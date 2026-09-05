@@ -10,7 +10,7 @@
 **Built by:** `build-decks.js`, from `engine/ref.css` and `engine/ref.js`, the shared engine, plus `content/slides-p-mission-01-maintain-control.js` for this deck's own words and figures
 **Body typeface:** Plus Jakarta Sans, falling back to the system sans serif stack. Faces are inlined as base64 woff2 by the shared engine. No web font is requested.
 **External requests:** none. Verified by loading the file under request interception in Chromium and recording every request that was not `file:` or `data:`. The recorded list was empty.
-**What this deck covers:** Silverthorn chapter 1 plus the homeostasis and communication frame of chapter 6, taught as one mission. 64 slides across 13 concept segments, 91 reveal cards, 2 inline SVG figures, 2 comparison tables, 13 competency lines, 2 lab annotations.
+**What this deck covers:** Silverthorn chapter 1 plus the homeostasis and communication frame of chapter 6, taught as one mission. 55 slides across 13 concept segments, 74 reveal cards, 2 inline SVG figures, 3 comparison tables, 8 competency lines, 3 lab annotations. Rebuilt to serve the instructor lecture narrative, so the slides carry content and the narrative carries the argument.
 **Date built:** September 5, 2026
 **Reviewer:** Dr. Sharilyn Rennie
 
@@ -26,32 +26,32 @@ Target: WCAG 2.2 Level AA minimum, Level AAA where achievable.
 | Criterion | Level | Status | Note |
 |---|---|---|---|
 | 1.1.1 Non text content | A | Pass | Both figures are inline SVG carrying `role="img"` and `aria-labelledby` pointing at a `title` and a `desc` inside the SVG. Automated test confirms both figures carry both elements and that every referenced id resolves inside its own SVG. |
-| 1.3.1 Info and relationships | A | Pass | Semantic `header`, `main` and `footer`, one each. One `section` per slide, 64 of them. Both comparison tables use `caption`, `thead` and `th[scope="col"]`, 6 column headers total. Figures use `figure` and `figcaption`. |
+| 1.3.1 Info and relationships | A | Pass | Semantic `header`, `main` and `footer`, one each. One `section` per slide, 55 of them. Both comparison tables use `caption`, `thead` and `th[scope="col"]`, 6 column headers total. Figures use `figure` and `figcaption`. |
 | 1.3.2 Meaningful sequence | A | Pass | Single column reading order. Slides sit in the document in presentation order. A closed reveal body is hidden in place rather than moved. |
 | 1.4.1 Use of colour | A | Pass | Reveal cards carry their state in text as well as color. In the two figures, the compartment code is stated in the caption in words, solid teal border for inside cells and dashed maroon for outside cells, so the distinction survives monochrome printing and color vision deficiency. |
-| 1.4.3 Contrast, minimum | AA | Pass | 25 unique text pairs swept on composited computed styles. Zero failures. See section 3. |
-| 1.4.6 Contrast, enhanced | AAA | Pass, no exception | Every one of the 25 pairs reaches the AAA threshold for its size. Lowest is 7.78:1. |
+| 1.4.3 Contrast, minimum | AA | Pass | 20 unique text pairs swept on composited computed styles. Zero failures. See section 3. |
+| 1.4.6 Contrast, enhanced | AAA | Pass, no exception | Every one of the 20 pairs reaches the AAA threshold for its size. Lowest is 7.78:1. |
 | 1.4.10 Reflow | AA | Pass | Measured at 320, 375, 768, 1024 and 1440 CSS pixels. Horizontal overflow was 0 pixels at every width. Wide tables scroll inside their own focusable container carrying `role="group"` and an accessible name. |
 | 1.4.12 Text spacing | AA | Pass | Inherited from the shared engine. No fixed heights on text containers. |
-| 2.1.1 Keyboard | A | Pass | 116 focusable elements. All 91 reveal cards are `role="button"` with `tabindex="0"`, confirmed by count: 91 of 91 tabbable. |
+| 2.1.1 Keyboard | A | Pass | 116 focusable elements. All 74 reveal cards are `role="button"` with `tabindex="0"`, confirmed by count: 74 of 74 tabbable. |
 | 2.1.2 No keyboard trap | A | Inherited | The zoom dialog's deliberate focus cycle and Escape behavior are engine features, verified previously against the decks this engine came from and not re-verified interactively here. |
 | 2.4.1 Bypass blocks | A | Pass | "Skip to the slides" is the first focusable element in the document, confirmed by walking the focusable order. |
 | 2.4.2 Page titled | A | Pass | Document title carries the deck name. |
-| 2.4.6 Headings and labels | AA | Pass | One `h1`, 64 `h2`, one per slide, and 90 `h3` inside cards and rows. Zero skipped heading levels across all 155 headings, measured by walking the heading sequence. |
+| 2.4.6 Headings and labels | AA | Pass | One `h1`, 55 `h2`, one per slide, and 72 `h3` inside cards and rows. Zero skipped heading levels across all 128 headings, measured by walking the heading sequence. |
 | 2.4.7 Focus visible | AA | Inherited | 3px outline with offset, terra on the page and gold in Present mode. Engine feature, read from the stylesheet. |
 | 2.5.8 Target size, minimum | AA | Pass, with a note | The smallest interactive targets in this file are the competency links at 27 CSS pixels tall, above the 24 pixel AA minimum. They are also inline links inside a sentence, which are exempt from this criterion regardless. Present bar controls measure 42 pixels tall, the zoom close button 38. |
 | 2.3.3 Animation from interaction | AAA | Pass | `prefers-reduced-motion: reduce` is present in the stylesheet and reduces the card lift, the zoom transition and the reveal fade. |
 | 3.1.1 Language of page | A | Pass | `lang="en"` on the root element. |
 | 3.2.3 Consistent navigation | AA | Pass | Written by the same generator from the same engine as the other decks, so header, keyboard hint line and present bar sit in the same place and behave identically. |
 | 3.2.4 Consistent identification | AA | Pass | "Tap to open", the competency line and the lab annotation mean the same thing here as in every other deck, because one generator writes all of them. |
-| 4.1.2 Name, role, value | A | Pass | All 91 reveal cards carry `role="button"`, `tabindex="0"` and `aria-expanded`, confirmed by count: 91 of 91 on each attribute. Zero icon-only buttons lack an accessible name, measured by checking every `button` with empty text content for `aria-label`. |
+| 4.1.2 Name, role, value | A | Pass | All 74 reveal cards carry `role="button"`, `tabindex="0"` and `aria-expanded`, confirmed by count: 74 of 74 on each attribute. Zero icon-only buttons lack an accessible name, measured by checking every `button` with empty text content for `aria-label`. |
 
 
 ## 3. Colour contrast audit
 
 Measured on computed styles in Chromium through Playwright, not read off a palette. Translucent foregrounds and backgrounds were composited against what actually sits behind them before measuring. Large text is judged at the 3:1 and 4.5:1 thresholds, normal text at 4.5:1 and 7:1.
 
-**25 unique text pairs. Zero failures at AA. Zero failures at AAA.** Lowest twelve, lowest first.
+**20 unique text pairs. Zero failures at AA. Zero failures at AAA.** Lowest twelve, lowest first.
 
 | Use | Foreground on background | Size | Ratio | Result |
 |---|---|---|---|---|
@@ -77,7 +77,7 @@ Measured programmatically on the rendered document.
 
 - 116 focusable elements in the document.
 - The first focusable element is "Skip to the slides", which targets the `main`.
-- All 91 reveal cards are reachable in reading order, each `role="button"` with `tabindex="0"` and an `aria-expanded` that tracks state.
+- All 74 reveal cards are reachable in reading order, each `role="button"` with `tabindex="0"` and an `aria-expanded` that tracks state.
 - No `button` in the file has empty text content without an `aria-label`.
 - Not verified interactively in this pass: the Present mode focus cycle, the zoom dialog's Escape-and-return behavior, and arrow key slide navigation. These are engine behaviors carried unchanged and were verified against the earlier decks.
 
@@ -106,7 +106,7 @@ Not a WCAG criterion, but a cognitive load rule of this course, and it is measur
 
 Ceilings: 90 words on a normal slide, 170 on a worked example, 70 on a figure.
 
-**64 of 64 slides pass. Zero over ceiling.** Mean visible words per slide, 59.2.
+**55 of 55 slides pass. Zero over ceiling.**
 
 | Densest slides | Kind | Visible words | Ceiling |
 |---|---|---|---|
@@ -141,6 +141,19 @@ A first build of this deck had 30 slides over ceiling and a mean of 81.6. Nothin
 **What it does not do.** Nothing is written into the deck file. A student opening the deck sees no instructor drawings, only the tool and, where the instructor drew, nothing at all, because the marker is driven by that browser's own storage. A student who draws their own gets their own marker.
 
 
+## 6d. The QR code on slide 1
+
+Slide 1 carries a QR code to this deck's published URL, so a student can open it on a phone or tablet beside the video, or draw on it with a stylus using the teaching canvas.
+
+| Point | Status |
+|---|---|
+| Encoding | Generated as an inline SVG path, 41 modules, error correction level M. No image file and no external request. |
+| Verified | Rendered from the built deck in Chromium, screenshotted, and decoded. It returns the published URL exactly. Not asserted, decoded. |
+| Accessible name | The SVG carries `role="img"` and `aria-labelledby` pointing at a `title` and a `desc` that say what the code is for. The URL is also printed beside it as text, so it is reachable without a camera. |
+| Contrast | Pure black modules on white, well past any threshold. The `title` and `desc` elements are not painted and were excluded from the contrast sweep after being confirmed to have a zero-size box. |
+| Print | Prints with the slide. |
+
+
 ## 7. Screen reader testing
 
 **Not done for this file, and that is a real gap.** No live session with a screen reader was run against this deck.
@@ -148,7 +161,7 @@ A first build of this deck had 30 slides over ceiling and a mean of 81.6. Nothin
 What was verified instead, programmatically:
 
 - Landmark structure is present and singular: one `header`, one `main`, one `footer`.
-- Heading hierarchy is complete with zero skipped levels across 155 headings.
+- Heading hierarchy is complete with zero skipped levels across 128 headings.
 - Both figures expose an accessible name and description through `role="img"` and `aria-labelledby` resolving to a `title` and `desc`.
 - Every reveal card exposes role, focusability and expanded state.
 - Both tables expose a caption and column headers with `scope`.

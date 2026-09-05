@@ -97,11 +97,22 @@ function cardHTML(c){
   return s;
 }
 
+function qrblock(q){
+  if (!q) return "";
+  let s = `\n      <div class="qrblock">`;
+  s += `\n        <div class="qrcode">\n` + q.svg.trim().split("\n").map(l => "          " + l).join("\n") + `\n        </div>`;
+  s += `\n        <div class="qrtext">`;
+  if (q.h) s += `\n          <p class="qrh">${rich(house(q.h))}</p>`;
+  (q.p || []).forEach(t => { s += `\n          <p>${rich(house(t))}</p>`; });
+  s += `\n        </div>\n      </div>`;
+  return s;
+}
+
 /* ---------- slide kinds ---------- */
 const KIND = {
 
   title(sl){
-    return head(sl) + terms(sl.terms) + bigline(sl.big, "");
+    return head(sl) + terms(sl.terms) + qrblock(sl.qr) + bigline(sl.big, "");
   },
 
   text(sl){
@@ -234,6 +245,20 @@ function badges(list){
 
 /* ---------- extra CSS this generation adds ---------- */
 const ADD_CSS = `
+/* QR block on a title slide, so a student can open the deck on a phone or tablet */
+.qrblock{display:flex;gap:18px;align-items:center;margin-top:22px;background:#FFFFFF;
+  border:1px solid var(--rule);border-radius:10px;box-shadow:0 1px 3px rgba(0,0,0,.08);
+  padding:16px 18px;max-width:34em}
+.qrcode{flex:0 0 auto;width:104px;height:104px;display:grid;place-items:center}
+.qrcode svg{width:104px;height:104px;display:block}
+.qrtext{min-width:0}
+.qrtext p{margin:0 0 4px;font-size:14px;line-height:1.6;color:var(--muted)}
+.qrtext p:last-child{margin-bottom:0}
+.qrtext .qrh{font-weight:700;color:var(--navy);font-size:15px}
+.slide.dark .qrblock{background:#101A2E;border-color:var(--navy-line)}
+.slide.dark .qrtext p{color:var(--light)}
+.slide.dark .qrtext .qrh{color:#FFFFFF}
+@media (max-width:520px){.qrblock{flex-direction:column;align-items:flex-start}}
 /* a table caption written as a sentence rather than a short label */
 .cmp caption.long{text-transform:none;letter-spacing:normal;font-size:14.5px;font-weight:400;
   color:var(--muted);line-height:1.65;max-width:64em;padding-bottom:14px}

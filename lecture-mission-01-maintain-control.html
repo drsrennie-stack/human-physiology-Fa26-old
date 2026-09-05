@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mission 1, Maintain Control. Instructor lecture narrative. BIO 005</title>
+<style>
+:root{
+  --navy:#08101F; --terra:#8B1D1D; --terra-dark:#6B1616; --gold:#DCB45C; --gold-ink:#5A4511;
+  --teal:#1F4E55; --white:#FFFFFF; --offwhite:#FAFAF9; --tint:#EDF1F3;
+  --muted:#3D4860; --rule:#DCE0E6;
+  --shadow:0 1px 3px rgba(0,0,0,.08); --shadow-lg:0 8px 16px rgba(0,0,0,.10);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--offwhite);color:var(--navy);
+  font-family:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:17px;line-height:1.72}
+.skip{position:absolute;left:-9999px;top:0;background:var(--white);color:var(--terra);
+  padding:12px 18px;z-index:10;font-weight:700;border-radius:0 0 8px 0}
+.skip:focus{left:0}
+header.top{background:var(--terra);color:var(--white);padding:34px 26px}
+.wrap{max-width:52rem;margin:0 auto}
+.eyebrow{font-family:"DM Sans",system-ui,sans-serif;font-size:12px;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;color:#FBEBC8;margin:0 0 10px}
+header.top h1{margin:0 0 10px;font-size:clamp(28px,4.6vw,42px);font-weight:800;line-height:1.16}
+header.top p{margin:0;color:#F2EFEF;font-size:16.5px;max-width:44rem}
+main{padding:0 26px 90px}
+.lead{background:var(--white);border:1px solid var(--rule);border-radius:10px;
+  box-shadow:var(--shadow);padding:24px 26px;margin:30px 0 0}
+.lead h2{margin-top:0}
+h2{font-size:clamp(22px,3vw,29px);font-weight:800;color:var(--navy);
+  margin:52px 0 6px;line-height:1.25}
+h3{font-size:19.5px;font-weight:700;color:var(--terra-dark);margin:30px 0 6px}
+h4{font-size:16px;font-weight:700;color:var(--navy);margin:22px 0 4px}
+p{margin:0 0 16px}
+.seg{font-family:"DM Sans",system-ui,sans-serif;font-size:12px;font-weight:700;
+  letter-spacing:1.6px;text-transform:uppercase;color:var(--terra);margin:0 0 2px}
+.runtime{font-size:14px;color:var(--muted);margin:0 0 18px}
+section.concept{border-top:1px solid var(--rule);padding-top:8px;margin-top:44px}
+ul,ol{margin:0 0 16px;padding-left:1.3em}
+li{margin:0 0 8px}
+b,strong{font-weight:700}
+.box{background:var(--white);border:1px solid var(--rule);border-radius:10px;
+  box-shadow:var(--shadow);padding:20px 22px;margin:22px 0}
+.box .lab{font-family:"DM Sans",system-ui,sans-serif;font-size:11.5px;font-weight:700;
+  letter-spacing:1.5px;text-transform:uppercase;margin:0 0 8px}
+.box p:last-child,.box ul:last-child,.box ol:last-child{margin-bottom:0}
+.draw .lab{color:var(--teal)}
+.ask .lab{color:var(--gold-ink)}
+.miss .lab{color:var(--terra)}
+.eq{background:var(--tint);border:1px solid var(--rule);border-radius:8px;
+  padding:16px 18px;margin:18px 0;font-size:18px;font-weight:700;text-align:center}
+.eqkey{font-size:14.5px;color:var(--muted);margin:-8px 0 18px}
+.say{border-left:3px solid var(--rule);padding-left:18px;margin:18px 0;color:var(--navy)}
+.say p:last-child{margin-bottom:0}
+table{width:100%;border-collapse:collapse;margin:18px 0;font-size:15.5px}
+caption{text-align:left;font-family:"DM Sans",system-ui,sans-serif;font-size:11.5px;
+  font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--terra);padding-bottom:8px}
+th,td{border-bottom:1px solid var(--rule);padding:9px 10px;text-align:left;vertical-align:top}
+th{font-weight:700;color:var(--navy)}
+.tw{overflow-x:auto}
+.tw:focus-visible{outline:3px solid var(--terra);outline-offset:3px}
+footer{border-top:1px solid var(--rule);padding:26px;color:var(--muted);font-size:14.5px}
+a{color:var(--terra-dark)}
+a:focus-visible,.tw:focus-visible{outline:3px solid var(--terra);outline-offset:3px}
+@media print{
+  body{background:#fff;font-size:10.5pt;line-height:1.5}
+  header.top{background:#fff;color:#000;border-bottom:2px solid #000;padding:0 0 12pt}
+  header.top h1{font-size:20pt}.eyebrow{color:#6B1616}header.top p{color:#000}
+  main{padding:0}.box,.lead{box-shadow:none;break-inside:avoid}
+  h2{break-after:avoid}h3{break-after:avoid}
+  section.concept{break-before:page}
+  .skip{display:none}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the lecture</a>
+
+<header class="top">
+  <div class="wrap">
+    <p class="eyebrow">BIO 005 Human Physiology . Week 1 . Unit 1, Keep the Human Alive</p>
+    <h1>Mission 1, Maintain Control</h1>
+    <p>Instructor lecture narrative. Silverthorn chapter 1, and the homeostasis and communication material from chapter 6. Written to teach from, in thirteen recording segments. Dr. Sharilyn Rennie.</p>
+  </div>
+</header>
+
+<main id="main">
+<div class="wrap">
+
+<div class="lead">
+<h2 style="margin-top:0">How to use this</h2>
+<p>This is the lecture, not an outline of it. The prose is what you say, or close enough that you can read a paragraph, look up, and say it your own way. The slides carry the content you point at. This carries the argument.</p>
+<p>Each concept is one recording segment. The boxes flag the four things that are easy to lose when you record: what to draw, where to stop and ask, the misconception to head off, and how to get into the next segment.</p>
+<h3>What this covers, and what it deliberately does not</h3>
+<p>Chapter 1 in full. From chapter 6, the homeostatic reflex pathway, the classification of signals by range, receptor location and the fact of amplification. The transduction pathways, meaning G protein coupled receptors, cyclic AMP, IP3 and calmodulin, are not here. They belong with the endocrine week where the competencies already sit, and teaching them now costs you forty minutes and buys a student nothing they can use in week 1.</p>
+<h3>Course competencies this lecture serves</h3>
+<p>Numbers 1, 3 and 4 of the six on the Yuba syllabus. It describes the interrelationship of cells, tissues, organs and systems. It introduces the major themes of physiology and how they apply across levels of organization. It opens experimental design and the philosophy of science, which concept 13 closes.</p>
+</div>
+
+<!-- ============================================================= -->
+<section class="concept" aria-labelledby="c0">
+<p class="seg">Opening segment</p>
+<h2 id="c0">The patient, and what a mission is</h2>
+<p class="runtime">About 8 minutes. Slides 1 to 5.</p>
+
+<p>Start with the patient, before you say anything about physiology. You have three days of values from one person, and every value is on the screen next to the range it is supposed to sit in. Do not tell them what is wrong. Ask them to do two things: mark which values moved over the three days, and mark which ones ended up outside the range.</p>
+
+<p>Give them a minute. It is the first thing they do in the course and it should feel like work rather than watching.</p>
+
+<p>Then take the answer. Four values moved and left the range: sodium, heart rate, blood pressure and urine output. Three barely moved and stayed where they were: potassium, glucose and temperature. That split is the entire week. Some variables in this patient are still being held. Others are not.</p>
+
+<div class="say">
+<p>Here is the sentence to land, and you will come back to it eleven more times before Friday. A value that stays the same is not a value that is being ignored. It is a value that something is actively holding. When a value drifts, something that was holding it has stopped.</p>
+</div>
+
+<p>Now define the word mission, because you are about to use it all semester and they have no reason to know what you mean by it. The body has one job, which is to keep conditions inside it steady enough that cells can keep working. That job is far too large to learn in one piece, so the course breaks it into smaller jobs. Each of those is a mission. A mission always starts with a problem that is already on the table, and you learn the science because the problem needs it, not the other way round.</p>
+
+<p>Tell them what they will be able to do at the end of this one. Given a variable that is drifting, they will be able to say whether the body has stopped detecting the change, stopped communicating it, or stopped being able to act on it. Those are three different failures. They look similar on a chart and they are not the same problem.</p>
+
+<div class="box ask">
+<p class="lab">Where to stop and ask</p>
+<p>Before you move on, ask which pile was harder to sort and why. The answer you want to hear is that they did not know what counted as normal until the range was next to the number. That is worth naming out loud, because reading a value against a reference range is a skill this course trains and most of them have never been taught it.</p>
+</div>
+
+<div class="box">
+<p class="lab" style="color:var(--terra-dark)">Transition into concept 1</p>
+<p>You have a patient whose numbers are moving and a claim to test. To test it you need to know what physiology actually asks, so that is where we start.</p>
+</div>
+</section>
+
+<!-- ============================================================= -->
+<section class="concept" aria-labelledby="c1">
+<p class="seg">Concept 1 of 13</p>
+<h2 id="c1">What physiology asks</h2>
+<p class="runtime">About 12 minutes. Slides 6 to 10.</p>
+
+<p>Anatomy asks what a structure is. Physiology asks what it does, how it does it, and what happens to it when conditions change. Those are different questions and they need different kinds of answers.</p>
+
+<p>Make the point concrete rather than abstract. A student can learn the name of every part of the kidney, every segment of the nephron in order, and still not be able to tell you why a particular patient is producing three liters of urine a day. The parts list does not contain the behavior. You have to know what each part does under what conditions before the behavior falls out.</p>
+
+<p>Anatomy has not disappeared from the course. It shows up wherever structure explains why a process works the way it does, and when you need it to follow a mechanism, we will go and get it. What you will not get is a semester of names.</p>
+
+<h3>Function appears at every level of organization</h3>
+
+<p>Physiology is studied at every level from the molecule up to the whole organism, and the question changes as you move up. Walk one event up the ladder so they can see it change.</p>
+
+<p>A protein changes shape when something binds to it. That shape change opens a channel, and ions move across a membrane. Enough cells do that together and the tissue contracts. The contraction ejects blood from a chamber. Pressure rises in vessels a long way from the heart. And you stand up without fainting.</p>
+
+<p>That is one event described at six levels. Every one of those statements is true and they are answers to different questions. When you ask a student to explain a mechanism, part of what you are asking is that they tell you which level they are working at, because an explanation that jumps between levels without saying so is usually hiding a gap.</p>
+
+<h3>Two kinds of explanation</h3>
+
+<p>Ask the question out loud: why do red blood cells carry oxygen?</p>
+
+<p>One answer is that they carry it in order to supply the tissues. That is a <b>teleological</b> explanation. It answers why in terms of purpose. It is genuinely useful for getting oriented in a new system, and it is how most people think about the body. It also tells you nothing about how oxygen is actually carried, and there is no measurement you could make that would show it to be wrong.</p>
+
+<p>The other answer is that hemoglobin binds oxygen reversibly, and how much it binds depends on the oxygen partial pressure around it. That is a <b>mechanistic</b> explanation. It answers how. It names the molecule doing the work and the condition that changes how much work gets done. It tells you what to measure, and it predicts what will happen if you change the oxygen pressure.</p>
+
+<p>Physiology wants the second kind. Not because purpose is forbidden, but because a mechanism can be tested and a purpose cannot.</p>
+
+<div class="box miss">
+<p class="lab">Misconception to head off</p>
+<p>Students hear this as why versus how and turn it into a rule about the first word of the sentence. It is not. A mechanism can answer a why question perfectly well. Why did flow increase? Because resistance fell. The distinction is purpose against process, not the word at the front. Say this if a sharp student pushes on it, and skip it if nobody does.</p>
+</div>
+
+<div class="box ask">
+<p class="lab">Where to stop and ask</p>
+<p>Give them a sentence and ask which kind it is. The stomach secretes acid in order to digest protein. Most will call it mechanistic because it contains a process word. It is teleological, because the work in the sentence is being done by "in order to". That correction lands better than any definition you could give them.</p>
+</div>
+
+<h3>Where this matters outside the classroom</h3>
+<p>Give one example and move on. Giving oxygen because a saturation is low helps the patient. It does not tell you whether the problem is ventilation, diffusion or perfusion, and those three are managed differently. The purpose answer got you to act. Only the mechanism tells you what to do next.</p>
+
+<div class="box">
+<p class="lab" style="color:var(--terra-dark)">Transition into concept 2</p>
+<p>If physiology is about what happens when conditions change, then the next question is which conditions, and where. That means being precise about what counts as inside.</p>
+</div>
+</section>
+
+<!-- ============================================================= -->
+<section class="concept" aria-labelledby="c2">
+<p class="seg">Concept 2 of 13</p>
+<h2 id="c2">The internal environment</h2>
+<p class="runtime">About 12 minutes. Slides 11 to 14.</p>
+
+<p>Open with something that sounds wrong and is not. Most of your cells never touch the outside world, and the inside of your gut is not inside you.</p>
+
+<p>Your skin and the linings of your airways and digestive tract form a boundary. Everything within that boundary is the <b>internal environment</b>. The lumen of the gut is continuous with the outside world at both ends, which is why material can pass through you without ever having been in you. That is not a word game. It is the reason absorption is a regulated event rather than an automatic one.</p>
+
+<p>Once you have a boundary you have two environments and they are allowed to differ. Holding that difference is most of what this course is about.</p>
+
+<h3>The compartments</h3>
+
+<p>Total body water divides into two compartments. About two thirds sits inside cells and is called <b>intracellular fluid</b>. About one third sits outside cells and is called <b>extracellular fluid</b>. Extracellular fluid divides again into the <b>interstitial fluid</b> that bathes the cells and the <b>plasma</b> inside the blood vessels.</p>
+
+<div class="box draw">
+<p class="lab">Draw this</p>
+<p>Top down, not left to right. Total body water across the top. Two boxes under it, intracellular on the left and extracellular on the right. Two more under extracellular, interstitial and plasma. Use a solid border for the intracellular box and a dashed border for everything extracellular, and keep that code for the rest of the semester so students can read a compartment diagram at a glance in week 14.</p>
+</div>
+
+<p>Now the point of the diagram. A cell has no way to know what your plasma sodium is. It can only respond to what is immediately around it, which is interstitial fluid. So when we say a value is being held steady, we almost always mean it is being held steady in the extracellular fluid, because that is the fluid the cells actually experience.</p>
+
+<p>And yet when you order a laboratory test, what gets sampled is plasma. You are measuring one compartment and drawing a conclusion about another. That works because the two extracellular compartments exchange freely, and it is worth them knowing that from the start, because the exception is where patients get into trouble.</p>
+
+<h3>Why the exchange matters clinically</h3>
+
+<p>Plasma and interstitial fluid trade water readily. That is convenient, and it also means fluid can leave the vessels and accumulate in the tissue. When that happens, total body water can be high at the same time as the volume inside the vessels is low.</p>
+
+<p>So a patient can have swollen ankles and a low blood pressure at the same time, and those two findings are not contradicting each other. They are telling you where the water went. Distribution between compartments matters as much as total volume, and a number for total body water alone would not have told you anything useful.</p>
+
+<div class="box ask">
+<p class="lab">Where to stop and ask</p>
+<p>Ask what would happen to the compartments if you gave a liter of intravenous fluid. Do not expect a full answer, they meet osmolarity in week 3. What you want is for them to ask you which fluid, because that question is the whole of the week 3 lab and it is much better if it comes from them now.</p>
+</div>
+
+<div class="box">
+<p class="lab" style="color:var(--terra-dark)">Transition into concept 3</p>
+<p>We now have a place where conditions are held. The next word is the one the entire course is built on, and it is routinely learned wrong.</p>
+</div>
+</section>
+
+<!-- ============================================================= -->
+<section class="concept" aria-labelledby="c3">
+<p class="seg">Concept 3 of 13</p>
+<h2 id="c3">Homeostasis</h2>
+<p class="runtime">About 14 minutes. Slides 15 to 19.</p>
+
+<p><b>Homeostasis</b> is the process of keeping conditions in the internal environment within a range that cells can work in.</p>
+
+<p>Read that definition slowly and then take it apart, because every word in it is load bearing and students routinely keep the wrong half.</p>
+
+<p>It is a <b>process</b>, not a state. It runs continuously, it consumes energy, and it can fail. Nothing about it is passive and nothing about it is guaranteed.</p>
+
+<p>It is a <b>range</b>, not a number. The value you measure moves inside that range rather than sitting on a point. Core temperature is not 37.0 C (98.6 F) all day and it is not meant to be.</p>
+
+<h3>Steady state is not equilibrium</h3>
+
+<p>This is the distinction most students arrive without, and it is worth the five minutes.</p>
+
+<p>At <b>equilibrium</b>, a system has settled. Movement in each direction is balanced, nothing is being forced, and no energy is required to keep it that way. A sugar cube fully dissolved in a glass of water is at equilibrium. Walk away for a day and nothing changes.</p>
+
+<p>In a <b>steady state</b>, the value is not changing but a great deal is happening. Material is moving continuously in both directions, the rates happen to be matched, and energy is being spent to keep them matched. Your plasma sodium sits at 140 millimoles per liter as a steady state. Cut off the energy supply and it drifts.</p>
+
+<p>So the line to give them is that the body is in steady state, and it reaches equilibrium only when it dies. That is not a flourish, it is the literal case.</p>
+
+<div class="box ask">
+<p class="lab">Predict, then check</p>
+<p>A patient's potassium has read exactly 4.0 for three days. Ask whether more potassium is crossing her cell membranes on day three than on day one, less, or about the same. Let them commit before you answer.</p>
+<p>The answer is that you cannot tell. A value that has not moved tells you the rates in and out are equal. It says nothing about how large those rates are. She could be moving very little potassium or a great deal in both directions, and the reading is identical either way.</p>
+</div>
+
+<h3>What a steady value costs</h3>
+
+<p>This follows directly and it is the clinically important half.</p>
+
+<p>Because a steady value is being actively held, the value alone does not tell you how hard the body is working to hold it. Compensatory mechanisms can keep a regulated variable inside its reference range while running close to their limit. The number looks unremarkable. The reserve is nearly gone.</p>
+
+<p>Arterial pH is the cleanest example. A patient can hold a pH close to the reference range while respiratory compensation runs near maximal. The pH is reassuring. The compensation is not, and when the reserve is finally exhausted the change is abrupt rather than gradual, because there was nothing left to give.</p>
+
+<p>This is also why a single value is worth less than a series. One measurement is a point estimate. Serial measurements give you direction and rate of change, and that is what identifies a patient who is deteriorating before the variable ever leaves its range.</p>
+
+<div class="box miss">
+<p class="lab">Misconception to head off</p>
+<p>Students hear "within normal limits" as "fine". Give them the habit of asking a second question every time: what is it costing this patient to keep that number there. A normal value produced by maximal effort and a normal value produced by a system at rest look identical on the chart and are completely different situations.</p>
+</div>
+
+<div class="box">
+<p class="lab" style="color:var(--terra-dark)">Transition into concept 4</p>
+<p>We have said a steady value means two rates are matched. The next two concepts are about what those rates actually are and how you would account for them.</p>
+</div>
+</section>
+
+<!-- ============================================================= -->
+<section class="concept" aria-labelledby="c4">
+<p class="seg">Concept 4 of 13</p>
+<h2 id="c4">Mass balance</h2>
+<p class="runtime">About 12 minutes. Slides 20 to 23.</p>
+
+<p>Mass balance is a conservation rule, and it sits underneath every steady value in the body. For any substance, the amount present changes only if the routes in and the routes out stop matching.</p>
+
+<div class="eq">amount in body = intake + production &minus; excretion &minus; metabolism</div>
+<p class="eqkey"><b>Intake</b>, what enters by mouth, by vein or across the lungs. <b>Production</b>, what your own cells synthesize. <b>Excretion</b>, what leaves the body intact in urine, stool, sweat or expired air. <b>Metabolism</b>, what is chemically converted into something else.</p>
+
+<p>Say what the equation means physiologically before you use it. A substance is steady when everything adding to it is exactly matched by everything removing it. If the amount is climbing, either an input rose or an output fell, and the equation on its own does not tell you which. That is the question you go looking for.</p>
+
+<h3>Work one all the way through</h3>
+
+<p>Take sodium across a single day in a person whose total body sodium is stable. She takes in 4200 milligrams by mouth. She loses 300 in sweat and 100 in stool. Her kidneys excrete 3800 in urine. There is no intravenous input, sodium is not produced by cells, and it is not metabolized.</p>
+
+<p>Inputs total 4200. Outputs total 4200. The change is zero, and total body sodium is unchanged at the end of the day.</p>
+
+<p>Now change one thing, which is the move you will make in every worked example this semester. She spends the day working outdoors and sweats 1200 milligrams instead of 300. If her urinary sodium does not change, she finishes the day 900 milligrams down.</p>
+
+<p>The useful observation is which term did the adjusting. Intake is set by what she ate. Sweat is set by the weather and her activity. Stool losses are small and fairly fixed. The kidney is the only term in that equation with real range, which is why so much of the second half of this course is renal.</p>
+
+<h3>Two different ways to remove something</h3>
+
+<p>Excretion and metabolism both make a substance disappear from the equation, and only one of them means it left the body.</p>
+
+<p>In <b>excretion</b>, the molecule physically exits, intact. In <b>metabolism</b>, it is chemically converted into something else. It is gone as itself, but its atoms are still inside you.</p>
+
+<p>That distinction decides where you look when something accumulates. If a drug is building up, the question is whether the kidney has stopped excreting it or the liver has stopped converting it. Those are different organs, different tests and different management, and the equation alone will not separate them for you.</p>
+
+<div class="box ask">
+<p class="lab">Where to stop and ask</p>
+<p>Ask what happens to the sodium equation in a patient who is given intravenous saline. They should see intake rise. Then ask what has to happen for total body sodium to stay steady, and let them get to the kidney on their own.</p>
+</div>
+
+<div class="box">
+<p class="lab" style="color:var(--terra-dark)">Transition into concept 5</p>
+<p>Mass balance tells you how much. It does not tell you how fast anything is arriving or how hard an organ is working, and both of those turn out to matter more at the bedside.</p>
+</div>
+</section>
+
+<!-- ============================================================= -->
+<section class="concept" aria-labelledby="c5">
+<p class="seg">Concept 5 of 13</p>
+<h2 id="c5">Mass flow and clearance</h2>
+<p class="runtime">About 14 minutes. Slides 24 to 28.</p>
+
+<p>Two quantities, and both of them exist because a concentration on its own is not enough to tell you what is happening.</p>
+
+<h3>Mass flow</h3>
+
+<div class="eq">mass flow = concentration &times; volume flow</div>
+<p class="eqkey"><b>Concentration</b>, amount per volume, for example milligrams per milliliter. <b>Volume flow</b>, volume per time, for example milliliters per minute. The volumes cancel, which leaves amount per time.</p>
+
+<p>What the relationship says is that delivery of a substance to a tissue depends on two things, how much of it is in the blood and how fast that blood is moving. Change either one and delivery changes. Hold one constant and vary the other and delivery still changes.</p>
+
+<p>Work it with oxygen, because it makes the point unforgettable. Two patients both have an arterial oxygen content of 20 milliliters of oxygen per 100 milliliters of blood, which is 200 milliliters per liter. The first has a cardiac output of 5.0 liters per minute, so she delivers 1000 milliliters of oxygen each minute. The second is in shock with a cardiac output of 2.5 liters per minute, so she delivers 500.</p>
+
+<p>Identical oxygen content. Half the delivery. Her blood gas and her pulse oximetry can both look reassuring while her tissues receive half as much oxygen, because the concentration was never the thing that was wrong.</p>
+
+<div class="box miss">
+<p class="lab">Misconception to head off</p>
+<p>A normal saturation is treated by almost everyone as evidence that the tissues are being supplied. It is not. Saturation is a concentration term. Delivery needs the flow term as well, and there is no oximeter for cardiac output. Say this now, because in week 9 you will build on it and in week 11 they will need it for shock.</p>
+</div>
+
+<h3>Clearance</h3>
+
+<p>Counting molecules removed from the body is not practical, so physiology describes removal a different way. Clearance asks how much plasma would have to be completely stripped of a substance each minute to account for the amount actually removed.</p>
+
+<div class="eq">clearance = rate of removal &divide; plasma concentration</div>
+<p class="eqkey"><b>Rate of removal</b>, amount per time, for example milligrams per minute. <b>Plasma concentration</b>, amount per volume, for example milligrams per milliliter. The result is a volume per time, in milliliters per minute.</p>
+
+<p>Be honest that the volume is a construct. No particular milliliters get emptied. It is a way of scoring how hard an organ is working relative to how much substance is there, and expressing it as a volume is what lets you compare one organ against another and one patient against another.</p>
+
+<p>Then connect it to something they will meet in their first week on a ward. Nearly every renally cleared drug is dosed off an estimate of clearance, so when clearance falls the same dose produces a higher concentration. A rising creatinine usually means clearance dropped, not that the patient suddenly started producing more creatinine. And the lung clears too. Removing carbon dioxide is a clearance problem in which ventilation is the flow term.</p>
+
+<div class="box">
+<p class="lab" style="color:var(--terra-dark)">Transition into concept 6</p>
+<p>We have now said several times that something holds these values steady. We have not once said what that something is made of. That is the next five concepts.</p>
+</div>
+</section>
+
+<!-- ============================================================= -->
+<section class="concept" aria-labelledby="c6">
+<p class="seg">Concept 6 of 13</p>
+<h2 id="c6">The components of a reflex pathway</h2>
+<p class="runtime">About 15 minutes. Slides 29 to 32. This is the spine of the lecture.</p>
+
+<p>Everything so far has said that something holds these values steady. Now name the parts of that something. There are five, they occur in a fixed order, and once a student can list them they can analyze any control system in the course.</p>
+
+<ol>
+<li><b>Sensor.</b> A receptor that detects a change in the regulated variable.</li>
+<li><b>Afferent pathway.</b> The route that carries that input from the sensor to the integrating center.</li>
+<li><b>Integrating center.</b> Where the input is compared against the setpoint, and where the output is decided.</li>
+<li><b>Efferent pathway.</b> The route that carries the output signal from the center to the effector.</li>
+<li><b>Effector.</b> The cell, tissue or organ that produces the response.</li>
+</ol>
+
+<p>Then the response itself changes the regulated variable, and that change feeds back to the sensor. The feedback is what makes this a loop rather than a chain of events, and it is the single most important arrow on the diagram.</p>
+
+<p>Be explicit about the setpoint, because it is where the previous version of this lecture went wrong. The setpoint is not a sixth component. It is a property of the integrating center, the value the center compares the input against. Treating it as a separate structure invites students to look for it somewhere, and there is nothing to find.</p>
+
+<div class="box draw">
+<p class="lab">Draw this</p>
+<p>Top down. Regulated variable at the top, then sensor, then integrating center, then effector, with the two pathways drawn as the labeled arrows between them rather than as boxes. Then the long feedback arrow up the left hand side from the response back to the regulated variable, in a different color. Draw the feedback arrow last and pause before you draw it, so they see that without it the diagram is just a sequence.</p>
+</div>
+
+<h3>The same five components in a system they already know</h3>
+
+<p>Thermoregulation on a cold day. Go through it in the same order, every time, so the order becomes automatic.</p>
+
+<p>The sensors are cold receptors in the skin and thermosensitive neurons in the hypothalamus. The afferent pathway is sensory neurons carrying that input from the periphery to the hypothalamus. The integrating center is the hypothalamus, comparing the input against a setpoint near 37 C (98.6 F). The efferent pathways are somatic motor neurons running to skeletal muscle and sympathetic fibers running to cutaneous blood vessels. The effectors are skeletal muscle, which shivers, and the smooth muscle of those vessels, which constricts.</p>
+
+<p>The response is that heat production rises and heat loss falls. Core temperature comes back up, the sensors detect that, and the drive to shiver falls away. The loop closed itself.</p>
+
+<h3>Each component is a separate point of failure</h3>
+
+<p>This is the payoff, and it is what the mission patient turns on. Go through them in order and say what each failure looks like.</p>
+
+<div class="tw" tabindex="0" role="group" aria-label="Component failures in a reflex pathway">
+<table>
+<caption>Five components, five failures</caption>
+<thead><tr><th scope="col">What fails</th><th scope="col">What happens</th></tr></thead>
+<tbody>
+<tr><th scope="row">Sensor</th><td>The change is never detected, so nothing downstream is ever activated. No response, because as far as the body is concerned nothing happened.</td></tr>
+<tr><th scope="row">Afferent pathway</th><td>The change is detected and the input never reaches the integrating center.</td></tr>
+<tr><th scope="row">Integrating center</th><td>The input arrives and is compared against an inappropriate setpoint, so the output that comes back is wrong.</td></tr>
+<tr><th scope="row">Efferent pathway</th><td>The correct output is generated and never reaches the effector.</td></tr>
+<tr><th scope="row">Effector</th><td>The signal arrives and the tissue cannot produce the response.</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>There is a sixth situation and it is worth separating from the five. Every component can work correctly and the disturbance can simply be larger than the pathway is able to correct. That is not a component failure, it is capacity being exceeded, and the distinction matters because the management is completely different.</p>
+
+<div class="box ask">
+<p class="lab">Where to stop and ask</p>
+<p>Go back to the three broad categories from the opening segment, detection, communication and effector response, and ask which components belong to which. Sensor is detection. The two pathways are communication. The integrating center and the effector are where the response is decided and produced. That mapping is worth making explicit rather than leaving them to notice it.</p>
+</div>
+
+<div class="box">
+<p class="lab" style="color:var(--terra-dark)">Transition into concept 7</p>
+<p>Not every correction needs all five components spread across the body. Some are handled entirely where the problem is.</p>
+</div>
+</section>
+
+<!-- ============================================================= -->
+<section class="concept" aria-labelledby="c7">
+<p class="seg">Concept 7 of 13</p>
+<h2 id="c7">Local control and reflex control</h2>
+<p class="runtime">About 9 minutes. Slides 33 to 35.</p>
+
+<p>Control pathways come in two scales, and the thing that separates them is how far the signal has to travel.</p>
+
+<p>In <b>local control</b>, a tissue detects a change in its own immediate surroundings and responds to it, without involving anything else. The signal moves a very short distance and the effect stays in that tissue. A tissue running short of oxygen releases substances that dilate its own arterioles, which increases its own blood supply. Nothing else in the body needs to know.</p>
+
+<p>In <b>reflex control</b>, the sensor sends its input to a distant integrating center, which sends output back out to effectors that may be nowhere near the original change. This is the five component pathway from concept 6, and it exists because some problems cannot be solved locally.</p>
+
+<div class="box ask">
+<p class="lab">Predict, then check</p>
+<p>You stand up quickly and blood pools in your legs. Ask whether the correction that stops you fainting is local control or reflex control. Let them commit.</p>
+<p>It is reflex control. Baroreceptors in the large arteries detect the fall in pressure, the input goes to the brainstem, and the output goes back out to the heart and to blood vessels throughout the body. Then ask the follow up that makes it stick: why could local control not have handled it? Because the tissue with the problem is the brain, and the tissues that have to change are the heart and the vessels in the legs. Local control has no way to bridge that distance.</p>
+</div>
+
+<p>So the general rule is that when the effector is anatomically distant from the sensor, the pathway has to be a reflex. That is not a definition to memorize, it is something they can derive every time.</p>
+
+<div class="box">
+<p class="lab" style="color:var(--terra-dark)">Transition into concept 8</p>
+<p>We have the components and the two scales. Now the question is what the loop actually does with the information, and there are three answers.</p>
+</div>
+</section>
+
+<!-- ============================================================= -->
+<section class="concept" aria-labelledby="c8">
+<p class="seg">Concept 8 of 13</p>
+<h2 id="c8">Negative feedback</h2>
+<p class="runtime">About 14 minutes. Slides 36 to 39.</p>
+
+<p>Deal with the word first, because it costs you nothing and it prevents a semester of confusion. Negative here does not mean harmful. It means opposite.</p>
+
+<p>In <b>negative feedback</b>, the response opposes the change that triggered it. The variable moves away from the setpoint, the pathway detects it, and the response drives the variable back in the opposite direction. As the variable returns, the stimulus on the sensor weakens, so the response eases off.</p>
+
+<p>That last step is the important one and it is the one students skip. The loop turns itself down as it succeeds. Nothing has to tell it to stop, because success removes the thing that was driving it. That is what makes negative feedback stable, and it is why almost every control system in your body is built this way.</p>
+
+<h3>Walk one loop completely</h3>
+
+<p>Blood glucose after a meal. Same five components, same order.</p>
+
+<p>You eat, glucose is absorbed from the gut, and blood glucose starts to rise above its usual range. Beta cells in the pancreas detect the rise, and in this case the same cells act as sensor and integrating center. They secrete insulin into the blood, which is the efferent signal, and it travels to muscle, adipose tissue and liver. Those effectors take glucose out of the blood and store it. Blood glucose falls back toward its usual range. And as it falls, the stimulus on the beta cells fades and insulin secretion drops.</p>
+
+<div class="box ask">
+<p class="lab">Then break it</p>
+<p>Ask what the numbers look like if the effector cells stop responding normally to insulin. Glucose stays high. The sensor keeps detecting the high glucose, so insulin secretion stays high too. You get a high signal and an uncorrected variable at the same time.</p>
+<p>That combination is diagnostic reasoning they can do in week 1. A high signal with the variable still wrong points at the effector, not at the sensor. If the sensor had failed, the signal would be low.</p>
+</div>
+
+<h3>Loops overshoot, and that is not a fault</h3>
+
+<p>A pathway cannot respond to a change before it has detected it, and detection takes time. Because of that delay the variable always drifts slightly past the setpoint before the correction arrives, and the correction carries it slightly past on the way back. The value oscillates gently around the setpoint rather than sitting on it.</p>
+
+<p>So a value that moves inside its range is what a working control system looks like. A value pinned to exactly one number would be far more suspicious than one that wanders.</p>
+
+<div class="box">
+<p class="lab" style="color:var(--terra-dark)">Transition into concept 9</p>
+<p>Negative feedback is the common case. There is a second kind, it is rarer, and it behaves in the opposite way.</p>
+</div>
+</section>
+
+<!-- ============================================================= -->
+<section class="concept" aria-labelledby="c9">
+<p class="seg">Concept 9 of 13</p>
+<h2 id="c9">Positive feedback</h2>
+<p class="runtime">About 10 minutes. Slides 40 to 42.</p>
+
+<p>In <b>positive feedback</b>, the response increases the change that triggered it. The loop reinforces itself, so instead of settling it accelerates.</p>
+
+<p>Because nothing inside the loop opposes the change, positive feedback cannot terminate itself. It runs until some event outside the loop ends the situation. That single property is what makes it useful in a few places and dangerous everywhere else.</p>
+
+<p>Two examples where the body uses it deliberately. In childbirth, stretch of the cervix drives oxytocin release, contractions push the fetus downward, and that increases cervical stretch further. Delivery is the outside event that ends it. In clotting, activated clotting factors activate more clotting factors, so a small injury seals rapidly. The completed clot is what ends it.</p>
+
+<p>In both cases the process needs to be driven to completion rather than held at a value, which is exactly what positive feedback is good for.</p>
+
+<div class="box ask">
+<p class="lab">Predict, then check</p>
+<p>A failing heart pumps poorly, so blood pressure falls. The body responds by constricting vessels and increasing heart rate. Those responses raise the work the heart has to do, so it pumps even less effectively. Ask which kind of feedback this is.</p>
+<p>It is positive feedback, and it is the version nobody wants. Each round makes the next round worse, which is why decompensation accelerates rather than drifting.</p>
+<p>Then make the point that matters. Every individual response in that sequence is a normal negative feedback response to a low blood pressure. They are appropriate corrections. They are appropriate to a problem this patient does not have, and applied to the problem she does have they make things worse. An appropriate response to the wrong problem can still accelerate decompensation.</p>
+</div>
+
+<div class="box">
+<p class="lab" style="color:var(--terra-dark)">Transition into concept 10</p>
+<p>Both kinds of feedback share one weakness. They are late, because something has to go wrong before there is anything to detect.</p>
+</div>
+</section>
+
+<!-- ============================================================= -->
+<section class="concept" aria-labelledby="c10">
+<p class="seg">Concept 10 of 13</p>
+<h2 id="c10">Feedforward, and setpoints that move</h2>
+<p class="runtime">About 12 minutes. Slides 43 to 46.</p>
+
+<p>Two mechanisms here, and they solve the same problem in different ways. Feedback is always reactive. Something has to move off the setpoint before the pathway has anything to respond to.</p>
+
+<h3>Feedforward</h3>
+
+<p>In <b>feedforward control</b>, the body uses a cue that reliably predicts a coming disturbance and begins responding before the regulated variable has changed at all.</p>
+
+<p>You see and smell food and begin producing saliva and gastric acid before anything is swallowed. Your heart rate and ventilation rise as you begin to exercise, not after your muscles have run short of oxygen. In both cases the response is running before there is any error to correct.</p>
+
+<p>Feedforward does not replace feedback. It buys time, and feedback cleans up whatever the anticipation got wrong.</p>
+
+<h3>Setpoints are not fixed</h3>
+
+<p>This is the part that catches people out clinically, and it is worth being slow about. A control pathway can be working perfectly and still be holding a variable at a value you did not expect, because the setpoint itself has changed.</p>
+
+<p>Three ways that happens. <b>Biological rhythms</b>: core temperature and many hormones follow a daily cycle, so the setpoint at four in the morning is not the setpoint at four in the afternoon. <b>Fever</b>: the hypothalamic setpoint is deliberately raised, and the patient feels cold and shivers because 37 C (98.6 F) now sits below the new target. That is why chills accompany a rising fever, and it is not a detail, it is the mechanism. <b>Acclimatization</b>: sustained exposure to new conditions resets what the body defends, which is how altitude changes the oxygen carrying capacity that gets maintained.</p>
+
+<div class="box miss">
+<p class="lab">Misconception to head off</p>
+<p>An abnormal value gets read as a broken loop. Before concluding that, check whether the loop is defending a different number on purpose. Treating a fever with antipyretics works by lowering the raised setpoint. Putting ice packs on a patient whose setpoint is still high just makes them shiver harder, because you are fighting a loop that is doing exactly what it was told.</p>
+</div>
+
+<div class="box">
+<p class="lab" style="color:var(--terra-dark)">Transition into concept 11</p>
+<p>We have used the word signal in every one of the last five concepts without ever saying what one is. That is the next two.</p>
+</div>
+</section>
+
+<!-- ============================================================= -->
+<section class="concept" aria-labelledby="c11">
+<p class="seg">Concept 11 of 13</p>
+<h2 id="c11">How signals travel</h2>
+<p class="runtime">About 12 minutes. Slides 47 to 50.</p>
+
+<p>A sensor with no route to an effector accomplishes nothing, so the afferent and efferent pathways deserve their own treatment. Cells communicate in four ways, and the useful way to organize them is by how far the signal has to go.</p>
+
+<ol>
+<li><b>Direct contact.</b> Molecules pass straight from one cell into its neighbor through connecting channels, or two cells touch and read each other's surface proteins. Range is cells that are touching.</li>
+<li><b>Local chemical signals.</b> A cell releases a chemical into the fluid around it, nearby cells respond, and the chemical is broken down before it can travel any distance. Range is a few cell widths.</li>
+<li><b>Neural signals.</b> An electrical signal travels the length of a neuron, then a chemical is released onto one specific target cell. Range is long, and it is delivered to a single address.</li>
+<li><b>Hormones.</b> A chemical is released into the blood and travels everywhere. Only cells with the matching receptor respond. Range is the entire body.</li>
+</ol>
+
+<p>So there are two ways to reach something far away. Send the message to one address, or broadcast it and let the receiver decide whether it is relevant.</p>
+
+<h3>The nervous and endocrine systems solve the same problem oppositely</h3>
+
+<div class="tw" tabindex="0" role="group" aria-label="Nervous and endocrine comparison">
+<table>
+<caption>Two long distance systems</caption>
+<thead><tr><th scope="col"></th><th scope="col">Nervous</th><th scope="col">Endocrine</th></tr></thead>
+<tbody>
+<tr><th scope="row">Route</th><td>A fixed anatomical path</td><td>Broadcast in the blood</td></tr>
+<tr><th scope="row">Who receives it</th><td>The cell at the end of the neuron</td><td>Any cell expressing the receptor</td></tr>
+<tr><th scope="row">Onset</th><td>Milliseconds</td><td>Seconds to hours</td></tr>
+<tr><th scope="row">Duration</th><td>Brief unless repeated</td><td>Sustained</td></tr>
+<tr><th scope="row">Suited to</th><td>Fast, precise, short term adjustment</td><td>Widespread, sustained adjustment</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>You rarely get both sets of properties from one system, which is why the body maintains both and why so many variables are regulated by the two together.</p>
+
+<h3>Why broadcasting is not wasteful</h3>
+
+<p>A hormone released into the blood reaches essentially every cell within a minute or two, and the overwhelming majority of those cells do nothing at all, because they have no receptor that fits it.</p>
+
+<p>That sounds inefficient until you see what it buys. The specificity does not live in the delivery, it lives in which cells are equipped to listen. That single fact explains why one hormone can produce completely different effects in different tissues, and why a drug given into a vein can act on one organ and largely leave the rest alone.</p>
+
+<div class="box">
+<p class="lab" style="color:var(--terra-dark)">Transition into concept 12</p>
+<p>If the receptor is what determines who responds, then the receptor deserves a closer look.</p>
+</div>
+</section>
+
+<!-- ============================================================= -->
+<section class="concept" aria-labelledby="c12">
+<p class="seg">Concept 12 of 13</p>
+<h2 id="c12">Receptors</h2>
+<p class="runtime">About 12 minutes. Slides 51 to 54.</p>
+
+<p>Three things about receptors in week 1: where they sit, what happens after binding, and the fact that they change. The full transduction pathways come in the endocrine week.</p>
+
+<h3>Location follows solubility</h3>
+
+<p>The cell membrane is largely lipid, so it passes lipid soluble molecules and blocks water soluble ones. That single physical fact determines where a receptor has to be.</p>
+
+<p>A <b>water soluble</b> signal cannot cross the membrane, so its receptor sits on the cell surface. The molecule binds outside and something else has to relay the message inward. Most hormones and all neurotransmitters work this way. The response is fast, because nothing has to be manufactured, and it stops quickly once the signal is gone.</p>
+
+<p>A <b>lipid soluble</b> signal crosses the membrane and binds a receptor in the cytoplasm or the nucleus, usually altering which genes are transcribed. Steroid and thyroid hormones work this way. The response is slow, because proteins have to be made, and it persists long after the signal has gone.</p>
+
+<p>So solubility determines location, and location determines both how fast the response arrives and how long it lasts. That is a chain of consequences from one physical property, and it is worth saying in those terms.</p>
+
+<h3>Amplification</h3>
+
+<p>When a surface receptor relays a message inward it does not hand it off one for one. Each step multiplies the one before it. The receptor activates a relay molecule, that activates an enzyme, the enzyme produces many copies of an intracellular messenger, and each of those activates more machinery again.</p>
+
+<p>That is why a hormone present at concentrations measurable only in picograms per milliliter can produce an effect across the whole body, and it is why small changes in hormone concentration have clinical consequences that seem out of proportion to the numbers.</p>
+
+<h3>Receptors are not fixed</h3>
+
+<p>The target cell adjusts its own sensitivity, and this is where a great deal of pharmacology lives.</p>
+
+<p>When a signal has been scarce for a long time, the cell adds receptors and becomes more sensitive to what little arrives. That is <b>up regulation</b>. When a signal has been high for a long time, the cell removes receptors and responds less. That is <b>down regulation</b>, and it is one route to drug tolerance.</p>
+
+<p>A molecule that binds the receptor and produces the same response the natural signal would is an <b>agonist</b>. One that binds, produces no response, and blocks the natural signal from binding is an <b>antagonist</b>.</p>
+
+<p>The consequence worth stating plainly is that a patient can have an entirely normal hormone concentration and an abnormal response to it, because the receptors changed rather than the signal. Beta blockers are antagonists at receptors the sympathetic system uses, so the signal is still being sent and the receptor no longer passes it on. A patient needing more opioid for the same effect is often showing down regulation rather than drug seeking behavior.</p>
+
+<div class="box">
+<p class="lab" style="color:var(--terra-dark)">Transition into concept 13</p>
+<p>Everything in this lecture came from experiments. The last segment is about how you tell a good one from a bad one.</p>
+</div>
+</section>
+
+<!-- ============================================================= -->
+<section class="concept" aria-labelledby="c13">
+<p class="seg">Concept 13 of 13</p>
+<h2 id="c13">Doing physiology as a science</h2>
+<p class="runtime">About 10 minutes. Slides 55 to 58.</p>
+
+<p>Everything you have been told this hour came from an experiment, and experiments can be done badly. This segment is short and it sets up the lab.</p>
+
+<h3>What a usable experiment needs</h3>
+
+<ul>
+<li><b>One thing changed on purpose.</b> The independent variable. If two things changed you cannot attribute the result to either.</li>
+<li><b>One thing measured.</b> The dependent variable, and you decide how you are going to measure it before you start rather than after you have seen the data.</li>
+<li><b>A control group.</b> Treated identically except for the one variable. Without one you have a description, not a comparison.</li>
+<li><b>Enough subjects.</b> Biological variation is large, and a single result is an anecdote.</li>
+<li><b>Repeatability.</b> A finding that happens once in one laboratory is not yet knowledge.</li>
+</ul>
+
+<h3>Variation, and why two different numbers may mean nothing</h3>
+
+<p>Every measurement carries error from the instrument and from the person using it. On top of that, the same healthy person genuinely varies from hour to hour.</p>
+
+<p>So when you compare two values the question is not whether they differ. It is whether they differ by more than this measurement and this person normally vary on their own. Before you explain a difference, establish that there is one.</p>
+
+<div class="box ask">
+<p class="lab">Where to stop and ask</p>
+<p>Send them back to the mission patient. Her potassium read 4.0, then 4.2, then 4.1. Ask whether her potassium changed. It did not, and the movement is smaller than ordinary measurement variation. Then ask about her sodium, 141 to 134 to 128, which is a change no measurement error would produce. Same patient, same panel, two completely different conclusions, and the difference is magnitude relative to noise.</p>
+</div>
+
+<div class="box">
+<p class="lab" style="color:var(--terra-dark)">Transition into the close</p>
+<p>They now have every tool the mission needs. Time to use it.</p>
+</div>
+</section>
+
+<!-- ============================================================= -->
+<section class="concept" aria-labelledby="cend">
+<p class="seg">Closing segment</p>
+<h2 id="cend">Predict, perturb, and back to the patient</h2>
+<p class="runtime">About 12 minutes. Slides 59 to 64.</p>
+
+<h3>Predict</h3>
+
+<p>Put six disturbances on the screen and have each student take one. Running up a flight of stairs. Walking outside on a day at 38 C (100.4 F). Eating a very large meal. Having had nothing to drink since yesterday. Standing up suddenly. Arriving at a cabin at 9000 feet.</p>
+
+<p>They are not allowed to look up organ systems, because they have not been taught them. What they have to say is what a working body would need to sense, what message it would need to send, what it would need to change, and what would power that change.</p>
+
+<p>Make the point that they can reason about all six of these in week 1 without knowing a single organ system in detail. That is what the five components bought them.</p>
+
+<h3>Perturb</h3>
+
+<p>Now take the same disturbance and disable one component. The sensor cannot detect the change. The afferent pathway cannot carry the input. The setpoint has shifted. The efferent pathway cannot reach the effector. The effector cannot generate a full response. Or everything works and the disturbance is twice as large as the pathway was built for.</p>
+
+<p>For each one they say what happens now and, more importantly, what they would expect to see in front of them. That last step is what turns a pathway diagram into a clinical presentation.</p>
+
+<h3>Back to the patient</h3>
+
+<p>Return to the three days of values you opened with. They now have the vocabulary they were missing at the start.</p>
+
+<p>Have them write the five components for the variable that is drifting, mark clearly what they are assuming as against what they were told, name the component they think has failed, and say what evidence would change their mind. That last sentence is worth as much as the answer, and tell them so, because most of the credit on every assessment in this course sits in the reasoning rather than the conclusion.</p>
+
+<div class="box miss">
+<p class="lab">Be ready for this one</p>
+<p>Someone will ask what is actually wrong with her. The honest answer is that the pattern is consistent with more than one thing, and that you are not asking them to choose between those yet. Low sodium with a high urine output, a falling blood pressure and a rising heart rate fits a picture of losing salt and water together. Which mechanism is doing that is a question for later in the course. Say that plainly rather than inventing a diagnosis, because the point of the exercise is localizing a failure, not naming a disease.</p>
+</div>
+
+<h3>What they carry into next week</h3>
+
+<ul>
+<li>A steady value is being actively held, and holding it costs energy.</li>
+<li>Steady means two rates are matched, and it tells you nothing about how large they are.</li>
+<li>Every reflex pathway has a sensor, an afferent pathway, an integrating center holding a setpoint, an efferent pathway and an effector, and the response feeds back to close the loop.</li>
+<li>A signal reaches one address or is broadcast, and the receptor determines who responds.</li>
+<li>Negative feedback opposes change and stops itself. Positive feedback amplifies change and needs an outside event to end it.</li>
+</ul>
+
+<p>Then tell them where it goes next. Mission 2 takes up the molecules that make all of this physically possible, because every sensor, every pathway and every effector in this lecture was a protein doing something, and we have not yet said how any of them work.</p>
+</section>
+
+</div>
+</main>
+
+<footer>
+<div class="wrap">
+<p>BIO 005 Human Physiology, Yuba College. Mission 1, Maintain Control. Instructor lecture narrative. Silverthorn chapter 1 and the homeostasis and communication material from chapter 6. Dr. Sharilyn Rennie.</p>
+</div>
+</footer>
+</body>
+</html>

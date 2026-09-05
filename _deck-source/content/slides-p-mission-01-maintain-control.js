@@ -1,8 +1,12 @@
 /* BIO 005 Human Physiology, Week 1, Unit 1
    Slide deck P, Mission 1, Maintain Control
-   Silverthorn chapter 1, plus the homeostasis and communication frame of chapter 6.
-   Concept markers divide the deck into recording segments.
-   Density pass Sep 5 2026: depth moved into reveal cards, nothing cut.
+
+   Rebuilt Sep 5 2026 to serve lecture-mission-01-maintain-control.html.
+   The narrative carries the argument. These slides carry the content she points at.
+   Titles name the topic, not a thesis. No closing tagline except where a line
+   genuinely earns the wall. Card labels are plain nouns.
+   Order matches the narrative: foundations, control, communication, method.
+
    Dr. Sharilyn Rennie */
 
 module.exports = {
@@ -12,53 +16,65 @@ module.exports = {
   week: 1,
   unit: 1,
   topic: "Mission 1, Maintain Control",
-  title: "Your patient's numbers are moving, and something is supposed to be stopping that",
-  subtitle: "Thirteen concepts on how the body holds itself steady: the internal environment, mass balance, control loops, how a signal travels, and the three kinds of feedback. Recorded one concept at a time.",
+  title: "Mission 1, Maintain Control",
+  subtitle: "Homeostasis, mass balance, the reflex pathway, feedback, and how signals travel. Silverthorn chapter 1 with the homeostasis and communication material from chapter 6. Thirteen concepts, recorded one at a time.",
 
   slides: [
 
-    /* ============================================================ MISSION */
-    /* ---------------------------------------------------------- 1 */
+    /* ================================================= OPENING */
+    /* 1 */
     {
       k: "title",
       variant: "terra",
       kicker: "Week 1 . Unit 1 . Mission 1",
       h: "Maintain control",
-      lede: "Everything your body does depends on holding internal conditions steady while external conditions change. That is the whole job.",
+      lede: "The body has one job: keep conditions inside steady enough that cells can keep working. This week is how that gets done.",
       terms: [
         { t: "Internal environment", c: "t" },
         { t: "Homeostasis", c: "t" },
         { t: "Mass balance", c: "l" },
-        { t: "Control loop", c: "g" },
+        { t: "Reflex pathway", c: "g" },
         { t: "Negative feedback", c: "g" },
         { t: "Feedforward", c: "l" }
       ],
-      big: "A number that stays the same is not being left alone. It is being held."
+      qr: {
+        h: "Open this deck on your phone or tablet",
+        p: [
+          "Scan to follow along beside the video, or to draw on it yourself with a stylus.",
+          "drsrennie-stack.github.io, human-physiology-Fa26"
+        ],
+        svg: `<svg viewBox="0 0 41 41" role="img" aria-labelledby="qrT qrD" shape-rendering="crispEdges">
+  <title id="qrT">QR code to this deck</title>
+  <desc id="qrD">Scans to the Mission 1 slide deck on the BIO 005 course site, so you can open it on a phone or tablet.</desc>
+  <rect width="41" height="41" fill="#FFFFFF"/>
+  <path d="M0 0h7v1h-7zM11 0h1v1h-1zM13 0h1v1h-1zM15 0h7v1h-7zM23 0h4v1h-4zM28 0h1v1h-1zM30 0h2v1h-2zM34 0h7v1h-7zM0 1h1v1h-1zM6 1h1v1h-1zM9 1h2v1h-2zM13 1h1v1h-1zM16 1h2v1h-2zM20 1h2v1h-2zM24 1h1v1h-1zM27 1h2v1h-2zM32 1h1v1h-1zM34 1h1v1h-1zM40 1h1v1h-1zM0 2h1v1h-1zM2 2h3v1h-3zM6 2h1v1h-1zM8 2h2v1h-2zM12 2h1v1h-1zM15 2h4v1h-4zM20 2h4v1h-4zM27 2h1v1h-1zM30 2h2v1h-2zM34 2h1v1h-1zM36 2h3v1h-3zM40 2h1v1h-1zM0 3h1v1h-1zM2 3h3v1h-3zM6 3h1v1h-1zM8 3h2v1h-2zM11 3h1v1h-1zM13 3h3v1h-3zM19 3h1v1h-1zM21 3h1v1h-1zM23 3h4v1h-4zM28 3h2v1h-2zM32 3h1v1h-1zM34 3h1v1h-1zM36 3h3v1h-3zM40 3h1v1h-1zM0 4h1v1h-1zM2 4h3v1h-3zM6 4h1v1h-1zM8 4h1v1h-1zM10 4h1v1h-1zM14 4h1v1h-1zM16 4h4v1h-4zM21 4h3v1h-3zM25 4h2v1h-2zM28 4h1v1h-1zM31 4h2v1h-2zM34 4h1v1h-1zM36 4h3v1h-3zM40 4h1v1h-1zM0 5h1v1h-1zM6 5h1v1h-1zM8 5h3v1h-3zM13 5h1v1h-1zM15 5h3v1h-3zM20 5h1v1h-1zM25 5h4v1h-4zM34 5h1v1h-1zM40 5h1v1h-1zM0 6h7v1h-7zM8 6h1v1h-1zM10 6h1v1h-1zM12 6h1v1h-1zM14 6h1v1h-1zM16 6h1v1h-1zM18 6h1v1h-1zM20 6h1v1h-1zM22 6h1v1h-1zM24 6h1v1h-1zM26 6h1v1h-1zM28 6h1v1h-1zM30 6h1v1h-1zM32 6h1v1h-1zM34 6h7v1h-7zM8 7h2v1h-2zM12 7h1v1h-1zM14 7h2v1h-2zM18 7h1v1h-1zM21 7h2v1h-2zM24 7h1v1h-1zM27 7h2v1h-2zM30 7h1v1h-1zM0 8h1v1h-1zM2 8h5v1h-5zM10 8h1v1h-1zM14 8h2v1h-2zM17 8h1v1h-1zM19 8h1v1h-1zM22 8h2v1h-2zM25 8h2v1h-2zM29 8h1v1h-1zM31 8h1v1h-1zM34 8h5v1h-5zM0 9h2v1h-2zM4 9h1v1h-1zM9 9h1v1h-1zM11 9h1v1h-1zM13 9h2v1h-2zM17 9h3v1h-3zM22 9h2v1h-2zM28 9h1v1h-1zM31 9h6v1h-6zM38 9h3v1h-3zM0 10h1v1h-1zM2 10h8v1h-8zM11 10h2v1h-2zM14 10h3v1h-3zM20 10h1v1h-1zM22 10h1v1h-1zM27 10h2v1h-2zM32 10h1v1h-1zM34 10h1v1h-1zM36 10h1v1h-1zM0 11h2v1h-2zM3 11h2v1h-2zM7 11h2v1h-2zM10 11h3v1h-3zM19 11h1v1h-1zM21 11h2v1h-2zM27 11h2v1h-2zM31 11h2v1h-2zM35 11h1v1h-1zM37 11h1v1h-1zM39 11h1v1h-1zM0 12h1v1h-1zM2 12h1v1h-1zM4 12h4v1h-4zM12 12h1v1h-1zM14 12h2v1h-2zM19 12h2v1h-2zM22 12h6v1h-6zM29 12h1v1h-1zM31 12h2v1h-2zM37 12h2v1h-2zM0 13h3v1h-3zM9 13h1v1h-1zM16 13h1v1h-1zM18 13h1v1h-1zM28 13h9v1h-9zM38 13h1v1h-1zM40 13h1v1h-1zM0 14h2v1h-2zM4 14h3v1h-3zM15 14h1v1h-1zM18 14h1v1h-1zM20 14h6v1h-6zM27 14h1v1h-1zM33 14h1v1h-1zM39 14h1v1h-1zM3 15h2v1h-2zM7 15h2v1h-2zM10 15h3v1h-3zM14 15h1v1h-1zM21 15h3v1h-3zM26 15h1v1h-1zM28 15h1v1h-1zM31 15h2v1h-2zM34 15h2v1h-2zM37 15h1v1h-1zM39 15h2v1h-2zM2 16h2v1h-2zM5 16h3v1h-3zM10 16h1v1h-1zM12 16h1v1h-1zM16 16h2v1h-2zM23 16h4v1h-4zM29 16h1v1h-1zM31 16h3v1h-3zM35 16h1v1h-1zM37 16h3v1h-3zM0 17h3v1h-3zM5 17h1v1h-1zM7 17h1v1h-1zM9 17h1v1h-1zM14 17h2v1h-2zM18 17h3v1h-3zM22 17h2v1h-2zM26 17h1v1h-1zM28 17h1v1h-1zM31 17h2v1h-2zM34 17h4v1h-4zM39 17h2v1h-2zM1 18h1v1h-1zM3 18h2v1h-2zM6 18h1v1h-1zM9 18h3v1h-3zM13 18h2v1h-2zM16 18h1v1h-1zM18 18h1v1h-1zM20 18h1v1h-1zM22 18h1v1h-1zM26 18h5v1h-5zM32 18h3v1h-3zM36 18h1v1h-1zM38 18h1v1h-1zM0 19h1v1h-1zM3 19h3v1h-3zM7 19h1v1h-1zM9 19h1v1h-1zM13 19h2v1h-2zM16 19h1v1h-1zM20 19h1v1h-1zM23 19h1v1h-1zM27 19h2v1h-2zM30 19h1v1h-1zM32 19h1v1h-1zM36 19h1v1h-1zM39 19h1v1h-1zM1 20h1v1h-1zM3 20h1v1h-1zM6 20h1v1h-1zM14 20h2v1h-2zM18 20h9v1h-9zM29 20h1v1h-1zM38 20h1v1h-1zM0 21h2v1h-2zM7 21h5v1h-5zM13 21h4v1h-4zM19 21h3v1h-3zM23 21h1v1h-1zM25 21h1v1h-1zM30 21h5v1h-5zM36 21h1v1h-1zM39 21h2v1h-2zM1 22h1v1h-1zM3 22h1v1h-1zM6 22h3v1h-3zM10 22h3v1h-3zM15 22h1v1h-1zM17 22h1v1h-1zM20 22h3v1h-3zM25 22h3v1h-3zM29 22h2v1h-2zM32 22h3v1h-3zM37 22h1v1h-1zM0 23h1v1h-1zM5 23h1v1h-1zM7 23h1v1h-1zM9 23h1v1h-1zM11 23h1v1h-1zM16 23h1v1h-1zM19 23h3v1h-3zM23 23h2v1h-2zM28 23h1v1h-1zM30 23h3v1h-3zM35 23h1v1h-1zM37 23h1v1h-1zM0 24h7v1h-7zM11 24h1v1h-1zM13 24h2v1h-2zM17 24h1v1h-1zM22 24h1v1h-1zM24 24h3v1h-3zM29 24h1v1h-1zM31 24h1v1h-1zM38 24h2v1h-2zM0 25h1v1h-1zM4 25h2v1h-2zM10 25h1v1h-1zM15 25h1v1h-1zM18 25h3v1h-3zM23 25h3v1h-3zM28 25h2v1h-2zM31 25h1v1h-1zM33 25h5v1h-5zM40 25h1v1h-1zM2 26h2v1h-2zM5 26h2v1h-2zM8 26h1v1h-1zM11 26h2v1h-2zM16 26h2v1h-2zM20 26h3v1h-3zM27 26h1v1h-1zM32 26h2v1h-2zM35 26h1v1h-1zM0 27h2v1h-2zM3 27h3v1h-3zM7 27h2v1h-2zM10 27h1v1h-1zM12 27h4v1h-4zM18 27h2v1h-2zM21 27h1v1h-1zM31 27h2v1h-2zM34 27h1v1h-1zM36 27h2v1h-2zM39 27h2v1h-2zM2 28h1v1h-1zM4 28h3v1h-3zM10 28h3v1h-3zM14 28h2v1h-2zM17 28h1v1h-1zM22 28h1v1h-1zM24 28h4v1h-4zM29 28h1v1h-1zM31 28h1v1h-1zM37 28h2v1h-2zM40 28h1v1h-1zM0 29h2v1h-2zM4 29h2v1h-2zM7 29h1v1h-1zM11 29h1v1h-1zM14 29h1v1h-1zM16 29h3v1h-3zM20 29h2v1h-2zM24 29h1v1h-1zM26 29h1v1h-1zM30 29h5v1h-5zM36 29h2v1h-2zM40 29h1v1h-1zM0 30h1v1h-1zM2 30h1v1h-1zM6 30h1v1h-1zM10 30h1v1h-1zM12 30h1v1h-1zM14 30h1v1h-1zM18 30h2v1h-2zM21 30h1v1h-1zM24 30h2v1h-2zM27 30h1v1h-1zM30 30h1v1h-1zM32 30h3v1h-3zM37 30h1v1h-1zM39 30h1v1h-1zM0 31h1v1h-1zM2 31h2v1h-2zM8 31h1v1h-1zM11 31h1v1h-1zM13 31h3v1h-3zM19 31h3v1h-3zM26 31h3v1h-3zM30 31h5v1h-5zM36 31h2v1h-2zM0 32h1v1h-1zM2 32h1v1h-1zM6 32h2v1h-2zM12 32h6v1h-6zM19 32h1v1h-1zM23 32h4v1h-4zM29 32h8v1h-8zM38 32h2v1h-2zM8 33h3v1h-3zM13 33h3v1h-3zM17 33h3v1h-3zM21 33h3v1h-3zM25 33h1v1h-1zM28 33h3v1h-3zM32 33h1v1h-1zM36 33h3v1h-3zM40 33h1v1h-1zM0 34h7v1h-7zM9 34h2v1h-2zM12 34h2v1h-2zM17 34h1v1h-1zM20 34h2v1h-2zM26 34h4v1h-4zM31 34h2v1h-2zM34 34h1v1h-1zM36 34h3v1h-3zM0 35h1v1h-1zM6 35h1v1h-1zM8 35h2v1h-2zM12 35h1v1h-1zM14 35h1v1h-1zM16 35h3v1h-3zM21 35h2v1h-2zM24 35h1v1h-1zM26 35h3v1h-3zM31 35h2v1h-2zM36 35h2v1h-2zM0 36h1v1h-1zM2 36h3v1h-3zM6 36h1v1h-1zM8 36h1v1h-1zM10 36h1v1h-1zM13 36h2v1h-2zM21 36h1v1h-1zM23 36h1v1h-1zM25 36h2v1h-2zM29 36h1v1h-1zM32 36h9v1h-9zM0 37h1v1h-1zM2 37h3v1h-3zM6 37h1v1h-1zM8 37h1v1h-1zM10 37h2v1h-2zM15 37h1v1h-1zM17 37h7v1h-7zM25 37h1v1h-1zM28 37h1v1h-1zM30 37h1v1h-1zM33 37h1v1h-1zM35 37h1v1h-1zM38 37h3v1h-3zM0 38h1v1h-1zM2 38h3v1h-3zM6 38h1v1h-1zM8 38h2v1h-2zM15 38h1v1h-1zM18 38h1v1h-1zM20 38h2v1h-2zM27 38h5v1h-5zM33 38h5v1h-5zM0 39h1v1h-1zM6 39h1v1h-1zM9 39h1v1h-1zM11 39h1v1h-1zM13 39h3v1h-3zM18 39h5v1h-5zM24 39h1v1h-1zM26 39h2v1h-2zM32 39h1v1h-1zM34 39h1v1h-1zM36 39h2v1h-2zM39 39h1v1h-1zM0 40h7v1h-7zM8 40h3v1h-3zM15 40h1v1h-1zM17 40h3v1h-3zM22 40h8v1h-8zM34 40h3v1h-3zM38 40h1v1h-1z" fill="#08101F"/>
+</svg>`
+      }
     },
 
-    /* ---------------------------------------------------------- 2 */
+    /* 2 */
     {
       k: "cards",
       cols: 3,
-      kicker: "Before we start . What a mission is",
-      h: "Why I keep calling these missions",
-      lede: "One word, used all semester. Here is what I mean by it before I use it again.",
+      kicker: "Before we start",
+      h: "What a mission is",
+      lede: "A word used all semester, defined before it is used again.",
       cards: [
         {
-          label: "The body's job",
-          h: "One job, broken into smaller jobs",
-          p: ["Keep conditions inside steady enough that your cells can keep working. That job is far too big to take in one piece, so I have broken it into smaller jobs."]
+          label: "The job",
+          h: "One job, broken into smaller ones",
+          p: ["Keep conditions in the internal environment steady enough for cells to work. Too large to learn in one piece, so the course divides it."]
         },
         {
-          label: "What a mission is",
+          label: "A mission",
           labelClass: "terra",
-          h: "A problem you work out, not one I answer for you",
-          p: ["A mission starts with a problem already on the table, usually a patient or a claim somebody is making. You do not get the answer first. You learn the science the problem needs, then decide whether the evidence supports the claim."]
+          h: "A problem that comes before the science",
+          p: ["Each mission opens with a problem already on the table. You learn the science because the problem needs it, then decide whether the evidence supports the claim."]
         },
         {
-          label: "The five missions",
+          label: "Unit 1",
           labelClass: "teal",
-          h: "Unit 1, Keep the Human Alive",
+          h: "Keep the Human Alive",
           list: [
             "1. Maintain control. This week.",
             "2. Build the molecular toolkit.",
@@ -67,35 +83,15 @@ module.exports = {
             "5. Coordinate the human."
           ]
         }
-      ],
-      big: "The problem comes first. The science comes because you need it."
+      ]
     },
 
-    /* ---------------------------------------------------------- 3 */
-    {
-      k: "hook",
-      kicker: "Beat 1 . The mission",
-      h: "Meet the problem",
-      hook: {
-        icon: "!",
-        iconClass: "terra",
-        label: "What you are looking at",
-        h: "A regulated variable in this patient is no longer being held steady.",
-        say: "Three days of values from one person. You are not told which system this is.",
-        p: [
-          "By the end of this mission you will be able to say whether the body stopped measuring that value, stopped sending the message, or could not act on it."
-        ]
-      },
-      big: "Detection, communication, effector response. A variable drifts when one of the three fails."
-    },
-
-    /* ---------------------------------------------------------- 4 */
+    /* 3 */
     {
       k: "activity",
-      badges: [{ t: "Apply in class", cls: "gold" }],
-      kicker: "Beat 1 . The mission",
-      h: "Start by sorting this data",
-      lede: "Three days from one patient, with the usual range beside each value. Two questions: which ones moved, and which ones ended up outside the range.",
+      kicker: "The patient",
+      h: "Three days of values, one patient",
+      lede: "Two questions. Which values moved, and which ended up outside the range.",
       listLabel: "Day 1, day 2, day 3, then the usual range",
       list: [
         "**Sodium** 141, 134, 128 mmol/L. Usual 135 to 145.",
@@ -106,170 +102,101 @@ module.exports = {
         "**Blood pressure** 118/74, 106/66, 96/58. Usual under 120/80.",
         "**Urine output** 1500, 2100, 2900 mL per day. Usual 800 to 2000."
       ],
-      big: "Four of them moved and left the range. Three barely moved at all.",
       covers: ["w1-lab-graphing"]
     },
 
-    /* ---------------------------------------------------------- 5 */
+    /* 4 */
     {
       k: "text",
       variant: "dark",
-      kicker: "Beat 1 . The mission",
-      h: "What you are being asked to do",
-      lede: "How the mission is structured.",
+      kicker: "The mission",
+      h: "What you will be able to do",
+      lede: "Given a variable that is drifting, say where the failure is.",
       list: [
-        "**Learn what steady actually means.** It is not what most people think.",
-        "**Learn the components of a reflex pathway.** Five of them, and each can fail.",
-        "**Learn how the signal travels.** Nervous and endocrine routes, and what each is suited to.",
-        "**Come back to the patient.** Name the component that failed, and defend it."
+        "Whether the body stopped **detecting** the change.",
+        "Whether it stopped **communicating** it.",
+        "Whether it stopped being able to **act** on it.",
+        "Three different failures. They look similar on a chart."
       ],
-      big: "You are not diagnosing. You are localizing a failure within a reflex pathway."
+      big: "A value that stays the same is not being ignored. It is being held."
     },
 
-    /* ============================================================ CONCEPT 1 */
-    /* ---------------------------------------------------------- 6 */
+    /* ================================================= CONCEPT 1 */
+    /* 5 */
     {
       k: "title",
       variant: "teal",
-      kicker: "Concept 1 of 13 . 5 slides",
+      kicker: "Concept 1 of 13 . 3 slides",
       h: "What physiology asks",
-      lede: "Anatomy asks what a thing is. Physiology asks what it does, how it does it, and what happens when conditions change."
+      lede: "Anatomy asks what a structure is. Physiology asks what it does, how it does it, and what happens when conditions change."
     },
 
-    /* ---------------------------------------------------------- 7 */
-    {
-      k: "cards",
-      cols: 2,
-      kicker: "Concept 1 . What physiology asks",
-      h: "Physiology is the study of function",
-      lede: "Function means what something accomplishes, and the steps by which it accomplishes it.",
-      cards: [
-        {
-          label: "Naming the parts",
-          h: "You can name every part and still not explain it",
-          p: ["You can know the name of every part of the kidney and still not be able to say why someone is making three liters of urine a day. The parts list does not tell you the behavior."]
-        },
-        {
-          label: "Anatomy in this course",
-          labelClass: "teal",
-          h: "It appears where it explains a mechanism",
-          p: ["Anatomy is still in here, but it appears where structure explains why a process works the way it does. When you need it to follow a mechanism, we go get it."]
-        }
-      ],
-      big: "What does it do, how does it do it, and what changes when conditions change.",
-      covers: ["w1-levels-function"]
-    },
-
-    /* ---------------------------------------------------------- 8 */
+    /* 6 */
     {
       k: "rows",
-      kicker: "Concept 1 . What physiology asks",
-      h: "Function shows up at every level",
-      lede: "One event, followed up through six levels of organization.",
+      kicker: "Concept 1 . Levels of organization",
+      h: "One event, six levels",
+      lede: "The question changes as you move up.",
       rows: [
         { dot: "1", h: "Molecule", p: ["A protein changes shape when something binds to it."] },
-        { dot: "2", h: "Cell", p: ["That shape change opens a channel, and ions move."] },
+        { dot: "2", h: "Cell", p: ["The shape change opens a channel and ions move."] },
         { dot: "3", h: "Tissue", p: ["Enough cells do it together that the tissue contracts."] },
         { dot: "4", h: "Organ", p: ["The contraction ejects blood."] },
         { dot: "5", h: "System", p: ["Pressure rises in vessels far from the heart."] },
-        { dot: "6", h: "Organism", p: ["You stand up without passing out."] }
+        { dot: "6", h: "Organism", p: ["You stand up without fainting."] }
       ],
-      big: "When you explain a mechanism, state which level of organization you are describing.",
       covers: ["w1-levels-function", "w1-structure-function"]
     },
 
-    /* ---------------------------------------------------------- 9 */
+    /* 7 */
     {
       k: "cards",
       cols: 2,
-      kicker: "Concept 1 . What physiology asks",
-      h: "Purpose versus mechanism",
-      lede: "Ask why red blood cells carry oxygen and you can get either of these answers. Physiology is after the second one.",
+      kicker: "Concept 1 . Two kinds of explanation",
+      h: "Purpose and mechanism",
+      lede: "Why do red blood cells carry oxygen?",
       cards: [
         {
           label: "Teleological, answers why",
           h: "They carry it to supply the tissues",
-          p: ["This answers why in terms of purpose. It is useful for getting oriented, and it does not tell you how oxygen is actually carried."],
+          p: ["Answers in terms of purpose. Useful for orientation, and it names no process."],
           list: [
-            "Names a purpose, not a process.",
-            "There is no measurement that could check it.",
-            "Cannot be wrong, so it cannot be tested."
+            "No measurement could check it.",
+            "Cannot be wrong, so cannot be tested."
           ]
         },
         {
           label: "Mechanistic, answers how",
           labelClass: "terra",
-          h: "Hemoglobin binds oxygen, and binding depends on oxygen pressure",
-          p: [
-            "This answers how. It names the molecule doing the work and the condition that changes how much it does.",
-            "One caution, because it comes up. A mechanism can also answer a why question, as in why did flow rise, because resistance fell. The distinction is purpose versus process, not the word at the front of the sentence."
-          ],
+          h: "Hemoglobin binds oxygen reversibly, and binding depends on oxygen partial pressure",
+          p: ["Names the molecule doing the work and the condition that changes how much work gets done."],
           list: [
             "Tells you what to measure.",
-            "Predicts what happens if you change the oxygen pressure.",
-            "This is the answer I want on exams."
+            "Predicts what happens if oxygen pressure changes.",
+            "A mechanism can answer a why question too. The split is purpose against process, not the first word."
           ]
         }
-      ],
-      big: "If your answer could not be wrong, it is not yet a mechanism."
-    },
-
-    /* ---------------------------------------------------------- 10 */
-    {
-      k: "cards",
-      cols: 3,
-      kicker: "Concept 1 . Where this shows up",
-      h: "Why this is not just academic",
-      cards: [
-        { label: "In medicine", h: "Purpose is not cause", p: ["Giving oxygen because saturation is low helps. It does not tell you whether the problem is ventilation, diffusion, or perfusion, and those are treated differently."] },
-        { label: "In nursing", h: "Charting what, versus why", p: ["Urine output dropped is an observation. Output dropped after two hours of poor intake with a rising heart rate is the start of a mechanism."] },
-        { label: "In respiratory therapy", h: "The vent does not know your intent", p: ["Changing a setting because a number is low, with no mechanism behind it, is how you correct a number while the real problem keeps moving."] }
       ]
     },
 
-    /* ============================================================ CONCEPT 2 */
-    /* ---------------------------------------------------------- 11 */
+    /* ================================================= CONCEPT 2 */
+    /* 8 */
     {
       k: "title",
       variant: "teal",
-      kicker: "Concept 2 of 13 . 4 slides",
-      h: "The inside and the outside",
-      lede: "Most of your cells never touch the outside world. They sit in a private pool of fluid, and that pool is what has to be defended."
+      kicker: "Concept 2 of 13 . 3 slides",
+      h: "The internal environment",
+      lede: "Most cells never touch the outside world. The lumen of the gut is not inside you."
     },
 
-    /* ---------------------------------------------------------- 12 */
-    {
-      k: "cards",
-      cols: 2,
-      kicker: "Concept 2 . The inside and the outside",
-      h: "A barrier is what creates an inside",
-      lede: "Draw a boundary and you have made two environments that are allowed to differ.",
-      cards: [
-        {
-          label: "The internal environment",
-          labelClass: "terra",
-          h: "Everything inside the barrier",
-          p: ["Your skin and the linings of your gut and airways separate you from the outside. Everything inside that boundary is the internal environment, and your cells live there and nowhere else."]
-        },
-        {
-          label: "Two fluids",
-          labelClass: "teal",
-          h: "Extracellular outside, intracellular inside",
-          p: ["Fluid around cells is extracellular fluid. Fluid inside them is intracellular fluid. A cell reads only what is immediately around it, so holding a value steady almost always means holding it steady in extracellular fluid."]
-        }
-      ],
-      big: "A cell cannot tell what your blood sodium is. It can only tell what is touching it.",
-      covers: ["w1-fluid-compartments"]
-    },
-
-    /* ---------------------------------------------------------- 13 */
+    /* 9 */
     {
       k: "fig",
-      kicker: "Concept 2 . Compartments",
-      h: "Drawn top down",
+      kicker: "Concept 2 . Body fluid compartments",
+      h: "Total body water",
       svg: `<svg viewBox="0 0 760 300" role="img" aria-labelledby="cmpT cmpD">
   <title id="cmpT">Body fluid compartments</title>
-  <desc id="cmpD">Total body water divides into intracellular fluid, about two thirds, and extracellular fluid, about one third. Extracellular fluid divides again into interstitial fluid and plasma.</desc>
+  <desc id="cmpD">Total body water divides into intracellular fluid, about two thirds, and extracellular fluid, about one third. Extracellular fluid divides again into interstitial fluid, which bathes the cells, and plasma, which is inside the vessels.</desc>
   <rect x="20" y="16" width="720" height="46" rx="8" fill="#EDF1F3" stroke="#08101F" stroke-width="1.5"/>
   <text x="380" y="45" text-anchor="middle" font-family="system-ui,sans-serif" font-size="17" font-weight="700" fill="#08101F">Total body water</text>
   <line x1="380" y1="62" x2="380" y2="80" stroke="#08101F" stroke-width="1.5"/>
@@ -277,294 +204,268 @@ module.exports = {
   <line x1="200" y1="80" x2="200" y2="98" stroke="#08101F" stroke-width="1.5"/>
   <line x1="560" y1="80" x2="560" y2="98" stroke="#08101F" stroke-width="1.5"/>
   <rect x="60" y="98" width="280" height="70" rx="8" fill="#FFFFFF" stroke="#1F4E55" stroke-width="2"/>
-  <text x="200" y="126" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" font-weight="700" fill="#1F4E55">Intracellular</text>
-  <text x="200" y="149" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" fill="#3D4860">two thirds</text>
+  <text x="200" y="126" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" font-weight="700" fill="#1F4E55">Intracellular fluid</text>
+  <text x="200" y="149" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" fill="#3D4860">about two thirds</text>
   <rect x="420" y="98" width="280" height="70" rx="8" fill="#FFFFFF" stroke="#8B1D1D" stroke-width="2" stroke-dasharray="6 4"/>
-  <text x="560" y="126" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" font-weight="700" fill="#8B1D1D">Extracellular</text>
-  <text x="560" y="149" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" fill="#3D4860">one third</text>
+  <text x="560" y="126" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" font-weight="700" fill="#8B1D1D">Extracellular fluid</text>
+  <text x="560" y="149" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" fill="#3D4860">about one third</text>
   <line x1="560" y1="168" x2="560" y2="188" stroke="#8B1D1D" stroke-width="1.5"/>
   <line x1="470" y1="188" x2="650" y2="188" stroke="#8B1D1D" stroke-width="1.5"/>
   <line x1="470" y1="188" x2="470" y2="206" stroke="#8B1D1D" stroke-width="1.5"/>
   <line x1="650" y1="188" x2="650" y2="206" stroke="#8B1D1D" stroke-width="1.5"/>
   <rect x="380" y="206" width="180" height="62" rx="8" fill="#FFFFFF" stroke="#8B1D1D" stroke-width="1.5" stroke-dasharray="6 4"/>
-  <text x="470" y="232" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#8B1D1D">Interstitial</text>
+  <text x="470" y="232" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#8B1D1D">Interstitial fluid</text>
   <text x="470" y="253" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12.5" fill="#3D4860">bathes the cells</text>
   <rect x="580" y="206" width="140" height="62" rx="8" fill="#FFFFFF" stroke="#8B1D1D" stroke-width="1.5" stroke-dasharray="6 4"/>
   <text x="650" y="232" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#8B1D1D">Plasma</text>
   <text x="650" y="253" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12.5" fill="#3D4860">inside vessels</text>
 </svg>`,
       cap: "<b>Solid teal, inside cells. Dashed maroon, outside cells.</b> Same code all semester.",
-      big: "You sample plasma. You are usually inferring something about interstitial fluid.",
-      covers: ["w1-fluid-compartments", "w1-compartment-shifts"]
+      covers: ["w1-fluid-compartments"]
     },
 
-    /* ---------------------------------------------------------- 14 */
+    /* 10 */
     {
       k: "cards",
       cols: 2,
-      kicker: "Concept 2 . The inside and the outside",
-      h: "Why the dashed border matters clinically",
-      lede: "Plasma and interstitial fluid exchange water freely, and that exchange is where volume problems arise.",
+      kicker: "Concept 2 . Compartment exchange",
+      h: "Plasma and interstitial fluid exchange freely",
+      lede: "You sample plasma. You are inferring something about the fluid the cells actually sit in.",
       cards: [
         {
-          label: "Water moves out",
-          labelClass: "terra",
-          h: "Total high, circulating low",
-          p: ["Because the two extracellular compartments exchange easily, fluid can leave the vessels and sit in the tissue. Total body water can be high while the volume inside the vessels is low."]
+          label: "What the cell reads",
+          labelClass: "teal",
+          h: "Only what is immediately around it",
+          p: ["A cell has no access to your plasma sodium. Holding a value steady means holding it steady in extracellular fluid, because that is the fluid the cells experience."]
         },
         {
-          label: "At the bedside",
-          labelClass: "gold",
+          label: "Where volume problems arise",
+          labelClass: "terra",
           h: "Swollen ankles with a low blood pressure",
-          p: ["That is why a swollen patient can still be short on circulating volume. Puffy ankles and a low blood pressure in the same patient is a compartment problem, not a measurement error."]
+          p: ["Fluid can leave the vessels and accumulate in tissue, so total body water can be high while the volume inside the vessels is low. The two findings are not contradicting each other. They locate the water."]
         }
       ],
-      big: "Distribution between compartments matters as much as total volume.",
       lab: "You will sort scenarios by which compartment gained or lost water.",
       covers: ["w1-compartment-shifts"]
     },
 
-    /* ============================================================ CONCEPT 3 */
-    /* ---------------------------------------------------------- 15 */
+    /* ================================================= CONCEPT 3 */
+    /* 11 */
     {
       k: "title",
       variant: "teal",
       kicker: "Concept 3 of 13 . 5 slides",
-      h: "Homeostasis, and what it is not",
-      lede: "This is the idea the whole course is built on, and it is routinely learned wrong."
+      h: "Homeostasis",
+      lede: "The process of keeping conditions in the internal environment within a range that cells can work in."
     },
 
-    /* ---------------------------------------------------------- 16 */
+    /* 12 */
     {
       k: "cards",
       cols: 2,
-      kicker: "Concept 3 . Homeostasis",
-      h: "Active maintenance, not stillness",
-      lede: "Homeostasis is the process of keeping conditions inside within a range cells can work in.",
+      kicker: "Concept 3 . Taking the definition apart",
+      h: "A process, and a range",
       cards: [
         {
-          label: "It is a process",
+          label: "A process",
           labelClass: "terra",
-          h: "It costs energy and it can fail",
-          p: ["Notice that it is a process, not a state. It runs constantly, it costs energy to run, and it can fail. Nothing about it is passive."]
+          h: "Runs continuously, costs energy, can fail",
+          p: ["Not a state. Nothing about it is passive and nothing about it is guaranteed."]
         },
         {
-          label: "It is a range",
+          label: "A range",
           labelClass: "teal",
-          h: "Not one pinned number",
-          p: ["The value you measure moves inside a range rather than sitting on a single number. Core temperature is not 37.0 C (98.6 F) all day, and it is not supposed to be."]
+          h: "Not a single number",
+          p: ["The value moves inside the range rather than sitting on a point. Core temperature is not 37.0 C (98.6 F) all day and is not meant to be."]
         }
       ],
-      big: "Homeostasis is not the absence of change. It is change that gets corrected.",
       covers: ["w1-homeostasis"]
     },
 
-    /* ---------------------------------------------------------- 17 */
+    /* 13 */
     {
       k: "table",
-      kicker: "Concept 3 . Homeostasis",
-      h: "Steady state is not equilibrium",
-      caption: "Two situations students mix up constantly",
+      kicker: "Concept 3 . Two situations",
+      h: "Steady state and equilibrium",
+      caption: "Routinely confused, and not the same thing",
       cols: ["", "Steady state", "Equilibrium"],
       rows: [
-        ["Value changing?", "No, it is held", "No, it settled"],
-        ["Still moving?", "Yes, constantly", "Balanced, unforced"],
-        ["Costs energy?", "Yes", "No"],
-        ["Cut the energy", "It drifts", "Nothing happens"],
-        ["Example", "Sodium at 140", "Dissolved sugar"]
+        ["Value changing", "No", "No"],
+        ["Movement", "Continuous, both directions", "Balanced, unforced"],
+        ["Energy required", "Yes", "No"],
+        ["Cut the energy", "The value drifts", "Nothing changes"],
+        ["Example", "Plasma sodium at 140 mmol/L", "Dissolved sugar in water"]
       ],
-      big: "Your body is in steady state. It is at equilibrium only when it is dead."
+      big: "The body is in steady state. It reaches equilibrium only when it dies."
     },
 
-    /* ---------------------------------------------------------- 18 */
+    /* 14 */
     {
       k: "cards",
       cols: 2,
       kicker: "Concept 3 . Predict, then check",
-      h: "Make your prediction, then open the card",
-      lede: "A patient's potassium has read exactly 4.0 for three days. Is more potassium crossing her cell membranes on day 3 than on day 1, less, or about the same? Decide, then open the card.",
+      h: "Potassium has read 4.0 for three days",
+      lede: "Is more potassium crossing her cell membranes on day 3 than on day 1, less, or about the same? Decide, then open the card.",
       cards: [
         {
-          label: "Check your answer",
+          label: "Answer",
           labelClass: "gold",
           h: "You cannot tell",
-          p: ["A number that has not moved tells you the rates in and out are matched. It says nothing about how large those rates are. She could be moving very little potassium, or enormous amounts in both directions, and the reading is the same either way."]
+          p: ["An unchanged value tells you the rates in and out are equal. It says nothing about how large they are. Very little movement and a great deal of movement produce the same reading."]
         },
         {
-          label: "What a steady number tells you",
+          label: "The habit",
           labelClass: "terra",
-          h: "A steady value can conceal near-maximal compensation",
-          p: ["This is the habit to build early. When a value is steady, you have learned something about balance and nothing about magnitude. The work being done to hold it there is invisible in the number."]
+          h: "Steady tells you about balance, not magnitude",
+          p: ["The work being done to hold a value there is invisible in the value itself."]
         }
-      ],
-      big: "A stable number tells you two rates are equal. It never tells you what they are."
+      ]
     },
 
-    /* ---------------------------------------------------------- 19 */
+    /* 15 */
     {
       k: "cards",
-      cols: 3,
-      kicker: "Concept 3 . Where this shows up",
-      h: "The reference range tells you the value, not the reserve",
-      lede: "Compensatory mechanisms can hold a regulated variable inside its reference range while operating near their limit.",
+      cols: 4,
+      kicker: "Concept 3 . Clinical",
+      h: "Reference range and physiological reserve",
+      lede: "Compensation can hold a variable inside its range while running near its limit.",
       cards: [
-        { label: "In medicine", h: "Compensated acidosis with a near-normal pH", p: ["Arterial pH can sit close to the reference range while respiratory compensation runs near maximal. The pH is reassuring and the compensation is not, and decompensation is abrupt once that reserve is exhausted."] },
-        { label: "In nursing", h: "Serial values show trajectory, single values do not", p: ["One measurement is a point estimate. Serial measurements give you direction and rate of change, which is what identifies deterioration before the variable leaves its reference range."] },
-        { label: "In respiratory therapy", h: "Saturation reports outcome, not work of breathing", p: ["Oxygen saturation can remain within range while the work of breathing rises substantially. Saturation reflects the result of ventilation, not the effort required to produce it."] }
-      ],
-      big: "Ask what the compensation is costing, not only whether the value is in range."
+        { label: "In nursing", labelClass: "terra", h: "Serial values show trajectory", p: ["One measurement is a point estimate. Serial measurements give direction and rate of change, which identifies deterioration before the variable leaves its range."] },
+        { label: "In rad tech", labelClass: "terra", h: "A creatinine inside the range is not a reserve check", p: ["Screening renal function before iodinated contrast tells you where the value sits today. It does not tell you how much renal reserve is left to handle the load you are about to give."] },
+        { label: "In medicine", h: "Compensated acidosis with a near-normal pH", p: ["Arterial pH can sit close to the reference range while respiratory compensation runs near maximal. When the reserve is exhausted the change is abrupt, because there was nothing left to give."] },
+        { label: "In respiratory therapy", h: "Saturation reports outcome, not work of breathing", p: ["Saturation can hold while the work of breathing rises substantially. It reflects the result of ventilation, not the effort required to produce it."] }
+      ]
     },
 
-    /* ============================================================ CONCEPT 4 */
-    /* ---------------------------------------------------------- 20 */
+    /* ================================================= CONCEPT 4 */
+    /* 16 */
     {
       k: "title",
       variant: "teal",
       kicker: "Concept 4 of 13 . 4 slides",
       h: "Mass balance",
-      lede: "The conservation rule underneath every steady value in the body."
+      lede: "A conservation rule. The amount of a substance changes only if the routes in and the routes out stop matching."
     },
 
-    /* ---------------------------------------------------------- 21 */
+    /* 17 */
     {
       k: "formula",
-      kicker: "Concept 4 . Mass balance",
-      h: "What goes in has to be accounted for",
-      eq: "Amount in body  =  intake + production  -  excretion  -  metabolism",
-      note: "Intake, what you take in by mouth, IV or lungs. Production, what your cells make. Excretion, what leaves intact. Metabolism, what gets converted to something else.",
+      kicker: "Concept 4 . The equation",
+      h: "Accounting for a substance",
+      eq: "amount in body  =  intake + production  -  excretion  -  metabolism",
+      note: "Intake, what enters by mouth, vein or lungs. Production, what cells synthesize. Excretion, what leaves intact. Metabolism, what is converted into something else.",
       after: [
-        "In plain language: something is steady when everything adding to it is matched by everything removing it."
+        "A substance is steady when everything adding to it is matched by everything removing it. If the amount is climbing, an input rose or an output fell, and the equation does not say which."
       ],
-      big: "When a value rises, ask which side of this equation moved.",
       covers: ["w1-mass-balance"]
     },
 
-    /* ---------------------------------------------------------- 22 */
+    /* 18 */
     {
       k: "work",
-      badges: [{ t: "Must teach", cls: "terra" }],
-      kicker: "Concept 4 . Mass balance",
-      h: "A worked case, sodium over one day",
-      given: "Total body sodium steady. Intake 4200 mg by mouth. Sweat 300 mg. Stool 100 mg. Urine 3800 mg. No IV fluids, no production, sodium is not metabolized.",
+      kicker: "Concept 4 . Worked example",
+      h: "Sodium across one day",
+      given: "Total body sodium stable. Intake 4200 mg by mouth. Sweat 300 mg. Stool 100 mg. Urine 3800 mg. No intravenous input, no production, sodium is not metabolized.",
       steps: [
-        "Add the inputs. Intake 4200 mg, production 0 mg. Total in, 4200 mg.",
-        "Add the outputs. Urine 3800, sweat 300, stool 100. Total out, 4200 mg.",
-        "Subtract. 4200 in minus 4200 out equals 0 mg change.",
-        "Interpret. Total body sodium did not change, and the kidney did nearly all the adjusting."
+        "Inputs. 4200 mg intake plus 0 mg production, total 4200 mg.",
+        "Outputs. 3800 urine plus 300 sweat plus 100 stool, total 4200 mg.",
+        "Change. 4200 in minus 4200 out is zero. Total body sodium unchanged.",
+        "Now change one term. She works outdoors and sweats 1200 mg instead of 300.",
+        "If urinary sodium does not change, she finishes the day 900 mg down."
       ],
-      ans: "Now move one number. She works outside and sweats 1200 mg instead of 300. If urinary sodium does not change, she is down 900 mg for the day.",
-      big: "The kidney is the variable here. Almost everything else is fixed by circumstance.",
+      ans: "Intake is set by what she ate, sweat by weather and activity, stool losses are small and fixed. The kidney is the only term with real range, which is why so much of this course is renal.",
       covers: ["w1-mass-balance"]
     },
 
-    /* ---------------------------------------------------------- 23 */
+    /* 19 */
     {
       k: "cards",
       cols: 2,
-      kicker: "Concept 4 . Mass balance",
-      h: "Two ways to get rid of something",
-      lede: "Both remove a substance. Only one means it left the body.",
+      kicker: "Concept 4 . Two routes out",
+      h: "Excretion and metabolism",
+      lede: "Both remove a substance from the equation. Only one means it left the body.",
       cards: [
         {
           label: "Excretion",
           labelClass: "teal",
-          h: "The molecule physically leaves",
-          p: ["It exits intact, in urine, stool, sweat or exhaled air. Gone from the body and gone from the equation."]
+          h: "The molecule exits intact",
+          p: ["Urine, stool, sweat or expired air. Gone from the body and gone from the equation."]
         },
         {
           label: "Metabolism",
           labelClass: "terra",
-          h: "The molecule becomes something else",
-          p: ["It is chemically changed. Gone as itself, but the atoms are still in you. This decides where you look when something accumulates: if a drug builds up, ask whether the kidney stopped excreting it or the liver stopped converting it. Different organs, different fixes."]
+          h: "The molecule is converted",
+          p: ["Gone as itself, atoms still inside you. If a drug accumulates, ask whether the kidney stopped excreting it or the liver stopped converting it. Different organs, different tests, different management."]
         }
-      ],
-      big: "Gone from the body and gone from the equation are not the same thing."
-    },
-
-    /* ============================================================ CONCEPT 5 */
-    /* ---------------------------------------------------------- 24 */
-    {
-      k: "title",
-      variant: "teal",
-      kicker: "Concept 5 of 13 . 5 slides",
-      h: "Mass flow and clearance",
-      lede: "Mass balance says how much. These two say how fast, and by whom."
-    },
-
-    /* ---------------------------------------------------------- 25 */
-    {
-      k: "formula",
-      kicker: "Concept 5 . Mass flow",
-      h: "How much is arriving per minute",
-      eq: "Mass flow  =  concentration  x  volume flow",
-      note: "Concentration, amount per volume, such as mg/mL. Volume flow, volume per time, such as mL/min. The volumes cancel, leaving amount per time.",
-      after: [
-        "Concentration alone never tells you delivery. You need to know how fast the fluid carrying it is moving."
-      ],
-      big: "Concentration is not delivery. Delivery needs flow."
-    },
-
-    /* ---------------------------------------------------------- 26 */
-    {
-      k: "work",
-      badges: [{ t: "Must teach", cls: "terra" }],
-      kicker: "Concept 5 . Mass flow",
-      h: "Same concentration, different delivery",
-      given: "Two patients. Both have arterial oxygen content of 20 mL per 100 mL of blood. Patient A has a cardiac output of 5.0 L/min. Patient B is in shock at 2.5 L/min.",
-      steps: [
-        "Convert to consistent units. 20 mL per 100 mL is 200 mL of oxygen per liter of blood.",
-        "Patient A. 200 mL/L x 5.0 L/min = 1000 mL of oxygen delivered per minute.",
-        "Patient B. 200 mL/L x 2.5 L/min = 500 mL of oxygen delivered per minute.",
-        "Compare. Identical oxygen content. Half the delivery."
-      ],
-      ans: "Patient B's blood gas and pulse oximetry can both look reassuring while her tissues receive half the oxygen. The concentration was never the problem.",
-      big: "A normal saturation does not by itself establish adequate tissue oxygen delivery."
-    },
-
-    /* ---------------------------------------------------------- 27 */
-    {
-      k: "formula",
-      kicker: "Concept 5 . Clearance",
-      h: "Removal, described as a volume",
-      eq: "Clearance  =  rate of removal  /  plasma concentration",
-      note: "Rate of removal, amount per time, such as mg/min. Plasma concentration, amount per volume, such as mg/mL. The result is a volume per time, mL/min.",
-      after: [
-        "The volume is made up on purpose. No specific milliliters get emptied. It scores how hard the organ works relative to how much substance is there."
-      ],
-      big: "A rate of removal expressed as a volume, so you can compare organs and patients."
-    },
-
-    /* ---------------------------------------------------------- 28 */
-    {
-      k: "cards",
-      cols: 3,
-      kicker: "Concept 5 . Where this shows up",
-      h: "Clearance is a number you will meet constantly",
-      cards: [
-        { label: "In medicine", h: "Drug dosing", p: ["Nearly every renally cleared drug is dosed off an estimate of clearance. When clearance falls, the same dose produces a higher concentration."] },
-        { label: "In nursing", h: "Creatinine is a clearance story", p: ["A rising creatinine usually means clearance dropped, not that the patient suddenly started producing more of it."] },
-        { label: "In respiratory therapy", h: "The lung clears too", p: ["Carbon dioxide removal is a clearance problem. Ventilation is the flow term, and when it falls, the concentration climbs."] }
       ]
     },
 
-    /* ============================================================ CONCEPT 6 */
-    /* ---------------------------------------------------------- 29 */
+    /* ================================================= CONCEPT 5 */
+    /* 20 */
+    {
+      k: "title",
+      variant: "teal",
+      kicker: "Concept 5 of 13 . 4 slides",
+      h: "Mass flow and clearance",
+      lede: "Mass balance says how much. These say how fast, and by whom."
+    },
+
+    /* 21 */
+    {
+      k: "formula",
+      kicker: "Concept 5 . Mass flow",
+      h: "Delivery per unit time",
+      eq: "mass flow  =  concentration  x  volume flow",
+      note: "Concentration, amount per volume, such as mg/mL. Volume flow, volume per time, such as mL/min. Volumes cancel, leaving amount per time.",
+      after: [
+        "Delivery depends on how much is in the blood and how fast the blood is moving. Change either and delivery changes."
+      ]
+    },
+
+    /* 22 */
+    {
+      k: "work",
+      kicker: "Concept 5 . Worked example",
+      h: "Same oxygen content, different delivery",
+      given: "Two patients, both with arterial oxygen content of 20 mL per 100 mL of blood, which is 200 mL per liter. Patient A has a cardiac output of 5.0 L/min. Patient B is in shock at 2.5 L/min.",
+      steps: [
+        "Patient A. 200 mL/L x 5.0 L/min = 1000 mL of oxygen delivered per minute.",
+        "Patient B. 200 mL/L x 2.5 L/min = 500 mL of oxygen delivered per minute.",
+        "Identical oxygen content. Half the delivery."
+      ],
+      ans: "Her blood gas and pulse oximetry can both look reassuring while her tissues receive half as much oxygen. Saturation is a concentration term, and there is no oximeter for cardiac output."
+    },
+
+    /* 23 */
+    {
+      k: "formula",
+      kicker: "Concept 5 . Clearance",
+      h: "Removal expressed as a volume",
+      eq: "clearance  =  rate of removal  /  plasma concentration",
+      note: "Rate of removal, amount per time, such as mg/min. Plasma concentration, amount per volume, such as mg/mL. Result is a volume per time, mL/min.",
+      after: [
+        "The volume is a construct. No particular milliliters are emptied. It scores how hard an organ works relative to how much substance is present, which is what makes organs and patients comparable."
+      ]
+    },
+
+    /* ================================================= CONCEPT 6 */
+    /* 24 */
     {
       k: "title",
       variant: "terra",
-      kicker: "Concept 6 of 13 . Beat 3, mechanism . 4 slides",
+      kicker: "Concept 6 of 13 . 4 slides",
       h: "The components of a reflex pathway",
-      lede: "Five components. Learn them once and you will recognize them in every system this semester."
+      lede: "Five components, in a fixed order. Learn them once and you can analyze any control system in the course."
     },
 
-    /* ---------------------------------------------------------- 30 */
+    /* 25 */
     {
       k: "fig",
-      kicker: "Concept 6 . The loop",
-      h: "Drawn top down",
+      kicker: "Concept 6 . The pathway",
+      h: "Five components and the feedback",
       svg: `<svg viewBox="0 0 760 350" role="img" aria-labelledby="loopT loopD">
   <title id="loopT">The five components of a reflex pathway</title>
-  <desc id="loopD">A change in the regulated variable is detected by a sensor. An afferent pathway carries the signal to an integrating center, which compares it against the setpoint. An efferent pathway carries the output to an effector. The effector produces a response, and that response feeds back on the regulated variable, closing the loop.</desc>
+  <desc id="loopD">A change in the regulated variable is detected by a sensor. An afferent pathway carries the input to an integrating center, which compares it against the setpoint. An efferent pathway carries the output to an effector. The effector produces a response, and that response feeds back on the regulated variable, closing the loop.</desc>
   <defs>
     <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#08101F"/></marker>
     <marker id="arg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#DCB45C"/></marker>
@@ -579,7 +480,7 @@ module.exports = {
   <text x="392" y="139" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#8B1D1D">2. afferent pathway</text>
   <rect x="250" y="150" width="260" height="60" rx="8" fill="#FFFFFF" stroke="#8B1D1D" stroke-width="2"/>
   <text x="380" y="172" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#8B1D1D">3. Integrating center</text>
-  <text x="380" y="192" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12.5" fill="#3D4860">compares it against the setpoint</text>
+  <text x="380" y="192" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12.5" fill="#3D4860">compares against the setpoint</text>
   <line x1="380" y1="210" x2="380" y2="234" stroke="#08101F" stroke-width="2" marker-end="url(#ar)"/>
   <text x="392" y="227" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#8B1D1D">4. efferent pathway</text>
   <rect x="270" y="238" width="220" height="42" rx="8" fill="#FFFFFF" stroke="#1F4E55" stroke-width="2"/>
@@ -588,624 +489,528 @@ module.exports = {
   <text x="128" y="155" font-family="system-ui,sans-serif" font-size="12.5" font-weight="700" fill="#5A4511">Response</text>
   <text x="128" y="173" font-family="system-ui,sans-serif" font-size="12" fill="#3D4860">closes the loop</text>
 </svg>`,
-      cap: "<b>The gold arrow is the feedback that closes the loop.</b> Without it, this is a chain of events.",
-      big: "Sensor, afferent pathway, integrating center, efferent pathway, effector.",
+      cap: "<b>The setpoint is a property of the integrating center, not a sixth component.</b> The gold arrow is what makes this a loop, not a chain.",
       covers: ["w1-feedback-components"]
     },
 
-    /* ---------------------------------------------------------- 31 */
+    /* 26 */
     {
       k: "rows",
-      kicker: "Concept 6 . The control loop",
-      h: "The same five components, in a system you know",
-      lede: "Thermoregulation on a cold day.",
+      kicker: "Concept 6 . Worked through",
+      h: "Thermoregulation on a cold day",
       rows: [
         { dot: "1", dotClass: "teal", h: "Sensor", p: ["Cold receptors in the skin, and thermosensitive neurons in the hypothalamus."] },
-        { dot: "2", dotClass: "terra", h: "Afferent pathway", p: ["Sensory neurons carrying that input from the periphery to the hypothalamus."] },
-        { dot: "3", dotClass: "terra", h: "Integrating center", p: ["The hypothalamus, comparing the input against a setpoint near 37 C (98.6 F). The setpoint is a property of the center, not a separate structure, and it is adjustable, which is what fever exploits."] },
-        { dot: "4", dotClass: "terra", h: "Efferent pathway", p: ["Somatic motor neurons to skeletal muscle, and sympathetic fibers to cutaneous vessels."] },
-        { dot: "5", dotClass: "teal", h: "Effector", p: ["Skeletal muscle producing shivering, and cutaneous smooth muscle constricting."] }
+        { dot: "2", dotClass: "terra", h: "Afferent pathway", p: ["Sensory neurons carrying the input from the periphery to the hypothalamus."] },
+        { dot: "3", dotClass: "terra", h: "Integrating center", p: ["The hypothalamus, comparing the input against a setpoint near 37 C (98.6 F)."] },
+        { dot: "4", dotClass: "terra", h: "Efferent pathway", p: ["Somatic motor neurons to skeletal muscle, sympathetic fibers to cutaneous vessels."] },
+        { dot: "5", dotClass: "teal", h: "Effector", p: ["Skeletal muscle shivering, cutaneous smooth muscle constricting."] },
+        { dot: "6", dotClass: "gold", h: "Response closes the loop", p: ["Heat production rises, heat loss falls, core temperature returns, and the drive to shiver falls away."] }
       ],
-      big: "The response, heat production up and heat loss down, feeds back on core temperature and closes the loop.",
       lab: "You will map these five components by hand for your own seeded patient, one pathway per week.",
       covers: ["w1-feedback-components"]
     },
 
-    /* ---------------------------------------------------------- 32 */
+    /* 27 */
     {
-      k: "rows",
-      variant: "dark",
-      kicker: "Concept 6 . The control loop",
-      h: "Each component is a separate point of failure",
-      lede: "This is what the component list is for, and it is what your mission patient turns on.",
+      k: "table",
+      kicker: "Concept 6 . Points of failure",
+      h: "Five components, five failures",
+      caption: "Plus one situation that is not a component failure",
+      cols: ["What fails", "What happens"],
       rows: [
-        { dot: "1", dotClass: "teal", h: "Sensor fails", p: ["The change is never detected, so nothing downstream is activated."] },
-        { dot: "2", dotClass: "terra", h: "Afferent pathway fails", p: ["The change is detected and the input never reaches the integrating center."] },
-        { dot: "3", dotClass: "terra", h: "Integrating center fails", p: ["The input arrives and is compared against an inappropriate setpoint, so the output is wrong."] },
-        { dot: "4", dotClass: "terra", h: "Efferent pathway fails", p: ["The correct output is generated and never reaches the effector."] },
-        { dot: "5", dotClass: "teal", h: "Effector fails", p: ["The signal arrives and the tissue cannot produce the response."] },
-        { dot: "6", dotClass: "gold", h: "Capacity exceeded", p: ["Every component works and the disturbance exceeds what the pathway can correct. This is not a component failure, which is why it is listed separately."] }
-      ],
-      big: "Five components, five matching failures, plus the case where the pathway is simply outmatched."
+        ["Sensor", "The change is never detected, so nothing downstream activates."],
+        ["Afferent pathway", "Detected, and the input never reaches the integrating center."],
+        ["Integrating center", "Input arrives and is compared against an inappropriate setpoint."],
+        ["Efferent pathway", "Correct output generated, never reaches the effector."],
+        ["Effector", "Signal arrives, tissue cannot produce the response."],
+        ["Capacity exceeded", "Every component works. The disturbance is larger than the pathway can correct."]
+      ]
     },
 
-    /* ============================================================ CONCEPT 7 */
-    /* ---------------------------------------------------------- 33 */
+    /* ================================================= CONCEPT 7 */
+    /* 28 */
     {
       k: "title",
-      variant: "teal",
+      variant: "terra",
       kicker: "Concept 7 of 13 . 3 slides",
       h: "Local control and reflex control",
-      lede: "Some disturbances are corrected locally. Others require a pathway that reaches distant effectors."
+      lede: "Two scales, separated by how far the signal has to travel."
     },
 
-    /* ---------------------------------------------------------- 34 */
+    /* 29 */
     {
       k: "cards",
       cols: 2,
-      kicker: "Concept 7 . Two scales of control",
-      h: "The two differ by the range of the signal",
+      kicker: "Concept 7 . Two scales",
+      h: "Range of the signal",
       cards: [
         {
           label: "Local control",
           labelClass: "teal",
-          h: "Correction occurs in the tissue that detected the change",
-          p: ["A tissue detects a change in its own surroundings and responds, without telling anyone else."],
+          h: "Correction happens in the tissue that detected the change",
+          p: ["The signal travels a very short distance and the effect stays in that tissue."],
           list: [
-            "Signal travels a very short distance.",
-            "Affects only that tissue.",
-            "A tissue low on oxygen dilates its own arterioles."
+            "A tissue short of oxygen releases substances that dilate its own arterioles.",
+            "Nothing else in the body is informed."
           ]
         },
         {
           label: "Reflex control",
           labelClass: "terra",
           h: "A distant integrating center directs distant effectors",
-          p: ["A sensor sends the message to a distant integrating center, which orders effectors elsewhere to respond."],
+          p: ["The five component pathway. It exists because some problems cannot be solved where they occur."],
           list: [
-            "Signal travels far, by nerve or blood.",
-            "Coordinates several organs at once.",
-            "Pressure falls, and the brain adjusts heart and vessels body-wide."
+            "Signal travels by nerve or by blood.",
+            "Coordinates organs that are nowhere near the change."
           ]
         }
       ],
-      big: "Local control acts on the tissue that detected the change. Reflex control coordinates distant effectors.",
       covers: ["w1-control-pathways"]
     },
 
-    /* ---------------------------------------------------------- 35 */
+    /* 30 */
     {
       k: "cards",
       cols: 2,
       kicker: "Concept 7 . Predict, then check",
-      h: "Make your prediction, then open the card",
-      lede: "You stand up quickly and blood pools in your legs. Is the correction that keeps you from fainting local control or reflex control? Decide, then open the card.",
+      h: "You stand up quickly and blood pools in your legs",
+      lede: "Is the correction that stops you fainting local control or reflex control? Decide, then open the card.",
       cards: [
         {
-          label: "Check your answer",
+          label: "Answer",
           labelClass: "gold",
           h: "Reflex control",
-          p: ["Sensors in your large arteries detect the pressure drop, send it to the brainstem, and the response comes back out to your heart and to blood vessels all over your body."]
+          p: ["Baroreceptors in the large arteries detect the pressure fall, input goes to the brainstem, output returns to the heart and to vessels throughout the body."]
         },
         {
-          label: "Why not local control",
+          label: "Why not local",
           labelClass: "terra",
-          h: "The problem and the fix are in different places",
-          p: ["The tissue with the problem is your brain. The tissues that have to change are your heart and your leg vessels. Local control cannot reach across that gap, so this needs a loop with range."]
+          h: "The problem and the effector are in different places",
+          p: ["The tissue with the problem is the brain. The tissues that have to change are the heart and the leg vessels. Local control cannot bridge that distance."]
         }
-      ],
-      big: "When the effector is anatomically distant from the sensor, the pathway has to be a reflex."
+      ]
     },
 
-    /* ============================================================ CONCEPT 8 */
-    /* ---------------------------------------------------------- 36 */
+    /* ================================================= CONCEPT 8 */
+    /* 31 */
     {
       k: "title",
       variant: "terra",
       kicker: "Concept 8 of 13 . 4 slides",
-      h: "How a signal gets from here to there",
-      lede: "A sensor with no pathway to an effector accomplishes nothing. This is the communication half of the loop."
+      h: "Negative feedback",
+      lede: "Negative means opposite, not harmful. The response opposes the change that triggered it."
     },
 
-    /* ---------------------------------------------------------- 37 */
+    /* 32 */
     {
       k: "rows",
-      kicker: "Concept 8 . Signal types and range",
-      h: "Four ways a cell talks to another cell",
-      lede: "Arranged by how far the message has to go.",
+      kicker: "Concept 8 . How it runs",
+      h: "Detect, oppose, ease off",
       rows: [
-        { dot: "1", dotClass: "teal", h: "Direct contact", p: ["Molecules pass straight into a neighboring cell through connecting channels, or two cells touch and read each other's surface proteins. Range, touching."] },
-        { dot: "2", dotClass: "teal", h: "Local chemical signals", p: ["A cell releases a chemical into the fluid around it. Nearby cells respond, and it is broken down before it can travel. Range, a few cell widths."] },
-        { dot: "3", dotClass: "terra", h: "Neural signals", p: ["An electrical signal runs down a neuron, then a chemical is released onto one specific target cell. Range, long, delivered to a single address."] },
-        { dot: "4", dotClass: "terra", h: "Hormones", p: ["A chemical goes into the blood and travels everywhere. Only cells with the matching receptor respond. Range, the whole body."] }
+        { dot: "1", dotClass: "terra", h: "The variable moves off setpoint", p: ["The pathway detects it."] },
+        { dot: "2", dotClass: "terra", h: "The response drives it back", p: ["In the opposite direction to the change."] },
+        { dot: "3", dotClass: "gold", h: "The stimulus weakens", p: ["As the variable returns, the drive on the sensor falls and the response eases off. The loop turns itself down as it succeeds, which is what makes it stable."] }
       ],
-      big: "Two ways to reach a distant target: send to one address, or broadcast and let the receptor decide."
+      covers: ["w1-feedback-types"]
     },
 
-    /* ---------------------------------------------------------- 38 */
+    /* 33 */
     {
-      k: "table",
-      kicker: "Concept 8 . Signal types and range",
-      h: "Two long-distance systems, opposite trade-offs",
-      caption: "Same problem, solved two ways",
-      cols: ["", "Nervous", "Endocrine"],
-      rows: [
-        ["Route", "Fixed wired path", "Broadcast in blood"],
-        ["Receiver", "Cell at the end", "Anyone with the receptor"],
-        ["Onset", "Milliseconds", "Seconds to hours"],
-        ["Duration", "Brief", "Sustained"],
-        ["Best for", "Fast, precise", "Widespread, lasting"]
+      k: "work",
+      kicker: "Concept 8 . Worked example",
+      h: "Blood glucose after a meal",
+      given: "You eat. Glucose is absorbed from the gut and blood glucose rises above its usual range.",
+      steps: [
+        "Sensor and integrating center. Beta cells in the pancreas detect the rise. Here the same cells do both.",
+        "Efferent signal. They secrete insulin into the blood.",
+        "Effectors. Muscle, adipose tissue and liver take glucose out of the blood and store it.",
+        "Response. Blood glucose falls back toward its usual range.",
+        "Self limiting step. As glucose falls, the stimulus on the beta cells fades and insulin secretion drops."
       ],
-      big: "Speed and precision, or reach and duration. You rarely get both from one system."
+      ans: "Break the effector: if those cells stop responding to insulin, glucose stays high and insulin stays high. A high signal with the variable still wrong points at the effector. If the sensor had failed, the signal would be low."
     },
 
-    /* ---------------------------------------------------------- 39 */
+    /* 34 */
     {
       k: "cards",
       cols: 2,
-      kicker: "Concept 8 . Why broadcasting works",
-      h: "The message reaches everyone, and almost nobody answers",
-      lede: "This appears wasteful. It is what makes endocrine signaling possible.",
+      kicker: "Concept 8 . Oscillation",
+      h: "Why the value wanders",
+      lede: "A pathway cannot respond before it has detected something, and detection takes time.",
       cards: [
         {
-          label: "Everyone hears it",
+          label: "The delay",
           labelClass: "terra",
-          h: "And most cells do nothing",
-          p: ["A hormone released into the blood reaches essentially every cell within a minute or two. The great majority do nothing at all, because they have no receptor that fits it."]
+          h: "Correction always arrives late",
+          p: ["The variable drifts past the setpoint before the correction lands, then past it again on the way back. The value oscillates around the setpoint rather than sitting on it."]
         },
         {
-          label: "What makes it specific",
-          labelClass: "teal",
-          h: "Only cells with the matching receptor",
-          p: ["It is not in the delivery. That single fact explains why one hormone can do different things in different tissues, and why a drug given into a vein can act on one organ and largely leave the others alone."]
+          label: "What that means",
+          labelClass: "gold",
+          h: "A value moving inside its range is normal",
+          p: ["A value pinned to exactly one number would be more suspicious than one that wanders."]
         }
-      ],
-      big: "Distribution is systemic. Specificity comes from which cells express the receptor."
+      ]
     },
 
-    /* ============================================================ CONCEPT 9 */
-    /* ---------------------------------------------------------- 40 */
+    /* ================================================= CONCEPT 9 */
+    /* 35 */
     {
       k: "title",
       variant: "terra",
-      kicker: "Concept 9 of 13 . 5 slides",
-      h: "Receptors decide who hears the message",
-      lede: "Where the receptor sits, and how many there are, changes what the same signal does."
+      kicker: "Concept 9 of 13 . 3 slides",
+      h: "Positive feedback",
+      lede: "The response increases the change that triggered it. The loop accelerates instead of settling."
     },
 
-    /* ---------------------------------------------------------- 41 */
+    /* 36 */
+    {
+      k: "cards",
+      cols: 3,
+      kicker: "Concept 9 . Where the body uses it",
+      h: "Driven to completion, ended from outside",
+      lede: "Nothing inside the loop opposes the change, so it cannot terminate itself.",
+      cards: [
+        {
+          label: "The property",
+          labelClass: "terra",
+          h: "It runs until an outside event ends the situation",
+          p: ["Useful for processes that must be driven to completion rather than held at a value. Dangerous whenever it starts by accident."]
+        },
+        {
+          label: "Childbirth",
+          labelClass: "teal",
+          h: "Delivery ends it",
+          p: ["Cervical stretch drives oxytocin release, contractions push the fetus down, stretch increases further."]
+        },
+        {
+          label: "Clotting",
+          labelClass: "teal",
+          h: "The completed clot ends it",
+          p: ["Activated clotting factors activate more clotting factors, so a small injury seals rapidly."]
+        }
+      ],
+      covers: ["w1-feedback-types"]
+    },
+
+    /* 37 */
     {
       k: "cards",
       cols: 2,
-      kicker: "Concept 9 . Receptor location",
-      h: "Solubility decides where the receptor has to be",
-      lede: "The membrane is mostly lipid, so it passes fat-soluble things and blocks water-soluble things.",
+      kicker: "Concept 9 . Predict, then check",
+      h: "A failing heart, and the body's response to it",
+      lede: "The heart pumps poorly, blood pressure falls, the body constricts vessels and raises heart rate. That increases cardiac work, so it pumps less well still. Which kind of feedback? Decide, then open the card.",
+      cards: [
+        {
+          label: "Answer",
+          labelClass: "gold",
+          h: "Positive feedback",
+          p: ["Each round makes the next worse, which is why decompensation accelerates rather than drifting."]
+        },
+        {
+          label: "The part that matters",
+          labelClass: "terra",
+          h: "Every response in that sequence was normal",
+          p: ["Constricting vessels and raising heart rate are ordinary negative feedback responses to a low blood pressure. They are appropriate to a problem this patient does not have, and applied to the one she does have they make it worse."]
+        }
+      ]
+    },
+
+    /* ================================================= CONCEPT 10 */
+    /* 38 */
+    {
+      k: "title",
+      variant: "terra",
+      kicker: "Concept 10 of 13 . 3 slides",
+      h: "Feedforward, and setpoints that move",
+      lede: "Feedback is always reactive. Something has to go wrong before there is anything to detect."
+    },
+
+    /* 39 */
+    {
+      k: "cards",
+      cols: 2,
+      kicker: "Concept 10 . Feedforward",
+      h: "Responding before the variable changes",
+      lede: "The body uses a cue that reliably predicts a coming disturbance.",
+      cards: [
+        {
+          label: "Digestion",
+          labelClass: "teal",
+          h: "Saliva and gastric acid before anything is swallowed",
+          p: ["Sight and smell of food start the response while the stomach is still empty."]
+        },
+        {
+          label: "Exercise",
+          labelClass: "teal",
+          h: "Heart rate and ventilation rise as you begin",
+          p: ["Not after the muscles have run short. Feedforward buys time, and feedback corrects whatever the anticipation got wrong."]
+        }
+      ],
+      covers: ["w1-feedforward"]
+    },
+
+    /* 40 */
+    {
+      k: "rows",
+      kicker: "Concept 10 . Moving setpoints",
+      h: "Three ways the target changes",
+      lede: "A pathway can work perfectly and hold a variable somewhere you did not expect.",
+      rows: [
+        { dot: "1", dotClass: "teal", h: "Biological rhythms", p: ["Core temperature and many hormones follow a daily cycle, so the setpoint at four in the morning is not the setpoint at four in the afternoon."] },
+        { dot: "2", dotClass: "terra", h: "Fever", p: ["The hypothalamic setpoint is deliberately raised. The patient shivers because 37 C (98.6 F) now sits below target, which is why chills accompany a rising fever. Antipyretics work by lowering the setpoint, not by cooling the patient."] },
+        { dot: "3", dotClass: "gold", h: "Acclimatization", p: ["Sustained exposure resets what the body defends, such as altitude changing the oxygen carrying capacity that gets maintained."] }
+      ],
+      covers: ["w1-feedforward"]
+    },
+
+    /* ================================================= CONCEPT 11 */
+    /* 41 */
+    {
+      k: "title",
+      variant: "teal",
+      kicker: "Concept 11 of 13 . 3 slides",
+      h: "How signals travel",
+      lede: "A sensor with no route to an effector accomplishes nothing. Four ways cells communicate, organized by range."
+    },
+
+    /* 42 */
+    {
+      k: "rows",
+      kicker: "Concept 11 . Four routes",
+      h: "Organized by distance",
+      rows: [
+        { dot: "1", dotClass: "teal", h: "Direct contact", p: ["Molecules pass into a neighboring cell through connecting channels, or two cells touch and read each other's surface proteins. Range, cells that are touching."] },
+        { dot: "2", dotClass: "teal", h: "Local chemical signals", p: ["Released into the surrounding fluid, broken down before they can travel. Range, a few cell widths."] },
+        { dot: "3", dotClass: "terra", h: "Neural signals", p: ["An electrical signal travels the length of a neuron, then a chemical is released onto one target cell. Range, long, delivered to a single address."] },
+        { dot: "4", dotClass: "terra", h: "Hormones", p: ["Released into the blood and carried everywhere. Only cells with the matching receptor respond. Range, the whole body."] }
+      ]
+    },
+
+    /* 43 */
+    {
+      k: "table",
+      kicker: "Concept 11 . The two long distance systems",
+      h: "Nervous and endocrine",
+      caption: "Same problem, opposite trade-offs",
+      cols: ["", "Nervous", "Endocrine"],
+      rows: [
+        ["Route", "A fixed anatomical path", "Broadcast in the blood"],
+        ["Receiver", "The cell at the end of the neuron", "Any cell expressing the receptor"],
+        ["Onset", "Milliseconds", "Seconds to hours"],
+        ["Duration", "Brief unless repeated", "Sustained"],
+        ["Suited to", "Fast, precise, short term", "Widespread, sustained"]
+      ],
+      big: "A hormone reaches every cell. The receptor determines which ones answer."
+    },
+
+    /* ================================================= CONCEPT 12 */
+    /* 44 */
+    {
+      k: "title",
+      variant: "teal",
+      kicker: "Concept 12 of 13 . 4 slides",
+      h: "Receptors",
+      lede: "Where they sit, what happens after binding, and the fact that they change. Transduction pathways come in the endocrine week."
+    },
+
+    /* 45 */
+    {
+      k: "cards",
+      cols: 2,
+      kicker: "Concept 12 . Location",
+      h: "Solubility determines where the receptor sits",
+      lede: "The membrane is largely lipid, so it passes lipid soluble molecules and blocks water soluble ones.",
       cards: [
         {
           label: "Water soluble signal",
           labelClass: "teal",
-          h: "Receptor on the surface",
-          p: ["The molecule cannot cross the membrane, so it binds outside and the message is relayed inward by something else."],
+          h: "Receptor on the cell surface",
+          p: ["Cannot cross the membrane, so it binds outside and the message is relayed inward."],
           list: [
             "Most hormones, all neurotransmitters.",
-            "Fast, nothing has to be built.",
+            "Fast, nothing has to be manufactured.",
             "Stops quickly once the signal is gone."
           ]
         },
         {
           label: "Lipid soluble signal",
           labelClass: "terra",
-          h: "Receptor inside the cell",
-          p: ["The molecule crosses the membrane and binds a receptor in the cytoplasm or nucleus, usually changing which genes get read."],
+          h: "Receptor in the cytoplasm or nucleus",
+          p: ["Crosses the membrane and usually alters which genes are transcribed."],
           list: [
-            "Steroid hormones, thyroid hormone.",
+            "Steroid and thyroid hormones.",
             "Slow, proteins have to be made.",
-            "Lasts long after the signal is gone."
+            "Persists after the signal has gone."
           ]
         }
-      ],
-      big: "Location decides how fast the response is, and how long it lasts."
+      ]
     },
 
-    /* ---------------------------------------------------------- 42 */
+    /* 46 */
     {
       k: "cards",
       cols: 2,
-      kicker: "Concept 9 . Amplification",
-      h: "One molecule outside can move millions inside",
-      lede: "A surface receptor does not relay the message one for one. It multiplies.",
+      kicker: "Concept 12 . Amplification",
+      h: "The relay multiplies at every step",
       cards: [
         {
           label: "The cascade",
           labelClass: "terra",
-          h: "Each step multiplies the last",
-          p: ["The receptor activates a relay molecule, which activates an enzyme, which makes many copies of an internal messenger, and each of those switches on more machinery again."]
+          h: "Receptor, relay molecule, enzyme, many messengers",
+          p: ["Each step multiplies the one before it, so one bound molecule outside produces a large intracellular effect."]
         },
         {
-          label: "Why small amounts matter",
+          label: "The consequence",
           labelClass: "gold",
-          h: "Tiny concentrations, whole-body effects",
-          p: ["This is why a hormone present in almost undetectable amounts produces an obvious effect across the patient, and why very small changes in hormone concentration matter clinically."]
+          h: "Picogram concentrations, whole body effects",
+          p: ["This is why small changes in hormone concentration have clinical consequences out of proportion to the numbers."]
         }
-      ],
-      big: "A hormone measurable only in picograms per milliliter can produce a systemic response."
-    },
-
-    /* ---------------------------------------------------------- 43 */
-    {
-      k: "rows",
-      kicker: "Concept 9 . Receptor modulation",
-      h: "The same signal does not always give the same response",
-      lede: "The target cell adjusts its own sensitivity.",
-      rows: [
-        { dot: "+", dotClass: "teal", h: "Up regulation", p: ["When a signal has been scarce, the cell adds receptors and becomes more sensitive to what little arrives."] },
-        { dot: "-", dotClass: "terra", h: "Down regulation", p: ["When a signal has been high for a long time, the cell removes receptors and responds less. One route to drug tolerance."] },
-        { dot: "A", dotClass: "gold", h: "Agonist", p: ["Binds the receptor and produces the same response the natural signal would."] },
-        { dot: "B", dotClass: "gold", h: "Antagonist", p: ["Binds the receptor, produces no response, and blocks the natural signal from getting in."] }
-      ],
-      big: "A patient can have a normal hormone level and an abnormal response, because the receptors changed."
-    },
-
-    /* ---------------------------------------------------------- 44 */
-    {
-      k: "cards",
-      cols: 3,
-      kicker: "Concept 9 . Where this shows up",
-      h: "Receptors are where most drugs act",
-      cards: [
-        { label: "In medicine", h: "Beta blockers", p: ["An antagonist at receptors the sympathetic system uses. The signal is still being sent. The receptor no longer passes it on."] },
-        { label: "In nursing", h: "Tolerance is physiological", p: ["A patient needing more opioid for the same effect is often showing down regulation, not drug-seeking. The receptors changed."] },
-        { label: "In respiratory therapy", h: "Bronchodilators", p: ["An agonist at receptors on airway smooth muscle. Overuse can down regulate them, which is why a rescue inhaler can seem to stop working."] }
-      ],
-      big: "The transduction pathways come in the endocrine week. This week you need the architecture."
-    },
-
-    /* ============================================================ CONCEPT 10 */
-    /* ---------------------------------------------------------- 45 */
-    {
-      k: "title",
-      variant: "terra",
-      kicker: "Concept 10 of 13 . Beat 4, response . 4 slides",
-      h: "Negative feedback",
-      lede: "The dominant control mechanism in physiology. Most loops you will learn are this one."
-    },
-
-    /* ---------------------------------------------------------- 46 */
-    {
-      k: "cards",
-      cols: 2,
-      kicker: "Concept 10 . Negative feedback",
-      h: "The response opposes the change that started it",
-      lede: "Negative here does not mean bad. It means opposite.",
-      cards: [
-        {
-          label: "How it runs",
-          labelClass: "terra",
-          h: "Detect, oppose, ease off",
-          p: ["The variable moves off its setpoint. The loop detects it and responds in the opposite direction. As the variable comes back, the stimulus weakens and the response eases off."]
-        },
-        {
-          label: "Why it is stable",
-          labelClass: "teal",
-          h: "It turns itself down",
-          p: ["That last step is what makes it self-limiting. The loop shuts down as it succeeds, without anything having to tell it to stop."]
-        }
-      ],
-      big: "Negative feedback is stable because success removes the reason it was running.",
-      covers: ["w1-feedback-types"]
-    },
-
-    /* ---------------------------------------------------------- 47 */
-    {
-      k: "work",
-      badges: [{ t: "Must teach", cls: "terra" }],
-      kicker: "Concept 10 . Negative feedback",
-      h: "Walk the loop, blood glucose after a meal",
-      given: "You eat. Glucose is absorbed from the gut and blood glucose starts to climb above its usual range.",
-      steps: [
-        "Sensor. Beta cells in the pancreas detect the rising glucose.",
-        "Integrating center. The same beta cells compare it against the range they are tuned to.",
-        "Output. They secrete insulin into the blood.",
-        "Effector. Muscle, fat and liver take glucose out of the blood and store it.",
-        "Response. Blood glucose falls back toward its usual range.",
-        "Self-limiting step. As glucose falls, the stimulus fades and insulin secretion drops."
-      ],
-      ans: "Now break one part. If the effector cells stop responding normally to insulin, glucose stays high, the sensor keeps detecting it, and insulin stays high too.",
-      big: "High signal with an uncorrected variable points to the effector, not the sensor."
-    },
-
-    /* ---------------------------------------------------------- 48 */
-    {
-      k: "cards",
-      cols: 2,
-      kicker: "Concept 10 . Negative feedback",
-      h: "Control loops oscillate around the setpoint",
-      lede: "A loop cannot respond before it has detected something, and detection takes time.",
-      cards: [
-        {
-          label: "The delay",
-          labelClass: "terra",
-          h: "Correction always arrives late",
-          p: ["The variable drifts a little past the setpoint before the correction lands, then the correction carries it a little past on the way back. The value oscillates gently around the setpoint instead of sitting on it."]
-        },
-        {
-          label: "What a normal value looks like",
-          labelClass: "gold",
-          h: "A value moving inside its range is normal",
-          p: ["A value that moves inside its range is not a sign of failure. A value pinned to exactly one number would be far more suspicious."]
-        }
-      ],
-      big: "Oscillation around the setpoint is what a working loop looks like."
-    },
-
-    /* ============================================================ CONCEPT 11 */
-    /* ---------------------------------------------------------- 49 */
-    {
-      k: "title",
-      variant: "terra",
-      kicker: "Concept 11 of 13 . 3 slides",
-      h: "Positive feedback",
-      lede: "Less common, self-amplifying, and terminated only by an event outside the loop."
-    },
-
-    /* ---------------------------------------------------------- 50 */
-    {
-      k: "cards",
-      cols: 3,
-      kicker: "Concept 11 . Positive feedback",
-      h: "The response increases the change that started it",
-      lede: "The loop reinforces itself, so it accelerates instead of settling.",
-      cards: [
-        {
-          label: "Why it cannot stop",
-          labelClass: "terra",
-          h: "Nothing inside opposes it",
-          p: ["Positive feedback cannot end on its own. It runs until something outside the loop ends the situation. That makes it useful for events that must be driven to completion, and dangerous when it starts by accident."]
-        },
-        {
-          label: "Childbirth",
-          labelClass: "teal",
-          h: "Delivery ends it",
-          p: ["Stretch of the cervix drives oxytocin release, contractions push the baby down, and stretch increases further."]
-        },
-        {
-          label: "Clotting",
-          labelClass: "teal",
-          h: "The finished clot ends it",
-          p: ["Activated clotting factors activate more clotting factors, so a small injury seals quickly."]
-        }
-      ],
-      big: "Positive feedback needs an outside event to stop it. That is the defining feature.",
-      covers: ["w1-feedback-types"]
-    },
-
-    /* ---------------------------------------------------------- 51 */
-    {
-      k: "cards",
-      cols: 2,
-      kicker: "Concept 11 . Predict, then check",
-      h: "Make your prediction, then open the card",
-      lede: "A failing heart pumps poorly, so blood pressure drops. The body constricts vessels and speeds the heart, which raises the work the heart has to do, so it pumps even less well. Which kind of feedback? Decide, then open the card.",
-      cards: [
-        {
-          label: "Check your answer",
-          labelClass: "gold",
-          h: "Positive feedback",
-          p: ["Each round makes the next round worse. This is the version nobody wants, and it is why decompensation accelerates rather than drifting."]
-        },
-        {
-          label: "Every response was normal",
-          labelClass: "terra",
-          h: "Every single response was appropriate",
-          p: ["Constricting vessels and speeding the heart are normal negative feedback responses to a low blood pressure. They are correct corrections that happen to make this particular problem worse."]
-        }
-      ],
-      big: "An appropriate response to the wrong problem can still accelerate decompensation."
-    },
-
-    /* ============================================================ CONCEPT 12 */
-    /* ---------------------------------------------------------- 52 */
-    {
-      k: "title",
-      variant: "terra",
-      kicker: "Concept 12 of 13 . 4 slides",
-      h: "Feedforward, and setpoints that move",
-      lede: "Two ways the body compensates for the detection delay: act early, or move the target."
-    },
-
-    /* ---------------------------------------------------------- 53 */
-    {
-      k: "cards",
-      cols: 2,
-      kicker: "Concept 12 . Feedforward",
-      h: "Responding before the variable has moved",
-      lede: "Feedback is always late, because something has to go wrong before it can be detected.",
-      cards: [
-        {
-          label: "How it works",
-          labelClass: "terra",
-          h: "Act on a cue, not on the damage",
-          p: ["The body uses a cue that reliably predicts a coming disturbance, and starts responding before the regulated variable changes at all."]
-        },
-        {
-          label: "Where you have seen it",
-          labelClass: "teal",
-          h: "Saliva before you swallow, heart rate before you tire",
-          p: ["You see food and start producing saliva and stomach acid before anything is swallowed. Your heart rate rises as you begin to exercise, not after your muscles run short."]
-        }
-      ],
-      big: "Feedback corrects a change. Feedforward anticipates one.",
-      covers: ["w1-feedforward"]
-    },
-
-    /* ---------------------------------------------------------- 54 */
-    {
-      k: "rows",
-      kicker: "Concept 12 . Moving setpoints",
-      h: "The target is not fixed",
-      lede: "A loop can work perfectly and still hold a value somewhere new, because the setpoint changed.",
-      rows: [
-        { dot: "1", dotClass: "teal", h: "Biological rhythms", p: ["Body temperature and many hormones follow a daily cycle. The setpoint at 4 in the morning is not the setpoint at 4 in the afternoon."] },
-        { dot: "2", dotClass: "terra", h: "Fever", p: ["The hypothalamic setpoint is deliberately raised. The patient feels cold and shivers because 37 C (98.6 F) now sits below the new target, which is why chills accompany a rising fever."] },
-        { dot: "3", dotClass: "gold", h: "Acclimatization", p: ["Sustained exposure to a new environment resets what the body defends, such as altitude changing how much oxygen-carrying capacity is maintained."] }
-      ],
-      big: "Before you call a loop broken, check whether it is defending a different number on purpose.",
-      covers: ["w1-feedforward"]
-    },
-
-    /* ---------------------------------------------------------- 55 */
-    {
-      k: "cards",
-      cols: 3,
-      kicker: "Concept 12 . Where this shows up",
-      h: "Setpoints move in patients constantly",
-      cards: [
-        { label: "In medicine", h: "Treating fever", p: ["Antipyretics work by lowering the raised setpoint, not by cooling the patient directly. Ice packs on a patient whose setpoint is still high just make them shiver harder."] },
-        { label: "In nursing", h: "Timing matters", p: ["Values collected at different times of day are not always comparable, because some of them are supposed to differ by the hour."] },
-        { label: "In respiratory therapy", h: "Chronic retainers", p: ["Someone who has lived with a high carbon dioxide level for years is defending a different baseline than someone who arrived at that number this morning."] }
       ]
     },
 
-    /* ============================================================ CONCEPT 13 */
-    /* ---------------------------------------------------------- 56 */
+    /* 47 */
+    {
+      k: "rows",
+      kicker: "Concept 12 . Modulation",
+      h: "The target cell adjusts its own sensitivity",
+      rows: [
+        { dot: "+", dotClass: "teal", h: "Up regulation", p: ["A long period of scarce signal, so the cell adds receptors and becomes more sensitive."] },
+        { dot: "-", dotClass: "terra", h: "Down regulation", p: ["A long period of high signal, so the cell removes receptors and responds less. One route to drug tolerance."] },
+        { dot: "A", dotClass: "gold", h: "Agonist", p: ["Binds the receptor and produces the response the natural signal would."] },
+        { dot: "B", dotClass: "gold", h: "Antagonist", p: ["Binds, produces no response, and blocks the natural signal. Beta blockers work this way, so the signal is still sent and the receptor no longer passes it on."] }
+      ]
+    },
+
+    /* 48 */
+    {
+      k: "cards",
+      cols: 4,
+      kicker: "Concept 12 . Clinical",
+      h: "Receptors are where most drugs act",
+      cards: [
+        { label: "In nursing", labelClass: "terra", h: "Tolerance is physiological", p: ["A patient needing more opioid for the same effect is often showing down regulation rather than drug seeking."] },
+        { label: "In rad tech", labelClass: "terra", h: "Beta blockers and contrast reactions", p: ["A patient on a beta blocker who reacts to contrast can respond poorly to epinephrine, because the receptors epinephrine works through are occupied. The drug is being given correctly and the receptor is not available."] },
+        { label: "In medicine", h: "Normal hormone level, abnormal response", p: ["When the receptors change rather than the signal, the concentration you measure is not the thing that is wrong."] },
+        { label: "In respiratory therapy", h: "Overused bronchodilators", p: ["An agonist at receptors on airway smooth muscle. Overuse can down regulate them, which is why a rescue inhaler can seem to stop working."] }
+      ]
+    },
+
+    /* ================================================= CONCEPT 13 */
+    /* 49 */
     {
       k: "title",
       variant: "teal",
       kicker: "Concept 13 of 13 . 3 slides",
       h: "Doing physiology as a science",
-      lede: "Everything in this deck came from experiments, and experiments can be done badly."
+      lede: "Everything in this lecture came from an experiment, and experiments can be done badly."
     },
 
-    /* ---------------------------------------------------------- 57 */
+    /* 50 */
     {
       k: "rows",
       kicker: "Concept 13 . Experimental design",
-      h: "What a usable physiology experiment needs",
+      h: "What a usable experiment needs",
       rows: [
-        { dot: "1", dotClass: "teal", h: "One thing changed on purpose", p: ["The independent variable. If two things changed, you cannot say which one caused the result."] },
-        { dot: "2", dotClass: "teal", h: "One thing measured", p: ["The dependent variable. Decide how you will measure it before you start, not after you see the data."] },
-        { dot: "3", dotClass: "terra", h: "A control group", p: ["Identical treatment except for the one variable. Without it you have a description, not a comparison."] },
+        { dot: "1", dotClass: "teal", h: "One thing changed on purpose", p: ["The independent variable. If two changed, the result cannot be attributed to either."] },
+        { dot: "2", dotClass: "teal", h: "One thing measured", p: ["The dependent variable. Decide how before you start, not after you see the data."] },
+        { dot: "3", dotClass: "terra", h: "A control group", p: ["Identical except for the one variable. Without it you have a description, not a comparison."] },
         { dot: "4", dotClass: "terra", h: "Enough subjects", p: ["Biological variation is large. One result is an anecdote."] },
-        { dot: "5", dotClass: "gold", h: "Repeatability", p: ["A finding that happens once in one lab is not yet knowledge."] }
+        { dot: "5", dotClass: "gold", h: "Repeatability", p: ["A finding that happens once in one laboratory is not yet knowledge."] }
       ],
-      big: "Change one thing, measure one thing, and have something to compare it to.",
       lab: "You will design and run a small experiment this term, including choosing your control and defending your sample size.",
       covers: ["w1-lab-experimental-design"]
     },
 
-    /* ---------------------------------------------------------- 58 */
+    /* 51 */
     {
       k: "cards",
       cols: 2,
-      kicker: "Concept 13 . Variability",
-      h: "Two readings that differ may mean nothing",
-      lede: "Some of the difference between measurements is real. Some of it is noise.",
+      kicker: "Concept 13 . Variation",
+      h: "Two values that differ may not mean anything",
+      lede: "Her potassium read 4.0, then 4.2, then 4.1. Her sodium read 141, then 134, then 128.",
       cards: [
         {
-          label: "Where the noise comes from",
+          label: "Sources of noise",
           labelClass: "terra",
-          h: "The tool, and the person using it",
-          p: ["Every measurement carries error from the instrument and from whoever used it. On top of that, the same healthy person genuinely varies hour to hour."]
+          h: "The instrument, and the person using it",
+          p: ["On top of that, the same healthy person genuinely varies hour to hour."]
         },
         {
-          label: "What to ask",
+          label: "The question to ask",
           labelClass: "gold",
-          h: "Bigger than the usual wander?",
-          p: ["When you compare two numbers, the question is not whether they differ. It is whether they differ by more than this measurement and this person normally wander on their own."]
+          h: "Is the difference larger than the usual variation?",
+          p: ["The potassium movement is smaller than ordinary measurement variation, so it did not change. The sodium movement is not something measurement error would produce. Same panel, two different conclusions."]
         }
       ],
-      big: "Before you explain a difference, establish that there is one.",
       covers: ["w1-lab-measurement-error"]
     },
 
-    /* ============================================================ PREDICT AND PERTURB */
-    /* ---------------------------------------------------------- 59 */
-    {
-      k: "title",
-      variant: "dark",
-      kicker: "Beat 5 . Predict",
-      h: "Use what you just learned",
-      lede: "You have the parts. These next slides ask you to run them forward on situations nobody has walked you through."
-    },
-
-    /* ---------------------------------------------------------- 60 */
+    /* ================================================= CLOSE */
+    /* 52 */
     {
       k: "activity",
-      badges: [{ t: "Apply in class", cls: "gold" }],
-      kicker: "Beat 5 . Predict",
-      h: "Six disturbances, same five components",
-      lede: "Pick one. Do not look up organ systems, you have not been taught them yet. Say what a working body would sense, what message it would send, what it would change, and what would power that change.",
+      kicker: "Close . Predict",
+      h: "Six disturbances",
+      lede: "Take one. Do not look up organ systems, you have not been taught them. Say what a working body would sense, what message it would send, what it would change, and what would power that change.",
       listLabel: "Pick one",
       list: [
         "You run up a flight of stairs.",
-        "You walk outside on a 100 degree day.",
+        "You walk outside on a day at 38 C (100.4 F).",
         "You eat a very large meal.",
         "You have not had a drink since yesterday.",
-        "You stand up suddenly after lying down.",
+        "You stand up suddenly.",
         "You arrive at a cabin at 9000 feet."
-      ],
-      big: "You can reason about all six now, with no organ system detail. That is the point of this week."
+      ]
     },
 
-    /* ---------------------------------------------------------- 61 */
-    {
-      k: "title",
-      variant: "dark",
-      kicker: "Beat 6 . Perturb",
-      h: "Now break one part of the loop",
-      lede: "A prediction you cannot revise when a component fails was not really a mechanism."
-    },
-
-    /* ---------------------------------------------------------- 62 */
+    /* 53 */
     {
       k: "activity",
-      badges: [{ t: "Apply in class", cls: "gold" }],
-      kicker: "Beat 6 . Perturb",
-      h: "Same disturbance, one part disabled",
-      lede: "Go back to what you just worked through and knock out one part. Say what happens now, and how the patient would look different from a working system.",
+      kicker: "Close . Perturb",
+      h: "Same disturbance, one component disabled",
+      lede: "Say what happens now, and what you would expect to see in front of you.",
       listLabel: "Disable one",
       list: [
         "The sensor cannot detect the change.",
-        "The message cannot reach the integrating center.",
-        "The setpoint has shifted to the wrong value.",
+        "The afferent pathway cannot carry the input.",
+        "The setpoint has shifted.",
+        "The efferent pathway cannot reach the effector.",
         "The effector cannot generate a full response.",
-        "Everything works, and the disturbance is twice as large as the loop was built for."
-      ],
-      big: "For each one, state the expected clinical findings. That converts a pathway into a presentation."
+        "Everything works, and the disturbance is twice what the pathway was built for."
+      ]
     },
 
-    /* ---------------------------------------------------------- 63 */
+    /* 54 */
     {
       k: "hook",
-      kicker: "Beat 6 . Back to the mission",
+      kicker: "Close . Back to the mission",
       h: "Return to your patient",
       hook: {
         icon: "!",
         iconClass: "terra",
-        label: "Back to your patient",
-        h: "A regulated variable stopped being held steady. Which component?",
-        say: "You have the vocabulary for this now.",
+        label: "What to hand in",
+        h: "Write the five components for the variable that is drifting.",
+        say: "You have the vocabulary you were missing at the start.",
         p: [
-          "Write out the five components for the drifting variable. Mark clearly what you are assuming rather than what you were told, then name the component you think failed and say what evidence would change your mind."
+          "Mark clearly what you are assuming as against what you were told. Name the component you think failed, and say what evidence would change your mind."
         ]
       },
-      big: "Most of the credit is in the reasoning. A wrong answer reached honestly keeps most of it."
+      big: "Most of the credit is in the reasoning, not the conclusion."
     },
 
-    /* ---------------------------------------------------------- 64 */
+    /* 55 */
     {
       k: "close",
       kicker: "Mission 1 . Close",
       h: "What to carry into next week",
-      lede: "Five points to carry forward. The rest of the semester builds on them.",
       list: [
-        "A steady value is held, and holding it costs energy.",
-        "Steady means two rates match, not that they are small.",
-        "Every reflex pathway: sensor, afferent pathway, integrating center, efferent pathway, effector.",
-        "One address or broadcast, and the receptor decides who answers.",
-        "Negative feedback opposes and self-limits. Positive amplifies and needs an outside stop."
-      ],
-      big: "Next mission, we take up the molecules that make all of this possible."
+        "A steady value is being actively held, and holding it costs energy.",
+        "Steady means two rates are matched, and says nothing about how large they are.",
+        "Every reflex pathway: sensor, afferent pathway, integrating center holding a setpoint, efferent pathway, effector. The response closes the loop.",
+        "A signal goes to one address or is broadcast, and the receptor determines who responds.",
+        "Negative feedback opposes change and stops itself. Positive feedback amplifies change and needs an outside event to end it."
+      ]
     }
 
   ]
