@@ -180,7 +180,7 @@
     return !(n.offsetParent === null && n.getClientRects().length === 0);
   }
   function chrome(n) {
-    return !!(n.closest && n.closest('.b5nav, .b5foot, .b5play, .b5listen, nav, [aria-hidden="true"], .bd-dock'));
+    return !!(n.closest && n.closest('.b5nav, .b5foot, nav, [aria-hidden="true"], .bd-dock'));
   }
   function readableCount(host) {
     if (!host) return 0;
@@ -213,6 +213,7 @@
   var CSS = ''
   + '.b5nav{background:#fff;border-bottom:1px solid #E3E1DE;font-family:"Plus Jakarta Sans","DM Sans",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}'
   + '.b5nav-in{max-width:1080px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}'
+  + '.b5nav-in ol{margin-right:auto}'
   + '.b5nav ol{list-style:none;display:flex;align-items:center;gap:8px;margin:0;padding:0;flex-wrap:wrap}'
   + '.b5nav li{display:flex;align-items:center;gap:8px;font-size:15px;color:#1E3D4C}'
   + '.b5nav li+li:before{content:"›";color:#8A8A8A;font-size:16px}'
@@ -253,29 +254,8 @@
   + '.b5skip:focus{left:8px;top:8px}'
   + '@media (max-width:560px){.b5nav-in{padding:9px 14px}.b5foot-in{padding:22px 14px 26px}}'
   + '@media (prefers-reduced-motion:reduce){.b5nav-back{transition:none}.b5nav-back:hover{transform:none}}'
-  + '@media print{.b5nav,.b5foot,.b5skip,.b5listen,.b5play{display:none!important}}'
+  + '@media print{.b5nav,.b5foot,.b5skip{display:none!important}}'
 
-  /* Listen to this page. Text to speech, which is NOT a screen reader, and is
-     labelled that way where it matters. It sits in the footer row as one more
-     link rather than as a boxed button, because a button in a box inside a
-     dark panel is what made the front door look like a advert. */
-  + '.b5listen{display:inline-flex;align-items:center;gap:6px;background:none;border:0;'
-  + 'color:#fff;font:inherit;font-size:13px;font-weight:600;cursor:pointer;padding:2px 2px;'
-  + 'border-radius:5px}'
-  + '.b5listen:hover{text-decoration:underline}'
-  + '.b5listen:focus-visible{outline:3px solid #B8924A;outline-offset:2px}'
-  + '.b5listen svg{width:15px;height:15px;flex:0 0 auto}'
-  + '.b5play{position:fixed;right:18px;bottom:18px;z-index:2147482000;display:none;'
-  + 'align-items:center;gap:8px;background:#fff;border:1px solid #E3E1DE;border-radius:12px;'
-  + 'padding:8px 10px;box-shadow:0 8px 22px rgba(0,0,0,.18)}'
-  + '.b5play.on{display:flex}'
-  + '.b5play button{font:inherit;font-size:13.5px;font-weight:700;cursor:pointer;color:#7A2A22;'
-  + 'background:#fff;border:1px solid #E3E1DE;border-radius:8px;padding:6px 10px;min-height:32px}'
-  + '.b5play button:hover{background:#FAFAF9}'
-  + '.b5play button:focus-visible{outline:3px solid #B8924A;outline-offset:2px}'
-  + '.b5play .st{font-size:13px;color:#4F5663;padding:0 4px;max-width:15ch}'
-  + '.b5read{background:#FBF0D8;border-radius:4px;box-shadow:0 0 0 3px #FBF0D8}'
-  + '@media (max-width:560px){.b5play{right:10px;bottom:10px;left:10px;justify-content:center}}';
 
   function inject() {
     var style = document.createElement('style');
@@ -388,173 +368,9 @@
       foot.innerHTML = '<div class="b5foot-in">'
         + '<nav aria-label="Site"><ul>' + items + '</ul></nav>'
         + '<p>BIO 005 Human Physiology, Yuba College, Fall 2026. Dr. Sharilyn Rennie. '
-        + 'Listen is text to speech, not a screen reader. If a page does not work for you, '
-        + 'tell me in the Virtual Office.</p></div>';
+        + 'If a page does not work for you, tell me in the Virtual Office.</p></div>';
       document.body.appendChild(foot);
     }
-
-    listen();
-  }
-
-  /* ---------------------------------------------------------
-     Read this page out loud.
-
-     Deliberately not called a screen reader anywhere a student can
-     see, because it is not one. It reads the main content in order,
-     one block at a time, highlighting as it goes so a student can
-     follow along with their eyes and their ears together.
-
-     Chunked by block rather than handed over as one long string,
-     because the browser speech engine truncates long utterances and
-     because chunking is what makes pause, resume and the highlight
-     work at all.
-     --------------------------------------------------------- */
-  function listen() {
-    if (!('speechSynthesis' in window) || !window.SpeechSynthesisUtterance) return;
-
-    var row = document.querySelector('.b5foot nav ul');
-    if (!row || document.querySelector('.b5listen')) return;
-
-    var blocks = [], idx = 0, playing = false, paused = false, keep = null;
-    var rate = 1;
-    try { var r = parseFloat(localStorage.getItem('bio005-listen-rate')); if (r >= 0.5 && r <= 2) rate = r; }
-    catch (e) {}
-
-    var SPEAKER = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"'
-      + ' stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
-      + '<path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/>'
-      + '<path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>';
-
-    var li = document.createElement('li');
-    var btn = document.createElement('button');
-    btn.type = 'button';
-    btn.className = 'b5listen';
-    btn.innerHTML = SPEAKER + '<span>Listen</span>';
-    btn.title = 'Reads this page out loud. This is text to speech, not a screen reader.';
-    li.appendChild(btn);
-    row.appendChild(li);
-
-    var bar = document.createElement('div');
-    bar.className = 'b5play';
-    bar.innerHTML = '<button type="button" data-a="toggle">Pause</button>'
-      + '<button type="button" data-a="rate">1x</button>'
-      + '<button type="button" data-a="stop">Stop</button>'
-      + '<span class="st" role="status" aria-live="polite"></span>';
-    document.body.appendChild(bar);
-    var status = bar.querySelector('.st');
-    var toggleBtn = bar.querySelector('[data-a="toggle"]');
-    var rateBtn = bar.querySelector('[data-a="rate"]');
-    rateBtn.textContent = rate + 'x';
-
-    function collect() {
-      var host = contentHost();
-      var out = [];
-      var nodes = host.querySelectorAll(READABLE);
-      [].forEach.call(nodes, function (n) {
-        if (chrome(n)) return;
-        if (!shown(n)) return;
-        /* innerText, not textContent. A link whose label and its sub-line are
-           separate elements reads as "Course scheduleEvery week" from
-           textContent, because nothing separates them. innerText respects the
-           rendered layout and puts a break between them. */
-        var raw = (typeof n.innerText === 'string' ? n.innerText : n.textContent) || '';
-        var t = raw
-          .replace(/[\u00B7\u2022\u2219]/g, ', ')      /* separator dots, read as pauses */
-          .replace(/[\u2192\u2190\u2191\u2193\u21B5]/g, ' ') /* arrows, decorative */
-          .replace(/[\u2713\u2714\u00D7\u2715]/g, ' ')        /* ticks and crosses */
-          .replace(/\s+/g, ' ')
-          .replace(/\s+,/g, ',')
-          .replace(/,\s*,/g, ',')
-          /* Section numbers sit in their own span inside the heading, so a
-             heading reads as "01Course identification". Put the pause back. */
-          .replace(/^(\d{1,2})(?=[A-Z])/, '$1. ')
-          .trim();
-        if (t.length < 2) return;
-        /* Split long paragraphs at sentence ends so pause responds quickly and the
-           highlight moves at a readable pace. */
-        if (t.length > 240) {
-          var parts = t.match(/[^.!?]+[.!?]*\s*/g) || [t];
-          var buf = '';
-          parts.forEach(function (piece) {
-            if ((buf + piece).length > 240 && buf) { out.push({ el: n, text: buf.trim() }); buf = piece; }
-            else buf += piece;
-          });
-          if (buf.trim()) out.push({ el: n, text: buf.trim() });
-        } else {
-          out.push({ el: n, text: t });
-        }
-      });
-      return out;
-    }
-
-    function clearMark() {
-      var m = document.querySelector('.b5read');
-      if (m) m.classList.remove('b5read');
-    }
-    function mark(el) {
-      clearMark();
-      if (!el) return;
-      el.classList.add('b5read');
-      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      try { el.scrollIntoView({ block: 'center', behavior: reduce ? 'auto' : 'smooth' }); } catch (e) {}
-    }
-
-    function speakNext() {
-      if (!playing || idx >= blocks.length) { finish(); return; }
-      var b = blocks[idx];
-      mark(b.el);
-      var u = new SpeechSynthesisUtterance(b.text);
-      u.rate = rate;
-      u.onend = function () { if (playing) { idx++; speakNext(); } };
-      u.onerror = function () { if (playing) { idx++; speakNext(); } };
-      window.speechSynthesis.speak(u);
-      status.textContent = 'Reading, part ' + (idx + 1) + ' of ' + blocks.length;
-    }
-
-    function start() {
-      blocks = collect();
-      if (!blocks.length) { status.textContent = 'Nothing to read on this page.'; return; }
-      idx = 0; playing = true; paused = false;
-      bar.classList.add('on');
-      toggleBtn.textContent = 'Pause';
-      btn.setAttribute('aria-pressed', 'true');
-      window.speechSynthesis.cancel();
-      speakNext();
-      /* Some browsers stop speaking after about fifteen seconds unless nudged. */
-      keep = setInterval(function () {
-        if (playing && !paused && window.speechSynthesis.speaking) {
-          window.speechSynthesis.pause(); window.speechSynthesis.resume();
-        }
-      }, 10000);
-    }
-
-    function finish() {
-      playing = false; paused = false;
-      clearMark(); clearInterval(keep);
-      window.speechSynthesis.cancel();
-      bar.classList.remove('on');
-      btn.setAttribute('aria-pressed', 'false');
-      status.textContent = '';
-    }
-
-    btn.addEventListener('click', function () { playing ? finish() : start(); });
-    bar.addEventListener('click', function (e) {
-      var a = e.target && e.target.getAttribute && e.target.getAttribute('data-a');
-      if (a === 'stop') { finish(); btn.focus(); }
-      else if (a === 'toggle') {
-        if (paused) { window.speechSynthesis.resume(); paused = false;
-          toggleBtn.textContent = 'Pause'; status.textContent = 'Reading again.'; }
-        else { window.speechSynthesis.pause(); paused = true;
-          toggleBtn.textContent = 'Play'; status.textContent = 'Paused.'; }
-      } else if (a === 'rate') {
-        var steps = [0.75, 1, 1.25, 1.5];
-        rate = steps[(steps.indexOf(rate) + 1) % steps.length];
-        rateBtn.textContent = rate + 'x';
-        try { localStorage.setItem('bio005-listen-rate', String(rate)); } catch (e2) {}
-        if (playing) { window.speechSynthesis.cancel(); speakNext(); }
-      }
-    });
-    window.addEventListener('pagehide', function () { try { window.speechSynthesis.cancel(); } catch (e) {} });
   }
 
   if (document.readyState === 'loading') {
