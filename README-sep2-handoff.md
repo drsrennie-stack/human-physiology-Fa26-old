@@ -313,3 +313,18 @@ completing PhysioEx; Pearson weeks render the PhysioEx-first order, the
 two-part credit rule, and the built worksheet button where one exists
 (weeks 2, 3, 11, 13, 15). Week 1 hub Lab step now opens the fluid balance
 lab; the kit's Week 1 extras carry it; the lab map records it.
+
+## course-materials.html Week 1 lab step, September 6
+
+Her live Course Tools page's lab step assumed PhysioEx in Week 1, linked raw
+pearson.com against the buy-one-way rule, and pointed its clinical
+correlations button at Week 3's osmosis lab. Rewritten for Week 1: label
+says no PhysioEx this week, the step is the standards and ranges lab (where
+reference ranges come from), with the fluid balance case second, the lab
+grading page, and the manual. The generic PhysioEx text belongs to Pearson
+weeks; when she makes this page week-switched, weeks 2 and up get the
+PhysioEx version back with Access Pearson in Canvas as the path, never
+pearson.com. Note: the step's old text said lab is ungraded for points,
+which contradicts Lab 15 percent in the syllabus; the rewrite stays silent
+on points and defers to the grading page, but she should reconcile that
+sentence wherever else it appears.
