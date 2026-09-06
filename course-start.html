@@ -421,6 +421,32 @@ footer :focus-visible{outline-color:var(--gold)}
     if (e) w.exam = { u:"syllabus-fall2026.html#exam-dates", t:e.t, d:e.d };
   });
 
+  /* ---- the four Physiology Learning Labs, Weeks 2 to 5 -------------
+     Each one carries its own paired discussion, sealed until the lab
+     work is saved, so for these four weeks the lab IS the discussion
+     slot rather than a second thing to do.
+
+     LABELLED BY WEEK, NEVER BY LAB NUMBER. These used to read
+     "Learning Lab 1" on Week 2, "Learning Lab 3" on Week 4 and so on,
+     which made students carry a second index that was always off by
+     one from the week they were actually in. Every assignment in this
+     course is "Week N <thing>". The labs are no exception. */
+  var LABS = {
+    2: "Reading a physiology figure or graph",
+    3: "Previewing an unfamiliar chapter",
+    4: "Spaced recall and the gap finder",
+    5: "Auditing AI on cell transport"
+  };
+  WEEKS.forEach(function(w){
+    var t = LABS[w.n];
+    if (!t) return;
+    w.discussion = {
+      u: "learning-lab.html?week=" + w.n,
+      t: "Week " + w.n + " Learning Lab, " + t.charAt(0).toLowerCase() + t.slice(1),
+      d: "Do the lab first. The discussion at the bottom unlocks once your answers are saved, because it asks for evidence from your own work."
+    };
+  });
+
   /* ---- which week is it ---- */
   var STARTS = [
     "2026-09-08","2026-09-14","2026-09-21","2026-09-28","2026-10-05","2026-10-12",

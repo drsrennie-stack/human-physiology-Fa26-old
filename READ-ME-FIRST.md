@@ -156,7 +156,82 @@ Also on the door:
   the rest of the site, where it is the only way to reach some tools. If you
   want it gone site-wide that is a separate call, say the word.
 
-### 7. Exam dates, set
+### 7. The four Learning Labs are wired in, with their iframes
+
+`learning-lab.html` was built and tested but never connected to anything. It is
+connected now, and **`CANVAS-IFRAME.txt`** in the root has every snippet ready
+to paste.
+
+The labs sit in the **discussion slot** of Weeks 2 to 5 on `course-start.html`,
+because each lab carries its own paired discussion at the bottom, sealed until
+the lab work is saved.
+
+Measured heights, at 820px wide:
+
+| Week | Lab | Sealed at load | Fully open | Use this height |
+|---|---|---|---|---|
+| 2 | Reading a physiology figure or graph | 4,383 | 6,629 | **6700** |
+| 3 | Previewing an unfamiliar chapter | 3,015 | 5,999 | **6050** |
+| 4 | Spaced recall and the gap finder | 2,928 | 5,867 | **5900** |
+| 5 | Auditing AI on cell transport | 4,637 | 7,824 | **7900** |
+
+The gap between those two columns is the thing to notice. The page grows as
+students save each part and the next one opens, so a height set from the
+first screen would cut the discussion off at exactly the moment they reach it.
+The snippets use the fully open number.
+
+Gating re-verified on all four: sealed at load, every part saves, the
+discussion opens only after the last one, no console errors.
+
+Two contrast misses turned up in the sealed part boxes, 6.74:1 and 6.88:1.
+Both clear AA, both miss AAA, and everything else in this build holds AAA, so
+inside a sealed box the maroon and the grey now step down to 8.95:1 and 7.70:1.
+
+**Week 2's discussion is wired in.** The lab shows a **Post in the Week 2
+discussion** button once the student finishes it, pointing at
+`/courses/42616/discussion_topics/712810`.
+
+Weeks 3, 4 and 5 have no link yet, so those labs show one short line saying it
+is coming rather than a button that goes nowhere. Send the three URLs and they
+become buttons. The map is one object near the top of the script, `DISC_URL`.
+
+**`CANVAS-IFRAME.txt` is now the whole semester**, 79 measured snippets: every
+week, every page type, plus the door, the week page and the competency list.
+
+### 8. Naming, fixed
+
+Two numbering systems were running at once and they disagreed. The lab page
+labelled itself by week, but `course-start.html` and the iframe file labelled
+the same thing "Learning Lab 1" on Week 2 and "Learning Lab 3" on Week 4. A
+student on the Week 4 page saw a 3.
+
+The lab sequence number is gone everywhere. **Every assignment in this course
+is "Week N <thing>"**, labs included, because the week is the only index
+students navigate by and each week holds different assignments.
+
+| Where | Now reads |
+|---|---|
+| Browser tab | Week 2 Learning Lab, Reading a Physiology Figure or Graph |
+| Page eyebrow | BIO 005 &middot; Week 2 &middot; Learning Lab |
+| Page heading | Reading a Physiology Figure or Graph |
+| Week list slot | Week 2 Learning Lab, reading a physiology figure or graph |
+
+Suggested Canvas titles, so the gradebook sorts the way the course runs:
+
+    Week 2 Learning Lab: Reading a Physiology Figure or Graph
+    Week 2 Discussion: Reading a Physiology Figure or Graph
+    Week 3 Learning Lab: Previewing an Unfamiliar Chapter
+    Week 3 Discussion: Previewing an Unfamiliar Chapter
+    Week 4 Learning Lab: Spaced Recall and the Gap Finder
+    Week 4 Discussion: Spaced Recall and the Gap Finder
+    Week 5 Learning Lab: Auditing AI on Cell Transport
+    Week 5 Discussion: Auditing AI on Cell Transport
+
+`canvas-week02-discussion.html` in this folder is the Week 2 discussion body,
+inline styled so Canvas will not strip it. Paste it into the discussion in the
+HTML editor.
+
+### 9. Exam dates, set
 
 | Exam | Covers | Opens | Closes |
 |---|---|---|---|
