@@ -6,7 +6,7 @@
  * A page can pass axe, pass contrast, pass reflow, and still fail a real
  * person. These are the ones that bite here: Windows High Contrast, text-only
  * zoom, and the icon tiles, whose background is a translucent wash over a
- * card colour and so is not the colour anyone wrote down.
+ * card color and so is not the color anyone wrote down.
  */
 const { chromium } = require('playwright');
 const path = require('path');

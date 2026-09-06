@@ -24,7 +24,7 @@ Target: WCAG 2.2 Level AA minimum, Level AAA where achievable.
 | 1.3.1 Info and relationships | A | Met | Semantic `main`, `nav`, `section`, `footer`. Every input has a `label` bound by `for` and `id`. Submitted answers render as `dl`, `dt`, `dd`. Order results use a definition list, not layout tables. |
 | 1.3.2 Meaningful sequence | A | Met | Single column DOM order matches visual order at every breakpoint. |
 | 1.3.5 Identify input purpose | AA | Met | `autocomplete="off"` on the name and code fields, which are not personal data fields in the autofill taxonomy. |
-| 1.4.1 Use of colour | A | Met | Week states are signalled by border style and text, not colour alone: locked is a dashed border, open is a solid border, submitted carries a text badge reading "Submitted". Order availability is signalled by button text ("Order", "Ordered", "Too costly"). |
+| 1.4.1 Use of color | A | Met | Week states are signaled by border style and text, not color alone: locked is a dashed border, open is a solid border, submitted carries a text badge reading "Submitted". Order availability is signaled by button text ("Order", "Ordered", "Too costly"). |
 | 1.4.3 Contrast minimum | AA | Met | See section 3. Lowest measured ratio in the interface is 7.39:1 against a 4.5:1 requirement. |
 | 1.4.4 Resize text | AA | Met | All sizing in rem and relative units. Verified legible and non overlapping at 200 percent zoom. |
 | 1.4.6 Contrast enhanced | AAA | Met | Every pair is at or above 7:1 for normal text and 4.5:1 for large text. |
@@ -53,7 +53,7 @@ Not applicable: 1.2.x (no audio or video), 1.4.2 (no audio), 2.2.x (no time limi
 
 ---
 
-## 3. Colour contrast audit
+## 3. Color contrast audit
 
 Every distinct foreground and background pair rendered by the interface, measured on computed styles in Chromium against the first opaque ancestor background. Sweep covers the gate, the week rail in all three states, the order menu expanded, the commit dialog, a revealed result, the drawing panel, and a submitted week.
 
@@ -98,7 +98,7 @@ Verified end to end in Chromium with the pointer unused except where noted.
 7. Commit dialog: opens with focus on the first textarea. Tab cycles within the dialog and does not escape to the page behind it. Escape closes it. Focus returns to the originating Order button. Character counters update in an `aria-live` region as the student types.
 8. Result: the "what did this change" textarea follows each result in DOM order. The order menu re opens as soon as the note passes 60 characters, live, without needing a blur.
 9. Drawing: tool buttons use `aria-pressed`. The description textarea follows the canvas.
-10. Synthesis: labelled select and textarea controls in visual order.
+10. Synthesis: labeled select and textarea controls in visual order.
 11. Close the week: the blocker list is `aria-live="polite"` and the Close button enables live as the last blocker clears.
 12. Save and hand in: Export PDF, Show save code, Copy code, Clear this browser. The two destructive actions require a second confirming click on the same button rather than a browser confirm dialog.
 
@@ -110,7 +110,7 @@ Verified end to end in Chromium with the pointer unused except where noted.
 
 Tested with the accessibility tree as exposed by Chromium, and by structural audit against the criteria above. Verified:
 
-- Landmarks: one `main`, a labelled `nav` for the weeks, a `footer`.
+- Landmarks: one `main`, a labeled `nav` for the weeks, a `footer`.
 - Heading hierarchy: h1 to h2 to h3 with no skipped level anywhere in any week or state.
 - Every form control resolves to an accessible name, checked programmatically across the gate, an open week, an expanded order menu, the commit dialog and a submitted week. Zero unnamed controls.
 - The canvas is announced as an image with a label that tells the user a written description is required below it.

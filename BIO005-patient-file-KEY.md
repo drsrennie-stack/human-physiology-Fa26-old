@@ -28,9 +28,9 @@ Master code, opens every week at once for your own review: `RENNIE-KEY-2026`
 
 ### Variant A. Marisol V., 34, warehouse order picker
 
-**Condition:** Iron deficiency anaemia from chronic occult gastrointestinal blood loss, aggravated by regular NSAID use
+**Condition:** Iron deficiency anemia from chronic occult gastrointestinal blood loss, aggravated by regular NSAID use
 
-**What it teaches:** Microcytic anaemia, oxygen delivery, iron balance, the difference between a low store and a low intake
+**What it teaches:** Microcytic anemia, oxygen delivery, iron balance, the difference between a low store and a low intake
 
 **Key abnormal results:**
 
@@ -120,7 +120,7 @@ Master code, opens every week at once for your own review: `RENNIE-KEY-2026`
 
 ### Variant D. Ruben A., 61, retired mail carrier
 
-**Condition:** Chronic kidney disease stage 3b with secondary hyperparathyroidism and anaemia of chronic kidney disease
+**Condition:** Chronic kidney disease stage 3b with secondary hyperparathyroidism and anemia of chronic kidney disease
 
 **What it teaches:** Glomerular filtration, mineral bone axis, non anion gap acidosis, erythropoietin
 
@@ -190,7 +190,7 @@ Master code, opens every week at once for your own review: `RENNIE-KEY-2026`
 - Forced vital capacity: 72 percent predicted  (ref over 80 percent predicted)
 - FEV1 to FVC ratio: 0.44  (ref over 0.70)
 - Diffusing capacity for carbon monoxide: 44 percent predicted  (ref over 80 percent predicted)
-- Six minute walk with oximetry: 210 metres with saturation falling from 89 to 82 percent.
+- Six minute walk with oximetry: 210 meters with saturation falling from 89 to 82 percent.
 - Twelve lead electrocardiogram: Sinus rhythm. Right axis deviation. Peaked P waves in lead two.
 - Echocardiogram with ejection fraction: Ejection fraction 60 percent. Right ventricle mildly dilated with elevated estimated pulmonary pressure.  (ref Ejection fraction 55 to 70 percent)
 - B type natriuretic peptide: 142 pg/mL  (ref under 100 pg/mL)
@@ -267,7 +267,7 @@ Master code, opens every week at once for your own review: `RENNIE-KEY-2026`
 - Arterial oxygen tension: 74 mmHg  (ref 80 to 100 mmHg)
 - Arterial bicarbonate, calculated: 22 mEq/L  (ref 22 to 26 mEq/L)
 - Lactate: 2.4 mmol/L  (ref 0.5 to 2.0 mmol/L)
-- Six minute walk with oximetry: 180 metres, stopped for breathlessness, saturation 91 percent.
+- Six minute walk with oximetry: 180 meters, stopped for breathlessness, saturation 91 percent.
 
 ### Variant H. Priya R., 29, veterinary technician
 

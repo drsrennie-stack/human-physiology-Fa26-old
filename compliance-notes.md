@@ -60,7 +60,7 @@ The video player is a YouTube embed. Captions are requested on load with `cc_loa
 | Footer `#C9CEDA` | Navy `#0B1530` | 11.45:1 | 4.5:1 | AAA |
 | Terra `#8B3A2E` | Navy-tint `#ECEFF4` | 6.64:1 | 3:1 (progress bar, non-text) | Pass |
 
-The muted grey `#4F576A` is the corrected value for the design system's `--navy-55`, which flattened to `#797E8D` at 4.05:1 and failed the AA floor.
+The muted gray `#4F576A` is the corrected value for the design system's `--navy-55`, which flattened to `#797E8D` at 4.05:1 and failed the AA floor.
 
 ---
 

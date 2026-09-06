@@ -28,9 +28,9 @@ against the surfaces this system renders: the deck view, the focus stage
 | Criterion | Level | Status |
 |---|---|---|
 | 1.1.1 Non-text content | A | Pass. The flag glyph and the close glyph are `aria-hidden` and both buttons carry text or an `aria-label`. The DOK numeral tile is `aria-hidden`; the level is also written in words next to it. |
-| 1.3.1 Info and relationships | A | Pass. Semantic `article`, `header`, `h2`, `h3`, `ol`/`li` for options, `section` per note sheet group. Confidence buttons are a labelled `role="group"`. |
+| 1.3.1 Info and relationships | A | Pass. Semantic `article`, `header`, `h2`, `h3`, `ol`/`li` for options, `section` per note sheet group. Confidence buttons are a labeled `role="group"`. |
 | 1.3.2 Meaningful sequence | A | Pass. DOM order matches reading order on every surface. |
-| 1.4.1 Use of colour | A | Pass. Correct and incorrect options carry generated text ("correct", "what you picked") as well as colour, and the verdict is stated in words. |
+| 1.4.1 Use of color | A | Pass. Correct and incorrect options carry generated text ("correct", "what you picked") as well as color, and the verdict is stated in words. |
 | 1.4.3 Contrast (minimum) | AA | Pass, and exceeded. See section 3. |
 | 1.4.6 Contrast (enhanced) | AAA | Pass on body text on every surface. See section 3. |
 | 1.4.10 Reflow | AA | Pass. Card is fluid to a 640px cap, stage scrolls vertically, no horizontal scroll at 320px. Under 560px the flag button drops its text label to the accessible name only. |
@@ -46,7 +46,7 @@ against the surfaces this system renders: the deck view, the focus stage
 | 2.5.8 Target size (minimum) | AA | Pass. Every interactive control is at least 44px in its smaller dimension, above the 24px floor. |
 | 3.2.2 On input | A | Pass. Changing a filter rebuilds the queue and returns the student to the deck view. No control changes context unannounced. |
 | 3.3.1 Error identification | A | Not applicable. No forms to submit. |
-| 4.1.2 Name, role, value | A | Pass. The flag button carries `aria-pressed` and updates it. The stage is `role="dialog" aria-modal="true"` labelled by the question. |
+| 4.1.2 Name, role, value | A | Pass. The flag button carries `aria-pressed` and updates it. The stage is `role="dialog" aria-modal="true"` labeled by the question. |
 | 4.1.3 Status messages | AA | Pass. `role="status" aria-live="polite"` carries the verdict, the answer, the red flag, and the explanation as text. |
 
 **Where AAA is not met.** 2.4.9 Link purpose (link only) and 3.1.5 Reading
@@ -89,7 +89,7 @@ as much as a usability one: it penalised imprecise pointing.
 
 ---
 
-## 3. Colour contrast audit
+## 3. Color contrast audit
 
 Measured in a headless Chromium against computed styles, using the WCAG
 relative luminance formula. Every pair below is a real rendered pair, not a
@@ -97,7 +97,7 @@ palette assumption.
 
 ### The card, maroon shell (`#7A2A22`)
 
-The card changed colour from navy to maroon after the Module 1 review. The
+The card changed color from navy to maroon after the Module 1 review. The
 lighter terras in the palette were measured and rejected: `#C2734D` gives
 3.6:1 against white and `#A0522D` gives 5.6:1, so neither can carry body text
 at AAA. `#7A2A22` is already in the OS palette and gives 9.6:1.
@@ -114,7 +114,7 @@ at AAA. `#7A2A22` is already in the OS palette and gives 9.6:1.
 
 The one AA rather than AAA pair is the gold on maroon at 6.2:1, used for the
 DOK 2 label and the flag button. Both are bold, and the flag button also
-carries a border at the same colour, so it clears the 4.5:1 floor with room.
+carries a border at the same color, so it clears the 4.5:1 floor with room.
 Pushing it to AAA would mean a paler gold that stops reading as gold.
 
 ### The card, white face (`#FFFFFF`)
@@ -151,10 +151,10 @@ identifies the panel non-visually is its 4px left border at 9.6:1, its
 heading, and the fact that its content is announced through the live region
 regardless.
 
-**Selection is not signalled by colour alone.** A picked option carries a 2px
+**Selection is not signaled by color alone.** A picked option carries a 2px
 border, a 4px inset left bar, bold weight, and the generated text "your pick".
 After submitting, "correct" and "what you picked" are likewise generated text,
-not colour.
+not color.
 
 ### The note sheet (screen and print)
 
@@ -241,7 +241,7 @@ part of `tools/test_recall.js`.
 - On submitting, the live region announces in this order: the verdict, the
   correct answer in words, the red flag if one fired, and the explanation.
   This is the entire teaching content, so the correction does not depend on
-  seeing the coloured panel.
+  seeing the colored panel.
 - The live region is visually hidden with a clip technique, not
   `display:none`, so it stays in the accessibility tree and is announced. It
   is hidden visually because the same text is already rendered in the verdict
@@ -250,10 +250,10 @@ part of `tools/test_recall.js`.
 - The note sheet reads as nested landmarks: heading, then one section per
   competency, then one article per card.
 
-**Known reader behaviour, not a defect.** The explanation can be long, and a
+**Known reader behavior, not a defect.** The explanation can be long, and a
 verbose reader setting will read the whole live region announcement before the
 user can move on. Interrupting with any navigation key stops it, which is
-normal live-region behaviour.
+normal live-region behavior.
 
 ---
 
@@ -263,7 +263,7 @@ normal live-region behaviour.
    `compliance-notes.md` lists the outstanding items: contrast across the dark
    application surface generally, keyboard operability of the onboarding
    carousel, the focus session modal, the Course tools dock and Ask Hootie,
-   and screen reader behaviour on the Today view. This document covers the
+   and screen reader behavior on the Today view. This document covers the
    Recall system only. Until the OS audit is done, the accessible path through
    the course remains `index.html`, `competency-study-guide.html`,
    `competency-recall.html` and `course-schedule.html`.
@@ -291,7 +291,7 @@ normal live-region behaviour.
    it. If that becomes a complaint, splitting the bank per module and loading
    on demand is the fix.
 
-6. **Colour is used to distinguish DOK level** on the badge. It is never the
+6. **Color is used to distinguish DOK level** on the badge. It is never the
    only signal: the level is written in words beside the numeral, and the
    numeral itself is in the badge.
 
@@ -301,7 +301,7 @@ normal live-region behaviour.
 
 Worth recording because a reviewer will ask and it is not a WCAG criterion.
 
-- Every card is self-contained text. No card depends on a figure, a colour, or
+- Every card is self-contained text. No card depends on a figure, a color, or
   a diagram the student has to see, which is what makes the whole bank usable
   by a screen reader user without alternative material.
 - Chemistry and units are plain ASCII (`Na+`, `Ca2+`, `HCO3-`, `37 C`,

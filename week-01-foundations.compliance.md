@@ -23,7 +23,7 @@ Target: WCAG 2.2 Level AA minimum, Level AAA where achievable.
 | 1.1.1 Non text content | A | Pass | Every SVG carries `role="img"` and an `aria-label` that describes the shape and the landmark values, not just the title. The oxygen curve, both posture traces and the logo are the only images, and all four are inline SVG. |
 | 1.3.1 Info and relationships | A | Pass | Semantic `header`, `nav`, `main`, `footer`, `section`, `figure` and `figcaption`. Every table uses `thead`, `th scope="col"` and a `caption`. |
 | 1.3.2 Meaningful sequence | A | Pass | Single column reading order in every panel. Nothing is positioned out of flow. |
-| 1.4.1 Use of colour | A | Pass | Correct and incorrect answers change their wording, not only their colour. Table flags read the words Yes and No. A filled drop box shows the label text, not just a colour change. |
+| 1.4.1 Use of color | A | Pass | Correct and incorrect answers change their wording, not only their color. Table flags read the words Yes and No. A filled drop box shows the label text, not just a color change. |
 | 1.4.3 Contrast, minimum | AA | Pass | See section 3. |
 | 1.4.6 Contrast, enhanced | AAA | Pass with one exception | Every text pair reaches 7:1 except the gold eyebrow on the maroon header at 5.75:1, which meets AA. |
 | 1.4.10 Reflow | AA | Pass | Fluid grids throughout. Every table and every calculation grid scrolls inside its own container, so the page body never scrolls sideways. |
@@ -49,7 +49,7 @@ Target: WCAG 2.2 Level AA minimum, Level AAA where achievable.
 | 3.3.5 Help | AAA | Pass | A worked step that has been missed twice says the method is coming. On the third miss it explains how the step works, in words, without ever printing the value. |
 | 2.2.1 Timing adjustable | A | Pass | Nothing in the walkthrough is timed. A step waits indefinitely, and a wrong answer costs nothing but another attempt. |
 
-## 3. Colour contrast audit
+## 3. Color contrast audit
 
 | Use | Foreground on background | Ratio | Result |
 |---|---|---|---|
@@ -93,7 +93,7 @@ The page background is off-white `#FAFAF9` and every card is white, so cards are
 
 What this changed, and why it matters for accessibility rather than only for looks:
 
-- **Nothing is identified by colour alone.** The predict and check cards used to be told apart by a gold outline against a grey one. They are now told apart by the words on their badges, Predict first and Now check it, which works for a screen reader and for a monochrome print.
+- **Nothing is identified by color alone.** The predict and check cards used to be told apart by a gold outline against a gray one. They are now told apart by the words on their badges, Predict first and Now check it, which works for a screen reader and for a monochrome print.
 - **Motion is bounded.** Every lift is a 2px translate over 200ms, and the existing `prefers-reduced-motion` block reduces all of it to effectively zero.
 - **Print is flat.** All shadows and transforms are removed in print, so the submitted PDF carries no rendering weight it does not need.
 - **A spent control retires rather than greys out.** The button that opens a check becomes a quiet outline with a downward arrow instead of a 45 percent opacity disabled button, so its label stays readable at full contrast after it has been used.
@@ -111,7 +111,7 @@ Two components were added to make a student do the intermediate thinking. Both w
 - Wrong answers are named, not just marked. A student who halves the gap instead of taking a third is told that is what they did. After two misses the page says help is coming; after three it explains the method in words and still never prints the value.
 - Nothing is timed and nothing is capped. There is no attempt limit and no lockout, which matters for anyone who works slowly or is using assistive technology.
 
-**Eliminate.** After choosing an answer, the student says what is wrong with each option they did not choose, using a labelled `select` per option. Each select has a visually hidden `label` naming which option it belongs to, and the reason list contains decoys that fit nothing, so the task cannot be completed by elimination alone. The second half runs whether the first answer was right or wrong, because the reasoning is the point either way.
+**Eliminate.** After choosing an answer, the student says what is wrong with each option they did not choose, using a labeled `select` per option. Each select has a visually hidden `label` naming which option it belongs to, and the reason list contains decoys that fit nothing, so the task cannot be completed by elimination alone. The second half runs whether the first answer was right or wrong, because the reasoning is the point either way.
 
 **On the anti-shortcut layer.** The design deliberately stops short of copy blocking. Blocking selection would obstruct a student using a screen reader, a magnifier, or a translation tool far more than it would obstruct anyone determined to route around the work. What is used instead is that the answers are not in the page at all, that every student's numbers differ, and that decoy readings from other patients sit alongside the real one with nothing in the markup to distinguish them. A student who photographs their own screen can still get an AI to do the arithmetic. What they cannot do is enter the result, because the boxes above it are still shut.
 
@@ -148,8 +148,8 @@ The two calculated rows stay locked until the student has proved those values in
 8. **Posture runs.** Each patient version is a button. The traces update, and the numbers above them are read out.
 9. **Rosa's walkthrough.** Each step's input and its check button sit in reading order. `Enter` in the field checks it. When a step passes, focus moves to the next field and a live region announces which step just opened. A locked field is reachable but disabled, and the sentence next to it says what has to happen first.
 10. **Eliminate.** Each distractor's `select` is a standard control with a visually hidden label naming its option. Choosing a reason announces the result in the row's own live region without moving focus.
-11. **The chart.** Every value field and every reading `select` is a standard labelled control in reading order. A failed check moves focus to the first problem row and writes the reason into a row directly beneath it, so a screen reader reaches the explanation immediately after the control it belongs to.
-12. **The note.** Checkboxes in a labelled group per section; the "nothing pertinent" box clears the others and they clear it, so the two can never both be set.
+11. **The chart.** Every value field and every reading `select` is a standard labeled control in reading order. A failed check moves focus to the first problem row and writes the reason into a row directly beneath it, so a screen reader reaches the explanation immediately after the control it belongs to.
+12. **The note.** Checkboxes in a labeled group per section; the "nothing pertinent" box clears the others and they clear it, so the two can never both be set.
 13. **Results page.** Three text inputs with visible labels, then the save button.
 
 No element is reachable but inoperable, and nothing on the page is operable by pointer only.

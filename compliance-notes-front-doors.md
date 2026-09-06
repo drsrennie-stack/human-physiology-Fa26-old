@@ -24,7 +24,7 @@ Generated from real browser runs: `a11y-report.js`, `level2-audit.js` and
 | Targets under 44px | 0 | 0 |
 | Horizontal scroll at 320px | none | none |
 | Lowest text contrast | **7.46:1** | 7.46:1 |
-| Colour pairs below AAA | 0 | 0 |
+| Color pairs below AAA | 0 | 0 |
 | Icon tiles below 3:1 | 0 | 0 |
 | Windows High Contrast | passes | passes |
 | Text-only zoom to 200% | no scroll, nothing clipped | same |
@@ -61,7 +61,7 @@ version in `index.html` has no opacity and is correct. There is none here.
 
 ---
 
-## 3. Colour contrast, measured on the rendered page
+## 3. Color contrast, measured on the rendered page
 
 | Foreground | Background | Size / weight | Ratio | Size class | Level |
 |---|---|---|---|---|---|
@@ -79,11 +79,11 @@ for normal text, not just for large.
 
 ### The icon tiles, composited
 
-Each tile is a translucent wash over its card colour, so its real colour is not
+Each tile is a translucent wash over its card color, so its real color is not
 a value anyone wrote down. `hard-audit.js` composites the alpha down and
 measures the glyph against the result:
 
-| Card | Card colour | Tile, composited | Glyph | Body | Go line |
+| Card | Card color | Tile, composited | Glyph | Body | Go line |
 |---|---|---|---|---|---|
 | Enter the course | `#C9A14A` | `#B29047` | 5.99:1 | 7.46:1 | 7.46:1 |
 | Lab | `#0B1530` | `#373F55` | 10.48:1 | 18.04:1 | 18.04:1 |
@@ -91,9 +91,9 @@ measures the glyph against the result:
 | Study | `#C9A14A` | `#B29047` | 5.99:1 | 7.46:1 | 7.46:1 |
 | Syllabus and schedule | `#1F2D44` | `#475366` | 7.79:1 | 13.84:1 | 13.84:1 |
 
-Every glyph clears the 3:1 in 1.4.11 with room, and the glyph colour is never
+Every glyph clears the 3:1 in 1.4.11 with room, and the glyph color is never
 hard-coded: `.cat .ic svg * { stroke: var(--fg) }` ties it to the card's own
-text colour, so it cannot drift if a card is recoloured.
+text color, so it cannot drift if a card is recoloured.
 
 ---
 
@@ -101,16 +101,16 @@ text colour, so it cannot drift if a card is recoloured.
 
 These cards carry `border:none` and say everything with a solid background. In
 `forced-colors: active` the background is replaced, so all five would become
-the colour of the page and stop existing as objects. The shadow goes too, since
+the color of the page and stop existing as objects. The shadow goes too, since
 shadows are dropped, so the lift that separates them from the page goes with
 it.
 
 A `@media (forced-colors: active)` block gives every card a 2px `ButtonBorder`,
 every icon tile a border, and every label `ButtonText`, with `Highlight` on
-hover and focus. System colours only: a hex here is either ignored or honoured,
+hover and focus. System colors only: a hex here is either ignored or honoured,
 and honoured is worse, because it fights the scheme the reader chose.
 
-Verified by rendering with forced colours on, at both levels. `hard-audit.js`
+Verified by rendering with forced colors on, at both levels. `hard-audit.js`
 checks it on every run and fails the build if a card loses its border.
 
 ---
@@ -166,7 +166,7 @@ without their 214px floor, grid two-up sooner) purely to close that gap. At
 full size it wanted 1915px on a phone. Nothing is removed; it is the same five
 cards.
 
-It also centres itself in the frame with `safe` centring, so spare height is
+It also centers itself in the frame with `safe` centering, so spare height is
 even padding rather than a gap, and a narrow device is top-aligned rather than
 pushed off the top. Verified at 320, 390, 560, 900 and 1200px on both levels:
 no scrollbar inside the frame.

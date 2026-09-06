@@ -105,7 +105,7 @@ than being withheld, and gives six things that are open every day of the term: t
 OS, the competency study guide, the lab manual, the course schedule, the course home and the
 site map.
 
-Times are shown as Pacific and labelled Pacific, not translated into the student's device
+Times are shown as Pacific and labeled Pacific, not translated into the student's device
 timezone, so everyone in the class is reading the same clock Canvas uses.
 
 Nothing else is gated. The recall cards, the OS, the study guide, the syllabus, the schedule
@@ -153,8 +153,8 @@ locked week pages, the site map and the 404: **zero violations**.
 Contrast, all AAA: back bar text 11.49:1, back bar link 10.16:1, footer link 18.34:1,
 footer body 11.24:1, white on maroon 9.63:1, eyebrow on maroon 7.05:1.
 
-The breadcrumb is a `nav` labelled Breadcrumb holding an ordered list with the current page
-marked `aria-current="page"`. The footer is a `footer` landmark holding a `nav` labelled
+The breadcrumb is a `nav` labeled Breadcrumb holding an ordered list with the current page
+marked `aria-current="page"`. The footer is a `footer` landmark holding a `nav` labeled
 Site. A skip link is added to any page that lacked one. Focus is visible at 3px gold. Motion
 respects prefers-reduced-motion. Navigation is hidden in print.
 

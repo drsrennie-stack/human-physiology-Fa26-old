@@ -62,7 +62,7 @@ violations. Every page has a language, a title, a skip link and a main landmark.
 
 The reading was tested on the course home, a locked week page, the syllabus, the
 accessibility page and the CBC lab. No navigation or footer text leaks into what is read.
-The highlight colour measures 10.16 to 1 against the text on it, which is AAA.
+The highlight color measures 10.16 to 1 against the text on it, which is AAA.
 
 ## One thing that is deliberate
 

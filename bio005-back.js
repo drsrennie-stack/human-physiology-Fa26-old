@@ -21,7 +21,7 @@
      1. Came from another page on this site  -> back to that page,
         named. "Back to the lab report instructions", not "Back".
      2. Came from Canvas                     -> back to Canvas.
-     3. Came from nowhere we recognise, or a
+     3. Came from nowhere we recognize, or a
         fresh tab with no history            -> the course tools hub,
         which is the one page everything else hangs off.
 

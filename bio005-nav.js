@@ -236,7 +236,7 @@
   + '.b5nav-back:hover{transform:translateY(-2px);box-shadow:0 8px 16px rgba(0,0,0,.10);text-decoration:none}'
   + '.b5nav-back:focus-visible{outline:3px solid #B8924A;outline-offset:2px}'
   /* A quiet strip, not a slab. The first version stood 297px tall on the
-     course home with its links wrapping onto three centred lines, and on a
+     course home with its links wrapping onto three centered lines, and on a
      wide screen it got caught in the hero's layout and sat beside the
      headline. It is now one left aligned row that clears everything above it
      and cannot become a column of somebody else's grid. */

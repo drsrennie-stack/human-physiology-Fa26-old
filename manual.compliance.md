@@ -21,7 +21,7 @@ Target: WCAG 2.2 Level AA minimum, Level AAA where achievable.
 | 1.1.1 Non text content | A | Pass | The only image is the course logo, an inline SVG with `role="img"` and an `aria-label`. Everything else is text. |
 | 1.3.1 Info and relationships | A | Pass | Semantic `header`, `nav`, `main`, `section`, `footer`. All 46 tables use `thead`, `th` and a `caption`. The two per-week summary tables carry visually hidden captions so a screen reader can tell the time budget from the deliverables. |
 | 1.3.2 Meaningful sequence | A | Pass | Single column reading order. Nothing is positioned out of flow. |
-| 1.4.1 Use of colour | A | Pass | Exercise steps carry the words Do, Record and Explain, not just a coloured pill. The optional bench version is labelled in words. |
+| 1.4.1 Use of color | A | Pass | Exercise steps carry the words Do, Record and Explain, not just a colored pill. The optional bench version is labeled in words. |
 | 1.4.3 Contrast, minimum | AA | Pass | See section 3. |
 | 1.4.6 Contrast, enhanced | AAA | Pass with one exception | Every text pair reaches 7:1 except the gold eyebrow on the maroon header at 5.75:1, which meets AA. |
 | 1.4.10 Reflow | AA | Pass | Fluid grids, contents list collapses to one column under 680px, every table scrolls inside its own container so the page body never scrolls sideways. |
@@ -39,7 +39,7 @@ Target: WCAG 2.2 Level AA minimum, Level AAA where achievable.
 | 3.2.4 Consistent identification | AA | Pass | Do, Record and Explain mean the same thing in all 42 exercises. |
 | 4.1.2 Name, role, value | A | Pass | Info buttons use `aria-expanded` and `aria-controls` pointing at the block they reveal. The master toggle uses `aria-pressed` and updates its own label. |
 
-## 3. Colour contrast audit
+## 3. Color contrast audit
 
 | Use | Foreground on background | Ratio | Result |
 |---|---|---|---|

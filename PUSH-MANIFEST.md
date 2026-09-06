@@ -22,7 +22,7 @@ tile is now live instead of greyed out.
 
 ### Finished tools were sitting behind "coming soon"
 These tiles pointed at pages that already exist, but were flagged as not built yet, so
-students saw a grey square they could not click:
+students saw a gray square they could not click:
 
 | Tile | Now points at |
 |---|---|

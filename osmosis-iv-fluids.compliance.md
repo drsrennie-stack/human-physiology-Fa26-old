@@ -45,7 +45,7 @@ Eight scenarios were run against independent hand calculation. All eight agreed 
 | Scenario | Model output | Hand calculation |
 |---|---|---|
 | 70 kg man, Na 140, 1 L of 0.9% NaCl | ICF −0.05 L, ECF +1.05 L, Na +0.3 | ICF essentially unchanged, ECF +1.05, Na +0.33 |
-| 70 kg man, Na 140, 1 L of D5W | ICF +0.67 L, ECF +0.33 L, Na −3.3 | Two thirds and one third of a litre, Na −3.26 |
+| 70 kg man, Na 140, 1 L of D5W | ICF +0.67 L, ECF +0.33 L, Na −3.3 | Two thirds and one third of a liter, Na −3.26 |
 | 70 kg man, Na 140, 1 L of 3% NaCl | ICF −1.60 L, ECF +2.60 L, Na +8.7 | ICF −1.60, ECF +2.60, Na +8.67 |
 | 70 kg man, Na 140, 1 L of 0.45% NaCl | ICF +0.30 L, ECF +0.70 L | ICF +0.31, ECF +0.69 |
 | Order 4, 58 kg woman, Na 112, 1 L of 3% over 4 h | Na +13.4, rate flag fires | (513 − 112) ÷ 30 = 13.4 |
@@ -55,7 +55,7 @@ Eight scenarios were run against independent hand calculation. All eight agreed 
 
 Two wording corrections were made during this pass. Normal saline was being reported as hypertonic to a patient with a normal osmolarity, which is arithmetically true at 308 against 285 and pedagogically misleading, so the isotonic band was widened to 35 mOsm and the line now says plainly that tonicity is relative to the patient rather than a property of the bag. The corrected sodium line was firing on a glucose of 102 and reporting a correction of zero, so it now appears only above 150.
 
-The limits of the model are stated on the page itself, in section 4, rather than left for a student to discover: no renal excretion, a fixed one quarter plasma share of the extracellular space, no oncotic modelling, and no judgment about tolerance.
+The limits of the model are stated on the page itself, in section 4, rather than left for a student to discover: no renal excretion, a fixed one quarter plasma share of the extracellular space, no oncotic modeling, and no judgment about tolerance.
 
 ---
 

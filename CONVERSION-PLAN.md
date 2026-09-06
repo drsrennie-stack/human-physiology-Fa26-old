@@ -53,7 +53,7 @@ That is 19. Doubling it covers the term with room for the ones you know students
 
 **Recommendation: keep them exactly as they are, for anatomy review, and do not try to convert any of them.**
 
-Built as `anatomy-review.html` in this repo. It carries the whole bank, has its own spacing engine and its own storage keys, and is clearly labelled optional and not graded.
+Built as `anatomy-review.html` in this repo. It carries the whole bank, has its own spacing engine and its own storage keys, and is clearly labeled optional and not graded.
 
 **The part that matters:** answering an anatomy card must never move a physiology mastery bar. A student reviewing the brachial plexus has not learned anything about glomerular filtration, and an app that says otherwise is lying to them at the exact moment they are trusting it to tell them what to study. That is why the deck has its own engine rather than a mode flag on the physiology one. Two engines and two keys cannot cross. One engine with a flag is one bug away from it. Verified: with physiology progress seeded, working the anatomy deck leaves every physiology key untouched.
 

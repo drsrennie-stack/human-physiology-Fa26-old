@@ -18,7 +18,7 @@ Every week runs the same six steps.
 3. **Commit before each reveal.** Choosing a test opens a dialog: what do you expect and why, which order are you giving up to place this one, and why this rather than that. The result is not in the page until they submit. Then it appears.
 4. **Log what changed.** The order menu closes until they write what the last result changed. No shotgunning.
 5. **Draw.** In browser with pen, thick pen, and eraser, or on paper and photographed. Either way they must also write the figure in words, which is both the accessible equivalent and a second piece of evidence.
-6. **Synthesise and close.** Pull down menus force a commitment, the written prompts ask for the mechanism. The week locks and prints.
+6. **Synthesize and close.** Pull down menus force a commitment, the written prompts ask for the mechanism. The week locks and prints.
 
 ---
 
@@ -28,11 +28,11 @@ I want to be straight with you about what this does and does not do, because the
 
 **What it genuinely defeats.** The prediction has to be written before the data exists. There is nothing on the page to screenshot at that moment, because the result has not been rendered and is not in the document. A student who pastes the page into a chatbot at step one gets a page with no results on it. That is the single strongest mechanic here, and it is the one your instruction pointed at.
 
-**What it makes expensive.** The budget means every order costs something, so "ask for everything and let the machine sort it" does not work. The give up field forces an explicit trade, which is a judgement a model cannot make for them without knowing what they have already spent. The eight variants mean an answer shared in a group chat is wrong for seven students out of eight. The timestamps show the order in which decisions were actually made.
+**What it makes expensive.** The budget means every order costs something, so "ask for everything and let the machine sort it" does not work. The give up field forces an explicit trade, which is a judgment a model cannot make for them without knowing what they have already spent. The eight variants mean an answer shared in a group chat is wrong for seven students out of eight. The timestamps show the order in which decisions were actually made.
 
 **What it does not do.** The results are obfuscated in the file rather than encrypted, so a determined student who opens the source and works at it can extract the value table. That raises the effort well above copy and paste, but it is not a lock. And no mechanism stops a student from writing a prediction with a chatbot's help. What you are grading is the fit between the prediction, the order sequence, and the revision, across fifteen weeks. That coherence is hard to fake and easy to see when it is faked, which is why the rubric below puts most of the weight there.
 
-If you want a harder guarantee later, the honest answer is a short oral defence in Week 15 rather than a stronger file.
+If you want a harder guarantee later, the honest answer is a short oral defense in Week 15 rather than a stronger file.
 
 ---
 
@@ -70,7 +70,7 @@ Each condition was chosen because it surfaces across several systems over severa
 
 | ID | Patient | Hidden condition | What it teaches |
 |---|---|---|---|
-| A | Marisol V., 34, warehouse picker | Iron deficiency anaemia from chronic occult gastrointestinal blood loss, aggravated by daily NSAID use | Microcytic anaemia, oxygen delivery, iron balance, low store against low intake |
+| A | Marisol V., 34, warehouse picker | Iron deficiency anemia from chronic occult gastrointestinal blood loss, aggravated by daily NSAID use | Microcytic anemia, oxygen delivery, iron balance, low store against low intake |
 | B | Dana W., 47, bookkeeper | Primary hypothyroidism, Hashimoto thyroiditis, with hyponatraemia and myopathy | Axis localisation, basal metabolic rate, why a hormone value without its tropic hormone says nothing |
 | C | Theo G., 19, student | New onset type 1 diabetes with early ketoacidosis | Osmolarity, anion gap acidosis, respiratory compensation, fuel metabolism without insulin |
 | D | Ruben A., 61, retired mail carrier | Chronic kidney disease stage 3b with secondary hyperparathyroidism | Filtration, mineral bone axis, non gap acidosis, erythropoietin |

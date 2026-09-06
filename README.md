@@ -14,14 +14,14 @@ rest    0 14px 30px rgba(11,21,48,.18)
 hover   translateY(-6px), 0 26px 50px rgba(11,21,48,.28)
 ```
 
-Colours are yours too: `#0B1530` ink, `#8B3A2E` rust, `#C9A14A` gold,
+Colors are yours too: `#0B1530` ink, `#8B3A2E` rust, `#C9A14A` gold,
 `#1F2D44` slate, on white.
 
 ## One door, then four
 
 Level one is one gold card. Opening it swaps to the four.
 
-| Card | Colour | Goes to |
+| Card | Color | Goes to |
 |---|---|---|
 | Lab | ink | `lab-sprints.html` |
 | Lecture | rust | `course-materials.html` |
@@ -42,7 +42,7 @@ the same one-line fix if students ever land there.
 **Windows High Contrast erased the cards.** These carry `border:none` and say
 everything with a solid background. In forced-colors mode backgrounds are
 replaced and shadows dropped, so all five cards become the page and vanish as
-objects. A `forced-colors` block using system colours gives every card and icon
+objects. A `forced-colors` block using system colors gives every card and icon
 tile a real border. Checked on every run by `hard-audit.js`.
 
 ## Numbers

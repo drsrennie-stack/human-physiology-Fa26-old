@@ -20,7 +20,7 @@ Aug 23 2026. **Complete. 4,980 cards, all 268 competencies, all five modules.**
 
 The repo carried two competency sets that disagreed. `bio005-competencies.js`
 held the superseded 137 with `m1-*` ids. `bio005-competencies.csv` next to it
-held the 268 with `w1-*` ids. PLACEHOLDERS item B resolved that in favour of
+held the 268 with `w1-*` ids. PLACEHOLDERS item B resolved that in favor of
 268, but only the CSV was ever updated, so the file the OS actually loads was
 still the old one.
 
@@ -197,7 +197,7 @@ competency with 8 DOK 1, 7 DOK 2 and 4 DOK 3 cards:
 - Three DOK 1 cards holding, and the deal becomes **15**. DOK 2 opened, DOK 3
   did not.
 - Three DOK 2 cards holding, and the deal becomes **19**. DOK 3 opened.
-- Doing that to one competency leaves its neighbour still gated at 8, so the
+- Doing that to one competency leaves its neighbor still gated at 8, so the
   gate is genuinely per competency and does not leak.
 - The override widens the week 1 pool from 154 to 360.
 - Every card carries topic, DOK, week, yield and tags: 4,980 of 4,980.

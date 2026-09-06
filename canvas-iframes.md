@@ -8,7 +8,7 @@ up with the course loaded inside the course.
 bottom right to switch to HTML view, paste, then switch back and save.
 
 **Always keep the fallback link.** Canvas iframes fail on locked-down school
-networks and inside the Canvas mobile app. A student who sees an empty grey box
+networks and inside the Canvas mobile app. A student who sees an empty gray box
 does not email you, they just skip the work.
 
 Base URL for everything: `https://drsrennie-stack.github.io/human-physiology-Fa26/`

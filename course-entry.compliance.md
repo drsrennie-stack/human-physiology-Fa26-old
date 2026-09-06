@@ -150,7 +150,7 @@ Verified behaviors:
 
 ## 5. Screen reader testing
 
-**What has been verified, and by what:** the semantic structure, accessible names, roles, dialog labelling, and the live region were verified with axe-core against the rendered DOM in all four states, plus a manual read of the accessibility tree. Landmarks resolve as `main` and `complementary`. The heading outline is a single `h1`, then `h2` on the rail, then one `h3` per dialog, with no skipped levels.
+**What has been verified, and by what:** the semantic structure, accessible names, roles, dialog labeling, and the live region were verified with axe-core against the rendered DOM in all four states, plus a manual read of the accessibility tree. Landmarks resolve as `main` and `complementary`. The heading outline is a single `h1`, then `h2` on the rail, then one `h3` per dialog, with no skipped levels.
 
 **What has not been done yet:** no run through NVDA, JAWS, or VoiceOver with a live voice. That is a human pass and it should happen before students land on this page, ideally on the live GitHub Pages URL and again inside the Canvas iframe. Five things to listen for:
 

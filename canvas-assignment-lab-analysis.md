@@ -49,7 +49,7 @@ to the week you are building.
 ```
 
 The fallback link is not optional. Canvas iframes fail for students on locked-down
-school networks and in the Canvas mobile app, and a student who sees an empty grey
+school networks and in the Canvas mobile app, and a student who sees an empty gray
 box does not email you, they just skip the assignment.
 
 The instructions page already handles the three weeks with no PhysioEx on its own,

@@ -34,7 +34,7 @@ Copy the five `compliance/*.compliance.md` files into **`compliance/`**. `compli
 
 **Starting values are a list, not a paragraph.** Worked examples now open with each value in its own labeled box rather than a run-on sentence of data.
 
-**American spelling.** 197 British spellings were converted across the decks, the patient file, the compliance documents and the instructor guide. Not memorise, hemoglobin not haemoglobin, edema not oedema, liter not litre, labeled not labelled.
+**American spelling.** 197 British spellings were converted across the decks, the patient file, the compliance documents and the instructor guide. Not memorize, hemoglobin not hemoglobin, edema not edema, liter not liter, labeled not labeled.
 
 **No accent bars.** The lab annotation had a four pixel gold edge. It is now a plain one pixel border. The same bar is gone from the patient file's note block.
 

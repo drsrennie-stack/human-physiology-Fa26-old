@@ -64,7 +64,7 @@ Solid white background, pure #FFFFFF, edge to edge.
 Outlines in dark navy #08101F, even weight, crisp, no sketchy or
 hand-drawn strokes, no double lines.
 Fill colors restricted to this palette only:
-  pale blue grey #ECEFF4
+  pale blue gray #ECEFF4
   warm cream     #F7EFD9
   muted gold     #B8924A
   brick red      #7A2A22
@@ -178,7 +178,7 @@ Because the art and the labels are separate layers, a slide version never means 
 ## 10. Check before it goes in a page
 
 - [ ] No text baked into the art anywhere, including the corners.
-- [ ] Background is white, not off white, not transparent, not grey.
+- [ ] Background is white, not off white, not transparent, not gray.
 - [ ] Palette holds. No stray teal, purple or green.
 - [ ] Nothing anatomically wrong: no extra structures, no impossible connections, nothing mirrored the wrong way.
 - [ ] Every label points at the right structure, and the leader ends in white space.
@@ -280,8 +280,8 @@ SUBJECT: Two panels side by side, equal size.
 Both panels on the same white background with the same line weight.
 ```
 
-**Labels:** Signalling cell · Target cell nearby · Signal travels a short distance · Receptor in the arm · Signal to the brain · Signal back out to the target · Target organ
-**Alt:** `Two panels comparing a signal passing between neighboring cells with a signal travelling the length of the body through the brain.`
+**Labels:** Signaling cell · Target cell nearby · Signal travels a short distance · Receptor in the arm · Signal to the brain · Signal back out to the target · Target organ
+**Alt:** `Two panels comparing a signal passing between neighboring cells with a signal traveling the length of the body through the brain.`
 **Caption:** Both of these are control. The difference is distance. Local control never leaves the neighborhood, so nothing else in the body knows it happened. A reflex sends the news to a control center and gets an instruction back.
 
 ### fig-w01-10 A cell in three solutions
@@ -292,7 +292,7 @@ Both panels on the same white background with the same line weight.
 
 SUBJECT: Three red blood cells in a single horizontal row, evenly
 spaced, each sitting inside its own rounded rectangle of surrounding
-fluid drawn in pale blue grey.
+fluid drawn in pale blue gray.
   Left: The cell is visibly swollen, round and taut, close to
     bursting, with its outline stretched smooth. A few small fragments
     float beside it to suggest one has already ruptured. The
