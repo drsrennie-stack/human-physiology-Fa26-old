@@ -6,15 +6,13 @@
 <link rel="icon" type="image/svg+xml" href="icon.svg">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Physiology Lab . Week 3 . Membrane Potential Case</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/fonts-site.css">
 <style>
 @import url('https://cdn.jsdelivr.net/npm/@fontsource-variable/plus-jakarta-sans/index.css');
 :root{
-  --mcas-navy:#08101F; --mcas-rust:#5E201A; --mcas-gold:#B8924A; --mcas-gold-deep:#5E201A;
+  --mcas-navy:#0B1530; --mcas-rust:#6E2D24; --mcas-gold:#C9A14A; --mcas-gold-deep:#6E2D24;
   --offwhite-alt:#FAFAF9; --mcas-dark:#060A18; --white:#FFFFFF;
-  --navy-tint:#ECEFF4; --gray-line:rgba(8,16,31,0.18); --gray-soft:rgba(8,16,31,0.72);
+  --navy-tint:#ECEFF4; --gray-line:rgba(11,21,48,0.18); --gray-soft:rgba(11,21,48,0.72);
 }
 *{box-sizing:border-box}
 html,body{margin:0;font-family:'Plus Jakarta Sans Variable','Plus Jakarta Sans',system-ui,-apple-system,sans-serif;background:#FFFFFF;color:var(--mcas-navy);line-height:1.55;-webkit-font-smoothing:antialiased}
@@ -33,7 +31,7 @@ body.mcas-page *:not(code):not(pre){font-family:'Plus Jakarta Sans Variable','Pl
 .mcas-back{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--mcas-rust);text-decoration:none;padding:8px 14px;border:1px solid var(--mcas-rust);border-radius:4px}
 .mcas-back:hover,.mcas-back:focus-visible{background:var(--mcas-rust);color:#FFFFFF}
 header.page-head{padding:8px max(20px,4vw) 0;max-width:880px;margin:0 auto}
-.eyebrow{font-family:'DM Sans',system-ui,sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mcas-rust);margin:16px 0 6px}
+.eyebrow{font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mcas-rust);margin:16px 0 6px}
 h1{font-weight:800;font-size:clamp(22px,3.5vw,32px);color:var(--mcas-navy);margin:0 0 6px;letter-spacing:-.015em;line-height:1.12}
 .subhead{font-weight:600;color:var(--mcas-rust);margin:0 0 10px;font-size:clamp(15px,2.2vw,18px)}
 .usage{font-family:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',sans-serif;font-style:normal;color:var(--mcas-navy);opacity:.85;font-size:15px;margin:6px 0 0;max-width:70ch}
@@ -44,21 +42,21 @@ main{max-width:880px;margin:0 auto;padding:16px max(20px,4vw) 24px}
 .btn-primary:hover{background:#A0452F}
 .btn-ghost{background:transparent;color:var(--mcas-navy);border-color:var(--gray-line)}
 .btn-ghost:hover{background:var(--navy-tint);border-color:var(--mcas-navy)}
-.case{background:#FFFFFF;border-radius:8px;box-shadow:0 5px 16px rgba(8,16,31,.10);padding:18px 22px;margin:8px 0 6px}
-.case .tag{font-family:'DM Sans',system-ui,sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mcas-rust);margin:0 0 6px}
+.case{background:#FFFFFF;border-radius:8px;box-shadow:0 5px 16px rgba(11,21,48,.10);padding:18px 22px;margin:8px 0 6px}
+.case .tag{font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mcas-rust);margin:0 0 6px}
 .case p{margin:6px 0 0;font-size:15.5px}
 .section-band{margin:30px 0 8px;padding:0;background:none}
-.section-band p.tag{font-family:'DM Sans',system-ui,sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin:0 0 4px;color:var(--mcas-rust)}
+.section-band p.tag{font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin:0 0 4px;color:var(--mcas-rust)}
 .section-band.b p.tag{color:var(--mcas-gold-deep)}
 .section-band h2{font-weight:800;color:var(--mcas-navy);font-size:21px;margin:0;letter-spacing:-.01em}
-.card{background:#FFFFFF;border-radius:10px;box-shadow:0 5px 16px rgba(8,16,31,.10);padding:22px 24px;margin-bottom:18px}
+.card{background:#FFFFFF;border-radius:10px;box-shadow:0 5px 16px rgba(11,21,48,.10);padding:22px 24px;margin-bottom:18px}
 h2{font-weight:700;color:var(--mcas-navy);font-size:18px;margin:0 0 10px}
 h3{font-weight:700;color:var(--mcas-navy);font-size:15px;margin:16px 0 6px}
 p.lead{margin:0 0 10px}
 ul.clean{margin:6px 0 0;padding-left:20px}
 ul.clean li{margin:5px 0;font-size:15px}
 table.physio-table{width:100%;border-collapse:collapse;margin:10px 0 12px;font-size:14px}
-table.physio-table caption{caption-side:top;text-align:left;font-family:'DM Sans',system-ui,sans-serif;font-weight:700;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mcas-rust);margin-bottom:6px}
+table.physio-table caption{caption-side:top;text-align:left;font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-weight:700;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mcas-rust);margin-bottom:6px}
 table.physio-table th,table.physio-table td{border:1px solid var(--gray-line);padding:10px 8px;vertical-align:top;text-align:left}
 table.physio-table th{background:var(--navy-tint);color:var(--mcas-navy);font-weight:700}
 table.physio-table td.fill{height:46px;background:#FFFFFF}
@@ -69,7 +67,7 @@ table.physio-table tfoot td{font-style:normal;color:var(--gray-soft);font-size:1
 .givens li{margin:5px 0}
 .formula{font-family:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',sans-serif;background:#FFFFFF;border:1px dashed var(--mcas-navy);border-radius:6px;padding:10px 14px;margin:8px 0;font-size:15px}
 .work-space{border:1px dashed var(--gray-line);border-radius:6px;min-height:120px;padding:10px 14px;margin:8px 0}
-.work-space .hint{font-family:'DM Sans',system-ui,sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gray-soft)}
+.work-space .hint{font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gray-soft)}
 .answer-space{border-bottom:1px solid var(--gray-line);min-height:30px;margin-top:6px}
 .answer-space + .answer-space{margin-top:22px}
 .synthesis-q{border-left:3px solid var(--mcas-rust);padding:6px 14px;margin:14px 0}
@@ -77,13 +75,13 @@ table.physio-table tfoot td{font-style:normal;color:var(--gray-soft);font-size:1
 .graph-wrap{margin:10px 0 6px}
 .graph-frame{padding:6px 6px 34px 50px}
 .graph-grid{position:relative;height:380px;background-color:#FFFFFF;background-image:
-  linear-gradient(to right, rgba(8,16,31,.10) 1px, transparent 1px),
-  linear-gradient(to bottom, rgba(8,16,31,.10) 1px, transparent 1px);
+  linear-gradient(to right, rgba(11,21,48,.10) 1px, transparent 1px),
+  linear-gradient(to bottom, rgba(11,21,48,.10) 1px, transparent 1px);
   background-size:28px 28px;border:2px solid var(--mcas-navy);border-radius:6px}
-.graph-grid .y-label{position:absolute;left:-46px;top:50%;transform:rotate(-90deg) translateX(50%);transform-origin:left;font-family:'DM Sans',system-ui,sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mcas-navy);white-space:nowrap}
-.graph-grid .x-label{position:absolute;bottom:-26px;left:0;width:100%;text-align:center;font-family:'DM Sans',system-ui,sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mcas-navy)}
+.graph-grid .y-label{position:absolute;left:-46px;top:50%;transform:rotate(-90deg) translateX(50%);transform-origin:left;font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mcas-navy);white-space:nowrap}
+.graph-grid .x-label{position:absolute;bottom:-26px;left:0;width:100%;text-align:center;font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mcas-navy)}
 .draw-box{background:#FFFFFF;border:2px dashed var(--mcas-navy);border-radius:8px;padding:18px;margin:10px 0 8px;display:flex;flex-direction:column;justify-content:flex-end;min-height:300px}
-.draw-box .draw-caption{font-family:'DM Sans',system-ui,sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gray-soft);text-align:center;margin-top:auto}
+.draw-box .draw-caption{font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gray-soft);text-align:center;margin-top:auto}
 .submit{background:var(--navy-tint);border-radius:8px;padding:16px 20px;margin-top:6px}
 .submit h2{margin-top:0}
 .mcas-footer{background:var(--mcas-dark);color:var(--offwhite-alt);padding:40px max(40px,5vw) 28px;margin-top:48px}
@@ -96,6 +94,15 @@ table.physio-table tfoot td{font-style:normal;color:var(--gray-soft);font-size:1
 .mcas-footer-copyright{font-size:11px;opacity:.72;letter-spacing:.03em}
 .mcas-footer-byline{font-size:11px;font-weight:700;color:var(--mcas-gold);letter-spacing:.16em;text-transform:uppercase}
 @media print{.no-print{display:none!important}.mcas-header,.mcas-footer{background:#fff!important;color:#000!important;padding:10px 0}.mcas-footer a,.mcas-footer-byline,.mcas-footer-copyright{color:#000!important;opacity:1}.card,.section-band,.case{box-shadow:none;border-color:#888}.graph-grid,.draw-box{border-color:#333}body{color:#000}a[target]{color:#000;text-decoration:none}}
+
+/* Wide tables scroll in their own box rather than pushing the page
+   sideways. Added Sep 6 2026 with the MedMasters type change: Open Sans
+   is wider than Plus Jakarta, so tables that just fitted at 320px no
+   longer did. tabindex makes the scroll box keyboard reachable, which
+   WCAG 2.1.1 requires of any scrollable region. */
+.tblscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%}
+.tblscroll:focus-visible{outline:3px solid var(--maroon,#8B3A2E);outline-offset:2px}
+.tblscroll table{min-width:100%}
 </style>
 </head>
 <body class="mcas-page">
@@ -106,9 +113,9 @@ table.physio-table tfoot td{font-style:normal;color:var(--gray-soft);font-size:1
     <a class="mcas-brand" href="index.html" target="_top" aria-label="Human Physiology, course home">
       <svg viewBox="40 10 125 148" role="img" aria-hidden="true" focusable="false">
         <g transform="translate(0, 18)">
-          <g transform="translate(60, 0) rotate(8 0 130)"><circle cx="0" cy="20" r="10" fill="#08101F"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#08101F"/></g>
-          <g transform="translate(100, 0)"><circle cx="0" cy="10" r="11" fill="#5E201A"/><path d="M 0,22 C -11,22 -17,26 -17,34 C -17,52 -14,70 -12,86 C -11,108 -13,122 -15,132 L 15,132 C 13,122 11,108 12,86 C 14,70 17,52 17,34 C 17,26 11,22 0,22 Z" fill="#5E201A"/></g>
-          <g transform="translate(140, 0) rotate(-8 0 130)"><circle cx="0" cy="20" r="10" fill="#B8924A"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#B8924A"/></g>
+          <g transform="translate(60, 0) rotate(8 0 130)"><circle cx="0" cy="20" r="10" fill="#0B1530"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#0B1530"/></g>
+          <g transform="translate(100, 0)"><circle cx="0" cy="10" r="11" fill="#6E2D24"/><path d="M 0,22 C -11,22 -17,26 -17,34 C -17,52 -14,70 -12,86 C -11,108 -13,122 -15,132 L 15,132 C 13,122 11,108 12,86 C 14,70 17,52 17,34 C 17,26 11,22 0,22 Z" fill="#6E2D24"/></g>
+          <g transform="translate(140, 0) rotate(-8 0 130)"><circle cx="0" cy="20" r="10" fill="#C9A14A"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#C9A14A"/></g>
         </g>
       </svg>
       <span>
@@ -144,14 +151,14 @@ table.physio-table tfoot td{font-style:normal;color:var(--gray-soft);font-size:1
   <article class="card">
     <p class="lead">The Nernst equation gives the membrane voltage at which a single ion would be at equilibrium (no net movement). At body temperature, for a monovalent ion:</p>
     <div class="formula">E<sub>ion</sub> = (61 / z) &times; log<sub>10</sub> ( [ion]<sub>outside</sub> / [ion]<sub>inside</sub> )&nbsp;&nbsp;(mV); z = charge (use +1 for Na&#8314; and K&#8314;)</div>
-    <table class="physio-table">
+    <div class="tblscroll" tabindex="0" role="region" aria-label="Table, scroll sideways to see all columns"><table class="physio-table">
       <caption>Normal concentrations. Compute each equilibrium potential.</caption>
       <thead><tr><th>Ion</th><th>Outside (mM)</th><th>Inside (mM)</th><th>E<sub>ion</sub> (mV) &mdash; show work</th></tr></thead>
       <tbody>
         <tr><td>Potassium (K&#8314;)</td><td>4</td><td>140</td><td class="fill"></td></tr>
         <tr><td>Sodium (Na&#8314;)</td><td>145</td><td>15</td><td class="fill"></td></tr>
       </tbody>
-    </table>
+    </table></div>
     <div class="work-space"><span class="hint">Show your Nernst arithmetic here (keep the sign)</span></div>
     <div class="synthesis-q"><strong>Q1. E<sub>K</sub> is strongly negative and E<sub>Na</sub> is strongly positive. Explain what each sign means physically: in which direction does each ion "want" to move at a resting potential of about &minus;70 mV?</strong><div class="answer-space"></div><div class="answer-space"></div></div>
   </article>
@@ -168,14 +175,14 @@ table.physio-table tfoot td{font-style:normal;color:var(--gray-soft);font-size:1
   <div class="section-band a"><p class="tag">Part 3 of 4 &middot; Calculate &amp; Predict</p><h2>Kofi's hypokalemia, and a hyperkalemia contrast</h2></div>
   <article class="card">
     <p class="lead">Now recompute E<sub>K</sub> for two altered external potassium levels, keeping internal K&#8314; at 140 mM. One is Kofi's actual value; the other is the opposite derangement, for contrast.</p>
-    <table class="physio-table">
+    <div class="tblscroll" tabindex="0" role="region" aria-label="Table, scroll sideways to see all columns"><table class="physio-table">
       <caption>Recompute E_K and predict the effect on resting potential</caption>
       <thead><tr><th>Condition</th><th>K&#8314; outside (mM)</th><th>E<sub>K</sub> (mV) &mdash; show work</th><th>RMP more or less negative than normal?</th></tr></thead>
       <tbody>
         <tr><td>Kofi (hypokalemia)</td><td>2.5</td><td class="fill"></td><td class="fill"></td></tr>
         <tr><td>Contrast (hyperkalemia)</td><td>7.0</td><td class="fill"></td><td class="fill"></td></tr>
       </tbody>
-    </table>
+    </table></div>
     <div class="work-space"><span class="hint">Show your Nernst arithmetic here</span></div>
     <div class="synthesis-q"><strong>Q4. Hyperkalemia brings the RMP closer to threshold and at first makes cells easier to fire, then, as voltage-gated Na&#8314; channels inactivate, harder to fire. Sketch this idea in one sentence and predict what happens to excitability in Kofi's hypokalemia (RMP further from threshold).</strong><div class="answer-space"></div><div class="answer-space"></div></div>
   </article>
@@ -196,7 +203,7 @@ table.physio-table tfoot td{font-style:normal;color:var(--gray-soft);font-size:1
       <li>Where voltage-gated Na&#8314; channels open, where they inactivate, and where voltage-gated K&#8314; channels open.</li>
       <li>An arrow showing that depolarization heads toward your E<sub>Na</sub> and repolarization heads toward your E<sub>K</sub> (from Part 1).</li>
     </ul>
-    <table class="physio-table">
+    <div class="tblscroll" tabindex="0" role="region" aria-label="Table, scroll sideways to see all columns"><table class="physio-table">
       <caption>Graded potential versus action potential. Fill every cell.</caption>
       <thead><tr><th>Property</th><th>Graded potential</th><th>Action potential</th></tr></thead>
       <tbody>
@@ -205,7 +212,7 @@ table.physio-table tfoot td{font-style:normal;color:var(--gray-soft);font-size:1
         <tr><td>Travels long distances without decay?</td><td class="fill"></td><td class="fill"></td></tr>
         <tr><td>Channels responsible</td><td class="fill"></td><td class="fill"></td></tr>
       </tbody>
-    </table>
+    </table></div>
     <div class="synthesis-q"><strong>Q5. Conduction velocity rises with axon diameter and with myelination. In one or two sentences, explain why myelin speeds conduction (name saltatory conduction and the nodes of Ranvier).</strong><div class="answer-space"></div><div class="answer-space"></div></div>
     <div class="synthesis-q"><strong>Q6. Synthesis across the three weeks. In four or five sentences, trace Kofi's story from a membrane transporter to a whole-body emergency: cholera toxin opened a channel (Week 2), water followed salt out of his compartments (Week 1), and the lost potassium has now shifted E<sub>K</sub> and his cardiac excitability (Week 3). Use at least two of your own calculated numbers as evidence, and state why his irregular heartbeat is the dangerous endpoint.</strong><div class="answer-space"></div><div class="answer-space"></div><div class="answer-space"></div><div class="answer-space"></div></div>
   </article>
@@ -234,31 +241,31 @@ table.physio-table tfoot td{font-style:normal;color:var(--gray-soft);font-size:1
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <style>
-.wb-bar{position:sticky;top:0;z-index:60;background:#fff;border-bottom:1px solid #D1D5DB;padding:12px 16px;display:flex;flex-wrap:wrap;gap:12px 16px;align-items:center;font-family:'Plus Jakarta Sans',system-ui,sans-serif;box-shadow:0 5px 16px rgba(8,16,31,.06)}
-.wb-bar label{font-size:12px;font-weight:700;color:#08101F;display:flex;align-items:center;gap:8px}
+.wb-bar{position:sticky;top:0;z-index:60;background:#fff;border-bottom:1px solid #D1D5DB;padding:12px 16px;display:flex;flex-wrap:wrap;gap:12px 16px;align-items:center;font-family:'Plus Jakarta Sans',system-ui,sans-serif;box-shadow:0 5px 16px rgba(11,21,48,.06)}
+.wb-bar label{font-size:12px;font-weight:700;color:#0B1530;display:flex;align-items:center;gap:8px}
 .wb-name{font:inherit;font-size:14px;padding:7px 10px;border:1px solid #D1D5DB;border-radius:6px;min-width:170px}
-.wb-date{font-size:12px;color:#5A6273;font-weight:600}
-.wb-pc{font-size:12px;font-weight:700;color:#5E201A}
-.wb-note{font-size:12px;color:#5A6273}
+.wb-date{font-size:12px;color:#454B58;font-weight:600}
+.wb-pc{font-size:12px;font-weight:700;color:#6E2D24}
+.wb-note{font-size:12px;color:#454B58}
 .wb-spacer{flex:1 1 auto}
-.wb-finger{font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:12px;font-weight:700;border:1px solid #D1D5DB;background:#fff;border-radius:6px;padding:9px 12px;cursor:pointer;color:#08101F}
-.wb-finger.on{background:#08101F;color:#fff;border-color:#08101F}
-.wb-save{font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-weight:700;font-size:13px;letter-spacing:.02em;background:#5E201A;color:#fff;border:none;border-radius:6px;padding:11px 18px;cursor:pointer}
+.wb-finger{font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:12px;font-weight:700;border:1px solid #D1D5DB;background:#fff;border-radius:6px;padding:9px 12px;cursor:pointer;color:#0B1530}
+.wb-finger.on{background:#0B1530;color:#fff;border-color:#0B1530}
+.wb-save{font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-weight:700;font-size:13px;letter-spacing:.02em;background:#6E2D24;color:#fff;border:none;border-radius:6px;padding:11px 18px;cursor:pointer}
 .wb-save[disabled]{opacity:.55;cursor:default}
-.wb-input{width:100%;min-height:38px;border:none;background:transparent;font:inherit;font-size:14px;color:#08101F;padding:6px 6px;resize:none}
-.wb-ans{display:block;width:100%;border:none;border-bottom:1px solid #D1D5DB;background:#fff;font:inherit;font-size:15px;line-height:1.7;color:#08101F;padding:6px 4px;margin:2px 0;resize:none;overflow:hidden}
-.wb-input:focus,.wb-ans:focus{outline:2px solid #5E201A;outline-offset:-1px;border-radius:4px}
+.wb-input{width:100%;min-height:38px;border:none;background:transparent;font:inherit;font-size:14px;color:#0B1530;padding:6px 6px;resize:none}
+.wb-ans{display:block;width:100%;border:none;border-bottom:1px solid #D1D5DB;background:#fff;font:inherit;font-size:15px;line-height:1.7;color:#0B1530;padding:6px 4px;margin:2px 0;resize:none;overflow:hidden}
+.wb-input:focus,.wb-ans:focus{outline:2px solid #6E2D24;outline-offset:-1px;border-radius:4px}
 .wb-cell{padding:0 !important}
 .wb-tools{display:flex;gap:6px;align-items:center;margin:8px 0 4px;flex-wrap:wrap}
-.wb-tools button{font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:12px;font-weight:700;border:1px solid #D1D5DB;background:#fff;border-radius:6px;padding:6px 10px;cursor:pointer;color:#08101F;line-height:1}
-.wb-tools button.on{background:#08101F;color:#fff;border-color:#08101F}
+.wb-tools button{font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:12px;font-weight:700;border:1px solid #D1D5DB;background:#fff;border-radius:6px;padding:6px 10px;cursor:pointer;color:#0B1530;line-height:1}
+.wb-tools button.on{background:#0B1530;color:#fff;border-color:#0B1530}
 .wb-size{width:90px;vertical-align:middle}
 .wb-sw{width:22px;height:22px;border-radius:50%;padding:0;border:2px solid #fff;box-shadow:0 0 0 1px #D1D5DB;cursor:pointer}
-.wb-sw.on{box-shadow:0 0 0 2px #08101F}
+.wb-sw.on{box-shadow:0 0 0 2px #0B1530}
 .wb-canvas{display:block;cursor:crosshair;background:transparent}
-.wb-textinput{position:absolute;z-index:6;background:rgba(255,255,255,.92);border:1px dashed #08101F;border-radius:4px;padding:0 3px;min-width:44px;outline:none;line-height:1.25}
-.wb-cap{font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#5A6273;margin:6px 0 2px}
-.wb-toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);background:#08101F;color:#fff;padding:10px 18px;border-radius:8px;font-size:13px;font-weight:700;z-index:9999;opacity:0;transition:opacity .2s;font-family:'Plus Jakarta Sans',system-ui,sans-serif;pointer-events:none}
+.wb-textinput{position:absolute;z-index:6;background:rgba(255,255,255,.92);border:1px dashed #0B1530;border-radius:4px;padding:0 3px;min-width:44px;outline:none;line-height:1.25}
+.wb-cap{font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#454B58;margin:6px 0 2px}
+.wb-toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);background:#0B1530;color:#fff;padding:10px 18px;border-radius:8px;font-size:13px;font-weight:700;z-index:9999;opacity:0;transition:opacity .2s;font-family:'Plus Jakarta Sans',system-ui,sans-serif;pointer-events:none}
 .wb-toast.on{opacity:1}
 @media print{.wb-tools,.wb-save,.wb-finger{display:none !important}}
 

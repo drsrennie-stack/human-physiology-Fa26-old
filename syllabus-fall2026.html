@@ -4,16 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Syllabus &middot; BIO 005 Human Physiology &middot; Fall 2026</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/fonts-site.css">
 <style>
 :root{
   --navy:#0B1530;--navy-70:rgba(11,21,48,.75);--navy-50:rgba(11,21,48,.50);--navy-15:rgba(11,21,48,.15);
   --navy-tint:#EBEDF2;--terra:#8B3A2E;--terra-dark:#6E2C23;--gold-bright:#C9A14A;--straw-light:#F5F1E8;
   --gold-pale:#F7EFD9;--white:#FFF;--offwhite:#FAFAF9;--r:8px;
   --font:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;
-  --display:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;
+  --display:'Open Sans',system-ui,-apple-system,sans-serif;
 }
 *,*::before,*::after{box-sizing:border-box}
 em,i,cite,dfn,var,address{font-style:normal}
@@ -104,6 +102,15 @@ footer{margin-top:64px;padding:24px;color:var(--navy-70);font-size:14px;text-ali
   tr.exam td{background:#eee}
   .grade-bar > div{color:#000!important;background:#fff;border:1px solid #000}
 }
+
+/* Wide tables scroll in their own box rather than pushing the page
+   sideways. Added Sep 6 2026 with the MedMasters type change: Open Sans
+   is wider than Plus Jakarta, so tables that just fitted at 320px no
+   longer did. tabindex makes the scroll box keyboard reachable, which
+   WCAG 2.1.1 requires of any scrollable region. */
+.tblscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%}
+.tblscroll:focus-visible{outline:3px solid var(--maroon,#8B3A2E);outline-offset:2px}
+.tblscroll table{min-width:100%}
 </style>
 </head>
 <body>
@@ -154,7 +161,7 @@ footer{margin-top:64px;padding:24px;color:var(--navy-70);font-size:14px;text-ali
 <!-- ============================== -->
 <section id="s01">
   <h2 class="sec"><span class="n">01</span>Course identification and catalog data</h2>
-  <table>
+  <div class="tblscroll" tabindex="0" role="region" aria-label="Table, scroll sideways to see all columns"><table>
     <tr><th scope="row" class="k">Course</th><td>BIO 005, Human Physiology</td></tr>
     <tr><th scope="row" class="k">Units</th><td>4.0 semester units</td></tr>
     <tr><th scope="row" class="k">Section</th><td>BIOL-5-D9286 &middot; Sutter Internet (NET)</td></tr>
@@ -167,20 +174,20 @@ footer{margin-top:64px;padding:24px;color:var(--navy-70);font-size:14px;text-ali
     <tr><th scope="row" class="k">Prerequisite</th><td>BIOL 15 (Bioscience) or BIOL 1 (Principles of Biology). Recommended: eligibility for ENGL 1A and MATH 52, and basic computer skills.</td></tr>
     <tr><th scope="row" class="k">Grading</th><td>Letter grade only. There is no Pass / No Pass option for this course.</td></tr>
     <tr><th scope="row" class="k">Transfer</th><td>Transferable to both UC and CSU. IGETC Areas 5B and 5C. CSU GE Areas B2 and B3. C-ID BIOL 120B. Serves the Biology-Allied Health AS, Natural Science AS, Kinesiology AA-T, and the LVN-to-RN 30-Unit Option.</td></tr>
-  </table>
+  </table></div>
   <p>If you're heading toward nursing or another health program, check that program's specific requirements with a counselor. The contacts are in Section 15.</p>
 </section>
 
 <!-- ============================== -->
 <section id="s02">
   <h2 class="sec"><span class="n">02</span>Instructor and contact</h2>
-  <table>
+  <div class="tblscroll" tabindex="0" role="region" aria-label="Table, scroll sideways to see all columns"><table>
     <tr><th scope="row" class="k">Instructor</th><td>Dr. Sharilyn Rennie</td></tr>
     <tr><th scope="row" class="k">Email</th><td><a href="mailto:srennie@yccd.edu">srennie@yccd.edu</a></td></tr>
     <tr><th scope="row" class="k">Best channel</th><td>Canvas Inbox. It keeps every course message in one place, which means I can find your history when you need me to.</td></tr>
     <tr><th scope="row" class="k">Reply time</th><td>48 to 72 hours on weekdays. Please do not expect a same-day reply the night before a deadline.</td></tr>
     <tr><th scope="row" class="k">Office hours</th><td>Wednesdays 9:00 to 10:00 am on <a href="https://us06web.zoom.us/j/81803810332">Zoom</a>. Drop in, no appointment needed. If that window never works with your schedule, message me and we will find another time.</td></tr>
-  </table>
+  </table></div>
   <p>Physiology builds on itself, so a small gap in September is a large one by November. Come and talk to me before you fall behind rather than after. That conversation is much easier for both of us while the gap is still small.</p>
 </section>
 
@@ -218,14 +225,14 @@ footer{margin-top:64px;padding:24px;color:var(--navy-70);font-size:14px;text-ali
 <section id="s05">
   <h2 class="sec"><span class="n">05</span>The weekly rhythm</h2>
   <p>Every week follows the same five steps in the same order. Learn the shape once and the term runs on rails.</p>
-  <table>
+  <div class="tblscroll" tabindex="0" role="region" aria-label="Table, scroll sideways to see all columns"><table>
     <tr><th scope="col">Step</th><th scope="col">Do this</th></tr>
     <tr><th scope="row" class="k">1 &middot; Prepare</th><td>Open the week's note sheet and complete it from the assigned reading and the concept lectures. This comes first, always.</td></tr>
     <tr><th scope="row" class="k">2 &middot; Watch</th><td>Work through the week's lectures and slide decks with your note sheet beside you.</td></tr>
     <tr><th scope="row" class="k">3 &middot; Practice</th><td>Do the assigned book problems, and run your recall cards in the Mastery OS.</td></tr>
     <tr><th scope="row" class="k">4 &middot; Lab</th><td>Complete the week's PhysioEx lab and turn in your data record.</td></tr>
     <tr><th scope="row" class="k">5 &middot; Prove</th><td>Do the week's short draw-and-teach practice round. Five minutes, ungraded, exam format in miniature.</td></tr>
-  </table>
+  </table></div>
   <p><strong>Two deadlines a week, and they do not move.</strong> Your discussion post is due <strong>Friday at 10 pm</strong>. Everything else, including your two discussion replies, is due <strong>Sunday at 10 pm</strong>. That holds all fifteen weeks.</p><p>The post comes earlier than the rest for one reason: nobody can reply to a post that is not there yet. A late post quietly takes the week away from the classmates who were going to respond to it, so that deadline is firmer than it looks.</p><p>Beyond those two times, you choose when in the week each step happens: five in the morning before work, nine at night after the kids are down, all day Saturday. The order above is the order that works; the schedule is yours.</p>
 </section>
 
@@ -258,21 +265,21 @@ footer{margin-top:64px;padding:24px;color:var(--navy-70);font-size:14px;text-ali
     <div class="gb-book"><span class="gl">Book problems</span><span class="gp">15%</span></div>
     <div class="gb-disc"><span class="gl">Discussions</span><span class="gp">10%</span></div>
   </div>
-  <table>
+  <div class="tblscroll" tabindex="0" role="region" aria-label="Table, scroll sideways to see all columns"><table>
     <tr><th scope="col">Component</th><th scope="col">Detail</th><th scope="col">Weight</th></tr>
     <tr><th scope="row" class="k">Competency note sheets</th><td>15 weekly sheets, one prompt per competency. Five prompts graded for accuracy, the rest checked for completion.</td><td>20%</td></tr>
     <tr><th scope="row" class="k">Midterm exams</th><td>3 exams, draw-and-teach on video. No notes. Mostly apply-and-reason, not pure recall.</td><td>40%</td></tr>
     <tr><th scope="row" class="k">Laboratory</th><td>15 weekly PhysioEx labs with data records.</td><td>15%</td></tr>
     <tr><th scope="row" class="k">Book problems</th><td>Assigned Silverthorn problems each week.</td><td>15%</td></tr>
     <tr><th scope="row" class="k">Discussions</th><td>One post a week, carrying both the physiology and your thinking about it.</td><td>10%</td></tr>
-  </table>
+  </table></div>
 
   <h3>Competency note sheets, 20 percent</h3>
   <ul>
     <li>Every week's sheet is built directly from that week's competencies, one box per competency, and it is the first thing you do each week.</li>
-    <li><strong>Two passes, two colors, in the same box.</strong> The first pass comes from your textbook and your own notes, before you open any video. Organize what you can already put together and stop while half of every box is still empty. Then watch the week's videos, switch to a second color, and add into the same boxes what you were missing, what you had wrong, and what finally landed once you heard it explained.</li>
+    <li><strong>Two passes, two colours, in the same box.</strong> The first pass comes from your textbook and your own notes, before you open any video. Organize what you can already put together and stop while half of every box is still empty. Then watch the week's videos, switch to a second colour, and add into the same boxes what you were missing, what you had wrong, and what finally landed once you heard it explained.</li>
     <li><strong>Do not erase the first pass.</strong> Leave it visible underneath, mistakes and all. Those marks are the most useful thing on the page, for you and for me.</li>
-    <li>The two colors are how I can see which part of your understanding came from reading and which came from the videos. A sheet that arrives in a single color has not finished the assignment, whatever is written on it, because it tells me the videos were skipped.</li>
+    <li>The two colours are how I can see which part of your understanding came from reading and which came from the videos. A sheet that arrives in a single colour has not finished the assignment, whatever is written on it, because it tells me the videos were skipped.</li>
     <li>Working in this order is not busywork. Arriving at a video already holding a half-built picture is what makes the video land, instead of washing over you while you nod along.</li>
     <li>You submit the whole sheet. I choose <strong>five prompts</strong> and grade those for accuracy, you won't know which five ahead of time, so every prompt has to be real. The rest is checked for completion.</li>
     <li>It doubles as your midterm study guide, so doing it well pays you twice.</li>
@@ -349,7 +356,7 @@ footer{margin-top:64px;padding:24px;color:var(--navy-70);font-size:14px;text-ali
 <section id="s09">
   <h2 class="sec"><span class="n">09</span>Course schedule</h2>
   <p>15 weeks, three midterms. Each midterm closes a five-week block. Week titles below are what you'll see in Canvas; the reading and assignments for each week are on that week's page.</p>
-  <table>
+  <div class="tblscroll" tabindex="0" role="region" aria-label="Table, scroll sideways to see all columns"><table>
     <tr><th scope="col">Wk</th><th scope="col">Opens</th><th scope="col">Week</th></tr>
     <tr><td>1</td><td>Sep 8</td><td>How physiology works and what keeps you steady</td></tr>
     <tr><td>2</td><td>Sep 14</td><td>The chemistry that does work in the body</td></tr>
@@ -369,7 +376,7 @@ footer{margin-top:64px;padding:24px;color:var(--navy-70);font-size:14px;text-ali
     <tr><td>14</td><td>Dec 7</td><td>The kidney and body fluid balance</td></tr>
     <tr><td>15</td><td>Dec 14</td><td>The slow pH lever, and putting it all together &middot; three days only</td></tr>
     <tr class="exam"><td colspan="3">Midterm 3 &middot; Weeks 11 to 15 &middot; window announced in Canvas</td></tr>
-  </table>
+  </table></div>
   <p>If a date has to move I will announce it in Canvas. Grade weights and exam policy will not change.</p>
 </section>
 
@@ -423,12 +430,12 @@ footer{margin-top:64px;padding:24px;color:var(--navy-70);font-size:14px;text-ali
 <section id="s13">
   <h2 class="sec"><span class="n">13</span>Accessibility and accommodation</h2>
   <p>Your success matters to me. This course is designed to be welcoming to and usable by everyone: English-language learners, students with disabilities, students returning to school after time away, and students new to online courses. If any part of the course gets in the way of your learning, tell me as soon as possible and we will build strategies together.</p>
-  <table>
+  <div class="tblscroll" tabindex="0" role="region" aria-label="Table, scroll sideways to see all columns"><table>
     <tr><th scope="row" class="k">Office</th><td>Disabled Student Programs &amp; Services (DSPS), Building 1800, Marysville campus</td></tr>
     <tr><th scope="row" class="k">Phone</th><td>(530) 741-6795</td></tr>
     <tr><th scope="row" class="k">Email</th><td><a href="mailto:dspsinfo@yccd.edu">dspsinfo@yccd.edu</a></td></tr>
     <tr><th scope="row" class="k">Fax</th><td>(530) 741-6942</td></tr>
-  </table>
+  </table></div>
   <p>Yuba College provides reasonable accommodations for students with documented disabilities under the ADA and Section 504. Apply with DSPS, submit your documentation, and schedule an intake appointment by phone, Zoom, or in person; you never have to come to campus.</p>
   <p><strong>Set this up in Week 1.</strong> You are responsible for sending me your approved accommodations early in the term. Accommodations are not retroactive, so work you have already submitted cannot be re-graded under accommodation. Your information stays confidential; I only ever see the approved accommodation, never the paperwork behind it. Accommodations adjust how you show what you know, never what the course asks of you.</p>
 </section>
@@ -437,13 +444,13 @@ footer{margin-top:64px;padding:24px;color:var(--navy-70);font-size:14px;text-ali
 <section id="s14">
   <h2 class="sec"><span class="n">14</span>Registration deadlines and important dates</h2>
   <p>These dates govern your enrollment, your money, and your transcript. Diary them today.</p>
-  <table>
+  <div class="tblscroll" tabindex="0" role="region" aria-label="Table, scroll sideways to see all columns"><table>
     <tr><th scope="col">Date</th><th scope="col">Deadline</th></tr>
     <tr><th scope="row" class="k">Mon Sep 8</th><td>Instruction begins. Week 1 opens.</td></tr>
     <tr><th scope="row" class="k">Sun Sep 27</th><td><strong>Census.</strong> Participation is certified from submitted work. No work in means being reported as not attending, and possibly dropped.</td></tr>
     <tr><th scope="row" class="k">Sat Nov 21</th><td><strong>Last day to drop with a W</strong>, without academic penalty. After this date you receive a letter grade, whatever it is.</td></tr>
     <tr><th scope="row" class="k">Wed Dec 16</th><td>Term ends. Final work is due.</td></tr>
-  </table>
+  </table></div>
   <p>Check your schedule bill in your student portal for any class-specific add, refund, and no-record drop deadlines, those dates come from Admissions and Records, and short-term sections run on their own calendar. November 21 is the one people miss. If this course is not going to work out, the difference between deciding on November 20 and deciding on November 22 is the difference between a W and an F on your transcript forever, and Section 02 tells you how to reach me before it comes to that.</p>
   <div class="notyet">the three midterm exam windows, which will be added here and to Section 09.</div>
 </section>
