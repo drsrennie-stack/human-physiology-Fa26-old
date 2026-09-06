@@ -55,7 +55,7 @@
   --navy:#0B1530; --navy-deep:#060A18; --navy-tint:#ECEFF4;
   --maroon:#8B3A2E; --maroon-dark:#6E2D24;
   --gold:#C9A14A; --gold-deep:#8A6D33; --gold-text:#624612; --gold-pale:#F7EFD9;
-  --gray-lock:#767E8C;
+  --gray-lock:#454B58;  /* white on it: 8.75:1. Was #767E8C at 4.09:1, which FAILED AA on the locked step numbers. */
   --offwhite:#FAFAF9; --ink-soft:#3D4759; --rule:#A3ACBA;
   --r:8px; --rc:16px; --shadow:0 1px 3px rgba(11,21,48,.08),0 1px 2px rgba(11,21,48,.05);
   --font:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
@@ -164,8 +164,9 @@ button.btn.ghost:hover{background:var(--gold-pale);border-color:var(--gold-deep)
 <div class="wrap">
 <main id="main">
 
-<p class="page-eyebrow">Use this on every problem set</p>
+<p class="page-eyebrow"><span data-wk>Week 1</span> &middot; <span data-wt>How physiology works and what keeps you steady</span></p>
 <h1>Problem log</h1>
+<p class="page-eyebrow" style="margin-top:6px">Use this on every problem set</p>
 <p class="page-lead">Solve it, source it, then check it. You work the problem by hand using the book, my notes and my videos, you write down exactly where each piece came from, and only then do you open AI to check your answer. The sources are what make this work: AI does not know what page something is on or where it sits in my videos, so citing them is the proof you did the thinking first.</p>
 
 <p class="phase">Part one, before AI</p>
@@ -644,5 +645,21 @@ button.btn.ghost:hover{background:var(--gold-pale);border-color:var(--gold-deep)
 }());
 </script>
 <script src="bio005-nav.js" defer></script>
+
+<script>
+/* ONE FILE, FIFTEEN WEEKS. Same pattern as the other four assignment pages:
+   the week comes from the URL, so ?week=3 relabels this page. Added Sep 6
+   2026, when this page turned out to be reachable from nowhere at all. */
+(function(){
+  "use strict";
+  var TITLES = ["How physiology works and what keeps you steady", "The chemistry that does work in the body", "Getting across the membrane", "The action potential", "The nervous system, from sensing to moving", "How muscle makes force", "Hormones, the slow control system", "Reproduction, and the clearest positive feedback loop", "The heart as a pump", "Pressure, flow, and holding blood pressure steady", "Blood, and how the body defends itself", "Digestion, and how you use food for fuel", "Breathing, gas transport, and blood pH", "The kidney, and body fluid balance", "The slow lever on pH, and putting it all together"];
+  var q = new URLSearchParams(window.location.search);
+  var w = parseInt(q.get("week"), 10);
+  if (isNaN(w) || w < 1 || w > 15) { w = 1; }
+  document.querySelectorAll("[data-wk]").forEach(function(n){ n.textContent = "Week " + w; });
+  document.querySelectorAll("[data-wt]").forEach(function(n){ n.textContent = TITLES[w-1]; });
+  if (/Week \d+/.test(document.title)) { document.title = document.title.replace(/Week \d+/, "Week " + w); }
+})();
+</script>
 </body>
 </html>

@@ -308,8 +308,10 @@ footer :focus-visible{outline-color:var(--gold)}
       deck:       {u:"slides-p-mission-01-maintain-control.html", t:"Mission 1, Maintain Control", d:"The full deck, one slide at a time. Open it on your phone and draw on it."},
       read:       {u:"week-01.html", t:"Written notes for Week 1", d:"The whole week written out. Prints cleanly if you would rather work on paper."},
       sheet:      {u:"week-01-competencies.html", t:"Week 1 competencies and prompts", d:"Twenty competencies, two prompts each. Set it up before you watch, answer it after, second colour."},
-      problems:   {u:"assignment-bookproblems.html", t:"Silverthorn chapters 1 and 6", d:"End of chapter problems. Work them on paper before you check the back."},
-      lab:        {u:"osmosis-iv-fluids-lab.html", t:"Clinical correlations, IV fluids", d:"Plus PhysioEx through Pearson. Ungraded for points, required for participation."},
+      problems:   {u:"assignment-bookproblems.html?week=1", t:"Silverthorn chapters 1 and 6", d:"End of chapter problems. Work them on paper before you check the back."},
+      ailog:      {u:"ai-work-log.html?week=1", t:"Problem log", d:"Solve it by hand, write down where each piece came from, then check it with AI. Fill it in as you work."},
+      lab:        {u:"assignment-physioex.html?week=1", t:"Lab analysis, Week 1", d:"There is no PhysioEx exercise that fits Week 1, so the lab is the clinical correlations IV fluids lab. Same sheet, same deadline.",
+                   also:{u:"osmosis-iv-fluids-lab.html", t:"Open the IV fluids lab"}},
       discussion: {u:"https://yccd.instructure.com/courses/42616/discussion_topics/712733", ext:true,
                    t:"Discussion 1, your vision board", d:"Post due Friday September 11 at 10 pm. Two replies due Sunday September 13 at 10 pm.",
                    also:{u:"assignment-discussion-01-visionboard.html", t:"Read the instructions and rubric first"}}
@@ -330,17 +332,47 @@ footer :focus-visible{outline-color:var(--gold)}
     { n:15, unit:"Systems in action",title:"The slow pH lever, and putting it all together",         opens:"Monday December 14",  due:"Wednesday December 16" }
   ];
 
-  /* Every week has a page. The ones not written yet are placeholders that
-     carry the week's title, its dates and a pointer to the reading, so
-     "read" always has somewhere to go. */
+  /* ------------------------------------------------------------------
+     FOUR ASSIGNMENT PAGES ALREADY DO ALL FIFTEEN WEEKS BY THEMSELVES.
+
+     assignment-notesheet, assignment-bookproblems, assignment-physioex,
+     assignment-discussion and now ai-work-log each read ?week=N from the
+     URL and relabel themselves. So every week gets a real, correctly
+     titled page for each of those slots without anybody writing fifteen
+     copies of anything.
+
+     What those pages do NOT yet carry is the per-week CONTENT: which
+     PhysioEx exercise, which Silverthorn problem numbers, which discussion
+     topic. That is Scrubs' to supply. Until she does, the link is live and
+     the page is correct, it just does not name the specific exercise.
+     ------------------------------------------------------------------ */
   WEEKS.forEach(function(w){
+    var q = "?week=" + w.n;
     if (!w.read) {
       w.read = { u:"week-" + (w.n<10?"0"+w.n:w.n) + ".html",
                  t:"Week " + w.n + " page",
                  d:"Dates, what is coming, and where this week's reading is until the full page is up." };
     }
+    if (!w.sheet) {
+      w.sheet = { u:"assignment-notesheet.html" + q, t:"Note sheet for Week " + w.n,
+                  d:"How to build it, the two colour rule, and the rubric it is graded against." };
+    }
+    if (!w.problems) {
+      w.problems = { u:"assignment-bookproblems.html" + q, t:"Book problems, Week " + w.n,
+                     d:"How to work them and how AI may be used on them." };
+    }
     if (!w.lab) {
-      w.lab = { u:LABMANUAL, t:"Lab manual", d:"This week's lab, with the background and the procedure. PhysioEx runs through Pearson." };
+      w.lab = { u:"assignment-physioex.html" + q, t:"Lab analysis, Week " + w.n,
+                d:"One handwritten sheet covering everything you ran. The manual has the procedures." };
+    }
+    if (!w.discussion) {
+      w.discussion = { u:"assignment-discussion.html" + q, t:"Discussion, Week " + w.n,
+                       d:"What goes in your post, replying to two classmates, and how AI may be used." };
+    }
+    /* The problem log rides with every problem set, so it is on every week. */
+    if (!w.ailog) {
+      w.ailog = { u:"ai-work-log.html" + q, t:"Problem log",
+                  d:"Solve it by hand, cite where each piece came from, then check it with AI. Fill this in as you work, not after." };
     }
   });
 
@@ -351,7 +383,8 @@ footer :focus-visible{outline-color:var(--gold)}
     ["sheet",      "Note sheet"],
     ["problems",   "Problems"],
     ["lab",        "Lab"],
-    ["discussion", "Discussion"]
+    ["discussion", "Discussion"],
+    ["ailog",      "Problem log"]
   ];
 
   /* ---- which week is it ---- */

@@ -3,3 +3,5 @@ Upload everything here to github.com/drsrennie-stack/human-physiology-Fa26
 (Add file -> Upload files -> Cmd+A -> drag -> commit to main). Keep subfolders.
 Then check https://drsrennie-stack.github.io/human-physiology-Fa26/course-door.html
 ONLY THEN paste the iframes into Canvas. See CANVAS-IFRAME.txt.
+Chapter 6 not recorded yet? See CHAPTER-6-SWITCH.txt.
+Still owed from you: see WHAT-I-STILL-NEED-FROM-YOU.txt.

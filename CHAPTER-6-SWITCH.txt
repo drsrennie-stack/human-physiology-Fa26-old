@@ -1,0 +1,6 @@
+IF CHAPTER 6 IS NOT RECORDED IN TIME
+Open week-01-competencies.html, find near the bottom:
+    var SHOW = { ch1:true, ch6:true, skills:true };
+Change ch6:true to ch6:false. The four chapter 6 competencies leave the
+page, the count drops 18 to 14, and they leave the print version too.
+Set it back to true when the recording is posted.
