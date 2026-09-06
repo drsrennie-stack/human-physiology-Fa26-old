@@ -23,9 +23,7 @@ h1{font-size:clamp(26px,4.5vw,36px);font-weight:800;letter-spacing:-.02em;margin
 h2{font-size:18px;font-weight:800;margin:24px 0 6px}
 ol.how{margin:8px 0 18px;padding-left:22px}
 ol.how li{margin:0 0 10px;max-width:64ch}
-.aiwrap{border:1px solid var(--slate);border-radius:12px;overflow:hidden;margin:10px 0 8px}
-.aiwrap iframe{display:block;width:100%;border:0;min-height:2600px}
-.tab{font-size:14px;margin:0 0 22px}
+.waybtn{display:inline-block;background:var(--rust);color:#fff;font-weight:800;text-decoration:none;border-radius:8px;padding:12px 20px;font-size:14px;margin:0 0 10px}
 .upload{background:var(--goldpale);border:1px solid var(--slate);border-radius:12px;padding:14px 18px;max-width:680px}
 .upload ol{margin:6px 0 0;padding-left:20px}
 .upload li{margin:0 0 6px}
@@ -49,10 +47,9 @@ ol.how li{margin:0 0 10px;max-width:64ch}
     <li><strong>The answers in the back are for checking, after.</strong> A problem you watched yourself solve is not a problem you can solve.</li>
   </ol>
 
-  <h2>The AI worksheet, worked beside the problems</h2>
-  <p style="max-width:66ch">Complete one log entry per problem as you go: solve it, source it, then, and only then, open AI to check it. The log is part of the assignment, not extra.</p>
-  <div class="aiwrap"><iframe id="ailog" src="ai-work-log.html" title="The AI work log"></iframe></div>
-  <p class="tab"><a id="aitab" href="ai-work-log.html" target="_blank" rel="noopener">Open the AI worksheet in its own tab</a> if you would rather work it side by side.</p>
+  <h2>The AI worksheet</h2>
+  <p style="max-width:66ch">One log entry per problem: solve it, source it, then, and only then, open AI to check it. The worksheet is part of the assignment, not extra. Open it, print it to PDF or paper, and complete it by hand as you work; it does not get filled out on a screen.</p>
+  <p><a class="waybtn" id="aitab" href="ai-work-log.html" target="_blank" rel="noopener">Open the AI worksheet to print</a></p>
 
   <h2>Turning it in</h2>
   <div class="upload">
@@ -75,14 +72,8 @@ ol.how li{margin:0 0 10px;max-width:64ch}
   document.getElementById("dueline").textContent = "Due " + DUE[w-1] + " at 10:00 pm";
   document.getElementById("probline").textContent = PROBLEMS[w] ||
     ("This week's assigned problems are listed on this assignment in Canvas, directly above these instructions.");
-  var log = document.getElementById("ailog"), tab = document.getElementById("aitab");
-  log.src = "ai-work-log.html?week=" + w;
+  var tab = document.getElementById("aitab");
   tab.href = "ai-work-log.html?week=" + w;
-  window.addEventListener("message", function(e){
-    if (log && e.source === log.contentWindow && e.data && e.data.height){
-      log.style.minHeight = (e.data.height + 20) + "px";
-    }
-  });
   var id = "bp" + w + "-" + Math.random().toString(36).slice(2,8);
   function post(){ try{ parent.postMessage({frame:id, height:document.documentElement.scrollHeight}, "*"); }catch(e){} }
   if ("ResizeObserver" in window){ new ResizeObserver(post).observe(document.documentElement); }

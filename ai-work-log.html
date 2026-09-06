@@ -150,7 +150,16 @@ button.btn.ghost:hover{background:var(--gold-pale);border-color:var(--gold-deep)
   .site-header,.site-footer,.btnrow,.count,.why,.hint,#out,.lockmsg{display:none}
   body{background:#fff;font-size:12px}
   .step{box-shadow:none;border:1px solid #999;break-inside:avoid;margin:8px 0}
+  .btn,button{display:none!important}
+  .printlines{display:block!important}
+  .printlines div{border-bottom:1px solid #444;height:34px}
+  .field input,.field select{border:1px solid #444;min-height:30px;background:#fff}
+  .field textarea{border:1px solid #444;min-height:110px;background:#fff}
+  .field input::placeholder,.field textarea::placeholder{color:transparent}
+  input[type=checkbox]{width:14px;height:14px;border:1px solid #444}
+  @page{margin:14mm}
 }
+.printlines{display:none}
 </style>
 </head>
 <body>
@@ -199,7 +208,8 @@ button.btn.ghost:hover{background:var(--gold-pale);border-color:var(--gold-deep)
   <p class="hint">For the book, cite the <strong>figure number or the section heading</strong> rather than the page. Page numbers differ between editions and printings. Figure 5.9 is Figure 5.9 in every copy.</p>
   <p class="hint">You need at least two, and at least one has to be the book or my notes.</p>
   <div id="cites"></div>
-  <button type="button" class="btn ghost" id="addcite">Add another source</button>
+  <div class="printlines" aria-hidden="true"><div></div><div></div><div></div><div></div></div>
+<button type="button" class="btn ghost" id="addcite">Add another source</button>
   <p class="count" id="c-cites" aria-live="polite">0 sources. Needs 2.</p>
 </section>
 
