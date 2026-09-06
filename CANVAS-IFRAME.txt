@@ -1,0 +1,17 @@
+CANVAS START HERE PAGE
+======================
+Edit the page, click the </> button (HTML editor), delete everything
+that is there, paste this in, save, then PUBLISH.
+
+<p><iframe
+  src="https://drsrennie-stack.github.io/human-physiology-Fa26/course-door.html"
+  title="BIO 005 Human Physiology"
+  width="100%"
+  height="1010"
+  style="width:100%; min-height:1010px; border:0; display:block;"
+  allowfullscreen="allowfullscreen"></iframe></p>
+
+Measured heights: 961px at 700px wide and up. 1518px at phone width.
+1010 gives desktop a little headroom. On a phone the frame scrolls
+internally, which is the usual Canvas trade and matches how BIO 004
+behaves.
