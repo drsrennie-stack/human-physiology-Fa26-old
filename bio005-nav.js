@@ -221,7 +221,7 @@
   + '.b5nav-back:focus-visible{outline:3px solid #B8924A;outline-offset:2px}'
   + '.b5foot{background:#060A18;color:#C9CFD6;margin-top:0;'
   + 'font-family:"Plus Jakarta Sans","DM Sans",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}'
-  + '.b5foot-in{max-width:1080px;margin:0 auto;padding:26px 20px 30px}'
+  + '.b5foot-in{max-width:none;margin:0;padding:26px max(40px,5vw) 34px}'
   + '.b5foot ul{list-style:none;margin:0 0 14px;padding:0;display:flex;flex-wrap:wrap;'
   + 'align-items:center;gap:6px 0;font-size:15px}'
   + '.b5foot li{display:flex;align-items:center}'
@@ -378,9 +378,7 @@
       foot.className = 'b5foot';
       foot.innerHTML = '<div class="b5foot-in">'
         + '<nav aria-label="Site"><ul>' + items + '</ul></nav>'
-        + '<p>BIO 005 Human Physiology, Yuba College, Fall 2026. '
-        + 'Taught by Dr. Sharilyn Rennie. If a page does not work for you, '
-        + 'tell me in the Virtual Office and I will fix it.</p></div>';
+        + '<p>If a page does not work for you, tell me in the Virtual Office and I will fix it.</p></div>';
       document.body.appendChild(foot);
     }
 
