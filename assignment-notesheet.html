@@ -1,426 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Competency Note Sheet &middot; Week 1 &middot; BIO 005</title>
-<link rel="stylesheet" href="assets/fonts-site.css">
-<!--
-  ============================================================
-  BIO 005 Human Physiology, Yuba College, Fall 2026
-  assignment-notesheet.html
-
-  REUSABLE FOR ALL FIFTEEN WEEKS. Do not duplicate this file.
-  Put it in Canvas once and change only the week number in the
-  iframe src:
-
-    <p><iframe title="Competency Note Sheet"
-      src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-notesheet.html?week=3"
-      width="100%" height="1500"
-      style="width:100%;height:1500px;border:0"></iframe></p>
-
-  The page reads ?week= and relabels its heading, its week title
-  and its browser tab. With no parameter it shows Week 1.
-  ============================================================
--->
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Note sheet &middot; BIO 005 Human Physiology</title>
+<link href="https://cdn.jsdelivr.net/npm/@fontsource-variable/plus-jakarta-sans/index.css" rel="stylesheet">
 <style>
-:root{
-  --ink:#0B1530; --maroon:#8B3A2E; --maroon-dk:#6E2D24; --maroon-wash:#F7EEEC;
-  --muted:#4A5265; --faint:#505663; --page:#FAFAF9; --card:#FFFFFF;
-  --hair:rgba(11,21,48,.15); --hair-soft:rgba(11,21,48,.07);
-  --gold:#C9A14A; --band:#0B1530; --terracotta:#C2734D;
-  --r-card:8px; --r-btn:4px; --r-badge:3px;
-  --display:'Open Sans',system-ui,-apple-system,sans-serif;
-  --body:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
-
-  /* Rebrand leftovers. These two were used all over this page but their
-     definitions went away with the old palette, so every rule that read
-     them fell back to nothing: white text on a transparent button, for
-     one. Mapped onto the MedMasters maroon, which is what they meant. */
-  --terra:#8B3A2E; --terra-dark:#6E2D24;
-}
-*,*::before,*::after{box-sizing:border-box}
+:root{--navy:#0B1530;--rust:#8B3A2E;--gold:#C9A14A;--goldpale:#F7EFD9;--slate:#8C90A0}
+*{box-sizing:border-box}
 html,body{margin:0}
-body{font-family:var(--body);background:var(--page);color:var(--ink);font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased}
-em,i,cite,dfn,var{font-style:normal}
-h1,h2,h3{font-family:var(--display);margin:0;letter-spacing:-.015em}
-p{margin:0}
-a{color:var(--maroon-dk)}
-:focus-visible{outline:3px solid var(--maroon);outline-offset:3px;border-radius:3px}
-.skip{position:absolute;left:-9999px;top:0;z-index:80;background:var(--ink);color:#fff;padding:12px 18px;font-weight:700;text-decoration:none}
-.skip:focus{left:0}
-.wrap{max-width:820px;margin:0 auto;padding:0 24px}
-.hdr{background:var(--band);color:#fff;padding:28px 0 26px}
-.hdr .eyebrow{font-family:var(--display);font-size:11px;font-weight:800;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
-/* Two-tone headline. Terracotta #C2734D measures 5.30:1 on the band; the
-   deeper terra used on white is only 2.48:1 here and cannot be reused. */
-.hdr h1{font-size:clamp(26px,4.4vw,38px);font-weight:800;margin-top:10px;color:#fff;line-height:1.1}
-.hdr h1 .a{color:var(--terracotta)}
-.hdr .wk{margin-top:9px;color:rgba(255,255,255,.88);font-size:15px}
-.meta{background:var(--card);border-bottom:.5px solid var(--hair);padding:15px 0}
-.meta .wrap{display:flex;flex-wrap:wrap;gap:10px}
-.chip{font-family:var(--display);font-size:10px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;
-  border:.5px solid var(--hair);border-radius:var(--r-badge);padding:6px 11px;color:var(--muted);background:var(--card)}
-.chip.g{background:var(--maroon);border-color:var(--maroon);color:#fff}
-.chip.ai{border-color:var(--maroon);color:var(--maroon-dk);background:var(--maroon-wash)}
-
-/* ---------- prerequisite strip ---------- */
-.prereq{background:var(--band);padding:26px 0 30px}
-.prereq .lab{font-family:var(--display);font-size:10.5px;font-weight:800;letter-spacing:.3em;
-  text-transform:uppercase;color:var(--gold);margin-bottom:4px}
-.prereq .sub{color:rgba(255,255,255,.82);font-size:13.5px;margin-bottom:15px;max-width:70ch}
-.pcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
-/* White cards floating on the dark band, with the gradient icon tile from the
-   BIO 004 door cards. Two blues stacked read as a mistake, and a white ground
-   is where terra works, so the labels stay terra. */
-.pc{background:var(--card);border-radius:14px;padding:20px 18px 18px;text-align:center}
-.pc .tile{width:52px;height:52px;border-radius:14px;margin:0 auto 12px;
-  display:flex;align-items:center;justify-content:center;color:#fff}
-.pc .t-anat{background:linear-gradient(150deg,#A8543C,#8B3A2E)}
-.pc .t-math{background:linear-gradient(150deg,#2B3A57,#0B1530)}
-.pc .t-chem{background:linear-gradient(150deg,#C9A14A,#A8842F)}
-.pc h3{font-family:var(--display);font-size:16px;font-weight:800;letter-spacing:-.01em;
-  text-transform:none;color:var(--ink);margin:0 0 7px}
-.pc p{font-size:13.5px;color:var(--muted);line-height:1.5;margin:0;text-align:left}
-.pc .src{display:block;margin-top:9px;font-size:12px;color:var(--faint)}
-.pc .ok{font-size:15px;margin-right:5px;color:var(--maroon)}
-.pc a{color:var(--maroon-dk);text-decoration:underline;text-underline-offset:2px}
-.pc a:hover{color:var(--maroon)}
-main{padding:34px 0 70px}
-section{margin-bottom:30px}
-h2{font-size:20px;font-weight:800;padding-bottom:8px;border-bottom:2px solid var(--maroon);margin-bottom:14px}
-h3{font-size:16px;font-weight:800;margin:20px 0 6px}
-p+p{margin-top:10px}
-ol,ul{margin:10px 0 0;padding-left:22px}
-li{margin-bottom:9px}
-li:last-child{margin-bottom:0}
-.steps{counter-reset:s;list-style:none;padding:0;margin:14px 0 0}
-.steps li{counter-increment:s;display:grid;grid-template-columns:52px 1fr;gap:6px 16px;
-  padding:18px 0;border-bottom:.5px solid var(--hair-soft);margin:0}
-.steps li::before{content:counter(s,decimal-leading-zero);font-family:var(--display);font-size:30px;
-  font-weight:800;color:var(--maroon);line-height:.9;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
-.steps li b{font-family:var(--display);font-size:16px;font-weight:800;display:block;margin-bottom:3px}
-.steps li span{grid-column:2;font-size:15px;color:var(--muted)}
-.box{border:.5px solid var(--hair);border-radius:var(--r-card);background:var(--card);padding:22px;margin-top:14px}
-.box.hot{border:2px solid var(--maroon);padding-top:0}
-.tab{display:inline-block;background:var(--maroon);color:#fff;font-family:var(--display);font-size:10.5px;
-  font-weight:800;letter-spacing:.2em;text-transform:uppercase;padding:6px 13px;border-radius:var(--r-badge);
-  transform:translateY(-50%);margin-bottom:-4px}
-.box h3{margin-top:0}
-.chapnote{display:block;margin-top:7px;font-size:14px;color:var(--muted)}
-table{border-collapse:collapse;width:100%;font-size:15px;margin-top:12px}
-th{font-family:var(--display);font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;
-  color:var(--faint);text-align:left;padding:9px 12px;border-bottom:.5px solid var(--hair)}
-td{padding:10px 12px;border-bottom:.5px solid var(--hair-soft);vertical-align:top}
-tr:last-child td{border-bottom:0}
-.due{font-family:var(--display);font-weight:800;color:var(--maroon-dk)}
-footer{border-top:.5px solid var(--hair);background:var(--card);padding:22px 0;font-size:12.5px;color:var(--faint)}
-footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
-@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
-@media(max-width:560px){.steps li{grid-template-columns:1fr}.steps li span{grid-column:1}}
-
-/* Wide tables scroll in their own box rather than pushing the page
-   sideways. Added Sep 6 2026 with the MedMasters type change: Open Sans
-   is wider than Plus Jakarta, so tables that just fitted at 320px no
-   longer did. tabindex makes the scroll box keyboard reachable, which
-   WCAG 2.1.1 requires of any scrollable region. */
-.tblscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%}
-.tblscroll:focus-visible{outline:3px solid var(--maroon,#8B3A2E);outline-offset:2px}
-.tblscroll table{min-width:100%}
-
-/* Square buttons instead of inline underlined links. Added Sep 6 2026. */
-.sqbtn{display:inline-block;font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-size:11px;
-  font-weight:700;letter-spacing:1.6px;text-transform:uppercase;text-decoration:none;
-  padding:10px 14px;border-radius:4px;border:1px solid var(--rule);background:var(--white);
-  color:var(--navy);margin-top:8px;
-  transition:border-color 160ms ease,color 160ms ease,background-color 160ms ease}
-.sqbtn:hover{border-color:var(--terra);color:var(--terra);background:#FBF6F5}
-.sqbtn.key{background:var(--terra);border-color:var(--terra);color:#FFFFFF}
-.sqbtn.key:hover{background:var(--terra-dark);border-color:var(--terra-dark);color:#FFFFFF}
-.btnrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
-@media print{ .sqbtn{border:1px solid #000;color:#000;background:#fff} }
+body{font-family:'Plus Jakarta Sans Variable','Plus Jakarta Sans',system-ui,sans-serif;color:var(--navy);background:#fff;line-height:1.65;font-size:15.5px;padding:40px max(28px,4vw)}
+.inner{max-width:760px;margin:0 auto}
+.skip{position:absolute;left:-9999px;top:0;background:var(--navy);color:#fff;padding:12px 18px;font-weight:700;text-decoration:none}
+.skip:focus{left:0;top:0}
+a{color:var(--rust)}
+:focus-visible{outline:3px solid var(--rust);outline-offset:3px}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--rust);margin:0 0 12px}
+h1{font-size:clamp(26px,4.5vw,36px);font-weight:800;letter-spacing:-.02em;margin:0 0 4px;line-height:1.1}
+.sub{margin:0 0 4px;font-weight:700}
+.due{color:var(--rust);font-weight:800;margin:0 0 18px}
+ol.how{margin:14px 0 22px;padding-left:22px}
+ol.how li{margin:0 0 10px;max-width:64ch}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin:6px 0 26px}
+.btn{display:inline-block;font-weight:800;text-decoration:none;border-radius:10px;padding:13px 20px;letter-spacing:.04em}
+.btn.solid{background:var(--rust);color:#fff}
+.btn.line{border:2px solid var(--navy);color:var(--navy)}
+h2{font-size:18px;font-weight:800;margin:22px 0 6px}
+.upload{background:var(--goldpale);border:1px solid var(--slate);border-radius:12px;padding:14px 18px;max-width:640px}
+.upload ol{margin:6px 0 0;padding-left:20px}
+.upload li{margin:0 0 6px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to the instructions</a>
+<main id="main" class="inner">
+  <p class="eyebrow">Assignment &middot; graded &middot; 20% of your grade</p>
+  <h1>Competency note sheet</h1>
+  <p class="sub" id="wkline">Week 1 &middot; How physiology works and what keeps you steady</p>
+  <p class="due" id="dueline">Due Sunday at 10:00 pm</p>
 
-<header class="hdr"><div class="wrap">
-  <p class="eyebrow">Assignment</p>
-  <h1>Competency <span class="a">note sheet</span></h1>
-  <p class="wk"><span data-wk>Week 1</span> &middot; <span data-wt>How physiology works and what keeps you steady</span></p>
-</div></header>
-
-<div class="meta"><div class="wrap"><span class="chip g">Graded</span><span class="chip">20% of your grade</span><span class="chip">One assignment, two parts</span><span class="chip ai">AI closed</span><span class="chip">By hand, on paper</span></div></div>
-
-<div class="prereq"><div class="wrap">
-  <p class="lab">Before you start, brush up if you need to</p>
-  <p class="sub">These are the things this week's physiology assumes you already have. If a card says you are set, you are set. If not, the resource is there to fill the gap, and none of it is a lecture from me.</p>
-  <div class="pcards">
-    <div class="pc" id="pc-anat"><span class="tile t-anat" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 1 4 4v1a4 4 0 0 1-8 0V6a4 4 0 0 1 4-4z"/><path d="M5 22v-4a7 7 0 0 1 14 0v4"/></svg></span><h3>Anatomy</h3><p></p></div>
-    <div class="pc" id="pc-math"><span class="tile t-math" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2.5" width="14" height="19" rx="2.5"/><path d="M8 6.5h8M8.5 11h.01M12 11h.01M15.5 11h.01M8.5 14.5h.01M12 14.5h.01M15.5 14.5h.01M8.5 18h.01M12 18h3.5"/></svg></span><h3>Math</h3><p></p></div>
-    <div class="pc" id="pc-chem"><span class="tile t-chem" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.5L4.5 19a2 2 0 0 0 1.8 3h11.4a2 2 0 0 0 1.8-3L14 9.5V2"/><path d="M8 2h8M7 15h10"/></svg></span><h3>Chemistry</h3><p></p></div>
-  </div>
-</div></div>
-
-<main id="main"><div class="wrap">
-
-<section>
-  <h2>What this is</h2>
-  <p>One box for every competency in <span data-wk>Week 1</span>. You build it by hand, on paper, in two passes and two colors. It is the first thing you do each week and the last thing you should skip, because it is also your study guide when the midterm comes.</p>
-  <p><strong>You turn this in once, at the end of the week, not after the first pass.</strong> The first pass and the second pass live on the same sheet, so there is nothing to submit until you have watched the videos and added your second color.</p>
-  <p>Due <span class="due">Sunday at 10:00 pm</span>, the Sunday that closes <span data-wk>Week 1</span>. Up to 24 hours late is an automatic 50 percent reduction. After 24 hours it is a zero.</p>
-</section>
-
-<section>
-  <h2>What you need before you start</h2>
-  <p>Gather these five things first. Nothing here needs to be bought beyond the textbook you already have.</p>
-  <div class="tblscroll" tabindex="0" role="region" aria-label="Table, scroll sideways to see all columns"><table>
-    <tr><th style="width:31%">What</th><th>Where and why</th></tr>
-    <tr>
-      <td><strong>My course notes</strong></td>
-      <td><span id="notesrow">Notes for this week are posted on the week page in Canvas.</span></td>
-    </tr>
-    <tr>
-      <td><strong>This week's competencies</strong></td>
-      <td>You do not build the sheet. It is already built, one page per competency, with four labelled spaces on each page. Print it and fill it in.
-          <span class="btnrow">
-            <a class="sqbtn key" href="note-sheet.html?week=1" target="_top">Print your sheet</a>
-            <a class="sqbtn" href="week-01-competencies.html" target="_top">Week 1 competencies</a>
-          </span></td>
-    </tr>
-    <tr>
-      <td><strong>Your Silverthorn chapters</strong></td>
-      <td><span id="chapters">Chapter list loads here.</span>
-          <span id="chapnote" class="chapnote"></span></td>
-    </tr>
-    <tr>
-      <td><strong>Pearson access</strong></td>
-      <td>Silverthorn is read through Pearson. Sign in with the access you set up in Week 1. If you cannot get in, message me early in the week rather than the night before something is due, because access problems take Pearson a day or two to sort out.</td>
-    </tr>
-    <tr>
-      <td><strong>Two pens of different colors</strong></td>
-      <td>One for your first pass and one for your second. Any two colors, as long as both read clearly in a photograph. Avoid yellow and light pastels, they disappear on camera.</td>
-    </tr>
-  </table></div>
-
-  <div class="box">
-    <h3>About page numbers</h3>
-    <p>I give you chapters rather than page numbers on purpose. Page numbers move between printings, between the US and Global editions, and between print and the online version, so a page number that is right for me is often wrong for you. Chapter and section headings do not move.</p>
-    <p>If you are hunting for something specific, search the chapter for the term rather than scrolling to a page. The competency wording is the search term: it is written to match how the book names things.</p>
-  </div>
-</section>
-
-<section>
-  <h2>Do it in this order</h2>
-  <ol class="steps">
-    <li><b>Read this week's competencies first</b><span>Open the competency list and read the <span data-wt>Week 1</span> entries. Those are the boxes on your sheet, and they are the exact things you have to be able to do.</span></li>
-    <li><b>First pass, in your first color</b><span>Work through the sheet using your textbook and your own notes, and nothing else. Do not open the videos yet. Organize what you can already put together: mini mind maps, lists, sequences, arrows. Keep it short.</span></li>
-    <li><b>Stop while the boxes are still half empty</b><span>This is deliberate. You are meant to arrive at the videos already holding a partly built picture, so that watching fills gaps you can actually feel instead of washing over you.</span></li>
-    <li><b>Do not turn it in yet</b><span>Both passes go on the same sheet and you submit it once, at the end. Handing it in now means turning in a half finished sheet in a single color, which is exactly what does not count. Keep going.</span></li>
-    <li><b>Now watch this week's concept videos</b><span>Watch them the whole way through, with your sheet in front of you.</span></li>
-    <li><b>Second pass, in a different color</b><span>Go back through the same boxes and add what you were missing, correct what you had wrong, and write down whatever finally made sense once you heard it explained.</span></li>
-    <li><b>Do not erase the first pass</b><span>Leave it visible underneath, mistakes and all. Those wrong marks are the most useful thing on the page, for you and for me.</span></li>
-    <li><b>Now photograph it and submit</b><span>This is the only time you turn the note sheet in, with both passes on it and both colors showing. The photograph rules are further down this page, and they matter more than you would think.</span></li>
+  <ol class="how">
+    <li><strong>Print your sheet.</strong> One page per competency, spaces already labelled. You do not build anything.</li>
+    <li><strong>Open the competencies.</strong> Read the prompts first, preview the text, then answer the best you can from what you already know, in your <strong>first color</strong>.</li>
+    <li><strong>Watch the videos</strong> for each concept and add what you did not know in your <strong>second color</strong>. Do not erase the first pass; the gap between the colors is the point.</li>
   </ol>
-</section>
 
-<section>
-  <h2>Why two colors</h2>
-  <div class="box hot">
-    <span class="tab">Read this part</span>
-    <h3>The two colors are how I can tell you watched</h3>
-    <p>When I read your sheet I can see exactly which parts of your understanding came from your reading and which came from the videos. That tells me something no score can.</p>
-    <p><strong>A sheet that arrives in a single color has not finished the assignment</strong>, whatever is written on it, because it tells me the videos were skipped or the whole thing was done in one sitting afterwards. If that happens, go back, watch, and add your second pass.</p>
-    <p>This is also the honest way for you to find out what you understood on your own before anyone explained it to you. That is precisely what your midterm asks about.</p>
+  <div class="btns">
+    <a class="btn solid" id="sheetBtn" href="sheets/BIO005-note-sheet-week-01.pdf" target="_top">Print your sheet</a>
+    <a class="btn line" id="compBtn" href="week-01-notesheet-prompts.html" target="_top">Open the competencies</a>
   </div>
-</section>
 
-<section>
-  <h2>How to photograph and submit it</h2>
-  <p>Your two colors only work if they survive the photo. Take thirty seconds over this and you will not have to redo it.</p>
-  <ul>
-    <li><strong>Color photo or color scan only.</strong> Greyscale or black-and-white scans erase the entire point of the assignment and cannot be graded.</li>
-    <li><strong>Good light, no shadow across the page.</strong> Daylight near a window beats a ceiling light directly overhead. Your own shadow falling across the sheet is the most common problem.</li>
-    <li><strong>Square to the page.</strong> Hold your phone flat above the sheet rather than at an angle, so the box edges stay straight and the writing stays readable.</li>
-    <li><strong>Every page, in order</strong>, lecture journal then lab journal. Check each image before you upload it: if you cannot read your own handwriting on screen, neither can I.</li>
-    <li><strong>One PDF if you can.</strong> Most phone camera apps will combine pages into a single PDF. Separate image files are fine too, just name them so the order is obvious.</li>
-  </ul>
-  <p>If a photo comes out unreadable I will ask you to resubmit, and the late policy still applies, so check before you upload rather than after.</p>
-</section>
-
-<section>
-  <h2>How it is graded</h2>
-  <div class="tblscroll" tabindex="0" role="region" aria-label="Table, scroll sideways to see all columns"><table>
-    <tr><th>What I look at</th><th>What earns credit</th></tr>
-    <tr><td><strong>Five prompts, chosen at random</strong></td><td>Graded for accuracy. You will not know which five ahead of time, so every box has to be real work.</td></tr>
-    <tr><td><strong>Everything else</strong></td><td>Checked for completion: every box attempted, both colors present, a source named.</td></tr>
-    <tr><td><strong>Both passes visible</strong></td><td>First pass in one color, second pass added in another, first pass not erased.</td></tr>
-  </table></div>
-  <h3>Using AI on this</h3>
-  <p>AI is closed on this assignment. You may use it to help you organize your own thinking or to check a definition while you study, but nothing on the sheet may be copied from it, and nothing on the sheet may be drawn by it. Everything you turn in is in your handwriting.</p>
-</section>
-
-</div></main>
-
-<footer><div class="wrap">
-  <span>BIO 005 Human Physiology &middot; Yuba College &middot; Fall 2026</span>
-  <span>Dr. Sharilyn Rennie</span>
-</div></footer>
+  <h2>Turning it in</h2>
+  <div class="upload">
+    <ol>
+      <li>Handwritten, on paper, in your two colors. Typed work earns a zero.</li>
+      <li>Photograph or scan every page into <strong>one PDF</strong>, in order.</li>
+      <li>Submit the PDF here before <strong>10:00 pm</strong>. Check for the Canvas confirmation screen.</li>
+    </ol>
+  </div>
+</main>
 <script>
 (function(){
-  "use strict";
-  /* ONE FILE, FIFTEEN WEEKS. The week comes from the URL: add ?week=3 to the
-     iframe src in Canvas and this page relabels itself. Nothing to edit here
-     week to week, and nothing to re-upload. */
-  var TITLES = ["How physiology works and what keeps you steady", "The chemistry that does work in the body", "Getting across the membrane", "The action potential", "The nervous system, from sensing to moving", "How muscle makes force", "Hormones, the slow control system", "Reproduction, and the clearest positive feedback loop", "The heart as a pump", "Pressure, flow, and holding blood pressure steady", "Blood, and how the body defends itself", "Digestion, and how you use food for fuel", "Breathing, gas transport, and blood pH", "The kidney, and body fluid balance", "The slow lever on pH, and putting it all together"];
-  var q = new URLSearchParams(window.location.search);
-  var w = parseInt(q.get("week"), 10);
-  if (isNaN(w) || w < 1 || w > 15) { w = 1; }
-  document.querySelectorAll("[data-wk]").forEach(function(n){ n.textContent = "Week " + w; });
-  document.querySelectorAll("[data-wt]").forEach(function(n){ n.textContent = TITLES[w-1]; });
-  document.title = document.title.replace("Week 1", "Week " + w);
-
-/* ---------- my notes for the week ----------
-   Week 1 has the concept library: twenty segments, each with its
-   own written notes. Later weeks get notes as they are written,
-   so the row says where to look rather than pointing at nothing. */
-var NOTES = {
-  1: ['concept-videos-week01.html',
-      'Each of the twenty Week 1 concepts has its own written notes alongside its video, so you can read the concept before you watch it or after. Open the concept page and the notes sit with each segment.',
-      'Open the concept videos and notes']
-};
-var nr = document.getElementById("notesrow");
-if (nr && NOTES[w]) {
-  nr.innerHTML = NOTES[w][1] + ' <a href="' + NOTES[w][0] + '" target="_top">' +
-                 NOTES[w][2] + ' &rarr;</a>';
-}
-
-
-/* ---------- what each week assumes you already have ----------
-   Empty string means nothing extra is needed that week, and the
-   card says so rather than sitting blank. Sources are named
-   rather than deep-linked, because deep links rot and a named
-   chapter does not. ------------------------------------------- */
-var PRE = {
-  1:  {a:"", m:["Units and unit conversion, reading a graph, and rearranging a simple equation. Mass balance is algebra you already have.","Khan Academy, Algebra basics"], c:""},
-  2:  {a:"", m:["Exponents, scientific notation and logarithms. pH is a log scale and it will not make sense without them.","Khan Academy, Logarithms"],
-       c:["Atoms and bonds, water as a solvent, acids and bases, pH and buffers, and the four classes of biological molecule. This is the heaviest chemistry week in the course.","OpenStax Chemistry 2e, chapters 2 and 14, or Khan Academy, Chemistry"]},
-  3:  {a:["Cell structure and the epithelial tissue types.","OpenStax Anatomy and Physiology, chapters 3 and 4, or your own anatomy review page"],
-       m:["Concentration: molarity, percent solutions, and dilutions. You will calculate osmolarity all week.","Khan Academy, Molarity and solutions"],
-       c:["Solutions, solutes, and what a concentration gradient is.","OpenStax Chemistry 2e, chapter 11"]},
-  4:  {a:["The neuron: cell body, dendrites, axon, myelin. Plus the basic divisions of the nervous system.","OpenStax Anatomy and Physiology, chapter 12, or your own anatomy review page"],
-       m:["Negative numbers on a scale, and logarithms again for the Nernst equation.","Khan Academy, Logarithms"],
-       c:["Ions, charge, and what makes a gradient electrochemical rather than just chemical.","OpenStax Chemistry 2e, chapter 2"]},
-  5:  {a:["Brain regions and the spinal cord in outline. You do not need detail, you need to know roughly where things are.","OpenStax Anatomy and Physiology, chapter 13"], m:"", c:""},
-  6:  {a:["The sensory organs, and the anatomy of the autonomic nervous system.","OpenStax Anatomy and Physiology, chapters 14 and 15"],
-       m:["Log scales, because sensory intensity is measured on them.","Khan Academy, Logarithms"], c:""},
-  7:  {a:["Skeletal muscle structure down to the sarcomere, plus the major muscle groups and joint types.","OpenStax Anatomy and Physiology, chapters 9, 10 and 11, or your own anatomy review page"],
-       m:["Force, levers and ratios.","Khan Academy, Torque and angular momentum"],
-       c:["ATP and calcium as a signal. You met both in week 2.",""]},
-  8:  {a:["The endocrine glands and where they sit, plus reproductive anatomy.","OpenStax Anatomy and Physiology, chapters 17 and 27"],
-       m:["Half life, and reading a concentration curve over time.","Khan Academy, Exponential decay"],
-       c:["Steroids versus peptides, and why lipid solubility decides where a receptor lives.","OpenStax Chemistry 2e, chapter 20"]},
-  9:  {a:["Heart chambers, valves, the conduction system and the great vessels. Know these cold before this week.","OpenStax Anatomy and Physiology, chapter 19, or your own anatomy review page"],
-       m:["Multiplying through a formula. Cardiac output is heart rate times stroke volume, and you will rearrange it.",""], c:""},
-  10: {a:["Vessel types and the main circulatory routes.","OpenStax Anatomy and Physiology, chapter 20"],
-       m:["The heaviest math week. Pressure, flow and resistance, rearranging equations for any variable, and calculating mean arterial pressure.","Khan Academy, Algebra, solving for a variable"], c:""},
-  11: {a:["Blood components, and the lymphatic organs including spleen, thymus and nodes.","OpenStax Anatomy and Physiology, chapters 18 and 21"],
-       m:["Percentages and cell counts. Haematocrit is a percentage and counts run in scientific notation.","Khan Academy, Scientific notation"],
-       c:["Haemoglobin and iron, and how an antigen and an antibody bind.",""]},
-  12: {a:["The GI tract in order, plus the accessory organs: liver, gallbladder, pancreas.","OpenStax Anatomy and Physiology, chapter 23"],
-       m:["Calorie arithmetic and reading an energy balance.",""],
-       c:["Carbohydrates, fats and proteins, and hydrolysis as the reaction that breaks them apart.","OpenStax Chemistry 2e, chapter 20"]},
-  13: {a:["Lungs, airways, pleura, the thoracic cage and the diaphragm.","OpenStax Anatomy and Physiology, chapter 22"],
-       m:["Partial pressures and gas equations. Second heaviest math week after week 10.","Khan Academy, Ideal gas equation"],
-       c:["The gas laws, gas solubility, and the carbonic acid and bicarbonate system.","OpenStax Chemistry 2e, chapters 9 and 11"]},
-  14: {a:["The nephron, in detail, and the gross structure of the kidney. Worth reviewing properly, this week is built on it.","OpenStax Anatomy and Physiology, chapter 25, or your own anatomy review page"],
-       m:["Clearance and filtration calculations, and ratios. Heavy math.","Khan Academy, Ratios and proportions"],
-       c:["Osmolarity again, and how an ion moves against a gradient.",""]},
-  15: {a:"", m:["Logarithms one last time, for the Henderson Hasselbalch equation.","Khan Academy, Logarithms"],
-       c:["Buffers and acid base chemistry. If week 2 was shaky, this is the week it catches up with you.","OpenStax Chemistry 2e, chapter 14"]}
-};
-
-function fillCard(id, item) {
-  var card = document.getElementById(id);
-  if (!card) { return; }
-  var p = card.querySelector("p");
-  if (!item || item === "") {
-    card.className = "pc none";
-    p.innerHTML = '<span class="ok" aria-hidden="true">&#9786;</span>Nothing extra needed this week. You already have what this asks for.';
-    return;
-  }
-  var html = item[0];
-  if (item[1]) {
-    var src = item[1];
-    if (/anatomy review page/i.test(src)) {
-      src = src.replace(/your own anatomy review page/i,
-        '<a href="anatomy-review.html" target="_top">the anatomy review page</a>');
-    }
-    html += '<span class="src">Where: ' + src + '</span>';
-  }
-  p.innerHTML = html;
-}
-var pre = PRE[w] || {a:"", m:"", c:""};
-fillCard("pc-anat", pre.a);
-fillCard("pc-math", pre.m);
-fillCard("pc-chem", pre.c);
-
-
-var CHAPTERS = {
-  1:  [["1","Introduction to Physiology"],["6","Communication, Integration, and Homeostasis"]],
-  2:  [["2","Molecular Interaction"],["4","Energy and Cellular Metabolism"]],
-  3:  [["3","Compartmentation: Cells and Tissues"],["5","Membrane Dynamics"]],
-  4:  [["6","Communication, Integration, and Homeostasis"],["9","Neurons: Cellular and Network Properties"]],
-  5:  [["9","Neurons, the synapse sections"],["10","The Central Nervous System"]],
-  6:  [["11","Sensory Physiology"],["12","Efferent Division, autonomic sections"]],
-  7:  [["12","Efferent Division, somatic motor sections"],["13","Muscles"],["14","Integrative Physiology I: Control of Body Movement"]],
-  8:  [["8","Introduction to the Endocrine System"],["24","Endocrine Control of Growth and Metabolism"],["26","Reproduction and Development"]],
-  9:  [["15","Cardiovascular Physiology"]],
-  10: [["16","Blood Flow and the Control of Blood Pressure"]],
-  11: [["17","Blood"],["7","The Immune System"]],
-  12: [["22","The Digestive System"],["23","Metabolism and Energy Balance"]],
-  13: [["18","Mechanics of Breathing"],["19","Gas Exchange and Transport"]],
-  14: [["20","The Kidneys"]],
-  15: [["21","Integrative Physiology II: Fluid and Electrolyte Balance"],["25","Integrative Physiology III: Exercise"]]
-};
-var CHNOTE = {
-  1:  "Read chapter 6 this week for homeostasis, feedback loops and control pathways only. The signalling half comes back in week 4.",
-  2:  "Chapter 2 for water, pH, proteins and enzymes. Chapter 4 for ATP and coupling.",
-  3:  "Chapter 3 for the body fluid compartments. Chapter 5 is the core of the week.",
-  4:  "Chapter 6 returns, this time for cell signalling, receptors and second messengers.",
-  5:  "Chapter 9 is read across two weeks: the cell last week, the synapse this week.",
-  6:  "Sensory input and autonomic output are two halves of the same reflex, so they read well together.",
-  7:  "Chapter 12 is split too: the autonomic half was last week, the somatic half sits here beside the muscle it commands.",
-  8:  "Three chapters, but chapter 24 is short and mostly the calcium loop. Your midterm sits in this week, so start early.",
-  11: "The immune system is chapter 7 in this edition, well before where we teach it. That number is not a mistake.",
-  12: "Read chapter 22 properly and skim chapter 23.",
-  14: "One chapter, and it is a long one. Give it more time than a usual week.",
-  15: "Three days only. Chapter 21 for renal compensation, chapter 25 as the integration read before the case conference."
-};
-var ch = CHAPTERS[w] || [];
-var box = document.getElementById("chapters");
-if (box) {
-  box.innerHTML = ch.length
-    ? "Silverthorn 9th edition, US or Global. " +
-      ch.map(function(c){ return "<strong>Chapter " + c[0] + "</strong>, " + c[1]; }).join("; ") + "."
-    : "Chapters for this week are posted on the week page.";
-}
-var nb = document.getElementById("chapnote");
-if (nb && CHNOTE[w]) { nb.textContent = CHNOTE[w]; }
-
-})();
-(function(){
-  var ID = "bio005-assignment";
-  function send(){
-    var h = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
-    try{ window.parent.postMessage({id:ID,frameId:ID,type:"resize",height:h}, "*"); }catch(e){}
-  }
-  window.addEventListener("load", send); window.addEventListener("resize", send);
-  if (typeof ResizeObserver !== "undefined"){ try{ new ResizeObserver(send).observe(document.body); }catch(e){} }
-  setTimeout(send,400); setTimeout(send,1500);
+  var TITLES = ["How physiology works and what keeps you steady", "The chemistry that does work in the body", "Getting across the membrane", "How cells talk, and the electrical signal", "Synapses and central integration", "Sensing the world, and the responses you do not control", "Muscle, and how movement gets commanded", "Hormones and reproduction, the slow control system", "The heart as a pump", "Pressure, flow, and holding blood pressure steady", "Blood and how the body defends itself", "Digestion, and how you use food for fuel", "Breathing, gas transport, and the fast pH lever", "The kidney and body fluid balance", "The slow pH lever, and putting it all together"];
+  var DUE = ["Sunday, September 13", "Sunday, September 20", "Sunday, September 27", "Sunday, October 4", "Sunday, October 11", "Sunday, October 18", "Sunday, October 25", "Sunday, November 1", "Sunday, November 8", "Sunday, November 15", "Sunday, November 22", "Sunday, November 29", "Sunday, December 6", "Sunday, December 13", "Wednesday, December 16"];
+  var m = /[?&]week=(\d{1,2})/.exec(location.search);
+  var w = m ? Math.max(1, Math.min(15, parseInt(m[1],10))) : 1;
+  var pad = (w < 10 ? "0" : "") + w;
+  document.title = "Note sheet \u00b7 Week " + w + " \u00b7 BIO 005 Human Physiology";
+  document.getElementById("wkline").textContent = "Week " + w + " \u00b7 " + TITLES[w-1];
+  document.getElementById("dueline").textContent = "Due " + DUE[w-1] + " at 10:00 pm";
+  document.getElementById("sheetBtn").href = "sheets/BIO005-note-sheet-week-" + pad + ".pdf";
+  document.getElementById("compBtn").href = "week-" + pad + "-notesheet-prompts.html";
+  var id = "ns" + pad + "-" + Math.random().toString(36).slice(2,8);
+  function post(){ try{ parent.postMessage({frame:id, height:document.documentElement.scrollHeight}, "*"); }catch(e){} }
+  if ("ResizeObserver" in window){ new ResizeObserver(post).observe(document.documentElement); }
+  window.addEventListener("load", post); window.addEventListener("resize", post); post();
 })();
 </script>
-<script src="bio005-back.js"></script>
-<script src="bio005-nav.js" defer></script>
 </body>
 </html>

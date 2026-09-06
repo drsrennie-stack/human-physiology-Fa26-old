@@ -1,4 +1,4 @@
-// BIO 005 course questions, generated September 5, 2026. Feed for Hootie or any helper.
+// BIO 005 course questions, generated September 6, 2026. Feed for Hootie or any helper.
 // Update whenever a course rule changes; course-questions.html renders the same data.
 var BIO005_FAQ = [
  {
@@ -44,7 +44,7 @@ var BIO005_FAQ = [
  {
   "cat": "Getting started",
   "q": "What is the first assignment due?",
-  "a": "Your introduce yourself post is due Friday, September 11 at 10:00 pm. Everything else for Week 1 is due Sunday, September 13 at 10:00 pm."
+  "a": "Your digital vision board post is due Friday, September 11 at 10:00 pm. Everything else for Week 1 is due Sunday, September 13 at 10:00 pm."
  },
  {
   "cat": "Getting started",
@@ -424,7 +424,7 @@ var BIO005_FAQ = [
  {
   "cat": "Discussions",
   "q": "What is Week 1's discussion?",
-  "a": "The introduce yourself post. Same deadlines: post by Friday, September 11, replies by Sunday, September 13, 10:00 pm."
+  "a": "Your digital vision board: one image showing who you are, what matters to you, why you are here, and where you are going, posted with a short video of you walking us through it. Post by Friday, September 11, replies by Sunday, September 13, 10:00 pm."
  },
  {
   "cat": "Discussions",

@@ -69,6 +69,12 @@ Builds 2 to 4 are one-page data-interpretation sheets, the ten-minute-to-grade k
 - Retag note for the repo: `workbook_week01/02/03` filenames predate the Aug 23 week remap, their content now belongs to Weeks 1, 3, and 4 respectively. Rename or map in the week pages, don't renumber the content.
 
 
+## Built worksheets
+
+Week 1: fluid-homeostasis-lab.html, the fluid balance lab in the clinical format, wrapping the homeostasis case with the hypernatremia serum panel correlation. No Pearson in Week 1.
+
+Week 2: enzyme-amylase-lab.html, the amylase lab sheet with predictions, data tables, the pancreatitis lab-test correlation, and the look-back. Wire the Canvas assignment to it.
+
 ## Credit rule, September 5
 
 The lab takes both parts. PhysioEx must show complete in Pearson, and the graded artifact is the worksheet and data record, plus the clinical correlation questions in weeks that carry them. The worksheet is only graded once PhysioEx shows complete; check Pearson completion before grading the Canvas submission. Keep Mastering activities completion-weighted; the points live on the Canvas worksheet submission.

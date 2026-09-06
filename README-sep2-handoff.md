@@ -254,3 +254,62 @@ weighted over answer-word hits, minimum score gate so nonsense still gets
 the graceful fallback. The two files to keep in lockstep on any course
 change: bio005-faq.js and course-questions.html, same data, two doors.
 Deploy note: welcome.html and bio005-faq.js travel together.
+
+## Week 2 built, September 5, late
+
+week-02-notesheet-prompts.html: seven competencies from the sheet data of
+record (assets/bio005-sheet-data.js), two prompts each in her Week 1 format,
+cloned whole from week-01-notesheet-prompts.html: same progress ticks, same
+two pass color doctrine, same rubric, storage key bio005-w2. The enzyme
+assay prompt points at the amylase lab data. enzyme-amylase-lab.html: the
+Week 2 lab sheet, predictions, PhysioEx data tables, the pancreatitis
+serum amylase and lipase correlation, look back. Both wired into
+week-02.html, whose prepare chip is cleared.
+
+FLAG, needs her decision: competencies-by-week.html re-titles weeks 4 to 8
+and 13 to 15 (nervous system split across 4 to 6, muscle at 7, hormones and
+reproduction merged at 8, pH levers renamed at 13 and 15). The generated
+week hubs 4 to 8, 13 and 15 carry the older titles and lab mapping and need
+reconciling to the new map before those weeks open. Weeks 1 to 3 agree.
+
+## The Canvas assignment kit, September 5, late
+
+canvas-kit.html, instructor tool: pick any week 1 to 15, get every embed
+snippet for that week with a copy button, in her exact iframe convention and
+Pages base URL, wired to her own parameterized assignment pages
+(assignment-notesheet, discussion, bookproblems, physioex, ai-work-log, all
+?week=N), plus the week hub and the built extras (Week 1 prompts and lab
+case; Week 2 prompts and enzyme lab). Header section: the five weighted
+Canvas assignment groups (20/40/15/15/10), naming convention, 10:00 pm
+times, Pearson note. Static section: course home card, welcome, syllabus,
+schedule, and the questions page. Discussion prompts written for Weeks 2 to
+4 in her physiology-plus-honest-thinking formula, Week 1 pointing at her
+vision board page. Simulated for Week 2: all eight snippets correct.
+
+## assignment-notesheet.html rebuilt lean, September 6
+
+Her page hardcoded Week 1 links regardless of ?week and ran 1,249 words. The
+rebuild is 157 words and fully week-driven: three instructions in the color
+method, two buttons (Print your sheet, straight to that week's PDF in
+sheets/, which exists for all fifteen weeks; Open the competencies, to
+week-NN-notesheet-prompts.html, live for Weeks 1 and 2, the naming contract
+for the rest), the due date computed per week including the Wednesday close
+for Week 15, and the three-step upload box. Height sender included so the
+Canvas iframe sizes itself. The prompts pages must ship for each future week
+before its assignment goes live; the kit and wiring map both track that.
+
+## Week 1 lab and the week-aware lab assignment page, September 6
+
+fluid-homeostasis-lab.html: Week 1's lab in the clinical five-part format,
+wrapping her existing homeostasis case (part 2 links the workbook) with
+predictions, the failed thirst loop and mass balance ledger, the
+hypernatremia panel correlation (serum sodium 156, osmolality 322, the
+elderly blunted-thirst patient), and the look back. No Pearson in Week 1,
+stated plainly.
+
+assignment-physioex.html rebuilt lean and week-aware: weeks 1, 5 and 8
+render their no-Pearson labs with the right link and never mention
+completing PhysioEx; Pearson weeks render the PhysioEx-first order, the
+two-part credit rule, and the built worksheet button where one exists
+(weeks 2, 3, 11, 13, 15). Week 1 hub Lab step now opens the fluid balance
+lab; the kit's Week 1 extras carry it; the lab map records it.
