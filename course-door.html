@@ -109,14 +109,45 @@ h1{font-size:clamp(30px,6vw,44px);line-height:1.1;color:#fff}
 .small{display:block;margin-top:18px;font-size:13px;color:#C9CEDA}
 .small a{color:var(--gold);font-weight:700}
 
+/* ---------- the hello screen, folded in from the old welcome page ----------
+   It is an ABSOLUTE overlay inside .stage, never fixed and never a second
+   page load, so the door is still one Canvas embed and the iframe height
+   never changes while it plays. The cards sit underneath it in the DOM the
+   whole time, focusable and readable, so a keyboard or screen reader user is
+   never waiting on an animation. It plays once a day per browser, skips on
+   any click or key, and does not run at all under reduced motion. */
+.stage{position:relative}
+.hello{position:absolute;inset:0;background:var(--ground);z-index:10;
+       display:grid;place-items:center;text-align:center;padding:20px;
+       transition:opacity 520ms ease}
+.hello[hidden]{display:none}
+.hello.out{opacity:0;pointer-events:none}
+.hello .g{font-family:var(--display);font-weight:800;color:#fff;
+          font-size:clamp(46px,11vw,104px);line-height:1;letter-spacing:-.03em;
+          min-height:1.05em}
+.hello .gsub{margin-top:18px;font-size:14px;letter-spacing:.24em;
+             text-transform:uppercase;font-weight:700;color:#E2C583}  /* 9.34:1 */
+.hello .skip-hint{margin-top:26px;font-size:12.5px;color:#C9CEDA}     /* 11.4:1 */
+
 @media (max-width:560px){ .doors{grid-template-columns:1fr} }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important}
+  .hello{display:none}
 }
 </style>
 </head>
 <body>
 <a class="skip" href="#doors">Skip to the course</a>
+
+<div class="stage">
+
+<div class="hello" id="hello" aria-hidden="true" hidden>
+  <div>
+    <p class="g" id="greet">Hello</p>
+    <p class="gsub">BIO 005 &middot; Human Physiology &middot; Fall 2026</p>
+    <p class="skip-hint">Tap anywhere to skip</p>
+  </div>
+</div>
 
 <main class="wrap">
 
@@ -147,15 +178,17 @@ h1{font-size:clamp(30px,6vw,44px);line-height:1.1;color:#fff}
     <a class="door" href="os/mastery-physio-os.html" target="_top">
       <span class="tile t-gold" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.4-1.2 4.2-2.6 5.6-.8.8-1.4 1.9-1.4 3v.4H9v-.4c0-1.1-.6-2.2-1.4-3C6.2 13.2 5 11.4 5 9a7 7 0 0 1 7-7z"/><path d="M9 21h6"/></svg></span>
       <h2>Study</h2>
-      <span class="d">Mastery OS, recall cards, drawing</span>
+      <span class="d">The Mastery OS, recall cards, drawing</span>
     </a>
 
   </div>
 
-  <a class="pill p-maroon" href="https://yccd.instructure.com/courses/42616/discussion_topics/712733" target="_blank" rel="noopener">
+  <!-- Was Discussion 1 only, which went stale the moment Week 1 closed. It is
+       the discussions index now, so this button is right all fifteen weeks. -->
+  <a class="pill p-maroon" href="https://yccd.instructure.com/courses/42616/discussion_topics" target="_blank" rel="noopener">
     <span class="ptile" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-4-.9L3 21l1.9-4.6A8.4 8.4 0 0 1 4 11.5 8.4 8.4 0 0 1 12.5 3 8.4 8.4 0 0 1 21 11.5z"/></svg></span>
-    <span><span class="pt">Discussion 1, your vision board</span>
-    <span class="pd">Post due Friday Sep 11, 10 pm &middot; Replies Sunday Sep 13</span></span>
+    <span><span class="pt">Discussions</span>
+    <span class="pd">Every discussion in the course &middot; Discussion 1 posts due Friday Sep 11, 10 pm</span></span>
   </a>
 
   <a class="pill p-gold" href="syllabus-fall2026.html" target="_top">
@@ -171,7 +204,64 @@ h1{font-size:clamp(30px,6vw,44px);line-height:1.1;color:#fff}
 
 </main>
 
+</div><!-- /.stage -->
+
 <script>
+/* ---------------------------------------------------------------
+   The hello screen. Ported from the old welcome page, same ten
+   greetings and the same 320ms step, so students who saw it there
+   see the same thing here.
+
+   Rules it has to keep:
+     never taller than the door, so the iframe height is stable
+     never blocks the keyboard, the cards are live underneath
+     never plays twice in a day, students open this door often
+     never plays at all under prefers-reduced-motion
+   --------------------------------------------------------------- */
+(function(){
+  var el = document.getElementById("hello");
+  if (!el) return;
+
+  var reduce = window.matchMedia &&
+               window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce) return;                       /* stays hidden, cards show at once */
+
+  /* Once a day per browser. Storage can throw in a private window or with site
+     data blocked, and the honest fallback there is to just play it. */
+  var KEY = "bio005-door-greeted", today = new Date().toDateString();
+  try { if (window.localStorage.getItem(KEY) === today) return; } catch(e){}
+  try { window.localStorage.setItem(KEY, today); } catch(e){}
+
+  var GREETINGS = ["Hello","Hola","Bonjour","\u4f60\u597d","\u3053\u3093\u306b\u3061\u306f",
+                   "Ol\u00e1","Ciao","Hallo","Namaste","Welcome"];
+  var g = document.getElementById("greet");
+  var i = 0, timer = null, done = false;
+
+  el.hidden = false;
+  g.textContent = GREETINGS[0];
+
+  function finish(){
+    if (done) return;
+    done = true;
+    if (timer) window.clearInterval(timer);
+    el.classList.add("out");
+    window.setTimeout(function(){ el.hidden = true; }, 560);
+    document.removeEventListener("keydown", finish, true);
+    el.removeEventListener("click", finish);
+  }
+
+  timer = window.setInterval(function(){
+    i++;
+    if (i >= GREETINGS.length){ g.textContent = "Welcome"; finish(); return; }
+    g.textContent = GREETINGS[i];
+  }, 320);
+
+  /* Any key, any click, and it is gone. Capture, so it fires even though the
+     cards underneath are the real focus targets. */
+  document.addEventListener("keydown", finish, true);
+  el.addEventListener("click", finish);
+})();
+
 /* Height sender, so Canvas can size the frame. */
 (function(){
   var ID = "bio005-course-door";

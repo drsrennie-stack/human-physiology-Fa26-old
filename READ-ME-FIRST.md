@@ -125,7 +125,38 @@ kept sending them back to it. That was my mistake, and it is fixed.
 Verified on 20 representative pages: no links left to `welcome.html`, no moved
 banners, no console errors.
 
-### 6. Exam dates, set
+### 6. The Canvas door now opens with the hello screen
+
+`course-door.html` plays the greeting from the old welcome page, then lands on
+the four cards. It is **one file and one Canvas embed**, not a second page
+load: the greeting is an overlay inside the door, so there is nothing to click
+through and nothing extra to load.
+
+Same ten greetings and the same 320ms step as the old page, so it looks like
+what students saw before. About 3.2 seconds, then it fades to the cards.
+
+What it will not do:
+
+- **Change the iframe height.** Measured at 961px before, during and after.
+  Your Canvas iframe height stays **1010**, unchanged.
+- **Make anyone wait.** The four cards are live underneath the whole time.
+  Two tabs lands on the Lecture card, and any keypress or click skips the
+  greeting instantly.
+- **Play twice.** Once per browser per day. Students open this door a lot.
+- **Play at all** for anyone with reduced motion turned on.
+
+Also on the door:
+
+- **Discussions is a button now**, not Discussion 1. It goes to the Canvas
+  discussions index, so it is still right in Week 12. The Discussion 1 due date
+  rides along in the subtitle.
+- **Study card leads with the Mastery OS.**
+- **Course tools is not on this flow.** It never was: that button is the dock,
+  and the door does not load the dock script. It is still on the week pages and
+  the rest of the site, where it is the only way to reach some tools. If you
+  want it gone site-wide that is a separate call, say the word.
+
+### 7. Exam dates, set
 
 | Exam | Covers | Opens | Closes |
 |---|---|---|---|

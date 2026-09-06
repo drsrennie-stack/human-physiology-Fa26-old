@@ -18,6 +18,7 @@ Files covered:
   `bio005-reading-mode.js` (course home moved to `course-start.html`)
 - `welcome.html` (now a redirect), `welcome-tour.html` (the page that used to
   live at that address), and the 40 pages whose links were repointed
+- `course-door.html` (the hello screen folded in, Discussions button, Study card)
 
 Date: September 6, 2026.
 Reviewer: Dr. Sharilyn Rennie.
@@ -175,7 +176,50 @@ driven with VoiceOver or NVDA. That is the open item for this project.
 | Print colour fidelity | note-sheet.html | Black on white by design so it prints on a mono laser. Not a defect |
 | Three per page is tight | note-sheet.html `?per=3` | Boxes are about 1.6in tall. It fits and it is measured, but it is the economy setting, not the good one. Two per page is the default for that reason |
 
-## 9. The course home move
+## 9. The hello screen on the Canvas door
+
+The greeting screen from the old welcome page now plays on `course-door.html`
+itself rather than being a separate page load, so the Canvas embed is still one
+iframe. It is an absolute overlay inside a relatively positioned stage, never
+`position:fixed`.
+
+Measured behaviour, not asserted:
+
+| Check | Result |
+|---|---|
+| Page height while the greeting plays | 961px, 961px, 961px. Unchanged, so the iframe never jumps |
+| Cards reachable while the overlay is up | Yes. Two tabs lands on the Lecture card |
+| Any keypress dismisses it | Yes, and the listener is on capture so it fires from the cards underneath |
+| Second visit the same day | Overlay does not play |
+| `prefers-reduced-motion: reduce` | Overlay never renders at all |
+| Console errors | 0 |
+| Reflow, overlay up and down, 320 to 1440 | No horizontal scroll at any width |
+
+The overlay is `aria-hidden="true"` and carries no focusable content, and the
+four cards sit under it in the DOM the whole time, so a screen reader or
+keyboard user is never made to wait on an animation. `localStorage` access is
+wrapped in try/catch at both the read and the write; if it throws, the greeting
+simply plays, which is the harmless outcome.
+
+### Contrast on the two gradient pills
+
+An automated check reports "Syllabus and schedule" at 1.09:1. That is a false
+positive: the auditor cannot resolve `linear-gradient` and falls back to the
+element's own transparent background. Both pills were measured instead by
+sampling the rendered pixels at four points across each sweep:
+
+| Pair | Across the sweep | Worst | Level |
+|---|---|---|---|
+| Navy #0B1530 on the gold sweep | 8.78, 8.35, 7.94, 7.61 | 7.61:1 | AAA |
+| White on the maroon sweep | 7.76, 8.14, 8.54, 8.90 | 7.76:1 | AAA |
+
+| Hello screen pair | Background | Ratio | Level |
+|---|---|---|---|
+| White greeting | Ground #060A18 | 19.73:1 | AAA |
+| Gold #E2C583 course line | Ground #060A18 | 9.34:1 | AAA |
+| #C9CEDA skip hint | Ground #060A18 | 11.40:1 | AAA |
+
+## 10. The course home move
 
 `welcome.html` was the root of the nav map and 40 pages linked to it, most of
 them through the shared nav bar with the link text "Course home", "This week"
@@ -202,6 +246,6 @@ Fixed by moving the root rather than by editing 40 files:
 Verified across 20 representative pages: zero remaining links to
 `welcome.html`, zero "this page has moved" banners, zero console errors.
 
-## 10. Reviewer
+## 11. Reviewer
 
 Dr. Sharilyn Rennie
