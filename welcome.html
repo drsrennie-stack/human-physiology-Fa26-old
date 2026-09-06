@@ -142,6 +142,9 @@
     color:#fff;
   }
   .greeting .cursor{color:var(--gold);}
+.greeting.final{font-size:clamp(30px,5.6vw,54px);animation:greetin 700ms cubic-bezier(.2,.8,.2,1)}
+@keyframes greetin{from{opacity:.25}to{opacity:1}}
+@media(prefers-reduced-motion:reduce){.greeting.final{animation:none}}
 
   .intro-title{
     opacity:0;transform:translateY(16px);
@@ -951,7 +954,8 @@
   }
 
   // ---------- Intro animation ----------
-  var GREETINGS = ['Hello','Hola','Bonjour','你好','こんにちは','Olá','Ciao','Hallo','Namaste','Welcome'];
+  var GREETINGS = ['Hello','Hola','Bonjour','你好','こんにちは','Olá','Ciao','Hallo','Namaste'];
+  var FINAL_GREETING = 'Welcome to Human Physiology.';
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   function runIntro(){
@@ -961,7 +965,8 @@
 
     if(reduceMotion){
       figures.classList.add('go');
-      greetEl.textContent = 'Welcome';
+      greetEl.textContent = FINAL_GREETING;
+      greetEl.classList.add('final');
       titleEl.classList.add('go');
       return;
     }
@@ -972,13 +977,19 @@
       i++;
       if(i >= GREETINGS.length){
         window.clearInterval(timer);
-        greetEl.textContent = 'Welcome';
-        titleEl.classList.add('go');
-        postHeight();
+        window.setTimeout(function(){
+          greetEl.textContent = FINAL_GREETING;
+          greetEl.classList.add('final');
+          postHeight();
+          window.setTimeout(function(){
+            titleEl.classList.add('go');
+            postHeight();
+          }, 1100);
+        }, 260);
         return;
       }
       greetEl.textContent = GREETINGS[i];
-    }, 320);
+    }, 560);
   }
 
   // ---------- Build tour rail ----------
