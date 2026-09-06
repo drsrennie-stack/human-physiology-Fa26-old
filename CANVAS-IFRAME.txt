@@ -1,20 +1,13 @@
-CANVAS EMBEDS  (paste into the </> HTML editor, save, then PUBLISH)
+CANVAS EMBEDS  (</> HTML editor, paste, save, PUBLISH)
 
---- START HERE page ---
-<p><iframe
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/course-door.html"
-  title="BIO 005 Human Physiology"
-  width="100%" height="1010"
-  style="width:100%; min-height:1010px; border:0; display:block;"
-  allowfullscreen="allowfullscreen"></iframe></p>
+--- START HERE ---
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/course-door.html"
+  title="BIO 005 Human Physiology" width="100%" height="1010"
+  style="width:100%; min-height:1010px; border:0; display:block;"></iframe></p>
 
---- WEEK 1 COMPETENCIES page ---
-<p><iframe
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/week-01-competencies.html"
-  title="Week 1 competencies and prompts"
-  width="100%" height="8450"
-  style="width:100%; min-height:8450px; border:0; display:block;"
-  allowfullscreen="allowfullscreen"></iframe></p>
+--- WEEK 1 COMPETENCIES ---
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/week-01-competencies.html"
+  title="Week 1 competencies and prompts" width="100%" height="9400"
+  style="width:100%; min-height:9400px; border:0; display:block;"></iframe></p>
 
-Measured 8359px at 900px wide. 8450 gives headroom.
-Printable version: BIO005-Week1-competencies.pdf, 7 pages.
+Measured 9272px at 900px wide. Printable: BIO005-Week1-competencies.pdf, 7 pages.
