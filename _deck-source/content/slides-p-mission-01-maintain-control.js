@@ -179,6 +179,19 @@ module.exports = {
       ]
     },
 
+    {
+      k: "cards",
+      cols: 4,
+      kicker: 'Concept 1 . Clinical',
+      h: 'Purpose gets you moving, mechanism tells you what next',
+      cards: [
+        { label: 'In nursing', labelClass: "terra", h: 'Charting an observation, or the start of a mechanism', p: ['Urine output dropped is an observation. Output dropped after two hours of poor intake with a rising heart rate is a mechanism, and it is the version that gets escalated successfully.'] },
+        { label: 'In rad tech', labelClass: "terra", h: 'Knowing why the protocol exists', p: ['A protocol followed without knowing what it protects against is fragile. When a patient does not fit the protocol, only the mechanism tells you which part still matters.'] },
+        { label: 'In medicine', h: 'Oxygen for a low saturation', p: ['Giving it helps. It does not tell you whether the problem is ventilation, diffusion or perfusion, and those three are managed differently.'] },
+        { label: 'In respiratory therapy', h: 'Changing a setting without a mechanism', p: ['Correcting a number you do not understand is how you fix the display while the underlying problem keeps moving.'] }
+      ]
+    },
+
     /* ================================================= CONCEPT 2 */
     /* 8 */
     {
@@ -247,6 +260,19 @@ module.exports = {
       ],
       lab: "You will sort scenarios by which compartment gained or lost water.",
       covers: ["w1-compartment-shifts"]
+    },
+
+    {
+      k: "cards",
+      cols: 4,
+      kicker: 'Concept 2 . Clinical',
+      h: 'Where the water is',
+      cards: [
+        { label: 'In nursing', labelClass: "terra", h: 'Edema and a low blood pressure together', p: ['Not a contradiction. Fluid has left the vessels for the interstitium, so total body water is high while circulating volume is low.'] },
+        { label: 'In rad tech', labelClass: "terra", h: 'Contrast goes into one compartment', p: ['It is injected into plasma and redistributes from there. What you see on the images depends on where it has got to by the time you scan.'] },
+        { label: 'In medicine', h: 'Total body water is the wrong number', p: ['Volume status is about distribution between compartments, which is why a weight alone does not answer the question.'] },
+        { label: 'In respiratory therapy', h: 'Pulmonary edema is a compartment problem', p: ['Fluid in the interstitium and alveoli rather than the capillary. Same body water, wrong location, and gas exchange fails.'] }
+      ]
     },
 
     /* ================================================= CONCEPT 3 */
@@ -400,6 +426,19 @@ module.exports = {
       ]
     },
 
+    {
+      k: "cards",
+      cols: 4,
+      kicker: 'Concept 4 . Clinical',
+      h: 'Intake and output is mass balance',
+      cards: [
+        { label: 'In nursing', labelClass: "terra", h: 'The I and O chart is this equation', p: ['Every shift you are recording the input and output terms. A patient in positive balance day after day is the equation telling you something before the weight does.'] },
+        { label: 'In rad tech', labelClass: "terra", h: 'Contrast has to leave', p: ['What goes in is cleared renally. In a patient whose kidneys are already struggling, the output term is the one that fails.'] },
+        { label: 'In medicine', h: 'Accumulation has two possible causes', p: ['If a drug builds up, ask whether the kidney stopped excreting it or the liver stopped converting it. Different organ, different fix.'] },
+        { label: 'In respiratory therapy', h: 'Carbon dioxide balance', p: ['Produced by metabolism, removed by ventilation. A rising level means production rose or ventilation fell, and the equation does not say which.'] }
+      ]
+    },
+
     /* ================================================= CONCEPT 5 */
     /* 20 */
     {
@@ -445,6 +484,19 @@ module.exports = {
       note: "Rate of removal, amount per time, such as mg/min. Plasma concentration, amount per volume, such as mg/mL. Result is a volume per time, mL/min.",
       after: [
         "The volume is a construct. No particular milliliters are emptied. It scores how hard an organ works relative to how much substance is present, which is what makes organs and patients comparable."
+      ]
+    },
+
+    {
+      k: "cards",
+      cols: 4,
+      kicker: 'Concept 5 . Clinical',
+      h: 'Concentration, flow and clearance',
+      cards: [
+        { label: 'In nursing', labelClass: "terra", h: 'A rising creatinine', p: ['Usually means clearance fell, not that the patient started producing more. That distinction changes what you do next.'] },
+        { label: 'In rad tech', labelClass: "terra", h: 'Screening before contrast', p: ['An estimated filtration rate is a clearance number. It is asking how fast the kidney can remove the load you are about to give.'] },
+        { label: 'In medicine', h: 'Delivery needs both terms', p: ['Oxygen content times cardiac output. A reassuring saturation with a halved cardiac output is half the delivery.'] },
+        { label: 'In respiratory therapy', h: 'Ventilation is the flow term', p: ['Carbon dioxide removal is a clearance problem, and when ventilation falls the concentration climbs.'] }
       ]
     },
 
@@ -527,6 +579,19 @@ module.exports = {
       ]
     },
 
+    {
+      k: "cards",
+      cols: 4,
+      kicker: 'Concept 6 . Clinical',
+      h: 'Localizing the failure',
+      cards: [
+        { label: 'In nursing', labelClass: "terra", h: 'No response is information', p: ['When an expected response does not happen, the useful question is which component. Was it detected, was the message sent, could the tissue act.'] },
+        { label: 'In rad tech', labelClass: "terra", h: 'A patient who cannot follow breath hold', p: ['Heard it, understood it, could not do it. Those are three different components and they change how you get the study.'] },
+        { label: 'In medicine', h: 'Where in the pathway', p: ['Much of the neurological exam is exactly this: separating a sensory failure from a conduction failure from an effector failure.'] },
+        { label: 'In respiratory therapy', h: 'Drive, transmission, or muscle', p: ['A patient not breathing adequately has a problem in the chemoreceptors, the pathway, or the respiratory muscles. Support differs for each.'] }
+      ]
+    },
+
     /* ================================================= CONCEPT 7 */
     /* 28 */
     {
@@ -591,6 +656,19 @@ module.exports = {
       ]
     },
 
+    {
+      k: "cards",
+      cols: 4,
+      kicker: 'Concept 7 . Clinical',
+      h: 'Local and long distance corrections',
+      cards: [
+        { label: 'In nursing', labelClass: "terra", h: 'A cold, poorly perfused limb', p: ['Local control has already done what it can. If the limb is still cold, the problem is upstream and systemic.'] },
+        { label: 'In rad tech', labelClass: "terra", h: 'Warmth and flushing with contrast', p: ['A local vascular response to the injection, not a systemic reaction. Knowing the difference is what keeps you calm and keeps the patient informed.'] },
+        { label: 'In medicine', h: 'Distributive shock', p: ['Local control is working normally everywhere at once, and the systemic result is a pressure the reflex cannot hold.'] },
+        { label: 'In respiratory therapy', h: 'Hypoxic pulmonary vasoconstriction', p: ['A local response, diverting blood from poorly ventilated lung. Give enough oxygen everywhere and you blunt the local matching.'] }
+      ]
+    },
+
     /* ================================================= CONCEPT 8 */
     /* 31 */
     {
@@ -650,6 +728,19 @@ module.exports = {
           h: "A value moving inside its range is normal",
           p: ["A value pinned to exactly one number would be more suspicious than one that wanders."]
         }
+      ]
+    },
+
+    {
+      k: "cards",
+      cols: 4,
+      kicker: 'Concept 8 . Clinical',
+      h: 'Reading a loop that is still running',
+      cards: [
+        { label: 'In nursing', labelClass: "terra", h: 'High insulin and high glucose together', p: ['The signal is being sent and the effector is not responding. Sensor failure would look like a low signal instead.'] },
+        { label: 'In rad tech', labelClass: "terra", h: 'Thyroid and an iodine load', p: ['Thyroid hormone runs on a negative feedback loop with TSH. A large iodine load from contrast can disturb it, which is why thyroid history is asked.'] },
+        { label: 'In medicine', h: 'Interpret the signal with the variable', p: ['A hormone level means nothing on its own. Read it next to the variable it is supposed to be controlling.'] },
+        { label: 'In respiratory therapy', h: 'Carbon dioxide and drive', p: ['Rising carbon dioxide normally increases ventilation. A patient with a high level and no increase in effort has a loop that is not closing.'] }
       ]
     },
 
@@ -716,6 +807,19 @@ module.exports = {
       ]
     },
 
+    {
+      k: "cards",
+      cols: 4,
+      kicker: 'Concept 9 . Clinical',
+      h: 'When the loop makes it worse',
+      cards: [
+        { label: 'In nursing', labelClass: "terra", h: 'Deterioration accelerates', p: ['Positive feedback is why a patient who looked stable for hours goes off quickly. The change is not linear and waiting for the next set of vitals can cost you.'] },
+        { label: 'In rad tech', labelClass: "terra", h: 'A reaction that escalates', p: ['Contrast reactions can amplify rather than settle. That is why observation after injection is not a formality.'] },
+        { label: 'In medicine', h: 'The failing heart spiral', p: ['Vasoconstriction and tachycardia raise cardiac work, which worsens output, which drives more of both. Every step is an appropriate response.'] },
+        { label: 'In respiratory therapy', h: 'Work of breathing feeding itself', p: ['Rising work raises carbon dioxide production, which demands more ventilation from muscles that are already tiring.'] }
+      ]
+    },
+
     /* ================================================= CONCEPT 10 */
     /* 38 */
     {
@@ -764,6 +868,19 @@ module.exports = {
       covers: ["w1-feedforward"]
     },
 
+    {
+      k: "cards",
+      cols: 4,
+      kicker: 'Concept 10 . Clinical',
+      h: 'The target can move',
+      cards: [
+        { label: 'In nursing', labelClass: "terra", h: 'Chills with a rising fever', p: ['The setpoint went up, so 37 C (98.6 F) now reads as cold. Cooling a patient whose setpoint is still raised just makes them shiver harder.'] },
+        { label: 'In rad tech', labelClass: "terra", h: 'Time of day is not neutral', p: ['Some values follow a daily rhythm, so a result compared against one taken at a different hour is not always comparing like with like.'] },
+        { label: 'In medicine', h: 'Treat the setpoint, not the number', p: ['Antipyretics work by lowering the raised setpoint. That is a different action from removing heat.'] },
+        { label: 'In respiratory therapy', h: 'The chronic retainer', p: ['Someone who has lived with a high carbon dioxide level for years is defending a different baseline than someone who arrived there this morning.'] }
+      ]
+    },
+
     /* ================================================= CONCEPT 11 */
     /* 41 */
     {
@@ -802,6 +919,19 @@ module.exports = {
         ["Suited to", "Fast, precise, short term", "Widespread, sustained"]
       ],
       big: "A hormone reaches every cell. The receptor determines which ones answer."
+    },
+
+    {
+      k: "cards",
+      cols: 4,
+      kicker: 'Concept 11 . Clinical',
+      h: 'How the route changes the timing',
+      cards: [
+        { label: 'In nursing', labelClass: "terra", h: 'Route and onset', p: ['Intravenous, intramuscular and oral are three different delivery routes to the same receptor, and the difference you see at the bedside is timing.'] },
+        { label: 'In rad tech', labelClass: "terra", h: 'Timing the scan to the contrast', p: ['The contrast is broadcast through the blood, so which phase you image depends entirely on when you scan after injection.'] },
+        { label: 'In medicine', h: 'Targeted or systemic', p: ['A nerve block delivers to one address. A systemic drug broadcasts and lets receptor distribution decide, which is where side effects come from.'] },
+        { label: 'In respiratory therapy', h: 'Nebulized against systemic', p: ['Delivering a drug to the airway directly puts it where the receptors are and limits what the rest of the body receives.'] }
+      ]
     },
 
     /* ================================================= CONCEPT 12 */
@@ -944,6 +1074,19 @@ module.exports = {
         }
       ],
       covers: ["w1-lab-measurement-error"]
+    },
+
+    {
+      k: "cards",
+      cols: 4,
+      kicker: 'Concept 13 . Clinical',
+      h: 'Is the difference real',
+      cards: [
+        { label: 'In nursing', labelClass: "terra", h: 'One reading is not a trend', p: ['Before you escalate on a single value, ask whether it differs from the last by more than the measurement normally wanders.'] },
+        { label: 'In rad tech', labelClass: "terra", h: 'Comparing studies', p: ['A change between two images is only meaningful if positioning, technique and timing were comparable. Otherwise you are measuring the setup.'] },
+        { label: 'In medicine', h: 'Establish the difference first', p: ['Before you explain why a value changed, confirm that it changed by more than ordinary biological and measurement variation.'] },
+        { label: 'In respiratory therapy', h: 'Know your device error', p: ['Every monitor has a margin. A change smaller than that margin is not yet a change in the patient.'] }
+      ]
     },
 
     /* ================================================= CLOSE */
