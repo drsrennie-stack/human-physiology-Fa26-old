@@ -665,6 +665,7 @@
   .back-head .logo-figures svg:first-child path{fill:var(--navy)}
 </style>
 </head>
+<script src="bio005-faq.js"></script>
 <script>
 /* Set before first paint: is this page the window, or is it inside a frame?
    The welcome back screen fills the window in the first case and sizes to
@@ -1424,6 +1425,39 @@
       {id:'start',     kw:['start','begin','where do i','first','brand new','beginning','what do i do','orientation','new here','getting started','get started']}
     ];
 
+    function faqSearch(text){
+      if (typeof BIO005_FAQ === 'undefined' || !BIO005_FAQ || !BIO005_FAQ.length) return null;
+      var stop = {'the':1,'a':1,'an':1,'is':1,'are':1,'do':1,'does':1,'i':1,'my':1,'me':1,'to':1,'of':1,'in':1,'for':1,'on':1,'how':1,'what':1,'when':1,'where':1,'why':1,'can':1,'it':1,'this':1,'that':1,'and':1,'or':1,'with':1,'about':1,'we':1,'you':1};
+      var words = text.toLowerCase().replace(/[^a-z0-9\s]/g,' ').split(/\s+/).filter(function(w){ return w.length > 1 && !stop[w]; });
+      if (!words.length) return null;
+      var best = null, bestScore = 0, second = null;
+      for (var i = 0; i < BIO005_FAQ.length; i++){
+        var item = BIO005_FAQ[i];
+        var qlow = item.q.toLowerCase(), alow = item.a.toLowerCase();
+        var score = 0;
+        for (var w = 0; w < words.length; w++){
+          if (qlow.indexOf(words[w]) > -1) score += 3;
+          else if (alow.indexOf(words[w]) > -1) score += 1;
+        }
+        if (score > bestScore){ second = best; best = item; bestScore = score; }
+      }
+      if (bestScore < 3) return null;
+      var out = '<p><strong>' + best.q + '</strong></p><p>' + best.a + '</p>';
+      if (second && second !== best){
+        out += '<p style="font-size:13px;opacity:.85">You might also ask: ' + second.q + ' All 250 questions live on the <a href="course-questions.html" target="_top">questions page</a>.</p>';
+      }
+      return out;
+    }
+
+    function showFaq(html){
+      var cap = '<p class="hootie-src">Here is what your BIO 005 materials say.</p>';
+      body.innerHTML = '<div class="hootie-answer">'+cap+html+'</div>'+
+        '<button type="button" class="hootie-back" id="hootieBack">&larr; Ask something else</button>';
+      var back = document.getElementById('hootieBack');
+      if(back) back.addEventListener('click', renderMenu);
+      postHeight();
+    }
+
     function matchIntent(text){
       var q = ' ' + text.toLowerCase() + ' ';
       var best = null, bestScore = 0;
@@ -1438,10 +1472,12 @@
     function answerBody(id){
       var l = secLinks();
       switch(id){
-        case 'start': return '<p>Three moves and you are ahead:</p><ol class="steps">'+
-          '<li>Skim your '+link(l.syllabus,'syllabus',true)+' so you know how the course runs and when everything is due (Sunday night, every week).</li>'+
-          '<li>Open this week\u2019s note sheet and work it against the '+link(VID,'concept videos',true)+'. The note sheet always comes first.</li>'+
-          '<li>Open the '+link(MOS,'Mastery OS',true)+' and let it start tracking your competencies.</li></ol>';
+        case 'start': return '<p>There is an exact order, and it always works:</p><ol class="steps">'+
+          '<li>Read the note sheet questions first. Then preview the text and organize your notes so you know where to find things. No flashcards; organize.</li>'+
+          '<li>Answer the questions the best you can from what you already know, in your first color, on your master note sheet.</li>'+
+          '<li>Now watch each concept\u2019s video, the name and number are at the top of the prompt, and add what you did not know in a second color. Color one is your baseline; color two is what you need to commit to memory.</li>'+
+          '<li>Turn it in. For lab: PhysioEx first, then the worksheet, then the clinical correlations.</li></ol>'+
+          '<p>If a step does not fit the way you learn, adapt it. What cannot change: answer from memory at some point, keep the two colors honest, PhysioEx before the worksheet, and Sunday stays Sunday. Your '+link(l.syllabus,'syllabus',true)+' has the rest.</p>';
         case 'week': return '<p>Everything for the current week is on the '+link(CAL,'course schedule',true)+
           '. The rhythm never changes: note sheet first, then the videos, then book problems and your PhysioEx lab, then the five minute practice round. All of it is due Sunday at 10:00 pm. When a discussion is assigned, the initial post runs early: Friday at 10:00 pm, with peer replies due Sunday.</p>';
         case 'struggle': return '<p>This is normal and fixable. Try this, in order:</p><ol class="steps">'+
@@ -1457,7 +1493,7 @@
           '<li>Book problems: 15%</li></ol>'+
           '<p>There is no extra credit and no curve. Full detail in your '+link(l.syllabus,'syllabus',true)+'.</p>';
         case 'exams': return '<p>Three midterms, and they are not multiple choice. Each one asks you to draw a physiological pathway and teach it on video, out loud, no notes. Midterm 1 covers Weeks 1 to 5, Midterm 2 covers Weeks 6 to 10, Midterm 3 covers Weeks 11 to 15. Every week includes a short ungraded practice round in exactly this format, so the format will be familiar. Exam windows are announced in Canvas and in your '+link(l.syllabus,'syllabus',true)+'.</p>';
-        case 'notesheets': return '<p>The note sheet is your weekly pre-work: one prompt for each competency you must be able to do that week, worked from the reading and the videos before anything else. You submit the whole sheet; five prompts are graded for accuracy (you will not know which five), and the rest are checked for completion. It doubles as your midterm study guide, so doing it well pays you twice.</p>';
+        case 'notesheets': return '<p>The note sheet is your weekly pre-work: one prompt for each competency, worked in a specific order. Read the questions first, preview the text, organize your notes, answer from what you know in your first color, then watch the videos and add what you did not know in a second color. Color two is your commit to memory list. You submit the whole sheet; five prompts are graded for accuracy, you will not know which five, and the rest are checked for completion. It doubles as your midterm study guide.</p>';
         case 'mastery': return '<p>The '+link(MOS,'Mastery OS',true)+' is your study engine: spaced recall cards across all 268 competencies and a gap finder that shows exactly what is weak before a grade depends on it. Open it and set up your plan.</p>';
         case 'labs': return '<p>Your labs run in PhysioEx, inside Pearson. Open our Canvas course, click Access Pearson in the left menu, and purchase there; that one path gets the right package, the labs, and the free eText of our Silverthorn book. Set it up in Week 1. One lab every week, due Sunday at 10:00 pm with everything else.</p>';
         case 'packet': return '<p>The '+link(PACKET,'Competency Packet',true)+' is the whole course on one list: 268 things you will be able to do, grouped by midterm and week, plus the anatomy, chemistry, and math the course assumes you arrive with. Nothing is graded that is not on that list.</p>';
@@ -1490,7 +1526,7 @@
         var q = document.getElementById('hootieAsk').value.trim();
         if(!q) return;
         var id = matchIntent(q);
-        if(id) showAnswer(id, true); else showFallback();
+        if(id){ showAnswer(id, true); } else { var hit = faqSearch(q); if(hit){ showFaq(hit); } else { showFallback(); } }
       });
       postHeight();
     }
@@ -1507,7 +1543,7 @@
 
     function showFallback(){
       var html = '<div class="hootie-answer"><p class="hootie-src">Hmm, I did not quite catch that.</p>'+
-        '<p>I can help with where to start, this week\'s work, note sheets, grading, the midterms, studying, and who to contact. Tap one below, or message Dr. Rennie in the Canvas Inbox.</p></div>'+
+        '<p>I can help with where to start, this week\'s work, note sheets, grading, the midterms, studying, and who to contact. Tap one below, browse <a href="course-questions.html" target="_top">all 250 answered questions</a>, or message Dr. Rennie in the Canvas Inbox.</p></div>'+
         '<div class="hootie-q">';
       SUGGEST.forEach(function(m){ html += '<button type="button" data-q="'+m.id+'">'+m.q+'</button>'; });
       html += '</div><button type="button" class="hootie-back" id="hootieBack">← Back</button>';
