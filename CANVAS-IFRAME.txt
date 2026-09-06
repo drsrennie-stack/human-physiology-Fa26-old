@@ -1,755 +1,187 @@
 ==================================================================
 BIO 005 Human Physiology, Yuba College, Fall 2026
-CANVAS IFRAME SNIPPETS, EVERY WEEK
-Measured September 6, 2026. Dr. Sharilyn Rennie
+CANVAS IFRAME SNIPPETS, EVERY PAGE
+Regenerated September 6, 2026. Dr. Sharilyn Rennie
 ==================================================================
 
 HOW TO USE
-  Canvas page > Edit > the </> HTML editor button > paste > Save.
-  Paste into the HTML editor, not the rich text box, or Canvas
-  shows you the code instead of the page.
-
-HOW EVERYTHING IS NAMED
-  Every assignment in this course is "Week N <thing>". The Learning
-  Labs are no exception: Week 2 Learning Lab, Week 3 Learning Lab,
-  and so on. There is deliberately NO "Learning Lab 1, 2, 3, 4"
-  numbering, because that runs one behind the week and gives
-  students a second index to keep straight.
-
-  Suggested Canvas titles:
-    Week 2 Learning Lab: Reading a Physiology Figure or Graph
-    Week 2 Discussion: Reading a Physiology Figure or Graph
-    Week 3 Learning Lab: Previewing an Unfamiliar Chapter
-    Week 3 Discussion: Previewing an Unfamiliar Chapter
-    Week 4 Learning Lab: Spaced Recall and the Gap Finder
-    Week 4 Discussion: Spaced Recall and the Gap Finder
-    Week 5 Learning Lab: Auditing AI on Cell Transport
-    Week 5 Discussion: Auditing AI on Cell Transport
-
-ABOUT THE HEIGHTS
-  Every number below was measured on the rendered page at 820px
-  wide, the usual Canvas content column, then rounded up. Nothing
-  here is a guess.
-
-  Where a page grows as a student works through it, the height is
-  the FULLY OPEN one. The Learning Labs nearly double, so a height
-  taken from the first screen would cut the discussion off at the
-  exact moment they earned it.
-
-  On a phone every page is taller, because it stacks into one
-  column. The frame scrolls internally there. Nothing is lost.
-
-  THE NOTE SHEET IS THE EXCEPTION. It runs 5,850px in a light week
-  to 20,900px in Week 5, because it is a printable sheet with one
-  block per competency. Do not embed it. Link it, or attach the PDF
-  from sheets/. Its snippet is at the bottom if you want it anyway.
-
-==================================================================
-THE TWO PAGES THAT ARE NOT PER WEEK
-==================================================================
-
---- CANVAS FRONT DOOR, the Start Here page
-
-<p><iframe title="BIO 005 Human Physiology, start here"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/course-door.html"
-  width="100%" height="1010"
-  style="width:100%;height:1010px;border:0;display:block"></iframe></p>
-
---- EVERY WEEK, the course page
-
-<p><iframe title="BIO 005, every week"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/course-start.html"
-  width="100%" height="2400"
-  style="width:100%;height:2400px;border:0;display:block"></iframe></p>
-
-  This one grows as students open weeks. It reports its height to
-  the parent, so if your Canvas theme listens it sizes itself and
-  2400 is only the fallback.
-
---- ALL 268 COMPETENCIES, grouped by week
-
-<p><iframe title="All 268 competencies by week"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/competencies-by-week.html"
-  width="100%" height="9000"
-  style="width:100%;height:9000px;border:0;display:block"></iframe></p>
-
-
-==================================================================
-WEEK 1   How physiology works and what keeps you steady
-          Tue Sep 8 to Sun Sep 13
-==================================================================
-
---- SILVERTHORN PROBLEMS
-
-<p><iframe title="Silverthorn problems, Week 1"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-bookproblems.html?week=1"
-  width="100%" height="1950"
-  style="width:100%;height:1950px;border:0;display:block"></iframe></p>
-
---- LAB
-
-<p><iframe title="Lab, Week 1"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=1"
-  width="100%" height="4000"
-  style="width:100%;height:4000px;border:0;display:block"></iframe></p>
-
---- DISCUSSION
-
-<p><iframe title="Discussion, Week 1"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion.html?week=1"
-  width="100%" height="2400"
-  style="width:100%;height:2400px;border:0;display:block"></iframe></p>
-
---- PROBLEM LOG
-
-<p><iframe title="Problem log, Week 1"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/ai-work-log.html?week=1"
-  width="100%" height="2950"
-  style="width:100%;height:2950px;border:0;display:block"></iframe></p>
-
---- NOTE SHEET, HOW IT IS GRADED
-
-<p><iframe title="Note sheet, how it is graded, Week 1"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-notesheet.html?week=1"
-  width="100%" height="5150"
-  style="width:100%;height:5150px;border:0;display:block"></iframe></p>
-
-
-==================================================================
-WEEK 2   The chemistry that does work in the body
-          Mon Sep 14 to Sun Sep 20
-==================================================================
-
---- WEEK 2 LEARNING LAB, Reading a Physiology Figure or Graph
-    Carries its own paired discussion, sealed until the lab is saved.
-
-<p><iframe title="Week 2 Learning Lab, reading a physiology figure or graph"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/learning-lab.html?week=2"
-  width="100%" height="6750"
-  style="width:100%;height:6750px;border:0;display:block"></iframe></p>
-
---- SILVERTHORN PROBLEMS
-
-<p><iframe title="Silverthorn problems, Week 2"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-bookproblems.html?week=2"
-  width="100%" height="1950"
-  style="width:100%;height:1950px;border:0;display:block"></iframe></p>
-
---- LAB
-
-<p><iframe title="Lab, Week 2"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=2"
-  width="100%" height="4050"
-  style="width:100%;height:4050px;border:0;display:block"></iframe></p>
-
---- DISCUSSION
-    Week 2's discussion is inside the Learning Lab above.
-
---- PROBLEM LOG
-
-<p><iframe title="Problem log, Week 2"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/ai-work-log.html?week=2"
-  width="100%" height="2950"
-  style="width:100%;height:2950px;border:0;display:block"></iframe></p>
-
---- NOTE SHEET, HOW IT IS GRADED
-
-<p><iframe title="Note sheet, how it is graded, Week 2"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-notesheet.html?week=2"
-  width="100%" height="5100"
-  style="width:100%;height:5100px;border:0;display:block"></iframe></p>
-
-
-==================================================================
-WEEK 3   Getting across the membrane
-          Mon Sep 21 to Sun Sep 27
-==================================================================
-
---- WEEK 3 LEARNING LAB, Previewing an Unfamiliar Chapter
-    Carries its own paired discussion, sealed until the lab is saved.
-
-<p><iframe title="Week 3 Learning Lab, previewing an unfamiliar chapter"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/learning-lab.html?week=3"
-  width="100%" height="6100"
-  style="width:100%;height:6100px;border:0;display:block"></iframe></p>
-
---- SILVERTHORN PROBLEMS
-
-<p><iframe title="Silverthorn problems, Week 3"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-bookproblems.html?week=3"
-  width="100%" height="1950"
-  style="width:100%;height:1950px;border:0;display:block"></iframe></p>
-
---- LAB
-
-<p><iframe title="Lab, Week 3"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=3"
-  width="100%" height="4050"
-  style="width:100%;height:4050px;border:0;display:block"></iframe></p>
-
---- DISCUSSION
-    Week 3's discussion is inside the Learning Lab above.
-
---- PROBLEM LOG
-
-<p><iframe title="Problem log, Week 3"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/ai-work-log.html?week=3"
-  width="100%" height="2950"
-  style="width:100%;height:2950px;border:0;display:block"></iframe></p>
-
---- NOTE SHEET, HOW IT IS GRADED
-
-<p><iframe title="Note sheet, how it is graded, Week 3"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-notesheet.html?week=3"
-  width="100%" height="5000"
-  style="width:100%;height:5000px;border:0;display:block"></iframe></p>
-
-
-==================================================================
-WEEK 4   How cells talk, and the electrical signal
-          Mon Sep 28 to Sun Oct 4
-==================================================================
-
---- WEEK 4 LEARNING LAB, Spaced Recall and the Gap Finder
-    Carries its own paired discussion, sealed until the lab is saved.
-
-<p><iframe title="Week 4 Learning Lab, spaced recall and the gap finder"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/learning-lab.html?week=4"
-  width="100%" height="5950"
-  style="width:100%;height:5950px;border:0;display:block"></iframe></p>
-
---- SILVERTHORN PROBLEMS
-
-<p><iframe title="Silverthorn problems, Week 4"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-bookproblems.html?week=4"
-  width="100%" height="1950"
-  style="width:100%;height:1950px;border:0;display:block"></iframe></p>
-
---- LAB
-
-<p><iframe title="Lab, Week 4"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=4"
-  width="100%" height="4050"
-  style="width:100%;height:4050px;border:0;display:block"></iframe></p>
-
---- DISCUSSION
-    Week 4's discussion is inside the Learning Lab above.
-
---- PROBLEM LOG
-
-<p><iframe title="Problem log, Week 4"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/ai-work-log.html?week=4"
-  width="100%" height="2950"
-  style="width:100%;height:2950px;border:0;display:block"></iframe></p>
-
---- NOTE SHEET, HOW IT IS GRADED
-
-<p><iframe title="Note sheet, how it is graded, Week 4"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-notesheet.html?week=4"
-  width="100%" height="5050"
-  style="width:100%;height:5050px;border:0;display:block"></iframe></p>
-
-
-==================================================================
-WEEK 5   Synapses and central integration
-          Mon Oct 5 to Sun Oct 11
-==================================================================
-
---- WEEK 5 LEARNING LAB, Auditing AI's Explanation of Cell Transport
-    Carries its own paired discussion, sealed until the lab is saved.
-
-<p><iframe title="Week 5 Learning Lab, auditing ai's explanation of cell transport"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/learning-lab.html?week=5"
-  width="100%" height="7900"
-  style="width:100%;height:7900px;border:0;display:block"></iframe></p>
-
---- SILVERTHORN PROBLEMS
-
-<p><iframe title="Silverthorn problems, Week 5"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-bookproblems.html?week=5"
-  width="100%" height="1950"
-  style="width:100%;height:1950px;border:0;display:block"></iframe></p>
-
---- LAB
-
-<p><iframe title="Lab, Week 5"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=5"
-  width="100%" height="3950"
-  style="width:100%;height:3950px;border:0;display:block"></iframe></p>
-
---- DISCUSSION
-    Week 5's discussion is inside the Learning Lab above.
-
---- PROBLEM LOG
-
-<p><iframe title="Problem log, Week 5"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/ai-work-log.html?week=5"
-  width="100%" height="2950"
-  style="width:100%;height:2950px;border:0;display:block"></iframe></p>
-
---- NOTE SHEET, HOW IT IS GRADED
-
-<p><iframe title="Note sheet, how it is graded, Week 5"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-notesheet.html?week=5"
-  width="100%" height="5000"
-  style="width:100%;height:5000px;border:0;display:block"></iframe></p>
-
-
-==================================================================
-WEEK 6   Sensing the world, and the responses you do not control
-          Mon Oct 12 to Sun Oct 18
-          Midterm 1 window, Weeks 1 to 5. Mon Oct 12, 8 am to Sun Oct 18, 10 pm.
-==================================================================
-
---- SILVERTHORN PROBLEMS
-
-<p><iframe title="Silverthorn problems, Week 6"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-bookproblems.html?week=6"
-  width="100%" height="1950"
-  style="width:100%;height:1950px;border:0;display:block"></iframe></p>
-
---- LAB
-
-<p><iframe title="Lab, Week 6"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=6"
-  width="100%" height="4050"
-  style="width:100%;height:4050px;border:0;display:block"></iframe></p>
-
---- DISCUSSION
-
-<p><iframe title="Discussion, Week 6"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion.html?week=6"
-  width="100%" height="2400"
-  style="width:100%;height:2400px;border:0;display:block"></iframe></p>
-
---- PROBLEM LOG
-
-<p><iframe title="Problem log, Week 6"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/ai-work-log.html?week=6"
-  width="100%" height="2950"
-  style="width:100%;height:2950px;border:0;display:block"></iframe></p>
-
---- NOTE SHEET, HOW IT IS GRADED
-
-<p><iframe title="Note sheet, how it is graded, Week 6"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-notesheet.html?week=6"
-  width="100%" height="5000"
-  style="width:100%;height:5000px;border:0;display:block"></iframe></p>
-
-
-==================================================================
-WEEK 7   Muscle, and how movement gets commanded
-          Mon Oct 19 to Sun Oct 25
-==================================================================
-
---- SILVERTHORN PROBLEMS
-
-<p><iframe title="Silverthorn problems, Week 7"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-bookproblems.html?week=7"
-  width="100%" height="1950"
-  style="width:100%;height:1950px;border:0;display:block"></iframe></p>
-
---- LAB
-
-<p><iframe title="Lab, Week 7"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=7"
-  width="100%" height="4050"
-  style="width:100%;height:4050px;border:0;display:block"></iframe></p>
-
---- DISCUSSION
-
-<p><iframe title="Discussion, Week 7"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion.html?week=7"
-  width="100%" height="2400"
-  style="width:100%;height:2400px;border:0;display:block"></iframe></p>
-
---- PROBLEM LOG
-
-<p><iframe title="Problem log, Week 7"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/ai-work-log.html?week=7"
-  width="100%" height="2950"
-  style="width:100%;height:2950px;border:0;display:block"></iframe></p>
-
---- NOTE SHEET, HOW IT IS GRADED
-
-<p><iframe title="Note sheet, how it is graded, Week 7"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-notesheet.html?week=7"
-  width="100%" height="5050"
-  style="width:100%;height:5050px;border:0;display:block"></iframe></p>
-
-
-==================================================================
-WEEK 8   Hormones and reproduction, the slow control system
-          Mon Oct 26 to Sun Nov 1
-==================================================================
-
---- SILVERTHORN PROBLEMS
-
-<p><iframe title="Silverthorn problems, Week 8"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-bookproblems.html?week=8"
-  width="100%" height="1950"
-  style="width:100%;height:1950px;border:0;display:block"></iframe></p>
-
---- LAB
-
-<p><iframe title="Lab, Week 8"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=8"
-  width="100%" height="3950"
-  style="width:100%;height:3950px;border:0;display:block"></iframe></p>
-
---- DISCUSSION
-
-<p><iframe title="Discussion, Week 8"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion.html?week=8"
-  width="100%" height="2400"
-  style="width:100%;height:2400px;border:0;display:block"></iframe></p>
-
---- PROBLEM LOG
-
-<p><iframe title="Problem log, Week 8"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/ai-work-log.html?week=8"
-  width="100%" height="2950"
-  style="width:100%;height:2950px;border:0;display:block"></iframe></p>
-
---- NOTE SHEET, HOW IT IS GRADED
-
-<p><iframe title="Note sheet, how it is graded, Week 8"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-notesheet.html?week=8"
-  width="100%" height="5050"
-  style="width:100%;height:5050px;border:0;display:block"></iframe></p>
-
-
-==================================================================
-WEEK 9   The heart as a pump
-          Mon Nov 2 to Sun Nov 8
-==================================================================
-
---- SILVERTHORN PROBLEMS
-
-<p><iframe title="Silverthorn problems, Week 9"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-bookproblems.html?week=9"
-  width="100%" height="1950"
-  style="width:100%;height:1950px;border:0;display:block"></iframe></p>
-
---- LAB
-
-<p><iframe title="Lab, Week 9"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=9"
-  width="100%" height="4050"
-  style="width:100%;height:4050px;border:0;display:block"></iframe></p>
-
---- DISCUSSION
-
-<p><iframe title="Discussion, Week 9"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion.html?week=9"
-  width="100%" height="2400"
-  style="width:100%;height:2400px;border:0;display:block"></iframe></p>
-
---- PROBLEM LOG
-
-<p><iframe title="Problem log, Week 9"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/ai-work-log.html?week=9"
-  width="100%" height="2950"
-  style="width:100%;height:2950px;border:0;display:block"></iframe></p>
-
---- NOTE SHEET, HOW IT IS GRADED
-
-<p><iframe title="Note sheet, how it is graded, Week 9"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-notesheet.html?week=9"
-  width="100%" height="5000"
-  style="width:100%;height:5000px;border:0;display:block"></iframe></p>
-
-
-==================================================================
-WEEK 10   Pressure, flow, and holding blood pressure steady
-          Mon Nov 9 to Sun Nov 15
-==================================================================
-
---- SILVERTHORN PROBLEMS
-
-<p><iframe title="Silverthorn problems, Week 10"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-bookproblems.html?week=10"
-  width="100%" height="1950"
-  style="width:100%;height:1950px;border:0;display:block"></iframe></p>
-
---- LAB
-
-<p><iframe title="Lab, Week 10"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=10"
-  width="100%" height="4000"
-  style="width:100%;height:4000px;border:0;display:block"></iframe></p>
-
---- DISCUSSION
-
-<p><iframe title="Discussion, Week 10"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion.html?week=10"
-  width="100%" height="2400"
-  style="width:100%;height:2400px;border:0;display:block"></iframe></p>
-
---- PROBLEM LOG
-
-<p><iframe title="Problem log, Week 10"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/ai-work-log.html?week=10"
-  width="100%" height="2950"
-  style="width:100%;height:2950px;border:0;display:block"></iframe></p>
-
---- NOTE SHEET, HOW IT IS GRADED
-
-<p><iframe title="Note sheet, how it is graded, Week 10"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-notesheet.html?week=10"
-  width="100%" height="5000"
-  style="width:100%;height:5000px;border:0;display:block"></iframe></p>
-
-
-==================================================================
-WEEK 11   Blood and how the body defends itself
-          Mon Nov 16 to Sun Nov 22
-          Midterm 2 window, Weeks 6 to 10. Mon Nov 16, 8 am to Sun Nov 22, 10 pm.
-==================================================================
-
---- SILVERTHORN PROBLEMS
-
-<p><iframe title="Silverthorn problems, Week 11"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-bookproblems.html?week=11"
-  width="100%" height="1950"
-  style="width:100%;height:1950px;border:0;display:block"></iframe></p>
-
---- LAB
-
-<p><iframe title="Lab, Week 11"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=11"
-  width="100%" height="4050"
-  style="width:100%;height:4050px;border:0;display:block"></iframe></p>
-
---- DISCUSSION
-
-<p><iframe title="Discussion, Week 11"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion.html?week=11"
-  width="100%" height="2400"
-  style="width:100%;height:2400px;border:0;display:block"></iframe></p>
-
---- PROBLEM LOG
-
-<p><iframe title="Problem log, Week 11"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/ai-work-log.html?week=11"
-  width="100%" height="2950"
-  style="width:100%;height:2950px;border:0;display:block"></iframe></p>
-
---- NOTE SHEET, HOW IT IS GRADED
-
-<p><iframe title="Note sheet, how it is graded, Week 11"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-notesheet.html?week=11"
-  width="100%" height="5000"
-  style="width:100%;height:5000px;border:0;display:block"></iframe></p>
-
-
-==================================================================
-WEEK 12   Digestion, and how you use food for fuel
-          Mon Nov 23 to Sun Nov 29
-==================================================================
-
---- SILVERTHORN PROBLEMS
-
-<p><iframe title="Silverthorn problems, Week 12"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-bookproblems.html?week=12"
-  width="100%" height="1950"
-  style="width:100%;height:1950px;border:0;display:block"></iframe></p>
-
---- LAB
-
-<p><iframe title="Lab, Week 12"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=12"
-  width="100%" height="4050"
-  style="width:100%;height:4050px;border:0;display:block"></iframe></p>
-
---- DISCUSSION
-
-<p><iframe title="Discussion, Week 12"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion.html?week=12"
-  width="100%" height="2400"
-  style="width:100%;height:2400px;border:0;display:block"></iframe></p>
-
---- PROBLEM LOG
-
-<p><iframe title="Problem log, Week 12"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/ai-work-log.html?week=12"
-  width="100%" height="2950"
-  style="width:100%;height:2950px;border:0;display:block"></iframe></p>
-
---- NOTE SHEET, HOW IT IS GRADED
-
-<p><iframe title="Note sheet, how it is graded, Week 12"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-notesheet.html?week=12"
-  width="100%" height="5000"
-  style="width:100%;height:5000px;border:0;display:block"></iframe></p>
-
-
-==================================================================
-WEEK 13   Breathing, gas transport, and the fast pH lever
-          Mon Nov 30 to Sun Dec 6
-==================================================================
-
---- SILVERTHORN PROBLEMS
-
-<p><iframe title="Silverthorn problems, Week 13"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-bookproblems.html?week=13"
-  width="100%" height="1950"
-  style="width:100%;height:1950px;border:0;display:block"></iframe></p>
-
---- LAB
-
-<p><iframe title="Lab, Week 13"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=13"
-  width="100%" height="4050"
-  style="width:100%;height:4050px;border:0;display:block"></iframe></p>
-
---- DISCUSSION
-
-<p><iframe title="Discussion, Week 13"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion.html?week=13"
-  width="100%" height="2400"
-  style="width:100%;height:2400px;border:0;display:block"></iframe></p>
-
---- PROBLEM LOG
-
-<p><iframe title="Problem log, Week 13"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/ai-work-log.html?week=13"
-  width="100%" height="2950"
-  style="width:100%;height:2950px;border:0;display:block"></iframe></p>
-
---- NOTE SHEET, HOW IT IS GRADED
-
-<p><iframe title="Note sheet, how it is graded, Week 13"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-notesheet.html?week=13"
-  width="100%" height="4950"
-  style="width:100%;height:4950px;border:0;display:block"></iframe></p>
-
-
-==================================================================
-WEEK 14   The kidney and body fluid balance
-          Mon Dec 7 to Sun Dec 13
-==================================================================
-
---- SILVERTHORN PROBLEMS
-
-<p><iframe title="Silverthorn problems, Week 14"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-bookproblems.html?week=14"
-  width="100%" height="1950"
-  style="width:100%;height:1950px;border:0;display:block"></iframe></p>
-
---- LAB
-
-<p><iframe title="Lab, Week 14"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=14"
-  width="100%" height="4050"
-  style="width:100%;height:4050px;border:0;display:block"></iframe></p>
-
---- DISCUSSION
-
-<p><iframe title="Discussion, Week 14"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion.html?week=14"
-  width="100%" height="2400"
-  style="width:100%;height:2400px;border:0;display:block"></iframe></p>
-
---- PROBLEM LOG
-
-<p><iframe title="Problem log, Week 14"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/ai-work-log.html?week=14"
-  width="100%" height="2950"
-  style="width:100%;height:2950px;border:0;display:block"></iframe></p>
-
---- NOTE SHEET, HOW IT IS GRADED
-
-<p><iframe title="Note sheet, how it is graded, Week 14"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-notesheet.html?week=14"
-  width="100%" height="5000"
-  style="width:100%;height:5000px;border:0;display:block"></iframe></p>
-
-
-==================================================================
-WEEK 15   The slow pH lever, and putting it all together
-          Mon Dec 14 to Wed Dec 16
-          Midterm 3 window, Weeks 11 to 15. Mon Dec 14, 8 am to Wed Dec 16, 10 pm.
-==================================================================
-
---- SILVERTHORN PROBLEMS
-
-<p><iframe title="Silverthorn problems, Week 15"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-bookproblems.html?week=15"
-  width="100%" height="1950"
-  style="width:100%;height:1950px;border:0;display:block"></iframe></p>
-
---- LAB
-
-<p><iframe title="Lab, Week 15"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=15"
-  width="100%" height="4050"
-  style="width:100%;height:4050px;border:0;display:block"></iframe></p>
-
---- DISCUSSION
-
-<p><iframe title="Discussion, Week 15"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion.html?week=15"
-  width="100%" height="2400"
-  style="width:100%;height:2400px;border:0;display:block"></iframe></p>
-
---- PROBLEM LOG
-
-<p><iframe title="Problem log, Week 15"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/ai-work-log.html?week=15"
-  width="100%" height="2950"
-  style="width:100%;height:2950px;border:0;display:block"></iframe></p>
-
---- NOTE SHEET, HOW IT IS GRADED
-
-<p><iframe title="Note sheet, how it is graded, Week 15"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-notesheet.html?week=15"
-  width="100%" height="5050"
-  style="width:100%;height:5050px;border:0;display:block"></iframe></p>
-
-
-==================================================================
-THE NOTE SHEET, if you really do want it embedded
-==================================================================
-
-  Heights per week, at 2 competencies per printed page:
-
-    Week 1    11750 px
-    Week 2     5850 px
-    Week 3     9550 px
-    Week 4    17700 px
-    Week 5    20900 px
-    Week 6    12800 px
-    Week 7     9550 px
-    Week 8     5850 px
-    Week 9    11250 px
-    Week 10    9100 px
-    Week 11   12300 px
-    Week 12   14450 px
-    Week 13   14950 px
-    Week 14   13400 px
-    Week 15    5850 px
-
-  Snippet shape, swap the week number and the height:
-
-<p><iframe title="Week 1 note sheet"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/note-sheet.html?week=1&amp;per=2"
-  width="100%" height="11750"
-  style="width:100%;height:11750px;border:0;display:block"></iframe></p>
-
-  Note &amp; rather than a bare &, Canvas needs it.
-  &per= takes 1, 2 or 3 competencies per printed page.
-
-==================================================================
-STILL OPEN
-==================================================================
-
-  Week 2's discussion is wired into its Learning Lab as a Post
-  button: /courses/42616/discussion_topics/712810
-
-  Weeks 3, 4 and 5 do not have their Canvas discussion links yet.
-  Those labs show a short line saying the link is coming rather
-  than a button that goes nowhere. Send me the three URLs and they
-  become buttons.
-
+  Canvas page > Edit > the </> HTML editor button > paste > Save > PUBLISH.
+  Heights are starting values. If a page runs long inside Canvas, raise the
+  number; if it leaves white space, trim it. Canvas strips scripts, so the
+  fixed height is what Canvas uses.
+
+WHAT CHANGED IN THIS VERSION
+  course-door gained the This Week card, so its height went up.
+  The four doors now open their own term-wide index pages.
+  assignment-notesheet and assignment-physioex were rebuilt lean, so their
+  heights came way down.
+  New pages: the four door indexes, the reference range lab, the fluid
+  balance case, the enzyme lab, the Week 2 prompts, the vision board, and
+  the 250 questions page.
+
+------------------------------------------------------------------
+THE FRONT (embed once)
+------------------------------------------------------------------
+
+--- START HERE, the Canvas front page (course door, with This Week card) ---
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/course-door.html"
+  title="BIO 005 Human Physiology" width="100%" height="1300"
+  style="width:100%; min-height:1300px; border:0; display:block;"></iframe></p>
+
+--- ALTERNATIVE minimal front card (two buttons) ---
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/canvas-home.html"
+  title="BIO 005 Human Physiology" width="100%" height="820"
+  style="width:100%; min-height:820px; border:0; display:block;"></iframe></p>
+
+--- THE WELCOME, for a week 0 announcement or orientation page ---
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/welcome.html"
+  title="Welcome to BIO 005 Human Physiology" width="100%" height="2600"
+  style="width:100%; min-height:2600px; border:0; display:block;"></iframe></p>
+
+------------------------------------------------------------------
+THE FOUR DOORS, term-wide indexes (embed once each)
+------------------------------------------------------------------
+
+--- ASSIGNMENTS, every assignment all fifteen weeks ---
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/door-assignments.html"
+  title="Every assignment, all fifteen weeks" width="100%" height="2300"
+  style="width:100%; min-height:2300px; border:0; display:block;"></iframe></p>
+
+--- LAB, every lab with the PhysioEx buttons ---
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/door-lab.html"
+  title="Every lab, all fifteen weeks" width="100%" height="2100"
+  style="width:100%; min-height:2100px; border:0; display:block;"></iframe></p>
+
+--- LECTURE, every week's videos, slides and notes ---
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/door-lecture.html"
+  title="Every lecture, all fifteen weeks" width="100%" height="2000"
+  style="width:100%; min-height:2000px; border:0; display:block;"></iframe></p>
+
+--- STUDY, the Mastery OS and drawing tools ---
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/door-study.html"
+  title="The study tools" width="100%" height="1500"
+  style="width:100%; min-height:1500px; border:0; display:block;"></iframe></p>
+
+------------------------------------------------------------------
+COURSE TOOLS, the six-step weekly page (embed once)
+------------------------------------------------------------------
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/course-materials.html"
+  title="Course tools, this week in order" width="100%" height="9000"
+  style="width:100%; min-height:9000px; border:0; display:block;"></iframe></p>
+
+------------------------------------------------------------------
+ANY ASSIGNMENT PAGE, ANY WEEK
+Add ?week=N and the page relabels itself, including its due date.
+------------------------------------------------------------------
+
+--- NOTE SHEET (lean rebuild: sheet button, prompts button, upload) ---
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-notesheet.html?week=1"
+  title="Week 1 note sheet" width="100%" height="950"
+  style="width:100%; min-height:950px; border:0; display:block;"></iframe></p>
+
+--- BOOK PROBLEMS ---
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-bookproblems.html?week=1"
+  title="Week 1 book problems" width="100%" height="1700"
+  style="width:100%; min-height:1700px; border:0; display:block;"></iframe></p>
+
+--- WEEKLY LAB (week-aware: no-Pearson weeks 1, 5, 8 say so) ---
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=1"
+  title="Week 1 lab" width="100%" height="1000"
+  style="width:100%; min-height:1000px; border:0; display:block;"></iframe></p>
+
+--- DISCUSSION ---
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion.html?week=1"
+  title="Week 1 discussion" width="100%" height="1500"
+  style="width:100%; min-height:1500px; border:0; display:block;"></iframe></p>
+
+--- AI WORK LOG ---
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/ai-work-log.html?week=1"
+  title="Week 1 AI work log" width="100%" height="1600"
+  style="width:100%; min-height:1600px; border:0; display:block;"></iframe></p>
+
+--- WEEK HUB, for a module front page (week-01 through week-15) ---
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/week-01.html"
+  title="Week 1" width="100%" height="2000"
+  style="width:100%; min-height:2000px; border:0; display:block;"></iframe></p>
+
+------------------------------------------------------------------
+WEEK 1 PAGES
+------------------------------------------------------------------
+
+--- THE DIGITAL VISION BOARD (Discussion 1) ---
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion-01-visionboard.html"
+  title="Your digital vision board" width="100%" height="1900"
+  style="width:100%; min-height:1900px; border:0; display:block;"></iframe></p>
+
+--- WEEK 1 NOTE SHEET PROMPTS ---
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/week-01-notesheet-prompts.html"
+  title="Week 1 note sheet prompts" width="100%" height="3200"
+  style="width:100%; min-height:3200px; border:0; display:block;"></iframe></p>
+
+--- WEEK 1 LAB: STANDARDS AND RANGES ---
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/reference-range-lab.html"
+  title="The reference range lab" width="100%" height="3400"
+  style="width:100%; min-height:3400px; border:0; display:block;"></iframe></p>
+
+--- WEEK 1 COMPANION: THE FLUID BALANCE CASE ---
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/fluid-homeostasis-lab.html"
+  title="The fluid balance case" width="100%" height="3200"
+  style="width:100%; min-height:3200px; border:0; display:block;"></iframe></p>
+
+--- WEEK 1 COMPETENCIES (printable sheet page) ---
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/week-01-competencies.html"
+  title="Week 1 competencies" width="100%" height="10200"
+  style="width:100%; min-height:10200px; border:0; display:block;"></iframe></p>
+
+------------------------------------------------------------------
+WEEK 2 PAGES
+------------------------------------------------------------------
+
+--- WEEK 2 NOTE SHEET PROMPTS ---
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/week-02-notesheet-prompts.html"
+  title="Week 2 note sheet prompts" width="100%" height="3000"
+  style="width:100%; min-height:3000px; border:0; display:block;"></iframe></p>
+
+--- WEEK 2 LAB: THE ENZYME LAB AND THE LAB TEST ---
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/enzyme-amylase-lab.html"
+  title="The enzyme lab" width="100%" height="3400"
+  style="width:100%; min-height:3400px; border:0; display:block;"></iframe></p>
+
+------------------------------------------------------------------
+REFERENCE PAGES (embed once, or link from anywhere)
+------------------------------------------------------------------
+
+--- SYLLABUS ---
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/syllabus-fall2026.html"
+  title="Syllabus, BIO 005 Fall 2026" width="100%" height="6200"
+  style="width:100%; min-height:6200px; border:0; display:block;"></iframe></p>
+
+--- COURSE SCHEDULE ---
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/course-schedule.html"
+  title="Course schedule, all fifteen weeks" width="100%" height="3200"
+  style="width:100%; min-height:3200px; border:0; display:block;"></iframe></p>
+
+--- 250 QUESTIONS, ANSWERED ---
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/course-questions.html"
+  title="250 questions, answered" width="100%" height="4200"
+  style="width:100%; min-height:4200px; border:0; display:block;"></iframe></p>
+
+--- COMPETENCY PACKET ---
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/competency-packet-fall2026.html"
+  title="The Competency Packet" width="100%" height="5200"
+  style="width:100%; min-height:5200px; border:0; display:block;"></iframe></p>
+
+--- ALL 268 COMPETENCIES BY WEEK ---
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/competencies-by-week.html"
+  title="All 268 competencies, by week" width="100%" height="5200"
+  style="width:100%; min-height:5200px; border:0; display:block;"></iframe></p>
+
+------------------------------------------------------------------
+NOTES
+  Discussions get two Canvas dates: available and initial post Friday
+  10:00 pm, due (replies) Sunday 10:00 pm.
+  Everything else: due Sunday 10:00 pm. Week 15 closes Wednesday
+  December 16, 10:00 pm.
+  The Pearson path is Access Pearson inside Canvas, never pearson.com.
+  The full week-by-week build guide with copy buttons is canvas-kit.html.
 ==================================================================
