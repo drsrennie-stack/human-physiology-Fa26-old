@@ -87,7 +87,6 @@ img,svg{max-width:100%}
 
 .eyebrow{font-family:var(--body);font-size:10.5px;font-weight:700;letter-spacing:.26em;
          text-transform:uppercase;color:var(--maroon);margin:0}
-.on-dark .eyebrow{color:var(--gold)}
 
 /* ---------- brand bar ---------- */
 .brandbar{background:var(--card);border-bottom:1px solid var(--hair-soft);padding:13px 0}
@@ -107,10 +106,6 @@ img,svg{max-width:100%}
 .hero .lede{margin-top:14px;color:var(--muted);max-width:58ch;font-size:16px}
 
 /* ---------- right now ---------- */
-.now{background:var(--ink-deep);color:var(--bone);padding:34px 0 38px}
-.now h2{color:var(--bone);font-size:clamp(21px,3.4vw,28px);line-height:1.18;margin-top:11px}
-.now h2 em{color:var(--gold)}
-.now .sub{margin-top:10px;color:rgba(250,250,249,.84);max-width:56ch;font-size:15px}
 
 /* ---------- week cards ---------- */
 .weeks{padding:38px 0 46px}
@@ -121,37 +116,33 @@ img,svg{max-width:100%}
 .wk{border:1px solid var(--hair);border-radius:6px;margin-bottom:10px;background:var(--card);
     overflow:hidden}
 .wk.is-now{border-color:var(--maroon);border-width:2px}
-.now .wk{background:var(--ink-deep);border-color:var(--hair-dark);color:var(--bone)}
-.now .wk.is-now{border-color:var(--gold);border-width:2px}
 
 .wk > summary{list-style:none;cursor:pointer;padding:15px 17px;display:grid;
               grid-template-columns:44px 1fr auto;gap:12px;align-items:center}
 .wk > summary::-webkit-details-marker{display:none}
 .wk > summary:hover .wt{color:var(--maroon)}
-.now .wk > summary:hover .wt{color:var(--gold)}
 .wn{font-family:var(--display);font-size:22px;font-weight:800;line-height:1;
     color:var(--maroon);font-variant-numeric:tabular-nums}
-.now .wn{color:var(--gold)}
 .wt{font-family:var(--display);font-weight:800;font-size:15.5px;line-height:1.3;
     letter-spacing:-.02em;display:block;transition:color 160ms ease}
 .wmeta{font-size:12px;color:var(--muted);margin-top:3px;display:block}
-.now .wmeta{color:rgba(250,250,249,.8)}
 .wchev{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
        color:var(--faint);white-space:nowrap}
-.now .wchev{color:rgba(250,250,249,.8)}
 .wk[open] > summary .wchev::after{content:" \2212"}
 .wk:not([open]) > summary .wchev::after{content:" +"}
 .tagnow{display:inline-block;font-size:9px;font-weight:700;letter-spacing:.18em;
         text-transform:uppercase;background:var(--maroon);color:#fff;
         padding:3px 8px;border-radius:3px;margin-left:8px;vertical-align:2px}
-.now .tagnow{background:var(--gold);color:var(--ink-deep)}
+
+/* The .now and .on-dark rules that used to live here styled the dark pinned
+   "Right now" panel. That panel showed the current week a second time above
+   the list that already contains it, so it was removed and these rules with
+   it. One list, one colour scheme, current week open in place. */
 
 /* ---------- the seven slots ---------- */
 .slots{border-top:1px solid var(--hair);padding:4px 0 6px;margin:0}
-.now .slots{border-color:var(--hair-dark)}
 .slot{display:grid;grid-template-columns:118px 1fr;gap:10px;align-items:baseline;
       padding:11px 17px;border-bottom:1px solid var(--hair-soft)}
-.now .slot{border-color:rgba(250,250,249,.1)}
 .slot:last-child{border-bottom:0}
 .slot-exam{background:#F7EFD9}                 /* navy on it 15.99:1, maroon-dark 8.83:1 */
 .slot-exam .sk{color:#6E2D24}                  /* 8.83:1 */
@@ -160,18 +151,13 @@ img,svg{max-width:100%}
    down to the darker pair. */
 .slot-exam .sv > a{font-weight:800;color:#6E2D24}        /* 8.83:1 */
 .slot-exam .sv .desc{color:#3B4150}                      /* 10.06:1 */
-.now .slot-exam{background:rgba(226,197,131,.14)}
 @media (forced-colors:active){ .slot-exam{border:1px solid CanvasText} }
 .sk{font-family:var(--body);font-size:9.5px;font-weight:700;letter-spacing:.18em;
     text-transform:uppercase;color:var(--faint)}
-.now .sk{color:rgba(250,250,249,.72)}
 .sv a{font-weight:700;text-decoration:none;font-size:14.5px}
 .sv a:hover{text-decoration:underline}
-.now .sv a{color:var(--gold)}
 .sv .soon{color:var(--muted);font-size:14px}
-.now .sv .soon{color:rgba(250,250,249,.66)}
 .sv .desc{display:block;font-size:13px;color:var(--muted);margin-top:2px}
-.now .sv .desc{color:rgba(250,250,249,.72)}
 
 /* ---------- always-on resources ---------- */
 .always{padding:34px 0 40px;border-top:1px solid var(--hair)}
@@ -226,25 +212,20 @@ footer :focus-visible{outline-color:var(--gold)}
 <header class="hero"><div class="wrap">
   <p class="eyebrow">Human Physiology &middot; Fully online</p>
   <h1>Everything for this course, <em>week by week</em>.</h1>
-  <p class="lede">Fifteen weeks, each with the same seven pieces in the same order, so you never have to work out where anything is. This week is at the top. The rest are below, open one to see what is in it.</p>
+  <p class="lede">Fifteen weeks, each with the same seven pieces in the same order, so you never have to work out where anything is. This week is already open. Open any other one to see what is in it.</p>
 </div></header>
 
 <main>
-<!-- ============ THIS WEEK ============ -->
-<section class="now on-dark" id="thisweek" aria-labelledby="h-now">
-  <div class="wrap">
-    <p class="eyebrow" id="nowkicker">Right now</p>
-    <h2 id="h-now">Loading this week&hellip;</h2>
-    <p class="sub" id="nowsub"></p>
-    <div id="nowcard" style="margin-top:22px"></div>
-  </div>
-</section>
-
 <!-- ============ ALL FIFTEEN WEEKS ============ -->
-<section class="weeks" aria-labelledby="h-all">
+<!-- There used to be a dark "Right now" panel above this list holding the
+     current week, expanded. It was the same week, with the same seven links,
+     that the list below already shows and already opens. Two copies of one
+     week in two colour schemes. The panel is gone and the current week is
+     simply open where it belongs, first in the list, marked "This week". -->
+<section class="weeks" id="thisweek" aria-labelledby="h-all">
   <div class="wrap">
     <div class="wkhead"><h2 id="h-all">All fifteen weeks</h2></div>
-    <p class="wknote">Every week has the same seven pieces. A piece that says "posted when the week opens" is not missing, it just is not up yet, and it will appear in exactly this spot when it is.</p>
+    <p class="wknote" id="wknote">Every week has the same seven pieces. A piece that says "posted when the week opens" is not missing, it just is not up yet, and it will appear in exactly this spot when it is.</p>
     <div id="allweeks"></div>
   </div>
 </section>
@@ -487,26 +468,19 @@ footer :focus-visible{outline-color:var(--gold)}
       '<span class="wchev">Open</span></summary>';
   }
 
-  /* ---- the pinned current week, already expanded ---- */
+  /* ---- all fifteen. The current one is marked, and it is the one that
+         starts open, so nothing has to be duplicated above the list. ---- */
   var w = WEEKS[cur - 1];
-  document.getElementById("h-now").innerHTML =
-    'Week ' + cur + ', <em>' + esc(w.title) + '</em>.';
-  document.getElementById("nowkicker").textContent = beforeTerm ? "First up" : "Right now";
-  document.getElementById("nowsub").textContent = beforeTerm
-    ? "The term starts Tuesday September 8. Here is Week 1 so you can look ahead. Work is due " + w.due + " at 11:59 pm."
-    : "This week opened " + w.opens + ". The work is due " + w.due + " at 11:59 pm.";
+  document.getElementById("wknote").textContent = beforeTerm
+    ? "The term starts Tuesday September 8. Week 1 is open below. Every week has the same seven pieces, and a piece that says \u201cposted when the week opens\u201d is not missing, it just is not up yet."
+    : "Week " + cur + " opened " + w.opens + " and its work is due " + w.due +
+      " at 11:59 pm. It is open below. Every week has the same seven pieces, and a piece that says \u201cposted when the week opens\u201d is not missing, it just is not up yet.";
 
-  var d = document.createElement("details");
-  d.className = "wk is-now";
-  d.open = true;
-  d.innerHTML = summaryHTML(w, true) + slotsHTML(w);
-  document.getElementById("nowcard").appendChild(d);
-
-  /* ---- all fifteen, collapsed, current one marked ---- */
   var all = document.getElementById("allweeks");
   WEEKS.forEach(function(wk){
     var el = document.createElement("details");
     el.className = "wk" + (wk.n === cur ? " is-now" : "");
+    el.open = (wk.n === cur);
     el.innerHTML = summaryHTML(wk, wk.n === cur) + slotsHTML(wk);
     all.appendChild(el);
   });

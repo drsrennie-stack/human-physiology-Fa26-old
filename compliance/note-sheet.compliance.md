@@ -6,7 +6,7 @@ BIO 005 Human Physiology, Yuba College, Fall 2026.
 
 Files covered:
 
-- `note-sheet.html` (the printable competency note sheet, `?week=1` to `?week=15`, `?blank=1`)
+- `note-sheet.html` (the printable competency note sheet, `?week=1` to `?week=15`, `?per=1|2|3`, `?blank=1`)
 - `competencies-by-week.html` (all 268 competencies grouped by teaching week)
 - `course-start.html` (midterm rows added to Weeks 6, 11, 15)
 - `week-01-competencies.html` (header buttons rewired)
@@ -51,6 +51,10 @@ non-text minimum of 1.4.11 with room to spare.
 | Text | Background | Ratio | Level |
 |---|---|---|---|
 | Maroon-dark #6E2D24 drawing rule | White | 10.18:1 | AAA |
+| White density control, selected | Navy #0B1530 | 18.04:1 | AAA |
+| Navy density control, unselected | White | 18.04:1 | AAA |
+| Pen 1 blue #1B3A6B, template drawing | White | 11.27:1 | AAA |
+| Pen 2 maroon #8B3A2E, template drawing | White | 7.66:1 | AAA |
 
 ### competencies-by-week.html
 
@@ -88,10 +92,18 @@ measured 6.81:1. Both clear AA, both miss AAA, so the exam row overrides them.
    class and under AAA outright. Now #AEB8C6 at 7.57:1. Fixed in all four
    copies of `bio005-dock.js`.
 3. **Box hints collided with their labels.** In the narrow right hand column
-   the italic hint sat at the top right and overlapped the label tab, clipping
+   the hint sat at the top right and overlapped the label tab, clipping
    "boxes and arrows" mid word. Hints now sit at the bottom right of each box.
    Verified with `scrollWidth` against `clientWidth` on every label and hint on
    the page: zero clipped.
+4. **Screen box minimums leaked into the print layout.** `.d3 .sp.parts` and
+   its siblings are specificity (0,3,0); the print rule that zeroes them is
+   (0,2,0), so the screen minimums won and the third competency on a three up
+   page overflowed its block by 30 to 40px, painting the box 4 label over the
+   next competency's title. The minimums are now inside `@media screen`, and
+   each block carries an explicit print height rather than `flex:1`. Verified
+   by measuring `scrollHeight` against `clientHeight` for every block and every
+   sheet across all 15 weeks at all 3 densities: 45 of 45 combinations fit.
 
 ## 5. Keyboard navigation
 
@@ -99,9 +111,16 @@ Verified on `note-sheet.html` and `competencies-by-week.html`:
 
 - Skip link is the first focusable element and reveals on focus.
 - Tab order runs skip link, print button, the two header links, the week
-  select, then the document. Nothing is reachable that is not operable.
+  select, the density control, then the document. Nothing is reachable that is
+  not operable.
 - The week select is a real `<select>`, so it works with arrow keys and with
   the browser's own type-ahead.
+- The density control is a real radio group in a `<fieldset>` with a
+  `<legend>`, so it announces as a group and arrow keys move between 1, 2 and
+  3. The visible styling is on the `<span>` after each input; the input keeps
+  its native semantics and its focus ring is drawn with `:focus-visible`.
+- The template drawing sits in a scrollable region with `tabindex="0"` and an
+  accessible name, which WCAG 2.1.1 requires of any scrollable region.
 - The print button is a real `<button>` and fires on both Enter and Space.
 - Focus indicator is a 3px maroon outline at 3px offset, visible against every
   surface on both pages.
@@ -150,6 +169,7 @@ driven with VoiceOver or NVDA. That is the open item for this project.
 | No live screen reader pass | Every file | Run VoiceOver on Safari and NVDA on Firefox before Week 1 opens |
 | `.rd-box-kicker` 6.02:1, `.rd-box-tag` 6.75:1 | unit-01 to unit-05, before-you-start | Pre-existing, clears AA, misses AAA. Darken the box grounds on the next pass at the unit pages |
 | Print colour fidelity | note-sheet.html | Black on white by design so it prints on a mono laser. Not a defect |
+| Three per page is tight | note-sheet.html `?per=3` | Boxes are about 1.6in tall. It fits and it is measured, but it is the economy setting, not the good one. Two per page is the default for that reason |
 
 ## 9. Reviewer
 

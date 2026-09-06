@@ -12,38 +12,43 @@
   note-sheet.html   THE SHEET ITSELF, NOT INSTRUCTIONS FOR IT
 
   ?week=1 .. ?week=15   which week's competencies get printed
-  ?blank=1              same sheet with the number and concept
-                        name left empty, for handing out generic
+  ?per=1 | 2 | 3        competencies per sheet of paper
+  ?blank=1              number and concept name left empty
 
   WHY THIS PAGE EXISTS
   --------------------
   assignment-notesheet.html used to explain how to build a note
-  sheet. Students got lost building it and never got to the
-  physiology. This page hands them the built sheet. Every
-  competency for the week is already printed on its own page
-  with four labelled spaces under it. All they do is fill it in.
+  sheet. Students got lost building it and never reached the
+  physiology. This page hands them the built sheet.
+
+  PRINTING COSTS MONEY. One competency per page made Week 1
+  eighteen sheets of paper, every week, which students on this
+  campus cannot carry. So the sheet packs 1, 2 or 3 competencies
+  onto a page and DEFAULTS TO TWO. Week 1 at two per page is nine
+  sheets, at three per page it is six.
+
+  And printing is optional. A student who is not printing rules
+  the same four boxes onto their own paper, and the drawn
+  template on this page shows them exactly how, including what
+  belongs in each box. That template is screen only, it never
+  eats a printed page.
 
   FOUR SPACES PER COMPETENCY, ALL FOUR DRAWN
-    1  Draw it                     the big one, left, full height
+    1  Draw it                     the big one, on the left
     2  Label every part            top right
     3  What happens, in order      middle right
     4  What breaks if this fails   full width across the bottom
 
-  THE BOXES HAVE NO RULES IN THEM ON PURPOSE. A ruled box invites a
-  paragraph and a paragraph is the one thing this assignment is not.
-  Words are fine inside a drawing, in little boxes with arrows
-  between them, in the order things happen. Sentences running the
-  width of the box are not, and the rule is printed on every page.
+  THE BOXES HAVE NO RULES IN THEM ON PURPOSE. A ruled box invites
+  a paragraph and a paragraph is the one thing this assignment is
+  not. Words are fine inside a drawing, in little boxes with
+  arrows between them, in the order things happen. Sentences
+  running the width of the box are not, and the rule is printed
+  on every page.
 
   TWO PASSES, TWO COLOURS, SAME BOXES. Pass one from the book
   before any video. Pass two in a second colour after the video,
   into the same boxes. The gap between the colours is the grade.
-
-  PRINT
-  -----
-  One competency per sheet of paper. Letter, half inch margins.
-  Ink is black on white so it does not eat a colour cartridge.
-  Screen shows the same pages stacked so nothing is a surprise.
 
   IFRAME SAFE. Nothing position:fixed. Fluid to 320px. Height
   sender posts as bio005-note-sheet. Internal links target _top.
@@ -55,12 +60,13 @@
   --navy-deep:#060A18;
   --maroon:#8B3A2E;      /* 7.66:1 on white, 7.33:1 on off white */
   --maroon-dark:#6E2D24; /* 10.18:1 */
-  --gold-deep:#8A6D33;   /* 4.87:1, large text and rules only */
   --ink:#0B1530;
   --muted:#454B58;       /* 8.75:1 on white */
   --page:#FAFAF9;
   --card:#FFFFFF;
   --hair:#D8DBE2;
+  --pen1:#1B3A6B;        /* first pass pen, 11.27:1 on white */
+  --pen2:#8B3A2E;        /* second pass pen, 7.66:1 on white */
   --disp:'Open Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
   --body:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
 }
@@ -78,11 +84,11 @@ a{color:var(--maroon-dark);font-weight:700}
 
 /* ---------------- screen chrome, none of it prints ---------------- */
 .top{background:var(--navy-deep);color:#fff;padding:34px 20px 30px}
-.top .wrap{max-width:900px;margin:0 auto}
+.top .wrap{max-width:940px;margin:0 auto}
 .eyebrow{font-family:var(--body);font-size:11px;font-weight:700;letter-spacing:.3em;
-         text-transform:uppercase;color:#E2C583;margin-bottom:12px}  /* 9.34:1 on navy-deep */
+         text-transform:uppercase;color:#E2C583;margin-bottom:12px}  /* 9.34:1 */
 .top h1{font-size:clamp(25px,5vw,36px);line-height:1.12;color:#fff}
-.top .sub{margin-top:11px;font-size:16px;color:#E4E7EE;max-width:62ch}  /* 14.6:1 */
+.top .sub{margin-top:11px;font-size:16px;color:#E4E7EE;max-width:64ch}  /* 14.6:1 */
 
 .btnrow{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}
 .sqbtn{display:inline-block;background:#fff;color:var(--maroon-dark);border:0;
@@ -93,30 +99,76 @@ a{color:var(--maroon-dark);font-weight:700}
 .sqbtn.ghost{background:transparent;color:#fff;box-shadow:inset 0 0 0 1px #fff}
 .sqbtn.ghost:hover{background:#fff;color:var(--navy-deep)}
 
-.pick{background:#fff;border-bottom:1px solid var(--hair);padding:16px 20px}
-.pick .wrap{max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;
-            align-items:center;gap:12px}
-.pick label{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
-            color:var(--muted)}
+.pick{background:#fff;border-bottom:1px solid var(--hair);padding:15px 20px}
+.pick .wrap{max-width:940px;margin:0 auto;display:flex;flex-wrap:wrap;
+            align-items:center;gap:10px 20px}
+.pick .grp{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.pick label,.pick legend{font-size:11px;font-weight:700;letter-spacing:.14em;
+            text-transform:uppercase;color:var(--muted);padding:0}
 .pick select{font-family:var(--body);font-size:15px;font-weight:600;color:var(--ink);
              background:#fff;border:1px solid var(--navy);border-radius:4px;padding:9px 12px}
-.pick .cnt{font-size:14px;color:var(--muted)}
+.pick fieldset{border:0;margin:0;padding:0;display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.seg{display:inline-flex;border:1px solid var(--navy);border-radius:4px;overflow:hidden}
+.seg label{position:relative;margin:0}
+.seg input{position:absolute;opacity:0;width:100%;height:100%;left:0;top:0;margin:0;cursor:pointer}
+.seg span{display:block;padding:9px 15px;font-size:13px;font-weight:700;letter-spacing:.04em;
+          color:var(--navy);text-transform:none;background:#fff;cursor:pointer;
+          border-left:1px solid var(--hair)}
+.seg label:first-child span{border-left:0}
+.seg input:checked + span{background:var(--navy);color:#fff}      /* 18.04:1 */
+.seg input:focus-visible + span{outline:3px solid var(--maroon);outline-offset:-3px}
+.pick .cnt{font-size:14px;color:var(--muted);font-weight:600}
 
-.howto{max-width:900px;margin:22px auto 0;padding:0 20px}
-.howto .box{background:#fff;border:1px solid var(--hair);border-left:3px solid var(--maroon);
-            padding:18px 20px}
-.howto h2{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--maroon-dark);
-          font-family:var(--body);font-weight:700;margin-bottom:9px}
-.howto ol{margin:0;padding-left:20px;font-size:15px;color:var(--ink)}
-.howto li{margin-bottom:5px}
-.howto li:last-child{margin-bottom:0}
+.band{max-width:940px;margin:22px auto 0;padding:0 20px;display:grid;
+      grid-template-columns:1fr 1fr;gap:16px}
+.band .box{background:#fff;border:1px solid var(--hair);border-left:3px solid var(--maroon);
+           padding:18px 20px}
+.band h2{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--maroon-dark);
+         font-family:var(--body);font-weight:700;margin-bottom:9px}
+.band ol{margin:0;padding-left:19px;font-size:14.5px;color:var(--ink)}
+.band li{margin-bottom:6px}
+.band li:last-child{margin-bottom:0}
+.band p{font-size:14.5px;color:var(--ink);margin-bottom:9px}
+.band p:last-child{margin-bottom:0}
+@media (max-width:760px){ .band{grid-template-columns:1fr} }
 
-.sheets{max-width:900px;margin:0 auto;padding:22px 20px 60px}
+/* ---------------- the hand ruling template, screen only ------------- */
+.tpl{max-width:940px;margin:22px auto 0;padding:0 20px}
+.tpl .box{background:#fff;border:1px solid var(--hair);padding:22px 22px 18px}
+.tpl h2{font-size:19px;color:var(--navy);margin-bottom:7px}
+.tpl .cap{font-size:14.5px;color:var(--muted);max-width:74ch;margin-bottom:14px}
+.tplwrap{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%}
+.tplwrap:focus-visible{outline:3px solid var(--maroon);outline-offset:2px}
+.tplsvg{display:block;width:100%;height:auto;min-width:520px;max-width:720px;margin:0 auto}
+.tplsvg text{stroke:none}
+.tplsvg .rule{fill:none;stroke:var(--navy);stroke-width:2}
+.tplsvg .lab{font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:800;
+             letter-spacing:.09em;fill:#fff}
+.tplsvg .tab{fill:var(--navy)}
+.tplsvg .tab4{fill:var(--maroon)}
+.tplsvg .p1{fill:none;stroke:var(--pen1);stroke-width:1.7;
+            stroke-linecap:round;stroke-linejoin:round}
+.tplsvg .p1t{font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;
+             font-weight:600;fill:var(--pen1)}
+.tplsvg .p2{fill:none;stroke:var(--pen2);stroke-width:1.7;
+            stroke-linecap:round;stroke-linejoin:round}
+.tplsvg .p2t{font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;
+             font-weight:600;fill:var(--pen2)}
+.tplsvg .hd{font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;
+            font-weight:700;fill:var(--muted)}
+.legend{display:flex;flex-wrap:wrap;gap:18px;margin:0 0 12px}
+.legend span{font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+             display:flex;align-items:center;gap:7px}
+.legend .k1{color:var(--pen1)} .legend .k2{color:var(--pen2)}
+.legend .swatch{width:13px;height:13px;border-radius:2px;display:inline-block}
+.legend .k1 .swatch{background:var(--pen1)} .legend .k2 .swatch{background:var(--pen2)}
+.tpl .after{margin-top:14px;font-size:14.5px;color:var(--ink);max-width:74ch}
 
-/* ---------------- one competency, one page ---------------- */
-.pg{background:var(--card);border:1px solid var(--hair);padding:26px 24px 24px;
-    margin-bottom:20px}
+.sheets{max-width:940px;margin:0 auto;padding:22px 20px 60px}
 
+/* ---------------- one sheet of paper ---------------- */
+.sheetpage{background:var(--card);border:1px solid var(--hair);padding:24px 22px 20px;
+           margin-bottom:20px;display:flex;flex-direction:column}
 .phead{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;
        border-bottom:1.5px solid var(--navy);padding-bottom:8px}
 .phead .runner{font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
@@ -125,56 +177,75 @@ a{color:var(--maroon-dark);font-weight:700}
 .phead .who .ln{display:inline-block;border-bottom:1px solid var(--muted);
                 width:130px;margin:0 14px 0 5px}
 
-.ptitle{display:flex;align-items:flex-start;gap:12px;margin-top:14px}
-.numbox{flex:none;width:46px;height:46px;border:1.5px solid var(--navy);
-        display:grid;place-items:center;font-family:var(--disp);font-weight:800;
-        font-size:20px;color:var(--navy)}
-.numbox.empty{color:transparent}
-.numlab{display:block;font-size:8px;font-weight:700;letter-spacing:.14em;
-        text-transform:uppercase;color:var(--muted);text-align:center;margin-top:3px}
-.ptitle h2{font-size:19px;line-height:1.25;color:var(--navy)}
-.ptitle .blankname{display:block;border-bottom:1px solid var(--navy);height:23px;width:100%;
-                   max-width:460px}
-.can{margin-top:9px;font-size:13.5px;line-height:1.45;color:var(--muted)}
-.can b{color:var(--maroon-dark);font-weight:700}
-
-.meta{display:flex;flex-wrap:wrap;gap:20px;align-items:center;margin-top:12px;
-      border-top:1px dotted var(--hair);border-bottom:1px dotted var(--hair);padding:9px 0}
-.meta span{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
-           color:var(--muted);display:inline-flex;align-items:center;gap:7px}
-.tick{display:inline-block;width:13px;height:13px;border:1.2px solid var(--navy);
-      border-radius:2px;vertical-align:-2px}
-.meta .cl{display:inline-block;border-bottom:1px solid var(--muted);width:74px}
-
-/* the four spaces */
 .drawrule{margin-top:9px;font-size:11.5px;line-height:1.4;color:var(--maroon-dark);
           border-left:2px solid var(--maroon);padding-left:9px}   /* 10.18:1 on white */
 .drawrule b{font-weight:800}
 
+/* one competency inside the sheet */
+.pg{display:flex;flex-direction:column;min-height:0;margin-top:14px}
+.pg + .pg{border-top:1px dashed var(--hair);padding-top:12px}
+
+.ptitle{display:flex;align-items:flex-start;gap:12px}
+.numbox{flex:none;width:44px;height:44px;border:1.5px solid var(--navy);
+        display:grid;place-items:center;font-family:var(--disp);font-weight:800;
+        font-size:19px;color:var(--navy)}
+.numbox.empty{color:transparent}
+.numlab{display:block;font-size:8px;font-weight:700;letter-spacing:.14em;
+        text-transform:uppercase;color:var(--muted);text-align:center;margin-top:3px}
+.ptitle h2{font-size:18px;line-height:1.25;color:var(--navy)}
+.ptitle .blankname{display:block;border-bottom:1px solid var(--navy);height:22px;width:100%;
+                   max-width:460px}
+.can{margin-top:7px;font-size:13px;line-height:1.42;color:var(--muted)}
+.can b{color:var(--maroon-dark);font-weight:700}
+
+.meta{display:flex;flex-wrap:wrap;gap:18px;align-items:center;margin-top:10px;
+      border-top:1px dotted var(--hair);border-bottom:1px dotted var(--hair);padding:7px 0}
+.meta span{font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+           color:var(--muted);display:inline-flex;align-items:center;gap:7px}
+.tick{display:inline-block;width:13px;height:13px;border:1.2px solid var(--navy);
+      border-radius:2px;vertical-align:-2px}
+.meta .cl{display:inline-block;border-bottom:1px solid var(--muted);width:70px}
+
+/* the four spaces */
 .grid{display:grid;grid-template-columns:1.32fr 1fr;grid-template-rows:auto auto auto;
-      gap:10px;margin-top:12px}
+      gap:9px;margin-top:10px;flex:1;min-height:0}
 .sp{border:1.2px solid var(--navy);position:relative;padding:22px 11px 10px}
 .sp .lab{position:absolute;top:0;left:0;background:var(--navy);color:#fff;
          font-size:9px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
-         padding:3px 9px}                                        /* white on navy 18.04:1 */
+         padding:3px 9px}                                        /* 18.04:1 */
 /* The hint sits at the BOTTOM right. At the top it collided with the label tab
    in the narrow right hand column, which clipped "boxes and arrows" mid word. */
-.sp .hint{position:absolute;bottom:5px;right:9px;font-size:9px;font-style:italic;
+.sp .hint{position:absolute;bottom:5px;right:9px;font-size:9px;
           color:var(--muted);letter-spacing:.01em;max-width:calc(100% - 18px);
           text-align:right}
-.sp.draw{grid-column:1;grid-row:1 / span 2;min-height:330px}
-.sp.parts{grid-column:2;grid-row:1;min-height:160px}
-.sp.steps{grid-column:2;grid-row:2;min-height:160px}
-.sp.fails{grid-column:1 / span 2;grid-row:3;min-height:104px}
-.sp.fails .lab{background:var(--maroon)}                          /* white on maroon 7.66:1 */
-/* No rules in any box. These are drawing surfaces, and a ruled box invites a
-   paragraph, which is the exact thing this assignment is not. Blank white. */
+.sp.draw{grid-column:1;grid-row:1 / span 2}
+.sp.parts{grid-column:2;grid-row:1}
+.sp.steps{grid-column:2;grid-row:2}
+.sp.fails{grid-column:1 / span 2;grid-row:3}
+.sp.fails .lab{background:var(--maroon)}                          /* 7.66:1 */
 
-.foot{margin-top:11px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;
+/* On screen the boxes need real height, scaled by how many share a page.
+   SCREEN ONLY, and that is load bearing. These selectors are (0,3,0) and the
+   print reset that zeroes them is (0,2,0), so unscoped they won 30 to 40px per
+   block in the print layout and the third block on a three up page overflowed
+   into the one below it. */
+@media screen{
+  .d1 .sp.draw{min-height:330px}
+  .d1 .sp.parts,.d1 .sp.steps{min-height:160px}
+  .d1 .sp.fails{min-height:104px}
+  .d2 .sp.draw{min-height:230px}
+  .d2 .sp.parts,.d2 .sp.steps{min-height:110px}
+  .d2 .sp.fails{min-height:78px}
+  .d3 .sp.draw{min-height:168px}
+  .d3 .sp.parts,.d3 .sp.steps{min-height:79px}
+  .d3 .sp.fails{min-height:60px}
+}
+
+.foot{margin-top:10px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;
       border-top:1px solid var(--hair);padding-top:7px}
 .foot p{font-size:9.5px;color:var(--muted);letter-spacing:.02em}
 
-.tail{max-width:900px;margin:0 auto;padding:0 20px 60px}
+.tail{max-width:940px;margin:0 auto;padding:0 20px 60px}
 .tail .box{background:#fff;border:1px solid var(--hair);padding:20px 22px}
 .tail h2{font-size:16px;color:var(--navy);margin-bottom:8px}
 .tail p{font-size:14.5px;color:var(--muted);margin-bottom:8px}
@@ -182,15 +253,13 @@ a{color:var(--maroon-dark);font-weight:700}
 
 @media (max-width:620px){
   .grid{grid-template-columns:1fr}
-  .sp.draw{grid-column:1;grid-row:auto}
-  .sp.parts,.sp.steps{grid-column:1;grid-row:auto}
-  .sp.fails{grid-column:1;grid-row:auto}
+  .sp.draw,.sp.parts,.sp.steps,.sp.fails{grid-column:1;grid-row:auto}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important}
 }
 @media (forced-colors:active){
-  .sp,.numbox,.pg{border:1px solid CanvasText}
+  .sp,.numbox,.sheetpage,.seg{border:1px solid CanvasText}
   .sp .lab{border:1px solid CanvasText}
 }
 
@@ -199,35 +268,70 @@ a{color:var(--maroon-dark);font-weight:700}
   @page{size:letter portrait;margin:0.5in}
   html,body{background:#fff}
   body{font-size:10pt;color:#000}
-  .top,.pick,.howto,.tail,.skip,.btnrow{display:none!important}
+  .top,.pick,.band,.tpl,.tail,.skip,.btnrow{display:none!important}
   .sheets{max-width:none;margin:0;padding:0}
-  .pg{border:0;padding:0;margin:0;break-after:page;page-break-after:always;
-      break-inside:avoid;page-break-inside:avoid;
-      height:9.9in;display:flex;flex-direction:column}
-  .pg:last-child{break-after:auto;page-break-after:auto}
+
+  .sheetpage{border:0;padding:0;margin:0;height:9.9in;
+             break-after:page;page-break-after:always;
+             break-inside:avoid;page-break-inside:avoid}
+  .sheetpage:last-child{break-after:auto;page-break-after:auto}
+
   .phead{border-bottom:1.2pt solid #000}
-  .phead .runner{color:#000;font-size:7.5pt}
-  .phead .who{color:#000;font-size:7.5pt}
+  .phead .runner,.phead .who{color:#000;font-size:7.5pt}
   .phead .who .ln{border-bottom:.7pt solid #000}
-  .numbox{border:1.2pt solid #000;color:#000;width:0.46in;height:0.46in;font-size:15pt}
+  .drawrule{color:#000;font-size:7.4pt;border-left:1.5pt solid #000;
+            padding-left:6pt;margin-top:0.05in}
+
+  /* Each competency block gets an EXPLICIT height, not flex:1. Flex let the
+     third block on a three up page push past the bottom of the paper, and the
+     absolutely positioned box 4 label then painted over the next competency's
+     title. Explicit height plus overflow:hidden cannot do that. The numbers are
+     9.9in of page, less the running head, the drawing rule and the footer,
+     divided by how many blocks share the sheet. */
+  .pg{margin-top:0.09in;min-height:0;overflow:hidden}
+  .pg + .pg{border-top:.6pt dashed #777;padding-top:0.09in}
+  .d1 .pg{height:9.10in}
+  .d2 .pg{height:4.46in}
+  .d3 .pg{height:2.92in}
+
+  .numbox{border:1.2pt solid #000;color:#000;width:0.40in;height:0.40in;font-size:13pt}
   .numlab{color:#000;font-size:6pt}
-  .ptitle h2{font-size:14.5pt;color:#000}
+  .ptitle h2{font-size:13pt;color:#000}
   .ptitle .blankname{border-bottom:.8pt solid #000}
-  .can{color:#000;font-size:9.5pt}
-  .drawrule{color:#000;font-size:7.6pt;border-left:1.5pt solid #000;padding-left:6pt;margin-top:0.06in}
+  .can{color:#000;font-size:9pt}
   .can b{color:#000}
-  .meta{border-color:#000;color:#000}
-  .meta span{color:#000;font-size:8pt}
+  .meta{border-color:#000;color:#000;padding:5pt 0;margin-top:0.06in}
+  .meta span{color:#000;font-size:7.6pt}
   .meta .cl,.tick{border-color:#000}
-  .grid{flex:1;gap:0.10in;margin-top:0.10in;
-        grid-template-rows:1fr 1fr 0.80fr}
-  .sp{border:.9pt solid #000;padding:0.20in 0.08in 0.06in}
+
+  .grid{gap:0.09in;margin-top:0.08in;grid-template-rows:1fr 1fr 0.80fr}
+  .sp{border:.9pt solid #000;padding:0.19in 0.07in 0.05in}
+  /* the screen minimums would run off the page at two and three up */
   .sp.draw,.sp.parts,.sp.steps,.sp.fails{min-height:0}
-  .sp .lab{background:#000;color:#fff;font-size:6.6pt;padding:2pt 6pt;
+  .sp .lab{background:#000;color:#fff;font-size:6.4pt;padding:2pt 6pt;
            -webkit-print-color-adjust:exact;print-color-adjust:exact}
-  .sp .hint{color:#000;font-size:6.6pt;bottom:0.04in;right:0.08in}
-  .foot{border-top:.6pt solid #000;margin-top:0.07in}
-  .foot p{color:#000;font-size:6.8pt}
+  .sp .hint{color:#000;font-size:6.4pt;bottom:0.03in;right:0.07in}
+
+  .foot{border-top:.6pt solid #000;margin-top:0.06in}
+  .foot p{color:#000;font-size:6.6pt}
+
+  /* Three to a page has to buy the grid its height back out of the chrome. */
+  .d3 .can{font-size:7.6pt;line-height:1.32;margin-top:4pt}
+  .d3 .ptitle h2{font-size:10.5pt;line-height:1.2}
+  .d3 .numbox{width:0.30in;height:0.30in;font-size:10pt;border-width:1pt}
+  .d3 .numlab{font-size:5.4pt;margin-top:1px}
+  .d3 .meta{padding:3pt 0;margin-top:4pt;gap:12px}
+  .d3 .meta span{font-size:6.8pt}
+  .d3 .drawrule{font-size:6.9pt}
+  .d3 .grid{gap:0.07in;margin-top:0.06in;grid-template-rows:1fr 1fr 0.72fr}
+  .d3 .sp{padding:0.17in 0.06in 0.04in}
+  .d3 .sp .lab{font-size:5.9pt;padding:1.6pt 5pt}
+  .d3 .sp .hint{font-size:5.9pt}
+
+  /* Two to a page trims a little less. */
+  .d2 .can{font-size:8.4pt;line-height:1.36}
+  .d2 .ptitle h2{font-size:12pt}
+  .d2 .meta{padding:4pt 0}
 }
 </style>
 </head>
@@ -237,35 +341,178 @@ a{color:var(--maroon-dark);font-weight:700}
 <header class="top"><div class="wrap">
   <p class="eyebrow" id="eyebrow">BIO 005 &middot; Human Physiology &middot; Fall 2026</p>
   <h1 id="h1">Your note sheet, already built.</h1>
-  <p class="sub" id="sub">One page per competency. Four blank boxes on each one, and every box gets drawn. Print it, or work on it in a tablet app. You are not building the sheet, you are drawing on it.</p>
+  <p class="sub">Four blank boxes per competency, and every box gets drawn. Print it if you want it printed, at whatever density fits your paper budget. If you would rather not spend the paper at all, rule the same four boxes onto your own sheet. The template below shows you exactly how, and both are graded the same.</p>
   <p class="btnrow">
     <button class="sqbtn" type="button" id="printbtn">Print or save as PDF</button>
+    <a class="sqbtn ghost" href="#template">Rule your own instead</a>
     <a class="sqbtn ghost" id="compbtn" href="week-01-competencies.html" target="_top">The competencies behind it</a>
-    <a class="sqbtn ghost" href="assignment-notesheet.html" target="_top">How it is graded</a>
   </p>
 </div></header>
 
 <div class="pick"><div class="wrap">
-  <label for="wk">Week</label>
-  <select id="wk"></select>
+  <span class="grp">
+    <label for="wk">Week</label>
+    <select id="wk"></select>
+  </span>
+  <fieldset class="grp">
+    <legend>Per sheet of paper</legend>
+    <span class="seg">
+      <label><input type="radio" name="per" value="1"><span>1</span></label>
+      <label><input type="radio" name="per" value="2"><span>2</span></label>
+      <label><input type="radio" name="per" value="3"><span>3</span></label>
+    </span>
+  </fieldset>
   <span class="cnt" id="cnt"></span>
 </div></div>
 
-<div class="howto"><div class="box">
-  <h2>Before you print</h2>
-  <ol>
-    <li>Pick two pens you can tell apart. Pass one is the book, before any video. Pass two is a second colour, after the videos, into the same boxes.</li>
-    <li>Stop pass one while half of every box is still empty. That empty half is the point.</li>
-    <li><strong>All four boxes are drawings.</strong> Not just box 1. Box 2 is labels with lines out to the picture. Box 3 is little boxes with arrows between them in the order things happen. Box 4 follows those arrows to whatever stops.</li>
-    <li>Words are allowed inside the drawing. A sentence running the width of the box is not. If a box reads like a paragraph, redo it as a word picture.</li>
-  </ol>
-</div></div>
+<div class="band">
+  <div class="box">
+    <h2>Before you start</h2>
+    <ol>
+      <li>Pick two pens you can tell apart. Pass one is the book, before any video. Pass two is a second colour, after the videos, into the same boxes.</li>
+      <li>Stop pass one while half of every box is still empty. That empty half is the point.</li>
+      <li><strong>All four boxes are drawings.</strong> Not just box 1. Box 2 is labels with lines out to the picture. Box 3 is little boxes with arrows between them in the order things happen. Box 4 follows those arrows to whatever stops.</li>
+      <li>Words are allowed inside the drawing. A sentence running the width of the box is not. If a box reads like a paragraph, redo it as a word picture.</li>
+    </ol>
+  </div>
+  <div class="box">
+    <h2>About the paper</h2>
+    <p><strong>You do not have to print this.</strong> Two per competency page is what it opens on, and three fits a whole week onto a few sheets. Printing at home, at work, or in the library all count. So does not printing.</p>
+    <p>If you are not printing, rule the four boxes onto your own paper. <a href="#template">The template below</a> shows the layout and what goes in each box, drawn out. A hand ruled sheet is graded exactly the same as a printed one.</p>
+    <p>Working on a tablet counts too. Import the PDF into whatever you draw in and use two pen colours.</p>
+  </div>
+</div>
+
+<!-- =============== the hand ruling template, screen only =============== -->
+<section class="tpl" id="template"><div class="box">
+  <h2>Not printing? Rule this onto your own paper.</h2>
+  <p class="cap">The four boxes are the same wherever you draw them. One competency to a sheet, or fold a page in half and do two. This example is <strong>anatomy</strong>, from BIO 004, on purpose. Nothing in it goes on your physiology sheet, so you are looking at how a box gets built and not at answers to copy.</p>
+
+  <div class="legend">
+    <span class="k1"><span class="swatch" aria-hidden="true"></span>First pass, before the video</span>
+    <span class="k2"><span class="swatch" aria-hidden="true"></span>Second pass, after the video</span>
+  </div>
+
+  <div class="tplwrap" tabindex="0" role="region" aria-label="Template drawing, scroll sideways to see all of it">
+  <svg class="tplsvg" viewBox="0 0 700 510" role="img" aria-labelledby="tplT tplD">
+    <title id="tplT">Template for a hand ruled note sheet, filled in with an anatomy example</title>
+    <desc id="tplD">A sheet of paper ruled into four boxes. Across the top, short lines for the competency number, the concept name and which prompt was chosen, filled in as number 4, long bone structure, prompt A. Box 1, draw it, fills the left half and holds a drawing of a long bone in section, the shaft and both ends outlined in the first pen colour with the cartilage caps added in the second. Lines run out of that drawing to box 2. Box 2, label every part, sits top right and holds those labels: diaphysis the shaft, epiphysis each end, medullary cavity the hollow centre, and in the second colour articular cartilage caps the ends, plus a note that a hollow shaft gives more strength per gram. Box 3, what happens in order, sits middle right and holds three small boxes joined by arrows reading load lands on the bone, then force runs down the shaft, then spread wide at the joint. Box 4, what breaks if this fails, runs across the bottom and holds a three box chain, thin cortex from osteoporosis, then less bone to carry the force, then shaft snaps under normal load, with the middle box crossed out in the second colour and an arrow out to a note saying break one box and everything downstream of it changes.</desc>
+
+    <!-- ============ the header lines the student rules first ============ -->
+    <text class="hd" x="2" y="13">Comp no.</text>
+    <path class="rule" d="M 60,16 L 98,16" stroke-width="1.2"/>
+    <text class="hd" x="112" y="13">Concept name</text>
+    <path class="rule" d="M 200,16 L 470,16" stroke-width="1.2"/>
+    <text class="hd" x="486" y="13">Prompt A / B</text>
+    <path class="rule" d="M 570,16 L 620,16" stroke-width="1.2"/>
+    <!-- what the student wrote on them -->
+    <text class="p1t" x="70" y="12">4</text>
+    <text class="p1t" x="208" y="12">Long bone structure</text>
+    <text class="p1t" x="580" y="12">A</text>
+
+    <!-- ============ the four boxes ============ -->
+    <rect class="rule" x="3" y="32" width="360" height="300"/>
+    <rect class="tab"  x="3" y="32" width="88" height="18"/>
+    <text class="lab"  x="11" y="45">1 DRAW IT</text>
+
+    <rect class="rule" x="377" y="32" width="320" height="142"/>
+    <rect class="tab"  x="377" y="32" width="150" height="18"/>
+    <text class="lab"  x="385" y="45">2 LABEL EVERY PART</text>
+
+    <rect class="rule" x="377" y="186" width="320" height="146"/>
+    <rect class="tab"  x="377" y="186" width="188" height="18"/>
+    <text class="lab"  x="385" y="199">3 WHAT HAPPENS, IN ORDER</text>
+
+    <rect class="rule" x="3" y="346" width="694" height="160"/>
+    <rect class="tab4" x="3" y="346" width="202" height="18"/>
+    <text class="lab"  x="11" y="359">4 WHAT BREAKS IF THIS FAILS</text>
+
+    <!-- ============ box 1, a long bone in section ============
+         Leader lines leave the bone top to bottom and land on the labels top to
+         bottom, each in its own vertical column, so none of them cross. That is
+         the habit being demonstrated, not decoration. -->
+    <g class="p1">
+      <path d="M 60,88 C 59,71 78,62 105,62 C 132,62 151,71 150,88
+               C 149,98 132,101 125,105 L 125,257
+               C 132,261 149,264 150,274 C 151,291 132,300 105,300
+               C 78,300 59,291 60,274 C 61,264 78,261 85,257
+               L 85,105 C 78,101 61,98 60,88 Z"/>
+      <path d="M 85,105 L 125,105 M 85,257 L 125,257"/>
+      <path d="M 93,113 L 93,249 M 117,113 L 117,249"/>
+    </g>
+    <g class="p2">
+      <path d="M 62,78 C 72,66 138,66 148,78"/>
+      <path d="M 62,284 C 72,296 138,296 148,284"/>
+    </g>
+    <!-- leaders out to box 2, one column each, in exit order -->
+    <g class="p1">
+      <path d="M 152,85 L 196,85 L 196,72 L 373,72"/>
+      <path d="M 127,180 L 222,180 L 222,90 L 373,90"/>
+      <path d="M 105,230 L 248,230 L 248,108 L 373,108"/>
+    </g>
+    <g class="p2">
+      <path d="M 152,286 L 274,286 L 274,126 L 373,126"/>
+    </g>
+    <text class="p1t" x="34" y="322">Picture first. The labels live in box 2.</text>
+
+    <!-- ============ box 2, the labels ============ -->
+    <text class="p1t" x="387" y="76">epiphysis, each end</text>
+    <text class="p1t" x="387" y="94">diaphysis, the shaft</text>
+    <text class="p1t" x="387" y="112">medullary cavity, hollow centre</text>
+    <text class="p2t" x="387" y="130">articular cartilage, caps the ends</text>
+    <text class="p2t" x="387" y="158">hollow shaft = more strength per gram</text>
+
+    <!-- ============ box 3, boxes and arrows ============ -->
+    <g class="p1">
+      <rect x="389" y="216" width="94" height="36" rx="3"/>
+      <rect x="509" y="216" width="94" height="36" rx="3"/>
+      <rect x="389" y="276" width="94" height="36" rx="3"/>
+      <path d="M 487,234 L 505,234 M 499,229 L 505,234 L 499,239"/>
+      <path d="M 607,234 L 625,234 L 625,294 L 487,294
+               M 493,289 L 487,294 L 493,299"/>
+    </g>
+    <text class="p1t" x="397" y="231">load lands on</text>
+    <text class="p1t" x="397" y="245">the bone</text>
+    <text class="p1t" x="517" y="231">force runs</text>
+    <text class="p1t" x="517" y="245">down the shaft</text>
+    <text class="p1t" x="397" y="291">spread wide</text>
+    <text class="p1t" x="397" y="305">at the joint</text>
+    <text class="p2t" x="512" y="324">3 boxes, 2 arrows.</text>
+
+    <!-- ============ box 4, the same chain, broken ============ -->
+    <g class="p1">
+      <rect x="20" y="390" width="104" height="36" rx="3"/>
+      <rect x="152" y="390" width="104" height="36" rx="3"/>
+      <rect x="284" y="390" width="104" height="36" rx="3"/>
+      <path d="M 128,408 L 148,408 M 142,403 L 148,408 L 142,413"/>
+      <path d="M 260,408 L 280,408 M 274,403 L 280,408 L 274,413"/>
+    </g>
+    <text class="p1t" x="28" y="405">thin cortex,</text>
+    <text class="p1t" x="28" y="419">osteoporosis</text>
+    <text class="p1t" x="160" y="405">less bone to</text>
+    <text class="p1t" x="160" y="419">carry the load</text>
+    <text class="p1t" x="292" y="405">shaft snaps</text>
+    <text class="p1t" x="292" y="419">under load</text>
+    <g class="p2">
+      <path d="M 158,386 L 250,430 M 250,386 L 158,430"/>
+      <path d="M 392,408 L 414,408 M 408,403 L 414,408 L 408,413"/>
+      <rect x="420" y="386" width="262" height="44" rx="3"/>
+    </g>
+    <text class="p2t" x="428" y="405">break one box and everything</text>
+    <text class="p2t" x="428" y="421">downstream of it changes</text>
+    <text class="p2t" x="20" y="456">Cross out the box that failed. Arrow to what happens because of it.</text>
+    <text class="p1t" x="20" y="480">Same three boxes as box 3, drawn again. Not the words "the bone breaks".</text>
+  </svg>
+  </div>
+
+  <p class="after"><strong>What to copy from this.</strong> The four boxes and their labels, and the habit inside them. Box 1 is a picture. Box 2 is short labels on lines that run out to that picture. Box 3 is small boxes joined by arrows in the order things happen. Box 4 takes those same boxes, crosses out the one that failed, and follows the arrows to what stops. Two pen colours throughout, both passes into the same boxes.</p>
+</div></section>
 
 <main id="sheets" class="sheets" aria-label="The note sheet"></main>
 
 <div class="tail"><div class="box">
   <h2>Turning it in</h2>
-  <p>Photograph every page in order, in good light, flat on the table. Both colours have to be readable. Combine them into one PDF and upload that to the week&rsquo;s Canvas assignment.</p>
+  <p>Photograph every sheet in order, in good light, flat on the table. Both colours have to be readable. Combine them into one PDF and upload that to the week&rsquo;s Canvas assignment. Printed and hand ruled sheets are graded the same way.</p>
   <p>Full submission and grading detail is on the <a href="assignment-notesheet.html" target="_top">note sheet assignment page</a>.</p>
   <p>Dr. Sharilyn Rennie</p>
 </div></div>
@@ -311,6 +558,15 @@ a{color:var(--maroon-dark);font-weight:700}
   var week  = parseInt(qs("week"), 10);
   if (!(week >= 1 && week <= 15)) week = 1;
 
+  /* Two to a page is the default. One competency per page made Week 1
+     eighteen sheets of paper and students cannot carry that every week. */
+  var per = parseInt(qs("per"), 10);
+  if (!(per === 1 || per === 2 || per === 3)) per = 2;
+
+  function go(w, p){
+    window.location.search = "?week=" + w + "&per=" + p + (BLANK ? "&blank=1" : "");
+  }
+
   var sel = document.getElementById("wk");
   for (var i = 1; i <= 15; i++){
     var o = document.createElement("option");
@@ -319,12 +575,17 @@ a{color:var(--maroon-dark);font-weight:700}
     sel.appendChild(o);
   }
   sel.value = week;
-  sel.addEventListener("change", function(){
-    var q = "?week=" + sel.value + (BLANK ? "&blank=1" : "");
-    window.location.search = q;
-  });
+  sel.addEventListener("change", function(){ go(sel.value, per); });
 
-  function pageHTML(it, n, wk){
+  var radios = document.querySelectorAll('input[name="per"]');
+  for (var r = 0; r < radios.length; r++){
+    radios[r].checked = (+radios[r].value === per);
+    radios[r].addEventListener("change", function(){
+      if (this.checked) go(week, this.value);
+    });
+  }
+
+  function compHTML(it, n){
     var num  = BLANK ? '<span class="numbox empty">0</span>'
                      : '<span class="numbox">' + n + '</span>';
     var name = BLANK ? '<span class="blankname" aria-label="Write the concept name here"></span>'
@@ -335,11 +596,6 @@ a{color:var(--maroon-dark);font-weight:700}
 
     return '' +
     '<article class="pg">' +
-      '<div class="phead">' +
-        '<span class="runner">BIO 005 &middot; Week ' + wk + ' &middot; Note sheet</span>' +
-        '<span class="who">Name<span class="ln"></span>Date<span class="ln" style="width:88px"></span></span>' +
-      '</div>' +
-
       '<div class="ptitle">' +
         '<span>' + num + '<span class="numlab">' + (BLANK ? "No." : "Comp") + '</span></span>' +
         '<span style="flex:1"><h2>' + name + '</h2>' +
@@ -353,10 +609,6 @@ a{color:var(--maroon-dark);font-weight:700}
         (it.lab ? '<span>Also a lab skill</span>' : '') +
       '</div>' +
 
-      '<p class="drawrule">Every one of these boxes is <b>drawn</b>. If you need words, ' +
-      'they go inside little boxes with arrows between them, in the order things happen. ' +
-      'Sentences running across the page do not count.</p>' +
-
       '<div class="grid">' +
         '<div class="sp draw"><span class="lab">1 &middot; Draw it</span>' +
           '<span class="hint">a picture, not a paragraph</span></div>' +
@@ -367,24 +619,41 @@ a{color:var(--maroon-dark);font-weight:700}
         '<div class="sp fails"><span class="lab">4 &middot; What breaks if this fails</span>' +
           '<span class="hint">follow the arrows to what stops</span></div>' +
       '</div>' +
+    '</article>';
+  }
 
+  function pageHTML(items, startAt, wk){
+    return '' +
+    '<section class="sheetpage d' + per + '">' +
+      '<div class="phead">' +
+        '<span class="runner">BIO 005 &middot; Week ' + wk + ' &middot; Note sheet</span>' +
+        '<span class="who">Name<span class="ln"></span>Date<span class="ln" style="width:88px"></span></span>' +
+      '</div>' +
+      '<p class="drawrule">Every one of these boxes is <b>drawn</b>. If you need words, ' +
+      'they go inside little boxes with arrows between them, in the order things happen. ' +
+      'Sentences running across the page do not count.</p>' +
+      items.map(function(it, k){ return compHTML(it, startAt + k); }).join("") +
       '<div class="foot">' +
         '<p>Pass 1 from the book, before the video. Pass 2 in the second colour, after it, in the same boxes.</p>' +
         '<p>Dr. Sharilyn Rennie</p>' +
       '</div>' +
-    '</article>';
+    '</section>';
   }
 
   var w = DATA[week];
   var host = document.getElementById("sheets");
   var title = SITE_TITLES[week] || (w && w.title) || "";
+  var pages = 0;
 
   if (!w || !w.items || !w.items.length){
-    host.innerHTML = '<div class="pg"><p class="can">The competency list for Week ' + week +
-                     ' is not loaded. Open the week page in Canvas.</p></div>';
+    host.innerHTML = '<div class="sheetpage"><p class="can">The competency list for Week ' +
+                     week + ' is not loaded. Open the week page in Canvas.</p></div>';
   } else {
     var out = [];
-    for (var k = 0; k < w.items.length; k++) out.push(pageHTML(w.items[k], k + 1, week));
+    for (var k = 0; k < w.items.length; k += per){
+      out.push(pageHTML(w.items.slice(k, k + per), k + 1, week));
+      pages++;
+    }
     host.innerHTML = out.join("");
   }
 
@@ -393,18 +662,17 @@ a{color:var(--maroon-dark);font-weight:700}
   document.getElementById("h1").textContent = BLANK
     ? "Blank note sheet."
     : "Your Week " + week + " note sheet, already built.";
-  document.getElementById("cnt").textContent = w && w.items
-    ? w.items.length + (w.items.length === 1 ? " competency, " : " competencies, ") +
-      w.items.length + " printed pages"
+
+  var nItems = w && w.items ? w.items.length : 0;
+  document.getElementById("cnt").textContent = nItems
+    ? nItems + (nItems === 1 ? " competency" : " competencies") + ", " +
+      pages + (pages === 1 ? " sheet of paper" : " sheets of paper")
     : "";
   document.title = "BIO 005 Week " + week + " note sheet";
 
-  var cb = document.getElementById("compbtn");
-  if (week === 1){
-    cb.href = "week-01-competencies.html";
-  } else {
-    cb.href = "competency-study-guide.html?week=" + week;
-  }
+  document.getElementById("compbtn").href = (week === 1)
+    ? "week-01-competencies.html"
+    : "competency-study-guide.html?week=" + week;
 
   document.getElementById("printbtn").addEventListener("click", function(){
     window.print();

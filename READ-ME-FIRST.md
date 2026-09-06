@@ -10,9 +10,9 @@ you already have.
 
 ### 1. The note sheet is now a sheet, not instructions for a sheet
 
-**New: `note-sheet.html`**, plus 16 ready-made PDFs in `sheets/`.
+**New: `note-sheet.html`**, plus 18 ready-made PDFs in `sheets/`.
 
-One page per competency. Four blank boxes on each page:
+Four blank boxes per competency:
 
 | Box | Label |
 |---|---|
@@ -22,21 +22,42 @@ One page per competency. Four blank boxes on each page:
 | 4 | What breaks if this fails |
 
 **No rule lines anywhere.** Blank white, because ruled boxes invite paragraphs.
-Printed on every single page, under the header:
+Printed at the top of every sheet:
 
 > Every one of these boxes is **drawn**. If you need words, they go inside
 > little boxes with arrows between them, in the order things happen. Sentences
 > running across the page do not count.
 
-The header has the competency number pre-printed in a box, the concept name,
-the full "You should be able to" text, prompt A/B tick boxes, and two blanks
-for their pass 1 and pass 2 pen colours. Name and date on the top right.
+Each competency carries its number pre-printed in a box, the concept name, the
+full "You should be able to" text, prompt A/B tick boxes, and two blanks for
+their pass 1 and pass 2 pen colours. Name and date on the top right of the
+sheet.
 
-`?week=1` through `?week=15`. `?blank=1` gives the same sheet with the number
-and the concept name left empty, if you ever want a generic one.
+**Nobody has to print 18 pages.** There is a 1 / 2 / 3 control at the top and
+it **opens on 2**. Week 1 costs:
 
-**The PDFs are already built** in `sheets/`, one per week plus the blank. Week
-1 is 18 pages, Week 5 is 35, Week 15 is 7.
+| Setting | Week 1 | Heaviest week (5) | Lightest weeks |
+|---|---|---|---|
+| 1 per page | 18 sheets | 35 | 7 |
+| **2 per page, the default** | **9 sheets** | **18** | **4** |
+| 3 per page | 6 sheets | 12 | 3 |
+
+Two per page keeps the drawing box about 2.4in tall, which is still a real
+drawing. Three per page drops it to about 1.6in. It fits, it is measured, but
+it is the economy setting and the page does not pretend otherwise.
+
+`sheets/` has every week at two per page, plus Week 1 at 1up and 3up so you can
+see the difference, plus the blank variant.
+
+**And printing is optional.** A new section on the page, *"Not printing? Rule
+this onto your own paper"*, is a drawn template: the four boxes with their
+labels, filled in with a worked **anatomy** example (long bone structure, from
+BIO 004, so there is nothing on it a physiology student can copy). It shows the
+picture in box 1, the labels on leader lines in box 2, the three-box arrow
+chain in box 3, and the same chain in box 4 with the failed box crossed out and
+an arrow to what stops. Both pen colours are in it. That section is screen
+only, so it never costs a printed page, and the sheet says plainly that a hand
+ruled sheet is graded exactly the same as a printed one.
 
 ### 2. Those three buttons
 
@@ -63,7 +84,18 @@ is for transfer and equivalency review, this one is for finding your week.
 **`BIO005-Fall2026-Syllabus-and-Schedule.pdf`** (20 pages). The whole syllabus
 including the week-by-week schedule, with the exam dates now in it.
 
-### 4. Exam dates, set
+### 4. course-start.html shows each week once
+
+There was a dark "Right now" panel pinned above the week list holding the
+current week, expanded, with all seven of its links. The list below it then
+showed the same week again, marked "This week". Two copies of one week in two
+colour schemes.
+
+The dark panel is gone. The current week is simply open where it belongs,
+first in the light list, still marked "This week". The nineteen CSS rules that
+only styled the dark panel went with it. One list, one colour scheme.
+
+### 5. Exam dates, set
 
 | Exam | Covers | Opens | Closes |
 |---|---|---|---|
@@ -175,13 +207,13 @@ Still open: no live screen reader pass on anything.
 
    ```html
    <p><iframe title="Week 1 note sheet"
-     src="https://drsrennie-stack.github.io/human-physiology-Fa26/note-sheet.html?week=1"
+     src="https://drsrennie-stack.github.io/human-physiology-Fa26/note-sheet.html?week=1&amp;per=2"
      width="100%" height="1600"
      style="width:100%;height:1600px;border:0"></iframe></p>
    ```
 
-   Change the `?week=` number for other weeks. Or skip the iframe entirely and
-   just attach the PDF from `sheets/`, which is probably what most students
-   will actually use.
+   Change the `?week=` number for other weeks, and `&per=` for the density.
+   Embedding it rather than attaching the PDF is worth it here, because the
+   embedded page is the only place the hand ruling template lives.
 
 Dr. Sharilyn Rennie
