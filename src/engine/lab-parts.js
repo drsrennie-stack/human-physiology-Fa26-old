@@ -401,10 +401,10 @@ function xy(cfg) {
   (cfg.bands || []).forEach(function (b) {
     if (b.x != null) {
       s += '<rect x="' + fmt(px(b.x[0]), 1) + '" y="' + y0 + '" width="' + fmt(px(b.x[1]) - px(b.x[0]), 1) +
-        '" height="' + (y1 - y0) + '" fill="' + (b.fill || 'rgba(220,180,92,.16)') + '"/>';
+        '" height="' + (y1 - y0) + '" fill="' + (b.fill || 'rgba(201,161,74,.16)') + '"/>';
     } else {
       s += '<rect x="' + x0 + '" y="' + fmt(py(b.y[1]), 1) + '" width="' + (x1 - x0) + '" height="' +
-        fmt(py(b.y[0]) - py(b.y[1]), 1) + '" fill="' + (b.fill || 'rgba(220,180,92,.16)') + '"/>';
+        fmt(py(b.y[0]) - py(b.y[1]), 1) + '" fill="' + (b.fill || 'rgba(201,161,74,.16)') + '"/>';
     }
   });
 

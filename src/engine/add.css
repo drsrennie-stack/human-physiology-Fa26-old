@@ -12,7 +12,7 @@
 .dropbox .slot{font-family:var(--display);font-weight:700;font-size:1rem;color:#555E71}
 .dropbox .why{font-size:.82rem;color:var(--ink-muted);line-height:1.42}
 .dropbox:hover:not(.hit){background:#fff;border-color:var(--navy);box-shadow:var(--shadow-lift);transform:translateY(-2px)}
-.dropbox.drop-ready{border-color:#9A7F32;border-style:solid;background:rgba(220,180,92,.14)}
+.dropbox.drop-ready{border-color:#9A7F32;border-style:solid;background:rgba(201,161,74,.14)}
 .dropbox.drop-over{border-color:var(--terra);border-style:solid;background:rgba(115,23,23,.10)}
 .dropbox.hit{border-style:solid;border-color:var(--navy);background:#fff;cursor:default;box-shadow:0 2px 5px rgba(10,19,34,.07), 0 8px 18px rgba(10,19,34,.07);transform:none}
 .dropbox.hit .slot{color:var(--navy)}

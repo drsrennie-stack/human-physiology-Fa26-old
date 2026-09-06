@@ -11,7 +11,7 @@
   --navy:#0B1530; --navy-2:#0A1322; --navy-darkest:#060A18; --navy-tint:#ECEFF4;
   --terra:#6E2D24; --terra-dark:#5A1212; --terra-text:#7A2F18;
   --gold:#C9A14A; --gold-text:#5F4514; --teal-text:#27565D;
-  --ink:#0A1322; --ink-muted:#3D4860; --rule:#7F8798; --rule-soft:#DCE0E6;
+  --ink:#0A1322; --ink-muted:#414B5C; --rule:#7F8798; --rule-soft:#DCE0E6;
   --off:#FAFAF9; --white:#ffffff;
   --shadow:0 1px 2px rgba(10,19,34,.05), 0 2px 6px rgba(10,19,34,.05);
   --shadow-lift:0 2px 4px rgba(10,19,34,.05), 0 12px 28px rgba(10,19,34,.10);
@@ -244,7 +244,7 @@ ol.recap li{margin-bottom:.6em}
 .chip-drag.dragging{opacity:.45}
 .chip-drag.placed{display:none}
 .dnd-hint{font-size:.9rem;color:var(--ink-muted);margin:0 0 8px}
-.brk.drop-ready rect{fill:rgba(220,180,92,.30)}
+.brk.drop-ready rect{fill:rgba(201,161,74,.30)}
 .brk.drop-over rect{fill:rgba(139,58,46,.22);stroke:#8B3A2E;stroke-width:3}
 
 /* ---------- readouts ---------- */
@@ -324,7 +324,7 @@ ul.tight li,ol.tight li{margin-bottom:.4em}
 .dropbox .slot{font-family:var(--display);font-weight:700;font-size:1rem;color:#454B58}
 .dropbox .why{font-size:.82rem;color:var(--ink-muted);line-height:1.42}
 .dropbox:hover:not(.hit){background:#fff;border-color:var(--navy);box-shadow:var(--shadow-lift);transform:translateY(-2px)}
-.dropbox.drop-ready{border-color:#9A7F32;border-style:solid;background:rgba(220,180,92,.14)}
+.dropbox.drop-ready{border-color:#9A7F32;border-style:solid;background:rgba(201,161,74,.14)}
 .dropbox.drop-over{border-color:var(--terra);border-style:solid;background:rgba(115,23,23,.10)}
 .dropbox.hit{border-style:solid;border-color:var(--navy);background:#fff;cursor:default;box-shadow:0 2px 5px rgba(10,19,34,.07), 0 8px 18px rgba(10,19,34,.07);transform:none}
 .dropbox.hit .slot{color:var(--navy)}
@@ -631,8 +631,11 @@ ul.tight li,ol.tight li{margin-bottom:.4em}
 }
 
 </style>
+<link rel="stylesheet" href="assets/fonts-site.css">
+<link rel="stylesheet" href="assets/brandbar.css">
 </head>
 <body>
+
 <div id="app"></div>
 <noscript><div style="max-width:70ch;margin:40px auto;padding:0 20px;font-family:Helvetica,Arial,sans-serif"><h1>Week 1, Foundations and Whole Body Control</h1><p>This lab is interactive, so it needs JavaScript switched on. Everything it covers is also written out in the course lab manual, which reads and prints without any scripting.</p></div></noscript>
 <script>
@@ -704,7 +707,7 @@ LAB.newCaseNumber = newCaseNumber;
 /* the typeface stack SVG text has to be given explicitly */
 LAB.SVG_FONT = 'Helvetica Neue,Helvetica,Arial,sans-serif';
 LAB.COLOR = {
-  navy: '#0B1530', ink: '#0A1322', muted: '#3D4860',
+  navy: '#0B1530', ink: '#0A1322', muted: '#414B5C',
   terra: '#6E2D24', terraDark: '#5A1212', gold: '#C9A14A', goldText: '#5F4514',
   teal: '#27565D', rule: '#7F8798', ruleSoft: '#DCE0E6', off: '#FAFAF9'
 };
@@ -733,12 +736,12 @@ LAB.sections = function (list) { SECTIONS = list; };
 
 function logoSVG() {
   return '<svg viewBox="0 0 64 64" role="img" aria-label="Course logo, three figures side by side">' +
-    '<circle cx="14" cy="17" r="7.4" fill="#C9A14A"/>' +
-    '<path d="M14 27.5c-7 0-11.6 4.6-11.6 11.4V57h23.2V38.9c0-6.8-4.6-11.4-11.6-11.4z" fill="#C9A14A"/>' +
-    '<circle cx="32" cy="12.5" r="8.2" fill="#6E2D24"/>' +
-    '<path d="M32 24c-7.7 0-12.8 5.1-12.8 12.6V57h25.6V36.6C44.8 29.1 39.7 24 32 24z" fill="#6E2D24"/>' +
-    '<circle cx="50" cy="17" r="7.4" fill="#0B1530"/>' +
-    '<path d="M50 27.5c-7 0-11.6 4.6-11.6 11.4V57h23.2V38.9c0-6.8-4.6-11.4-11.6-11.4z" fill="#0B1530"/></svg>';
+    '<circle cx="14" cy="17" r="7.4" fill="#0B1530"/>' +
+    '<path d="M14 27.5c-7 0-11.6 4.6-11.6 11.4V57h23.2V38.9c0-6.8-4.6-11.4-11.6-11.4z" fill="#0B1530"/>' +
+    '<circle cx="32" cy="12.5" r="8.2" fill="#8B3A2E"/>' +
+    '<path d="M32 24c-7.7 0-12.8 5.1-12.8 12.6V57h25.6V36.6C44.8 29.1 39.7 24 32 24z" fill="#8B3A2E"/>' +
+    '<circle cx="50" cy="17" r="7.4" fill="#C9A14A"/>' +
+    '<path d="M50 27.5c-7 0-11.6 4.6-11.6 11.4V57h23.2V38.9c0-6.8-4.6-11.4-11.6-11.4z" fill="#C9A14A"/></svg>';
 }
 
 function buildShell() {
@@ -1622,10 +1625,10 @@ function xy(cfg) {
   (cfg.bands || []).forEach(function (b) {
     if (b.x != null) {
       s += '<rect x="' + fmt(px(b.x[0]), 1) + '" y="' + y0 + '" width="' + fmt(px(b.x[1]) - px(b.x[0]), 1) +
-        '" height="' + (y1 - y0) + '" fill="' + (b.fill || 'rgba(220,180,92,.16)') + '"/>';
+        '" height="' + (y1 - y0) + '" fill="' + (b.fill || 'rgba(201,161,74,.16)') + '"/>';
     } else {
       s += '<rect x="' + x0 + '" y="' + fmt(py(b.y[1]), 1) + '" width="' + (x1 - x0) + '" height="' +
-        fmt(py(b.y[0]) - py(b.y[1]), 1) + '" fill="' + (b.fill || 'rgba(220,180,92,.16)') + '"/>';
+        fmt(py(b.y[0]) - py(b.y[1]), 1) + '" fill="' + (b.fill || 'rgba(201,161,74,.16)') + '"/>';
     }
   });
 

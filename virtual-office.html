@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dr. Rennie's Virtual Office &middot; BIO 005 Human Physiology</title>
+<link rel="icon" type="image/svg+xml" href="icon.svg">
+<link rel="stylesheet" href="assets/fonts-site.css">
+<link rel="stylesheet" href="assets/brand.css">
+<style>
+/* ============================================================
+   virtual-office.html
+   Page-specific rules only. Every palette token lives in
+   assets/brand.css. Nothing here defines a colour of its own.
+
+   Brand of record, Sep 6 2026: the MedMasters system, read off the
+   live site. Navy #0B1530, maroon #8B3A2E, gold #C9A14A. Headlines
+   Open Sans 800, everything else Plus Jakarta Sans, both self
+   hosted in assets/fonts-site.css. The three figure mark runs
+   navy, maroon, gold, in that order, and the third figure is gold.
+
+   No italics anywhere. No decorative bars closing off a section.
+   White cards lift off the off-white page with a shadow, never a
+   border. Cream appears on the dark band only.
+   ============================================================ */
+
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0}
+body{
+  font-family:var(--body);
+  background:var(--offwhite);
+  color:var(--navy);
+  font-size:16px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:var(--display);font-weight:800;letter-spacing:-.022em;margin:0}
+em,i{font-style:normal;color:var(--maroon)}
+p{margin:0 0 14px;max-width:68ch}
+a{color:var(--maroon);text-underline-offset:3px}
+a:hover{color:var(--maroon-dark)}
+:focus-visible{outline:3px solid var(--maroon);outline-offset:3px;border-radius:3px}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+
+.skip{position:absolute;left:-9999px;top:0;z-index:90;background:var(--navy);
+  color:#fff;padding:12px 18px;font-weight:700;text-decoration:none}
+.skip:focus{left:0;top:0}
+
+/* ---------- brand bar ---------- */
+.brandbar{position:sticky;top:0;z-index:60;background:#fff;
+  border-bottom:1px solid var(--line);padding:13px 0}
+.brandbar .wrap{display:flex;align-items:center;gap:11px;flex-wrap:wrap}
+.mark{display:flex;align-items:center;gap:9px;text-decoration:none}
+.wm{display:block;font-family:var(--display);font-size:16px;font-weight:800;
+  color:var(--navy);letter-spacing:-.02em;line-height:1.05}
+.wm b{color:var(--maroon);font-weight:800}
+.wmsub{display:block;font-family:var(--body);font-size:8px;font-weight:700;
+  letter-spacing:.3em;text-transform:uppercase;color:var(--ink-soft);margin-top:3px}
+.course{margin-left:auto;font-family:var(--body);font-size:9.5px;font-weight:700;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft)}
+
+/* ---------- hero ---------- */
+.back{display:inline-block;margin:22px 0 0;font-size:10.5px;font-weight:700;
+  letter-spacing:.24em;text-transform:uppercase;text-decoration:none;color:var(--maroon)}
+.back:hover{text-decoration:underline}
+.eyebrow{font-size:10.5px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--maroon);margin:0 0 10px}
+.hero{padding:14px 0 34px}
+.hero h1{font-size:clamp(28px,5vw,42px);line-height:1.12;max-width:18ch}
+.hero h1 span{color:var(--maroon)}
+.lede{margin-top:14px;color:var(--ink-soft);max-width:60ch;font-size:17px}
+
+/* ---------- cards ---------- */
+.card{background:#fff;border:0;border-radius:12px;padding:22px 24px;
+  box-shadow:0 1px 3px rgba(11,21,48,.08);
+  transition:transform 200ms ease,box-shadow 200ms ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 16px rgba(11,21,48,.10)}
+.card h3{font-size:17px;margin:0 0 4px}
+.card .role{font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--maroon);margin:0 0 10px}
+.card ul{margin:0;padding-left:19px}
+.card li{margin:0 0 9px;max-width:60ch}
+.card li:last-child{margin-bottom:0}
+.grid3{display:grid;gap:16px;margin:18px 0 0;
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr))}
+
+section{padding:34px 0}
+section h2{font-size:clamp(21px,3vw,27px);margin-bottom:10px}
+
+/* ---------- the dark panel, the signature block ---------- */
+.panel{background:var(--navy-deep);color:var(--bone);padding:40px 0 44px;margin:34px 0 0}
+.panel h2{color:#fff}
+.panel .eyebrow{color:var(--gold)}
+.panel p{color:var(--bone)}
+.steps{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:16px}
+.steps li{display:flex;gap:15px;align-items:flex-start;max-width:74ch}
+.steps .n{flex:0 0 auto;width:30px;height:30px;border-radius:999px;background:var(--gold);
+  color:var(--gold-ink);font-family:var(--display);font-weight:800;font-size:14px;
+  display:flex;align-items:center;justify-content:center}
+.steps strong{color:#fff;font-weight:800}
+.steps p{margin:2px 0 0;color:var(--bone)}
+.panel a{color:var(--gold)}
+.panel :focus-visible{outline-color:var(--gold)}
+
+/* ---------- call to action ---------- */
+.cta{display:inline-flex;align-items:center;gap:10px;margin-top:6px;
+  background:var(--maroon);color:#fff;text-decoration:none;
+  font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;
+  padding:15px 26px;border-radius:8px;
+  transition:background 200ms ease,transform 200ms ease}
+.cta:hover{background:var(--maroon-dark);color:#fff;transform:translateY(-2px)}
+.cta .arw{font-size:15px;line-height:1}
+
+/* ---------- footer ---------- */
+footer{background:var(--navy-deep);color:var(--bone);padding:30px 0 36px;margin-top:40px}
+footer a{color:var(--bone);text-decoration:underline}
+footer a:hover{color:var(--gold)}
+footer :focus-visible{outline-color:var(--gold)}
+.flinks{display:flex;flex-wrap:wrap;gap:8px 10px;align-items:center;font-size:14px}
+.dot{color:var(--gold)}
+.fleg{margin:16px 0 0;font-size:13px;color:var(--bone);max-width:74ch;opacity:.86}
+
+@media (max-width:620px){
+  .course{margin-left:0;flex-basis:100%}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none !important;animation:none !important}
+  .card:hover,.cta:hover{transform:none}
+}
+@media print{
+  .skip,.brandbar,.back,.cta,footer{display:none}
+  body{background:#fff;font-size:10pt}
+  .panel{background:#fff;color:#000;padding:12pt 0}
+  .panel h2,.panel p,.steps p,.steps strong{color:#000}
+  .steps .n{background:#fff;color:#000;border:1px solid #000}
+  .card{box-shadow:none;border-top:1px solid #000;border-radius:0;padding:8pt 0;
+    break-inside:avoid;page-break-inside:avoid}
+  section{padding:10pt 0}
+  h1,h2,h3{break-after:avoid;page-break-after:avoid}
+  a{color:#000;text-decoration:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+
+<div class="brandbar"><div class="wrap">
+  <a class="mark" href="course-start.html" target="_top">
+    <svg viewBox="40 10 125 148" width="22" height="26" role="img" aria-label="BIO 005 Human Physiology, course home">
+      <g transform="translate(0,18)">
+        <g transform="translate(60,0) rotate(8 0 130)"><circle cx="0" cy="20" r="10" fill="#0B1530"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#0B1530"/></g>
+        <g transform="translate(100,0)"><circle cx="0" cy="10" r="11" fill="#8B3A2E"/><path d="M 0,22 C -11,22 -17,26 -17,34 C -17,52 -14,70 -12,86 C -11,108 -13,122 -15,132 L 15,132 C 13,122 11,108 12,86 C 14,70 17,52 17,34 C 17,26 11,22 0,22 Z" fill="#8B3A2E"/></g>
+        <g transform="translate(140,0) rotate(-8 0 130)"><circle cx="0" cy="20" r="10" fill="#C9A14A"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#C9A14A"/></g>
+      </g>
+    </svg>
+    <span><span class="wm">BIO <b>005</b></span><span class="wmsub">Human Physiology</span></span>
+  </a>
+  <span class="course">BIO 005 &middot; Fall 2026</span>
+</div></div>
+
+<div class="wrap"><a class="back" href="course-start.html" target="_top">&larr; Course home</a></div>
+
+<header class="hero"><div class="wrap">
+  <p class="eyebrow">Getting help, and giving it</p>
+  <h1>Dr. Rennie's <span>Virtual Office</span>.</h1>
+  <p class="lede">The Virtual Office is a question board in Canvas, open all term. It is the front door for course questions, and it is public on purpose. In a fully online class the hallway conversation after lecture does not happen by accident, so we hold it here, where everyone can benefit from it.</p>
+  <a class="cta" href="https://yccd.instructure.com/courses/42616/discussion_topics/711800" target="_blank" rel="noopener">Open the Virtual Office in Canvas <span class="arw" aria-hidden="true">&rarr;</span></a>
+</div></header>
+
+<main id="main">
+
+<section><div class="wrap">
+  <h2>Why your question here helps everyone</h2>
+  <p>If you are confused about something, you are almost certainly not the only one. You are just the one willing to say it out loud. A question asked in the Virtual Office gets answered once and read by the whole class, and the best ones get folded into the course's answered questions page, where they keep helping students for terms to come.</p>
+  <p>Asking a good question in public is a contribution to this class, and I treat it as one.</p>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <h2>Which door for which question</h2>
+  <p>Three places to bring something, and they do different jobs. Picking the right one gets you a useful answer faster.</p>
+  <div class="grid3">
+    <div class="card">
+      <p class="role">Public board</p>
+      <h3>The Virtual Office</h3>
+      <ul>
+        <li>Anything about the course that is not private: content you are stuck on, what an assignment is asking for, where something lives, a page that will not load.</li>
+        <li>Answers help the whole class, and classmates are welcome to answer first.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <p class="role">Live, on Zoom</p>
+      <h3>Office hours</h3>
+      <ul>
+        <li>Wednesdays, 9:00 to 10:00 am Pacific. No appointment needed, just show up.</li>
+        <li>For anything that needs a conversation: working a concept live with drawing, going over your exam, or rebuilding a study system that is not working.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <p class="role">Private</p>
+      <h3>The Canvas Inbox</h3>
+      <ul>
+        <li>Grades, accommodations, personal circumstances, an emergency, or anything carrying your name and details.</li>
+        <li>Private things never go on the public board. Send those to me directly.</li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<section class="panel"><div class="wrap">
+  <p class="eyebrow">Five moves</p>
+  <h2>How to ask a question that gets a great answer</h2>
+  <p>None of this is about being formal. It is about giving whoever answers enough to actually help you.</p>
+  <ol class="steps">
+    <li><span class="n" aria-hidden="true">1</span><div>
+      <strong>Check whether it is already answered.</strong>
+      <p>The <a href="course-questions.html" target="_top">answered questions page</a> and Hootie resolve most questions in under a minute. Then search the Virtual Office itself. Your question may already have a thread, and replying there beats starting a twin.</p>
+    </div></li>
+    <li><span class="n" aria-hidden="true">2</span><div>
+      <strong>Give it a real title.</strong>
+      <p>"Confused about the second color on the note sheet" gets found and answered. "Help" gets neither.</p>
+    </div></li>
+    <li><span class="n" aria-hidden="true">3</span><div>
+      <strong>Say what you tried.</strong>
+      <p>Where you looked, what you expected, and what happened instead. For a broken page, a screenshot and the page name are worth more than a paragraph of description.</p>
+    </div></li>
+    <li><span class="n" aria-hidden="true">4</span><div>
+      <strong>One question per post.</strong>
+      <p>Three questions bundled into one post tend to get one and a half answers. Split them and each one gets a real reply.</p>
+    </div></li>
+    <li><span class="n" aria-hidden="true">5</span><div>
+      <strong>Come back and close the loop.</strong>
+      <p>If a reply solved it, say so. The next student with your question needs to know which answer worked.</p>
+    </div></li>
+  </ol>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Answering each other</h2>
+  <p>You are allowed, and encouraged, to answer classmates in the Virtual Office. Explaining something you have just learned is one of the strongest study moves there is, and it is a good sign you actually have it. I read the board, so anything that needs correcting gets corrected.</p>
+  <p>If a page does not work for you, tell me there and I will fix it.</p>
+</div></section>
+
+</main>
+
+<footer><div class="wrap">
+  <nav class="flinks" aria-label="Course links">
+    <a href="course-start.html" target="_top">Course home</a><span class="dot" aria-hidden="true">&middot;</span>
+    <a href="course-questions.html" target="_top">Answered questions</a><span class="dot" aria-hidden="true">&middot;</span>
+    <a href="syllabus-fall2026.html" target="_top">Syllabus</a><span class="dot" aria-hidden="true">&middot;</span>
+    <a href="course-schedule.html" target="_top">Schedule</a><span class="dot" aria-hidden="true">&middot;</span>
+    <a href="ai-in-this-course.html" target="_top">How AI is used here</a><span class="dot" aria-hidden="true">&middot;</span>
+    <a href="accessibility.html" target="_top">Accessibility</a><span class="dot" aria-hidden="true">&middot;</span>
+    <a href="https://yccd.instructure.com/courses/42616" target="_blank" rel="noopener">Canvas</a>
+  </nav>
+  <p class="fleg">BIO 005 Human Physiology &middot; Fall 2026 &middot; Dr. Sharilyn Rennie<br>
+     If a page does not work for you, tell me in the Virtual Office and I will fix it.</p>
+</div></footer>
+
+<script>
+/* Iframe height sender for the Canvas embed. */
+(function(){
+  var id='virtual-office';
+  function post(){
+    try{parent.postMessage({frame:id,height:document.documentElement.scrollHeight},'*');}catch(e){}
+  }
+  if('ResizeObserver' in window){new ResizeObserver(post).observe(document.documentElement);}
+  window.addEventListener('load',post);
+  window.addEventListener('resize',post);
+  post();
+})();
+</script>
+</body>
+</html>

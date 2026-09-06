@@ -4,16 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>BIO 005 Progressive Patient File</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/fonts-site.css">
+
+
 <style>
 :root{
-  --navy:#08101F; --navy-chip:#16233C; --navy-tint:#EDF1F3;
-  --terra:#8B1D1D; --terra-deep:#6E1616;
-  --gold:#DCB45C; --gold-ink:#6B5214; --gold-lite:#FBEBC8;
+  --navy:#0B1530; --navy-chip:#16233C; --navy-tint:#ECEFF4;
+  --terra:#8B3A2E; --terra-deep:#6E1616;
+  --gold:#C9A14A; --gold-ink:#6B5214; --gold-lite:#FBEBC8;
   --white:#FFFFFF; --offwhite:#FAFAF9; --onred:#FFFFFF;
-  --muted:#3D4860; --rule:#DCE0E6; --light:#DDE2EA;
+  --muted:#414B5C; --rule:#DCE0E6; --light:#DDE2EA;
   --lock:#454E5E;
   --shadow:0 1px 3px rgba(0,0,0,.08); --shadow-lift:0 8px 16px rgba(0,0,0,.10);
   --fs:16px;
@@ -23,7 +23,7 @@ em,i,cite,dfn,var,address{font-style:normal}
 html{font-size:var(--fs)}
 body{
   margin:0; background:var(--offwhite); color:var(--navy);
-  font-family:"DM Sans",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  font-family:'Plus Jakarta Sans',system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
   line-height:1.55; font-size:1rem;
 }
 h1,h2,h3,h4{font-family:"Plus Jakarta Sans",system-ui,Arial,sans-serif; margin:0 0 .4em}
@@ -130,7 +130,7 @@ button:disabled{background:#EEF0F3; color:#333C4D; border-color:var(--light); cu
 
 /* modal */
 dialog{border:0; padding:0; color:var(--navy); border-radius:14px; max-width:640px; width:calc(100% - 32px); box-shadow:0 18px 48px rgba(0,0,0,.32)}
-dialog::backdrop{background:rgba(8,16,31,.62)}
+dialog::backdrop{background:rgba(11,21,48,.62)}
 .dlg{background:var(--white); border-radius:14px; overflow:hidden}
 .dlg header{background:var(--navy); color:var(--white); padding:16px 20px}
 .dlg header h2{color:var(--white); margin:0}
@@ -163,7 +163,7 @@ footer.foot{border-top:1px solid var(--rule); margin-top:34px; padding-top:16px;
   #printdoc .pcard{border:1px solid #333; border-radius:6px; padding:8pt 10pt; margin:8pt 0}
   #printdoc table{width:100%; border-collapse:collapse; font-size:9.5pt; margin:0 0 8pt}
   #printdoc th,#printdoc td{border:1px solid #666; padding:3pt 5pt; text-align:left; vertical-align:top}
-  #printdoc th{background:#EDF1F3}
+  #printdoc th{background:#ECEFF4}
   #printdoc .ord{border:1px solid #666; border-radius:5px; padding:6pt 8pt; margin:0 0 7pt; break-inside:avoid}
   #printdoc .ordh{font-weight:700; border-bottom:1px solid #999; padding-bottom:3pt; margin-bottom:4pt; font-size:10.5pt}
   #printdoc .ord dl{margin:0; display:grid; grid-template-columns:78pt 1fr; column-gap:8pt; row-gap:3pt}
@@ -753,7 +753,7 @@ function sectionDraw(w, st){
   function move(e){
     if(!drawState.drawing) return;
     var p = pos(e);
-    ctx.strokeStyle = drawState.tool === "eraser" ? "#FFFFFF" : "#08101F";
+    ctx.strokeStyle = drawState.tool === "eraser" ? "#FFFFFF" : "#0B1530";
     ctx.lineWidth = drawState.tool === "eraser" ? 26 : (drawState.tool === "thick" ? 7 : 3);
     ctx.lineTo(p.x,p.y); ctx.stroke();
     e.preventDefault();

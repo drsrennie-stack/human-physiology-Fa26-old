@@ -66,8 +66,8 @@ LAB.newCaseNumber = newCaseNumber;
 /* the typeface stack SVG text has to be given explicitly */
 LAB.SVG_FONT = 'Helvetica Neue,Helvetica,Arial,sans-serif';
 LAB.COLOR = {
-  navy: '#08101F', ink: '#0A1322', muted: '#3D4860',
-  terra: '#731717', terraDark: '#5A1212', gold: '#B8924A', goldText: '#6E5018',
+  navy: '#0B1530', ink: '#0A1322', muted: '#414B5C',
+  terra: '#731717', terraDark: '#5A1212', gold: '#C9A14A', goldText: '#6E5018',
   teal: '#27565D', rule: '#7F8798', ruleSoft: '#DCE0E6', off: '#FAFAF9'
 };
 
@@ -95,12 +95,12 @@ LAB.sections = function (list) { SECTIONS = list; };
 
 function logoSVG() {
   return '<svg viewBox="0 0 64 64" role="img" aria-label="Course logo, three figures side by side">' +
-    '<circle cx="14" cy="17" r="7.4" fill="#DCB45C"/>' +
-    '<path d="M14 27.5c-7 0-11.6 4.6-11.6 11.4V57h23.2V38.9c0-6.8-4.6-11.4-11.6-11.4z" fill="#DCB45C"/>' +
+    '<circle cx="14" cy="17" r="7.4" fill="#C9A14A"/>' +
+    '<path d="M14 27.5c-7 0-11.6 4.6-11.6 11.4V57h23.2V38.9c0-6.8-4.6-11.4-11.6-11.4z" fill="#C9A14A"/>' +
     '<circle cx="32" cy="12.5" r="8.2" fill="#731717"/>' +
     '<path d="M32 24c-7.7 0-12.8 5.1-12.8 12.6V57h25.6V36.6C44.8 29.1 39.7 24 32 24z" fill="#731717"/>' +
-    '<circle cx="50" cy="17" r="7.4" fill="#08101F"/>' +
-    '<path d="M50 27.5c-7 0-11.6 4.6-11.6 11.4V57h23.2V38.9c0-6.8-4.6-11.4-11.6-11.4z" fill="#08101F"/></svg>';
+    '<circle cx="50" cy="17" r="7.4" fill="#0B1530"/>' +
+    '<path d="M50 27.5c-7 0-11.6 4.6-11.6 11.4V57h23.2V38.9c0-6.8-4.6-11.4-11.6-11.4z" fill="#0B1530"/></svg>';
 }
 
 function buildShell() {
