@@ -1,5 +1,4 @@
 // BIO 005 course questions, generated September 6, 2026. Feed for Hootie or any helper.
-// Update whenever a course rule changes; course-questions.html renders the same data.
 var BIO005_FAQ = [
  {
   "cat": "Getting started",
@@ -579,7 +578,7 @@ var BIO005_FAQ = [
  {
   "cat": "Labs and PhysioEx",
   "q": "Do some weeks have no PhysioEx?",
-  "a": "Yes: Week 1 runs the fluid homeostasis lab case, Week 5 runs the home sensory and reflex lab, and Week 8 runs the hormone cycle worksheet. Their worksheets are graded the same way."
+  "a": "Yes: PhysioEx begins in Week 2. Week 1 runs the standards and ranges lab, where reference ranges come from, plus the fluid balance case. Week 5 runs the home sensory and reflex lab, and Week 8 the hormone cycle worksheet. Their worksheets are graded the same way."
  },
  {
   "cat": "Labs and PhysioEx",
@@ -629,7 +628,7 @@ var BIO005_FAQ = [
  {
   "cat": "Labs and PhysioEx",
   "q": "What lab runs in Week 1?",
-  "a": "The Week 1 lab case: fluid homeostasis, worked as a patient rather than a worksheet. <a href=\"workbook_week01_fluid-homeostasis.html\">Open it here</a>."
+  "a": "The standards and ranges lab: you build a reference range by hand and learn exactly what that column on every lab panel is claiming. Then the fluid balance case puts the week's physiology on a patient. No PhysioEx in Week 1; it begins in Week 2."
  },
  {
   "cat": "Labs and PhysioEx",

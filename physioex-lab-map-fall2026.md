@@ -73,7 +73,7 @@ Builds 2 to 4 are one-page data-interpretation sheets, the ten-minute-to-grade k
 
 Also built: reference-range-lab.html, where normal comes from, the middle 95 percent construction done by hand on 40 glucose values, what a range does and does not claim, the population drift case with the write-your-own-example task, and optimal versus normal anchored by the diabetes 126 threshold. Slot it wherever she wants, Week 1 or as a standing tool; the fluid balance lab links it.
 
-Week 1: fluid-homeostasis-lab.html, the fluid balance lab in the clinical format, wrapping the homeostasis case with the hypernatremia serum panel correlation. No Pearson in Week 1.
+Week 1 lab of record: reference-range-lab.html, standards and ranges. Companion: fluid-homeostasis-lab.html, the homeostasis case with the hypernatremia panel. No Pearson in Week 1; PhysioEx begins Week 2 with Exercise 8, amylase.
 
 Week 2: enzyme-amylase-lab.html, the amylase lab sheet with predictions, data tables, the pancreatitis lab-test correlation, and the look-back. Wire the Canvas assignment to it.
 
