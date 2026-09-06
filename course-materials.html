@@ -395,8 +395,8 @@ footer :focus-visible{outline-color:var(--gold)}
     </div>
 
     <div class="seqgroup">
-      <h3>The lab. This week: standards and ranges</h3>
-      <div class="seqrow">
+      <h3 id="seqLabTitle">The lab. This week: standards and ranges</h3>
+      <div class="seqrow" id="seqLabRow">
         <span class="seqchip">Predict<small>first color, before you look</small></span>
         <span class="seqarrow" aria-hidden="true">&rarr;</span>
         <span class="seqchip">Build the range<small>the middle 95, by hand</small></span>
@@ -410,8 +410,8 @@ footer :focus-visible{outline-color:var(--gold)}
     </div>
 
     <div class="seqgroup">
-      <h3>The discussion. Week 1: your digital vision board</h3>
-      <div class="seqrow">
+      <h3 id="seqDiscTitle">The discussion. Week 1: your digital vision board</h3>
+      <div class="seqrow" id="seqDiscRow">
         <span class="seqchip">Build your board<small>one image, plus a short intro video</small></span>
         <span class="seqarrow" aria-hidden="true">&rarr;</span>
         <span class="seqchip done">Post it<small>part one, Friday September 11, 10:00 pm</small></span>
@@ -434,6 +434,47 @@ footer :focus-visible{outline-color:var(--gold)}
     </div>
   </div>
 </section>
+<script>
+(function(){
+  var TERM_START = new Date(2026, 8, 8);
+  var ms = new Date() - TERM_START;
+  var w = ms < 0 ? 1 : Math.min(15, Math.floor(ms / (7 * 864e5)) + 1);
+  var DUE = ["Sunday, September 13", "Sunday, September 20", "Sunday, September 27", "Sunday, October 4", "Sunday, October 11", "Sunday, October 18", "Sunday, October 25", "Sunday, November 1", "Sunday, November 8", "Sunday, November 15", "Sunday, November 22", "Sunday, November 29", "Sunday, December 6", "Sunday, December 13", "Wednesday, December 16"];
+  var POST = ["Friday, September 11", "Friday, September 18", "Friday, September 25", "Friday, October 2", "Friday, October 9", "Friday, October 16", "Friday, October 23", "Friday, October 30", "Friday, November 6", "Friday, November 13", "Friday, November 20", "Friday, November 27", "Friday, December 4", "Friday, December 11", "Monday, December 14"];
+  var LAB = {"1": ["The lab. This week: standards and ranges", [["Predict", "first color, before you look"], ["Build the range", "the middle 95, by hand"], ["Read the lab test", "the population drift case"], ["Look back", "second color, commit to memory"]]], "2": ["The lab. This week: the enzyme lab, PhysioEx Exercise 8", [["Predict", "first color, before you look"], ["Run PhysioEx", "until Pearson shows complete"], ["The worksheet", "data, by hand"], ["The clinical correlation", "the amylase and lipase panel"]]], "3": ["The lab. This week: osmosis and IV fluids", [["Run PhysioEx", "until Pearson shows complete"], ["The worksheet", "data, by hand"], ["The clinical correlation", "the IV fluids case"]]], "5": ["The lab. This week: the home sensory and reflex lab", [["Run the home lab", "measured on yourself"], ["The worksheet", "by hand"]]], "8": ["The lab. This week: the hormone cycle worksheet", [["Work the cycle graph", "by hand"], ["The worksheet questions", "by hand"]]]};
+  var GEN = [["Run this week's PhysioEx", "until Pearson shows complete"], ["The worksheet", "data, by hand"], ["Clinical correlations", "where the week has them"]];
+  function chip(t, sub, done){
+    return '<span class="seqchip' + (done ? ' done' : '') + '">' + t + '<small>' + sub + '</small></span>';
+  }
+  var arrow = '<span class="seqarrow" aria-hidden="true">&rarr;</span>';
+  var lab = LAB[w] || ["The lab, this week", GEN];
+  var lt = document.getElementById('seqLabTitle');
+  var lr = document.getElementById('seqLabRow');
+  if (lt && lr){
+    lt.textContent = lab[0];
+    var parts = [];
+    for (var i = 0; i < lab[1].length; i++) parts.push(chip(lab[1][i][0], lab[1][i][1], false));
+    parts.push(chip('Turn it in', 'one PDF, ' + DUE[w-1] + ', 10:00 pm', true));
+    lr.innerHTML = parts.join(arrow);
+  }
+  var dt = document.getElementById('seqDiscTitle');
+  var dr = document.getElementById('seqDiscRow');
+  if (dt && dr){
+    if (w === 1){
+      dt.textContent = 'The discussion. Week 1: your digital vision board';
+      dr.innerHTML = chip('Build your board','one image, plus a short intro video',false) + arrow +
+        chip('Post it','part one, ' + POST[0] + ', 10:00 pm',true) + arrow +
+        chip('Reply to two classmates', DUE[0] + ', 10:00 pm', true);
+    } else {
+      dt.textContent = 'The discussion, Week ' + w;
+      dr.innerHTML = chip('Write your post',"this week's physiology, plus your honest thinking",false) + arrow +
+        chip('Post it', POST[w-1] + ', 10:00 pm', true) + arrow +
+        chip('Reply to two classmates', DUE[w-1] + ', 10:00 pm', true);
+    }
+  }
+})();
+</script>
+
 <section class="band" id="thisweek" aria-labelledby="h-week">
     <div class="wrap">
       <div class="b-head">
