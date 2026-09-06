@@ -1,71 +1,187 @@
-# Listen to this page, and the device guidance. September 5 2026.
+# Push this, then do the two Canvas steps at the bottom
 
-Two files. Drag both into the repo root. Do not upload this file.
+Repo: `drsrennie-stack/human-physiology-Fa26`. Drop these files in at the same
+paths, keeping the folder structure. Nothing here renames or deletes anything
+you already have.
 
-## bio005-nav.js
+---
 
-Already on every page, so the Listen button appears everywhere with no other change.
+## What changed and why
 
-**A Listen to this page button in the footer of every page.** Press it and the browser reads
-the page out loud, one paragraph at a time, highlighting each one so a student can follow
-with their eyes and ears together. A small control appears in the bottom right corner with
-pause, a speed setting of 0.75x through 1.5x, and stop, so nobody has to scroll back to the
-footer to pause it. The speed is remembered.
+### 1. The note sheet is now a sheet, not instructions for a sheet
 
-It reads what is on the page, in order, and skips the navigation, the footer and the dock.
-It stops when the page is closed.
+**New: `note-sheet.html`**, plus 16 ready-made PDFs in `sheets/`.
 
-The button says, under its own label, "Reads the page out loud. This is not a screen
-reader." That wording matters. A student who uses a real screen reader has something far
-better already configured the way they like it, and a course that blurs the two looks like
-it does not understand the difference.
+One page per competency. Four blank boxes on each page:
 
-**Three things this build fixed along the way.**
+| Box | Label |
+|---|---|
+| 1 | Draw it (the big one, full height on the left) |
+| 2 | Label every part |
+| 3 | What happens, in order |
+| 4 | What breaks if this fails |
 
-The course home is three screens in one file and only one is on screen at a time. Its skip
-link pointed at an element inside the returning-student screen, so a first-time visitor
-pressing Tab landed in a hidden panel. The script now checks whether a skip link target is
-actually on screen and repoints it at the content if it is not. That was a real keyboard
-bug on your front door and it is fixed on every page at once.
+**No rule lines anywhere.** Blank white, because ruled boxes invite paragraphs.
+Printed on every single page, under the header:
 
-Link labels with a sub-line underneath were being read as one run-on word, so "Course
-schedule / Every week, with dates and reading" came out as "Course scheduleEvery week". The
-reader now uses the rendered text rather than the raw text, so the break is there.
+> Every one of these boxes is **drawn**. If you need words, they go inside
+> little boxes with arrows between them, in the order things happen. Sentences
+> running across the page do not count.
 
-Separator dots, arrows and tick marks were being spoken as words. They are now read as
-pauses or skipped, and a heading numbered 01 reads as "01, Course identification" instead
-of "01Course identification".
+The header has the competency number pre-printed in a box, the concept name,
+the full "You should be able to" text, prompt A/B tick boxes, and two blanks
+for their pass 1 and pass 2 pen colours. Name and date on the top right.
 
-## accessibility.html
+`?week=1` through `?week=15`. `?blank=1` gives the same sheet with the number
+and the concept name left empty, if you ever want a generic one.
 
-Two new sections.
+**The PDFs are already built** in `sheets/`, one per week plus the blank. Week
+1 is 18 pages, Week 5 is 35, Week 15 is 7.
 
-**What your own computer already does.** VoiceOver with Command and F5 on a Mac, Narrator
-with the Windows key plus Control plus Enter, Speak Screen on an iPhone, TalkBack and Select
-to Speak on Android, Reader View, and browser zoom. Every keystroke checked against the
-vendor's own documentation. Most students have never been told any of this exists, and the
-ones who would benefit most are the least likely to go looking. It also says plainly that
-using any of it is not a special arrangement and they do not have to tell anyone.
+### 2. Those three buttons
 
-**The Listen button, and what it is not.** Says outright that it is text to speech and not a
-screen reader, that a screen reader does far more, and that anyone already using one should
-keep using theirs. Then it gives the real reasons to press it: long reading weeks, tired
-eyes, studying in the car before a shift, taking material in better by ear, reading
-physiology in a second language.
+- **How to build the sheet** is gone. It is **Print your Week 1 sheet** now,
+  pointing at the sheet itself.
+- **Week 1 reading** landed on the top of `week-01.html`, which opens with
+  about 190 lines of to-do list before any reading starts. It is **Read the
+  notes** now and jumps straight to `#w1-orientation`, past all of it. The
+  page itself still has the to-do list up top. Say the word and I will move
+  that block below the reading, or fold it into a collapsed panel.
+- **Full 268 list** is gone from both places it appeared. It is a PDF now.
 
-Verified numbers on the page refreshed to 101 pages and 2,566 checks.
+### 3. Two PDFs for Canvas
 
-## Checked
+**`BIO005-Fall2026-Competencies-by-Week.pdf`** (32 pages). All 268, grouped
+into the week they are taught, inside their midterm block, with the exam
+window printed at the top of each block. This is the one students use to
+answer "what is on this week".
 
-101 pages scanned with axe-core against WCAG 2.0 A and AA, 2.1 A and AA and 2.2 AA. Zero
-violations. Every page has a language, a title, a skip link and a main landmark.
+You already have `BIO005-Fall2026-Competency-Packet.pdf`, which is the same
+268 grouped by unit with the entry expectations in front. Keep both. That one
+is for transfer and equivalency review, this one is for finding your week.
 
-The reading was tested on the course home, a locked week page, the syllabus, the
-accessibility page and the CBC lab. No navigation or footer text leaks into what is read.
-The highlight color measures 10.16 to 1 against the text on it, which is AAA.
+**`BIO005-Fall2026-Syllabus-and-Schedule.pdf`** (20 pages). The whole syllabus
+including the week-by-week schedule, with the exam dates now in it.
 
-## One thing that is deliberate
+### 4. Exam dates, set
 
-On a page where your reading mode has collapsed the sections, Listen reads the section that
-is open, not the whole page. That matches what the student can see when they press it. If
-you would rather it always read everything, say so and I will change it.
+| Exam | Covers | Opens | Closes |
+|---|---|---|---|
+| Midterm 1 | Weeks 1 to 5 | Mon Oct 12, 8:00 am | **Sun Oct 18, 10:00 pm** |
+| Midterm 2 | Weeks 6 to 10 | Mon Nov 16, 8:00 am | **Sun Nov 22, 10:00 pm** |
+| Midterm 3 | Weeks 11 to 15 | Mon Dec 14, 8:00 am | **Wed Dec 16, 10:00 pm** |
+
+Why these:
+
+- **A window, not an hour.** Monday 8 am to Sunday 10 pm, matching your
+  existing Sunday 10 pm rhythm. They record and upload whenever suits them.
+- Each one runs **in the week after its block closes**, so the last week of
+  content has time to settle before they have to teach it back.
+- **Midterm 1 sits after census** (Sep 27), so the roster is stable, and lands
+  a real graded reality check in mid October, well before the W deadline.
+- **Midterm 2 clears Thanksgiving.** It closes Nov 22, the Sunday before
+  Thanksgiving week opens.
+- **Midterm 3 closes with the term**, Dec 16. Week 15 is only three days long,
+  so Week 15 *is* the exam week and nothing else is due.
+
+**The one thing to look at.** Midterm 2 closes Sunday Nov 22 and the last day
+to drop with a W is Saturday Nov 21. There is no arrangement of a five-week
+block that fixes that, so I handled it instead of hiding it: the syllabus now
+says every grade posts **Wednesday November 18**, with ten weeks of work plus
+Midterm 1 already in the gradebook, and that is the number students use for
+the drop decision. If you would rather move Midterm 2 a week earlier and have
+it cover Weeks 6 to 9, tell me and it is a one-line change in three places.
+
+**Two things I wrote that are policy, not dates.** Strike either if you
+disagree:
+
+1. In a midterm week (6, 11, 15) that week's book problems and lab move to the
+   following Sunday. The note sheet still comes first.
+2. Midterm 3 is explicitly not cumulative.
+
+The dates are now in: the syllabus Section 07 (new "When the midterms are"
+table), Section 09 (schedule), Section 14 (important dates), and as a gold
+**Midterm** row on Weeks 6, 11 and 15 of `course-start.html`.
+
+---
+
+## Two things you should know about, not bugs
+
+### The 268 stayed 268, but six competencies moved
+
+Week 1 now teaches Silverthorn chapter 6 alongside chapter 1. Six competencies
+that the Aug 24 CSV still files under later weeks are taught in Week 1:
+
+- from Week 3: Body fluid compartments, Compartment separation and clinical volume shifts
+- from Week 7: Signal types and range, Receptor location and ligand solubility, Signal amplification, Receptor modulation
+
+Week 1 wins and the later week drops its copy. Without that, students meet the
+same competency twice and the course total reads 274. Nothing was deleted,
+only re-filed. Week 3 goes 16 to 14, Week 7 goes 18 to 14, the total is 268.
+
+### Your week titles disagree with each other in Weeks 4 to 8
+
+`WEEK-REASSIGNMENT-REPORT.md` and the competency CSV, both dated Aug 24 and
+marked decision of record, order Weeks 4 to 8 as: action potential, whole
+nervous system, muscle, hormones, reproduction.
+
+`course-start.html` and the syllabus schedule order the same weeks as: cell
+signalling and the electrical signal, synapses and integration, sensory and
+autonomic, muscle, hormones and reproduction together.
+
+Weeks 1 to 3 and 9 to 15 agree. Weeks 4 to 8 do not. Every student-facing page
+I built prints the **site** titles, because that is what Canvas shows, but the
+**competencies** under those titles come from the CSV. So the Week 6 sheet is
+headed "Sensing the world" and carries the CSV's muscle competencies.
+
+**I did not guess which one is right.** Tell me which wins and I will fix it in
+one place, `assets/bio005-sheet-data.js`, and everything downstream follows.
+
+---
+
+## Accessibility
+
+`compliance/note-sheet.compliance.md` covers all of it. Every ratio in there
+was measured on a rendered page, not read off a stylesheet.
+
+WCAG 2.2 AA is met on every file in this push. AAA contrast (7:1 / 4.5:1) is
+met on every measured pair on every file in this push. Zero horizontal scroll
+at 320, 375, 768, 1024 and 1440. Zero external requests. Zero console errors.
+
+**Three real defects turned up and are fixed:**
+
+1. `--terra` and `--terra-dark` were **undefined on eleven pages**, left behind
+   by the rebrand. Every rule reading them fell back to nothing. On
+   `assignment-notesheet.html` the primary button was white text on a
+   transparent background, 1.04:1, effectively invisible. Both tokens are now
+   defined as the MedMasters maroon. That is why eleven files you did not ask
+   me to touch are in this push.
+2. The dim dock tile subtitle was 5.95:1, under AA. Now 7.57:1. Fixed in all
+   four copies of `bio005-dock.js`.
+3. Box hints collided with their labels in the narrow column and clipped
+   mid word. Moved to the bottom of each box.
+
+Still open: no live screen reader pass on anything.
+
+---
+
+## After the push, two Canvas steps
+
+1. **Upload the two PDFs** to Canvas Files and link them wherever you want
+   them. They are in the root of this folder.
+
+2. **Nothing to re-point.** Every iframe you already have keeps working. If
+   you want the sheet embedded on its own Canvas page:
+
+   ```html
+   <p><iframe title="Week 1 note sheet"
+     src="https://drsrennie-stack.github.io/human-physiology-Fa26/note-sheet.html?week=1"
+     width="100%" height="1600"
+     style="width:100%;height:1600px;border:0"></iframe></p>
+   ```
+
+   Change the `?week=` number for other weeks. Or skip the iframe entirely and
+   just attach the PDF from `sheets/`, which is probably what most students
+   will actually use.
+
+Dr. Sharilyn Rennie

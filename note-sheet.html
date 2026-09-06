@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BIO 005 &middot; Note sheet</title>
+<link rel="icon" type="image/svg+xml" href="icon.svg">
+<link rel="stylesheet" href="assets/fonts-site.css">
+<!--
+  ============================================================
+  BIO 005 Human Physiology, Yuba College, Fall 2026
+  note-sheet.html   THE SHEET ITSELF, NOT INSTRUCTIONS FOR IT
+
+  ?week=1 .. ?week=15   which week's competencies get printed
+  ?blank=1              same sheet with the number and concept
+                        name left empty, for handing out generic
+
+  WHY THIS PAGE EXISTS
+  --------------------
+  assignment-notesheet.html used to explain how to build a note
+  sheet. Students got lost building it and never got to the
+  physiology. This page hands them the built sheet. Every
+  competency for the week is already printed on its own page
+  with four labelled spaces under it. All they do is fill it in.
+
+  FOUR SPACES PER COMPETENCY, ALL FOUR DRAWN
+    1  Draw it                     the big one, left, full height
+    2  Label every part            top right
+    3  What happens, in order      middle right
+    4  What breaks if this fails   full width across the bottom
+
+  THE BOXES HAVE NO RULES IN THEM ON PURPOSE. A ruled box invites a
+  paragraph and a paragraph is the one thing this assignment is not.
+  Words are fine inside a drawing, in little boxes with arrows
+  between them, in the order things happen. Sentences running the
+  width of the box are not, and the rule is printed on every page.
+
+  TWO PASSES, TWO COLOURS, SAME BOXES. Pass one from the book
+  before any video. Pass two in a second colour after the video,
+  into the same boxes. The gap between the colours is the grade.
+
+  PRINT
+  -----
+  One competency per sheet of paper. Letter, half inch margins.
+  Ink is black on white so it does not eat a colour cartridge.
+  Screen shows the same pages stacked so nothing is a surprise.
+
+  IFRAME SAFE. Nothing position:fixed. Fluid to 320px. Height
+  sender posts as bio005-note-sheet. Internal links target _top.
+  ============================================================
+-->
+<style>
+:root{
+  --navy:#0B1530;        /* 18.04:1 on white */
+  --navy-deep:#060A18;
+  --maroon:#8B3A2E;      /* 7.66:1 on white, 7.33:1 on off white */
+  --maroon-dark:#6E2D24; /* 10.18:1 */
+  --gold-deep:#8A6D33;   /* 4.87:1, large text and rules only */
+  --ink:#0B1530;
+  --muted:#454B58;       /* 8.75:1 on white */
+  --page:#FAFAF9;
+  --card:#FFFFFF;
+  --hair:#D8DBE2;
+  --disp:'Open Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --body:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;max-width:100%;overflow-x:hidden}
+body{background:var(--page);color:var(--ink);font-family:var(--body);
+     line-height:1.5;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--disp);margin:0;font-weight:800;letter-spacing:-.02em}
+p{margin:0}
+a{color:var(--maroon-dark);font-weight:700}
+:focus-visible{outline:3px solid var(--maroon);outline-offset:3px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--navy);color:#fff;
+      padding:12px 20px;font-weight:700;z-index:50}
+.skip:focus{left:0}
+
+/* ---------------- screen chrome, none of it prints ---------------- */
+.top{background:var(--navy-deep);color:#fff;padding:34px 20px 30px}
+.top .wrap{max-width:900px;margin:0 auto}
+.eyebrow{font-family:var(--body);font-size:11px;font-weight:700;letter-spacing:.3em;
+         text-transform:uppercase;color:#E2C583;margin-bottom:12px}  /* 9.34:1 on navy-deep */
+.top h1{font-size:clamp(25px,5vw,36px);line-height:1.12;color:#fff}
+.top .sub{margin-top:11px;font-size:16px;color:#E4E7EE;max-width:62ch}  /* 14.6:1 */
+
+.btnrow{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}
+.sqbtn{display:inline-block;background:#fff;color:var(--maroon-dark);border:0;
+       font-family:var(--body);font-size:12px;font-weight:700;letter-spacing:.14em;
+       text-transform:uppercase;padding:13px 18px;border-radius:4px;cursor:pointer;
+       text-decoration:none;transition:background-color 160ms ease,color 160ms ease}
+.sqbtn:hover{background:#E2C583;color:var(--navy-deep)}
+.sqbtn.ghost{background:transparent;color:#fff;box-shadow:inset 0 0 0 1px #fff}
+.sqbtn.ghost:hover{background:#fff;color:var(--navy-deep)}
+
+.pick{background:#fff;border-bottom:1px solid var(--hair);padding:16px 20px}
+.pick .wrap{max-width:900px;margin:0 auto;display:flex;flex-wrap:wrap;
+            align-items:center;gap:12px}
+.pick label{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+            color:var(--muted)}
+.pick select{font-family:var(--body);font-size:15px;font-weight:600;color:var(--ink);
+             background:#fff;border:1px solid var(--navy);border-radius:4px;padding:9px 12px}
+.pick .cnt{font-size:14px;color:var(--muted)}
+
+.howto{max-width:900px;margin:22px auto 0;padding:0 20px}
+.howto .box{background:#fff;border:1px solid var(--hair);border-left:3px solid var(--maroon);
+            padding:18px 20px}
+.howto h2{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--maroon-dark);
+          font-family:var(--body);font-weight:700;margin-bottom:9px}
+.howto ol{margin:0;padding-left:20px;font-size:15px;color:var(--ink)}
+.howto li{margin-bottom:5px}
+.howto li:last-child{margin-bottom:0}
+
+.sheets{max-width:900px;margin:0 auto;padding:22px 20px 60px}
+
+/* ---------------- one competency, one page ---------------- */
+.pg{background:var(--card);border:1px solid var(--hair);padding:26px 24px 24px;
+    margin-bottom:20px}
+
+.phead{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;
+       border-bottom:1.5px solid var(--navy);padding-bottom:8px}
+.phead .runner{font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+               color:var(--maroon-dark)}
+.phead .who{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.phead .who .ln{display:inline-block;border-bottom:1px solid var(--muted);
+                width:130px;margin:0 14px 0 5px}
+
+.ptitle{display:flex;align-items:flex-start;gap:12px;margin-top:14px}
+.numbox{flex:none;width:46px;height:46px;border:1.5px solid var(--navy);
+        display:grid;place-items:center;font-family:var(--disp);font-weight:800;
+        font-size:20px;color:var(--navy)}
+.numbox.empty{color:transparent}
+.numlab{display:block;font-size:8px;font-weight:700;letter-spacing:.14em;
+        text-transform:uppercase;color:var(--muted);text-align:center;margin-top:3px}
+.ptitle h2{font-size:19px;line-height:1.25;color:var(--navy)}
+.ptitle .blankname{display:block;border-bottom:1px solid var(--navy);height:23px;width:100%;
+                   max-width:460px}
+.can{margin-top:9px;font-size:13.5px;line-height:1.45;color:var(--muted)}
+.can b{color:var(--maroon-dark);font-weight:700}
+
+.meta{display:flex;flex-wrap:wrap;gap:20px;align-items:center;margin-top:12px;
+      border-top:1px dotted var(--hair);border-bottom:1px dotted var(--hair);padding:9px 0}
+.meta span{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+           color:var(--muted);display:inline-flex;align-items:center;gap:7px}
+.tick{display:inline-block;width:13px;height:13px;border:1.2px solid var(--navy);
+      border-radius:2px;vertical-align:-2px}
+.meta .cl{display:inline-block;border-bottom:1px solid var(--muted);width:74px}
+
+/* the four spaces */
+.drawrule{margin-top:9px;font-size:11.5px;line-height:1.4;color:var(--maroon-dark);
+          border-left:2px solid var(--maroon);padding-left:9px}   /* 10.18:1 on white */
+.drawrule b{font-weight:800}
+
+.grid{display:grid;grid-template-columns:1.32fr 1fr;grid-template-rows:auto auto auto;
+      gap:10px;margin-top:12px}
+.sp{border:1.2px solid var(--navy);position:relative;padding:22px 11px 10px}
+.sp .lab{position:absolute;top:0;left:0;background:var(--navy);color:#fff;
+         font-size:9px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+         padding:3px 9px}                                        /* white on navy 18.04:1 */
+/* The hint sits at the BOTTOM right. At the top it collided with the label tab
+   in the narrow right hand column, which clipped "boxes and arrows" mid word. */
+.sp .hint{position:absolute;bottom:5px;right:9px;font-size:9px;font-style:italic;
+          color:var(--muted);letter-spacing:.01em;max-width:calc(100% - 18px);
+          text-align:right}
+.sp.draw{grid-column:1;grid-row:1 / span 2;min-height:330px}
+.sp.parts{grid-column:2;grid-row:1;min-height:160px}
+.sp.steps{grid-column:2;grid-row:2;min-height:160px}
+.sp.fails{grid-column:1 / span 2;grid-row:3;min-height:104px}
+.sp.fails .lab{background:var(--maroon)}                          /* white on maroon 7.66:1 */
+/* No rules in any box. These are drawing surfaces, and a ruled box invites a
+   paragraph, which is the exact thing this assignment is not. Blank white. */
+
+.foot{margin-top:11px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;
+      border-top:1px solid var(--hair);padding-top:7px}
+.foot p{font-size:9.5px;color:var(--muted);letter-spacing:.02em}
+
+.tail{max-width:900px;margin:0 auto;padding:0 20px 60px}
+.tail .box{background:#fff;border:1px solid var(--hair);padding:20px 22px}
+.tail h2{font-size:16px;color:var(--navy);margin-bottom:8px}
+.tail p{font-size:14.5px;color:var(--muted);margin-bottom:8px}
+.tail p:last-child{margin-bottom:0}
+
+@media (max-width:620px){
+  .grid{grid-template-columns:1fr}
+  .sp.draw{grid-column:1;grid-row:auto}
+  .sp.parts,.sp.steps{grid-column:1;grid-row:auto}
+  .sp.fails{grid-column:1;grid-row:auto}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important}
+}
+@media (forced-colors:active){
+  .sp,.numbox,.pg{border:1px solid CanvasText}
+  .sp .lab{border:1px solid CanvasText}
+}
+
+/* ================= PRINT: this is the deliverable ================= */
+@media print{
+  @page{size:letter portrait;margin:0.5in}
+  html,body{background:#fff}
+  body{font-size:10pt;color:#000}
+  .top,.pick,.howto,.tail,.skip,.btnrow{display:none!important}
+  .sheets{max-width:none;margin:0;padding:0}
+  .pg{border:0;padding:0;margin:0;break-after:page;page-break-after:always;
+      break-inside:avoid;page-break-inside:avoid;
+      height:9.9in;display:flex;flex-direction:column}
+  .pg:last-child{break-after:auto;page-break-after:auto}
+  .phead{border-bottom:1.2pt solid #000}
+  .phead .runner{color:#000;font-size:7.5pt}
+  .phead .who{color:#000;font-size:7.5pt}
+  .phead .who .ln{border-bottom:.7pt solid #000}
+  .numbox{border:1.2pt solid #000;color:#000;width:0.46in;height:0.46in;font-size:15pt}
+  .numlab{color:#000;font-size:6pt}
+  .ptitle h2{font-size:14.5pt;color:#000}
+  .ptitle .blankname{border-bottom:.8pt solid #000}
+  .can{color:#000;font-size:9.5pt}
+  .drawrule{color:#000;font-size:7.6pt;border-left:1.5pt solid #000;padding-left:6pt;margin-top:0.06in}
+  .can b{color:#000}
+  .meta{border-color:#000;color:#000}
+  .meta span{color:#000;font-size:8pt}
+  .meta .cl,.tick{border-color:#000}
+  .grid{flex:1;gap:0.10in;margin-top:0.10in;
+        grid-template-rows:1fr 1fr 0.80fr}
+  .sp{border:.9pt solid #000;padding:0.20in 0.08in 0.06in}
+  .sp.draw,.sp.parts,.sp.steps,.sp.fails{min-height:0}
+  .sp .lab{background:#000;color:#fff;font-size:6.6pt;padding:2pt 6pt;
+           -webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .sp .hint{color:#000;font-size:6.6pt;bottom:0.04in;right:0.08in}
+  .foot{border-top:.6pt solid #000;margin-top:0.07in}
+  .foot p{color:#000;font-size:6.8pt}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#sheets">Skip to the sheet</a>
+
+<header class="top"><div class="wrap">
+  <p class="eyebrow" id="eyebrow">BIO 005 &middot; Human Physiology &middot; Fall 2026</p>
+  <h1 id="h1">Your note sheet, already built.</h1>
+  <p class="sub" id="sub">One page per competency. Four blank boxes on each one, and every box gets drawn. Print it, or work on it in a tablet app. You are not building the sheet, you are drawing on it.</p>
+  <p class="btnrow">
+    <button class="sqbtn" type="button" id="printbtn">Print or save as PDF</button>
+    <a class="sqbtn ghost" id="compbtn" href="week-01-competencies.html" target="_top">The competencies behind it</a>
+    <a class="sqbtn ghost" href="assignment-notesheet.html" target="_top">How it is graded</a>
+  </p>
+</div></header>
+
+<div class="pick"><div class="wrap">
+  <label for="wk">Week</label>
+  <select id="wk"></select>
+  <span class="cnt" id="cnt"></span>
+</div></div>
+
+<div class="howto"><div class="box">
+  <h2>Before you print</h2>
+  <ol>
+    <li>Pick two pens you can tell apart. Pass one is the book, before any video. Pass two is a second colour, after the videos, into the same boxes.</li>
+    <li>Stop pass one while half of every box is still empty. That empty half is the point.</li>
+    <li><strong>All four boxes are drawings.</strong> Not just box 1. Box 2 is labels with lines out to the picture. Box 3 is little boxes with arrows between them in the order things happen. Box 4 follows those arrows to whatever stops.</li>
+    <li>Words are allowed inside the drawing. A sentence running the width of the box is not. If a box reads like a paragraph, redo it as a word picture.</li>
+  </ol>
+</div></div>
+
+<main id="sheets" class="sheets" aria-label="The note sheet"></main>
+
+<div class="tail"><div class="box">
+  <h2>Turning it in</h2>
+  <p>Photograph every page in order, in good light, flat on the table. Both colours have to be readable. Combine them into one PDF and upload that to the week&rsquo;s Canvas assignment.</p>
+  <p>Full submission and grading detail is on the <a href="assignment-notesheet.html" target="_top">note sheet assignment page</a>.</p>
+  <p>Dr. Sharilyn Rennie</p>
+</div></div>
+
+<script src="assets/bio005-sheet-data.js"></script>
+<script>
+(function(){
+  "use strict";
+  var DATA = window.BIO005_SHEET || {};
+
+  /* Week titles as students see them on the course pages. The data file carries
+     its own titles from the competency CSV; where the two disagree the student
+     facing one wins, because that is what Canvas shows. */
+  var SITE_TITLES = {
+    1:"How physiology works and what keeps you steady",
+    2:"The chemistry that does work in the body",
+    3:"Getting across the membrane",
+    4:"How cells talk, and the electrical signal",
+    5:"Synapses and central integration",
+    6:"Sensing the world, and the responses you do not control",
+    7:"Muscle, and how movement gets commanded",
+    8:"Hormones and reproduction, the slow control system",
+    9:"The heart as a pump",
+    10:"Pressure, flow, and holding blood pressure steady",
+    11:"Blood and how the body defends itself",
+    12:"Digestion, and how you use food for fuel",
+    13:"Breathing, gas transport, and the fast pH lever",
+    14:"The kidney and body fluid balance",
+    15:"The slow pH lever, and putting it all together"
+  };
+
+  function qs(k){
+    var m = new RegExp("[?&]" + k + "=([^&]*)").exec(window.location.search);
+    return m ? decodeURIComponent(m[1].replace(/\+/g," ")) : null;
+  }
+  function esc(s){
+    return String(s == null ? "" : s)
+      .replace(/&/g,"&amp;").replace(/</g,"&lt;")
+      .replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+  }
+
+  var BLANK = qs("blank") === "1";
+  var week  = parseInt(qs("week"), 10);
+  if (!(week >= 1 && week <= 15)) week = 1;
+
+  var sel = document.getElementById("wk");
+  for (var i = 1; i <= 15; i++){
+    var o = document.createElement("option");
+    o.value = i;
+    o.textContent = "Week " + i + ", " + (SITE_TITLES[i] || "");
+    sel.appendChild(o);
+  }
+  sel.value = week;
+  sel.addEventListener("change", function(){
+    var q = "?week=" + sel.value + (BLANK ? "&blank=1" : "");
+    window.location.search = q;
+  });
+
+  function pageHTML(it, n, wk){
+    var num  = BLANK ? '<span class="numbox empty">0</span>'
+                     : '<span class="numbox">' + n + '</span>';
+    var name = BLANK ? '<span class="blankname" aria-label="Write the concept name here"></span>'
+                     : esc(it.name);
+    var can  = BLANK
+      ? '<span class="blankname" aria-label="Write the competency here"></span>'
+      : esc(it.can);
+
+    return '' +
+    '<article class="pg">' +
+      '<div class="phead">' +
+        '<span class="runner">BIO 005 &middot; Week ' + wk + ' &middot; Note sheet</span>' +
+        '<span class="who">Name<span class="ln"></span>Date<span class="ln" style="width:88px"></span></span>' +
+      '</div>' +
+
+      '<div class="ptitle">' +
+        '<span>' + num + '<span class="numlab">' + (BLANK ? "No." : "Comp") + '</span></span>' +
+        '<span style="flex:1"><h2>' + name + '</h2>' +
+        '<p class="can"><b>You should be able to:</b> ' + can + '</p></span>' +
+      '</div>' +
+
+      '<div class="meta">' +
+        '<span>Prompt <i class="tick" aria-hidden="true"></i> A <i class="tick" aria-hidden="true"></i> B</span>' +
+        '<span>Pass 1 colour <i class="cl" aria-hidden="true"></i></span>' +
+        '<span>Pass 2 colour <i class="cl" aria-hidden="true"></i></span>' +
+        (it.lab ? '<span>Also a lab skill</span>' : '') +
+      '</div>' +
+
+      '<p class="drawrule">Every one of these boxes is <b>drawn</b>. If you need words, ' +
+      'they go inside little boxes with arrows between them, in the order things happen. ' +
+      'Sentences running across the page do not count.</p>' +
+
+      '<div class="grid">' +
+        '<div class="sp draw"><span class="lab">1 &middot; Draw it</span>' +
+          '<span class="hint">a picture, not a paragraph</span></div>' +
+        '<div class="sp parts"><span class="lab">2 &middot; Label every part</span>' +
+          '<span class="hint">lines out to the drawing</span></div>' +
+        '<div class="sp steps"><span class="lab">3 &middot; What happens, in order</span>' +
+          '<span class="hint">boxes and arrows, step to step</span></div>' +
+        '<div class="sp fails"><span class="lab">4 &middot; What breaks if this fails</span>' +
+          '<span class="hint">follow the arrows to what stops</span></div>' +
+      '</div>' +
+
+      '<div class="foot">' +
+        '<p>Pass 1 from the book, before the video. Pass 2 in the second colour, after it, in the same boxes.</p>' +
+        '<p>Dr. Sharilyn Rennie</p>' +
+      '</div>' +
+    '</article>';
+  }
+
+  var w = DATA[week];
+  var host = document.getElementById("sheets");
+  var title = SITE_TITLES[week] || (w && w.title) || "";
+
+  if (!w || !w.items || !w.items.length){
+    host.innerHTML = '<div class="pg"><p class="can">The competency list for Week ' + week +
+                     ' is not loaded. Open the week page in Canvas.</p></div>';
+  } else {
+    var out = [];
+    for (var k = 0; k < w.items.length; k++) out.push(pageHTML(w.items[k], k + 1, week));
+    host.innerHTML = out.join("");
+  }
+
+  document.getElementById("eyebrow").innerHTML =
+    "BIO 005 &middot; Week " + week + " &middot; " + esc(title);
+  document.getElementById("h1").textContent = BLANK
+    ? "Blank note sheet."
+    : "Your Week " + week + " note sheet, already built.";
+  document.getElementById("cnt").textContent = w && w.items
+    ? w.items.length + (w.items.length === 1 ? " competency, " : " competencies, ") +
+      w.items.length + " printed pages"
+    : "";
+  document.title = "BIO 005 Week " + week + " note sheet";
+
+  var cb = document.getElementById("compbtn");
+  if (week === 1){
+    cb.href = "week-01-competencies.html";
+  } else {
+    cb.href = "competency-study-guide.html?week=" + week;
+  }
+
+  document.getElementById("printbtn").addEventListener("click", function(){
+    window.print();
+  });
+
+  /* Height sender, so Canvas can size the frame. */
+  var ID = "bio005-note-sheet";
+  function send(){
+    var h = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+    try { window.parent.postMessage({ id:ID, frameId:ID, type:"resize", height:h }, "*"); } catch(e){}
+  }
+  window.addEventListener("load", send);
+  window.addEventListener("resize", send);
+  if (typeof ResizeObserver !== "undefined"){ try { new ResizeObserver(send).observe(document.body); } catch(e){} }
+  send(); setTimeout(send, 400); setTimeout(send, 1500);
+})();
+</script>
+</body>
+</html>

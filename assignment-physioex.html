@@ -108,7 +108,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
   <p class="wk"><span data-wk>Week 1</span> &middot; <span data-wt>How physiology works and what keeps you steady</span></p>
 </div></header>
 
-<div class="meta"><div class="wrap"><span class="chip g">Graded</span><span class="chip">Part of 15% of your grade</span><span class="chip ai">Hand written</span><span class="chip">One sheet, all of the week's activities</span></div></div>
+<div class="meta"><div class="wrap"><span class="chip g">Graded</span><span class="chip">Part of 15% of your grade</span><span class="chip ai">Hand written</span><span class="chip">One sheet, all of the week's activities</span><span class="chip">Due <span data-due>Sunday September 13</span>, 11:59 pm</span></div></div>
 
 <main id="main"><div class="wrap">
 <section>
@@ -118,6 +118,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
     <p><strong>There is no PhysioEx this week.</strong> <span data-noexwhy>PhysioEx does not have an exercise that fits this material.</span> Your lab for <span data-wk>Week 1</span> is <strong><a data-noexlab href="course-materials.html" target="_top">listed in the week page</a></strong> instead.</p>
     <p>The sheet and the deadline do not change. Everywhere below that says "activity," read it as one part of that lab.</p>
   </div>
+  <div class="box" data-exhost hidden>
+    <span class="tab">In Mastering this week</span>
+    <p><strong data-extext></strong></p>
+    <p>Assigned in Mastering as one item for the week. Find it by activity name, not by number, because Pearson renumbers.</p>
+  </div>
+  <p class="note" data-labnote></p>
   <p><strong>One sheet a week, covering everything you ran.</strong> If <span data-wk>Week 1</span> has six <span data-lab>PhysioEx</span> activities, you do not write six reports. You write one, and it accounts for all six together.</p>
   <p><span data-labcap>PhysioEx</span> is where you generate the data. This sheet is where you say what the week's set of experiments, taken together, actually showed you. It is handwritten, and it is an analysis rather than a data dump.</p>
   <p>Due <span class="due">Sunday at 10:00 pm</span>, the Sunday that closes <span data-wk>Week 1</span>. Up to 24 hours late is an automatic 50 percent reduction. After 24 hours it is a zero.</p>
@@ -193,6 +199,59 @@ footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
   /* ONE FILE, FIFTEEN WEEKS. The week comes from the URL: add ?week=3 to the
      iframe src in Canvas and this page relabels itself. Nothing to edit here
      week to week, and nothing to re-upload. */
+
+  /* ==================================================================
+     THE PEARSON BUILD SHEET, from Scrubs, September 6.
+
+     One row per week. ex is what gets assigned in Mastering. Where ex is
+     null there is no PhysioEx exercise that fits, and alt names the lab
+     that runs instead, which is a real page in this repo.
+
+     Every week opens Monday and closes Sunday 11:59 pm, except Week 1,
+     which opens Tuesday September 8, and Week 15, which closes Wednesday
+     December 16 with the term.
+
+     All twelve exercises get used across the term. Ex 4, 8, 10 and 12 are
+     deliberately split across two weeks each, where their activities
+     belong physiologically.
+     ================================================================== */
+  var LABS = [
+    {due:"Sunday September 13", ex:null,
+     note:"Graphing and experimental design."},
+    {due:"Sunday September 20",
+     ex:"Exercise 8, the amylase activity only. Enzyme activity against temperature and pH.",
+     note:"Pepsin and lipase are held for Week 12."},
+    {due:"Sunday September 27",
+     ex:"Exercise 1, all five activities. Simple diffusion, facilitated diffusion, osmotic pressure, filtration, active transport."},
+    {due:"Sunday October 4",
+     ex:"Exercise 3, all activities. Resting potential, threshold, blocking the action potential, conduction velocity, synaptic transmission."},
+    {due:"Sunday October 11", ex:null,
+     note:"You run this one on yourself, at home."},
+    {due:"Sunday October 18",
+     ex:"Exercise 2, all activities. Twitch, stimulus voltage, treppe, summation, tetanus, fatigue, length tension, isotonic contraction."},
+    {due:"Sunday October 25",
+     ex:"Exercise 4, the glucose and insulin activity plus hormone replacement. Then Exercise 12, the ELISA activity, as the hormone immunoassay."},
+    {due:"Sunday November 1", ex:null,
+     note:"The cycle is the clearest positive feedback loop in the body, so you work it on paper."},
+    {due:"Sunday November 8",
+     ex:"Exercise 6, all activities. Refractory period, vagal stimulation, autonomic modifiers, temperature, ions."},
+    {due:"Sunday November 15",
+     ex:"Exercise 5, all activities. Vessel radius, viscosity, length, pressure, pump mechanics."},
+    {due:"Sunday November 22",
+     ex:"Exercise 11. Hematocrit, ESR, hemoglobin, blood typing.",
+     note:"Add the Exercise 12 agglutination activity if it was not used in Week 7."},
+    {due:"Sunday November 29",
+     ex:"Exercise 8, the pepsin and lipase activities. Then Exercise 4, the metabolism and BMR activity.",
+     note:"Thanksgiving week. The deadline holds."},
+    {due:"Sunday December 6",
+     ex:"Exercise 7, all activities. Volumes and FEV1, comparative spirometry, surfactant and pneumothorax. Then Exercise 10, hyperventilation and rebreathing."},
+    {due:"Sunday December 13",
+     ex:"Exercise 9, all activities. Filtration, urine concentration, glucose carriers, ADH and aldosterone."},
+    {due:"Wednesday December 16",
+     ex:"Exercise 10, the renal and metabolic compensation activities.",
+     note:"Last week of the term, so this one closes Wednesday with everything else."}
+  ];
+
   var TITLES = ["How physiology works and what keeps you steady", "The chemistry that does work in the body", "Getting across the membrane", "The action potential", "The nervous system, from sensing to moving", "How muscle makes force", "Hormones, the slow control system", "Reproduction, and the clearest positive feedback loop", "The heart as a pump", "Pressure, flow, and holding blood pressure steady", "Blood, and how the body defends itself", "Digestion, and how you use food for fuel", "Breathing, gas transport, and blood pH", "The kidney, and body fluid balance", "The slow lever on pH, and putting it all together"];
   /* THE THREE WEEKS WITH NO PHYSIOEX.
      PhysioEx 10.0 has no homeostasis/graphing exercise (Wk 1), no sensory
@@ -224,6 +283,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
   document.querySelectorAll("[data-wt]").forEach(function(n){ n.textContent = TITLES[w-1]; });
   document.title = document.title.replace("Week 1", "Week " + w);
 
+
+
   var nx = NOEX[w];
   document.querySelectorAll("[data-noex]").forEach(function(n){ n.hidden = !nx; });
   document.querySelectorAll("[data-ex]").forEach(function(n){ n.hidden = !!nx; });
@@ -238,6 +299,22 @@ footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
     document.querySelectorAll("[data-s2t]").forEach(function(n){ n.textContent = nx.s2t; });
     document.querySelectorAll("[data-s2b]").forEach(function(n){ n.textContent = nx.s2b; });
   }
+
+  /* ---- paint this week's Mastering assignment ----
+     NOEX above owns weeks 1, 5 and 8, including the box, the reason and the
+     alternate lab. This only fills in what NOEX has no opinion about: the
+     due date, the exercise text for the twelve weeks that have one, and the
+     per week note. */
+  (function(){
+    var L = LABS[w-1]; if (!L) return;
+    document.querySelectorAll("[data-due]").forEach(function(n){ n.textContent = L.due; });
+    if (L.ex) {
+      var host = document.querySelector("[data-exhost]");
+      if (host) { host.hidden = false; host.querySelector("[data-extext]").textContent = L.ex; }
+    }
+    var nn = document.querySelector("[data-labnote]");
+    if (nn) { if (L.note) { nn.textContent = L.note; } else { nn.hidden = true; } }
+  })();
 })();
 (function(){
   var ID = "bio005-assignment";

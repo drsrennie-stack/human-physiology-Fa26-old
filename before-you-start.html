@@ -198,7 +198,13 @@
     --font-display:'Open Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     --font-body:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     --font-eyebrow:'Plus Jakarta Sans',-apple-system,sans-serif;
-  }
+  
+  /* Rebrand leftovers. These two were used all over this page but their
+     definitions went away with the old palette, so every rule that read
+     them fell back to nothing: white text on a transparent button, for
+     one. Mapped onto the MedMasters maroon, which is what they meant. */
+  --terra:#8B3A2E;
+}
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
   body{margin:0;background:var(--white);color:var(--navy);font-family:var(--font-body);font-size:16.5px;line-height:1.62;font-style:normal;-webkit-font-smoothing:antialiased}

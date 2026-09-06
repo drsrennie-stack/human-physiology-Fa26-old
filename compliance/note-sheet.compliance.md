@@ -1,0 +1,156 @@
+# Accessibility compliance notes
+
+## 1. Project
+
+BIO 005 Human Physiology, Yuba College, Fall 2026.
+
+Files covered:
+
+- `note-sheet.html` (the printable competency note sheet, `?week=1` to `?week=15`, `?blank=1`)
+- `competencies-by-week.html` (all 268 competencies grouped by teaching week)
+- `course-start.html` (midterm rows added to Weeks 6, 11, 15)
+- `week-01-competencies.html` (header buttons rewired)
+- `assignment-notesheet.html` (rewired, and undefined palette tokens repaired)
+- `syllabus-fall2026.html` (three midterm windows written in)
+- `course-materials.html` (sheet link rewired)
+- `bio005-dock.js` and its three copies (dim tile subtitle contrast)
+
+Date: September 6, 2026.
+Reviewer: Dr. Sharilyn Rennie.
+
+## 2. WCAG version and level
+
+WCAG 2.2. Level AA is the floor and is met on every file above. Level AAA for
+contrast (1.4.6) is met on every measured text and background pair on these
+files. Measurements are composited values read out of a rendered Chromium page,
+not values read off a stylesheet.
+
+## 3. Colour contrast audit
+
+Every pair below was measured, not estimated.
+
+### note-sheet.html
+
+| Text | Background | Ratio | Level |
+|---|---|---|---|
+| White heading | Navy-deep #060A18 | 19.73:1 | AAA |
+| Gold eyebrow #E2C583 | Navy-deep #060A18 | 9.34:1 | AAA |
+| Body #E4E7EE | Navy-deep #060A18 | 14.60:1 | AAA |
+| Navy #0B1530 competency name | White | 18.04:1 | AAA |
+| Muted #454B58 competency text | White | 8.75:1 | AAA |
+| White space label | Navy #0B1530 tab | 18.04:1 | AAA |
+| White space label | Maroon #8B3A2E tab | 7.66:1 | AAA |
+| Maroon-dark #6E2D24 button text | White | 10.18:1 | AAA |
+
+Printed sheet is black on white throughout. The four boxes have no rule lines
+in them by design: they are drawing surfaces, and a ruled box invites the
+paragraph the assignment is trying to prevent. Box borders are structural, not
+information carrying, and are drawn in black against white, clearing the 3:1
+non-text minimum of 1.4.11 with room to spare.
+
+| Text | Background | Ratio | Level |
+|---|---|---|---|
+| Maroon-dark #6E2D24 drawing rule | White | 10.18:1 | AAA |
+
+### competencies-by-week.html
+
+| Text | Background | Ratio | Level |
+|---|---|---|---|
+| Navy #0B1530 | White | 18.04:1 | AAA |
+| Maroon-dark #6E2D24 numbers and eyebrows | White | 10.18:1 | AAA |
+| Muted #454B58 competency wording | White | 8.75:1 | AAA |
+| Maroon-dark #6E2D24 Lab tag | Gold-pale #F7EFD9 | 8.83:1 | AAA |
+
+### course-start.html, new midterm rows
+
+| Text | Background | Ratio | Level |
+|---|---|---|---|
+| Maroon-dark #6E2D24 label | Gold-pale #F7EFD9 | 8.83:1 | AAA |
+| Maroon-dark #6E2D24 link | Gold-pale #F7EFD9 | 8.83:1 | AAA |
+| #3B4150 description | Gold-pale #F7EFD9 | 10.06:1 | AAA |
+
+Both of those last two were changed for this reason. The page default link
+maroon measured 6.60:1 on the pale gold and the default description grey
+measured 6.81:1. Both clear AA, both miss AAA, so the exam row overrides them.
+
+## 4. Defects found by measurement and fixed
+
+1. **`--terra` and `--terra-dark` were undefined on eleven pages**, left behind
+   by the MedMasters rebrand. Every rule reading them fell back to nothing. On
+   `assignment-notesheet.html` the primary button was white text on a
+   transparent background, measured 1.04:1, invisible on the page. Both tokens
+   are now defined as the MedMasters maroon #8B3A2E and #6E2D24. Pages
+   repaired: anatomy-review, assignment-notesheet, before-you-start,
+   competency-study-guide, unit-01 through unit-05, unit-05-standalone,
+   week-01.
+2. **Dock tile subtitle on a not-yet-open tile** was #98A3B4 on the tile
+   background, measured 5.95:1, under the 4.5:1 AA floor only for its size
+   class and under AAA outright. Now #AEB8C6 at 7.57:1. Fixed in all four
+   copies of `bio005-dock.js`.
+3. **Box hints collided with their labels.** In the narrow right hand column
+   the italic hint sat at the top right and overlapped the label tab, clipping
+   "boxes and arrows" mid word. Hints now sit at the bottom right of each box.
+   Verified with `scrollWidth` against `clientWidth` on every label and hint on
+   the page: zero clipped.
+
+## 5. Keyboard navigation
+
+Verified on `note-sheet.html` and `competencies-by-week.html`:
+
+- Skip link is the first focusable element and reveals on focus.
+- Tab order runs skip link, print button, the two header links, the week
+  select, then the document. Nothing is reachable that is not operable.
+- The week select is a real `<select>`, so it works with arrow keys and with
+  the browser's own type-ahead.
+- The print button is a real `<button>` and fires on both Enter and Space.
+- Focus indicator is a 3px maroon outline at 3px offset, visible against every
+  surface on both pages.
+- No keyboard trap. No `tabindex` above 0 anywhere on either page.
+- Both pages fully usable with no pointing device.
+
+## 6. Screen reader and structure
+
+Verified programmatically, not with a live reader:
+
+- One `h1` per page, heading levels descend without skipping.
+- Landmarks present: `main` on both new pages, `header` on both, plus the skip
+  target.
+- Every competency page in the sheet is an `article`, so a reader can jump
+  page to page.
+- The four spaces carry visible text labels, not colour or position alone,
+  which is 1.3.3 and 1.4.1.
+- Decorative marks (the tick squares, the colour rules) carry
+  `aria-hidden="true"` so they are not announced as content.
+- `aria-label` on the blank name and competency rules of the blank variant, so
+  a reader hears what belongs on the line.
+- The visually hidden dock status region (`.bd-live`) is clipped to 1px by
+  design. An automated contrast check reports it as 1:1. It is
+  screen-reader-only text and is exempt from 1.4.3, so this is a false
+  positive, not a defect.
+
+**Not yet done: a live screen reader pass.** Nothing on these pages has been
+driven with VoiceOver or NVDA. That is the open item for this project.
+
+## 7. Reflow, motion, forced colours
+
+- Reflow verified at 320, 375, 768, 1024 and 1440 px. No horizontal scrolling
+  at any width on any file listed in section 1. The four spaces collapse to a
+  single column below 620px.
+- `prefers-reduced-motion: reduce` cancels all transitions.
+- `forced-colors: active` gives every box, tag and label a `CanvasText`
+  border so nothing disappears in Windows High Contrast.
+- Zero external network requests on every page. Fonts are self-hosted from
+  `assets/fonts-site.css`.
+- Zero console errors on every page at every width.
+
+## 8. Known limitations and remediation plan
+
+| Item | Where | Plan |
+|---|---|---|
+| No live screen reader pass | Every file | Run VoiceOver on Safari and NVDA on Firefox before Week 1 opens |
+| `.rd-box-kicker` 6.02:1, `.rd-box-tag` 6.75:1 | unit-01 to unit-05, before-you-start | Pre-existing, clears AA, misses AAA. Darken the box grounds on the next pass at the unit pages |
+| Print colour fidelity | note-sheet.html | Black on white by design so it prints on a mono laser. Not a defect |
+
+## 9. Reviewer
+
+Dr. Sharilyn Rennie

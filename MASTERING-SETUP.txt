@@ -1,0 +1,22 @@
+MASTERING SETUP NOTES  (instructor only, not on any student page)
+=================================================================
+From your build sheet, kept here so it does not get lost:
+
+- Assign activities BY NAME from the Item Library, not by number.
+  Pearson renumbers occasionally.
+- Each activity has an assignable pre-lab and post-lab quiz. The credit
+  model grades these mostly on completion, with mastery verified on the
+  midterm teach-backs instead.
+- One assignment per week, named plainly, e.g. "Week 03 Lab · Membranes",
+  so the Mastering list reads in order.
+- All 12 exercises get used across the term. Ex 4, 8, 10 and 12 are
+  deliberately split across two weeks each, where their activities belong
+  physiologically.
+
+Every week opens Monday and closes Sunday 11:59 pm, except Week 1 which
+opens Tuesday September 8, and Week 15 which closes Wednesday December 16
+with the term.
+
+WHERE THE DATA LIVES NOW: the LABS array at the bottom of
+assignment-physioex.html, and a short EX list in course-start.html so the
+week entry names the exercise. Change a week in both if you move one.

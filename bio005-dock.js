@@ -589,7 +589,7 @@
 '.bd-tile.soon{background:rgba(255,255,255,.035);border-color:rgba(255,255,255,.09);cursor:default}',
 '.bd-tile.soon:hover{transform:none;background:rgba(255,255,255,.035);border-color:rgba(255,255,255,.09)}',
 '.bd-tile.soon .bd-n{color:#C3CAD6}',
-'.bd-tile.soon .bd-s{color:#98A3B4;opacity:1}',
+'.bd-tile.soon .bd-s{color:#AEB8C6;opacity:1}',   /* was #98A3B4 at 5.95:1 on the tile, under AA for small text. 7.57:1 now. */
 '.bd-tile.soon .bd-ic{filter:grayscale(.75)}',
 '.bd-soon{display:inline-block;margin-left:7px;font-size:9.5px;font-weight:800;letter-spacing:.08em;white-space:nowrap;',
 '  text-transform:uppercase;color:#0B1530;background:#C3CAD6;border-radius:999px;padding:2px 7px;vertical-align:1px}',

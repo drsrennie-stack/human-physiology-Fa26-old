@@ -153,6 +153,15 @@ img,svg{max-width:100%}
       padding:11px 17px;border-bottom:1px solid var(--hair-soft)}
 .now .slot{border-color:rgba(250,250,249,.1)}
 .slot:last-child{border-bottom:0}
+.slot-exam{background:#F7EFD9}                 /* navy on it 15.99:1, maroon-dark 8.83:1 */
+.slot-exam .sk{color:#6E2D24}                  /* 8.83:1 */
+/* The default link maroon is 6.60:1 on this pale gold and the default desc grey
+   is 6.81:1. Both clear AA and both miss AAA, so on the exam row only they step
+   down to the darker pair. */
+.slot-exam .sv > a{font-weight:800;color:#6E2D24}        /* 8.83:1 */
+.slot-exam .sv .desc{color:#3B4150}                      /* 10.06:1 */
+.now .slot-exam{background:rgba(226,197,131,.14)}
+@media (forced-colors:active){ .slot-exam{border:1px solid CanvasText} }
 .sk{font-family:var(--body);font-size:9.5px;font-weight:700;letter-spacing:.18em;
     text-transform:uppercase;color:var(--faint)}
 .now .sk{color:rgba(250,250,249,.72)}
@@ -307,7 +316,8 @@ footer :focus-visible{outline-color:var(--gold)}
       watch:      {u:"concept-videos-week01.html", t:"Week 1 lecture videos", d:"Short segments. Play straight through or take one concept at a time."},
       deck:       {u:"slides-p-mission-01-maintain-control.html", t:"Mission 1, Maintain Control", d:"The full deck, one slide at a time. Open it on your phone and draw on it."},
       read:       {u:"week-01.html", t:"Written notes for Week 1", d:"The whole week written out. Prints cleanly if you would rather work on paper."},
-      sheet:      {u:"week-01-competencies.html", t:"Week 1 competencies and prompts", d:"Twenty competencies, two prompts each. Set it up before you watch, answer it after, second colour."},
+      sheet:      {u:"note-sheet.html?week=1", t:"Print your Week 1 note sheet", d:"Eighteen competencies, one printed page each, four labelled spaces on every page. Pass one before you watch, pass two in a second colour after.",
+                   also:{u:"week-01-competencies.html", t:"The competencies and their prompts"}},
       problems:   {u:"assignment-bookproblems.html?week=1", t:"Silverthorn chapters 1 and 6", d:"End of chapter problems. Work them on paper before you check the back."},
       ailog:      {u:"ai-work-log.html?week=1", t:"Problem log", d:"Solve it by hand, write down where each piece came from, then check it with AI. Fill it in as you work."},
       lab:        {u:"assignment-physioex.html?week=1", t:"Lab analysis, Week 1", d:"There is no PhysioEx exercise that fits Week 1, so the lab is the clinical correlations IV fluids lab. Same sheet, same deadline.",
@@ -354,16 +364,40 @@ footer :focus-visible{outline-color:var(--gold)}
                  d:"Dates, what is coming, and where this week's reading is until the full page is up." };
     }
     if (!w.sheet) {
-      w.sheet = { u:"assignment-notesheet.html" + q, t:"Note sheet for Week " + w.n,
-                  d:"How to build it, the two colour rule, and the rubric it is graded against." };
+      /* The sheet is built for them now, one page per competency with four
+         labelled spaces. They print it, they do not construct it. */
+      w.sheet = { u:"note-sheet.html" + q, t:"Print your Week " + w.n + " note sheet",
+                  d:"Already built, one page per competency. Two passes, two colours, into the same boxes.",
+                  also:{ u:"assignment-notesheet.html" + q, t:"How it is graded" } };
     }
     if (!w.problems) {
       w.problems = { u:"assignment-bookproblems.html" + q, t:"Book problems, Week " + w.n,
                      d:"How to work them and how AI may be used on them." };
     }
+    /* The Pearson build sheet, so the slot names the actual exercise. */
+    var EX = [null,
+      "Exercise 8, amylase only",
+      "Exercise 1, all five activities",
+      "Exercise 3, all activities",
+      null,
+      "Exercise 2, all activities",
+      "Exercise 4 plus Exercise 12, ELISA",
+      null,
+      "Exercise 6, all activities",
+      "Exercise 5, all activities",
+      "Exercise 11, plus Exercise 12 if unused",
+      "Exercise 8, pepsin and lipase, plus Exercise 4, BMR",
+      "Exercise 7 plus Exercise 10, hyperventilation",
+      "Exercise 9, all activities",
+      "Exercise 10, compensation activities"];
+    var NOEXALT = {1:"the fluid homeostasis workbook runs instead",
+                   5:"the at home sensory and reflex lab runs instead",
+                   8:"the hormone cycle worksheet runs instead"};
     if (!w.lab) {
+      var ex = EX[w.n - 1];
       w.lab = { u:"assignment-physioex.html" + q, t:"Lab analysis, Week " + w.n,
-                d:"One handwritten sheet covering everything you ran. The manual has the procedures." };
+                d: ex ? ("PhysioEx in Mastering: " + ex + ". One handwritten sheet covers everything you ran.")
+                      : ("No PhysioEx this week, " + NOEXALT[w.n] + ". Same sheet, same deadline.") };
     }
     if (!w.discussion) {
       w.discussion = { u:"assignment-discussion.html" + q, t:"Discussion, Week " + w.n,
@@ -384,8 +418,27 @@ footer :focus-visible{outline-color:var(--gold)}
     ["problems",   "Problems"],
     ["lab",        "Lab"],
     ["discussion", "Discussion"],
-    ["ailog",      "Problem log"]
+    ["ailog",      "Problem log"],
+    ["exam",       "Midterm"]
   ];
+
+  /* ---- the three midterm windows, set Sep 6 2026 -------------------
+     Each one runs Monday 8 am to Sunday 10 pm inside the week named here,
+     so it never collides with Thanksgiving and Midterm 3 closes with the
+     term. Midterm 2 closes the day after the November 21 W deadline on
+     purpose: grades post Wednesday November 18 for the drop decision. */
+  var EXAMS = {
+    6:  { t:"Midterm 1, Weeks 1 to 5",
+          d:"Window opens Monday October 12 at 8 am and closes Sunday October 18 at 10 pm. Draw and teach on video, no notes. This week your book problems and lab move to the following Sunday." },
+    11: { t:"Midterm 2, Weeks 6 to 10",
+          d:"Window opens Monday November 16 at 8 am and closes Sunday November 22 at 10 pm. Every grade posts Wednesday November 18, before the November 21 drop deadline. Book problems and lab move to the following Sunday." },
+    15: { t:"Midterm 3, Weeks 11 to 15",
+          d:"Window opens Monday December 14 at 8 am and closes Wednesday December 16 at 10 pm, when the term ends. Not cumulative. Nothing else is due this week." }
+  };
+  WEEKS.forEach(function(w){
+    var e = EXAMS[w.n];
+    if (e) w.exam = { u:"syllabus-fall2026.html#exam-dates", t:e.t, d:e.d };
+  });
 
   /* ---- which week is it ---- */
   var STARTS = [
@@ -412,11 +465,16 @@ footer :focus-visible{outline-color:var(--gold)}
       if (it.d) v += '<span class="desc">' + esc(it.d) + '</span>';
       if (it.also) v += '<span class="desc"><a href="' + esc(it.also.u) + '" target="_top">' + esc(it.also.t) + '</a></span>';
     }
-    return '<div class="slot"><span class="sk">' + esc(label) + '</span><span class="sv">' + v + '</span></div>';
+    var cls = "slot" + (key === "exam" ? " slot-exam" : "");
+    return '<div class="' + cls + '"><span class="sk">' + esc(label) + '</span><span class="sv">' + v + '</span></div>';
   }
 
   function slotsHTML(w){
-    return '<div class="slots">' + SLOTS.map(function(s){ return slotHTML(w, s[0], s[1]); }).join("") + '</div>';
+    /* Twelve of the fifteen weeks have no midterm in them. Those weeks drop the
+       row entirely rather than printing "posted when the week opens", which
+       would read as an exam nobody has scheduled yet. */
+    var keys = SLOTS.filter(function(s){ return s[0] !== "exam" || w.exam; });
+    return '<div class="slots">' + keys.map(function(s){ return slotHTML(w, s[0], s[1]); }).join("") + '</div>';
   }
 
   function summaryHTML(w, isNow){

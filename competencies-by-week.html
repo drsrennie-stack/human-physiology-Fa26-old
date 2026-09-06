@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BIO 005 &middot; All 268 competencies, by week</title>
+<link rel="icon" type="image/svg+xml" href="icon.svg">
+<link rel="stylesheet" href="assets/fonts-site.css">
+<!--
+  ============================================================
+  BIO 005 Human Physiology, Yuba College, Fall 2026
+  competencies-by-week.html
+
+  All 268 competencies, grouped by the week they are taught.
+
+  The existing BIO005-Fall2026-Competency-Packet.pdf groups the
+  same 268 by unit, which is the right shape for an equivalency
+  review at another college. This one groups them by week, which
+  is the shape a student needs when the question is "what is on
+  this week and what is not". Same 268, same ids, nothing added
+  and nothing dropped.
+
+  Week 1 is the curated ch1 + ch6 + skills set from
+  week-01-competencies.html. Weeks 2 to 15 come from
+  bio005-competencies-3midterms.csv, the Aug 24 decision of
+  record. Both are read from assets/bio005-sheet-data.js so this
+  page can never drift from the note sheets.
+
+  Prints to PDF for Canvas. Screen version is iframe safe.
+  ============================================================
+-->
+<style>
+:root{
+  --navy:#0B1530;--navy-deep:#060A18;--maroon:#8B3A2E;--maroon-dark:#6E2D24;
+  --gold-deep:#8A6D33;--gold-pale:#F7EFD9;
+  --muted:#454B58;--hair:#D8DBE2;--page:#FAFAF9;
+  --disp:'Open Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --body:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;max-width:100%;overflow-x:hidden}
+body{background:var(--page);color:var(--navy);font-family:var(--body);
+     line-height:1.55;font-size:16px;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--disp);margin:0;font-weight:800;letter-spacing:-.02em}
+p{margin:0 0 12px;max-width:76ch}
+a{color:var(--maroon-dark);font-weight:700}
+:focus-visible{outline:3px solid var(--maroon);outline-offset:3px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--navy);color:#fff;
+      padding:12px 20px;font-weight:700;z-index:50}
+.skip:focus{left:0}
+.wrap{max-width:880px;margin:0 auto;padding:0 24px}
+
+.cover{background:#fff;border-bottom:1px solid var(--hair);padding:56px 0 40px}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;
+         color:var(--maroon-dark);margin:0 0 16px}
+.cover h1{font-size:clamp(34px,6.4vw,50px);line-height:1.05;margin-bottom:16px}
+.cover .sub{font-size:17px;font-weight:700;margin-bottom:4px}
+.cover .subq{font-size:16px;color:var(--muted);margin-bottom:4px}
+.cover .lede{margin-top:26px;border-top:1px solid var(--hair);padding-top:20px}
+.sig{margin-top:22px;color:var(--muted);font-size:15px}
+
+.mt{margin-top:44px;border-top:2px solid var(--maroon);padding-top:14px}
+.mt .mlab{font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;
+          color:var(--maroon-dark)}
+.mt h2{font-size:24px;margin-top:4px}
+.mt .mmeta{font-size:15px;color:var(--muted);margin-top:5px}
+
+.wk{margin-top:30px}
+.wk h3{font-size:19px;line-height:1.25}
+.wk h3 .wn{color:var(--maroon);font-variant-numeric:tabular-nums;margin-right:10px}
+.wmeta{font-size:13.5px;color:var(--muted);margin:4px 0 10px}
+ol.comps{list-style:none;margin:0;padding:0;counter-reset:c}
+ol.comps li{display:grid;grid-template-columns:44px 1fr;gap:12px;padding:9px 0;
+            border-top:1px solid var(--hair);break-inside:avoid;page-break-inside:avoid}
+ol.comps li:first-child{border-top:1.5px solid var(--navy)}
+.cn{font-family:var(--disp);font-weight:800;font-size:14px;color:var(--maroon-dark);
+    font-variant-numeric:tabular-nums;padding-top:2px}
+.cname{font-weight:700;font-size:15.5px;display:block}
+.ccan{font-size:14.5px;color:var(--muted);display:block;margin-top:2px;max-width:none}
+.tag{display:inline-block;font-size:9.5px;font-weight:700;letter-spacing:.14em;
+     text-transform:uppercase;background:var(--gold-pale);color:var(--maroon-dark);
+     padding:2px 7px;border-radius:3px;margin-left:8px;vertical-align:2px}
+
+.foothelp{margin:44px 0 60px;background:#fff;border:1px solid var(--hair);
+          border-left:3px solid var(--maroon);padding:18px 20px}
+.foothelp h2{font-size:16px;margin-bottom:8px}
+
+@media (forced-colors:active){ .tag,.foothelp{border:1px solid CanvasText} }
+@media print{
+  @page{size:letter portrait;margin:0.62in}
+  html,body{background:#fff}
+  body{font-size:10pt;color:#000}
+  .skip{display:none}
+  .wrap{max-width:none;padding:0}
+  .cover{border:0;padding:0 0 24pt;break-after:page;page-break-after:always}
+  .cover h1{font-size:30pt}
+  .eyebrow,.cn,.cname,.wk h3 .wn,.mt .mlab{color:#000}
+  a{color:#000;text-decoration:none}
+  .mt{break-before:page;page-break-before:always;border-top:1.5pt solid #000;margin-top:0}
+  .mt:first-of-type{break-before:auto;page-break-before:auto}
+  .mt h2{font-size:17pt}
+  .wk h3{font-size:13pt;break-after:avoid;page-break-after:avoid}
+  .wmeta,.ccan,.mt .mmeta{color:#000}
+  ol.comps li{border-top:.5pt solid #999}
+  ol.comps li:first-child{border-top:1pt solid #000}
+  .tag{background:#E9E9E9;color:#000;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .foothelp{break-inside:avoid;border:1pt solid #000;border-left:2.5pt solid #000;margin:20pt 0 0}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#list">Skip to the competencies</a>
+
+<header class="cover"><div class="wrap">
+  <p class="eyebrow">BIO 005 &middot; Yuba College &middot; Fall 2026</p>
+  <h1>All 268 competencies, week by week.</h1>
+  <p class="sub">Human Physiology &middot; Section BIOL-5-D9286 &middot; Sutter Internet (NET)</p>
+  <p class="subq">15 weeks &middot; September 8 to December 16, 2026 &middot; three midterms</p>
+  <div class="lede">
+    <p><strong>What this is.</strong> Every single thing this course will ask you to be able to do, sorted into the week it is taught. If it is not on this list, it is not on an exam. If it is on this list, it is fair game on the midterm that covers its week.</p>
+    <p><strong>How to use it.</strong> Find your week. Those are your competencies. Your note sheet already has one page for each of them, so you do not have to copy anything off this list. Come back to it before a midterm and read down the five weeks it covers. Anything you cannot do without looking is your study list.</p>
+    <p><strong>A note on the other packet.</strong> The Competency Packet in Canvas holds these same 268 grouped by unit, with the entry expectations in front. That one is for transfer and equivalency review. This one is for finding your week.</p>
+  </div>
+  <p class="sig">Dr. Sharilyn Rennie</p>
+</div></header>
+
+<main id="list"><div class="wrap" id="host"></div></main>
+
+<div class="wrap"><div class="foothelp">
+  <h2>If one of these does not make sense yet</h2>
+  <p>That is what the week is for. A competency is written as the finished skill, the thing you can do on the far side of the week, not the thing you already know walking in. Bring the ones that stay stubborn to my Virtual Office and we will take them apart.</p>
+  <p style="margin-bottom:0">Dr. Sharilyn Rennie</p>
+</div></div>
+
+<script src="assets/bio005-sheet-data.js"></script>
+<script>
+(function(){
+  "use strict";
+  var DATA = window.BIO005_SHEET || {};
+
+  var SITE = {
+    1:["How physiology works and what keeps you steady","Tue Sep 8 to Sun Sep 13"],
+    2:["The chemistry that does work in the body","Mon Sep 14 to Sun Sep 20"],
+    3:["Getting across the membrane","Mon Sep 21 to Sun Sep 27"],
+    4:["How cells talk, and the electrical signal","Mon Sep 28 to Sun Oct 4"],
+    5:["Synapses and central integration","Mon Oct 5 to Sun Oct 11"],
+    6:["Sensing the world, and the responses you do not control","Mon Oct 12 to Sun Oct 18"],
+    7:["Muscle, and how movement gets commanded","Mon Oct 19 to Sun Oct 25"],
+    8:["Hormones and reproduction, the slow control system","Mon Oct 26 to Sun Nov 1"],
+    9:["The heart as a pump","Mon Nov 2 to Sun Nov 8"],
+    10:["Pressure, flow, and holding blood pressure steady","Mon Nov 9 to Sun Nov 15"],
+    11:["Blood and how the body defends itself","Mon Nov 16 to Sun Nov 22"],
+    12:["Digestion, and how you use food for fuel","Mon Nov 23 to Sun Nov 29, Thanksgiving week"],
+    13:["Breathing, gas transport, and the fast pH lever","Mon Nov 30 to Sun Dec 6"],
+    14:["The kidney and body fluid balance","Mon Dec 7 to Sun Dec 13"],
+    15:["The slow pH lever, and putting it all together","Mon Dec 14 to Wed Dec 16, three days"]
+  };
+
+  var BLOCKS = [
+    { m:1, weeks:[1,2,3,4,5],      exam:"Midterm 1. Window Monday October 12 at 8 am to Sunday October 18 at 10 pm." },
+    { m:2, weeks:[6,7,8,9,10],     exam:"Midterm 2. Window Monday November 16 at 8 am to Sunday November 22 at 10 pm." },
+    { m:3, weeks:[11,12,13,14,15], exam:"Midterm 3. Window Monday December 14 at 8 am to Wednesday December 16 at 10 pm." }
+  ];
+
+  function esc(s){
+    return String(s == null ? "" : s)
+      .replace(/&/g,"&amp;").replace(/</g,"&lt;")
+      .replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+  }
+
+  var host = document.getElementById("host");
+  var out = [];
+  var running = 0;
+
+  BLOCKS.forEach(function(b){
+    var n = 0;
+    b.weeks.forEach(function(w){ n += (DATA[w] && DATA[w].items ? DATA[w].items.length : 0); });
+
+    out.push('<section class="mt">' +
+      '<p class="mlab">Midterm ' + b.m + ' block</p>' +
+      '<h2>Weeks ' + b.weeks[0] + ' to ' + b.weeks[b.weeks.length-1] + '</h2>' +
+      '<p class="mmeta">' + n + ' competencies. ' + esc(b.exam) + '</p>' +
+    '</section>');
+
+    b.weeks.forEach(function(w){
+      var d = DATA[w];
+      if (!d || !d.items) return;
+      var meta = SITE[w] || ["",""];
+      var rows = d.items.map(function(it){
+        running++;
+        return '<li><span class="cn">' + running + '</span>' +
+          '<span><span class="cname">' + esc(it.name) +
+          (it.lab ? '<span class="tag">Lab</span>' : '') + '</span>' +
+          '<span class="ccan">' + esc(it.can) + '</span></span></li>';
+      }).join("");
+
+      out.push('<section class="wk">' +
+        '<h3><span class="wn">Week ' + w + '</span>' + esc(meta[0]) + '</h3>' +
+        '<p class="wmeta">' + esc(meta[1]) + ' &middot; ' + d.items.length +
+        (d.items.length === 1 ? ' competency' : ' competencies') + '</p>' +
+        '<ol class="comps">' + rows + '</ol>' +
+      '</section>');
+    });
+  });
+
+  host.innerHTML = out.join("");
+
+  /* Height sender, so Canvas can size the frame. */
+  var ID = "bio005-competencies-by-week";
+  function send(){
+    var h = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+    try { window.parent.postMessage({ id:ID, frameId:ID, type:"resize", height:h }, "*"); } catch(e){}
+  }
+  window.addEventListener("load", send);
+  window.addEventListener("resize", send);
+  if (typeof ResizeObserver !== "undefined"){ try { new ResizeObserver(send).observe(document.body); } catch(e){} }
+  send(); setTimeout(send, 400); setTimeout(send, 1500);
+})();
+</script>
+</body>
+</html>

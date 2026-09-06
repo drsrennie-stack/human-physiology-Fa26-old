@@ -1062,7 +1062,7 @@ function mosResolveSchedule(){
     var endsBeforeFall=false;
     try{
       var last=s.end||(s.weeks&&s.weeks.length&&s.weeks[s.weeks.length-1].start);
-      if(last) endsBeforeFall=Date.parse(last) < Date.parse('2026-08-17');
+      if(last) endsBeforeFall=Date.parse(last) < Date.parse('2026-09-08') /* BIO 005 term start, Tue 8 Sep. Was 2026-08-17, the ANATOMY term. */;
     }catch(e){}
     if(endsBeforeFall){
       try{ store.set('bio005-mos-schedule',null); localStorage.removeItem('bio005-mos-schedule'); }catch(e){}
@@ -1597,7 +1597,7 @@ function inPlay(c){ return weekOf(c) <= currentWeekNumber(); }
    and the whole term is suddenly in play. That is how respiratory,
    week 11, showed up as a weakness in week 1.
 
-   The fall term starts Monday 17 August 2026. That is a fact about the
+   The fall term starts Tuesday 8 September 2026, the day after Labor Day. That is a fact about the
    calendar, not about anything cached, so compute from it directly.
    Every other page in the course does the same arithmetic, which also
    means they can no longer disagree with each other. */
