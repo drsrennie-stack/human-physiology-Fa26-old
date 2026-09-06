@@ -41,7 +41,7 @@
   at the bottom. Every week gets the SAME seven slots whether the
   file exists yet or not:
 
-    watch . deck . read . note sheet . problems . lab . discussion
+    note sheet . watch . deck . read . problems . lab . discussion
 
   A slot with a URL is a link. A slot without one renders as a
   greyed "posted when the week opens" line. That is deliberate: a
@@ -281,7 +281,7 @@ footer :focus-visible{outline-color:var(--gold)}
    add one. Nothing else on this page has to change.
 
    Slot keys, in the order they render:
-     watch  deck  read  sheet  problems  lab  discussion
+     sheet  watch  deck  read  problems  lab  discussion
    ============================================================ */
 (function(){
   "use strict";
@@ -295,8 +295,8 @@ footer :focus-visible{outline-color:var(--gold)}
     { n:1, unit:"Foundations", title:"How physiology works and what keeps you steady",
       opens:"Tuesday September 8", due:"Sunday September 13",
       watch:      {u:"concept-videos-week01.html", t:"Week 1 lecture videos", d:"Short segments. Play straight through or take one concept at a time."},
-      read:       {u:"week-01.html", t:"Written notes for Week 1", d:"The whole week written out. Prints cleanly if you would rather work on paper."},
-      sheet:      {u:"note-sheet.html?week=1", t:"Print your Week 1 note sheet", d:"Eighteen competencies, one printed page each, four labelled spaces on every page. Pass one before you watch, pass two in a second colour after.",
+      read:       {u:"week-01-notes.html", t:"Week 1 notes, homeostasis and control", d:"The content itself, written out: what physiology asks, the internal environment, homeostasis and what people mix it up with, mass balance, and control systems. Prints cleanly if you would rather work on paper."},
+      sheet:      {u:"note-sheet.html?week=1", t:"Print or design your Week 1 note sheet", d:"Start here. Eighteen competencies, one printed page each, four labelled spaces on every page. Print mine or lay out your own. Pass one is the book and your own notes, before you watch anything. Pass two goes into the same boxes in a second colour after the videos.",
                    also:{u:"week-01-competencies.html", t:"The competencies and their prompts"}},
       problems:   {u:"assignment-bookproblems.html?week=1", t:"Silverthorn chapters 1 and 6", d:"End of chapter problems. Work them on paper before you check the back."},
       ailog:      {u:"ai-work-log.html?week=1", t:"Problem log", d:"Solve it by hand, write down where each piece came from, then check it with AI. Fill it in as you work."},
@@ -390,11 +390,15 @@ footer :focus-visible{outline-color:var(--gold)}
     }
   });
 
+  /* The note sheet is first on purpose. Pass one is the book and your own
+     notes, before you watch anything. Pass two goes into the same boxes in
+     a second colour after the videos. Putting the sheet at the top is what
+     makes that order the obvious one. */
   var SLOTS = [
+    ["sheet",      "Note sheet"],
     ["watch",      "Watch"],
     ["deck",       "Slides"],
     ["read",       "Read"],
-    ["sheet",      "Note sheet"],
     ["problems",   "Problems"],
     ["lab",        "Lab"],
     ["discussion", "Discussion"],
