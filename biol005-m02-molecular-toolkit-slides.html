@@ -1,0 +1,1715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mission 2, Build the Molecular Toolkit &middot; Slides &middot; BIOL 005</title>
+<style>@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+:root{
+  --navy:#0B1530; --navy-72:#4F576A; --navy-15:rgba(11,21,48,.15); --navy-08:rgba(11,21,48,.08);
+  --terra:#8B3A2E; --terra-dark:#6B2A20;
+  --gold:#DCB45C;
+  --white:#FFFFFF; --page:#FFFFFF; --wash:#FAFAF9;
+  --r-card:8px; --r-btn:4px; --r-pill:99px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+  background:var(--page); color:var(--navy); font-size:16px; line-height:1.6; font-style:normal;
+}
+em,i,cite,dfn,var,address{font-style:normal}
+button{font-family:inherit}
+a{color:var(--terra)}
+:focus-visible{outline:3px solid var(--terra);outline-offset:3px;border-radius:4px}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:16px;top:16px;position:fixed;background:var(--navy);color:#fff;padding:10px 14px;border-radius:4px;z-index:400}
+.vh{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+/* ---------- editorial type ---------- */
+.disp{font-family:'Open Sans','Plus Jakarta Sans',system-ui,sans-serif;font-weight:800;letter-spacing:-.02em;line-height:1.08}
+.disp .hl{color:var(--terra)}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--terra);margin:0 0 10px}
+.eyebrow.navy{color:var(--navy-72)}
+.lede{font-size:18px;color:var(--navy-72);max-width:64ch;margin:0 0 22px}
+.muted{color:var(--navy-72)}
+
+/* ---------- chrome ---------- */
+.site-header{display:flex;align-items:center;gap:16px;flex-wrap:wrap;
+  padding:14px max(16px,3vw);background:#fff;border-bottom:.5px solid var(--navy-15)}
+.site-logo{display:inline-flex;align-items:center;gap:13px;text-decoration:none;flex:1;min-width:250px}
+.site-logo svg{height:42px;width:auto;display:block;flex:0 0 auto}
+.logo-title{font-family:'Open Sans','Plus Jakarta Sans',sans-serif;font-size:19px;font-weight:800;letter-spacing:-.02em;color:var(--navy);display:block}
+.logo-title .logo-accent{color:var(--terra)}
+.logo-sub{display:block;font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--navy-72);margin-top:3px}
+
+/* ---------- cards ---------- */
+.card{background:#fff;border:.5px solid var(--navy-15);border-radius:var(--r-card);padding:24px 22px}
+.card.navy{background:var(--navy);color:#fff;border-color:var(--navy)}
+.card.navy .eyebrow{color:var(--gold)}
+.card.navy a{color:var(--gold)}
+.card.feature{border:2px solid var(--terra)}
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:860px){.g2,.g3{grid-template-columns:1fr}}
+
+/* badge pill overlapping a card top */
+.badged{position:relative;margin-top:14px}
+.badged>.pill{position:absolute;top:-13px;left:20px}
+.pill{display:inline-flex;align-items:center;gap:7px;background:var(--terra);color:#fff;
+  font-size:10px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;
+  padding:7px 14px;border-radius:var(--r-pill)}
+.pill.navy{background:var(--navy)}
+.pill.ghost{background:#fff;color:var(--navy);border:.5px solid var(--navy-15)}
+
+/* statement band */
+.band{background:var(--navy);color:#fff;border-radius:var(--r-card);padding:26px 26px}
+.band p{margin:0;font-family:'Open Sans','Plus Jakarta Sans',sans-serif;font-weight:700;
+  font-size:clamp(18px,2.2vw,25px);line-height:1.32;letter-spacing:-.01em}
+.band .em{color:var(--gold)}
+
+/* oversized step numerals */
+.steps{list-style:none;margin:0;padding:0;counter-reset:s}
+.steps>li{counter-increment:s;display:grid;grid-template-columns:64px 1fr;gap:18px;
+  padding:20px 0;border-top:.5px solid var(--navy-15)}
+.steps>li:first-child{border-top:0;padding-top:6px}
+.steps>li::before{content:counter(s,decimal-leading-zero);
+  font-family:'Open Sans','Plus Jakarta Sans',sans-serif;font-weight:800;font-size:34px;
+  color:var(--terra);line-height:1;letter-spacing:-.03em}
+.steps h3,.steps h4{margin:0 0 6px;font-size:17.5px;font-weight:800;letter-spacing:-.01em;
+  text-transform:none;color:var(--navy)}
+.steps p{margin:0 0 8px}
+.steps p:last-child{margin-bottom:0}
+
+/* buttons */
+.btn{font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;
+  border-radius:var(--r-btn);padding:13px 20px;border:1px solid var(--terra);background:var(--terra);
+  color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.btn:hover{background:var(--terra-dark);border-color:var(--terra-dark)}
+.btn.ghost{background:transparent;color:var(--navy);border-color:var(--navy-15)}
+.btn.ghost:hover{background:var(--wash);border-color:var(--navy)}
+.btn.navy{background:var(--navy);border-color:var(--navy)}
+.btn.navy:hover{background:#16213d}
+
+/* lists */
+ul.bul{margin:0 0 14px;padding:0;list-style:none}
+ul.bul>li{padding:5px 0 5px 20px;position:relative}
+ul.bul>li::before{content:"";position:absolute;left:2px;top:14px;width:6px;height:6px;background:var(--terra);border-radius:50%}
+ul.bul>li>ul{margin:6px 0 2px}
+ul.bul>li>ul>li::before{background:var(--navy-72);width:5px;height:5px}
+
+/* tables */
+.tbl{width:100%;border-collapse:collapse;font-size:14.5px}
+.tbl caption{caption-side:top;text-align:left;font-size:10.5px;font-weight:800;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--terra);padding:0 0 10px}
+.tbl th,.tbl td{text-align:left;padding:9px 12px;border-bottom:.5px solid var(--navy-15);vertical-align:top}
+.tbl thead th{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--navy-72);font-weight:700}
+.tbl tbody th{font-weight:800}
+.tbl td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.tbl td.num .alt{font-size:.86em;color:var(--navy-72)}
+
+/* figures */
+figure{margin:0}
+.fig{width:100%;height:auto;display:block;background:#fff;border:.5px solid var(--navy-15);border-radius:var(--r-card);cursor:zoom-in}
+figcaption{font-size:13px;color:var(--navy-72);margin:9px 0 0}
+figcaption b{color:var(--terra)}
+
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* ---------- deck ---------- */
+.deck{max-width:1200px;margin:0 auto;padding:22px max(16px,3vw) 44px}
+.deck-note{font-size:14px;color:var(--navy-72);margin:0 0 20px;max-width:70ch}
+.slide{background:#fff;border:.5px solid var(--navy-15);border-radius:var(--r-card);margin:0 0 20px;overflow:hidden}
+.slide-head{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:18px;
+  padding:16px 22px;border-bottom:.5px solid var(--navy-15)}
+.slide-n{font-family:'Open Sans','Plus Jakarta Sans',sans-serif;font-weight:800;font-size:30px;
+  color:var(--terra);letter-spacing:-.03em;line-height:1;min-width:52px}
+.slide-eyebrow{font-size:10px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--navy-72);margin:0 0 4px}
+.slide-title{font-family:'Open Sans','Plus Jakarta Sans',sans-serif;font-size:clamp(18px,2.3vw,25px);
+  font-weight:800;letter-spacing:-.02em;margin:0;line-height:1.15}
+.slide-beat{font-size:10px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--terra);white-space:nowrap}
+.slide-body{padding:24px 22px}
+.slide-body>*:last-child{margin-bottom:0}
+.two{display:grid;grid-template-columns:minmax(280px,1fr) minmax(280px,1.02fr);gap:26px;align-items:start}
+@media(max-width:900px){.two{grid-template-columns:1fr}}
+.lead{font-size:17.5px;font-weight:600;margin:0 0 14px;color:var(--navy)}
+.slide h3{font-size:10.5px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--terra);margin:0 0 12px}
+.slide h3+h3{margin-top:22px}
+
+/* reveal boxes: the thing Reset clears */
+.reveal-wrap{margin:16px 0 0}
+.rv-btn{font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;
+  background:#fff;color:var(--navy);border:1px solid var(--navy-15);border-radius:var(--r-btn);padding:12px 18px}
+.rv-btn:hover{border-color:var(--navy);background:var(--wash)}
+.rv-btn[aria-expanded="true"]{border-color:var(--navy);border-width:2px;
+  box-shadow:0 6px 16px rgba(11,21,48,.10),0 3px 6px rgba(11,21,48,.06)}
+.rv{margin:14px 0 0;background:#fff;border:.5px solid var(--navy-15);border-radius:var(--r-card);padding:18px 20px}
+.rv[hidden]{display:none}
+.rv p:last-child{margin-bottom:0}
+.rv .tag{font-size:10px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--terra);margin:0 0 8px}
+
+/* worked example: weak answer beside strong answer */
+.exbox{border:.5px solid var(--navy-15);border-radius:var(--r-card);padding:18px 20px;margin:16px 0 0}
+.exbox .tag{font-size:10px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--terra);margin:0 0 8px}
+.exbox .q{font-size:16.5px;font-weight:800;margin:0 0 14px;color:var(--navy)}
+.ex2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:820px){.ex2{grid-template-columns:1fr}}
+.ex{border-radius:var(--r-card);padding:14px 16px}
+.ex .lab{font-size:10px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;margin:0 0 7px}
+.ex p:last-child{margin-bottom:0}
+.ex.weak{border:1.4px dashed var(--navy-72);background:var(--wash)}
+.ex.weak .lab{color:var(--navy-72)}
+.ex.strong{border:2px solid var(--terra)}
+.ex.strong .lab{color:var(--terra)}
+.exbox .why{font-size:14.5px;color:var(--navy-72);margin:14px 0 0}
+.exbox .why b{color:var(--navy)}
+body.present .exbox .q{font-size:clamp(17px,1.7vw,25px)}
+body.present .ex{font-size:clamp(15px,1.5vw,21px)}
+body.present .ex .lab,body.present .exbox .tag{font-size:clamp(10px,1vw,14px)}
+body.present .exbox .why{font-size:clamp(14px,1.35vw,19px)}
+
+/* in range or out of range sorter */
+.sortbl td.pickcell{padding:7px 10px}
+.pick{display:flex;gap:8px;flex-wrap:wrap}
+.pk{font-family:inherit;font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+  background:#fff;color:var(--navy);border:1px solid var(--navy-15);border-radius:var(--r-btn);
+  padding:9px 12px;cursor:pointer;white-space:nowrap}
+.pk:hover{border-color:var(--navy)}
+.pk[aria-pressed="true"]{border:2px solid var(--navy);
+  box-shadow:0 6px 16px rgba(11,21,48,.10),0 3px 6px rgba(11,21,48,.06)}
+tr.locked .pk{cursor:default}
+tr.locked .pk:not([aria-pressed="true"]){opacity:.45}
+.res{font-size:13.5px;font-weight:700;min-width:132px}
+tr.ok .res{color:var(--navy)}
+tr.no .res{color:var(--terra)}
+.sortcount{font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--navy-72);margin:14px 0 0}
+body.present .pk{font-size:clamp(11px,1.05vw,15px);padding:11px 15px}
+body.present .res{font-size:clamp(13px,1.3vw,18px)}
+
+/* predict box */
+.predict{border:2px solid var(--terra);border-radius:var(--r-card);padding:18px 20px;margin:16px 0 0}
+.predict .tag{font-size:10px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--terra);margin:0 0 8px}
+.predict p:last-child{margin-bottom:0}
+
+/* deck toolbar */
+.deck-bar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;
+  padding:12px max(16px,3vw);border-bottom:.5px solid var(--navy-15);background:#fff;
+  position:sticky;top:0;z-index:30}
+.deck-bar .sp{flex:1}
+.deck-bar .cnt{font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--navy-72)}
+
+/* present mode */
+body.present{overflow:hidden;background:var(--navy)}
+body.present .site-header,body.present .deck-bar,body.present .deck-note,body.present .page-foot{display:none}
+body.present .deck{max-width:none;margin:0;padding:0}
+body.present .slide{display:none}
+body.present .slide.cur{display:flex;flex-direction:column;position:fixed;inset:0;margin:0;
+  border:0;border-radius:0;overflow:auto;background:#fff}
+body.present .slide.cur .slide-body{flex:1;max-width:1360px;width:100%;margin:0 auto;
+  padding:2.4vh 4.5vw calc(2.4vh + 92px);display:flex;flex-direction:column;justify-content:center}
+body.present .slide-head{padding:2.2vh 4.5vw}
+body.present .slide-n{font-size:clamp(32px,3.2vw,52px)}
+body.present .slide-title{font-size:clamp(24px,3vw,42px)}
+body.present .slide-eyebrow,body.present .slide-beat{font-size:clamp(10px,1vw,14px)}
+body.present .lead{font-size:clamp(20px,2.2vw,32px)}
+body.present .slide h3{font-size:clamp(11px,1.15vw,16px);margin-bottom:16px}
+body.present ul.bul>li{font-size:clamp(17px,1.75vw,27px);padding:8px 0 8px 28px}
+body.present ul.bul>li::before{top:18px;width:9px;height:9px}
+body.present ul.bul>li>ul>li{font-size:clamp(15px,1.5vw,23px)}
+body.present .tbl{font-size:clamp(15px,1.5vw,22px)}
+body.present .tbl th,body.present .tbl td{padding:11px 15px}
+body.present .rv,body.present .predict{font-size:clamp(16px,1.6vw,24px);padding:20px 24px}
+body.present .rv-btn{font-size:clamp(11px,1.05vw,15px);padding:14px 22px}
+body.present figcaption{font-size:clamp(12px,1.15vw,17px)}
+body.present .fig{max-height:42vh;width:auto;max-width:100%;margin:0 auto}
+body.present .two .fig{max-height:56vh}
+.pbar{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:200;display:none;
+  align-items:center;gap:10px;background:var(--navy);color:#fff;padding:8px 12px;border-radius:var(--r-pill)}
+body.present .pbar{display:flex}
+.pbar button{font-weight:800;font-size:17px;border:0;border-radius:var(--r-pill);
+  background:var(--terra);color:#fff;width:44px;height:44px;cursor:pointer}
+.pbar button:hover{background:var(--terra-dark)}
+.pbar button:disabled{background:#667085;cursor:default}
+.pbar .c{font-size:12px;font-weight:800;min-width:62px;text-align:center;font-variant-numeric:tabular-nums;letter-spacing:.08em}
+.pbar .x{width:auto;padding:0 16px;background:transparent;border:1px solid rgba(255,255,255,.45);
+  font-size:10px;letter-spacing:.2em;text-transform:uppercase}
+body.wb-on .pbar{display:none!important}
+
+@media print{
+  @page{size:landscape;margin:11mm}
+  .site-header,.deck-bar,.pbar,.deck-note,.wb,.wb-launch,.lightbox{display:none!important}
+  body{background:#fff;font-size:11pt}
+  .deck{max-width:none;padding:0}
+  .slide{display:block!important;break-after:page;page-break-after:always;margin:0 0 6mm;border:1px solid #bbb}
+  .slide:last-of-type{break-after:auto;page-break-after:auto}
+  .slide-head{break-after:avoid;page-break-after:avoid}
+  .two,.card,.tbl,.rv,.predict,figure{break-inside:avoid;page-break-inside:avoid}
+  .rv[hidden]{display:block!important}
+  .rv-btn{display:none!important}
+  .pick{display:none!important}
+  .clin-body[hidden]{display:block!important}
+  .clin-btn{display:none!important}
+  .clin-grid{grid-template-columns:repeat(2,1fr)}
+  .cprof{break-inside:avoid;page-break-inside:avoid}
+  .card.navy,.band{background:#fff!important;color:#0B1530!important;border:1px solid #bbb!important}
+  .card.navy .eyebrow,.band .em{color:#6B2A20!important}
+}
+
+/* collapsible clinical bar: what this means in medicine, nursing, respiratory therapy */
+.clin{margin:18px 0 0}
+.clin-btn{width:100%;display:flex;align-items:center;justify-content:space-between;gap:14px;
+  font-family:inherit;font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;
+  background:#fff;color:var(--navy);border:1px solid var(--navy-15);border-radius:var(--r-btn);
+  padding:14px 18px;cursor:pointer;text-align:left}
+.clin-btn:hover{border-color:var(--navy);background:var(--wash)}
+.clin-btn[aria-expanded="true"]{border:2px solid var(--navy);
+  box-shadow:0 6px 16px rgba(11,21,48,.10),0 3px 6px rgba(11,21,48,.06)}
+.clin-btn .chev{font-size:15px;color:var(--terra);transition:transform .18s ease}
+.clin-btn[aria-expanded="true"] .chev{transform:rotate(90deg)}
+.clin-body{margin:12px 0 0}
+.clin-body[hidden]{display:none}
+.clin-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+@media(max-width:1180px){.clin-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:700px){.clin-grid{grid-template-columns:1fr}}
+.cprof{border:.5px solid var(--navy-15);border-radius:var(--r-card);padding:15px 16px}
+.cprof .who{display:inline-flex;align-items:center;font-size:10px;font-weight:800;letter-spacing:.18em;
+  text-transform:uppercase;color:#fff;background:var(--navy);border-radius:var(--r-pill);
+  padding:6px 12px;margin:0 0 10px}
+.cprof.n .who{background:var(--terra)}
+/* "Radiologic technology" is the longest label of the four; tighten its tracking
+   so the pill stays on one line and all four card texts start on the same line. */
+.cprof.x .who{background:#6B5017;letter-spacing:.07em;white-space:nowrap}
+.cprof.r .who,.cprof.n .who,.cprof.m .who{white-space:nowrap}
+.cprof.r .who{background:#2C4A70}
+.cprof .means{margin:0 0 9px;font-size:14.5px;line-height:1.45}
+.cprof .eg{margin:0;font-size:14px;color:var(--navy-72);line-height:1.45}
+.cprof .eg b{color:var(--terra)}
+body.present .clin-btn{font-size:clamp(11px,1.05vw,15px);padding:15px 20px}
+body.present .cprof .means{font-size:clamp(14px,1.4vw,20px)}
+body.present .cprof .eg{font-size:clamp(13px,1.3vw,18px)}
+body.present .cprof .who{font-size:clamp(10px,1vw,13px)}
+/* While recording, an open clinical bar owns the slide. Four professions side by
+   side need the full width; scaled down to fit around the slide content they are
+   unreadable on camera. Closing the bar brings the slide straight back. */
+body.present .slide.clinopen .slide-body>*:not(.clin){display:none}
+body.present .slide.clinopen .clin{margin-top:4px}
+body.present .slide.clinopen .cprof{padding:18px 20px}
+
+.lightbox{position:fixed;inset:0;z-index:300;background:rgba(11,21,48,.92);display:flex;
+  align-items:center;justify-content:center;padding:4vh 4vw}
+.lightbox[hidden]{display:none}
+.lightbox .lb-inner{max-width:96vw;max-height:92vh;overflow:auto;background:#fff;border-radius:var(--r-card);padding:14px}
+.mapcard{cursor:zoom-in}
+.mapcard .mc-hit{transition:fill .15s ease}
+.mapcard:hover .mc-hit{fill:#FAFAF9;stroke-width:2.6}
+.mapcard:focus{outline:none}
+.mapcard:focus-visible .mc-hit{stroke:#8B3A2E;stroke-width:3.4}
+.lb-card{max-width:min(80vw,880px)}
+.lb-card .lb-h{background:var(--terra);color:#fff;border-radius:var(--r-card) var(--r-card) 0 0;
+  padding:20px 26px;font-family:'Open Sans','Plus Jakarta Sans',sans-serif;font-weight:800;
+  font-size:clamp(24px,3vw,38px);letter-spacing:-.02em;margin:0}
+.lb-card ul{list-style:none;margin:0;padding:22px 26px 26px;border:1.5px solid var(--navy);
+  border-top:0;border-radius:0 0 var(--r-card) var(--r-card)}
+.lb-card li{position:relative;padding:10px 0 10px 30px;font-size:clamp(18px,2vw,26px);line-height:1.4}
+.lb-card li::before{content:"";position:absolute;left:4px;top:22px;width:9px;height:9px;
+  background:var(--terra);border-radius:50%}
+.lightbox .lb-close{position:absolute;top:16px;right:18px;background:var(--terra);color:#fff;border:0;
+  border-radius:var(--r-btn);padding:12px 18px;font-weight:800;font-size:11px;letter-spacing:.2em;
+  text-transform:uppercase;cursor:pointer}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="site-header">
+  <a class="site-logo" href="index.html" target="_top" aria-label="BIOL 005 Human Physiology, course home">
+    <svg viewBox="40 10 125 148" aria-hidden="true" focusable="false"><g transform="translate(0,18)"><g transform="translate(60,0) rotate(8 0 130)"><circle cx="0" cy="20" r="10" fill="#0B1530"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#0B1530"/></g><g transform="translate(100,0)"><circle cx="0" cy="10" r="11" fill="#8B3A2E"/><path d="M 0,22 C -11,22 -17,26 -17,34 C -17,52 -14,70 -12,86 C -11,108 -13,122 -15,132 L 15,132 C 13,122 11,108 12,86 C 14,70 17,52 17,34 C 17,26 11,22 0,22 Z" fill="#8B3A2E"/></g><g transform="translate(140,0) rotate(-8 0 130)"><circle cx="0" cy="20" r="10" fill="#0B1530"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#0B1530"/></g></g></svg>
+    <span><span class="logo-title">Human <span class="logo-accent">Physiology</span></span><span class="logo-sub">BIOL 005 &middot; Mission 2</span></span>
+  </a>
+</header>
+<div class="deck-bar">
+  <button class="btn navy" id="presentBtn" type="button">Present full screen</button>
+  <button class="btn ghost" id="resetBtn" type="button">Reset boxes</button>
+  <button class="btn ghost" id="printBtn" type="button">Print the deck</button>
+  <span class="sp"></span>
+  <span class="cnt" id="deckStatus" role="status" aria-live="polite"></span>
+</div>
+<main class="deck" id="main">
+<h1 class="vh">Mission 2, Build the Molecular Toolkit: BIOL 005 Human Physiology lecture slides</h1>
+<p class="deck-note">16 slides. Present full screen to record, Reset boxes first so nothing is pre-revealed, and press W for the pen layer.</p>
+<article class="slide">
+  <header class="slide-head">
+    <span class="slide-n" aria-hidden="true">01</span>
+    <div><p class="slide-eyebrow">BIOL 005 &middot; Unit 1, Keep the Human Alive</p><h2 class="slide-title">Mission 2: Build the Molecular Toolkit</h2></div>
+    <span class="slide-beat">Start</span>
+  </header>
+  <div class="slide-body">
+<div class="two">
+  <div>
+    <p class="lead">Last time you drew a control loop. Every box in it was done by a molecule.</p>
+    <ul class="bul">
+      <li>A sensor is a protein that changes shape when something binds it.</li>
+      <li>A signal is a molecule that fits a receptor and nothing else.</li>
+      <li>An effector is a protein that converts binding into physical work.</li>
+      <li>So the question today is what makes one molecule able to do a job another cannot.</li>
+    </ul>
+    <p class="muted" style="font-size:14.5px">Silverthorn chapter 2. Course competencies 1, 2 and 3.</p>
+  </div>
+  <div class="card navy">
+    <p class="eyebrow">The mission</p>
+    <p style="font-size:19px;font-weight:700;line-height:1.35;margin:0">Assemble a toolkit of molecules capable of sensing, signaling, transporting and doing work, and explain what gives each one its job.</p>
+  </div>
+</div></div>
+</article><article class="slide">
+  <header class="slide-head">
+    <span class="slide-n" aria-hidden="true">02</span>
+    <div><p class="slide-eyebrow">The problem</p><h2 class="slide-title">Two molecules, one job</h2></div>
+    <span class="slide-beat">Mission</span>
+  </header>
+  <div class="slide-body">
+<p class="lead">These two are close relatives. One raises blood glucose, the other lowers it, and the difference is entirely shape.</p>
+<table class="tbl">
+  <caption>Why can they not substitute for each other?</caption>
+  <thead><tr><th scope="col"></th><th scope="col">Insulin</th><th scope="col">Glucagon</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">Chemical class</th><td>Peptide hormone</td><td>Peptide hormone</td></tr>
+    <tr><th scope="row">Made in</th><td>Pancreatic beta cells</td><td>Pancreatic alpha cells</td></tr>
+    <tr><th scope="row">Travels in</th><td>Plasma, same route</td><td>Plasma, same route</td></tr>
+    <tr><th scope="row">Effect on blood glucose</th><td>Lowers it</td><td>Raises it</td></tr>
+  </tbody>
+</table>
+<div class="reveal-wrap">
+  <button class="rv-btn" type="button" aria-controls="q2" aria-expanded="false">Show what the difference has to be</button>
+  <div class="rv" id="q2" hidden><p class="tag">The shape of the answer</p><p>Same class, same source organ, same delivery route, opposite effects. The only thing left that can differ is which receptor each one fits, and what that receptor is wired to do. Specificity is not a property of the hormone alone. It is a property of the pair.</p></div>
+</div></div>
+</article><article class="slide">
+  <header class="slide-head">
+    <span class="slide-n" aria-hidden="true">03</span>
+    <div><p class="slide-eyebrow">Atoms and ions</p><h2 class="slide-title">The ions that run physiology</h2></div>
+    <span class="slide-beat">Mechanism</span>
+  </header>
+  <div class="slide-body">
+<div class="two">
+  <div>
+    <ul class="bul">
+      <li>An <b>ion</b> is an atom or molecule carrying a net charge, because it gained or lost electrons.</li>
+      <li><b>Cations</b> are positive, <b>anions</b> are negative.</li>
+      <li>Charge is what makes an ion unable to cross a lipid membrane on its own. Every ion that moves needs a protein to move through.</li>
+    </ul>
+  </div>
+  <div>
+    <table class="tbl">
+      <caption>The short list worth memorizing now</caption>
+      <thead><tr><th scope="col">Ion</th><th scope="col">Where it matters</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Na+</th><td>ECF volume, membrane potential, most secondary transport</td></tr>
+        <tr><th scope="row">K+</th><td>Resting membrane potential, cardiac excitability</td></tr>
+        <tr><th scope="row">Ca2+</th><td>Muscle contraction, secretion, signaling</td></tr>
+        <tr><th scope="row">Cl-</th><td>ECF anion, inhibition in neurons, gastric acid</td></tr>
+        <tr><th scope="row">H+</th><td>pH, so the shape of every protein</td></tr>
+        <tr><th scope="row">HCO3-</th><td>The main buffer in blood</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="clin">
+  <button class="clin-btn" type="button" aria-controls="clin1" aria-expanded="false">
+    <span>What this means in the clinic</span><span class="chev" aria-hidden="true">&#9656;</span></button>
+  <div class="clin-body" id="clin1" hidden>
+    <div class="clin-grid">
+      <div class="cprof n"><p class="who">Nursing</p><p class="means">Potassium sits at the top of the list because the heart's excitability depends on it.</p><p class="eg"><b>Example:</b> Potassium is replaced with monitoring and never pushed fast, because the margin between correcting it and causing an arrhythmia is small.</p></div>
+      <div class="cprof x"><p class="who">Radiologic technology</p><p class="means">Ionizing radiation is named for exactly this. The beam strips electrons off atoms in tissue and leaves charged particles behind.</p><p class="eg"><b>Example:</b> Most of that happens in water, because water is most of the tissue. The reactive fragments it makes are what go on to damage DNA, and that chain is the entire reason dose limits, shielding and time-distance-shielding exist.</p></div>
+      <div class="cprof m"><p class="who">Medicine</p><p class="means">A charged particle cannot cross a membrane on its own, so every ion that moves needs a protein to move through.</p><p class="eg"><b>Example:</b> That is why a drug that blocks one channel can change the behavior of an entire organ.</p></div>
+      <div class="cprof r"><p class="who">Respiratory therapy</p><p class="means">Electrolytes set muscle strength, and breathing is muscle work.</p><p class="eg"><b>Example:</b> Low potassium or low phosphate weakens the diaphragm, which shows up as a failed weaning trial rather than as breathlessness.</p></div>
+    </div>
+  </div>
+</div></div>
+</article><article class="slide">
+  <header class="slide-head">
+    <span class="slide-n" aria-hidden="true">04</span>
+    <div><p class="slide-eyebrow">Water</p><h2 class="slide-title">Polarity is why anything dissolves</h2></div>
+    <span class="slide-beat">Mechanism</span>
+  </header>
+  <div class="slide-body">
+<div class="two">
+  <div>
+    <ul class="bul">
+      <li>Water is <b>polar</b>: oxygen pulls the shared electrons, so oxygen is slightly negative and the hydrogens slightly positive.</li>
+      <li>That partial charge lets water molecules form <b>hydrogen bonds</b> with each other and with other polar molecules.</li>
+      <li>Individually a hydrogen bond is weak. In bulk they set water's boiling point, its surface tension, and its ability to carry heat.</li>
+      <li>Water is the solvent for essentially every reaction in the body, so solubility in water decides where a molecule can go.</li>
+    </ul>
+  </div>
+  <div>
+    <h3>Three words you will use all term</h3>
+    <ul class="bul">
+      <li><b>Hydrophilic</b>: dissolves readily in water. Polar or charged.</li>
+      <li><b>Hydrophobic</b>: does not. Nonpolar, mostly carbon and hydrogen.</li>
+      <li><b>Amphipathic</b>: both ends in one molecule, a polar head and nonpolar tails. Phospholipids are amphipathic, which is the entire reason a membrane exists.</li>
+    </ul>
+    <div class="reveal-wrap">
+  <button class="rv-btn" type="button" aria-controls="q4" aria-expanded="false">Why this predicts drug behavior</button>
+  <div class="rv" id="q4" hidden><p class="tag">Application</p><p>A hydrophilic drug dissolves in plasma easily and crosses membranes with difficulty. A hydrophobic drug crosses membranes easily and needs a carrier protein to travel in blood. You can predict a great deal about a molecule's route through the body from this one property.</p></div>
+</div>
+  </div>
+</div>
+<div class="clin">
+  <button class="clin-btn" type="button" aria-controls="clin2" aria-expanded="false">
+    <span>What this means in the clinic</span><span class="chev" aria-hidden="true">&#9656;</span></button>
+  <div class="clin-body" id="clin2" hidden>
+    <div class="clin-grid">
+      <div class="cprof n"><p class="who">Nursing</p><p class="means">Solubility explains why some drugs need a particular fluid, filter or line.</p><p class="eg"><b>Example:</b> Oily preparations separate out or stick to tubing, so the route matters as much as the dose.</p></div>
+      <div class="cprof x"><p class="who">Radiologic technology</p><p class="means">MRI does not image tissue. It images hydrogen nuclei, and almost all of them are sitting in water and fat.</p><p class="eg"><b>Example:</b> Two soft tissues look different on MRI because they hold different amounts of water and fat. That is why MRI separates soft tissues an X-ray cannot tell apart, and why a dense bone that dominates a radiograph can be nearly silent on MRI.</p></div>
+      <div class="cprof m"><p class="who">Medicine</p><p class="means">Whether a molecule is water loving or oily predicts where in the body it can go.</p><p class="eg"><b>Example:</b> A fat soluble drug crosses into the brain readily. A water soluble one largely does not, which is why two similar drugs can have very different effects on alertness.</p></div>
+      <div class="cprof r"><p class="who">Respiratory therapy</p><p class="means">An aerosolized drug has to survive as droplets and reach the small airways.</p><p class="eg"><b>Example:</b> Particle size and humidity change how much of a nebulized dose gets past the upper airway at all.</p></div>
+    </div>
+  </div>
+</div></div>
+</article><article class="slide">
+  <header class="slide-head">
+    <span class="slide-n" aria-hidden="true">05</span>
+    <div><p class="slide-eyebrow">Solutions</p><h2 class="slide-title">Saying how much is in there</h2></div>
+    <span class="slide-beat">Mechanism</span>
+  </header>
+  <div class="slide-body">
+<div class="two">
+  <div>
+    <div class="eq">
+      <p class="f">Molarity = moles of solute &divide; liters of solution</p>
+      <p class="k"><b>Units:</b> mol/L, written M. Physiological concentrations are usually mM, millimoles per liter.</p>
+      <p class="says">What it says: <b>molarity counts particles, not mass.</b> Equal masses of two different solutes are not equal numbers of molecules, and it is the number of molecules that determines the effect.</p>
+    </div>
+    <div class="eq">
+      <p class="f">Equivalents = moles &times; charge per ion</p>
+      <p class="k">Used for ions, because charge balance matters as much as particle count.</p>
+      <p class="says">What it says: <b>one mole of Ca2+ carries twice the charge of one mole of Na+.</b> Body fluids must stay electrically neutral overall, so anions and cations move in matched sets.</p>
+    </div>
+  </div>
+  <div>
+    <h3>Reading a lab value</h3>
+    <ul class="bul">
+      <li>Plasma sodium is reported around <b>140 mM</b>. That is 140 millimoles in every liter of plasma.</li>
+      <li>Plasma glucose is often reported in <b>mg/dL</b>, a mass per volume, which is why it needs converting before it goes into any equation with molarity in it.</li>
+      <li>Whenever a value looks strange, check the units before you check the physiology.</li>
+    </ul>
+    <p class="muted" style="font-size:14.5px">Osmolarity and tonicity build on this and belong to Mission 3, once the membrane is in place.</p>
+  </div>
+</div></div>
+</article><article class="slide">
+  <header class="slide-head">
+    <span class="slide-n" aria-hidden="true">06</span>
+    <div><p class="slide-eyebrow">pH</p><h2 class="slide-title">A narrow window, defended hard</h2></div>
+    <span class="slide-beat">Mechanism</span>
+  </header>
+  <div class="slide-body">
+<figure><svg class="fig" viewBox="0 0 1000 306" role="img" aria-labelledby="figT5 figD5">
+<title id="figT5">The pH scale with physiological windows</title><desc id="figD5">A pH ruler from 0 to 14. Arterial blood occupies a very narrow window from 7.35 to 7.45. Stomach lumen sits between 1 and 3, the inside of most cells between 6.8 and 7.2, pancreatic secretions between 7.6 and 8.2, and urine spans the widest range, roughly 4.5 to 8.</desc>
+<rect width="1000" height="306" fill="#ffffff"/>
+<rect x="522" y="23" width="6" height="22" rx="4" fill="#ffffff" stroke="#8B3A2E" stroke-width="2.2"/>
+<line x1="525" y1="45" x2="525" y2="210" stroke="#8B3A2E" stroke-width="1.1" stroke-dasharray="4 4"/>
+<text x="540" y="39" font-size="14" font-weight="700" font-family="sans-serif" fill="#8B3A2E">Arterial blood, 7.35 to 7.45</text>
+<rect x="123" y="57" width="126" height="22" rx="4" fill="#ffffff" stroke="#4F576A" stroke-width="1.3"/>
+<line x1="186" y1="79" x2="186" y2="210" stroke="#4F576A" stroke-width="1.1" stroke-dasharray="4 4"/>
+<text x="261" y="73" font-size="14" font-weight="600" font-family="sans-serif" fill="#4F576A">Stomach lumen</text>
+<rect x="487" y="91" width="25" height="22" rx="4" fill="#ffffff" stroke="#4F576A" stroke-width="1.3"/>
+<line x1="500" y1="113" x2="500" y2="210" stroke="#4F576A" stroke-width="1.1" stroke-dasharray="4 4"/>
+<text x="525" y="107" font-size="14" font-weight="600" font-family="sans-serif" fill="#4F576A">Inside most cells</text>
+<rect x="538" y="125" width="38" height="22" rx="4" fill="#ffffff" stroke="#4F576A" stroke-width="1.3"/>
+<line x1="557" y1="147" x2="557" y2="210" stroke="#4F576A" stroke-width="1.1" stroke-dasharray="4 4"/>
+<text x="587" y="141" font-size="14" font-weight="600" font-family="sans-serif" fill="#4F576A">Pancreatic secretions</text>
+<rect x="343" y="159" width="220" height="22" rx="4" fill="#ffffff" stroke="#4F576A" stroke-width="1.3"/>
+<line x1="453" y1="181" x2="453" y2="210" stroke="#4F576A" stroke-width="1.1" stroke-dasharray="4 4"/>
+<text x="575" y="175" font-size="14" font-weight="600" font-family="sans-serif" fill="#4F576A">Urine, the widest range in the body</text>
+<rect x="60" y="210" width="880" height="26" rx="4" fill="#FAFAF9" stroke="#C9CDD6"/>
+<line x1="60" y1="210" x2="60" y2="236" stroke="#C9CDD6" stroke-width="1"/>
+<text x="60" y="256" text-anchor="middle" font-size="13" font-family="sans-serif" fill="#4F576A">0</text>
+<line x1="123" y1="210" x2="123" y2="236" stroke="#C9CDD6" stroke-width="1"/>
+<text x="123" y="256" text-anchor="middle" font-size="13" font-family="sans-serif" fill="#4F576A">1</text>
+<line x1="186" y1="210" x2="186" y2="236" stroke="#C9CDD6" stroke-width="1"/>
+<text x="186" y="256" text-anchor="middle" font-size="13" font-family="sans-serif" fill="#4F576A">2</text>
+<line x1="249" y1="210" x2="249" y2="236" stroke="#C9CDD6" stroke-width="1"/>
+<text x="249" y="256" text-anchor="middle" font-size="13" font-family="sans-serif" fill="#4F576A">3</text>
+<line x1="311" y1="210" x2="311" y2="236" stroke="#C9CDD6" stroke-width="1"/>
+<text x="311" y="256" text-anchor="middle" font-size="13" font-family="sans-serif" fill="#4F576A">4</text>
+<line x1="374" y1="210" x2="374" y2="236" stroke="#C9CDD6" stroke-width="1"/>
+<text x="374" y="256" text-anchor="middle" font-size="13" font-family="sans-serif" fill="#4F576A">5</text>
+<line x1="437" y1="210" x2="437" y2="236" stroke="#C9CDD6" stroke-width="1"/>
+<text x="437" y="256" text-anchor="middle" font-size="13" font-family="sans-serif" fill="#4F576A">6</text>
+<line x1="500" y1="210" x2="500" y2="236" stroke="#C9CDD6" stroke-width="1"/>
+<text x="500" y="256" text-anchor="middle" font-size="13" font-family="sans-serif" fill="#4F576A">7</text>
+<line x1="563" y1="210" x2="563" y2="236" stroke="#C9CDD6" stroke-width="1"/>
+<text x="563" y="256" text-anchor="middle" font-size="13" font-family="sans-serif" fill="#4F576A">8</text>
+<line x1="626" y1="210" x2="626" y2="236" stroke="#C9CDD6" stroke-width="1"/>
+<text x="626" y="256" text-anchor="middle" font-size="13" font-family="sans-serif" fill="#4F576A">9</text>
+<line x1="689" y1="210" x2="689" y2="236" stroke="#C9CDD6" stroke-width="1"/>
+<text x="689" y="256" text-anchor="middle" font-size="13" font-family="sans-serif" fill="#4F576A">10</text>
+<line x1="751" y1="210" x2="751" y2="236" stroke="#C9CDD6" stroke-width="1"/>
+<text x="751" y="256" text-anchor="middle" font-size="13" font-family="sans-serif" fill="#4F576A">11</text>
+<line x1="814" y1="210" x2="814" y2="236" stroke="#C9CDD6" stroke-width="1"/>
+<text x="814" y="256" text-anchor="middle" font-size="13" font-family="sans-serif" fill="#4F576A">12</text>
+<line x1="877" y1="210" x2="877" y2="236" stroke="#C9CDD6" stroke-width="1"/>
+<text x="877" y="256" text-anchor="middle" font-size="13" font-family="sans-serif" fill="#4F576A">13</text>
+<line x1="940" y1="210" x2="940" y2="236" stroke="#C9CDD6" stroke-width="1"/>
+<text x="940" y="256" text-anchor="middle" font-size="13" font-family="sans-serif" fill="#4F576A">14</text>
+<text x="60" y="282" font-size="14" font-weight="700" font-family="sans-serif" fill="#0B1530">more acidic</text>
+<text x="940" y="282" text-anchor="end" font-size="14" font-weight="700" font-family="sans-serif" fill="#0B1530">more alkaline</text>
+</svg><figcaption><b>Figure 1.</b> Arterial pH is defended inside 0.1 of a unit. Almost nothing else in the body is held that tightly.</figcaption></figure></div>
+</article><article class="slide">
+  <header class="slide-head">
+    <span class="slide-n" aria-hidden="true">07</span>
+    <div><p class="slide-eyebrow">pH</p><h2 class="slide-title">Why the body cares so much</h2></div>
+    <span class="slide-beat">Mechanism</span>
+  </header>
+  <div class="slide-body">
+<div class="two">
+  <div>
+    <div class="eq">
+      <p class="f">pH = &minus;log[H+]</p>
+      <p class="k"><b>The log is the point.</b> A drop of one pH unit is a tenfold rise in hydrogen ion concentration.</p>
+      <p class="says">What it says: <b>a pH change that looks tiny is not tiny.</b> Going from 7.4 to 7.1 doubles the hydrogen ion concentration. That is enough to change the shape of proteins throughout the body.</p>
+    </div>
+    <ul class="bul">
+      <li><b>Acid</b>: releases H+ in solution. <b>Base</b>: accepts H+.</li>
+      <li><b>Buffer</b>: a solution that resists a change in pH by binding or releasing H+ as needed.</li>
+      <li>The main buffer in blood is the <b>bicarbonate system</b>. You will build it properly in Week 13.</li>
+    </ul>
+  </div>
+  <div class="predict">
+    <p class="tag">Predict before you look</p>
+    <p>A patient's arterial pH falls from 7.40 to 7.10. Nothing else about their body has changed. Name two things that must now be going wrong at the level of proteins, and say why each one follows from the pH change rather than from anything else.</p>
+  </div>
+</div>
+<div class="clin">
+  <button class="clin-btn" type="button" aria-controls="clin3" aria-expanded="false">
+    <span>What this means in the clinic</span><span class="chev" aria-hidden="true">&#9656;</span></button>
+  <div class="clin-body" id="clin3" hidden>
+    <div class="clin-grid">
+      <div class="cprof n"><p class="who">Nursing</p><p class="means">The earliest sign of an acid problem is often behavior rather than a number.</p><p class="eg"><b>Example:</b> New confusion or agitation can arrive before anyone has drawn a gas.</p></div>
+      <div class="cprof x"><p class="who">Radiologic technology</p><p class="means">Anything you inject enters a body that holds pH in a very narrow window, so contrast agents are formulated to match it.</p><p class="eg"><b>Example:</b> Older high-osmolar agents sat further from the body's own chemistry, and patients felt it as heat, pain and far more reactions. Modern low-osmolar agents are tolerated better because the chemistry is closer to what the blood already is.</p></div>
+      <div class="cprof m"><p class="who">Medicine</p><p class="means">A pH change that looks small is not small, because the scale is logarithmic.</p><p class="eg"><b>Example:</b> Falling from 7.4 to 7.1 roughly doubles the hydrogen ion concentration, which is enough to change protein shape throughout the body.</p></div>
+      <div class="cprof r"><p class="who">Respiratory therapy</p><p class="means">Interpreting acid base status is the core skill of the specialty.</p><p class="eg"><b>Example:</b> Ventilation is the fast lever on pH, so a change in minute ventilation moves the pH within minutes, not hours.</p></div>
+    </div>
+  </div>
+</div></div>
+</article><article class="slide">
+  <header class="slide-head">
+    <span class="slide-n" aria-hidden="true">08</span>
+    <div><p class="slide-eyebrow">The toolkit</p><h2 class="slide-title">Four families of biological molecule</h2></div>
+    <span class="slide-beat">Mechanism</span>
+  </header>
+  <div class="slide-body">
+<figure><svg class="fig" viewBox="0 0 1680 400" role="img" aria-labelledby="figT1 figD1">
+<title id="figT1">The four families of biological molecules</title><desc id="figD1">A top-down map with four branch cards: carbohydrates, lipids, proteins, and nucleotides, each listing four defining features.</desc>
+<rect width="1680" height="400" fill="#ffffff"/>
+<rect x="500" y="38" width="680" height="66" rx="10" fill="#0B1530"/>
+<text x="840" y="68" text-anchor="middle" font-size="22" font-weight="800" font-family="sans-serif" fill="#ffffff">The four families</text>
+<text x="840" y="93" text-anchor="middle" font-size="22" font-weight="800" font-family="sans-serif" fill="#DCB45C">every biological molecule belongs to one</text>
+<line x1="840" y1="104" x2="840" y2="152" stroke="#8B3A2E" stroke-width="2.4"/>
+<line x1="222" y1="152" x2="1458" y2="152" stroke="#8B3A2E" stroke-width="2.4"/>
+<line x1="222" y1="152" x2="222" y2="196" stroke="#8B3A2E" stroke-width="2.4"/>
+<g class="mapcard" role="button" tabindex="0" aria-label="Enlarge Carbohydrates" data-b="Carbohydrates" data-l="C, H and O|Fast fuel|Glycogen is the store|Labels on cell surfaces">
+<rect class="mc-hit" x="24" y="196" width="396" height="178" rx="10" fill="#ffffff" stroke="#0B1530" stroke-width="1.5"/>
+<rect x="24" y="196" width="396" height="52" rx="10" fill="#8B3A2E"/>
+<rect x="24" y="236" width="396" height="12" fill="#8B3A2E"/>
+<text x="222" y="228" text-anchor="middle" font-size="17" font-weight="800" font-family="sans-serif" fill="#ffffff">Carbohydrates</text>
+<circle cx="44" cy="275" r="3.4" fill="#8B3A2E"/>
+<text x="56" y="280" font-size="16" font-family="sans-serif" fill="#0B1530">C, H and O</text>
+<circle cx="44" cy="299" r="3.4" fill="#8B3A2E"/>
+<text x="56" y="304" font-size="16" font-family="sans-serif" fill="#0B1530">Fast fuel</text>
+<circle cx="44" cy="323" r="3.4" fill="#8B3A2E"/>
+<text x="56" y="328" font-size="16" font-family="sans-serif" fill="#0B1530">Glycogen is the store</text>
+<circle cx="44" cy="347" r="3.4" fill="#8B3A2E"/>
+<text x="56" y="352" font-size="16" font-family="sans-serif" fill="#0B1530">Labels on cell surfaces</text>
+</g>
+<line x1="634" y1="152" x2="634" y2="196" stroke="#8B3A2E" stroke-width="2.4"/>
+<g class="mapcard" role="button" tabindex="0" aria-label="Enlarge Lipids" data-b="Lipids" data-l="Mostly C and H, so oily|Triglycerides store energy|Phospholipids build membranes|Steroids from cholesterol">
+<rect class="mc-hit" x="436" y="196" width="396" height="178" rx="10" fill="#ffffff" stroke="#0B1530" stroke-width="1.5"/>
+<rect x="436" y="196" width="396" height="52" rx="10" fill="#8B3A2E"/>
+<rect x="436" y="236" width="396" height="12" fill="#8B3A2E"/>
+<text x="634" y="228" text-anchor="middle" font-size="17" font-weight="800" font-family="sans-serif" fill="#ffffff">Lipids</text>
+<circle cx="456" cy="275" r="3.4" fill="#8B3A2E"/>
+<text x="468" y="280" font-size="16" font-family="sans-serif" fill="#0B1530">Mostly C and H, so oily</text>
+<circle cx="456" cy="299" r="3.4" fill="#8B3A2E"/>
+<text x="468" y="304" font-size="16" font-family="sans-serif" fill="#0B1530">Triglycerides store energy</text>
+<circle cx="456" cy="323" r="3.4" fill="#8B3A2E"/>
+<text x="468" y="328" font-size="16" font-family="sans-serif" fill="#0B1530">Phospholipids build membranes</text>
+<circle cx="456" cy="347" r="3.4" fill="#8B3A2E"/>
+<text x="468" y="352" font-size="16" font-family="sans-serif" fill="#0B1530">Steroids from cholesterol</text>
+</g>
+<line x1="1046" y1="152" x2="1046" y2="196" stroke="#8B3A2E" stroke-width="2.4"/>
+<g class="mapcard" role="button" tabindex="0" aria-label="Enlarge Proteins" data-b="Proteins" data-l="Amino acid chains|Shape decides function|The most versatile family|Denature and it stops working">
+<rect class="mc-hit" x="848" y="196" width="396" height="178" rx="10" fill="#ffffff" stroke="#0B1530" stroke-width="1.5"/>
+<rect x="848" y="196" width="396" height="52" rx="10" fill="#8B3A2E"/>
+<rect x="848" y="236" width="396" height="12" fill="#8B3A2E"/>
+<text x="1046" y="228" text-anchor="middle" font-size="17" font-weight="800" font-family="sans-serif" fill="#ffffff">Proteins</text>
+<circle cx="868" cy="275" r="3.4" fill="#8B3A2E"/>
+<text x="880" y="280" font-size="16" font-family="sans-serif" fill="#0B1530">Amino acid chains</text>
+<circle cx="868" cy="299" r="3.4" fill="#8B3A2E"/>
+<text x="880" y="304" font-size="16" font-family="sans-serif" fill="#0B1530">Shape decides function</text>
+<circle cx="868" cy="323" r="3.4" fill="#8B3A2E"/>
+<text x="880" y="328" font-size="16" font-family="sans-serif" fill="#0B1530">The most versatile family</text>
+<circle cx="868" cy="347" r="3.4" fill="#8B3A2E"/>
+<text x="880" y="352" font-size="16" font-family="sans-serif" fill="#0B1530">Denature and it stops working</text>
+</g>
+<line x1="1458" y1="152" x2="1458" y2="196" stroke="#8B3A2E" stroke-width="2.4"/>
+<g class="mapcard" role="button" tabindex="0" aria-label="Enlarge Nucleotides" data-b="Nucleotides" data-l="ATP, the energy currency|cAMP carries signals|NAD and FAD carry electrons|DNA and RNA store the code">
+<rect class="mc-hit" x="1260" y="196" width="396" height="178" rx="10" fill="#ffffff" stroke="#0B1530" stroke-width="1.5"/>
+<rect x="1260" y="196" width="396" height="52" rx="10" fill="#8B3A2E"/>
+<rect x="1260" y="236" width="396" height="12" fill="#8B3A2E"/>
+<text x="1458" y="228" text-anchor="middle" font-size="17" font-weight="800" font-family="sans-serif" fill="#ffffff">Nucleotides</text>
+<circle cx="1280" cy="275" r="3.4" fill="#8B3A2E"/>
+<text x="1292" y="280" font-size="16" font-family="sans-serif" fill="#0B1530">ATP, the energy currency</text>
+<circle cx="1280" cy="299" r="3.4" fill="#8B3A2E"/>
+<text x="1292" y="304" font-size="16" font-family="sans-serif" fill="#0B1530">cAMP carries signals</text>
+<circle cx="1280" cy="323" r="3.4" fill="#8B3A2E"/>
+<text x="1292" y="328" font-size="16" font-family="sans-serif" fill="#0B1530">NAD and FAD carry electrons</text>
+<circle cx="1280" cy="347" r="3.4" fill="#8B3A2E"/>
+<text x="1292" y="352" font-size="16" font-family="sans-serif" fill="#0B1530">DNA and RNA store the code</text>
+</g>
+</svg><figcaption><b>Figure 2.</b> Structure sets function in all four families. This is the first theme from Mission 1, showing up exactly where you would expect it.</figcaption></figure></div>
+</article><article class="slide">
+  <header class="slide-head">
+    <span class="slide-n" aria-hidden="true">09</span>
+    <div><p class="slide-eyebrow">Proteins</p><h2 class="slide-title">Shape is everything</h2></div>
+    <span class="slide-beat">Mechanism</span>
+  </header>
+  <div class="slide-body">
+<div class="two">
+  <div>
+    <ul class="bul">
+      <li>Proteins are chains of <b>amino acids</b> joined by <b>peptide bonds</b>.</li>
+      <li>There are twenty amino acids. What differs between them is the side chain, and side chains are what make one region of a protein polar, another charged, another oily.</li>
+      <li>The sequence is set by the gene. Everything after that is folding, and folding is what makes the protein work.</li>
+      <li><b>Denaturation</b> is loss of that shape, from heat, extreme pH, or certain chemicals. Function goes with it, and often it does not come back.</li>
+    </ul>
+  </div>
+  <div>
+    <figure><svg class="fig" viewBox="0 0 900 300" role="img" aria-labeledby="figT3 figD3">
+<title id="figT3">The four levels of protein structure</title><desc id="figD3">Four levels stacked: primary structure is the amino acid sequence, secondary is local folding into helices and sheets, tertiary is the full three-dimensional shape of one chain, and quaternary is several chains assembled into one functional protein.</desc>
+<rect width="900" height="300" fill="#ffffff"/>
+<rect x="300" y="26" width="300" height="52" rx="8" fill="#ffffff" stroke="#8B3A2E" stroke-width="1.5"/>
+<text x="450" y="53" text-anchor="middle" font-size="15.5" font-weight="700" font-family="sans-serif" fill="#0B1530">Primary</text>
+<text x="450" y="70" text-anchor="middle" font-size="12.5" font-family="sans-serif" fill="#4F576A">the amino acid sequence, set by the gene</text>
+<rect x="220" y="88" width="460" height="52" rx="8" fill="#ffffff" stroke="#8B3A2E" stroke-width="1.5"/>
+<text x="450" y="115" text-anchor="middle" font-size="15.5" font-weight="700" font-family="sans-serif" fill="#0B1530">Secondary</text>
+<text x="450" y="132" text-anchor="middle" font-size="12.5" font-family="sans-serif" fill="#4F576A">alpha helices and beta sheets, held by hydrogen bonds</text>
+<rect x="140" y="150" width="620" height="52" rx="8" fill="#ffffff" stroke="#8B3A2E" stroke-width="1.5"/>
+<text x="450" y="177" text-anchor="middle" font-size="15.5" font-weight="700" font-family="sans-serif" fill="#0B1530">Tertiary</text>
+<text x="450" y="194" text-anchor="middle" font-size="12.5" font-family="sans-serif" fill="#4F576A">the full three dimensional shape of one chain</text>
+<rect x="60" y="212" width="780" height="52" rx="8" fill="#0B1530" stroke="#0B1530" stroke-width="1.5"/>
+<text x="450" y="239" text-anchor="middle" font-size="15.5" font-weight="700" font-family="sans-serif" fill="#ffffff">Quaternary</text>
+<text x="450" y="256" text-anchor="middle" font-size="12.5" font-family="sans-serif" fill="#DCB45C">several chains assembled, as in hemoglobin</text>
+</svg><figcaption><b>Figure 3.</b> A fever high enough to denature enzymes is lethal for exactly this reason.</figcaption></figure>
+  </div>
+</div>
+<div class="clin">
+  <button class="clin-btn" type="button" aria-controls="clin4" aria-expanded="false">
+    <span>What this means in the clinic</span><span class="chev" aria-hidden="true">&#9656;</span></button>
+  <div class="clin-body" id="clin4" hidden>
+    <div class="clin-grid">
+      <div class="cprof n"><p class="who">Nursing</p><p class="means">Temperature control is protein protection.</p><p class="eg"><b>Example:</b> Above roughly 40 C (104 F) the concern shifts from comfort to enzymes losing their shape.</p></div>
+      <div class="cprof x"><p class="who">Radiologic technology</p><p class="means">MRI puts radiofrequency energy into the patient, and that energy turns into heat in tissue.</p><p class="eg"><b>Example:</b> The SAR limit the scanner enforces on a sequence exists for this reason. It is a cap on how much the patient is allowed to warm, because tissue proteins have a temperature they will not survive.</p></div>
+      <div class="cprof m"><p class="who">Medicine</p><p class="means">Losing the folded shape means losing the function, and often it does not come back.</p><p class="eg"><b>Example:</b> That is why a very high body temperature is an emergency in its own right and not just an uncomfortable symptom.</p></div>
+      <div class="cprof r"><p class="who">Respiratory therapy</p><p class="means">Heated humidifiers are limited on purpose.</p><p class="eg"><b>Example:</b> Delivered gas is warmed to body temperature and no higher, because airway proteins denature the same way any other protein does.</p></div>
+    </div>
+  </div>
+</div></div>
+</article><article class="slide">
+  <header class="slide-head">
+    <span class="slide-n" aria-hidden="true">10</span>
+    <div><p class="slide-eyebrow">Proteins</p><h2 class="slide-title">Six jobs, one mechanism underneath</h2></div>
+    <span class="slide-beat">Mechanism</span>
+  </header>
+  <div class="slide-body">
+<figure><svg class="fig" viewBox="0 0 1680 424" role="img" aria-labelledby="figT2 figD2">
+<title id="figT2">What proteins do in the body</title><desc id="figD2">A top-down map with six branch cards below the heading: enzymes, transporters, receptors, defense, structural and regulatory proteins, each listing what that group does.</desc>
+<rect width="1680" height="424" fill="#ffffff"/>
+<rect x="545" y="38" width="590" height="66" rx="10" fill="#0B1530"/>
+<text x="840" y="68" text-anchor="middle" font-size="22" font-weight="800" font-family="sans-serif" fill="#ffffff">Proteins</text>
+<text x="840" y="93" text-anchor="middle" font-size="22" font-weight="800" font-family="sans-serif" fill="#DCB45C">six jobs, one mechanism underneath</text>
+<line x1="840" y1="104" x2="840" y2="152" stroke="#8B3A2E" stroke-width="2.4"/>
+<line x1="153" y1="152" x2="1527" y2="152" stroke="#8B3A2E" stroke-width="2.4"/>
+<line x1="153" y1="152" x2="153" y2="196" stroke="#8B3A2E" stroke-width="2.4"/>
+<g class="mapcard" role="button" tabindex="0" aria-label="Enlarge Enzymes" data-b="Enzymes" data-l="Speed up a reaction|Not used up|Lower the energy barrier">
+<rect class="mc-hit" x="24" y="196" width="259" height="202" rx="10" fill="#ffffff" stroke="#0B1530" stroke-width="1.5"/>
+<rect x="24" y="196" width="259" height="52" rx="10" fill="#8B3A2E"/>
+<rect x="24" y="236" width="259" height="12" fill="#8B3A2E"/>
+<text x="153" y="228" text-anchor="middle" font-size="17" font-weight="800" font-family="sans-serif" fill="#ffffff">Enzymes</text>
+<circle cx="44" cy="275" r="3.4" fill="#8B3A2E"/>
+<text x="56" y="280" font-size="16" font-family="sans-serif" fill="#0B1530">Speed up a reaction</text>
+<circle cx="44" cy="299" r="3.4" fill="#8B3A2E"/>
+<text x="56" y="304" font-size="16" font-family="sans-serif" fill="#0B1530">Not used up</text>
+<circle cx="44" cy="323" r="3.4" fill="#8B3A2E"/>
+<text x="56" y="328" font-size="16" font-family="sans-serif" fill="#0B1530">Lower the energy barrier</text>
+</g>
+<line x1="428" y1="152" x2="428" y2="196" stroke="#8B3A2E" stroke-width="2.4"/>
+<g class="mapcard" role="button" tabindex="0" aria-label="Enlarge Transporters" data-b="Transporters" data-l="Move solutes across membranes|They saturate|Channels and carriers">
+<rect class="mc-hit" x="299" y="196" width="259" height="202" rx="10" fill="#ffffff" stroke="#0B1530" stroke-width="1.5"/>
+<rect x="299" y="196" width="259" height="52" rx="10" fill="#8B3A2E"/>
+<rect x="299" y="236" width="259" height="12" fill="#8B3A2E"/>
+<text x="428" y="228" text-anchor="middle" font-size="17" font-weight="800" font-family="sans-serif" fill="#ffffff">Transporters</text>
+<circle cx="319" cy="275" r="3.4" fill="#8B3A2E"/>
+<text x="331" y="280" font-size="16" font-family="sans-serif" fill="#0B1530">Move solutes across</text>
+<text x="331" y="304" font-size="16" font-family="sans-serif" fill="#0B1530">membranes</text>
+<circle cx="319" cy="323" r="3.4" fill="#8B3A2E"/>
+<text x="331" y="328" font-size="16" font-family="sans-serif" fill="#0B1530">They saturate</text>
+<circle cx="319" cy="347" r="3.4" fill="#8B3A2E"/>
+<text x="331" y="352" font-size="16" font-family="sans-serif" fill="#0B1530">Channels and carriers</text>
+</g>
+<line x1="703" y1="152" x2="703" y2="196" stroke="#8B3A2E" stroke-width="2.4"/>
+<g class="mapcard" role="button" tabindex="0" aria-label="Enlarge Receptors" data-b="Receptors" data-l="Bind a signal molecule|Turn binding into a response|Same signal, different result">
+<rect class="mc-hit" x="573" y="196" width="259" height="202" rx="10" fill="#ffffff" stroke="#0B1530" stroke-width="1.5"/>
+<rect x="573" y="196" width="259" height="52" rx="10" fill="#8B3A2E"/>
+<rect x="573" y="236" width="259" height="12" fill="#8B3A2E"/>
+<text x="703" y="228" text-anchor="middle" font-size="17" font-weight="800" font-family="sans-serif" fill="#ffffff">Receptors</text>
+<circle cx="593" cy="275" r="3.4" fill="#8B3A2E"/>
+<text x="605" y="280" font-size="16" font-family="sans-serif" fill="#0B1530">Bind a signal molecule</text>
+<circle cx="593" cy="299" r="3.4" fill="#8B3A2E"/>
+<text x="605" y="304" font-size="16" font-family="sans-serif" fill="#0B1530">Turn binding into a</text>
+<text x="605" y="328" font-size="16" font-family="sans-serif" fill="#0B1530">response</text>
+<circle cx="593" cy="347" r="3.4" fill="#8B3A2E"/>
+<text x="605" y="352" font-size="16" font-family="sans-serif" fill="#0B1530">Same signal, different</text>
+<text x="605" y="376" font-size="16" font-family="sans-serif" fill="#0B1530">result</text>
+</g>
+<line x1="977" y1="152" x2="977" y2="196" stroke="#8B3A2E" stroke-width="2.4"/>
+<g class="mapcard" role="button" tabindex="0" aria-label="Enlarge Defense" data-b="Defense" data-l="Antibodies bind antigens|Recognition is binding">
+<rect class="mc-hit" x="848" y="196" width="259" height="202" rx="10" fill="#ffffff" stroke="#0B1530" stroke-width="1.5"/>
+<rect x="848" y="196" width="259" height="52" rx="10" fill="#8B3A2E"/>
+<rect x="848" y="236" width="259" height="12" fill="#8B3A2E"/>
+<text x="977" y="228" text-anchor="middle" font-size="17" font-weight="800" font-family="sans-serif" fill="#ffffff">Defense</text>
+<circle cx="868" cy="275" r="3.4" fill="#8B3A2E"/>
+<text x="880" y="280" font-size="16" font-family="sans-serif" fill="#0B1530">Antibodies bind antigens</text>
+<circle cx="868" cy="299" r="3.4" fill="#8B3A2E"/>
+<text x="880" y="304" font-size="16" font-family="sans-serif" fill="#0B1530">Recognition is binding</text>
+</g>
+<line x1="1252" y1="152" x2="1252" y2="196" stroke="#8B3A2E" stroke-width="2.4"/>
+<g class="mapcard" role="button" tabindex="0" aria-label="Enlarge Structural" data-b="Structural" data-l="Collagen and keratin|Shape and strength">
+<rect class="mc-hit" x="1123" y="196" width="259" height="202" rx="10" fill="#ffffff" stroke="#0B1530" stroke-width="1.5"/>
+<rect x="1123" y="196" width="259" height="52" rx="10" fill="#8B3A2E"/>
+<rect x="1123" y="236" width="259" height="12" fill="#8B3A2E"/>
+<text x="1252" y="228" text-anchor="middle" font-size="17" font-weight="800" font-family="sans-serif" fill="#ffffff">Structural</text>
+<circle cx="1143" cy="275" r="3.4" fill="#8B3A2E"/>
+<text x="1155" y="280" font-size="16" font-family="sans-serif" fill="#0B1530">Collagen and keratin</text>
+<circle cx="1143" cy="299" r="3.4" fill="#8B3A2E"/>
+<text x="1155" y="304" font-size="16" font-family="sans-serif" fill="#0B1530">Shape and strength</text>
+</g>
+<line x1="1527" y1="152" x2="1527" y2="196" stroke="#8B3A2E" stroke-width="2.4"/>
+<g class="mapcard" role="button" tabindex="0" aria-label="Enlarge Regulatory" data-b="Regulatory" data-l="Switch genes on and off|Carry hormones in blood">
+<rect class="mc-hit" x="1397" y="196" width="259" height="202" rx="10" fill="#ffffff" stroke="#0B1530" stroke-width="1.5"/>
+<rect x="1397" y="196" width="259" height="52" rx="10" fill="#8B3A2E"/>
+<rect x="1397" y="236" width="259" height="12" fill="#8B3A2E"/>
+<text x="1527" y="228" text-anchor="middle" font-size="17" font-weight="800" font-family="sans-serif" fill="#ffffff">Regulatory</text>
+<circle cx="1417" cy="275" r="3.4" fill="#8B3A2E"/>
+<text x="1429" y="280" font-size="16" font-family="sans-serif" fill="#0B1530">Switch genes on and off</text>
+<circle cx="1417" cy="299" r="3.4" fill="#8B3A2E"/>
+<text x="1429" y="304" font-size="16" font-family="sans-serif" fill="#0B1530">Carry hormones in blood</text>
+</g>
+</svg><figcaption><b>Figure 4.</b> Six different jobs. Every one of them is a binding event that changes a shape.</figcaption></figure></div>
+</article><article class="slide">
+  <header class="slide-head">
+    <span class="slide-n" aria-hidden="true">11</span>
+    <div><p class="slide-eyebrow">Binding</p><h2 class="slide-title">The five steps</h2></div>
+    <span class="slide-beat">Response</span>
+  </header>
+  <div class="slide-body">
+<figure><svg class="fig" viewBox="0 0 1040 127" role="img" aria-labeledby="figT4 figD4">
+<title id="figT4">The five steps of protein binding</title><desc id="figD4">A left to right chain: a ligand approaches, fits a binding site whose shape and charge match, forms a complex held by weak reversible bonds, causes the protein to change shape and carry out its function, then dissociates and leaves the site free.</desc>
+<rect width="1040" height="127" fill="#ffffff"/>
+<defs><marker id="ah4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#8B3A2E"/></marker><marker id="ahm4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#4F576A"/></marker></defs>
+<rect x="20" y="26" width="187" height="79" rx="8" fill="#ffffff" stroke="#0B1530" stroke-width="1.4"/>
+<text x="114" y="48" text-anchor="middle" font-size="14" font-weight="700" font-family="sans-serif" fill="#0B1530">Ligand</text>
+<text x="114" y="67" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#4F576A">the molecule that binds</text>
+<rect x="223" y="26" width="187" height="79" rx="8" fill="#ffffff" stroke="#0B1530" stroke-width="1.4"/>
+<text x="317" y="48" text-anchor="middle" font-size="14" font-weight="700" font-family="sans-serif" fill="#0B1530">Binding site</text>
+<text x="317" y="67" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#4F576A">a pocket with matching shape</text>
+<text x="317" y="83" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#4F576A">and charge</text>
+<line x1="210" y1="66" x2="219" y2="66" stroke="#8B3A2E" stroke-width="2.2" marker-end="url(#ah4)"/>
+<rect x="426" y="26" width="187" height="79" rx="8" fill="#ffffff" stroke="#0B1530" stroke-width="1.4"/>
+<text x="520" y="48" text-anchor="middle" font-size="14" font-weight="700" font-family="sans-serif" fill="#0B1530">Complex forms</text>
+<text x="520" y="67" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#4F576A">held by weak, reversible</text>
+<text x="520" y="83" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#4F576A">bonds</text>
+<line x1="413" y1="66" x2="422" y2="66" stroke="#8B3A2E" stroke-width="2.2" marker-end="url(#ah4)"/>
+<rect x="630" y="26" width="187" height="79" rx="8" fill="#ffffff" stroke="#0B1530" stroke-width="1.4"/>
+<text x="723" y="48" text-anchor="middle" font-size="14" font-weight="700" font-family="sans-serif" fill="#0B1530">Protein changes shape</text>
+<text x="723" y="67" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#4F576A">and does its job</text>
+<line x1="617" y1="66" x2="626" y2="66" stroke="#8B3A2E" stroke-width="2.2" marker-end="url(#ah4)"/>
+<rect x="833" y="26" width="187" height="79" rx="8" fill="#ffffff" stroke="#0B1530" stroke-width="1.4"/>
+<text x="926" y="48" text-anchor="middle" font-size="14" font-weight="700" font-family="sans-serif" fill="#0B1530">Ligand releases</text>
+<text x="926" y="67" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#4F576A">the site is free again</text>
+<line x1="820" y1="66" x2="829" y2="66" stroke="#8B3A2E" stroke-width="2.2" marker-end="url(#ah4)"/>
+</svg><figcaption><b>Figure 5.</b> Enzymes, receptors, transporters and antibodies all run this same sequence. Learn it once.</figcaption></figure>
+<div class="two" style="margin-top:18px">
+  <div>
+    <ul class="bul">
+      <li><b>Ligand</b>: any molecule that binds to a protein. A substrate is the ligand of an enzyme, a hormone is the ligand of a receptor.</li>
+      <li><b>Binding site</b>: the pocket whose shape and charge distribution match the ligand.</li>
+      <li>Binding uses weak, <b>reversible</b> interactions, which is what allows the response to be switched off again.</li>
+    </ul>
+  </div>
+  <div>
+    <div class="reveal-wrap">
+  <button class="rv-btn" type="button" aria-controls="q11" aria-expanded="false">Two properties that describe every binding pair</button>
+  <div class="rv" id="q11" hidden><p class="tag">Definitions</p><p><b>Specificity</b> is how selective the site is about what it will accept. High specificity means it binds one ligand and refuses close relatives.</p><p><b>Affinity</b> is how tightly it holds what it binds. High affinity means the complex stays together longer before it dissociates.</p><p>These are independent. A site can be fussy and hold loosely, or tolerant and hold hard.</p></div>
+</div>
+  </div>
+</div>
+<div class="clin">
+  <button class="clin-btn" type="button" aria-controls="clin5" aria-expanded="false">
+    <span>What this means in the clinic</span><span class="chev" aria-hidden="true">&#9656;</span></button>
+  <div class="clin-body" id="clin5" hidden>
+    <div class="clin-grid">
+      <div class="cprof n"><p class="who">Nursing</p><p class="means">Reversal agents work by competing for the same site.</p><p class="eg"><b>Example:</b> Naloxone displaces opioid from the receptor, and if it wears off first the opioid can bind again and the patient re-sedates.</p></div>
+      <div class="cprof x"><p class="who">Radiologic technology</p><p class="means">Gadolinium contrast is safe only because the metal is held inside a binding cage. The binding is the safety.</p><p class="eg"><b>Example:</b> Free gadolinium is toxic. It is injected locked into a chelate that holds it while it circulates and lets it be cleared intact. The entire concern about gadolinium retention is a question about how tightly that binding holds.</p></div>
+      <div class="cprof m"><p class="who">Medicine</p><p class="means">Specificity is a property of the pair, not of the drug on its own.</p><p class="eg"><b>Example:</b> The same molecule produces different effects in different tissues, because the receptor it meets there is different.</p></div>
+      <div class="cprof r"><p class="who">Respiratory therapy</p><p class="means">Receptor selectivity is why one bronchodilator is chosen over another.</p><p class="eg"><b>Example:</b> A drug aimed at airway receptors still reaches heart receptors, and that is where the tremor and the fast heart rate come from.</p></div>
+    </div>
+  </div>
+</div></div>
+</article><article class="slide">
+  <header class="slide-head">
+    <span class="slide-n" aria-hidden="true">12</span>
+    <div><p class="slide-eyebrow">Binding</p><h2 class="slide-title">Saturation</h2></div>
+    <span class="slide-beat">Response</span>
+  </header>
+  <div class="slide-body">
+<figure><svg class="fig" viewBox="0 0 940 396" role="img" aria-labelledby="figT6 figD6">
+<title id="figT6">Binding saturation as ligand concentration rises</title><desc id="figD6">A curve rising steeply at low ligand concentration then flattening as it approaches one hundred percent saturation. A marked point shows the concentration at which half the binding sites are occupied.</desc>
+<rect width="940" height="396" fill="#ffffff"/>
+<line x1="80" y1="36" x2="80" y2="258" stroke="#0B1530" stroke-width="1.4"/>
+<line x1="80" y1="258" x2="880" y2="258" stroke="#0B1530" stroke-width="1.4"/>
+<line x1="80" y1="46" x2="880" y2="46" stroke="#4F576A" stroke-width="1.4" stroke-dasharray="7 5"/>
+<text x="876" y="38" text-anchor="end" font-size="13.5" font-weight="700" font-family="sans-serif" fill="#4F576A">100 percent saturation</text>
+<polyline points="80.0,258.0 82.0,254.7 84.0,251.6 86.0,248.5 88.0,245.5 90.0,242.6 92.0,239.8 94.0,237.1 96.0,234.4 98.0,231.9 100.0,229.4 102.0,226.9 104.0,224.5 106.0,222.2 108.0,219.9 110.0,217.7 112.0,215.6 114.0,213.5 116.0,211.5 118.0,209.5 120.0,207.5 122.0,205.6 124.0,203.8 126.0,202.0 128.0,200.2 130.0,198.4 132.0,196.8 134.0,195.1 136.0,193.5 138.0,191.9 140.0,190.3 142.0,188.8 144.0,187.3 146.0,185.9 148.0,184.4 150.0,183.1 152.0,181.7 154.0,180.3 156.0,179.0 158.0,177.7 160.0,176.5 162.0,175.2 164.0,174.0 166.0,172.8 168.0,171.6 170.0,170.5 172.0,169.3 174.0,168.2 176.0,167.1 178.0,166.1 180.0,165.0 182.0,164.0 184.0,163.0 186.0,162.0 188.0,161.0 190.0,160.0 192.0,159.1 194.0,158.1 196.0,157.2 198.0,156.3 200.0,155.4 202.0,154.5 204.0,153.7 206.0,152.8 208.0,152.0 210.0,151.2 212.0,150.4 214.0,149.6 216.0,148.8 218.0,148.0 220.0,147.3 222.0,146.5 224.0,145.8 226.0,145.0 228.0,144.3 230.0,143.6 232.0,142.9 234.0,142.2 236.0,141.5 238.0,140.9 240.0,140.2 242.0,139.6 244.0,138.9 246.0,138.3 248.0,137.7 250.0,137.1 252.0,136.5 254.0,135.9 256.0,135.3 258.0,134.7 260.0,134.1 262.0,133.5 264.0,133.0 266.0,132.4 268.0,131.9 270.0,131.3 272.0,130.8 274.0,130.3 276.0,129.8 278.0,129.2 280.0,128.7 282.0,128.2 284.0,127.7 286.0,127.2 288.0,126.8 290.0,126.3 292.0,125.8 294.0,125.3 296.0,124.9 298.0,124.4 300.0,124.0 302.0,123.5 304.0,123.1 306.0,122.7 308.0,122.2 310.0,121.8 312.0,121.4 314.0,121.0 316.0,120.5 318.0,120.1 320.0,119.7 322.0,119.3 324.0,118.9 326.0,118.6 328.0,118.2 330.0,117.8 332.0,117.4 334.0,117.0 336.0,116.7 338.0,116.3 340.0,115.9 342.0,115.6 344.0,115.2 346.0,114.9 348.0,114.5 350.0,114.2 352.0,113.8 354.0,113.5 356.0,113.2 358.0,112.8 360.0,112.5 362.0,112.2 364.0,111.9 366.0,111.5 368.0,111.2 370.0,110.9 372.0,110.6 374.0,110.3 376.0,110.0 378.0,109.7 380.0,109.4 382.0,109.1 384.0,108.8 386.0,108.5 388.0,108.2 390.0,108.0 392.0,107.7 394.0,107.4 396.0,107.1 398.0,106.8 400.0,106.6 402.0,106.3 404.0,106.0 406.0,105.8 408.0,105.5 410.0,105.2 412.0,105.0 414.0,104.7 416.0,104.5 418.0,104.2 420.0,104.0 422.0,103.7 424.0,103.5 426.0,103.2 428.0,103.0 430.0,102.8 432.0,102.5 434.0,102.3 436.0,102.1 438.0,101.8 440.0,101.6 442.0,101.4 444.0,101.2 446.0,100.9 448.0,100.7 450.0,100.5 452.0,100.3 454.0,100.1 456.0,99.8 458.0,99.6 460.0,99.4 462.0,99.2 464.0,99.0 466.0,98.8 468.0,98.6 470.0,98.4 472.0,98.2 474.0,98.0 476.0,97.8 478.0,97.6 480.0,97.4 482.0,97.2 484.0,97.0 486.0,96.8 488.0,96.6 490.0,96.4 492.0,96.3 494.0,96.1 496.0,95.9 498.0,95.7 500.0,95.5 502.0,95.3 504.0,95.2 506.0,95.0 508.0,94.8 510.0,94.6 512.0,94.5 514.0,94.3 516.0,94.1 518.0,93.9 520.0,93.8 522.0,93.6 524.0,93.4 526.0,93.3 528.0,93.1 530.0,92.9 532.0,92.8 534.0,92.6 536.0,92.5 538.0,92.3 540.0,92.1 542.0,92.0 544.0,91.8 546.0,91.7 548.0,91.5 550.0,91.4 552.0,91.2 554.0,91.1 556.0,90.9 558.0,90.8 560.0,90.6 562.0,90.5 564.0,90.3 566.0,90.2 568.0,90.1 570.0,89.9 572.0,89.8 574.0,89.6 576.0,89.5 578.0,89.3 580.0,89.2 582.0,89.1 584.0,88.9 586.0,88.8 588.0,88.7 590.0,88.5 592.0,88.4 594.0,88.3 596.0,88.1 598.0,88.0 600.0,87.9 602.0,87.7 604.0,87.6 606.0,87.5 608.0,87.4 610.0,87.2 612.0,87.1 614.0,87.0 616.0,86.9 618.0,86.7 620.0,86.6 622.0,86.5 624.0,86.4 626.0,86.3 628.0,86.1 630.0,86.0 632.0,85.9 634.0,85.8 636.0,85.7 638.0,85.6 640.0,85.4 642.0,85.3 644.0,85.2 646.0,85.1 648.0,85.0 650.0,84.9 652.0,84.8 654.0,84.7 656.0,84.5 658.0,84.4 660.0,84.3 662.0,84.2 664.0,84.1 666.0,84.0 668.0,83.9 670.0,83.8 672.0,83.7 674.0,83.6 676.0,83.5 678.0,83.4 680.0,83.3 682.0,83.2 684.0,83.1 686.0,83.0 688.0,82.9 690.0,82.8 692.0,82.7 694.0,82.6 696.0,82.5 698.0,82.4 700.0,82.3 702.0,82.2 704.0,82.1 706.0,82.0 708.0,81.9 710.0,81.8 712.0,81.7 714.0,81.6 716.0,81.5 718.0,81.4 720.0,81.3 722.0,81.2 724.0,81.2 726.0,81.1 728.0,81.0 730.0,80.9 732.0,80.8 734.0,80.7 736.0,80.6 738.0,80.5 740.0,80.4 742.0,80.3 744.0,80.3 746.0,80.2 748.0,80.1 750.0,80.0 752.0,79.9 754.0,79.8 756.0,79.8 758.0,79.7 760.0,79.6 762.0,79.5 764.0,79.4 766.0,79.3 768.0,79.3 770.0,79.2 772.0,79.1 774.0,79.0 776.0,78.9 778.0,78.9 780.0,78.8 782.0,78.7 784.0,78.6 786.0,78.5 788.0,78.5 790.0,78.4 792.0,78.3 794.0,78.2 796.0,78.2 798.0,78.1 800.0,78.0 802.0,77.9 804.0,77.8 806.0,77.8 808.0,77.7 810.0,77.6 812.0,77.6 814.0,77.5 816.0,77.4 818.0,77.3 820.0,77.3 822.0,77.2 824.0,77.1 826.0,77.0 828.0,77.0 830.0,76.9 832.0,76.8 834.0,76.8 836.0,76.7 838.0,76.6 840.0,76.6 842.0,76.5 844.0,76.4 846.0,76.4 848.0,76.3 850.0,76.2 852.0,76.2 854.0,76.1 856.0,76.0 858.0,76.0 860.0,75.9 862.0,75.8 864.0,75.8 866.0,75.7 868.0,75.6 870.0,75.6 872.0,75.5 874.0,75.4 876.0,75.4 878.0,75.3 880.0,75.2" fill="none" stroke="#8B3A2E" stroke-width="3" stroke-linejoin="round"/>
+<line x1="80" y1="152" x2="208" y2="152" stroke="#0B1530" stroke-width="1.2" stroke-dasharray="4 4"/>
+<line x1="208" y1="152" x2="208" y2="258" stroke="#0B1530" stroke-width="1.2" stroke-dasharray="4 4"/>
+<circle cx="208" cy="152" r="5" fill="#0B1530"/>
+<text x="220" y="142" font-size="13.5" font-weight="700" font-family="sans-serif" fill="#0B1530">half saturated</text>
+<text x="480" y="298" text-anchor="middle" font-size="14.5" font-weight="700" font-family="sans-serif" fill="#0B1530">Ligand concentration</text>
+<text x="30" y="152" text-anchor="middle" font-size="14.5" font-weight="700" font-family="sans-serif" fill="#0B1530" transform="rotate(-90 30 152)">Percent of binding sites occupied</text>
+<text x="80" y="324" font-size="13.5" font-family="sans-serif" fill="#4F576A">At low concentration, a small rise in ligand adds a lot of binding.</text>
+<text x="80" y="345" font-size="13.5" font-family="sans-serif" fill="#4F576A">Near saturation, adding more ligand changes almost nothing.</text>
+<text x="80" y="366" font-size="13.5" font-family="sans-serif" fill="#4F576A">The concentration at half saturation is a measure of affinity.</text>
+</svg><figcaption><b>Figure 6.</b> Every protein-mediated process in the body has this shape somewhere in it.</figcaption></figure>
+<div class="two" style="margin-top:18px">
+  <div>
+    <ul class="bul">
+      <li>A protein has a finite number of binding sites, so the rate cannot rise forever.</li>
+      <li><b>Saturation</b> is the point at which every site is occupied and adding more ligand changes nothing.</li>
+      <li>Simple diffusion never saturates. Anything that does saturate is telling you a protein is involved.</li>
+    </ul>
+  </div>
+  <div class="predict">
+    <p class="tag">Predict</p>
+    <p>Glucose appears in the urine once plasma glucose passes roughly 180 mg/dL, and not before. Using saturation, explain why there is a threshold rather than a steady leak.</p>
+  </div>
+</div>
+<div class="clin">
+  <button class="clin-btn" type="button" aria-controls="clin6" aria-expanded="false">
+    <span>What this means in the clinic</span><span class="chev" aria-hidden="true">&#9656;</span></button>
+  <div class="clin-body" id="clin6" hidden>
+    <div class="clin-grid">
+      <div class="cprof n"><p class="who">Nursing</p><p class="means">A saturation curve is why the same size change means different things at different points on it.</p><p class="eg"><b>Example:</b> A drop from 99 to 95 percent is small. The same four point drop from 90 to 86 is not.</p></div>
+      <div class="cprof x"><p class="who">Radiologic technology</p><p class="means">Detectors saturate the same way proteins do. Past a point, more of the input buys none of the output.</p><p class="eg"><b>Example:</b> An overexposed region of a digital image is saturated: every pixel there is already reading maximum, so the detail is gone and more dose will not bring it back. It only adds exposure to the patient for no image.</p></div>
+      <div class="cprof m"><p class="who">Medicine</p><p class="means">Anything that saturates involves a protein, and saturation produces thresholds rather than gradual leaks.</p><p class="eg"><b>Example:</b> Glucose appears in the urine only once the transporters are overwhelmed, which is why there is a threshold instead of a steady trickle.</p></div>
+      <div class="cprof r"><p class="who">Respiratory therapy</p><p class="means">The oxyhemoglobin dissociation curve is exactly this shape.</p><p class="eg"><b>Example:</b> Above about 90 percent, adding more oxygen buys very little extra saturation, so the fix usually has to be somewhere other than the oxygen dial.</p></div>
+    </div>
+  </div>
+</div></div>
+</article><article class="slide">
+  <header class="slide-head">
+    <span class="slide-n" aria-hidden="true">13</span>
+    <div><p class="slide-eyebrow">Modulation</p><h2 class="slide-title">Turning proteins up and down</h2></div>
+    <span class="slide-beat">Mechanism</span>
+  </header>
+  <div class="slide-body">
+<figure><svg class="fig" viewBox="0 0 980 300" role="img" aria-labeledby="figT7 figD7">
+<title id="figT7">Competitive inhibition compared with allosteric modulation</title><desc id="figD7">Two columns. A competitive inhibitor binds the active site, resembles the substrate, can be outcompeted by more substrate, and still allows the maximum rate. An allosteric modulator binds a separate site, changes the shape of the active site, cannot be overcome by more substrate, and can activate as well as inhibit.</desc>
+<rect width="980" height="300" fill="#ffffff"/>
+<rect x="18" y="22" width="458" height="48" rx="8" fill="#0B1530"/>
+<text x="247" y="52" text-anchor="middle" font-size="17" font-weight="800" font-family="sans-serif" fill="#ffffff">Competitive inhibitor</text>
+<rect x="504" y="22" width="458" height="48" rx="8" fill="#ffffff" stroke="#8B3A2E" stroke-width="2"/>
+<text x="733" y="52" text-anchor="middle" font-size="17" font-weight="800" font-family="sans-serif" fill="#8B3A2E">Allosteric modulator</text>
+<line x1="18" y1="92" x2="962" y2="92" stroke="#C9CDD6" stroke-width="1"/>
+<text x="30" y="121" font-size="15" font-family="sans-serif" fill="#0B1530">Binds the active site itself</text>
+<text x="516" y="121" font-size="15" font-family="sans-serif" fill="#0B1530">Binds a different site entirely</text>
+<line x1="18" y1="138" x2="962" y2="138" stroke="#C9CDD6" stroke-width="1"/>
+<text x="30" y="167" font-size="15" font-family="sans-serif" fill="#0B1530">Looks like the substrate</text>
+<text x="516" y="167" font-size="15" font-family="sans-serif" fill="#0B1530">Changes the shape of the active site</text>
+<line x1="18" y1="184" x2="962" y2="184" stroke="#C9CDD6" stroke-width="1"/>
+<text x="30" y="213" font-size="15" font-family="sans-serif" fill="#0B1530">More substrate can outcompete it</text>
+<text x="516" y="213" font-size="15" font-family="sans-serif" fill="#0B1530">More substrate does not overcome it</text>
+<line x1="18" y1="230" x2="962" y2="230" stroke="#C9CDD6" stroke-width="1"/>
+<text x="30" y="259" font-size="15" font-family="sans-serif" fill="#0B1530">Maximum rate is still reachable</text>
+<text x="516" y="259" font-size="15" font-family="sans-serif" fill="#0B1530">Can activate as well as inhibit</text>
+<line x1="490" y1="22" x2="490" y2="286" stroke="#C9CDD6" stroke-width="1"/>
+</svg><figcaption><b>Figure 7.</b> The distinction that matters clinically: one can be outcompeted, the other cannot.</figcaption></figure>
+<div class="two" style="margin-top:18px">
+  <div>
+    <ul class="bul">
+      <li><b>Cofactor</b>: a non-protein helper the protein needs in order to work at all. Often a metal ion.</li>
+      <li><b>Coenzyme</b>: an organic cofactor, usually derived from a vitamin, which is one reason vitamin deficiencies produce such widespread effects.</li>
+      <li><b>Covalent modulation</b>: attaching a group, most often a phosphate, which switches activity on or off. Phosphorylation is the body's main on-off switch.</li>
+    </ul>
+  </div>
+  <div>
+    <div class="reveal-wrap">
+  <button class="rv-btn" type="button" aria-controls="q13" aria-expanded="false">Why the distinction matters at the bedside</button>
+  <div class="rv" id="q13" hidden><p class="tag">Application</p><p>Methanol poisoning is treated with ethanol or fomepizole, which compete for the same enzyme that would otherwise turn methanol into formic acid. That works because the inhibition is competitive: flood the system with a rival substrate and you win.</p><p>An allosteric inhibitor cannot be beaten that way. More substrate does not help, because the active site itself has changed shape.</p></div>
+</div>
+  </div>
+</div>
+<div class="clin">
+  <button class="clin-btn" type="button" aria-controls="clin7" aria-expanded="false">
+    <span>What this means in the clinic</span><span class="chev" aria-hidden="true">&#9656;</span></button>
+  <div class="clin-body" id="clin7" hidden>
+    <div class="clin-grid">
+      <div class="cprof n"><p class="who">Nursing</p><p class="means">A competitive block can be outcompeted, which changes how a reversal behaves over time.</p><p class="eg"><b>Example:</b> As a reversal agent clears, the original drug can win the site back, so the patient has to be watched past the first improvement.</p></div>
+      <div class="cprof x"><p class="who">Radiologic technology</p><p class="means">Premedication before contrast is competitive inhibition, and that is why the timing is not negotiable.</p><p class="eg"><b>Example:</b> Diphenhydramine and steroids are given to occupy the sites histamine would use, ahead of the injection. A competitive blocker has to already be sitting on the receptor when the histamine arrives. Given afterward it is competing against a site that is already taken.</p></div>
+      <div class="cprof m"><p class="who">Medicine</p><p class="means">Whether inhibition is competitive decides whether more substrate can overcome it.</p><p class="eg"><b>Example:</b> Methanol poisoning is treated by flooding the same enzyme with a rival substrate, and that only works because the block is competitive.</p></div>
+      <div class="cprof r"><p class="who">Respiratory therapy</p><p class="means">Some drugs act at a separate site and cannot be outcompeted.</p><p class="eg"><b>Example:</b> Adding more of the natural signal will not restore function if the active site itself has already changed shape.</p></div>
+    </div>
+  </div>
+</div></div>
+</article><article class="slide">
+  <header class="slide-head">
+    <span class="slide-n" aria-hidden="true">14</span>
+    <div><p class="slide-eyebrow">Reactions</p><h2 class="slide-title">Law of mass action</h2></div>
+    <span class="slide-beat">Mechanism</span>
+  </header>
+  <div class="slide-body">
+<div class="two">
+  <div>
+    <div class="eq">
+      <p class="f">A + B &#8652; AB</p>
+      <p class="k">The double arrow is doing the work. Reversible reactions run both directions at once.</p>
+      <p class="says">What it says: <b>add more of anything on one side and the reaction shifts away from it.</b> Take something away and it shifts toward that side to replace it. This single idea explains oxygen loading in the lung, carbon dioxide carriage in blood, and every buffer you will meet.</p>
+    </div>
+    <ul class="bul">
+      <li><b>Reaction rate</b> depends on concentration of reactants, temperature, and how much enzyme is present.</li>
+      <li>Enzymes speed a reaction by <b>lowering the activation energy</b>. They do not change the direction, and they are not consumed.</li>
+    </ul>
+  </div>
+  <div class="predict">
+    <p class="tag">Perturb</p>
+    <p>Carbon dioxide combines with water to form carbonic acid, which dissociates into hydrogen ion and bicarbonate. A patient stops breathing adequately and carbon dioxide accumulates. Use mass action to predict what happens to their blood pH, and name every step in the chain.</p>
+  </div>
+</div>
+<div class="clin">
+  <button class="clin-btn" type="button" aria-controls="clin8" aria-expanded="false">
+    <span>What this means in the clinic</span><span class="chev" aria-hidden="true">&#9656;</span></button>
+  <div class="clin-body" id="clin8" hidden>
+    <div class="clin-grid">
+      <div class="cprof n"><p class="who">Nursing</p><p class="means">Respiratory rate is a pH instrument.</p><p class="eg"><b>Example:</b> A patient who stops breathing adequately becomes acidotic within minutes, well before any lab result returns.</p></div>
+      <div class="cprof x"><p class="who">Radiologic technology</p><p class="means">The breath hold you coach on every chest CT is a mass action problem the patient is losing.</p><p class="eg"><b>Example:</b> Holding a breath lets carbon dioxide build, the reaction shifts toward acid, and that shift is what the patient feels as the urge to breathe. Coaching a few deep breaths first drives carbon dioxide down before the hold, which buys a longer and steadier hold and a sharper image.</p></div>
+      <div class="cprof m"><p class="who">Medicine</p><p class="means">Push one side of a reversible reaction and it shifts away from you.</p><p class="eg"><b>Example:</b> Carbon dioxide accumulating shifts the reaction toward acid, and the pH falls as a direct consequence.</p></div>
+      <div class="cprof r"><p class="who">Respiratory therapy</p><p class="means">Minute ventilation is the fastest control you have over blood pH.</p><p class="eg"><b>Example:</b> Change ventilation, carbon dioxide changes, and pH changes with it, all inside a few minutes.</p></div>
+    </div>
+  </div>
+</div></div>
+</article><article class="slide">
+  <header class="slide-head">
+    <span class="slide-n" aria-hidden="true">15</span>
+    <div><p class="slide-eyebrow">Variants</p><h2 class="slide-title">Isozymes and proenzymes</h2></div>
+    <span class="slide-beat">Mechanism</span>
+  </header>
+  <div class="slide-body">
+<div class="two">
+  <div>
+    <h3>Isozymes</h3>
+    <ul class="bul">
+      <li>Different forms of the same enzyme, catalyzing the same reaction with different efficiencies or in different tissues.</li>
+      <li>Because tissues carry different isozyme mixes, finding a particular form in blood tells you which tissue was damaged. That is the whole basis of cardiac enzyme testing.</li>
+    </ul>
+  </div>
+  <div>
+    <h3>Proenzymes</h3>
+    <ul class="bul">
+      <li>An inactive precursor, activated later by cutting off part of the molecule. Also called a zymogen.</li>
+      <li>Pepsinogen becomes pepsin only in the acid of the stomach. Digestive enzymes made in an active form would digest the organ that made them.</li>
+      <li>Acute pancreatitis is partly this control failing, with enzymes activating while still inside the pancreas.</li>
+    </ul>
+  </div>
+</div></div>
+</article><article class="slide">
+  <header class="slide-head">
+    <span class="slide-n" aria-hidden="true">16</span>
+    <div><p class="slide-eyebrow">Close</p><h2 class="slide-title">Draw it from memory</h2></div>
+    <span class="slide-beat">Perturb</span>
+  </header>
+  <div class="slide-body">
+<div class="two">
+  <div>
+    <p class="lead">Blank paper. Six minutes, nothing open.</p>
+    <ul class="bul">
+      <li>Draw a binding site with its ligand and label specificity and affinity on the drawing.</li>
+      <li>Sketch the saturation curve, mark half saturation, and write one sentence on what that point tells you.</li>
+      <li>Beside it, draw a competitive inhibitor and an allosteric modulator, and mark where each one binds.</li>
+      <li>Then answer in writing: which of the two can be defeated by adding more substrate, and why.</li>
+    </ul>
+  </div>
+  <div class="card navy">
+    <p class="eyebrow">Coming next</p>
+    <p style="font-size:18px;font-weight:700;line-height:1.4;margin:0 0 10px">Mission 3: Organize the machinery.</p>
+    <p style="margin:0;font-size:15px;opacity:.9">You now have molecules that can sense, bind and do work. Next you put a membrane around them, and everything you just learned about polarity decides what can cross it.</p>
+  </div>
+</div></div>
+</article>
+</main>
+<div class="pbar" role="group" aria-label="Presentation controls">
+  <button type="button" class="prev" aria-label="Previous slide">&#8249;</button>
+  <span class="c">1 / 1</span>
+  <button type="button" class="next" aria-label="Next slide">&#8250;</button>
+  <button type="button" class="x" aria-label="Exit full screen">Exit</button>
+</div>
+<p class="page-foot" style="max-width:1200px;margin:0 auto;padding:0 max(16px,3vw) 40px">Dr. Sharilyn Rennie &middot; BIOL 005 Human Physiology &middot; Mission 2, Build the Molecular Toolkit</p>
+<div id="lightbox" class="lightbox" hidden role="dialog" aria-modal="true" aria-label="Enlarged figure">
+  <button type="button" class="lb-close" aria-label="Close the enlarged figure">&#10005; Close</button>
+  <div class="lb-inner"></div>
+</div>
+<!-- ===================================================================
+     WHITEBOARD OVERLAY
+     Draw over the lecture while you teach. Works with a stylus, a mouse,
+     or a finger. Records normally in Loom, and the toolbar drags out of
+     the way of Loom's own controls.
+     Keyboard: W opens and closes, P pen, H highlighter, E eraser,
+     1 to 8 colors, [ and ] size, Ctrl+Z undo, T hides the toolbar,
+     Escape closes.
+     =================================================================== -->
+<style>
+.wb-launch{position:fixed;right:18px;bottom:18px;z-index:2147482000;
+  background:var(--terra,#8B3A2E);color:#fff;border:0;border-radius:99px;
+  padding:12px 18px;font-family:inherit;font-weight:800;font-size:12px;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;
+  box-shadow:0 6px 18px rgba(11,21,48,.28);display:inline-flex;align-items:center;gap:8px}
+.wb-launch:hover{background:#6B2A20}
+.wb-launch:focus-visible{outline:3px solid #DCB45C;outline-offset:3px}
+.wb-launch .wb-key{font-weight:700;font-size:11px;opacity:.8;letter-spacing:.06em}
+
+.wb{position:fixed;inset:0;z-index:2147483000}
+body.wb-on .wb-launch{display:none}
+body.wb-on .present-bar,body.wb-on .present-exit-top,body.wb-on .strip-bar{display:none!important}
+.wb[hidden]{display:none}
+.wb.bg-white{background:#FFFFFF}
+.wb.bg-dark{background:#0B1530}
+.wb.bg-grid{background:#FFFFFF;background-image:
+  repeating-linear-gradient(to right,#E3E7ED 0 1px,transparent 1px 32px),
+  repeating-linear-gradient(to bottom,#E3E7ED 0 1px,transparent 1px 32px)}
+.wb-canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none;
+  cursor:crosshair;display:block}
+
+.wb-bar{position:absolute;top:12px;right:14px;transform:none;
+  display:flex;align-items:center;flex-wrap:wrap;gap:5px;
+  background:rgba(11,21,48,.96);border-radius:14px;padding:7px 9px;
+  box-shadow:0 10px 30px rgba(0,0,0,.4);max-width:min(97vw,1240px)}
+.wb-bar.dragging{opacity:.9}
+.wb.bar-hidden .wb-bar{display:none}
+.wb-grip{cursor:grab;background:transparent;border:0;color:#9FB0C6;font-size:18px;
+  padding:6px 4px;line-height:1;touch-action:none}
+.wb-grip:active{cursor:grabbing}
+.wb-sep{width:1px;height:24px;background:rgba(255,255,255,.2);margin:0 2px}
+.wb-b{font-family:inherit;font-weight:700;font-size:12.5px;color:#fff;background:transparent;
+  border:1px solid rgba(255,255,255,.28);border-radius:8px;padding:7px 9px;cursor:pointer;
+  min-height:36px;min-width:36px;display:inline-flex;align-items:center;justify-content:center;
+  gap:5px;white-space:nowrap}
+.wb-b.icon{padding:7px 10px;font-size:15px}
+.wb-b:hover{background:rgba(255,255,255,.14)}
+.wb-b[aria-pressed="true"]{background:#8B3A2E;border-color:#8B3A2E}
+.wb-b:focus-visible,.wb-grip:focus-visible,.wb-sw:focus-visible{outline:3px solid #DCB45C;outline-offset:2px}
+.wb-b.danger[aria-pressed]{}
+.wb-count{color:#DCE4EE;font-weight:800;font-size:12px;padding:0 3px;
+  font-variant-numeric:tabular-nums;min-width:66px;text-align:center}
+.wb-sw{width:28px;height:28px;border-radius:8px;border:2px solid rgba(255,255,255,.35);
+  cursor:pointer;padding:0}
+.wb-sw[aria-pressed="true"]{border-color:#fff;box-shadow:0 0 0 3px rgba(220,180,92,.85)}
+.wb-size{width:32px;height:32px;border-radius:8px;border:1px solid rgba(255,255,255,.28);
+  background:transparent;cursor:pointer;display:inline-flex;align-items:center;justify-content:center}
+.wb-size[aria-pressed="true"]{background:#8B3A2E;border-color:#8B3A2E}
+.wb-size i{display:block;background:var(--wb-ink,#fff);border-radius:50%;box-shadow:0 0 0 1px rgba(255,255,255,.5)}
+.wb-size.s i{width:5px;height:5px}
+.wb-size.m i{width:9px;height:9px}
+.wb-size.l i{width:15px;height:15px}
+.wb-hint{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);
+  background:rgba(11,21,48,.9);color:#DCE4EE;font-size:12.5px;font-weight:600;
+  padding:7px 14px;border-radius:999px;pointer-events:none;opacity:0;transition:opacity .25s ease}
+.wb-hint.show{opacity:1}
+@media(prefers-reduced-motion:reduce){.wb-hint{transition:none}}
+@media(max-width:700px){
+  .wb-bar{left:8px;right:8px;top:8px;transform:none;max-width:none;justify-content:center}
+  .wb-b .wb-lbl{display:none}
+}
+@media print{.wb,.wb-launch{display:none!important}}
+</style>
+
+<button type="button" id="wbLaunch" class="wb-launch" aria-label="Open the pen layer to draw over these slides">
+  <span aria-hidden="true">&#9998;</span> Pen <span class="wb-key" aria-hidden="true">W</span>
+</button>
+
+<div id="wb" class="wb bg-clear" hidden role="application" aria-label="Whiteboard overlay for drawing over the lecture">
+  <canvas id="wbCanvas" class="wb-canvas" aria-label="Drawing surface. Use a stylus, mouse, or finger to draw."></canvas>
+
+  <div id="wbBar" class="wb-bar" role="toolbar" aria-label="Whiteboard tools">
+    <button type="button" class="wb-grip" id="wbGrip" aria-label="Drag to move this toolbar">&#10495;</button>
+
+    <button type="button" class="wb-b wb-tool" data-tool="pen" aria-pressed="true" aria-label="Pen">
+      <span aria-hidden="true">&#9998;</span><span class="wb-lbl">Pen</span></button>
+    <button type="button" class="wb-b wb-tool" data-tool="marker" aria-pressed="false" aria-label="Highlighter">
+      <span aria-hidden="true">&#9646;</span><span class="wb-lbl">Marker</span></button>
+    <button type="button" class="wb-b wb-tool" data-tool="eraser" aria-pressed="false" aria-label="Eraser">
+      <span aria-hidden="true">&#9633;</span><span class="wb-lbl">Erase</span></button>
+
+    <span class="wb-sep" aria-hidden="true"></span>
+
+    <button type="button" class="wb-sw" data-color="#8B3A2E" aria-pressed="true"  aria-label="Rust" style="background:#8B3A2E"></button>
+    <button type="button" class="wb-sw" data-color="#0B1530" aria-pressed="false" aria-label="Navy" style="background:#0B1530"></button>
+    <button type="button" class="wb-sw" data-color="#6E5018" aria-pressed="false" aria-label="Dark gold" style="background:#6E5018"></button>
+    <button type="button" class="wb-sw" data-color="#1D6FB8" aria-pressed="false" aria-label="Blue" style="background:#1D6FB8"></button>
+    <button type="button" class="wb-sw" data-color="#12795A" aria-pressed="false" aria-label="Green" style="background:#12795A"></button>
+    <button type="button" class="wb-sw" data-color="#8E2F73" aria-pressed="false" aria-label="Magenta" style="background:#8E2F73"></button>
+    <button type="button" class="wb-sw" data-color="#111111" aria-pressed="false" aria-label="Black" style="background:#111111"></button>
+    <button type="button" class="wb-sw" data-color="#FFFFFF" aria-pressed="false" aria-label="White" style="background:#FFFFFF"></button>
+
+    <span class="wb-sep" aria-hidden="true"></span>
+
+    <button type="button" class="wb-size s" data-size="3"  aria-pressed="false" aria-label="Thin"><i></i></button>
+    <button type="button" class="wb-size m" data-size="6"  aria-pressed="true"  aria-label="Medium"><i></i></button>
+    <button type="button" class="wb-size l" data-size="13" aria-pressed="false" aria-label="Thick"><i></i></button>
+
+    <span class="wb-sep" aria-hidden="true"></span>
+
+    <button type="button" class="wb-b icon" id="wbUndo" aria-label="Undo the last stroke"><span aria-hidden="true">&#8630;</span></button>
+    <button type="button" class="wb-b" id="wbClear" aria-label="Clear this board">Clear</button>
+
+    <span class="wb-sep" aria-hidden="true"></span>
+
+    <button type="button" class="wb-b" id="wbBg" aria-label="Change the board background: overlay, white, grid, or dark">
+      <span class="wb-lbl">Overlay</span></button>
+
+    <span class="wb-sep" aria-hidden="true"></span>
+
+    <button type="button" class="wb-b" id="wbPrev" aria-label="Previous board">&#8249;</button>
+    <span class="wb-count" id="wbCount" role="status" aria-live="polite">Board 1 of 1</span>
+    <button type="button" class="wb-b" id="wbNext" aria-label="Next board, or add a new one">&#8250;</button>
+
+    <span class="wb-sep wb-slidenav" aria-hidden="true"></span>
+    <button type="button" class="wb-b wb-slidenav" id="wbSlidePrev" aria-label="Previous slide, on a fresh board">
+      <span aria-hidden="true">&#8592;</span><span class="wb-lbl">Slide</span></button>
+    <button type="button" class="wb-b wb-slidenav" id="wbSlideNext" aria-label="Next slide, on a fresh board">
+      <span class="wb-lbl">Slide</span><span aria-hidden="true">&#8594;</span></button>
+
+    <span class="wb-sep" aria-hidden="true"></span>
+
+    <button type="button" class="wb-b icon" id="wbSave" aria-label="Save this board as a PNG image"><span aria-hidden="true">&#8615;</span></button>
+    <button type="button" class="wb-b icon" id="wbClose" aria-label="Close the whiteboard"><span aria-hidden="true">&#10005;</span></button>
+  </div>
+
+  <p class="wb-hint" id="wbHint" role="status" aria-live="polite"></p>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var wb=document.getElementById('wb'), cv=document.getElementById('wbCanvas'),
+      bar=document.getElementById('wbBar'), grip=document.getElementById('wbGrip'),
+      launch=document.getElementById('wbLaunch'), hint=document.getElementById('wbHint'),
+      countEl=document.getElementById('wbCount');
+  if(!wb||!cv) return;
+  var ctx=cv.getContext('2d');
+
+  var tool='pen', color='#8B3A2E', size=6, penSeen=false, drawing=false, cur=null;
+  var boards=[[]], page=0;
+  var BGS=['clear','white','grid','dark'];
+  var BG_LABEL={clear:'Overlay',white:'White',grid:'Grid',dark:'Dark'};
+  var BG_SAY={clear:'Drawing over the slide',white:'White board',grid:'Grid board',dark:'Dark board'};
+  var bgIndex=0;
+  var lastFocus=null;
+
+  function strokes(){ return boards[page]; }
+
+  function say(msg){
+    hint.textContent=msg; hint.classList.add('show');
+    clearTimeout(say._t); say._t=setTimeout(function(){hint.classList.remove('show');},1600);
+  }
+  function updateCount(){ countEl.textContent='Board '+(page+1)+' of '+boards.length; }
+
+  /* ---------- sizing ---------- */
+  function sizeCanvas(){
+    var dpr=Math.min(window.devicePixelRatio||1,2);
+    var w=wb.clientWidth||window.innerWidth, h=wb.clientHeight||window.innerHeight;
+    cv.width=Math.max(1,Math.round(w*dpr)); cv.height=Math.max(1,Math.round(h*dpr));
+    cv.style.width=w+'px'; cv.style.height=h+'px';
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    redraw();
+  }
+
+  /* ---------- drawing ---------- */
+  function paintStroke(s){
+    var pts=s.pts; if(!pts.length) return;
+    ctx.save();
+    ctx.lineCap='round'; ctx.lineJoin='round';
+    if(s.tool==='eraser'){
+      ctx.globalCompositeOperation='destination-out';
+      ctx.strokeStyle='rgba(0,0,0,1)';
+      ctx.globalAlpha=1;
+    } else {
+      ctx.globalCompositeOperation='source-over';
+      ctx.strokeStyle=s.color;
+      ctx.globalAlpha=(s.tool==='marker')?0.34:1;
+    }
+    if(pts.length===1){
+      var r=(s.tool==='marker'?s.size*2.6:s.size*(0.55+pts[0].p))/2;
+      ctx.globalCompositeOperation=(s.tool==='eraser')?'destination-out':'source-over';
+      ctx.beginPath(); ctx.arc(pts[0].x,pts[0].y,Math.max(0.6,r),0,Math.PI*2);
+      ctx.fillStyle=(s.tool==='eraser')?'rgba(0,0,0,1)':s.color; ctx.fill();
+      ctx.restore(); return;
+    }
+    for(var i=1;i<pts.length;i++){
+      var a=pts[i-1], b=pts[i];
+      var w;
+      if(s.tool==='marker') w=s.size*2.6;
+      else if(s.tool==='eraser') w=s.size*3.4;
+      else w=s.size*(0.55+b.p);
+      ctx.lineWidth=Math.max(0.7,w);
+      ctx.beginPath();
+      ctx.moveTo(a.x,a.y);
+      var mx=(a.x+b.x)/2, my=(a.y+b.y)/2;
+      ctx.quadraticCurveTo(a.x,a.y,mx,my);
+      ctx.lineTo(b.x,b.y);
+      ctx.stroke();
+    }
+    ctx.restore();
+  }
+  function redraw(){
+    ctx.save(); ctx.setTransform(1,0,0,1,0,0);
+    ctx.clearRect(0,0,cv.width,cv.height); ctx.restore();
+    strokes().forEach(paintStroke);
+  }
+
+  function point(e){
+    var r=cv.getBoundingClientRect();
+    var p=(typeof e.pressure==='number'&&e.pressure>0)?e.pressure:0.5;
+    if(e.pointerType==='mouse') p=0.5;
+    return {x:e.clientX-r.left, y:e.clientY-r.top, p:p};
+  }
+  cv.addEventListener('pointerdown',function(e){
+    if(e.pointerType==='pen') penSeen=true;
+    if(e.pointerType==='touch'&&penSeen) return;      /* palm rejection once a stylus is in use */
+    if(e.pointerType==='mouse'&&e.button!==0) return;
+    e.preventDefault();
+    try{cv.setPointerCapture(e.pointerId);}catch(err){}
+    drawing=true;
+    cur={tool:tool,color:color,size:size,pts:[point(e)]};
+    strokes().push(cur);
+    paintStroke(cur);
+  });
+  cv.addEventListener('pointermove',function(e){
+    if(!drawing||!cur) return;
+    if(e.pointerType==='touch'&&penSeen) return;
+    e.preventDefault();
+    var evs=(e.getCoalescedEvents?e.getCoalescedEvents():null)||[e];
+    for(var i=0;i<evs.length;i++){
+      var p=point(evs[i]);
+      var last=cur.pts[cur.pts.length-1];
+      if(Math.abs(p.x-last.x)<0.4&&Math.abs(p.y-last.y)<0.4) continue;
+      cur.pts.push(p);
+      paintStroke({tool:cur.tool,color:cur.color,size:cur.size,pts:[last,p]});
+    }
+  });
+  function endStroke(e){
+    if(!drawing) return;
+    drawing=false; cur=null;
+    try{cv.releasePointerCapture(e.pointerId);}catch(err){}
+  }
+  cv.addEventListener('pointerup',endStroke);
+  cv.addEventListener('pointercancel',endStroke);
+  cv.addEventListener('pointerleave',function(e){ if(drawing) endStroke(e); });
+
+  /* ---------- toolbar ---------- */
+  function setPressed(nodes,match){
+    nodes.forEach(function(n){ n.setAttribute('aria-pressed', match(n)?'true':'false'); });
+  }
+  var toolBtns=Array.prototype.slice.call(document.querySelectorAll('.wb-tool')),
+      swBtns=Array.prototype.slice.call(document.querySelectorAll('.wb-sw')),
+      sizeBtns=Array.prototype.slice.call(document.querySelectorAll('.wb-size'));
+
+  function setTool(t){
+    tool=t; setPressed(toolBtns,function(n){return n.getAttribute('data-tool')===t;});
+    cv.style.cursor=(t==='eraser')?'cell':'crosshair';
+  }
+  function setColor(c){
+    color=c; if(tool==='eraser') setTool('pen');
+    bar.style.setProperty('--wb-ink',c);
+    setPressed(swBtns,function(n){return n.getAttribute('data-color').toUpperCase()===c.toUpperCase();});
+  }
+  function setSize(s){
+    size=s; setPressed(sizeBtns,function(n){return +n.getAttribute('data-size')===s;});
+  }
+  toolBtns.forEach(function(b){b.addEventListener('click',function(){setTool(b.getAttribute('data-tool'));});});
+  swBtns.forEach(function(b){b.addEventListener('click',function(){setColor(b.getAttribute('data-color'));});});
+  sizeBtns.forEach(function(b){b.addEventListener('click',function(){setSize(+b.getAttribute('data-size'));});});
+
+  document.getElementById('wbUndo').addEventListener('click',function(){
+    if(strokes().length){ strokes().pop(); redraw(); } else say('Nothing to undo');
+  });
+  document.getElementById('wbClear').addEventListener('click',function(){
+    boards[page]=[]; redraw(); say('Board cleared');
+  });
+  var bgBtn=document.getElementById('wbBg');
+  function applyBg(){
+    BGS.forEach(function(b){ wb.classList.remove('bg-'+b); });
+    wb.classList.add('bg-'+BGS[bgIndex]);
+    bgBtn.querySelector('.wb-lbl').textContent=BG_LABEL[BGS[bgIndex]];
+  }
+  bgBtn.addEventListener('click',function(){
+    bgIndex=(bgIndex+1)%BGS.length; applyBg();
+    if(BGS[bgIndex]==='dark'&&color==='#0B1530') setColor('#FFFFFF');
+    if(BGS[bgIndex]!=='dark'&&color==='#FFFFFF') setColor('#8B3A2E');
+    say(BG_SAY[BGS[bgIndex]]);
+  });
+
+  function goPage(i){ page=Math.max(0,Math.min(boards.length-1,i)); updateCount(); redraw(); }
+  document.getElementById('wbPrev').addEventListener('click',function(){
+    if(page===0){ say('First board'); return; } goPage(page-1);
+  });
+  document.getElementById('wbNext').addEventListener('click',function(){
+    if(page===boards.length-1){ boards.push([]); say('New board'); }
+    goPage(page+1);
+  });
+
+  /* slide stepping, only when the host page has a deck */
+  var slideNav=Array.prototype.slice.call(document.querySelectorAll('.wb-slidenav'));
+  function haveDeck(){ return typeof window.__deckStep==='function'; }
+  if(!haveDeck()) slideNav.forEach(function(n){ n.style.display='none'; });
+  function stepSlide(d){
+    if(!haveDeck()) return;
+    window.__deckStep(d);
+    boards.push([]); goPage(boards.length-1);
+    say(d>0?'Next slide, fresh board':'Previous slide, fresh board');
+  }
+  var sp=document.getElementById('wbSlidePrev'), sn=document.getElementById('wbSlideNext');
+  if(sp) sp.addEventListener('click',function(){stepSlide(-1);});
+  if(sn) sn.addEventListener('click',function(){stepSlide(1);});
+
+  document.getElementById('wbSave').addEventListener('click',function(){
+    var out=document.createElement('canvas'); out.width=cv.width; out.height=cv.height;
+    var o=out.getContext('2d');
+    o.fillStyle=(BGS[bgIndex]==='dark')?'#0B1530':'#FFFFFF';
+    o.fillRect(0,0,out.width,out.height);
+    o.drawImage(cv,0,0);
+    try{
+      out.toBlob(function(blob){
+        if(!blob){ say('Could not save'); return; }
+        var url=URL.createObjectURL(blob), a=document.createElement('a');
+        a.href=url; a.download='whiteboard-board-'+(page+1)+'.png';
+        document.body.appendChild(a); a.click(); document.body.removeChild(a);
+        setTimeout(function(){URL.revokeObjectURL(url);},2000);
+        say('Saved as PNG');
+      },'image/png');
+    }catch(err){ say('Could not save'); }
+  });
+
+  /* drag the toolbar out of the way of Loom's controls, and remember where it lands */
+  var BAR_KEY='wb-bar-pos';
+  function placeBar(x,y){
+    bar.style.transform='none'; bar.style.right='auto';
+    bar.style.left=x+'px'; bar.style.top=y+'px';
+  }
+  function restoreBar(){
+    try{
+      var v=JSON.parse(localStorage.getItem(BAR_KEY)||'null');
+      if(v&&typeof v.x==='number'){
+        var w=bar.offsetWidth||420,h=bar.offsetHeight||90;
+        placeBar(Math.max(4,Math.min(window.innerWidth-w-4,v.x)),
+                 Math.max(4,Math.min(window.innerHeight-h-4,v.y)));
+      }
+    }catch(err){}
+  }
+  (function(){
+    var dragging=false,ox=0,oy=0;
+    grip.addEventListener('pointerdown',function(e){
+      dragging=true; bar.classList.add('dragging');
+      var r=bar.getBoundingClientRect();
+      ox=e.clientX-r.left; oy=e.clientY-r.top;
+      placeBar(r.left,r.top);
+      try{grip.setPointerCapture(e.pointerId);}catch(err){}
+      e.preventDefault();
+    });
+    grip.addEventListener('pointermove',function(e){
+      if(!dragging) return;
+      var w=bar.offsetWidth,h=bar.offsetHeight;
+      var x=Math.max(4,Math.min(window.innerWidth-w-4,e.clientX-ox));
+      var y=Math.max(4,Math.min(window.innerHeight-h-4,e.clientY-oy));
+      placeBar(x,y);
+    });
+    function stop(e){ if(!dragging) return; dragging=false; bar.classList.remove('dragging');
+      try{localStorage.setItem(BAR_KEY,JSON.stringify({x:bar.offsetLeft,y:bar.offsetTop}));}catch(err){}
+      try{grip.releasePointerCapture(e.pointerId);}catch(err){} }
+    grip.addEventListener('pointerup',stop);
+    grip.addEventListener('pointercancel',stop);
+  })();
+
+  /* ---------- open and close ---------- */
+  function open(){
+    lastFocus=document.activeElement;
+    wb.hidden=false; document.body.classList.add('wb-on');
+    launch.setAttribute('aria-expanded','true');
+    sizeCanvas(); updateCount(); restoreBar();
+    document.getElementById('wbClose').focus();
+    say('Whiteboard on. W closes it, T hides the toolbar.');
+  }
+  function close(){
+    wb.hidden=true; document.body.classList.remove('wb-on');
+    launch.setAttribute('aria-expanded','false');
+    if(lastFocus&&lastFocus.focus) lastFocus.focus(); else launch.focus();
+  }
+  function toggle(){ wb.hidden?open():close(); }
+  launch.setAttribute('aria-expanded','false');
+  launch.addEventListener('click',toggle);
+  document.getElementById('wbClose').addEventListener('click',close);
+
+  window.addEventListener('resize',function(){ if(!wb.hidden) sizeCanvas(); });
+  document.addEventListener('fullscreenchange',function(){ if(!wb.hidden) setTimeout(sizeCanvas,60); });
+
+  /* ---------- keyboard ---------- */
+  var COLOR_KEYS=['#8B3A2E','#0B1530','#6E5018','#1D6FB8','#12795A','#8E2F73','#111111','#FFFFFF'];
+  var SIZES=[3,6,13];
+  document.addEventListener('keydown',function(e){
+    var t=e.target, tag=(t&&t.tagName?t.tagName:'').toLowerCase();
+    if(tag==='input'||tag==='textarea'||tag==='select'||(t&&t.isContentEditable)) return;
+    var k=e.key.toLowerCase();
+    if(k==='w'&&!e.ctrlKey&&!e.metaKey&&!e.altKey){ e.preventDefault(); toggle(); return; }
+    if(wb.hidden) return;
+    /* while the board is open it owns the keyboard, so slide keys do not fire underneath */
+    if(k==='escape'){ e.preventDefault(); close(); return; }
+    if(k==='t'){ e.preventDefault(); wb.classList.toggle('bar-hidden');
+      say(wb.classList.contains('bar-hidden')?'Toolbar hidden, press T to bring it back':'Toolbar shown'); return; }
+    if(k==='z'&&(e.ctrlKey||e.metaKey)){ e.preventDefault();
+      if(strokes().length){strokes().pop();redraw();} return; }
+    if(k==='p'){ e.preventDefault(); setTool('pen'); say('Pen'); return; }
+    if(k==='h'){ e.preventDefault(); setTool('marker'); say('Highlighter'); return; }
+    if(k==='e'){ e.preventDefault(); setTool('eraser'); say('Eraser'); return; }
+    if(k==='c'){ e.preventDefault(); boards[page]=[]; redraw(); say('Board cleared'); return; }
+    if(k==='['){ e.preventDefault(); setSize(SIZES[Math.max(0,SIZES.indexOf(size)-1)]); return; }
+    if(k===']'){ e.preventDefault(); setSize(SIZES[Math.min(SIZES.length-1,SIZES.indexOf(size)+1)]); return; }
+    if(k>='1'&&k<='8'){ e.preventDefault(); setColor(COLOR_KEYS[+k-1]); return; }
+    if(e.key==='ArrowRight'||e.key==='ArrowLeft'){
+      e.preventDefault(); e.stopPropagation();
+      if(haveDeck()) stepSlide(e.key==='ArrowRight'?1:-1);
+      return;
+    }
+  },true);
+
+  applyBg(); setTool('pen'); setColor('#8B3A2E'); setSize(6); updateCount();
+})();
+</script>
+
+<script>
+(function(){ "use strict";
+var PAGE_ID='biol005-m02-slides';
+
+(function(){
+  var lb=document.getElementById('lightbox'); if(!lb) return;
+  var inner=lb.querySelector('.lb-inner'),close=lb.querySelector('.lb-close'),last=null;
+  function shut(){lb.hidden=true;inner.innerHTML='';if(last)last.focus();}
+  /* a single branch card of a top-down map enlarges on its own */
+  document.querySelectorAll('.mapcard').forEach(function(card){
+    function openCard(e){
+      e.preventDefault(); e.stopPropagation();
+      last=card;
+      var b=card.getAttribute('data-b')||'';
+      var leaves=(card.getAttribute('data-l')||'').split('|').filter(Boolean);
+      inner.innerHTML='<div class="lb-card"><p class="lb-h"></p><ul></ul></div>';
+      inner.querySelector('.lb-h').textContent=b;
+      var ul=inner.querySelector('ul');
+      leaves.forEach(function(t){var li=document.createElement('li');li.textContent=t;ul.appendChild(li);});
+      lb.hidden=false; close.focus();
+    }
+    card.addEventListener('click',openCard);
+    card.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' ')openCard(e);});
+  });
+
+  document.querySelectorAll('.fig').forEach(function(f){
+    f.setAttribute('tabindex','0'); f.setAttribute('role','img');
+    function open(e){
+      if(document.body.classList.contains('wb-on'))return;
+      e.preventDefault(); e.stopPropagation();
+      last=f; inner.innerHTML=f.outerHTML;
+      var big=inner.querySelector('svg');
+      if(big){big.removeAttribute('tabindex');big.style.width='min(94vw,1500px)';big.style.cursor='default';}
+      lb.hidden=false; close.focus();
+    }
+    f.addEventListener('click',open);
+    f.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' ')open(e);});
+  });
+  close.addEventListener('click',shut);
+  lb.addEventListener('click',function(e){if(e.target===lb)shut();});
+  document.addEventListener('keydown',function(e){if(!lb.hidden&&e.key==='Escape')shut();});
+})();
+
+(function(){
+  "use strict";
+  var slides=Array.prototype.slice.call(document.querySelectorAll('.deck .slide'));
+  if(!slides.length) return;
+  slides.forEach(function(s,i){
+    var n=s.querySelector('.slide-n'); if(n)n.textContent=(i<9?'0':'')+(i+1);
+    var t=s.querySelector('.slide-title');
+    s.setAttribute('aria-label','Slide '+(i+1)+' of '+slides.length+(t?': '+t.textContent:''));
+  });
+
+  /* reveal boxes */
+  function wireReveals(){
+    document.querySelectorAll('.rv-btn').forEach(function(b){
+      if(b.dataset.wired) return; b.dataset.wired='1';
+      var box=document.getElementById(b.getAttribute('aria-controls'));
+      b.setAttribute('aria-expanded','false');
+      b.addEventListener('click',function(){
+        var open=b.getAttribute('aria-expanded')==='true';
+        b.setAttribute('aria-expanded',open?'false':'true');
+        if(box)box.hidden=open;
+        if(!open&&b.dataset.openLabel)b.textContent=b.dataset.openLabel;
+        else if(open&&b.dataset.shutLabel)b.textContent=b.dataset.shutLabel;
+        if(window.__deckFit)window.__deckFit();
+      });
+      b.dataset.shutLabel=b.textContent;
+    });
+  }
+  wireReveals();
+
+  /* in range or out of range sorter */
+  function wireSorter(){
+    document.querySelectorAll('.sortbl tbody tr').forEach(function(row){
+      if(row.dataset.wired) return; row.dataset.wired='1';
+      var ans=row.getAttribute('data-ans'), res=row.querySelector('.res');
+      row.querySelectorAll('.pk').forEach(function(b){
+        b.addEventListener('click',function(){
+          if(row.classList.contains('locked')) return;
+          var right=b.getAttribute('data-v')===ans;
+          row.querySelectorAll('.pk').forEach(function(x){x.setAttribute('aria-pressed','false');});
+          b.setAttribute('aria-pressed','true');
+          row.classList.add('locked', right?'ok':'no');
+          res.textContent=(right?'Correct. ':'Not quite. ')+(row.getAttribute('data-note')||'');
+          tally();
+          if(window.__deckFit)window.__deckFit();
+        });
+      });
+    });
+  }
+  function tally(){
+    var rows=document.querySelectorAll('.sortbl tbody tr');
+    if(!rows.length) return;
+    var done=document.querySelectorAll('.sortbl tbody tr.locked').length;
+    var el=document.getElementById('sortCount');
+    if(el) el.textContent=done+' of '+rows.length+' sorted'+(done===rows.length?', now pick the one that buys you the least time':'');
+  }
+  wireSorter(); tally();
+
+  /* clinical bars behave like reveals: closed before recording, open in print */
+  function wireClin(){
+    document.querySelectorAll('.clin-btn').forEach(function(b){
+      if(b.dataset.wired) return; b.dataset.wired='1';
+      var box=document.getElementById(b.getAttribute('aria-controls'));
+      b.addEventListener('click',function(){
+        var open=b.getAttribute('aria-expanded')==='true';
+        b.setAttribute('aria-expanded',open?'false':'true');
+        if(box)box.hidden=open;
+        /* while recording, an open bar takes the whole slide: four professions
+           side by side need the width, and shrinking them to fit around the
+           slide content makes them unreadable on camera. */
+        var sl=b.closest('.slide'); if(sl) sl.classList.toggle('clinopen',!open);
+        if(window.__deckFit)window.__deckFit();
+      });
+    });
+  }
+  wireClin();
+
+  function resetAll(){
+    document.querySelectorAll('.clin-btn').forEach(function(b){
+      b.setAttribute('aria-expanded','false');
+      var box=document.getElementById(b.getAttribute('aria-controls'));
+      if(box)box.hidden=true;
+      var sl=b.closest('.slide'); if(sl) sl.classList.remove('clinopen');
+    });
+    document.querySelectorAll('.sortbl tbody tr').forEach(function(row){
+      row.classList.remove('locked','ok','no');
+      row.querySelectorAll('.pk').forEach(function(b){b.setAttribute('aria-pressed','false');});
+      var r=row.querySelector('.res'); if(r) r.textContent='';
+    });
+    tally();
+    document.querySelectorAll('.rv-btn').forEach(function(b){
+      b.setAttribute('aria-expanded','false');
+      var box=document.getElementById(b.getAttribute('aria-controls'));
+      if(box)box.hidden=true;
+      if(b.dataset.shutLabel)b.textContent=b.dataset.shutLabel;
+    });
+    var live=document.getElementById('deckStatus');
+    if(live)live.textContent='All boxes closed, ready to record';
+  }
+  var rb=document.getElementById('resetBtn'); if(rb)rb.addEventListener('click',resetAll);
+
+  /* present mode */
+  var idx=0,on=false;
+  var bar=document.querySelector('.pbar'),cnt=bar.querySelector('.c'),
+      prev=bar.querySelector('.prev'),next=bar.querySelector('.next'),exit=bar.querySelector('.x');
+  function show(i){
+    idx=Math.max(0,Math.min(slides.length-1,i));
+    slides.forEach(function(s,k){s.classList.toggle('cur',k===idx);});
+    cnt.textContent=(idx+1)+' / '+slides.length;
+    prev.disabled=idx===0; next.disabled=idx===slides.length-1;
+    if(slides[idx])slides[idx].scrollTop=0;
+    fit();
+    window.dispatchEvent(new Event('resize'));
+  }
+
+  /* Shrink the current slide just enough to fit the screen, so nothing is cut
+     off mid-recording. Runs only in present mode and never scales up. */
+  function fit(){
+    var s=slides[idx]; if(!s) return;
+    var body=s.querySelector('.slide-body'); if(!body) return;
+    body.style.zoom='';
+    if(!on) return;
+    requestAnimationFrame(function(){
+      var z=1, guard=0;
+      while(s.scrollHeight>s.clientHeight+2 && z>0.52 && guard<30){
+        z-=0.04; guard++;
+        body.style.zoom=z.toFixed(2);
+      }
+    });
+  }
+  window.addEventListener('resize',function(){ if(on) fit(); });
+  window.__deckFit=function(){ if(on) fit(); };
+  function enter(i){on=true;document.body.classList.add('present');show(i||0);
+    if(document.documentElement.requestFullscreen)document.documentElement.requestFullscreen().catch(function(){});}
+  function leave(){on=false;document.body.classList.remove('present');
+    slides.forEach(function(s){s.classList.remove('cur');});
+    if(document.fullscreenElement&&document.exitFullscreen)document.exitFullscreen().catch(function(){});}
+  var pb=document.getElementById('presentBtn'); if(pb)pb.addEventListener('click',function(){enter(0);});
+  var prb=document.getElementById('printBtn'); if(prb)prb.addEventListener('click',function(){window.print();});
+  prev.addEventListener('click',function(){show(idx-1);});
+  next.addEventListener('click',function(){show(idx+1);});
+  exit.addEventListener('click',leave);
+  window.__deckStep=function(d){ if(!on)enter(idx); show(idx+d); };
+  document.addEventListener('keydown',function(e){
+    if(!on)return;
+    var tag=(e.target&&e.target.tagName||'').toLowerCase();
+    if(tag==='input'||tag==='textarea'||tag==='select')return;
+    if(!document.getElementById('wb')||document.getElementById('wb').hidden){
+      if(e.key==='ArrowRight'||e.key==='PageDown'){e.preventDefault();show(idx+1);}
+      else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();show(idx-1);}
+      else if(e.key==='Escape'){leave();}
+    }
+  });
+  document.addEventListener('fullscreenchange',function(){if(!document.fullscreenElement&&on)leave();});
+  if(/[?#&]present\b/.test(location.href))enter(0);
+})();
+
+
+  function sendHeight(){
+    try{parent.postMessage({type:'resize',id:PAGE_ID,height:document.documentElement.scrollHeight},'*');}catch(e){}
+  }
+  window.addEventListener('load',sendHeight);
+  window.addEventListener('resize',sendHeight);
+  if(window.ResizeObserver)new ResizeObserver(sendHeight).observe(document.body);
+
+})();
+</script>
+</body>
+</html>

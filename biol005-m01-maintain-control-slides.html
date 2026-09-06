@@ -1,0 +1,1908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mission 1, Maintain Control &middot; Slides &middot; BIOL 005</title>
+<style>@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+:root{
+  --navy:#0B1530; --navy-72:#4F576A; --navy-15:rgba(11,21,48,.15); --navy-08:rgba(11,21,48,.08);
+  --terra:#8B3A2E; --terra-dark:#6B2A20;
+  --gold:#DCB45C;
+  --white:#FFFFFF; --page:#FFFFFF; --wash:#FAFAF9;
+  --r-card:8px; --r-btn:4px; --r-pill:99px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+  background:var(--page); color:var(--navy); font-size:16px; line-height:1.6; font-style:normal;
+}
+em,i,cite,dfn,var,address{font-style:normal}
+button{font-family:inherit}
+a{color:var(--terra)}
+:focus-visible{outline:3px solid var(--terra);outline-offset:3px;border-radius:4px}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:16px;top:16px;position:fixed;background:var(--navy);color:#fff;padding:10px 14px;border-radius:4px;z-index:400}
+.vh{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+/* ---------- editorial type ---------- */
+.disp{font-family:'Open Sans','Plus Jakarta Sans',system-ui,sans-serif;font-weight:800;letter-spacing:-.02em;line-height:1.08}
+.disp .hl{color:var(--terra)}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--terra);margin:0 0 10px}
+.eyebrow.navy{color:var(--navy-72)}
+.lede{font-size:18px;color:var(--navy-72);max-width:64ch;margin:0 0 22px}
+.muted{color:var(--navy-72)}
+
+/* ---------- chrome ---------- */
+.site-header{display:flex;align-items:center;gap:16px;flex-wrap:wrap;
+  padding:14px max(16px,3vw);background:#fff;border-bottom:.5px solid var(--navy-15)}
+.site-logo{display:inline-flex;align-items:center;gap:13px;text-decoration:none;flex:1;min-width:250px}
+.site-logo svg{height:42px;width:auto;display:block;flex:0 0 auto}
+.logo-title{font-family:'Open Sans','Plus Jakarta Sans',sans-serif;font-size:19px;font-weight:800;letter-spacing:-.02em;color:var(--navy);display:block}
+.logo-title .logo-accent{color:var(--terra)}
+.logo-sub{display:block;font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--navy-72);margin-top:3px}
+
+/* ---------- cards ---------- */
+.card{background:#fff;border:.5px solid var(--navy-15);border-radius:var(--r-card);padding:24px 22px}
+.card.navy{background:var(--navy);color:#fff;border-color:var(--navy)}
+.card.navy .eyebrow{color:var(--gold)}
+.card.navy a{color:var(--gold)}
+.card.feature{border:2px solid var(--terra)}
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:860px){.g2,.g3{grid-template-columns:1fr}}
+
+/* badge pill overlapping a card top */
+.badged{position:relative;margin-top:14px}
+.badged>.pill{position:absolute;top:-13px;left:20px}
+.pill{display:inline-flex;align-items:center;gap:7px;background:var(--terra);color:#fff;
+  font-size:10px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;
+  padding:7px 14px;border-radius:var(--r-pill)}
+.pill.navy{background:var(--navy)}
+.pill.ghost{background:#fff;color:var(--navy);border:.5px solid var(--navy-15)}
+
+/* statement band */
+.band{background:var(--navy);color:#fff;border-radius:var(--r-card);padding:26px 26px}
+.band p{margin:0;font-family:'Open Sans','Plus Jakarta Sans',sans-serif;font-weight:700;
+  font-size:clamp(18px,2.2vw,25px);line-height:1.32;letter-spacing:-.01em}
+.band .em{color:var(--gold)}
+
+/* oversized step numerals */
+.steps{list-style:none;margin:0;padding:0;counter-reset:s}
+.steps>li{counter-increment:s;display:grid;grid-template-columns:64px 1fr;gap:18px;
+  padding:20px 0;border-top:.5px solid var(--navy-15)}
+.steps>li:first-child{border-top:0;padding-top:6px}
+.steps>li::before{content:counter(s,decimal-leading-zero);
+  font-family:'Open Sans','Plus Jakarta Sans',sans-serif;font-weight:800;font-size:34px;
+  color:var(--terra);line-height:1;letter-spacing:-.03em}
+.steps h3,.steps h4{margin:0 0 6px;font-size:17.5px;font-weight:800;letter-spacing:-.01em;
+  text-transform:none;color:var(--navy)}
+.steps p{margin:0 0 8px}
+.steps p:last-child{margin-bottom:0}
+
+/* buttons */
+.btn{font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;
+  border-radius:var(--r-btn);padding:13px 20px;border:1px solid var(--terra);background:var(--terra);
+  color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.btn:hover{background:var(--terra-dark);border-color:var(--terra-dark)}
+.btn.ghost{background:transparent;color:var(--navy);border-color:var(--navy-15)}
+.btn.ghost:hover{background:var(--wash);border-color:var(--navy)}
+.btn.navy{background:var(--navy);border-color:var(--navy)}
+.btn.navy:hover{background:#16213d}
+
+/* lists */
+ul.bul{margin:0 0 14px;padding:0;list-style:none}
+ul.bul>li{padding:5px 0 5px 20px;position:relative}
+ul.bul>li::before{content:"";position:absolute;left:2px;top:14px;width:6px;height:6px;background:var(--terra);border-radius:50%}
+ul.bul>li>ul{margin:6px 0 2px}
+ul.bul>li>ul>li::before{background:var(--navy-72);width:5px;height:5px}
+
+/* tables */
+.tbl{width:100%;border-collapse:collapse;font-size:14.5px}
+.tbl caption{caption-side:top;text-align:left;font-size:10.5px;font-weight:800;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--terra);padding:0 0 10px}
+.tbl th,.tbl td{text-align:left;padding:9px 12px;border-bottom:.5px solid var(--navy-15);vertical-align:top}
+.tbl thead th{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--navy-72);font-weight:700}
+.tbl tbody th{font-weight:800}
+.tbl td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.tbl td.num .alt{font-size:.86em;color:var(--navy-72)}
+
+/* figures */
+figure{margin:0}
+.fig{width:100%;height:auto;display:block;background:#fff;border:.5px solid var(--navy-15);border-radius:var(--r-card);cursor:zoom-in}
+figcaption{font-size:13px;color:var(--navy-72);margin:9px 0 0}
+figcaption b{color:var(--terra)}
+
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* ---------- deck ---------- */
+.deck{max-width:1200px;margin:0 auto;padding:22px max(16px,3vw) 44px}
+.deck-note{font-size:14px;color:var(--navy-72);margin:0 0 20px;max-width:70ch}
+.slide{background:#fff;border:.5px solid var(--navy-15);border-radius:var(--r-card);margin:0 0 20px;overflow:hidden}
+.slide-head{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:18px;
+  padding:16px 22px;border-bottom:.5px solid var(--navy-15)}
+.slide-n{font-family:'Open Sans','Plus Jakarta Sans',sans-serif;font-weight:800;font-size:30px;
+  color:var(--terra);letter-spacing:-.03em;line-height:1;min-width:52px}
+.slide-eyebrow{font-size:10px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--navy-72);margin:0 0 4px}
+.slide-title{font-family:'Open Sans','Plus Jakarta Sans',sans-serif;font-size:clamp(18px,2.3vw,25px);
+  font-weight:800;letter-spacing:-.02em;margin:0;line-height:1.15}
+.slide-beat{font-size:10px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--terra);white-space:nowrap}
+.slide-body{padding:24px 22px}
+.slide-body>*:last-child{margin-bottom:0}
+.two{display:grid;grid-template-columns:minmax(280px,1fr) minmax(280px,1.02fr);gap:26px;align-items:start}
+@media(max-width:900px){.two{grid-template-columns:1fr}}
+.lead{font-size:17.5px;font-weight:600;margin:0 0 14px;color:var(--navy)}
+.slide h3{font-size:10.5px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--terra);margin:0 0 12px}
+.slide h3+h3{margin-top:22px}
+
+/* reveal boxes: the thing Reset clears */
+.reveal-wrap{margin:16px 0 0}
+.rv-btn{font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;
+  background:#fff;color:var(--navy);border:1px solid var(--navy-15);border-radius:var(--r-btn);padding:12px 18px}
+.rv-btn:hover{border-color:var(--navy);background:var(--wash)}
+.rv-btn[aria-expanded="true"]{border-color:var(--navy);border-width:2px;
+  box-shadow:0 6px 16px rgba(11,21,48,.10),0 3px 6px rgba(11,21,48,.06)}
+.rv{margin:14px 0 0;background:#fff;border:.5px solid var(--navy-15);border-radius:var(--r-card);padding:18px 20px}
+.rv[hidden]{display:none}
+.rv p:last-child{margin-bottom:0}
+.rv .tag{font-size:10px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--terra);margin:0 0 8px}
+
+/* worked example: weak answer beside strong answer */
+.exbox{border:.5px solid var(--navy-15);border-radius:var(--r-card);padding:18px 20px;margin:16px 0 0}
+.exbox .tag{font-size:10px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--terra);margin:0 0 8px}
+.exbox .q{font-size:16.5px;font-weight:800;margin:0 0 14px;color:var(--navy)}
+.ex2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:820px){.ex2{grid-template-columns:1fr}}
+.ex{border-radius:var(--r-card);padding:14px 16px}
+.ex .lab{font-size:10px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;margin:0 0 7px}
+.ex p:last-child{margin-bottom:0}
+.ex.weak{border:1.4px dashed var(--navy-72);background:var(--wash)}
+.ex.weak .lab{color:var(--navy-72)}
+.ex.strong{border:2px solid var(--terra)}
+.ex.strong .lab{color:var(--terra)}
+.exbox .why{font-size:14.5px;color:var(--navy-72);margin:14px 0 0}
+.exbox .why b{color:var(--navy)}
+body.present .exbox .q{font-size:clamp(17px,1.7vw,25px)}
+body.present .ex{font-size:clamp(15px,1.5vw,21px)}
+body.present .ex .lab,body.present .exbox .tag{font-size:clamp(10px,1vw,14px)}
+body.present .exbox .why{font-size:clamp(14px,1.35vw,19px)}
+
+/* in range or out of range sorter */
+.sortbl td.pickcell{padding:7px 10px}
+.pick{display:flex;gap:8px;flex-wrap:wrap}
+.pk{font-family:inherit;font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+  background:#fff;color:var(--navy);border:1px solid var(--navy-15);border-radius:var(--r-btn);
+  padding:9px 12px;cursor:pointer;white-space:nowrap}
+.pk:hover{border-color:var(--navy)}
+.pk[aria-pressed="true"]{border:2px solid var(--navy);
+  box-shadow:0 6px 16px rgba(11,21,48,.10),0 3px 6px rgba(11,21,48,.06)}
+tr.locked .pk{cursor:default}
+tr.locked .pk:not([aria-pressed="true"]){opacity:.45}
+.res{font-size:13.5px;font-weight:700;min-width:132px}
+tr.ok .res{color:var(--navy)}
+tr.no .res{color:var(--terra)}
+.sortcount{font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--navy-72);margin:14px 0 0}
+body.present .pk{font-size:clamp(11px,1.05vw,15px);padding:11px 15px}
+body.present .res{font-size:clamp(13px,1.3vw,18px)}
+
+/* predict box */
+.predict{border:2px solid var(--terra);border-radius:var(--r-card);padding:18px 20px;margin:16px 0 0}
+.predict .tag{font-size:10px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--terra);margin:0 0 8px}
+.predict p:last-child{margin-bottom:0}
+
+/* deck toolbar */
+.deck-bar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;
+  padding:12px max(16px,3vw);border-bottom:.5px solid var(--navy-15);background:#fff;
+  position:sticky;top:0;z-index:30}
+.deck-bar .sp{flex:1}
+.deck-bar .cnt{font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--navy-72)}
+
+/* present mode */
+body.present{overflow:hidden;background:var(--navy)}
+body.present .site-header,body.present .deck-bar,body.present .deck-note,body.present .page-foot{display:none}
+body.present .deck{max-width:none;margin:0;padding:0}
+body.present .slide{display:none}
+body.present .slide.cur{display:flex;flex-direction:column;position:fixed;inset:0;margin:0;
+  border:0;border-radius:0;overflow:auto;background:#fff}
+body.present .slide.cur .slide-body{flex:1;max-width:1360px;width:100%;margin:0 auto;
+  padding:2.4vh 4.5vw calc(2.4vh + 92px);display:flex;flex-direction:column;justify-content:center}
+body.present .slide-head{padding:2.2vh 4.5vw}
+body.present .slide-n{font-size:clamp(32px,3.2vw,52px)}
+body.present .slide-title{font-size:clamp(24px,3vw,42px)}
+body.present .slide-eyebrow,body.present .slide-beat{font-size:clamp(10px,1vw,14px)}
+body.present .lead{font-size:clamp(20px,2.2vw,32px)}
+body.present .slide h3{font-size:clamp(11px,1.15vw,16px);margin-bottom:16px}
+body.present ul.bul>li{font-size:clamp(17px,1.75vw,27px);padding:8px 0 8px 28px}
+body.present ul.bul>li::before{top:18px;width:9px;height:9px}
+body.present ul.bul>li>ul>li{font-size:clamp(15px,1.5vw,23px)}
+body.present .tbl{font-size:clamp(15px,1.5vw,22px)}
+body.present .tbl th,body.present .tbl td{padding:11px 15px}
+body.present .rv,body.present .predict{font-size:clamp(16px,1.6vw,24px);padding:20px 24px}
+body.present .rv-btn{font-size:clamp(11px,1.05vw,15px);padding:14px 22px}
+body.present figcaption{font-size:clamp(12px,1.15vw,17px)}
+body.present .fig{max-height:42vh;width:auto;max-width:100%;margin:0 auto}
+body.present .two .fig{max-height:56vh}
+.pbar{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:200;display:none;
+  align-items:center;gap:10px;background:var(--navy);color:#fff;padding:8px 12px;border-radius:var(--r-pill)}
+body.present .pbar{display:flex}
+.pbar button{font-weight:800;font-size:17px;border:0;border-radius:var(--r-pill);
+  background:var(--terra);color:#fff;width:44px;height:44px;cursor:pointer}
+.pbar button:hover{background:var(--terra-dark)}
+.pbar button:disabled{background:#667085;cursor:default}
+.pbar .c{font-size:12px;font-weight:800;min-width:62px;text-align:center;font-variant-numeric:tabular-nums;letter-spacing:.08em}
+.pbar .x{width:auto;padding:0 16px;background:transparent;border:1px solid rgba(255,255,255,.45);
+  font-size:10px;letter-spacing:.2em;text-transform:uppercase}
+body.wb-on .pbar{display:none!important}
+
+@media print{
+  @page{size:landscape;margin:11mm}
+  .site-header,.deck-bar,.pbar,.deck-note,.wb,.wb-launch,.lightbox{display:none!important}
+  body{background:#fff;font-size:11pt}
+  .deck{max-width:none;padding:0}
+  .slide{display:block!important;break-after:page;page-break-after:always;margin:0 0 6mm;border:1px solid #bbb}
+  .slide:last-of-type{break-after:auto;page-break-after:auto}
+  .slide-head{break-after:avoid;page-break-after:avoid}
+  .two,.card,.tbl,.rv,.predict,figure{break-inside:avoid;page-break-inside:avoid}
+  .rv[hidden]{display:block!important}
+  .rv-btn{display:none!important}
+  .pick{display:none!important}
+  .clin-body[hidden]{display:block!important}
+  .clin-btn{display:none!important}
+  .clin-grid{grid-template-columns:repeat(2,1fr)}
+  .cprof{break-inside:avoid;page-break-inside:avoid}
+  .card.navy,.band{background:#fff!important;color:#0B1530!important;border:1px solid #bbb!important}
+  .card.navy .eyebrow,.band .em{color:#6B2A20!important}
+}
+
+/* collapsible clinical bar: what this means in medicine, nursing, respiratory therapy */
+.clin{margin:18px 0 0}
+.clin-btn{width:100%;display:flex;align-items:center;justify-content:space-between;gap:14px;
+  font-family:inherit;font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;
+  background:#fff;color:var(--navy);border:1px solid var(--navy-15);border-radius:var(--r-btn);
+  padding:14px 18px;cursor:pointer;text-align:left}
+.clin-btn:hover{border-color:var(--navy);background:var(--wash)}
+.clin-btn[aria-expanded="true"]{border:2px solid var(--navy);
+  box-shadow:0 6px 16px rgba(11,21,48,.10),0 3px 6px rgba(11,21,48,.06)}
+.clin-btn .chev{font-size:15px;color:var(--terra);transition:transform .18s ease}
+.clin-btn[aria-expanded="true"] .chev{transform:rotate(90deg)}
+.clin-body{margin:12px 0 0}
+.clin-body[hidden]{display:none}
+.clin-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+@media(max-width:1180px){.clin-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:700px){.clin-grid{grid-template-columns:1fr}}
+.cprof{border:.5px solid var(--navy-15);border-radius:var(--r-card);padding:15px 16px}
+.cprof .who{display:inline-flex;align-items:center;font-size:10px;font-weight:800;letter-spacing:.18em;
+  text-transform:uppercase;color:#fff;background:var(--navy);border-radius:var(--r-pill);
+  padding:6px 12px;margin:0 0 10px}
+.cprof.n .who{background:var(--terra)}
+/* "Radiologic technology" is the longest label of the four; tighten its tracking
+   so the pill stays on one line and all four card texts start on the same line. */
+.cprof.x .who{background:#6B5017;letter-spacing:.07em;white-space:nowrap}
+.cprof.r .who,.cprof.n .who,.cprof.m .who{white-space:nowrap}
+.cprof.r .who{background:#2C4A70}
+.cprof .means{margin:0 0 9px;font-size:14.5px;line-height:1.45}
+.cprof .eg{margin:0;font-size:14px;color:var(--navy-72);line-height:1.45}
+.cprof .eg b{color:var(--terra)}
+body.present .clin-btn{font-size:clamp(11px,1.05vw,15px);padding:15px 20px}
+body.present .cprof .means{font-size:clamp(14px,1.4vw,20px)}
+body.present .cprof .eg{font-size:clamp(13px,1.3vw,18px)}
+body.present .cprof .who{font-size:clamp(10px,1vw,13px)}
+/* While recording, an open clinical bar owns the slide. Four professions side by
+   side need the full width; scaled down to fit around the slide content they are
+   unreadable on camera. Closing the bar brings the slide straight back. */
+body.present .slide.clinopen .slide-body>*:not(.clin){display:none}
+body.present .slide.clinopen .clin{margin-top:4px}
+body.present .slide.clinopen .cprof{padding:18px 20px}
+
+.lightbox{position:fixed;inset:0;z-index:300;background:rgba(11,21,48,.92);display:flex;
+  align-items:center;justify-content:center;padding:4vh 4vw}
+.lightbox[hidden]{display:none}
+.lightbox .lb-inner{max-width:96vw;max-height:92vh;overflow:auto;background:#fff;border-radius:var(--r-card);padding:14px}
+.mapcard{cursor:zoom-in}
+.mapcard .mc-hit{transition:fill .15s ease}
+.mapcard:hover .mc-hit{fill:#FAFAF9;stroke-width:2.6}
+.mapcard:focus{outline:none}
+.mapcard:focus-visible .mc-hit{stroke:#8B3A2E;stroke-width:3.4}
+.lb-card{max-width:min(80vw,880px)}
+.lb-card .lb-h{background:var(--terra);color:#fff;border-radius:var(--r-card) var(--r-card) 0 0;
+  padding:20px 26px;font-family:'Open Sans','Plus Jakarta Sans',sans-serif;font-weight:800;
+  font-size:clamp(24px,3vw,38px);letter-spacing:-.02em;margin:0}
+.lb-card ul{list-style:none;margin:0;padding:22px 26px 26px;border:1.5px solid var(--navy);
+  border-top:0;border-radius:0 0 var(--r-card) var(--r-card)}
+.lb-card li{position:relative;padding:10px 0 10px 30px;font-size:clamp(18px,2vw,26px);line-height:1.4}
+.lb-card li::before{content:"";position:absolute;left:4px;top:22px;width:9px;height:9px;
+  background:var(--terra);border-radius:50%}
+.lightbox .lb-close{position:absolute;top:16px;right:18px;background:var(--terra);color:#fff;border:0;
+  border-radius:var(--r-btn);padding:12px 18px;font-weight:800;font-size:11px;letter-spacing:.2em;
+  text-transform:uppercase;cursor:pointer}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="site-header">
+  <a class="site-logo" href="index.html" target="_top" aria-label="BIOL 005 Human Physiology, course home">
+    <svg viewBox="40 10 125 148" aria-hidden="true" focusable="false"><g transform="translate(0,18)"><g transform="translate(60,0) rotate(8 0 130)"><circle cx="0" cy="20" r="10" fill="#0B1530"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#0B1530"/></g><g transform="translate(100,0)"><circle cx="0" cy="10" r="11" fill="#8B3A2E"/><path d="M 0,22 C -11,22 -17,26 -17,34 C -17,52 -14,70 -12,86 C -11,108 -13,122 -15,132 L 15,132 C 13,122 11,108 12,86 C 14,70 17,52 17,34 C 17,26 11,22 0,22 Z" fill="#8B3A2E"/></g><g transform="translate(140,0) rotate(-8 0 130)"><circle cx="0" cy="20" r="10" fill="#0B1530"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#0B1530"/></g></g></svg>
+    <span><span class="logo-title">Human <span class="logo-accent">Physiology</span></span><span class="logo-sub">BIOL 005 &middot; Mission 1</span></span>
+  </a>
+</header>
+<div class="deck-bar">
+  <button class="btn navy" id="presentBtn" type="button">Present full screen</button>
+  <button class="btn ghost" id="resetBtn" type="button">Reset boxes</button>
+  <button class="btn ghost" id="printBtn" type="button">Print the deck</button>
+  <span class="sp"></span>
+  <span class="cnt" id="deckStatus" role="status" aria-live="polite"></span>
+</div>
+<main class="deck" id="main">
+<h1 class="vh">Mission 1, Maintain Control: BIOL 005 Human Physiology lecture slides</h1>
+<p class="deck-note">20 slides. Present full screen to record, Reset boxes first so nothing is pre-revealed, and press W for the pen layer.</p>
+<article class="slide">
+  <header class="slide-head">
+    <span class="slide-n" aria-hidden="true">01</span>
+    <div><p class="slide-eyebrow">BIOL 005 &middot; Start here</p><h2 class="slide-title">Why I keep saying mission</h2></div>
+    <span class="slide-beat">Start</span>
+  </header>
+  <div class="slide-body">
+<div class="two">
+  <div>
+    <p class="lead">Your body has one job it can never stop doing: keep the conditions inside you steady enough that you stay alive.</p>
+    <ul class="bul">
+      <li>Everything else your body does is in service of that one job. Every heartbeat, every breath, every meal you digest, every hormone released.</li>
+      <li>That job is far too big to learn in one piece. So this course breaks it into smaller jobs, and I call each smaller job a <b>mission</b>.</li>
+      <li>A mission is just a problem your body has to solve. Each one starts with something the body needs to get done, shows you the machinery it uses, then changes the conditions to see whether that machinery can keep up.</li>
+      <li>You are not memorizing a mission. You are learning the physiology inside it. The mission is there so the physiology has a reason to exist.</li>
+    </ul>
+  </div>
+  <div class="card navy">
+    <p class="eyebrow">The one big job</p>
+    <p style="font-size:19px;font-weight:700;line-height:1.35;margin:0 0 12px">Keep the conditions inside the body steady while the world outside, and your own activity inside, keep changing them.</p>
+    <p style="font-size:15px;margin:0;opacity:.9">Everything in this course hangs off that sentence. If the body loses the ability to do it, nothing else it can do matters.</p>
+  </div>
+</div></div>
+</article><article class="slide">
+  <header class="slide-head">
+    <span class="slide-n" aria-hidden="true">02</span>
+    <div><p class="slide-eyebrow">BIOL 005 &middot; Start here</p><h2 class="slide-title">The five missions of Unit 1</h2></div>
+    <span class="slide-beat">Start</span>
+  </header>
+  <div class="slide-body">
+<p class="lead">Unit 1 is called Keep the Human Alive. Five missions, and together they answer one question: what does a body actually need in order to stay alive?</p>
+<table class="tbl">
+  <caption>Where we are going, and why each one comes when it does</caption>
+  <thead><tr><th scope="col">Mission</th><th scope="col">The problem it solves</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">1. Maintain control</th><td>How does a body notice something has changed, and change it back? This is today.</td></tr>
+    <tr><th scope="row">2. Build the molecular toolkit</th><td>Everything in mission 1 was done by molecules. Which molecules, and what gives each one its job?</td></tr>
+    <tr><th scope="row">3. Organize the machinery</th><td>Put a wall around those molecules. What can cross it, and what cannot?</td></tr>
+    <tr><th scope="row">4. Power the system</th><td>All of this costs energy. Where does the energy come from, and what happens when it runs short?</td></tr>
+    <tr><th scope="row">5. Coordinate the human</th><td>Now make the parts talk to each other, so the whole body responds instead of one cell.</td></tr>
+  </tbody>
+</table>
+<div class="band" style="margin-top:20px">
+  <p>Everything your body does depends on one ability: <span class="em">holding a stable internal environment</span>. Lose it and every other function stops mattering, because there is no longer anything alive to do them.</p>
+</div></div>
+</article><article class="slide">
+  <header class="slide-head">
+    <span class="slide-n" aria-hidden="true">03</span>
+    <div><p class="slide-eyebrow">Unit 1, Keep the Human Alive</p><h2 class="slide-title">Mission 1: Maintain Control</h2></div>
+    <span class="slide-beat">Mission</span>
+  </header>
+  <div class="slide-body">
+<div class="two">
+  <div>
+    <p class="lead">Every mission after this one assumes this one worked.</p>
+    <ul class="bul">
+      <li>There are dozens of conditions inside you that have to stay inside a narrow band. Body temperature, blood sugar, how acidic your blood is, how much salt and water you are carrying, and many more.</li>
+      <li>Nothing tells your body to hold those steady. It does it on its own, every second, awake or asleep.</li>
+      <li>Let one of them slip far enough and you have somewhere between a few minutes and a few days, depending on which one it was.</li>
+      <li>Today we work out what a system has to contain before it can hold anything steady at all.</li>
+    </ul>
+    <p class="muted" style="font-size:14.5px">Silverthorn chapter 1, plus the homeostatic reflex pathways section of chapter 6. Course competencies 1, 3, 4 and 5.</p>
+  </div>
+  <div class="card navy">
+    <p class="eyebrow">Mission 1</p>
+    <p style="font-size:19px;font-weight:700;line-height:1.35;margin:0">Keep the conditions inside the body within survivable limits, while conditions inside and outside keep changing without warning.</p>
+  </div>
+</div></div>
+</article><article class="slide">
+  <header class="slide-head">
+    <span class="slide-n" aria-hidden="true">04</span>
+    <div><p class="slide-eyebrow">The problem</p><h2 class="slide-title">Sort this patient</h2></div>
+    <span class="slide-beat">Mission</span>
+  </header>
+  <div class="slide-body">
+<p class="lead">A patient is admitted. Six numbers come back. Compare each one with its normal range and decide: in range, or out of range?</p>
+<table class="tbl sortbl">
+  <caption>You do not need any physiology yet. You need a ruler.</caption>
+  <thead><tr><th scope="col">Variable</th><th scope="col">Normal range</th><th scope="col">This patient</th><th scope="col">Your call</th><th scope="col">Result</th></tr></thead>
+  <tbody>
+    <tr data-ans="out" data-note="Well below the range, and this range is the tightest in the body."><th scope="row">Arterial pH</th><td class="num">7.35 to 7.45</td><td class="num">7.18</td><td class="pickcell"><div class="pick" role="group" aria-label="Arterial pH, your call"><button class="pk" type="button" data-v="in" aria-pressed="false">In range</button><button class="pk" type="button" data-v="out" aria-pressed="false">Out of range</button></div></td><td class="res"></td></tr>
+    <tr data-ans="out" data-note="High. Potassium sets how excitable the heart is."><th scope="row">Plasma potassium</th><td class="num">3.5 to 5.0 mM</td><td class="num">6.8 mM</td><td class="pickcell"><div class="pick" role="group" aria-label="Plasma potassium, your call"><button class="pk" type="button" data-v="in" aria-pressed="false">In range</button><button class="pk" type="button" data-v="out" aria-pressed="false">Out of range</button></div></td><td class="res"></td></tr>
+    <tr data-ans="in" data-note="Comfortably inside the range."><th scope="row">Blood glucose</th><td class="num">70 to 100 mg/dL</td><td class="num">88 mg/dL</td><td class="pickcell"><div class="pick" role="group" aria-label="Blood glucose, your call"><button class="pk" type="button" data-v="in" aria-pressed="false">In range</button><button class="pk" type="button" data-v="out" aria-pressed="false">Out of range</button></div></td><td class="res"></td></tr>
+    <tr data-ans="in" data-note="Normal, so temperature control is working."><th scope="row">Core temperature</th><td class="num">36.5 to 37.5 C<br><span class="alt">97.7 to 99.5 F</span></td><td class="num">37.1 C<br><span class="alt">98.8 F</span></td><td class="pickcell"><div class="pick" role="group" aria-label="Core temperature, your call"><button class="pk" type="button" data-v="in" aria-pressed="false">In range</button><button class="pk" type="button" data-v="out" aria-pressed="false">Out of range</button></div></td><td class="res"></td></tr>
+    <tr data-ans="in" data-note="Normal, so salt and water balance is holding."><th scope="row">Plasma sodium</th><td class="num">135 to 145 mM</td><td class="num">138 mM</td><td class="pickcell"><div class="pick" role="group" aria-label="Plasma sodium, your call"><button class="pk" type="button" data-v="in" aria-pressed="false">In range</button><button class="pk" type="button" data-v="out" aria-pressed="false">Out of range</button></div></td><td class="res"></td></tr>
+    <tr data-ans="out" data-note="Fast. Worth asking what the body might be trying to blow off."><th scope="row">Breathing rate</th><td class="num">12 to 20 per minute</td><td class="num">32 per minute</td><td class="pickcell"><div class="pick" role="group" aria-label="Breathing rate, your call"><button class="pk" type="button" data-v="in" aria-pressed="false">In range</button><button class="pk" type="button" data-v="out" aria-pressed="false">Out of range</button></div></td><td class="res"></td></tr>
+  </tbody>
+</table>
+<p class="sortcount" id="sortCount" role="status" aria-live="polite">0 of 6 sorted</p>
+<div class="reveal-wrap">
+  <button class="rv-btn" type="button" aria-controls="r4" aria-expanded="false">Now: which one buys you the least time?</button>
+  <div class="rv" id="r4" hidden><p class="tag">The point of the exercise</p><p>Potassium. At 6.8 mM the heart is at risk within minutes, while the low pH and the fast breathing are serious but slower. Sorting told you <b>which</b> values are abnormal. It did not tell you <b>why</b>, or which one to deal with first, or whether any of them are related.</p><p>Notice the pattern hiding in there: the blood is acidic, the potassium is high, and the breathing is fast. Those three are not three separate problems. Finding that out is what the rest of the course is for.</p></div>
+</div></div>
+</article><article class="slide">
+  <header class="slide-head">
+    <span class="slide-n" aria-hidden="true">05</span>
+    <div><p class="slide-eyebrow">Foundations</p><h2 class="slide-title">Physiology is the study of function</h2></div>
+    <span class="slide-beat">Mechanism</span>
+  </header>
+  <div class="slide-body">
+<div class="two">
+  <div>
+    <h3>Definitions to hold</h3>
+    <ul class="bul">
+      <li><b>Physiology</b> is the study of the normal functioning of a living organism and its parts, including the physical and chemical processes involved.</li>
+      <li><b>Anatomy</b> is the study of structure. Physiology asks what that structure does and how.</li>
+      <li><b>Pathophysiology</b> is what function looks like when a normal mechanism fails.</li>
+    </ul>
+  </div>
+  <div>
+    <figure><svg class="fig" viewBox="0 0 900 424" role="img" aria-labeledby="figT8 figD8">
+<title id="figT8">Levels of organization in the body</title><desc id="figD8">Six levels stacked from molecules at the top through cells, tissues, organs and organ systems to the whole organism at the bottom, where emergent properties appear.</desc>
+<rect width="900" height="424" fill="#ffffff"/>
+<rect x="300" y="26" width="300" height="52" rx="8" fill="#ffffff" stroke="#8B3A2E" stroke-width="1.5"/>
+<text x="450" y="53" text-anchor="middle" font-size="15.5" font-weight="700" font-family="sans-serif" fill="#0B1530">Molecules</text>
+<text x="450" y="70" text-anchor="middle" font-size="12.5" font-family="sans-serif" fill="#4F576A">ions, proteins, lipids, nucleotides</text>
+<rect x="252" y="88" width="396" height="52" rx="8" fill="#ffffff" stroke="#8B3A2E" stroke-width="1.5"/>
+<text x="450" y="115" text-anchor="middle" font-size="15.5" font-weight="700" font-family="sans-serif" fill="#0B1530">Cells</text>
+<text x="450" y="132" text-anchor="middle" font-size="12.5" font-family="sans-serif" fill="#4F576A">the smallest unit that is alive</text>
+<rect x="204" y="150" width="492" height="52" rx="8" fill="#ffffff" stroke="#8B3A2E" stroke-width="1.5"/>
+<text x="450" y="177" text-anchor="middle" font-size="15.5" font-weight="700" font-family="sans-serif" fill="#0B1530">Tissues</text>
+<text x="450" y="194" text-anchor="middle" font-size="12.5" font-family="sans-serif" fill="#4F576A">cells of one type working together</text>
+<rect x="156" y="212" width="588" height="52" rx="8" fill="#ffffff" stroke="#8B3A2E" stroke-width="1.5"/>
+<text x="450" y="239" text-anchor="middle" font-size="15.5" font-weight="700" font-family="sans-serif" fill="#0B1530">Organs</text>
+<text x="450" y="256" text-anchor="middle" font-size="12.5" font-family="sans-serif" fill="#4F576A">several tissues doing one job</text>
+<rect x="108" y="274" width="684" height="52" rx="8" fill="#ffffff" stroke="#8B3A2E" stroke-width="1.5"/>
+<text x="450" y="301" text-anchor="middle" font-size="15.5" font-weight="700" font-family="sans-serif" fill="#0B1530">Organ systems</text>
+<text x="450" y="318" text-anchor="middle" font-size="12.5" font-family="sans-serif" fill="#4F576A">organs sharing a function</text>
+<rect x="60" y="336" width="780" height="52" rx="8" fill="#0B1530" stroke="#0B1530" stroke-width="1.5"/>
+<text x="450" y="363" text-anchor="middle" font-size="15.5" font-weight="700" font-family="sans-serif" fill="#ffffff">The organism</text>
+<text x="450" y="380" text-anchor="middle" font-size="12.5" font-family="sans-serif" fill="#DCB45C">emergent properties appear only here</text>
+</svg><figcaption><b>Figure 1.</b> Function at one level cannot be predicted from the level below it on its own.</figcaption></figure>
+  </div>
+</div></div>
+</article><article class="slide">
+  <header class="slide-head">
+    <span class="slide-n" aria-hidden="true">06</span>
+    <div><p class="slide-eyebrow">Foundations</p><h2 class="slide-title">Two ways to answer why</h2></div>
+    <span class="slide-beat">Mechanism</span>
+  </header>
+  <div class="slide-body">
+<div class="two">
+  <div>
+    <ul class="bul">
+      <li><b>Teleological</b> answers say what for. Red cells carry oxygen because tissues need it.</li>
+      <li><b>Mechanistic</b> answers say how. Hemoglobin binds oxygen because the oxygen partial pressure is high in the lung and the binding is cooperative.</li>
+      <li>Physiology wants the mechanistic answer. The teleological one is a memory aid, not an explanation.</li>
+    </ul>
+  </div>
+  <div>
+    <div class="reveal-wrap">
+  <button class="rv-btn" type="button" aria-controls="r3" aria-expanded="false">Why this matters on your exams</button>
+  <div class="rv" id="r3" hidden><p class="tag">Grading consequence</p><p>A teleological answer earns partial credit at best, because it restates the observation. If your sentence would still be true with the mechanism removed, you have not answered the question.</p><p>Test yourself by deleting every because clause. If what is left still says something, you wrote a description, not an explanation.</p></div>
+</div>
+  </div>
+</div>
+<div class="exbox">
+  <p class="tag">Example</p>
+  <p class="q">Why do you shiver when you are cold?</p>
+  <div class="ex2">
+    <div class="ex weak">
+      <p class="lab">Says what for</p>
+      <p>Because your body needs to warm back up.</p>
+    </div>
+    <div class="ex strong">
+      <p class="lab">Says how</p>
+      <p>Because temperature sensors in your skin detect the drop, the hypothalamus compares that reading with its target, and it sends motor signals that make muscle contract rapidly and repeatedly. Heat is a by-product of that contraction.</p>
+    </div>
+  </div>
+  <p class="why">Both sentences are true. Only the second one lets you predict anything. <b>Cut the nerve from the skin and the first sentence is still true, but the shivering stops.</b></p>
+</div>
+<div style="display:none">
+  </div>
+</div></div>
+</article><article class="slide">
+  <header class="slide-head">
+    <span class="slide-n" aria-hidden="true">07</span>
+    <div><p class="slide-eyebrow">Foundations</p><h2 class="slide-title">Emergent properties</h2></div>
+    <span class="slide-beat">Mechanism</span>
+  </header>
+  <div class="slide-body">
+<p class="lead">An emergent property belongs to the whole system. Take the system apart and the property is not in any of the pieces.</p>
+<table class="tbl">
+  <caption>Read each row across: the property, what it is made of, and what one piece can manage alone</caption>
+  <thead><tr><th scope="col">The property</th><th scope="col">Made of</th><th scope="col">What one piece alone can do</th><th scope="col">What the whole can do</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">Blood pressure</th><td>Millions of heart muscle cells inside a closed loop of vessels</td><td>One cell can shorten. That is all. A single cell has no pressure.</td><td>Contract in a timed sequence against resistance, producing a pressure you can measure in an arm</td></tr>
+    <tr><th scope="row">Concentrating urine</th><td>About a million nephrons arranged in loops with a shared blood supply</td><td>One nephron can move salt and water across a wall</td><td>Build a salt gradient down the kidney, so water can be pulled back and the urine leaves concentrated</td></tr>
+    <tr><th scope="row">Consciousness</th><td>Billions of neurons wired into networks</td><td>One neuron can fire or not fire</td><td>Something we can measure and still cannot fully explain, which is worth saying out loud</td></tr>
+  </tbody>
+</table>
+<div class="reveal-wrap">
+  <button class="rv-btn" type="button" aria-controls="r7" aria-expanded="false">So what is the rule here, and what breaks it?</button>
+  <div class="rv" id="r7" hidden><p class="tag">Say it plainly</p><p><b>The rule you would expect:</b> add up what the parts do and you get what the system does.</p><p><b>What breaks it:</b> arrangement. Heart cells in a dish will beat, and they still produce no blood pressure, because pressure needs them joined in a particular order, squeezing into a closed container. The property does not come from the parts. It comes from the parts <b>plus how they are put together</b>.</p><p><b>Why you care:</b> the thing that fails in a patient is almost always a whole-system property, and the cause is almost always down at the level of a molecule or a cell. Connecting those two levels in writing is what your patient file asks for every week.</p></div>
+</div>
+<div class="clin">
+  <button class="clin-btn" type="button" aria-controls="clin1" aria-expanded="false">
+    <span>What this means in the clinic</span><span class="chev" aria-hidden="true">&#9656;</span></button>
+  <div class="clin-body" id="clin1" hidden>
+    <div class="clin-grid">
+      <div class="cprof n"><p class="who">Nursing</p><p class="means">You monitor system properties and you act on causes, so you carry both levels at once.</p><p class="eg"><b>Example:</b> You chart a blood pressure, but the fluid you hang is aimed at a mechanism, not at the number on the monitor.</p></div>
+      <div class="cprof x"><p class="who">Radiologic technology</p><p class="means">An image is a system-level property too. What appears on it is the sum of every tissue the beam passed through, not any single structure.</p><p class="eg"><b>Example:</b> A white-out on a chest film is one appearance with several possible causes: fluid, collapse, or consolidation. The image shows the property. It does not by itself name the mechanism.</p></div>
+      <div class="cprof m"><p class="who">Medicine</p><p class="means">The number that fails is a whole-system property. The cause is almost always molecular or cellular, one or two levels down.</p><p class="eg"><b>Example:</b> Blood pressure falls in sepsis. The pressure is the system property. The cause is signaling molecules relaxing vessel walls, which is a molecular event.</p></div>
+      <div class="cprof r"><p class="who">Respiratory therapy</p><p class="means">Oxygen saturation is a whole-system property of gas exchange, so a normal value does not mean every part is working.</p><p class="eg"><b>Example:</b> A patient can hold a normal saturation while carbon dioxide climbs, because saturation and ventilation are not the same measurement.</p></div>
+    </div>
+  </div>
+</div></div>
+</article><article class="slide">
+  <header class="slide-head">
+    <span class="slide-n" aria-hidden="true">08</span>
+    <div><p class="slide-eyebrow">The internal environment</p><h2 class="slide-title">What exactly are we keeping steady?</h2></div>
+    <span class="slide-beat">Mechanism</span>
+  </header>
+  <div class="slide-body">
+<figure><svg class="fig" viewBox="0 0 1060 520" role="img" aria-labelledby="figT2 figD2">
+<title id="figT2">Body fluid compartments, drawn so the containment is visible</title><desc id="figD2">A dashed outer box is the external environment. Inside it sits the body, bounded by skin and epithelia. Inside the body a red-outlined box holds the extracellular fluid, the internal environment, about one third of total body water, containing plasma at about a quarter of ECF and interstitial fluid at about three quarters. Below a line marked cell membrane sits the intracellular fluid, about two thirds of total body water. A channel labeled gut lumen and airways runs through the body and opens to the outside at both ends, so it belongs to the external environment.</desc>
+<rect width="1060" height="520" fill="#ffffff"/>
+<rect x="14" y="14" width="1032" height="492" rx="12" fill="#FAFAF9" stroke="#4F576A" stroke-width="1.4" stroke-dasharray="8 6"/>
+<text x="34" y="40" text-anchor="start" font-size="11.5" font-weight="800" font-family="sans-serif" fill="#4F576A" letter-spacing="2.2">EXTERNAL ENVIRONMENT</text>
+<text x="34" y="60" font-size="13" font-family="sans-serif" fill="#4F576A">everything the body is not</text>
+<rect x="64" y="78" width="932" height="400" rx="12" fill="#ffffff" stroke="#0B1530" stroke-width="1.8"/>
+<text x="88" y="104" text-anchor="start" font-size="11.5" font-weight="800" font-family="sans-serif" fill="#0B1530" letter-spacing="2.2">THE BODY</text>
+<text x="972" y="104" text-anchor="end" font-size="12.5" font-family="sans-serif" fill="#4F576A">boundary: skin and epithelia</text>
+<rect x="96" y="124" width="868" height="156" rx="10" fill="#ffffff" stroke="#8B3A2E" stroke-width="2.2"/>
+<text x="120" y="150" text-anchor="start" font-size="11.5" font-weight="800" font-family="sans-serif" fill="#8B3A2E" letter-spacing="2.2">INTERNAL ENVIRONMENT</text>
+<text x="120" y="170" font-size="14" font-weight="700" font-family="sans-serif" fill="#0B1530">Extracellular fluid, ECF. About one third of total body water.</text>
+<rect x="120" y="186" width="250" height="74" rx="8" fill="#FAFAF9" stroke="#4F576A" stroke-width="1.3"/>
+<text x="245" y="214" text-anchor="middle" font-size="15" font-weight="700" font-family="sans-serif" fill="#0B1530">Plasma</text>
+<text x="245" y="236" text-anchor="middle" font-size="12.5" font-family="sans-serif" fill="#4F576A">about a quarter of ECF, and it circulates</text>
+<rect x="388" y="186" width="552" height="74" rx="8" fill="#FAFAF9" stroke="#4F576A" stroke-width="1.3"/>
+<text x="664" y="214" text-anchor="middle" font-size="15" font-weight="700" font-family="sans-serif" fill="#0B1530">Interstitial fluid</text>
+<text x="664" y="236" text-anchor="middle" font-size="12.5" font-family="sans-serif" fill="#4F576A">about three quarters of ECF, and it bathes the cells</text>
+<line x1="96" y1="298" x2="964" y2="298" stroke="#0B1530" stroke-width="2.4"/>
+<rect x="446" y="286" width="168" height="24" rx="4" fill="#ffffff"/>
+<text x="530" y="303" text-anchor="middle" font-size="12.5" font-weight="700" font-family="sans-serif" fill="#0B1530">cell membrane</text>
+<rect x="96" y="316" width="868" height="76" rx="10" fill="#0B1530" stroke="#0B1530" stroke-width="1.8"/>
+<text x="530" y="346" text-anchor="middle" font-size="15.5" font-weight="700" font-family="sans-serif" fill="#ffffff">Intracellular fluid, ICF</text>
+<text x="530" y="368" text-anchor="middle" font-size="12.5" font-family="sans-serif" fill="#DCB45C">about two thirds of total body water</text>
+<rect x="61" y="416" width="7" height="48" fill="#ffffff"/>
+<rect x="992" y="416" width="7" height="48" fill="#ffffff"/>
+<rect x="14" y="414" width="1032" height="52" rx="10" fill="#FAFAF9" stroke="#4F576A" stroke-width="1.4" stroke-dasharray="8 6"/>
+<text x="530" y="437" text-anchor="middle" font-size="14" font-weight="700" font-family="sans-serif" fill="#4F576A">Gut lumen and airways</text>
+<text x="530" y="457" text-anchor="middle" font-size="12.5" font-family="sans-serif" fill="#4F576A">inside the body outline, but open to the outside at both ends, so still external</text>
+<path d="M 53 440 L 31 440" stroke="#4F576A" stroke-width="2"/>
+<path d="M 31 433 L 23 440 L 31 447 Z" fill="#4F576A"/>
+<path d="M 1007 440 L 1029 440" stroke="#4F576A" stroke-width="2"/>
+<path d="M 1029 433 L 1037 440 L 1029 447 Z" fill="#4F576A"/>
+</svg><figcaption><b>Figure 2.</b> Read it from the outside in, and match the three colors below to the three boxes above.</figcaption></figure>
+<div class="ckey">
+  <span class="ckitem"><span class="sw ext" aria-hidden="true"></span><span class="lb">Outside the body</span><span class="sub">dashed grey</span></span>
+  <span class="ckitem"><span class="sw int" aria-hidden="true"></span><span class="lb">Internal environment, the ECF</span><span class="sub">red outline</span></span>
+  <span class="ckitem"><span class="sw icf" aria-hidden="true"></span><span class="lb">Inside the cells, the ICF</span><span class="sub">solid navy</span></span>
+</div></div>
+</article><article class="slide">
+  <header class="slide-head">
+    <span class="slide-n" aria-hidden="true">09</span>
+    <div><p class="slide-eyebrow">The internal environment</p><h2 class="slide-title">Naming the compartments</h2></div>
+    <span class="slide-beat">Mechanism</span>
+  </header>
+  <div class="slide-body">
+<div class="two">
+  <div>
+    <h3>What the words mean</h3>
+    <ul class="bul">
+      <li><b>External environment</b> is everything outside the body, and that includes the inside of the gut and the airways.</li>
+      <li><b>Internal environment</b> is the fluid outside your cells but inside you. Its proper name is extracellular fluid, or ECF.</li>
+      <li>Your cells never touch the outside world. They sit in ECF, and ECF is what the body works to hold steady.</li>
+    </ul>
+    <h3>How the water is split</h3>
+    <ul class="bul">
+      <li>Total body water is about <b>60 percent</b> of body mass.
+        <ul>
+          <li>About <b>two thirds</b> of it is inside cells.</li>
+          <li>About <b>one third</b> is outside cells, and that third splits into interstitial fluid and plasma.</li>
+        </ul>
+      </li>
+      <li>Plasma is the only part that travels quickly around the body, which is why plasma is what gets sampled when someone draws blood.</li>
+    </ul>
+  </div>
+  <div class="card feature">
+    <p class="eyebrow">The line everyone trips on</p>
+    <p style="font-size:16.5px;font-weight:800;margin:0 0 10px">Food sitting in your stomach is not inside you yet.</p>
+    <p style="margin:0;font-size:15px">The gut is a tube that runs through you and opens to the outside at both ends. Nothing has entered your internal environment until it has crossed a layer of cells and reached the fluid around them. The same is true of the air in your lungs.</p>
+  </div>
+</div>
+<div class="clin">
+  <button class="clin-btn" type="button" aria-controls="clin2" aria-expanded="false">
+    <span>What this means in the clinic</span><span class="chev" aria-hidden="true">&#9656;</span></button>
+  <div class="clin-body" id="clin2" hidden>
+    <div class="clin-grid">
+      <div class="cprof n"><p class="who">Nursing</p><p class="means">Where fluid sits decides what you see on assessment.</p><p class="eg"><b>Example:</b> A patient can be visibly swollen, with fluid sitting in the interstitial space, and still be low on volume inside the vessels.</p></div>
+      <div class="cprof x"><p class="who">Radiologic technology</p><p class="means">Contrast is injected into one compartment and then leaves it, so scan timing decides which compartment you are actually imaging.</p><p class="eg"><b>Example:</b> An arterial-phase scan catches contrast still inside the vessels. A delayed scan catches it after it has moved out into the interstitial space. Same injection, two different-looking images, because the contrast moved compartments.</p></div>
+      <div class="cprof m"><p class="who">Medicine</p><p class="means">Choosing an IV fluid is a compartment question before it is anything else.</p><p class="eg"><b>Example:</b> A liter of isotonic saline stays largely in the extracellular fluid. A liter of 5 percent dextrose in water spreads across total body water, so much less of it stays in the vessels.</p></div>
+      <div class="cprof r"><p class="who">Respiratory therapy</p><p class="means">Airway secretions sit in the external compartment, not the internal one.</p><p class="eg"><b>Example:</b> A dry airway is a local humidity problem. It is not the same thing as whole-body dehydration, and it is not fixed the same way.</p></div>
+    </div>
+  </div>
+</div></div>
+</article><article class="slide">
+  <header class="slide-head">
+    <span class="slide-n" aria-hidden="true">10</span>
+    <div><p class="slide-eyebrow">The central concept</p><h2 class="slide-title">Homeostasis is not equilibrium</h2></div>
+    <span class="slide-beat">Mechanism</span>
+  </header>
+  <div class="slide-body">
+<p class="lead">This is the distinction students lose the most points on all term, so get it now.</p>
+<figure><svg class="fig" viewBox="0 0 980 300" role="img" aria-labeledby="figT7 figD7">
+<title id="figT7">Equilibrium compared with steady state</title><desc id="figD7">Two columns. Equilibrium costs no energy, ends with equal concentrations, defends nothing, and is what a dead cell reaches. Steady state costs ATP continuously, keeps gradients unequal, is actively defended, and only a living cell holds it.</desc>
+<rect width="980" height="300" fill="#ffffff"/>
+<rect x="18" y="22" width="458" height="48" rx="8" fill="#0B1530"/>
+<text x="247" y="52" text-anchor="middle" font-size="17" font-weight="800" font-family="sans-serif" fill="#ffffff">Equilibrium</text>
+<rect x="504" y="22" width="458" height="48" rx="8" fill="#ffffff" stroke="#8B3A2E" stroke-width="2"/>
+<text x="733" y="52" text-anchor="middle" font-size="17" font-weight="800" font-family="sans-serif" fill="#8B3A2E">Steady state</text>
+<line x1="18" y1="92" x2="962" y2="92" stroke="#C9CDD6" stroke-width="1"/>
+<text x="30" y="121" font-size="15" font-family="sans-serif" fill="#0B1530">Costs no energy to hold</text>
+<text x="516" y="121" font-size="15" font-family="sans-serif" fill="#0B1530">Costs ATP every second</text>
+<line x1="18" y1="138" x2="962" y2="138" stroke="#C9CDD6" stroke-width="1"/>
+<text x="30" y="167" font-size="15" font-family="sans-serif" fill="#0B1530">Concentrations end up equal</text>
+<text x="516" y="167" font-size="15" font-family="sans-serif" fill="#0B1530">Gradients are kept unequal</text>
+<line x1="18" y1="184" x2="962" y2="184" stroke="#C9CDD6" stroke-width="1"/>
+<text x="30" y="213" font-size="15" font-family="sans-serif" fill="#0B1530">Nothing is being defended</text>
+<text x="516" y="213" font-size="15" font-family="sans-serif" fill="#0B1530">Actively defended against change</text>
+<line x1="18" y1="230" x2="962" y2="230" stroke="#C9CDD6" stroke-width="1"/>
+<text x="30" y="259" font-size="15" font-family="sans-serif" fill="#0B1530">A dead cell reaches it within hours</text>
+<text x="516" y="259" font-size="15" font-family="sans-serif" fill="#0B1530">Only a living cell can hold it</text>
+<line x1="490" y1="22" x2="490" y2="286" stroke="#C9CDD6" stroke-width="1"/>
+</svg><figcaption><b>Figure 2.</b> A cell at equilibrium with its surroundings is a dead cell.</figcaption></figure>
+<div class="two" style="margin-top:20px">
+  <div>
+    <ul class="bul">
+      <li><b>Homeostasis</b> is the maintenance of a relatively stable internal environment. Relatively is doing real work in that sentence.</li>
+      <li><b>Dynamic steady state</b> is what it actually is: material and energy move continuously, but the amount in each compartment does not change much.</li>
+    </ul>
+  </div>
+  <div>
+    <div class="reveal-wrap">
+  <button class="rv-btn" type="button" aria-controls="r6" aria-expanded="false">The sodium example</button>
+  <div class="rv" id="r6" hidden><p class="tag">Worked</p><p>Extracellular sodium sits near 145 mM and intracellular near 12 mM. Sodium leaks in constantly down a steep gradient. The concentration holds because the sodium potassium pump spends ATP throwing it back out, every second, for your whole life. Stop the ATP and the gradient collapses within minutes. Nothing about that is equilibrium.</p></div>
+</div>
+  </div>
+</div>
+<div class="clin">
+  <button class="clin-btn" type="button" aria-controls="clin3" aria-expanded="false">
+    <span>What this means in the clinic</span><span class="chev" aria-hidden="true">&#9656;</span></button>
+  <div class="clin-body" id="clin3" hidden>
+    <div class="clin-grid">
+      <div class="cprof n"><p class="who">Nursing</p><p class="means">A patient losing perfusion is a patient losing gradients, and the signs appear before the labs do.</p><p class="eg"><b>Example:</b> Cool mottled skin and a rising lactate are gradient failure becoming visible at the bedside.</p></div>
+      <div class="cprof x"><p class="who">Radiologic technology</p><p class="means">Nuclear medicine images gradients directly. A tracer collects only where cells are still spending ATP to hold one.</p><p class="eg"><b>Example:</b> Technetium sestamibi concentrates in heart muscle because living mitochondria maintain their charge gradient. Dead tissue cannot, so it takes up nothing. That is what makes the cold spot on the scan.</p></div>
+      <div class="cprof m"><p class="who">Medicine</p><p class="means">Every gradient in the body is being paid for in ATP, continuously, for as long as the patient is alive.</p><p class="eg"><b>Example:</b> When perfusion stops, the sodium potassium pump stops with it, potassium leaks out of cells, and measured plasma potassium rises.</p></div>
+      <div class="cprof r"><p class="who">Respiratory therapy</p><p class="means">The work of breathing is the ATP price of holding the carbon dioxide gradient.</p><p class="eg"><b>Example:</b> A patient who is tiring can no longer afford that gradient, which is why carbon dioxide starts to climb as they wear out.</p></div>
+    </div>
+  </div>
+</div></div>
+</article><article class="slide">
+  <header class="slide-head">
+    <span class="slide-n" aria-hidden="true">11</span>
+    <div><p class="slide-eyebrow">Organizing frame</p><h2 class="slide-title">The six themes</h2></div>
+    <span class="slide-beat">Mechanism</span>
+  </header>
+  <div class="slide-body">
+<figure><svg class="fig" viewBox="0 0 1680 424" role="img" aria-labelledby="figT3 figD3">
+<title id="figT3">The six themes of physiology</title><desc id="figD3">A top-down map. Physiology sits at the top, and six branch cards hang below it: structure and function, energy, information flow, homeostasis, compartmentation, and mass balance, each listing three examples.</desc>
+<rect width="1680" height="424" fill="#ffffff"/>
+<rect x="660" y="38" width="360" height="66" rx="10" fill="#0B1530"/>
+<text x="840" y="68" text-anchor="middle" font-size="22" font-weight="800" font-family="sans-serif" fill="#ffffff">Physiology</text>
+<text x="840" y="93" text-anchor="middle" font-size="22" font-weight="800" font-family="sans-serif" fill="#DCB45C">six themes</text>
+<line x1="840" y1="104" x2="840" y2="152" stroke="#8B3A2E" stroke-width="2.4"/>
+<line x1="153" y1="152" x2="1527" y2="152" stroke="#8B3A2E" stroke-width="2.4"/>
+<line x1="153" y1="152" x2="153" y2="196" stroke="#8B3A2E" stroke-width="2.4"/>
+<g class="mapcard" role="button" tabindex="0" aria-label="Enlarge Structure and function" data-b="Structure and function" data-l="Form sets what it can do|Walls decide what mixes|Surface area sets exchange">
+<rect class="mc-hit" x="24" y="196" width="259" height="202" rx="10" fill="#ffffff" stroke="#0B1530" stroke-width="1.5"/>
+<rect x="24" y="196" width="259" height="52" rx="10" fill="#8B3A2E"/>
+<rect x="24" y="236" width="259" height="12" fill="#8B3A2E"/>
+<text x="153" y="228" text-anchor="middle" font-size="17" font-weight="800" font-family="sans-serif" fill="#ffffff">Structure and function</text>
+<circle cx="44" cy="275" r="3.4" fill="#8B3A2E"/>
+<text x="56" y="280" font-size="16" font-family="sans-serif" fill="#0B1530">Form sets what it can do</text>
+<circle cx="44" cy="299" r="3.4" fill="#8B3A2E"/>
+<text x="56" y="304" font-size="16" font-family="sans-serif" fill="#0B1530">Walls decide what mixes</text>
+<circle cx="44" cy="323" r="3.4" fill="#8B3A2E"/>
+<text x="56" y="328" font-size="16" font-family="sans-serif" fill="#0B1530">Surface area sets</text>
+<text x="56" y="352" font-size="16" font-family="sans-serif" fill="#0B1530">exchange</text>
+</g>
+<line x1="428" y1="152" x2="428" y2="196" stroke="#8B3A2E" stroke-width="2.4"/>
+<g class="mapcard" role="button" tabindex="0" aria-label="Enlarge Energy" data-b="Energy" data-l="Gradients cost ATP|Steady state is not free|Metabolism pays for it">
+<rect class="mc-hit" x="299" y="196" width="259" height="202" rx="10" fill="#ffffff" stroke="#0B1530" stroke-width="1.5"/>
+<rect x="299" y="196" width="259" height="52" rx="10" fill="#8B3A2E"/>
+<rect x="299" y="236" width="259" height="12" fill="#8B3A2E"/>
+<text x="428" y="228" text-anchor="middle" font-size="17" font-weight="800" font-family="sans-serif" fill="#ffffff">Energy</text>
+<circle cx="319" cy="275" r="3.4" fill="#8B3A2E"/>
+<text x="331" y="280" font-size="16" font-family="sans-serif" fill="#0B1530">Gradients cost ATP</text>
+<circle cx="319" cy="299" r="3.4" fill="#8B3A2E"/>
+<text x="331" y="304" font-size="16" font-family="sans-serif" fill="#0B1530">Steady state is not free</text>
+<circle cx="319" cy="323" r="3.4" fill="#8B3A2E"/>
+<text x="331" y="328" font-size="16" font-family="sans-serif" fill="#0B1530">Metabolism pays for it</text>
+</g>
+<line x1="703" y1="152" x2="703" y2="196" stroke="#8B3A2E" stroke-width="2.4"/>
+<g class="mapcard" role="button" tabindex="0" aria-label="Enlarge Information flow" data-b="Information flow" data-l="Chemical signals|Electrical signals|Signal, receptor, response">
+<rect class="mc-hit" x="573" y="196" width="259" height="202" rx="10" fill="#ffffff" stroke="#0B1530" stroke-width="1.5"/>
+<rect x="573" y="196" width="259" height="52" rx="10" fill="#8B3A2E"/>
+<rect x="573" y="236" width="259" height="12" fill="#8B3A2E"/>
+<text x="703" y="228" text-anchor="middle" font-size="17" font-weight="800" font-family="sans-serif" fill="#ffffff">Information flow</text>
+<circle cx="593" cy="275" r="3.4" fill="#8B3A2E"/>
+<text x="605" y="280" font-size="16" font-family="sans-serif" fill="#0B1530">Chemical signals</text>
+<circle cx="593" cy="299" r="3.4" fill="#8B3A2E"/>
+<text x="605" y="304" font-size="16" font-family="sans-serif" fill="#0B1530">Electrical signals</text>
+<circle cx="593" cy="323" r="3.4" fill="#8B3A2E"/>
+<text x="605" y="328" font-size="16" font-family="sans-serif" fill="#0B1530">Signal, receptor,</text>
+<text x="605" y="352" font-size="16" font-family="sans-serif" fill="#0B1530">response</text>
+</g>
+<line x1="977" y1="152" x2="977" y2="196" stroke="#8B3A2E" stroke-width="2.4"/>
+<g class="mapcard" role="button" tabindex="0" aria-label="Enlarge Homeostasis" data-b="Homeostasis" data-l="A variable held in range|Sensor, integrator, effector|Failure looks like disease">
+<rect class="mc-hit" x="848" y="196" width="259" height="202" rx="10" fill="#ffffff" stroke="#0B1530" stroke-width="1.5"/>
+<rect x="848" y="196" width="259" height="52" rx="10" fill="#8B3A2E"/>
+<rect x="848" y="236" width="259" height="12" fill="#8B3A2E"/>
+<text x="977" y="228" text-anchor="middle" font-size="17" font-weight="800" font-family="sans-serif" fill="#ffffff">Homeostasis</text>
+<circle cx="868" cy="275" r="3.4" fill="#8B3A2E"/>
+<text x="880" y="280" font-size="16" font-family="sans-serif" fill="#0B1530">A variable held in range</text>
+<circle cx="868" cy="299" r="3.4" fill="#8B3A2E"/>
+<text x="880" y="304" font-size="16" font-family="sans-serif" fill="#0B1530">Sensor, integrator,</text>
+<text x="880" y="328" font-size="16" font-family="sans-serif" fill="#0B1530">effector</text>
+<circle cx="868" cy="347" r="3.4" fill="#8B3A2E"/>
+<text x="880" y="352" font-size="16" font-family="sans-serif" fill="#0B1530">Failure looks like</text>
+<text x="880" y="376" font-size="16" font-family="sans-serif" fill="#0B1530">disease</text>
+</g>
+<line x1="1252" y1="152" x2="1252" y2="196" stroke="#8B3A2E" stroke-width="2.4"/>
+<g class="mapcard" role="button" tabindex="0" aria-label="Enlarge Compartmentation" data-b="Compartmentation" data-l="Inside vs outside cells|Plasma vs interstitial|Organelles inside the cell">
+<rect class="mc-hit" x="1123" y="196" width="259" height="202" rx="10" fill="#ffffff" stroke="#0B1530" stroke-width="1.5"/>
+<rect x="1123" y="196" width="259" height="52" rx="10" fill="#8B3A2E"/>
+<rect x="1123" y="236" width="259" height="12" fill="#8B3A2E"/>
+<text x="1252" y="228" text-anchor="middle" font-size="17" font-weight="800" font-family="sans-serif" fill="#ffffff">Compartmentation</text>
+<circle cx="1143" cy="275" r="3.4" fill="#8B3A2E"/>
+<text x="1155" y="280" font-size="16" font-family="sans-serif" fill="#0B1530">Inside vs outside cells</text>
+<circle cx="1143" cy="299" r="3.4" fill="#8B3A2E"/>
+<text x="1155" y="304" font-size="16" font-family="sans-serif" fill="#0B1530">Plasma vs interstitial</text>
+<circle cx="1143" cy="323" r="3.4" fill="#8B3A2E"/>
+<text x="1155" y="328" font-size="16" font-family="sans-serif" fill="#0B1530">Organelles inside the</text>
+<text x="1155" y="352" font-size="16" font-family="sans-serif" fill="#0B1530">cell</text>
+</g>
+<line x1="1527" y1="152" x2="1527" y2="196" stroke="#8B3A2E" stroke-width="2.4"/>
+<g class="mapcard" role="button" tabindex="0" aria-label="Enlarge Mass balance" data-b="Mass balance" data-l="What comes in must leave|Intake plus production|Clearance removes it">
+<rect class="mc-hit" x="1397" y="196" width="259" height="202" rx="10" fill="#ffffff" stroke="#0B1530" stroke-width="1.5"/>
+<rect x="1397" y="196" width="259" height="52" rx="10" fill="#8B3A2E"/>
+<rect x="1397" y="236" width="259" height="12" fill="#8B3A2E"/>
+<text x="1527" y="228" text-anchor="middle" font-size="17" font-weight="800" font-family="sans-serif" fill="#ffffff">Mass balance</text>
+<circle cx="1417" cy="275" r="3.4" fill="#8B3A2E"/>
+<text x="1429" y="280" font-size="16" font-family="sans-serif" fill="#0B1530">What comes in must leave</text>
+<circle cx="1417" cy="299" r="3.4" fill="#8B3A2E"/>
+<text x="1429" y="304" font-size="16" font-family="sans-serif" fill="#0B1530">Intake plus production</text>
+<circle cx="1417" cy="323" r="3.4" fill="#8B3A2E"/>
+<text x="1429" y="328" font-size="16" font-family="sans-serif" fill="#0B1530">Clearance removes it</text>
+</g>
+</svg><figcaption><b>Figure 3.</b> Every mechanism this term will sit on at least two of these branches. Name which two when you write your note sheet.</figcaption></figure></div>
+</article><article class="slide">
+  <header class="slide-head">
+    <span class="slide-n" aria-hidden="true">12</span>
+    <div><p class="slide-eyebrow">Quantitative</p><h2 class="slide-title">Mass balance</h2></div>
+    <span class="slide-beat">Mechanism</span>
+  </header>
+  <div class="slide-body">
+<div class="two">
+  <div>
+    <p class="lead">If a substance is held at a constant amount, then what comes in must equal what goes out.</p>
+    <div class="eq">
+      <p class="f">Total body load = intake + production &minus; excretion &minus; metabolism</p>
+      <p class="k"><b>Load</b> is the total amount of the substance in the body, not its concentration.</p>
+      <p class="says">What it says: <b>a concentration can change for two entirely different reasons.</b> The amount of substance changed, or the volume it is dissolved in changed. Never assume the first without ruling out the second.</p>
+    </div>
+    <div class="eq">
+      <p class="f">Mass flow = concentration &times; volume flow</p>
+      <p class="k"><b>Units:</b> mg/min = mg/mL &times; mL/min.</p>
+      <p class="says">What it says: <b>delivery is not concentration.</b> A normal concentration with a collapsed flow still starves the tissue.</p>
+    </div>
+  </div>
+  <div>
+    <h3>Work it</h3>
+    <ul class="bul">
+      <li>Plasma glucose is 90 mg/dL. Renal plasma flow is 600 mL/min. How much glucose reaches the kidney per minute?</li>
+    </ul>
+    <div class="reveal-wrap">
+  <button class="rv-btn" type="button" aria-controls="r8" aria-expanded="false">Show the working</button>
+  <div class="rv" id="r8" hidden><p class="tag">Answer</p><p>90 mg/dL is 0.9 mg/mL. Mass flow = 0.9 mg/mL &times; 600 mL/min = <b>540 mg/min</b>.</p><p>Now the physiology question: essentially none of it appears in the urine. Something is moving 540 mg back per minute against a gradient. Hold that thought for Week 14.</p></div>
+</div>
+  </div>
+</div>
+<div class="clin">
+  <button class="clin-btn" type="button" aria-controls="clin4" aria-expanded="false">
+    <span>What this means in the clinic</span><span class="chev" aria-hidden="true">&#9656;</span></button>
+  <div class="clin-body" id="clin4" hidden>
+    <div class="clin-grid">
+      <div class="cprof n"><p class="who">Nursing</p><p class="means">Intake and output charting is mass balance, which is why loose I and O hides the problem.</p><p class="eg"><b>Example:</b> A patient in positive balance across three shifts has gained fluid, and the daily weight usually shows it before anything else does.</p></div>
+      <div class="cprof x"><p class="who">Radiologic technology</p><p class="means">Contrast obeys mass balance like anything else. What you inject stays in the patient until it is cleared out.</p><p class="eg"><b>Example:</b> A patient who had contrast yesterday has not finished clearing it today. A repeat study too soon adds to a load that is still there, which is why prior studies get checked before the next injection.</p></div>
+      <div class="cprof m"><p class="who">Medicine</p><p class="means">A concentration can change because the amount changed or because the volume changed, and those have opposite corrections.</p><p class="eg"><b>Example:</b> A rising sodium can mean sodium was gained or water was lost. Treating the wrong one moves the patient in the wrong direction.</p></div>
+      <div class="cprof r"><p class="who">Respiratory therapy</p><p class="means">Fluid balance changes lung water, and lung water changes gas exchange.</p><p class="eg"><b>Example:</b> A patient several liters positive becomes harder to oxygenate, and the chest film tends to follow the balance sheet.</p></div>
+    </div>
+  </div>
+</div></div>
+</article><article class="slide">
+  <header class="slide-head">
+    <span class="slide-n" aria-hidden="true">13</span>
+    <div><p class="slide-eyebrow">Quantitative</p><h2 class="slide-title">Clearance</h2></div>
+    <span class="slide-beat">Mechanism</span>
+  </header>
+  <div class="slide-body">
+<div class="two">
+  <div>
+    <div class="eq">
+      <p class="f">Clearance = rate of removal &divide; plasma concentration</p>
+      <p class="k"><b>Units:</b> mL/min. Clearance is a volume per time, not an amount per time.</p>
+      <p class="says">What it says: <b>clearance is the volume of plasma completely cleared of a substance per minute.</b> No real volume is ever fully cleared. It is a way of expressing removal that does not change when the concentration changes.</p>
+    </div>
+    <ul class="bul">
+      <li>Organs that clear things: kidney, liver, lung, skin, gut.</li>
+      <li>Clearance is how drug dosing intervals are set, and it is the reason kidney failure changes every dose a patient takes.</li>
+    </ul>
+  </div>
+  <div class="predict">
+    <p class="tag">Predict before you look</p>
+    <p>A patient's kidney clearance of a drug halves. The dose stays the same and the dosing interval stays the same. What happens to the plasma concentration of the drug over the next several doses, and why?</p>
+  </div>
+</div>
+<div class="clin">
+  <button class="clin-btn" type="button" aria-controls="clin5" aria-expanded="false">
+    <span>What this means in the clinic</span><span class="chev" aria-hidden="true">&#9656;</span></button>
+  <div class="clin-body" id="clin5" hidden>
+    <div class="clin-grid">
+      <div class="cprof n"><p class="who">Nursing</p><p class="means">You are often the one who notices accumulation before a level comes back.</p><p class="eg"><b>Example:</b> Rising drowsiness in a patient whose kidney function dropped is a clearance problem until something else explains it.</p></div>
+      <div class="cprof x"><p class="who">Radiologic technology</p><p class="means">Iodinated contrast is cleared almost entirely by the kidneys, which is why kidney function is the screening question before you inject.</p><p class="eg"><b>Example:</b> An eGFR or creatinine is checked ahead of a contrast study because a patient who cannot clear the dose holds it far longer than the protocol assumes. It is the same reason metformin gets held afterward.</p></div>
+      <div class="cprof m"><p class="who">Medicine</p><p class="means">Clearance sets the dosing interval, so a failing organ changes every drug on the list at once.</p><p class="eg"><b>Example:</b> When kidney clearance halves and the interval does not change, the drug accumulates dose after dose.</p></div>
+      <div class="cprof r"><p class="who">Respiratory therapy</p><p class="means">Sedatives cleared by the liver or kidney behave differently when those organs are struggling.</p><p class="eg"><b>Example:</b> The same sedation dose lasts far longer, and it shows up as a failed weaning trial rather than as an abnormal lab.</p></div>
+    </div>
+  </div>
+</div></div>
+</article><article class="slide">
+  <header class="slide-head">
+    <span class="slide-n" aria-hidden="true">14</span>
+    <div><p class="slide-eyebrow">Control</p><h2 class="slide-title">Local control and reflex control</h2></div>
+    <span class="slide-beat">Mechanism</span>
+  </header>
+  <div class="slide-body">
+<figure><svg class="fig" viewBox="0 0 1680 376" role="img" aria-labelledby="figT4 figD4">
+<title id="figT4">Four kinds of physiological control</title><desc id="figD4">A top-down map with four branch cards below the heading: local control, long-distance reflex control, tonic control, and antagonistic control, each listing three defining features.</desc>
+<rect width="1680" height="376" fill="#ffffff"/>
+<rect x="658" y="38" width="365" height="66" rx="10" fill="#0B1530"/>
+<text x="840" y="68" text-anchor="middle" font-size="22" font-weight="800" font-family="sans-serif" fill="#ffffff">How the body</text>
+<text x="840" y="93" text-anchor="middle" font-size="22" font-weight="800" font-family="sans-serif" fill="#DCB45C">controls a variable</text>
+<line x1="840" y1="104" x2="840" y2="152" stroke="#8B3A2E" stroke-width="2.4"/>
+<line x1="222" y1="152" x2="1458" y2="152" stroke="#8B3A2E" stroke-width="2.4"/>
+<line x1="222" y1="152" x2="222" y2="196" stroke="#8B3A2E" stroke-width="2.4"/>
+<g class="mapcard" role="button" tabindex="0" aria-label="Enlarge Local control" data-b="Local control" data-l="One tissue only|The cell that senses responds|Low oxygen widens a vessel">
+<rect class="mc-hit" x="24" y="196" width="396" height="154" rx="10" fill="#ffffff" stroke="#0B1530" stroke-width="1.5"/>
+<rect x="24" y="196" width="396" height="52" rx="10" fill="#8B3A2E"/>
+<rect x="24" y="236" width="396" height="12" fill="#8B3A2E"/>
+<text x="222" y="228" text-anchor="middle" font-size="17" font-weight="800" font-family="sans-serif" fill="#ffffff">Local control</text>
+<circle cx="44" cy="275" r="3.4" fill="#8B3A2E"/>
+<text x="56" y="280" font-size="16" font-family="sans-serif" fill="#0B1530">One tissue only</text>
+<circle cx="44" cy="299" r="3.4" fill="#8B3A2E"/>
+<text x="56" y="304" font-size="16" font-family="sans-serif" fill="#0B1530">The cell that senses responds</text>
+<circle cx="44" cy="323" r="3.4" fill="#8B3A2E"/>
+<text x="56" y="328" font-size="16" font-family="sans-serif" fill="#0B1530">Low oxygen widens a vessel</text>
+</g>
+<line x1="634" y1="152" x2="634" y2="196" stroke="#8B3A2E" stroke-width="2.4"/>
+<g class="mapcard" role="button" tabindex="0" aria-label="Enlarge Long-distance control" data-b="Long-distance control" data-l="A reflex, whole body|Nerves, hormones, or both|Needs a path to travel">
+<rect class="mc-hit" x="436" y="196" width="396" height="154" rx="10" fill="#ffffff" stroke="#0B1530" stroke-width="1.5"/>
+<rect x="436" y="196" width="396" height="52" rx="10" fill="#8B3A2E"/>
+<rect x="436" y="236" width="396" height="12" fill="#8B3A2E"/>
+<text x="634" y="228" text-anchor="middle" font-size="17" font-weight="800" font-family="sans-serif" fill="#ffffff">Long-distance control</text>
+<circle cx="456" cy="275" r="3.4" fill="#8B3A2E"/>
+<text x="468" y="280" font-size="16" font-family="sans-serif" fill="#0B1530">A reflex, whole body</text>
+<circle cx="456" cy="299" r="3.4" fill="#8B3A2E"/>
+<text x="468" y="304" font-size="16" font-family="sans-serif" fill="#0B1530">Nerves, hormones, or both</text>
+<circle cx="456" cy="323" r="3.4" fill="#8B3A2E"/>
+<text x="468" y="328" font-size="16" font-family="sans-serif" fill="#0B1530">Needs a path to travel</text>
+</g>
+<line x1="1046" y1="152" x2="1046" y2="196" stroke="#8B3A2E" stroke-width="2.4"/>
+<g class="mapcard" role="button" tabindex="0" aria-label="Enlarge Tonic control" data-b="Tonic control" data-l="Always switched on|Turn it up or turn it down|Vessel tone works this way">
+<rect class="mc-hit" x="848" y="196" width="396" height="154" rx="10" fill="#ffffff" stroke="#0B1530" stroke-width="1.5"/>
+<rect x="848" y="196" width="396" height="52" rx="10" fill="#8B3A2E"/>
+<rect x="848" y="236" width="396" height="12" fill="#8B3A2E"/>
+<text x="1046" y="228" text-anchor="middle" font-size="17" font-weight="800" font-family="sans-serif" fill="#ffffff">Tonic control</text>
+<circle cx="868" cy="275" r="3.4" fill="#8B3A2E"/>
+<text x="880" y="280" font-size="16" font-family="sans-serif" fill="#0B1530">Always switched on</text>
+<circle cx="868" cy="299" r="3.4" fill="#8B3A2E"/>
+<text x="880" y="304" font-size="16" font-family="sans-serif" fill="#0B1530">Turn it up or turn it down</text>
+<circle cx="868" cy="323" r="3.4" fill="#8B3A2E"/>
+<text x="880" y="328" font-size="16" font-family="sans-serif" fill="#0B1530">Vessel tone works this way</text>
+</g>
+<line x1="1458" y1="152" x2="1458" y2="196" stroke="#8B3A2E" stroke-width="2.4"/>
+<g class="mapcard" role="button" tabindex="0" aria-label="Enlarge Antagonistic control" data-b="Antagonistic control" data-l="Two systems, opposite jobs|Faster and finer than one|Insulin and glucagon">
+<rect class="mc-hit" x="1260" y="196" width="396" height="154" rx="10" fill="#ffffff" stroke="#0B1530" stroke-width="1.5"/>
+<rect x="1260" y="196" width="396" height="52" rx="10" fill="#8B3A2E"/>
+<rect x="1260" y="236" width="396" height="12" fill="#8B3A2E"/>
+<text x="1458" y="228" text-anchor="middle" font-size="17" font-weight="800" font-family="sans-serif" fill="#ffffff">Antagonistic control</text>
+<circle cx="1280" cy="275" r="3.4" fill="#8B3A2E"/>
+<text x="1292" y="280" font-size="16" font-family="sans-serif" fill="#0B1530">Two systems, opposite jobs</text>
+<circle cx="1280" cy="299" r="3.4" fill="#8B3A2E"/>
+<text x="1292" y="304" font-size="16" font-family="sans-serif" fill="#0B1530">Faster and finer than one</text>
+<circle cx="1280" cy="323" r="3.4" fill="#8B3A2E"/>
+<text x="1292" y="328" font-size="16" font-family="sans-serif" fill="#0B1530">Insulin and glucagon</text>
+</g>
+</svg><figcaption><b>Figure 4.</b> Local control needs no signaling system at all. That is its advantage and its limit.</figcaption></figure>
+<div class="clin">
+  <button class="clin-btn" type="button" aria-controls="clin6" aria-expanded="false">
+    <span>What this means in the clinic</span><span class="chev" aria-hidden="true">&#9656;</span></button>
+  <div class="clin-body" id="clin6" hidden>
+    <div class="clin-grid">
+      <div class="cprof n"><p class="who">Nursing</p><p class="means">Knowing whether a response is local or whole-body tells you what to expect when you intervene.</p><p class="eg"><b>Example:</b> Warming one limb changes blood flow in that limb without changing the patient's core temperature.</p></div>
+      <div class="cprof x"><p class="who">Radiologic technology</p><p class="means">Enhancement on a scan is a picture of local control, because contrast only reaches tissue that local vessels are delivering to.</p><p class="eg"><b>Example:</b> A tumor lights up because its own vessels are dilated and leaky, a purely local change. Nothing whole-body happened. The bright spot is local blood flow made visible.</p></div>
+      <div class="cprof m"><p class="who">Medicine</p><p class="means">Local control needs no nerves and no hormones, so it keeps working when the long-distance systems do not.</p><p class="eg"><b>Example:</b> In a transplanted heart the nerves are cut, and local metabolic control of the coronary vessels still works normally.</p></div>
+      <div class="cprof r"><p class="who">Respiratory therapy</p><p class="means">The lung uses local control to match blood flow to ventilation.</p><p class="eg"><b>Example:</b> Low oxygen in one region narrows the vessels there, pushing blood toward regions that are actually being ventilated.</p></div>
+    </div>
+  </div>
+</div></div>
+</article><article class="slide">
+  <header class="slide-head">
+    <span class="slide-n" aria-hidden="true">15</span>
+    <div><p class="slide-eyebrow">Control</p><h2 class="slide-title">The seven steps of a reflex</h2></div>
+    <span class="slide-beat">Response</span>
+  </header>
+  <div class="slide-body">
+<figure><svg class="fig" viewBox="0 0 1040 194" role="img" aria-labeledby="figT5 figD5">
+<title id="figT5">The seven steps of a reflex control pathway</title><desc id="figD5">A left to right chain: stimulus, sensor, afferent path, integrating center, efferent path, effector, response. A dashed arrow returns from the response to the sensor, labeled negative feedback.</desc>
+<rect width="1040" height="194" fill="#ffffff"/>
+<defs><marker id="ah5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#8B3A2E"/></marker><marker id="ahm5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#4F576A"/></marker></defs>
+<rect x="20" y="26" width="129" height="96" rx="8" fill="#ffffff" stroke="#0B1530" stroke-width="1.4"/>
+<text x="85" y="48" text-anchor="middle" font-size="14" font-weight="700" font-family="sans-serif" fill="#0B1530">Stimulus</text>
+<text x="85" y="67" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#4F576A">the variable</text>
+<text x="85" y="83" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#4F576A">changes</text>
+<rect x="165" y="26" width="129" height="96" rx="8" fill="#ffffff" stroke="#0B1530" stroke-width="1.4"/>
+<text x="230" y="48" text-anchor="middle" font-size="14" font-weight="700" font-family="sans-serif" fill="#0B1530">Sensor</text>
+<text x="230" y="67" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#4F576A">detects the change</text>
+<line x1="152" y1="74" x2="161" y2="74" stroke="#8B3A2E" stroke-width="2.2" marker-end="url(#ah5)"/>
+<rect x="310" y="26" width="129" height="96" rx="8" fill="#ffffff" stroke="#0B1530" stroke-width="1.4"/>
+<text x="375" y="48" text-anchor="middle" font-size="14" font-weight="700" font-family="sans-serif" fill="#0B1530">Afferent path</text>
+<text x="375" y="67" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#4F576A">signal travels in</text>
+<line x1="297" y1="74" x2="306" y2="74" stroke="#8B3A2E" stroke-width="2.2" marker-end="url(#ah5)"/>
+<rect x="455" y="26" width="129" height="96" rx="8" fill="#ffffff" stroke="#0B1530" stroke-width="1.4"/>
+<text x="520" y="48" text-anchor="middle" font-size="14" font-weight="700" font-family="sans-serif" fill="#0B1530">Integrating</text>
+<text x="520" y="65" text-anchor="middle" font-size="14" font-weight="700" font-family="sans-serif" fill="#0B1530">center</text>
+<text x="520" y="84" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#4F576A">compares to set</text>
+<text x="520" y="100" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#4F576A">point</text>
+<line x1="442" y1="74" x2="451" y2="74" stroke="#8B3A2E" stroke-width="2.2" marker-end="url(#ah5)"/>
+<rect x="601" y="26" width="129" height="96" rx="8" fill="#ffffff" stroke="#0B1530" stroke-width="1.4"/>
+<text x="665" y="48" text-anchor="middle" font-size="14" font-weight="700" font-family="sans-serif" fill="#0B1530">Efferent path</text>
+<text x="665" y="67" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#4F576A">signal travels out</text>
+<line x1="588" y1="74" x2="597" y2="74" stroke="#8B3A2E" stroke-width="2.2" marker-end="url(#ah5)"/>
+<rect x="746" y="26" width="129" height="96" rx="8" fill="#ffffff" stroke="#0B1530" stroke-width="1.4"/>
+<text x="810" y="48" text-anchor="middle" font-size="14" font-weight="700" font-family="sans-serif" fill="#0B1530">Effector</text>
+<text x="810" y="67" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#4F576A">does the work</text>
+<line x1="733" y1="74" x2="742" y2="74" stroke="#8B3A2E" stroke-width="2.2" marker-end="url(#ah5)"/>
+<rect x="891" y="26" width="129" height="96" rx="8" fill="#ffffff" stroke="#0B1530" stroke-width="1.4"/>
+<text x="955" y="48" text-anchor="middle" font-size="14" font-weight="700" font-family="sans-serif" fill="#0B1530">Response</text>
+<text x="955" y="67" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#4F576A">variable moves</text>
+<text x="955" y="83" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#4F576A">back</text>
+<line x1="878" y1="74" x2="887" y2="74" stroke="#8B3A2E" stroke-width="2.2" marker-end="url(#ah5)"/>
+<path d="M 955 122 L 955 164 L 230 164 L 230 128" fill="none" stroke="#4F576A" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#ahm5)"/>
+<rect x="517" y="150" width="151" height="28" rx="6" fill="#ffffff"/>
+<text x="593" y="169" text-anchor="middle" font-size="13.5" font-weight="700" font-family="sans-serif" fill="#4F576A">negative feedback</text>
+</svg><figcaption><b>Figure 5.</b> Learn these seven boxes as a unit. Every reflex you meet this term is this diagram with different contents.</figcaption></figure>
+<div class="two" style="margin-top:18px">
+  <div>
+    <ul class="bul">
+      <li><b>Sensor</b> or receptor: detects the change in the regulated variable.</li>
+      <li><b>Afferent path</b>: carries the signal toward the integrating center. Afferent means arriving.</li>
+      <li><b>Integrating center</b>: compares the signal with the set point and decides on a response.</li>
+      <li><b>Efferent path</b>: carries the command out. Efferent means exiting.</li>
+      <li><b>Effector</b>: the muscle or gland that does the physical work.</li>
+    </ul>
+  </div>
+  <div>
+    <div class="reveal-wrap">
+  <button class="rv-btn" type="button" aria-controls="r11" aria-expanded="false">Where each one can fail</button>
+  <div class="rv" id="r11" hidden><p class="tag">Diagnostic use</p><p>Break the sensor and the body never knows. Break the afferent path and the signal never arrives. Break the integrating center and the comparison is wrong, which is what fever is. Break the efferent path or the effector and the command is issued but nothing happens.</p><p>When you are handed a failing patient, this list is your differential.</p></div>
+</div>
+  </div>
+</div>
+<div class="clin">
+  <button class="clin-btn" type="button" aria-controls="clin7" aria-expanded="false">
+    <span>What this means in the clinic</span><span class="chev" aria-hidden="true">&#9656;</span></button>
+  <div class="clin-body" id="clin7" hidden>
+    <div class="clin-grid">
+      <div class="cprof n"><p class="who">Nursing</p><p class="means">Naming the broken box tells you what to watch instead of the sign that will never come.</p><p class="eg"><b>Example:</b> In a patient on a beta blocker, do not wait for a rising heart rate to tell you they are bleeding. Watch the other signs.</p></div>
+      <div class="cprof x"><p class="who">Radiologic technology</p><p class="means">Reactions on the table sort themselves by which pathway is firing, and the two most common ones look nothing alike.</p><p class="eg"><b>Example:</b> A patient who goes pale, sweaty and slow-pulsed after an injection is a vagal reaction: the efferent nerve output dropped the heart rate. Anaphylaxis drives the heart rate up instead. Same table, opposite pathways, opposite responses from you.</p></div>
+      <div class="cprof m"><p class="who">Medicine</p><p class="means">The seven boxes work as a differential. Whichever box is broken produces a different picture.</p><p class="eg"><b>Example:</b> A patient who cannot raise their heart rate while bleeding may have an intact sensor and a blocked efferent path, which is exactly what a beta blocker does.</p></div>
+      <div class="cprof r"><p class="who">Respiratory therapy</p><p class="means">Chemoreceptors are the sensor for your entire specialty.</p><p class="eg"><b>Example:</b> If the sensor is blunted, the drive to breathe falls even though the stimulus telling it to rise is still there.</p></div>
+    </div>
+  </div>
+</div></div>
+</article><article class="slide">
+  <header class="slide-head">
+    <span class="slide-n" aria-hidden="true">16</span>
+    <div><p class="slide-eyebrow">Control</p><h2 class="slide-title">Negative feedback, worked</h2></div>
+    <span class="slide-beat">Response</span>
+  </header>
+  <div class="slide-body">
+<figure><svg class="fig" viewBox="0 0 1040 194" role="img" aria-labeledby="figT6 figD6">
+<title id="figT6">Thermoregulation as a worked negative feedback loop</title><desc id="figD6">Core temperature falls in a cold room, thermoreceptors detect it, the hypothalamus compares it with the set point near 37 C (98.6 F), sympathetic and motor output constrict vessels and start shivering, heat production rises and heat loss falls, and core temperature returns toward the set point. A dashed arrow returns from the last step to the receptors.</desc>
+<rect width="1040" height="194" fill="#ffffff"/>
+<defs><marker id="ah6" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#8B3A2E"/></marker><marker id="ahm6" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#4F576A"/></marker></defs>
+<rect x="20" y="26" width="153" height="96" rx="8" fill="#ffffff" stroke="#0B1530" stroke-width="1.4"/>
+<text x="97" y="48" text-anchor="middle" font-size="14" font-weight="700" font-family="sans-serif" fill="#0B1530">Core temp falls</text>
+<text x="97" y="67" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#4F576A">cold room</text>
+<rect x="189" y="26" width="153" height="96" rx="8" fill="#ffffff" stroke="#0B1530" stroke-width="1.4"/>
+<text x="266" y="48" text-anchor="middle" font-size="14" font-weight="700" font-family="sans-serif" fill="#0B1530">Thermoreceptors</text>
+<text x="266" y="67" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#4F576A">skin and hypothalamus</text>
+<line x1="176" y1="74" x2="185" y2="74" stroke="#8B3A2E" stroke-width="2.2" marker-end="url(#ah6)"/>
+<rect x="359" y="26" width="153" height="96" rx="8" fill="#ffffff" stroke="#0B1530" stroke-width="1.4"/>
+<text x="435" y="48" text-anchor="middle" font-size="14" font-weight="700" font-family="sans-serif" fill="#0B1530">Hypothalamus</text>
+<text x="435" y="67" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#4F576A">compares to 37 C (98.6</text>
+<text x="435" y="83" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#4F576A">F)</text>
+<line x1="346" y1="74" x2="355" y2="74" stroke="#8B3A2E" stroke-width="2.2" marker-end="url(#ah6)"/>
+<rect x="528" y="26" width="153" height="96" rx="8" fill="#ffffff" stroke="#0B1530" stroke-width="1.4"/>
+<text x="605" y="48" text-anchor="middle" font-size="14" font-weight="700" font-family="sans-serif" fill="#0B1530">Sympathetic and</text>
+<text x="605" y="65" text-anchor="middle" font-size="14" font-weight="700" font-family="sans-serif" fill="#0B1530">motor output</text>
+<text x="605" y="84" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#4F576A">efferent signals</text>
+<line x1="515" y1="74" x2="524" y2="74" stroke="#8B3A2E" stroke-width="2.2" marker-end="url(#ah6)"/>
+<rect x="697" y="26" width="153" height="96" rx="8" fill="#ffffff" stroke="#0B1530" stroke-width="1.4"/>
+<text x="774" y="48" text-anchor="middle" font-size="14" font-weight="700" font-family="sans-serif" fill="#0B1530">Vessels</text>
+<text x="774" y="65" text-anchor="middle" font-size="14" font-weight="700" font-family="sans-serif" fill="#0B1530">constrict, muscle</text>
+<text x="774" y="82" text-anchor="middle" font-size="14" font-weight="700" font-family="sans-serif" fill="#0B1530">shivers</text>
+<text x="774" y="101" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#4F576A">effectors</text>
+<line x1="684" y1="74" x2="693" y2="74" stroke="#8B3A2E" stroke-width="2.2" marker-end="url(#ah6)"/>
+<rect x="867" y="26" width="153" height="96" rx="8" fill="#ffffff" stroke="#0B1530" stroke-width="1.4"/>
+<text x="943" y="48" text-anchor="middle" font-size="14" font-weight="700" font-family="sans-serif" fill="#0B1530">Heat produced,</text>
+<text x="943" y="65" text-anchor="middle" font-size="14" font-weight="700" font-family="sans-serif" fill="#0B1530">heat loss cut</text>
+<text x="943" y="84" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#4F576A">core temp rises</text>
+<line x1="854" y1="74" x2="863" y2="74" stroke="#8B3A2E" stroke-width="2.2" marker-end="url(#ah6)"/>
+<path d="M 943 122 L 943 164 L 266 164 L 266 128" fill="none" stroke="#4F576A" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#ahm6)"/>
+<rect x="529" y="150" width="151" height="28" rx="6" fill="#ffffff"/>
+<text x="605" y="169" text-anchor="middle" font-size="13.5" font-weight="700" font-family="sans-serif" fill="#4F576A">negative feedback</text>
+</svg><figcaption><b>Figure 6.</b> Trace this loop with your finger once, then draw it from memory without looking.</figcaption></figure>
+<div class="two" style="margin-top:18px">
+  <div>
+    <ul class="bul">
+      <li><b>Negative feedback</b> means the response opposes the stimulus that produced it.</li>
+      <li>It stabilizes. It cannot prevent the initial change, only correct it, which is why the variable oscillates rather than sitting still.</li>
+      <li>Negative feedback loops shut themselves off. That is the whole point of the word negative.</li>
+    </ul>
+  </div>
+  <div class="predict">
+    <p class="tag">Predict</p>
+    <p>You wrap the skin thermoreceptors so they read warm while the core is actually cooling. Which of the seven boxes is broken, and what does core temperature do over the next hour?</p>
+  </div>
+</div>
+<div class="clin">
+  <button class="clin-btn" type="button" aria-controls="clin8" aria-expanded="false">
+    <span>What this means in the clinic</span><span class="chev" aria-hidden="true">&#9656;</span></button>
+  <div class="clin-body" id="clin8" hidden>
+    <div class="clin-grid">
+      <div class="cprof n"><p class="who">Nursing</p><p class="means">A correction in progress looks different from a system that has failed.</p><p class="eg"><b>Example:</b> A brief drop on standing that recovers is the loop working. A drop that stays down is the loop failing.</p></div>
+      <div class="cprof x"><p class="who">Radiologic technology</p><p class="means">Positioning a patient is a live test of this loop, and you run it several times a day.</p><p class="eg"><b>Example:</b> Sitting a patient up from a supine scan, or standing them for an upright film, drops their pressure for a few seconds before the reflex catches it. In an older or dehydrated patient the catch is slow, and that is the moment they go down. It is why you move them in stages and stay with them.</p></div>
+      <div class="cprof m"><p class="who">Medicine</p><p class="means">Negative feedback cannot prevent a change, only correct it, so the variable always moves first.</p><p class="eg"><b>Example:</b> Blood pressure dips on standing before the reflex catches it. The dip is normal. Failing to recover from it is not.</p></div>
+      <div class="cprof r"><p class="who">Respiratory therapy</p><p class="means">Ventilation is a negative feedback response to carbon dioxide.</p><p class="eg"><b>Example:</b> Rising carbon dioxide normally drives ventilation up. If the carbon dioxide is high and ventilation is not rising, the loop is broken somewhere.</p></div>
+    </div>
+  </div>
+</div></div>
+</article><article class="slide">
+  <header class="slide-head">
+    <span class="slide-n" aria-hidden="true">17</span>
+    <div><p class="slide-eyebrow">Control</p><h2 class="slide-title">Positive feedback and feedforward</h2></div>
+    <span class="slide-beat">Mechanism</span>
+  </header>
+  <div class="slide-body">
+<div class="two">
+  <div>
+    <h3>Positive feedback</h3>
+    <ul class="bul">
+      <li>The response <b>reinforces</b> the stimulus, driving the variable further from where it started.</li>
+      <li>It is destabilizing by design, so it needs an outside event to stop it.</li>
+      <li>Examples: oxytocin in labor, stopped by delivery. The clotting cascade, stopped when the vessel seals. Sodium entry in an action potential, stopped by channel inactivation.</li>
+      <li>Positive feedback with no off switch is a description of dying. Uncontrolled bleeding and runaway hyperkalemia both work this way.</li>
+    </ul>
+  </div>
+  <div>
+    <h3>Feedforward control</h3>
+    <ul class="bul">
+      <li>The body responds to a signal that <b>predicts</b> a change, before the regulated variable has moved at all.</li>
+      <li>Examples: salivating and secreting gastric acid at the smell of food. Heart rate rising in the seconds before exercise starts.</li>
+      <li>Feedforward buys time. It cannot correct an error because there is no error yet.</li>
+    </ul>
+    <div class="reveal-wrap">
+  <button class="rv-btn" type="button" aria-controls="r13" aria-expanded="false">The distinction in one line</button>
+  <div class="rv" id="r13" hidden><p class="tag">Keep this</p><p>Negative feedback reacts to what happened. Feedforward reacts to what is about to happen. Positive feedback commits to what is already happening.</p></div>
+</div>
+  </div>
+</div>
+<div class="clin">
+  <button class="clin-btn" type="button" aria-controls="clin9" aria-expanded="false">
+    <span>What this means in the clinic</span><span class="chev" aria-hidden="true">&#9656;</span></button>
+  <div class="clin-body" id="clin9" hidden>
+    <div class="clin-grid">
+      <div class="cprof n"><p class="who">Nursing</p><p class="means">Catching a self-reinforcing spiral early is the reason for frequent reassessment.</p><p class="eg"><b>Example:</b> A patient trending the same direction on every set of vitals is in a loop, not having one bad reading.</p></div>
+      <div class="cprof x"><p class="who">Radiologic technology</p><p class="means">Panic in a closed scanner is a positive feedback loop, and nothing inside the bore will break it.</p><p class="eg"><b>Example:</b> Anxiety speeds the breathing, low carbon dioxide causes tingling and lightheadedness, the strange sensations raise the anxiety, and it goes around again. Your voice on the intercom is the outside event that stops it, which is why talking the patient through is a technique and not a courtesy.</p></div>
+      <div class="cprof m"><p class="who">Medicine</p><p class="means">Positive feedback has no built-in stop, so it needs an event from outside the loop to end it.</p><p class="eg"><b>Example:</b> Bleeding lowers pressure, which lowers perfusion to the heart, which lowers output, which lowers pressure again. Nothing inside that loop stops it.</p></div>
+      <div class="cprof r"><p class="who">Respiratory therapy</p><p class="means">Air trapping feeds itself.</p><p class="eg"><b>Example:</b> Incomplete exhalation raises the trapped volume, which shortens the time available to exhale, which traps more air on the next breath.</p></div>
+    </div>
+  </div>
+</div></div>
+</article><article class="slide">
+  <header class="slide-head">
+    <span class="slide-n" aria-hidden="true">18</span>
+    <div><p class="slide-eyebrow">Control</p><h2 class="slide-title">Set points move</h2></div>
+    <span class="slide-beat">Perturb</span>
+  </header>
+  <div class="slide-body">
+<figure><svg class="fig" viewBox="0 0 980 322" role="img" aria-labeledby="figT9 figD9">
+<title id="figT9">A regulated variable oscillating around its set point</title><desc id="figD9">A wavy line moves up and down inside a shaded normal range, crossing a dashed set point line. The variable is never exactly at the set point, only near it.</desc>
+<rect width="980" height="322" fill="#ffffff"/>
+<rect x="70" y="116.0" width="850" height="68" fill="#FAFAF9" stroke="#C9CDD6"/>
+<line x1="70" y1="150.0" x2="920" y2="150.0" stroke="#8B3A2E" stroke-width="2" stroke-dasharray="8 6"/>
+<line x1="70" y1="46" x2="70" y2="270" stroke="#0B1530" stroke-width="1.4"/>
+<line x1="70" y1="270" x2="920" y2="270" stroke="#0B1530" stroke-width="1.4"/>
+<polyline points="70.0,150.0 72.5,148.7 75.0,147.3 77.5,146.0 80.0,144.7 82.5,143.4 85.0,142.2 87.5,140.9 90.0,139.7 92.5,138.5 95.0,137.3 97.5,136.1 100.0,135.0 102.5,133.9 105.0,132.9 107.5,131.9 110.0,130.9 112.5,130.0 115.0,129.1 117.5,128.3 120.0,127.6 122.5,126.8 125.0,126.2 127.5,125.6 130.0,125.0 132.5,124.5 135.0,124.0 137.5,123.6 140.0,123.3 142.5,123.0 145.0,122.8 147.5,122.6 150.0,122.4 152.5,122.3 155.0,122.3 157.5,122.3 160.0,122.3 162.5,122.4 165.0,122.6 167.5,122.7 170.0,123.0 172.5,123.2 175.0,123.5 177.5,123.8 180.0,124.1 182.5,124.5 185.0,124.9 187.5,125.3 190.0,125.7 192.5,126.2 195.0,126.6 197.5,127.1 200.0,127.5 202.5,128.0 205.0,128.5 207.5,129.0 210.0,129.4 212.5,129.9 215.0,130.4 217.5,130.8 220.0,131.2 222.5,131.7 225.0,132.1 227.5,132.5 230.0,132.9 232.5,133.2 235.0,133.6 237.5,133.9 240.0,134.2 242.5,134.5 245.0,134.7 247.5,134.9 250.0,135.1 252.5,135.3 255.0,135.5 257.5,135.6 260.0,135.8 262.5,135.9 265.0,135.9 267.5,136.0 270.0,136.0 272.5,136.1 275.0,136.1 277.5,136.1 280.0,136.1 282.5,136.1 285.0,136.1 287.5,136.0 290.0,136.0 292.5,136.0 295.0,135.9 297.5,135.9 300.0,135.9 302.5,135.9 305.0,135.9 307.5,135.9 310.0,135.9 312.5,136.0 315.0,136.1 317.5,136.1 320.0,136.3 322.5,136.4 325.0,136.6 327.5,136.8 330.0,137.0 332.5,137.3 335.0,137.6 337.5,137.9 340.0,138.3 342.5,138.7 345.0,139.1 347.5,139.6 350.0,140.2 352.5,140.7 355.0,141.4 357.5,142.0 360.0,142.7 362.5,143.4 365.0,144.2 367.5,145.0 370.0,145.9 372.5,146.7 375.0,147.7 377.5,148.6 380.0,149.6 382.5,150.6 385.0,151.7 387.5,152.7 390.0,153.8 392.5,154.9 395.0,156.1 397.5,157.2 400.0,158.4 402.5,159.5 405.0,160.7 407.5,161.9 410.0,163.1 412.5,164.2 415.0,165.4 417.5,166.6 420.0,167.7 422.5,168.9 425.0,170.0 427.5,171.1 430.0,172.2 432.5,173.2 435.0,174.2 437.5,175.2 440.0,176.1 442.5,177.0 445.0,177.9 447.5,178.7 450.0,179.5 452.5,180.2 455.0,180.9 457.5,181.5 460.0,182.1 462.5,182.6 465.0,183.1 467.5,183.5 470.0,183.8 472.5,184.1 475.0,184.3 477.5,184.4 480.0,184.5 482.5,184.6 485.0,184.6 487.5,184.5 490.0,184.3 492.5,184.1 495.0,183.9 497.5,183.6 500.0,183.2 502.5,182.8 505.0,182.3 507.5,181.8 510.0,181.2 512.5,180.6 515.0,179.9 517.5,179.3 520.0,178.5 522.5,177.8 525.0,177.0 527.5,176.1 530.0,175.3 532.5,174.4 535.0,173.5 537.5,172.6 540.0,171.6 542.5,170.7 545.0,169.7 547.5,168.8 550.0,167.8 552.5,166.9 555.0,165.9 557.5,165.0 560.0,164.0 562.5,163.1 565.0,162.2 567.5,161.3 570.0,160.4 572.5,159.5 575.0,158.7 577.5,157.9 580.0,157.1 582.5,156.3 585.0,155.6 587.5,154.9 590.0,154.2 592.5,153.6 595.0,153.0 597.5,152.4 600.0,151.8 602.5,151.3 605.0,150.8 607.5,150.4 610.0,150.0 612.5,149.6 615.0,149.2 617.5,148.9 620.0,148.6 622.5,148.3 625.0,148.0 627.5,147.8 630.0,147.6 632.5,147.4 635.0,147.2 637.5,147.1 640.0,146.9 642.5,146.8 645.0,146.7 647.5,146.6 650.0,146.5 652.5,146.4 655.0,146.3 657.5,146.2 660.0,146.1 662.5,146.0 665.0,145.8 667.5,145.7 670.0,145.6 672.5,145.4 675.0,145.2 677.5,145.0 680.0,144.8 682.5,144.6 685.0,144.4 687.5,144.1 690.0,143.8 692.5,143.5 695.0,143.1 697.5,142.7 700.0,142.3 702.5,141.9 705.0,141.4 707.5,141.0 710.0,140.4 712.5,139.9 715.0,139.3 717.5,138.7 720.0,138.1 722.5,137.5 725.0,136.8 727.5,136.1 730.0,135.4 732.5,134.7 735.0,134.0 737.5,133.2 740.0,132.5 742.5,131.7 745.0,130.9 747.5,130.1 750.0,129.3 752.5,128.6 755.0,127.8 757.5,127.0 760.0,126.2 762.5,125.5 765.0,124.8 767.5,124.0 770.0,123.3 772.5,122.7 775.0,122.0 777.5,121.4 780.0,120.8 782.5,120.3 785.0,119.7 787.5,119.3 790.0,118.8 792.5,118.4 795.0,118.1 797.5,117.8 800.0,117.6 802.5,117.4 805.0,117.2 807.5,117.1 810.0,117.1 812.5,117.1 815.0,117.2 817.5,117.3 820.0,117.5 822.5,117.8 825.0,118.1 827.5,118.5 830.0,118.9 832.5,119.4 835.0,120.0 837.5,120.6 840.0,121.2 842.5,122.0 845.0,122.7 847.5,123.5 850.0,124.4 852.5,125.3 855.0,126.3 857.5,127.3 860.0,128.3 862.5,129.4 865.0,130.5 867.5,131.6 870.0,132.8 872.5,134.0 875.0,135.2 877.5,136.4 880.0,137.6 882.5,138.9 885.0,140.1 887.5,141.4 890.0,142.7 892.5,144.0 895.0,145.2 897.5,146.5 900.0,147.7 902.5,149.0 905.0,150.2 907.5,151.4 910.0,152.5 912.5,153.7 915.0,154.8 917.5,155.9 920.0,157.0" fill="none" stroke="#0B1530" stroke-width="2.6" stroke-linejoin="round"/>
+<rect x="816" y="137.0" width="98" height="26" rx="5" fill="#ffffff" opacity="0.92"/>
+<text x="908" y="155.0" text-anchor="end" font-size="13.5" font-weight="700" font-family="sans-serif" fill="#8B3A2E">set point</text>
+<text x="80" y="107.0" font-size="13.5" font-weight="700" font-family="sans-serif" fill="#4F576A">normal range</text>
+<text x="495" y="302" text-anchor="middle" font-size="14" font-weight="700" font-family="sans-serif" fill="#0B1530">Time</text>
+<text x="26" y="150" text-anchor="middle" font-size="14" font-weight="700" font-family="sans-serif" fill="#0B1530" transform="rotate(-90 26 150)">Regulated variable</text>
+</svg><figcaption><b>Figure 7.</b> The variable is essentially never at the set point. It is near it.</figcaption></figure>
+<div class="two" style="margin-top:18px">
+  <div>
+    <ul class="bul">
+      <li><b>Fever</b> is not a broken thermostat. It is a thermostat deliberately reset upward by pyrogens, which is why you shiver while your temperature is already climbing.</li>
+      <li><b>Circadian rhythms</b> move set points on a daily cycle. Core temperature, cortisol and blood pressure all have a normal range that depends on the time of day.</li>
+      <li><b>Acclimatization</b> resets over days to weeks: hematocrit at altitude, sweat sodium in a hot climate.</li>
+    </ul>
+  </div>
+  <div class="predict">
+    <p class="tag">Perturb</p>
+    <p>A patient with a fever is given a drug that resets the set point back to 37 C (98.6 F) while their core is at 39 C (102.2 F). Predict what the body does in the next twenty minutes, and name which effectors it uses.</p>
+  </div>
+</div>
+<div class="clin">
+  <button class="clin-btn" type="button" aria-controls="clin10" aria-expanded="false">
+    <span>What this means in the clinic</span><span class="chev" aria-hidden="true">&#9656;</span></button>
+  <div class="clin-body" id="clin10" hidden>
+    <div class="clin-grid">
+      <div class="cprof n"><p class="who">Nursing</p><p class="means">Cooling a shivering patient means fighting the thermostat rather than resetting it.</p><p class="eg"><b>Example:</b> Shivering generates heat, so external cooling during the rise can drive the temperature higher rather than lower.</p></div>
+      <div class="cprof x"><p class="who">Radiologic technology</p><p class="means">Scanner rooms are held cold for the equipment, and the patient's thermostat responds to that whether you want it to or not.</p><p class="eg"><b>Example:</b> A cold, uncovered patient shivers, and shivering is movement, and movement is motion artifact. The warm blanket is an image quality tool, not just a comfort measure.</p></div>
+      <div class="cprof m"><p class="who">Medicine</p><p class="means">Fever is a raised set point, not a broken thermostat.</p><p class="eg"><b>Example:</b> The patient shivers while their temperature is already climbing, because the body reads its current temperature as too cold against the new target.</p></div>
+      <div class="cprof r"><p class="who">Respiratory therapy</p><p class="means">Chemoreceptor set points can reset over time.</p><p class="eg"><b>Example:</b> In long-standing carbon dioxide retention the body adapts to a higher normal, so the textbook number is no longer that patient's target.</p></div>
+    </div>
+  </div>
+</div></div>
+</article><article class="slide">
+  <header class="slide-head">
+    <span class="slide-n" aria-hidden="true">19</span>
+    <div><p class="slide-eyebrow">Science of physiology</p><h2 class="slide-title">How we know any of this</h2></div>
+    <span class="slide-beat">Mechanism</span>
+  </header>
+  <div class="slide-body">
+<div class="two">
+  <div>
+    <h3>Terminology</h3>
+    <ul class="bul">
+      <li><b>Independent variable</b>: what the experimenter changes.</li>
+      <li><b>Dependent variable</b>: what is measured in response.</li>
+      <li><b>Control</b>: an otherwise identical condition where the independent variable is not changed.</li>
+      <li><b>Placebo</b>: an inactive treatment used to separate the effect of the substance from the effect of being treated.</li>
+      <li><b>Blind and double blind</b>: who knows which group is which. Double blind means neither the participant nor the person measuring knows.</li>
+    </ul>
+  </div>
+  <div>
+    <h3>Why human physiology is hard to study</h3>
+    <ul class="bul">
+      <li>Variability between people is large and mostly normal, not error.</li>
+      <li>A single value tells you far less than a trend. This is why we chart.</li>
+      <li>Reference ranges are usually set to cover the middle 95 percent of a healthy population, so one healthy person in twenty falls outside a given range by definition.</li>
+    </ul>
+    <div class="reveal-wrap">
+  <button class="rv-btn" type="button" aria-controls="r15" aria-expanded="false">What that means at the bedside</button>
+  <div class="rv" id="r15" hidden><p class="tag">Consequence</p><p>Run a twenty-analyte panel on a perfectly healthy person and the odds are close to even that at least one result comes back flagged. A flagged value is a reason to look, not a diagnosis. Your patient file will punish you all term for treating a single number as an answer.</p></div>
+</div>
+  </div>
+</div>
+<div class="clin">
+  <button class="clin-btn" type="button" aria-controls="clin11" aria-expanded="false">
+    <span>What this means in the clinic</span><span class="chev" aria-hidden="true">&#9656;</span></button>
+  <div class="clin-body" id="clin11" hidden>
+    <div class="clin-grid">
+      <div class="cprof n"><p class="who">Nursing</p><p class="means">A trend beats a single value, which is why the previous result matters as much as this one.</p><p class="eg"><b>Example:</b> A creatinine at the top of normal that doubled since yesterday is a bigger problem than one that is mildly high and unchanged.</p></div>
+      <div class="cprof x"><p class="who">Radiologic technology</p><p class="means">You screen against reference ranges before contrast, so you need to know that a flag is not automatically a stop.</p><p class="eg"><b>Example:</b> A creatinine sitting slightly high and unchanged for a year is a different situation from one that doubled this week. Both print with the same flag on the report. Only one of them changes what happens next.</p></div>
+      <div class="cprof m"><p class="who">Medicine</p><p class="means">A range covering the middle 95 percent of healthy people flags one healthy person in twenty on every test.</p><p class="eg"><b>Example:</b> Run a twenty-analyte panel on a completely healthy person and something comes back flagged more often than not.</p></div>
+      <div class="cprof r"><p class="who">Respiratory therapy</p><p class="means">A blood gas is a snapshot of a process that is still moving.</p><p class="eg"><b>Example:</b> The same value on the way up and on the way down mean opposite things about where the patient is heading.</p></div>
+    </div>
+  </div>
+</div></div>
+</article><article class="slide">
+  <header class="slide-head">
+    <span class="slide-n" aria-hidden="true">20</span>
+    <div><p class="slide-eyebrow">Close</p><h2 class="slide-title">Draw it from memory</h2></div>
+    <span class="slide-beat">Perturb</span>
+  </header>
+  <div class="slide-body">
+<div class="two">
+  <div>
+    <p class="lead">Blank paper. No notes, no video, six minutes.</p>
+    <ul class="bul">
+      <li>Draw the seven boxes of a reflex loop and label every arrow.</li>
+      <li>Put thermoregulation into it, with the real anatomy in each box.</li>
+      <li>Mark where negative feedback returns and what it does when it arrives.</li>
+      <li>Then break one box of your choosing and write two sentences on what the patient looks like.</li>
+    </ul>
+    <p>Whatever you could not produce from memory is your study list. Not the parts that felt familiar while you watched.</p>
+  </div>
+  <div class="card navy">
+    <p class="eyebrow">Coming next</p>
+    <p style="font-size:18px;font-weight:700;line-height:1.4;margin:0 0 10px">Mission 2: Build the molecular toolkit.</p>
+    <p style="margin:0;font-size:15px;opacity:.9">Everything in every box you just drew was done by a molecule. Next we work out which molecules, and what makes one able to do a job another cannot.</p>
+  </div>
+</div></div>
+</article>
+</main>
+<div class="pbar" role="group" aria-label="Presentation controls">
+  <button type="button" class="prev" aria-label="Previous slide">&#8249;</button>
+  <span class="c">1 / 1</span>
+  <button type="button" class="next" aria-label="Next slide">&#8250;</button>
+  <button type="button" class="x" aria-label="Exit full screen">Exit</button>
+</div>
+<p class="page-foot" style="max-width:1200px;margin:0 auto;padding:0 max(16px,3vw) 40px">Dr. Sharilyn Rennie &middot; BIOL 005 Human Physiology &middot; Mission 1, Maintain Control</p>
+<div id="lightbox" class="lightbox" hidden role="dialog" aria-modal="true" aria-label="Enlarged figure">
+  <button type="button" class="lb-close" aria-label="Close the enlarged figure">&#10005; Close</button>
+  <div class="lb-inner"></div>
+</div>
+<!-- ===================================================================
+     WHITEBOARD OVERLAY
+     Draw over the lecture while you teach. Works with a stylus, a mouse,
+     or a finger. Records normally in Loom, and the toolbar drags out of
+     the way of Loom's own controls.
+     Keyboard: W opens and closes, P pen, H highlighter, E eraser,
+     1 to 8 colors, [ and ] size, Ctrl+Z undo, T hides the toolbar,
+     Escape closes.
+     =================================================================== -->
+<style>
+.wb-launch{position:fixed;right:18px;bottom:18px;z-index:2147482000;
+  background:var(--terra,#8B3A2E);color:#fff;border:0;border-radius:99px;
+  padding:12px 18px;font-family:inherit;font-weight:800;font-size:12px;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;
+  box-shadow:0 6px 18px rgba(11,21,48,.28);display:inline-flex;align-items:center;gap:8px}
+.wb-launch:hover{background:#6B2A20}
+.wb-launch:focus-visible{outline:3px solid #DCB45C;outline-offset:3px}
+.wb-launch .wb-key{font-weight:700;font-size:11px;opacity:.8;letter-spacing:.06em}
+
+.wb{position:fixed;inset:0;z-index:2147483000}
+body.wb-on .wb-launch{display:none}
+body.wb-on .present-bar,body.wb-on .present-exit-top,body.wb-on .strip-bar{display:none!important}
+.wb[hidden]{display:none}
+.wb.bg-white{background:#FFFFFF}
+.wb.bg-dark{background:#0B1530}
+.wb.bg-grid{background:#FFFFFF;background-image:
+  repeating-linear-gradient(to right,#E3E7ED 0 1px,transparent 1px 32px),
+  repeating-linear-gradient(to bottom,#E3E7ED 0 1px,transparent 1px 32px)}
+.wb-canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none;
+  cursor:crosshair;display:block}
+
+.wb-bar{position:absolute;top:12px;right:14px;transform:none;
+  display:flex;align-items:center;flex-wrap:wrap;gap:5px;
+  background:rgba(11,21,48,.96);border-radius:14px;padding:7px 9px;
+  box-shadow:0 10px 30px rgba(0,0,0,.4);max-width:min(97vw,1240px)}
+.wb-bar.dragging{opacity:.9}
+.wb.bar-hidden .wb-bar{display:none}
+.wb-grip{cursor:grab;background:transparent;border:0;color:#9FB0C6;font-size:18px;
+  padding:6px 4px;line-height:1;touch-action:none}
+.wb-grip:active{cursor:grabbing}
+.wb-sep{width:1px;height:24px;background:rgba(255,255,255,.2);margin:0 2px}
+.wb-b{font-family:inherit;font-weight:700;font-size:12.5px;color:#fff;background:transparent;
+  border:1px solid rgba(255,255,255,.28);border-radius:8px;padding:7px 9px;cursor:pointer;
+  min-height:36px;min-width:36px;display:inline-flex;align-items:center;justify-content:center;
+  gap:5px;white-space:nowrap}
+.wb-b.icon{padding:7px 10px;font-size:15px}
+.wb-b:hover{background:rgba(255,255,255,.14)}
+.wb-b[aria-pressed="true"]{background:#8B3A2E;border-color:#8B3A2E}
+.wb-b:focus-visible,.wb-grip:focus-visible,.wb-sw:focus-visible{outline:3px solid #DCB45C;outline-offset:2px}
+.wb-b.danger[aria-pressed]{}
+.wb-count{color:#DCE4EE;font-weight:800;font-size:12px;padding:0 3px;
+  font-variant-numeric:tabular-nums;min-width:66px;text-align:center}
+.wb-sw{width:28px;height:28px;border-radius:8px;border:2px solid rgba(255,255,255,.35);
+  cursor:pointer;padding:0}
+.wb-sw[aria-pressed="true"]{border-color:#fff;box-shadow:0 0 0 3px rgba(220,180,92,.85)}
+.wb-size{width:32px;height:32px;border-radius:8px;border:1px solid rgba(255,255,255,.28);
+  background:transparent;cursor:pointer;display:inline-flex;align-items:center;justify-content:center}
+.wb-size[aria-pressed="true"]{background:#8B3A2E;border-color:#8B3A2E}
+.wb-size i{display:block;background:var(--wb-ink,#fff);border-radius:50%;box-shadow:0 0 0 1px rgba(255,255,255,.5)}
+.wb-size.s i{width:5px;height:5px}
+.wb-size.m i{width:9px;height:9px}
+.wb-size.l i{width:15px;height:15px}
+.wb-hint{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);
+  background:rgba(11,21,48,.9);color:#DCE4EE;font-size:12.5px;font-weight:600;
+  padding:7px 14px;border-radius:999px;pointer-events:none;opacity:0;transition:opacity .25s ease}
+.wb-hint.show{opacity:1}
+@media(prefers-reduced-motion:reduce){.wb-hint{transition:none}}
+@media(max-width:700px){
+  .wb-bar{left:8px;right:8px;top:8px;transform:none;max-width:none;justify-content:center}
+  .wb-b .wb-lbl{display:none}
+}
+@media print{.wb,.wb-launch{display:none!important}}
+</style>
+
+<button type="button" id="wbLaunch" class="wb-launch" aria-label="Open the pen layer to draw over these slides">
+  <span aria-hidden="true">&#9998;</span> Pen <span class="wb-key" aria-hidden="true">W</span>
+</button>
+
+<div id="wb" class="wb bg-clear" hidden role="application" aria-label="Whiteboard overlay for drawing over the lecture">
+  <canvas id="wbCanvas" class="wb-canvas" aria-label="Drawing surface. Use a stylus, mouse, or finger to draw."></canvas>
+
+  <div id="wbBar" class="wb-bar" role="toolbar" aria-label="Whiteboard tools">
+    <button type="button" class="wb-grip" id="wbGrip" aria-label="Drag to move this toolbar">&#10495;</button>
+
+    <button type="button" class="wb-b wb-tool" data-tool="pen" aria-pressed="true" aria-label="Pen">
+      <span aria-hidden="true">&#9998;</span><span class="wb-lbl">Pen</span></button>
+    <button type="button" class="wb-b wb-tool" data-tool="marker" aria-pressed="false" aria-label="Highlighter">
+      <span aria-hidden="true">&#9646;</span><span class="wb-lbl">Marker</span></button>
+    <button type="button" class="wb-b wb-tool" data-tool="eraser" aria-pressed="false" aria-label="Eraser">
+      <span aria-hidden="true">&#9633;</span><span class="wb-lbl">Erase</span></button>
+
+    <span class="wb-sep" aria-hidden="true"></span>
+
+    <button type="button" class="wb-sw" data-color="#8B3A2E" aria-pressed="true"  aria-label="Rust" style="background:#8B3A2E"></button>
+    <button type="button" class="wb-sw" data-color="#0B1530" aria-pressed="false" aria-label="Navy" style="background:#0B1530"></button>
+    <button type="button" class="wb-sw" data-color="#6E5018" aria-pressed="false" aria-label="Dark gold" style="background:#6E5018"></button>
+    <button type="button" class="wb-sw" data-color="#1D6FB8" aria-pressed="false" aria-label="Blue" style="background:#1D6FB8"></button>
+    <button type="button" class="wb-sw" data-color="#12795A" aria-pressed="false" aria-label="Green" style="background:#12795A"></button>
+    <button type="button" class="wb-sw" data-color="#8E2F73" aria-pressed="false" aria-label="Magenta" style="background:#8E2F73"></button>
+    <button type="button" class="wb-sw" data-color="#111111" aria-pressed="false" aria-label="Black" style="background:#111111"></button>
+    <button type="button" class="wb-sw" data-color="#FFFFFF" aria-pressed="false" aria-label="White" style="background:#FFFFFF"></button>
+
+    <span class="wb-sep" aria-hidden="true"></span>
+
+    <button type="button" class="wb-size s" data-size="3"  aria-pressed="false" aria-label="Thin"><i></i></button>
+    <button type="button" class="wb-size m" data-size="6"  aria-pressed="true"  aria-label="Medium"><i></i></button>
+    <button type="button" class="wb-size l" data-size="13" aria-pressed="false" aria-label="Thick"><i></i></button>
+
+    <span class="wb-sep" aria-hidden="true"></span>
+
+    <button type="button" class="wb-b icon" id="wbUndo" aria-label="Undo the last stroke"><span aria-hidden="true">&#8630;</span></button>
+    <button type="button" class="wb-b" id="wbClear" aria-label="Clear this board">Clear</button>
+
+    <span class="wb-sep" aria-hidden="true"></span>
+
+    <button type="button" class="wb-b" id="wbBg" aria-label="Change the board background: overlay, white, grid, or dark">
+      <span class="wb-lbl">Overlay</span></button>
+
+    <span class="wb-sep" aria-hidden="true"></span>
+
+    <button type="button" class="wb-b" id="wbPrev" aria-label="Previous board">&#8249;</button>
+    <span class="wb-count" id="wbCount" role="status" aria-live="polite">Board 1 of 1</span>
+    <button type="button" class="wb-b" id="wbNext" aria-label="Next board, or add a new one">&#8250;</button>
+
+    <span class="wb-sep wb-slidenav" aria-hidden="true"></span>
+    <button type="button" class="wb-b wb-slidenav" id="wbSlidePrev" aria-label="Previous slide, on a fresh board">
+      <span aria-hidden="true">&#8592;</span><span class="wb-lbl">Slide</span></button>
+    <button type="button" class="wb-b wb-slidenav" id="wbSlideNext" aria-label="Next slide, on a fresh board">
+      <span class="wb-lbl">Slide</span><span aria-hidden="true">&#8594;</span></button>
+
+    <span class="wb-sep" aria-hidden="true"></span>
+
+    <button type="button" class="wb-b icon" id="wbSave" aria-label="Save this board as a PNG image"><span aria-hidden="true">&#8615;</span></button>
+    <button type="button" class="wb-b icon" id="wbClose" aria-label="Close the whiteboard"><span aria-hidden="true">&#10005;</span></button>
+  </div>
+
+  <p class="wb-hint" id="wbHint" role="status" aria-live="polite"></p>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var wb=document.getElementById('wb'), cv=document.getElementById('wbCanvas'),
+      bar=document.getElementById('wbBar'), grip=document.getElementById('wbGrip'),
+      launch=document.getElementById('wbLaunch'), hint=document.getElementById('wbHint'),
+      countEl=document.getElementById('wbCount');
+  if(!wb||!cv) return;
+  var ctx=cv.getContext('2d');
+
+  var tool='pen', color='#8B3A2E', size=6, penSeen=false, drawing=false, cur=null;
+  var boards=[[]], page=0;
+  var BGS=['clear','white','grid','dark'];
+  var BG_LABEL={clear:'Overlay',white:'White',grid:'Grid',dark:'Dark'};
+  var BG_SAY={clear:'Drawing over the slide',white:'White board',grid:'Grid board',dark:'Dark board'};
+  var bgIndex=0;
+  var lastFocus=null;
+
+  function strokes(){ return boards[page]; }
+
+  function say(msg){
+    hint.textContent=msg; hint.classList.add('show');
+    clearTimeout(say._t); say._t=setTimeout(function(){hint.classList.remove('show');},1600);
+  }
+  function updateCount(){ countEl.textContent='Board '+(page+1)+' of '+boards.length; }
+
+  /* ---------- sizing ---------- */
+  function sizeCanvas(){
+    var dpr=Math.min(window.devicePixelRatio||1,2);
+    var w=wb.clientWidth||window.innerWidth, h=wb.clientHeight||window.innerHeight;
+    cv.width=Math.max(1,Math.round(w*dpr)); cv.height=Math.max(1,Math.round(h*dpr));
+    cv.style.width=w+'px'; cv.style.height=h+'px';
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    redraw();
+  }
+
+  /* ---------- drawing ---------- */
+  function paintStroke(s){
+    var pts=s.pts; if(!pts.length) return;
+    ctx.save();
+    ctx.lineCap='round'; ctx.lineJoin='round';
+    if(s.tool==='eraser'){
+      ctx.globalCompositeOperation='destination-out';
+      ctx.strokeStyle='rgba(0,0,0,1)';
+      ctx.globalAlpha=1;
+    } else {
+      ctx.globalCompositeOperation='source-over';
+      ctx.strokeStyle=s.color;
+      ctx.globalAlpha=(s.tool==='marker')?0.34:1;
+    }
+    if(pts.length===1){
+      var r=(s.tool==='marker'?s.size*2.6:s.size*(0.55+pts[0].p))/2;
+      ctx.globalCompositeOperation=(s.tool==='eraser')?'destination-out':'source-over';
+      ctx.beginPath(); ctx.arc(pts[0].x,pts[0].y,Math.max(0.6,r),0,Math.PI*2);
+      ctx.fillStyle=(s.tool==='eraser')?'rgba(0,0,0,1)':s.color; ctx.fill();
+      ctx.restore(); return;
+    }
+    for(var i=1;i<pts.length;i++){
+      var a=pts[i-1], b=pts[i];
+      var w;
+      if(s.tool==='marker') w=s.size*2.6;
+      else if(s.tool==='eraser') w=s.size*3.4;
+      else w=s.size*(0.55+b.p);
+      ctx.lineWidth=Math.max(0.7,w);
+      ctx.beginPath();
+      ctx.moveTo(a.x,a.y);
+      var mx=(a.x+b.x)/2, my=(a.y+b.y)/2;
+      ctx.quadraticCurveTo(a.x,a.y,mx,my);
+      ctx.lineTo(b.x,b.y);
+      ctx.stroke();
+    }
+    ctx.restore();
+  }
+  function redraw(){
+    ctx.save(); ctx.setTransform(1,0,0,1,0,0);
+    ctx.clearRect(0,0,cv.width,cv.height); ctx.restore();
+    strokes().forEach(paintStroke);
+  }
+
+  function point(e){
+    var r=cv.getBoundingClientRect();
+    var p=(typeof e.pressure==='number'&&e.pressure>0)?e.pressure:0.5;
+    if(e.pointerType==='mouse') p=0.5;
+    return {x:e.clientX-r.left, y:e.clientY-r.top, p:p};
+  }
+  cv.addEventListener('pointerdown',function(e){
+    if(e.pointerType==='pen') penSeen=true;
+    if(e.pointerType==='touch'&&penSeen) return;      /* palm rejection once a stylus is in use */
+    if(e.pointerType==='mouse'&&e.button!==0) return;
+    e.preventDefault();
+    try{cv.setPointerCapture(e.pointerId);}catch(err){}
+    drawing=true;
+    cur={tool:tool,color:color,size:size,pts:[point(e)]};
+    strokes().push(cur);
+    paintStroke(cur);
+  });
+  cv.addEventListener('pointermove',function(e){
+    if(!drawing||!cur) return;
+    if(e.pointerType==='touch'&&penSeen) return;
+    e.preventDefault();
+    var evs=(e.getCoalescedEvents?e.getCoalescedEvents():null)||[e];
+    for(var i=0;i<evs.length;i++){
+      var p=point(evs[i]);
+      var last=cur.pts[cur.pts.length-1];
+      if(Math.abs(p.x-last.x)<0.4&&Math.abs(p.y-last.y)<0.4) continue;
+      cur.pts.push(p);
+      paintStroke({tool:cur.tool,color:cur.color,size:cur.size,pts:[last,p]});
+    }
+  });
+  function endStroke(e){
+    if(!drawing) return;
+    drawing=false; cur=null;
+    try{cv.releasePointerCapture(e.pointerId);}catch(err){}
+  }
+  cv.addEventListener('pointerup',endStroke);
+  cv.addEventListener('pointercancel',endStroke);
+  cv.addEventListener('pointerleave',function(e){ if(drawing) endStroke(e); });
+
+  /* ---------- toolbar ---------- */
+  function setPressed(nodes,match){
+    nodes.forEach(function(n){ n.setAttribute('aria-pressed', match(n)?'true':'false'); });
+  }
+  var toolBtns=Array.prototype.slice.call(document.querySelectorAll('.wb-tool')),
+      swBtns=Array.prototype.slice.call(document.querySelectorAll('.wb-sw')),
+      sizeBtns=Array.prototype.slice.call(document.querySelectorAll('.wb-size'));
+
+  function setTool(t){
+    tool=t; setPressed(toolBtns,function(n){return n.getAttribute('data-tool')===t;});
+    cv.style.cursor=(t==='eraser')?'cell':'crosshair';
+  }
+  function setColor(c){
+    color=c; if(tool==='eraser') setTool('pen');
+    bar.style.setProperty('--wb-ink',c);
+    setPressed(swBtns,function(n){return n.getAttribute('data-color').toUpperCase()===c.toUpperCase();});
+  }
+  function setSize(s){
+    size=s; setPressed(sizeBtns,function(n){return +n.getAttribute('data-size')===s;});
+  }
+  toolBtns.forEach(function(b){b.addEventListener('click',function(){setTool(b.getAttribute('data-tool'));});});
+  swBtns.forEach(function(b){b.addEventListener('click',function(){setColor(b.getAttribute('data-color'));});});
+  sizeBtns.forEach(function(b){b.addEventListener('click',function(){setSize(+b.getAttribute('data-size'));});});
+
+  document.getElementById('wbUndo').addEventListener('click',function(){
+    if(strokes().length){ strokes().pop(); redraw(); } else say('Nothing to undo');
+  });
+  document.getElementById('wbClear').addEventListener('click',function(){
+    boards[page]=[]; redraw(); say('Board cleared');
+  });
+  var bgBtn=document.getElementById('wbBg');
+  function applyBg(){
+    BGS.forEach(function(b){ wb.classList.remove('bg-'+b); });
+    wb.classList.add('bg-'+BGS[bgIndex]);
+    bgBtn.querySelector('.wb-lbl').textContent=BG_LABEL[BGS[bgIndex]];
+  }
+  bgBtn.addEventListener('click',function(){
+    bgIndex=(bgIndex+1)%BGS.length; applyBg();
+    if(BGS[bgIndex]==='dark'&&color==='#0B1530') setColor('#FFFFFF');
+    if(BGS[bgIndex]!=='dark'&&color==='#FFFFFF') setColor('#8B3A2E');
+    say(BG_SAY[BGS[bgIndex]]);
+  });
+
+  function goPage(i){ page=Math.max(0,Math.min(boards.length-1,i)); updateCount(); redraw(); }
+  document.getElementById('wbPrev').addEventListener('click',function(){
+    if(page===0){ say('First board'); return; } goPage(page-1);
+  });
+  document.getElementById('wbNext').addEventListener('click',function(){
+    if(page===boards.length-1){ boards.push([]); say('New board'); }
+    goPage(page+1);
+  });
+
+  /* slide stepping, only when the host page has a deck */
+  var slideNav=Array.prototype.slice.call(document.querySelectorAll('.wb-slidenav'));
+  function haveDeck(){ return typeof window.__deckStep==='function'; }
+  if(!haveDeck()) slideNav.forEach(function(n){ n.style.display='none'; });
+  function stepSlide(d){
+    if(!haveDeck()) return;
+    window.__deckStep(d);
+    boards.push([]); goPage(boards.length-1);
+    say(d>0?'Next slide, fresh board':'Previous slide, fresh board');
+  }
+  var sp=document.getElementById('wbSlidePrev'), sn=document.getElementById('wbSlideNext');
+  if(sp) sp.addEventListener('click',function(){stepSlide(-1);});
+  if(sn) sn.addEventListener('click',function(){stepSlide(1);});
+
+  document.getElementById('wbSave').addEventListener('click',function(){
+    var out=document.createElement('canvas'); out.width=cv.width; out.height=cv.height;
+    var o=out.getContext('2d');
+    o.fillStyle=(BGS[bgIndex]==='dark')?'#0B1530':'#FFFFFF';
+    o.fillRect(0,0,out.width,out.height);
+    o.drawImage(cv,0,0);
+    try{
+      out.toBlob(function(blob){
+        if(!blob){ say('Could not save'); return; }
+        var url=URL.createObjectURL(blob), a=document.createElement('a');
+        a.href=url; a.download='whiteboard-board-'+(page+1)+'.png';
+        document.body.appendChild(a); a.click(); document.body.removeChild(a);
+        setTimeout(function(){URL.revokeObjectURL(url);},2000);
+        say('Saved as PNG');
+      },'image/png');
+    }catch(err){ say('Could not save'); }
+  });
+
+  /* drag the toolbar out of the way of Loom's controls, and remember where it lands */
+  var BAR_KEY='wb-bar-pos';
+  function placeBar(x,y){
+    bar.style.transform='none'; bar.style.right='auto';
+    bar.style.left=x+'px'; bar.style.top=y+'px';
+  }
+  function restoreBar(){
+    try{
+      var v=JSON.parse(localStorage.getItem(BAR_KEY)||'null');
+      if(v&&typeof v.x==='number'){
+        var w=bar.offsetWidth||420,h=bar.offsetHeight||90;
+        placeBar(Math.max(4,Math.min(window.innerWidth-w-4,v.x)),
+                 Math.max(4,Math.min(window.innerHeight-h-4,v.y)));
+      }
+    }catch(err){}
+  }
+  (function(){
+    var dragging=false,ox=0,oy=0;
+    grip.addEventListener('pointerdown',function(e){
+      dragging=true; bar.classList.add('dragging');
+      var r=bar.getBoundingClientRect();
+      ox=e.clientX-r.left; oy=e.clientY-r.top;
+      placeBar(r.left,r.top);
+      try{grip.setPointerCapture(e.pointerId);}catch(err){}
+      e.preventDefault();
+    });
+    grip.addEventListener('pointermove',function(e){
+      if(!dragging) return;
+      var w=bar.offsetWidth,h=bar.offsetHeight;
+      var x=Math.max(4,Math.min(window.innerWidth-w-4,e.clientX-ox));
+      var y=Math.max(4,Math.min(window.innerHeight-h-4,e.clientY-oy));
+      placeBar(x,y);
+    });
+    function stop(e){ if(!dragging) return; dragging=false; bar.classList.remove('dragging');
+      try{localStorage.setItem(BAR_KEY,JSON.stringify({x:bar.offsetLeft,y:bar.offsetTop}));}catch(err){}
+      try{grip.releasePointerCapture(e.pointerId);}catch(err){} }
+    grip.addEventListener('pointerup',stop);
+    grip.addEventListener('pointercancel',stop);
+  })();
+
+  /* ---------- open and close ---------- */
+  function open(){
+    lastFocus=document.activeElement;
+    wb.hidden=false; document.body.classList.add('wb-on');
+    launch.setAttribute('aria-expanded','true');
+    sizeCanvas(); updateCount(); restoreBar();
+    document.getElementById('wbClose').focus();
+    say('Whiteboard on. W closes it, T hides the toolbar.');
+  }
+  function close(){
+    wb.hidden=true; document.body.classList.remove('wb-on');
+    launch.setAttribute('aria-expanded','false');
+    if(lastFocus&&lastFocus.focus) lastFocus.focus(); else launch.focus();
+  }
+  function toggle(){ wb.hidden?open():close(); }
+  launch.setAttribute('aria-expanded','false');
+  launch.addEventListener('click',toggle);
+  document.getElementById('wbClose').addEventListener('click',close);
+
+  window.addEventListener('resize',function(){ if(!wb.hidden) sizeCanvas(); });
+  document.addEventListener('fullscreenchange',function(){ if(!wb.hidden) setTimeout(sizeCanvas,60); });
+
+  /* ---------- keyboard ---------- */
+  var COLOR_KEYS=['#8B3A2E','#0B1530','#6E5018','#1D6FB8','#12795A','#8E2F73','#111111','#FFFFFF'];
+  var SIZES=[3,6,13];
+  document.addEventListener('keydown',function(e){
+    var t=e.target, tag=(t&&t.tagName?t.tagName:'').toLowerCase();
+    if(tag==='input'||tag==='textarea'||tag==='select'||(t&&t.isContentEditable)) return;
+    var k=e.key.toLowerCase();
+    if(k==='w'&&!e.ctrlKey&&!e.metaKey&&!e.altKey){ e.preventDefault(); toggle(); return; }
+    if(wb.hidden) return;
+    /* while the board is open it owns the keyboard, so slide keys do not fire underneath */
+    if(k==='escape'){ e.preventDefault(); close(); return; }
+    if(k==='t'){ e.preventDefault(); wb.classList.toggle('bar-hidden');
+      say(wb.classList.contains('bar-hidden')?'Toolbar hidden, press T to bring it back':'Toolbar shown'); return; }
+    if(k==='z'&&(e.ctrlKey||e.metaKey)){ e.preventDefault();
+      if(strokes().length){strokes().pop();redraw();} return; }
+    if(k==='p'){ e.preventDefault(); setTool('pen'); say('Pen'); return; }
+    if(k==='h'){ e.preventDefault(); setTool('marker'); say('Highlighter'); return; }
+    if(k==='e'){ e.preventDefault(); setTool('eraser'); say('Eraser'); return; }
+    if(k==='c'){ e.preventDefault(); boards[page]=[]; redraw(); say('Board cleared'); return; }
+    if(k==='['){ e.preventDefault(); setSize(SIZES[Math.max(0,SIZES.indexOf(size)-1)]); return; }
+    if(k===']'){ e.preventDefault(); setSize(SIZES[Math.min(SIZES.length-1,SIZES.indexOf(size)+1)]); return; }
+    if(k>='1'&&k<='8'){ e.preventDefault(); setColor(COLOR_KEYS[+k-1]); return; }
+    if(e.key==='ArrowRight'||e.key==='ArrowLeft'){
+      e.preventDefault(); e.stopPropagation();
+      if(haveDeck()) stepSlide(e.key==='ArrowRight'?1:-1);
+      return;
+    }
+  },true);
+
+  applyBg(); setTool('pen'); setColor('#8B3A2E'); setSize(6); updateCount();
+})();
+</script>
+
+<script>
+(function(){ "use strict";
+var PAGE_ID='biol005-m01-slides';
+
+(function(){
+  var lb=document.getElementById('lightbox'); if(!lb) return;
+  var inner=lb.querySelector('.lb-inner'),close=lb.querySelector('.lb-close'),last=null;
+  function shut(){lb.hidden=true;inner.innerHTML='';if(last)last.focus();}
+  /* a single branch card of a top-down map enlarges on its own */
+  document.querySelectorAll('.mapcard').forEach(function(card){
+    function openCard(e){
+      e.preventDefault(); e.stopPropagation();
+      last=card;
+      var b=card.getAttribute('data-b')||'';
+      var leaves=(card.getAttribute('data-l')||'').split('|').filter(Boolean);
+      inner.innerHTML='<div class="lb-card"><p class="lb-h"></p><ul></ul></div>';
+      inner.querySelector('.lb-h').textContent=b;
+      var ul=inner.querySelector('ul');
+      leaves.forEach(function(t){var li=document.createElement('li');li.textContent=t;ul.appendChild(li);});
+      lb.hidden=false; close.focus();
+    }
+    card.addEventListener('click',openCard);
+    card.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' ')openCard(e);});
+  });
+
+  document.querySelectorAll('.fig').forEach(function(f){
+    f.setAttribute('tabindex','0'); f.setAttribute('role','img');
+    function open(e){
+      if(document.body.classList.contains('wb-on'))return;
+      e.preventDefault(); e.stopPropagation();
+      last=f; inner.innerHTML=f.outerHTML;
+      var big=inner.querySelector('svg');
+      if(big){big.removeAttribute('tabindex');big.style.width='min(94vw,1500px)';big.style.cursor='default';}
+      lb.hidden=false; close.focus();
+    }
+    f.addEventListener('click',open);
+    f.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' ')open(e);});
+  });
+  close.addEventListener('click',shut);
+  lb.addEventListener('click',function(e){if(e.target===lb)shut();});
+  document.addEventListener('keydown',function(e){if(!lb.hidden&&e.key==='Escape')shut();});
+})();
+
+(function(){
+  "use strict";
+  var slides=Array.prototype.slice.call(document.querySelectorAll('.deck .slide'));
+  if(!slides.length) return;
+  slides.forEach(function(s,i){
+    var n=s.querySelector('.slide-n'); if(n)n.textContent=(i<9?'0':'')+(i+1);
+    var t=s.querySelector('.slide-title');
+    s.setAttribute('aria-label','Slide '+(i+1)+' of '+slides.length+(t?': '+t.textContent:''));
+  });
+
+  /* reveal boxes */
+  function wireReveals(){
+    document.querySelectorAll('.rv-btn').forEach(function(b){
+      if(b.dataset.wired) return; b.dataset.wired='1';
+      var box=document.getElementById(b.getAttribute('aria-controls'));
+      b.setAttribute('aria-expanded','false');
+      b.addEventListener('click',function(){
+        var open=b.getAttribute('aria-expanded')==='true';
+        b.setAttribute('aria-expanded',open?'false':'true');
+        if(box)box.hidden=open;
+        if(!open&&b.dataset.openLabel)b.textContent=b.dataset.openLabel;
+        else if(open&&b.dataset.shutLabel)b.textContent=b.dataset.shutLabel;
+        if(window.__deckFit)window.__deckFit();
+      });
+      b.dataset.shutLabel=b.textContent;
+    });
+  }
+  wireReveals();
+
+  /* in range or out of range sorter */
+  function wireSorter(){
+    document.querySelectorAll('.sortbl tbody tr').forEach(function(row){
+      if(row.dataset.wired) return; row.dataset.wired='1';
+      var ans=row.getAttribute('data-ans'), res=row.querySelector('.res');
+      row.querySelectorAll('.pk').forEach(function(b){
+        b.addEventListener('click',function(){
+          if(row.classList.contains('locked')) return;
+          var right=b.getAttribute('data-v')===ans;
+          row.querySelectorAll('.pk').forEach(function(x){x.setAttribute('aria-pressed','false');});
+          b.setAttribute('aria-pressed','true');
+          row.classList.add('locked', right?'ok':'no');
+          res.textContent=(right?'Correct. ':'Not quite. ')+(row.getAttribute('data-note')||'');
+          tally();
+          if(window.__deckFit)window.__deckFit();
+        });
+      });
+    });
+  }
+  function tally(){
+    var rows=document.querySelectorAll('.sortbl tbody tr');
+    if(!rows.length) return;
+    var done=document.querySelectorAll('.sortbl tbody tr.locked').length;
+    var el=document.getElementById('sortCount');
+    if(el) el.textContent=done+' of '+rows.length+' sorted'+(done===rows.length?', now pick the one that buys you the least time':'');
+  }
+  wireSorter(); tally();
+
+  /* clinical bars behave like reveals: closed before recording, open in print */
+  function wireClin(){
+    document.querySelectorAll('.clin-btn').forEach(function(b){
+      if(b.dataset.wired) return; b.dataset.wired='1';
+      var box=document.getElementById(b.getAttribute('aria-controls'));
+      b.addEventListener('click',function(){
+        var open=b.getAttribute('aria-expanded')==='true';
+        b.setAttribute('aria-expanded',open?'false':'true');
+        if(box)box.hidden=open;
+        /* while recording, an open bar takes the whole slide: four professions
+           side by side need the width, and shrinking them to fit around the
+           slide content makes them unreadable on camera. */
+        var sl=b.closest('.slide'); if(sl) sl.classList.toggle('clinopen',!open);
+        if(window.__deckFit)window.__deckFit();
+      });
+    });
+  }
+  wireClin();
+
+  function resetAll(){
+    document.querySelectorAll('.clin-btn').forEach(function(b){
+      b.setAttribute('aria-expanded','false');
+      var box=document.getElementById(b.getAttribute('aria-controls'));
+      if(box)box.hidden=true;
+      var sl=b.closest('.slide'); if(sl) sl.classList.remove('clinopen');
+    });
+    document.querySelectorAll('.sortbl tbody tr').forEach(function(row){
+      row.classList.remove('locked','ok','no');
+      row.querySelectorAll('.pk').forEach(function(b){b.setAttribute('aria-pressed','false');});
+      var r=row.querySelector('.res'); if(r) r.textContent='';
+    });
+    tally();
+    document.querySelectorAll('.rv-btn').forEach(function(b){
+      b.setAttribute('aria-expanded','false');
+      var box=document.getElementById(b.getAttribute('aria-controls'));
+      if(box)box.hidden=true;
+      if(b.dataset.shutLabel)b.textContent=b.dataset.shutLabel;
+    });
+    var live=document.getElementById('deckStatus');
+    if(live)live.textContent='All boxes closed, ready to record';
+  }
+  var rb=document.getElementById('resetBtn'); if(rb)rb.addEventListener('click',resetAll);
+
+  /* present mode */
+  var idx=0,on=false;
+  var bar=document.querySelector('.pbar'),cnt=bar.querySelector('.c'),
+      prev=bar.querySelector('.prev'),next=bar.querySelector('.next'),exit=bar.querySelector('.x');
+  function show(i){
+    idx=Math.max(0,Math.min(slides.length-1,i));
+    slides.forEach(function(s,k){s.classList.toggle('cur',k===idx);});
+    cnt.textContent=(idx+1)+' / '+slides.length;
+    prev.disabled=idx===0; next.disabled=idx===slides.length-1;
+    if(slides[idx])slides[idx].scrollTop=0;
+    fit();
+    window.dispatchEvent(new Event('resize'));
+  }
+
+  /* Shrink the current slide just enough to fit the screen, so nothing is cut
+     off mid-recording. Runs only in present mode and never scales up. */
+  function fit(){
+    var s=slides[idx]; if(!s) return;
+    var body=s.querySelector('.slide-body'); if(!body) return;
+    body.style.zoom='';
+    if(!on) return;
+    requestAnimationFrame(function(){
+      var z=1, guard=0;
+      while(s.scrollHeight>s.clientHeight+2 && z>0.52 && guard<30){
+        z-=0.04; guard++;
+        body.style.zoom=z.toFixed(2);
+      }
+    });
+  }
+  window.addEventListener('resize',function(){ if(on) fit(); });
+  window.__deckFit=function(){ if(on) fit(); };
+  function enter(i){on=true;document.body.classList.add('present');show(i||0);
+    if(document.documentElement.requestFullscreen)document.documentElement.requestFullscreen().catch(function(){});}
+  function leave(){on=false;document.body.classList.remove('present');
+    slides.forEach(function(s){s.classList.remove('cur');});
+    if(document.fullscreenElement&&document.exitFullscreen)document.exitFullscreen().catch(function(){});}
+  var pb=document.getElementById('presentBtn'); if(pb)pb.addEventListener('click',function(){enter(0);});
+  var prb=document.getElementById('printBtn'); if(prb)prb.addEventListener('click',function(){window.print();});
+  prev.addEventListener('click',function(){show(idx-1);});
+  next.addEventListener('click',function(){show(idx+1);});
+  exit.addEventListener('click',leave);
+  window.__deckStep=function(d){ if(!on)enter(idx); show(idx+d); };
+  document.addEventListener('keydown',function(e){
+    if(!on)return;
+    var tag=(e.target&&e.target.tagName||'').toLowerCase();
+    if(tag==='input'||tag==='textarea'||tag==='select')return;
+    if(!document.getElementById('wb')||document.getElementById('wb').hidden){
+      if(e.key==='ArrowRight'||e.key==='PageDown'){e.preventDefault();show(idx+1);}
+      else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();show(idx-1);}
+      else if(e.key==='Escape'){leave();}
+    }
+  });
+  document.addEventListener('fullscreenchange',function(){if(!document.fullscreenElement&&on)leave();});
+  if(/[?#&]present\b/.test(location.href))enter(0);
+})();
+
+
+  function sendHeight(){
+    try{parent.postMessage({type:'resize',id:PAGE_ID,height:document.documentElement.scrollHeight},'*');}catch(e){}
+  }
+  window.addEventListener('load',sendHeight);
+  window.addEventListener('resize',sendHeight);
+  if(window.ResizeObserver)new ResizeObserver(sendHeight).observe(document.body);
+
+})();
+</script>
+</body>
+</html>
