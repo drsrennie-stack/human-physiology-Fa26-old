@@ -27,13 +27,13 @@ L.addTerms({
   'autoregulation': 'An organ adjusting its own vessels so its blood flow stays steady even when the pressure feeding it changes.',
   'afterload': 'How hard the heart has to push to get blood out. Stiff or narrow vessels raise it.',
   'compliance': 'How stretchy something is. A stretchy artery absorbs the push of a beat. A stiff one passes it straight on.',
-  'p50': 'The oxygen pressure at which haemoglobin is exactly half loaded. Normally about 27.',
-  'shift': 'The whole curve sliding left or right, which changes how tightly haemoglobin holds on to oxygen.',
+  'p50': 'The oxygen pressure at which hemoglobin is exactly half loaded. Normally about 27.',
+  'shift': 'The whole curve sliding left or right, which changes how tightly hemoglobin holds on to oxygen.',
   'venous': 'Blood on its way back to the heart, after the tissue has taken what it needed.',
   'arterial': 'Blood on its way out from the heart, freshly loaded in the lungs.',
   'perfusion pressure': 'The pressure actually driving blood through an organ. Roughly mean arterial pressure minus whatever pressure is pushing back.',
   'pulse oximeter': 'The clip on a finger. It reads saturation with light, and it never tells you the oxygen pressure directly.',
-  'anaemia': 'Not enough haemoglobin. Saturation can still read 100 percent while the blood carries far less oxygen. Sometimes spelled anemia.',
+  'anemia': 'Not enough hemoglobin. Saturation can still read 100 percent while the blood carries far less oxygen. Sometimes spelled anemia.',
   'orthostatic hypotension': 'Blood pressure that falls too far on standing. The usual line is a 20 point fall in systolic or a 10 point fall in diastolic within three minutes.',
   'stroke': 'Blood flow to part of the brain is cut off or bleeding into it, so that part starts dying within minutes.'
 });

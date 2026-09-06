@@ -5,7 +5,7 @@
 **Reviewer:** Dr. Sharilyn Rennie, Professor of Anatomy and Physiology.
 **Last updated:** August 23, 2026.
 
-This folder holds one compliance document per deliverable. This page is the one to hand to anyone who asks about the course as a whole: a disability services office, an accreditation review, a department chair, or a student who wants to know before they enrol.
+This folder holds one compliance document per deliverable. This page is the one to hand to anyone who asks about the course as a whole: a disability services office, an accreditation review, a department chair, or a student who wants to know before they enroll.
 
 ## What exists, and where it stands
 
@@ -30,7 +30,7 @@ These were decided once and hold across every deliverable. They are repeated ins
 
 **Copy blocking was considered and rejected.** It would obstruct a student using a screen reader, a magnifier, or a translation tool far more than it would obstruct anyone determined to route around the work. The academic integrity design relies instead on per-student seeded data, on answers never appearing in the page, and on gating that requires the intermediate working.
 
-**Colour never carries meaning alone.** Correct and incorrect change their wording. Chart flags read the words below range, within range, above range, not obtained. A filled drop box shows its label.
+**Color never carries meaning alone.** Correct and incorrect change their wording. Chart flags read the words below range, within range, above range, not obtained. A filled drop box shows its label.
 
 **Nothing is timed and nothing is capped.** No attempt limits, no lockouts, no countdowns anywhere in the course. This matters for students who work slowly, students using assistive technology, and students with accommodations, and it means those accommodations do not need to be engineered around.
 
@@ -47,7 +47,7 @@ These were decided once and hold across every deliverable. They are repeated ins
 
 ## How to add a document when a new week ships
 
-Copy the shape of `week-01-foundations.compliance.md`. It has ten sections and the order matters, because it is the order a reviewer reads in: what the thing is, which criteria it meets, the contrast audit, anything unusual about its components, the keyboard flow, the screen reader pass, print behaviour, privacy, known limitations, reviewer.
+Copy the shape of `week-01-foundations.compliance.md`. It has ten sections and the order matters, because it is the order a reviewer reads in: what the thing is, which criteria it meets, the contrast audit, anything unusual about its components, the keyboard flow, the screen reader pass, print behavior, privacy, known limitations, reviewer.
 
 Most of that document describes the **shared engine**, which every week inherits unchanged. When a new week ships, the sections that genuinely need rewriting are the project header, anything unique to that week's own components, and the known limitations. The rest can be carried over, but it has to be re-verified rather than assumed: a claim that was true in week 1 and went stale by week 6 is worse than no claim at all.
 

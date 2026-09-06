@@ -93,7 +93,7 @@ module.exports = {
       lede: "Two molecules, one weak attraction between them. Multiply this by every water molecule in your 42 L and you have the reason blood is liquid at all.",
       svg: `<svg viewBox="0 0 900 430" role="img" aria-labelledby="x1-t x1-d" xmlns="http://www.w3.org/2000/svg">
   <title id="x1-t">A water molecule and a hydrogen bond to a second water molecule</title>
-  <desc id="x1-d">Two bent water molecules are drawn as circles. In each one a large teal oxygen circle sits above two smaller gold hydrogen circles, joined by thick solid lines at a bent angle of about 105 degrees. The oxygen of the left molecule is labelled delta minus, and both of its hydrogens are labelled delta plus, showing that charge is unevenly shared. A dashed maroon line runs from a hydrogen of the upper right molecule to the oxygen of the left molecule and is labelled hydrogen bond. A note at the bottom states that each water molecule can hydrogen bond with up to four neighbours, and that polar and charged solutes dissolve while nonpolar solutes are shoved together.</desc>
+  <desc id="x1-d">Two bent water molecules are drawn as circles. In each one a large teal oxygen circle sits above two smaller gold hydrogen circles, joined by thick solid lines at a bent angle of about 105 degrees. The oxygen of the left molecule is labeled delta minus, and both of its hydrogens are labeled delta plus, showing that charge is unevenly shared. A dashed maroon line runs from a hydrogen of the upper right molecule to the oxygen of the left molecule and is labeled hydrogen bond. A note at the bottom states that each water molecule can hydrogen bond with up to four neighbors, and that polar and charged solutes dissolve while nonpolar solutes are shoved together.</desc>
   <rect x="0" y="0" width="900" height="430" fill="#FFFFFF"/>
 
   <line x1="250" y1="175" x2="149" y2="253" stroke="#08101F" stroke-width="9"/>
@@ -122,7 +122,7 @@ module.exports = {
   <text x="430" y="142" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="19" font-weight="700" fill="#8B1D1D">hydrogen bond</text>
 
   <line x1="70" y1="352" x2="830" y2="352" stroke="#DCE0E6" stroke-width="3"/>
-  <text x="70" y="382" font-family="Plus Jakarta Sans, sans-serif" font-size="17" font-weight="700" fill="#08101F">Each water molecule can hydrogen bond with up to four neighbours.</text>
+  <text x="70" y="382" font-family="Plus Jakarta Sans, sans-serif" font-size="17" font-weight="700" fill="#08101F">Each water molecule can hydrogen bond with up to four neighbors.</text>
   <text x="70" y="408" font-family="Plus Jakarta Sans, sans-serif" font-size="16" fill="#3D4860">Polar and charged solutes join that network and dissolve. Nonpolar solutes cannot, so they get shoved together.</text>
 </svg>`,
       cap: "The oxygen end is slightly negative and the hydrogen ends are slightly positive, so water molecules cling to one another. Anything that can join that network dissolves. Anything that cannot gets pushed out of the way.",
@@ -159,7 +159,7 @@ module.exports = {
           label: "Oxygen",
           labelClass: "terra",
           h: "Dissolved oxygen gas",
-          p: ["**Hydrophobic**, and only barely soluble. Two identical atoms share their electrons evenly, so there is no charge separation to grab onto.", "That is exactly why you need haemoglobin. Plasma alone carries almost no oxygen, which is the whole reason week 12 exists."]
+          p: ["**Hydrophobic**, and only barely soluble. Two identical atoms share their electrons evenly, so there is no charge separation to grab onto.", "That is exactly why you need hemoglobin. Plasma alone carries almost no oxygen, which is the whole reason week 12 exists."]
         }
       ],
       big: "Charge or hydrogen bonds means it dissolves. Neither one means it does not.",
@@ -172,7 +172,7 @@ module.exports = {
       cols: 3,
       kicker: "Water and solution properties",
       h: "Three things solubility decides for you, for free",
-      lede: "You do not have to memorise these three separately. They are all the same fact wearing different clothes.",
+      lede: "You do not have to memorize these three separately. They are all the same fact wearing different clothes.",
       cards: [
         {
           h: "Why does a membrane form at all, when nothing is holding it together?",
@@ -277,7 +277,7 @@ module.exports = {
       lede: "Look at how much of the scale exists, and then look at how much of it you are allowed to use.",
       svg: `<svg viewBox="0 0 900 540" role="img" aria-labelledby="x2-t x2-d" xmlns="http://www.w3.org/2000/svg">
   <title id="x2-t">The pH scale from 0 to 14 with a magnified view of the arterial blood range</title>
-  <desc id="x2-d">A horizontal bar runs from pH 0 on the left to pH 14 on the right, labelled acid at the left end, neutral at 7 in the middle, and base at the right end. Markers show stomach acid at about pH 2, urine spanning pH 4.5 to 8, and arterial blood as a very narrow tick just above pH 7.4. Dashed lines funnel down from that narrow tick to a second, magnified bar spanning only pH 6.8 to 7.8. On the magnified bar the range 7.35 to 7.45 is filled gold and labelled normal arterial blood, the zone from 6.8 to 7.35 is labelled acidemia, the zone from 7.45 to 7.8 is labelled alkalemia, and both outer ends at 6.8 and 7.8 are marked in maroon as survival limits.</desc>
+  <desc id="x2-d">A horizontal bar runs from pH 0 on the left to pH 14 on the right, labeled acid at the left end, neutral at 7 in the middle, and base at the right end. Markers show stomach acid at about pH 2, urine spanning pH 4.5 to 8, and arterial blood as a very narrow tick just above pH 7.4. Dashed lines funnel down from that narrow tick to a second, magnified bar spanning only pH 6.8 to 7.8. On the magnified bar the range 7.35 to 7.45 is filled gold and labeled normal arterial blood, the zone from 6.8 to 7.35 is labeled acidemia, the zone from 7.45 to 7.8 is labeled alkalemia, and both outer ends at 6.8 and 7.8 are marked in maroon as survival limits.</desc>
   <rect x="0" y="0" width="900" height="540" fill="#FFFFFF"/>
 
   <rect x="70" y="112" width="760" height="42" fill="#EDF1F3" stroke="#3D4860" stroke-width="2"/>
@@ -350,13 +350,13 @@ module.exports = {
           label: "pH 7.15",
           labelClass: "terra",
           h: "Why does severe acidemia drop the blood pressure?",
-          p: ["Extra hydrogen ions bind the contractile and receptor proteins in vascular smooth muscle and in cardiac muscle and bend them out of shape.", "Vessels stop responding normally to noradrenaline and the heart contracts less forcefully. **The catecholamines are still there. The receptors just stopped answering.** That is a shape problem, not a signalling problem."]
+          p: ["Extra hydrogen ions bind the contractile and receptor proteins in vascular smooth muscle and in cardiac muscle and bend them out of shape.", "Vessels stop responding normally to noradrenaline and the heart contracts less forcefully. **The catecholamines are still there. The receptors just stopped answering.** That is a shape problem, not a signaling problem."]
         },
         {
           label: "pH 7.60",
           labelClass: "teal",
           h: "Why does hyperventilating give you tingling hands and cramps?",
-          p: ["Blowing off carbon dioxide drives pH up. With fewer hydrogen ions competing for the negatively charged sites on albumin, more calcium binds to albumin instead of floating free.", "Total calcium has not changed at all. **Ionised calcium falls**, and ionised calcium is the fraction nerves and muscle actually use. Hence the tingling and the spasm."]
+          p: ["Blowing off carbon dioxide drives pH up. With fewer hydrogen ions competing for the negatively charged sites on albumin, more calcium binds to albumin instead of floating free.", "Total calcium has not changed at all. **Ionized calcium falls**, and ionized calcium is the fraction nerves and muscle actually use. Hence the tingling and the spasm."]
         },
         {
           label: "K+ 6.1",
@@ -393,14 +393,14 @@ module.exports = {
       variant: "paper",
       kicker: "Work it with me",
       h: "Same acid load, buffered and unbuffered",
-      lede: "Ten millimoles of strong acid, dumped into one litre. Once into plain water, once into blood. Watch the difference the bicarbonate pair makes.",
+      lede: "Ten millimoles of strong acid, dumped into one liter. Once into plain water, once into blood. Watch the difference the bicarbonate pair makes.",
       badges: [{ t: "Work it with me" }, { t: "4 min", cls: "time" }],
       given: "10 mmol of H+ added to 1 L. Blood starts at pH 7.40, with HCO3- 24 mEq/L and PCO2 40 mmHg.",
       steps: [
         "Plain water first. 10 mmol/L of H+ is 0.010 mol/L, and pH is just the negative log of that. **pH goes from 7.00 to 2.00.**",
         "Say that as a fold change. Five pH units is ten to the fifth, so the hydrogen ion concentration went up a hundred thousand fold. Nothing was there to stop it.",
         "Now blood, and I am going to hand the whole load to bicarbonate to keep the arithmetic clean: each H+ pairs with a HCO3-, so bicarbonate falls from 24 to **14 mEq/L** and the H+ leaves solution as carbonic acid and then as carbon dioxide.",
-        "That is a deliberate simplification. In real blood **haemoglobin and plasma protein buffer a share of the same load**, so bicarbonate falls by less than the full 10 and the pH lands a little higher than the numbers below. The shape of the answer does not change.",
+        "That is a deliberate simplification. In real blood **hemoglobin and plasma protein buffer a share of the same load**, so bicarbonate falls by less than the full 10 and the pH lands a little higher than the numbers below. The shape of the answer does not change.",
         "pH tracks the ratio of bicarbonate to dissolved carbon dioxide. At the start that ratio is 20 to 1, which is what a pH of 7.40 means.",
         "If the lungs did nothing, the ratio would drop to about 11.7 to 1 and **pH would land near 7.17**. Acidemic and unwell, but alive and treatable.",
         "The lungs do not do nothing. Chemoreceptors sense the acid, breathing deepens, PCO2 falls from 40 to about 30 mmHg. That lifts the ratio back toward 15.6 to 1.",
@@ -444,7 +444,7 @@ module.exports = {
           dot: "1",
           dotClass: "navy",
           h: "Primary. What decides everything downstream?",
-          p: ["The order of the amino acids, written by the gene. That is all it is, a sequence.", "Change one amino acid and you can change every level above it. Sickle cell disease is one substitution in the beta globin chain, and the consequence is a haemoglobin that polymerises and a red cell that deforms."]
+          p: ["The order of the amino acids, written by the gene. That is all it is, a sequence.", "Change one amino acid and you can change every level above it. Sickle cell disease is one substitution in the beta globin chain, and the consequence is a hemoglobin that polymerises and a red cell that deforms."]
         },
         {
           dot: "2",
@@ -462,7 +462,7 @@ module.exports = {
           dot: "4",
           dotClass: "terra",
           h: "Quaternary. What do you get when several folded chains assemble?",
-          p: ["Two or more finished chains joining into one functional unit. Haemoglobin is four chains.", "This is where cooperation becomes possible, because one subunit binding something can change the shape of its neighbours. That is the whole reason the oxygen curve is a sigmoid and not a straight line. Week 12."]
+          p: ["Two or more finished chains joining into one functional unit. Hemoglobin is four chains.", "This is where cooperation becomes possible, because one subunit binding something can change the shape of its neighbors. That is the whole reason the oxygen curve is a sigmoid and not a straight line. Week 12."]
         }
       ],
       lab: "In the Week 1 lab your enzyme is a tertiary structure with a pocket in it, and every condition you change on the bench is an attack on that pocket. Keep this ladder in the front of your lab notebook while you run the assay.",
@@ -556,7 +556,7 @@ module.exports = {
       lede: "Notice what moves and what does not. The peak comes down. The two ends stay exactly where they were.",
       svg: `<svg viewBox="0 0 900 500" role="img" aria-labelledby="x3-t x3-d" xmlns="http://www.w3.org/2000/svg">
   <title id="x3-t">Energy against reaction progress, showing activation energy with and without an enzyme</title>
-  <desc id="x3-d">Energy is on the vertical axis and reaction progress on the horizontal axis. Two curves start together at the reactant energy level, rise over a hump, and finish together at a lower product energy level. The upper maroon curve, labelled no enzyme, peaks high. The lower teal curve, labelled with enzyme, peaks much lower. Two vertical double headed arrows measure the height from the reactant level to each peak: a tall maroon one labelled large activation energy and a short teal one labelled smaller activation energy. Dashed horizontal lines mark the reactant level and the lower product level, with a note that the enzyme lowers the peak but does not move either end, so the products and the overall energy change are unchanged.</desc>
+  <desc id="x3-d">Energy is on the vertical axis and reaction progress on the horizontal axis. Two curves start together at the reactant energy level, rise over a hump, and finish together at a lower product energy level. The upper maroon curve, labeled no enzyme, peaks high. The lower teal curve, labeled with enzyme, peaks much lower. Two vertical double headed arrows measure the height from the reactant level to each peak: a tall maroon one labeled large activation energy and a short teal one labeled smaller activation energy. Dashed horizontal lines mark the reactant level and the lower product level, with a note that the enzyme lowers the peak but does not move either end, so the products and the overall energy change are unchanged.</desc>
   <rect x="0" y="0" width="900" height="500" fill="#FFFFFF"/>
 
   <line x1="70" y1="50" x2="70" y2="432" stroke="#08101F" stroke-width="3"/>
@@ -618,7 +618,7 @@ module.exports = {
       lede: "Three curves on one pair of axes. Before you read the labels, look at which ceilings match and which do not.",
       svg: `<svg viewBox="0 0 900 560" role="img" aria-labelledby="x4-t x4-d" xmlns="http://www.w3.org/2000/svg">
   <title id="x4-t">Michaelis Menten curves with no inhibitor, a competitive inhibitor and a non competitive inhibitor</title>
-  <desc id="x4-d">Reaction rate is on the vertical axis from 0 to 100 micromol per minute and substrate concentration on the horizontal axis from 0 to 100 mmol per litre. Three curves all start at the origin and rise steeply then flatten. The navy curve, no inhibitor, climbs fastest and approaches a ceiling of 100, marked by a gold dashed line labelled Vmax equals 100; it reaches half of that ceiling, a rate of 50, at a substrate concentration of 5, marked as Km. The maroon curve, competitive inhibitor, rises more slowly but is still heading for the same ceiling of 100; it reaches a rate of 50 only at a substrate concentration of 20, marked as apparent Km. The teal curve, non competitive inhibitor, flattens early against its own much lower dashed ceiling at a rate of 60, and no amount of extra substrate lifts it above that line.</desc>
+  <desc id="x4-d">Reaction rate is on the vertical axis from 0 to 100 micromol per minute and substrate concentration on the horizontal axis from 0 to 100 mmol per liter. Three curves all start at the origin and rise steeply then flatten. The navy curve, no inhibitor, climbs fastest and approaches a ceiling of 100, marked by a gold dashed line labeled Vmax equals 100; it reaches half of that ceiling, a rate of 50, at a substrate concentration of 5, marked as Km. The maroon curve, competitive inhibitor, rises more slowly but is still heading for the same ceiling of 100; it reaches a rate of 50 only at a substrate concentration of 20, marked as apparent Km. The teal curve, non competitive inhibitor, flattens early against its own much lower dashed ceiling at a rate of 60, and no amount of extra substrate lifts it above that line.</desc>
   <rect x="0" y="0" width="900" height="560" fill="#FFFFFF"/>
 
   <line x1="90" y1="60" x2="90" y2="440" stroke="#08101F" stroke-width="3"/>
@@ -667,7 +667,7 @@ module.exports = {
       variant: "paper",
       kicker: "Work it with me",
       h: "Read the curve with numbers instead of adjectives",
-      lede: "Same enzyme, three conditions. Do the arithmetic and the difference between the two inhibitors stops being a definition you memorised and becomes a thing you can see.",
+      lede: "Same enzyme, three conditions. Do the arithmetic and the difference between the two inhibitors stops being a definition you memorized and becomes a thing you can see.",
       badges: [{ t: "Work it with me" }, { t: "5 min", cls: "time" }],
       given: "Uninhibited enzyme: Vmax 100 micromol/min, Km 5 mmol/L. Work every rate at a substrate concentration of 15 mmol/L.",
       steps: [
@@ -859,7 +859,7 @@ module.exports = {
           label: "Chemical",
           labelClass: "teal",
           h: "What work is being paid for when a cell builds something?",
-          p: ["Making a large molecule out of small ones, which costs energy every time. Linking amino acids into a protein, glucose into glycogen, or synthesising a neurotransmitter.", "Your body is rebuilt continuously, not once. Every one of those bonds was paid for with ATP, which is why building tissue costs calories and why starvation eats muscle."]
+          p: ["Making a large molecule out of small ones, which costs energy every time. Linking amino acids into a protein, glucose into glycogen, or synthesizing a neurotransmitter.", "Your body is rebuilt continuously, not once. Every one of those bonds was paid for with ATP, which is why building tissue costs calories and why starvation eats muscle."]
         }
       ],
       big: "Transport, mechanical, chemical. Pump, muscle, building a protein. Say the three out loud.",
@@ -906,16 +906,16 @@ module.exports = {
         {
           label: "4 to 5.6 percent",
           labelClass: "terra",
-          big: "Haemoglobin A1c",
+          big: "Hemoglobin A1c",
           h: "What window is this number reporting on?",
-          p: ["The last two to three months. Glucose sticks to haemoglobin slowly and non enzymatically, and once it is stuck it stays stuck for the life of the red cell. A1c is the fraction that got glycated.", "**It is not regulated at all.** Nothing defends it, nothing corrects it. It is a cumulative chemical record, the integral of glucose exposure rather than its current value."]
+          p: ["The last two to three months. Glucose sticks to hemoglobin slowly and non enzymatically, and once it is stuck it stays stuck for the life of the red cell. A1c is the fraction that got glycated.", "**It is not regulated at all.** Nothing defends it, nothing corrects it. It is a cumulative chemical record, the integral of glucose exposure rather than its current value."]
         },
         {
           label: "About 120 days",
           labelClass: "terra",
           big: "The catch",
           h: "How can an A1c change when the glucose has not moved at all?",
-          p: ["Because A1c measures exposure time, and exposure time is set by how long red cells live. Red cells normally last **about 120 days**.", "Shorten that lifespan and cells are replaced before they can accumulate glycation, so **A1c reads falsely low in a patient whose glucose has not changed by a single mg/dL**. Haemolysis does it. So does a recent transfusion, or blood loss, or iron replacement kicking off a burst of new red cells."]
+          p: ["Because A1c measures exposure time, and exposure time is set by how long red cells live. Red cells normally last **about 120 days**.", "Shorten that lifespan and cells are replaced before they can accumulate glycation, so **A1c reads falsely low in a patient whose glucose has not changed by a single mg/dL**. Hemolysis does it. So does a recent transfusion, or blood loss, or iron replacement kicking off a burst of new red cells."]
         },
         {
           label: "Read them together",
@@ -974,7 +974,7 @@ module.exports = {
       k: "close",
       kicker: "Before next class",
       h: "Four things to do before we meet again",
-      lede: "None of these take long. All of them are worth more than rereading the slides, because every one of them makes you produce something instead of recognise something.",
+      lede: "None of these take long. All of them are worth more than rereading the slides, because every one of them makes you produce something instead of recognize something.",
       list: [
         "Say the two rules out loud with the slides shut: **like dissolves like**, and **arterial pH 7.35 to 7.45**. If you have to check, you have not got them yet.",
         "Work one osmolality by hand. Make up a panel, estimate it, then invent a measured value and take the gap. Two minutes, and it never leaves you after that.",

@@ -105,8 +105,8 @@ function parse(s) {
              crumb: getComputedStyle(document.querySelector('.rv-crumb')).color,
              level: getComputedStyle(document.querySelector('.rv-level')).color };
   });
-  ok('shell is the maroon card colour', parse(look.shell).every((v, i) => v === [122, 42, 34][i]), look.shell);
-  ok('centre is white', parse(look.faceBg).every(v => v === 255), look.faceBg);
+  ok('shell is the maroon card color', parse(look.shell).every((v, i) => v === [122, 42, 34][i]), look.shell);
+  ok('center is white', parse(look.faceBg).every(v => v === 255), look.faceBg);
   ok('card is rounded and lifted', parseFloat(look.radius) >= 16 && look.shadow.length > 5);
   const qc = ratio(parse(look.qColor), [255, 255, 255]);
   ok('question text on white, AAA', qc >= 7, qc.toFixed(1) + ':1');

@@ -18,7 +18,7 @@
 const FIG_GRAPH = `
 <svg viewBox="0 0 720 430" role="img" aria-labelledby="x1-t x1-d">
   <title id="x1-t">Mean arterial pressure after a healthy 24 year old stands up</title>
-  <desc id="x1-d">A line graph. The x axis is time after standing up, in seconds, running from 0 to 30 with labelled ticks at 0, 10, 20 and 30. The y axis is mean arterial pressure in mmHg, running from 60 to 100 with labelled ticks every 10. The dark red line sits flat at 92 mmHg from 0 to 10 seconds. A gold dashed vertical line at 10 seconds marks the moment of standing. The line then falls steeply to 84 mmHg at 12 seconds, 76 at 14 seconds and 68 at 16 seconds, which is the lowest point. It then recovers to 78 at 20 seconds, 86 at 24 seconds and 91 by 30 seconds. A teal dashed right angled triangle is drawn on the falling stretch between 12 and 16 seconds. Its horizontal leg is 4 seconds and its vertical leg is 16 mmHg, so the slope on that stretch is 4 mmHg lost every second.</desc>
+  <desc id="x1-d">A line graph. The x axis is time after standing up, in seconds, running from 0 to 30 with labeled ticks at 0, 10, 20 and 30. The y axis is mean arterial pressure in mmHg, running from 60 to 100 with labeled ticks every 10. The dark red line sits flat at 92 mmHg from 0 to 10 seconds. A gold dashed vertical line at 10 seconds marks the moment of standing. The line then falls steeply to 84 mmHg at 12 seconds, 76 at 14 seconds and 68 at 16 seconds, which is the lowest point. It then recovers to 78 at 20 seconds, 86 at 24 seconds and 91 by 30 seconds. A teal dashed right angled triangle is drawn on the falling stretch between 12 and 16 seconds. Its horizontal leg is 4 seconds and its vertical leg is 16 mmHg, so the slope on that stretch is 4 mmHg lost every second.</desc>
   <rect x="90" y="50" width="580" height="290" fill="#FFFFFF"/>
   <line x1="90" y1="50" x2="670" y2="50" stroke="#EDF1F3" stroke-width="2"/>
   <line x1="90" y1="123" x2="670" y2="123" stroke="#EDF1F3" stroke-width="2"/>
@@ -124,7 +124,7 @@ const FIG_SCALE = `
 const FIG_ERROR = `
 <svg viewBox="0 0 720 420" role="img" aria-labelledby="x3-t x3-d">
   <title id="x3-t">Five repeated osmometer readings from two instruments, against the true value</title>
-  <desc id="x3-d">A dot plot with a single vertical scale of osmometer reading in mOsm/kg, labelled from 285 to 310. A thick gold horizontal line across the whole figure marks the true value of 305 mOsm/kg. On the left, instrument A gives five readings of 303, 307, 304, 306 and 305, scattered on both sides of the gold line. A teal dashed line marks their average of 305, which lands on the gold line. On the right, instrument B gives five readings of 288, 291, 289, 292 and 290. They are tightly grouped but all of them sit well below the gold line. A teal dashed line marks their average of 290, and a short dark red vertical bar shows the 15 mOsm/kg gap between that average and the true value.</desc>
+  <desc id="x3-d">A dot plot with a single vertical scale of osmometer reading in mOsm/kg, labeled from 285 to 310. A thick gold horizontal line across the whole figure marks the true value of 305 mOsm/kg. On the left, instrument A gives five readings of 303, 307, 304, 306 and 305, scattered on both sides of the gold line. A teal dashed line marks their average of 305, which lands on the gold line. On the right, instrument B gives five readings of 288, 291, 289, 292 and 290. They are tightly grouped but all of them sit well below the gold line. A teal dashed line marks their average of 290, and a short dark red vertical bar shows the 15 mOsm/kg gap between that average and the true value.</desc>
   <rect x="100" y="80" width="590" height="260" fill="#FFFFFF"/>
   <line x1="100" y1="80" x2="100" y2="340" stroke="#3D4860" stroke-width="2"/>
   <line x1="92" y1="303" x2="100" y2="303" stroke="#3D4860" stroke-width="2"/>
@@ -341,7 +341,7 @@ module.exports = {
       ans: "278 mOsm/L on the shelf, and plain water in the patient. D5W is **free water in disguise**, which is why it is the wrong bag for somebody who is bleeding and the right bag for somebody whose sodium is too high.",
       timer: 180,
       big: "Two bags, both isosmotic in the bag, completely different once the body gets hold of them.",
-      lab: "This is the trap on the fluid choice task in the Week 1 lab. Read what the solute is, not just what the osmolarity is, because a solute that gets metabolised stops counting the moment it is metabolised.",
+      lab: "This is the trap on the fluid choice task in the Week 1 lab. Read what the solute is, not just what the osmolarity is, because a solute that gets metabolized stops counting the moment it is metabolized.",
       covers: ["w1-units-conversion"]
     },
 
@@ -437,7 +437,7 @@ module.exports = {
         "There are 1,000 mL in a liter, so divide by 1,000. That gives 5.04 L/min.",
         "Now sprint for a bus. Heart rate 160, stroke volume 110 mL. 160 times 110 is 17,600 mL per minute, which is 17.6 L/min."
       ],
-      ans: "About **5 L/min** at rest, and over three times that running. Memorise the resting number. Every cardiovascular question for the rest of this course starts from it.",
+      ans: "About **5 L/min** at rest, and over three times that running. Memorize the resting number. Every cardiovascular question for the rest of this course starts from it.",
       timer: 120,
       big: "Your whole blood volume, all five liters of it, goes round once every minute while you sit still.",
       lab: "You will convert mL/min to L/min repeatedly in the Week 1 lab, because the monitors report one and the charts report the other. Getting the decimal point in the wrong place here is the single most common slip on the worksheet.",
@@ -457,7 +457,7 @@ module.exports = {
           h: "You have two variables. Which one goes on the x axis?",
           p: [
             "What you changed. What you measured goes on the y. Putting them backwards is the single most common thing I mark wrong on a lab submission.",
-            "If you set it, chose it, or dialled it, it is the **independent variable** and it belongs across the bottom."
+            "If you set it, chose it, or dialed it, it is the **independent variable** and it belongs across the bottom."
           ]
         },
         {
@@ -492,7 +492,7 @@ module.exports = {
       lede: "A healthy 24 year old lies still for ten seconds, then stands up. Standing drops 500 to 800 mL of blood into the legs in about one second, and the reflex has to catch it.",
       svg: FIG_GRAPH,
       cap: "Time is on the x axis because time is what was allowed to run. Mean arterial pressure is on the y because pressure is what was measured. Both axes carry units. The gold line marks the one event in the experiment. The teal triangle is how you get a slope off a curve by hand.",
-      big: "If a marker cannot tell what was changed and what was measured, the graph has not been labelled.",
+      big: "If a marker cannot tell what was changed and what was measured, the graph has not been labeled.",
       lab: "Your Week 1 lab figure has to look like this one. Title, both axes named with units, the moment of standing marked, and the steepest stretch identified. Draw it in pencil first and label the axes before you plot a single point.",
       covers: ["w1-lab-graphing"]
     },
@@ -576,7 +576,7 @@ module.exports = {
         say: "What I did goes across the bottom. What happened goes up the side.",
         p: [
           "Left to right is the direction you read, and it is the direction cause runs. The thing you set is the thing your eye crosses first.",
-          "Then say the units out loud with the name. Not just time, but time in seconds. Not just pressure, but mean arterial pressure in mmHg. If you cannot say the unit, you have not finished labelling that axis."
+          "Then say the units out loud with the name. Not just time, but time in seconds. Not just pressure, but mean arterial pressure in mmHg. If you cannot say the unit, you have not finished labeling that axis."
         ]
       },
       big: "Cause across the bottom, consequence up the side, units on both.",
@@ -622,7 +622,7 @@ module.exports = {
           dotClass: "terra",
           h: "What is the control condition, and what is it there for?",
           p: [
-            "It is the condition that rules out some other explanation. In the standing test it is the same manoeuvre run on a healthy 24 year old with an intact reflex.",
+            "It is the condition that rules out some other explanation. In the standing test it is the same maneuver run on a healthy 24 year old with an intact reflex.",
             "When you read any study, ask **what its control rules out**. If you cannot answer that, the control was not doing anything."
           ]
         }

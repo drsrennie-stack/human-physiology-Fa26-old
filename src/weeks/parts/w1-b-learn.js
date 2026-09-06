@@ -38,7 +38,7 @@ function curveSVG(opts) {
   return L.xy({
     h: 430,
     x: { min: 0, max: 110, label: 'Oxygen pressure in the blood, PO2 (mmHg)', ticks: [0, 20, 40, 60, 80, 100] },
-    y: { min: 0, max: 100, label: 'Haemoglobin saturation (%)', ticks: [0, 20, 40, 60, 80, 100] },
+    y: { min: 0, max: 100, label: 'Hemoglobin saturation (%)', ticks: [0, 20, 40, 60, 80, 100] },
     bands: opts.cliff ? [{ x: [0, 60], fill: 'rgba(115,23,23,.07)' }] : [],
     guides: opts.marks ? [{ y: 90, label: '90%', color: L.COLOR.muted }] : [],
     series: series,
@@ -134,7 +134,7 @@ function learnPanel() {
       'Blood sugar goes up, insulin comes out, sugar comes back down.'
     ]),
     para('That opposite push is what makes something stable. Nearly every loop in this course works this way.'),
-    para('<t>Positive feedback</t> pushes in the <b>same</b> direction, so it snowballs. It is rare, and it always needs an outside event to stop it. Labour is the standard example: contractions push the baby down, which stretches the cervix, which causes stronger contractions, which pushes the baby further. It only ends when the baby is born.'),
+    para('<t>Positive feedback</t> pushes in the <b>same</b> direction, so it snowballs. It is rare, and it always needs an outside event to stop it. Labor is the standard example: contractions push the baby down, which stretches the cervix, which causes stronger contractions, which pushes the baby further. It only ends when the baby is born.'),
     check({
       stem: 'Blood clotting: each activated clotting factor activates more of the next one, faster and faster, until the clot is formed. Which kind of loop is that?',
       options: ['Negative feedback', 'Positive feedback', 'Neither, there is no set point'],
@@ -247,7 +247,7 @@ function learnPanel() {
 
   /* ============================== 6 */
   body.appendChild(sec('curve', 'The oxygen curve, and why its shape matters', [
-    para('A <t>pulse oximeter</t> gives you <t>saturation</t>, the percentage of oxygen seats on <t>haemoglobin</t> that are filled. It never tells you the oxygen <t>partial pressure</t> directly.'),
+    para('A <t>pulse oximeter</t> gives you <t>saturation</t>, the percentage of oxygen seats on <t>hemoglobin</t> that are filled. It never tells you the oxygen <t>partial pressure</t> directly.'),
     para('Those two things are related, but not in a straight line. Plot one against the other and you get an S.'),
     el('figure', { class: 'fig' }, [
       el('div', { html: curveSVG({ marks: true }) }),
@@ -262,11 +262,11 @@ function learnPanel() {
       L.surface([
         el('h3', { text: 'The steep middle' }),
         para('Below about 60, small further drops in pressure knock saturation down fast. This is why a patient can sit at 92 percent looking stable and then fall off a cliff.', 'note'),
-        para('The steepness is useful at the tissue, where oxygen needs to come off haemoglobin easily.', 'note')
+        para('The steepness is useful at the tissue, where oxygen needs to come off hemoglobin easily.', 'note')
       ])
     ]),
     L.eli([
-      'Think of haemoglobin as a bus with four seats and oxygen as passengers.',
+      'Think of hemoglobin as a bus with four seats and oxygen as passengers.',
       'When the bus is nearly full, adding more people waiting at the stop hardly changes anything. There is almost nowhere left to sit. That is the flat top.',
       'When the bus is half empty, a few more people waiting fills seats fast. That is the steep middle.',
       'The pulse oximeter counts how full the seats are. It does not count how many people are waiting at the stop. Two very different questions.'
@@ -287,7 +287,7 @@ function learnPanel() {
 
   /* ============================== 7 */
   body.appendChild(sec('shift', 'The curve slides, and it slides on purpose', [
-    para('The whole curve can slide left or right. Sliding is measured at the <t>p50</t>, the pressure where haemoglobin is exactly half loaded. Normally that is about 27.'),
+    para('The whole curve can slide left or right. Sliding is measured at the <t>p50</t>, the pressure where hemoglobin is exactly half loaded. Normally that is about 27.'),
     el('figure', { class: 'fig' }, [
       el('div', { html: curveSVG({ shifts: true }) }),
       el('figcaption', { html: 'Solid line, normal. Dashed line to the right, a right shift. Dotted line to the left, a left shift.' })
@@ -300,8 +300,8 @@ function learnPanel() {
       ]),
       L.surface([
         el('h3', { text: 'Left shift, oxygen is held more tightly' }),
-        list(['Colder', 'More alkaline, so a higher pH', 'Less carbon dioxide', 'Fetal haemoglobin'], false),
-        note('Fetal haemoglobin sits left of the mother\'s on purpose. It has to pull oxygen away from her blood across the placenta, and holding on more tightly is how it wins that tug of war.')
+        list(['Colder', 'More alkaline, so a higher pH', 'Less carbon dioxide', 'Fetal hemoglobin'], false),
+        note('Fetal hemoglobin sits left of the mother\'s on purpose. It has to pull oxygen away from her blood across the placenta, and holding on more tightly is how it wins that tug of war.')
       ])
     ]),
     check({
@@ -313,7 +313,7 @@ function learnPanel() {
         'A right shift, which is harmful and must be corrected'
       ],
       correct: 1,
-      explain: 'The muscle makes its own conditions, and those conditions loosen haemoglobin\'s grip right there in that capillary bed. Blood passing through cold, quiet tissue keeps hold of its oxygen instead. It is local, automatic, and beautifully efficient.'
+      explain: 'The muscle makes its own conditions, and those conditions loosen hemoglobin\'s grip right there in that capillary bed. Blood passing through cold, quiet tissue keeps hold of its oxygen instead. It is local, automatic, and beautifully efficient.'
     })
   ]));
 
@@ -321,8 +321,8 @@ function learnPanel() {
   body.appendChild(sec('traps', 'Three traps the finger clip sets', [
     el('div', { class: 'grid g3' }, [
       L.surface([
-        el('h3', { text: '1. Anaemia' }),
-        para('Saturation is a percentage of seats filled. It says nothing about how many seats there are. Someone with half the normal <t>haemoglobin</t> can read a perfect 100 percent while carrying half the oxygen.', 'note')
+        el('h3', { text: '1. Anemia' }),
+        para('Saturation is a percentage of seats filled. It says nothing about how many seats there are. Someone with half the normal <t>hemoglobin</t> can read a perfect 100 percent while carrying half the oxygen.', 'note')
       ]),
       L.surface([
         el('h3', { text: '2. Carbon monoxide' }),

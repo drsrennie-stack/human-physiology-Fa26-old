@@ -139,7 +139,7 @@ function ok(name, cond, extra) {
   await page.goto(URL + '#s-recall?comp=' + other.id, { waitUntil: 'load' });
   await page.waitForTimeout(900);
   const otherQueued = await page.evaluate(id => window.BIO005_RECALL_OPEN(id), other.id);
-  ok('the gate is per competency, it does not leak to its neighbours',
+  ok('the gate is per competency, it does not leak to its neighbors',
      otherQueued === other.n1, other.id + ': ' + otherQueued + ' queued, expected ' + other.n1);
 
   console.log('\n3. THE OVERRIDE');

@@ -149,7 +149,7 @@ h1{font-size:1.7rem;margin:0 0 10px}
 svg.loop{display:block;width:100%;height:auto}
 .nodebox{fill:#fff;stroke:var(--navy);stroke-width:2}
 .nodebox.sense{stroke:var(--gold-deep);stroke-width:2.5}
-.nodebox.centre{fill:var(--navy-tint)}
+.nodebox.center{fill:var(--navy-tint)}
 .nodebox.effect{stroke:var(--maroon);stroke-width:2.5}
 /* practice states. Locked gray dashed, unlocked gold solid, done navy on tint. */
 .nodebox.lock{stroke:var(--gray-lock);stroke-width:2;stroke-dasharray:8 6;fill:#fff}
@@ -267,7 +267,7 @@ svg.loop{display:block;width:100%;height:auto}
           <!-- top row: stimulus, sensor, integrating center -->
           <g id="n-stimulus"><rect class="nodebox"        x="14"  y="20"  width="200" height="96" rx="10"/></g>
           <g id="n-sensor">  <rect class="nodebox sense"  x="254" y="20"  width="200" height="96" rx="10"/></g>
-          <g id="n-centre">  <rect class="nodebox centre" x="686" y="20"  width="200" height="96" rx="10"/></g>
+          <g id="n-center">  <rect class="nodebox center" x="686" y="20"  width="200" height="96" rx="10"/></g>
 
           <!-- bottom row: effector, response -->
           <g id="n-effector"><rect class="nodebox effect" x="686" y="274" width="200" height="96" rx="10"/></g>
@@ -345,7 +345,7 @@ svg.loop{display:block;width:100%;height:auto}
         stimulus: 'The regulated variable moves away from its setpoint',
         sensor:   'A structure that detects the change',
         afferent: 'signal from sensor to center',
-        centre:   'Compares the value to the setpoint and decides the response',
+        center:   'Compares the value to the setpoint and decides the response',
         efferent: 'signal from center to effector',
         effector: 'The muscle or gland that carries out the response',
         response: 'The change that pushes the variable back toward the setpoint and removes the stimulus'
@@ -353,7 +353,7 @@ svg.loop{display:block;width:100%;height:auto}
       alt: {
         stimulus: 'Something has pushed the value the body is defending off where it belongs.',
         sensor:   'The part that notices the change. It reports, it does not decide.',
-        centre:   'Where the reading gets compared to what it should be, and the order goes out.',
+        center:   'Where the reading gets compared to what it should be, and the order goes out.',
         effector: 'Whatever actually does the work once the order arrives.',
         response: 'The change that follows, which drags the value back and shuts the loop off.'
       },
@@ -364,7 +364,7 @@ svg.loop{display:block;width:100%;height:auto}
         stimulus: 'Core temperature falls below the setpoint near 37 degrees Celsius',
         sensor:   'Thermoreceptors in the skin and in the hypothalamus',
         afferent: 'sensory neurons',
-        centre:   'Hypothalamus',
+        center:   'Hypothalamus',
         efferent: 'sympathetic nerves and somatic motor neurons',
         effector: 'Smooth muscle of skin arterioles, and skeletal muscle',
         response: 'Vasoconstriction cuts heat loss and shivering makes heat, so core temperature rises'
@@ -372,7 +372,7 @@ svg.loop{display:block;width:100%;height:auto}
       alt: {
         stimulus: 'You go outside without a jacket and your deep body reading drops under where it should sit.',
         sensor:   'Nerve endings in the skin, and others deep in the brain, that fire differently when they get cold.',
-        centre:   'The region beneath the thalamus that holds the body temperature setpoint.',
+        center:   'The region beneath the thalamus that holds the body temperature setpoint.',
         effector: 'The muscle in the walls of your skin vessels, together with the muscle you move with.',
         response: 'Less blood reaches the surface and the muscles start twitching, so heat stops leaving and more gets made.'
       },
@@ -383,7 +383,7 @@ svg.loop{display:block;width:100%;height:auto}
         stimulus: 'Plasma glucose rises after a meal',
         sensor:   'Pancreatic beta cell, which takes up glucose directly',
         afferent: 'none needed',
-        centre:   'The same beta cell. Sensor and integrating center are one cell',
+        center:   'The same beta cell. Sensor and integrating center are one cell',
         efferent: 'insulin, carried in the blood',
         effector: 'Skeletal muscle, adipose tissue and liver',
         response: 'Those tissues take up and store glucose, so plasma glucose falls'
@@ -391,7 +391,7 @@ svg.loop{display:block;width:100%;height:auto}
       alt: {
         stimulus: 'You finish eating and the sugar dissolved in your blood climbs above where it usually sits.',
         sensor:   'A cell in the pancreas that pulls sugar in and reads the level from the inside.',
-        centre:   'That same pancreatic cell, doing the deciding as well as the detecting.',
+        center:   'That same pancreatic cell, doing the deciding as well as the detecting.',
         effector: 'Muscle, fat, and the liver: the three tissues that can pull sugar out of blood.',
         response: 'Sugar moves out of the blood and into storage, so the level comes back down.'
       },
@@ -402,7 +402,7 @@ svg.loop{display:block;width:100%;height:auto}
         stimulus: 'Arterial pressure falls when you stand up',
         sensor:   'Baroreceptors in the carotid sinus and the aortic arch',
         afferent: 'glossopharyngeal and vagus nerves',
-        centre:   'Cardiovascular control center in the medulla oblongata',
+        center:   'Cardiovascular control center in the medulla oblongata',
         efferent: 'sympathetic output up, parasympathetic output down',
         effector: 'SA node and cardiac muscle, and arteriolar smooth muscle',
         response: 'Heart rate, contractility and vasoconstriction all rise, so pressure rises'
@@ -410,7 +410,7 @@ svg.loop{display:block;width:100%;height:auto}
       alt: {
         stimulus: 'You get out of a chair too quickly and the pressure inside your arteries drops.',
         sensor:   'Stretch detectors in the wall of a large neck artery and in the arch of the aorta.',
-        centre:   'The part of the brainstem that holds and defends arterial pressure.',
+        center:   'The part of the brainstem that holds and defends arterial pressure.',
         effector: 'The pacemaker and muscle of the heart, plus the muscle wrapped around the smallest arteries.',
         response: 'The heart beats faster and harder while the small vessels narrow, so pressure climbs back.'
       },
@@ -421,7 +421,7 @@ svg.loop{display:block;width:100%;height:auto}
         stimulus: 'Plasma calcium falls below the setpoint',
         sensor:   'Calcium sensing receptor on the parathyroid chief cell',
         afferent: 'none needed',
-        centre:   'The same parathyroid chief cell',
+        center:   'The same parathyroid chief cell',
         efferent: 'parathyroid hormone, carried in the blood',
         effector: 'Bone, kidney, and the small intestine by way of calcitriol',
         response: 'Calcium leaves bone, the kidney keeps more of it, more is absorbed from food, so plasma calcium rises'
@@ -429,28 +429,28 @@ svg.loop{display:block;width:100%;height:auto}
       alt: {
         stimulus: 'The amount of calcium dissolved in the blood slips under its usual level.',
         sensor:   'A receptor sitting on the surface of a parathyroid cell that reads calcium straight from the fluid.',
-        centre:   'That same parathyroid cell, which both reads the level and decides what to do about it.',
+        center:   'That same parathyroid cell, which both reads the level and decides what to do about it.',
         effector: 'The skeleton, the kidney tubules, and the lining of the small intestine.',
         response: 'Calcium is pulled out of bone, saved from the urine, and taken from food, so the level rises.'
       },
       note: 'Same shortcut as glucose: the sensing cell is also the deciding cell. Three effectors here, which is part of why plasma calcium is defended so tightly. You meet this again in Week 9.' }
   ];
 
-  var ORDER = ['stimulus', 'sensor', 'afferent', 'centre', 'efferent', 'effector', 'response'];
+  var ORDER = ['stimulus', 'sensor', 'afferent', 'center', 'efferent', 'effector', 'response'];
   var ROLE = {
     stimulus: 'Stimulus', sensor: 'Sensor', afferent: 'Afferent path',
-    centre: 'Integrating center', efferent: 'Efferent path',
+    center: 'Integrating center', efferent: 'Efferent path',
     effector: 'Effector', response: 'Response'
   };
   /* Boxes on the diagram. afferent and efferent are arrow labels, not boxes. */
   var BOXES = {
     stimulus: { x: 14,  y: 20,  w: 200, h: 96 },
     sensor:   { x: 254, y: 20,  w: 200, h: 96 },
-    centre:   { x: 686, y: 20,  w: 200, h: 96 },
+    center:   { x: 686, y: 20,  w: 200, h: 96 },
     effector: { x: 686, y: 274, w: 200, h: 96 },
     response: { x: 254, y: 274, w: 336, h: 96 }
   };
-  var DROPS = ['stimulus', 'sensor', 'centre', 'effector', 'response'];
+  var DROPS = ['stimulus', 'sensor', 'center', 'effector', 'response'];
   var VBW = 900, VBH = 390, PAD = 14;
   /* Two vertical layouts for the same loop. Read mode leaves room under
      the top row for the note about the return path. Practice mode does
@@ -475,7 +475,7 @@ svg.loop{display:block;width:100%;height:auto}
     return L;
   }
   /* the resting look of each box, restored when practice ends */
-  var BASE = { stimulus: 'nodebox', sensor: 'nodebox sense', centre: 'nodebox centre',
+  var BASE = { stimulus: 'nodebox', sensor: 'nodebox sense', center: 'nodebox center',
                effector: 'nodebox effect', response: 'nodebox' };
 
   var svg = document.getElementById('svg');
@@ -735,7 +735,7 @@ svg.loop{display:block;width:100%;height:auto}
   var WHY = {
     stimulus: 'That one is the thing that started the whole loop, not a part of the machinery.',
     sensor:   'That one only detects. Ask yourself which part measures and which part decides.',
-    centre:   'That one does the comparing and the deciding.',
+    center:   'That one does the comparing and the deciding.',
     effector: 'That one is the structure that carries out the order.',
     response: 'That one is what changes at the end, the change that switches the loop back off.'
   };

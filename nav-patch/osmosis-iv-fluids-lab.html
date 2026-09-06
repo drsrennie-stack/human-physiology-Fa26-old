@@ -392,15 +392,15 @@ details[open] summary::before{content:"\2212"}
       <h3>The compartments, in a 70 kg adult</h3>
       <p class="small muted">These fractions are teaching approximations. They shift with age, sex, and body composition, because fat holds much less water than muscle does.</p>
       <ul class="clean">
-        <li><strong>Total body water</strong> is about 60 percent of body weight in an adult man and about 50 percent in an adult woman, so roughly 42 litres here. Older adults run lower, closer to 50 and 45 percent.</li>
-        <li><strong>Two thirds sits inside cells</strong>, about 28 litres. This is the intracellular compartment, and it is the reservoir that hypotonic and hypertonic fluids move water into and out of.</li>
-        <li><strong>One third sits outside cells</strong>, about 14 litres. Of that, three quarters is interstitial fluid bathing the tissues and one quarter, about 3.5 litres, is plasma.</li>
+        <li><strong>Total body water</strong> is about 60 percent of body weight in an adult man and about 50 percent in an adult woman, so roughly 42 liters here. Older adults run lower, closer to 50 and 45 percent.</li>
+        <li><strong>Two thirds sits inside cells</strong>, about 28 liters. This is the intracellular compartment, and it is the reservoir that hypotonic and hypertonic fluids move water into and out of.</li>
+        <li><strong>One third sits outside cells</strong>, about 14 liters. Of that, three quarters is interstitial fluid bathing the tissues and one quarter, about 3.5 liters, is plasma.</li>
       </ul>
-      <p style="margin:0">That last number is why a litre of the wrong fluid does almost nothing for a patient who is bleeding. Only the plasma fraction is holding up the blood pressure.</p>
+      <p style="margin:0">That last number is why a liter of the wrong fluid does almost nothing for a patient who is bleeding. Only the plasma fraction is holding up the blood pressure.</p>
     </div>
     <div class="card">
       <h3>Osmolarity is a number. Tonicity is a behavior.</h3>
-      <p><strong>Osmolarity</strong> counts every dissolved particle in a litre, whether or not it can cross the membrane. You can calculate the effective part from a chemistry panel as twice the sodium plus the glucose divided by 18.</p>
+      <p><strong>Osmolarity</strong> counts every dissolved particle in a liter, whether or not it can cross the membrane. You can calculate the effective part from a chemistry panel as twice the sodium plus the glucose divided by 18.</p>
       <p><strong>Tonicity</strong> is what a solution actually does to a cell sitting in it, and only particles that cannot cross the membrane count. A solute that crosses freely equilibrates on both sides and ends up pulling on nothing.</p>
       <p style="margin:0">Urea is the standard example. It raises measured osmolarity, it crosses cell membranes readily, and at steady state it moves no water. Dextrose in a bag of D5W is the same story for a different reason: it is an effective osmole in the bag, and then cells take it up and burn it, and what is left behind is plain water. This is why the bag label and the physiological effect disagree, and why students who memorize the label get D5W wrong every time.</p>
     </div>
@@ -454,7 +454,7 @@ details[open] summary::before{content:"\2212"}
   <div class="card">
     <div class="tablewrap">
       <table class="ref">
-        <caption>Composition per litre. Electrolytes in mEq/L, osmolarity in mOsm/L.</caption>
+        <caption>Composition per liter. Electrolytes in mEq/L, osmolarity in mOsm/L.</caption>
         <thead>
           <tr><th scope="col">Fluid</th><th scope="col">Na</th><th scope="col">K</th><th scope="col">Cl</th><th scope="col">Other</th><th scope="col">Bag</th><th scope="col">Effective</th><th scope="col">Where the water ends up</th></tr>
         </thead>
@@ -649,7 +649,7 @@ details[open] summary::before{content:"\2212"}
         <div><label class="field" for="c_fluid">Fluid</label>
           <select id="c_fluid"></select>
         </div>
-        <div><label class="field" for="c_vol">Volume, litres</label><input type="number" step="0.05" id="c_vol" value="1"></div>
+        <div><label class="field" for="c_vol">Volume, liters</label><input type="number" step="0.05" id="c_vol" value="1"></div>
         <div><label class="field" for="c_hrs">Given over, hours</label><input type="number" step="0.25" id="c_hrs" value="4"></div>
       </div>
       <div class="btnrow">
@@ -1105,13 +1105,13 @@ var CASES = [
   id:'ORD-01', name:'T. Ramirez', meta:'24 y / M / 68 kg', strip:'Emergency department · Day 3 of illness · 21:40',
   note:'Three days of vomiting and watery diarrhea after a family barbecue, unable to keep anything down since yesterday. Heart rate 122, blood pressure 88 over 54 lying flat, dry mucous membranes, capillary refill three seconds. Alert but exhausted.',
   rows:[['Sodium','148','mEq/L','HIGH','135 to 145'],['Potassium','3.2','mEq/L','LOW','3.5 to 5.0'],['Chloride','112','mEq/L','HIGH','98 to 107'],['Bicarbonate','20','mEq/L','LOW','22 to 28'],['BUN','34','mg/dL','HIGH','7 to 20'],['Creatinine','1.4','mg/dL','HIGH','0.7 to 1.2'],['Glucose','96','mg/dL','','70 to 99']],
-  order:'D5W 1 litre IV bolus, then reassess.',
+  order:'D5W 1 liter IV bolus, then reassess.',
   add:'Ordered by a covering clinician who wrote it as a rehydration bolus.',
-  options:['A reasonable rehydration bolus, since the patient is dry','Almost useless for his blood pressure, because only about 80 mL of that litre reaches plasma','Dangerous because it will raise his sodium further','Equivalent to normal saline once the dextrose is gone'],
+  options:['A reasonable rehydration bolus, since the patient is dry','Almost useless for his blood pressure, because only about 80 mL of that liter reaches plasma','Dangerous because it will raise his sodium further','Equivalent to normal saline once the dextrose is gone'],
   answer:1,
   fbTitle:'The right idea and the wrong compartment',
   fbBody:'He is short of extracellular volume, and specifically of the plasma quarter of it, which is what is holding up his blood pressure. D5W is dextrose in water, cells take the dextrose up and burn it within minutes, and what is left is free water with nothing dissolved in it to hold it outside the cells. Free water distributes across total body water, so two thirds of it goes straight into cells that are not short of anything. Of the third that stays extracellular, only a quarter is plasma. He needs an isotonic fluid, saline or lactated Ringer’s, whose sodium keeps it in the compartment that is actually empty.',
-  clues:['Total body water 0.6 times 68 kg is about 41 litres, so 1 litre of free water raises it by roughly 2 percent everywhere','About 670 mL ends up inside cells, about 250 mL interstitial, and about 83 mL in plasma','The same litre as isotonic saline puts about 250 mL in plasma, three times as much','His sodium of 148 is high because he has lost more water than salt, which is a separate problem from the volume loss'],
+  clues:['Total body water 0.6 times 68 kg is about 41 liters, so 1 liter of free water raises it by roughly 2 percent everywhere','About 670 mL ends up inside cells, about 250 mL interstitial, and about 83 mL in plasma','The same liter as isotonic saline puts about 250 mL in plasma, three times as much','His sodium of 148 is high because he has lost more water than salt, which is a separate problem from the volume loss'],
   branch:'This is the first branch on your chart and it comes before everything else. Which compartment is the patient short in? Answer that and half the fluids on the shelf are eliminated immediately.'
 },
 {
@@ -1123,54 +1123,54 @@ var CASES = [
   options:['Appropriate maintenance for a patient who is not eating','Hypotonic, so it lowers extracellular osmolarity and drives water into brain cells that are already swollen','Will raise the sodium too quickly','Will cause a hyperchloremic acidosis'],
   answer:1,
   fbTitle:'The one place where a routine maintenance fluid is a serious problem',
-  fbBody:'Half normal saline has an effective osmolarity of 154, barely more than half of hers. Every litre of it lowers the osmolarity of the fluid surrounding her cells, and water follows the gradient into the intracellular compartment everywhere in the body. In most tissues that is harmless. Inside a rigid skull it is not, because the brain has nowhere to expand into. A contused brain is already swollen and its autoregulation is impaired, so a small further gain in cell water can push intracranial pressure up and worsen perfusion. In head injury the fluid of choice is isotonic, and sometimes deliberately hypertonic in order to pull water the other way.',
-  clues:['Effective osmolarity of the bag is 154 against her 283, so the gradient points into cells','A litre of half normal saline puts roughly 300 mL into the intracellular compartment','Isotonic saline at 308 moves essentially none, which is exactly why it is preferred here','Hypertonic saline at 1026 reverses the gradient and is used deliberately when pressure has to come down'],
+  fbBody:'Half normal saline has an effective osmolarity of 154, barely more than half of hers. Every liter of it lowers the osmolarity of the fluid surrounding her cells, and water follows the gradient into the intracellular compartment everywhere in the body. In most tissues that is harmless. Inside a rigid skull it is not, because the brain has nowhere to expand into. A contused brain is already swollen and its autoregulation is impaired, so a small further gain in cell water can push intracranial pressure up and worsen perfusion. In head injury the fluid of choice is isotonic, and sometimes deliberately hypertonic in order to pull water the other way.',
+  clues:['Effective osmolarity of the bag is 154 against her 283, so the gradient points into cells','A liter of half normal saline puts roughly 300 mL into the intracellular compartment','Isotonic saline at 308 moves essentially none, which is exactly why it is preferred here','Hypertonic saline at 1026 reverses the gradient and is used deliberately when pressure has to come down'],
   branch:'This forces a branch that most students leave off: does this patient have a compartment that cannot expand? The skull is the obvious one. The others are the lungs and a failing ventricle.'
 },
 {
   id:'ORD-03', name:'A. Whitmore', meta:'62 y / M / 84 kg', strip:'Intensive care · Hospital hour 18 · 11:05',
-  note:'Severe gallstone pancreatitis, resuscitated overnight with six litres of 0.9% sodium chloride. Blood pressure has stabilized and urine output is adequate. He is now breathing faster than expected and looks uncomfortable.',
+  note:'Severe gallstone pancreatitis, resuscitated overnight with six liters of 0.9% sodium chloride. Blood pressure has stabilized and urine output is adequate. He is now breathing faster than expected and looks uncomfortable.',
   rows:[['pH','7.28','','LOW','7.35 to 7.45'],['Sodium','141','mEq/L','','135 to 145'],['Chloride','116','mEq/L','HIGH','98 to 107'],['Bicarbonate','17','mEq/L','LOW','22 to 28'],['Anion gap','8','','','8 to 12'],['Lactate','1.4','mmol/L','','0.5 to 2.0'],['Creatinine','1.0','mg/dL','','0.7 to 1.2']],
   order:'Continue 0.9% NaCl at 200 mL/hr.',
   add:'Team is asking whether the worsening acidosis means the pancreatitis is progressing.',
   options:['Lactic acidosis from ongoing poor perfusion','A hyperchloremic acidosis with a normal anion gap, caused by the chloride load in the saline itself','Diabetic ketoacidosis','Acute kidney injury with retained acid'],
   answer:1,
   fbTitle:'The fluid is the diagnosis',
-  fbBody:'The anion gap is normal at 8 and the lactate is normal, so this is not the acidosis of poor perfusion, and the creatinine says the kidneys are working. What changed is the chloride, which is 116 against a normal near 100. Plasma is electrically neutral, so the sum of the measured cations has to be balanced by the measured anions plus bicarbonate. Pour in six litres of a fluid carrying 154 mEq of chloride per litre, far more than plasma holds, and chloride rises in the extracellular space. Bicarbonate has to fall to keep the books balanced, and the patient is acidotic without a single extra acid being produced. Lactated Ringer’s carries 109 mEq of chloride and replaces the difference with lactate, which the liver converts to bicarbonate, so large volume resuscitation with it does not do this.',
-  clues:['Anion gap of 8 is normal, which rules out the acidoses that add an unmeasured anion','Lactate normal, so tissue perfusion is not the problem','Chloride 116 after six litres of a fluid containing 154 mEq/L of it','Bicarbonate fell as chloride rose, which is the signature of this pattern'],
+  fbBody:'The anion gap is normal at 8 and the lactate is normal, so this is not the acidosis of poor perfusion, and the creatinine says the kidneys are working. What changed is the chloride, which is 116 against a normal near 100. Plasma is electrically neutral, so the sum of the measured cations has to be balanced by the measured anions plus bicarbonate. Pour in six liters of a fluid carrying 154 mEq of chloride per liter, far more than plasma holds, and chloride rises in the extracellular space. Bicarbonate has to fall to keep the books balanced, and the patient is acidotic without a single extra acid being produced. Lactated Ringer’s carries 109 mEq of chloride and replaces the difference with lactate, which the liver converts to bicarbonate, so large volume resuscitation with it does not do this.',
+  clues:['Anion gap of 8 is normal, which rules out the acidoses that add an unmeasured anion','Lactate normal, so tissue perfusion is not the problem','Chloride 116 after six liters of a fluid containing 154 mEq/L of it','Bicarbonate fell as chloride rose, which is the signature of this pattern'],
   branch:'Add a branch for what comes along with the water. Sodium is never the only thing in the bag, and chloride, potassium, dextrose and lactate all have their own consequences.'
 },
 {
   id:'ORD-04', name:'M. Halloran', meta:'44 y / F / 58 kg', strip:'Emergency department · Hour 1 · 03:22',
   note:'Found confused at home, then had a witnessed generalized seizure in the department. Started on a thiazide diuretic three weeks ago and has been drinking large amounts of water for a headache. Currently postictal, breathing on her own.',
   rows:[['Sodium','112','mEq/L','LOW','135 to 145'],['Potassium','3.1','mEq/L','LOW','3.5 to 5.0'],['Glucose','88','mg/dL','','70 to 99'],['Measured osmolality','238','mOsm/kg','LOW','275 to 295'],['Urine sodium','62','mEq/L','','varies'],['Urine osmolality','480','mOsm/kg','','varies']],
-  order:'3% NaCl 1 litre IV over 4 hours.',
+  order:'3% NaCl 1 liter IV over 4 hours.',
   add:'Fluid choice discussed with the senior on call, rate written by the admitting team.',
   options:['Correct fluid and correct rate for a seizing patient','Correct fluid, but that rate would raise her sodium roughly 13 mEq/L in four hours and risks osmotic demyelination','She should have D5W instead','She should have normal saline instead'],
   answer:1,
   fbTitle:'Right bag, dangerous rate',
-  fbBody:'Hypertonic saline is the right choice, because she is seizing from cerebral edema caused by a genuinely low osmolarity, and the only thing that will stop it quickly is raising the osmolarity outside her brain cells. The problem is the arithmetic. Her total body water is about 0.5 times 58, so 29 litres. A litre of 3% saline carries 513 mEq of sodium, and sodium concentration behaves as total exchangeable cation over total body water, so that litre raises her sodium by roughly 513 minus 112, divided by 30, which is about 13 mEq/L. Delivered over four hours, that is far past the limit. Her brain cells have spent three weeks shedding internal osmoles to survive a low outside osmolarity, and they cannot regain them quickly. Pull water out of them faster than they can readjust and you get osmotic demyelination, which appears days later and is often permanent. The accepted approach is a small bolus to raise sodium four to six points and stop the seizure, then a slow correction of no more than about eight in twenty four hours.',
-  clues:['Total body water about 29 litres, so each litre of 3% saline moves her sodium about 13 mEq/L','The safe ceiling is roughly 8 mEq/L over a full day, and this order delivers more than that in four hours','Her low potassium matters too, because replacing it also raises sodium, since exchangeable potassium counts','Three weeks of thiazide means this is chronic, and chronic is exactly when the brain has adapted and correction must be slow'],
+  fbBody:'Hypertonic saline is the right choice, because she is seizing from cerebral edema caused by a genuinely low osmolarity, and the only thing that will stop it quickly is raising the osmolarity outside her brain cells. The problem is the arithmetic. Her total body water is about 0.5 times 58, so 29 liters. A liter of 3% saline carries 513 mEq of sodium, and sodium concentration behaves as total exchangeable cation over total body water, so that liter raises her sodium by roughly 513 minus 112, divided by 30, which is about 13 mEq/L. Delivered over four hours, that is far past the limit. Her brain cells have spent three weeks shedding internal osmoles to survive a low outside osmolarity, and they cannot regain them quickly. Pull water out of them faster than they can readjust and you get osmotic demyelination, which appears days later and is often permanent. The accepted approach is a small bolus to raise sodium four to six points and stop the seizure, then a slow correction of no more than about eight in twenty four hours.',
+  clues:['Total body water about 29 liters, so each liter of 3% saline moves her sodium about 13 mEq/L','The safe ceiling is roughly 8 mEq/L over a full day, and this order delivers more than that in four hours','Her low potassium matters too, because replacing it also raises sodium, since exchangeable potassium counts','Three weeks of thiazide means this is chronic, and chronic is exactly when the brain has adapted and correction must be slow'],
   branch:'This is the rate branch, and it is the one students most often leave off a flow chart entirely. Once the fluid is chosen, how fast anything is allowed to change becomes the whole question.'
 },
 {
   id:'ORD-05', name:'E. Barlow', meta:'78 y / M / 66 kg', strip:'Hospital ward · Admission day 1 · 14:50',
   note:'Brought in from a residential facility after five days of poor oral intake during a heat wave. Lethargic, dry, but blood pressure is acceptable. Staff report he had been steadily less responsive over most of a week.',
   rows:[['Sodium','168','mEq/L','HIGH','135 to 145'],['Potassium','4.2','mEq/L','','3.5 to 5.0'],['BUN','48','mg/dL','HIGH','7 to 20'],['Creatinine','1.6','mg/dL','HIGH','0.7 to 1.2'],['Glucose','102','mg/dL','HIGH','70 to 99'],['Measured osmolality','352','mOsm/kg','HIGH','275 to 295']],
-  order:'D5W 1 litre over 1 hour, then 250 mL/hr.',
+  order:'D5W 1 liter over 1 hour, then 250 mL/hr.',
   add:'Written with the intention of correcting the free water deficit quickly.',
   options:['Appropriate, because the deficit is large','Far too fast, and lowering his osmolarity this quickly risks cerebral edema and seizure','The wrong fluid, he needs normal saline','The wrong fluid, he needs 3% saline'],
   answer:1,
   fbTitle:'The mirror image of the last patient, and the same mistake in reverse',
-  fbBody:'D5W is the right fluid, because free water is exactly what he lacks. The rate is the problem, and it is the same principle as the hyponatremia case running the other way. Over five days his brain cells have accumulated internal osmoles to avoid shrinking in a high osmolarity environment. Those extra osmoles are still there. Drop his extracellular osmolarity quickly and water rushes into cells that are now the concentrated side of the gradient, and the brain swells. His total body water is about 0.5 times 66, so 33 litres, and a litre of free water lowers his sodium by roughly 168 divided by 34, about 5 mEq/L. Two litres in the first four hours would take him down about ten points before the day has even started. Chronic hypernatremia is corrected at roughly the same careful pace as chronic hyponatremia, in the region of ten points a day at most.',
-  clues:['A litre of D5W lowers his sodium about 5 mEq/L, so the ordered rate overshoots within hours','Five days of illness makes this chronic, and chronic means the brain has already adapted','The direction of adaptation is opposite to the hyponatremia case, and so is the danger','His kidney numbers say he also needs volume, which is a separate question from the free water deficit'],
+  fbBody:'D5W is the right fluid, because free water is exactly what he lacks. The rate is the problem, and it is the same principle as the hyponatremia case running the other way. Over five days his brain cells have accumulated internal osmoles to avoid shrinking in a high osmolarity environment. Those extra osmoles are still there. Drop his extracellular osmolarity quickly and water rushes into cells that are now the concentrated side of the gradient, and the brain swells. His total body water is about 0.5 times 66, so 33 liters, and a liter of free water lowers his sodium by roughly 168 divided by 34, about 5 mEq/L. Two liters in the first four hours would take him down about ten points before the day has even started. Chronic hypernatremia is corrected at roughly the same careful pace as chronic hyponatremia, in the region of ten points a day at most.',
+  clues:['A liter of D5W lowers his sodium about 5 mEq/L, so the ordered rate overshoots within hours','Five days of illness makes this chronic, and chronic means the brain has already adapted','The direction of adaptation is opposite to the hyponatremia case, and so is the danger','His kidney numbers say he also needs volume, which is a separate question from the free water deficit'],
   branch:'Your chart should reach the same rate branch from both directions. Sodium too low and sodium too high converge on one question, which is how fast the brain is allowed to be moved.'
 },
 {
   id:'ORD-06', name:'D. Achterberg', meta:'55 y / F / 72 kg', strip:'Emergency department · Hour 2 · 09:35',
   note:'Chronic kidney disease stage 4, three days of profuse diarrhea after a course of antibiotics. Heart rate 108, blood pressure 94 over 60, dry. Making some urine.',
   rows:[['Potassium','5.9','mEq/L','HIGH','3.5 to 5.0'],['Sodium','137','mEq/L','','135 to 145'],['Chloride','111','mEq/L','HIGH','98 to 107'],['Bicarbonate','16','mEq/L','LOW','22 to 28'],['Creatinine','3.4','mg/dL','HIGH','0.7 to 1.2'],['pH','7.29','','LOW','7.35 to 7.45']],
-  order:"Lactated Ringer's 1 litre bolus.",
+  order:"Lactated Ringer's 1 liter bolus.",
   add:'A colleague objects that lactated Ringer’s contains potassium and should never be used when the potassium is high.',
   options:['The objection is right, the potassium in the bag will push her higher','The objection is weaker than it sounds, since the bag holds 4 mEq/L against her 5.9, and the chloride load in saline can raise potassium more','Neither fluid is safe, she needs dialysis before any fluid','She should receive D5W instead'],
   answer:1,
@@ -1183,7 +1183,7 @@ var CASES = [
   id:'ORD-07', name:'J. Feldkamp', meta:'39 y / M / 80 kg', strip:'Ward · Order review · 08:10',
   note:'Admitted for intravenous antibiotics for cellulitis and otherwise well. He is eating, his kidneys are normal and his electrolytes are unremarkable. A pharmacy technician flags the fluid order during a routine check before anything is hung.',
   rows:[['Sodium','139','mEq/L','','135 to 145'],['Potassium','4.1','mEq/L','','3.5 to 5.0'],['Hemoglobin','14.6','g/dL','','13.5 to 17.5'],['Creatinine','0.9','mg/dL','','0.7 to 1.2'],['Glucose','94','mg/dL','','70 to 99']],
-  order:'Sterile water for injection, 1 litre IV over 2 hours.',
+  order:'Sterile water for injection, 1 liter IV over 2 hours.',
   add:'Sterile water is a diluent for reconstituting medications. It appears to have been selected from a dropdown in place of the intended diluent volume.',
   options:['Essentially the same as D5W once the dextrose is gone','Would cause immediate massive hemolysis, because the fluid contains no solute at all','Would cause hypernatremia','Would be acceptable at a slower rate'],
   answer:1,
@@ -1194,15 +1194,15 @@ var CASES = [
 },
 {
   id:'ORD-08', name:'R. Osei', meta:'71 y / M / 78 kg', strip:'Ward · Hospital day 2 · 16:20',
-  note:'Heart failure with an ejection fraction of 25 percent, admitted with pneumonia. Given two litres of 0.9% sodium chloride over six hours for hydration. Now short of breath, crackles to both mid zones, jugular venous pressure raised, oxygen saturation 88 percent on room air.',
+  note:'Heart failure with an ejection fraction of 25 percent, admitted with pneumonia. Given two liters of 0.9% sodium chloride over six hours for hydration. Now short of breath, crackles to both mid zones, jugular venous pressure raised, oxygen saturation 88 percent on room air.',
   rows:[['Sodium','137','mEq/L','','135 to 145'],['Creatinine','1.3','mg/dL','HIGH','0.7 to 1.2'],['BNP','1840','pg/mL','HIGH','under 100'],['Oxygen saturation','88','%','LOW','95 to 100'],['Weight change','plus 2.1','kg','HIGH','stable']],
   order:'Continue 0.9% NaCl at 100 mL/hr.',
   add:'Chest radiograph shows pulmonary vascular congestion and small pleural effusions.',
   options:['Expected, since most of the fluid has gone into cells','Isotonic fluid stays extracellular, and a failing ventricle cannot move the extra preload forward, so it backs up into the lungs','He is dehydrated and needs more fluid','This is the pneumonia alone'],
   answer:1,
   fbTitle:'The fluid went exactly where it was supposed to, and that was the problem',
-  fbBody:'Normal saline is isotonic, so essentially none of it enters cells. Two litres therefore expand the extracellular space by close to two litres, and about a quarter of that lands in plasma. In a healthy heart the extra preload is handled and excreted. His ventricle is already operating at the flat end of its length tension relationship, so adding preload gains him almost no extra stroke volume and instead raises the pressure behind it. That pressure is transmitted back through the left atrium into the pulmonary capillaries, where it raises hydrostatic pressure. Filtration across the capillary wall depends on the balance between hydrostatic pressure pushing water out and oncotic pressure holding it in, so once hydrostatic pressure climbs, fluid moves into the interstitium and then the alveoli faster than the lymphatics can clear it. The two kilograms of weight is the fluid, and every litre is about a kilogram.',
-  clues:['Two litres isotonic gives close to two litres of extracellular expansion and essentially no intracellular change','About 500 mL of that lands in plasma, which is a large preload change for this ventricle','Weight up 2.1 kg, which is the retained fluid measured on a scale','The lungs are the compartment that cannot expand here, exactly as the skull was in order 2'],
+  fbBody:'Normal saline is isotonic, so essentially none of it enters cells. Two liters therefore expand the extracellular space by close to two liters, and about a quarter of that lands in plasma. In a healthy heart the extra preload is handled and excreted. His ventricle is already operating at the flat end of its length tension relationship, so adding preload gains him almost no extra stroke volume and instead raises the pressure behind it. That pressure is transmitted back through the left atrium into the pulmonary capillaries, where it raises hydrostatic pressure. Filtration across the capillary wall depends on the balance between hydrostatic pressure pushing water out and oncotic pressure holding it in, so once hydrostatic pressure climbs, fluid moves into the interstitium and then the alveoli faster than the lymphatics can clear it. The two kilograms of weight is the fluid, and every liter is about a kilogram.',
+  clues:['Two liters isotonic gives close to two liters of extracellular expansion and essentially no intracellular change','About 500 mL of that lands in plasma, which is a large preload change for this ventricle','Weight up 2.1 kg, which is the retained fluid measured on a scale','The lungs are the compartment that cannot expand here, exactly as the skull was in order 2'],
   branch:'This is the tolerance branch. Predicting where the water goes is not enough. The last question on your chart has to ask whether this particular patient can absorb the shift you just predicted.'
 },
 {
@@ -1223,24 +1223,24 @@ var CASES = [
   note:'Bowel resection three days ago, nil by mouth since surgery, no complications. Alert and comfortable. Nursing staff report he has been receiving the same maintenance fluid since the operation with nothing added to it.',
   rows:[['Potassium','2.9','mEq/L','LOW','3.5 to 5.0'],['Sodium','142','mEq/L','','135 to 145'],['Chloride','110','mEq/L','HIGH','98 to 107'],['Bicarbonate','23','mEq/L','','22 to 28'],['Glucose','78','mg/dL','','70 to 99'],['Urine ketones','moderate','','ABNORMAL','negative']],
   order:'0.9% NaCl at 100 mL/hr, no additives, continuous.',
-  add:'Three days at this rate is about 7.2 litres of saline and roughly 1100 mEq of sodium.',
+  add:'Three days at this rate is about 7.2 liters of saline and roughly 1100 mEq of sodium.',
   options:['Appropriate maintenance for a patient who is not eating','Wrong on three counts: no potassium to replace ongoing renal losses, no dextrose to blunt ketosis, and far more sodium and chloride than maintenance requires','He needs hypertonic saline','He is fluid depleted and needs more'],
   answer:1,
   fbTitle:'Maintenance is a different question from resuscitation',
-  fbBody:'Resuscitation replaces a lost extracellular volume, so it uses isotonic fluid and a lot of it. Maintenance replaces what a person loses in a day while not eating, which is a very different list: roughly 25 to 30 mL of water per kilogram, one to two mEq per kilogram of sodium, and about half to one mEq per kilogram of potassium. Plain saline supplies the water and vastly more sodium and chloride than needed, no potassium at all, and no calories. The kidney keeps excreting potassium whether or not any is coming in, so the serum potassium drifts down over days. Meanwhile with no glucose arriving, insulin stays low, and the body turns to fat and then to muscle protein for fuel, which is where the ketones come from. Fifty grams of dextrose per litre is not nutrition, it is just enough to keep insulin high enough to slow that breakdown down.',
+  fbBody:'Resuscitation replaces a lost extracellular volume, so it uses isotonic fluid and a lot of it. Maintenance replaces what a person loses in a day while not eating, which is a very different list: roughly 25 to 30 mL of water per kilogram, one to two mEq per kilogram of sodium, and about half to one mEq per kilogram of potassium. Plain saline supplies the water and vastly more sodium and chloride than needed, no potassium at all, and no calories. The kidney keeps excreting potassium whether or not any is coming in, so the serum potassium drifts down over days. Meanwhile with no glucose arriving, insulin stays low, and the body turns to fat and then to muscle protein for fuel, which is where the ketones come from. Fifty grams of dextrose per liter is not nutrition, it is just enough to keep insulin high enough to slow that breakdown down.',
   clues:['Potassium 2.9 after three days with none supplied, while the kidney kept excreting it','Ketones in the urine with a normal glucose, which is fasting metabolism rather than diabetes','Chloride 110 from about 1100 mEq of chloride over three days','Maintenance needs are per kilogram per day, and none of them are met by plain saline'],
   branch:'Your chart needs to separate resuscitation from maintenance early, because the two questions have different right answers and mixing them is the most common everyday error on this list.'
 },
 {
   id:'ORD-11', name:'F. Castellanos', meta:'58 y / M / 70 kg', strip:'Ward · Post procedure · 15:30',
-  note:'Cirrhosis with recurrent ascites. Six litres removed by large volume paracentesis this afternoon. He felt better immediately, then over the next two hours became lightheaded, with blood pressure falling from 118 over 70 to 92 over 55 and heart rate rising.',
+  note:'Cirrhosis with recurrent ascites. Six liters removed by large volume paracentesis this afternoon. He felt better immediately, then over the next two hours became lightheaded, with blood pressure falling from 118 over 70 to 92 over 55 and heart rate rising.',
   rows:[['Albumin','2.1','g/dL','LOW','3.5 to 5.0'],['Sodium','131','mEq/L','LOW','135 to 145'],['Creatinine','1.5','mg/dL','HIGH','0.7 to 1.2'],['Bilirubin','3.2','mg/dL','HIGH','0.2 to 1.2'],['INR','1.6','','HIGH','0.9 to 1.1']],
   order:'5% albumin, 50 g intravenously.',
   add:'Ordered specifically because of the volume removed.',
   options:['Albumin works here by delivering sodium','Albumin is too large to cross the capillary wall freely, so it raises plasma oncotic pressure and holds water in the vascular space','Albumin is hypotonic and rehydrates cells','It is equivalent to the same volume of saline'],
   answer:1,
   fbTitle:'The one fluid on the shelf that works by a different mechanism',
-  fbBody:'Everything else in this lab moves water by osmolarity across cell membranes. Albumin works at a different barrier. The capillary wall is freely permeable to water and small ions but not to plasma proteins, so protein concentration is the one thing that differs meaningfully across it, and the resulting oncotic pressure is what holds water in the vascular space against the hydrostatic pressure pushing it out. He has two problems at once. His albumin was already low, so his oncotic pressure was low to begin with, and removing six litres of ascites dropped the abdominal pressure that had been partly supporting his circulation. Fluid then redistributes out of the vascular space into the space that was just emptied, and his effective blood volume falls. Albumin raises oncotic pressure where it is needed, which is why it outperforms an equal volume of saline in this specific situation even though saline is also isotonic.',
+  fbBody:'Everything else in this lab moves water by osmolarity across cell membranes. Albumin works at a different barrier. The capillary wall is freely permeable to water and small ions but not to plasma proteins, so protein concentration is the one thing that differs meaningfully across it, and the resulting oncotic pressure is what holds water in the vascular space against the hydrostatic pressure pushing it out. He has two problems at once. His albumin was already low, so his oncotic pressure was low to begin with, and removing six liters of ascites dropped the abdominal pressure that had been partly supporting his circulation. Fluid then redistributes out of the vascular space into the space that was just emptied, and his effective blood volume falls. Albumin raises oncotic pressure where it is needed, which is why it outperforms an equal volume of saline in this specific situation even though saline is also isotonic.',
   clues:['Albumin 2.1, so oncotic pressure was low before anything was removed','The relevant barrier here is the capillary wall, not the cell membrane','Saline crosses the capillary wall freely and distributes through the whole extracellular space','This is why the compartment model in section 4 flags albumin and refuses to model it the same way'],
   branch:'Mark on your chart where the question stops being about cell membranes and becomes about the capillary wall. They are different barriers with different rules, and a chart that treats them as one will get this patient wrong.'
 }
@@ -1259,7 +1259,7 @@ var CONSEQUENCES = [
  {n:'Widespread peripheral and periorbital edema with a normal blood pressure', s:'The patient looks puffy everywhere, has gained weight, and yet the blood pressure and heart rate are unremarkable.'},
  {n:'A potassium that rose during resuscitation', s:'The patient was resuscitated for shock and the repeat potassium came back higher than the first one.'},
  {n:'Hypokalemia after several days of maintenance fluid', s:'The patient was stable and not eating, and by day four the potassium had drifted well below range.'},
- {n:'No improvement in blood pressure after three litres', s:'Three litres went in, the patient is now visibly puffy, and the blood pressure has barely moved.'},
+ {n:'No improvement in blood pressure after three liters', s:'Three liters went in, the patient is now visibly puffy, and the blood pressure has barely moved.'},
  {n:'A metabolic alkalosis that kept getting worse', s:'The patient had been vomiting for days, was given fluid, and the bicarbonate climbed rather than settled.'},
  {n:'Severe phlebitis and loss of the peripheral line', s:'The vein above the cannula became hard, painful and cord like within hours of an infusion starting.'},
  {n:'Dilutional anemia and a coagulopathy after massive volume', s:'After a very large resuscitation the hemoglobin and the clotting studies both deteriorated without any new bleeding being found.'},

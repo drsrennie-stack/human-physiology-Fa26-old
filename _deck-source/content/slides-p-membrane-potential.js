@@ -9,7 +9,7 @@
 const FIG_IONS = `
 <svg viewBox="0 0 900 470" role="img" aria-labelledby="x1-t x1-d">
   <title id="x1-t">Where the four main ions sit across the cell membrane</title>
-  <desc id="x1-d">A wide diagram split by a vertical membrane band down the middle. The left side is labelled outside the cell, the right side is labelled inside the cell, and a narrow column on the far left names the ion. Values are in millimoles per liter. Potassium is 4 outside and 140 inside. Sodium is 145 outside and 12 inside. Chloride is 100 outside and 10 inside. Free calcium is 1.2 outside and 0.0001 inside. Potassium is the only one of the four that is higher inside than outside, and calcium shows the largest difference, about ten thousand fold.</desc>
+  <desc id="x1-d">A wide diagram split by a vertical membrane band down the middle. The left side is labeled outside the cell, the right side is labeled inside the cell, and a narrow column on the far left names the ion. Values are in millimoles per liter. Potassium is 4 outside and 140 inside. Sodium is 145 outside and 12 inside. Chloride is 100 outside and 10 inside. Free calcium is 1.2 outside and 0.0001 inside. Potassium is the only one of the four that is higher inside than outside, and calcium shows the largest difference, about ten thousand fold.</desc>
   <rect x="0" y="0" width="900" height="470" fill="#FFFFFF"/>
 
   <line x1="30" y1="178" x2="870" y2="178" stroke="#DCE0E6" stroke-width="2"/>
@@ -47,7 +47,7 @@ const FIG_IONS = `
 
 const FIG_TRACE = `
 <svg viewBox="0 0 900 520" role="img" aria-labelledby="x2-t x2-d">
-  <title id="x2-t">One membrane potential tracing with every phase labelled</title>
+  <title id="x2-t">One membrane potential tracing with every phase labeled</title>
   <desc id="x2-d">A graph of membrane potential in millivolts against time in milliseconds. The vertical axis runs from plus 40 at the top to minus 90 at the bottom, with marked lines at zero, at threshold of minus 55, and at the resting potential of minus 70. The trace sits flat at minus 70, rises past threshold, shoots steeply up to a peak of about plus 30 which is above zero and is called the overshoot, falls just as steeply back down through the resting line, dips to a trough of about minus 80 which is the hyperpolarization, then drifts slowly back up to minus 70 and stays there. Two ticks on the time axis mark zero milliseconds at the foot of the upstroke and three milliseconds where the trace has fallen back through the resting line, so the spike itself takes about three milliseconds.</desc>
   <rect x="0" y="0" width="900" height="520" fill="#FFFFFF"/>
 
@@ -262,7 +262,7 @@ module.exports = {
     {k:"table",
       kicker:"The numbers",
       h:"Learn these four rows and half of this course gets easier",
-      caption:"Typical concentrations in a human cell at 37 C, in mmol/L. Round numbers on purpose, because you will use them to estimate. Plasma chloride runs about 100 to 105 on a real chemistry panel and we round it to 100 here, and the calcium row is free ionised calcium on both sides, not the total calcium your lab reports.",
+      caption:"Typical concentrations in a human cell at 37 C, in mmol/L. Round numbers on purpose, because you will use them to estimate. Plasma chloride runs about 100 to 105 on a real chemistry panel and we round it to 100 here, and the calcium row is free ionized calcium on both sides, not the total calcium your lab reports.",
       cols:["Ion","Inside the cell","Outside the cell","Which side wins","Where you meet it"],
       rows:[
         ["K+","140","4","Inside, 35 to 1","Sets the resting potential"],

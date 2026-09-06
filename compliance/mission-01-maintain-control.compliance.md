@@ -28,7 +28,7 @@ Target: WCAG 2.2 Level AA minimum, Level AAA where achievable.
 | 1.1.1 Non text content | A | Pass | Both figures are inline SVG carrying `role="img"` and `aria-labelledby` pointing at a `title` and a `desc` inside the SVG. Automated test confirms both figures carry both elements and that every referenced id resolves inside its own SVG. |
 | 1.3.1 Info and relationships | A | Pass | Semantic `header`, `main` and `footer`, one each. One `section` per slide, 55 of them. Both comparison tables use `caption`, `thead` and `th[scope="col"]`, 6 column headers total. Figures use `figure` and `figcaption`. |
 | 1.3.2 Meaningful sequence | A | Pass | Single column reading order. Slides sit in the document in presentation order. A closed reveal body is hidden in place rather than moved. |
-| 1.4.1 Use of colour | A | Pass | Reveal cards carry their state in text as well as color. In the two figures, the compartment code is stated in the caption in words, solid teal border for inside cells and dashed maroon for outside cells, so the distinction survives monochrome printing and color vision deficiency. |
+| 1.4.1 Use of color | A | Pass | Reveal cards carry their state in text as well as color. In the two figures, the compartment code is stated in the caption in words, solid teal border for inside cells and dashed maroon for outside cells, so the distinction survives monochrome printing and color vision deficiency. |
 | 1.4.3 Contrast, minimum | AA | Pass | 20 unique text pairs swept on composited computed styles. Zero failures. See section 3. |
 | 1.4.6 Contrast, enhanced | AAA | Pass, no exception | Every one of the 20 pairs reaches the AAA threshold for its size. Lowest is 7.78:1. |
 | 1.4.10 Reflow | AA | Pass | Measured at 320, 375, 768, 1024 and 1440 CSS pixels. Horizontal overflow was 0 pixels at every width. Wide tables scroll inside their own focusable container carrying `role="group"` and an accessible name. |
@@ -47,7 +47,7 @@ Target: WCAG 2.2 Level AA minimum, Level AAA where achievable.
 | 4.1.2 Name, role, value | A | Pass | All 74 reveal cards carry `role="button"`, `tabindex="0"` and `aria-expanded`, confirmed by count: 74 of 74 on each attribute. Zero icon-only buttons lack an accessible name, measured by checking every `button` with empty text content for `aria-label`. |
 
 
-## 3. Colour contrast audit
+## 3. Color contrast audit
 
 Measured on computed styles in Chromium through Playwright, not read off a palette. Translucent foregrounds and backgrounds were composited against what actually sits behind them before measuring. Large text is judged at the 3:1 and 4.5:1 thresholds, normal text at 4.5:1 and 7:1.
 
@@ -181,7 +181,7 @@ That covers the structures a screen reader reads, but it does not confirm how th
 | Figure content is not tactile | Open | Both figures carry a `desc` that states the relationships in words, so the content is available without seeing the diagram. A student who needs a raised-line version should be routed through the campus accessibility office. |
 | Teaching canvas not screen reader tested | Open | A canvas is a visual tool by nature, and its controls are labeled, but the drawing itself is not exposed to a reader. Include it in the VoiceOver pass and note the outcome. |
 | Two DM Sans faces inlined but unused | Carried over | Engine level. Adds file size, no accessibility effect. Worth cleaning when the engine is next touched. |
-| Colour code in figures | Mitigated | Border style differs as well as color, solid versus dashed, and the caption states the code in words. |
+| Color code in figures | Mitigated | Border style differs as well as color, solid versus dashed, and the caption states the code in words. |
 
 
 ## 9. Reviewer

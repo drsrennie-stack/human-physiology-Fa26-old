@@ -490,7 +490,7 @@ function seeded(seed) {
 
 /* =====================================================================
    REFERENCE EQUATIONS
-   ECSC / Quanjer 1993 adult equations. Height in metres, age in years.
+   ECSC / Quanjer 1993 adult equations. Height in meters, age in years.
    Format: [height coefficient, age coefficient, constant, residual SD]
    These are height and age based with no race term. Current clinical
    practice uses the GLI global equations, which are also race neutral.
@@ -631,7 +631,7 @@ var CONDITIONS = {
     pct: { FVC: 94, FEV1: 95, TLC: 96, RV: 100, PEF: 94, DL: 52 },
     bd: { FEV1: 2, FVC: 2 }, loop: 'normal',
     story: 'Breathlessness on exertion with a completely normal chest film.',
-    teach: 'Spirometry and lung volumes are normal, and the only abnormal number on the whole report is diffusing capacity. When the airways and the volumes are fine, the problem is on the blood side of the membrane, so this pattern sends you toward pulmonary hypertension, chronic clot, or anaemia.'
+    teach: 'Spirometry and lung volumes are normal, and the only abnormal number on the whole report is diffusing capacity. When the airways and the volumes are fine, the problem is on the blood side of the membrane, so this pattern sends you toward pulmonary hypertension, chronic clot, or anemia.'
   }
 };
 var CONDITION_KEYS = Object.keys(CONDITIONS);
@@ -932,7 +932,7 @@ var GLOSSARY = {
   'permissive hypercapnia': 'Deliberately letting carbon dioxide run high, because the small breaths that cause it are safer for the lung.',
   'weaning': 'The process of getting someone off the ventilator, tested with a practice run of breathing on their own.',
   'baroreceptor': 'A stretch sensor in the wall of a big artery that reports blood pressure to the brain.',
-  'haemoglobin': 'The protein inside red blood cells that carries oxygen. Sometimes spelled hemoglobin.'
+  'hemoglobin': 'The protein inside red blood cells that carries oxygen. Sometimes spelled hemoglobin.'
 };
 var termSeq = 0;
 function wireTerms(root) {
@@ -1129,7 +1129,7 @@ function spirogramSVG(v, opts) {
   }
   s += '<line x1="' + x0 + '" y1="' + y0 + '" x2="' + x0 + '" y2="' + y1 + '" stroke="#0A1322" stroke-width="1.5"/>';
   s += '<line x1="' + x0 + '" y1="' + y1 + '" x2="' + x1 + '" y2="' + y1 + '" stroke="#0A1322" stroke-width="1.5"/>';
-  s += '<text x="' + (x0 - 44) + '" y="' + ((y0 + y1) / 2) + '" font-size="12" font-weight="700" fill="#0A1322" font-family="Plus Jakarta Sans" transform="rotate(-90 ' + (x0 - 44) + ' ' + ((y0 + y1) / 2) + ')" text-anchor="middle">Volume (litres)</text>';
+  s += '<text x="' + (x0 - 44) + '" y="' + ((y0 + y1) / 2) + '" font-size="12" font-weight="700" fill="#0A1322" font-family="Plus Jakarta Sans" transform="rotate(-90 ' + (x0 - 44) + ' ' + ((y0 + y1) / 2) + ')" text-anchor="middle">Volume (liters)</text>';
   s += '<text x="' + ((x0 + x1) / 2) + '" y="' + (y1 + 30) + '" font-size="12" font-weight="700" fill="#0A1322" font-family="Plus Jakarta Sans" text-anchor="middle">Time</text>';
   /* level guides */
   [['TLC', TLC], ['FRC', FRC], ['RV', RV]].forEach(function (lv) {
@@ -1141,12 +1141,12 @@ function spirogramSVG(v, opts) {
 
   /* brackets */
   var cols = { A: 575, B: 640, C: 700, D: 758 };
-  function bracket(id, colX, lo, hi, label, colour) {
+  function bracket(id, colX, lo, hi, label, color) {
     var yl = Y(lo), yh = Y(hi), mid = (yl + yh) / 2;
     var grp = '<g class="brk" data-brk="' + id + '" tabindex="0" role="button" aria-label="Bracket ' + (opts.blind ? id : label) + '">';
     grp += '<rect x="' + (colX - 16) + '" y="' + fmt(yh - 2, 1) + '" width="46" height="' + fmt(Math.max(10, yl - yh + 4), 1) + '" fill="transparent" pointer-events="all"/>';
-    grp += '<path d="M' + (colX + 8) + ' ' + fmt(yh, 1) + ' H' + colX + ' V' + fmt(yl, 1) + ' H' + (colX + 8) + '" fill="none" stroke="' + colour + '" stroke-width="2"/>';
-    grp += '<text class="brk-label" x="' + (colX + 13) + '" y="' + fmt(mid + 4, 1) + '" font-size="12" font-weight="800" fill="' + colour + '" font-family="Plus Jakarta Sans">' + (opts.blind ? id : label) + '</text>';
+    grp += '<path d="M' + (colX + 8) + ' ' + fmt(yh, 1) + ' H' + colX + ' V' + fmt(yl, 1) + ' H' + (colX + 8) + '" fill="none" stroke="' + color + '" stroke-width="2"/>';
+    grp += '<text class="brk-label" x="' + (colX + 13) + '" y="' + fmt(mid + 4, 1) + '" font-size="12" font-weight="800" fill="' + color + '" font-family="Plus Jakarta Sans">' + (opts.blind ? id : label) + '</text>';
     grp += '</g>';
     return grp;
   }
@@ -1215,8 +1215,8 @@ function loopSVG(cfg) {
   }
   s += '<line x1="' + x0 + '" y1="' + ymid + '" x2="' + x1 + '" y2="' + ymid + '" stroke="#0A1322" stroke-width="1.5"/>';
   s += '<line x1="' + x0 + '" y1="' + ytop + '" x2="' + x0 + '" y2="' + ybot + '" stroke="#0A1322" stroke-width="1.5"/>';
-  s += '<text x="' + ((x0 + x1) / 2) + '" y="' + (ybot + 36) + '" text-anchor="middle" font-size="12" font-weight="700" fill="#0A1322" font-family="Plus Jakarta Sans">Volume exhaled (litres)</text>';
-  s += '<text x="18" y="' + ((ytop + ybot) / 2) + '" transform="rotate(-90 18 ' + ((ytop + ybot) / 2) + ')" text-anchor="middle" font-size="12" font-weight="700" fill="#0A1322" font-family="Plus Jakarta Sans">Flow (litres per second)</text>';
+  s += '<text x="' + ((x0 + x1) / 2) + '" y="' + (ybot + 36) + '" text-anchor="middle" font-size="12" font-weight="700" fill="#0A1322" font-family="Plus Jakarta Sans">Volume exhaled (liters)</text>';
+  s += '<text x="18" y="' + ((ytop + ybot) / 2) + '" transform="rotate(-90 18 ' + ((ytop + ybot) / 2) + ')" text-anchor="middle" font-size="12" font-weight="700" fill="#0A1322" font-family="Plus Jakarta Sans">Flow (liters per second)</text>';
   s += '<text x="' + (x0 + 6) + '" y="' + (ytop + 14) + '" font-size="11" font-weight="700" fill="#6E5018" font-family="Plus Jakarta Sans">Breathing out</text>';
   s += '<text x="' + (x0 + 6) + '" y="' + (ybot - 6) + '" font-size="11" font-weight="700" fill="#2C5F66" font-family="Plus Jakarta Sans">Breathing in</text>';
 
@@ -1287,7 +1287,7 @@ var TEST_CARDS = [
   { abb: 'FEV1 / FVC', name: 'The ratio', what: 'The fraction of the vital capacity that gets out in one second, normally around 0.75 to 0.85 in adults and higher in children.', low: 'Below the lower limit of normal means obstruction. This one comparison is the first branch of every interpretation.' },
   { abb: 'FEF 25 to 75', name: 'Mid expiratory flow', what: 'Average flow across the middle half of the blow, when effort matters least.', low: 'Sensitive to small airway disease but very variable, so it supports an interpretation rather than making one on its own.' },
   { abb: 'PEF', name: 'Peak expiratory flow', what: 'The highest flow reached, in the first fraction of a second.', low: 'Effort dependent, which is why it is the number on the handheld meter people with asthma use at home rather than a diagnostic number.' },
-  { abb: 'DLCO', name: 'Diffusing capacity for carbon monoxide', what: 'How well gas crosses from alveolus into blood, tested with a single breath of a tiny amount of carbon monoxide.', low: 'Low when alveolar surface is destroyed, when the interstitium is scarred, when the capillary bed is lost, or simply when the patient is anaemic. High with alveolar bleeding, polycythemia, or asthma.' },
+  { abb: 'DLCO', name: 'Diffusing capacity for carbon monoxide', what: 'How well gas crosses from alveolus into blood, tested with a single breath of a tiny amount of carbon monoxide.', low: 'Low when alveolar surface is destroyed, when the interstitium is scarred, when the capillary bed is lost, or simply when the patient is anemic. High with alveolar bleeding, polycythemia, or asthma.' },
   { abb: 'RV / TLC', name: 'Residual volume as a fraction of total', what: 'How much of the fully inflated lung is air that cannot be moved.', low: 'Normally under about 35 percent in young adults, rising with age. A high value is the fingerprint of air trapping.' }
 ];
 
@@ -1482,7 +1482,7 @@ function learnPanel() {
     ]),
     el('p', { html: 'So the three hidden values get measured three other ways.' }),
     el('ul', { class: 'tight', html:
-      '<li><strong>Helium dilution.</strong> You rebreathe a closed circuit holding a known amount of helium. The helium spreads out into your lungs and gets watered down. How much it fades tells you the volume it spread into. Pour a cup of juice into a big pitcher and the colour barely changes. Small pitcher, bright colour.</li>' +
+      '<li><strong>Helium dilution.</strong> You rebreathe a closed circuit holding a known amount of helium. The helium spreads out into your lungs and gets watered down. How much it fades tells you the volume it spread into. Pour a cup of juice into a big pitcher and the color barely changes. Small pitcher, bright color.</li>' +
       '<li><strong>Nitrogen washout.</strong> You breathe pure oxygen and the machine collects all the nitrogen that comes out. Your lungs started about 79 percent nitrogen, so the amount collected tells you the starting volume.</li>' +
       '<li><strong>Body box.</strong> You sit in a sealed clear booth and pant against a closed shutter. Squeezing the gas in your chest changes the pressure in the box very slightly, and that gives away how much gas is in there.</li>' }),
     predict(
@@ -1656,9 +1656,9 @@ function learnPanel() {
   root.appendChild(sec('s8', 'The extras that separate look alike diseases', [
     el('p', { html: 'Two people can have almost the same spirometry and completely different diseases. Three extra numbers do the separating.' }),
     el('h3', { text: 'Diffusing capacity' }),
-    el('p', { html: 'One breath in with a trace of carbon monoxide. Hold ten seconds. Blow out. Whatever went missing crossed into the blood. Carbon monoxide is used because <t>haemoglobin</t> grabs it so fast that the answer depends on the membrane, not on how fast blood is flowing past.' }),
+    el('p', { html: 'One breath in with a trace of carbon monoxide. Hold ten seconds. Blow out. Whatever went missing crossed into the blood. Carbon monoxide is used because <t>hemoglobin</t> grabs it so fast that the answer depends on the membrane, not on how fast blood is flowing past.' }),
     el('div', { class: 'grid g2' }, [
-      el('div', { class: 'surface' }, [el('h4', { text: 'Lower than expected' }), el('ul', { class: 'tight', style: 'margin-bottom:0', html: '<li>Emphysema, walls destroyed</li><li>Fibrosis, scar in the way</li><li>Clot or pulmonary hypertension, capillary bed lost</li><li>Anaemia, which is not a lung problem at all</li>' })]),
+      el('div', { class: 'surface' }, [el('h4', { text: 'Lower than expected' }), el('ul', { class: 'tight', style: 'margin-bottom:0', html: '<li>Emphysema, walls destroyed</li><li>Fibrosis, scar in the way</li><li>Clot or pulmonary hypertension, capillary bed lost</li><li>Anemia, which is not a lung problem at all</li>' })]),
       el('div', { class: 'surface' }, [el('h4', { text: 'Higher than expected' }), el('ul', { class: 'tight', style: 'margin-bottom:0', html: '<li>Bleeding into the alveoli</li><li>Extra red cells</li><li>Asthma and obesity</li><li>Exercise</li>' })])
     ]),
     predict(
@@ -1717,7 +1717,7 @@ function learnPanel() {
       el('ol', { class: 'tight', style: 'margin-bottom:0', html:
         '<li><strong>Ratio first.</strong> 49 against a lower limit of 67. Below it, so this is <t>obstruction</t>. Nothing else on the page can change that.</li>' +
         '<li><strong>TLC second.</strong> 8.42 L against a lower limit of 5.75 L. Not low, it is high. So no restriction. In fact 122 percent of predicted is <t>hyperinflation</t>, the lungs are holding air they should have let go.</li>' +
-        '<li><strong>Severity from FEV1.</strong> 42 percent of predicted, which grades as severe. Severity always uses FEV1 against predicted, never the ratio and never the raw litres.</li>' +
+        '<li><strong>Severity from FEV1.</strong> 42 percent of predicted, which grades as severe. Severity always uses FEV1 against predicted, never the ratio and never the raw liters.</li>' +
         '<li><strong>Air trapping.</strong> RV is 195 percent of predicted, and makes up 47 percent of TLC. Nearly half this man\'s full lungs is air he cannot move.</li>' +
         '<li><strong>Gas transfer.</strong> DLCO 46 percent of predicted. The walls have been destroyed, not just the airways narrowed. That is emphysema rather than pure bronchitis.</li>' +
         '<li><strong>Reversibility.</strong> After a puff his FEV1 rises 5 percent. Nowhere near the threshold. The narrowing is structural, not muscle that can be relaxed.</li>' }),
@@ -1759,7 +1759,7 @@ function learnPanel() {
       el('ol', { class: 'tight recap', style: 'margin-bottom:0', html:
         '<li><strong>Ratio first.</strong> FEV1 divided by FVC, below the lower limit, means obstruction. Nothing else defines it.</li>' +
         '<li><strong>TLC second.</strong> Below the lower limit means restriction. A low FVC on its own cannot say.</li>' +
-        '<li><strong>Severity from FEV1</strong> as a percent of predicted. Not the ratio, not the litres.</li>' +
+        '<li><strong>Severity from FEV1</strong> as a percent of predicted. Not the ratio, not the liters.</li>' +
         '<li><strong>DLCO separates diseases that look alike.</strong> Obstruction plus low DLCO is emphysema. Obstruction plus normal DLCO is asthma or bronchitis.</li>' +
         '<li><strong>Below the lower limit means unusual, not sick.</strong> Five in a hundred healthy people are below it.</li>' +
         '<li><strong>Look at the shape, not only the table.</strong> A boxed off loop is a narrow windpipe, and the numbers alone will not tell you.</li>' +
@@ -1780,7 +1780,7 @@ function learnPanel() {
   if (lc) {
     var normalGhost = ghostPath({ FVC: 4.8, PEF: 9.5, ratio: 80, type: 'normal', axisMax: 6, flowMax: 11 });
     lc.innerHTML =
-      '<figure class="fig">' + loopSVG({ FVC: 3.2, PEF: 5.2, ratio: 46, type: 'obstruct', axisMax: 6, flowMax: 11, ghost: normalGhost, label: 'Obstructive flow volume loop, scooped' }) + '<figcaption>Obstruction. Grey dashed is the healthy comparison. Flow falls away fast and the curve caves inward.</figcaption></figure>' +
+      '<figure class="fig">' + loopSVG({ FVC: 3.2, PEF: 5.2, ratio: 46, type: 'obstruct', axisMax: 6, flowMax: 11, ghost: normalGhost, label: 'Obstructive flow volume loop, scooped' }) + '<figcaption>Obstruction. Gray dashed is the healthy comparison. Flow falls away fast and the curve caves inward.</figcaption></figure>' +
       '<figure class="fig">' + loopSVG({ FVC: 2.6, PEF: 6.8, ratio: 88, type: 'restrict', axisMax: 6, flowMax: 11, ghost: normalGhost, label: 'Restrictive flow volume loop, narrow' }) + '<figcaption>Restriction. Same shape as healthy, drawn small. Stiff lungs recoil hard, so flow holds up well for the volume available.</figcaption></figure>';
   }
 
@@ -1934,7 +1934,7 @@ function volumesPanel() {
       placed++; updateCount();
       fb.innerHTML = '<strong>Correct. </strong>' + m.name + ' is bracket ' + labelId + '. ' + m.hint;
       if (placed === 8) {
-        fb.innerHTML += '<br><br><strong>All eight placed.</strong> Every capacity you just matched is simply volumes added together, which is why there is nothing new to memorise once the four volumes are in place.';
+        fb.innerHTML += '<br><br><strong>All eight placed.</strong> Every capacity you just matched is simply volumes added together, which is why there is nothing new to memorize once the four volumes are in place.';
         done.labels = true; checkDone();
       }
     } else {
@@ -2128,7 +2128,7 @@ function capacityTask(onDone) {
 
     var t = el('table');
     var head = '<caption>Lung volume study, four values missing</caption>' +
-      '<thead><tr><th>Value</th><th class="num">Litres</th><th>How you got it</th></tr></thead><tbody>';
+      '<thead><tr><th>Value</th><th class="num">Liters</th><th>How you got it</th></tr></thead><tbody>';
     var body = '';
     ROWS.forEach(function (r) {
       var isGiven = set.given.indexOf(r.k) >= 0;
@@ -2149,7 +2149,7 @@ function capacityTask(onDone) {
       var id = 'cap-' + r.k;
       var inp = el('input', {
         type: 'number', step: '0.01', min: '0', id: id, inputmode: 'decimal',
-        'aria-label': r.name + ' in litres', style: 'max-width:120px;text-align:right'
+        'aria-label': r.name + ' in liters', style: 'max-width:120px;text-align:right'
       });
       inp.disabled = !unlocked;
       inputs[r.k] = inp;
@@ -2370,7 +2370,7 @@ function spiroPanel() {
 
     var figs = el('div', { class: 'grid g2' });
     var f1 = el('figure', { class: 'fig' });
-    f1.innerHTML = P.loopSVG(loopCfg) + '<figcaption>Flow volume loop. The dashed grey outline is this patient\'s own predicted loop, so the gap between the two is the disease.</figcaption>';
+    f1.innerHTML = P.loopSVG(loopCfg) + '<figcaption>Flow volume loop. The dashed gray outline is this patient\'s own predicted loop, so the gap between the two is the disease.</figcaption>';
     var f2 = el('figure', { class: 'fig' });
     f2.innerHTML = volumeTimeSVG(p) + '<figcaption>Volume against time for the forced blow. The mark at one second is FEV1. Where the curve flattens is FVC.</figcaption>';
     figs.appendChild(f1); figs.appendChild(f2);
@@ -2514,7 +2514,7 @@ function volumeTimeSVG(p) {
   s += '<line x1="' + x0 + '" y1="' + y0 + '" x2="' + x0 + '" y2="' + y1 + '" stroke="#0A1322" stroke-width="1.5"/>';
   s += '<line x1="' + x0 + '" y1="' + y1 + '" x2="' + x1 + '" y2="' + y1 + '" stroke="#0A1322" stroke-width="1.5"/>';
   s += '<text x="' + ((x0 + x1) / 2) + '" y="' + (y1 + 38) + '" text-anchor="middle" font-size="12" font-weight="700" fill="#0A1322" font-family="Plus Jakarta Sans">Time (seconds)</text>';
-  s += '<text x="18" y="' + ((y0 + y1) / 2) + '" transform="rotate(-90 18 ' + ((y0 + y1) / 2) + ')" text-anchor="middle" font-size="12" font-weight="700" fill="#0A1322" font-family="Plus Jakarta Sans">Volume exhaled (litres)</text>';
+  s += '<text x="18" y="' + ((y0 + y1) / 2) + '" transform="rotate(-90 18 ' + ((y0 + y1) / 2) + ')" text-anchor="middle" font-size="12" font-weight="700" fill="#0A1322" font-family="Plus Jakarta Sans">Volume exhaled (liters)</text>';
   /* one second marker */
   var v1 = p.meas.FEV1;
   s += '<line x1="' + fmt(X(1), 1) + '" y1="' + y1 + '" x2="' + fmt(X(1), 1) + '" y2="' + fmt(Y(v1), 1) + '" stroke="#6E5018" stroke-width="1.5" stroke-dasharray="4 3"/>';
@@ -2582,7 +2582,7 @@ var CASES = [
       options: [
         'Carbon monoxide is being blocked by mucus in the large airways',
         'Alveolar walls and their capillaries have been destroyed, so there is less surface for gas to cross',
-        'The patient is anaemic',
+        'The patient is anemic',
         'Hyperinflation stretches the membrane and speeds up diffusion'
       ], correct: 1,
       explain: 'Emphysema is destruction of alveolar septa. Losing the septa means losing both surface area and the capillaries inside them, so gas transfer falls. That is why a smoker with obstruction and a low DLCO is described as having emphysema, while one with obstruction and a preserved DLCO is described as having chronic bronchitis.'
@@ -2621,7 +2621,7 @@ var CASES = [
         'The restriction is coming from outside the lung tissue',
         'There is no restriction at all',
         'The patient must also have asthma',
-        'The DLCO test was not corrected for haemoglobin'
+        'The DLCO test was not corrected for hemoglobin'
       ], correct: 0,
       explain: 'The lung tissue is healthy, which is why gas transfer is normal. What is limited is the space the lung has to expand into, because abdominal weight pushes the diaphragm up. Expiratory reserve volume and functional residual capacity take the hardest hit, which is exactly why breathlessness gets worse lying flat.'
     },
@@ -2687,13 +2687,13 @@ var CASES = [
         'On the blood side of the alveolar capillary membrane',
         'The report must be a laboratory error'
       ], correct: 2,
-      explain: 'If the airways move air normally and the lungs are the right size, an isolated fall in gas transfer has to come from the membrane or the blood behind it. That short list is pulmonary vascular disease, chronic clot, early interstitial disease before volumes fall, and plain anaemia. It is one of the few patterns where a single number carries the whole message.'
+      explain: 'If the airways move air normally and the lungs are the right size, an isolated fall in gas transfer has to come from the membrane or the blood behind it. That short list is pulmonary vascular disease, chronic clot, early interstitial disease before volumes fall, and plain anemia. It is one of the few patterns where a single number carries the whole message.'
     },
     q3: {
       stem: 'Before calling this pulmonary vascular disease, which simple blood result must be checked?',
-      options: ['White cell count', 'Haemoglobin', 'Sodium', 'Platelets'],
+      options: ['White cell count', 'Hemoglobin', 'Sodium', 'Platelets'],
       correct: 1,
-      explain: 'Diffusing capacity depends on how much haemoglobin is available to bind carbon monoxide. An anaemic patient with completely healthy lungs will have a low DLCO. Every laboratory corrects the value for haemoglobin before anyone calls it abnormal, and skipping that step sends patients for scans they never needed.'
+      explain: 'Diffusing capacity depends on how much hemoglobin is available to bind carbon monoxide. An anemic patient with completely healthy lungs will have a low DLCO. Every laboratory corrects the value for hemoglobin before anyone calls it abnormal, and skipping that step sends patients for scans they never needed.'
     }
   },
   {
@@ -2774,7 +2774,7 @@ function interpretPanel() {
       axisMax: axisMax, flowMax: flowMax,
       ghost: P.ghostPath({ FVC: p.pred.FVC, PEF: p.pred.PEF, ratio: p.pred.RATIO, type: 'normal', axisMax: axisMax, flowMax: flowMax }),
       label: 'Flow volume loop for case ' + c.id
-    }) + '<figcaption>Dashed grey is this patient\'s predicted loop.</figcaption>';
+    }) + '<figcaption>Dashed gray is this patient\'s predicted loop.</figcaption>';
     body.push(figc);
 
     var slot2 = el('div'), slot3 = el('div');
@@ -2894,7 +2894,7 @@ function severinghausSat(pO2) {
   return 1 / (23400 / (Math.pow(pO2, 3) + 150 * pO2) + 1);
 }
 /* solve arterial oxygen tension from oxygen content, including the
-   dissolved fraction, so the answer keeps rising once haemoglobin
+   dissolved fraction, so the answer keeps rising once hemoglobin
    is fully saturated instead of flattening out at 100 percent */
 function pO2FromContent(content, Hb, ceiling) {
   var lo = 1, hi = Math.max(60, ceiling), mid;
@@ -2910,7 +2910,7 @@ var VENT_SCENARIOS = {
   postop: {
     name: 'Post operative, healthy lungs', sex: 'm', age: 54, height: 178,
     Crs: 70, Raw: 8, shunt0: 0.05, recruit: 0.001, VCO2: 200, dsF: 1.0, Hb: 13.5, HCO3: 24,
-    story: 'Intubated for a long abdominal operation, still sedated, lungs are normal. The ventilator is doing the work while the anaesthetic wears off.',
+    story: 'Intubated for a long abdominal operation, still sedated, lungs are normal. The ventilator is doing the work while the anesthetic wears off.',
     teaching: 'This is the baseline. Compliance near 70 and resistance near 8 are what healthy lungs and a normal endotracheal tube look like. Every abnormal patient below is a change in one of those two numbers.'
   },
   ardsModerate: {
@@ -3059,7 +3059,7 @@ function waveformSVG(sc, s, o) {
     dF += (i ? 'L' : 'M') + fmt(X(t), 1) + ' ' + fmt(YF(fl), 1) + ' ';
   }
 
-  var s2 = '<svg viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="Ventilator waveforms. Pressure against time on top, flow against time below. Peak inspiratory pressure ' + Math.round(o.PIP) + ', plateau pressure ' + Math.round(o.Pplat) + ', auto PEEP ' + fmt(o.autoPEEP, 1) + ' centimetres of water.">';
+  var s2 = '<svg viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="Ventilator waveforms. Pressure against time on top, flow against time below. Peak inspiratory pressure ' + Math.round(o.PIP) + ', plateau pressure ' + Math.round(o.Pplat) + ', auto PEEP ' + fmt(o.autoPEEP, 1) + ' centimeters of water.">';
   /* pressure panel */
   s2 += '<text x="' + x0 + '" y="16" font-size="12" font-weight="800" fill="#0A1322" font-family="Plus Jakarta Sans">Pressure (cmH2O)</text>';
   for (var pg = 0; pg <= Pmax; pg += 10) {
@@ -3103,11 +3103,11 @@ function waveformSVG(sc, s, o) {
    --------------------------------------------------------------------- */
 var MODES = [
   ['Assist control, volume (AC/VC)', 'You set the tidal volume, the rate and the flow. Every breath, whether the ventilator starts it or the patient does, delivers that same volume.', 'Volume is guaranteed, so minute ventilation and carbon dioxide are predictable. Pressure is whatever the lungs make it, so it has to be watched.', 'The default in most intensive care units, and the mode used in the trials that defined lung protective ventilation.'],
-  ['Assist control, pressure (AC/PC)', 'You set an inspiratory pressure and an inspiratory time. Volume is whatever that pressure can push in.', 'Pressure is capped by design, which protects the lung, but volume drifts as compliance changes. A patient getting stiffer quietly gets smaller breaths.', 'Useful when pressures are the main worry, and common in paediatrics and in severe ARDS.'],
-  ['SIMV', 'A set number of mandatory breaths, with the patient free to take extra breaths of their own in between, usually helped by pressure support.', 'Mixes two kinds of breath in one minute. Once popular for weaning, now largely displaced because it did not shorten weaning and can increase work of breathing.', 'Still seen, so it is worth recognising on the screen.'],
+  ['Assist control, pressure (AC/PC)', 'You set an inspiratory pressure and an inspiratory time. Volume is whatever that pressure can push in.', 'Pressure is capped by design, which protects the lung, but volume drifts as compliance changes. A patient getting stiffer quietly gets smaller breaths.', 'Useful when pressures are the main worry, and common in pediatrics and in severe ARDS.'],
+  ['SIMV', 'A set number of mandatory breaths, with the patient free to take extra breaths of their own in between, usually helped by pressure support.', 'Mixes two kinds of breath in one minute. Once popular for weaning, now largely displaced because it did not shorten weaning and can increase work of breathing.', 'Still seen, so it is worth recognizing on the screen.'],
   ['Pressure support (PSV)', 'Every breath is started by the patient. The ventilator boosts each one with a set pressure and stops when flow falls off.', 'There is no set rate, so this only works in someone with a reliable drive to breathe. It is the standard weaning mode.', 'A spontaneous breathing trial is usually done on low pressure support or on a T piece.'],
   ['PRVC and other adaptive modes', 'You set a target volume, the ventilator delivers pressure controlled breaths and adjusts the pressure breath by breath to hit that volume.', 'Tries to give the volume guarantee of one mode with the pressure profile of the other. It can mask a patient who is deteriorating by silently raising pressure.', 'Branded under many names by different manufacturers.'],
-  ['CPAP and BiPAP, non invasive', 'Delivered by a mask rather than a tube. CPAP holds one steady pressure, BiPAP holds a higher pressure on the way in and a lower one on the way out.', 'The difference between the two BiPAP pressures is what moves air, so it is what clears carbon dioxide. CPAP alone mostly helps oxygenation and holds airways open.', 'First line in COPD flares and cardiogenic pulmonary oedema, and it prevents a large share of intubations.']
+  ['CPAP and BiPAP, non invasive', 'Delivered by a mask rather than a tube. CPAP holds one steady pressure, BiPAP holds a higher pressure on the way in and a lower one on the way out.', 'The difference between the two BiPAP pressures is what moves air, so it is what clears carbon dioxide. CPAP alone mostly helps oxygenation and holds airways open.', 'First line in COPD flares and cardiogenic pulmonary edema, and it prevents a large share of intubations.']
 ];
 var SETTINGS = [
   ['Tidal volume', 'Vt', 'The size of each breath, set in millilitres. Prescribed at 6 mL per kilogram of predicted body weight in most patients, with 4 to 8 as the working range.', 'Predicted body weight comes from height and sex, never from actual weight. A tall thin person and a short heavy person of the same weight need very different breaths, and using actual weight is how people get injured.'],
@@ -3172,7 +3172,7 @@ function ventPanel() {
     '<strong>Volume control</strong> promises an amount of air. You will get exactly this much, whatever pressure it takes to push it in. The amount is guaranteed, the pressure is not, so somebody has to watch the pressure.',
     '<strong>Pressure control</strong> promises a push. The machine pushes exactly this hard for exactly this long, and you get whatever air that push happens to move. The pressure is guaranteed, the amount is not, so somebody has to watch the amount.',
     'It is the difference between saying give me two cups of water and saying pour for three seconds. One controls what you get, the other controls what you do.',
-    '<strong>Pressure support</strong> means the patient starts every breath themselves and the machine just helps. No help if they do not breathe, so this only works in someone who is definitely breathing. It is how people practise before the tube comes out.',
+    '<strong>Pressure support</strong> means the patient starts every breath themselves and the machine just helps. No help if they do not breathe, so this only works in someone who is definitely breathing. It is how people practice before the tube comes out.',
     '<strong>BiPAP and CPAP</strong> do all this through a mask instead of a tube. CPAP holds one steady pressure the whole time. BiPAP pushes harder when you breathe in and eases off when you breathe out, and that difference between the two is what actually moves air.'
   ]));
   root.appendChild(el('h2', { text: 'The settings you actually turn' }));
@@ -3205,7 +3205,7 @@ function ventPanel() {
         fx('PBW<sub>male</sub> &nbsp;=&nbsp; 50 + 2.3 &times; (height<sub>in</sub> &minus; 60)', 'Height and sex only, never actual weight.', [['PBW', 'predicted body weight in kg'], ['height<sub>in</sub>', 'height in inches, so cm divided by 2.54']], ['Lungs finish growing and then stay that size. Gaining weight does not grow them.', 'So breath size is worked out from height. Start at 50 kg for a person 5 feet tall, then add 2.3 kg for every inch above that. Someone 5 foot 10 is 10 inches over, so 50 plus 23, about 73 kg.', 'Using real weight instead is how a heavy patient gets a breath far too big for the lungs they actually have.']),
         fx('PBW<sub>female</sub> &nbsp;=&nbsp; 45.5 + 2.3 &times; (height<sub>in</sub> &minus; 60)', [['PBW', 'predicted body weight in kg']]),
         fx('V<sub>T</sub> target &nbsp;=&nbsp; 6 mL &times; PBW', 'Range 4 to 8 mL/kg.', [['V<sub>T</sub>', 'tidal volume, the size of one machine breath']], ['Six millilitres of air for every kilogram of that predicted weight. A 70 kg predicted weight gets about 420 mL a breath.', 'It sounds small, and that is the point. Injured lungs are not stiff everywhere, they are small, so a normal sized breath crams into the healthy part and overstretches it.']),
-        fx('V<sub>E</sub> &nbsp;=&nbsp; V<sub>T</sub> &times; RR', 'Minute ventilation sets PaCO<sub>2</sub>.', [['V<sub>E</sub>', 'minute ventilation, litres per minute'], ['RR', 'respiratory rate, breaths per minute']], ['How much air moves in a minute is the size of each breath multiplied by how many you take.', 'That total is what clears carbon dioxide. Too much CO2 in the blood means move more air, so bigger breaths or more of them.']),
+        fx('V<sub>E</sub> &nbsp;=&nbsp; V<sub>T</sub> &times; RR', 'Minute ventilation sets PaCO<sub>2</sub>.', [['V<sub>E</sub>', 'minute ventilation, liters per minute'], ['RR', 'respiratory rate, breaths per minute']], ['How much air moves in a minute is the size of each breath multiplied by how many you take.', 'That total is what clears carbon dioxide. Too much CO2 in the blood means move more air, so bigger breaths or more of them.']),
         fx('V<sub>A</sub> &nbsp;=&nbsp; (V<sub>T</sub> &minus; V<sub>D</sub>) &times; RR', 'Alveolar ventilation. Why rapid shallow breathing moves less air than it looks like.', [['V<sub>A</sub>', 'alveolar ventilation'], ['V<sub>D</sub>', 'dead space, air that fills tubes and never reaches an alveolus']], ['Part of every breath never gets anywhere useful. It fills the windpipe and the tubing and comes straight back out. That wasted part is dead space, roughly 150 mL in an adult.', 'So subtract the wasted part from each breath first, then multiply by the rate.', 'This is why fast shallow breathing is so inefficient. If dead space is 150 and the breath is 200, only 50 mL of each breath is useful. Take a 500 mL breath and 350 is useful, seven times more, from a breath only two and a half times bigger.']),
         fx('&Delta;P &nbsp;=&nbsp; P<sub>plat</sub> &minus; PEEP<sub>total</sub>', 'Driving pressure. Target under 15.', [['&Delta;P', 'driving pressure'], ['P<sub>plat</sub>', 'plateau pressure, measured on an inspiratory hold'], ['PEEP', 'pressure held at the end of a breath out']], ['PEEP is the pressure the lung already sits at before the breath starts. Plateau is where it ends up at the top of the breath.', 'The difference is how far the lung actually got stretched. That stretch is what injures lungs, so keeping it under 15 matters more than the raw breath size.'])
       ]),
@@ -3213,10 +3213,10 @@ function ventPanel() {
         fx('C<sub>stat</sub> &nbsp;=&nbsp; ' + frac('V<sub>T</sub>', 'P<sub>plat</sub> &minus; PEEP'), 'Static compliance. Normal 60 to 80 mL/cmH<sub>2</sub>O.', [['C<sub>stat</sub>', 'static compliance, mL per cmH<sub>2</sub>O'], ['V<sub>T</sub>', 'tidal volume']], ['How much air do you get for each unit of push? That is all compliance means.', 'A floppy balloon gives a lot of air for a small push, so compliance is high. A stiff one gives barely any. Under 30 is a genuinely stiff lung.']),
         fx('R<sub>aw</sub> &nbsp;=&nbsp; ' + frac('PIP &minus; P<sub>plat</sub>', 'flow'), 'The peak to plateau gap is pure resistance.', [['R<sub>aw</sub>', 'airway resistance'], ['PIP', 'peak inspiratory pressure, measured while air is moving']], ['Resistance only exists while something is moving. Hold the breath so nothing moves and the resistance part of the pressure vanishes.', 'So whatever the pressure drops by during the hold was the effort spent pushing air through the tubes. Divide by how fast the air was going and you have resistance.']),
         fx('&tau; &nbsp;=&nbsp; C &times; R', 'Time constant. Emptying needs about 3&tau;.', [['&tau;', 'tau, the time constant in seconds'], ['C', 'compliance'], ['R', 'resistance']], ['A floppy lung holds a lot of air, and narrow tubes let it out slowly. Multiply those together and you get how long the lung takes to empty.', 'One time constant empties 63 percent of the breath, two gets 86, three gets 95. Three is close enough, so that is the minimum time to allow for breathing out.', 'Narrow airways make tau long, which is exactly why an asthmatic on a ventilator needs the rate slowed down.']),
-        fx('P<sub>A</sub>O<sub>2</sub> &nbsp;=&nbsp; FiO<sub>2</sub> &times; (P<sub>atm</sub> &minus; 47) &minus; ' + frac('PaCO<sub>2</sub>', 'R'), 'Alveolar gas equation, R = 0.8.', [['P<sub>A</sub>O<sub>2</sub>', 'oxygen pressure inside the alveolus'], ['FiO<sub>2</sub>', 'fraction of the gas that is oxygen'], ['P<sub>atm</sub>', 'atmospheric pressure, 760 mmHg at sea level'], ['47', 'pressure of water vapour the airway adds'], ['R', 'respiratory quotient, about 0.8']], ['This works out how much oxygen pressure should be sitting inside the air sacs, which you cannot measure directly.', 'Start with total air pressure. Subtract 47, because the airway soaks the air and water vapour takes up room. Take the oxygen share of what is left.', 'Then subtract a bit more, because carbon dioxide coming out of the blood also takes up space in there.']),
+        fx('P<sub>A</sub>O<sub>2</sub> &nbsp;=&nbsp; FiO<sub>2</sub> &times; (P<sub>atm</sub> &minus; 47) &minus; ' + frac('PaCO<sub>2</sub>', 'R'), 'Alveolar gas equation, R = 0.8.', [['P<sub>A</sub>O<sub>2</sub>', 'oxygen pressure inside the alveolus'], ['FiO<sub>2</sub>', 'fraction of the gas that is oxygen'], ['P<sub>atm</sub>', 'atmospheric pressure, 760 mmHg at sea level'], ['47', 'pressure of water vapor the airway adds'], ['R', 'respiratory quotient, about 0.8']], ['This works out how much oxygen pressure should be sitting inside the air sacs, which you cannot measure directly.', 'Start with total air pressure. Subtract 47, because the airway soaks the air and water vapor takes up room. Take the oxygen share of what is left.', 'Then subtract a bit more, because carbon dioxide coming out of the blood also takes up space in there.']),
         fx('A&ndash;a &nbsp;=&nbsp; P<sub>A</sub>O<sub>2</sub> &minus; PaO<sub>2</sub>', 'Localises the problem to the alveolus or past it.', [['A', 'alveolar, the calculated value'], ['a', 'arterial, the measured blood value']], ['Work out how much oxygen should be in the air sacs, then measure how much actually made it into the blood. The gap is the toll charged by the crossing.', 'A small gap means the crossing is fine, so if oxygen is low, not enough air is arriving.', 'A big gap means oxygen is in the air sacs but is not getting across, so the problem is the membrane or the blood flow past it.']),
         fx('P/F &nbsp;=&nbsp; ' + frac('PaO<sub>2</sub>', 'FiO<sub>2</sub>'), 'Divide by the fraction, not the percentage. Under 100 is the severe band.', [['PaO<sub>2</sub>', 'measured arterial oxygen, mmHg'], ['FiO<sub>2</sub>', 'oxygen fraction, so 0.5 not 50']], ['An oxygen level of 80 sounds the same whether someone is on room air or pure oxygen, but those are completely different situations.', 'So divide what they achieved by how much help they were given. 80 on 100 percent oxygen scores 80. 80 on 21 percent scores 380, and that person has far healthier lungs.', 'The classic mistake is dividing by 50 instead of 0.5.']),
-        fx('RSBI &nbsp;=&nbsp; ' + frac('RR', 'V<sub>T (L)</sub>'), 'Over about 105 predicts a failed weaning trial.', [['RSBI', 'rapid shallow breathing index'], ['V<sub>T (L)</sub>', 'tidal volume in litres, so 300 mL is 0.3']], ['Someone who is coping breathes slowly and deeply. Someone running out of steam pants, taking lots of tiny fast breaths, exactly like the end of a hard run.', 'So divide the rate by the breath size. Panting gives a big top number over a small bottom number, so the answer comes out high. Over about 105 means they cannot keep this up.'])
+        fx('RSBI &nbsp;=&nbsp; ' + frac('RR', 'V<sub>T (L)</sub>'), 'Over about 105 predicts a failed weaning trial.', [['RSBI', 'rapid shallow breathing index'], ['V<sub>T (L)</sub>', 'tidal volume in liters, so 300 mL is 0.3']], ['Someone who is coping breathes slowly and deeply. Someone running out of steam pants, taking lots of tiny fast breaths, exactly like the end of a hard run.', 'So divide the rate by the breath size. Panting gives a big top number over a small bottom number, so the answer comes out high. Over about 105 means they cannot keep this up.'])
       ])
     ])
   ]));
@@ -3279,11 +3279,11 @@ function ventPanel() {
   root.appendChild(P.disclosure('Weaning: how someone gets off the machine', [
     el('p', { html: '<t>Weaning</t> is a question the team asks every morning, not a one time event. Four things get checked.' }), el('ul', { class: 'tight', html: '<li>Has the reason they were intubated actually improved?</li><li>Are the oxygen needs modest now?</li><li>Are they awake enough to protect their own airway?</li><li>Is their blood pressure stable?</li>' }),
     el('p', { html: 'If the answer is yes, they get a <strong>spontaneous breathing trial</strong>, usually 30 minutes on low pressure support or a T piece. During it the team watches rate, tidal volume, comfort, heart rate and saturation.' }),
-    el('p', { html: 'The <strong>rapid shallow breathing index</strong> is respiratory rate divided by tidal volume in litres. Under about 105 predicts success, above it predicts failure, because a tiring patient takes fast small breaths. A patient breathing 30 times a minute with 250 mL breaths scores 120 and is telling you they cannot keep this up.' }),
+    el('p', { html: 'The <strong>rapid shallow breathing index</strong> is respiratory rate divided by tidal volume in liters. Under about 105 predicts success, above it predicts failure, because a tiring patient takes fast small breaths. A patient breathing 30 times a minute with 250 mL breaths scores 120 and is telling you they cannot keep this up.' }),
     P.eli([
       'Coming off the machine is a question the team asks every single morning, not a one time event.',
       'The test is simple. Turn the help almost all the way down and watch them breathe on their own for half an hour. It is a practice run.',
-      'What gives someone away is the pattern. A person who is coping takes normal sized, unhurried breaths. A person who is running out of steam takes lots of tiny fast ones, exactly the way you pant at the end of a hard run. There is even a number for it: breaths per minute divided by the size of each breath in litres. Over about 105 and they are telling you they cannot keep this up.',
+      'What gives someone away is the pattern. A person who is coping takes normal sized, unhurried breaths. A person who is running out of steam takes lots of tiny fast ones, exactly the way you pant at the end of a hard run. There is even a number for it: breaths per minute divided by the size of each breath in liters. Over about 105 and they are telling you they cannot keep this up.',
       'Passing the practice run is not the whole story though. They also have to be awake enough to protect their own airway and able to cough properly, because the tube was doing both of those jobs for them.'
     ]),
     el('p', { style: 'margin-bottom:0', class: 'note', text: 'Passing the trial is not the same as being ready to extubate. Airway protection, cough strength and secretion load are separate questions, and a cuff leak test is used when airway swelling is a concern.' })
@@ -3416,7 +3416,7 @@ function ventSimulator() {
     { key: 'mainstem', label: 'The tube slips into the right mainstem bronchus', raw: 1.15, crs: 0.45,
       correct: 0, explain: 'The whole tidal volume is now going into one lung, so the effective compliance halves and both pressures rise. Check the tube depth and listen for absent breath sounds on the left.' },
     { key: 'ardsWorse', label: 'The ARDS worsens overnight', raw: 1, crs: 0.6,
-      correct: 0, explain: 'Peak and plateau rose together over hours rather than seconds. A gradual compliance fall fits worsening lung injury or oedema rather than a mechanical event.' },
+      correct: 0, explain: 'Peak and plateau rose together over hours rather than seconds. A gradual compliance fall fits worsening lung injury or edema rather than a mechanical event.' },
     { key: 'bronchospasm', label: 'Severe bronchospasm', raw: 2.6, crs: 0.92,
       correct: 1, explain: 'Peak pressure jumped and plateau moved only slightly. Narrowed airways are a resistance problem. Treat with bronchodilators, and watch for trapping because the time constant just got longer.' }
   ];
@@ -3538,7 +3538,7 @@ function alarmChartCard() {
   var card = el('div', { class: 'card' }, [
     el('p', { class: 'kicker', text: 'The algorithm card' }),
     el('h3', { text: 'Something changed. Follow the chart and find it.' }),
-    el('p', { text: 'Same idea as an ACLS card. Answer the question in the box, click the branch, and follow it down to the cause. Every alarm you are dealt is generated fresh, so the answer changes each time and there is no pattern to memorise.' }),
+    el('p', { text: 'Same idea as an ACLS card. Answer the question in the box, click the branch, and follow it down to the cause. Every alarm you are dealt is generated fresh, so the answer changes each time and there is no pattern to memorize.' }),
     scene, host,
     el('div', { class: 'btnrow' }, [
       el('button', { class: 'btn sec', type: 'button', text: 'Give me another alarm', onclick: deal })
@@ -3766,7 +3766,7 @@ var PFT_CHART = {
     dlco: {
       q: 'Last box. Is diffusing capacity below its lower limit of normal?',
       hint: function (p) {
-        return 'This patient: DLCO <strong>' + fmt(p.meas.DL, 1) + '</strong> against a lower limit of <strong>' + fmt(p.lln.DL, 1) + '</strong>, which is ' + Math.round(100 * p.meas.DL / p.pred.DL) + ' percent of predicted. Check the blood count before calling it abnormal, because anaemia lowers it with healthy lungs.';
+        return 'This patient: DLCO <strong>' + fmt(p.meas.DL, 1) + '</strong> against a lower limit of <strong>' + fmt(p.lln.DL, 1) + '</strong>, which is ' + Math.round(100 * p.meas.DL / p.pred.DL) + ' percent of predicted. Check the blood count before calling it abnormal, because anemia lowers it with healthy lungs.';
       },
       opts: [
         { key: 'yes', tag: 'Yes', label: 'Gas transfer is reduced' },
@@ -3781,7 +3781,7 @@ var PFT_CHART = {
         if (!low && obstructed) return 'Obstruction with preserved gas transfer points at asthma or chronic bronchitis, where the airways are the problem and the alveolar membrane is intact.';
         if (low && small) return 'Restriction with reduced gas transfer points into the lung tissue itself, which means interstitial disease.';
         if (!low && small) return 'Restriction with preserved gas transfer points outside the lung, so think chest wall, abdominal loading, or respiratory muscle weakness.';
-        if (low) return 'Normal mechanics with an isolated fall in gas transfer is a short list: pulmonary vascular disease, chronic clot, early interstitial disease, or plain anaemia.';
+        if (low) return 'Normal mechanics with an isolated fall in gas transfer is a short list: pulmonary vascular disease, chronic clot, early interstitial disease, or plain anemia.';
         return 'Mechanics normal and gas transfer normal. This is a normal study.';
       },
       next: { yes: 'final', no: 'final' }
@@ -3821,7 +3821,7 @@ function severityAnswer(p) {
   return 'verysevere';
 }
 function severityExplain(p) {
-  return 'FEV1 is ' + Math.round(100 * p.meas.FEV1 / p.pred.FEV1) + ' percent of predicted. Severity always uses FEV1 against predicted, never the ratio, and never the raw litres.';
+  return 'FEV1 is ' + Math.round(100 * p.meas.FEV1 / p.pred.FEV1) + ' percent of predicted. Severity always uses FEV1 against predicted, never the ratio, and never the raw liters.';
 }
 function severityNext(target) {
   return { mild: target, moderate: target, modsev: target, severe: target, verysevere: target };
@@ -3869,7 +3869,7 @@ var VENT_CHART = {
       hint: 'Work from the machine to the patient: circuit, tube, airways.',
       opts: [
         { key: 'suction', tag: 'A', label: 'Secretions, a kinked or bitten tube, or bronchospasm' },
-        { key: 'ptx', tag: 'B', label: 'Pneumothorax or pulmonary oedema' },
+        { key: 'ptx', tag: 'B', label: 'Pneumothorax or pulmonary edema' },
         { key: 'abdo', tag: 'C', label: 'Abdominal distension pressing on the diaphragm' }
       ],
       answer: function () { return 'suction'; },
@@ -3889,7 +3889,7 @@ var VENT_CHART = {
       answer: function (ctx) { return ctx.sudden ? 'sudden' : 'gradual'; },
       explain: function (ctx) {
         return ctx.sudden
-          ? 'Sudden stiffness with haemodynamic collapse is a mechanical event, not a disease progressing.'
+          ? 'Sudden stiffness with hemodynamic collapse is a mechanical event, not a disease progressing.'
           : 'A slow fall in compliance over hours fits the underlying lung process getting worse rather than something mechanical happening to the patient.';
       },
       next: { sudden: 'endSudden', gradual: 'endGradual' }
@@ -3907,7 +3907,7 @@ var VENT_CHART = {
     endGradual: {
       terminal: true,
       result: 'The lung process is worsening',
-      detail: 'Worsening oedema, worsening ARDS, or abdominal distension pushing up on the diaphragm. Recheck the tidal volume against predicted body weight, bring the plateau back under 30 and the driving pressure under 15, and treat the cause.'
+      detail: 'Worsening edema, worsening ARDS, or abdominal distension pushing up on the diaphragm. Recheck the tidal volume against predicted body weight, bring the plateau back under 30 and the driving pressure under 15, and treat the cause.'
     }
   }
 };
@@ -3978,14 +3978,14 @@ var BANK = [
   { o: 'calc', q: 'Tidal volume is 480 mL, plateau pressure is 26 cmH2O and PEEP is 8 cmH2O. What is the static compliance?', a: ['18 mL per cmH2O', '27 mL per cmH2O', '60 mL per cmH2O', '480 mL per cmH2O'], c: 1,
     e: 'Compliance is tidal volume divided by driving pressure. Driving pressure is plateau minus PEEP, which is 26 minus 8, so 18. Then 480 divided by 18 is about 27 mL per cmH2O. That is a stiff lung, in the range seen in moderate to severe ARDS.' },
   { o: 'calc', q: 'A patient breathes 32 times a minute with a tidal volume of 260 mL during a spontaneous breathing trial. What is the rapid shallow breathing index, and what does it predict?', a: ['123, which predicts failure to wean', '83, which predicts success', '8.3, which predicts success', '32, which is not interpretable'], c: 0,
-    e: 'The index is rate divided by tidal volume in litres, so 32 divided by 0.26 is about 123. Values above roughly 105 predict failure, because a tiring patient takes fast shallow breaths. This is one number that tells you to stop the trial and let the patient rest.' },
+    e: 'The index is rate divided by tidal volume in liters, so 32 divided by 0.26 is about 123. Values above roughly 105 predict failure, because a tiring patient takes fast shallow breaths. This is one number that tells you to stop the trial and let the patient rest.' },
 
   { o: 'gas', q: 'Which finding best separates emphysema from asthma when both show obstruction?', a: ['Peak expiratory flow', 'FVC', 'Diffusing capacity for carbon monoxide', 'Respiratory rate'], c: 2,
     e: 'Emphysema destroys alveolar walls and the capillaries inside them, so gas transfer falls. Asthma is an airway disease with an intact membrane, so gas transfer stays normal or even runs slightly high. This single value does more diagnostic work here than anything else on the report.' },
   { o: 'gas', q: 'A patient has restriction with a normal diffusing capacity. Which cause is most consistent?', a: ['Interstitial fibrosis', 'Obesity or chest wall limitation', 'Emphysema', 'Pulmonary embolism'], c: 1,
     e: 'When the restriction comes from outside the lung, the lung tissue is normal and gas transfer is preserved. Fibrosis puts scar between gas and blood, so it lowers diffusing capacity along with the volumes. That split, restriction with normal transfer against restriction with low transfer, is one of the most useful branches in the whole interpretation.' },
-  { o: 'gas', q: 'A patient has a low DLCO with completely normal spirometry and lung volumes. Which should be checked before ordering imaging?', a: ['Haemoglobin', 'Serum potassium', 'Peak flow at home', 'Chest wall circumference'], c: 0,
-    e: 'Diffusing capacity depends on how much haemoglobin is available to bind carbon monoxide, so anaemia lowers the result in a patient with perfectly healthy lungs. Every lab corrects for haemoglobin before calling it abnormal.' },
+  { o: 'gas', q: 'A patient has a low DLCO with completely normal spirometry and lung volumes. Which should be checked before ordering imaging?', a: ['Hemoglobin', 'Serum potassium', 'Peak flow at home', 'Chest wall circumference'], c: 0,
+    e: 'Diffusing capacity depends on how much hemoglobin is available to bind carbon monoxide, so anemia lowers the result in a patient with perfectly healthy lungs. Every lab corrects for hemoglobin before calling it abnormal.' },
   { o: 'gas', q: 'Why does raising PEEP improve oxygenation more than raising FiO2 in a patient with a large shunt?', a: ['PEEP increases cardiac output', 'PEEP opens collapsed alveoli so blood passing them can be oxygenated, while shunted blood never meets the extra oxygen at all', 'Oxygen is toxic above 40 percent', 'PEEP lowers carbon dioxide'], c: 1,
     e: 'Shunt means blood passing lung that is not ventilated. That blood never sees the inspired gas, so making the gas richer does very little for it. Recruiting those alveoli so they participate again is what actually fixes the problem, and that is what PEEP does.' },
   { o: 'gas', q: 'A ventilated patient has a PaO2 of 70 mmHg on an FiO2 of 0.7. What is the P to F ratio and what does it mean?', a: ['100, severe ARDS range', '49, severe ARDS range', '140, moderate ARDS range', '490, normal'], c: 0,
@@ -4002,10 +4002,10 @@ var BANK = [
   { o: 'vset', q: 'What does BiPAP add over CPAP for a patient retaining carbon dioxide?', a: ['A higher oxygen concentration', 'A difference between inspiratory and expiratory pressure, which actively moves air and clears carbon dioxide', 'Continuous positive pressure to hold airways open', 'A guaranteed respiratory rate'], c: 1,
     e: 'CPAP holds one steady pressure, which helps oxygenation and keeps airways open but does not move air by itself. In BiPAP the gap between the higher inspiratory pressure and the lower expiratory pressure is what pushes each breath in, so it is the difference between the two that clears carbon dioxide.' },
 
-  { o: 'vtrouble', q: 'Peak inspiratory pressure has risen from 28 to 44 cmH2O. Plateau pressure is unchanged at 22. What is the most likely problem?', a: ['A pneumothorax', 'Worsening pulmonary oedema', 'Secretions or bronchospasm narrowing the airways', 'The tidal volume was increased'], c: 2,
+  { o: 'vtrouble', q: 'Peak inspiratory pressure has risen from 28 to 44 cmH2O. Plateau pressure is unchanged at 22. What is the most likely problem?', a: ['A pneumothorax', 'Worsening pulmonary edema', 'Secretions or bronchospasm narrowing the airways', 'The tidal volume was increased'], c: 2,
     e: 'Resistance only exists while gas is moving, so a rise that shows up in peak pressure but not in plateau pressure is an airway problem, not a lung problem. Suction, check the tube for kinking or biting, and listen for bronchospasm.' },
   { o: 'vtrouble', q: 'Peak pressure has risen from 30 to 46 and plateau pressure has risen from 20 to 38, with a sudden fall in blood pressure. What must be excluded immediately?', a: ['A mucus plug', 'A tension pneumothorax', 'Circuit disconnection', 'Oversedation'], c: 1,
-    e: 'Both pressures rising together means compliance has fallen, so the lung or the space around it changed. A sudden onset with haemodynamic collapse is a tension pneumothorax until proven otherwise, and it is decompressed on clinical grounds rather than waiting for a chest film.' },
+    e: 'Both pressures rising together means compliance has fallen, so the lung or the space around it changed. A sudden onset with hemodynamic collapse is a tension pneumothorax until proven otherwise, and it is decompressed on clinical grounds rather than waiting for a chest film.' },
   { o: 'vtrouble', q: 'On the flow waveform, expiratory flow has not returned to zero when the next breath begins. What does this show?', a: ['A leak in the circuit', 'Air trapping with auto PEEP', 'A blocked expiratory valve requiring immediate replacement', 'Excessive PEEP set on the machine'], c: 1,
     e: 'Flow that is still running out when the next breath starts means the lung never finished emptying, so volume and pressure stack up breath after breath. That trapped pressure is auto PEEP. It is measured on an expiratory hold, and it is treated with a longer expiratory time, most simply by lowering the rate.' },
   { o: 'vtrouble', q: 'A ventilated patient becomes agitated and is fighting the ventilator. Their auto PEEP is 12 cmH2O. Why might more sedation be the wrong first move?', a: ['Sedation is always contraindicated', 'They have to generate 12 cmH2O of effort before the ventilator even senses them trying to breathe, so the agitation is a mechanical problem', 'Sedation raises carbon dioxide', 'Agitation always means pain'], c: 1,
@@ -4083,7 +4083,7 @@ function renderReport() {
   function pctOf(b) { return b.asked ? Math.round(100 * b.right / b.asked) : null; }
   var sections = [
     ['Predictions and checks while studying', pr.study],
-    ['Lung volumes labelled on the tracing', pr.volumeLabels],
+    ['Lung volumes labeled on the tracing', pr.volumeLabels],
     ['Capacity calculations and concept checks', pr.capacityCalc],
     ['Patterns read in the spirometry simulator', pr.spiroReads],
     ['Guided interpretation cases', pr.cases],

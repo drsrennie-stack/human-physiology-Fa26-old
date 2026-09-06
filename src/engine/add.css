@@ -102,7 +102,7 @@
 /* =====================================================================
    WORKED STEPS
    The spine of the anti shortcut design. A step that is not open yet
-   says so in words, not by going grey and silent.
+   says so in words, not by going gray and silent.
    ===================================================================== */
 .ws{display:grid;gap:14px;margin:16px 0 0}
 .ws-rule{background:var(--navy);color:#fff;border-radius:12px;padding:14px 18px;font-size:.92rem;line-height:1.55;margin:0 0 16px}

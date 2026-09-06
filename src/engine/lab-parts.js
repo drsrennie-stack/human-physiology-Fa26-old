@@ -385,7 +385,7 @@ L.calcTable = calcTable;
 /* =====================================================================
    PLOTTING
    One generic x against y figure. Weeks hand it curves, shaded bands and
-   labelled points, and get back an SVG string with real axes, units and
+   labeled points, and get back an SVG string with real axes, units and
    a text alternative.
    ===================================================================== */
 function xy(cfg) {
@@ -462,7 +462,7 @@ function xy(cfg) {
       ' stroke-linecap="round" stroke-linejoin="round"/>';
   });
 
-  /* labelled points */
+  /* labeled points */
   (cfg.marks || []).forEach(function (m) {
     var cx = px(m.x), cy = py(m.y);
     s += '<circle cx="' + fmt(cx, 1) + '" cy="' + fmt(cy, 1) + '" r="6" fill="' + (m.color || C.navy) + '" stroke="#fff" stroke-width="2"/>';

@@ -135,7 +135,7 @@ function workedSteps(cfg) {
       return;
     }
 
-    /* wrong. Name the specific misunderstanding if we can recognise it. */
+    /* wrong. Name the specific misunderstanding if we can recognize it. */
     r.misses++;
     r.input.classList.add('bad');
     r.fb.hidden = false;
@@ -290,7 +290,7 @@ L.eliminate = eliminate;
 /* =====================================================================
    DECOYS
    Other readings recorded on the same shift. They are plausible, they
-   are labelled as other patients, and they are not this student's
+   are labeled as other patients, and they are not this student's
    numbers. A page scrape, a select all, or a screenshot pasted into a
    chatbot carries them along with the real reading, and nothing in the
    markup says which is which.

@@ -28,7 +28,7 @@ Target: WCAG 2.2 Level AA minimum, Level AAA where achievable.
 | 1.1.1 Non text content | A | Pass | The 4 figures in this deck are inline SVG carrying `role="img"` and `aria-labelledby` pointing at a `title` and a `desc` inside the SVG. Automated test confirms every referenced id resolves and that every figure has both elements. The brand mark is the only other graphic; it sits inside a link that carries its own `aria-label`, and the SVG is `aria-hidden="true"` and `focusable="false"` so it is not announced twice. |
 | 1.3.1 Info and relationships | A | Pass | Semantic `header`, `main` and `footer`, with one `section` per slide. All three comparison tables use `thead`, `th` and a `caption`. Figures use `figure` and `figcaption`. |
 | 1.3.2 Meaningful sequence | A | Pass | Single column reading order. Slides sit in the document in the order they are presented, and Present mode only changes which one is displayed, never the order. A closed reveal body is hidden in place, not moved. |
-| 1.4.1 Use of colour | A | Pass | A reveal card that has not been opened says "Tap to open". Once opened it shows a tick and the word "opened". The state is in the text as well as in the background, so colour never carries it alone. The coloured cells in the comparison tables are words already, and read the same in monochrome. |
+| 1.4.1 Use of color | A | Pass | A reveal card that has not been opened says "Tap to open". Once opened it shows a tick and the word "opened". The state is in the text as well as in the background, so color never carries it alone. The colored cells in the comparison tables are words already, and read the same in monochrome. |
 | 1.4.3 Contrast, minimum | AA | Pass | See section 3. Zero failures across the full sweep, in three interaction states. |
 | 1.4.6 Contrast, enhanced | AAA | Pass, no exception | Every text pair reaches 7:1. The lowest is the gold eyebrow on the maroon header at 7.78:1. This is the one place these decks differ from every other document in this folder, all of which report that pair at 5.75:1 and AA only. |
 | 1.4.10 Reflow | AA | Pass | Measured at 320, 375, 768, 1024 and 1440 CSS pixels. Document scrollWidth equals viewport width at every one, so the page body never scrolls sideways. Wide tables scroll inside their own container, which is focusable and carries `role="group"` with an accessible name. |
@@ -43,13 +43,13 @@ Target: WCAG 2.2 Level AA minimum, Level AAA where achievable.
 | 2.5.8 Target size, minimum | AA | Pass | The present bar buttons are at least 44 by 44. The zoom close button is 38px tall and the timer buttons, the smallest controls in the file, are 34px. A reveal card is a full card sized target. Read from the stylesheet rather than measured in the browser. |
 | 2.2.1 Timing adjustable | A | Pass | Nothing is timed, capped or locked. The 5 slides that carry a suggested time set the presenter's timer when they are shown. The timer counts, and nothing happens when it reaches zero. |
 | 2.3.3 Animation from interaction | AAA | Pass | The card lift, the zoom transition, the reveal fade and the timer pulse are all reduced to effectively zero under `prefers-reduced-motion: reduce`. |
-| 3.2.3 Consistent navigation | AA | Pass | All five decks in this generation are written by one script from one engine, so the header, the keyboard hint line, the present bar and the timer are in the same place with the same behaviour on every deck. |
+| 3.2.3 Consistent navigation | AA | Pass | All five decks in this generation are written by one script from one engine, so the header, the keyboard hint line, the present bar and the timer are in the same place with the same behavior on every deck. |
 | 3.2.4 Consistent identification | AA | Pass | "Tap to open", the tick and "opened", the competency line and the lab annotation mean the same thing on every slide and in every deck, because one generator writes all of them. |
 | 4.1.2 Name, role, value | A | Pass | Every reveal card and row is `role="button"` with `tabindex="0"` and an `aria-expanded` that tracks state in both directions. The zoom layer is `role="dialog"` with `aria-modal="true"` and an accessible name. The four icon only controls, previous slide, next slide, take thirty seconds off and add thirty seconds, each carry an `aria-label`. |
 
-## 3. Colour contrast audit
+## 3. Color contrast audit
 
-Measured on computed styles in Chromium 141 through Playwright, not read off a palette. Translucent surfaces were composited against what sits behind them before measuring, so the present bar and the timer face are measured against the colour that actually renders rather than the colour that was written. The sweep ran in three interaction states: cards at rest, cards marked opened, and cards open.
+Measured on computed styles in Chromium 141 through Playwright, not read off a palette. Translucent surfaces were composited against what sits behind them before measuring, so the present bar and the timer face are measured against the color that actually renders rather than the color that was written. The sweep ran in three interaction states: cards at rest, cards marked opened, and cards open.
 
 **Zero failures at AA. Zero failures at AAA.** Every text pair in the deck, lowest ratio first.
 
@@ -88,7 +88,7 @@ Measured on computed styles in Chromium 141 through Playwright, not read off a p
 
 1. **The slide number was `#555F70`, which measured 6.45:1 on white.** It met AA and failed AAA. Darkened to `#454E5E`, now 8.39:1 on white and 8.03:1 on a paper slide.
 2. **The gold card label was `#6B5214`.** On a white card that measures 7.39:1 and passes. Once a card is marked opened its background becomes `#EDF1F3`, and the same label drops to 6.50:1 and fails AAA. This is a state dependent failure that a single pass sweep would not catch, which is exactly why the sweep runs in three states. Darkened to `#5A4511`, now 8.05:1 on the opened card and 9.15:1 on white. **The same defect is still present in the existing Introduction to Physiology deck, which still uses `#6B5214`.** It should be corrected there.
-3. **The lab annotation label had the same problem and took the same colour.** It sits on the same `#EDF1F3` tint at rest, so it was failing AAA in its ordinary state rather than only in an opened one.
+3. **The lab annotation label had the same problem and took the same color.** It sits on the same `#EDF1F3` tint at rest, so it was failing AAA in its ordinary state rather than only in an opened one.
 
 ## 3b. The reveal cards, Present mode and the zoom dialog
 
@@ -96,7 +96,7 @@ This section describes the shared engine. Every deck in this generation behaves 
 
 **Reveal cards.** Every card and every icon row is a `role="button"` with `tabindex="0"` and an `aria-expanded` that tracks state in both directions. The card's heading stays visible and only its body hides, so a card reads as a prompt with a hidden payoff rather than as an empty box. The practical consequence for access is that a screen reader user can survey a whole slide, heading by heading, without opening anything, and then open the one that matters.
 
-**State is signalled by text as well as by colour.** An unopened card carries the words "Tap to open". An opened one carries a tick and the word "opened". The background also changes, but the background is never the only signal.
+**State is signaled by text as well as by color.** An unopened card carries the words "Tap to open". An opened one carries a tick and the word "opened". The background also changes, but the background is never the only signal.
 
 **Present mode** is entered from a button in the header or by putting `present` in the URL. It hides the page chrome, shows one slide at a time, and puts a progress bar and a present bar on screen. Exiting restores the scrolling document and returns focus to the Present button.
 
@@ -111,7 +111,7 @@ This section describes the shared engine. Every deck in this generation behaves 
 1. Where the four main ions sit across the cell membrane
 2. Resting potential against extracellular potassium, measured against the Nernst prediction
 3. The four channel types and what opens each one
-4. One membrane potential tracing with every phase labelled
+4. One membrane potential tracing with every phase labeled
 
 **The three comparison tables.**
 
@@ -158,7 +158,7 @@ Verified through the accessibility tree in Chromium and by structural audit of t
 
 Two honest notes on what this does and does not cover. There are no live regions in the deck apart from the timer readout, and a slide change in Present mode is not announced; this is recorded as a known limitation in section 8. And a pass with JAWS and with VoiceOver on a real machine has not been done, on this deck or on any other deliverable in this folder.
 
-## 6. Print behaviour
+## 6. Print behavior
 
 Verified with print media emulation rather than assumed from the stylesheet.
 

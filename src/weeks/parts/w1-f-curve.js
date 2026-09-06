@@ -15,7 +15,7 @@ var P50 = { normal: 26.6, right: 31.5, left: 22.0 };
 var SHIFT_TEXT = {
   normal: 'Normal blood, at 37 degrees and a pH of 7.4.',
   right: 'A right shift. Hot, acidic, high carbon dioxide. Working muscle makes all three.',
-  left: 'A left shift. Cold, alkaline, low carbon dioxide. Also fetal haemoglobin, which is left shifted on purpose.'
+  left: 'A left shift. Cold, alkaline, low carbon dioxide. Also fetal hemoglobin, which is left shifted on purpose.'
 };
 
 function pts(p50) {
@@ -47,7 +47,7 @@ function fig(state) {
   return L.xy({
     h: 430,
     x: { min: 0, max: 110, label: 'Oxygen pressure in the blood, PO2 (mmHg)', ticks: [0, 20, 40, 60, 80, 100] },
-    y: { min: 0, max: 100, label: 'Haemoglobin saturation (%)', ticks: [0, 20, 40, 60, 80, 100] },
+    y: { min: 0, max: 100, label: 'Hemoglobin saturation (%)', ticks: [0, 20, 40, 60, 80, 100] },
     series: series, marks: marks, guides: guides,
     aria: 'Oxygen dissociation curve, ' + state.shift + ' position. ' +
       (state.po2 != null ? 'An oxygen pressure of ' + state.po2 + ' gives a saturation of ' + fmt(hill(state.po2, p50), 0) + ' percent.' : 'No point selected.')
@@ -62,7 +62,7 @@ function curvePanel() {
   root.appendChild(el('div', { class: 'panel-intro' }, [
     el('h2', { text: 'The oxygen curve' }),
     para('One figure, poked at from several directions. Pick an oxygen pressure and see where it lands. Then slide the whole curve and see what that same pressure is worth.'),
-    note('Everything on this page is the same curve you met on the study page. Nothing new to memorise, just somewhere to try it out.')
+    note('Everything on this page is the same curve you met on the study page. Nothing new to memorize, just somewhere to try it out.')
   ]));
 
   var figBox = el('figure', { class: 'fig' });
@@ -88,8 +88,8 @@ function curvePanel() {
 
   function draw() {
     figBox.innerHTML = fig(state) + '<figcaption>' + (state.shift === 'normal'
-      ? 'The normal curve. The gold dashed line marks the P50, where haemoglobin is exactly half loaded.'
-      : 'Red line, the shifted curve you are reading now. The pale grey line behind it is the normal curve, kept on screen so the size of the shift is visible.') +
+      ? 'The normal curve. The gold dashed line marks the P50, where hemoglobin is exactly half loaded.'
+      : 'Red line, the shifted curve you are reading now. The pale gray line behind it is the normal curve, kept on screen so the size of the shift is visible.') +
       '</figcaption>';
     L.$$('[data-po2]', po2Row).forEach(function (b) {
       b.setAttribute('aria-pressed', parseInt(b.getAttribute('data-po2'), 10) === state.po2 ? 'true' : 'false');
@@ -149,7 +149,7 @@ function curvePanel() {
 
   /* ---- the four questions ---- */
   root.appendChild(L.chartCard({
-    title: 'The oxygen haemoglobin dissociation curve',
+    title: 'The oxygen hemoglobin dissociation curve',
     figHTML: W.curveSVG({ marks: true, cliff: true }),
     caption: 'The shaded band on the left is the steep part, where saturation falls fast for small further drops in pressure.',
     intro: 'Answer the four questions in your own words first, then work through these.',
@@ -159,7 +159,7 @@ function curvePanel() {
         stem: 'Why is the top of the curve flat, and what does that mean for a pulse oximeter reading of 96 percent?',
         options: [
           'It is flat because the oximeter is inaccurate at high readings',
-          'It is flat because haemoglobin is nearly full, so 96 percent could sit anywhere across a wide range of oxygen pressures',
+          'It is flat because hemoglobin is nearly full, so 96 percent could sit anywhere across a wide range of oxygen pressures',
           'It is flat because oxygen stops dissolving in plasma above a pressure of 60',
           'It is flat because the lungs limit how much oxygen can be absorbed'
         ],
@@ -175,7 +175,7 @@ function curvePanel() {
           'It does not shift, only 2,3-BPG shifts the curve'
         ],
         correct: 1,
-        explain: 'Heat and acid both loosen haemoglobin\'s grip, which shifts the curve right. Working tissue produces both, so the blood arriving there gives up more oxygen without anyone sending a signal. Loading in the lung is barely affected, because the lung sits on the flat part where there is margin to spare.'
+        explain: 'Heat and acid both loosen hemoglobin\'s grip, which shifts the curve right. Working tissue produces both, so the blood arriving there gives up more oxygen without anyone sending a signal. Loading in the lung is barely affected, because the lung sits on the flat part where there is margin to spare.'
       },
       {
         stem: 'At a saturation of 90 percent, roughly what oxygen pressure are you looking at? And at 75 percent?',
@@ -197,7 +197,7 @@ function curvePanel() {
           'Oxygen content on the vertical and pressure on the horizontal. The clip measures content'
         ],
         correct: 1,
-        explain: 'Always start a chart by naming the axes and their units. Saturation, a percentage, goes up the side. Oxygen pressure, in millimetres of mercury, goes along the bottom. The finger clip only ever gives you the vertical axis, and the whole clinical value of the curve is that it lets you reason about the horizontal one.'
+        explain: 'Always start a chart by naming the axes and their units. Saturation, a percentage, goes up the side. Oxygen pressure, in millimeters of mercury, goes along the bottom. The finger clip only ever gives you the vertical axis, and the whole clinical value of the curve is that it lets you reason about the horizontal one.'
       }
     ]
   }));
@@ -214,7 +214,7 @@ function curvePanel() {
         'There is no way to comment without a blood gas'
       ],
       correct: 1,
-      explain: 'Saturation tells you the blood is carrying oxygen. It says nothing about whether that blood is arriving. Delivery needs three things: oxygen on board, enough <t>haemoglobin</t> to carry it, and enough pressure and flow to move it. This patient has the first, and the third has failed. That is the whole point of putting these two topics in the same week.',
+      explain: 'Saturation tells you the blood is carrying oxygen. It says nothing about whether that blood is arriving. Delivery needs three things: oxygen on board, enough <t>hemoglobin</t> to carry it, and enough pressure and flow to move it. This patient has the first, and the third has failed. That is the whole point of putting these two topics in the same week.',
       bucket: B.curve
     })
   ]));

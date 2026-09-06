@@ -59,7 +59,7 @@ var RUNS = {
     who: 'Age 68, long standing diabetes with nerve damage.',
     mapNadir: 34, ppNadir: 18, recover: 0.06, tau: 30, hrRise: 2, hrFinal: 2,
     read: 'A free fall with a flat heart rate. Nothing is answering at all.',
-    limb: 'The <b>sensor and signalling</b> path. Damaged nerves mean the fall is never properly reported, so no order is ever sent.'
+    limb: 'The <b>sensor and signaling</b> path. Damaged nerves mean the fall is never properly reported, so no order is ever sent.'
   }
 };
 /* the headline numbers each run produces, worked out from the model */
@@ -145,7 +145,7 @@ function casePanel() {
 
   root.appendChild(el('div', { class: 'panel-intro' }, [
     el('h2', { text: 'Why did Rosa fall?' }),
-    para('Rosa is 71. This morning she stood up from the side of her bed, the room went grey, and she went down. She is back in bed now and her first set of vital signs is below.'),
+    para('Rosa is 71. This morning she stood up from the side of her bed, the room went gray, and she went down. She is back in bed now and her first set of vital signs is below.'),
     para('You are going to work out what her monitor did not tell anyone, watch what happened to her pressure in the seconds after she stood, and name the part of her blood pressure control loop that failed.'),
     note('Five steps, in order. Each one opens when the one before it is right. There is nothing on this page to copy: your reading is yours, and every check is worked out at the moment you press the button.')
   ]));
@@ -207,7 +207,7 @@ function casePanel() {
   function handover() {
     var s = [];
     s.push('<p>Rosa is 71. She was admitted two days ago for observation after a fall at home, and she was due to go home today.</p>');
-    s.push('<p>At about a quarter past seven she sat on the edge of the bed, stood up, said the room had gone grey, and went down onto the carpet. She did not lose consciousness and there is no head injury. She was helped straight back into bed.</p>');
+    s.push('<p>At about a quarter past seven she sat on the edge of the bed, stood up, said the room had gone gray, and went down onto the carpet. She did not lose consciousness and there is no head injury. She was helped straight back into bed.</p>');
     s.push('<p>A full set of observations was taken with her lying flat. She was afebrile at ' + R.temp +
            ' degrees. Her pulse was regular at ' + R.hr + '. She was breathing comfortably at ' + R.rr +
            ' a minute and saturating ' + R.spo2 + ' percent on room air. The cuff read ' + R.sbp + ' over ' + R.dbp + '.</p>');
@@ -400,7 +400,7 @@ function casePanel() {
       out.appendChild(L.card([
         L.kicker(isHer ? 'Rosa' : 'Reference run'),
         el('h3', { text: isHer ? 'Rosa, standing' : 'A healthy reflex, standing' }),
-        para(isHer ? R.pres.hx : 'Same manoeuvre in someone whose reflex is intact. This is the shape Rosa is being compared against.'),
+        para(isHer ? R.pres.hx : 'Same maneuver in someone whose reflex is intact. This is the shape Rosa is being compared against.'),
         el('div', { class: 'readout', style: 'margin-bottom:16px' }, [
           stat('Lowest systolic', fmt(lowS, 0), 'down ' + fmt(BASE.sbp - lowS, 0) + ' from ' + BASE.sbp, (BASE.sbp - lowS) >= 20 ? 'alert' : 'good'),
           stat('Diastolic at 5 s', fmt(at5.dbp, 0), (dMove >= 0 ? 'up ' : 'down ') + fmt(Math.abs(dMove), 0), dMove >= 0 ? 'good' : 'alert'),
@@ -414,7 +414,7 @@ function casePanel() {
         ]),
         el('figure', { class: 'fig' }, [
           el('div', { html: rateFig(run) }),
-          el('figcaption', { html: 'Heart rate through the same manoeuvre.' })
+          el('figcaption', { html: 'Heart rate through the same maneuver.' })
         ]),
         L.surface([
           el('h3', { text: 'What you just saw' }),
@@ -440,7 +440,7 @@ function casePanel() {
       var sysFall = BASE.sbp - lowS;
       if (brain < 63) {
         return 'Yes, directly. At her brain the mean pressure is about ' + fmt(brain, 0) +
-          ', which is under the floor. Her brain vessels are already as wide as they go, so blood flow simply followed the pressure down and the room went grey.';
+          ', which is under the floor. Her brain vessels are already as wide as they go, so blood flow simply followed the pressure down and the room went gray.';
       }
       if (brain < 68) {
         return 'She is sitting right on the line. At her brain the mean is about ' + fmt(brain, 0) +
@@ -539,7 +539,7 @@ function casePanel() {
     },
     auto: {
       correct: 'The fall was never properly reported, so no order was sent to anything. Neither her heart nor her vessels responded.',
-      why: 'Nothing answered. Not the rate, not the vessels. When every effector stays silent at once, the failure is upstream of all of them, in the sensing and signalling path, which is what thirty years of diabetes does to small nerves.',
+      why: 'Nothing answered. Not the rate, not the vessels. When every effector stays silent at once, the failure is upstream of all of them, in the sensing and signaling path, which is what thirty years of diabetes does to small nerves.',
       flaws: { beta: 'vessels-gone', dry: 'hr-flat', pump: 'pp-not-narrow' }
     }
   };
@@ -627,7 +627,7 @@ function casePanel() {
           prompt: 'You marked two rows not obtained. Tick the ones whose absence actually changes what should happen next for Rosa, rather than every gap in the paperwork.',
           options: [
             { id: 'glu', text: 'No capillary glucose. Low blood sugar is one of the commonest reversible causes of a fall in an older person', correct: true },
-            { id: 'orth', text: 'No blood pressure was ever taken standing up, which is the one manoeuvre that reproduces what happened to her', correct: true },
+            { id: 'orth', text: 'No blood pressure was ever taken standing up, which is the one maneuver that reproduces what happened to her', correct: true },
             { id: 'pain', text: 'No pain score was recorded', correct: false },
             { id: 'wt', text: 'Her weight is not on this chart', correct: false }
           ],
@@ -680,7 +680,7 @@ function casePanel() {
     endSlot.appendChild(L.card([
       L.kicker('Case closed'),
       el('h3', { text: 'That is Rosa' }),
-      para('You did not diagnose her by recognising a pattern. You worked out a number nobody had written down, watched what her body did about a problem, and read the answer off which part of the loop stayed silent. That sequence is the whole method of this course.'),
+      para('You did not diagnose her by recognizing a pattern. You worked out a number nobody had written down, watched what her body did about a problem, and read the answer off which part of the loop stayed silent. That sequence is the whole method of this course.'),
       para('<strong>What she needed.</strong> ' + END_NOTE[HER], 'note'),
       L.surface([
         el('h3', { text: 'What is open now' }),
@@ -698,7 +698,7 @@ function casePanel() {
   var END_NOTE = {
     beta: 'Her medication reviewed, not fluid. Pouring fluid into someone whose heart is chemically prevented from responding does not fix the thing that is broken.',
     dry: 'Fluid, and a reason for why she lost it. Her loop is fine and will work perfectly as soon as it has something to move.',
-    auto: 'No quick fix. A signalling path that has been damaged over thirty years does not come back, so the work is compression, slow position changes, and removing anything that makes it worse.'
+    auto: 'No quick fix. A signaling path that has been damaged over thirty years does not come back, so the work is compression, slow position changes, and removing anything that makes it worse.'
   };
 
   var BUILD = [step1, step2, step3, step4, step5];

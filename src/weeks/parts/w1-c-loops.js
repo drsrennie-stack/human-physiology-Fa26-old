@@ -38,7 +38,7 @@ var LOOPS = [
     items: [
       { id: 'var', abb: 'Mean arterial pressure', name: 'the regulated variable', hint: 'Not systolic. The average across the whole beat.', why: 'The pressure organs actually feel. This is what the loop is protecting, not the top number.' },
       { id: 'sen', abb: 'Baroreceptors', name: 'the sensor', hint: 'Stretch sensors in the carotid sinus and the aortic arch.', why: 'Higher pressure stretches them more, so they fire more. Less stretch means fewer signals, which the brain reads as low pressure.' },
-      { id: 'int', abb: 'Medulla', name: 'the integrator', hint: 'In the brainstem, not the hypothalamus this time.', why: 'The cardiovascular centre. It compares the incoming firing rate against what it expects and adjusts the outgoing traffic.' },
+      { id: 'int', abb: 'Medulla', name: 'the integrator', hint: 'In the brainstem, not the hypothalamus this time.', why: 'The cardiovascular center. It compares the incoming firing rate against what it expects and adjusts the outgoing traffic.' },
       { id: 'eff', abb: 'Heart and blood vessels', name: 'the effector', hint: 'Three levers, not one.', why: 'Heart rate, force of contraction, and the tightness of arteries and veins. Three ways to change pressure.' }
     ],
     after: 'Notice the sensor is a stretch detector. It cannot measure pressure directly, only how far the wall has been pushed out. That distinction matters when arteries get stiff.'
@@ -50,7 +50,7 @@ var LOOPS = [
     items: [
       { id: 'var', abb: 'Arterial carbon dioxide', name: 'the regulated variable', hint: 'Not oxygen. Carbon dioxide is regulated first, minute by minute.', why: 'Carbon dioxide is what drives your breathing rate all day. Oxygen only takes over as a backup, once it gets seriously low.' },
       { id: 'sen', abb: 'Central chemoreceptors', name: 'the sensor', hint: 'On the surface of the medulla, reading the fluid around the brain.', why: 'They actually detect the pH change that carbon dioxide causes in the fluid around the brain, which amounts to the same thing.' },
-      { id: 'int', abb: 'Respiratory centres in the medulla', name: 'the integrator', hint: 'Brainstem again.', why: 'Sets the rate and depth of every breath, without you thinking about it.' },
+      { id: 'int', abb: 'Respiratory centers in the medulla', name: 'the integrator', hint: 'Brainstem again.', why: 'Sets the rate and depth of every breath, without you thinking about it.' },
       { id: 'eff', abb: 'Diaphragm and intercostals', name: 'the effector', hint: 'The muscles that move air.', why: 'Breathe faster or deeper and you blow off more carbon dioxide. That is the whole correction.' }
     ],
     after: 'Carbon dioxide first, oxygen second. Hold that. It explains a great deal in weeks 12 and 13.'

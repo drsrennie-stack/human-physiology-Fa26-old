@@ -1259,10 +1259,10 @@
   +   'justify-content:center;padding:clamp(14px,5vh,54px) 16px;overflow-y:auto;'
   +   '-webkit-overflow-scrolling:touch}'
   + 'body.rv-locked{overflow:hidden}'
-  /* margin:0 auto, not margin:auto. Auto vertical margins centre the card
+  /* margin:0 auto, not margin:auto. Auto vertical margins center the card
      in the flex container, and once the card grows taller than the
-     viewport that centring pushes its header above the scroll origin
-     where it cannot be reached. Top anchored, horizontally centred. */
+     viewport that centering pushes its header above the scroll origin
+     where it cannot be reached. Top anchored, horizontally centered. */
   + '.rv-stage .rv-card{position:relative;width:100%;max-width:680px;margin:0 auto;'
   +   'border-radius:20px;background:' + CARD + ';padding:8px;'
   +   'box-shadow:0 44px 84px -22px rgba(0,0,0,.78), 0 10px 22px rgba(0,0,0,.34),'
@@ -1321,7 +1321,7 @@
   + '.rv-stage .rv-opt:hover:not(:disabled){border-color:' + CARD + ';background:#FDF8F7}'
   + '.rv-stage .rv-opt:disabled{cursor:default}'
   /* selected but not submitted. Marked in weight and a left bar as well as
-     colour, so the selection is visible without relying on hue. */
+     color, so the selection is visible without relying on hue. */
   + '.rv-stage .rv-opt.is-picked{border-color:' + CARD + ';border-width:2px;'
   +   'background:' + SHADE + ';font-weight:700;box-shadow:inset 4px 0 0 ' + CARD + '}'
   + '.rv-stage .rv-opt.is-picked::after{content:" \\2022 your pick";font-weight:700;color:' + CARD_DEEP + '}'

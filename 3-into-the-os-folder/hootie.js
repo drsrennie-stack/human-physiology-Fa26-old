@@ -48,7 +48,7 @@
 
    ACCESSIBILITY
    -------------
-   The panel is a labelled dialog. The launcher is a real button
+   The panel is a labeled dialog. The launcher is a real button
    with aria-expanded. The transcript is an aria-live polite log
    so replies are announced. Focus moves into the input on open
    and back to the launcher on close. Escape closes. Nothing here

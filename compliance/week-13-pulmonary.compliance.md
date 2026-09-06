@@ -22,7 +22,7 @@ Target: WCAG 2.2 Level AA minimum, Level AAA where achievable.
 | 1.3.1 Info and relationships | A | Pass | Semantic `header`, `nav`, `main`, `section`, `footer`, `figure` and `figcaption`. All 15 data tables use `thead`, `th` and a `caption`. Every form control has an accessible name. Standalone fields use a `label` bound by `for` and `id`. The four blanks inside the lung volume report table carry an `aria-label` naming the value in full, because a visible label would duplicate the row header beside them. |
 | 1.3.2 Meaningful sequence | A | Pass | DOM order matches visual order. Panels are hidden with the `hidden` attribute, not by position. |
 | 1.3.5 Identify input purpose | AA | Pass | Numeric fields carry `type="number"` and `inputmode="decimal"`. |
-| 1.4.1 Use of colour | A | Pass | Result flags carry text ("Below LLN", "Above normal", "Normal") alongside colour. Correct and incorrect quiz answers are announced in text through the feedback region, not signalled by fill alone. |
+| 1.4.1 Use of color | A | Pass | Result flags carry text ("Below LLN", "Above normal", "Normal") alongside color. Correct and incorrect quiz answers are announced in text through the feedback region, not signaled by fill alone. |
 | 1.4.3 Contrast, minimum | AA | Pass | See section 3. All text pairs meet or exceed 4.5:1. |
 | 1.4.6 Contrast, enhanced | AAA | Pass with one exception | Every text pair reaches 7:1 except the gold eyebrow on the maroon header at 5.75:1, which meets AA. The maroon was darkened to `#731717` in the August 22 revision, which raised that pair from 4.68:1. |
 | 1.4.10 Reflow | AA | Pass | Fluid grids with `minmax` tracks. Wide tables and the tab strip scroll inside their own containers, so the page body never scrolls sideways at 320 CSS pixels. |
@@ -48,7 +48,7 @@ Target: WCAG 2.2 Level AA minimum, Level AAA where achievable.
 | 4.1.3 Status messages | AA | Pass | 21 `aria-live="polite"` regions cover quiz feedback, the matching task, the decision chart branches, the gate messages, ventilator safety flags, the target checker and the test counter. |
 | 2.3.3 Animation from interaction | AAA | Pass | The flow volume loop draw animation and all card transitions are disabled under `prefers-reduced-motion: reduce`. |
 
-## 3. Colour contrast audit
+## 3. Color contrast audit
 
 Every pair measured against WCAG 2.x relative luminance.
 
@@ -73,7 +73,7 @@ Every pair measured against WCAG 2.x relative luminance.
 | Gold outline button border | `#9A7F32` on `#ffffff` | 3.85:1 | AA non text |
 | Focus indicator | `#731717` on `#ffffff` | 11.27:1 | AA non text, exceeds 3:1 |
 
-Chart strokes: data lines are terra `#731717` and teal `#2C5F66` on white, both above 7:1. Reference curves are drawn as dashed grey and are always accompanied by a text legend or caption naming them, so line identity never depends on colour alone.
+Chart strokes: data lines are terra `#731717` and teal `#2C5F66` on white, both above 7:1. Reference curves are drawn as dashed gray and are always accompanied by a text legend or caption naming them, so line identity never depends on color alone.
 
 ## 4. Keyboard navigation flow verified
 
@@ -85,7 +85,7 @@ Tested end to end with keyboard only, no pointer.
 4. Lung volumes lab: all eight SVG brackets are reachable in order and answer on `Enter` or `Space`. The prompt and the feedback are both live regions, so a screen reader hears the result without moving focus.
 5. Spirometry simulator: sex, age, height, condition and case number are all reachable and operable. Buttons run the test, add a bronchodilator, and reveal the interpretation.
 6. Ventilator lab: every slider is operable with arrow keys, `Page Up` and `Page Down`, `Home` and `End`. Each slider's current value is bound through `aria-describedby` so the value is announced on change.
-7. Decision charts: each branch is a button inside a labelled box. A wrong branch is announced in a live region and the chart does not advance, so focus never jumps somewhere unexpected.
+7. Decision charts: each branch is a button inside a labeled box. A wrong branch is announced in a live region and the chart does not advance, so focus never jumps somewhere unexpected.
 8. Label matching: chips are buttons carrying `aria-pressed`. Enter picks a label up and announces it with its definition, Enter on a bracket drops it. Nothing here needs a pointer.
 9. Test and results: options are buttons, the next button receives focus automatically after each answer is committed, and the submission fields and PDF control are reachable.
 
@@ -103,7 +103,7 @@ Verified structure programmatically and by walking the accessibility tree in Chr
 - 21 live regions announce results without stealing focus, covering quiz feedback, the matching task, the decision charts, the gate messages, ventilator flags and the submission form.
 - 45 elements expose `aria-expanded`, covering every collapsible section and every plain language toggle.
 
-Outstanding: a pass with JAWS and with VoiceOver on a real machine has not been done. NVDA and Chromium behaviour was verified through the accessibility tree rather than by listening.
+Outstanding: a pass with JAWS and with VoiceOver on a real machine has not been done. NVDA and Chromium behavior was verified through the accessibility tree rather than by listening.
 
 ## 6. Known limitations and remediation plan
 
@@ -114,7 +114,7 @@ Outstanding: a pass with JAWS and with VoiceOver on a real machine has not been 
 5. **Plain language layer.** Every concept carries an "Explain it to me like I am 10" control, and a master switch in the page header opens all of them at once. This is a comprehension aid rather than a WCAG requirement, but it does the work of SC 3.1.5 Reading Level, which is a AAA criterion the clinical wording alone would not meet.
 6. **The guided sequence.** The lung volumes lab has to be worked through before the spirometry simulator opens, and one full read of a simulator report opens the rest. Gating is completion based, never score based, so a student is never locked out by getting answers wrong. Once a section opens it stays open for the session.
 7. **Results are session only by design.** Student work clears when the tab closes, which is intentional under FERPA. The submission form takes a name, a section and a case number purely so the printed PDF can be identified. Those fields are never stored, never written to browser storage, and never transmitted. Students should be told the session does not persist, so nobody loses a session's work by accident.
-8. **The simulators are teaching models.** The lung is modelled as a single compartment with fixed carbon dioxide production and a fixed arterial to venous oxygen content difference. Relationships between settings behave correctly. Absolute values should not be quoted as clinical reference data, and this is stated in the page footer and beneath the ventilator simulator.
+8. **The simulators are teaching models.** The lung is modeled as a single compartment with fixed carbon dioxide production and a fixed arterial to venous oxygen content difference. Relationships between settings behave correctly. Absolute values should not be quoted as clinical reference data, and this is stated in the page footer and beneath the ventilator simulator.
 
 ## 6a. Anti sharing measures
 

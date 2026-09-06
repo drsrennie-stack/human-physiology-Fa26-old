@@ -27,13 +27,13 @@ L.addTerms({
   'autoregulation': 'An organ adjusting its own vessels so its blood flow stays steady even when the pressure feeding it changes.',
   'afterload': 'How hard the heart has to push to get blood out. Stiff or narrow vessels raise it.',
   'compliance': 'How stretchy something is. A stretchy artery absorbs the push of a beat. A stiff one passes it straight on.',
-  'p50': 'The oxygen pressure at which haemoglobin is exactly half loaded. Normally about 27.',
-  'shift': 'The whole curve sliding left or right, which changes how tightly haemoglobin holds on to oxygen.',
+  'p50': 'The oxygen pressure at which hemoglobin is exactly half loaded. Normally about 27.',
+  'shift': 'The whole curve sliding left or right, which changes how tightly hemoglobin holds on to oxygen.',
   'venous': 'Blood on its way back to the heart, after the tissue has taken what it needed.',
   'arterial': 'Blood on its way out from the heart, freshly loaded in the lungs.',
   'perfusion pressure': 'The pressure actually driving blood through an organ. Roughly mean arterial pressure minus whatever pressure is pushing back.',
   'pulse oximeter': 'The clip on a finger. It reads saturation with light, and it never tells you the oxygen pressure directly.',
-  'anaemia': 'Not enough haemoglobin. Saturation can still read 100 percent while the blood carries far less oxygen. Sometimes spelled anemia.',
+  'anemia': 'Not enough hemoglobin. Saturation can still read 100 percent while the blood carries far less oxygen. Sometimes spelled anemia.',
   'orthostatic hypotension': 'Blood pressure that falls too far on standing. The usual line is a 20 point fall in systolic or a 10 point fall in diastolic within three minutes.',
   'stroke': 'Blood flow to part of the brain is cut off or bleeding into it, so that part starts dying within minutes.'
 });
@@ -248,7 +248,7 @@ function curveSVG(opts) {
   return L.xy({
     h: 430,
     x: { min: 0, max: 110, label: 'Oxygen pressure in the blood, PO2 (mmHg)', ticks: [0, 20, 40, 60, 80, 100] },
-    y: { min: 0, max: 100, label: 'Haemoglobin saturation (%)', ticks: [0, 20, 40, 60, 80, 100] },
+    y: { min: 0, max: 100, label: 'Hemoglobin saturation (%)', ticks: [0, 20, 40, 60, 80, 100] },
     bands: opts.cliff ? [{ x: [0, 60], fill: 'rgba(115,23,23,.07)' }] : [],
     guides: opts.marks ? [{ y: 90, label: '90%', color: L.COLOR.muted }] : [],
     series: series,
@@ -344,7 +344,7 @@ function learnPanel() {
       'Blood sugar goes up, insulin comes out, sugar comes back down.'
     ]),
     para('That opposite push is what makes something stable. Nearly every loop in this course works this way.'),
-    para('<t>Positive feedback</t> pushes in the <b>same</b> direction, so it snowballs. It is rare, and it always needs an outside event to stop it. Labour is the standard example: contractions push the baby down, which stretches the cervix, which causes stronger contractions, which pushes the baby further. It only ends when the baby is born.'),
+    para('<t>Positive feedback</t> pushes in the <b>same</b> direction, so it snowballs. It is rare, and it always needs an outside event to stop it. Labor is the standard example: contractions push the baby down, which stretches the cervix, which causes stronger contractions, which pushes the baby further. It only ends when the baby is born.'),
     check({
       stem: 'Blood clotting: each activated clotting factor activates more of the next one, faster and faster, until the clot is formed. Which kind of loop is that?',
       options: ['Negative feedback', 'Positive feedback', 'Neither, there is no set point'],
@@ -457,7 +457,7 @@ function learnPanel() {
 
   /* ============================== 6 */
   body.appendChild(sec('curve', 'The oxygen curve, and why its shape matters', [
-    para('A <t>pulse oximeter</t> gives you <t>saturation</t>, the percentage of oxygen seats on <t>haemoglobin</t> that are filled. It never tells you the oxygen <t>partial pressure</t> directly.'),
+    para('A <t>pulse oximeter</t> gives you <t>saturation</t>, the percentage of oxygen seats on <t>hemoglobin</t> that are filled. It never tells you the oxygen <t>partial pressure</t> directly.'),
     para('Those two things are related, but not in a straight line. Plot one against the other and you get an S.'),
     el('figure', { class: 'fig' }, [
       el('div', { html: curveSVG({ marks: true }) }),
@@ -472,11 +472,11 @@ function learnPanel() {
       L.surface([
         el('h3', { text: 'The steep middle' }),
         para('Below about 60, small further drops in pressure knock saturation down fast. This is why a patient can sit at 92 percent looking stable and then fall off a cliff.', 'note'),
-        para('The steepness is useful at the tissue, where oxygen needs to come off haemoglobin easily.', 'note')
+        para('The steepness is useful at the tissue, where oxygen needs to come off hemoglobin easily.', 'note')
       ])
     ]),
     L.eli([
-      'Think of haemoglobin as a bus with four seats and oxygen as passengers.',
+      'Think of hemoglobin as a bus with four seats and oxygen as passengers.',
       'When the bus is nearly full, adding more people waiting at the stop hardly changes anything. There is almost nowhere left to sit. That is the flat top.',
       'When the bus is half empty, a few more people waiting fills seats fast. That is the steep middle.',
       'The pulse oximeter counts how full the seats are. It does not count how many people are waiting at the stop. Two very different questions.'
@@ -497,7 +497,7 @@ function learnPanel() {
 
   /* ============================== 7 */
   body.appendChild(sec('shift', 'The curve slides, and it slides on purpose', [
-    para('The whole curve can slide left or right. Sliding is measured at the <t>p50</t>, the pressure where haemoglobin is exactly half loaded. Normally that is about 27.'),
+    para('The whole curve can slide left or right. Sliding is measured at the <t>p50</t>, the pressure where hemoglobin is exactly half loaded. Normally that is about 27.'),
     el('figure', { class: 'fig' }, [
       el('div', { html: curveSVG({ shifts: true }) }),
       el('figcaption', { html: 'Solid line, normal. Dashed line to the right, a right shift. Dotted line to the left, a left shift.' })
@@ -510,8 +510,8 @@ function learnPanel() {
       ]),
       L.surface([
         el('h3', { text: 'Left shift, oxygen is held more tightly' }),
-        list(['Colder', 'More alkaline, so a higher pH', 'Less carbon dioxide', 'Fetal haemoglobin'], false),
-        note('Fetal haemoglobin sits left of the mother\'s on purpose. It has to pull oxygen away from her blood across the placenta, and holding on more tightly is how it wins that tug of war.')
+        list(['Colder', 'More alkaline, so a higher pH', 'Less carbon dioxide', 'Fetal hemoglobin'], false),
+        note('Fetal hemoglobin sits left of the mother\'s on purpose. It has to pull oxygen away from her blood across the placenta, and holding on more tightly is how it wins that tug of war.')
       ])
     ]),
     check({
@@ -523,7 +523,7 @@ function learnPanel() {
         'A right shift, which is harmful and must be corrected'
       ],
       correct: 1,
-      explain: 'The muscle makes its own conditions, and those conditions loosen haemoglobin\'s grip right there in that capillary bed. Blood passing through cold, quiet tissue keeps hold of its oxygen instead. It is local, automatic, and beautifully efficient.'
+      explain: 'The muscle makes its own conditions, and those conditions loosen hemoglobin\'s grip right there in that capillary bed. Blood passing through cold, quiet tissue keeps hold of its oxygen instead. It is local, automatic, and beautifully efficient.'
     })
   ]));
 
@@ -531,8 +531,8 @@ function learnPanel() {
   body.appendChild(sec('traps', 'Three traps the finger clip sets', [
     el('div', { class: 'grid g3' }, [
       L.surface([
-        el('h3', { text: '1. Anaemia' }),
-        para('Saturation is a percentage of seats filled. It says nothing about how many seats there are. Someone with half the normal <t>haemoglobin</t> can read a perfect 100 percent while carrying half the oxygen.', 'note')
+        el('h3', { text: '1. Anemia' }),
+        para('Saturation is a percentage of seats filled. It says nothing about how many seats there are. Someone with half the normal <t>hemoglobin</t> can read a perfect 100 percent while carrying half the oxygen.', 'note')
       ]),
       L.surface([
         el('h3', { text: '2. Carbon monoxide' }),
@@ -636,7 +636,7 @@ var LOOPS = [
     items: [
       { id: 'var', abb: 'Mean arterial pressure', name: 'the regulated variable', hint: 'Not systolic. The average across the whole beat.', why: 'The pressure organs actually feel. This is what the loop is protecting, not the top number.' },
       { id: 'sen', abb: 'Baroreceptors', name: 'the sensor', hint: 'Stretch sensors in the carotid sinus and the aortic arch.', why: 'Higher pressure stretches them more, so they fire more. Less stretch means fewer signals, which the brain reads as low pressure.' },
-      { id: 'int', abb: 'Medulla', name: 'the integrator', hint: 'In the brainstem, not the hypothalamus this time.', why: 'The cardiovascular centre. It compares the incoming firing rate against what it expects and adjusts the outgoing traffic.' },
+      { id: 'int', abb: 'Medulla', name: 'the integrator', hint: 'In the brainstem, not the hypothalamus this time.', why: 'The cardiovascular center. It compares the incoming firing rate against what it expects and adjusts the outgoing traffic.' },
       { id: 'eff', abb: 'Heart and blood vessels', name: 'the effector', hint: 'Three levers, not one.', why: 'Heart rate, force of contraction, and the tightness of arteries and veins. Three ways to change pressure.' }
     ],
     after: 'Notice the sensor is a stretch detector. It cannot measure pressure directly, only how far the wall has been pushed out. That distinction matters when arteries get stiff.'
@@ -648,7 +648,7 @@ var LOOPS = [
     items: [
       { id: 'var', abb: 'Arterial carbon dioxide', name: 'the regulated variable', hint: 'Not oxygen. Carbon dioxide is regulated first, minute by minute.', why: 'Carbon dioxide is what drives your breathing rate all day. Oxygen only takes over as a backup, once it gets seriously low.' },
       { id: 'sen', abb: 'Central chemoreceptors', name: 'the sensor', hint: 'On the surface of the medulla, reading the fluid around the brain.', why: 'They actually detect the pH change that carbon dioxide causes in the fluid around the brain, which amounts to the same thing.' },
-      { id: 'int', abb: 'Respiratory centres in the medulla', name: 'the integrator', hint: 'Brainstem again.', why: 'Sets the rate and depth of every breath, without you thinking about it.' },
+      { id: 'int', abb: 'Respiratory centers in the medulla', name: 'the integrator', hint: 'Brainstem again.', why: 'Sets the rate and depth of every breath, without you thinking about it.' },
       { id: 'eff', abb: 'Diaphragm and intercostals', name: 'the effector', hint: 'The muscles that move air.', why: 'Breathe faster or deeper and you blow off more carbon dioxide. That is the whole correction.' }
     ],
     after: 'Carbon dioxide first, oxygen second. Hold that. It explains a great deal in weeks 12 and 13.'
@@ -846,7 +846,7 @@ var HYPO_CHART = {
     hypovol: {
       terminal: true,
       result: 'The tank is low. Think volume.',
-      detail: 'Small beats, a fast rate and a narrow pulse pressure is the classic picture of not enough circulating volume, from bleeding, vomiting, diarrhoea or burns. The reflex is working. Give it something to pump. In week 12 you will meet the same patient again from the fluid and electrolyte side.'
+      detail: 'Small beats, a fast rate and a narrow pulse pressure is the classic picture of not enough circulating volume, from bleeding, vomiting, diarrhea or burns. The reflex is working. Give it something to pump. In week 12 you will meet the same patient again from the fluid and electrolyte side.'
     },
     pump: {
       terminal: true,
@@ -989,7 +989,7 @@ function vitalsPanel() {
     onFinish: function () {
       chartSlot.appendChild(L.surface([
         el('h4', { text: 'What you just did' }),
-        para('You did not memorise a diagnosis. You asked a question, looked at a number, took a branch, and the chart carried you somewhere. That is exactly how an algorithm card works on a hospital wall, and it is why they can be followed at three in the morning by someone who is tired.', 'note')
+        para('You did not memorize a diagnosis. You asked a question, looked at a number, took a branch, and the chart carried you somewhere. That is exactly how an algorithm card works on a hospital wall, and it is why they can be followed at three in the morning by someone who is tired.', 'note')
       ]));
       chartDone = true;
       maybeOpen();
@@ -1071,7 +1071,7 @@ var RUNS = {
     who: 'Age 68, long standing diabetes with nerve damage.',
     mapNadir: 34, ppNadir: 18, recover: 0.06, tau: 30, hrRise: 2, hrFinal: 2,
     read: 'A free fall with a flat heart rate. Nothing is answering at all.',
-    limb: 'The <b>sensor and signalling</b> path. Damaged nerves mean the fall is never properly reported, so no order is ever sent.'
+    limb: 'The <b>sensor and signaling</b> path. Damaged nerves mean the fall is never properly reported, so no order is ever sent.'
   }
 };
 /* the headline numbers each run produces, worked out from the model */
@@ -1157,7 +1157,7 @@ function casePanel() {
 
   root.appendChild(el('div', { class: 'panel-intro' }, [
     el('h2', { text: 'Why did Rosa fall?' }),
-    para('Rosa is 71. This morning she stood up from the side of her bed, the room went grey, and she went down. She is back in bed now and her first set of vital signs is below.'),
+    para('Rosa is 71. This morning she stood up from the side of her bed, the room went gray, and she went down. She is back in bed now and her first set of vital signs is below.'),
     para('You are going to work out what her monitor did not tell anyone, watch what happened to her pressure in the seconds after she stood, and name the part of her blood pressure control loop that failed.'),
     note('Five steps, in order. Each one opens when the one before it is right. There is nothing on this page to copy: your reading is yours, and every check is worked out at the moment you press the button.')
   ]));
@@ -1219,7 +1219,7 @@ function casePanel() {
   function handover() {
     var s = [];
     s.push('<p>Rosa is 71. She was admitted two days ago for observation after a fall at home, and she was due to go home today.</p>');
-    s.push('<p>At about a quarter past seven she sat on the edge of the bed, stood up, said the room had gone grey, and went down onto the carpet. She did not lose consciousness and there is no head injury. She was helped straight back into bed.</p>');
+    s.push('<p>At about a quarter past seven she sat on the edge of the bed, stood up, said the room had gone gray, and went down onto the carpet. She did not lose consciousness and there is no head injury. She was helped straight back into bed.</p>');
     s.push('<p>A full set of observations was taken with her lying flat. She was afebrile at ' + R.temp +
            ' degrees. Her pulse was regular at ' + R.hr + '. She was breathing comfortably at ' + R.rr +
            ' a minute and saturating ' + R.spo2 + ' percent on room air. The cuff read ' + R.sbp + ' over ' + R.dbp + '.</p>');
@@ -1412,7 +1412,7 @@ function casePanel() {
       out.appendChild(L.card([
         L.kicker(isHer ? 'Rosa' : 'Reference run'),
         el('h3', { text: isHer ? 'Rosa, standing' : 'A healthy reflex, standing' }),
-        para(isHer ? R.pres.hx : 'Same manoeuvre in someone whose reflex is intact. This is the shape Rosa is being compared against.'),
+        para(isHer ? R.pres.hx : 'Same maneuver in someone whose reflex is intact. This is the shape Rosa is being compared against.'),
         el('div', { class: 'readout', style: 'margin-bottom:16px' }, [
           stat('Lowest systolic', fmt(lowS, 0), 'down ' + fmt(BASE.sbp - lowS, 0) + ' from ' + BASE.sbp, (BASE.sbp - lowS) >= 20 ? 'alert' : 'good'),
           stat('Diastolic at 5 s', fmt(at5.dbp, 0), (dMove >= 0 ? 'up ' : 'down ') + fmt(Math.abs(dMove), 0), dMove >= 0 ? 'good' : 'alert'),
@@ -1426,7 +1426,7 @@ function casePanel() {
         ]),
         el('figure', { class: 'fig' }, [
           el('div', { html: rateFig(run) }),
-          el('figcaption', { html: 'Heart rate through the same manoeuvre.' })
+          el('figcaption', { html: 'Heart rate through the same maneuver.' })
         ]),
         L.surface([
           el('h3', { text: 'What you just saw' }),
@@ -1452,7 +1452,7 @@ function casePanel() {
       var sysFall = BASE.sbp - lowS;
       if (brain < 63) {
         return 'Yes, directly. At her brain the mean pressure is about ' + fmt(brain, 0) +
-          ', which is under the floor. Her brain vessels are already as wide as they go, so blood flow simply followed the pressure down and the room went grey.';
+          ', which is under the floor. Her brain vessels are already as wide as they go, so blood flow simply followed the pressure down and the room went gray.';
       }
       if (brain < 68) {
         return 'She is sitting right on the line. At her brain the mean is about ' + fmt(brain, 0) +
@@ -1551,7 +1551,7 @@ function casePanel() {
     },
     auto: {
       correct: 'The fall was never properly reported, so no order was sent to anything. Neither her heart nor her vessels responded.',
-      why: 'Nothing answered. Not the rate, not the vessels. When every effector stays silent at once, the failure is upstream of all of them, in the sensing and signalling path, which is what thirty years of diabetes does to small nerves.',
+      why: 'Nothing answered. Not the rate, not the vessels. When every effector stays silent at once, the failure is upstream of all of them, in the sensing and signaling path, which is what thirty years of diabetes does to small nerves.',
       flaws: { beta: 'vessels-gone', dry: 'hr-flat', pump: 'pp-not-narrow' }
     }
   };
@@ -1639,7 +1639,7 @@ function casePanel() {
           prompt: 'You marked two rows not obtained. Tick the ones whose absence actually changes what should happen next for Rosa, rather than every gap in the paperwork.',
           options: [
             { id: 'glu', text: 'No capillary glucose. Low blood sugar is one of the commonest reversible causes of a fall in an older person', correct: true },
-            { id: 'orth', text: 'No blood pressure was ever taken standing up, which is the one manoeuvre that reproduces what happened to her', correct: true },
+            { id: 'orth', text: 'No blood pressure was ever taken standing up, which is the one maneuver that reproduces what happened to her', correct: true },
             { id: 'pain', text: 'No pain score was recorded', correct: false },
             { id: 'wt', text: 'Her weight is not on this chart', correct: false }
           ],
@@ -1692,7 +1692,7 @@ function casePanel() {
     endSlot.appendChild(L.card([
       L.kicker('Case closed'),
       el('h3', { text: 'That is Rosa' }),
-      para('You did not diagnose her by recognising a pattern. You worked out a number nobody had written down, watched what her body did about a problem, and read the answer off which part of the loop stayed silent. That sequence is the whole method of this course.'),
+      para('You did not diagnose her by recognizing a pattern. You worked out a number nobody had written down, watched what her body did about a problem, and read the answer off which part of the loop stayed silent. That sequence is the whole method of this course.'),
       para('<strong>What she needed.</strong> ' + END_NOTE[HER], 'note'),
       L.surface([
         el('h3', { text: 'What is open now' }),
@@ -1710,7 +1710,7 @@ function casePanel() {
   var END_NOTE = {
     beta: 'Her medication reviewed, not fluid. Pouring fluid into someone whose heart is chemically prevented from responding does not fix the thing that is broken.',
     dry: 'Fluid, and a reason for why she lost it. Her loop is fine and will work perfectly as soon as it has something to move.',
-    auto: 'No quick fix. A signalling path that has been damaged over thirty years does not come back, so the work is compression, slow position changes, and removing anything that makes it worse.'
+    auto: 'No quick fix. A signaling path that has been damaged over thirty years does not come back, so the work is compression, slow position changes, and removing anything that makes it worse.'
   };
 
   var BUILD = [step1, step2, step3, step4, step5];
@@ -1736,7 +1736,7 @@ var P50 = { normal: 26.6, right: 31.5, left: 22.0 };
 var SHIFT_TEXT = {
   normal: 'Normal blood, at 37 degrees and a pH of 7.4.',
   right: 'A right shift. Hot, acidic, high carbon dioxide. Working muscle makes all three.',
-  left: 'A left shift. Cold, alkaline, low carbon dioxide. Also fetal haemoglobin, which is left shifted on purpose.'
+  left: 'A left shift. Cold, alkaline, low carbon dioxide. Also fetal hemoglobin, which is left shifted on purpose.'
 };
 
 function pts(p50) {
@@ -1768,7 +1768,7 @@ function fig(state) {
   return L.xy({
     h: 430,
     x: { min: 0, max: 110, label: 'Oxygen pressure in the blood, PO2 (mmHg)', ticks: [0, 20, 40, 60, 80, 100] },
-    y: { min: 0, max: 100, label: 'Haemoglobin saturation (%)', ticks: [0, 20, 40, 60, 80, 100] },
+    y: { min: 0, max: 100, label: 'Hemoglobin saturation (%)', ticks: [0, 20, 40, 60, 80, 100] },
     series: series, marks: marks, guides: guides,
     aria: 'Oxygen dissociation curve, ' + state.shift + ' position. ' +
       (state.po2 != null ? 'An oxygen pressure of ' + state.po2 + ' gives a saturation of ' + fmt(hill(state.po2, p50), 0) + ' percent.' : 'No point selected.')
@@ -1783,7 +1783,7 @@ function curvePanel() {
   root.appendChild(el('div', { class: 'panel-intro' }, [
     el('h2', { text: 'The oxygen curve' }),
     para('One figure, poked at from several directions. Pick an oxygen pressure and see where it lands. Then slide the whole curve and see what that same pressure is worth.'),
-    note('Everything on this page is the same curve you met on the study page. Nothing new to memorise, just somewhere to try it out.')
+    note('Everything on this page is the same curve you met on the study page. Nothing new to memorize, just somewhere to try it out.')
   ]));
 
   var figBox = el('figure', { class: 'fig' });
@@ -1809,8 +1809,8 @@ function curvePanel() {
 
   function draw() {
     figBox.innerHTML = fig(state) + '<figcaption>' + (state.shift === 'normal'
-      ? 'The normal curve. The gold dashed line marks the P50, where haemoglobin is exactly half loaded.'
-      : 'Red line, the shifted curve you are reading now. The pale grey line behind it is the normal curve, kept on screen so the size of the shift is visible.') +
+      ? 'The normal curve. The gold dashed line marks the P50, where hemoglobin is exactly half loaded.'
+      : 'Red line, the shifted curve you are reading now. The pale gray line behind it is the normal curve, kept on screen so the size of the shift is visible.') +
       '</figcaption>';
     L.$$('[data-po2]', po2Row).forEach(function (b) {
       b.setAttribute('aria-pressed', parseInt(b.getAttribute('data-po2'), 10) === state.po2 ? 'true' : 'false');
@@ -1870,7 +1870,7 @@ function curvePanel() {
 
   /* ---- the four questions ---- */
   root.appendChild(L.chartCard({
-    title: 'The oxygen haemoglobin dissociation curve',
+    title: 'The oxygen hemoglobin dissociation curve',
     figHTML: W.curveSVG({ marks: true, cliff: true }),
     caption: 'The shaded band on the left is the steep part, where saturation falls fast for small further drops in pressure.',
     intro: 'Answer the four questions in your own words first, then work through these.',
@@ -1880,7 +1880,7 @@ function curvePanel() {
         stem: 'Why is the top of the curve flat, and what does that mean for a pulse oximeter reading of 96 percent?',
         options: [
           'It is flat because the oximeter is inaccurate at high readings',
-          'It is flat because haemoglobin is nearly full, so 96 percent could sit anywhere across a wide range of oxygen pressures',
+          'It is flat because hemoglobin is nearly full, so 96 percent could sit anywhere across a wide range of oxygen pressures',
           'It is flat because oxygen stops dissolving in plasma above a pressure of 60',
           'It is flat because the lungs limit how much oxygen can be absorbed'
         ],
@@ -1896,7 +1896,7 @@ function curvePanel() {
           'It does not shift, only 2,3-BPG shifts the curve'
         ],
         correct: 1,
-        explain: 'Heat and acid both loosen haemoglobin\'s grip, which shifts the curve right. Working tissue produces both, so the blood arriving there gives up more oxygen without anyone sending a signal. Loading in the lung is barely affected, because the lung sits on the flat part where there is margin to spare.'
+        explain: 'Heat and acid both loosen hemoglobin\'s grip, which shifts the curve right. Working tissue produces both, so the blood arriving there gives up more oxygen without anyone sending a signal. Loading in the lung is barely affected, because the lung sits on the flat part where there is margin to spare.'
       },
       {
         stem: 'At a saturation of 90 percent, roughly what oxygen pressure are you looking at? And at 75 percent?',
@@ -1918,7 +1918,7 @@ function curvePanel() {
           'Oxygen content on the vertical and pressure on the horizontal. The clip measures content'
         ],
         correct: 1,
-        explain: 'Always start a chart by naming the axes and their units. Saturation, a percentage, goes up the side. Oxygen pressure, in millimetres of mercury, goes along the bottom. The finger clip only ever gives you the vertical axis, and the whole clinical value of the curve is that it lets you reason about the horizontal one.'
+        explain: 'Always start a chart by naming the axes and their units. Saturation, a percentage, goes up the side. Oxygen pressure, in millimeters of mercury, goes along the bottom. The finger clip only ever gives you the vertical axis, and the whole clinical value of the curve is that it lets you reason about the horizontal one.'
       }
     ]
   }));
@@ -1935,7 +1935,7 @@ function curvePanel() {
         'There is no way to comment without a blood gas'
       ],
       correct: 1,
-      explain: 'Saturation tells you the blood is carrying oxygen. It says nothing about whether that blood is arriving. Delivery needs three things: oxygen on board, enough <t>haemoglobin</t> to carry it, and enough pressure and flow to move it. This patient has the first, and the third has failed. That is the whole point of putting these two topics in the same week.',
+      explain: 'Saturation tells you the blood is carrying oxygen. It says nothing about whether that blood is arriving. Delivery needs three things: oxygen on board, enough <t>hemoglobin</t> to carry it, and enough pressure and flow to move it. This patient has the first, and the third has failed. That is the whole point of putting these two topics in the same week.',
       bucket: B.curve
     })
   ]));
@@ -2006,7 +2006,7 @@ var BANK = [
     e: 'The sensors detected it and the brainstem sent the order. The heart is chemically prevented from answering, so the failure is at the effector. Compare that with dehydration, where the heart rate climbs hard and pressure still falls because there was never enough volume to work with.' },
   { o: 'baro', q: 'What defines orthostatic hypotension?', a: ['Any dizziness on standing', 'A fall of 20 in systolic or 10 in diastolic within three minutes of standing', 'A systolic below 100 while standing', 'A heart rate rise of more than 30'], c: 1,
     e: 'Twenty systolic or ten diastolic, within three minutes. Symptoms matter clinically, but the definition is a measurement, and it is one you can make with a cuff and a clock.' },
-  { o: 'baro', q: 'In the intact run, why does diastolic pressure rise slightly while systolic falls?', a: ['Measurement artefact', 'Vessels tighten, holding more pressure between beats, while smaller stroke volumes lower the peak', 'The heart fills better while upright', 'Diastolic always rises with heart rate'], c: 1,
+  { o: 'baro', q: 'In the intact run, why does diastolic pressure rise slightly while systolic falls?', a: ['Measurement artifact', 'Vessels tighten, holding more pressure between beats, while smaller stroke volumes lower the peak', 'The heart fills better while upright', 'Diastolic always rises with heart rate'], c: 1,
     e: 'Vessel tone holds the diastolic up, and a smaller beat pulls the systolic down. The two move in opposite directions, so the pulse pressure narrows. That narrowing is often the first visible sign the reflex has engaged.' },
 
   /* ---- oxygen curve ---- */
@@ -2014,14 +2014,14 @@ var BANK = [
     e: 'Ninety over sixty is the landmark. A reading that looks only slightly low already means the oxygen pressure has fallen to 60, and everything below that is on the steep part of the curve.' },
   { o: 'curve', q: 'A patient\'s oxygen pressure falls from 100 to 65. What happens to the saturation?', a: ['It falls to about 65 percent', 'It falls about six points, to roughly 91 percent', 'It does not change', 'It falls below 80 percent'], c: 1,
     e: 'Over a third of the oxygen pressure is gone and the saturation moves six points. That is the flat top of the curve doing its job, and it is also why the finger clip can look calm while something real is developing.' },
-  { o: 'curve', q: 'What does the P50 describe?', a: ['The pressure at which haemoglobin is half loaded', 'Half of the arterial oxygen pressure', 'The saturation at a pressure of 50', 'The pressure needed for 50 mL of oxygen delivery'], c: 0,
+  { o: 'curve', q: 'What does the P50 describe?', a: ['The pressure at which hemoglobin is half loaded', 'Half of the arterial oxygen pressure', 'The saturation at a pressure of 50', 'The pressure needed for 50 mL of oxygen delivery'], c: 0,
     e: 'It is the pressure that fills exactly half the binding sites, normally about 27. Because the whole curve moves together, one number is enough to say where it is sitting.' },
-  { o: 'curve', q: 'Which of these shifts the curve to the right?', a: ['Cold, alkalosis, low carbon dioxide', 'Heat, acidosis, high carbon dioxide, high 2,3-BPG', 'Fetal haemoglobin', 'Carbon monoxide'], c: 1,
+  { o: 'curve', q: 'Which of these shifts the curve to the right?', a: ['Cold, alkalosis, low carbon dioxide', 'Heat, acidosis, high carbon dioxide, high 2,3-BPG', 'Fetal hemoglobin', 'Carbon monoxide'], c: 1,
     e: 'Every one of those describes hard working tissue. The tissue creates its own conditions, and the blood passing through it hands over more oxygen as a direct result. No signal is needed.' },
   { o: 'curve', q: 'A patient rescued from a house fire has a pulse oximeter reading of 99 percent. Why is that not reassuring?', a: ['Oximeters do not work in smoke', 'Carbon monoxide occupies the same binding sites and a standard oximeter reads it as oxygen', 'The reading should be 100 percent', 'The curve shifts right in fires'], c: 1,
     e: 'A standard two wavelength oximeter cannot tell carbon monoxide from oxygen, so the seats can be full of the wrong gas. This is one of the few settings where a normal saturation is actively misleading, and it is why smoke exposure gets a blood test.' },
-  { o: 'curve', q: 'Why does anaemia not lower the saturation reading?', a: ['It does lower it, by about ten points', 'Saturation is the percentage of available sites that are filled, not how many sites there are', 'Anaemic blood shifts the curve left', 'Oximeters correct for haemoglobin automatically'], c: 1,
-    e: 'A percentage says nothing about the size of what is being divided. Halve the haemoglobin and every remaining site can still be full, giving a perfect reading on half the oxygen. Saturation is a percentage, not an amount.' },
+  { o: 'curve', q: 'Why does anemia not lower the saturation reading?', a: ['It does lower it, by about ten points', 'Saturation is the percentage of available sites that are filled, not how many sites there are', 'Anemic blood shifts the curve left', 'Oximeters correct for hemoglobin automatically'], c: 1,
+    e: 'A percentage says nothing about the size of what is being divided. Halve the hemoglobin and every remaining site can still be full, giving a perfect reading on half the oxygen. Saturation is a percentage, not an amount.' },
 
   /* ---- clinical ---- */
   { o: 'clin', q: 'Why is a mean arterial pressure of 65 used as a target in so many hospital protocols?', a: ['It is exactly half of normal', 'It is roughly where autoregulation runs out of room, so below it organ blood flow follows pressure down', 'It is the pressure at which the kidneys start making urine', 'It is a historical convention with no physiological basis'], c: 1,
@@ -2030,8 +2030,8 @@ var BANK = [
     e: 'A narrow swing means a small stroke volume, and a fast rate means the reflex is intact and working. Together they point at not enough circulating volume, from bleeding, vomiting or another loss. The loop is fine, the tank is low.' },
   { o: 'clin', q: 'A patient is 95 over 43 with a heart rate of 110 and warm hands. Where is the problem?', a: ['The pump, which has become too weak', 'The pipes, which have lost their tone', 'The volume, which is too low', 'The sensor limb of the reflex'], c: 1,
     e: 'A wide swing on a very low diastolic means pressure is leaking away between beats, which is a statement about vessel tone. This is the picture of distributive shock, most commonly sepsis. Fluid helps at first because the container just got larger, but the container is the real problem.' },
-  { o: 'clin', q: 'A patient has a mean arterial pressure of 55 and an oxygen saturation of 99 percent. Is the tissue receiving enough oxygen?', a: ['Yes, the saturation is what matters', 'Not necessarily, because loaded blood still has to be delivered', 'Yes, provided the haemoglobin is normal', 'There is no way to say without an arterial blood gas'], c: 1,
-    e: 'Delivery needs oxygen on board, enough haemoglobin to carry it, and enough pressure and flow to move it. This patient has the first and has lost the third. Saturation and perfusion are two separate questions and this week deliberately puts them side by side.' },
+  { o: 'clin', q: 'A patient has a mean arterial pressure of 55 and an oxygen saturation of 99 percent. Is the tissue receiving enough oxygen?', a: ['Yes, the saturation is what matters', 'Not necessarily, because loaded blood still has to be delivered', 'Yes, provided the hemoglobin is normal', 'There is no way to say without an arterial blood gas'], c: 1,
+    e: 'Delivery needs oxygen on board, enough hemoglobin to carry it, and enough pressure and flow to move it. This patient has the first and has lost the third. Saturation and perfusion are two separate questions and this week deliberately puts them side by side.' },
   { o: 'clin', q: 'Which single number would you most want if you could only have one from a cuff reading?', a: ['Systolic, because it is the peak', 'Diastolic, because it is the trough', 'Mean arterial pressure, because it is what organs experience across the whole beat', 'Pulse pressure, because it describes the arteries'], c: 2,
     e: 'The mean is the driving pressure organs actually feel, all cycle long. The other three are all worth having, and pulse pressure in particular tells you about the arteries, but if you can only carry one number in your head, carry the mean.' }
 ];

@@ -337,7 +337,7 @@ window.BIO005_MODULES = [
     "exam": "Case conference and final patient file",
     "examOpens": null,
     "examCloses": "2026-12-16",
-    "focus": "The same control loop again in one system after another, until the pattern is the thing you recognise rather than the facts."
+    "focus": "The same control loop again in one system after another, until the pattern is the thing you recognize rather than the facts."
   }
 ];
 

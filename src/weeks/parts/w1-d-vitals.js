@@ -98,7 +98,7 @@ var HYPO_CHART = {
     hypovol: {
       terminal: true,
       result: 'The tank is low. Think volume.',
-      detail: 'Small beats, a fast rate and a narrow pulse pressure is the classic picture of not enough circulating volume, from bleeding, vomiting, diarrhoea or burns. The reflex is working. Give it something to pump. In week 12 you will meet the same patient again from the fluid and electrolyte side.'
+      detail: 'Small beats, a fast rate and a narrow pulse pressure is the classic picture of not enough circulating volume, from bleeding, vomiting, diarrhea or burns. The reflex is working. Give it something to pump. In week 12 you will meet the same patient again from the fluid and electrolyte side.'
     },
     pump: {
       terminal: true,
@@ -241,7 +241,7 @@ function vitalsPanel() {
     onFinish: function () {
       chartSlot.appendChild(L.surface([
         el('h4', { text: 'What you just did' }),
-        para('You did not memorise a diagnosis. You asked a question, looked at a number, took a branch, and the chart carried you somewhere. That is exactly how an algorithm card works on a hospital wall, and it is why they can be followed at three in the morning by someone who is tired.', 'note')
+        para('You did not memorize a diagnosis. You asked a question, looked at a number, took a branch, and the chart carried you somewhere. That is exactly how an algorithm card works on a hospital wall, and it is why they can be followed at three in the morning by someone who is tired.', 'note')
       ]));
       chartDone = true;
       maybeOpen();
