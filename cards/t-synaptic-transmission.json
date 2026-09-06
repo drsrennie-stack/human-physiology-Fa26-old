@@ -47,16 +47,16 @@
     "lecture",
     "lab"
    ],
-   "q": "Where is neurotransmitter stored in the axon terminal before release?",
-   "a": "In synaptic vesicles.",
+   "q": "Why does a single action potential arriving at an axon terminal release transmitter within about a millisecond, rather than after a delay while transmitter is made?",
+   "a": "The transmitter is already packaged in vesicles docked at the release site, waiting for Ca2+ to enter.",
    "options": [
-    "In synaptic vesicles",
-    "Free in the cytosol of the terminal",
-    "Inside the mitochondria of the terminal",
-    "Bound to the outer face of the terminal membrane"
+    "The transmitter is already packaged in docked vesicles, waiting for Ca2+ entry",
+    "The action potential itself synthesizes transmitter as it arrives",
+    "Transmitter diffuses in from the blood as soon as the terminal depolarizes",
+    "The terminal makes transmitter continuously and releases it in a steady stream"
    ],
    "correctIndex": 0,
-   "explanation": "Transmitter is concentrated inside membrane-bound synaptic vesicles, which is what allows release in discrete packets called quanta. Free cytosolic transmitter exists but is the pool being loaded into vesicles, not the releasable store. Mitochondria supply ATP for the terminal and, for catecholamines, host the degrading enzyme MAO, but they do not store releasable transmitter. Transmitter bound to the outer membrane face would already be in the cleft."
+   "explanation": "Synthesis and packaging happen in advance, so the only steps left when the action potential arrives are Ca2+ entry through voltage gated channels and fusion of vesicles that are already docked at the active zone. That is why synaptic delay is well under a millisecond and why a terminal can follow a high frequency train, at least until the ready pool runs down and depression appears. Action potentials do not synthesize anything; they are electrical events. Blood borne delivery would be far too slow and far too imprecise, which is the difference between a synapse and an endocrine signal. A steady stream would make the signal continuous rather than an event, and the small spontaneous release that does occur, the miniature potentials, is below threshold and does not carry information."
   },
   {
    "id": "c4",
@@ -2333,16 +2333,16 @@
    "tags": [
     "lecture"
    ],
-   "q": "What structure joins the two cells at an electrical synapse?",
-   "a": "A gap junction.",
+   "q": "What makes transmission at an electrical synapse faster than at a chemical synapse?",
+   "a": "Current passes directly from cell to cell through gap junction channels, with no transmitter release, diffusion or receptor binding step.",
    "options": [
-    "A synaptic cleft of 20 to 40 nm",
-    "A tight junction",
-    "A desmosome",
-    "A gap junction"
+    "Current passes straight through gap junction channels, with no release, diffusion or receptor step",
+    "The transmitter used at electrical synapses diffuses faster than other transmitters",
+    "Electrical synapses have a much wider cleft, so the signal spreads more easily",
+    "Electrical synapses use myelin to speed the signal across the cleft"
    ],
-   "correctIndex": 3,
-   "explanation": "A gap junction is a set of paired channels that lines up across a 2 to 4 nm gap and creates a continuous pore between the cytoplasm of the two cells. A tight junction seals the space between cells and blocks leakage rather than conducting current. A desmosome is a mechanical anchor. A wide cleft of 20 to 40 nm is the arrangement at a chemical synapse."
+   "correctIndex": 0,
+   "explanation": "Gap junctions are pores that connect the cytoplasm of two cells directly, so ions carrying the current simply flow through, and the delay is essentially zero. That speed is why electrical synapses appear where cells must act as a unit, such as cardiac muscle, single unit smooth muscle, and some escape reflexes. The price is that the signal cannot easily be amplified, inverted or modulated, which is what chemical synapses are for. Electrical synapses use no transmitter at all. The cleft at an electrical synapse is much NARROWER, only a few nanometers, because the two membranes have to be close enough for the channels to line up. Myelin insulates axons; it has no role at a synapse."
   },
   {
    "id": "c128",

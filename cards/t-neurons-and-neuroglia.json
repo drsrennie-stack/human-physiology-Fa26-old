@@ -256,7 +256,7 @@
     "lecture",
     "lab"
    ],
-   "q": "In a pseudounipolar sensory neuron, what happens to an action potential travelling from the skin toward the spinal cord when it reaches the level of the cell body?",
+   "q": "In a pseudounipolar sensory neuron, what happens to an action potential traveling from the skin toward the spinal cord when it reaches the level of the cell body?",
    "a": "It stays on the shared stalk and bypasses the cell body.",
    "options": [
     "It stops, and a new potential is started in the central branch",
@@ -1163,16 +1163,16 @@
    "tags": [
     "lecture"
    ],
-   "q": "Where are voltage-gated Na+ channels concentrated along a myelinated axon?",
-   "a": "At the nodes of Ranvier.",
+   "q": "Why does conduction along a myelinated axon go faster even though the action potential still has to be regenerated along the way?",
+   "a": "It is only regenerated at the nodes of Ranvier, where the voltage gated Na+ channels are clustered, so the signal jumps from node to node instead of being rebuilt at every point.",
    "options": [
-    "Spread evenly along the entire axon under the myelin",
-    "At the nodes of Ranvier",
-    "In the myelin sheath itself, between the lipid layers",
-    "Only at the axon terminal, where transmitter is released"
+    "It is regenerated only at the nodes, where Na+ channels are clustered, so the signal jumps between them",
+    "Myelin removes the need to regenerate the action potential at all",
+    "Myelin increases the number of Na+ channels along the whole axon",
+    "Myelin makes the axon wider, which is what speeds conduction"
    ],
-   "correctIndex": 1,
-   "explanation": "Channels are clustered in the bare nodal membrane, which is the only place ions can cross, so that is where the impulse is regenerated. Spreading them evenly would waste them, since the membrane under the myelin cannot pass current across itself anyway. Myelin is made of stacked glial membrane and holds no functional axonal Na+ channels. The terminal has voltage-gated Ca2+ channels for release, but Na+ channels are needed all along the axon to keep the impulse alive."
+   "correctIndex": 0,
+   "explanation": "Myelin does two things: it raises the resistance across the membrane and lowers its capacitance, so current spreads passively along the internode quickly and with little loss. Voltage gated Na+ channels are concentrated at the bare nodes, so the action potential is rebuilt there and only there. That is saltatory conduction, and it buys speed and saves ATP, since far less Na+ and K+ has to be pumped back. Regeneration is still required, because passive spread alone would decay to nothing over any real distance. Myelin does not add channels; it redistributes where they matter by clustering them at the nodes. Axon diameter does speed conduction independently, which is how invertebrate giant axons manage, but that is a separate strategy and not what myelin does."
   },
   {
    "id": "c63",

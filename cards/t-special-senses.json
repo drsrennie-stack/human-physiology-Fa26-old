@@ -66,16 +66,16 @@
     "lecture",
     "lab"
    ],
-   "q": "Which cranial nerve carries the parasympathetic fibers that drive accommodation and pupillary constriction?",
-   "a": "The oculomotor nerve, CN III.",
+   "q": "Parasympathetic fibers traveling with the oculomotor nerve make the ciliary muscle contract. What does that contraction do to the lens?",
+   "a": "It lets the lens become rounder and thicker, which bends light more strongly so near objects focus on the retina.",
    "options": [
-    "The oculomotor nerve, CN III",
-    "The trochlear nerve, CN IV",
-    "The abducens nerve, CN VI",
-    "The optic nerve, CN II"
+    "It lets the lens become rounder and thicker, so near objects focus on the retina",
+    "It pulls the lens flatter, so distant objects focus on the retina",
+    "It moves the whole lens forward toward the cornea",
+    "It clouds the lens so less light reaches the retina"
    ],
    "correctIndex": 0,
-   "explanation": "Parasympathetic fibers travel with CN III, synapse in the ciliary ganglion, and innervate both the ciliary muscle and the sphincter pupillae. CN II is purely sensory and carries the incoming light signal, so it is the afferent limb rather than the motor output. CN IV and CN VI each move one extraocular muscle and carry no parasympathetic fibers to the inside of the eye."
+   "explanation": "The ciliary muscle is a ring. When it contracts the ring gets smaller, the suspensory fibers holding the lens go slack, and the elastic lens springs into a rounder shape. A rounder lens has more refractive power, which is what near vision needs. This is accommodation, and it is why the same parasympathetic outflow that constricts the pupil also focuses the eye for reading. Pulling the lens flatter is what happens when the ciliary muscle relaxes, which is the resting state used for distance. The lens does not travel forward in the human eye; that is how some fish focus. Clouding is a cataract, a change in the lens protein itself, and has nothing to do with muscle activity."
   },
   {
    "id": "c5",
@@ -819,16 +819,16 @@
    "tags": [
     "lecture"
    ],
-   "q": "Where is the primary visual cortex located?",
-   "a": "In the occipital lobe.",
+   "q": "The primary visual cortex is laid out as a map of the visual field. What follows from that arrangement when a small area of it is damaged?",
+   "a": "A blind spot appears in one specific part of the visual field while the rest of vision stays normal.",
    "options": [
-    "In the temporal lobe",
-    "In the frontal lobe",
-    "In the parietal lobe",
-    "In the occipital lobe"
+    "A blind spot appears in one specific part of the visual field, and the rest of vision is normal",
+    "Vision dims evenly across the whole field in both eyes",
+    "Color vision is lost everywhere but shape and motion are spared",
+    "The affected eye goes completely blind"
    ],
-   "correctIndex": 3,
-   "explanation": "The optic radiations end in the cortex around the calcarine sulcus of the occipital lobe, at the back of the brain. The temporal lobe holds primary auditory cortex, and parts of it handle later object recognition rather than the first cortical step. The parietal lobe holds somatosensory cortex, and the frontal lobe holds motor areas."
+   "correctIndex": 0,
+   "explanation": "Because neighboring points in the visual field are handled by neighboring patches of cortex, losing a patch of cortex costs a patch of the field. That is why cortical strokes produce shaped field cuts rather than a general blur. Even dimming across the whole field would need something that affects the entire pathway at once, like a change in the retina or in the media of the eye. Losing color but not shape happens with damage in a specialized color region further along the processing stream, not in primary visual cortex. One eye going blind means the problem is in that eye or its optic nerve, before the two eyes' inputs are combined, and by the time signals reach the cortex each side is carrying half the field from BOTH eyes."
   },
   {
    "id": "c46",
@@ -1449,16 +1449,16 @@
    "tags": [
     "lecture"
    ],
-   "q": "Which cranial nerve carries auditory information from the cochlea to the brainstem?",
-   "a": "The vestibulocochlear nerve, CN VIII.",
+   "q": "Cochlear hair cells have no axon of their own. How does a sound signal get from a hair cell to the brainstem?",
+   "a": "The hair cell releases neurotransmitter onto a spiral ganglion neuron, whose axon runs in the cochlear branch of the vestibulocochlear nerve (CN VIII).",
    "options": [
-    "The facial nerve, CN VII",
-    "The glossopharyngeal nerve, CN IX",
-    "The trigeminal nerve, CN V",
-    "The vestibulocochlear nerve, CN VIII"
+    "The hair cell releases transmitter onto a spiral ganglion neuron, whose axon runs in CN VIII",
+    "The hair cell grows its own axon that runs directly to the auditory cortex",
+    "The vibration is carried to the brainstem as a pressure wave in the endolymph",
+    "The hair cell passes current straight into the auditory cortex through gap junctions"
    ],
-   "correctIndex": 3,
-   "explanation": "The cochlear branch of CN VIII carries the spiral ganglion axons that synapse on the hair cells. CN VII runs alongside it through the temporal bone and moves the facial muscles, including the stapedius, but it does not carry hearing. CN V supplies facial sensation and the tensor tympani, and CN IX carries taste and sensation from the posterior tongue and pharynx."
+   "correctIndex": 0,
+   "explanation": "A hair cell is a receptor cell, not a neuron. Bending its stereocilia opens ion channels, the cell depolarizes, and it releases transmitter onto the ending of a spiral ganglion neuron. That neuron's axon is what carries the signal, and those axons together form the cochlear part of CN VIII. Hair cells never grow their own long axons, which is why a separate first order neuron is needed. The endolymph wave is what bends the stereocilia inside the cochlea; it stops at the cochlea and does not travel to the brainstem. Gap junctions do connect some supporting cells in the inner ear, but there is no direct electrical line from a hair cell to the cortex, and every auditory signal is relayed several times in the brainstem and thalamus first."
   },
   {
    "id": "c80",
@@ -2100,16 +2100,16 @@
     "lecture",
     "lab"
    ],
-   "q": "Where is the crista ampullaris located?",
-   "a": "In the ampulla of each semicircular canal.",
+   "q": "When your head starts to rotate, what actually bends the hair cells inside a semicircular canal?",
+   "a": "The endolymph lags behind the moving canal and pushes on the cupula, which bends the hair cells embedded in it.",
    "options": [
-    "In the wall of the utricle near the macula",
-    "In the ampulla of each semicircular canal",
-    "At the apex of the cochlear spiral",
-    "In the roof of the saccule near the macula"
+    "The endolymph lags behind the moving canal and pushes the cupula, bending the hair cells in it",
+    "Calcium carbonate crystals slide across the hair cells under gravity",
+    "The bony canal itself flexes and squeezes the hair cells",
+    "Blood pressure inside the canal rises and pushes the hair cells over"
    ],
-   "correctIndex": 1,
-   "explanation": "Each canal widens into an ampulla, and the crista ampullaris is the ridge of hair cells and supporting cells inside it, topped by the cupula. Putting it in the utricle or saccule confuses it with the macula, the sensory patch of those two chambers. The cochlear apex belongs to hearing and contains no vestibular receptors."
+   "correctIndex": 0,
+   "explanation": "The canal turns with your head, but the fluid inside it has inertia and briefly stays put. That relative movement of fluid pushes the cupula, the gel flap sitting on the crista ampullaris, and bending the cupula bends the hair cells. This is why the semicircular canals report ROTATION starting and stopping rather than steady spinning: once the fluid catches up, the cupula returns to center. Calcium carbonate crystals, the otoliths, sit on the maculae of the utricle and saccule, and they report head tilt and straight line acceleration instead. The bony canal is rigid and does not flex. Blood pressure does not act on this system at all; the stimulus is mechanical fluid movement."
   },
   {
    "id": "c115",
@@ -2176,16 +2176,16 @@
     "lecture",
     "lab"
    ],
-   "q": "Which cranial nerve carries equilibrium information from the vestibular apparatus?",
-   "a": "The vestibulocochlear nerve, CN VIII.",
+   "q": "Vestibular hair cells fire at a steady rate even when the head is completely still. What does the brainstem read when firing rises on one side and falls on the other?",
+   "a": "That the head is rotating toward the side whose firing rose.",
    "options": [
-    "The trigeminal nerve, CN V",
-    "The vestibulocochlear nerve, CN VIII",
-    "The facial nerve, CN VII",
-    "The vagus nerve, CN X"
+    "That the head is rotating toward the side whose firing rose",
+    "That the head is being held still in a new position",
+    "That the eyes are moving but the head is not",
+    "That the body is falling straight down"
    ],
-   "correctIndex": 1,
-   "explanation": "The vestibular branch of CN VIII carries afferents from the cristae and maculae to the vestibular nuclei in the brainstem and to the cerebellum. CN VII travels beside it in the temporal bone but is motor to facial muscles. CN V carries facial sensation, and CN X supplies thoracic and abdominal viscera, so neither is involved in balance."
+   "correctIndex": 0,
+   "explanation": "A resting firing rate gives the system a baseline it can move in both directions. Rotation bends the hair cells one way on one side of the head and the opposite way on the other, so one vestibular nerve speeds up while its partner slows down. The brain compares the two, and the difference is the signal. This paired design is why a sudden loss of one vestibular nerve feels like violent spinning: the intact side is now permanently the faster one. Holding still in a new position gives no difference between the sides, so both return toward baseline. Eye movement is the OUTPUT of this system through the vestibulo-ocular reflex, not what the canals sense. Falling straight down is linear acceleration, sensed by the otolith organs rather than the canals."
   },
   {
    "id": "c119",
@@ -2439,16 +2439,16 @@
    "tags": [
     "lecture"
    ],
-   "q": "Which cranial nerve carries taste from the anterior two thirds of the tongue?",
-   "a": "The facial nerve, CN VII.",
+   "q": "A patient loses taste from the front of the tongue on one side but tastes normally at the back. What does that pattern tell you about how taste reaches the brain?",
+   "a": "Taste is carried by more than one nerve, with the front of the tongue on the facial nerve (CN VII) and the back on the glossopharyngeal (CN IX), so one can fail on its own.",
    "options": [
-    "The facial nerve, CN VII",
-    "The glossopharyngeal nerve, CN IX",
-    "The trigeminal nerve, CN V",
-    "The vagus nerve, CN X"
+    "Taste travels in more than one nerve, front of tongue on CN VII and back on CN IX, so one can fail alone",
+    "All taste travels in a single nerve, so the finding must be an error",
+    "Taste buds at the front detect different chemicals than those at the back",
+    "The tongue has no taste receptors at the back, only touch receptors"
    ],
    "correctIndex": 0,
-   "explanation": "Taste from the front of the tongue travels with CN VII, while CN IX carries taste from the posterior third and CN X picks up the few taste buds on the epiglottis and upper esophagus. CN V supplies general touch, temperature, and pain to the anterior tongue, which is why it carries the burn of chili but not the taste."
+   "explanation": "Taste is split across nerves by territory, not by flavour. The anterior two thirds of the tongue sends taste along CN VII, the posterior third along CN IX, and a few buds on the epiglottis along CN X. A lesion of one nerve therefore takes out one strip of tongue and leaves the rest working, which is exactly the pattern described. A single taste nerve would make a partial loss like this impossible. The idea that front and back detect different chemicals is a persistent myth: the old tongue map has been shown to be wrong, and all five basic tastes can be detected across the whole tongue surface. The back of the tongue is densely supplied with taste buds, particularly around the circumvallate papillae."
   },
   {
    "id": "c133",
@@ -2457,16 +2457,16 @@
    "tags": [
     "lecture"
    ],
-   "q": "Through which bony structure do olfactory receptor neuron axons pass on their way to the brain?",
-   "a": "The cribriform plate of the ethmoid bone.",
+   "q": "A head injury shears the thin perforated bone that olfactory axons pass through on their way into the skull. What sensory loss follows, and why does it often fail to recover?",
+   "a": "Smell is lost, because the axons are cut where they thread through the cribriform plate and the regrowing axons cannot find their way back through it.",
    "options": [
-    "The cribriform plate of the ethmoid bone",
-    "The optic canal of the sphenoid bone",
-    "The foramen magnum of the occipital bone",
-    "The internal acoustic meatus of the temporal bone"
+    "Smell is lost, because the axons are cut where they cross the cribriform plate and cannot re-thread it",
+    "Vision is lost, because the optic nerve passes through the same bone",
+    "Hearing is lost on the injured side only",
+    "Nothing is lost, because olfactory receptor neurons are replaced every few weeks"
    ],
    "correctIndex": 0,
-   "explanation": "The cribriform plate is perforated by many small holes, and bundles of unmyelinated olfactory axons thread through them to reach the olfactory bulb sitting just above. That thin, perforated bone is also why a blow to the head can shear the axons and abolish smell. The optic canal transmits CN II, the internal acoustic meatus transmits CN VII and CN VIII, and the foramen magnum transmits the spinal cord."
+   "explanation": "Olfactory receptor neurons sit in the roof of the nasal cavity and send unmyelinated axons up through many small holes in the cribriform plate to reach the olfactory bulb. A shearing injury across that plate cuts every one of those bundles at once. Olfactory receptor neurons ARE replaced throughout life, which is unusual for neurons, but the new axons have to re-thread the same perforations and reach the correct target in the bulb. Scarring across the plate blocks that, so anosmia after head injury is often permanent even though the receptor cells themselves keep turning over. The optic nerve passes through the optic canal in the sphenoid, well away from the cribriform plate. Hearing runs through the temporal bone on a separate route entirely."
   },
   {
    "id": "c134",

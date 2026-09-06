@@ -44,16 +44,16 @@
       "tags": [
         "lecture"
       ],
-      "q": "Where is a neurotransmitter released?",
-      "a": "From an axon terminal into a synaptic cleft.",
+      "q": "What makes transmission at a chemical synapse one way, from the axon terminal to the target cell and never the reverse?",
+      "a": "The vesicles and release machinery are only in the presynaptic terminal, and the receptors are only on the postsynaptic membrane.",
       "options": [
-        "From an endocrine cell into a capillary",
-        "From a neuron ending into the bloodstream",
-        "From an axon terminal into a synaptic cleft",
-        "From any cell into the surrounding interstitial fluid"
+        "Release machinery is only presynaptic and receptors are only postsynaptic",
+        "The synaptic cleft only allows molecules to diffuse in one direction",
+        "The postsynaptic cell is always electrically negative to the presynaptic cell",
+        "Enzymes in the cleft destroy any transmitter traveling backwards"
       ],
-      "correctIndex": 2,
-      "explanation": "A neurotransmitter is released from an axon terminal into the narrow synaptic cleft, so it crosses well under a micrometer and acts on one identified target cell. Release from an endocrine cell into a capillary describes a hormone. Release from a neuron ending into the bloodstream describes a neurohormone, and nonspecific release into interstitial fluid describes a paracrine."
+      "correctIndex": 0,
+      "explanation": "Direction at a chemical synapse comes from where the parts are, not from anything in the gap. Only the presynaptic terminal holds transmitter filled vesicles, the voltage gated Ca2+ channels that trigger release, and the docking proteins; only the postsynaptic membrane holds a dense field of receptors. A signal therefore cannot run the other way, because the postsynaptic cell has nothing to release and the presynaptic membrane has little to detect it with. Diffusion in the cleft is not directional; molecules move down their concentration gradient in every direction. Membrane potential differences between the two cells do not steer transmitter, which is uncharged movement by diffusion in most cases. Degrading enzymes such as acetylcholinesterase do sit in the cleft, but they clear transmitter generally to end the signal rather than filtering it by direction. Retrograde messengers such as nitric oxide are a real and separate exception, and they work precisely because they do not use this machinery."
     },
     {
       "id": "c4",
@@ -1160,16 +1160,16 @@
       "tags": [
         "lecture"
       ],
-      "q": "Where is the calcium that IP3 releases stored inside the cell?",
-      "a": "In the endoplasmic reticulum.",
+      "q": "Cytosolic Ca2+ is held about ten thousand times lower than the Ca2+ concentration outside the cell. When IP3 is made, where does the Ca2+ it releases come from, and why is that store useful?",
+      "a": "From the endoplasmic reticulum, which lets the cell raise cytosolic Ca2+ within a fraction of a second without waiting for Ca2+ to enter from outside.",
       "options": [
-        "In the endoplasmic reticulum",
-        "In the Golgi vesicles awaiting export",
-        "In the nucleus",
-        "Dissolved freely in the cytosol"
+        "From the endoplasmic reticulum, which raises cytosolic Ca2+ almost instantly without waiting for entry from outside",
+        "From the mitochondria, which are the cell's main rapid release store",
+        "From the nucleus, which stores Ca2+ bound to DNA",
+        "From outside the cell only, through channels IP3 opens in the plasma membrane"
       ],
       "correctIndex": 0,
-      "explanation": "The endoplasmic reticulum, called the sarcoplasmic reticulum in muscle, pumps calcium in and holds it at high concentration so it can be dumped into the cytosol on command. The nucleus and Golgi are not the calcium reservoirs used for signaling. Free cytosolic calcium is deliberately kept very low at rest, which is exactly what makes a sudden release detectable."
+      "explanation": "Keeping cytosolic Ca2+ very low is expensive but it makes Ca2+ an excellent signal: a small absolute amount released produces a large fold change the cell can detect. The endoplasmic reticulum, called the sarcoplasmic reticulum in muscle, is the fast internal store, and IP3 opens receptor channels in its membrane. Because the store is already inside the cell and next to the targets, the rise is fast and local. Mitochondria do take up and buffer Ca2+, and they shape signals, but they are not the IP3 releasable store. The nucleus does not store Ca2+ on DNA. IP3 acts on the ER membrane, not the plasma membrane, although sustained signaling does eventually pull Ca2+ in from outside through store operated channels once the internal store runs down."
     },
     {
       "id": "c66",
@@ -1412,16 +1412,16 @@
       "tags": [
         "lecture"
       ],
-      "q": "Where is the receptor for a steroid hormone such as cortisol located?",
-      "a": "In the cytosol or nucleus of the target cell.",
+      "q": "What property of a steroid hormone allows its receptor to sit inside the cell rather than on the surface?",
+      "a": "It is lipid soluble, so it crosses the plasma membrane on its own and reaches a receptor in the cytosol or nucleus.",
       "options": [
-        "On the outer surface of the plasma membrane",
-        "In the lumen of the endoplasmic reticulum",
-        "In the cytosol or nucleus of the target cell",
-        "On the surface of circulating carrier proteins"
+        "It is lipid soluble, so it crosses the membrane on its own and meets a receptor inside",
+        "It is small enough to fit through membrane pores that exclude larger hormones",
+        "It is carried across by a specific membrane transporter in every target cell",
+        "It binds a surface receptor first and is then carried in as a complex"
       ],
-      "correctIndex": 2,
-      "explanation": "Cortisol crosses the membrane on its own, so its receptor waits inside the cell and the hormone receptor complex then acts on DNA. A plasma membrane receptor is needed only by signals that cannot cross. The endoplasmic reticulum lumen is not a signaling compartment for steroids, and carrier proteins transport hormone in blood without transmitting a message."
+      "correctIndex": 0,
+      "explanation": "Steroids are built from cholesterol and are hydrophobic, so the lipid bilayer is not a barrier to them. That single property explains most of what is different about steroid signaling: the receptor is intracellular, the receptor complex acts on DNA, the response takes an hour or more because transcription and translation have to happen, and the effect lasts hours because the new proteins persist. It also explains why steroids need carrier proteins in the blood, since they are poorly soluble in plasma. Size is not the issue; peptide hormones can be small and still cannot cross. There is no universal steroid transporter, and requiring one would remove the advantage of being lipid soluble. Binding a surface receptor first is the peptide hormone pattern, which is why peptide effects appear in seconds instead of hours."
     },
     {
       "id": "c80",

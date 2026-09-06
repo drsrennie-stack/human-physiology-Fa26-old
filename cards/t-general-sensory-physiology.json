@@ -1865,16 +1865,16 @@
    "tags": [
     "lecture"
    ],
-   "q": "Where does the somatosensory pathway terminate in the cortex?",
-   "a": "In the postcentral gyrus of the parietal lobe.",
+   "q": "The somatosensory map gives far more cortex to the fingertips than to the skin of the back. What does that predict about two point discrimination at those two sites?",
+   "a": "The fingertips can tell two points apart at a few millimeters, while the back needs several centimeters.",
    "options": [
-    "In the postcentral gyrus of the parietal lobe",
-    "In the precentral gyrus of the frontal lobe",
-    "In the superior temporal gyrus",
-    "In the calcarine cortex of the occipital lobe"
+    "Fingertips separate two points at a few millimeters; the back needs several centimeters",
+    "Both sites separate two points at about the same distance",
+    "The back is more sensitive, because it has a larger surface area",
+    "Two point discrimination depends only on how hard the points are pressed"
    ],
    "correctIndex": 0,
-   "explanation": "Primary somatosensory cortex sits in the postcentral gyrus, immediately behind the central sulcus. The precentral gyrus just in front of that sulcus is primary motor cortex, and confusing the two reverses sensory and motor findings. The superior temporal gyrus is auditory cortex and the calcarine cortex is visual cortex."
+   "explanation": "Two point discrimination tracks receptive field size and how much cortex is devoted to an area. Fingertips have small, densely packed receptive fields and a large cortical representation, so two nearby points still activate separate cortical territory and feel like two. On the back the receptive fields are large and overlapping and the cortical territory is small, so two points several centimeters apart can still fall inside one field and feel like one. Equal thresholds would mean the map is uniform, which it clearly is not. Total surface area does not set sensitivity; receptor density and cortical space do. Pressing harder increases firing rate, which codes intensity, but it does not improve the spatial resolution of the map."
   },
   {
    "id": "c102",
@@ -1946,7 +1946,7 @@
     "Loss of all sensation in both arms"
    ],
    "correctIndex": 1,
-   "explanation": "Dorsal column fibers ascend on the same side until they reach the medulla, so a lesion below that crossing point causes a deficit on the same side as the damage and below the level of the injury. Pain and temperature are spared because they have already crossed and are travelling in the spinothalamic tract on the other side. A contralateral deficit would require the lesion to be above the medullary crossing."
+   "explanation": "Dorsal column fibers ascend on the same side until they reach the medulla, so a lesion below that crossing point causes a deficit on the same side as the damage and below the level of the injury. Pain and temperature are spared because they have already crossed and are traveling in the spinothalamic tract on the other side. A contralateral deficit would require the lesion to be above the medullary crossing."
   },
   {
    "id": "c106",
@@ -1973,16 +1973,16 @@
    "tags": [
     "lecture"
    ],
-   "q": "Put these structures in the order a vibration signal from the foot passes through them: medial lemniscus, gracile nucleus, postcentral gyrus, ventral posterior lateral nucleus.",
-   "a": "Gracile nucleus, medial lemniscus, ventral posterior lateral nucleus, postcentral gyrus.",
+   "q": "In the dorsal column pathway the fibers cross the midline in the medulla, not in the spinal cord. What does that predict about a lesion in the cord compared with a lesion in the brainstem above the crossing?",
+   "a": "A cord lesion loses fine touch and vibration on the same side as the lesion, while a brainstem lesion above the crossing loses them on the opposite side.",
    "options": [
-    "Medial lemniscus, gracile nucleus, ventral posterior lateral nucleus, postcentral gyrus",
-    "Gracile nucleus, ventral posterior lateral nucleus, medial lemniscus, postcentral gyrus",
-    "Gracile nucleus, medial lemniscus, ventral posterior lateral nucleus, postcentral gyrus",
-    "Ventral posterior lateral nucleus, gracile nucleus, medial lemniscus, postcentral gyrus"
+    "Cord lesion: loss on the same side. Brainstem lesion above the crossing: loss on the opposite side",
+    "Both lesions cause loss on the opposite side",
+    "Both lesions cause loss on the same side",
+    "Cord lesion: loss on the opposite side. Brainstem lesion: loss on the same side"
    ],
-   "correctIndex": 2,
-   "explanation": "The first order fiber ascends the dorsal column and synapses in the gracile nucleus in the medulla, the second order axon crosses and becomes the medial lemniscus, that tract ends in the ventral posterior lateral nucleus of the thalamus, and the third order axon reaches the postcentral gyrus. Placing the medial lemniscus first ignores that the tract is made of second order axons. Putting the thalamus before the lemniscus or at the very start reverses the relay order."
+   "correctIndex": 0,
+   "explanation": "Fine touch and vibration fibers enter the cord and ascend on the SAME side all the way to the medulla, where the second order axons cross as the medial lemniscus. Anything below that crossing is still carrying same side information, so a cord lesion causes ipsilateral loss. Anything above it is carrying opposite side information, so a brainstem lesion causes contralateral loss. Pain and temperature behave differently, crossing within a segment or two of entering the cord, which is why a hemisection of the cord produces loss of vibration on one side and loss of pain on the other. Answering opposite side for both would be the pain pathway's rule applied to the wrong tract, and same side for both ignores the crossing entirely."
   },
   {
    "id": "c108",

@@ -28,16 +28,16 @@
         "lecture",
         "lab"
       ],
-      "q": "Which cranial nerve carries baroreceptor signals from the carotid sinus to the medulla?",
-      "a": "The glossopharyngeal nerve (IX).",
+      "q": "Baroreceptors in the carotid sinus fire faster when arterial pressure rises. What does the medulla do with that increase in firing?",
+      "a": "It reduces sympathetic output and increases vagal output, so heart rate, contractility and vascular resistance all fall and pressure comes back down.",
       "options": [
-        "The vagus nerve (cranial X)",
-        "The glossopharyngeal nerve (IX)",
-        "The facial nerve (cranial VII)",
-        "The trigeminal nerve (cranial V)"
+        "It reduces sympathetic output and increases vagal output, so pressure falls back toward the set point",
+        "It increases sympathetic output, so pressure rises further",
+        "It ignores the change unless pressure stays high for several hours",
+        "It sends the signal to the cortex for a conscious decision about what to do"
       ],
-      "correctIndex": 1,
-      "explanation": "Carotid sinus afferents run in the carotid sinus nerve, a branch of the glossopharyngeal nerve, and enter the medulla with cranial nerve IX. The vagus is the correct answer for the aortic arch receptors, and swapping those two is the most common error on this pathway. The facial and trigeminal nerves supply the face and jaw and carry no arterial pressure information."
+      "correctIndex": 0,
+      "explanation": "This is a negative feedback loop, so the response opposes the disturbance. Faster baroreceptor firing travels to the medulla along the glossopharyngeal nerve from the carotid sinus and the vagus from the aortic arch, and the cardiovascular centers respond by withdrawing sympathetic drive and adding vagal drive. Heart rate slows, contractility falls, arterioles dilate and veins relax, and mean arterial pressure comes back toward its set point within a few heartbeats. Increasing sympathetic output would be positive feedback and would drive pressure away from the set point, which is not what this reflex does. The reflex acts within seconds, not hours, which is what makes it the system that keeps you from fainting when you stand up. And it is entirely subconscious; the cortex is not in the loop."
     },
     {
       "id": "c3",

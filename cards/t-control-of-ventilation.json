@@ -26,16 +26,16 @@
    "tags": [
     "lecture"
    ],
-   "q": "Where is the pontine respiratory group, also called the pneumotaxic center, located?",
-   "a": "In the upper pons.",
+   "q": "The pontine respiratory group sends signals that help switch inspiration off. What happens to the breathing pattern if that input is lost?",
+   "a": "Inspirations become longer and deeper, and the breathing rate slows, because each breath is held in before it is released.",
    "options": [
-    "In the dorsal medulla",
-    "In the upper pons",
-    "In the lower pons",
-    "In the ventral medulla"
+    "Inspirations become long and deep and the rate slows, because each breath is not switched off on time",
+    "Breathing stops completely, since inspiration cannot begin without it",
+    "Breathing becomes fast and shallow, with a rate above 40 per minute",
+    "Breathing is unchanged, because the medulla sets the pattern entirely on its own"
    ],
-   "correctIndex": 1,
-   "explanation": "The pontine respiratory group lies in the upper pons and sends signals that limit the length of each inspiration. The lower pons is the location assigned to the apneustic center, which has the opposite effect and prolongs inspiration. The ventral medulla holds the ventral respiratory group and the pre-Botzinger complex, and the dorsal medulla holds the dorsal respiratory group, so both medullary answers name real centers in the wrong part of the brainstem."
+   "correctIndex": 0,
+   "explanation": "The basic rhythm is generated in the medulla, but the pontine group acts as a brake that limits how long each inspiration runs. Remove the brake and inspiration overruns, giving prolonged gasping breaths separated by brief expirations, the pattern called apneusis. Breathing does not stop, because the rhythm generator is medullary and still working, which is the point of the experiment that separated the two regions. Fast and shallow breathing is the opposite pattern and comes from stimuli such as low compliance lungs, pain, or metabolic acidosis. Saying the medulla is entirely self sufficient ignores the reason a pontine lesion changes the pattern at all, though it is fair to say the medulla is where the rhythm itself originates."
   },
   {
    "id": "c3",

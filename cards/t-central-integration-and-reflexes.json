@@ -142,16 +142,16 @@
     "lecture",
     "lab"
    ],
-   "q": "Where are the cell bodies of the somatic motor neurons of a spinal reflex arc?",
-   "a": "In the ventral horn of the spinal cord gray matter.",
+   "q": "In a spinal reflex, what makes the somatic motor neuron the last checkpoint before the muscle contracts?",
+   "a": "Every excitatory and inhibitory input to that movement converges on it, and the muscle contracts only if the sum of those inputs reaches threshold.",
    "options": [
-    "In the ventral horn of the spinal cord gray matter",
-    "In the dorsal horn of the spinal cord gray matter",
-    "In the lateral white column of the spinal cord",
-    "In the dorsal root ganglion"
+    "All excitatory and inhibitory input converges on it, and the muscle contracts only if the sum reaches threshold",
+    "It fires automatically whenever any sensory neuron fires",
+    "It stores the reflex pattern and replays it without needing input",
+    "It filters out pain signals before they reach the muscle"
    ],
    "correctIndex": 0,
-   "explanation": "Somatic motor neurons have their cell bodies in the ventral horn and send axons out through the ventral root to skeletal muscle. The dorsal root ganglion holds sensory cell bodies instead. The dorsal horn receives incoming sensory terminals and holds interneurons, not somatic motor neurons. White matter contains axons in transit and no neuronal cell bodies at all."
+   "explanation": "The somatic motor neuron is the final common path. Sensory afferents, interneurons and descending commands from the brain all end on the same cell, and it integrates them. The muscle contracts only if the running sum of excitatory and inhibitory input at the trigger zone crosses threshold, which is why a reflex can be reinforced, suppressed voluntarily, or exaggerated when descending inhibition is lost. Firing automatically on any sensory input would make reflexes impossible to modulate, and would contradict reciprocal inhibition, which works by adding inhibition at exactly this cell. Motor neurons do not store or replay patterns; rhythmic patterns come from interneuron circuits upstream. Filtering pain happens in the dorsal horn, on the sensory side, not at the motor neuron."
   },
   {
    "id": "c9",
@@ -1504,16 +1504,16 @@
    "tags": [
     "lecture"
    ],
-   "q": "Where are the cell bodies of the second order neurons of the spinothalamic pathway?",
-   "a": "In the dorsal horn of the cord, near the level of entry.",
+   "q": "The first synapse of the pain pathway sits in the dorsal horn of the spinal cord. Why does that make the dorsal horn a useful target for pain control?",
+   "a": "The signal can be turned down there, by descending pathways and by large touch fibers, before it is ever relayed to the brain.",
    "options": [
-    "In the ventral posterolateral nucleus of the thalamus",
-    "In the dorsal root ganglion beside the spinal cord",
-    "In the dorsal horn of the cord, near the level of entry",
-    "In the nucleus gracilis or cuneatus of the medulla"
+    "The signal can be turned down there before it is relayed to the brain",
+    "Pain signals are generated in the dorsal horn rather than in the skin",
+    "The dorsal horn is the only place where opioid receptors exist",
+    "Blocking the dorsal horn stops motor output as well, which prevents further injury"
    ],
-   "correctIndex": 2,
-   "explanation": "Pain and temperature afferents synapse in the dorsal horn, and it is that dorsal horn neuron whose axon crosses and ascends, which is why the crossing happens so low. The dorsal root ganglion holds the first order cell body. The nucleus gracilis holds the second order cell body of the dorsal column pathway. The thalamic nucleus holds the third order neuron for both sensory pathways."
+   "correctIndex": 0,
+   "explanation": "A synapse is a place where a signal can be modified, and the dorsal horn is where the incoming pain fiber first has to hand off. Descending fibers from the brainstem release serotonin, noradrenaline and endogenous opioids there, and large diameter touch fibers recruit inhibitory interneurons in the same region. That is the gate control idea, and it is why rubbing an injury or running a nerve stimulator over it genuinely reduces pain. The pain signal itself starts at nociceptor endings in the tissue, not in the cord. Opioid receptors are widespread, including in the periaqueductal gray and the brain, so the dorsal horn is not the only site. Blocking the dorsal horn does not stop motor output, which leaves by the ventral horn on the other side of the cord."
   },
   {
    "id": "c82",

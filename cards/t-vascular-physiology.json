@@ -2171,16 +2171,16 @@
    "tags": [
     "lecture"
    ],
-   "q": "The right lymphatic duct drains which region?",
-   "a": "The right upper limb and the right side of the head, neck, and thorax.",
+   "q": "Roughly 3 liters of filtered fluid are left behind in the interstitial space each day and returned to the blood by lymphatic vessels. What happens if lymphatic drainage from one arm is blocked?",
+   "a": "That arm swells, because filtered fluid keeps arriving but has no route back into the bloodstream.",
    "options": [
-    "The right leg, the right side of the abdomen, and the right side of the pelvis",
-    "The right upper limb and the right side of the head, neck, and thorax",
-    "The entire right half of the body",
-    "The right lung only"
+    "That arm swells, because filtered fluid keeps arriving and cannot get back to the blood",
+    "That arm becomes dehydrated, because fluid drains out of it faster",
+    "Nothing changes, because veins reabsorb all the filtered fluid anyway",
+    "Both arms swell, because the lymphatic system drains as a single unit"
    ],
-   "correctIndex": 1,
-   "explanation": "The right lymphatic duct serves only the upper right quadrant, a relatively small territory, and empties near the right subclavian vein. The right leg and right abdomen drain into the thoracic duct instead. The whole right half of the body would include those lower regions, which is why the split is by quadrant rather than by side. The right lung is part of the territory but not the whole of it."
+   "correctIndex": 0,
+   "explanation": "Capillary filtration slightly exceeds reabsorption, and the leftover fluid plus any escaped protein is collected by lymphatic capillaries and returned to the blood at the subclavian veins. Block that route and the fluid has nowhere to go, so it accumulates as lymphedema. This is why axillary lymph node removal during breast cancer surgery carries a risk of arm swelling. Blocking drainage cannot dehydrate a limb, since the problem is fluid staying rather than leaving. Veins reabsorb most but not all of the filtrate, and they cannot take up the protein that escapes, which is exactly why a separate return system is needed. Drainage is regional rather than unified: the right arm and right side of the head and thorax drain by the right lymphatic duct, and the rest of the body by the thoracic duct, so a blockage on one side spares the other."
   },
   {
    "id": "c119",

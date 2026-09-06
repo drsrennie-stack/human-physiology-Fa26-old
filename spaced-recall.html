@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spaced Recall, BIO 005 Human Physiology</title>
+<meta name="description" content="Daily spaced recall practice for BIO 005 Human Physiology. Cards come back on a schedule, and the questions get harder as you prove you know the material.">
+<link rel="icon" href="os/icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+<style>
+:root{
+  --maroon:#7A2A22;
+  --maroon-dark:#5E201A;
+  --maroon-tint:#F3ECEB;
+  --gold:#B8924A;
+  --gold-text:#634710;
+  --ink:#08101F;
+  --ink-soft:#2A3949;
+  --slate:#484F5E;
+  --white:#FFFFFF;
+  --offwhite:#FAFAF9;
+  --line:#DDE1E7;
+  --ok:#1E4C33;
+  --ok-tint:#EAF2ED;
+  --bad:#7A2E2E;
+  --bad-tint:#F7ECEC;
+  --rest-shadow:0 1px 3px rgba(0,0,0,.08);
+  --hover-shadow:0 8px 16px rgba(0,0,0,.10);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--offwhite);color:var(--ink);
+  font-family:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
+  font-size:17px;line-height:1.6;
+}
+.skip{position:absolute;left:-9999px;top:0;background:var(--maroon);color:#fff;padding:12px 18px;z-index:99;border-radius:0 0 8px 0}
+.skip:focus{left:0}
+a{color:var(--maroon)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{
+  outline:3px solid var(--maroon);outline-offset:3px;
+}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+
+/* brand bar and header band */
+.brandbar{background:var(--white);border-bottom:1px solid var(--line)}
+.brandbar .wrap{display:flex;align-items:center;gap:12px;min-height:56px;flex-wrap:wrap}
+.brandbar img{width:26px;height:26px}
+.brandbar .course{font-family:'DM Sans',system-ui,sans-serif;font-size:12px;letter-spacing:.10em;
+  text-transform:uppercase;color:var(--maroon-dark);font-weight:700}
+.band{background:var(--maroon);color:#fff;padding:26px 0 30px}
+.band h1{font-size:30px;font-weight:800;margin:2px 0 6px;line-height:1.22}
+.band p{margin:0;color:#F3E7E5;max-width:62ch}
+.eyebrow{font-family:'DM Sans',system-ui,sans-serif;font-size:12px;letter-spacing:.10em;
+  text-transform:uppercase;font-weight:700;color:#F4E1B6;margin:0}
+
+main{padding:26px 0 60px}
+section{margin:0 0 26px}
+h2{font-size:21px;font-weight:700;color:var(--maroon-dark);margin:0 0 12px}
+h3{font-size:17px;font-weight:700;color:var(--ink);margin:0 0 6px}
+
+.card{
+  background:var(--white);border:1px solid var(--line);border-radius:12px;
+  padding:22px;box-shadow:var(--rest-shadow);
+  transition:transform 200ms ease, box-shadow 200ms ease;
+}
+.card.lift:hover{transform:translateY(-2px);box-shadow:var(--hover-shadow)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* this week */
+.weekhead{display:flex;flex-wrap:wrap;gap:10px 26px;align-items:baseline}
+.weekhead .wk{font-size:12px;font-family:'DM Sans',system-ui,sans-serif;letter-spacing:.10em;
+  text-transform:uppercase;font-weight:700;color:var(--maroon-dark)}
+.big{font-size:34px;font-weight:800;line-height:1;color:var(--ink);display:block}
+.stat{min-width:104px}
+.stat .lab{font-size:13px;color:var(--slate);display:block;margin-top:4px}
+.statrow{display:flex;flex-wrap:wrap;gap:20px 30px;margin-top:16px}
+
+/* buttons */
+.btn{
+  font:inherit;font-weight:700;border-radius:9px;padding:13px 22px;cursor:pointer;
+  border:1px solid var(--maroon);background:var(--maroon);color:#fff;
+  transition:background 200ms ease;
+}
+.btn:hover{background:var(--maroon-dark)}
+.btn.ghost{background:var(--white);color:var(--maroon-dark);border-color:var(--maroon)}
+.btn.ghost:hover{background:var(--maroon-tint)}
+.btn[disabled]{opacity:.55;cursor:not-allowed}
+.btnrow{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+
+/* the question */
+.qmeta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:14px}
+.pill{
+  font-family:'DM Sans',system-ui,sans-serif;font-size:12px;font-weight:700;
+  letter-spacing:.06em;text-transform:uppercase;padding:5px 10px;border-radius:999px;
+  border:1px solid var(--line);color:var(--ink-soft);background:var(--offwhite);
+}
+.pill.level{border-color:var(--gold);color:var(--gold-text);background:#FBF6EA}
+.qtext{font-size:20px;font-weight:600;line-height:1.45;margin:0 0 18px}
+fieldset{border:0;padding:0;margin:0}
+legend{position:absolute;left:-9999px}
+.opt{display:block;margin:0 0 10px}
+.opt input{position:absolute;opacity:0;width:1px;height:1px}
+.opt > span{
+  display:block;padding:14px 16px;border:1px solid var(--line);border-radius:10px;
+  background:var(--white);cursor:pointer;line-height:1.5;
+}
+.opt > span:hover{border-color:var(--maroon);background:var(--maroon-tint)}
+.opt input:focus-visible + span{outline:3px solid var(--maroon);outline-offset:3px}
+.opt input:checked + span{border-color:var(--maroon);border-width:2px;padding:13px 15px;background:var(--maroon-tint)}
+.opt.right > span{border-color:var(--ok);border-width:2px;padding:13px 15px;background:var(--ok-tint)}
+.opt.wrong > span{border-color:var(--bad);border-width:2px;padding:13px 15px;background:var(--bad-tint)}
+.opt.locked > span{cursor:default}
+.opt.locked > span:hover{border-color:inherit;background:inherit}
+.mark{font-weight:700;font-family:'DM Sans',system-ui,sans-serif;font-size:13px;
+  letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:3px}
+.mark.r{color:var(--ok)}
+.mark.w{color:var(--bad)}
+
+.answer{margin-top:20px;padding-top:18px;border-top:1px solid var(--line)}
+.answer h3{margin-bottom:8px}
+.answer p{margin:0 0 12px}
+.next{margin-top:18px}
+
+.conf{margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}
+.conf p{margin:0 0 10px;font-size:15px;color:var(--slate)}
+.conf .btnrow{margin-top:0}
+.conf .btn{padding:10px 16px;font-size:15px}
+
+/* week record */
+.days{display:flex;gap:8px;flex-wrap:wrap;margin:4px 0 18px}
+.day{
+  flex:1 1 84px;min-width:84px;border:1px solid var(--line);border-radius:10px;
+  padding:12px 10px;text-align:center;background:var(--white);
+}
+.day.done{border-color:var(--maroon);border-width:2px;padding:11px 9px;background:var(--maroon-tint)}
+.day.today{box-shadow:inset 0 0 0 2px var(--gold)}
+.day .dn{font-family:'DM Sans',system-ui,sans-serif;font-size:12px;font-weight:700;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--slate);display:block}
+.day .dv{font-size:22px;font-weight:800;display:block;margin-top:5px;color:var(--ink)}
+.day .du{font-size:12px;color:var(--slate);display:block}
+
+table{border-collapse:collapse;width:100%;font-size:16px}
+caption{text-align:left;font-size:15px;color:var(--slate);padding-bottom:8px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:'DM Sans',system-ui,sans-serif;font-size:12px;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--slate);font-weight:700}
+td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
+.scroller{overflow-x:auto}
+
+/* goal chooser */
+.goals{display:flex;flex-wrap:wrap;gap:12px;margin:0}
+.goal{flex:1 1 300px;margin:0}
+.goal input{position:absolute;opacity:0;width:1px;height:1px}
+.goal > span{
+  display:block;padding:16px 18px;border:1px solid var(--line);border-radius:10px;
+  background:var(--white);cursor:pointer;height:100%;
+}
+.goal > span:hover{border-color:var(--maroon);background:var(--maroon-tint)}
+.goal input:focus-visible + span{outline:3px solid var(--maroon);outline-offset:3px}
+.goal input:checked + span{border-color:var(--maroon);border-width:2px;padding:15px 17px;background:var(--maroon-tint)}
+.goal .gt{display:block;font-weight:700;font-size:17px;margin-bottom:4px}
+.goal .gn{display:block;font-family:'DM Sans',system-ui,sans-serif;font-size:13px;
+  font-weight:700;letter-spacing:.04em;color:var(--maroon-dark);margin-bottom:6px}
+.goal .gd{display:block;font-size:15px;color:var(--slate);line-height:1.5}
+.meter{margin-top:18px}
+.meter .bar{height:14px;border-radius:999px;background:#EDEFF2;overflow:hidden;border:1px solid #7E858F}
+.meter .fill{height:100%;background:var(--maroon);width:0}
+.meter .cap{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:15px;margin:8px 0 0}
+.meter .cap b{font-variant-numeric:tabular-nums}
+.note{font-size:15px;color:var(--slate);margin:10px 0 0}
+.live{margin:0}
+.empty{color:var(--slate)}
+/* how it works */
+.discl{margin-top:18px}
+.discl button{
+  font:inherit;font-weight:700;font-size:16px;color:var(--maroon-dark);background:none;
+  border:0;padding:0;cursor:pointer;text-align:left;text-decoration:underline;
+}
+.discl button:hover{color:var(--maroon)}
+.discl .body{margin-top:14px;border-top:1px solid var(--line);padding-top:16px}
+.discl h3{margin:18px 0 6px}
+.discl h3:first-child{margin-top:0}
+.discl ul{margin:6px 0 0;padding-left:22px}
+.discl li{margin:0 0 7px}
+footer{border-top:1px solid var(--line);background:var(--white);padding:22px 0;font-size:15px}
+footer a{margin:0 4px}
+footer .sep{color:var(--slate)}
+@media (max-width:600px){
+  .band h1{font-size:25px}
+  .qtext{font-size:18px}
+  body{font-size:16px}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the practice cards</a>
+
+<header>
+<div class="brandbar">
+  <div class="wrap">
+    <img src="os/icon.svg" alt="" aria-hidden="true">
+    <span class="course">BIO 005 Human Physiology &middot; Yuba College</span>
+  </div>
+</div>
+
+<div class="band">
+  <div class="wrap">
+    <p class="eyebrow">Spaced recall</p>
+    <h1>Practice a little, most days</h1>
+    <p>Cards you get right come back later. Cards you miss come back tomorrow. Once you can hold a
+       topic at one level, the questions on it step up to the next one.</p>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+  <!-- ============ YOUR GOAL ============ -->
+  <section aria-labelledby="h-goal">
+    <h2 id="h-goal">Your goal</h2>
+    <div class="card">
+      <fieldset>
+        <legend class="gn" style="margin-bottom:10px">Pick how you want to use this</legend>
+        <div class="goals">
+          <label class="goal">
+            <input type="radio" name="goal" value="keepup" id="goalKeepup" checked>
+            <span>
+              <span class="gt">Keep up</span>
+              <span class="gn">15 cards, about 8 minutes, 5 days a week</span>
+              <span class="gd">Holds on to what you have learned and keeps you current with the
+              week being taught. It samples the course rather than covering it, so plan on the
+              note sheets and the reading to do the rest.</span>
+            </span>
+          </label>
+          <label class="goal">
+            <input type="radio" name="goal" value="coverage" id="goalCoverage">
+            <span>
+              <span class="gt">Cover the course</span>
+              <span class="gn">About 60 cards, 25 minutes, 7 days a week</span>
+              <span class="gd">Drives every competency in the course to the point where you can
+              recall it reliably. This one only works if you come back every day, because a card
+              cannot move forward twice in the same day.</span>
+            </span>
+          </label>
+        </div>
+      </fieldset>
+
+      <div class="discl">
+        <button type="button" id="howBtn" aria-expanded="false" aria-controls="howBody">
+          How this works, and what it takes to cover the course
+        </button>
+        <div class="body" id="howBody" hidden>
+          <h3>What the tool is doing</h3>
+          <p>Every question is tied to one course competency and sits at one of three levels.
+             Level 1 asks you to recall something. Level 2 asks you to apply it. Level 3 asks
+             you to work out what happens when conditions change. You start at level 1 on
+             everything. Level 2 opens on a topic once you have proved level 1 on it, and
+             level 3 opens the same way off level 2. You cannot skip ahead, and you do not
+             have to unlock anything by hand.</p>
+          <p>When you get a card right it goes away for longer: one day, then four, then
+             twelve, then thirty, then seventy-five. When you get it wrong it comes back
+             tomorrow. A card counts as proved once you have answered it right on two
+             separate days, which is why one long session cannot substitute for showing up
+             on several days.</p>
+
+          <h3>What covered means</h3>
+          <p>A competency is covered when three of its cards are proved at every level it
+             has cards for. That is the same bar the tool uses to open the next level, so
+             covering a competency and unlocking its hardest questions are the same thing.
+             There are 268 competencies in the course.</p>
+          <p>Covered does not mean every card in the bank. There are 4,980 cards and about
+             eighteen per competency. The spares are there so there is always a fresh
+             question waiting when you miss one.</p>
+
+          <h3>What it takes</h3>
+          <ul>
+            <li><b>Keep up.</b> About 15 cards a day, five days a week, roughly 8 to 10
+                minutes. You will stay current with the week being taught and hold on to
+                what you have already learned. You will not cover the course this way, and
+                that is a fair choice as long as you know you are making it.</li>
+            <li><b>Cover the course.</b> Around 60 cards a day, seven days a week, roughly
+                25 minutes. Over a term that gets almost every competency in the course
+                proved at level 1.</li>
+            <li><b>Going deeper than that.</b> Getting every competency proved at level 2 as
+                well takes about 125 cards a day, seven days a week, close to an hour. That
+                is a real commitment on top of the reading, the note sheets and the lab, so
+                think about whether the hour is better spent here or on the note sheets.</li>
+          </ul>
+
+          <h3>Days matter more than length</h3>
+          <p>A card can only move forward once a day, no matter how many times you see it.
+             Sixty cards on each of seven days moves you much further than four hundred
+             cards on two days. If you have twenty minutes and a choice between doing them
+             all today or ten minutes today and ten tomorrow, split them.</p>
+
+          <h3>You do not have to pick chapters</h3>
+          <p>The set is built for you every day. Cards that are due come first, oldest
+             first, from any week of the course. Then a few cards you have never seen are
+             added, with some always kept for the week being taught now and the rest taken
+             from the oldest material you have not finished. So earlier chapters come back
+             on their own, and nothing you started in week 3 gets stranded because week 9
+             arrived. There is no chapter menu because you do not need one.</p>
+
+          <h3>What it cannot do for you</h3>
+          <ul>
+            <li>Material taught in the last two or three weeks of the term will not have
+                time to climb the whole ladder before the term ends. For those weeks, lean
+                on the note sheets and the teach-back work.</li>
+            <li>These cards are multiple choice. Every graded thing in this course asks you
+                to draw a mechanism, teach it out loud, or answer out loud. The cards are
+                practice for the thinking, not practice for the format.</li>
+            <li>Your progress is saved in this browser on this device. If you clear your
+                browsing data or switch computers, you start over.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="meter">
+        <div class="bar"><div class="fill" id="covFill"></div></div>
+        <p class="cap">
+          <span>Competencies covered: <b id="covN">0</b> of <b id="covT">268</b></span>
+          <span>Recall proved: <b id="covL1">0</b></span>
+          <span>Apply proved: <b id="covL2">0</b></span>
+          <span>Analyze proved: <b id="covL3">0</b></span>
+        </p>
+        <p class="note" id="covNote"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ THIS WEEK ============ -->
+  <section aria-labelledby="h-week">
+    <h2 id="h-week">This week</h2>
+    <div class="card">
+      <div class="weekhead">
+        <span class="wk" id="wkLabel">Week 1</span>
+        <span id="wkTitle"></span>
+      </div>
+      <div class="statrow">
+        <div class="stat"><span class="big" id="sDue">0</span><span class="lab">cards ready today</span></div>
+        <div class="stat"><span class="big" id="sMins">0</span><span class="lab">minutes for today's set</span></div>
+        <div class="stat"><span class="big" id="sDays">0</span><span class="lab">days practiced this week</span></div>
+        <div class="stat"><span class="big" id="sHold">0</span><span class="lab">cards holding</span></div>
+      </div>
+      <p class="note" id="wkNote"></p>
+    </div>
+  </section>
+
+  <!-- ============ PRACTICE ============ -->
+  <section aria-labelledby="h-practice">
+    <h2 id="h-practice">Practice</h2>
+    <div class="card" id="runner">
+      <div id="startPanel">
+        <h3>Today's set</h3>
+        <p id="startText">Loading your cards.</p>
+        <div class="btnrow">
+          <button class="btn" id="btnStart" type="button" disabled>Start</button>
+          <button class="btn ghost" id="btnMissed" type="button" disabled>Practice what I missed</button>
+        </div>
+      </div>
+
+      <div id="qPanel" hidden>
+        <div class="qmeta">
+          <span class="pill" id="pTopic"></span>
+          <span class="pill level" id="pLevel"></span>
+          <span class="pill" id="pCount"></span>
+        </div>
+        <p class="qtext" id="qText"></p>
+        <form id="qForm">
+          <fieldset>
+            <legend id="qLegend">Choose one answer</legend>
+            <div id="optWrap"></div>
+          </fieldset>
+          <div class="btnrow">
+            <button class="btn" id="btnSubmit" type="submit" disabled>Check my answer</button>
+          </div>
+        </form>
+
+        <div class="conf" id="confPanel" hidden>
+          <p id="confAsk">Before you see the explanation: how sure are you?</p>
+          <div class="btnrow">
+            <button class="btn ghost" type="button" data-conf="yes">Sure</button>
+            <button class="btn ghost" type="button" data-conf="maybe">Half sure</button>
+            <button class="btn ghost" type="button" data-conf="no">Guessing</button>
+          </div>
+        </div>
+
+        <div class="answer" id="answerPanel" hidden>
+          <h3 id="verdict"></h3>
+          <p id="expl"></p>
+          <p class="note" id="schedNote"></p>
+          <div class="btnrow next">
+            <button class="btn" id="btnNext" type="button">Next card</button>
+            <button class="btn ghost" id="btnStop" type="button">Stop for today</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="donePanel" hidden>
+        <h3 id="doneTitle">That is the set</h3>
+        <p id="doneText"></p>
+        <div class="btnrow">
+          <button class="btn" id="btnMore" type="button">Keep going</button>
+        </div>
+      </div>
+    </div>
+    <p class="live" aria-live="polite" id="liveRegion" style="position:absolute;left:-9999px"></p>
+  </section>
+
+  <!-- ============ WHAT YOU DID ============ -->
+  <section aria-labelledby="h-record">
+    <h2 id="h-record">What you did this week</h2>
+    <div class="card">
+      <p class="note" style="margin:0 0 12px"><b id="sWeekCards">0</b> cards answered this week.</p>
+      <div class="days" id="dayStrip"></div>
+      <div class="scroller">
+        <table id="topicTable">
+          <caption id="tCaption">Topics you touched this week, and the level you are working at in each one.</caption>
+          <thead>
+            <tr>
+              <th scope="col">Topic</th>
+              <th scope="col">Cards</th>
+              <th scope="col">First try correct</th>
+              <th scope="col">Level you are on</th>
+            </tr>
+          </thead>
+          <tbody id="tBody"></tbody>
+        </table>
+      </div>
+      <p class="note" id="levelNote"></p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <a href="syllabus-fall2026.html" target="_top">Syllabus</a><span class="sep">&middot;</span>
+    <a href="course-schedule.html" target="_top">Schedule</a><span class="sep">&middot;</span>
+    <a href="competency-study-guide.html" target="_top">Study guide</a><span class="sep">&middot;</span>
+    <a href="mastery-canvas.html" target="_top">Drawing canvas</a><span class="sep">&middot;</span>
+    <a href="accessibility.html" target="_top">Accessibility</a>
+    <p class="note">Dr. Sharilyn Rennie</p>
+  </div>
+</footer>
+
+<script src="bio005-competencies.js"></script>
+<script src="os/card-competency-map.js"></script>
+<script src="os/bio005-card-bank.js"></script>
+<script>
+/* ============================================================
+   Spaced Recall, BIO 005 Human Physiology
+
+   This page does three things and nothing else:
+     1. shows what is due today,
+     2. runs the cards,
+     3. shows what the student did this week.
+
+   It reads and writes the SAME spacing state as the recall engine
+   inside Mastery Physio OS (localStorage key bio005-recall-progress),
+   so a student who used either one keeps their history.
+
+   HOW THE SPACING WORKS
+   Leitner boxes, in days: 0, 1, 4, 12, 30, 75. A card answered right
+   moves out one box, so it comes back later. A card missed drops to
+   box 0 and comes back the same day or the next one. "Holding" means
+   box 2 or better, which can only happen by being right on two
+   separate days, so a lucky guess cannot fake it.
+
+   HOW COVERAGE WORKS
+   A student can choose between two goals. Keep up is a 15 card set
+   built by buildSet, which holds on to what is learned and stays
+   current with the week being taught. Cover the course is a larger
+   set built by buildCoverSet, which drives every competency toward
+   three cards holding at every level. tools/sim_coverage.js measures
+   what each one costs in cards and minutes a day.
+
+   HOW THE DIFFICULTY RISES
+   Every card carries a DOK level: 1 recall, 2 apply, 3 analyze. The
+   gate is per competency. Level 1 is always open. Level 2 opens once
+   3 of that competency's level 1 cards are holding, and level 3 opens
+   the same way off level 2. The threshold is capped at how many cards
+   actually exist at that level, so a competency with only two level 1
+   cards is not stuck forever. A student who keeps practising therefore
+   meets harder questions on the same material over time, without ever
+   being handed an analyze question on something they cannot yet recall.
+   ============================================================ */
+(function () {
+  'use strict';
+
+  var SKEY = 'bio005-recall-progress';   // shared with the OS recall engine
+  var VKEY = 'bio005-recall-v2';         // the per card history the OS reads
+  var DKEY = 'bio005-recall-days';       // this page's day log, for the week view
+
+  var GKEY = 'bio005-recall-goal';       // keep up, or cover the course
+
+  /* Leitner ladder, in days. Lengthened Sep 2026 after the coverage
+     simulation: the old 0, 1, 3, 7, 16, 35 ladder spent so much of a
+     student's daily budget re-asking cards they already knew that there
+     was never room to reach the rest of the course. */
+  var BOX_DAYS = [0, 1, 4, 12, 30, 75];
+  var HOLDING  = 2;
+  var GATE_N   = 3;
+
+  var SET_SIZE = 15;                     // Keep up: cards in one sitting
+  var NEW_PER_SET = 5;                   // Keep up: how many may be brand new
+  var COVER_CAP = 90;                    // Cover the course: daily ceiling
+  var COVER_NEW = 0.35;                  // Cover the course: share held for new cards
+  var CURRENT_FLOOR = 3;                 // new cards always kept for this week
+
+  /* Seconds per card, for the "minutes for today's set" estimate. Word
+     counts are measured from the bank: 103 words at level 1, 121 at
+     level 2, 153 at level 3, counting question, options and explanation.
+     Costed at 200 words a minute plus a thinking pause. */
+  var WORDS = { 1: 103, 2: 121, 3: 153 };
+  var THINK = { 1: 10, 2: 15, 3: 20 };
+  function cardSeconds(e) {
+    var first = !progress[e.key];
+    var full = WORDS[e.dok] / 200 * 60 + THINK[e.dok];
+    return first ? full : (WORDS[e.dok] * 0.4 / 200 * 60 + THINK[e.dok] * 0.5) * 1.25;
+  }
+
+  var TERM_START = new Date(2026, 8, 8); // Tue 8 September 2026
+  var TERM_WEEKS = 15;
+  var LEVEL_NAME = { 1: 'Level 1 recall', 2: 'Level 2 apply', 3: 'Level 3 analyze' };
+
+  function $(id) { return document.getElementById(id); }
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+  function today() {
+    var d = new Date();
+    return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate());
+  }
+  function pad(n) { return (n < 10 ? '0' : '') + n; }
+  function addDays(iso, n) {
+    var p = iso.split('-'), d = new Date(+p[0], +p[1] - 1, +p[2] + n);
+    return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate());
+  }
+  function readLS(k) { try { return JSON.parse(localStorage.getItem(k)) || {}; } catch (e) { return {}; } }
+  function writeLS(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+
+  var progress = readLS(SKEY);
+  var dayLog   = readLS(DKEY);           // { 'YYYY-MM-DD': { n, right, topics:{id:{n,right}} } }
+
+  /* ---------- flatten the bank ---------- */
+  var ALL = [];
+  var COMP_WEEK = {}, COMP_NAME = {};
+  (window.BIO005_COMPETENCIES || []).forEach(function (c) {
+    COMP_WEEK[c.id] = c.week || 0;
+    COMP_NAME[c.id] = c.name || c.id;
+  });
+
+  function flatten() {
+    var bank = window.BIO005_CARD_BANK;
+    if (!bank || !bank.modules) return [];
+    var out = [];
+    bank.modules.forEach(function (m) {
+      (m.topics || []).forEach(function (t) {
+        (t.cards || []).forEach(function (c) {
+          out.push({
+            key: t.id + ':' + c.id,
+            card: c,
+            topicId: t.id,
+            topicTitle: t.title,
+            comp: c.competencyId || t.id,
+            dok: Math.max(1, Math.min(3, +c.dok || 1)),
+            week: c.week || COMP_WEEK[c.competencyId] || 0
+          });
+        });
+      });
+    });
+    return out;
+  }
+
+  /* ---------- the census: what every competency has, holds, and has in flight
+
+     HOLD  cards at box 2 or better, which is the proved bar
+     FLIGHT cards started but not yet holding
+     HAVE  cards that exist at all
+
+     Coverage of a competency means three cards holding at every level it
+     owns cards for, which is the same threshold the gate already uses. So
+     covering a competency and opening its top level are one act. */
+  var GATE = {}, CENSUS = {}, COMPS = [];
+  function census() {
+    CENSUS = {};
+    ALL.forEach(function (e) {
+      var g = CENSUS[e.comp] || (CENSUS[e.comp] = {
+        have: { 1: 0, 2: 0, 3: 0 }, hold: { 1: 0, 2: 0, 3: 0 }, flight: { 1: 0, 2: 0, 3: 0 } });
+      g.have[e.dok]++;
+      var p = progress[e.key];
+      if (!p) return;
+      if ((p.box || 0) >= HOLDING) g.hold[e.dok]++; else g.flight[e.dok]++;
+    });
+    COMPS = Object.keys(CENSUS);
+    GATE = {};
+    COMPS.forEach(function (k) {
+      var g = CENSUS[k], open = 1;
+      var need2 = Math.min(GATE_N, g.have[1]);
+      if (g.have[2] && need2 && g.hold[1] >= need2) open = 2;
+      var need3 = Math.min(GATE_N, g.have[2]);
+      if (open === 2 && g.have[3] && need3 && g.hold[2] >= need3) open = 3;
+      GATE[k] = open;
+    });
+  }
+  var computeGates = census;              // the old name, kept so nothing breaks
+  function gateFor(e) { return GATE[e.comp] || 1; }
+
+  function needAt(comp, dok) {
+    var g = CENSUS[comp];
+    return g ? Math.min(GATE_N, g.have[dok]) : 0;
+  }
+  function isCovered(comp) {
+    var g = CENSUS[comp];
+    if (!g) return false;
+    return [1, 2, 3].every(function (d) { return !g.have[d] || g.hold[d] >= needAt(comp, d); });
+  }
+  function coverageStats() {
+    var done = 0, l1 = 0, l2 = 0, l3 = 0;
+    COMPS.forEach(function (c) {
+      var g = CENSUS[c];
+      if (g.have[1] && g.hold[1] >= needAt(c, 1)) l1++;
+      if (g.have[2] && g.hold[2] >= needAt(c, 2)) l2++;
+      if (g.have[3] && g.hold[3] >= needAt(c, 3)) l3++;
+      if (isCovered(c)) done++;
+    });
+    return { done: done, total: COMPS.length, l1: l1, l2: l2, l3: l3 };
+  }
+
+  /* ---------- scheduling ---------- */
+  function isDue(e) {
+    var p = progress[e.key];
+    if (!p) return true;
+    return !p.next || p.next <= today();
+  }
+  function currentWeek() {
+    var wk = Math.floor((new Date() - TERM_START) / 604800000) + 1;
+    return wk < 1 ? 1 : (wk > TERM_WEEKS ? TERM_WEEKS : wk);
+  }
+  var WEEK = currentWeek();
+
+  /* Only material that has been taught. A student in week 3 should not
+     meet a renal card. */
+  function taught(e) { return !e.week || e.week <= WEEK; }
+
+  function duePool() {
+    return ALL.filter(function (e) {
+      return taught(e) && e.dok <= gateFor(e) && isDue(e);
+    });
+  }
+  function missedPool() {
+    return ALL.filter(function (e) {
+      var p = progress[e.key];
+      return taught(e) && e.dok <= gateFor(e) && p && p.wrong > 0 && (p.box || 0) < HOLDING;
+    });
+  }
+
+  /* HOW A SITTING IS BUILT, AND WHY IT IS BUILT THIS WAY
+
+     A first version of this page filled every set with brand new cards
+     from the current week. Simulated over a whole term it never once
+     served a level 2 question: new material arrived faster than any
+     competency could be driven to the level 1 threshold, so the gate
+     never opened and the difficulty never rose. Reviews have to come
+     first for spacing to mean anything.
+
+     So a set of 15 is: up to 10 cards that are DUE for review, then 5
+     cards the student has never seen. The 5 new slots are split, half
+     to a level that has just opened on something already proved, half
+     to material from the week being taught now. That split is what
+     keeps both jobs alive: the course keeps moving forward, and the
+     questions on what is already learned keep getting harder.
+
+     tools/sim_difficulty.js runs this over 15 simulated weeks and
+     reports the level mix week by week. */
+  function spread(list) {
+    var by = {}, order = [];
+    list.forEach(function (e) {
+      if (!by[e.comp]) { by[e.comp] = []; order.push(e.comp); }
+      by[e.comp].push(e);
+    });
+    var out = [], round = 0, more = true;
+    while (more) {
+      more = false;
+      for (var i = 0; i < order.length; i++) {
+        if (by[order[i]].length > round) { out.push(by[order[i]][round]); more = true; }
+      }
+      round++;
+    }
+    return out;
+  }
+
+  /* How many level 1 cards of a competency still have to hold before
+     level 2 can open. Used to put a competency that is partway there
+     ahead of one that has not been started. */
+  function started(e) {
+    var have = { 1: 0 }, hold = { 1: 0 };
+    for (var i = 0; i < ALL.length; i++) {
+      var x = ALL[i];
+      if (x.comp !== e.comp || x.dok !== 1) continue;
+      have[1]++;
+      var p = progress[x.key];
+      if (p && (p.box || 0) >= HOLDING) hold[1]++;
+    }
+    var need = Math.min(GATE_N, have[1]);
+    return (hold[1] > 0 && hold[1] < need) ? 0 : 1;
+  }
+
+  function buildSet(pool) {
+    var reviews = [], fresh = [];
+    pool.forEach(function (e) { (progress[e.key] ? reviews : fresh).push(e); });
+
+    /* Most overdue first, and at the same due date the deeper card first. */
+    reviews.sort(function (a, b) {
+      var na = progress[a.key].next || '', nb = progress[b.key].next || '';
+      return (na < nb ? -1 : na > nb ? 1 : 0) || (b.dok - a.dok);
+    });
+
+    var deeper = fresh.filter(function (e) { return e.dok > 1; }).sort(function (a, b) {
+      return (b.dok - a.dok) || (started(a) - started(b)) ||
+             ((COMP_WEEK[b.comp] || 0) - (COMP_WEEK[a.comp] || 0));
+    });
+    var newest = fresh.filter(function (e) { return e.dok === 1; }).sort(function (a, b) {
+      return ((COMP_WEEK[b.comp] || b.week || 0) - (COMP_WEEK[a.comp] || a.week || 0)) ||
+             (started(a) - started(b));
+    });
+
+    var rev = spread(reviews);
+    deeper = spread(deeper);
+    newest = spread(newest);
+    var takeDeep = deeper.slice(0, Math.ceil(NEW_PER_SET / 2));
+    var takeNew = newest.slice(0, NEW_PER_SET - takeDeep.length);
+    var newCards = takeDeep.concat(takeNew);
+
+    var out = rev.slice(0, SET_SIZE - newCards.length).concat(newCards);
+    if (out.length < SET_SIZE) {
+      var used = {};
+      out.forEach(function (e) { used[e.key] = 1; });
+      var rest = rev.concat(deeper, newest).filter(function (e) { return !used[e.key]; });
+      out = out.concat(rest.slice(0, SET_SIZE - out.length));
+    }
+    return out;
+  }
+
+  /* HOW A COVERING SITTING IS BUILT
+
+     Different job, different rules. Keeping up means touching this week
+     and holding on to the rest. Covering means driving every competency
+     in the course to three cards holding at every level, which is a much
+     larger and much more ordered piece of work.
+
+     Three rules do the work, and all three came out of the simulation in
+     tools/sim_coverage.js:
+
+     1. Due reviews are taken strictly by how overdue they are, not
+        rotated across competencies. Rotating caps a competency at one
+        review a day, and a competency needs nine cards holding, so the
+        rotation alone made coverage unreachable.
+
+     2. No more cards are started for a competency and a level than it is
+        actually short of. Without that cap a single day starts every card
+        a competency owns, the review load balloons, and nothing ever
+        climbs.
+
+     3. Oldest unseen material first, with a floor kept for the week being
+        taught now. That is what makes going back to earlier chapters
+        automatic: a student never has to choose a chapter, and nothing
+        taught in week 3 is left behind because week 9 arrived. */
+  function buildCoverSet(cap) {
+    var reviews = [], fresh = [];
+    ALL.forEach(function (e) {
+      if (!taught(e) || e.dok > gateFor(e)) return;
+      var p = progress[e.key];
+      if (p) { if (isDue(e)) reviews.push(e); }
+      else {
+        var g = CENSUS[e.comp];
+        if (g.hold[e.dok] + g.flight[e.dok] < needAt(e.comp, e.dok)) fresh.push(e);
+      }
+    });
+
+    reviews.sort(function (a, b) {
+      var na = progress[a.key].next || '', nb = progress[b.key].next || '';
+      return (na < nb ? -1 : na > nb ? 1 : 0) || (b.dok - a.dok);
+    });
+
+    var reserveNew = Math.min(fresh.length, Math.ceil(cap * COVER_NEW));
+    var takeRev = reviews.slice(0, Math.max(0, cap - reserveNew));
+    var newSlots = Math.min(cap - takeRev.length, fresh.length);
+
+    var current = fresh.filter(function (e) { return (COMP_WEEK[e.comp] || e.week) === WEEK; })
+      .sort(function (a, b) { return a.dok - b.dok; });
+    var backlog = fresh.slice().sort(function (a, b) {
+      return ((COMP_WEEK[a.comp] || a.week || 0) - (COMP_WEEK[b.comp] || b.week || 0)) ||
+             (a.dok - b.dok);
+    });
+
+    var room = {}, used = {}, picked = [];
+    function take(list, limit) {
+      for (var i = 0; i < list.length && picked.length < limit; i++) {
+        var e = list[i];
+        if (used[e.key]) continue;
+        var k = e.comp + '|' + e.dok, g = CENSUS[e.comp];
+        if (room[k] === undefined) room[k] = needAt(e.comp, e.dok) - g.hold[e.dok] - g.flight[e.dok];
+        if (room[k] <= 0) continue;
+        room[k]--; used[e.key] = 1; picked.push(e);
+      }
+    }
+    take(spread(current), Math.min(CURRENT_FLOOR, newSlots));
+    take(spread(backlog), newSlots);
+    return takeRev.concat(picked);
+  }
+
+  /* ---------- the goal ---------- */
+  function goal() {
+    try { return localStorage.getItem(GKEY) === 'coverage' ? 'coverage' : 'keepup'; }
+    catch (e) { return 'keepup'; }
+  }
+  function setGoal(g) { try { localStorage.setItem(GKEY, g); } catch (e) {} }
+  function todaySet() {
+    return goal() === 'coverage'
+      ? buildCoverSet(COVER_CAP)
+      : buildSet(duePool());
+  }
+  function setMinutes(list) {
+    var sec = 0;
+    list.forEach(function (e) { sec += cardSeconds(e); });
+    return Math.max(1, Math.round(sec / 60));
+  }
+
+  /* ---------- grading ---------- */
+  function grade(e, right, confidence) {
+    var p = progress[e.key] || { box: 0, right: 0, wrong: 0 };
+    var before = gateFor(e);
+    if (right) {
+      p.right = (p.right || 0) + 1;
+      p.box = Math.min((p.box || 0) + 1, BOX_DAYS.length - 1);
+      /* Right, but the student says they were guessing. Hold it at box 1
+         so it comes back tomorrow and has to be earned again. */
+      if (confidence === 'no' && p.box > 1) p.box = 1;
+      if (confidence === 'no') p.unsure = true; else if (p.box >= HOLDING) p.unsure = false;
+    } else {
+      p.wrong = (p.wrong || 0) + 1;
+      p.box = 0;
+    }
+    p.last = today();
+    p.next = addDays(today(), BOX_DAYS[p.box]);
+    progress[e.key] = p;
+    writeLS(SKEY, progress);
+    logDay(e, right);
+    feedOS(e, right);
+    computeGates();
+    var after = gateFor(e);
+    return { box: p.box, next: p.next, opened: after > before ? after : 0 };
+  }
+
+  function logDay(e, right) {
+    var d = today();
+    var rec = dayLog[d] || (dayLog[d] = { n: 0, right: 0, topics: {} });
+    rec.n++;
+    if (right) rec.right++;
+    var t = rec.topics[e.topicId] || (rec.topics[e.topicId] = { n: 0, right: 0, title: e.topicTitle });
+    t.n++;
+    if (right) t.right++;
+    t.title = e.topicTitle;
+    /* Keep the log to the last 120 days so it cannot grow without bound. */
+    var keys = Object.keys(dayLog).sort();
+    while (keys.length > 120) { delete dayLog[keys.shift()]; }
+    writeLS(DKEY, dayLog);
+  }
+
+  /* Keep feeding the per card history the rest of the site already reads,
+     so nothing that depended on the old engine goes dark. */
+  function feedOS(e, right) {
+    var st = readLS(VKEY);
+    if (!st.topics) st.topics = {};
+    var t = st.topics[e.topicId] || (st.topics[e.topicId] = { cards: {} });
+    if (!t.cards) t.cards = {};
+    var c = t.cards[e.card.id] || (t.cards[e.card.id] = { history: [] });
+    c.history.push({ correct: !!right, at: today() });
+    if (c.history.length > 20) c.history = c.history.slice(-20);
+    writeLS(VKEY, st);
+  }
+
+  /* ---------- week helpers ---------- */
+  function mondayOf(d) {
+    var x = new Date(d.getFullYear(), d.getMonth(), d.getDate());
+    var back = (x.getDay() + 6) % 7;        // Monday is 0
+    x.setDate(x.getDate() - back);
+    return x;
+  }
+  function weekDays() {
+    var m = mondayOf(new Date()), out = [];
+    for (var i = 0; i < 7; i++) {
+      var d = new Date(m.getFullYear(), m.getMonth(), m.getDate() + i);
+      out.push(d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()));
+    }
+    return out;
+  }
+  var DAYNAME = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+
+  /* ---------- rendering ---------- */
+  function renderWeek() {
+    var days = weekDays();
+    var td = today();
+    var n = 0, active = 0;
+    days.forEach(function (d) {
+      var r = dayLog[d];
+      if (r && r.n) { n += r.n; active++; }
+    });
+    var holding = 0;
+    Object.keys(progress).forEach(function (k) {
+      if ((progress[k].box || 0) >= HOLDING) holding++;
+    });
+
+    $('wkLabel').textContent = 'Week ' + WEEK;
+    var wtitle = (window.BIO005_WEEKS && window.BIO005_WEEKS[WEEK - 1] &&
+                  (window.BIO005_WEEKS[WEEK - 1].title || window.BIO005_WEEKS[WEEK - 1].name)) || '';
+    $('wkTitle').textContent = wtitle;
+    var plan = todaySet();
+    $('sDue').textContent = plan.length;
+    $('sMins').textContent = setMinutes(plan);
+    $('sDays').textContent = active;
+    $('sWeekCards').textContent = n;
+    $('sHold').textContent = holding;
+
+    var target = goal() === 'coverage' ? 7 : 5;
+    var note;
+    if (!active) {
+      note = 'Nothing logged this week yet. Today\'s set is ' + plan.length +
+             ' cards, about ' + setMinutes(plan) + ' minutes.';
+    } else if (active < target) {
+      note = 'Practiced on ' + active + (active === 1 ? ' day' : ' days') +
+             ' this week. Your goal asks for ' + target + '. A card cannot move forward twice in ' +
+             'the same day, so more days does more for you than a longer sitting.';
+    } else {
+      note = 'Practiced on ' + active + ' days this week, which is what your goal asks for.';
+    }
+    $('wkNote').textContent = note;
+    renderCoverage();
+
+    // day strip
+    var strip = days.map(function (d, i) {
+      var r = dayLog[d] || { n: 0 };
+      var cls = 'day' + (r.n ? ' done' : '') + (d === td ? ' today' : '');
+      return '<div class="' + cls + '">' +
+             '<span class="dn">' + DAYNAME[i] + '</span>' +
+             '<span class="dv">' + r.n + '</span>' +
+             '<span class="du">' + (r.n === 1 ? 'card' : 'cards') + '</span>' +
+             '</div>';
+    }).join('');
+    $('dayStrip').innerHTML = strip;
+
+    // topic table
+    var agg = {};
+    days.forEach(function (d) {
+      var r = dayLog[d];
+      if (!r || !r.topics) return;
+      Object.keys(r.topics).forEach(function (tid) {
+        var s = r.topics[tid];
+        var a = agg[tid] || (agg[tid] = { n: 0, right: 0, title: s.title || tid });
+        a.n += s.n; a.right += s.right;
+        if (s.title) a.title = s.title;
+      });
+    });
+    var rows = Object.keys(agg).sort(function (a, b) { return agg[b].n - agg[a].n; });
+    if (!rows.length) {
+      $('tBody').innerHTML = '<tr><td colspan="4" class="empty">Nothing yet this week. ' +
+        'Once you answer some cards, this table shows which topics you worked on and what level you reached in each one.</td></tr>';
+      $('levelNote').textContent = '';
+      return;
+    }
+    $('tBody').innerHTML = rows.map(function (tid) {
+      var a = agg[tid];
+      var lv = topicLevel(tid);
+      var pct = a.n ? Math.round(a.right * 100 / a.n) : 0;
+      return '<tr><td>' + esc(a.title) + '</td>' +
+             '<td class="n">' + a.n + '</td>' +
+             '<td class="n">' + pct + '%</td>' +
+             '<td>' + esc(LEVEL_NAME[lv]) + '</td></tr>';
+    }).join('');
+    $('levelNote').textContent =
+      'The level column is the deepest question type open to you in that topic right now. ' +
+      'Level 2 opens when three level 1 cards are holding, and level 3 opens the same way off level 2.';
+  }
+
+  function renderCoverage() {
+    var c = coverageStats();
+    var pct = c.total ? Math.round(c.done * 100 / c.total) : 0;
+    $('covFill').style.width = pct + '%';
+    $('covN').textContent = c.done;
+    $('covT').textContent = c.total;
+    $('covL1').textContent = c.l1;
+    $('covL2').textContent = c.l2;
+    $('covL3').textContent = c.l3;
+
+    var note;
+    if (goal() === 'coverage') {
+      note = 'Covered means three cards holding at every level the competency has, and holding ' +
+             'means you were right on two separate days. You do not have to pick chapters. ' +
+             'Once this week has had its share, the set fills from the oldest material you have ' +
+             'not finished, so earlier weeks come back on their own.';
+    } else {
+      note = 'On Keep up, this bar moves slowly and that is expected. It is here so you can see ' +
+             'the difference between keeping up and covering the course. Switch goals any time; ' +
+             'nothing you have already done is lost.';
+    }
+    $('covNote').textContent = note;
+  }
+
+  /* The level a topic is at, taken as the deepest gate open across the
+     competencies that topic covers. */
+  function topicLevel(tid) {
+    var best = 1;
+    ALL.forEach(function (e) {
+      if (e.topicId !== tid) return;
+      var g = gateFor(e);
+      if (g > best) best = g;
+    });
+    return best;
+  }
+
+  /* ---------- the runner ---------- */
+  var queue = [], pos = 0, picked = null, current = null, answered = false, correct = false;
+
+  function say(msg) { $('liveRegion').textContent = msg; }
+
+  function showStart() {
+    $('startPanel').hidden = false;
+    $('qPanel').hidden = true;
+    $('donePanel').hidden = true;
+    var plan = todaySet(), missed = missedPool().length;
+    $('btnStart').disabled = false;
+    $('btnMissed').disabled = missed === 0;
+    if (!plan.length) {
+      $('startText').textContent =
+        'Nothing is waiting for you right now, which means the spacing is doing its job. ' +
+        'You can still run a set of cards you have already seen if you want the practice.';
+      $('btnStart').textContent = 'Practice anyway';
+    } else {
+      var mins = setMinutes(plan);
+      $('btnStart').textContent = 'Start ' + plan.length + ' cards';
+      $('startText').textContent =
+        (goal() === 'coverage'
+          ? 'Today\'s set is ' + plan.length + ' cards, about ' + mins + ' minutes. ' +
+            'That is what covering the course asks of you today. It changes day to day, ' +
+            'because it is built from what is actually due and what you have not met yet.'
+          : 'Today\'s set is ' + plan.length + ' cards, about ' + mins + ' minutes.') +
+        (missed ? ' You also have ' + missed + ' you missed and have not got back yet.' : '');
+    }
+  }
+
+  function start(pool, label) { startPlan(buildSet(pool), label); }
+
+  function startPlan(plan, label) {
+    queue = plan;
+    if (!queue.length) {
+      queue = buildSet(ALL.filter(function (e) { return taught(e) && e.dok <= gateFor(e); }));
+    }
+    pos = 0;
+    if (!queue.length) { showStart(); return; }
+    $('startPanel').hidden = true;
+    $('donePanel').hidden = true;
+    $('qPanel').hidden = false;
+    say(label + ', ' + queue.length + ' cards.');
+    showCard();
+  }
+
+  function showCard() {
+    current = queue[pos];
+    picked = null; answered = false; correct = false;
+    var c = current.card;
+    $('pTopic').textContent = current.topicTitle;
+    $('pLevel').textContent = LEVEL_NAME[current.dok];
+    $('pCount').textContent = 'Card ' + (pos + 1) + ' of ' + queue.length;
+    $('qText').textContent = c.q;
+    $('qLegend').textContent = c.q;
+
+    var opts = c.options || [];
+    $('optWrap').innerHTML = opts.map(function (t, i) {
+      return '<label class="opt" data-i="' + i + '">' +
+             '<input type="radio" name="opt" value="' + i + '">' +
+             '<span>' + esc(t) + '</span></label>';
+    }).join('');
+
+    $('btnSubmit').disabled = true;
+    $('btnSubmit').hidden = false;
+    $('confPanel').hidden = true;
+    $('answerPanel').hidden = true;
+    $('qPanel').scrollIntoView({ block: 'nearest' });
+    var first = $('optWrap').querySelector('input');
+    if (first) first.focus();
+  }
+
+  $('optWrap').addEventListener('change', function (ev) {
+    if (!ev.target || ev.target.name !== 'opt') return;
+    if (answered) {                       // locked, put the choice back
+      var keep = $('optWrap').querySelector('input[value="' + picked + '"]');
+      if (keep) keep.checked = true;
+      return;
+    }
+    picked = +ev.target.value;
+    $('btnSubmit').disabled = false;
+  });
+  $('optWrap').addEventListener('click', function (ev) {
+    if (answered && ev.target.closest('.opt')) ev.preventDefault();
+  });
+
+  $('qForm').addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    if (picked === null || answered) return;
+    answered = true;
+    correct = picked === current.card.correctIndex;
+    $('btnSubmit').hidden = true;
+    $('confPanel').hidden = false;
+    $('confAsk').textContent = 'Before the explanation: how sure were you?';
+    var b = $('confPanel').querySelector('button');
+    if (b) b.focus();
+  });
+
+  $('confPanel').addEventListener('click', function (ev) {
+    var b = ev.target.closest('button[data-conf]');
+    if (!b) return;
+    finish(b.getAttribute('data-conf'));
+  });
+
+  function finish(confidence) {
+    $('confPanel').hidden = true;
+    var c = current.card;
+
+    // lock and mark the options
+    Array.prototype.forEach.call($('optWrap').children, function (lab) {
+      var i = +lab.getAttribute('data-i');
+      var input = lab.querySelector('input');
+      /* aria-disabled rather than disabled, so a keyboard or screen reader
+         user can still walk the options and hear which one was right. The
+         change guard below is what actually stops a second answer. */
+      input.setAttribute('aria-disabled', 'true');
+      input.setAttribute('readonly', 'readonly');
+      lab.classList.add('locked');
+      var span = lab.querySelector('span');
+      if (i === c.correctIndex) {
+        lab.classList.add('right');
+        span.innerHTML = '<span class="mark r">Correct answer</span>' + esc(c.options[i]);
+      } else if (i === picked) {
+        lab.classList.add('wrong');
+        span.innerHTML = '<span class="mark w">You chose this</span>' + esc(c.options[i]);
+      }
+    });
+
+    var res = grade(current, correct, confidence);
+    $('verdict').textContent = correct ? 'Right' : 'Not this time';
+    $('expl').textContent = c.explanation || c.a || '';
+
+    var days = BOX_DAYS[res.box];
+    var when = days === 0 ? 'later today' : (days === 1 ? 'tomorrow' : 'in ' + days + ' days');
+    var sched = correct
+      ? 'You will see this card again ' + when + '.'
+      : 'You will see this card again ' + when + ', because a miss sends it back to the start.';
+    if (res.opened) {
+      sched += ' ' + LEVEL_NAME[res.opened].charAt(0).toUpperCase() + LEVEL_NAME[res.opened].slice(1) +
+               ' questions just opened on ' + (COMP_NAME[current.comp] || 'this competency') + '.';
+    }
+    $('schedNote').textContent = sched;
+
+    $('answerPanel').hidden = false;
+    $('btnNext').textContent = (pos + 1 >= queue.length) ? 'Finish the set' : 'Next card';
+    $('btnNext').focus();
+    say((correct ? 'Correct. ' : 'Incorrect. ') + sched);
+    renderWeek();
+  }
+
+  $('btnNext').addEventListener('click', function () {
+    pos++;
+    if (pos >= queue.length) { showDone(); return; }
+    showCard();
+  });
+  $('btnStop').addEventListener('click', function () { showDone(true); });
+
+  function showDone(early) {
+    $('qPanel').hidden = true;
+    $('donePanel').hidden = false;
+    var d = dayLog[today()] || { n: 0, right: 0 };
+    var pct = d.n ? Math.round(d.right * 100 / d.n) : 0;
+    $('doneTitle').textContent = early ? 'Stopped for today' : 'That is the set';
+    $('doneText').textContent =
+      d.n + (d.n === 1 ? ' card' : ' cards') + ' today, ' + pct + '% right on the first try. ' +
+      'Coming back tomorrow is worth more than doing another set now, but the button is there if you want it.';
+    $('btnMore').focus();
+    renderWeek();
+  }
+
+  $('btnMore').addEventListener('click', function () { startPlan(todaySet(), 'Another set'); });
+  $('btnStart').addEventListener('click', function () {
+    var plan = todaySet();
+    if (!plan.length) plan = buildSet(ALL.filter(function (e) {
+      return taught(e) && e.dok <= gateFor(e);
+    }));
+    startPlan(plan, "Today's set");
+  });
+  $('btnMissed').addEventListener('click', function () { start(missedPool(), 'Cards you missed'); });
+
+  /* ---------- the how it works panel ---------- */
+  (function () {
+    var btn = $('howBtn'), body = $('howBody');
+    if (!btn || !body) return;
+    btn.addEventListener('click', function () {
+      var open = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', open ? 'false' : 'true');
+      body.hidden = open;
+      btn.textContent = open
+        ? 'How this works, and what it takes to cover the course'
+        : 'Hide how this works';
+    });
+  })();
+
+  /* ---------- the goal chooser ---------- */
+  function wireGoal() {
+    var g = goal();
+    var el = document.querySelector('input[name="goal"][value="' + g + '"]');
+    if (el) el.checked = true;
+    Array.prototype.forEach.call(document.querySelectorAll('input[name="goal"]'), function (r) {
+      r.addEventListener('change', function () {
+        if (!r.checked) return;
+        setGoal(r.value);
+        renderWeek();
+        showStart();
+        say(r.value === 'coverage'
+          ? 'Goal set to cover the course. Today\'s set is now sized for that.'
+          : 'Goal set to keep up. Today\'s set is fifteen cards.');
+      });
+    });
+  }
+
+  /* ---------- go ---------- */
+  ALL = flatten();
+  if (!ALL.length) {
+    $('startText').textContent =
+      'The card bank did not load. Reload the page, and if it keeps happening tell Dr. Rennie which browser you are using.';
+  } else {
+    census();
+    wireGoal();
+    renderWeek();
+    showStart();
+  }
+})();
+</script>
+
+<script>
+/* Height sender for the Canvas iframe. */
+(function () {
+  var id = 'spaced-recall';
+  function post() {
+    try { parent.postMessage({ frame: id, height: document.documentElement.scrollHeight }, '*'); } catch (e) {}
+  }
+  if ('ResizeObserver' in window) { new ResizeObserver(post).observe(document.documentElement); }
+  window.addEventListener('load', post);
+  window.addEventListener('resize', post);
+  post();
+})();
+</script>
+</body>
+</html>
