@@ -243,3 +243,14 @@ a weekly assess, work, revise cycle. Four existing answers enriched with the
 same material. Still exactly 250, zero dashes, zero program terminology,
 zero dead links. Her standalone error log tool exists in that repo and could
 be ported into this course later if she wants it as a page.
+
+## Hootie eats the 250, September 5
+
+welcome.html now loads bio005-faq.js and routes unmatched questions through
+it: hand-tuned intent answers first, then a scored search of all 250
+questions and answers, then the fallback, which now also links the questions
+page. Matcher tested against natural student phrasings, question-word hits
+weighted over answer-word hits, minimum score gate so nonsense still gets
+the graceful fallback. The two files to keep in lockstep on any course
+change: bio005-faq.js and course-questions.html, same data, two doors.
+Deploy note: welcome.html and bio005-faq.js travel together.

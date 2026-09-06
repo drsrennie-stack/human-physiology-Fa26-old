@@ -1,10 +1,10 @@
 // BIO 005 course questions, generated September 5, 2026. Feed for Hootie or any helper.
-// Update this file whenever a course rule changes; course-questions.html renders the same data.
+// Update whenever a course rule changes; course-questions.html renders the same data.
 var BIO005_FAQ = [
  {
   "cat": "Getting started",
   "q": "Where do I start?",
-  "a": "Three moves: skim the <a href=\"syllabus-fall2026.html\">syllabus</a> so you know how the course runs, open this week's note sheet and work it against the videos, and open the <a href=\"mastery-physio-os-standalone.html\">Mastery OS</a> so it starts tracking your competencies. The <a href=\"welcome.html\">welcome page</a> walks you through everything in about two minutes."
+  "a": "If you know the week, start its note sheet. If you truly do not know what to do, there is an exact order, and it always works: read the questions, preview the text, organize your notes, answer from what you know in one color, watch the concept's video, add what you learned in a second color, turn it in. The full method is under the question I do not know what to do on this page."
  },
  {
   "cat": "Getting started",
@@ -329,7 +329,7 @@ var BIO005_FAQ = [
  {
   "cat": "Note sheets",
   "q": "What does a good note sheet answer look like?",
-  "a": "A drawing or a worked explanation you could teach from, not a copied sentence. If your sheet can carry you through the practice round without the book, it is good."
+  "a": "Two colors telling the truth. First color: your best answer from memory and the text preview. Second color: what the video and your digging added. A drawing or worked explanation you could teach from, not a copied sentence. If your sheet can carry you through the practice round without the book, it is good."
  },
  {
   "cat": "Note sheets",
@@ -359,7 +359,7 @@ var BIO005_FAQ = [
  {
   "cat": "Note sheets",
   "q": "What is the two color rule?",
-  "a": "Structure in one color, function or flow in the other, so your drawings separate what a thing is from what it does. The how to section on the sheet shows it."
+  "a": "Your first color is your baseline: what you can answer from memory and the text preview, before the video. The second color is everything you add from the video or your own digging afterward. The result reads at a glance: color one is what you already had, color two is exactly what you still need to commit to memory. Your studying aims at the second color."
  },
  {
   "cat": "Note sheets",
@@ -549,7 +549,7 @@ var BIO005_FAQ = [
  {
   "cat": "Labs and PhysioEx",
   "q": "What exactly earns the lab credit?",
-  "a": "Both parts: PhysioEx shows complete in Pearson, and your worksheet and data record are turned in, plus the clinical correlation questions in weeks that have them. One without the other earns nothing."
+  "a": "Both parts, in this order: run PhysioEx first and get it showing complete in Pearson, then complete the worksheet and data record, then the clinical correlation questions in weeks that have them. One without the other earns nothing."
  },
  {
   "cat": "Labs and PhysioEx",
@@ -799,7 +799,7 @@ var BIO005_FAQ = [
  {
   "cat": "Studying",
   "q": "Should I make my own flashcards too?",
-  "a": "You can, but the OS cards already cover the 268 competencies. Your scarce hours are better spent drawing and teaching pathways."
+  "a": "No, and this is deliberate: do not make flashcards from your notes, organize the notes instead, so you always know where to find things. The OS recall cards already cover the 268 competencies; your scarce hours are better spent answering prompts, drawing, and teaching."
  },
  {
   "cat": "Studying",
@@ -819,7 +819,7 @@ var BIO005_FAQ = [
  {
   "cat": "Studying",
   "q": "How do I study with the videos?",
-  "a": "Note sheet open, pause often, answer prompts as they come up, and rewind on purpose when a prediction fails. Passive watching at 2x is entertainment."
+  "a": "Answer the prompt first, in your first color, from what you already know. Then watch that concept's video, name and number at the top of the prompt, and add what you did not know in your second color. The video lands differently when it is answering questions you already tried; watching first wastes the attempt."
  },
  {
   "cat": "Studying",
@@ -900,11 +900,6 @@ var BIO005_FAQ = [
   "cat": "Tech and submitting",
   "q": "Is there free tech help at the college?",
   "a": "Canvas has 24 hour support built into its help menu, and the college help desk handles account and login issues."
- },
- {
-  "cat": "Tech and submitting",
-  "q": "Can I do everything from my phone?",
-  "a": "Reading, cards, discussions, and video recording, yes. Labs and PDF assembly are much easier on a laptop or tablet. The campus and public libraries have computers if you need one."
  },
  {
   "cat": "Tech and submitting",
@@ -1202,11 +1197,6 @@ var BIO005_FAQ = [
   "a": "Yes, it serves the LVN to RN 30 Unit Option, along with the Biology-Allied Health AS, Natural Science AS, and Kinesiology AA-T."
  },
  {
-  "cat": "Tech and submitting",
-  "q": "What file name should I use?",
-  "a": "Something findable: BIO005 Week 03 NoteSheet YourName. Future you, digging for a file in November, will be grateful."
- },
- {
   "cat": "Succeeding online, anywhere",
   "q": "How do I come back after disappearing for a week?",
   "a": "Do not wait to feel caught up. Submit the current week first, message the professor briefly and factually, then decide what past work still changes anything. Forward beats backward."
@@ -1250,5 +1240,15 @@ var BIO005_FAQ = [
   "cat": "Time and workload",
   "q": "How should I plan my study week?",
   "a": "Treat the plan as a hypothesis. Sunday: write the week's plan with real hours in real slots. All week: work it and notice where it breaks. Next Sunday: revise based on what actually happened, not what you meant to happen. Students who plan, monitor, and revise outperform students who simply work harder; effort without monitoring is one of the most reliable predictors of a bad outcome."
+ },
+ {
+  "cat": "Getting started",
+  "q": "I do not know what to do. What is the exact order?",
+  "a": "Start with the pre-work, in this exact order. One: read the note sheet questions first, before anything else. Two: preview the text with those questions in your head. Three: organize your notes so you know where to find things. Do not make flashcards; organize. Four: practice answering the questions the best you can, from what you already know, in your first color, on the master note sheet you will draw and create from. Five: now watch the video for that concept; the concept name and number are at the top of the prompt. Six: as you watch, add what you did not know in a second color, from the video or any other digging you do. Your first color is your baseline, what you already had, especially if you wrote it from memory. The second color is exactly what you need to commit to memory. Then turn it in. For lab: run PhysioEx first, then complete the worksheet, then the clinical correlations. And if a step genuinely does not work for the way you learn, see the next question; the method bends, the course requirements do not."
+ },
+ {
+  "cat": "Getting started",
+  "q": "What if that order does not work for me?",
+  "a": "Then adjust it; the order is the default because it works for most people, not a rule you can fail. Adapt it to how you learn: if reading first truly stalls you, watch the concept video first, then close the loop by answering the prompt from memory afterward, in your first color, and add what you still had to look up in the second. If writing is slow for you, talk your answer out loud first, then write it. What has to survive any adaptation, because it is how this course is built: at some point you answer from memory rather than while looking, your two colors stay honest about what was baseline and what was new, PhysioEx runs before the worksheet, and the Sunday deadline does not move. Inside those walls, build the version that fits you, and if you want help designing it, bring it to office hours; that is a great use of them."
  }
 ];
