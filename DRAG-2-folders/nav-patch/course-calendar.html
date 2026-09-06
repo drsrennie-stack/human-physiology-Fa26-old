@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="icon.svg">
+<title>Course calendar &middot; BIO 005 Human Physiology</title>
+<meta name="description" content="BIO 005 Human Physiology, Yuba College, Fall 2026. Every week, every module, and every date, on a month grid.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<!--
+  ============================================================
+  BIO 005 Human Physiology, Yuba College, Fall 2026
+  course-calendar.html
+
+  A month grid, to sit beside course-schedule.html rather than
+  replace it. The schedule page answers "what does a week ask of
+  me". This answers "when is everything", which is the question
+  a student actually opens a calendar for.
+
+  EVERY DATE IS DERIVED. Nothing here is typed.
+    bio005-schedule-fall2026.js   BIO005_TERM, BIO005_WEEKS
+    schedule-fall2026.js          BIO005_MODULES_SCHEDULE
+  Move a date in the data and this page follows. If you find
+  yourself typing a date into this markup, stop: it will drift.
+
+  WEEK COUNT comes from BIO005_WEEKS.length, which is 15. It is
+  not written down anywhere in this file, so if the schedule
+  changes to 14 this page changes with it.
+
+  ACCESSIBILITY
+  A month is genuinely tabular, so it is a real table with a
+  caption and scope="col" weekday headers, which is what screen
+  readers navigate well. Every marker carries text, never color
+  alone. The week band is a row header. Print puts each month on
+  its own page and drops the chrome.
+  ============================================================
+-->
+<style>
+:root{
+  --navy:#08101F; --navy-deep:#060A18; --navy-tint:#ECEFF4;
+  --maroon:#7A2A22; --maroon-dark:#5E201A;
+  --gold:#B8924A; --gold-deep:#8A6D33; --gold-text:#6E5018; --gold-pale:#F7EFD9;
+  --white:#FFFFFF; --offwhite:#FAFAF9;
+  --ink-soft:#414B5C; --muted:#5A6273; --rule:#D5DAE2;
+  --r:8px; --r-card:16px;
+  --shadow:0 1px 3px rgba(8,16,31,.08), 0 1px 2px rgba(8,16,31,.05);
+  --font:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0}
+body{font-family:var(--font);background:var(--offwhite);color:var(--navy);line-height:1.55;font-size:16px}
+em,i,cite,dfn,var,address{font-style:normal}
+h1,h2,h3{margin:0;letter-spacing:-.02em}
+p{margin:0}
+a{color:var(--navy);text-underline-offset:2px}
+a:hover{color:var(--maroon-dark)}
+:focus-visible{outline:3px solid var(--navy);outline-offset:3px;border-radius:3px}
+.vh{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.skip{position:absolute;left:-9999px;top:0;z-index:60;background:var(--navy);color:#fff;padding:12px 18px;font-weight:700;text-decoration:none}
+.skip:focus{left:0;top:0}
+
+/* ---------- brand bar ---------- */
+.site-header{background:#fff;border-bottom:.5px solid rgba(8,16,31,.10);padding:18px max(20px,4vw)}
+.site-header-inner{max-width:1180px;margin:0 auto;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.site-header svg{height:50px;width:auto;display:block}
+.t1{font-size:.71rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-text)}
+.t2{font-size:1.5rem;font-weight:800;color:var(--navy);line-height:1.1}
+.t3{font-size:.92rem;color:var(--ink-soft)}
+
+/* ---------- hero ---------- */
+.hero{background:var(--navy);color:#fff;padding:40px max(20px,4vw)}
+.hero-in{max-width:1180px;margin:0 auto}
+.hero .eyebrow{font-size:.74rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#E9C877;margin:0 0 12px}
+.hero h1{font-size:clamp(1.9rem,4vw,2.7rem);font-weight:800;color:#fff;margin:0 0 12px}
+.hero h1 .a{color:#E9C877}
+.hero p{color:#DDE3EC;max-width:66ch}
+.facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;padding:0;list-style:none}
+.facts li{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);border-radius:var(--r);padding:10px 14px;min-width:150px}
+.facts .k{display:block;font-size:.66rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#E9C877;margin-bottom:3px}
+.facts .v{display:block;font-weight:700;color:#fff;font-size:.98rem}
+
+.wrap{max-width:1180px;margin:0 auto;padding:30px max(20px,4vw) 70px}
+
+/* ---------- legend ---------- */
+.legend{background:#fff;border:1px solid var(--rule);border-radius:var(--r-card);box-shadow:var(--shadow);padding:18px 20px;margin:0 0 26px}
+.legend h2{font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--maroon-dark);margin:0 0 12px}
+.legend ul{display:flex;flex-wrap:wrap;gap:9px 20px;margin:0;padding:0;list-style:none}
+.legend li{display:flex;align-items:center;gap:8px;font-size:.9rem;color:var(--ink-soft)}
+.sw{width:15px;height:15px;border-radius:4px;flex:0 0 auto;border:1px solid var(--rule)}
+.sw.open{background:var(--navy-tint);border-color:var(--navy)}
+.sw.due{background:var(--maroon);border-color:var(--maroon)}
+.sw.exam{background:var(--gold);border-color:var(--gold-deep)}
+.sw.admin{background:#fff;border:2px dashed var(--muted)}
+.sw.off{background:#EFEFEE;border-color:#C9CDD4}
+
+/* ---------- month ---------- */
+.month{background:#fff;border:1px solid var(--rule);border-radius:var(--r-card);box-shadow:var(--shadow);
+       padding:20px max(16px,1.6vw) 24px;margin:0 0 26px}
+.month > h2{font-size:1.3rem;font-weight:800;color:var(--navy);margin:0 0 4px}
+.month > p{font-size:.9rem;color:var(--ink-soft);margin:0 0 16px}
+table{width:100%;border-collapse:collapse;table-layout:fixed}
+caption{text-align:left;font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+        color:var(--maroon-dark);padding:0 0 10px}
+th,td{border:1px solid var(--rule);vertical-align:top;padding:0}
+thead th{background:var(--navy);color:#fff;font-size:.68rem;font-weight:700;letter-spacing:.12em;
+         text-transform:uppercase;padding:9px 6px;text-align:center;border-color:var(--navy)}
+th.wkhead{width:132px;background:var(--offwhite);color:var(--navy);text-align:left;padding:12px 12px;
+          font-size:.8rem;font-weight:700;border-right:2px solid var(--navy)}
+thead th.wkhead{background:var(--navy);color:#fff;font-size:.68rem;letter-spacing:.12em}
+.wkno{display:block;font-size:1.05rem;font-weight:800;color:var(--navy);line-height:1.1}
+.wkmod{display:block;font-size:.64rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+       color:var(--gold-text);margin-top:3px}
+.wktitle{display:block;font-size:.78rem;font-weight:600;color:var(--ink-soft);margin-top:6px;line-height:1.35}
+td.day{height:96px;padding:7px 8px;background:#fff}
+td.day.out{background:#F4F5F7}
+td.day.off{background:#EFEFEE}
+.dnum{font-size:.82rem;font-weight:700;color:var(--muted)}
+/* Was #A6ADBA at 2.06:1 on the out-of-month fill. A day number is
+   still a day number even when it belongs to the month next door. */
+td.day.out .dnum{color:#414B5C}
+.marks{margin-top:5px;display:grid;gap:4px}
+.m{display:block;font-size:.7rem;font-weight:700;line-height:1.25;padding:4px 6px;border-radius:5px;
+   border:1px solid var(--rule);background:#fff;color:var(--navy)}
+.m.open{background:var(--navy-tint);border-color:var(--navy)}
+.m.due{background:var(--maroon);border-color:var(--maroon);color:#fff}
+.m.exam{background:var(--gold-pale);border-color:var(--gold-deep);color:var(--gold-text)}
+.m.admin{background:#fff;border:2px dashed var(--muted);color:var(--navy)}
+.m.off{background:#E7E7E6;border-color:#C9CDD4;color:#3F4655}
+
+/* ---------- notes ---------- */
+.notes{background:#fff;border:1px solid var(--rule);border-radius:var(--r-card);box-shadow:var(--shadow);padding:22px 24px}
+.notes h2{font-size:1.15rem;font-weight:800;margin:0 0 10px}
+.notes ul{margin:0;padding-left:20px;color:var(--ink-soft);font-size:.94rem}
+.notes li{margin:0 0 8px}
+.notes li strong{color:var(--navy)}
+
+.site-footer{background:var(--navy-deep);color:#fff;padding:30px max(20px,4vw)}
+.site-footer-in{max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:baseline}
+.site-footer .n{font-weight:800}
+.site-footer .c{font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#E9C877}
+
+@media(max-width:820px){
+  th.wkhead{width:96px;padding:9px 7px}
+  td.day{height:78px;padding:5px 5px}
+  .m{font-size:.62rem}
+  .wktitle{display:none}
+}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{transition:none!important;animation:none!important}}
+@media print{
+  body{background:#fff}
+  .hero,.site-footer,.skip{display:none}
+  .month{break-after:page;box-shadow:none;border:0;padding:0;margin:0 0 12px}
+  .month:last-of-type{break-after:auto}
+  td.day{height:70px}
+  .m.due{background:#fff;color:#000;border:2px solid #000}
+}
+em,i,cite,dfn,var,address{font-style:normal}
+</style>
+</head>
+<body>
+<style data-shared-nav-css>
+/* On :root, not on .sn-scope. The skip link sits outside the bar, so scoping
+   the tokens to the bar left its background transparent: white on white. */
+:root{--sn-navy:#040711;--sn-navy-70:rgba(4,7,17,.70);--sn-navy-15:rgba(4,7,17,.15);
+  --sn-gold:#DCB45C;--sn-deep:#01030A;--sn-straw:#F2E2B8;
+  --sn-font:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif}
+.sn-scope *,.sn-scope *::before,.sn-scope *::after{box-sizing:border-box}
+.sn-skip{position:absolute;left:-9999px;top:0;z-index:200;background:var(--sn-navy);color:#fff;
+  padding:14px 18px;min-height:44px;display:flex;align-items:center;
+  font:700 15px/1.2 var(--sn-font);text-decoration:none}
+.sn-skip:focus{left:0;top:0}
+.sn-bar{background:#fff;border-bottom:1px solid var(--sn-navy-15);font-family:var(--sn-font)}
+.sn-in{max-width:1180px;margin:0 auto;padding:0 max(16px,3vw);display:flex;align-items:center;
+  gap:22px;flex-wrap:wrap;min-height:62px}
+.sn-brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--sn-navy);padding:8px 0}
+.sn-brand svg{height:30px;width:auto;display:block}
+.sn-brand span{display:flex;flex-direction:column;line-height:1.1}
+.sn-brand b{font-size:.94rem;font-weight:800}
+.sn-brand i{font-size:.72rem;color:var(--sn-navy-70);font-weight:600;font-style:normal}
+.sn-links{display:flex;flex-wrap:wrap;margin-left:auto}
+.sn-links a{position:relative;font-size:.9rem;font-weight:600;color:var(--sn-navy-70);
+  text-decoration:none;padding:10px 6px;margin:0 10px;min-height:44px;min-width:44px;
+  display:flex;align-items:center;justify-content:center}
+.sn-links a:hover{color:var(--sn-navy)}
+.sn-links a:hover::after,.sn-links a[aria-current="page"]::after{content:"";position:absolute;
+  left:0;right:0;bottom:7px;height:3px;border-radius:2px}
+.sn-links a:hover::after{background:var(--sn-navy-15)}
+.sn-links a[aria-current="page"]{color:var(--sn-navy);font-weight:800}
+.sn-links a[aria-current="page"]::after{background:var(--sn-gold)}
+.sn-scope :focus-visible{outline:3px solid var(--sn-navy);outline-offset:2px;
+  box-shadow:0 0 0 6px var(--sn-gold);border-radius:4px}
+.sn-foot{background:var(--sn-deep);color:#fff;padding:26px max(16px,3vw);margin-top:44px;
+  font-family:var(--sn-font)}
+.sn-foot .sn-fi{max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;
+  gap:18px;flex-wrap:wrap;align-items:center}
+.sn-foot p{margin:0}
+.sn-foot .sn-n{font-weight:800;font-size:.95rem}
+.sn-foot .sn-c{font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--sn-straw)}
+.sn-foot nav{display:flex;flex-wrap:wrap}
+.sn-foot nav a{color:#D6DCE6;font-size:.84rem;font-weight:600;text-decoration:none;
+  padding:10px 14px;min-height:44px;display:flex;align-items:center}
+.sn-foot nav a:hover{color:#fff;text-decoration:underline}
+@media(max-width:760px){
+  .sn-bar{position:static}
+  .sn-in{gap:8px;min-height:0;padding-top:8px;padding-bottom:8px}
+  .sn-links{margin-left:0;width:100%}
+  .sn-links a{font-size:.82rem;padding:9px 4px;margin:0 8px}
+}
+@media(prefers-reduced-motion:reduce){.sn-scope *{transition:none!important}}
+</style>
+<div class="sn-scope sn-bar" data-shared-nav>
+  <nav class="sn-in" aria-label="Course sections">
+    <a class="sn-brand" href="index.html" target="_top"><svg viewBox="40 10 125 148" aria-hidden="true" focusable="false"><g transform="translate(0,18)"><g transform="translate(60,0) rotate(8 0 130)"><circle cx="0" cy="20" r="10" fill="#040711"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#040711"/></g><g transform="translate(100,0)"><circle cx="0" cy="10" r="11" fill="#8B3A2E"/><path d="M 0,22 C -11,22 -17,26 -17,34 C -17,52 -14,70 -12,86 C -11,108 -13,122 -15,132 L 15,132 C 13,122 11,108 12,86 C 14,70 17,52 17,34 C 17,26 11,22 0,22 Z" fill="#8B3A2E"/></g><g transform="translate(140,0) rotate(-8 0 130)"><circle cx="0" cy="20" r="10" fill="#DCB45C"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#DCB45C"/></g></g></svg>
+      <span><b>BIO 005</b><i>Human Physiology</i></span></a>
+    <span class="sn-links">
+      <a href="index.html" target="_top" aria-current="page">Home</a>
+      <a href="welcome.html" target="_top">This week</a>
+      <a href="course-materials.html" target="_top">Lecture</a>
+      <a href="clinical-physiology-lab-manual.html" target="_top">Lab</a>
+      <a href="competency-recall.html" target="_top">Study</a>
+      <a href="guides.html" target="_top">Guides</a>
+      <a href="start-here.html" target="_top">Admin</a>
+    </span>
+  </nav>
+</div>
+
+<a class="skip" href="#main">Skip to the calendar</a>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <svg viewBox="40 10 125 148" role="img" aria-label="BIO 005 Human Physiology">
+      <g transform="translate(0,18)">
+        <g transform="translate(60,0) rotate(8 0 130)"><circle cx="0" cy="20" r="10" fill="#08101F"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#08101F"/></g>
+        <g transform="translate(100,0)"><circle cx="0" cy="10" r="11" fill="#5E201A"/><path d="M 0,22 C -11,22 -17,26 -17,34 C -17,52 -14,70 -12,86 C -11,108 -13,122 -15,132 L 15,132 C 13,122 11,108 12,86 C 14,70 17,52 17,34 C 17,26 11,22 0,22 Z" fill="#5E201A"/></g>
+        <g transform="translate(140,0) rotate(-8 0 130)"><circle cx="0" cy="20" r="10" fill="#B8924A"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#B8924A"/></g>
+      </g>
+    </svg>
+    <div>
+      <div class="t1">Course calendar</div>
+      <div class="t2">Human Physiology</div>
+      <div class="t3">BIO 005 &middot; Yuba College &middot; Fall 2026</div>
+    </div>
+  </div>
+</header>
+
+<section class="hero" aria-labelledby="h1">
+  <div class="hero-in">
+    <p class="eyebrow" id="term-line">Fall 2026</p>
+    <h1 id="h1"><span id="wk-count">The term</span> <span class="a">at a glance</span></h1>
+    <p>Every week of the term on one grid. The band on the left of each row tells you which week it is and which module it belongs to. The cells tell you what happens on that day.</p>
+    <ul class="facts" id="facts"></ul>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="legend" aria-labelledby="leg-h">
+    <h2 id="leg-h">How to read this</h2>
+    <ul>
+      <li><span class="sw open" aria-hidden="true"></span> Week opens</li>
+      <li><span class="sw due" aria-hidden="true"></span> Work due</li>
+      <li><span class="sw exam" aria-hidden="true"></span> Exam window</li>
+      <li><span class="sw admin" aria-hidden="true"></span> Registration date</li>
+      <li><span class="sw off" aria-hidden="true"></span> Campus holiday</li>
+    </ul>
+  </div>
+
+  <main id="main"></main>
+
+  <section class="notes" aria-labelledby="n-h">
+    <h2 id="n-h">Dates worth putting in your own calendar now</h2>
+    <ul id="keydates"></ul>
+  </section>
+</div>
+
+<footer class="site-footer">
+  <div class="site-footer-in">
+    <div><p class="n">Dr. Sharilyn Rennie</p></div>
+    <p class="c">BIO 005 Human Physiology &middot; Yuba College &middot; Fall 2026</p>
+  </div>
+</footer>
+
+<script src="bio005-schedule-fall2026.js"></script>
+<script src="schedule-fall2026.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  var T = window.BIO005_TERM || {};
+  var W = (window.BIO005_WEEKS || []).slice();
+  var MODS = window.BIO005_MODULES_SCHEDULE || window.BIO005_MODULES || [];
+  var main = document.getElementById('main');
+
+  if (!W.length) {
+    main.innerHTML = '<p class="notes">The schedule data did not load. Check that ' +
+      'bio005-schedule-fall2026.js sits next to this page.</p>';
+    return;
+  }
+
+  /* Dates are parsed as LOCAL, not UTC. new Date("2026-09-08") is
+     parsed as midnight UTC and in California renders as Sep 7, which
+     is how a calendar ends up one day out for half the world. */
+  function D(s) {
+    if (!s) { return null; }
+    var p = String(s).split('-');
+    return new Date(+p[0], +p[1] - 1, +p[2]);
+  }
+  function key(d) {
+    return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2);
+  }
+  function nice(d) {
+    return d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+  }
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) {
+      return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c];
+    });
+  }
+
+  var modTitle = {};
+  MODS.forEach(function (m) { modTitle[m.n] = m.title || ('Module ' + m.n); });
+
+  /* ---------- collect every marker, keyed by day ---------- */
+  var marks = {};
+  function add(dateStr, cls, label) {
+    if (!dateStr) { return; }
+    var k = typeof dateStr === 'string' ? dateStr : key(dateStr);
+    var list = (marks[k] = marks[k] || []);
+    /* Deduped on the way in. Both BIO005_MODULES and
+       BIO005_MODULES_SCHEDULE can be loaded and both can carry the same
+       exam window, which printed "Exam 1 closes" twice on one day. */
+    for (var i = 0; i < list.length; i++) {
+      if (list[i].cls === cls && list[i].label === label) { return; }
+    }
+    list.push({ cls: cls, label: label });
+  }
+
+  W.forEach(function (w) {
+    add(w.opens, 'open', 'Week ' + w.wk + ' opens');
+    add(w.closes, 'due', 'Week ' + w.wk + ' work due');
+  });
+
+  MODS.forEach(function (m) {
+    var d = (m.detail || '');
+    var win = d.match(/(\d{4}-\d{2}-\d{2})\s*(?:to|through|-)\s*(\d{4}-\d{2}-\d{2})/);
+    if (win) {
+      add(win[1], 'exam', 'Exam ' + (m.exam || m.n) + ' opens');
+      add(win[2], 'exam', 'Exam ' + (m.exam || m.n) + ' closes');
+    }
+  });
+
+  if (T.census)   { add(T.census,   'admin', 'Census'); }
+  if (T.lastDrop) { add(T.lastDrop, 'admin', 'Last day to drop'); }
+  if (T.start)    { add(T.start,    'admin', 'Term starts'); }
+  if (T.end)      { add(T.end,      'admin', 'Term ends'); }
+  (T.observances || []).forEach(function (o) {
+    add(o.date, 'off', o.name || o.label || 'Campus holiday');
+  });
+
+  /* ---------- the header facts ---------- */
+  document.getElementById('wk-count').textContent =
+    W.length + (W.length === 1 ? ' week' : ' weeks');
+  document.getElementById('term-line').textContent =
+    (T.term || 'Fall 2026') + ' · ' + (T.delivery || 'Asynchronous online');
+
+  var facts = [
+    ['Term', T.start && T.end ? nice(D(T.start)) + ' to ' + nice(D(T.end)) : ''],
+    ['Weeks', String(W.length)],
+    ['Modules', String(MODS.length)],
+    ['Week opens', T.weeklyOpen || ''],
+    ['Work due', T.weeklyClose || '']
+  ].filter(function (f) { return f[1]; });
+  document.getElementById('facts').innerHTML = facts.map(function (f) {
+    return '<li><span class="k">' + esc(f[0]) + '</span><span class="v">' + esc(f[1]) + '</span></li>';
+  }).join('');
+
+  /* ---------- build the month grids ---------- */
+  var first = D(T.start || W[0].opens);
+  var last  = D(T.end   || W[W.length - 1].closes);
+
+  /* Which week a given day belongs to, so the row band can name it. */
+  function weekOf(d) {
+    for (var i = 0; i < W.length; i++) {
+      var o = D(W[i].opens), c = D(W[i].closes);
+      if (d >= o && d <= c) { return W[i]; }
+    }
+    return null;
+  }
+
+  var DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  var html = '';
+  var cur = new Date(first.getFullYear(), first.getMonth(), 1);
+  var stop = new Date(last.getFullYear(), last.getMonth(), 1);
+
+  while (cur <= stop) {
+    var y = cur.getFullYear(), mo = cur.getMonth();
+    var monthName = cur.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+    var daysIn = new Date(y, mo + 1, 0).getDate();
+
+    /* Rows are calendar weeks, Sunday first. */
+    var startCell = new Date(y, mo, 1);
+    startCell.setDate(startCell.getDate() - startCell.getDay());
+    var endCell = new Date(y, mo, daysIn);
+    endCell.setDate(endCell.getDate() + (6 - endCell.getDay()));
+
+    html += '<section class="month" aria-labelledby="m-' + y + '-' + mo + '">';
+    html += '<h2 id="m-' + y + '-' + mo + '">' + esc(monthName) + '</h2>';
+    html += '<table>';
+    html += '<caption>' + esc(monthName) + ', BIO 005 Human Physiology</caption>';
+    html += '<thead><tr><th scope="col" class="wkhead">Week</th>';
+    DAYS.forEach(function (d) { html += '<th scope="col">' + d + '</th>'; });
+    html += '</tr></thead><tbody>';
+
+    var d = new Date(startCell);
+    while (d <= endCell) {
+      /* The week band names the course week this calendar row carries.
+         A row can straddle two course weeks; the one that owns the
+         Monday is the one named, because that is the week that opens. */
+      /* Scan the whole row, not just its Monday. Week 1 opens Tuesday
+         Sep 8 because the term does, so the Monday of that calendar row
+         is Sep 7 and sits outside every week. Probing only the Monday
+         left week 1 with no band at all. */
+      var wk = null, fallback = null;
+      for (var s = 0; s < 7; s++) {
+        var probe = new Date(d); probe.setDate(probe.getDate() + s);
+        var pk = key(probe);
+        var hit = weekOf(probe);
+        if (!hit) { continue; }
+        if (!fallback) { fallback = hit; }
+        /* The week that OPENS in this row owns it. Week 14 closes on
+           Sun Dec 13 and week 15 opens Mon Dec 14, both inside the same
+           calendar row; naming the first match left week 15 with no band. */
+        if (hit.opens === pk) { wk = hit; break; }
+      }
+      if (!wk) { wk = fallback; }
+      html += '<tr>';
+      if (wk) {
+        html += '<th scope="row" class="wkhead">' +
+                '<span class="wkno">Week ' + wk.wk + '</span>' +
+                '<span class="wkmod">Module ' + wk.module + '</span>' +
+                '<span class="wktitle">' + esc(wk.title || modTitle[wk.module] || '') + '</span>' +
+                '</th>';
+      } else {
+        html += '<th scope="row" class="wkhead"><span class="wktitle">Outside the term</span></th>';
+      }
+      for (var i = 0; i < 7; i++) {
+        var out = (d.getMonth() !== mo);
+        var k = key(d);
+        var mk = marks[k] || [];
+        var isOff = mk.some(function (x) { return x.cls === 'off'; });
+        html += '<td class="day' + (out ? ' out' : '') + (isOff ? ' off' : '') + '">' +
+                '<span class="dnum">' + d.getDate() + '</span>';
+        /* Markers only on days that belong to THIS month. A calendar row
+           spills into the month next door, so without this Sep 27 printed
+           once in September and again in October's leading row, which read
+           as two closes for the same exam. */
+        if (mk.length && !out) {
+          html += '<span class="marks">';
+          mk.forEach(function (x) {
+            html += '<span class="m ' + x.cls + '">' + esc(x.label) + '</span>';
+          });
+          html += '</span>';
+        }
+        html += '</td>';
+        d.setDate(d.getDate() + 1);
+      }
+      html += '</tr>';
+    }
+    html += '</tbody></table></section>';
+    cur = new Date(y, mo + 1, 1);
+  }
+  main.innerHTML = html;
+
+  /* ---------- key dates list ---------- */
+  var kd = [];
+  if (T.start)    { kd.push(['Term starts', T.start]); }
+  if (T.census)   { kd.push(['Census, the last day to add or drop without a grade', T.census]); }
+  if (T.lastDrop) { kd.push(['Last day to drop with a W', T.lastDrop]); }
+  (T.observances || []).forEach(function (o) { kd.push([o.name || 'Campus holiday', o.date]); });
+  MODS.forEach(function (m) {
+    var win = (m.detail || '').match(/(\d{4}-\d{2}-\d{2})\s*(?:to|through|-)\s*(\d{4}-\d{2}-\d{2})/);
+    if (win) { kd.push(['Exam ' + (m.exam || m.n) + ' window closes', win[2]]); }
+  });
+  if (T.end) { kd.push(['Term ends', T.end]); }
+
+  kd.sort(function (a, b) { return D(a[1]) - D(b[1]); });
+  document.getElementById('keydates').innerHTML = kd.map(function (r) {
+    return '<li><strong>' + nice(D(r[1])) + '</strong>, ' + esc(r[0]) + '</li>';
+  }).join('');
+})();
+</script>
+</body>
+</html>

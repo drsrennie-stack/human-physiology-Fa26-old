@@ -1,0 +1,260 @@
+
+/* =====================================================================
+   ADDITIONS THE SHARED ENGINE BRINGS
+   Everything above this line came from the pulmonary lab. Everything
+   below is new machinery every week page can use.
+   ===================================================================== */
+
+/* ---------- generic drop targets, for matching that is not on an SVG ---------- */
+.dropgrid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));margin:4px 0 0}
+.dropbox{background:#fff;border:1px dashed var(--rule);border-radius:var(--r-block);padding:15px 17px;min-height:104px;display:flex;flex-direction:column;gap:6px;cursor:pointer;text-align:left;font:inherit;color:var(--ink);width:100%;box-shadow:var(--shadow);transition:var(--lift)}
+.dropbox .role{font-family:var(--display);font-weight:800;font-size:.68rem;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-muted)}
+.dropbox .slot{font-family:var(--display);font-weight:700;font-size:1rem;color:#555E71}
+.dropbox .why{font-size:.82rem;color:var(--ink-muted);line-height:1.42}
+.dropbox:hover:not(.hit){background:#fff;border-color:var(--navy);box-shadow:var(--shadow-lift);transform:translateY(-2px)}
+.dropbox.drop-ready{border-color:#9A7F32;border-style:solid;background:rgba(220,180,92,.14)}
+.dropbox.drop-over{border-color:var(--terra);border-style:solid;background:rgba(115,23,23,.10)}
+.dropbox.hit{border-style:solid;border-color:var(--navy);background:#fff;cursor:default;box-shadow:0 2px 5px rgba(10,19,34,.07), 0 8px 18px rgba(10,19,34,.07);transform:none}
+.dropbox.hit .slot{color:var(--navy)}
+.dropbox.miss{border-color:var(--terra);background:rgba(115,23,23,.10)}
+.loopstrip{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));align-items:stretch}
+
+/* ---------- calculation table with blanks the student fills ---------- */
+.dt-wrap{overflow-x:auto}
+.dt{width:100%;border-collapse:collapse;font-size:.92rem}
+.dt th,.dt td{padding:7px 9px;border-bottom:1px solid var(--rule-soft);text-align:left;vertical-align:middle}
+.dt thead th{font-family:var(--display);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-muted);border-bottom:1px solid var(--rule);white-space:nowrap}
+.dt td.num,.dt th.num{text-align:right;font-variant-numeric:tabular-nums}
+.dt tbody tr:nth-child(even){background:var(--off)}
+.dt input{width:6.4em;padding:6px 8px;font-size:.92rem;text-align:right;font-variant-numeric:tabular-nums;border:1px solid var(--rule);border-radius:6px;background:#fff;color:var(--ink)}
+.dt input.ok{border-color:var(--teal-text);border-width:2px;background:#fff}
+.dt input.bad{border-color:var(--terra);border-width:2px;background:rgba(115,23,23,.07)}
+.dt .cellnote{display:block;font-size:.76rem;color:var(--ink-muted);margin-top:3px;max-width:22ch}
+.dt-legend{font-size:.85rem;color:var(--ink-muted);margin:0 0 10px}
+.dt .rowflag{font-family:var(--display);font-weight:800;font-size:.72rem;letter-spacing:.05em;text-transform:uppercase}
+
+/* ---------- seeded case stamp ---------- */
+.caseline{display:flex;flex-wrap:wrap;gap:8px 22px;align-items:baseline;background:var(--navy);color:#fff;border-radius:12px;padding:14px 20px;margin:0 0 20px;box-shadow:0 2px 5px rgba(10,19,34,.14), 0 10px 24px rgba(10,19,34,.12)}
+.caseline .cl-k{font-family:var(--display);font-weight:800;font-size:.68rem;letter-spacing:.11em;text-transform:uppercase;color:var(--gold)}
+.caseline .cl-v{font-family:var(--display);font-weight:700;font-size:.98rem;color:#fff}
+
+/* ---------- predict then check ----------
+   No heavy outline. These two read as a pair because of the badge and
+   the way they sit off the page, not because of a border drawn round
+   them. The predict card sits highest, since it is the one being asked
+   to do something. */
+.predict,.check{border:1px solid var(--hair)}
+.predict{box-shadow:0 2px 5px rgba(10,19,34,.06), 0 14px 30px rgba(10,19,34,.09)}
+.predict:hover{box-shadow:0 3px 7px rgba(10,19,34,.07), 0 20px 40px rgba(10,19,34,.12)}
+.check{box-shadow:var(--shadow)}
+.predict>p:last-of-type,.check>p:last-of-type{margin-bottom:0}
+
+.stepnum{font-family:var(--display);font-weight:800;font-size:.66rem;letter-spacing:.15em;
+  text-transform:uppercase;color:#fff;background:var(--navy);border-radius:99px;
+  padding:6px 14px 5px;display:inline-flex;align-items:center;gap:8px;margin-bottom:12px;
+  box-shadow:0 1px 2px rgba(10,19,34,.16)}
+.stepnum::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--gold);flex:0 0 auto}
+.stepnum.alt{background:var(--terra);box-shadow:0 1px 2px rgba(115,23,23,.24)}
+.stepnum.alt::before{background:var(--gold)}
+
+/* a call to action that has been used steps back instead of greying out */
+.btn.cta.spent,.btn.cta.spent[disabled]{background:#fff;color:var(--terra);border-color:#D8C4C4;
+  box-shadow:none;opacity:1;transform:none;cursor:default}
+.btn.cta.spent .arw{transform:rotate(90deg)}
+.btn.cta.spent:hover{transform:none;box-shadow:none}
+
+/* ---------- figure point readout ---------- */
+.pt-read{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.pt-btn{font-family:var(--display);font-weight:700;font-size:.85rem;background:#fff;border:1px solid var(--rule);border-radius:99px;padding:8px 16px;cursor:pointer;color:var(--ink);box-shadow:var(--shadow);transition:var(--lift)}
+.pt-btn:hover{background:#fff;border-color:var(--navy);box-shadow:var(--shadow-lift);transform:translateY(-1px)}
+.pt-btn[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
+
+/* ---------- label chips carry the same finish ---------- */
+.chip-drag{box-shadow:var(--shadow);transition:var(--lift)}
+.chip-drag:hover{box-shadow:var(--shadow-lift);transform:translateY(-1px)}
+.chip-drag[aria-pressed="true"]{box-shadow:0 2px 6px rgba(115,23,23,.24), 0 10px 22px rgba(115,23,23,.18)}
+
+/* ---------- decision chart nodes lift too ---------- */
+.fc-node{transition:var(--lift)}
+.fc-node:hover{box-shadow:var(--shadow-lift)}
+.fc-opt{transition:var(--lift),background 160ms ease}
+.fc-opt:hover:not([disabled]){background:#fff;border-color:var(--navy);box-shadow:0 3px 10px rgba(10,19,34,.09);transform:translateY(-1px)}
+
+/* ---------- flat in print, no shadows on paper ---------- */
+@media print{
+  .card,.qcard,.fig,.disc,.predict,.check,.dropbox,.caseline,.chip-drag,.fc-node,.btn{box-shadow:none!important;transform:none!important}
+}
+
+/* ---------- objective list on the learn page ---------- */
+.objlist{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+.objlist li{display:flex;gap:11px;align-items:flex-start;font-size:.97rem}
+.objlist .n{font-family:var(--display);font-weight:800;font-size:.8rem;color:#fff;background:var(--terra);border-radius:99px;min-width:24px;height:24px;display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;margin-top:1px}
+
+@media print{
+  .dropbox{border:1px solid #999;min-height:0;padding:6px 8px}
+  .dropgrid{gap:6px}
+  .dt input{border:0;padding:0;width:auto}
+  .caseline{background:#fff;color:#000;border:1px solid #000;padding:5px 8px}
+  .caseline .cl-k,.caseline .cl-v{color:#000}
+  .pt-read{display:none!important}
+}
+
+/* =====================================================================
+   WORKED STEPS
+   The spine of the anti shortcut design. A step that is not open yet
+   says so in words, not by going gray and silent.
+   ===================================================================== */
+.ws{display:grid;gap:14px;margin:16px 0 0}
+.ws-rule{background:var(--navy);color:#fff;border-radius:12px;padding:14px 18px;font-size:.92rem;line-height:1.55;margin:0 0 16px}
+.ws-rule strong{color:var(--gold)}
+.ws-step{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--hair);
+  border-radius:var(--r-block);padding:16px 18px;box-shadow:var(--shadow);transition:var(--lift)}
+.ws-step.locked{background:var(--off);box-shadow:none}
+.ws-step.done{border-color:var(--navy)}
+.ws-n{flex:0 0 auto;width:28px;height:28px;border-radius:50%;background:var(--navy);color:#fff;
+  font-family:var(--display);font-weight:800;font-size:.86rem;display:inline-flex;align-items:center;
+  justify-content:center;margin-top:2px}
+.ws-step.locked .ws-n{background:#fff;color:#555E71;border:1px solid var(--rule)}
+.ws-step.done .ws-n{background:var(--terra)}
+.ws-body{flex:1 1 auto;min-width:0}
+.ws-label{display:block;font-family:var(--display);font-weight:700;font-size:1rem;color:var(--navy);margin-bottom:3px}
+.ws-prompt{font-size:.9rem;color:var(--ink-muted);margin:0 0 10px;line-height:1.5}
+.ws-entry{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.ws-entry input{width:8em;padding:10px 12px;font-size:1rem;text-align:right;font-variant-numeric:tabular-nums;
+  border:1px solid var(--rule);border-radius:8px;background:#fff;color:var(--ink)}
+.ws-entry input:disabled{background:var(--off);color:#555E71}
+.ws-entry input.ok{border-color:var(--teal-text);border-width:2px}
+.ws-entry input.bad{border-color:var(--terra);border-width:2px}
+.ws-entry input[readonly]{background:#fff;font-weight:700}
+.ws-unit{font-size:.88rem;color:var(--ink-muted)}
+.ws-lock{font-size:.85rem;color:#555E71;margin:9px 0 0;display:flex;align-items:center;gap:8px}
+.ws-lock[hidden]{display:none}
+.ws-lock svg{width:15px;height:15px;flex:0 0 auto;display:block}
+.ws-fb{font-size:.9rem;line-height:1.55;margin:11px 0 0;padding:11px 14px;border-radius:8px;
+  background:var(--off);border:1px solid var(--hair);color:var(--ink)}
+.ws-fb.ok{border-left:3px solid var(--teal-text)}
+.ws-fb.bad{border-left:3px solid var(--terra)}
+.ws-fb.warn{border-left:3px solid #9A7F32}
+.ws-fb strong{font-family:var(--display)}
+
+/* =====================================================================
+   ELIMINATE, the second half of a multiple choice question
+   ===================================================================== */
+.elim-head{margin:22px 0 14px;padding-top:20px;border-top:1px solid var(--hair)}
+.elim-row{background:var(--off);border:1px solid var(--hair);border-radius:var(--r-block);
+  padding:14px 16px;margin-bottom:11px}
+.elim-opt{font-size:.95rem;margin:0 0 10px;line-height:1.5}
+.elim-opt b{font-family:var(--display);color:var(--navy)}
+.elim-row select{width:100%;max-width:56ch;font-family:var(--body);font-size:.94rem;padding:10px 12px;
+  border:1px solid var(--rule);border-radius:8px;background:#fff;color:var(--ink)}
+.elim-row select.ok{border-color:var(--teal-text);border-width:2px}
+.elim-row select.bad{border-color:var(--terra);border-width:2px}
+.elim-row select:disabled{background:#fff;font-weight:600;color:var(--ink);opacity:1}
+
+/* ---------- other readings from the same shift ---------- */
+.decoy{font-size:.82rem;color:var(--ink-muted);margin:14px 0 0;line-height:1.6;
+  font-variant-numeric:tabular-nums;display:flex;flex-wrap:wrap;gap:6px 12px;align-items:baseline}
+.decoy-k{font-family:var(--display);font-weight:800;font-size:.66rem;letter-spacing:.11em;
+  text-transform:uppercase;color:#555E71}
+
+/* =====================================================================
+   STEP RAIL
+   ===================================================================== */
+.rail{list-style:none;display:flex;flex-wrap:wrap;gap:8px 6px;margin:0 0 22px;padding:0}
+.rail-item{display:flex;align-items:center;gap:9px;background:#fff;border:1px solid var(--hair);
+  border-radius:99px;padding:7px 15px 7px 8px;box-shadow:var(--shadow);font-size:.86rem;color:#555E71}
+.rail-n{width:22px;height:22px;border-radius:50%;background:var(--off);border:1px solid var(--rule);
+  color:#555E71;font-family:var(--display);font-weight:800;font-size:.74rem;display:inline-flex;
+  align-items:center;justify-content:center;flex:0 0 auto}
+.rail-t{font-family:var(--display);font-weight:600}
+.rail-item.now{border-color:var(--navy);color:var(--navy)}
+.rail-item.now .rail-n{background:var(--navy);border-color:var(--navy);color:#fff}
+.rail-item.done{border-color:var(--hair);color:var(--terra)}
+.rail-item.done .rail-n{background:var(--terra);border-color:var(--terra);color:#fff}
+.rail-item.done .rail-n::after{content:"✓";font-size:.72rem}
+.rail-item.done .rail-n{font-size:0}
+
+/* ---------- the case header ---------- */
+.vitals-strip{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin:16px 0 0}
+.vital{background:#fff;border:1px solid var(--hair);border-radius:var(--r-block);padding:14px 16px;box-shadow:var(--shadow)}
+.vital .vk{display:block;font-family:var(--display);font-size:.68rem;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:4px}
+.vital .vv{display:block;font-family:var(--display);font-weight:800;font-size:1.6rem;color:var(--navy);line-height:1.1;font-variant-numeric:tabular-nums}
+.vital .vu{display:block;font-size:.78rem;color:var(--ink-muted);margin-top:2px}
+
+@media print{
+  .ws-rule{background:#fff;color:#000;border:1px solid #000}
+  .ws-rule strong{color:#000}
+  .ws-step,.elim-row,.rail-item,.vital{box-shadow:none;border:1px solid #999}
+  .rail{display:none}
+  .decoy{display:none!important}
+}
+
+/* =====================================================================
+   THE PATIENT CHART
+   ===================================================================== */
+.chart-wrap{overflow-x:auto;background:#fff;border:1px solid var(--hair);border-radius:var(--r-block);
+  box-shadow:var(--shadow);padding:4px 0 0;margin:0 0 6px}
+.chart-t{width:100%;border-collapse:collapse;font-size:.92rem}
+.chart-t caption{text-align:left;font-family:var(--display);font-weight:800;font-size:.7rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--terra);padding:14px 16px 10px}
+.chart-t th,.chart-t td{padding:9px 12px;border-bottom:1px solid var(--hair);text-align:left;vertical-align:middle}
+.chart-t thead th{font-family:var(--display);font-size:.68rem;letter-spacing:.07em;text-transform:uppercase;
+  color:var(--ink-muted);border-bottom:1px solid var(--rule);white-space:nowrap}
+.chart-t tbody tr:last-child td,.chart-t tbody tr:last-child th{border-bottom:0}
+.chart-lab{font-weight:600;color:var(--ink)}
+.chart-lab small{display:block;font-weight:400;font-size:.76rem;color:#555E71;margin-top:2px}
+.chart-u,.chart-r{font-size:.86rem;color:var(--ink-muted);white-space:nowrap;font-variant-numeric:tabular-nums}
+.chart-t input{width:6.6em;padding:8px 10px;font-size:.94rem;text-align:right;font-variant-numeric:tabular-nums;
+  border:1px solid var(--rule);border-radius:7px;background:#fff;color:var(--ink)}
+.chart-t input:disabled{background:var(--off);color:#555E71}
+.chart-t input.ok{border-color:var(--teal-text);border-width:2px}
+.chart-t input.bad{border-color:var(--terra);border-width:2px;background:rgba(115,23,23,.06)}
+.chart-t select{font-family:var(--body);font-size:.9rem;padding:8px 10px;border:1px solid var(--rule);
+  border-radius:7px;background:#fff;color:var(--ink);min-width:12.5em}
+.chart-t select.ok{border-color:var(--teal-text);border-width:2px}
+.chart-t select.bad{border-color:var(--terra);border-width:2px}
+.chart-t select:disabled{background:#fff;color:var(--ink);opacity:1;font-weight:600}
+.chart-fbrow[hidden]{display:none}
+.chart-fb{background:var(--off);border-left:3px solid var(--terra);font-size:.88rem;line-height:1.55;
+  color:var(--ink);padding:11px 14px}
+.chart-fb b{font-family:var(--display)}
+
+/* the handover the values have to be pulled out of */
+.handover{background:#fff;border:1px solid var(--hair);border-left:3px solid var(--navy);
+  border-radius:var(--r-block);padding:18px 22px;box-shadow:var(--shadow);margin:0 0 18px;
+  font-size:1rem;line-height:1.68}
+.handover .hv-k{font-family:var(--display);font-weight:800;font-size:.66rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--terra);display:block;margin-bottom:8px}
+.handover p:last-child{margin-bottom:0}
+
+/* =====================================================================
+   THE NOTE
+   ===================================================================== */
+.note-sec{background:#fff;border:1px solid var(--hair);border-radius:var(--r-block);padding:20px 22px;
+  box-shadow:var(--shadow);margin:0 0 16px}
+.note-sec>h3{margin-bottom:.35em}
+.note-opts{display:grid;gap:9px;margin-top:12px}
+.note-opt{display:flex;gap:11px;align-items:flex-start;background:var(--off);border:1px solid var(--hair);
+  border-radius:8px;padding:12px 14px;cursor:pointer;font-size:.95rem;line-height:1.5}
+.note-opt:hover{background:#fff;border-color:var(--navy)}
+.note-opt input{margin:2px 0 0;width:18px;height:18px;accent-color:var(--terra);flex:0 0 auto}
+.note-opt input:disabled{opacity:1}
+.note-sec textarea{width:100%;font-family:var(--body);font-size:1rem;line-height:1.6;padding:14px 16px;
+  border:1px solid var(--rule);border-radius:8px;background:#fff;color:var(--ink);resize:vertical;margin-top:4px}
+.note-sec textarea[readonly]{background:var(--off)}
+
+/* a prompt that folds away while the student writes */
+.fold-slot{margin:0 0 14px}
+.fold-label{font-family:var(--display);font-weight:800;font-size:.66rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--ink-muted);margin:0 0 8px}
+.fold-body{font-size:.95rem;line-height:1.6;color:var(--ink)}
+.fold-body:empty{display:none}
+.fold-body p{margin:0 0 .7em}
+
+@media print{
+  .chart-wrap,.note-sec{box-shadow:none;border:1px solid #999}
+  .chart-t select,.chart-t input{border:0;padding:0;font-weight:600}
+  .chart-fbrow{display:none!important}
+  .handover{box-shadow:none;border:1px solid #999}
+  .fold-slot .btn{display:none!important}
+}

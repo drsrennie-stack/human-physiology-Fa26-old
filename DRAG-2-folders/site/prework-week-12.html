@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="icon.svg">
+<title>Pre-work notes &middot; Week 12 &middot; BIO 005</title>
+<meta name="description" content="BIO 005 Week 12 pre-work. Turn each thing you need to be able to do into a note in your own words, before the videos and before any AI.">
+<style>
+:root{
+  /* ============================================================
+     MedMasters card system tokens.
+     From her spec, extracted off the live medmasterscollaborative.com
+     pricing section. Three values changed, each noted, because the
+     original drops below the WCAG floor this course has to hold.
+     ============================================================ */
+  --navy:#040711;                     /* body text, headings, borders, and the dark band.
+                                         20.12:1 on white. Deepened from the spec's #0B1530
+                                         at her request: much darker. */
+  --navy-70:rgba(4,7,17,.70);         /* de-emphasized text. 7.88:1 on white, 7.54:1 on off-white.
+                                         This is the LIGHTEST alpha that still clears AAA on both
+                                         grounds, so it de-emphasizes as much as the floor allows.
+                                         CHANGED from the spec's --navy-55, which measured 4.04:1
+                                         and fails even AA for normal text. */
+  --navy-75:var(--navy-70);           /* alias, older rules still name it */
+  --navy-50:rgba(4,7,17,.50);         /* boundary of a control. 3.79:1, clears 1.4.11.
+                                         CHANGED: the spec used --navy-15 on .cta-outline, and a
+                                         button whose only edge is 1.37:1 is not identifiable. */
+  --navy-15:rgba(4,7,17,.15);         /* decorative hairlines ONLY. Card edges and dividers, which
+                                         carry no information, so 1.40:1 is fine there. */
+  --terra:#8B3A2E;                    /* the only accent on a light ground. 7.66:1 on white */
+  --terra-dark:#6E2C23;               /* terra hover. 10.26:1 on white */
+  --white:#FFFFFF;
+
+  /* Dark grounds need their own accent: terra on navy is 2.36:1, which is
+     unusable (2.63:1). These three are her own BIO 004 tokens, not cream. */
+  --gold-bright:#DCB45C;              /* 10.28:1 on navy */
+  --straw:#E8CE85;
+  --straw-light:#F2E2B8;              /* 15.66:1 on navy */
+  --navy-deep:#01030A;                /* the footer, deeper still */
+  --navy-tint:#EBEDF2;
+  --offwhite:#FAFAF9;
+
+  /* aliases kept so the older rules on the week and guide pages
+     keep working against the new palette */
+  --maroon:var(--terra); --maroon-dark:var(--terra-dark);
+  --ink-soft:var(--navy-70);
+  --rule:var(--navy-50); --rule-soft:var(--navy-15);
+  --gold:var(--gold-bright); --gold-deep:#8A6D33; --gold-text:#8B3A2E; --gold-pale:#F7EFD9;
+  --gray-lock:#767E8C;
+
+  /* rhythm, from the spec */
+  --card-radius:8px; --btn-radius:4px; --badge-radius:3px;
+  --grid-gap:14px; --card-pad:24px 22px;
+  --r:8px; --rc:8px; --r-block:8px; --r-card:8px;
+  /* The pricing cards in her spec are flat by design and stay flat: .vl-card
+     declares no shadow. These three are for the page furniture that has to
+     read as lifted, above all the hero card that straddles the band edge. */
+  --shadow:0 1px 3px rgba(4,7,17,.10);
+  --shadow-rest:0 1px 3px rgba(4,7,17,.10);
+  --shadow-hover:0 14px 30px rgba(4,7,17,.24);
+  --shadow-lift:0 22px 48px rgba(4,7,17,.45);
+
+  --font:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;
+  --display:'Open Sans',system-ui,-apple-system,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{margin:0}
+body{font-family:var(--font);background:var(--offwhite);color:var(--navy);line-height:1.6;font-size:16px}
+em,i,cite,dfn,var,address{font-style:normal}
+h1,h2,h3,h4{margin:0;letter-spacing:-.02em;font-family:var(--display);font-weight:800}
+p{margin:0 0 12px}
+ul,ol{margin:0;padding:0}
+a{color:var(--maroon-dark)}
+.vh{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+:focus-visible{outline:3px solid var(--navy);outline-offset:2px;box-shadow:0 0 0 6px var(--gold-bright);border-radius:4px}
+.skip{position:absolute;left:-9999px;top:0;z-index:80;background:var(--navy);color:#fff;padding:12px 18px;font-weight:700;text-decoration:none}
+.skip:focus{left:0;top:0}
+
+/* ---------- top bar ---------- */
+.topbar{background:#fff;border-bottom:1px solid var(--rule-soft);position:sticky;top:0;z-index:40}
+.tb{max-width:1180px;margin:0 auto;padding:0 max(16px,3vw);display:flex;align-items:center;
+    gap:22px;flex-wrap:wrap;min-height:62px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--navy);padding:8px 0}
+.brand svg{height:30px;width:auto;display:block}
+.brand span{display:flex;flex-direction:column;line-height:1.1}
+.brand b{font-size:.94rem;font-weight:800;letter-spacing:-.01em}
+.brand i{font-size:.72rem;color:var(--ink-soft);font-weight:600}
+.mainnav{display:flex;gap:0;flex-wrap:wrap;margin-left:auto}
+/* The current page is marked three ways: a gold rule under it, a darker ink,
+   and a heavier weight. The gold rule is 1.9:1 on white, which is fine as
+   reinforcement but could not carry the state on its own, so the weight and
+   color shift carry it too and aria-current carries it for a screen reader. */
+.mainnav a{position:relative;font-size:.9rem;font-weight:600;color:var(--navy-70);
+  text-decoration:none;padding:10px 6px;margin:0 10px;min-height:44px;min-width:44px;
+  display:flex;align-items:center;justify-content:center}
+.mainnav a:hover{color:var(--navy)}
+.mainnav a:hover::after,.mainnav a[aria-current="page"]::after{
+  content:"";position:absolute;left:0;right:0;bottom:7px;height:3px;border-radius:2px}
+.mainnav a:hover::after{background:var(--navy-15)}
+.mainnav a[aria-current="page"]{color:var(--navy);font-weight:800}
+.mainnav a[aria-current="page"]::after{background:var(--gold-bright)}
+.mainnav a[aria-current="page"]:hover::after{background:var(--gold-bright)}
+
+/* ---------- shell ---------- */
+.shell{max-width:1180px;margin:0 auto;padding:0 max(16px,3vw) 0}
+.crumb{font-size:.78rem;color:var(--ink-soft);padding:16px 0 0}
+.crumb a{color:var(--ink-soft)}
+
+.hero{padding:6px 0 4px}
+.eyebrow{font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--maroon-dark);margin:0 0 6px}
+h1{font-size:clamp(1.6rem,3.4vw,2.15rem);margin:0 0 8px;line-height:1.14;max-width:30ch}
+.sub{color:var(--ink-soft);font-size:.95rem;margin:0 0 14px;max-width:64ch}
+.herorow{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin:0 0 4px}
+.chips{list-style:none;display:flex;gap:6px;flex-wrap:wrap}
+.chips li{font-size:.76rem;font-weight:700;color:var(--ink-soft);background:#fff;
+          border:1px solid var(--rule-soft);border-radius:999px;padding:5px 12px}
+/* Was gold-pale, which is cream by another name and out of the teaching
+   palette. A left rule in terra carries the same emphasis with no fill. */
+.wknote{background:#fff;border-left:4px solid var(--terra);border-radius:var(--r);
+  padding:11px 14px;font-size:.88rem;
+        margin:14px 0 0;max-width:70ch}
+
+.cols{display:grid;grid-template-columns:minmax(0,1fr);gap:26px;padding:22px 0 0}
+@media(min-width:960px){.cols{grid-template-columns:minmax(0,1fr) 296px;gap:34px}}
+
+/* ---------- the path ---------- */
+.panel{background:#fff;border:1px solid var(--rule-soft);border-radius:var(--rc);box-shadow:var(--shadow)}
+.panelhead{padding:18px 20px 0}
+.panelhead h2{font-size:1.1rem;font-weight:800;margin:0 0 4px}
+.panelhead p{font-size:.9rem;color:var(--ink-soft);margin:0;max-width:62ch}
+.pmeter{display:flex;align-items:center;gap:12px;padding:14px 20px 0}
+.bar{flex:1;height:8px;background:var(--navy-tint);border-radius:999px;overflow:hidden}
+.bar span{display:block;height:100%;background:var(--gold);width:0;transition:width 220ms ease}
+.ptext{font-size:.82rem;font-weight:700;color:var(--ink-soft);white-space:nowrap}
+
+.path{list-style:none;padding:14px 12px 16px}
+.step{display:grid;grid-template-columns:30px minmax(0,1fr) auto;gap:12px;align-items:start;
+      padding:13px 10px;border-radius:var(--r)}
+.step + .step{border-top:1px solid var(--rule-soft)}
+.step[data-done="yes"]{background:var(--offwhite)}
+.step[data-done="yes"] .stepbody h3{color:var(--ink-soft)}
+.stepnum{width:26px;height:26px;border-radius:999px;background:var(--navy-tint);color:var(--navy);
+         font-weight:800;font-size:.78rem;display:flex;align-items:center;justify-content:center;margin-top:2px}
+.step[data-done="yes"] .stepnum{background:var(--gold);border:1.5px solid #5C4110}
+.stepbody h3{font-size:.97rem;font-weight:700;margin:0 0 3px}
+.stepbody .do{font-size:.89rem;color:var(--ink-soft);margin:0;max-width:60ch}
+.stepbody .meta{font-size:.76rem;color:var(--ink-soft);margin:6px 0 0}
+.steprow{margin:9px 0 0}
+.go{display:inline-flex;align-items:center;min-height:44px;padding:10px 16px;border-radius:999px;
+    background:var(--maroon);color:#fff;font-size:.82rem;font-weight:700;text-decoration:none;
+    border:1.5px solid var(--maroon)}
+.go:hover{background:var(--maroon-dark);border-color:var(--maroon-dark)}
+.pending{display:inline-flex;align-items:center;min-height:44px;padding:10px 15px;border-radius:999px;
+  border:1.5px dashed var(--gray-lock);color:#4A5261;font-size:.79rem;font-weight:700}
+/* The label is the target, so the whole 44px box is clickable, not the box glyph. 2.5.8. */
+.stepdone{display:flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;cursor:pointer}
+.stepdone input{width:24px;height:24px;accent-color:var(--maroon)}
+@media(max-width:640px){.step{grid-template-columns:26px minmax(0,1fr) 30px;gap:10px}}
+
+/* ---------- collapsibles ---------- */
+details.drop{background:#fff;border:1px solid var(--rule-soft);border-radius:var(--rc);
+             box-shadow:var(--shadow);margin:14px 0 0}
+details.drop > summary{list-style:none;cursor:pointer;padding:15px 20px;min-height:52px;
+  display:flex;align-items:center;gap:10px;font-size:.97rem;font-weight:700}
+details.drop > summary::-webkit-details-marker{display:none}
+details.drop > summary::after{content:'+';margin-left:auto;font-size:1.25rem;font-weight:700;color:var(--maroon)}
+details.drop[open] > summary::after{content:'2'}
+details.drop > summary .tag{font-size:.72rem;font-weight:700;color:var(--ink-soft);
+  background:var(--navy-tint);border-radius:999px;padding:3px 10px}
+.dropbody{padding:0 20px 20px}
+.dropbody > p:first-child{margin-top:0}
+.dropbody .lead{font-size:.9rem;color:var(--ink-soft);max-width:64ch}
+
+.watch{list-style:none;display:grid;gap:9px;margin:4px 0 0}
+.watch li{display:grid;grid-template-columns:7px minmax(0,1fr);gap:11px;align-items:start;font-size:.92rem}
+.watch li::before{content:'';height:7px;border-radius:50%;background:var(--maroon);margin-top:8px}
+.watch li span{min-width:0}
+
+.knowlist{list-style:none;display:flex;flex-wrap:wrap;gap:7px;margin:10px 0 12px}
+.knowlist li{font-size:.85rem;font-weight:600;background:var(--offwhite);border:1px solid var(--rule-soft);
+             border-radius:999px;padding:6px 13px}
+.knowfoot{font-size:.86rem;color:var(--ink-soft);margin:0;max-width:66ch}
+
+.cplist{list-style:none;display:grid;gap:11px;margin:10px 0 0}
+.cplist li{border-left:2px solid var(--rule-soft);padding-left:12px}
+.cid{font:600 .72rem ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--gold-text)}
+.cname{font-weight:700;font-size:.9rem;display:block}
+.ccan{display:block;font-size:.86rem;color:var(--ink-soft)}
+
+/* ---------- rail ---------- */
+.rail{display:grid;gap:14px;align-content:start}
+@media(min-width:960px){.rail{position:sticky;top:78px}}
+.rcard{background:#fff;border:1px solid var(--rule-soft);border-radius:var(--rc);
+       box-shadow:var(--shadow);padding:16px 18px}
+.rcard h2{font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+          color:var(--maroon-dark);margin:0 0 10px}
+.glance{list-style:none;display:grid;gap:9px}
+.glance li{display:grid;grid-template-columns:76px minmax(0,1fr);gap:8px;font-size:.86rem;align-items:start}
+.glance dt,.glance .k{color:var(--ink-soft);font-weight:700;font-size:.78rem;padding-top:1px}
+.glance .v{font-weight:600}
+
+.wkgrid{list-style:none;display:grid;grid-template-columns:repeat(5,1fr);gap:5px}
+.wkgrid a{display:flex;align-items:center;justify-content:center;min-height:44px;border-radius:7px;
+  font-size:.82rem;font-weight:700;text-decoration:none;color:var(--navy);
+  background:var(--offwhite);border:1px solid var(--rule-soft)}
+.wkgrid a:hover{background:var(--gold-pale);border-color:var(--gold-deep)}
+.wkgrid a[aria-current="page"]{background:var(--maroon);border-color:var(--maroon);color:#fff}
+
+.rlist{list-style:none;display:grid;gap:2px}
+.rlist a{display:block;font-size:.87rem;font-weight:600;text-decoration:none;color:var(--navy);
+  padding:10px;border-radius:7px;min-height:44px;display:flex;align-items:center;gap:9px}
+.rlist a:hover{background:var(--gold-pale)}
+.rlist .dot{flex:0 0 6px;height:6px;border-radius:50%;background:var(--gold)}
+.rlist small{display:block;font-weight:500;color:var(--ink-soft);font-size:.78rem}
+
+.nextcard{background:var(--navy);color:#fff;border-radius:var(--rc);padding:18px 20px;margin:14px 0 0}
+.nextcard .eyebrow{color:#F0DCA8}
+.nextcard h2{font-size:1rem;font-weight:800;margin:0 0 5px}
+.nextcard p{font-size:.88rem;color:#D6DCE6;margin:0 0 12px;max-width:58ch}
+.nextcard a{display:inline-flex;align-items:center;min-height:44px;padding:10px 16px;border-radius:999px;
+  background:var(--gold);color:#000;font-size:.82rem;font-weight:700;text-decoration:none}
+
+.site-footer{background:var(--navy-deep);color:#fff;padding:26px max(16px,3vw);margin-top:44px}
+.fi{max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;align-items:center}
+.site-footer .n{font-weight:800;margin:0;font-size:.95rem}
+.site-footer .c{font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#F0DCA8;margin:0}
+.footnav{display:flex;gap:4px;flex-wrap:wrap}
+.footnav a{color:#D6DCE6;font-size:.84rem;font-weight:600;text-decoration:none;padding:10px 14px;border-radius:999px;min-height:44px;display:flex;align-items:center}
+.footnav a:hover{background:rgba(255,255,255,.10);color:#fff}
+
+/* On a phone a sticky seven-item bar eats a third of the screen, so it
+   sits at the top of the document instead of on top of it. Nothing is
+   hidden behind a scroll or a menu button either way. */
+@media(max-width:760px){
+  .topbar{position:static}
+  .tb{gap:8px;min-height:0;padding-top:8px;padding-bottom:8px}
+  .brand svg{height:26px}
+  .brand b{font-size:.88rem}
+  .mainnav{margin-left:0;width:100%;gap:0}
+  .mainnav a{font-size:.82rem;padding:9px 4px;margin:0 8px}
+}
+
+/* ============================================================
+   MEDMASTERS CARD SYSTEM
+   Her spec, implemented. Type scale kept at her numbers.
+   Flat cards: hairline border, 8px radius, no shadow, no lift.
+   The emphasis treatment is a 2px terra border and nothing else.
+   ============================================================ */
+
+/* ---- section shell ---- */
+.vl-section{background:var(--white);padding:48px max(40px,5vw)}
+.vl-eyebrow{font-size:11px;font-weight:700;letter-spacing:3.3px;text-transform:uppercase;
+  color:var(--terra);margin:0 0 18px}
+.vl-headline{font-family:var(--display);font-size:30px;font-weight:800;line-height:33px;
+  letter-spacing:-.6px;color:var(--navy);margin:0 0 26px;text-wrap:balance}
+.vl-headline .accent{color:var(--terra)}
+
+/* ---- grid ---- */
+.vl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--grid-gap);margin:0 0 22px}
+/* margin-top:auto on the CTA is what lands every button on the same
+   baseline however long the copy above it runs. */
+.vl-card{background:var(--white);border:1px solid var(--navy-15);border-radius:var(--card-radius);
+  padding:var(--card-pad);display:flex;flex-direction:column;position:relative}
+.vl-card.featured{border:2px solid var(--terra)}
+.vl-card.soon{border-style:dashed}
+
+/* ---- card parts ---- */
+.vl-badge{position:absolute;top:-10px;right:22px;font-size:11px;font-weight:700;
+  letter-spacing:1.98px;text-transform:uppercase;color:var(--white);background:var(--terra);
+  border-radius:var(--badge-radius);padding:4px 10px}
+.vl-badge.quiet{background:var(--navy)}
+/* Numbers belong here only because the set is a real progression.
+   Do not carry them onto cards that have no order. */
+.vl-num{font-size:28px;font-weight:800;line-height:28px;letter-spacing:-.56px;color:var(--terra);
+  margin:0 0 12px;font-variant-numeric:tabular-nums}
+.vl-tier{font-size:18px;font-weight:800;line-height:28.8px;letter-spacing:-.27px;color:var(--navy);
+  margin:0 0 8px}
+.vl-price{font-size:13px;font-weight:700;line-height:20.8px;color:var(--terra);margin:0 0 14px;
+  font-variant-numeric:tabular-nums}
+.vl-price .was{color:var(--navy-70);font-weight:500;text-decoration:line-through;margin-right:6px}
+.vl-tagline{font-size:13px;font-weight:400;line-height:20.15px;color:var(--navy);margin:0 0 16px}
+/* A rule, not a border on the card: it separates the pitch from the
+   specifics without boxing anything in. */
+.vl-divider{height:1px;background:var(--navy-15);margin:0 0 14px}
+.vl-includes{font-size:11px;font-weight:700;letter-spacing:2.09px;text-transform:uppercase;
+  color:var(--navy);margin:0 0 10px}
+.vl-list{list-style:none;margin:0 0 20px;padding:0}
+.vl-list li{font-size:13px;font-weight:500;line-height:19px;color:var(--navy);
+  padding:4px 0 4px 15px;margin:0 0 2.4px;position:relative}
+/* Custom dot rather than a list marker, so the color and size are ours
+   and the text hangs properly under itself. */
+.vl-list li::before{content:"";position:absolute;left:0;top:10px;width:5px;height:5px;
+  border-radius:50%;background:var(--terra)}
+
+/* ---- buttons ---- */
+.vl-cta{margin-top:auto;display:block;text-align:center;text-decoration:none;
+  font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  border-radius:var(--btn-radius);padding:14px;min-height:44px;
+  transition:opacity 160ms ease,background 160ms ease}
+.cta-outline{color:var(--navy);border:1px solid var(--navy-50)}
+.cta-outline:hover{background:var(--navy);color:var(--white);border-color:var(--navy)}
+.cta-solid{color:var(--white);background:var(--terra);border:1px solid var(--terra)}
+.cta-solid:hover{background:var(--terra-dark);border-color:var(--terra-dark)}
+.cta-quiet{color:var(--navy-70);border:1px dashed var(--navy-50)}
+.vl-cta:focus-visible{outline:3px solid var(--terra);outline-offset:2px}
+
+/* ---- note under a grid ---- */
+.vl-note{font-size:13px;line-height:19px;color:var(--navy);margin:0}
+.vl-note a{color:var(--terra);font-weight:700;text-decoration:none;border-bottom:1px solid var(--terra)}
+
+/* ---- on a dark or terra ground the cards stay white, but the
+        surrounding type has to switch: terra is 2.36:1 on navy. ---- */
+/* These reach section-level type only. .vl-num lives inside a card, and a
+   card is white on every ground, so it must keep its terra. */
+.band-dark .vl-eyebrow{color:var(--straw-light)}
+.band-dark .vl-headline{color:var(--white)}
+.band-maroon .vl-eyebrow,.band-maroon .vl-headline{color:var(--white)}
+
+@media(max-width:800px){
+  .vl-grid{grid-template-columns:1fr}
+  .vl-cta{margin-top:8px}
+  .vl-headline{font-size:26px;line-height:30px}
+}
+@media print{
+  .vl-card,.vl-card.featured,.vl-card.soon{border:1px solid #000;break-inside:avoid;page-break-inside:avoid}
+  .vl-badge,.cta-solid{background:none;color:#000;border:1px solid #000}
+  .vl-list li::before{background:#000}
+}
+
+
+/* ============================================================
+   CATEGORY CARDS
+   Lifted from her teaching-resources index: a full-bleed color
+   card, a translucent rounded icon chip, a big title, and an
+   uppercase link with an arrow that slides on hover.
+
+   Her geometry kept exactly: 18px radius, 54px chip at 14px
+   radius, 24px title, 214px min height, 340px grid minimum,
+   6px lift with a deeper shadow.
+
+   ONE CHANGE. Her .cat p carries opacity:.86, which measures
+   6.11:1 on the terra ground and 5.99:1 on the gold. Both clear
+   AA and both miss the 7:1 this course holds. At full opacity
+   the same text is 7.66 and 7.46. The look barely moves and the
+   floor is kept, so the opacity is gone.
+   ============================================================ */
+/* 420 rather than her 340: this page's wrap is wider than the one these
+   came off, and 340 lets three squeeze in and orphan the fourth. */
+.cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:20px}
+.cat{position:relative;display:flex;flex-direction:column;gap:12px;
+  background:var(--bg);color:var(--fg);border:none;border-radius:18px;
+  padding:28px 26px;min-height:214px;text-decoration:none;
+  box-shadow:0 14px 30px rgba(11,21,48,.18);
+  transition:transform .22s ease,box-shadow .22s ease}
+.cat:hover{transform:translateY(-6px);box-shadow:0 26px 50px rgba(11,21,48,.28)}
+.cat .ic{width:54px;height:54px;border-radius:14px;background:rgba(255,255,255,.18);
+  display:flex;align-items:center;justify-content:center}
+.cat.light .ic{background:rgba(11,21,48,.12)}
+.cat .ic svg{width:28px;height:28px}
+.cat .ic svg *{stroke:var(--fg)}
+.cat h3{font-size:24px;font-weight:800;letter-spacing:-.01em;line-height:1.15;margin:0;color:var(--fg)}
+/* full opacity, see the note above */
+.cat p{font-size:15px;color:var(--fg);margin:0;flex:1 1 auto;line-height:1.5}
+/* Named catgo, not go. The week page already owns .go as a solid maroon
+   button, so a bare .go inside a card inherited that background and put navy
+   text on maroon at 2.36:1. */
+.cat .catgo{margin-top:auto;font-family:var(--display);font-size:13px;font-weight:800;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--fg);background:none;
+  border:0;padding:0;min-height:0;display:inline-flex;align-items:center;gap:8px}
+.cat .catgo .arr{transition:transform .2s}
+.cat:hover .catgo .arr{transform:translateX(4px)}
+.cat:focus-visible{outline:3px solid var(--navy);outline-offset:3px;
+  box-shadow:0 0 0 6px var(--gold-bright),0 26px 50px rgba(11,21,48,.28)}
+@media(prefers-reduced-motion:reduce){
+  .cat,.cat .catgo .arr{transition:none}
+  .cat:hover{transform:none}
+  .cat:hover .catgo .arr{transform:none}
+}
+
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+@media print{
+  .topbar,.site-footer,.rail,.pmeter,.stepdone,.go,.pending{display:none}
+  body{background:#fff;font-size:11.5px}
+  .cols{grid-template-columns:1fr}
+  details.drop{border:0}details.drop > summary::after{content:''}
+  .dropbody{display:block!important}
+}
+</style>
+<style>
+.pw-wrap{max-width:900px;margin:0 auto;padding:0 max(16px,3vw)}
+.band-dark{background:var(--navy);color:#fff}
+.pw-hero{padding:44px 0 36px}
+.pw-hero .eyeb{font-family:var(--display);font-weight:700;font-size:.72rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--straw-light);margin:0 0 .6rem}
+.pw-hero h1{font-size:clamp(1.7rem,3.4vw,2.4rem);line-height:1.15;margin:0 0 14px;
+  letter-spacing:-.025em;color:#fff;max-width:22ch}
+.pw-hero p{color:#D6DCE6;font-size:1.02rem;line-height:1.65;max-width:62ch;margin:0 0 12px}
+.pw-hero .when{font-size:.9rem;color:var(--straw-light);font-weight:600;margin:16px 0 0}
+
+/* the one thing that has to land before they start */
+.pw-rule{background:#fff;color:var(--navy);border-radius:var(--card-radius);
+  padding:22px 24px;margin:0 0 -40px;position:relative;z-index:2;box-shadow:var(--shadow-lift)}
+.pw-rule h2{font-size:1.05rem;margin:0 0 8px}
+.pw-rule p{font-size:.96rem;margin:0 0 10px;max-width:64ch}
+.pw-rule p:last-child{margin-bottom:0}
+.pw-rule b{font-weight:700}
+.pw-spacer{height:40px}
+
+.pw-bar{position:sticky;top:0;z-index:30;background:var(--offwhite);
+  border-bottom:1px solid var(--navy-15);padding:12px 0;margin:0 0 8px}
+.pw-bar .pw-wrap{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.pw-meter{flex:1;min-width:160px;height:8px;background:var(--navy-15);border-radius:99px;overflow:hidden}
+.pw-meter span{display:block;height:100%;width:0;background:var(--terra);
+  transition:width 220ms ease}
+.pw-stat{font-size:.86rem;font-weight:700;color:var(--navy);white-space:nowrap}
+.pw-stat .flagged{color:var(--terra);font-weight:800}
+
+.pw-group{padding:30px 0 4px;border-top:1px solid var(--navy-15)}
+.pw-group:first-of-type{border-top:0}
+.pw-ghead h2{font-size:1.25rem;margin:0 0 4px;letter-spacing:-.02em}
+.pw-time{font-size:.86rem;color:var(--navy-70);margin:0 0 16px}
+.pw-src{background:#fff;border:1px solid var(--navy-15);border-radius:var(--card-radius);
+  padding:14px 16px;margin:0 0 16px}
+.pw-src label{display:block;font-size:.86rem;color:var(--navy-70);margin:0 0 8px;max-width:68ch}
+.pw-src input{width:100%;font:inherit;font-size:.94rem;color:var(--navy);background:#fff;
+  border:1px solid var(--navy-50);border-radius:var(--btn-radius);padding:11px 12px;min-height:44px}
+
+.pw-list{list-style:none;display:grid;gap:14px;margin:0;padding:0}
+.pw-card{background:#fff;border:1px solid var(--navy-15);border-radius:var(--card-radius);
+  padding:18px 20px}
+.pw-card[data-done="yes"]{background:#F6FAF6;border-color:#9BBBA0}
+.pw-card[data-flagged="yes"]{border-left:5px solid var(--terra)}
+.pw-head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin:0 0 8px}
+.pw-head h3{font-size:1.02rem;margin:0;letter-spacing:-.01em}
+.pw-dok{font-family:var(--display);font-size:.62rem;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;border-radius:99px;padding:3px 9px;white-space:nowrap;
+  background:var(--navy-tint);color:var(--navy)}
+.pw-dok3{background:var(--terra);color:#fff}
+.pw-can{font-size:.95rem;color:var(--navy);margin:0 0 8px;max-width:70ch}
+.pw-ask{font-size:.86rem;color:var(--navy-70);margin:0 0 10px;max-width:70ch}
+.pw-card textarea{width:100%;font:inherit;font-size:.95rem;line-height:1.55;color:var(--navy);
+  background:#fff;border:1px solid var(--navy-50);border-radius:var(--btn-radius);
+  padding:11px 12px;min-height:80px;resize:vertical}
+.pw-foot{display:flex;align-items:center;justify-content:space-between;gap:14px;
+  flex-wrap:wrap;margin:10px 0 0}
+.pw-flag{display:flex;align-items:center;gap:9px;min-height:44px;cursor:pointer;
+  font-size:.88rem;font-weight:600;color:var(--navy)}
+.pw-flag input{width:24px;height:24px;flex:0 0 auto;accent-color:var(--terra)}
+.pw-count{font-size:.8rem;color:var(--navy-70);font-weight:600}
+
+.pw-end{background:#fff;border:1px solid var(--navy-15);border-radius:var(--card-radius);
+  padding:24px;margin:34px 0 0}
+.pw-end h2{font-size:1.1rem;margin:0 0 8px}
+.pw-end p{font-size:.94rem;margin:0 0 14px;max-width:66ch;color:var(--navy)}
+.pw-acts{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 4px}
+.btnA,.btnB{display:inline-flex;align-items:center;justify-content:center;min-height:44px;
+  padding:12px 20px;border-radius:var(--btn-radius);font-family:var(--display);
+  font-size:.86rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  text-decoration:none;border:2px solid transparent;cursor:pointer}
+.btnA{background:var(--terra);border-color:var(--terra);color:#fff}
+.btnA:hover{background:#fff;color:var(--terra)}
+.btnB{background:#fff;border-color:var(--navy-50);color:var(--navy)}
+.btnB:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+.pw-said{font-size:.88rem;font-weight:700;color:var(--terra);margin:12px 0 0;min-height:1.2em}
+.pw-endspace{height:50px}
+
+@media print{
+  .topbar,.site-footer,.pw-bar,.pw-acts,.band-dark{display:none}
+  .pw-card,.pw-src{break-inside:avoid;page-break-inside:avoid}
+  .pw-card textarea{border:1px solid #000;min-height:60px}
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to the main content</a>
+<header class="topbar">
+  <div class="tb">
+    <a class="brand" href="index.html" target="_top">
+      <svg viewBox="40 10 125 148" aria-hidden="true" focusable="false"><g transform="translate(0,18)"><g transform="translate(60,0) rotate(8 0 130)"><circle cx="0" cy="20" r="10" fill="#040711"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#040711"/></g><g transform="translate(100,0)"><circle cx="0" cy="10" r="11" fill="#8B3A2E"/><path d="M 0,22 C -11,22 -17,26 -17,34 C -17,52 -14,70 -12,86 C -11,108 -13,122 -15,132 L 15,132 C 13,122 11,108 12,86 C 14,70 17,52 17,34 C 17,26 11,22 0,22 Z" fill="#8B3A2E"/></g><g transform="translate(140,0) rotate(-8 0 130)"><circle cx="0" cy="20" r="10" fill="#DCB45C"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#DCB45C"/></g></g></svg>
+      <span><b>BIO 005</b><i>Human Physiology</i></span>
+    </a>
+    <nav class="mainnav" aria-label="Course sections">
+      <a href="index.html" target="_top" >Home</a>
+      <a href="welcome.html" target="_top" >This week</a>
+      <a href="course-materials.html" target="_top">Lecture</a>
+      <a href="clinical-physiology-lab-manual.html" target="_top">Lab</a>
+      <a href="competency-recall.html" target="_top">Study</a>
+      <a href="guides.html" target="_top">Guides</a>
+      <a href="start-here.html" target="_top">Admin</a>
+    </nav>
+  </div>
+</header>
+
+
+<main id="main">
+
+<div class="band-dark">
+  <div class="pw-wrap">
+    <section class="pw-hero" aria-labelledby="h1">
+      <p class="eyeb">Week 12 &middot; Pre-work</p>
+      <h1 id="h1">Digestion, and how you use food for fuel</h1>
+      <p>Before the videos. Before any AI. Work through the list below and turn each
+        thing you need to be able to do into a note in your own words.</p>
+      <p class="when">Opens Monday November 23 &middot; due with everything else, Sunday December 6, 11:59 pm</p>
+      <p class="when">Weeks 12 and 13 share one deadline. Nothing is due on the Thanksgiving weekend. Everything from both weeks is due Sunday December 6, 11:59 pm.</p>
+    </section>
+
+    <section class="pw-rule" aria-labelledby="h-rule">
+      <h2 id="h-rule">This is not extra work on top of studying. This is the studying.</h2>
+      <p>The roughly 7 hours of work this week are the hours you spend writing these notes. If you
+        read the chapter first and then come here to write it up, you have done it twice
+        and learned it once.</p>
+      <p><b>Open the book. Read a paragraph. Close the book. Write the note.</b> If you
+        cannot write it with the book closed, you have not read it yet, you have looked at it.</p>
+      <p>Say where you got each one. Naming a figure or a section heading or a point in
+        one of my videos takes five seconds and it is the thing that makes this yours.</p>
+    </section>
+  </div>
+</div>
+
+<div class="pw-spacer"></div>
+
+<div class="pw-bar">
+  <div class="pw-wrap">
+    <div class="pw-meter" role="img" aria-labelledby="pw-stat"><span id="pw-fill"></span></div>
+    <p class="pw-stat" id="pw-stat">Nothing written yet</p>
+  </div>
+</div>
+
+<div class="pw-wrap">
+  <section class="pw-group" aria-labelledby="g0"><div class="pw-ghead"><h2 id="g0">Digestive Physiology</h2><p class="pw-time">About 4 and a quarter hours if you write as you read</p></div><div class="pw-src"><label for="src-0">Where you got this. Name the figure, the section heading, or the point in my video. Not a page number, those move between printings.</label><input type="text" id="src-0" data-src="0" placeholder="Silverthorn fig 6.7, and the control pathways video at about 4 minutes"></div><ul class="pw-list"><li class="pw-card" data-id="w14-digestive-processes"><div class="pw-head"><span class="pw-dok pw-dok2">Use it</span><h3>Four digestive processes</h3></div><p class="pw-can">Distinguish motility, secretion, digestion, and absorption and identify where in the tract each dominates.</p><p class="pw-ask">Write the rule, then one worked instance of it. A real example with real values, not "for example, a cell".</p><label class="vh" for="n-w14-digestive-processes">My note for Four digestive processes</label><textarea id="n-w14-digestive-processes" data-note="w14-digestive-processes" rows="3" placeholder="The rule is... and here it is working: ..."></textarea><div class="pw-foot"><label class="pw-flag"><input type="checkbox" data-flag="w14-digestive-processes"><span>I could not get this on my own</span></label><span class="pw-count" data-count="w14-digestive-processes" aria-live="polite"></span></div></li><li class="pw-card" data-id="w14-gi-motility"><div class="pw-head"><span class="pw-dok pw-dok2">Use it</span><h3>Motility patterns</h3></div><p class="pw-can">Compare peristalsis, segmentation, and the migrating motor complex by pattern and purpose.</p><p class="pw-ask">Write the rule, then one worked instance of it. A real example with real values, not "for example, a cell".</p><label class="vh" for="n-w14-gi-motility">My note for Motility patterns</label><textarea id="n-w14-gi-motility" data-note="w14-gi-motility" rows="3" placeholder="The rule is... and here it is working: ..."></textarea><div class="pw-foot"><label class="pw-flag"><input type="checkbox" data-flag="w14-gi-motility"><span>I could not get this on my own</span></label><span class="pw-count" data-count="w14-gi-motility" aria-live="polite"></span></div></li><li class="pw-card" data-id="w14-gi-regulation"><div class="pw-head"><span class="pw-dok pw-dok3">Reason it</span><h3>Neural and hormonal regulation</h3></div><p class="pw-can">Explain short and long reflex control by the enteric nervous system and match gastrin, secretin, cholecystokinin, and glucose dependent insulinotropic peptide to their stimulus and action.</p><p class="pw-ask">Write the chain. If this thing changes, what happens next, and why does that follow? Draw it on paper if the chain has more than two steps, and say here what you drew.</p><label class="vh" for="n-w14-gi-regulation">My note for Neural and hormonal regulation</label><textarea id="n-w14-gi-regulation" data-note="w14-gi-regulation" rows="3" placeholder="If ... rises, then ... because ..."></textarea><div class="pw-foot"><label class="pw-flag"><input type="checkbox" data-flag="w14-gi-regulation"><span>I could not get this on my own</span></label><span class="pw-count" data-count="w14-gi-regulation" aria-live="polite"></span></div></li><li class="pw-card" data-id="w14-digestive-phases"><div class="pw-head"><span class="pw-dok pw-dok2">Use it</span><h3>Phases of digestive control</h3></div><p class="pw-can">Describe the cephalic, gastric, and intestinal phases and state the dominant control mechanism in each.</p><p class="pw-ask">Write the rule, then one worked instance of it. A real example with real values, not "for example, a cell".</p><label class="vh" for="n-w14-digestive-phases">My note for Phases of digestive control</label><textarea id="n-w14-digestive-phases" data-note="w14-digestive-phases" rows="3" placeholder="The rule is... and here it is working: ..."></textarea><div class="pw-foot"><label class="pw-flag"><input type="checkbox" data-flag="w14-digestive-phases"><span>I could not get this on my own</span></label><span class="pw-count" data-count="w14-digestive-phases" aria-live="polite"></span></div></li><li class="pw-card" data-id="w14-gastric-secretion"><div class="pw-head"><span class="pw-dok pw-dok3">Reason it</span><h3>Gastric secretion and mucosal protection</h3></div><p class="pw-can">Trace the production of hydrochloric acid by the parietal cell and explain how the mucosal barrier protects the stomach and how ulcers develop when it fails.</p><p class="pw-ask">Write the chain. If this thing changes, what happens next, and why does that follow? Draw it on paper if the chain has more than two steps, and say here what you drew.</p><label class="vh" for="n-w14-gastric-secretion">My note for Gastric secretion and mucosal protection</label><textarea id="n-w14-gastric-secretion" data-note="w14-gastric-secretion" rows="3" placeholder="If ... rises, then ... because ..."></textarea><div class="pw-foot"><label class="pw-flag"><input type="checkbox" data-flag="w14-gastric-secretion"><span>I could not get this on my own</span></label><span class="pw-count" data-count="w14-gastric-secretion" aria-live="polite"></span></div></li><li class="pw-card" data-id="w14-pancreatic-bile-secretion"><div class="pw-head"><span class="pw-dok pw-dok3">Reason it</span><h3>Pancreatic and biliary secretion</h3></div><p class="pw-can">State the components of pancreatic juice and bile and explain how bicarbonate neutralizes chyme and how bile salts emulsify fat.</p><p class="pw-ask">Write the chain. If this thing changes, what happens next, and why does that follow? Draw it on paper if the chain has more than two steps, and say here what you drew.</p><label class="vh" for="n-w14-pancreatic-bile-secretion">My note for Pancreatic and biliary secretion</label><textarea id="n-w14-pancreatic-bile-secretion" data-note="w14-pancreatic-bile-secretion" rows="3" placeholder="If ... rises, then ... because ..."></textarea><div class="pw-foot"><label class="pw-flag"><input type="checkbox" data-flag="w14-pancreatic-bile-secretion"><span>I could not get this on my own</span></label><span class="pw-count" data-count="w14-pancreatic-bile-secretion" aria-live="polite"></span></div></li><li class="pw-card" data-id="w14-carb-protein-absorption"><div class="pw-head"><span class="pw-dok pw-dok3">Reason it</span><h3>Carbohydrate and protein digestion and absorption</h3></div><p class="pw-can">Trace a starch and a protein from mouth to bloodstream naming the enzymes at each step and the transport mechanism at the brush border.</p><p class="pw-ask">Write the chain. If this thing changes, what happens next, and why does that follow? Draw it on paper if the chain has more than two steps, and say here what you drew.</p><label class="vh" for="n-w14-carb-protein-absorption">My note for Carbohydrate and protein digestion and absorption</label><textarea id="n-w14-carb-protein-absorption" data-note="w14-carb-protein-absorption" rows="3" placeholder="If ... rises, then ... because ..."></textarea><div class="pw-foot"><label class="pw-flag"><input type="checkbox" data-flag="w14-carb-protein-absorption"><span>I could not get this on my own</span></label><span class="pw-count" data-count="w14-carb-protein-absorption" aria-live="polite"></span></div></li><li class="pw-card" data-id="w14-lipid-absorption"><div class="pw-head"><span class="pw-dok pw-dok3">Reason it</span><h3>Lipid digestion and absorption</h3></div><p class="pw-can">Trace a triglyceride through emulsification, lipase action, micelle formation, and chylomicron packaging to the lymphatic route and explain why fat takes a different path than glucose.</p><p class="pw-ask">Write the chain. If this thing changes, what happens next, and why does that follow? Draw it on paper if the chain has more than two steps, and say here what you drew.</p><label class="vh" for="n-w14-lipid-absorption">My note for Lipid digestion and absorption</label><textarea id="n-w14-lipid-absorption" data-note="w14-lipid-absorption" rows="3" placeholder="If ... rises, then ... because ..."></textarea><div class="pw-foot"><label class="pw-flag"><input type="checkbox" data-flag="w14-lipid-absorption"><span>I could not get this on my own</span></label><span class="pw-count" data-count="w14-lipid-absorption" aria-live="polite"></span></div></li><li class="pw-card" data-id="w14-liver-function"><div class="pw-head"><span class="pw-dok pw-dok2">Use it</span><h3>Liver function and enterohepatic circulation</h3></div><p class="pw-can">State the metabolic, storage, and detoxification functions of the liver and trace the enterohepatic circulation of bile salts.</p><p class="pw-ask">Write the rule, then one worked instance of it. A real example with real values, not "for example, a cell".</p><label class="vh" for="n-w14-liver-function">My note for Liver function and enterohepatic circulation</label><textarea id="n-w14-liver-function" data-note="w14-liver-function" rows="3" placeholder="The rule is... and here it is working: ..."></textarea><div class="pw-foot"><label class="pw-flag"><input type="checkbox" data-flag="w14-liver-function"><span>I could not get this on my own</span></label><span class="pw-count" data-count="w14-liver-function" aria-live="polite"></span></div></li><li class="pw-card" data-id="w14-large-intestine"><div class="pw-head"><span class="pw-dok pw-dok2">Use it</span><h3>Large intestine and microbiome</h3></div><p class="pw-can">Describe water and electrolyte absorption in the colon, the contribution of the microbiome, and the defecation reflex.</p><p class="pw-ask">Write the rule, then one worked instance of it. A real example with real values, not "for example, a cell".</p><label class="vh" for="n-w14-large-intestine">My note for Large intestine and microbiome</label><textarea id="n-w14-large-intestine" data-note="w14-large-intestine" rows="3" placeholder="The rule is... and here it is working: ..."></textarea><div class="pw-foot"><label class="pw-flag"><input type="checkbox" data-flag="w14-large-intestine"><span>I could not get this on my own</span></label><span class="pw-count" data-count="w14-large-intestine" aria-live="polite"></span></div></li><li class="pw-card" data-id="w14-lab-digestion-enzymes"><div class="pw-head"><span class="pw-dok pw-dok3">Reason it</span><h3>Digestive enzyme experiment</h3></div><p class="pw-can">Test the effect of pH, temperature, and substrate on a digestive enzyme and relate the results to the region of the tract where that enzyme works.</p><p class="pw-ask">Write the chain. If this thing changes, what happens next, and why does that follow? Draw it on paper if the chain has more than two steps, and say here what you drew.</p><label class="vh" for="n-w14-lab-digestion-enzymes">My note for Digestive enzyme experiment</label><textarea id="n-w14-lab-digestion-enzymes" data-note="w14-lab-digestion-enzymes" rows="3" placeholder="If ... rises, then ... because ..."></textarea><div class="pw-foot"><label class="pw-flag"><input type="checkbox" data-flag="w14-lab-digestion-enzymes"><span>I could not get this on my own</span></label><span class="pw-count" data-count="w14-lab-digestion-enzymes" aria-live="polite"></span></div></li></ul></section><section class="pw-group" aria-labelledby="g1"><div class="pw-ghead"><h2 id="g1">Metabolism and Energy Balance</h2><p class="pw-time">About 2 and three quarter hours if you write as you read</p></div><div class="pw-src"><label for="src-1">Where you got this. Name the figure, the section heading, or the point in my video. Not a page number, those move between printings.</label><input type="text" id="src-1" data-src="1" placeholder="Silverthorn fig 6.7, and the control pathways video at about 4 minutes"></div><ul class="pw-list"><li class="pw-card" data-id="w14-atp-pathways"><div class="pw-head"><span class="pw-dok pw-dok2">Use it</span><h3>ATP production pathways</h3></div><p class="pw-can">Compare glycolysis, the citric acid cycle, and oxidative phosphorylation by location, oxygen requirement, and ATP yield.</p><p class="pw-ask">Write the rule, then one worked instance of it. A real example with real values, not "for example, a cell".</p><label class="vh" for="n-w14-atp-pathways">My note for ATP production pathways</label><textarea id="n-w14-atp-pathways" data-note="w14-atp-pathways" rows="3" placeholder="The rule is... and here it is working: ..."></textarea><div class="pw-foot"><label class="pw-flag"><input type="checkbox" data-flag="w14-atp-pathways"><span>I could not get this on my own</span></label><span class="pw-count" data-count="w14-atp-pathways" aria-live="polite"></span></div></li><li class="pw-card" data-id="w14-absorptive-state"><div class="pw-head"><span class="pw-dok pw-dok2">Use it</span><h3>Absorptive state</h3></div><p class="pw-can">Describe the fate of glucose, amino acids, and fats in the absorptive state and identify insulin as the dominant hormone.</p><p class="pw-ask">Write the rule, then one worked instance of it. A real example with real values, not "for example, a cell".</p><label class="vh" for="n-w14-absorptive-state">My note for Absorptive state</label><textarea id="n-w14-absorptive-state" data-note="w14-absorptive-state" rows="3" placeholder="The rule is... and here it is working: ..."></textarea><div class="pw-foot"><label class="pw-flag"><input type="checkbox" data-flag="w14-absorptive-state"><span>I could not get this on my own</span></label><span class="pw-count" data-count="w14-absorptive-state" aria-live="polite"></span></div></li><li class="pw-card" data-id="w14-postabsorptive-state"><div class="pw-head"><span class="pw-dok pw-dok3">Reason it</span><h3>Postabsorptive state</h3></div><p class="pw-can">Explain how glycogenolysis, gluconeogenesis, lipolysis, and ketogenesis maintain plasma glucose during fasting and name the hormones that drive each.</p><p class="pw-ask">Write the chain. If this thing changes, what happens next, and why does that follow? Draw it on paper if the chain has more than two steps, and say here what you drew.</p><label class="vh" for="n-w14-postabsorptive-state">My note for Postabsorptive state</label><textarea id="n-w14-postabsorptive-state" data-note="w14-postabsorptive-state" rows="3" placeholder="If ... rises, then ... because ..."></textarea><div class="pw-foot"><label class="pw-flag"><input type="checkbox" data-flag="w14-postabsorptive-state"><span>I could not get this on my own</span></label><span class="pw-count" data-count="w14-postabsorptive-state" aria-live="polite"></span></div></li><li class="pw-card" data-id="w14-glucose-regulation"><div class="pw-head"><span class="pw-dok pw-dok3">Reason it</span><h3>Integrated glucose regulation</h3></div><p class="pw-can">Predict the hormonal and metabolic response to a carbohydrate meal and to a prolonged fast and explain how plasma glucose stays within range in both.</p><p class="pw-ask">Write the chain. If this thing changes, what happens next, and why does that follow? Draw it on paper if the chain has more than two steps, and say here what you drew.</p><label class="vh" for="n-w14-glucose-regulation">My note for Integrated glucose regulation</label><textarea id="n-w14-glucose-regulation" data-note="w14-glucose-regulation" rows="3" placeholder="If ... rises, then ... because ..."></textarea><div class="pw-foot"><label class="pw-flag"><input type="checkbox" data-flag="w14-glucose-regulation"><span>I could not get this on my own</span></label><span class="pw-count" data-count="w14-glucose-regulation" aria-live="polite"></span></div></li><li class="pw-card" data-id="w14-metabolic-rate"><div class="pw-head"><span class="pw-dok pw-dok2">Use it</span><h3>Energy balance and metabolic rate</h3></div><p class="pw-can">Define basal metabolic rate, state the factors that raise and lower it, and explain how indirect calorimetry estimates energy expenditure.</p><p class="pw-ask">Write the rule, then one worked instance of it. A real example with real values, not "for example, a cell".</p><label class="vh" for="n-w14-metabolic-rate">My note for Energy balance and metabolic rate</label><textarea id="n-w14-metabolic-rate" data-note="w14-metabolic-rate" rows="3" placeholder="The rule is... and here it is working: ..."></textarea><div class="pw-foot"><label class="pw-flag"><input type="checkbox" data-flag="w14-metabolic-rate"><span>I could not get this on my own</span></label><span class="pw-count" data-count="w14-metabolic-rate" aria-live="polite"></span></div></li><li class="pw-card" data-id="w14-thermoregulation"><div class="pw-head"><span class="pw-dok pw-dok3">Reason it</span><h3>Thermoregulation</h3></div><p class="pw-can">Trace the negative feedback response to heat and to cold through the hypothalamus and the effectors and explain the mechanism of fever.</p><p class="pw-ask">Write the chain. If this thing changes, what happens next, and why does that follow? Draw it on paper if the chain has more than two steps, and say here what you drew.</p><label class="vh" for="n-w14-thermoregulation">My note for Thermoregulation</label><textarea id="n-w14-thermoregulation" data-note="w14-thermoregulation" rows="3" placeholder="If ... rises, then ... because ..."></textarea><div class="pw-foot"><label class="pw-flag"><input type="checkbox" data-flag="w14-thermoregulation"><span>I could not get this on my own</span></label><span class="pw-count" data-count="w14-thermoregulation" aria-live="polite"></span></div></li><li class="pw-card" data-id="w14-lab-metabolic-rate"><div class="pw-head"><span class="pw-dok pw-dok3">Reason it</span><h3>Metabolic rate measurement</h3></div><p class="pw-can">Estimate metabolic rate from measured or simulated oxygen consumption and compare resting values with values after activity.</p><p class="pw-ask">Write the chain. If this thing changes, what happens next, and why does that follow? Draw it on paper if the chain has more than two steps, and say here what you drew.</p><label class="vh" for="n-w14-lab-metabolic-rate">My note for Metabolic rate measurement</label><textarea id="n-w14-lab-metabolic-rate" data-note="w14-lab-metabolic-rate" rows="3" placeholder="If ... rises, then ... because ..."></textarea><div class="pw-foot"><label class="pw-flag"><input type="checkbox" data-flag="w14-lab-metabolic-rate"><span>I could not get this on my own</span></label><span class="pw-count" data-count="w14-lab-metabolic-rate" aria-live="polite"></span></div></li></ul></section>
+
+  <section class="pw-end" aria-labelledby="h-end">
+    <h2 id="h-end">When you are done</h2>
+    <p>Copy this into the Canvas assignment, or print it. Anything you flagged comes
+      to the top of the copy, because that is the part I want to see first. I read
+      those flags every week and they decide what I make next.</p>
+    <div class="pw-acts">
+      <button type="button" class="btnA" id="pw-copy">Copy for Canvas</button>
+      <button type="button" class="btnB" id="pw-print">Print or save as PDF</button>
+      <a class="btnB" href="prework-week-13.html" target="_top">Next week's notes</a>
+    </div>
+    <p class="pw-said" id="pw-said" role="status"></p>
+  </section>
+
+  <div class="pw-endspace"></div>
+</div>
+
+</main>
+
+
+<footer class="site-footer"><div class="fi">
+  <div>
+    <p class="n">Dr. Sharilyn Rennie</p>
+    <p class="c">BIO 005 Human Physiology &middot; Fall 2026</p>
+  </div>
+  <nav class="footnav" aria-label="Footer">
+    <a href="welcome.html" target="_top">All weeks</a>
+    <a href="guides.html" target="_top">Guides</a>
+    <a href="start-here.html" target="_top">Syllabus</a>
+    <a href="competency-map.html" target="_top">Competencies</a>
+  </nav>
+</div></footer>
+
+
+<script>
+(function () {
+  'use strict';
+  var WK = 12;
+  var IDS = ["w14-digestive-processes", "w14-gi-motility", "w14-gi-regulation", "w14-digestive-phases", "w14-gastric-secretion", "w14-pancreatic-bile-secretion", "w14-carb-protein-absorption", "w14-lipid-absorption", "w14-liver-function", "w14-large-intestine", "w14-lab-digestion-enzymes", "w14-atp-pathways", "w14-absorptive-state", "w14-postabsorptive-state", "w14-glucose-regulation", "w14-metabolic-rate", "w14-thermoregulation", "w14-lab-metabolic-rate"];
+  var NAMES = {"w14-digestive-processes": "Four digestive processes", "w14-gi-motility": "Motility patterns", "w14-gi-regulation": "Neural and hormonal regulation", "w14-digestive-phases": "Phases of digestive control", "w14-gastric-secretion": "Gastric secretion and mucosal protection", "w14-pancreatic-bile-secretion": "Pancreatic and biliary secretion", "w14-carb-protein-absorption": "Carbohydrate and protein digestion and absorption", "w14-lipid-absorption": "Lipid digestion and absorption", "w14-liver-function": "Liver function and enterohepatic circulation", "w14-large-intestine": "Large intestine and microbiome", "w14-lab-digestion-enzymes": "Digestive enzyme experiment", "w14-atp-pathways": "ATP production pathways", "w14-absorptive-state": "Absorptive state", "w14-postabsorptive-state": "Postabsorptive state", "w14-glucose-regulation": "Integrated glucose regulation", "w14-metabolic-rate": "Energy balance and metabolic rate", "w14-thermoregulation": "Thermoregulation", "w14-lab-metabolic-rate": "Metabolic rate measurement"};
+  var KEY = 'bio005-prework-w' + WK;
+
+  function $(s, r) { return (r || document).querySelector(s); }
+  function $$(s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); }
+
+  var state = { notes: {}, flags: {}, srcs: {} };
+  try {
+    var raw = localStorage.getItem(KEY);
+    if (raw) { state = JSON.parse(raw) || state; }
+  } catch (e) {}
+  state.notes = state.notes || {};
+  state.flags = state.flags || {};
+  state.srcs = state.srcs || {};
+
+  function save() {
+    try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {}
+  }
+
+  /* A note counts as written at 40 characters. That is not a quality bar, it
+     is just enough to tell a real attempt from an empty box, and the number
+     is shown so nobody has to guess where the line is. */
+  var MIN = 40;
+
+  function paintCard(id) {
+    var card = $('.pw-card[data-id="' + id + '"]');
+    if (!card) { return; }
+    var n = (state.notes[id] || '').trim().length;
+    card.setAttribute('data-done', n >= MIN ? 'yes' : 'no');
+    card.setAttribute('data-flagged', state.flags[id] ? 'yes' : 'no');
+    var c = $('[data-count]', card);
+    if (c) {
+      c.textContent = n === 0 ? '' :
+        (n >= MIN ? 'Written' : (MIN - n) + ' more characters');
+    }
+  }
+
+  function paintTotals() {
+    var done = IDS.filter(function (id) {
+      return (state.notes[id] || '').trim().length >= MIN;
+    }).length;
+    var flagged = IDS.filter(function (id) { return state.flags[id]; }).length;
+    var pct = IDS.length ? Math.round(done / IDS.length * 100) : 0;
+    $('#pw-fill').style.width = pct + '%';
+    var msg = done === 0 ? 'Nothing written yet'
+            : done + ' of ' + IDS.length + ' written';
+    if (flagged) {
+      msg += ', <span class="flagged">' + flagged + ' flagged for me</span>';
+    }
+    $('#pw-stat').innerHTML = msg;
+    $('.pw-meter').setAttribute('aria-label', msg.replace(/<[^>]+>/g, ''));
+  }
+
+  $$('[data-note]').forEach(function (t) {
+    var id = t.getAttribute('data-note');
+    t.value = state.notes[id] || '';
+    t.addEventListener('input', function () {
+      state.notes[id] = t.value;
+      save(); paintCard(id); paintTotals();
+    });
+  });
+
+  $$('[data-flag]').forEach(function (b) {
+    var id = b.getAttribute('data-flag');
+    b.checked = !!state.flags[id];
+    b.addEventListener('change', function () {
+      state.flags[id] = b.checked;
+      save(); paintCard(id); paintTotals();
+    });
+  });
+
+  $$('[data-src]').forEach(function (i) {
+    var g = i.getAttribute('data-src');
+    i.value = state.srcs[g] || '';
+    i.addEventListener('input', function () { state.srcs[g] = i.value; save(); });
+  });
+
+  IDS.forEach(paintCard);
+  paintTotals();
+
+  function transcript() {
+    var out = ['BIO 005 pre-work notes, week ' + WK, ''];
+    var flagged = IDS.filter(function (id) { return state.flags[id]; });
+    if (flagged.length) {
+      out.push('WHAT I COULD NOT GET ON MY OWN');
+      flagged.forEach(function (id) { out.push('  - ' + NAMES[id]); });
+      out.push('');
+    }
+    $$('.pw-group').forEach(function (g, gi) {
+      out.push(g.querySelector('h2').textContent.toUpperCase());
+      var src = (state.srcs[gi] || '').trim();
+      out.push('  Source: ' + (src || '(not given)'));
+      out.push('');
+      $$('.pw-card', g).forEach(function (card) {
+        var id = card.getAttribute('data-id');
+        out.push('  ' + NAMES[id] + (state.flags[id] ? '   [could not get this on my own]' : ''));
+        var n = (state.notes[id] || '').trim();
+        out.push(n ? '    ' + n.split('\n').join('\n    ') : '    (not written)');
+        out.push('');
+      });
+    });
+    return out.join('\n');
+  }
+
+  function say(t) { $('#pw-said').textContent = t; }
+
+  $('#pw-copy').addEventListener('click', function () {
+    var text = transcript();
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(
+        function () { say('Copied. Paste it into the Canvas assignment.'); },
+        function () { say('Could not copy. Use Print instead and save as PDF.'); });
+    } else {
+      say('Could not copy here. Use Print instead and save as PDF.');
+    }
+  });
+
+  $('#pw-print').addEventListener('click', function () { window.print(); });
+}());
+</script>
+
+<script>
+(function () {
+  var ID = 'bio005-prework-12';
+  function send() {
+    try { parent.postMessage({ id: ID, frameId: ID,
+      height: Math.max(document.body.scrollHeight, document.documentElement.scrollHeight) }, '*'); } catch (e) {}
+  }
+  window.addEventListener('load', send); window.addEventListener('resize', send);
+  if (window.ResizeObserver) { new ResizeObserver(send).observe(document.body); }
+  document.addEventListener('input', function () { setTimeout(send, 200); });
+  send();
+}());
+</script>
+</body>
+</html>

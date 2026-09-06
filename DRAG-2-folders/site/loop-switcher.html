@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="icon.svg">
+<title>The feedback loop switcher &middot; BIO 005</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<!--
+  ============================================================
+  BIO 005 Human Physiology, Fall 2026
+  loop-switcher.html
+
+  ONE LOOP, FIVE SETS OF LABELS, AND A WAY TO PRACTICE IT.
+
+  Read mode: pick a system and the same boxes refill with its
+  structures. The student sees that body temperature, blood glucose,
+  blood pressure and plasma calcium are not four things to memorize.
+  They are one thing wearing four sets of labels.
+
+  Practice mode: the map empties out and the student has to put it
+  back together from descriptions that are deliberately worded
+  DIFFERENTLY from the reading version. Copying the words off the
+  read view will not work. They have to understand what each part
+  does and find it on the map.
+
+  WHY THIS IS NOT AN AI IMAGE
+    1. Image generators cannot spell. A mislabeled diagram in a
+       physiology course is worse than no diagram at all.
+    2. Five versions would be five separate images that would not
+       line up, so the boxes would jump as the student switched and
+       the whole point, that the STRUCTURE is identical, would be
+       lost.
+    3. A picture cannot be practiced on, read by a screen reader,
+       searched, selected, or recolored.
+
+  ACCESSIBILITY OF THE DRAG AND DROP
+  Dragging is never the only way to do anything here. Every card is a
+  button: activate it to pick it up, then activate a box to place it.
+  That works with a mouse, a keyboard, a switch, or a screen reader,
+  and it satisfies WCAG 2.2 criterion 2.5.7, which says a dragging
+  movement must always have a single pointer alternative.
+
+  TO REUSE: copy the <style>, the <figure class="loopfig"> block and
+  the <script> into any notes page or slide. The LOOPS array at the
+  top of the script is the only thing to edit. Each loop carries its
+  read wording in parts and its practice wording in alt.
+
+  Covers competencies w1-feedback-components and w1-feedback-types.
+  ============================================================
+-->
+<style>
+:root{
+  --navy:#08101F; --navy-deep:#060A18; --navy-tint:#ECEFF4;
+  --maroon:#7A2A22; --maroon-dark:#5E201A;
+  --gold:#B8924A; --gold-deep:#8A6D33; --gold-text:#624612; --gold-pale:#F7EFD9;
+  --gray-lock:#767E8C;
+  --offwhite:#FAFAF9; --ink-soft:#3D4759; --rule:#A3ACBA;
+  --r:8px; --rc:16px; --shadow:0 1px 3px rgba(8,16,31,.08),0 1px 2px rgba(8,16,31,.05);
+  --font:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{margin:0}
+body{font-family:var(--font);background:var(--offwhite);color:var(--navy);line-height:1.6;font-size:17px}
+em,i,cite,dfn,var,address{font-style:normal}
+h1,h2,h3{margin:0;letter-spacing:-.02em}
+p{margin:0 0 14px}
+.vh{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+:focus-visible{outline:3px solid var(--navy);outline-offset:3px;border-radius:4px}
+.skip{position:absolute;left:-9999px;top:0;z-index:60;background:var(--navy);color:#fff;padding:12px 18px;font-weight:700;text-decoration:none}
+.skip:focus{left:0;top:0}
+
+/* ---------- brand header and footer ---------- */
+.site-header{background:#fff;border-bottom:.5px solid rgba(8,16,31,.10);padding:18px max(20px,4vw)}
+.shi{max-width:1120px;margin:0 auto;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.shi svg{height:48px;width:auto;display:block}
+.t1{font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-text)}
+.t2{font-size:1.42rem;font-weight:800;line-height:1.1}
+.t3{font-size:.88rem;color:var(--ink-soft)}
+.site-footer{background:var(--navy-deep);color:#fff;padding:28px max(20px,4vw);margin-top:56px}
+.fi{max-width:1120px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+.site-footer .n{font-weight:800;margin:0}
+.site-footer .c{font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#F0DCA8;margin:0}
+
+.wrap{max-width:1180px;margin:0 auto;padding:32px max(20px,4vw) 0}
+.page-eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--maroon-dark);margin:0 0 6px}
+h1{font-size:1.7rem;margin:0 0 10px}
+.page-lead{max-width:70ch;color:var(--ink-soft)}
+
+/* ---------- the figure ---------- */
+.loopfig{margin:0;background:#fff;border:1px solid var(--rule);border-radius:var(--rc);
+         box-shadow:var(--shadow);padding:22px max(16px,2vw) 24px}
+.loopfig .eyebrow{font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+                  color:var(--maroon-dark);margin:0 0 6px}
+.loopfig h2{font-size:1.24rem;font-weight:800;margin:0 0 4px}
+.loopfig .lead{color:var(--ink-soft);font-size:.95rem;margin:0 0 16px;max-width:70ch}
+
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}
+.tabs button{font:inherit;font-size:.88rem;font-weight:700;cursor:pointer;color:var(--navy);
+  background:#fff;border:1.5px solid #7C8798;border-radius:999px;padding:10px 18px;min-height:44px;
+  transition:background-color 180ms ease,border-color 180ms ease,color 180ms ease}
+.tabs button:hover{border-color:var(--gold-deep);background:var(--gold-pale)}
+.tabs button[aria-selected="true"]{background:var(--maroon);border-color:var(--maroon);color:#fff}
+
+/* title of the current loop, with the mode toggle beside it */
+.titlebar{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin:0 0 14px}
+.titlebar h3{font-size:1.02rem;font-weight:800;color:var(--navy)}
+.modeside{display:flex;align-items:center;gap:8px}
+.nudge{font-size:.82rem;font-weight:700;color:var(--maroon-dark);display:flex;align-items:center;gap:6px}
+.nudge .arw{font-size:1.15rem;line-height:1;animation:nudge 1.5s ease-in-out infinite}
+@keyframes nudge{0%,100%{transform:translateX(0)}50%{transform:translateX(6px)}}
+.modebtn{font:inherit;font-size:.88rem;font-weight:700;cursor:pointer;color:#fff;background:var(--maroon);
+  border:1.5px solid var(--maroon);border-radius:999px;padding:10px 18px;min-height:44px;
+  transition:background-color 180ms ease,border-color 180ms ease}
+.modebtn:hover{background:var(--maroon-dark);border-color:var(--maroon-dark)}
+.modebtn.back{color:var(--navy);background:#fff;border-color:#7C8798}
+.modebtn.back:hover{background:var(--gold-pale);border-color:var(--gold-deep)}
+
+.work{display:block}
+.stage{overflow-x:auto;position:relative}
+.stageinner{position:relative;min-width:680px}
+
+/* Practice on a wide screen: map on the left, options on the right, both
+   on screen at once. The map scales down, so the type inside it is sized
+   up by the same media query to land back at reading size. */
+@media (min-width:1000px){
+  .pmode .work{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:24px;align-items:start}
+  .pmode .stageinner{min-width:0}
+  .pmode .lab{font-size:17px}
+  .pmode .lab.sm{font-size:15px}
+  .pmode .role{font-size:14px}
+  .pmode .arrowlab{font-size:15px}
+  .pmode .practice{margin:0}
+  /* In practice the reading blurbs are stale advice taking up the room the
+     map and the options need, so they step aside until the student goes back. */
+  .pmode .lead{display:none}
+  .practicing .page-lead{display:none}
+  .pmode .eyebrow{display:none}
+  .pmode h2{margin-bottom:12px}
+  .pmode .pintro{margin:0 0 10px;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+  .pmode .pintro h4{white-space:nowrap}
+  .pmode .pintro .say{max-width:none;flex:1 1 380px}
+  .pmode .bank{gap:8px}
+  .pmode .bank button{font-size:.86rem;padding:10px 12px;line-height:1.45}
+  .pmode .pfoot{margin:12px 0 0}
+  .pmode .msg{margin:10px 0 0}
+}
+svg.loop{display:block;width:100%;height:auto}
+.nodebox{fill:#fff;stroke:var(--navy);stroke-width:2}
+.nodebox.sense{stroke:var(--gold-deep);stroke-width:2.5}
+.nodebox.center{fill:var(--navy-tint)}
+.nodebox.effect{stroke:var(--maroon);stroke-width:2.5}
+/* practice states. Locked gray dashed, unlocked gold solid, done navy on tint. */
+.nodebox.lock{stroke:var(--gray-lock);stroke-width:2;stroke-dasharray:8 6;fill:#fff}
+.nodebox.hot{stroke:var(--gold);stroke-width:3.5;stroke-dasharray:none;fill:var(--gold-pale)}
+.nodebox.done{stroke:var(--navy);stroke-width:3;stroke-dasharray:none;fill:var(--navy-tint)}
+.role{font:700 10.5px var(--font);fill:var(--gold-text);letter-spacing:.09em;text-transform:uppercase}
+.lab{font:600 13px var(--font);fill:var(--navy)}
+.lab.sm{font-size:11.5px}
+.hint{font:600 12px var(--font);fill:#5A6273}
+.arrow{stroke:var(--navy);stroke-width:2.5;fill:none}
+.arrow.back{stroke:var(--maroon);stroke-dasharray:7 5}
+.arrowlab{font:700 11.5px var(--font);fill:var(--maroon-dark)}
+
+/* transparent hit areas sitting exactly on the five boxes */
+.dropz{position:absolute;inset:0}
+.dropz button{position:absolute;background:none;border:0;padding:0;margin:0;cursor:pointer;
+  border-radius:10px;font:inherit;color:transparent}
+.dropz button:focus-visible{outline:3px solid var(--navy);outline-offset:2px}
+.dropz button[data-filled="yes"]{cursor:default}
+
+.readout{margin:18px 0 0;border:1px solid var(--rule);border-radius:var(--r);overflow:hidden}
+.readout table{width:100%;border-collapse:collapse}
+.readout th,.readout td{border-bottom:1px solid var(--rule);padding:10px 12px;text-align:left;font-size:.92rem;vertical-align:top}
+.readout th{width:160px;color:var(--maroon-dark);font-weight:700;background:var(--offwhite);white-space:nowrap}
+.readout tr:last-child th,.readout tr:last-child td{border-bottom:0}
+
+/* the note carries no bar and no tint. Just an eyebrow and the words. */
+.note{margin:18px 0 0;font-size:.93rem;max-width:74ch}
+.note .nh{font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+          color:var(--gold-text);margin:0 0 4px}
+.note p:last-child{margin-bottom:0}
+
+/* ---------- practice ---------- */
+.pintro{margin:0 0 14px}
+.pintro h4{margin:0 0 4px;font-size:.95rem;font-weight:800;letter-spacing:-.01em}
+.pintro .say{font-size:.9rem;color:var(--ink-soft);margin:0;max-width:74ch}
+.practice{margin:18px 0 0}
+.bank{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.bank button{width:100%;text-align:left;font:inherit;font-size:.92rem;cursor:grab;color:var(--navy);
+  background:#fff;border:1.5px solid #7C8798;border-radius:var(--r);padding:12px 14px;min-height:44px;
+  transition:border-color 160ms ease,background-color 160ms ease}
+.bank button:hover{border-color:var(--gold-deep);background:var(--gold-pale)}
+.bank button[aria-pressed="true"]{border-color:var(--gold);border-width:3px;background:var(--gold-pale);cursor:grabbing}
+.bank button[data-used="yes"]{display:none}
+.pfoot{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin:14px 0 0}
+.tally{font-size:.9rem;font-weight:700;color:var(--navy)}
+.msg{font-size:.92rem;font-weight:600;color:var(--maroon-dark);margin:10px 0 0;min-height:1.5em}
+.msg.good{color:var(--gold-text)}
+.resetbtn{font:inherit;font-size:.86rem;font-weight:700;cursor:pointer;color:var(--navy);background:#fff;
+  border:1.5px solid #7C8798;border-radius:999px;padding:10px 18px;min-height:44px}
+.resetbtn:hover{border-color:var(--gold-deep);background:var(--gold-pale)}
+
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+@media print{
+  body{background:#fff}
+  .tabs,.modeside,.practice{display:none}
+  .loopfig{box-shadow:none;break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the figure</a>
+
+<header class="site-header"><div class="shi">
+<svg viewBox="40 10 125 148" role="img" aria-label="BIO 005 Human Physiology"><g transform="translate(0,18)"><g transform="translate(60,0) rotate(8 0 130)"><circle cx="0" cy="20" r="10" fill="#08101F"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#08101F"/></g><g transform="translate(100,0)"><circle cx="0" cy="10" r="11" fill="#5E201A"/><path d="M 0,22 C -11,22 -17,26 -17,34 C -17,52 -14,70 -12,86 C -11,108 -13,122 -15,132 L 15,132 C 13,122 11,108 12,86 C 14,70 17,52 17,34 C 17,26 11,22 0,22 Z" fill="#5E201A"/></g><g transform="translate(140,0) rotate(-8 0 130)"><circle cx="0" cy="20" r="10" fill="#B8924A"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#B8924A"/></g></g></svg>
+<div><div class="t1">Reusable figure</div><div class="t2">Human Physiology</div>
+<div class="t3">BIO 005 &middot; Fall 2026</div></div></div></header>
+
+<div class="wrap">
+
+<main id="main">
+
+<p class="page-eyebrow">Week 1 &middot; Foundations of Physiology</p>
+<h1>The feedback loop switcher</h1>
+<p class="page-lead">Pick a loop and every box refills. The shape never changes, which is the teaching point. When you think you have it, switch to practice and rebuild the map from scratch.</p>
+
+<figure class="loopfig" aria-labelledby="fig-h">
+  <p class="eyebrow">Figure 1</p>
+  <h2 id="fig-h">One loop, four systems</h2>
+  <p class="lead">Start on <strong>The parts</strong> to learn the seven roles. Then switch systems and watch the same boxes fill with different structures. Every arrow runs one way around the loop, and the dashed maroon arrow is what makes it negative feedback: the response feeds back and cancels the thing that started it.</p>
+
+  <div class="tabs" role="tablist" aria-label="Which feedback loop to show" id="tabs"></div>
+
+  <div class="panel" id="panel" role="tabpanel" tabindex="0">
+
+    <div class="titlebar">
+      <h3 id="loopTitle">One loop</h3>
+      <div class="modeside">
+        <span class="nudge" id="nudge"><span class="arw" aria-hidden="true">&rarr;</span>Now try it</span>
+        <button type="button" class="modebtn" id="modeBtn" aria-pressed="false">Practice this loop</button>
+      </div>
+    </div>
+
+    <div class="pintro" id="pintro" hidden>
+      <h4 id="bank-h">Put the loop back together</h4>
+      <p class="say">These are worded differently from what you just read, so copying will not get you there. Work out which job each one is doing, then pick a description and pick its box. Dragging works too.</p>
+    </div>
+
+    <div class="work" id="work">
+    <div class="mapcol">
+    <div class="stage">
+      <div class="stageinner">
+        <svg class="loop" viewBox="0 0 900 390" role="img" id="svg" aria-labelledby="svg-title">
+          <title id="svg-title">Negative feedback loop diagram</title>
+
+          <defs>
+            <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+              <path d="M 0 0 L 10 5 L 0 10 z" fill="#08101F"/>
+            </marker>
+            <marker id="ahm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+              <path d="M 0 0 L 10 5 L 0 10 z" fill="#7A2A22"/>
+            </marker>
+          </defs>
+
+          <!-- top row: stimulus, sensor, integrating center -->
+          <g id="n-stimulus"><rect class="nodebox"        x="14"  y="20"  width="200" height="96" rx="10"/></g>
+          <g id="n-sensor">  <rect class="nodebox sense"  x="254" y="20"  width="200" height="96" rx="10"/></g>
+          <g id="n-center">  <rect class="nodebox center" x="686" y="20"  width="200" height="96" rx="10"/></g>
+
+          <!-- bottom row: effector, response -->
+          <g id="n-effector"><rect class="nodebox effect" x="686" y="274" width="200" height="96" rx="10"/></g>
+          <g id="n-response"><rect class="nodebox"        x="254" y="274" width="336" height="96" rx="10"/></g>
+
+          <!-- one way round the loop -->
+          <path class="arrow" d="M 218 68 H 250"        marker-end="url(#ah)"/>
+          <path class="arrow" d="M 458 68 H 682"        marker-end="url(#ah)"/>
+          <path class="arrow" id="a-eff"  d="M 786 120 V 270"  marker-end="url(#ah)"/>
+          <path class="arrow" id="a-out"  d="M 682 322 H 594"  marker-end="url(#ah)"/>
+          <path class="arrow back" id="a-back" d="M 250 322 H 100 V 122" marker-end="url(#ahm)"/>
+
+          <text class="arrowlab" x="570" y="55" text-anchor="middle" id="t-aff">afferent path</text>
+          <text class="arrowlab" x="776" y="194" text-anchor="end"   id="t-eff">efferent path</text>
+          <text class="arrowlab" x="110" y="222" id="t-neg">the response removes the stimulus</text>
+        </svg>
+
+        <div class="dropz" id="dropz" hidden></div>
+      </div>
+    </div>
+
+      <div id="pstatus" hidden>
+        <p class="msg" id="msg" role="status" aria-live="polite"></p>
+        <div class="pfoot">
+          <p class="tally" id="tally">0 of 5 placed</p>
+          <button type="button" class="resetbtn" id="resetBtn">Start this loop over</button>
+        </div>
+      </div>
+    </div><!-- /.mapcol -->
+
+    <!-- practice mode: the options column, beside the map on a wide screen -->
+    <div class="practice" id="practiceBlock" hidden>
+      <ul class="bank" id="bank" aria-labelledby="bank-h"></ul>
+    </div>
+    </div><!-- /.work -->
+
+    <!-- read mode -->
+    <div id="readBlock">
+      <div class="readout">
+        <table>
+          <caption class="vh">The parts of the loop currently shown</caption>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+      <div class="note" id="note"></div>
+    </div>
+
+  </div>
+</figure>
+</main>
+</div>
+
+<p class="vh" id="live" role="status" aria-live="polite"></p>
+
+<footer class="site-footer"><div class="fi">
+<p class="n">Dr. Sharilyn Rennie</p>
+<p class="c">BIO 005 Human Physiology &middot; Week 1 &middot; Foundations of Physiology</p>
+</div></footer>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ============================================================
+     THE ONLY THING TO EDIT. Add a loop by adding an entry.
+
+     parts  the wording the student reads
+     alt    the wording the student has to match in practice. Say the
+            same physiology in different words, or the exercise turns
+            into a copying task and teaches nothing.
+     ============================================================ */
+  var LOOPS = [
+    { key: 'parts', tab: 'The parts', title: 'The parts of any negative feedback loop',
+      parts: {
+        stimulus: 'The regulated variable moves away from its setpoint',
+        sensor:   'A structure that detects the change',
+        afferent: 'signal from sensor to center',
+        center:   'Compares the value to the setpoint and decides the response',
+        efferent: 'signal from center to effector',
+        effector: 'The muscle or gland that carries out the response',
+        response: 'The change that pushes the variable back toward the setpoint and removes the stimulus'
+      },
+      alt: {
+        stimulus: 'Something has pushed the value the body is defending off where it belongs.',
+        sensor:   'The part that notices the change. It reports, it does not decide.',
+        center:   'Where the reading gets compared to what it should be, and the order goes out.',
+        effector: 'Whatever actually does the work once the order arrives.',
+        response: 'The change that follows, which drags the value back and shuts the loop off.'
+      },
+      note: 'Learn these seven roles once. Every loop in the other tabs is these same boxes with different structures in them. Some loops merge two roles into one cell, and that is normal.' },
+
+    { key: 'temp', tab: 'Body temperature', title: 'Body temperature falling on a cold morning',
+      parts: {
+        stimulus: 'Core temperature falls below the setpoint near 37 degrees Celsius',
+        sensor:   'Thermoreceptors in the skin and in the hypothalamus',
+        afferent: 'sensory neurons',
+        center:   'Hypothalamus',
+        efferent: 'sympathetic nerves and somatic motor neurons',
+        effector: 'Smooth muscle of skin arterioles, and skeletal muscle',
+        response: 'Vasoconstriction cuts heat loss and shivering makes heat, so core temperature rises'
+      },
+      alt: {
+        stimulus: 'You go outside without a jacket and your deep body reading drops under where it should sit.',
+        sensor:   'Nerve endings in the skin, and others deep in the brain, that fire differently when they get cold.',
+        center:   'The region beneath the thalamus that holds the body temperature setpoint.',
+        effector: 'The muscle in the walls of your skin vessels, together with the muscle you move with.',
+        response: 'Less blood reaches the surface and the muscles start twitching, so heat stops leaving and more gets made.'
+      },
+      note: 'This is the full loop with nothing merged, so it is the one to learn first and the one to draw from memory.' },
+
+    { key: 'glucose', tab: 'Blood glucose', title: 'Plasma glucose rising after a meal',
+      parts: {
+        stimulus: 'Plasma glucose rises after a meal',
+        sensor:   'Pancreatic beta cell, which takes up glucose directly',
+        afferent: 'none needed',
+        center:   'The same beta cell. Sensor and integrating center are one cell',
+        efferent: 'insulin, carried in the blood',
+        effector: 'Skeletal muscle, adipose tissue and liver',
+        response: 'Those tissues take up and store glucose, so plasma glucose falls'
+      },
+      alt: {
+        stimulus: 'You finish eating and the sugar dissolved in your blood climbs above where it usually sits.',
+        sensor:   'A cell in the pancreas that pulls sugar in and reads the level from the inside.',
+        center:   'That same pancreatic cell, doing the deciding as well as the detecting.',
+        effector: 'Muscle, fat, and the liver: the three tissues that can pull sugar out of blood.',
+        response: 'Sugar moves out of the blood and into storage, so the level comes back down.'
+      },
+      note: 'Notice the loop got shorter. The beta cell senses and decides, so there is no afferent path: nothing has to travel anywhere to report the change. Do not force seven separate boxes onto every loop.' },
+
+    { key: 'bp', tab: 'Blood pressure', title: 'Arterial pressure falling on standing up',
+      parts: {
+        stimulus: 'Arterial pressure falls when you stand up',
+        sensor:   'Baroreceptors in the carotid sinus and the aortic arch',
+        afferent: 'glossopharyngeal and vagus nerves',
+        center:   'Cardiovascular control center in the medulla oblongata',
+        efferent: 'sympathetic output up, parasympathetic output down',
+        effector: 'SA node and cardiac muscle, and arteriolar smooth muscle',
+        response: 'Heart rate, contractility and vasoconstriction all rise, so pressure rises'
+      },
+      alt: {
+        stimulus: 'You get out of a chair too quickly and the pressure inside your arteries drops.',
+        sensor:   'Stretch detectors in the wall of a large neck artery and in the arch of the aorta.',
+        center:   'The part of the brainstem that holds and defends arterial pressure.',
+        effector: 'The pacemaker and muscle of the heart, plus the muscle wrapped around the smallest arteries.',
+        response: 'The heart beats faster and harder while the small vessels narrow, so pressure climbs back.'
+      },
+      note: 'Two sets of effectors working together. The heart changes how much blood it pushes out and the arterioles change how hard it is to push blood through. You build this one out in Week 11.' },
+
+    { key: 'calcium', tab: 'Plasma calcium', title: 'Plasma calcium falling',
+      parts: {
+        stimulus: 'Plasma calcium falls below the setpoint',
+        sensor:   'Calcium sensing receptor on the parathyroid chief cell',
+        afferent: 'none needed',
+        center:   'The same parathyroid chief cell',
+        efferent: 'parathyroid hormone, carried in the blood',
+        effector: 'Bone, kidney, and the small intestine by way of calcitriol',
+        response: 'Calcium leaves bone, the kidney keeps more of it, more is absorbed from food, so plasma calcium rises'
+      },
+      alt: {
+        stimulus: 'The amount of calcium dissolved in the blood slips under its usual level.',
+        sensor:   'A receptor sitting on the surface of a parathyroid cell that reads calcium straight from the fluid.',
+        center:   'That same parathyroid cell, which both reads the level and decides what to do about it.',
+        effector: 'The skeleton, the kidney tubules, and the lining of the small intestine.',
+        response: 'Calcium is pulled out of bone, saved from the urine, and taken from food, so the level rises.'
+      },
+      note: 'Same shortcut as glucose: the sensing cell is also the deciding cell. Three effectors here, which is part of why plasma calcium is defended so tightly. You meet this again in Week 9.' }
+  ];
+
+  var ORDER = ['stimulus', 'sensor', 'afferent', 'center', 'efferent', 'effector', 'response'];
+  var ROLE = {
+    stimulus: 'Stimulus', sensor: 'Sensor', afferent: 'Afferent path',
+    center: 'Integrating center', efferent: 'Efferent path',
+    effector: 'Effector', response: 'Response'
+  };
+  /* Boxes on the diagram. afferent and efferent are arrow labels, not boxes. */
+  var BOXES = {
+    stimulus: { x: 14,  y: 20,  w: 200, h: 96 },
+    sensor:   { x: 254, y: 20,  w: 200, h: 96 },
+    center:   { x: 686, y: 20,  w: 200, h: 96 },
+    effector: { x: 686, y: 274, w: 200, h: 96 },
+    response: { x: 254, y: 274, w: 336, h: 96 }
+  };
+  var DROPS = ['stimulus', 'sensor', 'center', 'effector', 'response'];
+  var VBW = 900, VBH = 390, PAD = 14;
+  /* Two vertical layouts for the same loop. Read mode leaves room under
+     the top row for the note about the return path. Practice mode does
+     not need that room and pulls the bottom row up, so the map and the
+     options both fit on one screen. */
+  var LAYOUT = {
+    read:     { bottom: 274, vbh: 390, effY: 270, outY: 322, backY: 322, effLabY: 194 },
+    practice: { bottom: 196, vbh: 312, effY: 192, outY: 244, backY: 244, effLabY: 158 }
+  };
+
+  function layout(name) {
+    var L = LAYOUT[name];
+    VBH = L.vbh;
+    BOXES.effector.y = L.bottom;
+    BOXES.response.y = L.bottom;
+    svg.setAttribute('viewBox', '0 0 ' + VBW + ' ' + VBH);
+    document.querySelector('#n-effector rect').setAttribute('y', L.bottom);
+    document.querySelector('#n-response rect').setAttribute('y', L.bottom);
+    document.getElementById('a-eff').setAttribute('d', 'M 786 120 V ' + L.effY);
+    document.getElementById('a-out').setAttribute('d', 'M 682 ' + L.outY + ' H 594');
+    document.getElementById('a-back').setAttribute('d', 'M 250 ' + L.backY + ' H 100 V 122');
+    return L;
+  }
+  /* the resting look of each box, restored when practice ends */
+  var BASE = { stimulus: 'nodebox', sensor: 'nodebox sense', center: 'nodebox center',
+               effector: 'nodebox effect', response: 'nodebox' };
+
+  var svg = document.getElementById('svg');
+  var tabs = document.getElementById('tabs');
+  var panel = document.getElementById('panel');
+  var tbody = document.getElementById('tbody');
+  var live = document.getElementById('live');
+  var dropz = document.getElementById('dropz');
+  var bank = document.getElementById('bank');
+  var msg = document.getElementById('msg');
+  var tally = document.getElementById('tally');
+  var nudge = document.getElementById('nudge');
+  var pintro = document.getElementById('pintro');
+  var modeBtn = document.getElementById('modeBtn');
+  var readBlock = document.getElementById('readBlock');
+  var practiceBlock = document.getElementById('practiceBlock');
+  var NS = 'http://www.w3.org/2000/svg';
+
+  var current = 0;         /* which loop */
+  var practice = false;    /* which mode */
+  var placed = {};         /* role -> true once correct */
+  var held = null;         /* the role key of the card picked up */
+
+  function esc(v) {
+    return String(v == null ? '' : v).replace(/[&<>"]/g, function (c) {
+      return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c];
+    });
+  }
+
+  /* ---------- SVG text, measured so nothing runs out of its box ---------- */
+  var ruler = document.createElementNS(NS, 'text');
+  ruler.setAttribute('class', 'lab');
+  ruler.setAttribute('x', '-9999');
+  ruler.setAttribute('y', '-9999');
+  svg.appendChild(ruler);
+
+  function widthOf(str, cls) {
+    ruler.setAttribute('class', cls);
+    ruler.textContent = str;
+    return ruler.getComputedTextLength();
+  }
+
+  /* The map is drawn smaller in the side by side practice layout, so the
+     type inside it is sized up to compensate. Line spacing and the number
+     of lines a box can hold have to follow whatever size actually applied,
+     rather than being fixed numbers that only suit one layout. */
+  function lead(cls) {
+    ruler.setAttribute('class', cls);
+    var fs = parseFloat(window.getComputedStyle(ruler).fontSize) || 13;
+    return Math.round(fs * 1.16);
+  }
+
+  function wrap(text, maxW, cls) {
+    var words = String(text).split(' '), lines = [], line = '';
+    words.forEach(function (w) {
+      var test = line ? line + ' ' + w : w;
+      if (line && widthOf(test, cls) > maxW) { lines.push(line); line = w; }
+      else { line = test; }
+    });
+    if (line) { lines.push(line); }
+    return lines;
+  }
+
+  function arrowLabel(id, text, x, y, maxW, mode) {
+    var e = document.getElementById(id);
+    e.textContent = '';
+    var words = String(text).split(' '), lines = [], line = '';
+    words.forEach(function (w) {
+      var test = line ? line + ' ' + w : w;
+      if (line && widthOf(test, 'arrowlab') > maxW) { lines.push(line); line = w; }
+      else { line = test; }
+    });
+    if (line) { lines.push(line); }
+    /* A second line would otherwise land on top of the arrow. Lift the
+       whole block: clear of it above a horizontal arrow, centered on it
+       beside a vertical one. */
+    var ld = lead('arrowlab');
+    var lift = (mode === 'above' ? ld : ld / 2) * (lines.length - 1);
+    e.setAttribute('y', y - lift);
+    lines.forEach(function (ln, i) {
+      var ts = document.createElementNS(NS, 'tspan');
+      ts.setAttribute('x', x);
+      ts.setAttribute('dy', i === 0 ? 0 : ld);
+      ts.textContent = ln;
+      e.appendChild(ts);
+    });
+  }
+
+  function boxText(key, text, cls) {
+    var g = document.getElementById('n-' + key), b = BOXES[key];
+    Array.prototype.slice.call(g.querySelectorAll('text')).forEach(function (t) { g.removeChild(t); });
+
+    var role = document.createElementNS(NS, 'text');
+    role.setAttribute('class', 'role');
+    role.setAttribute('x', b.x + PAD);
+    role.setAttribute('y', b.y + 23);
+    role.textContent = ROLE[key];
+    g.appendChild(role);
+
+    if (!text) { return; }
+
+    var maxW = b.w - PAD * 2;
+    var use = cls || 'lab';
+    var ld = lead(use);
+    var room = Math.max(2, Math.floor((b.h - 50) / ld) + 1);
+    var lines = wrap(text, maxW, use);
+    if (use === 'lab' && lines.length > room) {
+      use = 'lab sm';
+      ld = lead(use);
+      room = Math.max(2, Math.floor((b.h - 50) / ld) + 1);
+      lines = wrap(text, maxW, use);
+    }
+
+    var t = document.createElementNS(NS, 'text');
+    t.setAttribute('class', use);
+    t.setAttribute('x', b.x + PAD);
+    t.setAttribute('y', b.y + 44);
+    lines.forEach(function (ln, i) {
+      var ts = document.createElementNS(NS, 'tspan');
+      ts.setAttribute('x', b.x + PAD);
+      ts.setAttribute('dy', i === 0 ? 0 : ld);
+      ts.textContent = ln;
+      t.appendChild(ts);
+    });
+    g.appendChild(t);
+  }
+
+  function setBoxClass(key, extra) {
+    document.querySelector('#n-' + key + ' rect')
+      .setAttribute('class', BASE[key] + (extra ? ' ' + extra : ''));
+  }
+
+  /* ---------- read mode ---------- */
+  function paintRead(loop) {
+    layout('read');
+    document.getElementById('svg-title').textContent = 'Negative feedback loop, ' + loop.title;
+    Object.keys(BOXES).forEach(function (k) {
+      setBoxClass(k, '');
+      boxText(k, loop.parts[k]);
+    });
+    arrowLabel('t-aff', loop.parts.afferent, 570, 55, 250, 'above');
+    arrowLabel('t-eff', loop.parts.efferent, 776, LAYOUT[practice ? 'practice' : 'read'].effLabY, 250, 'center');
+    document.getElementById('t-neg').textContent = 'the response removes the stimulus';
+
+    tbody.innerHTML = ORDER.map(function (k) {
+      return '<tr><th scope="row">' + esc(ROLE[k]) + '</th><td>' + esc(loop.parts[k]) + '</td></tr>';
+    }).join('');
+    document.getElementById('note').innerHTML =
+      '<p class="nh">Note</p><p>' + esc(loop.note) + '</p>';
+  }
+
+  /* ---------- practice mode ---------- */
+  function buildDropZones() {
+    dropz.textContent = '';
+    DROPS.forEach(function (k) {
+      var b = BOXES[k];
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.dataset.role = k;
+      btn.dataset.filled = 'no';
+      btn.style.left   = (b.x / VBW * 100) + '%';
+      btn.style.top    = (b.y / VBH * 100) + '%';
+      btn.style.width  = (b.w / VBW * 100) + '%';
+      btn.style.height = (b.h / VBH * 100) + '%';
+      btn.addEventListener('click', function () { tryPlace(k); });
+      btn.addEventListener('dragover', function (e) {
+        if (btn.dataset.filled === 'yes') { return; }
+        e.preventDefault(); setBoxClass(k, 'hot');
+      });
+      btn.addEventListener('dragleave', function () {
+        if (btn.dataset.filled !== 'yes') { setBoxClass(k, 'lock'); }
+      });
+      btn.addEventListener('drop', function (e) {
+        e.preventDefault();
+        var role = e.dataTransfer ? e.dataTransfer.getData('text/plain') : null;
+        if (role) { held = role; }
+        tryPlace(k);
+      });
+      dropz.appendChild(btn);
+    });
+    labelDropZones();
+  }
+
+  function labelDropZones() {
+    Array.prototype.forEach.call(dropz.querySelectorAll('button'), function (btn) {
+      var k = btn.dataset.role;
+      if (placed[k]) {
+        btn.dataset.filled = 'yes';
+        btn.setAttribute('aria-label', ROLE[k] + '. Filled in correctly.');
+        btn.setAttribute('aria-disabled', 'true');
+      } else {
+        btn.dataset.filled = 'no';
+        btn.removeAttribute('aria-disabled');
+        btn.setAttribute('aria-label', held
+          ? ROLE[k] + '. Empty. Activate to drop the description you are holding here.'
+          : ROLE[k] + '. Empty. Pick up a description first, then activate this box.');
+      }
+    });
+  }
+
+  function shuffle(a) {
+    var i, j, t;
+    for (i = a.length - 1; i > 0; i -= 1) {
+      j = Math.floor(Math.random() * (i + 1));
+      t = a[i]; a[i] = a[j]; a[j] = t;
+    }
+    return a;
+  }
+
+  function buildBank(loop) {
+    bank.textContent = '';
+    shuffle(DROPS.slice()).forEach(function (k) {
+      var li = document.createElement('li');
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.draggable = true;
+      btn.dataset.role = k;
+      btn.dataset.used = 'no';
+      btn.setAttribute('aria-pressed', 'false');
+      btn.textContent = loop.alt[k];
+      btn.addEventListener('click', function () { pickUp(k, btn); });
+      btn.addEventListener('dragstart', function (e) {
+        held = k;
+        markHeld();
+        if (e.dataTransfer) {
+          e.dataTransfer.setData('text/plain', k);
+          e.dataTransfer.effectAllowed = 'move';
+        }
+      });
+      btn.addEventListener('dragend', function () {
+        DROPS.forEach(function (d) { if (!placed[d]) { setBoxClass(d, 'lock'); } });
+      });
+      li.appendChild(btn);
+      bank.appendChild(li);
+    });
+  }
+
+  function markHeld() {
+    Array.prototype.forEach.call(bank.querySelectorAll('button'), function (b) {
+      b.setAttribute('aria-pressed', b.dataset.role === held ? 'true' : 'false');
+    });
+    labelDropZones();
+  }
+
+  function pickUp(k, btn) {
+    if (held === k) { held = null; markHeld(); say('Put back. Nothing is picked up now.'); return; }
+    held = k;
+    markHeld();
+    say('Picked up. Now choose the box on the map where this one belongs.');
+  }
+
+  function say(text, good) {
+    msg.textContent = text;
+    msg.className = 'msg' + (good ? ' good' : '');
+  }
+
+  var WHY = {
+    stimulus: 'That one is the thing that started the whole loop, not a part of the machinery.',
+    sensor:   'That one only detects. Ask yourself which part measures and which part decides.',
+    center:   'That one does the comparing and the deciding.',
+    effector: 'That one is the structure that carries out the order.',
+    response: 'That one is what changes at the end, the change that switches the loop back off.'
+  };
+
+  function tryPlace(target) {
+    if (!held) { say('Pick a description from the list first, then choose a box.'); return; }
+    if (placed[target]) { say('That box is already filled in.'); return; }
+
+    var loop = LOOPS[current];
+    if (held === target) {
+      placed[target] = true;
+      setBoxClass(target, 'done');
+      boxText(target, loop.parts[target]);
+      var card = bank.querySelector('button[data-role="' + target + '"]');
+      if (card) { card.dataset.used = 'yes'; card.setAttribute('aria-pressed', 'false'); }
+      held = null;
+      markHeld();
+      updateTally();
+      if (Object.keys(placed).length === DROPS.length) {
+        say('All five in place. The map now reads the same as it did before you emptied it.', true);
+        live.textContent = 'Loop complete. All five parts placed correctly.';
+      } else {
+        say('Correct. That is the ' + ROLE[target].toLowerCase() + '.', true);
+      }
+    } else {
+      setBoxClass(target, 'lock');
+      say('Not that box. ' + WHY[held] + ' Read it once more and try a different box.');
+      live.textContent = 'Not correct. Try another box.';
+    }
+  }
+
+  function updateTally() {
+    var n = Object.keys(placed).length;
+    tally.textContent = n + ' of ' + DROPS.length + ' placed';
+  }
+
+  function startPractice() {
+    var loop = LOOPS[current];
+    layout('practice');
+    placed = {};
+    held = null;
+    DROPS.forEach(function (k) { setBoxClass(k, 'lock'); boxText(k, ''); });
+    arrowLabel('t-aff', loop.parts.afferent, 570, 55, 250, 'above');
+    arrowLabel('t-eff', loop.parts.efferent, 776, LAYOUT[practice ? 'practice' : 'read'].effLabY, 250, 'center');
+    document.getElementById('t-neg').textContent = '';
+    document.getElementById('svg-title').textContent =
+      'Empty negative feedback loop map for ' + loop.title + '. Five boxes waiting to be filled.';
+    buildDropZones();
+    buildBank(loop);
+    updateTally();
+    say('');
+  }
+
+  function setMode(on, announce) {
+    practice = on;
+    modeBtn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    modeBtn.textContent = on ? 'Back to reading' : 'Practice this loop';
+    modeBtn.className = on ? 'modebtn back' : 'modebtn';
+    nudge.hidden = on;
+    pintro.hidden = !on;
+    readBlock.hidden = on;
+    practiceBlock.hidden = !on;
+    document.getElementById('pstatus').hidden = !on;
+    dropz.hidden = !on;
+    document.querySelector('.loopfig').classList.toggle('pmode', on);
+    document.body.classList.toggle('practicing', on);
+    if (on) { startPractice(); } else { paintRead(LOOPS[current]); }
+    if (announce) {
+      live.textContent = on
+        ? 'Practice mode. The map is empty. Pick a description, then pick a box.'
+        : 'Reading mode. The map is filled in again.';
+    }
+  }
+
+  function select(i, focus, announce) {
+    current = i;
+    Array.prototype.forEach.call(tabs.querySelectorAll('button'), function (b, j) {
+      var on = (i === j);
+      b.setAttribute('aria-selected', on ? 'true' : 'false');
+      b.setAttribute('tabindex', on ? '0' : '-1');
+      if (on) { panel.setAttribute('aria-labelledby', b.id); }
+      if (on && focus) { b.focus(); }
+    });
+    document.getElementById('loopTitle').textContent = LOOPS[i].title;
+    if (practice) { startPractice(); } else { paintRead(LOOPS[i]); }
+    if (announce) { live.textContent = 'Now showing ' + LOOPS[i].title + '.'; }
+  }
+
+  LOOPS.forEach(function (l, i) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.id = 'tab-' + l.key;
+    b.setAttribute('role', 'tab');
+    b.setAttribute('aria-selected', 'false');
+    b.setAttribute('aria-controls', 'panel');
+    b.setAttribute('tabindex', '-1');
+    b.textContent = l.tab;
+    b.addEventListener('click', function () { select(i, false, true); });
+    b.addEventListener('keydown', function (e) {
+      var n = null;
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { n = (i + 1) % LOOPS.length; }
+      if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { n = (i - 1 + LOOPS.length) % LOOPS.length; }
+      if (e.key === 'Home') { n = 0; }
+      if (e.key === 'End') { n = LOOPS.length - 1; }
+      if (n !== null) { e.preventDefault(); select(n, true, true); }
+    });
+    tabs.appendChild(b);
+  });
+
+  modeBtn.addEventListener('click', function () { setMode(!practice, true); });
+  document.getElementById('resetBtn').addEventListener('click', function () {
+    startPractice();
+    live.textContent = 'Started over. The map is empty again.';
+  });
+
+  select(0, false, false);
+
+  /* Crossing the two column breakpoint changes the type size inside the
+     map, so anything already drawn has to be laid out again. */
+  var wide = window.matchMedia('(min-width:1000px)');
+  function relayout() {
+    if (practice) {
+      Object.keys(BOXES).forEach(function (k) {
+        boxText(k, placed[k] ? LOOPS[current].parts[k] : '');
+      });
+      arrowLabel('t-aff', LOOPS[current].parts.afferent, 570, 55, 250, 'above');
+      arrowLabel('t-eff', LOOPS[current].parts.efferent, 776, LAYOUT[practice ? 'practice' : 'read'].effLabY, 250, 'center');
+    } else {
+      paintRead(LOOPS[current]);
+    }
+  }
+  if (wide.addEventListener) { wide.addEventListener('change', relayout); }
+  else if (wide.addListener) { wide.addListener(relayout); }
+
+  /* The first paint measures text in the fallback font, because the
+     webfont has not arrived yet. Repaint once it has, or the line
+     breaks are computed against the wrong letter widths. */
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(function () {
+      relayout();
+    });
+  }
+}());
+</script>
+
+<!-- Canvas iframe height sender. Tells the parent page how tall to make the frame. -->
+<script>
+(function () {
+  var ID = 'loop-switcher';
+  function send() {
+    try {
+      var h = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+      parent.postMessage({ id: ID, frameId: ID, height: h }, '*');
+    } catch (e) {}
+  }
+  window.addEventListener('load', send);
+  window.addEventListener('resize', send);
+  if (window.ResizeObserver) { new ResizeObserver(send).observe(document.body); }
+  send();
+}());
+</script>
+</body>
+</html>

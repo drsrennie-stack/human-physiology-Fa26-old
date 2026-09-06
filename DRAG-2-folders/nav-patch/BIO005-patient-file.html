@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BIO 005 Progressive Patient File</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#08101F; --navy-chip:#16233C; --navy-tint:#EDF1F3;
+  --terra:#8B1D1D; --terra-deep:#6E1616;
+  --gold:#DCB45C; --gold-ink:#6B5214; --gold-lite:#FBEBC8;
+  --white:#FFFFFF; --offwhite:#FAFAF9; --onred:#FFFFFF;
+  --muted:#3D4860; --rule:#DCE0E6; --light:#DDE2EA;
+  --lock:#454E5E;
+  --shadow:0 1px 3px rgba(0,0,0,.08); --shadow-lift:0 8px 16px rgba(0,0,0,.10);
+  --fs:16px;
+}
+*{box-sizing:border-box}
+em,i,cite,dfn,var,address{font-style:normal}
+html{font-size:var(--fs)}
+body{
+  margin:0; background:var(--offwhite); color:var(--navy);
+  font-family:"DM Sans",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  line-height:1.55; font-size:1rem;
+}
+h1,h2,h3,h4{font-family:"Plus Jakarta Sans",system-ui,Arial,sans-serif; margin:0 0 .4em}
+h1{font-weight:800; font-size:1.7rem; letter-spacing:-.01em}
+h2{font-weight:600; font-size:1.28rem}
+h3{font-weight:600; font-size:1.06rem}
+h4{font-weight:600; font-size:.98rem}
+p{margin:0 0 .8em}
+a{color:var(--terra)}
+.wrap{max-width:1120px; margin:0 auto; padding:0 20px 72px}
+.skip{position:absolute; left:-9999px; top:0; background:var(--navy); color:var(--white); padding:10px 16px; z-index:200}
+.skip:focus{left:8px; top:8px}
+:focus-visible{outline:3px solid var(--gold-ink); outline-offset:2px}
+.dark :focus-visible, .band :focus-visible{outline:3px solid var(--gold); outline-offset:2px}
+
+/* header */
+.band{background:var(--terra); color:var(--onred); padding:26px 0 22px}
+.band .wrap{padding-bottom:0}
+.eyebrow{font-size:.75rem; letter-spacing:.11em; text-transform:uppercase; font-weight:700; color:var(--gold-lite); margin:0 0 6px}
+.band h1{color:var(--white)}
+.band .sub{color:var(--white); font-size:.95rem; margin:0}
+
+/* cards */
+.card{background:var(--white); border:1px solid var(--rule); border-radius:12px; padding:20px 22px; box-shadow:var(--shadow); margin:18px 0}
+.card.tight{padding:16px 18px}
+.card h2{margin-top:0}
+.note{background:var(--navy-tint); border:1px solid var(--rule); border-left:4px solid var(--terra); border-radius:8px; padding:12px 14px; font-size:.94rem; color:var(--muted)}
+.note strong{color:var(--navy)}
+
+/* forms */
+label{display:block; font-weight:700; font-size:.9rem; margin:0 0 5px; color:var(--navy)}
+.hint{font-weight:400; color:var(--muted); font-size:.85rem; display:block; margin-top:2px}
+input[type=text],select,textarea{
+  width:100%; font:inherit; color:var(--navy); background:var(--white);
+  border:1.5px solid var(--muted); border-radius:8px; padding:9px 11px;
+}
+textarea{min-height:96px; resize:vertical}
+input:disabled,select:disabled,textarea:disabled{background:#F1F3F6; color:#333C4D; border-color:var(--light); opacity:1}
+input[readonly],textarea[readonly]{background:#F6F7F9; color:var(--navy); border-color:var(--light)}
+.answered dt{font-weight:700; font-size:.9rem; margin-top:12px}
+.answered dd{margin:3px 0 0; padding:9px 11px; background:#F6F7F9; border:1px solid var(--light); border-radius:8px; white-space:pre-wrap}
+.field{margin:0 0 14px}
+.row{display:grid; grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr)); gap:14px}
+
+button{font:inherit; font-weight:700; cursor:pointer; border-radius:8px; padding:10px 18px; border:1.5px solid transparent}
+.btn-primary{background:var(--terra); color:var(--white); border-color:var(--terra-deep)}
+.btn-primary:hover{background:var(--terra-deep)}
+.btn-secondary{background:var(--white); color:var(--navy); border-color:var(--navy)}
+.btn-secondary:hover{background:var(--navy-tint)}
+.btn-quiet{background:transparent; color:var(--muted); border-color:var(--light); font-weight:500}
+.btn-quiet:hover{color:var(--navy); border-color:var(--muted)}
+button:disabled{background:#EEF0F3; color:#333C4D; border-color:var(--light); cursor:not-allowed}
+.btnrow{display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-top:12px}
+
+/* week rail */
+.rail{display:flex; gap:8px; flex-wrap:wrap; margin:18px 0 6px; padding:0; list-style:none}
+.rail button{
+  padding:8px 12px; font-size:.87rem; border-radius:8px;
+  background:var(--white); color:var(--lock); border:1.5px dashed var(--lock); font-weight:600;
+}
+.rail button[data-state=open]{border-style:solid; border-color:var(--gold); color:var(--gold-ink); background:var(--white)}
+.rail button[data-state=done]{border-style:solid; border-color:var(--navy); color:var(--navy); background:var(--navy-tint)}
+.rail button[aria-current=true]{box-shadow:inset 0 0 0 2px var(--navy)}
+.legend{font-size:.82rem; color:var(--muted); margin:0 0 10px}
+
+/* patient strip */
+.pstrip{display:flex; flex-wrap:wrap; gap:18px; align-items:baseline; background:var(--navy); color:var(--white); border-radius:12px; padding:14px 18px; margin:18px 0}
+.pstrip .k{font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; color:var(--gold); display:block; font-weight:700}
+.pstrip .v{font-size:1rem; font-weight:600}
+
+/* budget meter */
+.meter{display:flex; gap:6px; flex-wrap:wrap; margin:6px 0 0}
+.tok{width:18px; height:18px; border-radius:4px; border:1.5px solid var(--navy); background:var(--navy)}
+.tok.spent{background:var(--white); border-style:dashed; border-color:var(--lock)}
+
+/* order list */
+.cat{border:1px solid var(--rule); border-radius:10px; margin:0 0 10px; background:var(--white)}
+.cat > h3{margin:0}
+.cat > h3 > button{
+  width:100%; text-align:left; background:transparent; border:0; border-radius:10px;
+  padding:12px 14px; font-family:"Plus Jakarta Sans",Arial,sans-serif; font-weight:600; color:var(--navy);
+  display:flex; justify-content:space-between; gap:10px; align-items:center;
+}
+.cat > h3 > button:hover{background:var(--navy-tint)}
+.cat .chev{color:var(--terra); font-weight:700}
+.catbody{padding:0 14px 12px; border-top:1px solid var(--rule)}
+.tests{list-style:none; margin:10px 0 0; padding:0}
+.tests li{display:flex; gap:12px; align-items:center; justify-content:space-between; padding:8px 0; border-bottom:1px solid var(--rule); flex-wrap:wrap}
+.tests li:last-child{border-bottom:0}
+.tname{flex:1 1 300px; min-width:0}
+.tcost{font-size:.8rem; color:var(--muted); white-space:nowrap}
+.tests button{padding:6px 14px; font-size:.86rem}
+
+/* results */
+.res{border:1.5px solid var(--navy); background:var(--navy-tint); border-radius:10px; padding:14px 16px; margin:12px 0}
+.res .rh{display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap; align-items:baseline; margin:0 0 6px}
+.res .rname{font-weight:700; font-family:"Plus Jakarta Sans",Arial,sans-serif}
+.res .rstamp{font-size:.78rem; color:var(--muted)}
+.res .rval{font-size:1.05rem; font-weight:700; color:var(--navy)}
+.res .rref{font-size:.84rem; color:var(--muted)}
+.res dl{margin:10px 0 0; font-size:.92rem}
+.res dt{font-weight:700; font-size:.78rem; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); margin-top:8px}
+.res dd{margin:2px 0 0}
+
+/* modal */
+dialog{border:0; padding:0; color:var(--navy); border-radius:14px; max-width:640px; width:calc(100% - 32px); box-shadow:0 18px 48px rgba(0,0,0,.32)}
+dialog::backdrop{background:rgba(8,16,31,.62)}
+.dlg{background:var(--white); border-radius:14px; overflow:hidden}
+.dlg header{background:var(--navy); color:var(--white); padding:16px 20px}
+.dlg header h2{color:var(--white); margin:0}
+.dlg header p{margin:4px 0 0; font-size:.88rem; color:var(--light)}
+.dlg .body{padding:18px 20px}
+.err{color:#7A1414; font-weight:700; font-size:.88rem; margin:6px 0 0}
+
+/* canvas */
+.tools{display:flex; gap:8px; flex-wrap:wrap; margin:0 0 8px}
+.tools button[aria-pressed=true]{background:var(--navy); color:var(--white); border-color:var(--navy)}
+.cwrap{border:1.5px solid var(--navy); border-radius:10px; background:var(--white); overflow:hidden}
+canvas{display:block; width:100%; height:auto; touch-action:none; background:var(--white)}
+
+/* misc */
+.done-flag{display:inline-block; background:var(--navy); color:var(--white); border-radius:6px; padding:3px 9px; font-size:.74rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase}
+.stack > * + *{margin-top:14px}
+.sr{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap}
+.hidden{display:none !important}
+footer.foot{border-top:1px solid var(--rule); margin-top:34px; padding-top:16px; color:var(--muted); font-size:.86rem}
+
+/* print */
+#printdoc{display:none}
+@media print{
+  @page{margin:14mm}
+  body{background:var(--white); font-size:11pt}
+  .noprint,.band,.rail,.legend,dialog,footer.foot{display:none !important}
+  #app{display:none !important}
+  #printdoc{display:block !important}
+  #printdoc h1{font-size:16pt} #printdoc h2{font-size:12.5pt; margin-top:14pt}
+  #printdoc .pcard{border:1px solid #333; border-radius:6px; padding:8pt 10pt; margin:8pt 0}
+  #printdoc table{width:100%; border-collapse:collapse; font-size:9.5pt; margin:0 0 8pt}
+  #printdoc th,#printdoc td{border:1px solid #666; padding:3pt 5pt; text-align:left; vertical-align:top}
+  #printdoc th{background:#EDF1F3}
+  #printdoc .ord{border:1px solid #666; border-radius:5px; padding:6pt 8pt; margin:0 0 7pt; break-inside:avoid}
+  #printdoc .ordh{font-weight:700; border-bottom:1px solid #999; padding-bottom:3pt; margin-bottom:4pt; font-size:10.5pt}
+  #printdoc .ord dl{margin:0; display:grid; grid-template-columns:78pt 1fr; column-gap:8pt; row-gap:3pt}
+  #printdoc .ord dt{font-weight:700; font-size:8.5pt; text-transform:uppercase; letter-spacing:.04em; margin:0}
+  #printdoc .ord dd{margin:0; font-size:10pt}
+  #printdoc .ord .val{font-weight:700}
+  #printdoc dl.plain dt{font-weight:700; margin-top:7pt}
+  #printdoc dl.plain dd{margin:2pt 0 0}
+  #printdoc img{max-width:100%; border:1px solid #333}
+  #printdoc .sig{margin-top:16pt; border-top:1px solid #000; width:60%; padding-top:4pt; font-size:10pt}
+  #printdoc .code{font-family:ui-monospace,Menlo,Consolas,monospace; font-size:7pt; word-break:break-all; color:#333}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none !important; animation:none !important}}
+@media (max-width:640px){ h1{font-size:1.42rem} .wrap{padding:0 14px 60px} }
+</style>
+</head>
+<body>
+<style data-shared-nav-css>
+/* On :root, not on .sn-scope. The skip link sits outside the bar, so scoping
+   the tokens to the bar left its background transparent: white on white. */
+:root{--sn-navy:#040711;--sn-navy-70:rgba(4,7,17,.70);--sn-navy-15:rgba(4,7,17,.15);
+  --sn-gold:#DCB45C;--sn-deep:#01030A;--sn-straw:#F2E2B8;
+  --sn-font:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif}
+.sn-scope *,.sn-scope *::before,.sn-scope *::after{box-sizing:border-box}
+.sn-skip{position:absolute;left:-9999px;top:0;z-index:200;background:var(--sn-navy);color:#fff;
+  padding:14px 18px;min-height:44px;display:flex;align-items:center;
+  font:700 15px/1.2 var(--sn-font);text-decoration:none}
+.sn-skip:focus{left:0;top:0}
+.sn-bar{background:#fff;border-bottom:1px solid var(--sn-navy-15);font-family:var(--sn-font)}
+.sn-in{max-width:1180px;margin:0 auto;padding:0 max(16px,3vw);display:flex;align-items:center;
+  gap:22px;flex-wrap:wrap;min-height:62px}
+.sn-brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--sn-navy);padding:8px 0}
+.sn-brand svg{height:30px;width:auto;display:block}
+.sn-brand span{display:flex;flex-direction:column;line-height:1.1}
+.sn-brand b{font-size:.94rem;font-weight:800}
+.sn-brand i{font-size:.72rem;color:var(--sn-navy-70);font-weight:600;font-style:normal}
+.sn-links{display:flex;flex-wrap:wrap;margin-left:auto}
+.sn-links a{position:relative;font-size:.9rem;font-weight:600;color:var(--sn-navy-70);
+  text-decoration:none;padding:10px 6px;margin:0 10px;min-height:44px;min-width:44px;
+  display:flex;align-items:center;justify-content:center}
+.sn-links a:hover{color:var(--sn-navy)}
+.sn-links a:hover::after,.sn-links a[aria-current="page"]::after{content:"";position:absolute;
+  left:0;right:0;bottom:7px;height:3px;border-radius:2px}
+.sn-links a:hover::after{background:var(--sn-navy-15)}
+.sn-links a[aria-current="page"]{color:var(--sn-navy);font-weight:800}
+.sn-links a[aria-current="page"]::after{background:var(--sn-gold)}
+.sn-scope :focus-visible{outline:3px solid var(--sn-navy);outline-offset:2px;
+  box-shadow:0 0 0 6px var(--sn-gold);border-radius:4px}
+.sn-foot{background:var(--sn-deep);color:#fff;padding:26px max(16px,3vw);margin-top:44px;
+  font-family:var(--sn-font)}
+.sn-foot .sn-fi{max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;
+  gap:18px;flex-wrap:wrap;align-items:center}
+.sn-foot p{margin:0}
+.sn-foot .sn-n{font-weight:800;font-size:.95rem}
+.sn-foot .sn-c{font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--sn-straw)}
+.sn-foot nav{display:flex;flex-wrap:wrap}
+.sn-foot nav a{color:#D6DCE6;font-size:.84rem;font-weight:600;text-decoration:none;
+  padding:10px 14px;min-height:44px;display:flex;align-items:center}
+.sn-foot nav a:hover{color:#fff;text-decoration:underline}
+@media(max-width:760px){
+  .sn-bar{position:static}
+  .sn-in{gap:8px;min-height:0;padding-top:8px;padding-bottom:8px}
+  .sn-links{margin-left:0;width:100%}
+  .sn-links a{font-size:.82rem;padding:9px 4px;margin:0 8px}
+}
+@media(prefers-reduced-motion:reduce){.sn-scope *{transition:none!important}}
+</style>
+<div class="sn-scope sn-bar" data-shared-nav>
+  <nav class="sn-in" aria-label="Course sections">
+    <a class="sn-brand" href="index.html" target="_top"><svg viewBox="40 10 125 148" aria-hidden="true" focusable="false"><g transform="translate(0,18)"><g transform="translate(60,0) rotate(8 0 130)"><circle cx="0" cy="20" r="10" fill="#040711"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#040711"/></g><g transform="translate(100,0)"><circle cx="0" cy="10" r="11" fill="#8B3A2E"/><path d="M 0,22 C -11,22 -17,26 -17,34 C -17,52 -14,70 -12,86 C -11,108 -13,122 -15,132 L 15,132 C 13,122 11,108 12,86 C 14,70 17,52 17,34 C 17,26 11,22 0,22 Z" fill="#8B3A2E"/></g><g transform="translate(140,0) rotate(-8 0 130)"><circle cx="0" cy="20" r="10" fill="#DCB45C"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#DCB45C"/></g></g></svg>
+      <span><b>BIO 005</b><i>Human Physiology</i></span></a>
+    <span class="sn-links">
+      <a href="index.html" target="_top">Home</a>
+      <a href="welcome.html" target="_top">This week</a>
+      <a href="course-materials.html" target="_top">Lecture</a>
+      <a href="clinical-physiology-lab-manual.html" target="_top">Lab</a>
+      <a href="competency-recall.html" target="_top">Study</a>
+      <a href="guides.html" target="_top">Guides</a>
+      <a href="start-here.html" target="_top">Admin</a>
+    </span>
+  </nav>
+</div>
+
+<a class="skip" href="#main">Skip to the patient file</a>
+
+<div id="app">
+<div class="band noprint">
+  <div class="wrap">
+    <p class="eyebrow" id="eyebrow">BIO 005 &middot; Human Physiology &middot; Progressive Patient File</p>
+    <h1>The Patient File</h1>
+    <p class="sub">One patient. Fifteen weeks. You decide what to find out, and in what order.</p>
+  </div>
+</div>
+
+<main class="wrap" id="main" tabindex="-1">
+
+  <!-- GATE -->
+  <section id="gate" class="card" aria-labelledby="gate-h">
+    <h2 id="gate-h">Open your file</h2>
+    <p>Your patient is assigned from your name. Two students rarely get the same one, and the same name always opens the same patient, so type it the same way every week.</p>
+    <div class="row">
+      <div class="field">
+        <label for="sname">Your full name as it appears in Canvas</label>
+        <input type="text" id="sname" autocomplete="off" spellcheck="false">
+      </div>
+      <div class="field">
+        <label for="ssec">Section<span class="hint">Leave the default unless told otherwise.</span></label>
+        <input type="text" id="ssec" value="" autocomplete="off" spellcheck="false">
+      </div>
+    </div>
+    <p class="note"><strong>Nothing you type leaves this page.</strong> Your name is used only to pick your patient. There is no server, no account, and no upload. Save your work each week using the two buttons at the bottom of the page.</p>
+    <div class="btnrow">
+      <button type="button" class="btn-primary" id="openBtn">Open my file</button>
+      <button type="button" class="btn-secondary" id="restoreBtn" aria-expanded="false" aria-controls="restoreWrap">Restore from a saved code</button>
+    </div>
+    <p class="err hidden" id="gateErr"></p>
+    <div class="field hidden" id="restoreWrap" style="margin-top:14px">
+      <label for="restoreCode">Paste your save code<span class="hint">The whole code, with nothing added or removed.</span></label>
+      <textarea id="restoreCode" rows="4" spellcheck="false"></textarea>
+      <div class="btnrow"><button type="button" class="btn-primary" id="restoreGo">Restore my file</button></div>
+    </div>
+  </section>
+
+  <!-- WORKSPACE -->
+  <section id="work" class="hidden">
+    <div class="pstrip">
+      <div><span class="k">Patient</span><span class="v" id="pWho"></span></div>
+      <div><span class="k">Occupation</span><span class="v" id="pRole"></span></div>
+      <div><span class="k">File number</span><span class="v" id="pFile"></span></div>
+      <div><span class="k">Physiologist of record</span><span class="v" id="pStudent"></span></div>
+    </div>
+
+    <nav aria-label="Weeks" class="noprint">
+      <h2 class="sr">Weeks</h2>
+      <ul class="rail" id="rail"></ul>
+      <p class="legend">Dashed gray is locked. Solid gold is open. Navy on tint is submitted. Your instructor posts the code that opens each week.</p>
+    </nav>
+
+    <!-- unlock -->
+    <div class="card tight noprint" id="unlockCard">
+      <div class="row">
+        <div class="field" style="margin:0">
+          <label for="wcode">Week code</label>
+          <input type="text" id="wcode" autocomplete="off" spellcheck="false" placeholder="Posted in Canvas">
+        </div>
+        <div class="field" style="margin:0; align-self:end">
+          <button type="button" class="btn-primary" id="unlockBtn">Unlock this week</button>
+        </div>
+      </div>
+      <p class="err hidden" id="unlockErr"></p>
+    </div>
+
+    <div id="weekBody"></div>
+
+    <div class="card noprint" id="saveCard">
+      <h2>Save and hand in</h2>
+      <p>Do both of these before you close the page.</p>
+      <div class="btnrow">
+        <button type="button" class="btn-primary" id="pdfBtn">Export this week to PDF</button>
+        <button type="button" class="btn-secondary" id="codeBtn">Show my save code</button>
+        <button type="button" class="btn-quiet" id="wipeBtn">Clear this browser</button>
+      </div>
+      <div class="field hidden" id="codeWrap" style="margin-top:14px">
+        <label for="saveCode">Save code<span class="hint">Copy this into a document you keep. Pasting it back into Restore brings all of your typed work back on any computer. Drawings are not in the code, they stay in this browser and in the PDF you export, so export the PDF every week.</span></label>
+        <textarea id="saveCode" readonly rows="4" spellcheck="false"></textarea>
+        <div class="btnrow"><button type="button" class="btn-secondary" id="copyBtn">Copy code</button><span id="copyMsg" aria-live="polite"></span></div>
+      </div>
+    </div>
+
+    <footer class="foot">
+      <p>BIO 005 Human Physiology. Dr. Sharilyn Rennie.</p>
+    </footer>
+  </section>
+</main>
+</div>
+
+<!-- ORDER COMMIT DIALOG -->
+<dialog id="orderDlg" aria-labelledby="odlg-h">
+ <form method="dialog" class="dlg" id="orderForm">
+  <header>
+    <h2 id="odlg-h">Commit before you look</h2>
+    <p>The result is not on this page yet. It appears after you submit.</p>
+  </header>
+  <div class="body stack">
+    <p><strong id="odlg-test"></strong></p>
+    <div class="field">
+      <label for="oExpect">What do you expect this to show, and why<span class="hint">Give a number or a direction and the mechanism behind it. At least 120 characters.</span></label>
+      <textarea id="oExpect" aria-describedby="oExpectCount"></textarea>
+      <p class="hint" id="oExpectCount" aria-live="polite">0 of 120 characters</p>
+    </div>
+    <div class="field">
+      <label for="oInstead">Name the order you are giving up to place this one</label>
+      <select id="oInstead"></select>
+    </div>
+    <div class="field">
+      <label for="oWhy">Why this one and not that one<span class="hint">At least 80 characters.</span></label>
+      <textarea id="oWhy" style="min-height:76px" aria-describedby="oWhyCount"></textarea>
+      <p class="hint" id="oWhyCount" aria-live="polite">0 of 80 characters</p>
+    </div>
+    <p class="err hidden" id="oErr"></p>
+    <div class="btnrow">
+      <button type="button" class="btn-primary" id="oSubmit">Submit and reveal</button>
+      <button type="button" class="btn-quiet" id="oCancel">Cancel</button>
+    </div>
+  </div>
+ </form>
+</dialog>
+
+<div id="printdoc"></div>
+
+<script>
+var KEY = "physio-2026-rennie";
+var COURSE = {"code":"BIO 005","title":"Human Physiology","section":"BIOL-5-D9286","term":"Fall 2026, Sep 8 to Dec 16","instructor":"Dr. Sharilyn Rennie","masterCode":"RENNIE-KEY-2026"};
+var WEEKS = [{"n":1,"title":"Foundations of Physiology","dates":"Sep 8 to 13","code":"HOMEO-01","budget":6,"opens":["hx","vs","pe"],"frame":"You are the physiologist on the case, not the doctor. Your job this week is to establish a baseline and to name the regulated variable that is out of range. Interview and examine before you order anything from a laboratory.","predict":"Before you place your first order, write the one physiologic variable you believe is being defended poorly, and what you expect to find.","draw":"Draw a labeled negative feedback loop for the variable you named. Mark the sensor, the integrating center, the effector, and the direction each arrow moves.","q":[{"k":"loop","type":"select","label":"The loop you drew is best described as","opts":["Negative feedback","Positive feedback","Feedforward","Not a control loop"]},{"k":"level","type":"select","label":"The level of organization where you think the problem starts","opts":["Molecular","Cellular","Tissue","Organ","Organ system","Whole body"]},{"k":"why","type":"text","label":"Name one order you deliberately did NOT place this week, and say what would have made you place it."}]},{"n":2,"title":"Molecules, Water, and Energy","dates":"Sep 14 to 20","code":"BIOMOL-02","budget":5,"opens":["hx","vs","pe","chem"],"frame":"Every symptom on this chart is a molecule doing something. This week you connect the patient's intake, storage, and energy use to measurable chemistry.","predict":"Name the class of biomolecule you think is most disturbed in this patient and predict the direction of the disturbance before you order.","draw":"Draw the pathway from the patient's intake to the molecule you named. Show at least one enzyme step and one storage form.","q":[{"k":"class","type":"select","label":"Biomolecule class most disturbed","opts":["Carbohydrate","Lipid","Protein","Nucleic acid","Water and electrolytes","Cannot tell yet"]},{"k":"bond","type":"select","label":"The property of water most relevant to this patient right now","opts":["Solvent capacity","High heat capacity","Cohesion and surface tension","Ionization and pH","Osmotic behavior"]},{"k":"why","type":"text","label":"Which result surprised you most, and what did you believe before you saw it?"}]},{"n":3,"title":"Membranes, Transport, and Compartments","dates":"Sep 21 to 27","code":"MEMBRA-03","budget":5,"opens":["hx","vs","pe","chem","cbc"],"frame":"Compartments week. Nearly every number on a chemistry panel is a statement about which side of a membrane something is on.","predict":"Predict whether this patient's extracellular volume is low, normal, or high, and name the single measurement that would settle it.","draw":"Draw the three fluid compartments to scale for this patient. Mark where you believe water has shifted and draw the osmotic gradient that drove it.","q":[{"k":"vol","type":"select","label":"Extracellular fluid volume","opts":["Low","Normal","High","Low with high total body water"]},{"k":"tonic","type":"select","label":"Plasma tonicity relative to normal","opts":["Hypotonic","Isotonic","Hypertonic"]},{"k":"trans","type":"select","label":"Transport mechanism most implicated","opts":["Simple diffusion","Facilitated diffusion","Primary active transport","Secondary active transport","Osmosis","Bulk flow"]},{"k":"why","type":"text","label":"Defend your volume call using two numbers. Say which number you weighted more and why."}]},{"n":4,"title":"Electrical Signaling","dates":"Sep 28 to Oct 4","code":"ACTPOT-04","budget":5,"opens":["hx","vs","pe","chem","cbc","card"],"frame":"Membrane potential is a chemistry problem with a clock on it. This week the patient's electrolytes become an excitability problem.","predict":"Predict the direction this patient's resting membrane potential has moved and name the ion responsible.","draw":"Draw an action potential trace for this patient beside a normal trace. Label threshold, and show how the patient's electrolytes change the shape or the timing.","q":[{"k":"rmp","type":"select","label":"Resting membrane potential in excitable tissue","opts":["More negative than normal","Normal","Less negative than normal","Unstable"]},{"k":"ion","type":"select","label":"Ion most responsible","opts":["Sodium","Potassium","Calcium","Chloride","Hydrogen","Magnesium"]},{"k":"excite","type":"select","label":"Net effect on excitability","opts":["Increased then decreased","Increased","Decreased","No change"]},{"k":"why","type":"text","label":"If you could order only one more test to test this prediction, what would it be and what result would prove you wrong?"}]},{"n":5,"title":"The Nervous System","dates":"Oct 5 to 11","code":"NEURAL-05","budget":5,"opens":["hx","vs","pe","chem","cbc","card","neuro"],"frame":"Autonomic week. Read the vitals as an output of the nervous system, not just as numbers.","predict":"Predict whether sympathetic or parasympathetic outflow is dominant in this patient and name the vital sign that will show it.","draw":"Draw the reflex arc that is producing this patient's heart rate. Label the receptor, afferent, center, efferent, and effector.","q":[{"k":"ans","type":"select","label":"Dominant autonomic tone","opts":["Sympathetic","Parasympathetic","Balanced","Sympathetic with blunted response"]},{"k":"reflex","type":"select","label":"Reflex most active","opts":["Baroreceptor","Chemoreceptor","Stretch reflex","Withdrawal reflex","None of these"]},{"k":"why","type":"text","label":"Your patient's heart rate is what it is for a reason. Give the mechanism, not the label."}]},{"n":6,"title":"Muscle","dates":"Oct 12 to 18","code":"SARCOM-06","budget":5,"opens":["hx","vs","pe","chem","cbc","card","neuro","musc"],"frame":"Weakness is a word patients use for a dozen different mechanisms. This week you separate them.","predict":"Predict where this patient's weakness originates: fuel, excitation, coupling, or contractile apparatus.","draw":"Draw the cross bridge cycle and circle the step you believe is impaired in this patient. If no step is impaired, draw the length tension curve and mark where the patient is operating.","q":[{"k":"site","type":"select","label":"Site of the problem","opts":["Fuel supply","Neuromuscular junction","Excitation contraction coupling","Contractile proteins","Not a muscle problem"]},{"k":"fiber","type":"select","label":"Fiber type most affected","opts":["Slow oxidative","Fast oxidative glycolytic","Fast glycolytic","Cardiac","Smooth","All equally"]},{"k":"why","type":"text","label":"Explain how you ruled out one of the other three sites."}]},{"n":7,"title":"Chemical Signaling and Endocrine Control","dates":"Oct 19 to 25","code":"ENDOAX-07","budget":6,"opens":["hx","vs","pe","chem","cbc","card","neuro","musc","endo"],"frame":"Axis week. A hormone level alone means nothing. A hormone level next to its tropic hormone is a diagnosis.","predict":"Predict which endocrine axis is disturbed and whether the lesion is at the gland or above it. Order the tropic hormone and the target hormone together.","draw":"Draw the axis you suspect from hypothalamus to target tissue. Mark where the feedback is broken with an X and show what happens to each level as a result.","q":[{"k":"axis","type":"select","label":"Axis disturbed","opts":["Thyroid","Adrenal cortex","Pancreatic islet","Calcium and PTH","Renin angiotensin aldosterone","Growth hormone","None"]},{"k":"site","type":"select","label":"Level of the lesion","opts":["Primary, at the target gland","Secondary, at the pituitary","Tertiary, at the hypothalamus","Target tissue resistance"]},{"k":"pair","type":"text","label":"Write the two values you paired and state the rule that let you localize the lesion."}]},{"n":8,"title":"Reproductive Physiology","dates":"Oct 26 to Nov 1","code":"GONADS-08","budget":4,"opens":["hx","vs","pe","chem","cbc","card","neuro","musc","endo","repro"],"frame":"The reproductive axis is the most sensitive alarm in the body. It quiets down when anything systemic is wrong, which makes it a useful reporter.","predict":"Predict whether this patient's reproductive axis is suppressed, normal, or overdriven, and say what systemic condition would do that.","draw":"Draw the hypothalamic pituitary gonadal axis and add an arrow showing where this patient's systemic illness feeds into it.","q":[{"k":"repro","type":"select","label":"Reproductive axis status","opts":["Suppressed","Normal","Overdriven","Not assessable from the data I have"]},{"k":"why","type":"text","label":"State one finding from an earlier week that supports your call. Cite the week."}]},{"n":9,"title":"Digestion, Absorption, and Energy Balance","dates":"Nov 2 to 8","code":"ABSORB-09","budget":6,"opens":["hx","vs","pe","chem","cbc","card","neuro","musc","endo","repro","gi"],"frame":"Intake, absorption, loss. Three places a nutrient balance can break, and the chart usually tells you which one.","predict":"Predict whether this patient's problem is intake, absorption, or loss, and name the nutrient or fuel involved.","draw":"Draw a balance diagram for the substance you named: intake in, storage in the middle, losses out. Put this patient's numbers on the arrows where you have them.","q":[{"k":"break","type":"select","label":"Where the balance breaks","opts":["Intake","Digestion","Absorption","Storage or mobilization","Loss","Utilization"]},{"k":"fuel","type":"select","label":"Substance in negative or positive balance","opts":["Glucose","Fat","Protein","Iron","Sodium","Potassium","Water","Calcium"]},{"k":"why","type":"text","label":"You had a hypothesis in Week 2 about biomolecules. Has it survived? Say what changed it or what confirmed it."}]},{"n":10,"title":"Cardiac Function and Blood","dates":"Nov 9 to 15","code":"CARDIO-10","budget":6,"opens":["hx","vs","pe","chem","cbc","card","neuro","musc","endo","repro","gi","fe"],"frame":"Oxygen delivery week. Cardiac output times arterial oxygen content is the number that matters, and it has four ways to fail.","predict":"Predict which term of oxygen delivery is failing in this patient: heart rate, stroke volume, hemoglobin, or saturation.","draw":"Draw a full CBC report card for your patient with the indices you ordered, then draw the red cell you would expect to see under the microscope with size and color labeled.","q":[{"k":"do2","type":"select","label":"Failing term in oxygen delivery","opts":["Heart rate","Stroke volume","Hemoglobin concentration","Arterial saturation","None, delivery is adequate"]},{"k":"anemia","type":"select","label":"If anemia is present, classify it","opts":["Microcytic","Normocytic","Macrocytic","No anemia"]},{"k":"comp","type":"text","label":"Name the compensation this patient is running and the cost of running it."}]},{"n":11,"title":"Circulation and Blood Pressure","dates":"Nov 16 to 22","code":"HEMODY-11","budget":6,"opens":["hx","vs","pe","chem","cbc","card","neuro","musc","endo","repro","gi","fe","vasc"],"frame":"Pressure equals flow times resistance. When the pressure is wrong, one of those two moved, and something moved it on purpose.","predict":"Predict whether this patient's blood pressure problem is a cardiac output problem or a resistance problem, and name the hormone or reflex driving it.","draw":"Draw a capillary with the four Starling forces labeled and numbered for this patient. Show the net direction of fluid movement at the arterial end and the venous end.","q":[{"k":"mech","type":"select","label":"Primary mechanism","opts":["Cardiac output","Systemic vascular resistance","Blood volume","Venous capacitance","Combination"]},{"k":"driver","type":"select","label":"Driver","opts":["Sympathetic outflow","Angiotensin II","Aldosterone","Antidiuretic hormone","Natriuretic peptide","Loss of volume","None of these"]},{"k":"starling","type":"text","label":"Give your net filtration pressure at the arterial end in mmHg and show the arithmetic."}]},{"n":12,"title":"Fluid, Electrolyte, and Acid Base Chemistry","dates":"Nov 23 to 29","code":"ACIDBA-12","budget":6,"opens":["hx","vs","pe","chem","cbc","card","neuro","musc","endo","repro","gi","fe","vasc","abg"],"frame":"Four questions, in order, every time. Acidemia or alkalemia. Respiratory or metabolic. Compensated or not. Anion gap or not.","predict":"Predict this patient's arterial pH and the primary disturbance before you order the gas. Write the number, not a direction.","draw":"Draw the Henderson Hasselbalch relationship as a seesaw with bicarbonate on one side and carbon dioxide on the other. Position this patient's seesaw and show the compensation arrow.","q":[{"k":"ph","type":"select","label":"Acid base state","opts":["Acidemia","Alkalemia","Normal pH with mixed disturbance","Normal"]},{"k":"prim","type":"select","label":"Primary disturbance","opts":["Metabolic acidosis","Respiratory acidosis","Metabolic alkalosis","Respiratory alkalosis","Mixed"]},{"k":"comp","type":"select","label":"Compensation","opts":["None yet","Partial","Full","Overcorrected, suggests a second disturbance"]},{"k":"gap","type":"text","label":"Calculate the anion gap. Show the numbers you used and state whether it is elevated."}]},{"n":13,"title":"Respiration","dates":"Nov 30 to Dec 6","code":"VENTIL-13","budget":6,"opens":["hx","vs","pe","chem","cbc","card","neuro","musc","endo","repro","gi","fe","vasc","abg","pft"],"frame":"Ventilation, diffusion, perfusion, carriage. Four steps between room air and a mitochondrion, and this patient fails at one of them.","predict":"Predict which of the four steps fails in this patient and predict whether carbon dioxide will be high, low, or normal.","draw":"Draw the oxygen hemoglobin dissociation curve. Plot this patient's point on it, then draw the shift their chemistry would cause and label the direction.","q":[{"k":"step","type":"select","label":"Step that fails","opts":["Ventilation","Diffusion at the alveolus","Perfusion and matching","Oxygen carriage in blood","Tissue utilization","None"]},{"k":"shift","type":"select","label":"Dissociation curve shift","opts":["Right","Left","No shift","Right at tissue, left at lung"]},{"k":"drive","type":"text","label":"What is driving this patient's respiratory rate right now? Name the receptor and the stimulus."}]},{"n":14,"title":"Renal Function","dates":"Dec 7 to 13","code":"NEPHRO-14","budget":6,"opens":["hx","vs","pe","chem","cbc","card","neuro","musc","endo","repro","gi","fe","vasc","abg","pft","renal"],"frame":"Filter, reabsorb, secrete, excrete. The urine is the kidney telling you what the rest of the body asked it to do.","predict":"Predict what this patient's urine will show and say what that would prove about the kidney's instructions.","draw":"Draw a nephron and mark, segment by segment, where this patient's handling of sodium, water, potassium, and hydrogen ion differs from normal.","q":[{"k":"renal","type":"select","label":"Kidney status","opts":["Normal kidney responding correctly","Normal kidney responding to a hormone signal","Intrinsic kidney disease","Prerenal","Postrenal"]},{"k":"seg","type":"select","label":"Segment most implicated","opts":["Glomerulus","Proximal tubule","Loop of Henle","Distal tubule","Collecting duct","Whole nephron"]},{"k":"why","type":"text","label":"Is the kidney the problem or the messenger? Defend it in three sentences."}]},{"n":15,"title":"Case Conference","dates":"Dec 14 to 16","code":"CONFER-15","budget":3,"opens":["hx","vs","pe","chem","cbc","card","neuro","musc","endo","repro","gi","fe","vasc","abg","pft","renal"],"frame":"Final week. You name the condition, and more importantly you show the path you took to get there, including the wrong turns.","predict":"Write your final diagnosis in one sentence before you place your last three orders. You may not change it after the results appear.","draw":"Draw the whole case as one integrated map. Every system you touched, connected, with the primary lesion at the center and arrows outward to each consequence.","q":[{"k":"dx","type":"text","label":"Final diagnosis, one sentence."},{"k":"first","type":"text","label":"What was your first serious hypothesis, in which week, and what killed it?"},{"k":"cheap","type":"text","label":"Which single order in the whole term gave you the most information for its cost, and why?"},{"k":"wrong","type":"text","label":"Name one thing you still cannot explain about this patient."}]}];
+var CATS = {"hx":{"label":"Interview","note":"Start here. The story is the cheapest information you will ever get from this patient."},"vs":{"label":"Vitals and measurements","note":""},"pe":{"label":"Physical examination","note":""},"chem":{"label":"Blood chemistry","note":""},"cbc":{"label":"Hematology","note":""},"fe":{"label":"Iron studies","note":""},"endo":{"label":"Endocrine","note":"Order tropic and target hormones together or you will learn nothing."},"repro":{"label":"Reproductive","note":""},"card":{"label":"Cardiac","note":""},"vasc":{"label":"Vascular and volume","note":""},"abg":{"label":"Blood gas","note":""},"pft":{"label":"Pulmonary function","note":""},"renal":{"label":"Urine and renal","note":""},"gi":{"label":"Gastrointestinal","note":""},"neuro":{"label":"Neurologic","note":""},"musc":{"label":"Muscle","note":""}};
+var TESTS = [{"id":"hx_chief","cat":"hx","name":"Chief concern in the patient's own words","cost":1,"ref":""},{"id":"hx_time","cat":"hx","name":"Symptom timeline","cost":1,"ref":""},{"id":"hx_meds","cat":"hx","name":"Medications and supplements","cost":1,"ref":""},{"id":"hx_diet","cat":"hx","name":"Diet and fluid intake","cost":1,"ref":""},{"id":"hx_social","cat":"hx","name":"Work, sleep, and activity","cost":1,"ref":""},{"id":"hx_fam","cat":"hx","name":"Family history","cost":1,"ref":""},{"id":"hx_ros","cat":"hx","name":"Review of systems","cost":2,"ref":"","minWeek":2},{"id":"vs_hr","cat":"vs","name":"Heart rate","cost":1,"ref":"60 to 100 per minute"},{"id":"vs_bp","cat":"vs","name":"Blood pressure, seated","cost":1,"ref":"under 120 over 80 mmHg"},{"id":"vs_rr","cat":"vs","name":"Respiratory rate","cost":1,"ref":"12 to 20 per minute"},{"id":"vs_temp","cat":"vs","name":"Core temperature","cost":1,"ref":"36.5 to 37.5 C"},{"id":"vs_spo2","cat":"vs","name":"Pulse oximetry on room air","cost":1,"ref":"95 to 100 percent"},{"id":"vs_wt","cat":"vs","name":"Weight and weight change","cost":1,"ref":""},{"id":"vs_ortho","cat":"vs","name":"Orthostatic vital signs","cost":2,"ref":"Drop under 20 systolic, under 10 diastolic","minWeek":5},{"id":"pe_skin","cat":"pe","name":"Skin, nails, and mucous membranes","cost":1,"ref":""},{"id":"pe_card","cat":"pe","name":"Cardiac auscultation and jugular venous pressure","cost":1,"ref":""},{"id":"pe_lung","cat":"pe","name":"Lung auscultation and work of breathing","cost":1,"ref":""},{"id":"pe_edema","cat":"pe","name":"Peripheral edema and capillary refill","cost":1,"ref":""},{"id":"pe_abd","cat":"pe","name":"Abdominal examination","cost":1,"ref":""},{"id":"pe_thy","cat":"pe","name":"Neck and thyroid examination","cost":1,"ref":""},{"id":"na","cat":"chem","name":"Sodium","cost":1,"ref":"135 to 145 mEq/L"},{"id":"k","cat":"chem","name":"Potassium","cost":1,"ref":"3.5 to 5.0 mEq/L"},{"id":"cl","cat":"chem","name":"Chloride","cost":1,"ref":"98 to 107 mEq/L"},{"id":"hco3","cat":"chem","name":"Bicarbonate, venous","cost":1,"ref":"22 to 28 mEq/L"},{"id":"bun","cat":"chem","name":"Blood urea nitrogen","cost":1,"ref":"7 to 20 mg/dL"},{"id":"cr","cat":"chem","name":"Creatinine","cost":1,"ref":"0.6 to 1.2 mg/dL"},{"id":"glu","cat":"chem","name":"Glucose, fasting","cost":1,"ref":"70 to 99 mg/dL"},{"id":"ca","cat":"chem","name":"Calcium, total","cost":1,"ref":"8.5 to 10.5 mg/dL"},{"id":"phos","cat":"chem","name":"Phosphate","cost":1,"ref":"2.5 to 4.5 mg/dL"},{"id":"mg","cat":"chem","name":"Magnesium","cost":1,"ref":"1.7 to 2.2 mg/dL"},{"id":"alb","cat":"chem","name":"Albumin","cost":1,"ref":"3.5 to 5.0 g/dL"},{"id":"osm","cat":"chem","name":"Serum osmolality, measured","cost":2,"ref":"275 to 295 mOsm/kg"},{"id":"lip","cat":"chem","name":"Lipid panel","cost":2,"ref":"LDL under 100 mg/dL","minWeek":2},{"id":"ck","cat":"chem","name":"Creatine kinase","cost":2,"ref":"30 to 200 U/L","minWeek":6},{"id":"hgb","cat":"cbc","name":"Hemoglobin","cost":1,"ref":"12.0 to 16.0 g/dL"},{"id":"hct","cat":"cbc","name":"Hematocrit","cost":1,"ref":"36 to 48 percent"},{"id":"mcv","cat":"cbc","name":"Mean corpuscular volume","cost":1,"ref":"80 to 100 fL"},{"id":"rdw","cat":"cbc","name":"Red cell distribution width","cost":1,"ref":"11.5 to 14.5 percent"},{"id":"wbc","cat":"cbc","name":"White cell count with differential","cost":1,"ref":"4.5 to 11.0 thousand/microliter"},{"id":"plt","cat":"cbc","name":"Platelet count","cost":1,"ref":"150 to 400 thousand/microliter"},{"id":"retic","cat":"cbc","name":"Reticulocyte percentage","cost":2,"ref":"0.5 to 2.5 percent"},{"id":"smear","cat":"cbc","name":"Peripheral blood smear description","cost":2,"ref":"","minWeek":10},{"id":"ferr","cat":"fe","name":"Ferritin","cost":2,"ref":"15 to 200 ng/mL","minWeek":9},{"id":"iron","cat":"fe","name":"Serum iron","cost":1,"ref":"60 to 170 mcg/dL","minWeek":9},{"id":"tibc","cat":"fe","name":"Total iron binding capacity","cost":1,"ref":"240 to 450 mcg/dL","minWeek":9},{"id":"tsat","cat":"fe","name":"Transferrin saturation","cost":1,"ref":"20 to 50 percent","minWeek":9},{"id":"tsh","cat":"endo","name":"Thyroid stimulating hormone","cost":2,"ref":"0.4 to 4.0 mIU/L","minWeek":7},{"id":"ft4","cat":"endo","name":"Free thyroxine","cost":2,"ref":"0.8 to 1.8 ng/dL","minWeek":7},{"id":"tpo","cat":"endo","name":"Thyroid peroxidase antibody","cost":2,"ref":"under 35 IU/mL","minWeek":7},{"id":"cort","cat":"endo","name":"Morning cortisol","cost":2,"ref":"6 to 23 mcg/dL","minWeek":7},{"id":"acth","cat":"endo","name":"Adrenocorticotropic hormone","cost":2,"ref":"7 to 63 pg/mL","minWeek":7},{"id":"aldo","cat":"endo","name":"Plasma aldosterone","cost":2,"ref":"4 to 31 ng/dL","minWeek":7},{"id":"renin","cat":"endo","name":"Plasma renin activity","cost":2,"ref":"0.5 to 4.0 ng/mL/hr","minWeek":7},{"id":"pth","cat":"endo","name":"Parathyroid hormone, intact","cost":2,"ref":"15 to 65 pg/mL","minWeek":7},{"id":"a1c","cat":"endo","name":"Hemoglobin A1c","cost":2,"ref":"4.0 to 5.6 percent","minWeek":7},{"id":"cpep","cat":"endo","name":"C peptide","cost":2,"ref":"0.8 to 3.9 ng/mL","minWeek":7},{"id":"vitd","cat":"endo","name":"25 hydroxy vitamin D","cost":2,"ref":"30 to 100 ng/mL","minWeek":7},{"id":"lhfsh","cat":"repro","name":"Luteinizing hormone and follicle stimulating hormone","cost":2,"ref":"varies by phase and sex","minWeek":8},{"id":"sexh","cat":"repro","name":"Estradiol or testosterone","cost":2,"ref":"varies by sex","minWeek":8},{"id":"cyc","cat":"repro","name":"Menstrual or reproductive history detail","cost":1,"ref":"","minWeek":8},{"id":"ecg","cat":"card","name":"Twelve lead electrocardiogram","cost":2,"ref":"","minWeek":4},{"id":"echo","cat":"card","name":"Echocardiogram with ejection fraction","cost":3,"ref":"Ejection fraction 55 to 70 percent","minWeek":10},{"id":"bnp","cat":"card","name":"B type natriuretic peptide","cost":2,"ref":"under 100 pg/mL","minWeek":10},{"id":"trop","cat":"card","name":"High sensitivity troponin","cost":2,"ref":"under 14 ng/L","minWeek":10},{"id":"map","cat":"vasc","name":"Mean arterial pressure and pulse pressure","cost":1,"ref":"MAP 70 to 100 mmHg","minWeek":11},{"id":"jvp","cat":"vasc","name":"Estimated central venous pressure","cost":2,"ref":"2 to 8 mmHg","minWeek":11},{"id":"cap","cat":"vasc","name":"Capillary Starling force estimates","cost":3,"ref":"","minWeek":11},{"id":"amb","cat":"vasc","name":"Ambulatory blood pressure over 24 hours","cost":2,"ref":"","minWeek":11},{"id":"ph","cat":"abg","name":"Arterial pH","cost":2,"ref":"7.35 to 7.45","minWeek":12},{"id":"pco2","cat":"abg","name":"Arterial carbon dioxide tension","cost":2,"ref":"35 to 45 mmHg","minWeek":12},{"id":"po2","cat":"abg","name":"Arterial oxygen tension","cost":2,"ref":"80 to 100 mmHg","minWeek":12},{"id":"abg_hco3","cat":"abg","name":"Arterial bicarbonate, calculated","cost":1,"ref":"22 to 26 mEq/L","minWeek":12},{"id":"lact","cat":"abg","name":"Lactate","cost":2,"ref":"0.5 to 2.0 mmol/L","minWeek":12},{"id":"fev1","cat":"pft","name":"Forced expiratory volume in one second","cost":2,"ref":"over 80 percent predicted","minWeek":13},{"id":"fvc","cat":"pft","name":"Forced vital capacity","cost":2,"ref":"over 80 percent predicted","minWeek":13},{"id":"ratio","cat":"pft","name":"FEV1 to FVC ratio","cost":1,"ref":"over 0.70","minWeek":13},{"id":"dlco","cat":"pft","name":"Diffusing capacity for carbon monoxide","cost":2,"ref":"over 80 percent predicted","minWeek":13},{"id":"walk","cat":"pft","name":"Six minute walk with oximetry","cost":2,"ref":"","minWeek":13},{"id":"ua","cat":"renal","name":"Urinalysis, dipstick and microscopy","cost":2,"ref":"","minWeek":14},{"id":"usg","cat":"renal","name":"Urine specific gravity","cost":1,"ref":"1.005 to 1.030","minWeek":14},{"id":"uosm","cat":"renal","name":"Urine osmolality","cost":2,"ref":"50 to 1200 mOsm/kg","minWeek":14},{"id":"una","cat":"renal","name":"Urine sodium","cost":2,"ref":"varies with intake","minWeek":14},{"id":"uk","cat":"renal","name":"Urine potassium, 24 hour","cost":2,"ref":"25 to 125 mEq/day","minWeek":14},{"id":"acr","cat":"renal","name":"Urine albumin to creatinine ratio","cost":2,"ref":"under 30 mg/g","minWeek":14},{"id":"egfr","cat":"renal","name":"Estimated glomerular filtration rate","cost":1,"ref":"over 90 mL/min/1.73 m2","minWeek":14},{"id":"fobt","cat":"gi","name":"Fecal occult blood test","cost":2,"ref":"Negative","minWeek":9},{"id":"celiac","cat":"gi","name":"Tissue transglutaminase antibody","cost":2,"ref":"under 4 U/mL","minWeek":9},{"id":"scope","cat":"gi","name":"Upper endoscopy and colonoscopy report","cost":3,"ref":"","minWeek":9},{"id":"dtr","cat":"neuro","name":"Deep tendon reflexes with relaxation phase","cost":1,"ref":"2 plus and symmetric","minWeek":5},{"id":"cn","cat":"neuro","name":"Cranial nerve screen","cost":1,"ref":"","minWeek":5},{"id":"sens","cat":"neuro","name":"Sensory examination including vibration","cost":1,"ref":"","minWeek":5},{"id":"hrv","cat":"neuro","name":"Heart rate variability with deep breathing","cost":2,"ref":"","minWeek":5},{"id":"str","cat":"musc","name":"Manual muscle strength testing","cost":1,"ref":"5 of 5 throughout","minWeek":6},{"id":"grip","cat":"musc","name":"Grip dynamometry","cost":1,"ref":"","minWeek":6},{"id":"emg","cat":"musc","name":"Electromyography","cost":3,"ref":"","minWeek":6}];
+var NORMALS = {"hx_chief":"OUgfFgwDDV5ZWVMNAQoDCx0NGQYeUwAcDV1WVBZPBxFOJ0kGEQYXHB1PXUdEEltUUgMHAA4AAkgWHUkGWRw=","hx_time":"IxEUAx0AQEEQWldbF0UMCwwLUBgLFhoKQ0YQVFlfUhYLGAwXEQRZHgYBWVpDEkFEBg0BGx1FEUgaHwwOXxJDRldfBgwACUkVHwEXB0c=","hx_meds":"PgdZAxsKXlFCW0ZZGwoATgQAFAEaEh0GQlxDHBZiEQYPHQAKHgkVUwYZSEAQRl5IUgYBGwcRFRpZEgcOQVVVQV9OXA==","hx_diet":"PQEBFg1PSVtVRhoNBg0cCwxFHQ0YHxpPQF1DRhZJExwdQkkEEgcMB0leAwcQXl9ZAAAdTgYDUA4VBgALDVZRW1pUXA==","hx_social":"JwcLGBpPS0dcXhZZGwgLQkkWHA0cAxpPXltIEkJCUhYLGAwLUAAWBhscARJHU1pGAUUIARtFFRAcAQoGXlcQUxZLFxJOGgAIFRtZEkkYSFdbHA==","hx_fam":"PgdZGAcAWlwQVFdAGwkXTgEMAxwWARBPQlQQUV5fHQsHDUkBGRscEhoKAw==","hx_ros":"PgdZFQwZSEAcElhCUgYGCxoRUBgYGgdDDVxfEkBEARAPAkkGGAkXFAxDDVxfElRCBQACTgYXUAoVEg0LSEAQUV5MHAILThsAAAcLBwwLAw==","vs_hr":"R1BZAwwdDV9ZXENZF0lOHAwCBQQYAQ==","vs_bp":"QVlBUwYZSEAQBQINHwgmCQ==","vs_rr":"QVxZAwwdDV9ZXENZFw==","vs_temp":"Q15XSkks","vs_spo2":"SVBZAwwdTldeRg==","vs_wt":"IxwYEQUKDV1GV0QNBg0LTgUEAxxZCgwOXw==","vs_ortho":"PgdZAAAIQ1tWW1VMHBFOARsRGAcKBwgbRFEQUV5MHAILQA==","pe_skin":"JwkLHkkOQ1YQVkRUXEUjGwoKBRtZHgwCT0BRXFNeUggBBxoRUAkXF0kfRFxbHBZjEwwCHUkLHxoUEgVB","pe_card":"Ig0eBgUOXxJCU0JIUgQACkkXGBENGwRBDXxfEltYAAgbHEdFOh0eBgUOXxJGV1hCBxZOHhsAAxsMAQxPQ11EElNBFxMPGgwBXg==","pe_lung":"MwQcEhtPWV0QU0NeERACGggRGQcXXUkhQkBdU1oNBQocBUkKFkgbAQwOWVpZXFED","pe_edema":"PgdZFg0KQFMeEnVMAgwCAggXCUgLFg8GQV4QR1hJFxdOGh4KUBscEAYBSUEe","pe_abd":"IwcfB0VPQ11eRlNDFgAcQkkLH0gWAQ4OQ11dV1FMHhxA","pe_thy":"JAAAAQYGSRJeXUINFwsCDxsCFQxVUwcADVxfVkNBF0lOAAYLBA0XFwwdAw==","na":"QVxJUwQqXB18","k":"REZLUwQqXB18","cl":"QVhKUwQqXB18","hco3":"Ql1ZHiweAn4=","bun":"QVxZHg5ASX4=","cr":"QEZAUwQIAlZ8","glu":"SFBZHg5ASX4=","ca":"SUZNUwQIAlZ8","phos":"Q0ZNUwQIAlZ8","mg":"QkZJUwQIAlZ8","alb":"REZKUw5ASX4=","osm":"QlBBUwQgXl8fWVE=","lip":"JAcNEgVPTlpfXlNeBgAcAQVFQV9BX0kjaX4QCwABUi0qIklQRERZBxsGSl5JUVNfGwELHUlUQVBZHg5ASX4=","ck":"SV5ZJkYj","hgb":"QVtXS0kIAlZ8","hct":"RFlZAwwdTldeRg==","mcv":"SFFZFSU=","rdw":"QVtXQkkfSEBTV1hZ","wbc":"RkZBUx0HQkdDU1hJXQgHDRsKHAENFhtDDVxfQFtMHkUKBw8DFRocHR0GTF4=","plt":"QlxBUx0HQkdDU1hJXQgHDRsKHAENFhs=","retic":"QUZLUxkKX1FVXEI=","smear":"PgcLHgYMVEZZURZDHRcDAQoNAgcUGgpPX1dUElVIHgkdQEkrH0gYEQcAX19RXhZLHRcDHUc=","ferr":"SFxZHQ5AQH4=","iron":"SV5ZHgoIAlZ8","tibc":"Q1lLUwQMSh1Ufg==","tsat":"Q1lZAwwdTldeRg==","tsh":"QUZAUwQmeB18","ft4":"QUZLUwcIAlZ8","tpo":"BQYdFhtPHAIQe2MCHyk=","cort":"QVxXQUkCTlUfVno=","acth":"QlBZAw5AQH4=","aldo":"QVpZHQ5ASX4=","renin":"QUZNUwcIAl98HV5f","pth":"Q1BZAw5AQH4=","a1c":"RUZLUxkKX1FVXEI=","cpep":"QUZAUwcIAl98","vitd":"RFpZHQ5AQH4=","lhfsh":"JwENGwABDUBVVFNfFwsNC0kXEQYeFkkJQkAQU1FIUgQACkkVGAkKFkc=","sexh":"JwENGwABDUBVVFNfFwsNC0kXEQYeFkkJQkAQU1FIUgQACkkWFRBX","cyc":"Ig0eBgUOXxJAU0JZFxcAQkkLH0gaGwgBSlcQQFNdHRcaCw1L","ecg":"PgcLHggDDUFZXENeUhcGFx0NHUZZPQYdQFNcEldVGxZATicKUDstUwYdDWYQRVdbF0UPDAcKAgUYHwAbVBwQY2JOUlFfXEkIA0Y=","echo":"NQIcEB0GQlwQVERMEREHAQdFRlpZAwwdTldeRhgNPAocAwgJUAsREgQNSEAQQV9XFxZATicKUB4YHx8KDVNSXFlfHwQCBx0cXg==","bnp":"Q1BZAw5AQH4=","trop":"BQYdFhtPGRJeVRlh","map":"SFFZHgQnShJdV1dDXkUeGwUWFUgJAQwcXkdCVxYZRkUDAyEC","jvp":"RUgUHiEI","amb":"PgcLHggDDVZRS0JEHwBODx8AAgkeFkkYREZYElNVAgANGgwBUAYQFAEbDVZZQkZEHAJA","cap":"MwkJGgUDTEBJEl5UFhcBHR0EBAEaU1paDV9delENExcaCxsMEQRZFgcLDVNeVhYcREUDAyECUB4cHQYaXhJVXFIDUjUCDxoIEUgaHAUDQltUElleHwoaBwpFQl1ZHgQnShwQe1hZFxcdGgARGQkVUwEWSUBfQUJMBgwNTllFHQUxFEdPZFxEV0ReBgwaBwgJUAsWHwUARFYQXUVAHREHDUlVUAUUOw5B","ph":"R0ZNQw==","pco2":"RFhZHgQnSg==","po2":"SVxZHgQnSg==","abg_hco3":"QlxZHiweAn4=","lact":"QUZIUwQCQl4ffg==","fev1":"SV5ZAwwdTldeRhZdAAAKBwoRFQw=","fvc":"SVBZAwwdTldeRhZdAAAKBwoRFQw=","ratio":"QEZBQg==","dlco":"SVpZAwwdTldeRhZdAAAKBwoRFQw=","walk":"RFBJUwQKWUBVQRoNAQQaGxsEBAEWHUkcWVNJV1INExFOV15FAA0LEAwBWRw=","ua":"MwQcEhtPVFdcXllaXEU+HAYRFQEXUwcKSlNEW0BIXEUpAhwGHxscUwcKSlNEW0BIXEUlCx0KHg0KUwcKSlNEW0BIXEUsAgYKFEgXFg4OWVtGVxgNPApODQwJHBtZHBtPTlNDRkUD","usg":"QUZJQlE=","uosm":"RlpJUwQgXl8fWVE=","una":"RlxZHiweAn4=","uk":"RVBZHiweAlZRSw==","acr":"RkgUFEYI","egfr":"Hx4cAUlWHRJdfhlAGwtBX0dSQ0gUQQ==","fobt":"Pg0eEh0GW1c=","celiac":"BQYdFhtPHxJlHVth","scope":"PgdZHhwMQkFRXhZBFxYHAQdFGQwcHR0GS1tVVhZEHEUaBgxFFRAYHgABSFYQQVNKHwAAGhpL","dtr":"QkgJHxwcDVNeVhZeCwgDCx0XGQtZBAAbRRJeXURAEwlOHAwJERAYBwAAQxw=","cn":"MxoYHQAOQRJeV0RbFxZOGh4KUBwRAQYaSloQRkFIHhMLTgALBAkaB0c=","sens":"PAEeGx1PWV1FUV4BUhMHDBsEBAEWHUVPTFxUEkZfHRUcBwYGFRgNGgYBDVteRldOBks=","hrv":"PgcLHggDDUFZXENeUgQcHAEcBAAUGghPWltEWhZJFwAeTgsXFQkNGwABShw=","str":"RUgWFUlaDVteEldBHkUaCxoRFQxZFBsAWEJDHA==","grip":"MRxZBwEKDVdIQlNOBgAKThkAAgscHR0GQVcQVFlfUgQJC0kEHgxZAAwXAw==","emg":"PgcLHggDDVteQVNfBgwBAAgJUAkaBwAZREZJEldDFkUDAR0KAkgMHQAbDUJfRlNDBgwPAhpL"};
+var VARIANTS = [{"id":"A","who":"Marisol V., 34","role":"warehouse order picker","beats":["MRoLGh8KSRJEW0RIFktOPQgcA0gKGwxPTlNeElVBGwgMTgYLFUgfHwAIRUYQXVANAREPBxsWUAkNUx4AX1kQUFNLHRcLThoNFUgREhpPWV0QQUJCAkUPAA1FEhocEh0HSBw=","Ig0JHBsbXhJTQFdbGwsJTggLFEgaGwwYRFxXEl9OF0UPAgVFFAkAXUknTEEQUFNIHEUaDwIMHg9ZGgsaXUBfVFNDUgMBHEkHEQsSUxkORFwQX1leBkUKDxAWUA4WAUkODUtVU0QD","PgdZAB4KQV5ZXFENEwsXGQEAAg1XUzoOVEEQQV5IUgwdTg0XGQYSGgcIDV9fQFMNBQQaCxtFBAAYHUkaXkdRXhZPFwYPGxoAUBsRFkkJSFdcQRZaExcDTggLFEgNGwAdXkZJEldZUhIBHAJL","PgcNFhpPRVdCEl5IExcaThkKBQYdGgcIDVNEEkRIARFOBwdFBAAcUwwZSFxZXFEDUisBThkEHBgQBwgbRF1eElJYAAwACUkWHA0cA0c=","PAEeGx1PRVdRVlNJUhIGCwdFAwAcUxobTFxUQRZYAkUIDxoRUAcXUx0HSBJcXVdJGwsJTg0KEwNXUyAbDUJRQUVIAUUHAEkEUA4cBEkcSFFfXFJeXA==","PA0eAEkJSFdcEl5IExMXTggDBA0LUx0YSFxESxZAGwsbGgwWUAcXUx0HSBJWXllCAEtOKRsMAEgQAEkJRFxVHBZ/FwYBGAwXCUgQAEkcQV1HHA==","IA0LGgYLXhJYU0BIUgcLCwdFGA0YBRBPS11CEkJaHUUXCwgXA0ZZIAEKDVNDQUNAFwFOGgEEBEgOEhpPQ11CX1dBUgMBHEkNFRpX","Ig0JHBsbXhJeXRZOGgQACQxFGQZZEBAMQVcQXlNDFREGQkkHBRxZAAYORlteVRZZGhcBGw4NUBgLHB0KTkZZXVgNHQtOGgEAUA4QARobDUZHXRZJExwdQA==","IxwWHAVPRVNDElpCHQ4LCkkBERoSUwYBDVNeVhZCFANATjoNFUgNGwYaSlpEEl9ZUhIPHUkRGA1ZGhsAQxJAW1pBAUUPTg8XGQ0XF0kITERVEl5IAElODBwRUBsRFkkBSERVQBZZHQoFTh0NFQVX","PgkQH0kNSFZDEldfF0UeDwUAXkgqGwxPT0BZXFFeUgROHgEKBAdZHA9PRVdCEkJCHAIbC0kJHwcSGgcIDUFdXVlZGkUPAA1FAwAQHRBB","MgQWHA1PXUBVQUVYAABOBxpFHwZZBwEKDV5fRRZeGwELTgYDUAYWAQQOQRJRXFINGgAcThkQHBscUxkdSEFDR0RIUgwdTh4MFA1X","PgdZERsKTEZYXlNeAQsLHRpFERxZAQwcWRwQYVdUAUUdBgxFEwkXUx0OQVkQW1gNFBACAkkWFQYNFgcMSEEQV0BIHEUZBgwLUBsRFkkJSFdcQRZaHRcdGkc=","PxAAFAwBDUFRRkNfExEHAQdFGRtZHQYdQFNcElNbFxcXTh0MHQ1ZGh1PREEQX1NMARAcCw1JUB8RGgoHDUFYVxZLGwsKHUkGHwYfBhoGQ1Ue","JRoQHQxPQV1fWUUNHAocAwgJUBwWUwEKXxwQYV5IUg0PHUkLFR4cAUkHTFYQQUFIHgkHAA5FHw5ZBwEKDVRRUVMNHRdOCAwABEY=","NgEXEgVPW1tDW0IDUjYGC0kSEQYNAEkbQhJbXFlaUhIGF0kNFRpZHBEWSldeEkRIEwEHAA5FBwkKUwgDWlNJQRZLGwsLTgADUBsRFkkYTEEQQV5CABFOAQ9FEhocEh0HAw=="],"r":{"hx_chief":"OUgYHkkbREBVVhZMHglOGgEAUBwQHgxPTFxUEn8NFQAaTgYQBEgWFUkNX1dRRl4NEQQcHBAMHg9ZEQYXSEEQexZYAQAKTh0KUAsYARsWDVRZXFMD","hx_time":"NxoYFxwOQRJfRFNfUgQMARwRUA0QFAEbSFdeEltCHBEGHUdFJwcLAAxPRFwQRl5IUgkPHR1FBAALFgxB","hx_meds":"OQoMAxsAS1deEgAdQkUDCUkIHxsNUw0OVEEQVFlfUgkBGUkHEQsSUxkORFweEnhCUhUcCxoGAgEJBwAAQxJdV1JEEQwACxpL","hx_diet":"IwMQAxpPT0BVU11LExYaQEkmHw4fFgxPTFxUElcNAQQACh4MEwBZEh1PQUdeUV4DUjMLHBBFHAENBwUKDUBVVhZAFwQaQEkmGA0OAEkGTlcQUVlDAREPAB0JCUY=","hx_social":"JA0XUwEAWEAQQV5EFBEdTgYLUAAcAUkJSFdEHBZ+HgALHhpFFgEPFkkbQhJDW04NGgobHBpLUCYWUx0AT1NTUVkD","hx_fam":"PQcNGwwdDVpRVhZMHAQLAwAEUAEXUxkdSFVeU1hOC0tOIAZFHxwRFhtPRlxfRVgNGwkCAAwWA0Y=","hx_ros":"PgdZFQwZSEAeEnhCUgYGCxoRUBgYGgdBDXpVU0BUUggLABoRAh0YH0kNQVdVVl9DFUtOKggXG0gKBwYAQUEQW1hZFxcDBx0RFQYNHxBB","vs_hr":"QVhNUxkKXxJdW1hYBgBCThsAFx0VEhs=","vs_bp":"QVhPUwYZSEAQBAQNHwgmCQ==","vs_rr":"QVBZAwwdDV9ZXENZFw==","vs_spo2":"SVBZAwwdTldeRg==","vs_wt":"NAcOHUldDVlXEllbFxdOD0kcFQkLX0kaQ1teRlNDBgwBAAgJ","vs_ortho":"IxEKBwYDRFEQVFdBHhZOX11FHQUxFEkAQxJDRldDFgwACUVFGA0YAR1PX1NEVxZfGxYLHUkRH0hIQVtB","pe_skin":"MwcXGRwBTkZZRFdIUhUPAgxLUCYYGgVPT1dUQRZdEwkLTh4MBABZFggdQUsQQUZCHQsHAA5LUDwWHQ4aSBJDX1lCBg1ODwcBUA8VHBocVBw=","pe_card":"JAkaGxAMTEBUW1UDUjYBCB1FAxEKBwYDRFEQVFpCBUUDGxsIBRpZEh1PWVpVElpIFBFOHR0AAgYYH0kNQkBUV0QDUi8bCRwJERpZBQwBQkdDEkZfFxYdGxsAUAYWAQQOQRw=","hgb":"SUZIUw5ASX4=","hct":"QlBZAwwdTldeRg==","mcv":"R1lZFSU=","rdw":"QVBXQUkfSEBTV1hZ","plt":"RF5BUx0HQkdDU1hJXQgHDRsKHAENFhs=","retic":"QEZBUxkKX1FVXEI=","smear":"PQEaAQYMVEZZURZFCxUBDQEXHwUQEEkdSFYQUVNBHhZOGQARGEgUEhsESFYQRFdfGwQaBwYLUAEXUxoGV1cQU1hJUhYGDxkAXkg2EAoOXltfXFdBUhULAAoMHEgaFgUDAw==","ferr":"RkgXFEYCYQ==","iron":"QlBZHgoIAlZ8","tibc":"RFBPUwQMSh1Ufg==","tsat":"RkgJFhsMSFxE","fobt":"IAcKGh0GW1cQXVgNBhIBTgYDUBwRAQwKDVFRQFJe","scope":"JB8WUxoHTF5cXUENFQQdGhsME0gYHR0dTF4QV0RCAQwBABpFBwENG0kdSFFVXEINEAkLCw0MHg9ZAB0GSl9RRlcDUiYBAgYLUAYWAQQOQRw=","ecg":"IwEXBhpPWVNTWk9OExcKBwhFERxZQllbAxJ/Rl5IABIHHQxFHgcLHggDAw==","map":"R19ZHgQnShJdV1dDXkUeGwUWFUgJAQwcXkdCVxYZRkUDAyEC","cyc":"MxEaHwxPSERVQE8NQFNOCggcA0RZAAwZSFwQVldUAUUBCEkDHAcOX0kcQlNbW1hKUhEGHAYQFwBZAxsAWVdTRl9CHEUBAEkBEREKUwYBSBJRXFINBhIBQA==","po2":"SV5ZHgQnSg==","ph":"R0ZNQg==","pco2":"Q1BZHgQnSg=="}},{"id":"B","who":"Dana W., 47","role":"bookkeeper","beats":["IwkAAEkcRVcQW0UNEQoCCkkSGA0XUwwZSEBJXVhIUgACHQxFGRtZEAYCS11CRldPHgBCTggLFEgKGwxPRVNDElRIFwtOHQUAFRgQHQ5PWVdeEl5CBxcdTggLFEgOEgIGQ1UQRl9fFwFA","Jw0QFAEbDVtDEkNdUhYLGAwLUAMQHwYIX1NdQRZEHEULBw4NBEgUHAcbRUEQRV9ZGkUAAUkGGAkXFAxPRFwQRV5MBkUdBgxFFQkNAEc=","NgkaFkkDQl1bQRZdBwMIF0kMHkgNGwxPQF1CXF9DFUtOPQEAUBsYChpPRVdCEkREHAIdTggXFUgNGg4HWRJSR0INGgAcTggLGwQcAEkLQhJeXUINAgwaQA==","Ig0KBwABShJYV1dfBkUcDx0AUAEKUwABDUZYVxZLGwMaBwwWXkgqGwxPRVNDElhIBAAcTgsAFQZZEgdPTEZYXlNZF0s=","Ig0fHwwXDUZVQUJEHAJOHQEKBxtZEkkBQkBdU1oNEQoAGhsEExwQHAdPTFxUElcNAQkBGUVFGAkXFAABShJCV0JYAAtA","PR0KEAUKXhJRUV5IUgQIGgwXUAcLFwABTEBJEldOBgwYBx0cXkgqGwxPXkZfQkZIFkUGCxtFBwkVGAABShJXQFlYAkUaGQZFHQcXBwEcDVNXXRg=","Pg0aGEkJSFdcQRZLBwkCTh4NFQZZAAEKDUFHU1pBHRIdQEktFRpZAAAcWVdCEl5MAUUPAEkEBRwWGgQCWFxVEkJFCxcBBw1FEwcXFwAbRF1eHA==","MxEaHwwcDVpRRFMNEAANAQQAUAAcEh8WDVNeVhZOHgodCxtFBAceFh0HSEAQXUBIAEUaBgxFHAkKB0kWSFNCHA==","MwcXAB0GXVNEV1INHwodGkkBEREKUw0KXkJZRlMNAgkLAB0cUAcfUw8GT0BVHBZsAhULGgARFUgQAEkGSxJRXE9ZGgwACUkBHx8XXQ==","IwMQHUkGXhJUQE8NEwsKTgoKHwRXUyEOREAQW0UNBg0HAAcMHg9ZEh1PWVpVEllYBgAcTgwcFQoLHB5B","MgQWHA1PXUBVQUVYAABOBxpFHQEVFwUWDVdcV0BMBgAKTh4MBABZEkkBTEBCXUENAhACHQxFABocABoaX1ce","IwcdGhwCDVpRQRZJAAwIGgwBUAwWBAdPQlwQV0BIABxOHggLFQRXUzoHSBJYU0UNHAoaTgoNEQYeFg1PRVdCElBBBwwKTgALBAkSFkc=","PgdZERsKTEZYXlNeAQsLHRpLUDsRFkkcTEtDEkJFF0UaBxsAFAYcABpPREEQXFlZUgROAhwLF0gNGhsKSVxVQUUBUgwaTgAWUAlZBAEAQVcQUFlJC0UaBxsAFAYcABpB","JRoQHQxPQkdEQkNZUgwdTgcKAgUYH0kOQ1YQQV5IUgwdTgcKBEgNGwAdXkZJHA==","NgEXEgVPW1tDW0IDUjYGC0kSEQYNAEkbQhJbXFlaUhIGF0kNFRpZAAYLREddEkFMAUUCAR5FGQ5ZAAEKDUVRQRZDHRFOCgwNCQwLEh0KSRw="],"r":{"hx_chief":"OUgYHkkMQl5UHhZkUgQDTgwdGAkMAB0KSR4QU1hJUixODwRFFwkQHQABShJHV19KGhFOGQARGAcMB0kKTEZZXFENHwocC0c=","hx_time":"IwQWBEkAW1dCEldPHRAaTghFCQ0YAUVPWl1CQVMNAQwADQxFBAAcUxofX1teVRg=","hx_meds":"PgcXFkdPeVNbV0UNE0UDGwURGR4QBwgCRFwQX1leBkUKDxAWXg==","hx_diet":"Ig0eBgUOXxJdV1dBAUlOAAZFEwAYHQ4KDVteEkZCABEHAQcWXkg/HxwGSRJRUFlYBkVfQFxFHAENAQwcAw==","hx_social":"NA0KGEkYQkBbHBZ+HgALHhpFHgEXFkkbQhJEV1gNGgobHBpFEQYdUxobRF5cEkJEAAAKQEkrH0gNHAsOTlFfEllfUgQCDQYNHwRX","hx_fam":"IwEKBwwdDUVZRl4NExAaAQAIHR0XFkkbRUtCXV9JUgEHHQwEAw1XUyQAWVpVQBZaGxEGTh8MBAEVGg4AAw==","hx_ros":"MwcVF0kGQ0ZfXlNfEwsNC0VFEwcXAB0GXVNEW1lDXkUKHBBFAwMQHUVPRVdRRE8NAgAcBwYBA0RZHhwcTl5VEldOGgwACUVFGAcYARoKDURfW1VIXA==","vs_hr":"RVpZAwwdDV9ZXENZF0lOHAwCBQQYAQ==","vs_bp":"QVtBUwYZSEAQCg4NHwgmCQ==","vs_temp":"Q15XQkks","vs_wt":"JRhZREkEShJZXBZIGwIGGkkIHwYNGxpPWltEWllYBkUKBwwRERoAUwoHTFxXVw==","pe_skin":"NBoAX0kMQl1cHhZOHQQcHQxLUDwRGgcBRFxXEllLUhEGC0kJERwcAQgDDVdJV1RfHRJATicKHhgQBx0GQ1UQQkNLFAwACxoWUAcfUx0HSBJWU1VIUgQACkkNEQYdAEc=","pe_thy":"NAEfFRwcSF5JElNDHgQcCQwBXEgfGhsCARJeXVhZFwsKCxtFBAAAAQYGSRJHW0JFHRAaTg0MAwsLFh0KDVxfVkNBF0s=","pe_edema":"PgcXAwAbWVteVRZLBwkCAAwWA0gWFUkbRVcQWldDFhZATicKUBgQBx0GQ1UQXVNJFwgPTgYDUBwRFkkOQ1lcV0UD","dtr":"QkgJHxwcDVFfXEJfEwYaBwYLUB8QBwFPQFNCWVNJHhxOCgwJEREcF0kdSF5RSldZGwoAThkNERscXQ==","na":"QVtIUwQqXB18","cl":"SV5ZHiweAn4=","osm":"Ql9LUwQgXl8fWVE=","ck":"RFBLUzxAYQ==","lip":"JAcNEgVPTlpfXlNeBgAcAQVFQl5BX0kjaX4QAw4fXkUmKiVFRFBVUx0dRFVcS1VIAAwKCxpFQVFJUwQIAlZ8","tsh":"RFpXRUkCZGcffg==","ft4":"QEZNUwcIAlZ8","tpo":"RlxJUyA6Al98","hgb":"QVlXR0kIAlZ8","hct":"Q1xZAwwdTldeRg==","mcv":"SVpZFSU=","rdw":"QVtXR0kfSEBTV1hZ","retic":"QEZAUxkKX1FVXEI=","smear":"PgcLHgYMVEZZURZDHRcDAQoNAgcUGgpPX1dUElVIHgkdQEkrH0gYEQcAX19RXhZLHRcDHUc=","ecg":"IwEXBhpPT0BRVk9OExcKBwhFERxZRltBDX5fRRZbHQkaDw4AUAEXUx0HSBJcW1tPUgkLDw0WXg==","uosm":"Q1xJUwQgXl8fWVE=","una":"RF5ZHiweAn4=","usg":"QUZJQls=","str":"REgJHxwcDV1WEgMNAhcBFgAIEQQVCkVPGBJfVBYYUgEHHR0EHAQAXQ==","grip":"Mg0VHB5PWVpVEkJIHBEGThkAAgscHR0GQVcQVFlfUgQJC0kEHgxZAAwXAw==","cyc":"MxEaHwwcDVdGV0RUUldcTg0ECRtZBAAbRRJYV1dbC0UIAgYSUA4WAUkcREoQVldUAUs=","lhfsh":"NgcVHwAMQVcQQUJEHxACDx0MHg9ZGwYdQF1eVxYaXFdOJzxKPERZHxwbSFteW0xEHAJOBgYXHQcXFklaAwMQe2MCPks=","cort":"QVlXS0kCTlUfVno=","acth":"QlpZAw5AQH4="}},{"id":"C","who":"Theo G., 19","role":"community college student and part time barista","beats":["IwkAAEkHSBJZQRZJAAwABQALF0gaHAccWVNeRlpUUgQACkkQAEgNGxsKSBJfQBZLHRAcTh0MHQ0KUwhPQ1tXWkINBgpOGxsMHgkNFkc=","OAkKUwUAXkYQV19KGhFOBQAJHw8LEgQcDVteEkVECkUZCwwOA0gOGwADSBJVU0JEHAJOAwYXFUgNGwgBDUdDR1dBXA==","PQcMBwFPREEQVkRUXkULFwwWUAQWHAJPXkdeWVNDXkUPAA1FGA1ZGhpPWVpZQEVZC0ULGAwLUBoQFAEbDVNWRlNfUgEcBwcOGQYeXQ==","Ng0cHxpPWldRWRZMHAFOD0kJGRwNHwxPWVteVVpUUgwATh0NFUgfGgcISEBDHBZjHUUIAQoEHEgOFggEQ1dDQRg=","MhocEh0HRFxXEl9eUgELCxlFEQYdUxobSFNUSxZfExEGCxtFBAAYHUkJTEFEEldDFkUdBggJHAcOXUknSBJUXVNeUgsBGkkDFQ0VUwsdSFNEWlpIARZA","MxoYHhkGQ1UQW1gNBg0LTgoEHB4cAEkOWRJeW1FFBktOPR0XFQYeBwFPWVdDRl9DFUUHHUkLHxoUEgVB","MQZZEhwBWRJYU0UNEwtODxwRHwEUHhwBSBJEWk9fHQwKTgoKHgwQBwAAQxwQfFkNFAQDBwUcUAAQAB0AX0sQXVANFgwPDAwRFRtX","PgdZEAEOQ1VVEl9DUgkHDAABH0gWAUkdSEJCXVJYEREHGAxFAxEUAx0AQEEQQFNdHRcaCw1L","MRgJFh0GWVcQW0UNGgwJBkVFGQYNEgIKDVtDEl5EFQ1CTggLFEgRFkkGXhJDRl9BHkUCARoMHg9ZBAwGSlpEHA==","JgEKGgYBDVBcR0ReUgQACkkGHA0YARpPQkRVQBZZGgBODQYQAhscUwYJDUZYVxZJExxA","MgQWHA1PXUBVQUVYAABOHBwLA0gVHB5PWltEWhZMUgMPHR1FAB0VAAxBDXxfEllIFgADD0kEHhEOGwwdSBw=","MhocEh0HDVpRQRZMUhYZCwwRXEgKHAUZSFxEElpEGQBOHQQAHARZHQYbSFYQU0INBg0LTgsAFBsQFwxB","PxAAFAwBDUFRRkNfExEHAQdFGRtZHQYdQFNcHBZuExcMAQdFFAEWCwALSBJZQRZBHRJOAQdFFR4cARBPQFdRQUNfFwgLAB1L","JRoQHQxPQkdEQkNZUgwdTgEMFwBZEgcLDUJRXlMBUgQACkkNFUgKEhAcDVtEEkVCHwAaBwQAA0gVHAYEXhJDRl9OGRxOAQdFBAAcUxoKTEYe","NgEXEgVPW1tDW0IDUi0LTh4EHhwKUx0ADVleXUENBQ0XTgEAUB8YAEkDQkFZXFENBQAHCQERUB8RGgUKDVdRRl9DFUUDARsAUBwREgdPSERVQBg="],"r":{"hx_chief":"OUgaEgcBQkYQQUJCAkUKHAALGwEXFEkYTEZVQBoNO0UPA0kQAEgYHwVPQ1tXWkINAgALBwcCXEgYHQ1PZBJRXxZBHRYHAA5FBw0QFAEbAw==","hx_time":"IwEBUx4KSFlDHhZMEQYLAgwXERwQHQ5PQkRVQBZZGgBOAggWBEgNFgdPSVNJQRg=","hx_meds":"PgcXFkdPY10QQUJIAAoHChpL","hx_diet":"NQkNGgcIDV9fQFMNBg0PAEkQAx0YH0dPa11FQBZZHUUIBx8AUAQQBxsKXhJfVBZaExELHEkEHgxZABkAX0ZDElJfGwsFTg0EGQQAXQ==","hx_social":"Nh0VH0kbRF9VEkVZBwELAB1JUB8WAQIcDVdGV1hEHAIdQEkrH0gNHAsOTlFfHBZiEQYPHQAKHgkVUwgDTl1YXVoD","hx_fam":"MR0XB0kYREZYEldYBgoHAwQQHg1ZBwEWX11ZVhZJGxYLDxoAXkg3HEkLRFNSV0JIAUUHAEkRGA1ZFQgCRF5JHA==","hx_ros":"IAcVChwdRFMcEkZCHhwKBxkWGQlVUxkAQUtAWldKGwRCTh4AGQ8RB0kDQkFDHhZPHhAcHAwBUB4QAAAAQx4QXFdYAQAPQkkLH0gfFh8KXxw=","vs_hr":"QVlBUxkKXxJdW1hYBgBCThsAFx0VEhs=","vs_bp":"SVBZHB8KXxIFChZAHy0J","vs_rr":"Ql5ZAwwdDV9ZXENZF0lOCgwAAEgYHQ1PWFxcU1RCBxcLCg==","vs_temp":"Q15XS0ks","vs_spo2":"SVFZAwwdTldeRg==","vs_wt":"NAcOHUlXDVlXEl9DUhYHFkkSFQ0SAA==","vs_ortho":"IxEKBwYDRFEQVFdBHhZOXFtFHQUxFEkAQxJDRldDFgwACUkSGRwRUwhPX1tDVxZEHEUGCwgXBEgLEh0KDUZfEgceREs=","pe_skin":"NBoAUx4GWVoQQFNJBwYLCkkRBRoeHBtBDX9FUVlYAUUDCwQHAgkXFhpPSUBJHBZ+BQALGkkEEw0NHAcKDV1UXUNfUgoATh0NFUgbAQwOWVoe","pe_lung":"MwQcEhtBDXZVV0YNAAAJGwUEAkgLFhofREBRRl9CHBZOGQARGAcMB0kOTlFVQUVCABxOAxwWEwQcUxwcSBw=","na":"QVpAUwQqXB18","k":"RUZNUwQqXB18","cl":"SV5ZHiweAn4=","hco3":"QVxZHiweAn4=","bun":"QlBZHg5ASX4=","cr":"QUZLUwQIAlZ8","glu":"RFlLUwQIAlZ8","osm":"Q1hPUwQgXl8fWVE=","phos":"QkZLUwQIAlZ8","a1c":"QVpXQkkfSEBTV1hZ","cpep":"QEZLUwcIAl98","ph":"R0ZLRQ==","pco2":"Ql9ZHgQnSg==","po2":"QVhLUwQCZVU=","abg_hco3":"QVtZHiweAn4=","lact":"QUZPUwQCQl4ffg==","ua":"NwQMEAYcSBIEEkZBBxZATiIABAcXFhpPQVNCVVMDUjUcAR0AGQZZBxsOTlceEnhCUgYLAgUWUAcLUwoOXkZDHA==","usg":"QUZJQFs=","uosm":"RFpJUwQgXl8fWVE=","una":"RVpZHiweAn4=","egfr":"SFBZHiVAQFteHQcDRVZOA1s=","ecg":"IwEXBhpPWVNTWk9OExcKBwhFERxZQlhXAxJgV1dGFwFOOkkSER4cAEkGQxJEWlMNAhcLDQYXFAEYH0kDSFNUQRg=","hgb":"QV1XRUkIAlZ8","hct":"RF9ZAwwdTldeRg==","wbc":"QVtXQUkbRV1FQVdDFkoDBwoXHwQQBwwdDUVZRl4NHAAbGhsKAAAQH0kfX1dUXVtEHAQADQw=","tsh":"QkZNUwQmeB18","ft4":"QUZIUwcIAlZ8","tpo":"QVxLUyA6Al98","sens":"PAEeGx1PWV1FUV4NGwsaDwoRXkgvGgsdTEZZXVgNHwwCCgUcUBocFxwMSFYQU0INBg0LTg4XFQkNUx0ASBw=","map":"R1lZHgQnShJdV1dDXkUeGwUWFUgJAQwcXkdCVxYZQkUDAyEC"}},{"id":"D","who":"Ruben A., 61","role":"retired mail carrier","beats":["Ng0cHxpPS15RRhZMHAFOBx0GGBFXUzoOVEEQRl5IUgwaDQEMHg9ZGhpPWl1CQUINExFOAAACGBxZEgcLDUZYV0RIUgwdTgcKUBoYAAFB","MRgJFh0GWVcQW0UNFgoZAEkEHgxZFQYASRJEU0VZFxZOAwwREQQVGgpBDWVVW1FFBkUHHUkWHAcOHxBPS1NcXl9DFUs=","IB0fFRBPTEBfR1hJUhEGC0kACQ0KUwABDUZYVxZAHRcABwcCUAkXF0kCRF5UEkZEBhEHAA5FERxZBwEKDVNeWVpIAUUMF0kABg0XGgcIAw==","PgdZAwgDXVtEU0JEHQsdQEk1HxwYABoGWF8QWldeUgcLCwdFFBoQFR0GQ1UQR0YNHQtOHAYQBAEXFkkfTFxVXkUNFAocTh0SH0gAFggdXhw=","PgdZFQYMTF4QXFNYAAoCAQ4ME0gKCgQfWV1dQRgNIQkLCxkWUBgWHBsDVBJHW0JFUhcLHR0JFRsKUwUKSkEe","PR0KEAUKDVFCU1tdAUUHAEkRGA1ZEAgDW1dDEkVIBAAcDwVFHgEeGx0cDVMQRVNIGUs=","PgdZBwEWX11ZVhZeCwgeGgYIA0ZZOwxPQFdeRl9CHBZODwdFHwQdUwcAWVcQU1RCBxFODQgJEwEMHkkNSFteVRZBHRJA","PgdZAQwfX11UR1VZGxMLTgoKHRgVEgABWUEeEnpEEAwKAUkXFQwMEAwLDV1GV0QNAQAYCxsEHEgAFggdXhw=","PgkMAAwODVteEkJFF0UDARsLGQYeAEkbRVNEEl9AAhcBGAwWUAkfBwwdDVpVElNMBhZA","IwMQHUkGXhJAU1pIUhIHGgFFEUgKEgUDQkUQR1hJFxcaAQcAXkg3EgADDVBVVkUNAgQCC0c=","MgQWHA1PXUBVQUVYAABOBggWUAYcFg0KSRJEWkRIF0UDCw0MEwkNGgYBXhJRXFINGxZOHR0MHARZEgsAW1cQRldfFQAaQA==","MhocEh0HRFxXEl9eUgsBHAQEHEgbBh1PRVtDElREEQQcDAYLERwcUwEOXhJSV1NDUgkBGUkKHkgcBQwdVBJAU1hIHks=","PgdZEAYaSloQXUQNBQ0LCxMAXkg2CxAISFwQQVdZBxcPGgAKHkgQAEkBQkBdU1oD","JRoQHQxPRVNDElRIFwtOCAYEHRFZGgdPWVpVEkJCGwkLGkkDHxpZEh1PQVdRQUINE0UXCwgXXg==","NgEXEgVPW1tDW0IDUi0LTh4EHhwKUx0ADVleXUENBQ0XTgEMA0gbHAcKXhJRQFMNEAAHAA5FEQ4fFgobSFYQUE8NE0UFBw0LFRFZAxsAT15VXxg="],"r":{"hx_chief":"OUgREh8KDVxfElNDFxcJF0VFFgcWF0kbTEFEV0UNHgwFC0kIFRwYH0VPTFxUEn8NGxENBkkEHARZHQAIRUYe","hx_time":"MxocFhkGQ1UQR0YNHRMLHEkRGBocFkkAXxJWXUNfUhwLDxsWXg==","hx_meds":"MQUVHA0GXVteVxoNHgwdBwcKABoQH0VPRUtUQFlOGgkBHAYRGAEYCQALSBwQfVVOExYHAQcEHEgQERwfX11WV1gNFAocTgILFQ0KXQ==","hx_diet":"IwUYHwVPTEJAV0JEBgBATjoEHBxZGwwOW0sQUVlDBAAABwwLEw1ZFQYASRwQc1RCBxFOX0kJGRwLFkkASxJWXkNEFks=","hx_social":"Ig0NGhsKSRwQfllaUgQNGgATGRwAXUkpQkBdV0QNAQgBBQwXXEgIBgAbDUZHV1hZC0UXCwgXA0gYFAZB","hx_fam":"NgkNGwwdDVpRVhZGGwEACxBFFgkQHxwdSBwQf1lZGgAcTgEEFEgRChkKX0ZVXEVEHQtA","hx_ros":"NgkNGg4aSB4QQkRYAAwaGxpJUAUcBwgDQVtTEkJMARELQkkLHwsNBhsGTB4QQFNeBgkLHRpFHA0eAEVPTFxbXlMNARILAgUMHg9X","vs_hr":"R15ZAwwdDV9ZXENZF0lOHAwCBQQYAQ==","vs_bp":"QV1BUwYZSEAQCwINHwgmCQ==","vs_wt":"NAcOHUlcDVlXEllbFxdOD0kcFQkL","pe_skin":"IAkVFkkYREZYEkVMHgkBGUkRHwYcXUkqVVFfQF9MBgwBABpFHwZZBwEKDVRfQFNMAAgdTh4MBAAWBh1PXUBZX1dfC0UcDxoNXg==","pe_edema":"JBoYEAxPWV0QXVhIUhUCGxpFAAENBwABShJfV1JIHwRODx1FEgcNG0kOQ1lcV0UNEBxOCx8AHgEXFEc=","pe_card":"Ig0eBgUOXxwQdFlYABEGTgEAERoNUxoAWFxUHBZnBwIbAggXUB4cHQYaXhJAQFNeARAcC0kEBEgNGwxPWEJAV0QNHgwDBx1L","na":"QVtBUwQqXB18","k":"RUZKUwQqXB18","cl":"QVhBUwQqXB18","hco3":"QVFZHiweAn4=","bun":"RFpZHg5ASX4=","cr":"QkZNUwQIAlZ8","ca":"SEZLUwQIAlZ8","phos":"RUZPUwQIAlZ8","alb":"Q0ZPUw5ASX4=","pth":"QlBBUxkIAl98","vitd":"QVBZHQ5AQH4=","glu":"QVhNUwQIAlZ8","a1c":"RUZBUxkKX1FVXEI=","hgb":"QVhXQUkIAlZ8","hct":"Q1lZAwwdTldeRg==","mcv":"SFFZFSU=","rdw":"QVtXS0kfSEBTV1hZ","retic":"QEZOUxkKX1FVXEI=","smear":"PgcLHgYMVEZZURZDHRcDAQoNAgcUGgpPX1dUElVIHgkdQEkqEwsYAAAAQ1NcElRYABdODQwJHEY=","ferr":"QVxBUwcIAl98","iron":"RlxZHgoIAlZ8","tibc":"QltBUwQMSh1Ufg==","tsat":"Ql9ZAwwdTldeRg==","egfr":"Ql5ZHiVAQFteHQcDRVZOA1s=","acr":"RlxJUwQIAlU=","ua":"IBoWBwwGQxICEkZBBxZATisJHwcdUwcKSlNEW0BIXEUhDQoEAwEWHQgDDVBCXVdJUhIPFhBFEwkKB0dPY10QUVNBHhZA","usg":"QUZJQlk=","uosm":"Q1pJUwQgXl8fWVE=","una":"RVBZHiweAn4=","ph":"R0ZKQA==","pco2":"Q1xZHgQnSg==","abg_hco3":"QVBZHiweAn4=","ecg":"IwEXBhpPX1pJRl5AXEUiCw8RUB4cHR0dRFFFXldfUg0XHgwXBBoWAwEWDVBJEkBCHhEPCQxFExoQBwwdRFMe","echo":"NQIcEB0GQlwQVERMEREHAQdFRVBZAwwdTldeRhZaGxEGTgoKHgscHR0dRFEQXlNLBkUYCwcRAgEaBgUOXxJYS0ZIABEcARkNCUgYHQ1PSVtRQUJCHgwNTg0cAw4MHQobRF1eHA==","bnp":"QVBPUxkIAl98","map":"QVlMUwQCZVUQX1NMHElOHhwJAw1ZAxsKXkFFQFMNRFFOAwQtFw==","aldo":"QVxZHQ5ASX4=","renin":"QEZAUwcIAl98HV5f","jvp":"SUgUHiEI"}},{"id":"E","who":"June H., 66","role":"retired school kitchen manager","beats":["MhocEh0HQVdDQRZaEwkFBwcCUBwWUx0HSBJdU19BEAoWQEk2EREKUxoHSBJYU0UNBgpOHR0KAEgREgUJWlNJEldDFkUCCwgLUAcXUx0HSBJWV1hOF0s=","PQcLHQABShJTXUNKGkUZBx0NUAsVFggdDUFAR0JYH0UDARoRUAwYChpPS11CEk9IExcdQEk2HQcSFg1PS11CElBCABEXThAAERoKX0keWFtEEldZUhYHFh0cXg==","PgdZAB4KQV5ZXFENEwsKTgcKUB8cGg4HWRJXU19DXEU9BgxFAwkAAEkcRVcQWldeUgkBHR1FBw0QFAEbDUVZRl5CBxFOGhscGQYeXQ==","PgdZAwgDXVtEU0JEHQsdQEktFQkLB0kdTEZVEkVEBhZOBwdFBAAcUwEGSloQV19KGhEHCxpFERxZAQwcWRw=","PgdZFwAVV1teV0VeXEU9BgxFAB0LAAwcDVpVQBZBGxUdTh4NFQZZAAEKDVdIWldBFxZOGQARGAcMB0kNSFteVRZZHQkKTh0KXg==","PA0eAEkbREBVElRIFAocC0kNFRpZERsKTEZYElJCFxZOAQdFFgQYB0kIX11FXFIBUgcbGkkLHxxZHAdPTBJYW1pBXA==","PgdZBwEWX11ZVhZeCwgeGgYIA0ZZPQZPWVddQlNfExEbHAxFGQYNHAUKX1NeUVMD","IAcKB0kCSFxfQldYAQQCQkkLH0gLFhkdQlZFUUJEBABODQYIAAQYGgcbXhw=","NQkNAEkcQFNcXhZAFwQCHUkHFQsYBhoKDVMQVENBHkUdGgYIEQsRUwQORldDEl9ZUg0PHA0AAkgNHEkNX1dRRl5IXA==","NgEXFAwdWVtAQRZMHAFOAgAVA0gVHAYEDVZFQV1UUgwATgoKHwRZBAwOWVpVQBgNPAQHAkkHFQwKUwgdSBJEWl9OGUs=","MgQWHA1PXUBVQUVYAABOBxpFHgcLHggDAxJ6R1FYHgQcTh8AHgcMAEkfX1dDQUNfF0UcBxoAA0gKHwAIRUZcSxZaGgAAThoNFUgaHBwIRUEe","MgEaEhsNQlxRRlMNGgQdTgsAFQZZGwAIRRJfXBZIBAAcF0kVEQYcH0kJQkAQS1NMABZODwcBUAYWEQYLVBJYU0UNFx0eAggMHg0dUwAbAw==","NRAJGhsOWVtfXBZZEw4LHUkEEgcMB0kbRUBVVxZZGwgLHUkEA0gVHAcIDVNDEl9DARUHHAgRGQcXUwgbDUZYVxZPFwEdBw0AXg==","JRoQHQxPQkdEQkNZUgwdTgcKAgUYH0dPflpVEl5MAUUACx8AAkgREg1PXUBfRlNEHEUHAEkRGA1ZBhsGQ1ce","NgEXEgVPW1tDW0IDUjYGC0kSEQYNAEkbQhJbXFlaUhIGF0kCGR4QHQ5PRVdCEltCAABOAREcFw0XUwYBTlcQX1dJF0UGCxtFAwQcFhkWAw=="],"r":{"hx_chief":"OUgLBgdPQkdEEllLUgQHHEkSEQQSGgcIDUZfEkJFF0UDDwAJEgcBUwgBSRJ5ElVCBwIGTgwTFRoAUxoGQ1VcVxZAHRcABwcCXg==","hx_time":"JA0XUxAKTEBDEllLUgYBGw4NXEgfGh8KDUtVU0ReUgoITgsXFQkNGwUKXkFeV0VeXkUZARsWFUgcEgoHDUVZXEJIAEs=","hx_meds":"JB8WUwABRVNcV0ReXkUAAR1FBRscF0kMQlxDW0VZFwsaAhBLUCYWUwYXVFVVXBZMBkUGAQQAXg==","hx_diet":"IwUYHwVPS0BVQ0NIHBFOAwwEHBtXUzoOVEEQV1dZGwsJTghFEgEeUwQKTF4QX1dGFxZODBsAERwRGgcIDVpRQFJIAEs=","hx_social":"Ig0NGhsKSRwQdFlfBhxOHggGG0gAFggdDUFdXV1EHAJOBgAWBAcLCkVPXEdZRhZeGx1OFwwEAhtZEg4AAxJ8W0BIAUUPAgYLFUY=","hx_fam":"NgkNGwwdDVpRVhZIHxUGFxoAHQlX","hx_ros":"MwALHAcGThJTXUNKGklOHRkQBB0UX0kKVVdCRl9CHAQCTgsXFQkNGwUKXkFeV0VeXkUZCwACGBxZHwYcXh4QXFkNFAAYCxtJUAYWUwoHSEFEEkZMGwtA","vs_hr":"SVpZAwwdDV9ZXENZF0lOHAwCBQQYAQ==","vs_bp":"QVpPUwYZSEAQBQ4NHwgmCQ==","vs_rr":"QlpZAwwdDV9ZXENZFw==","vs_spo2":"SFFZAwwdTldeRhZCHEUcAQYIUAkQAQ==","vs_wt":"NAcOHUlaDVlXEllbFxdOGh4KUBEcEhsc","pe_skin":"NB0KGBBPQ1NZXhZPFwEdQEkrEQEVAEkbRVtTWVNDFwFATicKUAsVBgsNRFxXHA==","pe_lung":"NAEUGgcGXlpVVhZPAAAPGgFFAwcMHQ0cDUZYQFlYFQ0BGx1LUDgLHAUAQ1VVVhZIChUHHAgRHxoAUxkHTEFVHBZoHAFOCxEVGRoYBwYdVBJHWlNICABATigGEw0KAAYdVBJdR0VOHgBOGxoAXkgpBhscSFYQXl9dUgccCwgRGAEXFEc=","pe_card":"NAEKBwgBWRJYV1dfBkUdARwLFBtXUyMaSkdcU0QNBAAAARwWUBgLFhocWEBVElhCAAgPAkkEBEgLFhobARJCW0VIAUUZBx0NUAsWBg4HAw==","hco3":"Q1pZHiweAn4=","cl":"SV1ZHiweAn4=","na":"QVxJUwQqXB18","k":"REZJUwQqXB18","hgb":"QVBXQUkIAlZ8","hct":"RVxZAwwdTldeRg==","mcv":"SFBZFSU=","retic":"QkZLUxkKX1FVXEI=","smear":"OQYaAQwOXldUEkRIFkUNCwUJUAUYABpBDXxfQFtMHkUDARsVGAcVHA4WAw==","ph":"R0ZKRQ==","pco2":"RVBZHgQnSg==","po2":"RVBZHgQnSg==","abg_hco3":"Q1pZHiweAn4=","lact":"QUZLUwQCQl4ffg==","fev1":"Q1BZAwwdTldeRhZdAAAKBwoRFQw=","fvc":"R1pZAwwdTldeRhZdAAAKBwoRFQw=","ratio":"QEZNRw==","dlco":"RFxZAwwdTldeRhZdAAAKBwoRFQw=","walk":"QllJUwQKWUBVQRZaGxEGThoEBB0LEh0GQlwQVFdBHgwACUkDAgcUU1FWDUZfEg4fUhULHAoAHhxX","ecg":"IwEXBhpPX1pJRl5AXEU8Bw4NBEgYCwAcDVZVRF9MBgwBAEdFIA0YGAwLDWIQRVdbFxZOBwdFHA0YF0kbWl0e","echo":"NQIcEB0GQlwQVERMEREHAQdFRlhZAwwdTldeRhgNIAwJBh1FBg0XBxsGTl5VEltEHgECF0kBGQQYBwwLDUVZRl4NFwkLGAgRFQxZFhobRF9RRlNJUhUbAgQKHgkLCkkfX1dDQUNfF0s=","bnp":"QVxLUxkIAl98","jvp":"R0gUHiEI","ferr":"QllJUwcIAl98","iron":"QVhNUwQMSh1Ufg==","tsat":"Q1xZAwwdTldeRg==","egfr":"R1BZHiVAQFteHQcDRVZOA1s=","usg":"QUZJQVs="}},{"id":"F","who":"Alina P., 44","role":"dental hygienist","beats":["MgQWHA1PXUBVQUVYAABOBggWUBsNEhAKSRJYW1FFUgoATh0NAg0cUwQKSVtTU0JEHQsdQEk2GA1ZGwgcDVxfEkVUHxUaAQQWUBsRFkkOWUZCW1RYBgAdTh0KUAENXQ==","MxoYBQwcDUFRXkIDUiEcBwcOA0gYUwUAWRJfVBZaExELHEkEHgxZBhsGQ1NEV0UNHQMaCwdJUAEXEAUaSVteVRZMBkUABw4NBEY=","PgdZHAwLSF9REldZUgQCAkVFBwAQEAFPXlpVEkJFGwsFHUkMA0gKBxsOQ1VVElFEBAAATgEKB0gUBgoHDUFRXkINAQ0LTgwEBBtX","PwsaEhoGQlxRXhZdEwkeBx0EBAEWHRpPTFxUElcNFAkbGh0AAgEXFEkJSFdcW1hKUgQIGgwXUAQWHQ5PXlpZVEJeXA==","JAEXFAUGQ1UQU0RCBwsKTh0NFUgUHBwbRRJRXFINGwtOGgEAUA4QHQ4KX0EQUxZLFxJOGgAIFRtZEkkCQlxEWhg=","PR0KEAUKDVFCU1tdAUUPAA1FFRgQAAYLSEEQXVANBQAPBQcAAxtZGgdPWVpVElpIFRZCTh4KAhscUwUOWVcQW1gNBg0LTh4AFQNX","PgdZBwEWX11ZVhZeCwgeGgYIA0ZZPQZPWldZVV5ZUgYGDwcCFUZZPQZPXkZCW1dIUgocTgwEAxFZERsaREFZXFED","MxEaHwwcDVNCVxZfFwIbAggXUAkXF0kaQ1FYU1hKFwFA","MRgJFh0GWVcQXFlfHwQCQEkrH0gPHAQGWVteVRoNHApOCgAEAhoRHAwOARJeXRZBEx0PGgATFUgWAUkLREdCV0JEEUUbHQxL","MwcVHBwdDVtDElhCAAgPAkdFPgdZAwgDQV1CEldDFkUAAUkVHA0NGwYdTBw=","MgQWHA1PXUBVQUVYAABOBxpFHQkLGAwLQUsQV1pIBAQaCw1FGQZZEQYbRRJRQFteUhIHGgFFHgdZFwAfXVteVRZCBAAcAAACGBxX","MgEaEhsNQlxRRlMNGxZOBgACGEgYHQ1PXV1EU0VeGxADTgAWUAQWBEkAQxJVRFNfC0UeDwcAHEgNEgIKQxw=","MhocEh0HRFxXEl9eUgsBHAQEHEgYB0kdSEFEEkFEBg1OAAZFGAEKBwYdVBJfVBZBBwsJTg0MAw0YAAxB","JRoQHQxPQkdEQkNZUgwdTgEMFwBZEgcLDVZZXkNZF0tOOxsMHg1ZAwYbTEFDW0NAUgwdTgEMFwBZBAEGQVcQQVNfBwhOHgYRERsKGhwCDVtDElpCBUs=","NgEXEgVPW1tDW0IDUjYGC0kSEQYNAEkbQhJbXFlaUhIGF0kWGA1ZGhpPQ11EEkVaHQkCCwdFGQ5ZAAEKDVtDEkRIBgQHAAALF0gKHA0GWF8e"],"r":{"hx_chief":"PRFZEQUAQlYQQkRIARYbHAxFBwEVH0kBQkYQUVlAF0UKAR4LUAYWUwQOWUZVQBZaGgQaTh0NFRFZAxwbDV9VEllDXA==","hx_time":"OBEJFhsbSFxDW1lDUgMBHEkWGRBZCgwOX0EcEkRIAQwdGggLBEgfHBtPWVpVElpMARFOGh4KXg==","hx_meds":"MQUVHA0GXVteVxoNHgodDxsREQZVUwEWSUBfUV5BHRcBGgEMERIQFwxBDXxfEkZCBgQdHQAQHUgKBhkfQVddV1hZXEUgAUkJGRkMHBsGTlce","hx_diet":"IwkVBxpPS11fVhZFFwQYBwUcUAkXF0kMX1NGV0UNGxFATj0NAg0cUwUGWUBVQRZCFEUZDx0AAkgdEgADVBw=","hx_social":"JwcLGBpPS11FQBZZFwtOBgYQAkgKGwAJWUEeEmVBFwAeHUkWFR4cHUkHQkdCQRgNPApOGgYHEQsaHEc=","hx_fam":"PQcNGwwdDUVZRl4NGhweCxsRFQYKGgYBDVZZU1FDHRYLCkkMHkgRFhtPWVpZQEJEFxZA","hx_ros":"PgcaBxwdRFMcEltYAQYCC0kGAgkUAxpDDVteRlNfHwwaGgwLBEgOFggEQ1dDQRoNAgQCHgARERwQHAccARJAV0REHRcPAkkRGQYeHwABShwQfFkNHQAKCwQEXg==","vs_hr":"SFxZAwwdDV9ZXENZF0lOHAwCBQQYAQ==","vs_bp":"QV9LUwYZSEAQAwYZUggDJg5JUA0IBggDDVteElRCBg1ODxsIAw==","pe_edema":"PgdZHAwLSF9REldDCxIGCxsAUAwcABkGWVcQX1dfGQAKTgEcAA0LBwwBXltfXBg=","pe_card":"Ig0eBgUOXxwQdFlYABEGTgEAERoNUxoAWFxUHBZjHUUDGxsIBRpX","na":"QVxPUwQqXB18","k":"QkZBUwQqXB18","cl":"SV5ZHiweAn4=","hco3":"Q1pZHiweAn4=","mg":"QUZPUwQIAlZ8","glu":"QVhBUwQIAlZ8","ca":"SUZPUwQIAlZ8","aldo":"Q1xZHQ5ASX4=","renin":"QEZLUwcIAl98HV5f","cort":"QVtXRUkCTlUfVno=","acth":"QlxZAw5AQH4=","ph":"R0ZNSg==","pco2":"RF5ZHgQnSg==","abg_hco3":"Q1tZHiweAn4=","ecg":"IwEXBhpPX1pJRl5AXEUiCw8RUB4cHR0dRFFFXldfUg0XHgwXBBoWAwEWAxJ2XldZBgAACw1FJEgOEh8KXhJHW0JFUhUcAQQMHg0XB0k6DUVRRFNeXA==","echo":"NQIcEB0GQlwQVERMEREHAQdFRlxZAwwdTldeRhZaGxEGTgoKHgscHR0dRFEQXlNLBkUYCwcRAgEaBgUOXxJYS0ZIABEcARkNCUY=","map":"QVpOUwQCZVUQX1NMHElOHhwJAw1ZAxsKXkFFQFMNRF1OAwQtFw==","amb":"Ix0KBwgGQ1dUElNBFxMPGgAKHkgWBQwdDQAEEl5CBxcdTh4MBABZEgscSFxEElhCEREbHAcEHEgdGhkfRFxXHA==","uk":"RVpZHiweAlZRSxZaGgwCC0kWFRoMHkkfQkZRQUVEBwhOBxpFQkZBUwQqXB18","una":"QVxLUwQqXB18","uosm":"QlBJUwQgXl8fWVE=","usg":"QUZJQ1E=","acr":"Q1BZHg5ASg==","egfr":"SFpZHiVAQFteHQcDRVZOA1s=","str":"REgWFUlaDVteEkJFF0UeHAYdGQUYH0kDSFVDEllDUgROHRAIABwWHggbRFEQVldUXkVbTgYDUF1ZHB0HSEBHW0VIXA==","ck":"QVBBUzxAYQ==","jvp":"RkgUHiEI"}},{"id":"G","who":"Walter B., 58","role":"long haul driver","beats":["MhocEh0HQVdDQRZBCwwACUkDHAkNXUk8QVdVQkUNHQtOGgEXFQ1ZAwADQV1HQRZMHAFOGQgOFRtZFAgcXVteVRZMEAobGkkRBwEaFkkODUVVV10D","Jw0QFAEbDVtDEkNdUgMBGxtFGwEVHA4dTF9DEl9DUhEGHAwAUB8cFgIcDUVZRl4NHApODQEEHg8cUwABDVdRRl9DFUs=","MQYSHwwcDUFHV1pBUhEGHAYQFwBZBwEKDVZRSxZMHAFODxsAUAocBx0KXxJSSxZAHRcABwcCXkgqGwYKXhJeXRZBHQsJCxtFFgENUwgbDVxZVV5ZXA==","PwsaEhoGQlxRXhZEABcLCRwJERpZEQwOWUEeEn5IUgYPAEkDFQ0VUx0HSF8QW1gNGgwdTh0NAgcYB0c=","PAEeGx1PRVdRVlNJUgwITgEAUBsNEgcLXhJEXVkNFAQdGkVFEh0NUwcKW1dCElBMGwsaCw1L","PA0eAEkIRERVEllYBkUPCB0AAkgYUwEaQ1ZCV1INHwAaHAwWXkgxFkkcTEtDEl9ZUgwdTgcKBEgNGwxPT0BVU0JFXkUHGkkMA0gNGwxPQVdXQRg=","PgdZBwEWX11ZVhZeCwgeGgYIA0ZZIQwfQkBEQRZDHUUaCwQVFRoYBxwdSBJZXEJCHgAcDwcGFUY=","Ig0dBgoKSRJcW1REFgpOCAYXUBwOHEkWSFNCQRgNOgBODx0RAgEbBh0KSRJZRhZZHUUaBgxFGgcbXQ==","MRgJFh0GWVcQW0UNAgoBHEkEHgxZGwxPS1dVXkUNFBACAkkUBQEaGAUWAxJxUFJCHwAATg8AFQQKUx0GSlpEHA==","MwcVHBwdDVtDElhCAAgPAkkHBRxZGwAcDVpRXFJeUgQcC0kGHwcVUwgBSRJYW0UNHAQHAkkHFQwKUxsKS1tcXhZeHgoZAhBL","MgQWHA1PXUBVQUVYAABOBxpFHAcOUx4GWVoQUxZDExccAR5FAB0VAAxPXUBVQUVYAABATicAEwNZBQwGQ0EQU0RIUhMHHQAHHBFZFwAcWVdeVlNJUgQaTl1QUAwcFBsKSEEe","IwcdGhwCDVpRQRZPFwAATgUKB0gWHUkKW1dCSxZdEwsLAkkEHgxZGwxPREEQXFlZUgoATghFFAEMAQwbRFEQRl5MBkUZARwJFEgcCxkDTFteEl9ZXA==","MxoYEAIDSEEQU0INEAoaBkkHERscAEkbRVNEElJCUgsBGkkGHA0YAUkYREZYElVCBwIGBwcCXg==","JRoQHQxPQkdEQkNZUgMPAgUWUAcXUx0HSBJUU09eUg0LTgAWUAUWAB1PXkVfXlpIHEtOOxsMHg1ZAAYLREddEl9eUhMLHBBFHAcOXQ==","NgEXEgVPW1tDW0IDUi0LTh4EHhwKUx0ADVleXUENBQ0XTgEMA0gKHA0GWF8QW0UNHgoZTgADUAAcUwAcDVpfXlJEHAJOAQdFBAdZAAgDWRJRXFINBQQaCxtL"],"r":{"hx_chief":"OUgaEgcBQkYQXl9IUgMCDx1FEQYdUwQWDV5VVUUNARILAgVFBRhZERBPWVpVElNDFkUBCEkRGA1ZFwgWAw==","hx_time":"JB8cHx8KDV9fXEJFAUlOHQEEAhgVCkkYQkBDVxZEHEUaBgxFHAkKB0kCQlxEWhg=","hx_meds":"PAEKGgcAXUBZXhoNHwAaARkXHwQWH0VPS0dCXUVIHwwKC0kREQMcHUkGX0BVVUNBExcCF0c=","hx_diet":"JBoMEAJPXkZfQhZLHQoKQkkTFRoAUwEGSloQQVdBBktOOh4KUBwWUx0HX1dVElpEBhcLHUkKFkgfHxwGSRw=","hx_social":"NBoQBQwcDUZVXBZZHUUaGQwJBg1ZGwYaX0EQUxZJExxATi8KAgUcAUkcQF1bV0QDUigHAAAIEQRZEgobRERZRk8D","hx_fam":"NgkNGwwdDVZZV1INHQNOD0kNFQkLB0kOWUZRUV0NExFOWFhL","hx_ros":"PxoNGwYfQ11VUxoNAgQcAREcAwUYH0kBQlFER0RDEwlOChAWAAYWFghDDVNeWVpIUhYZCwUJGQYeX0kKTEBcSxZeExEHCx0cXEgfEh0GSkdVHA==","vs_hr":"SV5ZAwwdDV9ZXENZF0lOBxsXFQ8MHwgdDV1TUVdeGwoADwVFFQsNHBkW","vs_bp":"QVhLUwYZSEAQBQANHwgmCQ==","vs_rr":"QlhZAwwdDV9ZXENZFw==","vs_spo2":"SVtZAwwdTldeRg==","vs_wt":"JRhZR0kEShJZXBZZGhcLC0kSFQ0SAA==","vs_ortho":"IxEKBwYDRFEQVFdBHhZOX19FHQUxFEkAQxJDRldDFgwACUkSGRwRUwQGQ1tdU1oNGgAPHB1FAgkNFkkdREFVHA==","pe_skin":"MwcWH0kfSEBZQl5IAAwLHUdFMwkJGgUDTEBJEkRIFAwCAkkRGBocFkkcSFFfXFJeXA==","pe_card":"NAEKAwUOTldUElddFx1ATj0NGRodUwEKTEBEEkVCBwsKTg4EHAQWA0dPZ0dXR1pMAEUYCwcKBRtZAxsKXkFFQFMNFwkLGAgRFQxZBwZPWVpVEldDFQkLTgYDUBwRFkkFTEUQU0INRlBOCgwCAg0cAEc=","pe_lung":"NgEXFkkGQ0FAW0RMBgocF0kGAgkaGAUKXhJRRhZPHREGTgsEAw0KUx0HTEYQVlkNHAoaTgoJFQkLUx4GWVoQUVlYFQ0HAA5L","pe_edema":"JB8WUxkDWEEQQl9ZBgwACUkKFQwcHghPWV0QX19JUhYGBwdFEgEVEh0KX1NcXk8D","pe_abd":"PQEVF0kbSFxUV0QNGgAeDx0KHQ0eEgUWAxJ+XRZeGgwIGgALF0gdBgUDQ1dDQRg=","na":"QVtJUwQqXB18","k":"REZAUwQqXB18","cl":"SVxZHiweAn4=","hco3":"Ql5ZHiweAn4=","bun":"Q1BZHg5ASX4=","cr":"QUZPUwQIAlZ8","alb":"Q0ZNUw5ASX4=","osm":"Ql9NUwQgXl8fWVE=","ecg":"IwEXBhpPX1pJRl5AUhIHGgFFFhocAhwKQ0YQRFNDBhcHDRwJERpZFgobQkJJHBZhFwMaTgsQHgwVFkkNX1NeUV4NEAkBDQJJUDkrIEleGAAQX0UD","echo":"NQIcEB0GQlwQVERMEREHAQdFQlBZAwwdTldeRhgNNgwCDx0AFEgVFg8bDURVXEJfGwYCC0dFPQcdFhsOWVcQVENDEREHAQcEHEgUGh0dTF4QQFNKBxcJBx0EBAEWHUc=","bnp":"QVBNQ0kfSh1dfg==","trop":"QlpZHQ5AYQ==","map":"SF1ZHgQnShJdV1dDXkUeGwUWFUgJAQwcXkdCVxYfREUDAyEC","jvp":"QV5ZHgQnSg==","cap":"MwkJGgUDTEBJEl5UFhcBHR0EBAEaU11dDV9delENExcaCxsMEQRZFgcLDVNeVhYfSkUDAyECUB4cHQYaXhJVXFIDUjUCDxoIEUgaHAUDQltUElleHwoaBwpFQllZHgQnShwQe1hZFxcdGgARGQkVUwEWSUBfQUJMBgwNTlhFHQUxFEdPZFxEV0ReBgwaBwgJUAsWHwUARFYQXUVAHREHDUlRUAUUOw5B","aldo":"QlBZHQ5ASX4=","renin":"RkZLUwcIAl98HV5f","una":"QVpZHiweAn4=","uosm":"RlxJUwQgXl8fWVE=","usg":"QUZJQV8=","acr":"RlxZHg5ASg==","egfr":"RF5ZHiVAQFteHQcDRVZOA1s=","hgb":"QVpXS0kIAlZ8","hct":"Q1BZAwwdTldeRg==","mcv":"SVhZFSU=","ph":"R0ZNQQ==","pco2":"Q1tZHgQnSg==","po2":"R1xZHgQnSg==","abg_hco3":"QlpZHiweAn4=","lact":"QkZNUwQCQl4ffg==","walk":"QVBJUwQKWUBVQRoNAREBHhkAFEgfHBtPT0BVU0JFHgAdHQcAAxtVUxoOWUdCU0JEHQtOV1hFAA0LEAwBWRw=","sexh":"JA0KBwYcWVdCXVhIUgQaTh0NFUgVHB4KXxJcW1tEBkUBCEkRGA1ZAQwJSEBVXFVIUhcPAA4AXg=="}},{"id":"H","who":"Priya R., 29","role":"veterinary technician","beats":["NRAREhwcWVdUEl9DUgROGQgcUBwREh1PXl5VV0YNFgoLHUkLHxxZFQAXAxJjU09eUhYGC0kDFQ0VAEkYQkBDRhZEHEUaBgxFHQcLHQABShw=","MxoYBQABShJDU1pZUgwAGgwLAw0VCkdPflpVEl5MAUUdGggXBA0dUwwOWVteVRZCHgwYCxpFEQYdUxkGTllcV0UNAREcDwACGBxZFRsAQBJEWlMNGAQcQA==","PgdZAB4KQV5ZXFEDUjYFBwdFFg0cHxpPSUBJEldDFkUdBgxFGAkKUwUAXkYQQV9VUg4HAgYCAgkUAEkYREZYXUNZUhEcFwALF0Y=","OA0YAR1PX1NTV0UNBQ0LAEkWGA1ZAB0OQ1ZDHBZ/FxYaBwcCUBoYBwxPREEQW1gNBg0LTgUKB0gRBgcLX1dUQRg=","Pg0YAQUWDVRRW1hZFwFOGh4MEw1ZEh1PWl1CWRZKFxEaBwcCUB0JUw8dQl8QUxZOAAobDQFL","Nw0XFhsOQVtDV1INBQAPBQcAAxtZBAAbRV1FRhZMHBxOCAYGEQRZHwYcXhwQYUJfFwsJGgFFBA0KBwABShJZQRZCHAkXTgQMHAwVCkkdSFZFUVNJXA==","IwMQHUkHTEEQVldfGQAACw1JUAUWAB1PQ11EW1VIEwcCF0kKHkgNGwxPXVNcXxZOAAAPHQwWXEgSHRwMRl5VQRoNEwsKTggLUAcVF0kcTlNCHA==","IA0LGgYLXhJYU0BIUgcLDQYIFUgQARsKSkdcU0QNHRMLHEkRGA1ZHwgcWRJVW1FFBkUDAQcRGBtX","PgkMAAwODV9fQUINHwocAAALFxtVUwYMTlNDW1lDEwlOGAYIGRwQHQ5DDURRVUNIUgQMCgYIGQYYH0kfTFteHA==","Mh0aEAgDDV9FUVleE0UdBgYSA0gJEh0MRUsQVldfGUUeBw4IFQYNEh0GQlwe","MgQWHA1PXUBVQUVYAABOBxpFHAcOUwgBSRJUQFldAUUIGxsRGA0LUwYBDUFEU1hJGwsJQA==","IwcdGhwCDVtDElpCBUUPAA1FAAcNEhocREddEl9eUg0HCQFFHwZZFh8KX0sQQldDFwlCTh4MBABZEkkCRF5UElpCBUUMBwoEAgoWHQgbSBw=","MhocEh0HRFxXEl9eUgsBHAQEHEZZIAEKDVpRQRZDHUUNARwCGEgYHQ1PQ10QXkNDFUUGBxoRHxoAXQ==","JRoQHQxPXl1UW0NAUgwdTgALERgJAQYfX1tRRlNBC0UGBw4NUA4WAUkHQkUQVlNdHgAaCw1FAwAcUwAcAw==","NgEXEgVPW1tDW0IDUjYGC0kSEQYNAEkbQhJbXFlaUhIGF0kNFRpZAAIGQxJUU0RGFwsLCkkSGA0XUx0HSBJAQFlPHgADTgAWUAEXUwEKXxJRVkRIHAQCTg4JEQYdAEc="],"r":{"hx_chief":"OUgYHkkYREJVVhZCBxFCTiBFExoYBQxPXlNcRhZOHQsdGggLBAQAX0kOQ1YQexZDFwQcAhBFAAkKAAwLDV1FRhZMBkUZARsOXg==","hx_time":"IwEBUx0ADVdZVV5ZUggBAB0NA0RZBAYdXlcQW1gNBg0LTgUEAxxZAAAXDUVVV11eXA==","hx_meds":"PgcXFkdPY10QQUJIAAoHCkkQAw1VUxkOXkYQXUQNAhcLHQwLBEY=","hx_diet":"NQkNGgcIDUFRXkJUUgMBAQ1FEwcXAB0OQ0ZcSxgNMxUeCx0MBA1ZHB0HSEBHW0VIUhUBARtLUCYYBhoKTBJZXBZZGgBOAwYXHgEXFBpB","hx_social":"IAAAAAAMTF4QWFlPUgoATgEAAkgfFgwbAxJjXlNIAhZOCwACGBxZGwYaX0EQU1hJUhIPBQwWUB0XAQwJX1dDWlNJXA==","hx_fam":"PQcNGwwdDUVZRl4NExAaAQAIHR0XFkkbRUtCXV9JUgEHHQwEAw1XUyoAWEFZXBZaGxEGTh0cAA1ZQkkLRFNSV0JIAUs=","hx_ros":"NgkNGg4aSB4QQVdBBkUNHAgTGQYeX0kYSFtXWkINHgodHUVFHgkMAAwOARJGXVtEBgwACUVFFAEDCQABSEFDEllDUhYaDwcBGQYeX0kLTEBbV1hEHAJOHQIMHkRZGhsdSFVFXldfUhULHAAKFBtX","vs_hr":"QVhPUxkKXxJdW1hYBgBCThsAFx0VEhs=","vs_bp":"SVxZHB8KXxIFChZAHy0J","vs_temp":"Q15XR0ks","vs_wt":"NAcOHUlZDVlXEl9DUhYHFkkIHwYNGxo=","vs_ortho":"IxEKBwYDRFEQVFdBHhZOXF1FHQUxFEkAQxJDRldDFgwACUkSGRwRUwEKTEBEEkRMBgBOHAAWGQYeUx0ADQMCChg=","pe_skin":"NAEfFRwcSBJYS0ZIABUHCQQAHhwYBwAAQx4QU1VOFwsaGwgRFQxZGgdPWVpVEkZMHggPHEkGAg0YAAwcARJfRFNfUhEGC0kOHh0aGAUKXh4QU1hJUgwATggLUAcVF0kOXUJVXFJIEREBAxBFAwsYAUdPfVNEUV5UUhUHCQQAHhwYBwAAQxJfVBZZGgBODBwGEwkVUwQaTl1DUxgNIAAKGwoAFEgNBhsIQkAe","pe_abd":"PQEVF0kLRFRWR0VIUhELAA0AAgYcABpPWltEWllYBkUJGwgXFAEXFEc=","na":"QVpPUwQqXB18","k":"RUZBUwQqXB18","cl":"SVxZHiweAn4=","hco3":"QlhZHiweAn4=","bun":"QlBZHg5ASX4=","cr":"QUZIUwQIAlZ8","glu":"RVBZHg5ASX4=","ca":"QVhXRUkCSh1Ufg==","osm":"Ql5PUwQgXl8fWVE=","cort":"QkZIUwQMSh1Ufg==","acth":"RFBPUxkIAl98","aldo":"QkgXFEYLYQ==","renin":"QVBXR0kBSh1dfhlFAA==","tsh":"RUZBUwQmeB18","ft4":"QUZJUwcIAlZ8","tpo":"QVBJUyA6Al98","a1c":"REZNUxkKX1FVXEI=","cpep":"QEZAUwcIAl98","wbc":"RUZLUx0HQkdDU1hJXQgHDRsKHAENFhtPWltEWhZIHRYHAAYVGAEVGghPTEYQCxZdFxcNCwcRUAkXF0kdSF5RRl9bF0UCFwQVGAcaCh0AXltD","hgb":"QVpXQUkIAlZ8","hct":"Q19ZAwwdTldeRg==","mcv":"SVlZFSU=","ecg":"IwEXBhpPWVNTWk9OExcKBwhLUDgcEgIKSRJkEkFMBAAdTgALUAQcEg0cDWQCEkJCUjNaQA==","una":"RlxZHiweAn4QVlNeAgwaC0kGHAEXGgoOQRJGXVpYHwBOCgwVHA0NGgYB","uosm":"Q1xJUwQgXl8fWVE=","usg":"QUZJQl0=","egfr":"R1pZHiVAQFteHQcDRVZOA1s=","ph":"R0ZKQQ==","pco2":"Q15ZHgQnSg==","abg_hco3":"QVFZHiweAn4=","map":"R1hZHgQnShJdV1dDXkUeGwUWFUgJAQwcXkdCVxYeREUDAyEC","jvp":"QkgUHiEI","str":"REgJHxwcDV1WEgMNFQkBDAgJHBFZBAAbRV1FRhZLHQYPAkkBFQ4QEAAbAw==","cyc":"MxEaHwwcDVpRRFMNEAANAQQAUAELAQwIWF5RQBZCBAAcTgwMFwANUwQAQ0ZYQRZaGxEGTh0SH0gUGhocSFYQQlNfGwoKHUc=","lhfsh":"NgcVHwAMQVcQQUJEHxACDx0MHg9ZGwYdQF1eVxYbXFFOJzxKPERZHxwbSFteW0xEHAJOBgYXHQcXFklbAwoQe2MCPks="}}];
+
+
+/* ---------- deterministic seeding ---------- */
+function hashStr(s){var h=2166136261>>>0;for(var i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)>>>0;}return h>>>0;}
+function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;var t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
+
+/* ---------- result decoding ---------- */
+function dec(b64){
+  if(!b64) return "";
+  var raw = atob(b64), out = "";
+  for(var i=0;i<raw.length;i++){ out += String.fromCharCode(raw.charCodeAt(i) ^ (KEY.charCodeAt(i%KEY.length))); }
+  try{ return decodeURIComponent(escape(out)); }catch(e){ return out; }
+}
+
+/* ---------- state ---------- */
+var S = null;
+var TESTMAP = {}; TESTS.forEach(function(t){TESTMAP[t.id]=t;});
+var WEEKMAP = {}; WEEKS.forEach(function(w){WEEKMAP[w.n]=w;});
+var cur = 1;
+
+function blankWeek(){ return {open:false, predict:"", orders:[], draw:"", drawAlt:"", q:{}, submitted:false}; }
+
+function newState(name, sec, vIdx){
+  var st = {v:1, name:name, sec:sec, vIdx:vIdx, w:{}};
+  WEEKS.forEach(function(w){ st.w[w.n] = blankWeek(); });
+  return st;
+}
+
+/* persistence: localStorage is a convenience only, wrapped so a blocked
+   store never breaks the page. The save code is the real record. */
+var LSKEY = "bio005-patient-file";
+var storeWarned = false;
+function save(){
+  try{ localStorage.setItem(LSKEY, JSON.stringify(S)); }
+  catch(e){
+    if(!storeWarned){
+      storeWarned = true;
+      var m = $("copyMsg");
+      if(m) m.textContent = "This browser will not hold any more of your work. Export your PDF now and keep your save code.";
+    }
+  }
+}
+function loadLocal(){
+  try{ var r = localStorage.getItem(LSKEY); return r ? JSON.parse(r) : null; }catch(e){ return null; }
+}
+/* The save code carries your typed work, not your drawings. Drawings are
+   large, they live in this browser and in the PDF you export each week. */
+function toCode(){
+  try{
+    var lean = { v:S.v, name:S.name, sec:S.sec, vIdx:S.vIdx, w:{} };
+    Object.keys(S.w).forEach(function(k){
+      var x = S.w[k];
+      lean.w[k] = { open:x.open, predict:x.predict, predictAt:x.predictAt, orders:x.orders,
+                    drawAlt:x.drawAlt, q:x.q, submitted:x.submitted, submittedAt:x.submittedAt,
+                    reopened:x.reopened, openedAt:x.openedAt, draw:"" };
+    });
+    return btoa(unescape(encodeURIComponent(JSON.stringify(lean))));
+  }catch(e){ return ""; }
+}
+function fingerprint(n){
+  var st = S.w[n];
+  var basis = S.name + "|" + n + "|" + (st.predict||"") + "|" +
+    st.orders.map(function(o){ return o.id + o.at + (o.changed||""); }).join("") + "|" +
+    (st.drawAlt||"") + "|" + JSON.stringify(st.q) + "|" + (st.submittedAt||"");
+  var h = hashStr(basis).toString(36).toUpperCase();
+  while(h.length < 8) h = "0" + h;
+  return h.slice(0,4) + "-" + h.slice(4,8);
+}
+function fromCode(c){
+  try{ return JSON.parse(decodeURIComponent(escape(atob(c.replace(/\s+/g,""))))); }catch(e){ return null; }
+}
+
+/* ---------- helpers ---------- */
+function $(id){ return document.getElementById(id); }
+function el(tag, cls, txt){ var n=document.createElement(tag); if(cls) n.className=cls; if(txt!=null) n.textContent=txt; return n; }
+function variant(){ return VARIANTS[S.vIdx]; }
+function resultFor(testId){
+  var v = variant();
+  if(Object.prototype.hasOwnProperty.call(v.r, testId)) return dec(v.r[testId]);
+  return dec(NORMALS[testId] || "");
+}
+function availableTests(n){
+  var w = WEEKMAP[n];
+  return TESTS.filter(function(t){
+    if(w.opens.indexOf(t.cat) < 0) return false;
+    if(t.minWeek && n < t.minWeek) return false;
+    return true;
+  });
+}
+function spent(n){ return S.w[n].orders.reduce(function(a,o){ return a + (TESTMAP[o.id] ? TESTMAP[o.id].cost : 1); }, 0); }
+function remaining(n){ return WEEKMAP[n].budget - spent(n); }
+function ordered(n, id){ return S.w[n].orders.some(function(o){ return o.id === id; }); }
+function lastOrderNeedsNote(n){
+  var o = S.w[n].orders;
+  return o.length > 0 && !(o[o.length-1].changed && o[o.length-1].changed.length >= 60);
+}
+function stamp(){
+  var d = new Date();
+  function p(x){ return (x<10?"0":"")+x; }
+  return d.getFullYear()+"-"+p(d.getMonth()+1)+"-"+p(d.getDate())+" "+p(d.getHours())+":"+p(d.getMinutes());
+}
+
+/* ---------- gate ---------- */
+$("ssec").value = COURSE.section;
+$("openBtn").addEventListener("click", function(){
+  var name = $("sname").value.trim();
+  if(name.length < 3){ showErr("gateErr","Type your full name as it appears in Canvas."); return; }
+  var sec = $("ssec").value.trim() || COURSE.section;
+  var seed = hashStr(name.toLowerCase().replace(/\s+/g," ") + "|" + sec.toLowerCase());
+  var idx = Math.floor(mulberry32(seed)() * VARIANTS.length) % VARIANTS.length;
+  var prior = loadLocal();
+  if(prior && prior.name && prior.name.toLowerCase() === name.toLowerCase()){ S = prior; }
+  else { S = newState(name, sec, idx); }
+  boot();
+});
+$("restoreBtn").addEventListener("click", function(){
+  var wrap = $("restoreWrap"), open = !wrap.classList.contains("hidden");
+  wrap.classList.toggle("hidden", open);
+  $("restoreBtn").setAttribute("aria-expanded", open ? "false" : "true");
+  if(!open) $("restoreCode").focus();
+});
+$("restoreGo").addEventListener("click", function(){
+  var c = $("restoreCode").value.trim();
+  if(!c){ showErr("gateErr","Paste your save code first."); return; }
+  var st = fromCode(c);
+  if(!st || !st.w){ showErr("gateErr","That code could not be read. Paste the whole thing, with nothing added."); return; }
+  WEEKS.forEach(function(w){ if(!st.w[w.n]) st.w[w.n] = blankWeek(); });
+  var here = loadLocal();
+  if(here && here.name && here.name.toLowerCase() === (st.name||"").toLowerCase()){
+    WEEKS.forEach(function(w){ if(!st.w[w.n].draw && here.w[w.n] && here.w[w.n].draw) st.w[w.n].draw = here.w[w.n].draw; });
+  }
+  S = st; save(); boot();
+});
+function showErr(id, msg){ var n=$(id); n.textContent=msg; n.classList.remove("hidden"); }
+function hideErr(id){ $(id).classList.add("hidden"); }
+
+function boot(){
+  $("gate").classList.add("hidden");
+  $("work").classList.remove("hidden");
+  var v = variant();
+  $("pWho").textContent = v.who;
+  $("pRole").textContent = v.role;
+  $("pFile").textContent = "PF-" + v.id + "-" + String(hashStr(S.name.toLowerCase()) % 9000 + 1000);
+  $("pStudent").textContent = S.name;
+  var firstOpen = 1;
+  WEEKS.forEach(function(w){ if(S.w[w.n].open) firstOpen = w.n; });
+  cur = firstOpen;
+  renderRail(); renderWeek();
+  $("main").focus && $("main").focus();
+}
+
+/* ---------- rail ---------- */
+function renderRail(){
+  var rail = $("rail"); rail.innerHTML = "";
+  WEEKS.forEach(function(w){
+    var li = el("li");
+    var b = el("button", null, "Week " + w.n);
+    b.type = "button";
+    var st = S.w[w.n];
+    b.setAttribute("data-state", st.submitted ? "done" : (st.open ? "open" : "locked"));
+    b.setAttribute("aria-current", w.n === cur ? "true" : "false");
+    b.setAttribute("aria-label", "Week " + w.n + ", " + w.title + ", " + (st.submitted ? "submitted" : (st.open ? "open" : "locked")));
+    b.addEventListener("click", function(){ cur = w.n; renderRail(); renderWeek(); });
+    li.appendChild(b); rail.appendChild(li);
+  });
+}
+
+/* ---------- week ---------- */
+function renderWeek(){
+  var w = WEEKMAP[cur], st = S.w[cur], body = $("weekBody");
+  body.innerHTML = "";
+  $("unlockCard").classList.toggle("hidden", st.open);
+  $("saveCard").classList.toggle("hidden", !st.open);
+  hideErr("unlockErr");
+
+  var head = el("div","card");
+  var h = el("h2", null, "Week " + w.n + ". " + w.title);
+  head.appendChild(h);
+  head.appendChild(el("p", "hint", w.dates));
+  if(!st.open){
+    head.appendChild(el("p", null, "This week is locked. Enter the code your instructor posted."));
+    body.appendChild(head);
+    return;
+  }
+  head.appendChild(el("p", null, w.frame));
+  var beat = el("div","note");
+  var bs = el("strong", null, "This week on the ward. ");
+  beat.appendChild(bs);
+  beat.appendChild(document.createTextNode(dec(variant().beats[cur-1])));
+  head.appendChild(beat);
+  if(st.submitted){ head.appendChild(el("p","", "")); head.lastChild.appendChild(el("span","done-flag","Submitted")); }
+  body.appendChild(head);
+
+  body.appendChild(sectionPredict(w, st));
+  if(st.predict && st.predict.length >= 120){
+    body.appendChild(sectionOrders(w, st));
+    body.appendChild(sectionResults(w, st));
+  }
+  body.appendChild(sectionDraw(w, st));
+  body.appendChild(sectionQ(w, st));
+  body.appendChild(sectionSubmit(w, st));
+}
+
+/* 1. prediction gate */
+function sectionPredict(w, st){
+  var c = el("div","card");
+  c.appendChild(el("h2", null, "1. Commit your prediction"));
+  c.appendChild(el("p", null, w.predict));
+  var f = el("div","field");
+  var lab = el("label", null, "Your prediction");
+  lab.setAttribute("for","predBox");
+  var hint = el("span","hint","At least 120 characters. This locks once you order your first test, and it is what you will be graded against.");
+  lab.appendChild(hint);
+  var ta = el("textarea"); ta.id = "predBox"; ta.value = st.predict || "";
+  var locked = !!(st.predict && st.predict.length >= 120);
+  if(locked) ta.setAttribute("readonly","readonly");
+  f.appendChild(lab); f.appendChild(ta); c.appendChild(f);
+  if(!locked){
+    var row = el("div","btnrow");
+    var b = el("button","btn-primary","Lock my prediction"); b.type="button";
+    var msg = el("span","err hidden"); msg.id="predErr";
+    b.addEventListener("click", function(){
+      var val = ta.value.trim();
+      if(val.length < 120){ msg.textContent = "Write at least 120 characters. You have " + val.length + "."; msg.classList.remove("hidden"); return; }
+      st.predict = val; st.predictAt = stamp(); save(); renderWeek();
+    });
+    row.appendChild(b); c.appendChild(row); c.appendChild(msg);
+  } else {
+    c.appendChild(el("p","hint","Locked " + (st.predictAt || "") + "."));
+  }
+  return c;
+}
+
+/* 2. order menu */
+function sectionOrders(w, st){
+  var c = el("div","card");
+  c.appendChild(el("h2", null, "2. Place your orders"));
+  var rem = remaining(cur);
+  var p = el("p", null, "You have " + w.budget + " order tokens this week. " + rem + " left. Tests cost one, two, or three tokens.");
+  c.appendChild(p);
+  var meter = el("div","meter");
+  meter.setAttribute("role","img");
+  meter.setAttribute("aria-label", rem + " of " + w.budget + " order tokens remaining");
+  for(var i=0;i<w.budget;i++){ var t=el("span","tok"+(i<spent(cur)?" spent":"")); meter.appendChild(t); }
+  c.appendChild(meter);
+
+  if(lastOrderNeedsNote(cur)){
+    var warn = el("div","note");
+    warn.appendChild(el("strong", null, "Before your next order. "));
+    warn.appendChild(document.createTextNode("Write what your last result changed. The menu is closed until you do."));
+    c.appendChild(warn);
+    return c;
+  }
+  if(rem <= 0){
+    c.appendChild(el("p","hint","Your tokens for this week are spent. Move to the drawing and the synthesis."));
+    return c;
+  }
+  if(st.submitted){ c.appendChild(el("p","hint","This week is submitted. Ordering is closed.")); return c; }
+
+  var byCat = {};
+  availableTests(cur).forEach(function(t){ (byCat[t.cat] = byCat[t.cat] || []).push(t); });
+  Object.keys(byCat).forEach(function(k){
+    var box = el("div","cat");
+    var h3 = el("h3");
+    var tog = el("button"); tog.type="button";
+    tog.setAttribute("aria-expanded","false");
+    var bid = "cat-"+k;
+    tog.setAttribute("aria-controls", bid);
+    tog.appendChild(el("span",null, CATS[k].label + " (" + byCat[k].length + ")"));
+    tog.appendChild(el("span","chev","+"));
+    h3.appendChild(tog); box.appendChild(h3);
+    var bd = el("div","catbody hidden"); bd.id = bid;
+    if(CATS[k].note) bd.appendChild(el("p","hint", CATS[k].note));
+    var ul = el("ul","tests");
+    byCat[k].forEach(function(t){
+      var li = el("li");
+      var nm = el("span","tname", t.name);
+      var cost = el("span","tcost", t.cost + (t.cost===1?" token":" tokens"));
+      li.appendChild(nm); li.appendChild(cost);
+      if(ordered(cur, t.id)){ li.appendChild(el("span","tcost","Ordered")); }
+      else if(t.cost > remaining(cur)){ var d=el("button","btn-quiet","Too costly"); d.type="button"; d.disabled=true; li.appendChild(d); }
+      else {
+        var b = el("button","btn-secondary","Order"); b.type="button";
+        b.setAttribute("aria-label","Order " + t.name + ", costs " + t.cost);
+        b.addEventListener("click", function(){ openOrder(t); });
+        li.appendChild(b);
+      }
+      ul.appendChild(li);
+    });
+    bd.appendChild(ul); box.appendChild(bd);
+    tog.addEventListener("click", function(){
+      var openNow = tog.getAttribute("aria-expanded") === "true";
+      tog.setAttribute("aria-expanded", openNow ? "false" : "true");
+      tog.querySelector(".chev").textContent = openNow ? "+" : "–";
+      bd.classList.toggle("hidden", openNow);
+    });
+    c.appendChild(box);
+  });
+  return c;
+}
+
+/* commit dialog */
+var pendingTest = null;
+function openOrder(t){
+  pendingTest = t;
+  $("odlg-test").textContent = t.name + ". " + t.cost + (t.cost===1?" token." : " tokens.");
+  $("oExpect").value = ""; $("oWhy").value = "";
+  $("oExpectCount").textContent = "0 of 120 characters";
+  $("oWhyCount").textContent = "0 of 80 characters";
+  var sel = $("oInstead"); sel.innerHTML = "";
+  var opts = availableTests(cur).filter(function(x){ return x.id !== t.id && !ordered(cur, x.id) && x.cost <= remaining(cur); });
+  var ph = el("option", null, "Choose the order you are not placing"); ph.value=""; sel.appendChild(ph);
+  opts.slice(0,60).forEach(function(x){ var o=el("option",null, x.name); o.value=x.id; sel.appendChild(o); });
+  $("oErr").classList.add("hidden");
+  $("orderDlg").showModal();
+  $("oExpect").focus();
+}
+function counter(taId, outId, need){
+  var ta = $(taId), out = $(outId);
+  function upd(){ var n = ta.value.trim().length; out.textContent = n + " of " + need + " characters" + (n >= need ? ", enough" : ""); }
+  ta.addEventListener("input", upd); upd();
+}
+counter("oExpect","oExpectCount",120);
+counter("oWhy","oWhyCount",80);
+$("oCancel").addEventListener("click", function(){ $("orderDlg").close(); });
+$("oSubmit").addEventListener("click", function(){
+  var ex = $("oExpect").value.trim(), why = $("oWhy").value.trim(), ins = $("oInstead").value;
+  if(ex.length < 120){ return oerr("Your expectation needs at least 120 characters. You have " + ex.length + "."); }
+  if(!ins){ return oerr("Choose the order you are giving up."); }
+  if(why.length < 80){ return oerr("Your reason needs at least 80 characters. You have " + why.length + "."); }
+  S.w[cur].orders.push({ id: pendingTest.id, at: stamp(), expect: ex, instead: ins, why: why, changed: "" });
+  save(); $("orderDlg").close(); renderRail(); renderWeek();
+  var last = document.querySelectorAll(".res");
+  if(last.length){ last[last.length-1].scrollIntoView({block:"center"}); last[last.length-1].querySelector("textarea") && last[last.length-1].querySelector("textarea").focus(); }
+});
+function oerr(m){ var n=$("oErr"); n.textContent=m; n.classList.remove("hidden"); return false; }
+
+/* 3. results */
+function sectionResults(w, st){
+  var c = el("div","card");
+  c.appendChild(el("h2", null, "3. Your results, in the order you asked for them"));
+  if(!st.orders.length){ c.appendChild(el("p","hint","Nothing ordered yet.")); return c; }
+  st.orders.forEach(function(o, i){
+    var t = TESTMAP[o.id];
+    var box = el("div","res");
+    var rh = el("div","rh");
+    rh.appendChild(el("span","rname", (i+1) + ". " + t.name));
+    rh.appendChild(el("span","rstamp", o.at));
+    box.appendChild(rh);
+    box.appendChild(el("div","rval", resultFor(o.id)));
+    if(t.ref) box.appendChild(el("div","rref","Reference: " + t.ref));
+    var dl = el("dl");
+    dl.appendChild(el("dt", null, "You predicted"));
+    dl.appendChild(el("dd", null, o.expect));
+    dl.appendChild(el("dt", null, "You gave up"));
+    dl.appendChild(el("dd", null, (TESTMAP[o.instead] ? TESTMAP[o.instead].name : o.instead) + ". " + o.why));
+    box.appendChild(dl);
+    if(st.submitted){
+      var sdl = el("dl","answered");
+      sdl.appendChild(el("dt", null, "What this result changed"));
+      sdl.appendChild(el("dd", null, o.changed || ""));
+      box.appendChild(sdl); c.appendChild(box); return;
+    }
+    var f = el("div","field"); f.style.marginTop = "12px";
+    var lab = el("label", null, "What did this result change");
+    lab.setAttribute("for","chg"+i);
+    lab.appendChild(el("span","hint","At least 60 characters. Say what you now believe that you did not believe a minute ago, or say that nothing changed and why that is informative."));
+    var ta = el("textarea"); ta.id="chg"+i; ta.value = o.changed || ""; ta.style.minHeight="76px";
+    ta.disabled = st.submitted;
+    ta.addEventListener("input", function(){
+      var was = !!(o.changed && o.changed.length >= 60);
+      o.changed = ta.value.trim();
+      save();
+      var now = o.changed.length >= 60;
+      updateSubmit();
+      if(was !== now && i === st.orders.length - 1){
+        var pos = window.pageYOffset;
+        renderWeek();
+        window.scrollTo(0, pos);
+        var re = document.getElementById("chg" + i);
+        if(re){ re.focus(); re.setSelectionRange(re.value.length, re.value.length); }
+      }
+    });
+    f.appendChild(lab); f.appendChild(ta);
+    box.appendChild(f);
+    c.appendChild(box);
+  });
+  return c;
+}
+
+/* 4. drawing */
+var drawState = { tool:"pen", drawing:false, ctx:null, undo:[] };
+function sectionDraw(w, st){
+  var c = el("div","card");
+  c.appendChild(el("h2", null, "4. Draw it"));
+  c.appendChild(el("p", null, w.draw));
+  c.appendChild(el("p","hint","Draw here with a mouse, a finger, or a stylus. If you would rather draw on paper, do that, photograph it, and upload the photo to Canvas beside your PDF. Either way, fill in the description box, which is what a screen reader and your instructor both read."));
+
+  var tools = el("div","tools");
+  [["pen","Pen"],["thick","Thick pen"],["eraser","Eraser"]].forEach(function(pair){
+    var b = el("button","btn-secondary",pair[1]); b.type="button";
+    b.setAttribute("aria-pressed", drawState.tool===pair[0] ? "true":"false");
+    b.addEventListener("click", function(){
+      drawState.tool = pair[0];
+      tools.querySelectorAll("button").forEach(function(x){ x.setAttribute("aria-pressed","false"); });
+      b.setAttribute("aria-pressed","true");
+    });
+    tools.appendChild(b);
+  });
+  var undoB = el("button","btn-quiet","Undo"); undoB.type="button";
+  var clrB = el("button","btn-quiet","Clear"); clrB.type="button";
+  tools.appendChild(undoB); tools.appendChild(clrB);
+  c.appendChild(tools);
+
+  var cw = el("div","cwrap");
+  var cv = document.createElement("canvas");
+  cv.width = 1400; cv.height = 860;
+  cv.setAttribute("role","img");
+  cv.setAttribute("aria-label","Drawing area for week " + w.n + ". A written description is required in the box below this canvas.");
+  cw.appendChild(cv); c.appendChild(cw);
+
+  var ctx = cv.getContext("2d");
+  ctx.fillStyle = "#FFFFFF"; ctx.fillRect(0,0,cv.width,cv.height);
+  ctx.lineCap = "round"; ctx.lineJoin = "round";
+  if(st.draw){ var im = new Image(); im.onload = function(){ ctx.drawImage(im,0,0); }; im.src = st.draw; }
+  drawState.ctx = ctx; drawState.undo = [];
+
+  function pos(e){
+    var r = cv.getBoundingClientRect();
+    return { x:(e.clientX - r.left) * (cv.width / r.width), y:(e.clientY - r.top) * (cv.height / r.height) };
+  }
+  function begin(e){
+    if(st.submitted) return;
+    drawState.drawing = true;
+    if(drawState.undo.length > 12) drawState.undo.shift();
+    drawState.undo.push(ctx.getImageData(0,0,cv.width,cv.height));
+    ctx.beginPath();
+    var p = pos(e); ctx.moveTo(p.x,p.y);
+    cv.setPointerCapture && cv.setPointerCapture(e.pointerId);
+    e.preventDefault();
+  }
+  function move(e){
+    if(!drawState.drawing) return;
+    var p = pos(e);
+    ctx.strokeStyle = drawState.tool === "eraser" ? "#FFFFFF" : "#08101F";
+    ctx.lineWidth = drawState.tool === "eraser" ? 26 : (drawState.tool === "thick" ? 7 : 3);
+    ctx.lineTo(p.x,p.y); ctx.stroke();
+    e.preventDefault();
+  }
+  function snapshot(){
+    var o = document.createElement("canvas");
+    o.width = 900; o.height = Math.round(900 * cv.height / cv.width);
+    var octx = o.getContext("2d");
+    octx.fillStyle = "#FFFFFF"; octx.fillRect(0,0,o.width,o.height);
+    octx.drawImage(cv, 0, 0, o.width, o.height);
+    return o.toDataURL("image/png");
+  }
+  function end(){
+    if(!drawState.drawing) return;
+    drawState.drawing = false;
+    st.draw = snapshot(); save();
+  }
+  cv.addEventListener("pointerdown", begin);
+  cv.addEventListener("pointermove", move);
+  cv.addEventListener("pointerup", end);
+  cv.addEventListener("pointerleave", end);
+  undoB.addEventListener("click", function(){
+    var im = drawState.undo.pop(); if(!im) return;
+    ctx.putImageData(im,0,0); st.draw = snapshot(); save();
+  });
+  clrB.addEventListener("click", function(){
+    drawState.undo.push(ctx.getImageData(0,0,cv.width,cv.height));
+    ctx.fillStyle="#FFFFFF"; ctx.fillRect(0,0,cv.width,cv.height);
+    st.draw = snapshot(); save();
+  });
+
+  if(st.submitted){
+    var ddl = el("dl","answered");
+    ddl.appendChild(el("dt", null, "Description of the figure"));
+    ddl.appendChild(el("dd", null, st.drawAlt || ""));
+    c.appendChild(ddl); return c;
+  }
+  var f = el("div","field"); f.style.marginTop="14px";
+  var lab = el("label", null, "Describe your drawing in words");
+  lab.setAttribute("for","drawAlt");
+  lab.appendChild(el("span","hint","Required. At least 150 characters. Name every label you drew and every arrow direction. This is the accessible version of your figure and it is graded with it."));
+  var ta = el("textarea"); ta.id="drawAlt"; ta.value = st.drawAlt || ""; ta.disabled = st.submitted;
+  ta.addEventListener("input", function(){ st.drawAlt = ta.value.trim(); save(); updateSubmit(); });
+  f.appendChild(lab); f.appendChild(ta); c.appendChild(f);
+  return c;
+}
+
+/* 5. synthesis */
+function sectionQ(w, st){
+  var c = el("div","card");
+  c.appendChild(el("h2", null, "5. Say what you think"));
+  if(st.submitted){
+    var dl = el("dl","answered");
+    w.q.forEach(function(q){
+      dl.appendChild(el("dt", null, q.label));
+      dl.appendChild(el("dd", null, st.q[q.k] || ""));
+    });
+    c.appendChild(dl); return c;
+  }
+  w.q.forEach(function(q){
+    var f = el("div","field");
+    var lab = el("label", null, q.label);
+    lab.setAttribute("for","q_"+q.k);
+    var node;
+    if(q.type === "select"){
+      node = el("select"); node.id = "q_"+q.k;
+      var ph = el("option", null, "Choose one"); ph.value=""; node.appendChild(ph);
+      q.opts.forEach(function(o){ var op = el("option", null, o); op.value = o; if(st.q[q.k]===o) op.selected = true; node.appendChild(op); });
+    } else {
+      node = el("textarea"); node.id = "q_"+q.k; node.value = st.q[q.k] || ""; node.style.minHeight="86px";
+      lab.appendChild(el("span","hint","At least 100 characters."));
+    }
+    node.disabled = st.submitted;
+    node.addEventListener(q.type === "select" ? "change" : "input", function(){ st.q[q.k] = node.value; save(); updateSubmit(); });
+    f.appendChild(lab); f.appendChild(node); c.appendChild(f);
+  });
+  return c;
+}
+
+/* 6. submit */
+/* Updates the close panel without replacing any node. Replacing the node
+   under the pointer swallowed the first click when a textarea blurred. */
+function updateSubmit(){
+  var box = $("submitProblems"), btn = $("submitBtn");
+  if(!box || !btn) return;
+  var probs = weekProblems(WEEKMAP[cur], S.w[cur]);
+  btn.disabled = probs.length > 0;
+  var sig = probs.join("|");
+  if(box.getAttribute("data-sig") === sig) return;
+  box.setAttribute("data-sig", sig);
+  box.innerHTML = "";
+  if(probs.length){
+    var n = el("div","note");
+    n.appendChild(el("strong", null, "Not finished yet. "));
+    var ul = el("ul"); probs.forEach(function(x){ ul.appendChild(el("li", null, x)); });
+    n.appendChild(ul); box.appendChild(n);
+  }
+}
+function sectionSubmit(w, st){
+  var c = el("div","card"); c.id = "submitCard";
+  c.appendChild(el("h2", null, "6. Close the week"));
+  if(st.submitted){
+    var p = el("p"); p.appendChild(el("span","done-flag","Submitted"));
+    c.appendChild(p);
+    c.appendChild(el("p", null, "This week is closed. Export the PDF and upload it in Canvas. If you need it reopened, message your instructor."));
+    var re = el("button","btn-quiet","Reopen for editing"); re.type="button";
+    var armed = false;
+    re.addEventListener("click", function(){
+      if(!armed){ armed = true; re.textContent = "Click again to reopen. Your record shows the reopen."; return; }
+      st.submitted=false; st.reopened=(st.reopened||0)+1; save(); renderRail(); renderWeek();
+    });
+    c.appendChild(re);
+    return c;
+  }
+  var probs = weekProblems(w, st);
+  var box = el("div"); box.id = "submitProblems";
+  box.setAttribute("aria-live","polite");
+  box.setAttribute("data-sig", probs.join("|"));
+  if(probs.length){
+    var n = el("div","note");
+    n.appendChild(el("strong", null, "Not finished yet. "));
+    var ul = el("ul"); probs.forEach(function(x){ ul.appendChild(el("li", null, x)); });
+    n.appendChild(ul); box.appendChild(n);
+  }
+  c.appendChild(box);
+  var row = el("div","btnrow");
+  var b = el("button","btn-primary","Close the week and lock it"); b.type="button";
+  b.id = "submitBtn";
+  b.disabled = probs.length > 0;
+  b.addEventListener("click", function(){
+    st.submitted = true; st.submittedAt = stamp(); save(); renderRail(); renderWeek();
+    window.scrollTo(0,0);
+  });
+  row.appendChild(b); c.appendChild(row);
+  return c;
+}
+function weekProblems(w, st){
+  var out = [];
+  if(!st.predict || st.predict.length < 120) out.push("Lock your prediction.");
+  if(st.orders.length === 0) out.push("Place at least one order.");
+  st.orders.forEach(function(o,i){ if(!o.changed || o.changed.length < 60) out.push("Say what result " + (i+1) + " changed."); });
+  if(!st.drawAlt || st.drawAlt.length < 150) out.push("Describe your drawing in words, at least 150 characters.");
+  w.q.forEach(function(q){
+    var v = st.q[q.k] || "";
+    if(q.type === "select" && !v) out.push("Answer: " + q.label);
+    if(q.type === "text" && v.trim().length < 100) out.push("Write at least 100 characters for: " + q.label);
+  });
+  return out;
+}
+
+/* ---------- unlock ---------- */
+$("unlockBtn").addEventListener("click", function(){
+  var code = $("wcode").value.trim().toUpperCase();
+  var w = WEEKMAP[cur];
+  if(code === COURSE.masterCode.toUpperCase()){
+    WEEKS.forEach(function(x){ S.w[x.n].open = true; });
+    save(); $("wcode").value=""; renderRail(); renderWeek(); return;
+  }
+  if(code === w.code.toUpperCase()){
+    S.w[cur].open = true; S.w[cur].openedAt = stamp(); save(); $("wcode").value=""; renderRail(); renderWeek();
+  } else {
+    showErr("unlockErr","That code does not open Week " + cur + ". Check the announcement in Canvas.");
+  }
+});
+
+/* ---------- save code ---------- */
+$("codeBtn").addEventListener("click", function(){
+  $("saveCode").value = toCode();
+  $("codeWrap").classList.remove("hidden");
+  $("saveCode").focus(); $("saveCode").select();
+});
+$("copyBtn").addEventListener("click", function(){
+  var ta = $("saveCode"); ta.select();
+  var ok = false;
+  try{ ok = document.execCommand("copy"); }catch(e){}
+  if(navigator.clipboard && !ok){ navigator.clipboard.writeText(ta.value).then(function(){ $("copyMsg").textContent = "Copied."; }); return; }
+  $("copyMsg").textContent = ok ? "Copied." : "Select the text and copy it by hand.";
+});
+var wipeArmed = false;
+$("wipeBtn").addEventListener("click", function(){
+  if(!wipeArmed){
+    wipeArmed = true;
+    $("wipeBtn").textContent = "Click again. This erases this browser copy.";
+    $("copyMsg").textContent = "Save your code first if you have not.";
+    return;
+  }
+  try{ localStorage.removeItem(LSKEY); }catch(e){}
+  window.location.reload();
+});
+
+/* ---------- print ---------- */
+$("pdfBtn").addEventListener("click", function(){ buildPrint(); window.print(); });
+
+function pcard(parent, title){
+  var d = el("div","pcard");
+  if(title) d.appendChild(el("h2", null, title));
+  parent.appendChild(d); return d;
+}
+function buildPrint(){
+  var w = WEEKMAP[cur], st = S.w[cur], v = variant();
+  var root = $("printdoc"); root.innerHTML = "";
+  root.appendChild(el("h1", null, COURSE.code + " Human Physiology. Patient File, Week " + w.n + ". " + w.title));
+  var meta = el("p", null,
+    "Physiologist of record: " + S.name + ". Section " + S.sec + ". " +
+    "Patient " + v.who + ", " + v.role + ". File " + $("pFile").textContent + ". " +
+    "Week dates " + w.dates + ". Exported " + stamp() + "." +
+    (st.submittedAt ? " Week closed " + st.submittedAt + "." : " Week not yet closed.") +
+    (st.reopened ? " Reopened " + st.reopened + " time(s)." : ""));
+  root.appendChild(meta);
+
+  var d1 = pcard(root, "This week on the ward");
+  d1.appendChild(el("p", null, dec(v.beats[cur-1])));
+
+  var d2 = pcard(root, "Prediction, locked before any result existed");
+  d2.appendChild(el("p","", "Locked " + (st.predictAt || "not locked")));
+  d2.appendChild(el("p", null, st.predict || ""));
+
+  var d3 = pcard(root, "Order trail");
+  if(!st.orders.length){ d3.appendChild(el("p", null, "No orders placed.")); }
+  else {
+    d3.appendChild(el("p","", "Sequence at a glance. Tokens used " + spent(cur) + " of " + w.budget + "."));
+    var tb = el("table");
+    var thead = el("thead"); var tr = el("tr");
+    ["#","Time","Order","Cost","Result"].forEach(function(h){ tr.appendChild(el("th",null,h)); });
+    thead.appendChild(tr); tb.appendChild(thead);
+    var tbody = el("tbody");
+    st.orders.forEach(function(o,i){
+      var t = TESTMAP[o.id]; var r = el("tr");
+      [String(i+1), o.at, t.name, String(t.cost), resultFor(o.id)].forEach(function(cell){ r.appendChild(el("td",null,cell)); });
+      tbody.appendChild(r);
+    });
+    tb.appendChild(tbody); d3.appendChild(tb);
+
+    st.orders.forEach(function(o,i){
+      var t = TESTMAP[o.id];
+      var blk = el("div","ord");
+      blk.appendChild(el("div","ordh", (i+1) + ". " + t.name + "   |   " + o.at + "   |   " + t.cost + (t.cost===1?" token":" tokens")));
+      var dl = el("dl");
+      function row(k, v, cls){ dl.appendChild(el("dt",null,k)); dl.appendChild(el("dd", cls||null, v)); }
+      row("Predicted", o.expect);
+      row("Gave up", (TESTMAP[o.instead] ? TESTMAP[o.instead].name : o.instead) + ". " + o.why);
+      row("Result", resultFor(o.id) + (t.ref ? "   (reference " + t.ref + ")" : ""), "val");
+      row("Changed", o.changed || "");
+      blk.appendChild(dl);
+      d3.appendChild(blk);
+    });
+  }
+
+  var d4 = pcard(root, "Figure");
+  d4.appendChild(el("p", null, w.draw));
+  if(st.draw){ var im = new Image(); im.src = st.draw; im.alt = "Student drawing for week " + w.n; d4.appendChild(im); }
+  else { d4.appendChild(el("p", null, "Drawn on paper and uploaded separately.")); }
+  d4.appendChild(el("h3", null, "Description of the figure"));
+  d4.appendChild(el("p", null, st.drawAlt || ""));
+
+  var d5 = pcard(root, "Synthesis");
+  var dl = el("dl","plain");
+  w.q.forEach(function(q){
+    dl.appendChild(el("dt", null, q.label));
+    dl.appendChild(el("dd", null, st.q[q.k] || ""));
+  });
+  d5.appendChild(dl);
+
+  var d6 = pcard(root, "Statement");
+  d6.appendChild(el("p", null, "The reasoning in this file is mine. Where I used a source, a classmate, or a generative tool to check my understanding, I have said so in the box below. I understand that the order in which I asked for information, and what I said before I saw it, is what is being graded."));
+  d6.appendChild(el("p", null, "Sources or tools consulted: ______________________________________________"));
+  var sig = el("p","sig","Signature and date");
+  d6.appendChild(sig);
+
+  var d7 = el("div","pcard");
+  d7.appendChild(el("h3", null, "File fingerprint"));
+  d7.appendChild(el("p", null, "Week " + w.n + " fingerprint " + fingerprint(cur) +
+    ". This changes if any answer on this page changes, so the copy your instructor grades is the copy you exported."));
+  root.appendChild(d7);
+}
+
+/* restore on load if a file already lives in this browser */
+(function(){
+  var prior = loadLocal();
+  if(prior && prior.name){
+    $("sname").value = prior.name;
+    $("ssec").value = prior.sec || COURSE.section;
+  }
+})();
+</script>
+
+<script>
+/* iframe height sender for Canvas and Kajabi embeds */
+(function(){
+  var frameId = (function(){
+    try{ var m = window.location.search.match(/[?&]id=([^&]+)/); return m ? decodeURIComponent(m[1]) : "bio005-patient-file"; }
+    catch(e){ return "bio005-patient-file"; }
+  })();
+  var last = 0;
+  function sendHeight(){
+    var h = Math.max(
+      document.body.scrollHeight, document.documentElement.scrollHeight,
+      document.body.offsetHeight, document.documentElement.offsetHeight
+    );
+    if(Math.abs(h - last) < 2) return;
+    last = h;
+    try{ window.parent.postMessage({ id: frameId, height: h, frameHeight: h, type: "resize" }, "*"); }catch(e){}
+  }
+  window.addEventListener("load", sendHeight);
+  window.addEventListener("resize", sendHeight);
+  if(window.ResizeObserver){ new ResizeObserver(sendHeight).observe(document.body); }
+  document.addEventListener("click", function(){ setTimeout(sendHeight, 60); });
+  setTimeout(sendHeight, 300);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BIO 005 Progressive Patient File</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#08101F; --navy-chip:#16233C; --navy-tint:#EDF1F3;
+  --terra:#8B1D1D; --terra-deep:#6E1616;
+  --gold:#DCB45C; --gold-ink:#6B5214; --gold-lite:#FBEBC8;
+  --white:#FFFFFF; --offwhite:#FAFAF9; --onred:#FFFFFF;
+  --muted:#3D4860; --rule:#DCE0E6; --light:#DDE2EA;
+  --lock:#454E5E;
+  --shadow:0 1px 3px rgba(0,0,0,.08); --shadow-lift:0 8px 16px rgba(0,0,0,.10);
+  --fs:16px;
+}
+*{box-sizing:border-box}
+em,i,cite,dfn,var,address{font-style:normal}
+html{font-size:var(--fs)}
+body{
+  margin:0; background:var(--offwhite); color:var(--navy);
+  font-family:"DM Sans",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  line-height:1.55; font-size:1rem;
+}
+h1,h2,h3,h4{font-family:"Plus Jakarta Sans",system-ui,Arial,sans-serif; margin:0 0 .4em}
+h1{font-weight:800; font-size:1.7rem; letter-spacing:-.01em}
+h2{font-weight:600; font-size:1.28rem}
+h3{font-weight:600; font-size:1.06rem}
+h4{font-weight:600; font-size:.98rem}
+p{margin:0 0 .8em}
+a{color:var(--terra)}
+.wrap{max-width:1120px; margin:0 auto; padding:0 20px 72px}
+.skip{position:absolute; left:-9999px; top:0; background:var(--navy); color:var(--white); padding:10px 16px; z-index:200}
+.skip:focus{left:8px; top:8px}
+:focus-visible{outline:3px solid var(--gold-ink); outline-offset:2px}
+.dark :focus-visible, .band :focus-visible{outline:3px solid var(--gold); outline-offset:2px}
+
+/* header */
+.band{background:var(--terra); color:var(--onred); padding:26px 0 22px}
+.band .wrap{padding-bottom:0}
+.eyebrow{font-size:.75rem; letter-spacing:.11em; text-transform:uppercase; font-weight:700; color:var(--gold-lite); margin:0 0 6px}
+.band h1{color:var(--white)}
+.band .sub{color:var(--white); font-size:.95rem; margin:0}
+
+/* cards */
+.card{background:var(--white); border:1px solid var(--rule); border-radius:12px; padding:20px 22px; box-shadow:var(--shadow); margin:18px 0}
+.card.tight{padding:16px 18px}
+.card h2{margin-top:0}
+.note{background:var(--navy-tint); border:1px solid var(--rule); border-left:4px solid var(--terra); border-radius:8px; padding:12px 14px; font-size:.94rem; color:var(--muted)}
+.note strong{color:var(--navy)}
+
+/* forms */
+label{display:block; font-weight:700; font-size:.9rem; margin:0 0 5px; color:var(--navy)}
+.hint{font-weight:400; color:var(--muted); font-size:.85rem; display:block; margin-top:2px}
+input[type=text],select,textarea{
+  width:100%; font:inherit; color:var(--navy); background:var(--white);
+  border:1.5px solid var(--muted); border-radius:8px; padding:9px 11px;
+}
+textarea{min-height:96px; resize:vertical}
+input:disabled,select:disabled,textarea:disabled{background:#F1F3F6; color:#333C4D; border-color:var(--light); opacity:1}
+input[readonly],textarea[readonly]{background:#F6F7F9; color:var(--navy); border-color:var(--light)}
+.answered dt{font-weight:700; font-size:.9rem; margin-top:12px}
+.answered dd{margin:3px 0 0; padding:9px 11px; background:#F6F7F9; border:1px solid var(--light); border-radius:8px; white-space:pre-wrap}
+.field{margin:0 0 14px}
+.row{display:grid; grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr)); gap:14px}
+
+button{font:inherit; font-weight:700; cursor:pointer; border-radius:8px; padding:10px 18px; border:1.5px solid transparent}
+.btn-primary{background:var(--terra); color:var(--white); border-color:var(--terra-deep)}
+.btn-primary:hover{background:var(--terra-deep)}
+.btn-secondary{background:var(--white); color:var(--navy); border-color:var(--navy)}
+.btn-secondary:hover{background:var(--navy-tint)}
+.btn-quiet{background:transparent; color:var(--muted); border-color:var(--light); font-weight:500}
+.btn-quiet:hover{color:var(--navy); border-color:var(--muted)}
+button:disabled{background:#EEF0F3; color:#333C4D; border-color:var(--light); cursor:not-allowed}
+.btnrow{display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-top:12px}
+
+/* week rail */
+.rail{display:flex; gap:8px; flex-wrap:wrap; margin:18px 0 6px; padding:0; list-style:none}
+.rail button{
+  padding:8px 12px; font-size:.87rem; border-radius:8px;
+  background:var(--white); color:var(--lock); border:1.5px dashed var(--lock); font-weight:600;
+}
+.rail button[data-state=open]{border-style:solid; border-color:var(--gold); color:var(--gold-ink); background:var(--white)}
+.rail button[data-state=done]{border-style:solid; border-color:var(--navy); color:var(--navy); background:var(--navy-tint)}
+.rail button[aria-current=true]{box-shadow:inset 0 0 0 2px var(--navy)}
+.legend{font-size:.82rem; color:var(--muted); margin:0 0 10px}
+
+/* patient strip */
+.pstrip{display:flex; flex-wrap:wrap; gap:18px; align-items:baseline; background:var(--navy); color:var(--white); border-radius:12px; padding:14px 18px; margin:18px 0}
+.pstrip .k{font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; color:var(--gold); display:block; font-weight:700}
+.pstrip .v{font-size:1rem; font-weight:600}
+
+/* budget meter */
+.meter{display:flex; gap:6px; flex-wrap:wrap; margin:6px 0 0}
+.tok{width:18px; height:18px; border-radius:4px; border:1.5px solid var(--navy); background:var(--navy)}
+.tok.spent{background:var(--white); border-style:dashed; border-color:var(--lock)}
+
+/* order list */
+.cat{border:1px solid var(--rule); border-radius:10px; margin:0 0 10px; background:var(--white)}
+.cat > h3{margin:0}
+.cat > h3 > button{
+  width:100%; text-align:left; background:transparent; border:0; border-radius:10px;
+  padding:12px 14px; font-family:"Plus Jakarta Sans",Arial,sans-serif; font-weight:600; color:var(--navy);
+  display:flex; justify-content:space-between; gap:10px; align-items:center;
+}
+.cat > h3 > button:hover{background:var(--navy-tint)}
+.cat .chev{color:var(--terra); font-weight:700}
+.catbody{padding:0 14px 12px; border-top:1px solid var(--rule)}
+.tests{list-style:none; margin:10px 0 0; padding:0}
+.tests li{display:flex; gap:12px; align-items:center; justify-content:space-between; padding:8px 0; border-bottom:1px solid var(--rule); flex-wrap:wrap}
+.tests li:last-child{border-bottom:0}
+.tname{flex:1 1 300px; min-width:0}
+.tcost{font-size:.8rem; color:var(--muted); white-space:nowrap}
+.tests button{padding:6px 14px; font-size:.86rem}
+
+/* results */
+.res{border:1.5px solid var(--navy); background:var(--navy-tint); border-radius:10px; padding:14px 16px; margin:12px 0}
+.res .rh{display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap; align-items:baseline; margin:0 0 6px}
+.res .rname{font-weight:700; font-family:"Plus Jakarta Sans",Arial,sans-serif}
+.res .rstamp{font-size:.78rem; color:var(--muted)}
+.res .rval{font-size:1.05rem; font-weight:700; color:var(--navy)}
+.res .rref{font-size:.84rem; color:var(--muted)}
+.res dl{margin:10px 0 0; font-size:.92rem}
+.res dt{font-weight:700; font-size:.78rem; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); margin-top:8px}
+.res dd{margin:2px 0 0}
+
+/* modal */
+dialog{border:0; padding:0; color:var(--navy); border-radius:14px; max-width:640px; width:calc(100% - 32px); box-shadow:0 18px 48px rgba(0,0,0,.32)}
+dialog::backdrop{background:rgba(8,16,31,.62)}
+.dlg{background:var(--white); border-radius:14px; overflow:hidden}
+.dlg header{background:var(--navy); color:var(--white); padding:16px 20px}
+.dlg header h2{color:var(--white); margin:0}
+.dlg header p{margin:4px 0 0; font-size:.88rem; color:var(--light)}
+.dlg .body{padding:18px 20px}
+.err{color:#7A1414; font-weight:700; font-size:.88rem; margin:6px 0 0}
+
+/* canvas */
+.tools{display:flex; gap:8px; flex-wrap:wrap; margin:0 0 8px}
+.tools button[aria-pressed=true]{background:var(--navy); color:var(--white); border-color:var(--navy)}
+.cwrap{border:1.5px solid var(--navy); border-radius:10px; background:var(--white); overflow:hidden}
+canvas{display:block; width:100%; height:auto; touch-action:none; background:var(--white)}
+
+/* misc */
+.done-flag{display:inline-block; background:var(--navy); color:var(--white); border-radius:6px; padding:3px 9px; font-size:.74rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase}
+.stack > * + *{margin-top:14px}
+.sr{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap}
+.hidden{display:none !important}
+footer.foot{border-top:1px solid var(--rule); margin-top:34px; padding-top:16px; color:var(--muted); font-size:.86rem}
+
+/* print */
+#printdoc{display:none}
+@media print{
+  @page{margin:14mm}
+  body{background:var(--white); font-size:11pt}
+  .noprint,.band,.rail,.legend,dialog,footer.foot{display:none !important}
+  #app{display:none !important}
+  #printdoc{display:block !important}
+  #printdoc h1{font-size:16pt} #printdoc h2{font-size:12.5pt; margin-top:14pt}
+  #printdoc .pcard{border:1px solid #333; border-radius:6px; padding:8pt 10pt; margin:8pt 0}
+  #printdoc table{width:100%; border-collapse:collapse; font-size:9.5pt; margin:0 0 8pt}
+  #printdoc th,#printdoc td{border:1px solid #666; padding:3pt 5pt; text-align:left; vertical-align:top}
+  #printdoc th{background:#EDF1F3}
+  #printdoc .ord{border:1px solid #666; border-radius:5px; padding:6pt 8pt; margin:0 0 7pt; break-inside:avoid}
+  #printdoc .ordh{font-weight:700; border-bottom:1px solid #999; padding-bottom:3pt; margin-bottom:4pt; font-size:10.5pt}
+  #printdoc .ord dl{margin:0; display:grid; grid-template-columns:78pt 1fr; column-gap:8pt; row-gap:3pt}
+  #printdoc .ord dt{font-weight:700; font-size:8.5pt; text-transform:uppercase; letter-spacing:.04em; margin:0}
+  #printdoc .ord dd{margin:0; font-size:10pt}
+  #printdoc .ord .val{font-weight:700}
+  #printdoc dl.plain dt{font-weight:700; margin-top:7pt}
+  #printdoc dl.plain dd{margin:2pt 0 0}
+  #printdoc img{max-width:100%; border:1px solid #333}
+  #printdoc .sig{margin-top:16pt; border-top:1px solid #000; width:60%; padding-top:4pt; font-size:10pt}
+  #printdoc .code{font-family:ui-monospace,Menlo,Consolas,monospace; font-size:7pt; word-break:break-all; color:#333}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none !important; animation:none !important}}
+@media (max-width:640px){ h1{font-size:1.42rem} .wrap{padding:0 14px 60px} }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the patient file</a>
+
+<div id="app">
+<div class="band noprint">
+  <div class="wrap">
+    <p class="eyebrow" id="eyebrow">BIO 005 &middot; Human Physiology &middot; Progressive Patient File</p>
+    <h1>The Patient File</h1>
+    <p class="sub">One patient. Fifteen weeks. You decide what to find out, and in what order.</p>
+  </div>
+</div>
+
+<main class="wrap" id="main" tabindex="-1">
+
+  <!-- GATE -->
+  <section id="gate" class="card" aria-labelledby="gate-h">
+    <h2 id="gate-h">Open your file</h2>
+    <p>Your patient is assigned from your name. Two students rarely get the same one, and the same name always opens the same patient, so type it the same way every week.</p>
+    <div class="row">
+      <div class="field">
+        <label for="sname">Your full name as it appears in Canvas</label>
+        <input type="text" id="sname" autocomplete="off" spellcheck="false">
+      </div>
+      <div class="field">
+        <label for="ssec">Section<span class="hint">Leave the default unless told otherwise.</span></label>
+        <input type="text" id="ssec" value="" autocomplete="off" spellcheck="false">
+      </div>
+    </div>
+    <p class="note"><strong>Nothing you type leaves this page.</strong> Your name is used only to pick your patient. There is no server, no account, and no upload. Save your work each week using the two buttons at the bottom of the page.</p>
+    <div class="btnrow">
+      <button type="button" class="btn-primary" id="openBtn">Open my file</button>
+      <button type="button" class="btn-secondary" id="restoreBtn" aria-expanded="false" aria-controls="restoreWrap">Restore from a saved code</button>
+    </div>
+    <p class="err hidden" id="gateErr"></p>
+    <div class="field hidden" id="restoreWrap" style="margin-top:14px">
+      <label for="restoreCode">Paste your save code<span class="hint">The whole code, with nothing added or removed.</span></label>
+      <textarea id="restoreCode" rows="4" spellcheck="false"></textarea>
+      <div class="btnrow"><button type="button" class="btn-primary" id="restoreGo">Restore my file</button></div>
+    </div>
+  </section>
+
+  <!-- WORKSPACE -->
+  <section id="work" class="hidden">
+    <div class="pstrip">
+      <div><span class="k">Patient</span><span class="v" id="pWho"></span></div>
+      <div><span class="k">Occupation</span><span class="v" id="pRole"></span></div>
+      <div><span class="k">File number</span><span class="v" id="pFile"></span></div>
+      <div><span class="k">Physiologist of record</span><span class="v" id="pStudent"></span></div>
+    </div>
+
+    <nav aria-label="Weeks" class="noprint">
+      <h2 class="sr">Weeks</h2>
+      <ul class="rail" id="rail"></ul>
+      <p class="legend">Dashed gray is locked. Solid gold is open. Navy on tint is submitted. Your instructor posts the code that opens each week.</p>
+    </nav>
+
+    <!-- unlock -->
+    <div class="card tight noprint" id="unlockCard">
+      <div class="row">
+        <div class="field" style="margin:0">
+          <label for="wcode">Week code</label>
+          <input type="text" id="wcode" autocomplete="off" spellcheck="false" placeholder="Posted in Canvas">
+        </div>
+        <div class="field" style="margin:0; align-self:end">
+          <button type="button" class="btn-primary" id="unlockBtn">Unlock this week</button>
+        </div>
+      </div>
+      <p class="err hidden" id="unlockErr"></p>
+    </div>
+
+    <div id="weekBody"></div>
+
+    <div class="card noprint" id="saveCard">
+      <h2>Save and hand in</h2>
+      <p>Do both of these before you close the page.</p>
+      <div class="btnrow">
+        <button type="button" class="btn-primary" id="pdfBtn">Export this week to PDF</button>
+        <button type="button" class="btn-secondary" id="codeBtn">Show my save code</button>
+        <button type="button" class="btn-quiet" id="wipeBtn">Clear this browser</button>
+      </div>
+      <div class="field hidden" id="codeWrap" style="margin-top:14px">
+        <label for="saveCode">Save code<span class="hint">Copy this into a document you keep. Pasting it back into Restore brings all of your typed work back on any computer. Drawings are not in the code, they stay in this browser and in the PDF you export, so export the PDF every week.</span></label>
+        <textarea id="saveCode" readonly rows="4" spellcheck="false"></textarea>
+        <div class="btnrow"><button type="button" class="btn-secondary" id="copyBtn">Copy code</button><span id="copyMsg" aria-live="polite"></span></div>
+      </div>
+    </div>
+
+    <footer class="foot">
+      <p>BIO 005 Human Physiology. Dr. Sharilyn Rennie.</p>
+    </footer>
+  </section>
+</main>
+</div>
+
+<!-- ORDER COMMIT DIALOG -->
+<dialog id="orderDlg" aria-labelledby="odlg-h">
+ <form method="dialog" class="dlg" id="orderForm">
+  <header>
+    <h2 id="odlg-h">Commit before you look</h2>
+    <p>The result is not on this page yet. It appears after you submit.</p>
+  </header>
+  <div class="body stack">
+    <p><strong id="odlg-test"></strong></p>
+    <div class="field">
+      <label for="oExpect">What do you expect this to show, and why<span class="hint">Give a number or a direction and the mechanism behind it. At least 120 characters.</span></label>
+      <textarea id="oExpect" aria-describedby="oExpectCount"></textarea>
+      <p class="hint" id="oExpectCount" aria-live="polite">0 of 120 characters</p>
+    </div>
+    <div class="field">
+      <label for="oInstead">Name the order you are giving up to place this one</label>
+      <select id="oInstead"></select>
+    </div>
+    <div class="field">
+      <label for="oWhy">Why this one and not that one<span class="hint">At least 80 characters.</span></label>
+      <textarea id="oWhy" style="min-height:76px" aria-describedby="oWhyCount"></textarea>
+      <p class="hint" id="oWhyCount" aria-live="polite">0 of 80 characters</p>
+    </div>
+    <p class="err hidden" id="oErr"></p>
+    <div class="btnrow">
+      <button type="button" class="btn-primary" id="oSubmit">Submit and reveal</button>
+      <button type="button" class="btn-quiet" id="oCancel">Cancel</button>
+    </div>
+  </div>
+ </form>
+</dialog>
+
+<div id="printdoc"></div>
+
+<script>
+/*__DATA__*/
+
+/* ---------- deterministic seeding ---------- */
+function hashStr(s){var h=2166136261>>>0;for(var i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)>>>0;}return h>>>0;}
+function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;var t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
+
+/* ---------- result decoding ---------- */
+function dec(b64){
+  if(!b64) return "";
+  var raw = atob(b64), out = "";
+  for(var i=0;i<raw.length;i++){ out += String.fromCharCode(raw.charCodeAt(i) ^ (KEY.charCodeAt(i%KEY.length))); }
+  try{ return decodeURIComponent(escape(out)); }catch(e){ return out; }
+}
+
+/* ---------- state ---------- */
+var S = null;
+var TESTMAP = {}; TESTS.forEach(function(t){TESTMAP[t.id]=t;});
+var WEEKMAP = {}; WEEKS.forEach(function(w){WEEKMAP[w.n]=w;});
+var cur = 1;
+
+function blankWeek(){ return {open:false, predict:"", orders:[], draw:"", drawAlt:"", q:{}, submitted:false}; }
+
+function newState(name, sec, vIdx){
+  var st = {v:1, name:name, sec:sec, vIdx:vIdx, w:{}};
+  WEEKS.forEach(function(w){ st.w[w.n] = blankWeek(); });
+  return st;
+}
+
+/* persistence: localStorage is a convenience only, wrapped so a blocked
+   store never breaks the page. The save code is the real record. */
+var LSKEY = "bio005-patient-file";
+var storeWarned = false;
+function save(){
+  try{ localStorage.setItem(LSKEY, JSON.stringify(S)); }
+  catch(e){
+    if(!storeWarned){
+      storeWarned = true;
+      var m = $("copyMsg");
+      if(m) m.textContent = "This browser will not hold any more of your work. Export your PDF now and keep your save code.";
+    }
+  }
+}
+function loadLocal(){
+  try{ var r = localStorage.getItem(LSKEY); return r ? JSON.parse(r) : null; }catch(e){ return null; }
+}
+/* The save code carries your typed work, not your drawings. Drawings are
+   large, they live in this browser and in the PDF you export each week. */
+function toCode(){
+  try{
+    var lean = { v:S.v, name:S.name, sec:S.sec, vIdx:S.vIdx, w:{} };
+    Object.keys(S.w).forEach(function(k){
+      var x = S.w[k];
+      lean.w[k] = { open:x.open, predict:x.predict, predictAt:x.predictAt, orders:x.orders,
+                    drawAlt:x.drawAlt, q:x.q, submitted:x.submitted, submittedAt:x.submittedAt,
+                    reopened:x.reopened, openedAt:x.openedAt, draw:"" };
+    });
+    return btoa(unescape(encodeURIComponent(JSON.stringify(lean))));
+  }catch(e){ return ""; }
+}
+function fingerprint(n){
+  var st = S.w[n];
+  var basis = S.name + "|" + n + "|" + (st.predict||"") + "|" +
+    st.orders.map(function(o){ return o.id + o.at + (o.changed||""); }).join("") + "|" +
+    (st.drawAlt||"") + "|" + JSON.stringify(st.q) + "|" + (st.submittedAt||"");
+  var h = hashStr(basis).toString(36).toUpperCase();
+  while(h.length < 8) h = "0" + h;
+  return h.slice(0,4) + "-" + h.slice(4,8);
+}
+function fromCode(c){
+  try{ return JSON.parse(decodeURIComponent(escape(atob(c.replace(/\s+/g,""))))); }catch(e){ return null; }
+}
+
+/* ---------- helpers ---------- */
+function $(id){ return document.getElementById(id); }
+function el(tag, cls, txt){ var n=document.createElement(tag); if(cls) n.className=cls; if(txt!=null) n.textContent=txt; return n; }
+function variant(){ return VARIANTS[S.vIdx]; }
+function resultFor(testId){
+  var v = variant();
+  if(Object.prototype.hasOwnProperty.call(v.r, testId)) return dec(v.r[testId]);
+  return dec(NORMALS[testId] || "");
+}
+function availableTests(n){
+  var w = WEEKMAP[n];
+  return TESTS.filter(function(t){
+    if(w.opens.indexOf(t.cat) < 0) return false;
+    if(t.minWeek && n < t.minWeek) return false;
+    return true;
+  });
+}
+function spent(n){ return S.w[n].orders.reduce(function(a,o){ return a + (TESTMAP[o.id] ? TESTMAP[o.id].cost : 1); }, 0); }
+function remaining(n){ return WEEKMAP[n].budget - spent(n); }
+function ordered(n, id){ return S.w[n].orders.some(function(o){ return o.id === id; }); }
+function lastOrderNeedsNote(n){
+  var o = S.w[n].orders;
+  return o.length > 0 && !(o[o.length-1].changed && o[o.length-1].changed.length >= 60);
+}
+function stamp(){
+  var d = new Date();
+  function p(x){ return (x<10?"0":"")+x; }
+  return d.getFullYear()+"-"+p(d.getMonth()+1)+"-"+p(d.getDate())+" "+p(d.getHours())+":"+p(d.getMinutes());
+}
+
+/* ---------- gate ---------- */
+$("ssec").value = COURSE.section;
+$("openBtn").addEventListener("click", function(){
+  var name = $("sname").value.trim();
+  if(name.length < 3){ showErr("gateErr","Type your full name as it appears in Canvas."); return; }
+  var sec = $("ssec").value.trim() || COURSE.section;
+  var seed = hashStr(name.toLowerCase().replace(/\s+/g," ") + "|" + sec.toLowerCase());
+  var idx = Math.floor(mulberry32(seed)() * VARIANTS.length) % VARIANTS.length;
+  var prior = loadLocal();
+  if(prior && prior.name && prior.name.toLowerCase() === name.toLowerCase()){ S = prior; }
+  else { S = newState(name, sec, idx); }
+  boot();
+});
+$("restoreBtn").addEventListener("click", function(){
+  var wrap = $("restoreWrap"), open = !wrap.classList.contains("hidden");
+  wrap.classList.toggle("hidden", open);
+  $("restoreBtn").setAttribute("aria-expanded", open ? "false" : "true");
+  if(!open) $("restoreCode").focus();
+});
+$("restoreGo").addEventListener("click", function(){
+  var c = $("restoreCode").value.trim();
+  if(!c){ showErr("gateErr","Paste your save code first."); return; }
+  var st = fromCode(c);
+  if(!st || !st.w){ showErr("gateErr","That code could not be read. Paste the whole thing, with nothing added."); return; }
+  WEEKS.forEach(function(w){ if(!st.w[w.n]) st.w[w.n] = blankWeek(); });
+  var here = loadLocal();
+  if(here && here.name && here.name.toLowerCase() === (st.name||"").toLowerCase()){
+    WEEKS.forEach(function(w){ if(!st.w[w.n].draw && here.w[w.n] && here.w[w.n].draw) st.w[w.n].draw = here.w[w.n].draw; });
+  }
+  S = st; save(); boot();
+});
+function showErr(id, msg){ var n=$(id); n.textContent=msg; n.classList.remove("hidden"); }
+function hideErr(id){ $(id).classList.add("hidden"); }
+
+function boot(){
+  $("gate").classList.add("hidden");
+  $("work").classList.remove("hidden");
+  var v = variant();
+  $("pWho").textContent = v.who;
+  $("pRole").textContent = v.role;
+  $("pFile").textContent = "PF-" + v.id + "-" + String(hashStr(S.name.toLowerCase()) % 9000 + 1000);
+  $("pStudent").textContent = S.name;
+  var firstOpen = 1;
+  WEEKS.forEach(function(w){ if(S.w[w.n].open) firstOpen = w.n; });
+  cur = firstOpen;
+  renderRail(); renderWeek();
+  $("main").focus && $("main").focus();
+}
+
+/* ---------- rail ---------- */
+function renderRail(){
+  var rail = $("rail"); rail.innerHTML = "";
+  WEEKS.forEach(function(w){
+    var li = el("li");
+    var b = el("button", null, "Week " + w.n);
+    b.type = "button";
+    var st = S.w[w.n];
+    b.setAttribute("data-state", st.submitted ? "done" : (st.open ? "open" : "locked"));
+    b.setAttribute("aria-current", w.n === cur ? "true" : "false");
+    b.setAttribute("aria-label", "Week " + w.n + ", " + w.title + ", " + (st.submitted ? "submitted" : (st.open ? "open" : "locked")));
+    b.addEventListener("click", function(){ cur = w.n; renderRail(); renderWeek(); });
+    li.appendChild(b); rail.appendChild(li);
+  });
+}
+
+/* ---------- week ---------- */
+function renderWeek(){
+  var w = WEEKMAP[cur], st = S.w[cur], body = $("weekBody");
+  body.innerHTML = "";
+  $("unlockCard").classList.toggle("hidden", st.open);
+  $("saveCard").classList.toggle("hidden", !st.open);
+  hideErr("unlockErr");
+
+  var head = el("div","card");
+  var h = el("h2", null, "Week " + w.n + ". " + w.title);
+  head.appendChild(h);
+  head.appendChild(el("p", "hint", w.dates));
+  if(!st.open){
+    head.appendChild(el("p", null, "This week is locked. Enter the code your instructor posted."));
+    body.appendChild(head);
+    return;
+  }
+  head.appendChild(el("p", null, w.frame));
+  var beat = el("div","note");
+  var bs = el("strong", null, "This week on the ward. ");
+  beat.appendChild(bs);
+  beat.appendChild(document.createTextNode(dec(variant().beats[cur-1])));
+  head.appendChild(beat);
+  if(st.submitted){ head.appendChild(el("p","", "")); head.lastChild.appendChild(el("span","done-flag","Submitted")); }
+  body.appendChild(head);
+
+  body.appendChild(sectionPredict(w, st));
+  if(st.predict && st.predict.length >= 120){
+    body.appendChild(sectionOrders(w, st));
+    body.appendChild(sectionResults(w, st));
+  }
+  body.appendChild(sectionDraw(w, st));
+  body.appendChild(sectionQ(w, st));
+  body.appendChild(sectionSubmit(w, st));
+}
+
+/* 1. prediction gate */
+function sectionPredict(w, st){
+  var c = el("div","card");
+  c.appendChild(el("h2", null, "1. Commit your prediction"));
+  c.appendChild(el("p", null, w.predict));
+  var f = el("div","field");
+  var lab = el("label", null, "Your prediction");
+  lab.setAttribute("for","predBox");
+  var hint = el("span","hint","At least 120 characters. This locks once you order your first test, and it is what you will be graded against.");
+  lab.appendChild(hint);
+  var ta = el("textarea"); ta.id = "predBox"; ta.value = st.predict || "";
+  var locked = !!(st.predict && st.predict.length >= 120);
+  if(locked) ta.setAttribute("readonly","readonly");
+  f.appendChild(lab); f.appendChild(ta); c.appendChild(f);
+  if(!locked){
+    var row = el("div","btnrow");
+    var b = el("button","btn-primary","Lock my prediction"); b.type="button";
+    var msg = el("span","err hidden"); msg.id="predErr";
+    b.addEventListener("click", function(){
+      var val = ta.value.trim();
+      if(val.length < 120){ msg.textContent = "Write at least 120 characters. You have " + val.length + "."; msg.classList.remove("hidden"); return; }
+      st.predict = val; st.predictAt = stamp(); save(); renderWeek();
+    });
+    row.appendChild(b); c.appendChild(row); c.appendChild(msg);
+  } else {
+    c.appendChild(el("p","hint","Locked " + (st.predictAt || "") + "."));
+  }
+  return c;
+}
+
+/* 2. order menu */
+function sectionOrders(w, st){
+  var c = el("div","card");
+  c.appendChild(el("h2", null, "2. Place your orders"));
+  var rem = remaining(cur);
+  var p = el("p", null, "You have " + w.budget + " order tokens this week. " + rem + " left. Tests cost one, two, or three tokens.");
+  c.appendChild(p);
+  var meter = el("div","meter");
+  meter.setAttribute("role","img");
+  meter.setAttribute("aria-label", rem + " of " + w.budget + " order tokens remaining");
+  for(var i=0;i<w.budget;i++){ var t=el("span","tok"+(i<spent(cur)?" spent":"")); meter.appendChild(t); }
+  c.appendChild(meter);
+
+  if(lastOrderNeedsNote(cur)){
+    var warn = el("div","note");
+    warn.appendChild(el("strong", null, "Before your next order. "));
+    warn.appendChild(document.createTextNode("Write what your last result changed. The menu is closed until you do."));
+    c.appendChild(warn);
+    return c;
+  }
+  if(rem <= 0){
+    c.appendChild(el("p","hint","Your tokens for this week are spent. Move to the drawing and the synthesis."));
+    return c;
+  }
+  if(st.submitted){ c.appendChild(el("p","hint","This week is submitted. Ordering is closed.")); return c; }
+
+  var byCat = {};
+  availableTests(cur).forEach(function(t){ (byCat[t.cat] = byCat[t.cat] || []).push(t); });
+  Object.keys(byCat).forEach(function(k){
+    var box = el("div","cat");
+    var h3 = el("h3");
+    var tog = el("button"); tog.type="button";
+    tog.setAttribute("aria-expanded","false");
+    var bid = "cat-"+k;
+    tog.setAttribute("aria-controls", bid);
+    tog.appendChild(el("span",null, CATS[k].label + " (" + byCat[k].length + ")"));
+    tog.appendChild(el("span","chev","+"));
+    h3.appendChild(tog); box.appendChild(h3);
+    var bd = el("div","catbody hidden"); bd.id = bid;
+    if(CATS[k].note) bd.appendChild(el("p","hint", CATS[k].note));
+    var ul = el("ul","tests");
+    byCat[k].forEach(function(t){
+      var li = el("li");
+      var nm = el("span","tname", t.name);
+      var cost = el("span","tcost", t.cost + (t.cost===1?" token":" tokens"));
+      li.appendChild(nm); li.appendChild(cost);
+      if(ordered(cur, t.id)){ li.appendChild(el("span","tcost","Ordered")); }
+      else if(t.cost > remaining(cur)){ var d=el("button","btn-quiet","Too costly"); d.type="button"; d.disabled=true; li.appendChild(d); }
+      else {
+        var b = el("button","btn-secondary","Order"); b.type="button";
+        b.setAttribute("aria-label","Order " + t.name + ", costs " + t.cost);
+        b.addEventListener("click", function(){ openOrder(t); });
+        li.appendChild(b);
+      }
+      ul.appendChild(li);
+    });
+    bd.appendChild(ul); box.appendChild(bd);
+    tog.addEventListener("click", function(){
+      var openNow = tog.getAttribute("aria-expanded") === "true";
+      tog.setAttribute("aria-expanded", openNow ? "false" : "true");
+      tog.querySelector(".chev").textContent = openNow ? "+" : "–";
+      bd.classList.toggle("hidden", openNow);
+    });
+    c.appendChild(box);
+  });
+  return c;
+}
+
+/* commit dialog */
+var pendingTest = null;
+function openOrder(t){
+  pendingTest = t;
+  $("odlg-test").textContent = t.name + ". " + t.cost + (t.cost===1?" token." : " tokens.");
+  $("oExpect").value = ""; $("oWhy").value = "";
+  $("oExpectCount").textContent = "0 of 120 characters";
+  $("oWhyCount").textContent = "0 of 80 characters";
+  var sel = $("oInstead"); sel.innerHTML = "";
+  var opts = availableTests(cur).filter(function(x){ return x.id !== t.id && !ordered(cur, x.id) && x.cost <= remaining(cur); });
+  var ph = el("option", null, "Choose the order you are not placing"); ph.value=""; sel.appendChild(ph);
+  opts.slice(0,60).forEach(function(x){ var o=el("option",null, x.name); o.value=x.id; sel.appendChild(o); });
+  $("oErr").classList.add("hidden");
+  $("orderDlg").showModal();
+  $("oExpect").focus();
+}
+function counter(taId, outId, need){
+  var ta = $(taId), out = $(outId);
+  function upd(){ var n = ta.value.trim().length; out.textContent = n + " of " + need + " characters" + (n >= need ? ", enough" : ""); }
+  ta.addEventListener("input", upd); upd();
+}
+counter("oExpect","oExpectCount",120);
+counter("oWhy","oWhyCount",80);
+$("oCancel").addEventListener("click", function(){ $("orderDlg").close(); });
+$("oSubmit").addEventListener("click", function(){
+  var ex = $("oExpect").value.trim(), why = $("oWhy").value.trim(), ins = $("oInstead").value;
+  if(ex.length < 120){ return oerr("Your expectation needs at least 120 characters. You have " + ex.length + "."); }
+  if(!ins){ return oerr("Choose the order you are giving up."); }
+  if(why.length < 80){ return oerr("Your reason needs at least 80 characters. You have " + why.length + "."); }
+  S.w[cur].orders.push({ id: pendingTest.id, at: stamp(), expect: ex, instead: ins, why: why, changed: "" });
+  save(); $("orderDlg").close(); renderRail(); renderWeek();
+  var last = document.querySelectorAll(".res");
+  if(last.length){ last[last.length-1].scrollIntoView({block:"center"}); last[last.length-1].querySelector("textarea") && last[last.length-1].querySelector("textarea").focus(); }
+});
+function oerr(m){ var n=$("oErr"); n.textContent=m; n.classList.remove("hidden"); return false; }
+
+/* 3. results */
+function sectionResults(w, st){
+  var c = el("div","card");
+  c.appendChild(el("h2", null, "3. Your results, in the order you asked for them"));
+  if(!st.orders.length){ c.appendChild(el("p","hint","Nothing ordered yet.")); return c; }
+  st.orders.forEach(function(o, i){
+    var t = TESTMAP[o.id];
+    var box = el("div","res");
+    var rh = el("div","rh");
+    rh.appendChild(el("span","rname", (i+1) + ". " + t.name));
+    rh.appendChild(el("span","rstamp", o.at));
+    box.appendChild(rh);
+    box.appendChild(el("div","rval", resultFor(o.id)));
+    if(t.ref) box.appendChild(el("div","rref","Reference: " + t.ref));
+    var dl = el("dl");
+    dl.appendChild(el("dt", null, "You predicted"));
+    dl.appendChild(el("dd", null, o.expect));
+    dl.appendChild(el("dt", null, "You gave up"));
+    dl.appendChild(el("dd", null, (TESTMAP[o.instead] ? TESTMAP[o.instead].name : o.instead) + ". " + o.why));
+    box.appendChild(dl);
+    if(st.submitted){
+      var sdl = el("dl","answered");
+      sdl.appendChild(el("dt", null, "What this result changed"));
+      sdl.appendChild(el("dd", null, o.changed || ""));
+      box.appendChild(sdl); c.appendChild(box); return;
+    }
+    var f = el("div","field"); f.style.marginTop = "12px";
+    var lab = el("label", null, "What did this result change");
+    lab.setAttribute("for","chg"+i);
+    lab.appendChild(el("span","hint","At least 60 characters. Say what you now believe that you did not believe a minute ago, or say that nothing changed and why that is informative."));
+    var ta = el("textarea"); ta.id="chg"+i; ta.value = o.changed || ""; ta.style.minHeight="76px";
+    ta.disabled = st.submitted;
+    ta.addEventListener("input", function(){
+      var was = !!(o.changed && o.changed.length >= 60);
+      o.changed = ta.value.trim();
+      save();
+      var now = o.changed.length >= 60;
+      updateSubmit();
+      if(was !== now && i === st.orders.length - 1){
+        var pos = window.pageYOffset;
+        renderWeek();
+        window.scrollTo(0, pos);
+        var re = document.getElementById("chg" + i);
+        if(re){ re.focus(); re.setSelectionRange(re.value.length, re.value.length); }
+      }
+    });
+    f.appendChild(lab); f.appendChild(ta);
+    box.appendChild(f);
+    c.appendChild(box);
+  });
+  return c;
+}
+
+/* 4. drawing */
+var drawState = { tool:"pen", drawing:false, ctx:null, undo:[] };
+function sectionDraw(w, st){
+  var c = el("div","card");
+  c.appendChild(el("h2", null, "4. Draw it"));
+  c.appendChild(el("p", null, w.draw));
+  c.appendChild(el("p","hint","Draw here with a mouse, a finger, or a stylus. If you would rather draw on paper, do that, photograph it, and upload the photo to Canvas beside your PDF. Either way, fill in the description box, which is what a screen reader and your instructor both read."));
+
+  var tools = el("div","tools");
+  [["pen","Pen"],["thick","Thick pen"],["eraser","Eraser"]].forEach(function(pair){
+    var b = el("button","btn-secondary",pair[1]); b.type="button";
+    b.setAttribute("aria-pressed", drawState.tool===pair[0] ? "true":"false");
+    b.addEventListener("click", function(){
+      drawState.tool = pair[0];
+      tools.querySelectorAll("button").forEach(function(x){ x.setAttribute("aria-pressed","false"); });
+      b.setAttribute("aria-pressed","true");
+    });
+    tools.appendChild(b);
+  });
+  var undoB = el("button","btn-quiet","Undo"); undoB.type="button";
+  var clrB = el("button","btn-quiet","Clear"); clrB.type="button";
+  tools.appendChild(undoB); tools.appendChild(clrB);
+  c.appendChild(tools);
+
+  var cw = el("div","cwrap");
+  var cv = document.createElement("canvas");
+  cv.width = 1400; cv.height = 860;
+  cv.setAttribute("role","img");
+  cv.setAttribute("aria-label","Drawing area for week " + w.n + ". A written description is required in the box below this canvas.");
+  cw.appendChild(cv); c.appendChild(cw);
+
+  var ctx = cv.getContext("2d");
+  ctx.fillStyle = "#FFFFFF"; ctx.fillRect(0,0,cv.width,cv.height);
+  ctx.lineCap = "round"; ctx.lineJoin = "round";
+  if(st.draw){ var im = new Image(); im.onload = function(){ ctx.drawImage(im,0,0); }; im.src = st.draw; }
+  drawState.ctx = ctx; drawState.undo = [];
+
+  function pos(e){
+    var r = cv.getBoundingClientRect();
+    return { x:(e.clientX - r.left) * (cv.width / r.width), y:(e.clientY - r.top) * (cv.height / r.height) };
+  }
+  function begin(e){
+    if(st.submitted) return;
+    drawState.drawing = true;
+    if(drawState.undo.length > 12) drawState.undo.shift();
+    drawState.undo.push(ctx.getImageData(0,0,cv.width,cv.height));
+    ctx.beginPath();
+    var p = pos(e); ctx.moveTo(p.x,p.y);
+    cv.setPointerCapture && cv.setPointerCapture(e.pointerId);
+    e.preventDefault();
+  }
+  function move(e){
+    if(!drawState.drawing) return;
+    var p = pos(e);
+    ctx.strokeStyle = drawState.tool === "eraser" ? "#FFFFFF" : "#08101F";
+    ctx.lineWidth = drawState.tool === "eraser" ? 26 : (drawState.tool === "thick" ? 7 : 3);
+    ctx.lineTo(p.x,p.y); ctx.stroke();
+    e.preventDefault();
+  }
+  function snapshot(){
+    var o = document.createElement("canvas");
+    o.width = 900; o.height = Math.round(900 * cv.height / cv.width);
+    var octx = o.getContext("2d");
+    octx.fillStyle = "#FFFFFF"; octx.fillRect(0,0,o.width,o.height);
+    octx.drawImage(cv, 0, 0, o.width, o.height);
+    return o.toDataURL("image/png");
+  }
+  function end(){
+    if(!drawState.drawing) return;
+    drawState.drawing = false;
+    st.draw = snapshot(); save();
+  }
+  cv.addEventListener("pointerdown", begin);
+  cv.addEventListener("pointermove", move);
+  cv.addEventListener("pointerup", end);
+  cv.addEventListener("pointerleave", end);
+  undoB.addEventListener("click", function(){
+    var im = drawState.undo.pop(); if(!im) return;
+    ctx.putImageData(im,0,0); st.draw = snapshot(); save();
+  });
+  clrB.addEventListener("click", function(){
+    drawState.undo.push(ctx.getImageData(0,0,cv.width,cv.height));
+    ctx.fillStyle="#FFFFFF"; ctx.fillRect(0,0,cv.width,cv.height);
+    st.draw = snapshot(); save();
+  });
+
+  if(st.submitted){
+    var ddl = el("dl","answered");
+    ddl.appendChild(el("dt", null, "Description of the figure"));
+    ddl.appendChild(el("dd", null, st.drawAlt || ""));
+    c.appendChild(ddl); return c;
+  }
+  var f = el("div","field"); f.style.marginTop="14px";
+  var lab = el("label", null, "Describe your drawing in words");
+  lab.setAttribute("for","drawAlt");
+  lab.appendChild(el("span","hint","Required. At least 150 characters. Name every label you drew and every arrow direction. This is the accessible version of your figure and it is graded with it."));
+  var ta = el("textarea"); ta.id="drawAlt"; ta.value = st.drawAlt || ""; ta.disabled = st.submitted;
+  ta.addEventListener("input", function(){ st.drawAlt = ta.value.trim(); save(); updateSubmit(); });
+  f.appendChild(lab); f.appendChild(ta); c.appendChild(f);
+  return c;
+}
+
+/* 5. synthesis */
+function sectionQ(w, st){
+  var c = el("div","card");
+  c.appendChild(el("h2", null, "5. Say what you think"));
+  if(st.submitted){
+    var dl = el("dl","answered");
+    w.q.forEach(function(q){
+      dl.appendChild(el("dt", null, q.label));
+      dl.appendChild(el("dd", null, st.q[q.k] || ""));
+    });
+    c.appendChild(dl); return c;
+  }
+  w.q.forEach(function(q){
+    var f = el("div","field");
+    var lab = el("label", null, q.label);
+    lab.setAttribute("for","q_"+q.k);
+    var node;
+    if(q.type === "select"){
+      node = el("select"); node.id = "q_"+q.k;
+      var ph = el("option", null, "Choose one"); ph.value=""; node.appendChild(ph);
+      q.opts.forEach(function(o){ var op = el("option", null, o); op.value = o; if(st.q[q.k]===o) op.selected = true; node.appendChild(op); });
+    } else {
+      node = el("textarea"); node.id = "q_"+q.k; node.value = st.q[q.k] || ""; node.style.minHeight="86px";
+      lab.appendChild(el("span","hint","At least 100 characters."));
+    }
+    node.disabled = st.submitted;
+    node.addEventListener(q.type === "select" ? "change" : "input", function(){ st.q[q.k] = node.value; save(); updateSubmit(); });
+    f.appendChild(lab); f.appendChild(node); c.appendChild(f);
+  });
+  return c;
+}
+
+/* 6. submit */
+/* Updates the close panel without replacing any node. Replacing the node
+   under the pointer swallowed the first click when a textarea blurred. */
+function updateSubmit(){
+  var box = $("submitProblems"), btn = $("submitBtn");
+  if(!box || !btn) return;
+  var probs = weekProblems(WEEKMAP[cur], S.w[cur]);
+  btn.disabled = probs.length > 0;
+  var sig = probs.join("|");
+  if(box.getAttribute("data-sig") === sig) return;
+  box.setAttribute("data-sig", sig);
+  box.innerHTML = "";
+  if(probs.length){
+    var n = el("div","note");
+    n.appendChild(el("strong", null, "Not finished yet. "));
+    var ul = el("ul"); probs.forEach(function(x){ ul.appendChild(el("li", null, x)); });
+    n.appendChild(ul); box.appendChild(n);
+  }
+}
+function sectionSubmit(w, st){
+  var c = el("div","card"); c.id = "submitCard";
+  c.appendChild(el("h2", null, "6. Close the week"));
+  if(st.submitted){
+    var p = el("p"); p.appendChild(el("span","done-flag","Submitted"));
+    c.appendChild(p);
+    c.appendChild(el("p", null, "This week is closed. Export the PDF and upload it in Canvas. If you need it reopened, message your instructor."));
+    var re = el("button","btn-quiet","Reopen for editing"); re.type="button";
+    var armed = false;
+    re.addEventListener("click", function(){
+      if(!armed){ armed = true; re.textContent = "Click again to reopen. Your record shows the reopen."; return; }
+      st.submitted=false; st.reopened=(st.reopened||0)+1; save(); renderRail(); renderWeek();
+    });
+    c.appendChild(re);
+    return c;
+  }
+  var probs = weekProblems(w, st);
+  var box = el("div"); box.id = "submitProblems";
+  box.setAttribute("aria-live","polite");
+  box.setAttribute("data-sig", probs.join("|"));
+  if(probs.length){
+    var n = el("div","note");
+    n.appendChild(el("strong", null, "Not finished yet. "));
+    var ul = el("ul"); probs.forEach(function(x){ ul.appendChild(el("li", null, x)); });
+    n.appendChild(ul); box.appendChild(n);
+  }
+  c.appendChild(box);
+  var row = el("div","btnrow");
+  var b = el("button","btn-primary","Close the week and lock it"); b.type="button";
+  b.id = "submitBtn";
+  b.disabled = probs.length > 0;
+  b.addEventListener("click", function(){
+    st.submitted = true; st.submittedAt = stamp(); save(); renderRail(); renderWeek();
+    window.scrollTo(0,0);
+  });
+  row.appendChild(b); c.appendChild(row);
+  return c;
+}
+function weekProblems(w, st){
+  var out = [];
+  if(!st.predict || st.predict.length < 120) out.push("Lock your prediction.");
+  if(st.orders.length === 0) out.push("Place at least one order.");
+  st.orders.forEach(function(o,i){ if(!o.changed || o.changed.length < 60) out.push("Say what result " + (i+1) + " changed."); });
+  if(!st.drawAlt || st.drawAlt.length < 150) out.push("Describe your drawing in words, at least 150 characters.");
+  w.q.forEach(function(q){
+    var v = st.q[q.k] || "";
+    if(q.type === "select" && !v) out.push("Answer: " + q.label);
+    if(q.type === "text" && v.trim().length < 100) out.push("Write at least 100 characters for: " + q.label);
+  });
+  return out;
+}
+
+/* ---------- unlock ---------- */
+$("unlockBtn").addEventListener("click", function(){
+  var code = $("wcode").value.trim().toUpperCase();
+  var w = WEEKMAP[cur];
+  if(code === COURSE.masterCode.toUpperCase()){
+    WEEKS.forEach(function(x){ S.w[x.n].open = true; });
+    save(); $("wcode").value=""; renderRail(); renderWeek(); return;
+  }
+  if(code === w.code.toUpperCase()){
+    S.w[cur].open = true; S.w[cur].openedAt = stamp(); save(); $("wcode").value=""; renderRail(); renderWeek();
+  } else {
+    showErr("unlockErr","That code does not open Week " + cur + ". Check the announcement in Canvas.");
+  }
+});
+
+/* ---------- save code ---------- */
+$("codeBtn").addEventListener("click", function(){
+  $("saveCode").value = toCode();
+  $("codeWrap").classList.remove("hidden");
+  $("saveCode").focus(); $("saveCode").select();
+});
+$("copyBtn").addEventListener("click", function(){
+  var ta = $("saveCode"); ta.select();
+  var ok = false;
+  try{ ok = document.execCommand("copy"); }catch(e){}
+  if(navigator.clipboard && !ok){ navigator.clipboard.writeText(ta.value).then(function(){ $("copyMsg").textContent = "Copied."; }); return; }
+  $("copyMsg").textContent = ok ? "Copied." : "Select the text and copy it by hand.";
+});
+var wipeArmed = false;
+$("wipeBtn").addEventListener("click", function(){
+  if(!wipeArmed){
+    wipeArmed = true;
+    $("wipeBtn").textContent = "Click again. This erases this browser copy.";
+    $("copyMsg").textContent = "Save your code first if you have not.";
+    return;
+  }
+  try{ localStorage.removeItem(LSKEY); }catch(e){}
+  window.location.reload();
+});
+
+/* ---------- print ---------- */
+$("pdfBtn").addEventListener("click", function(){ buildPrint(); window.print(); });
+
+function pcard(parent, title){
+  var d = el("div","pcard");
+  if(title) d.appendChild(el("h2", null, title));
+  parent.appendChild(d); return d;
+}
+function buildPrint(){
+  var w = WEEKMAP[cur], st = S.w[cur], v = variant();
+  var root = $("printdoc"); root.innerHTML = "";
+  root.appendChild(el("h1", null, COURSE.code + " Human Physiology. Patient File, Week " + w.n + ". " + w.title));
+  var meta = el("p", null,
+    "Physiologist of record: " + S.name + ". Section " + S.sec + ". " +
+    "Patient " + v.who + ", " + v.role + ". File " + $("pFile").textContent + ". " +
+    "Week dates " + w.dates + ". Exported " + stamp() + "." +
+    (st.submittedAt ? " Week closed " + st.submittedAt + "." : " Week not yet closed.") +
+    (st.reopened ? " Reopened " + st.reopened + " time(s)." : ""));
+  root.appendChild(meta);
+
+  var d1 = pcard(root, "This week on the ward");
+  d1.appendChild(el("p", null, dec(v.beats[cur-1])));
+
+  var d2 = pcard(root, "Prediction, locked before any result existed");
+  d2.appendChild(el("p","", "Locked " + (st.predictAt || "not locked")));
+  d2.appendChild(el("p", null, st.predict || ""));
+
+  var d3 = pcard(root, "Order trail");
+  if(!st.orders.length){ d3.appendChild(el("p", null, "No orders placed.")); }
+  else {
+    d3.appendChild(el("p","", "Sequence at a glance. Tokens used " + spent(cur) + " of " + w.budget + "."));
+    var tb = el("table");
+    var thead = el("thead"); var tr = el("tr");
+    ["#","Time","Order","Cost","Result"].forEach(function(h){ tr.appendChild(el("th",null,h)); });
+    thead.appendChild(tr); tb.appendChild(thead);
+    var tbody = el("tbody");
+    st.orders.forEach(function(o,i){
+      var t = TESTMAP[o.id]; var r = el("tr");
+      [String(i+1), o.at, t.name, String(t.cost), resultFor(o.id)].forEach(function(cell){ r.appendChild(el("td",null,cell)); });
+      tbody.appendChild(r);
+    });
+    tb.appendChild(tbody); d3.appendChild(tb);
+
+    st.orders.forEach(function(o,i){
+      var t = TESTMAP[o.id];
+      var blk = el("div","ord");
+      blk.appendChild(el("div","ordh", (i+1) + ". " + t.name + "   |   " + o.at + "   |   " + t.cost + (t.cost===1?" token":" tokens")));
+      var dl = el("dl");
+      function row(k, v, cls){ dl.appendChild(el("dt",null,k)); dl.appendChild(el("dd", cls||null, v)); }
+      row("Predicted", o.expect);
+      row("Gave up", (TESTMAP[o.instead] ? TESTMAP[o.instead].name : o.instead) + ". " + o.why);
+      row("Result", resultFor(o.id) + (t.ref ? "   (reference " + t.ref + ")" : ""), "val");
+      row("Changed", o.changed || "");
+      blk.appendChild(dl);
+      d3.appendChild(blk);
+    });
+  }
+
+  var d4 = pcard(root, "Figure");
+  d4.appendChild(el("p", null, w.draw));
+  if(st.draw){ var im = new Image(); im.src = st.draw; im.alt = "Student drawing for week " + w.n; d4.appendChild(im); }
+  else { d4.appendChild(el("p", null, "Drawn on paper and uploaded separately.")); }
+  d4.appendChild(el("h3", null, "Description of the figure"));
+  d4.appendChild(el("p", null, st.drawAlt || ""));
+
+  var d5 = pcard(root, "Synthesis");
+  var dl = el("dl","plain");
+  w.q.forEach(function(q){
+    dl.appendChild(el("dt", null, q.label));
+    dl.appendChild(el("dd", null, st.q[q.k] || ""));
+  });
+  d5.appendChild(dl);
+
+  var d6 = pcard(root, "Statement");
+  d6.appendChild(el("p", null, "The reasoning in this file is mine. Where I used a source, a classmate, or a generative tool to check my understanding, I have said so in the box below. I understand that the order in which I asked for information, and what I said before I saw it, is what is being graded."));
+  d6.appendChild(el("p", null, "Sources or tools consulted: ______________________________________________"));
+  var sig = el("p","sig","Signature and date");
+  d6.appendChild(sig);
+
+  var d7 = el("div","pcard");
+  d7.appendChild(el("h3", null, "File fingerprint"));
+  d7.appendChild(el("p", null, "Week " + w.n + " fingerprint " + fingerprint(cur) +
+    ". This changes if any answer on this page changes, so the copy your instructor grades is the copy you exported."));
+  root.appendChild(d7);
+}
+
+/* restore on load if a file already lives in this browser */
+(function(){
+  var prior = loadLocal();
+  if(prior && prior.name){
+    $("sname").value = prior.name;
+    $("ssec").value = prior.sec || COURSE.section;
+  }
+})();
+</script>
+
+<script>
+/* iframe height sender for Canvas and Kajabi embeds */
+(function(){
+  var frameId = (function(){
+    try{ var m = window.location.search.match(/[?&]id=([^&]+)/); return m ? decodeURIComponent(m[1]) : "bio005-patient-file"; }
+    catch(e){ return "bio005-patient-file"; }
+  })();
+  var last = 0;
+  function sendHeight(){
+    var h = Math.max(
+      document.body.scrollHeight, document.documentElement.scrollHeight,
+      document.body.offsetHeight, document.documentElement.offsetHeight
+    );
+    if(Math.abs(h - last) < 2) return;
+    last = h;
+    try{ window.parent.postMessage({ id: frameId, height: h, frameHeight: h, type: "resize" }, "*"); }catch(e){}
+  }
+  window.addEventListener("load", sendHeight);
+  window.addEventListener("resize", sendHeight);
+  if(window.ResizeObserver){ new ResizeObserver(sendHeight).observe(document.body); }
+  document.addEventListener("click", function(){ setTimeout(sendHeight, 60); });
+  setTimeout(sendHeight, 300);
+})();
+</script>
+</body>
+</html>
