@@ -154,6 +154,53 @@ footer{border-top:1px solid var(--rule);padding:22px 0 34px;font-size:13.5px;col
   *,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important}
 }
 
+/* ---- What a finished box looks like ------------------------------------
+   The worked example on competency 1 shows the thinking. This shows the
+   PAGE: how a box is headed, how the two colours sit inside one box, and
+   that a new concept starts a NEW box rather than continuing the old one.
+
+   The content is deliberately ANATOMY, from BIO 004. If the sample were
+   physiology, half the class would copy it straight onto their sheet and
+   learn nothing. Anatomy shows the format with nothing worth lifting.
+
+   Colour never carries meaning on its own. Every pass is labelled in text
+   as well, so the boxes read correctly in greyscale, on a printout, and to
+   a screen reader. The swatches are aria-hidden decoration. */
+.sheet{background:var(--card);border:1px solid var(--rule);border-radius:10px;
+  padding:18px 20px 20px;margin:0 0 8px}
+.sheet .sl{font-family:var(--display);font-weight:800;font-size:17px;margin-bottom:6px;display:block}
+.paper{border:1.5px solid var(--navy);border-radius:6px;margin:16px 0 14px;overflow:hidden}
+.paper .ph{background:var(--tint);border-bottom:1.5px solid var(--navy);padding:9px 13px}
+.paper .pn{font-family:var(--display);font-weight:800;font-size:13.5px;display:block}
+.paper .pp{font-size:11.5px;color:#3F4653;margin-top:2px;display:block}  /* muted is 6.88:1 on the tint fill */
+.paper .pbody{padding:13px}
+.pass{margin:0 0 13px}
+.pass:last-child{margin-bottom:0}
+.pass .pl{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  margin:0 0 5px;display:flex;align-items:center;gap:7px}
+.swatch{width:12px;height:12px;border-radius:3px;display:inline-block;flex:none}
+.p1 .pl{color:#1B3A6B} .p1 .swatch{background:#1B3A6B}
+.p2 .pl{color:#8B3A2E} .p2 .swatch{background:#8B3A2E}
+.pass ul{margin:0;padding-left:19px;font-size:13.5px;line-height:1.55}
+.pass li{margin:0 0 3px}
+.p1 ul{color:#1B3A6B} .p2 ul{color:#8B3A2E}
+.arrowdown{text-align:center;color:var(--faint);font-size:11px;font-weight:700;
+  letter-spacing:.16em;text-transform:uppercase;margin:0 0 4px}
+.sheet .cap{font-size:13.5px;color:var(--muted)}
+@media print{
+  .sheet{border:0.8pt solid #000;padding:7pt 9pt;break-inside:avoid;margin:0 0 6pt}
+  .sheet .sl{font-size:10pt;margin-bottom:3pt}
+  .paper{border:1pt solid #000;margin:7pt 0 6pt}
+  .paper .ph{background:#fff;border-bottom:1pt solid #000;padding:4pt 7pt}
+  .paper .pn{font-size:9pt} .paper .pp{font-size:7.5pt}
+  .paper .pbody{padding:6pt 7pt}
+  .pass{margin-bottom:6pt}
+  .pass ul{font-size:8.3pt;padding-left:13pt} .p1 ul,.p2 ul{color:#000}
+  .pass .pl{font-size:7pt;color:#000} .swatch{border:0.5pt solid #000;background:#fff!important}
+  .arrowdown{font-size:7pt}
+  .sheet .cap{font-size:8pt}
+}
+
 /* Worked example. One competency gets a fully worked answer so students can
    see the shape of a good one before they do the other seventeen. It shows
    the ladder carried all the way through with a single case, then breaks one
@@ -243,20 +290,82 @@ footer{border-top:1px solid var(--rule);padding:22px 0 34px;font-size:13.5px;col
 
 <div class="progress"><div class="wrap">
   <div class="pbar-row">
-    <span class="pcount" id="pcount">0 of 18 competencies</span>
+    <span class="pcount" id="pcount">Loading</span>
     <span class="pbar"><span class="pfill" id="pfill"></span></span>
     <button class="sqbtn" type="button" id="resetbtn">Clear all</button>
   </div>
   <p class="pnote">Tick a prompt once that box is finished on your sheet. Ticks are saved in this browser only. They are not your grade and I never see them.</p>
 </div></div>
 
-<main id="list"><div class="wrap" id="out"></div>
+<main id="list">
   <div class="wrap">
-    <div class="notice">
-      <p class="nl">Not in these chapters</p>
-      <p>Water and solution properties, pH and buffers, protein structure, enzymes, and ATP are Silverthorn chapter 2. They are Week 2, not this week. If you saw them on an earlier version of the week 1 list, that is why they are not here.</p>
-      <p style="margin-top:9px">The rest of chapter 6, G protein coupled receptors, second messengers, receptor modulation and dose response, comes later in the term with the rest of cell signaling.</p>
+    <div class="sheet">
+      <p class="sl">What a finished box looks like on your paper sheet</p>
+      <p class="cap" style="margin:0 0 14px">These two are <strong>anatomy</strong>, from BIO 004, on purpose. Nothing here goes on your physiology sheet, so you are looking at the format and not at answers to copy. One concept gets one box. When you move to the next concept you start a new box, you do not keep writing in the old one.</p>
+
+      <div class="paper">
+        <div class="ph">
+          <span class="pn">4. Long bone structure</span>
+          <span class="pp">Prompt A &middot; Draw a long bone in section and label every region</span>
+        </div>
+        <div class="pbody">
+          <div class="pass p1">
+            <p class="pl"><span class="swatch" aria-hidden="true"></span>First pass, before the video</p>
+            <ul>
+              <li>diaphysis = shaft. epiphysis = each end</li>
+              <li>metaphysis between them, growth plate lives here</li>
+              <li>compact bone outside, spongy inside the epiphysis</li>
+              <li>medullary cavity = hollow centre, marrow</li>
+              <li>periosteum outside, endosteum lining the cavity</li>
+            </ul>
+          </div>
+          <div class="pass p2">
+            <p class="pl"><span class="swatch" aria-hidden="true"></span>Second pass, after the video</p>
+            <ul>
+              <li>had periosteum and endosteum backwards. Peri = around the outside</li>
+              <li>articular cartilage caps the epiphysis, periosteum does NOT cover it</li>
+              <li>why hollow: strength per gram. Same reason a scaffold pole is a tube</li>
+              <li>growth plate closes, becomes epiphyseal line. Missed this entirely</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <p class="arrowdown">New concept, new box &darr;</p>
+
+      <div class="paper">
+        <div class="ph">
+          <span class="pn">5. Synovial joint structure</span>
+          <span class="pp">Prompt B &middot; List the parts every synovial joint has and what each one does</span>
+        </div>
+        <div class="pbody">
+          <div class="pass p1">
+            <p class="pl"><span class="swatch" aria-hidden="true"></span>First pass, before the video</p>
+            <ul>
+              <li>joint cavity with fluid in it</li>
+              <li>articular cartilage on both bone ends</li>
+              <li>capsule around the whole thing</li>
+              <li>ligaments hold bone to bone</li>
+            </ul>
+          </div>
+          <div class="pass p2">
+            <p class="pl"><span class="swatch" aria-hidden="true"></span>Second pass, after the video</p>
+            <ul>
+              <li>capsule is two layers. Fibrous outside, synovial membrane inside</li>
+              <li>synovial membrane is what makes the fluid. I had the fluid appearing from nowhere</li>
+              <li>fluid does two jobs: lubricates AND feeds the cartilage, which has no blood supply</li>
+              <li>ligament vs tendon: bone to bone vs muscle to bone. Kept mixing these up</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <p class="cap">Notice what makes the second box gradeable. The header names the competency and says which prompt was chosen. The first pass is short and leaves room. The second pass goes into the same box and says what was wrong, not just what is right. That gap between the two colours is the first thing I look at.</p>
     </div>
+  </div>
+
+  <div class="wrap" id="out"></div>
+  <div class="wrap">
     <p class="btnrow">
       <a class="sqbtn key" href="assignment-notesheet.html" target="_top">How the sheet is graded</a>
       <a class="sqbtn" href="assignment-bookproblems.html" target="_top">Book problems</a>
@@ -277,12 +386,12 @@ footer{border-top:1px solid var(--rule);padding:22px 0 34px;font-size:13.5px;col
     ch1: { label:"Silverthorn chapter 1",
            title:"Introduction to physiology",
            desc:"What physiology asks, homeostasis, mass balance, the reflex pathway, and the two kinds of feedback." },
-    skills:{ label:"Used all term, starting this week",
-           title:"Quantitative and lab skills",
-           desc:"These are not a chapter. They are the skills every lab this term leans on, and this is the week you set them up." },
+    skills:{ label:"Concept 13 and the lab",
+           title:"Doing physiology as a science",
+           desc:"How a physiology claim gets tested, and how you tell a real difference from noise." },
     ch6: { label:"Silverthorn chapter 6",
            title:"How signals travel",
-           desc:"The part of chapter 6 Mission 1 covers: what carries a signal, where its receptor sits, how a small signal becomes a big response, and how it gets shut off." }
+           desc:"The four routes cells use to reach each other, where a receptor sits and why, how one bound molecule becomes a large response, and how a cell changes its own sensitivity." }
   };
 
   var COMPS = [
@@ -319,86 +428,86 @@ footer{border-top:1px solid var(--rule);padding:22px 0 34px;font-size:13.5px;col
    can:"Predict how a change in the structure of a molecule, cell, tissue, or organ alters its function, using examples from two different organ systems.",
    a:"Draw one structure from this week and label the single feature that makes its job possible. Then sketch what would stop working if that feature changed.",
    b:"List three structures from this week. Beside each, write the one property its function depends on, in six words or fewer."},
-  {n:3, g:"ch1", id:"homeostasis", lab:false,
-   name:"Homeostasis defined",
-   can:"Define homeostasis, regulated variable, and setpoint, and distinguish homeostasis from chemical equilibrium and from steady state.",
-   a:"Write the definition of homeostasis, then underline the three words doing the real work. Beside each underlined word, one line on why it matters.",
-   b:"Draw two graphs side by side, a value in steady state and a value at equilibrium. On each, label what is still moving and what it costs."},
-  {n:4, g:"ch1", id:"feedback-components", lab:true,
-   name:"Feedback loop components",
-   can:"Diagram a negative feedback loop labeling stimulus, sensor, afferent path, integrating center, efferent path, effector, and response, and trace body temperature or blood glucose through every step.",
-   a:"Draw the five component reflex pathway top down and label all five plus the feedback arrow. Labels only, no sentences.",
-   b:"Fill in the five components for thermoregulation on a cold day. Then mark which component you would suspect first if the patient never shivered."},
-  {n:5, g:"ch1", id:"feedback-types", lab:false,
-   name:"Negative and positive feedback",
-   can:"Distinguish negative from positive feedback by the direction of the response and give a physiological example of each, explaining why a positive feedback loop needs an outside event to end it.",
-   a:"Draw one negative feedback loop and one positive feedback loop as arrow diagrams. On each, mark what makes it stop.",
-   b:"Draw clotting as a positive feedback loop, then show what ends it. Underneath, write one line on why the body can afford to use positive feedback here."},
-  {n:6, g:"ch1", id:"feedforward", lab:false,
-   name:"Feedforward control and acclimatization",
-   can:"Explain anticipatory feedforward control and acclimatization and identify which one is operating in a given scenario.",
-   a:"Draw a timeline of eating a meal. Mark where feedforward starts and where feedback takes over.",
-   b:"Draw a setpoint as a horizontal line. Show what fever does to it, and mark at each stage what the patient feels."},
-  {n:7, g:"ch1", id:"control-pathways", lab:false,
-   name:"Local and reflex control pathways",
-   can:"Distinguish a local control pathway from a long distance reflex pathway and classify a given response as one or the other.",
-   a:"Draw a local control example and a reflex control example side by side. On each, mark how far the signal travels.",
-   b:"Standing up suddenly: draw the reflex, label all five components, and write one line on why local control could not have handled it."},
-  {n:8, g:"ch1", id:"mass-balance", lab:true,
-   name:"Mass balance",
-   can:"Apply the mass balance equation to a solute or to body water and calculate the intake, production, and output combination that holds the amount in the body constant.",
-   a:"Write the mass balance equation and label every term. Then draw a body outline with arrows in and out for sodium, labeling which arrow is which term.",
-   b:"Work a mass balance for one substance across one day. Then change a single term and show the new result underneath."},
-  {n:9, g:"ch1", id:"fluid-compartments", lab:true,
+  {n:3, g:"ch1", id:"fluid-compartments", lab:true,
    name:"Body fluid compartments",
    can:"State the approximate volumes of total body water, intracellular fluid, extracellular fluid, plasma, and interstitial fluid in a 70 kg adult and compare the dominant solutes of the intracellular and extracellular compartments.",
    a:"Draw the fluid compartments top down with the fractions. Use one border style for inside cells and a different one for outside.",
    b:"On a compartment drawing, mark where a blood sample is taken and which compartment you are actually drawing a conclusion about."},
-  {n:10, g:"ch1", id:"compartment-shifts", lab:false,
+  {n:4, g:"ch1", id:"compartment-shifts", lab:false,
    name:"Compartment separation and clinical volume shifts",
    can:"Predict the direction of water movement between compartments when extracellular osmolarity rises or falls and name a clinical situation that produces each shift.",
    a:"Draw a patient with swollen ankles and a low blood pressure. Use arrows to show where the water went.",
    b:"Draw three scenarios: water gained in the vessels, water lost from the body, water moved into tissue. Predict blood pressure under each."},
-  {n:11, g:"skills", id:"units-conversion", lab:true,
-   name:"Units and unit conversion",
-   can:"Convert among the units used in physiology including molarity, osmolarity, milliequivalents, mmHg, liters per minute, and percent solutions.",
-   a:"Convert three values from this week. Show every step and carry the units through each line.",
-   b:"Take one equation from this week and show that the units on the left match the units on the right."},
-  {n:12, g:"skills", id:"lab-graphing", lab:true,
-   name:"Graphing and data interpretation",
-   can:"Construct a labeled graph with the independent variable on the x axis, and read slope, direction, and trend from a physiological data set.",
-   a:"Plot the mission patient's sodium across the three days. Label both axes with units and mark the reference range on the graph.",
-   b:"Draw a saturation curve. Label the plateau, then write one line on what the plateau means physiologically."},
-  {n:13, g:"skills", id:"lab-experimental-design", lab:true,
-   name:"Experimental design and controls",
-   can:"Identify the hypothesis, independent variable, dependent variable, and control condition in a physiology experiment and state what the control rules out.",
-   a:"Sketch an experiment as three labeled boxes: what you changed, what you measured, and your control.",
-   b:"Take a claim from this week and design the control group that would test it. Draw both groups and label the one difference between them."},
-  {n:14, g:"skills", id:"lab-measurement-error", lab:true,
-   name:"Measurement error and variability",
-   can:"Distinguish random from systematic error and explain why physiological measurements are repeated and averaged.",
-   a:"Draw two sets of repeated measurements, one with high variability and one with low. Mark which difference between readings is real.",
-   b:"List three sources of variation in a single measurement. Beside each, one way to reduce it."},
-  {n:15, g:"ch6", id:"signal-types", lab:false,
+  {n:5, g:"ch1", id:"homeostasis", lab:false,
+   name:"Homeostasis defined",
+   can:"Define homeostasis, regulated variable, and setpoint, and distinguish homeostasis from chemical equilibrium and from steady state.",
+   a:"Write the definition of homeostasis, then underline the three words doing the real work. Beside each underlined word, one line on why it matters.",
+   b:"Draw two graphs side by side, a value in steady state and a value at equilibrium. On each, label what is still moving and what it costs."},
+  {n:6, g:"ch1", id:"mass-balance", lab:true,
+   name:"Mass balance",
+   can:"Apply the mass balance equation to a solute or to body water and calculate the intake, production, and output combination that holds the amount in the body constant.",
+   a:"Write the mass balance equation and label every term. Then draw a body outline with arrows in and out for sodium, labeling which arrow is which term.",
+   b:"Work a mass balance for one substance across one day. Then change a single term and show the new result underneath."},
+  {n:7, g:"ch1", id:"mass-flow-clearance", lab:false,
+   name:"Mass flow and clearance",
+   can:"Calculate mass flow as concentration times volume flow, and clearance as rate of removal divided by plasma concentration, and explain why two patients with the same concentration can have very different delivery.",
+   a:"Write both equations from memory with the units written under every term, and show the units cancelling. Then work the two patient case: identical oxygen content, one with half the cardiac output. Numbers, not sentences.",
+   b:"Draw one vessel delivering to a tissue. Label the concentration and the volume flow. Draw it again with the flow halved and write what happened to delivery. Then say in one line which one you would change first in a patient, and why."},
+  {n:8, g:"ch1", id:"feedback-components", lab:true,
+   name:"Feedback loop components",
+   can:"Diagram a negative feedback loop labeling stimulus, sensor, afferent path, integrating center, efferent path, effector, and response, and trace body temperature or blood glucose through every step.",
+   a:"Draw the five component reflex pathway top down and label all five plus the feedback arrow. Labels only, no sentences.",
+   b:"Fill in the five components for thermoregulation on a cold day. Then mark which component you would suspect first if the patient never shivered."},
+  {n:9, g:"ch1", id:"control-pathways", lab:false,
+   name:"Local and reflex control pathways",
+   can:"Distinguish a local control pathway from a long distance reflex pathway and classify a given response as one or the other.",
+   a:"Draw a local control example and a reflex control example side by side. On each, mark how far the signal travels.",
+   b:"Standing up suddenly: draw the reflex, label all five components, and write one line on why local control could not have handled it."},
+  {n:10, g:"ch1", id:"feedback-types", lab:false,
+   name:"Negative and positive feedback",
+   can:"Distinguish negative from positive feedback by the direction of the response and give a physiological example of each, explaining why a positive feedback loop needs an outside event to end it.",
+   a:"Draw one negative feedback loop and one positive feedback loop as arrow diagrams. On each, mark what makes it stop.",
+   b:"Draw clotting as a positive feedback loop, then show what ends it. Underneath, write one line on why the body can afford to use positive feedback here."},
+  {n:11, g:"ch1", id:"feedforward", lab:false,
+   name:"Feedforward control and acclimatization",
+   can:"Explain anticipatory feedforward control and acclimatization and identify which one is operating in a given scenario.",
+   a:"Draw a timeline of eating a meal. Mark where feedforward starts and where feedback takes over.",
+   b:"Draw a setpoint as a horizontal line. Show what fever does to it, and mark at each stage what the patient feels."},
+  {n:12, g:"ch6", id:"signal-types", lab:false,
    name:"Signal types and range",
    can:"Classify a chemical signal as autocrine, paracrine, neurotransmitter, neurohormone, or hormone by its route and distance of travel.",
    a:"Draw one target cell in the middle of the box. Draw an arrow in from each of the five signal types, autocrine, paracrine, neurotransmitter, neurohormone, hormone. Label each arrow with how far it travelled and what carried it.",
    b:"Make a five row table. Signal type, where it is released, how far it goes, what it travels through. Fill it from memory, then check one row against the book."},
-  {n:16, g:"ch6", id:"receptor-location", lab:false,
+  {n:13, g:"ch6", id:"receptor-location", lab:false,
    name:"Receptor location and ligand solubility",
    can:"Predict whether a signal molecule binds a surface receptor or an intracellular receptor from its lipid solubility and relate that to the speed and duration of the response.",
    a:"Draw a cell with one surface receptor and one intracellular receptor. Show the path a lipid soluble signal takes and the path a water soluble one takes. Mark which response is faster and which lasts longer.",
    b:"Write the two questions you would ask about any new signal molecule to predict where its receptor sits. Then answer both for a steroid and for a peptide hormone."},
-  {n:17, g:"ch6", id:"signal-amplification", lab:false,
+  {n:14, g:"ch6", id:"signal-amplification", lab:false,
    name:"Signal amplification",
    can:"Explain how a cascade amplifies a signal and estimate the size of the amplification across the steps of a given pathway.",
    a:"Draw a three step cascade as a widening funnel. Put a number on each step and multiply them down the side to get the total amplification.",
    b:"Start from one ligand and write the count at each step of a cascade until you reach the response. One line per step, numbers only, no sentences."},
-  {n:18, g:"ch6", id:"signal-termination", lab:false,
-   name:"Signal termination",
-   can:"Name three mechanisms that end a chemical signal and explain why a signal that cannot be terminated produces pathology.",
-   a:"Draw a signal at a receptor, then draw the three ways it gets shut off. Label each one. Beside the drawing, write what goes wrong if that mechanism fails.",
-   b:"Name the three termination mechanisms. For each, write one clinical consequence of it failing, in one line."},
+  {n:15, g:"ch6", id:"receptor-modulation", lab:false,
+   name:"Receptor modulation",
+   can:"Define agonist, antagonist, competitive inhibition, up regulation, and down regulation, and predict the effect of chronic ligand excess on target cell sensitivity.",
+   a:"Draw one target cell three times. Normal, after a long stretch of scarce signal, after a long stretch of excess signal. Show the receptor count changing in each and label which is up regulation and which is down.",
+   b:"Define agonist, antagonist, up regulation and down regulation in your own words, one line each. Then explain in two lines why a patient who needs more opioid for the same effect is usually showing down regulation rather than drug seeking."},
+  {n:16, g:"skills", id:"lab-experimental-design", lab:true,
+   name:"Experimental design and controls",
+   can:"Identify the hypothesis, independent variable, dependent variable, and control condition in a physiology experiment and state what the control rules out.",
+   a:"Sketch an experiment as three labeled boxes: what you changed, what you measured, and your control.",
+   b:"Take a claim from this week and design the control group that would test it. Draw both groups and label the one difference between them."},
+  {n:17, g:"skills", id:"lab-measurement-error", lab:true,
+   name:"Measurement error and variability",
+   can:"Distinguish random from systematic error and explain why physiological measurements are repeated and averaged.",
+   a:"Draw two sets of repeated measurements, one with high variability and one with low. Mark which difference between readings is real.",
+   b:"List three sources of variation in a single measurement. Beside each, one way to reduce it."},
+  {n:18, g:"skills", id:"lab-graphing", lab:true,
+   name:"Graphing and data interpretation",
+   can:"Construct a labeled graph with the independent variable on the x axis, and read slope, direction, and trend from a physiological data set.",
+   a:"Plot the mission patient's sodium across the three days. Label both axes with units and mark the reference range on the graph.",
+   b:"Draw a saturation curve. Label the plateau, then write one line on what the plateau means physiologically."},
   ];
 
   var KEY = "bio005-w1-competencies";
@@ -410,7 +519,7 @@ footer{border-top:1px solid var(--rule);padding:22px 0 34px;font-size:13.5px;col
   function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
 
   var out = document.getElementById("out");
-  var order = ["ch1","skills","ch6"], seen = {};
+  var order = ["ch1","ch6","skills"];
 
   order.forEach(function(g){
     var items = COMPS.filter(function(c){ return c.g === g; });
