@@ -13,7 +13,11 @@ Files covered:
 - `assignment-notesheet.html` (rewired, and undefined palette tokens repaired)
 - `syllabus-fall2026.html` (three midterm windows written in)
 - `course-materials.html` (sheet link rewired)
-- `bio005-dock.js` and its three copies (dim tile subtitle contrast)
+- `bio005-dock.js` and its three copies (dim tile subtitle contrast, course home target)
+- `bio005-nav.js`, `bio005-gate.js`, `bio005-back.js`, `readiness-check-view.js`,
+  `bio005-reading-mode.js` (course home moved to `course-start.html`)
+- `welcome.html` (now a redirect), `welcome-tour.html` (the page that used to
+  live at that address), and the 40 pages whose links were repointed
 
 Date: September 6, 2026.
 Reviewer: Dr. Sharilyn Rennie.
@@ -171,6 +175,33 @@ driven with VoiceOver or NVDA. That is the open item for this project.
 | Print colour fidelity | note-sheet.html | Black on white by design so it prints on a mono laser. Not a defect |
 | Three per page is tight | note-sheet.html `?per=3` | Boxes are about 1.6in tall. It fits and it is measured, but it is the economy setting, not the good one. Two per page is the default for that reason |
 
-## 9. Reviewer
+## 9. The course home move
+
+`welcome.html` was the root of the nav map and 40 pages linked to it, most of
+them through the shared nav bar with the link text "Course home", "This week"
+or "All weeks". It had been given a "this page has moved" banner without those
+links being repointed, so the most linked page in the site was telling students
+they were in the wrong place while the navigation kept sending them back to it.
+
+Fixed by moving the root rather than by editing 40 files:
+
+- `bio005-nav.js` root is now `course-start.html`. Every entry that read
+  `parent: 'welcome.html'` now reads `parent: 'course-start.html'`.
+- `bio005-gate.js`, `bio005-back.js`, `readiness-check-view.js` and both copies
+  of `bio005-reading-mode.js` were injecting the old target at runtime, which
+  is why it survived a search of the HTML. All patched.
+- The 8 pages that hardcoded the link (six decks, `course-materials.html`,
+  `instructor/teaching-notes.html`) were repointed directly.
+- `welcome.html` is now a redirect. It replaces rather than assigns, so Back
+  does not bounce, and it redirects the frame rather than the top window, so a
+  Canvas embed of the old URL keeps working inside Canvas. It carries a real
+  link for anyone with scripting off, at 10.18:1.
+- Nothing was deleted. The greeting hero, Hootie and the eight part tour are
+  intact at `welcome-tour.html`, still reachable from the nav.
+
+Verified across 20 representative pages: zero remaining links to
+`welcome.html`, zero "this page has moved" banners, zero console errors.
+
+## 10. Reviewer
 
 Dr. Sharilyn Rennie

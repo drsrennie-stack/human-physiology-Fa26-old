@@ -21,7 +21,7 @@
      1. Came from another page on this site  -> back to that page,
         named. "Back to the lab report instructions", not "Back".
      2. Came from Canvas                     -> back to Canvas.
-     3. Came from nowhere we recognize, or a
+     3. Came from nowhere we recognise, or a
         fresh tab with no history            -> the course tools hub,
         which is the one page everything else hangs off.
 
@@ -57,7 +57,8 @@
      falls back to a generic label rather than a specific one. */
   var NAMES = {
     "course-materials.html":        "course tools",
-    "welcome.html":                 "course home",
+    "course-start.html":            "course home",
+    "welcome-tour.html":            "the welcome tour",
     "home.html":                    "course home",
     "syllabus-fall2026.html":       "the syllabus",
     "course-schedule.html":         "the schedule",

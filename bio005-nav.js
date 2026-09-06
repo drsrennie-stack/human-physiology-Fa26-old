@@ -58,17 +58,21 @@
      added later is never stranded, it is just one level flat.
      --------------------------------------------------------- */
   var PAGES = {
-    'welcome.html':            { name: 'Course home',            parent: null },
-    'index.html':              { name: 'Course calendar',        parent: 'welcome.html' },
+    /* Course home moved to course-start.html on Sep 6 2026. welcome.html was the
+       root of this map and 40 pages link to it, so retiring it meant swapping the
+       root here rather than editing 40 files. welcome.html now redirects. */
+    'course-start.html':       { name: 'Course home',            parent: null },
+    'welcome-tour.html':       { name: 'Welcome tour',           parent: 'course-start.html' },
+    'index.html':              { name: 'Course calendar',        parent: 'course-start.html' },
     'course-entry.html':       { name: 'Start of the course',    parent: null },
     'canvas-home.html':        { name: 'Course entry',           parent: null },
-    'start-here.html':         { name: 'Start here',             parent: 'welcome.html' },
-    'before-you-start.html':   { name: 'Before you start',       parent: 'welcome.html' },
-    'what-you-do.html':        { name: 'What you do and what it is worth', parent: 'welcome.html' },
-    'syllabus-fall2026.html':  { name: 'Syllabus',               parent: 'welcome.html' },
-    'course-schedule.html':    { name: 'Course schedule',        parent: 'welcome.html' },
-    'course-materials.html':   { name: 'Course materials',       parent: 'welcome.html' },
-    'sitemap.html':            { name: 'All course pages',       parent: 'welcome.html' },
+    'start-here.html':         { name: 'Start here',             parent: 'course-start.html' },
+    'before-you-start.html':   { name: 'Before you start',       parent: 'course-start.html' },
+    'what-you-do.html':        { name: 'What you do and what it is worth', parent: 'course-start.html' },
+    'syllabus-fall2026.html':  { name: 'Syllabus',               parent: 'course-start.html' },
+    'course-schedule.html':    { name: 'Course schedule',        parent: 'course-start.html' },
+    'course-materials.html':   { name: 'Course materials',       parent: 'course-start.html' },
+    'sitemap.html':            { name: 'All course pages',       parent: 'course-start.html' },
 
     /* Weeks */
     'week-01.html':            { name: 'Week 1',  parent: 'course-schedule.html' },
@@ -87,14 +91,6 @@
     'week-14.html':            { name: 'Week 14', parent: 'course-schedule.html' },
     'week-15.html':            { name: 'Week 15', parent: 'course-schedule.html' },
 
-    /* Mission lectures. Slides and notes are one pair per mission, and the
-       mission belongs to the week it is taught in. */
-    'biol005-m01-maintain-control-slides.html':  { name: 'Mission 1 slides', parent: 'week-01.html' },
-    'biol005-m01-maintain-control-notes.html':   { name: 'Mission 1 notes',  parent: 'week-01.html' },
-    'biol005-m02-molecular-toolkit-slides.html': { name: 'Mission 2 slides', parent: 'week-02.html' },
-    'biol005-m02-molecular-toolkit-notes.html':  { name: 'Mission 2 notes',  parent: 'week-02.html' },
-    'competency-brain-dump.html':                { name: 'The competency brain dump', parent: 'welcome.html' },
-
     /* Week 1 teaching spine */
     'concept-videos-week01.html': { name: 'Week 1 concept videos', parent: 'week-01.html' },
     'braindump-week01.html':      { name: 'Week 1 brain dump',     parent: 'week-01.html' },
@@ -107,7 +103,7 @@
     'unit-05.html': { name: 'Unit 5', parent: 'course-materials.html' },
 
     /* Lab */
-    'clinical-physiology-lab-manual.html': { name: 'Clinical Physiology Lab manual', parent: 'welcome.html' },
+    'clinical-physiology-lab-manual.html': { name: 'Clinical Physiology Lab manual', parent: 'course-start.html' },
     'osmosis-iv-fluids-lab.html':    { name: 'Osmosis and IV fluids lab', parent: 'clinical-physiology-lab-manual.html' },
     'cbc-pcr-lab.html':              { name: 'CBC and PCR lab',           parent: 'clinical-physiology-lab-manual.html' },
     'pulmonary-function-lab.html':   { name: 'Pulmonary function lab',    parent: 'clinical-physiology-lab-manual.html' },
@@ -122,19 +118,19 @@
     'assignment-physioex.html':     { name: 'PhysioEx labs',    parent: 'what-you-do.html' },
 
     /* Study tools */
-    'competency-study-guide.html':   { name: 'Competency study guide', parent: 'welcome.html' },
-    'competency-recall.html':        { name: 'Recall cards',           parent: 'welcome.html' },
-    'competency-packet-fall2026.html': { name: 'Competency packet',    parent: 'welcome.html' },
-    'mastery-canvas.html':           { name: 'Draw it from memory',    parent: 'welcome.html' },
-    'BIO005-patient-file.html':      { name: 'Patient file',           parent: 'welcome.html' },
-    'label-kit.html':                { name: 'Label kit',              parent: 'welcome.html' },
-    'anatomy-review.html':           { name: 'Anatomy review',         parent: 'welcome.html' },
+    'competency-study-guide.html':   { name: 'Competency study guide', parent: 'course-start.html' },
+    'competency-recall.html':        { name: 'Recall cards',           parent: 'course-start.html' },
+    'competency-packet-fall2026.html': { name: 'Competency packet',    parent: 'course-start.html' },
+    'mastery-canvas.html':           { name: 'Draw it from memory',    parent: 'course-start.html' },
+    'BIO005-patient-file.html':      { name: 'Patient file',           parent: 'course-start.html' },
+    'label-kit.html':                { name: 'Label kit',              parent: 'course-start.html' },
+    'anatomy-review.html':           { name: 'Anatomy review',         parent: 'course-start.html' },
 
     /* Instructor side. Reachable, but not advertised to students. */
-    'build-tracker.html':        { name: 'Build tracker',      parent: 'welcome.html', staff: true },
-    'competency-map.html':       { name: 'Competency map',     parent: 'welcome.html', staff: true },
-    'ai-work-log.html':          { name: 'AI work log',        parent: 'welcome.html', staff: true },
-    'teaching-guide-week01.html':{ name: 'Week 1 teaching guide', parent: 'welcome.html', staff: true }
+    'build-tracker.html':        { name: 'Build tracker',      parent: 'course-start.html', staff: true },
+    'competency-map.html':       { name: 'Competency map',     parent: 'course-start.html', staff: true },
+    'ai-work-log.html':          { name: 'AI work log',        parent: 'course-start.html', staff: true },
+    'teaching-guide-week01.html':{ name: 'Week 1 teaching guide', parent: 'course-start.html', staff: true }
   };
 
   /* Whole families, matched by prefix, so new files inherit a parent
@@ -149,29 +145,18 @@
   ];
 
   function here() {
-    var f = (location.pathname.split('/').pop() || 'welcome.html');
-    return f === '' ? 'welcome.html' : f;
+    var f = (location.pathname.split('/').pop() || 'course-start.html');
+    return f === '' ? 'course-start.html' : f;
   }
 
   function entry(file) {
     if (PAGES[file]) return PAGES[file];
-    /* The per-week competency lists and note sheets belong to their own week,
-       and there will eventually be fifteen of each. Derive the parent from the
-       number in the filename rather than listing thirty entries above. */
-    var wk = /^(competencies|notesheet)-week-(\d{2})\.html$/.exec(file);
-    if (wk) {
-      return {
-        name: (wk[1] === 'notesheet' ? 'Week ' + (+wk[2]) + ' note sheet'
-                                     : 'Week ' + (+wk[2]) + ' competency list'),
-        parent: 'week-' + wk[2] + '.html'
-      };
-    }
     for (var i = 0; i < PREFIX.length; i++) {
       if (PREFIX[i].test.test(file)) {
         return { name: PREFIX[i].label, parent: PREFIX[i].parent };
       }
     }
-    return { name: null, parent: 'welcome.html' };
+    return { name: null, parent: 'course-start.html' };
   }
 
   function titleOf(file) {
@@ -188,7 +173,7 @@
     return !(n.offsetParent === null && n.getClientRects().length === 0);
   }
   function chrome(n) {
-    return !!(n.closest && n.closest('.b5nav, .b5foot, nav, [aria-hidden="true"], .bd-dock'));
+    return !!(n.closest && n.closest('.b5nav, .b5foot, .b5play, .b5listen, nav, [aria-hidden="true"], .bd-dock'));
   }
   function readableCount(host) {
     if (!host) return 0;
@@ -221,7 +206,6 @@
   var CSS = ''
   + '.b5nav{background:#fff;border-bottom:1px solid #E3E1DE;font-family:"Plus Jakarta Sans","DM Sans",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}'
   + '.b5nav-in{max-width:1080px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}'
-  + '.b5nav-in ol{margin-right:auto}'
   + '.b5nav ol{list-style:none;display:flex;align-items:center;gap:8px;margin:0;padding:0;flex-wrap:wrap}'
   + '.b5nav li{display:flex;align-items:center;gap:8px;font-size:15px;color:#1E3D4C}'
   + '.b5nav li+li:before{content:"›";color:#8A8A8A;font-size:16px}'
@@ -235,36 +219,54 @@
   + 'transition:transform 200ms ease,box-shadow 200ms ease}'
   + '.b5nav-back:hover{transform:translateY(-2px);box-shadow:0 8px 16px rgba(0,0,0,.10);text-decoration:none}'
   + '.b5nav-back:focus-visible{outline:3px solid #B8924A;outline-offset:2px}'
-  /* A quiet strip, not a slab. The first version stood 297px tall on the
-     course home with its links wrapping onto three centered lines, and on a
-     wide screen it got caught in the hero's layout and sat beside the
-     headline. It is now one left aligned row that clears everything above it
-     and cannot become a column of somebody else's grid. */
-  + '.b5foot{background:#08101F;color:#C9CFD6;margin-top:48px;width:100%;clear:both;'
-  + 'position:static;float:none;grid-column:1/-1;flex:0 0 100%;box-sizing:border-box;'
-  + 'text-align:left;'
+  + '.b5foot{background:#08101F;color:#C9CFD6;margin-top:56px;'
   + 'font-family:"Plus Jakarta Sans","DM Sans",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}'
-  + '.b5foot-in{max-width:1080px;margin:0 auto;padding:15px 20px 17px}'
-  + '.b5foot ul{list-style:none;margin:0 0 7px;padding:0;display:flex;flex-wrap:wrap;'
-  + 'align-items:center;gap:2px 0;font-size:13px;justify-content:flex-start;text-align:left}'
-  /* Every page brings its own list styles, and on the week pages they were
-     capping the row's width and adding 5px above and below every item, which
-     wrapped eight links onto three lines. Reset them inside the footer only. */
-  + '.b5foot nav ul{width:100%;max-width:none}'
-  + '.b5foot nav ul li{display:flex;align-items:center;margin:0;padding:0;list-style:none}'
-  + '.b5foot nav ul li:before{margin-top:0}'
-  + '.b5foot li+li:before{content:"·";margin:0 8px;color:#7FA2B4}'
-  + '.b5foot a{color:#fff;text-decoration:none;font-weight:600;border-radius:5px;padding:2px 2px}'
+  + '.b5foot-in{max-width:1080px;margin:0 auto;padding:26px 20px 30px}'
+  + '.b5foot ul{list-style:none;margin:0 0 14px;padding:0;display:flex;flex-wrap:wrap;'
+  + 'align-items:center;gap:6px 0;font-size:15px}'
+  + '.b5foot li{display:flex;align-items:center}'
+  + '.b5foot li+li:before{content:"·";margin:0 12px;color:#6B7A88}'
+  + '.b5foot a{color:#fff;text-decoration:none;font-weight:600;border-radius:6px;padding:2px 3px}'
   + '.b5foot a:hover{text-decoration:underline}'
   + '.b5foot a:focus-visible{outline:3px solid #B8924A;outline-offset:2px}'
-  + '.b5foot p{margin:0;font-size:12.5px;line-height:1.5;color:#9BA6B2;max-width:92ch;text-align:left}'
+  + '.b5foot p{margin:0;font-size:14px;line-height:1.6;color:#C9CFD6;max-width:70ch}'
   + '.b5skip{position:absolute;left:-9999px;top:0;background:#08101F;color:#fff;padding:10px 16px;z-index:1000}'
   + '.b5skip:focus{left:8px;top:8px}'
   + '@media (max-width:560px){.b5nav-in{padding:9px 14px}.b5foot-in{padding:22px 14px 26px}}'
   + '@media (prefers-reduced-motion:reduce){.b5nav-back{transition:none}.b5nav-back:hover{transform:none}}'
-  + 'body.present .b5foot,body.present .b5nav,body.wb-on .b5foot,body.wb-on .b5nav{display:none!important}'
-  + '@media print{.b5nav,.b5foot,.b5skip{display:none!important}}'
+  + '@media print{.b5nav,.b5foot,.b5skip,.b5listen,.b5play{display:none!important}}'
 
+  /* Listen to this page. Text to speech, which is NOT a screen reader, and is
+     labelled that way everywhere it appears. A student who uses a real screen
+     reader has a far better tool already configured the way they like it. This
+     is for reading fatigue, for a second language, for following along with
+     audio, and for the ones studying in the car park before a shift. */
+  + '.b5listen{display:inline-flex;align-items:center;gap:9px;background:transparent;'
+  + 'border:1px solid rgba(255,255,255,.35);color:#fff;font:inherit;font-size:14.5px;'
+  + 'font-weight:600;border-radius:9px;padding:9px 14px;cursor:pointer;margin:2px 0 14px;'
+  + 'transition:background 160ms ease,border-color 160ms ease}'
+  + '.b5listen:hover{background:rgba(255,255,255,.10);border-color:rgba(255,255,255,.6)}'
+  + '.b5listen:focus-visible{outline:3px solid #B8924A;outline-offset:2px}'
+  + '.b5listen svg{width:18px;height:18px;flex:0 0 auto}'
+  + '.b5listen .sub{font-weight:400;color:#C9CFD6;font-size:13.5px}'
+  + '.b5play{position:fixed;right:18px;bottom:18px;z-index:2147482000;display:none;'
+  + 'align-items:center;gap:8px;background:#fff;border:1px solid #E3E1DE;border-radius:12px;'
+  + 'padding:9px 11px;box-shadow:0 8px 22px rgba(0,0,0,.18)}'
+  + '.b5play.on{display:flex}'
+  + '.b5play button{font:inherit;font-size:14px;font-weight:700;cursor:pointer;color:#7A2A22;'
+  + 'background:#fff;border:1px solid #E3E1DE;border-radius:8px;padding:7px 11px;min-height:34px}'
+  + '.b5play button:hover{background:#FAFAF9}'
+  + '.b5play button:focus-visible{outline:3px solid #B8924A;outline-offset:2px}'
+  + '.b5play .st{font-size:13.5px;color:#4F5663;padding:0 4px;max-width:15ch}'
+  + '.b5read{background:#FBF0D8;border-radius:4px;box-shadow:0 0 0 3px #FBF0D8}'
+  + '@media (max-width:560px){.b5play{right:10px;bottom:10px;left:10px;justify-content:center}}'
+  /* The dock launcher is fixed at bottom left with a very high z-index. The
+     slide decks put their pen toolbar in the same corner, so the launcher sat
+     on top of the first few controls and the colour swatches failed the WCAG
+     2.2 target size rule by being partly covered. Lifting the toolbar clears
+     it. Harmless on every page that has no toolbar. */
+  + '.inkbar{bottom:76px!important}'
+  + '@media (max-width:560px){.inkbar{bottom:84px!important}}';
 
   function inject() {
     var style = document.createElement('style');
@@ -335,7 +337,7 @@
         var pe = PAGES[walk];
         walk = pe ? pe.parent : null;
       }
-      if (trail.indexOf('welcome.html') === -1) trail.unshift('welcome.html');
+      if (trail.indexOf('course-start.html') === -1) trail.unshift('course-start.html');
 
       var crumbs = '';
       for (var i = 0; i < trail.length; i++) {
@@ -356,14 +358,14 @@
     /* ---- footer, on everything ---- */
     if (!document.querySelector('.b5foot')) {
       var links = [
-        ['welcome.html', 'Course home', 0],
+        ['course-start.html', 'Course home', 0],
         ['syllabus-fall2026.html', 'Syllabus', 0],
-        ['course-schedule.html', 'Schedule', 0],
+        ['course-schedule.html', 'Course schedule', 0],
         ['clinical-physiology-lab-manual.html', 'Lab manual', 0],
-        ['sitemap.html', 'All pages', 0],
+        ['sitemap.html', 'All course pages', 0],
         ['accessibility.html', 'Accessibility', 0],
         [CANVAS_HOME, 'Canvas', 1],
-        [VIRTUAL_OFFICE, 'Virtual Office', 1]
+        [VIRTUAL_OFFICE, "Dr. Rennie's Virtual Office", 1]
       ];
       var items = '';
       for (var j = 0; j < links.length; j++) {
@@ -376,10 +378,171 @@
       foot.className = 'b5foot';
       foot.innerHTML = '<div class="b5foot-in">'
         + '<nav aria-label="Site"><ul>' + items + '</ul></nav>'
-        + '<p>BIO 005 Human Physiology, Yuba College, Fall 2026. Dr. Sharilyn Rennie. '
-        + 'If a page does not work for you, tell me in the Virtual Office.</p></div>';
+        + '<p>BIO 005 Human Physiology, Yuba College, Fall 2026. '
+        + 'Taught by Dr. Sharilyn Rennie. If a page does not work for you, '
+        + 'tell me in the Virtual Office and I will fix it.</p></div>';
       document.body.appendChild(foot);
     }
+
+    listen();
+  }
+
+  /* ---------------------------------------------------------
+     Read this page out loud.
+
+     Deliberately not called a screen reader anywhere a student can
+     see, because it is not one. It reads the main content in order,
+     one block at a time, highlighting as it goes so a student can
+     follow along with their eyes and their ears together.
+
+     Chunked by block rather than handed over as one long string,
+     because the browser speech engine truncates long utterances and
+     because chunking is what makes pause, resume and the highlight
+     work at all.
+     --------------------------------------------------------- */
+  function listen() {
+    if (!('speechSynthesis' in window) || !window.SpeechSynthesisUtterance) return;
+
+    var foot = document.querySelector('.b5foot .b5foot-in');
+    if (!foot || document.querySelector('.b5listen')) return;
+
+    var blocks = [], idx = 0, playing = false, paused = false, keep = null;
+    var rate = 1;
+    try { var r = parseFloat(localStorage.getItem('bio005-listen-rate')); if (r >= 0.5 && r <= 2) rate = r; }
+    catch (e) {}
+
+    var SPEAKER = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"'
+      + ' stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+      + '<path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/>'
+      + '<path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>';
+
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'b5listen';
+    btn.innerHTML = SPEAKER + '<span>Listen to this page<br><span class="sub">Reads the page out loud. This is not a screen reader.</span></span>';
+    foot.insertBefore(btn, foot.firstChild);
+
+    var bar = document.createElement('div');
+    bar.className = 'b5play';
+    bar.innerHTML = '<button type="button" data-a="toggle">Pause</button>'
+      + '<button type="button" data-a="rate">1x</button>'
+      + '<button type="button" data-a="stop">Stop</button>'
+      + '<span class="st" role="status" aria-live="polite"></span>';
+    document.body.appendChild(bar);
+    var status = bar.querySelector('.st');
+    var toggleBtn = bar.querySelector('[data-a="toggle"]');
+    var rateBtn = bar.querySelector('[data-a="rate"]');
+    rateBtn.textContent = rate + 'x';
+
+    function collect() {
+      var host = contentHost();
+      var out = [];
+      var nodes = host.querySelectorAll(READABLE);
+      [].forEach.call(nodes, function (n) {
+        if (chrome(n)) return;
+        if (!shown(n)) return;
+        /* innerText, not textContent. A link whose label and its sub-line are
+           separate elements reads as "Course scheduleEvery week" from
+           textContent, because nothing separates them. innerText respects the
+           rendered layout and puts a break between them. */
+        var raw = (typeof n.innerText === 'string' ? n.innerText : n.textContent) || '';
+        var t = raw
+          .replace(/[\u00B7\u2022\u2219]/g, ', ')      /* separator dots, read as pauses */
+          .replace(/[\u2192\u2190\u2191\u2193\u21B5]/g, ' ') /* arrows, decorative */
+          .replace(/[\u2713\u2714\u00D7\u2715]/g, ' ')        /* ticks and crosses */
+          .replace(/\s+/g, ' ')
+          .replace(/\s+,/g, ',')
+          .replace(/,\s*,/g, ',')
+          /* Section numbers sit in their own span inside the heading, so a
+             heading reads as "01Course identification". Put the pause back. */
+          .replace(/^(\d{1,2})(?=[A-Z])/, '$1. ')
+          .trim();
+        if (t.length < 2) return;
+        /* Split long paragraphs at sentence ends so pause responds quickly and the
+           highlight moves at a readable pace. */
+        if (t.length > 240) {
+          var parts = t.match(/[^.!?]+[.!?]*\s*/g) || [t];
+          var buf = '';
+          parts.forEach(function (piece) {
+            if ((buf + piece).length > 240 && buf) { out.push({ el: n, text: buf.trim() }); buf = piece; }
+            else buf += piece;
+          });
+          if (buf.trim()) out.push({ el: n, text: buf.trim() });
+        } else {
+          out.push({ el: n, text: t });
+        }
+      });
+      return out;
+    }
+
+    function clearMark() {
+      var m = document.querySelector('.b5read');
+      if (m) m.classList.remove('b5read');
+    }
+    function mark(el) {
+      clearMark();
+      if (!el) return;
+      el.classList.add('b5read');
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      try { el.scrollIntoView({ block: 'center', behavior: reduce ? 'auto' : 'smooth' }); } catch (e) {}
+    }
+
+    function speakNext() {
+      if (!playing || idx >= blocks.length) { finish(); return; }
+      var b = blocks[idx];
+      mark(b.el);
+      var u = new SpeechSynthesisUtterance(b.text);
+      u.rate = rate;
+      u.onend = function () { if (playing) { idx++; speakNext(); } };
+      u.onerror = function () { if (playing) { idx++; speakNext(); } };
+      window.speechSynthesis.speak(u);
+      status.textContent = 'Reading, part ' + (idx + 1) + ' of ' + blocks.length;
+    }
+
+    function start() {
+      blocks = collect();
+      if (!blocks.length) { status.textContent = 'Nothing to read on this page.'; return; }
+      idx = 0; playing = true; paused = false;
+      bar.classList.add('on');
+      toggleBtn.textContent = 'Pause';
+      btn.setAttribute('aria-pressed', 'true');
+      window.speechSynthesis.cancel();
+      speakNext();
+      /* Some browsers stop speaking after about fifteen seconds unless nudged. */
+      keep = setInterval(function () {
+        if (playing && !paused && window.speechSynthesis.speaking) {
+          window.speechSynthesis.pause(); window.speechSynthesis.resume();
+        }
+      }, 10000);
+    }
+
+    function finish() {
+      playing = false; paused = false;
+      clearMark(); clearInterval(keep);
+      window.speechSynthesis.cancel();
+      bar.classList.remove('on');
+      btn.setAttribute('aria-pressed', 'false');
+      status.textContent = '';
+    }
+
+    btn.addEventListener('click', function () { playing ? finish() : start(); });
+    bar.addEventListener('click', function (e) {
+      var a = e.target && e.target.getAttribute && e.target.getAttribute('data-a');
+      if (a === 'stop') { finish(); btn.focus(); }
+      else if (a === 'toggle') {
+        if (paused) { window.speechSynthesis.resume(); paused = false;
+          toggleBtn.textContent = 'Pause'; status.textContent = 'Reading again.'; }
+        else { window.speechSynthesis.pause(); paused = true;
+          toggleBtn.textContent = 'Play'; status.textContent = 'Paused.'; }
+      } else if (a === 'rate') {
+        var steps = [0.75, 1, 1.25, 1.5];
+        rate = steps[(steps.indexOf(rate) + 1) % steps.length];
+        rateBtn.textContent = rate + 'x';
+        try { localStorage.setItem('bio005-listen-rate', String(rate)); } catch (e2) {}
+        if (playing) { window.speechSynthesis.cancel(); speakNext(); }
+      }
+    });
+    window.addEventListener('pagehide', function () { try { window.speechSynthesis.cancel(); } catch (e) {} });
   }
 
   if (document.readyState === 'loading') {

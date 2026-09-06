@@ -95,7 +95,37 @@ The dark panel is gone. The current week is simply open where it belongs,
 first in the light list, still marked "This week". The nineteen CSS rules that
 only styled the dark panel went with it. One list, one colour scheme.
 
-### 5. Exam dates, set
+### 5. The course home moved properly this time
+
+`welcome.html` was never scrapped, but it had been given a "this page has
+moved" banner without anything being repointed at the new page. It was the root
+of `bio005-nav.js` and **40 pages linked to it**, mostly through the shared nav
+bar as "Course home", "This week" and "All weeks". So the most linked page in
+the site was telling students they were in the wrong place while the navigation
+kept sending them back to it. That was my mistake, and it is fixed.
+
+- `bio005-nav.js` root is now `course-start.html`, and every entry that hung
+  off `welcome.html` now hangs off it. One line instead of 40 files.
+- Five scripts were injecting the old link at runtime, which is why searching
+  the HTML did not find them: `bio005-gate.js`, `bio005-back.js`,
+  `readiness-check-view.js`, and both copies of `bio005-reading-mode.js`.
+- The 8 pages that hardcoded it (six decks, `course-materials.html`,
+  `instructor/teaching-notes.html`) were repointed directly.
+- The "this page has moved" banner is gone from `home.html`, `index.html` and
+  `start-here.html`.
+- **`welcome.html` is now a redirect** to `course-start.html`. Old bookmarks,
+  old Canvas embeds and anything you printed still land somewhere correct. It
+  redirects the frame, not the top window, so a Canvas embed of the old URL
+  keeps working inside Canvas rather than throwing the student out of it.
+- **Nothing was deleted.** The greeting hero, Hootie and the eight part tour
+  are intact at **`welcome-tour.html`** and still reachable from the nav as
+  "Welcome tour". If you want that page back as the front door, say so and it
+  is the same one line in reverse.
+
+Verified on 20 representative pages: no links left to `welcome.html`, no moved
+banners, no console errors.
+
+### 6. Exam dates, set
 
 | Exam | Covers | Opens | Closes |
 |---|---|---|---|

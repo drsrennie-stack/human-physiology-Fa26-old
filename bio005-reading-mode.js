@@ -85,7 +85,7 @@
     /* the pages whose whole job is a single interaction */
     var f = (location.pathname.split('/').pop() || '').toLowerCase();
     var deny = [
-      'today.html', 'welcome.html', 'index.html', 'canvas-enter.html', 'canvas-home.html',
+      'today.html', 'welcome.html', 'welcome-tour.html', 'course-start.html', 'index.html', 'canvas-enter.html', 'canvas-home.html',
       'bio005-spaced-recall.html', 'card-gap-finder.html', 'bio005-room-map-timer.html',
       'bio005-braindump-selector-fall2026.html', 'atlas-coloring-book.html', 'bio005-draw.html',
       'grade-calculator.html',

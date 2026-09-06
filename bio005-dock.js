@@ -281,7 +281,7 @@
   var SEC_KEY = 'bio005-section';
 
   var SECTIONS = {
-    'net':    { label: 'Yuba College, fully online', syllabus: 'syllabus-fall2026.html', hub: 'welcome.html' }
+    'net':    { label: 'Yuba College, fully online', syllabus: 'syllabus-fall2026.html', hub: 'course-start.html' }
   };
 
   function section() {
@@ -472,7 +472,7 @@
              url: BASE + 'accessibility.html' + q, icon: 'target', tone: 'terra',
              kw: 'accessibility access screen reader contrast keyboard captions dsps accommodation wcag' });
     t.push({ g: 'Admin', name: 'Course home', sub: 'Back to the front of the course',
-             url: BASE + 'welcome.html' + q, icon: 'home', tone: 'navy', qr: 'home',
+             url: BASE + 'course-start.html' + q, icon: 'home', tone: 'navy', qr: 'home',
              kw: 'home hub front start main course' });
     t.push({ g: 'Admin', name: 'Virtual Office', sub: 'Ask a question where the whole class sees the answer',
              url: 'https://yccd.instructure.com/courses/42616/discussion_topics/711800', icon: 'people', tone: 'terra',

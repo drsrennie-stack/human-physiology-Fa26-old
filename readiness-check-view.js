@@ -215,7 +215,7 @@
             '<p class="rd-sub">If something does come up later, this page is still here and the ' +
               'answer will be waiting.</p>' +
             '<div class="rd-bar">' +
-              '<a class="rd-btn rd-btn-primary" href="welcome.html" target="_top">Go to the course home</a>' +
+              '<a class="rd-btn rd-btn-primary" href="course-start.html" target="_top">Go to the course home</a>' +
               '<button type="button" class="rd-btn" data-again>Take it again</button>' +
             '</div>' +
           '</div>';

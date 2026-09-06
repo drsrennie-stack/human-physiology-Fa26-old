@@ -106,7 +106,7 @@
         '<div class="b5gate-card">' +
           '<h2>Open right now, every day of the term</h2>' +
           '<ul class="b5gate-links">' +
-            '<li><a href="welcome.html" target="_top">Course home<span>The week that is open now</span></a></li>' +
+            '<li><a href="course-start.html" target="_top">Course home<span>The week that is open now</span></a></li>' +
             '<li><a href="os/mastery-physio-os.html" target="_top">Mastery OS<span>Recall cards for the whole course, never locked</span></a></li>' +
             '<li><a href="competency-study-guide.html" target="_top">Competency study guide<span>What you should be able to do, every week</span></a></li>' +
             '<li><a href="clinical-physiology-lab-manual.html" target="_top">Lab manual<span>All fifteen labs</span></a></li>' +
