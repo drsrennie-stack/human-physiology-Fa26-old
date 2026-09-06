@@ -6,7 +6,7 @@
 <title>Discussion 1, your vision board. BIO 005 Human Physiology</title>
 <style>
 :root{
-  --navy:#08101F; --terra:#8B1D1D; --terra-dark:#6B1616; --gold:#DCB45C; --gold-ink:#5A4511;
+  --navy:#0B1530; --terra:#8B3A2E; --terra-dark:#6E2D24; --gold:#C9A14A; --gold-ink:#5A4511;
   --teal:#1F4E55; --white:#FFFFFF; --offwhite:#FAFAF9; --tint:#EDF1F3;
   --muted:#3D4860; --rule:#DCE0E6; --shadow:0 1px 3px rgba(0,0,0,.08);
 }
@@ -20,12 +20,12 @@ body{margin:0;background:var(--offwhite);color:var(--navy);
 .skip:focus{left:0}
 .wrap{max-width:52rem;margin:0 auto;padding:0 22px}
 header.top{background:var(--terra);color:var(--white);padding:30px 0 26px}
-.eyebrow{font-family:"DM Sans",system-ui,sans-serif;font-size:12px;font-weight:700;
-  letter-spacing:2px;text-transform:uppercase;color:#FBEBC8;margin:0 0 8px}
+.eyebrow{font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-size:12px;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;color:#FEF8EE;margin:0 0 8px}
 header.top h1{margin:0 0 10px;font-size:clamp(26px,4.4vw,38px);font-weight:800;line-height:1.18}
-header.top p{margin:0;color:#F2EFEF;max-width:42rem}
+header.top p{margin:0;color:#FFFFFF;max-width:42rem}
 .chips{margin:16px 0 0;display:flex;gap:8px;flex-wrap:wrap}
-.chip{font-family:"DM Sans",system-ui,sans-serif;font-size:11.5px;font-weight:700;
+.chip{font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-size:11.5px;font-weight:700;
   letter-spacing:1.2px;text-transform:uppercase;background:rgba(0,0,0,.2);
   border-radius:99px;padding:5px 12px;color:#FFFFFF}
 h2{font-size:clamp(21px,2.8vw,27px);font-weight:800;margin:44px 0 8px;line-height:1.25}
@@ -39,7 +39,7 @@ main{padding-bottom:70px}
 .opener p:last-child{margin-bottom:0}
 .box{background:var(--white);border:1px solid var(--rule);border-radius:10px;
   box-shadow:var(--shadow);padding:18px 20px;margin:18px 0}
-.box .lab{font-family:"DM Sans",system-ui,sans-serif;font-size:11.5px;font-weight:700;
+.box .lab{font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-size:11.5px;font-weight:700;
   letter-spacing:1.5px;text-transform:uppercase;margin:0 0 8px;color:var(--terra)}
 .box p:last-child,.box ul:last-child,.box ol:last-child{margin-bottom:0}
 figure.shot{margin:20px 0;background:var(--white);border:1px solid var(--rule);
@@ -51,7 +51,7 @@ figure.shot figcaption{padding:13px 18px;border-top:1px solid var(--rule);
 .method{background:var(--white);border:1px solid var(--rule);border-radius:10px;
   box-shadow:var(--shadow);padding:18px 20px}
 .method h3{margin-top:0;color:var(--navy)}
-.method .m-lab{font-family:"DM Sans",system-ui,sans-serif;font-size:11px;font-weight:700;
+.method .m-lab{font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-size:11px;font-weight:700;
   letter-spacing:1.3px;text-transform:uppercase;color:var(--terra);margin:0 0 4px}
 .method p:last-child,.method ul:last-child{margin-bottom:0}
 .method ul{padding-left:1.15em;font-size:15px}
@@ -59,9 +59,9 @@ ol.steps{counter-reset:s;list-style:none;padding-left:0}
 ol.steps>li{counter-increment:s;position:relative;padding-left:44px;margin-bottom:16px}
 ol.steps>li::before{content:counter(s);position:absolute;left:0;top:1px;width:30px;height:30px;
   border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;
-  font-family:"DM Sans",system-ui,sans-serif;font-weight:700;font-size:14px}
+  font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-weight:700;font-size:14px}
 table{width:100%;border-collapse:collapse;margin:16px 0;font-size:15px}
-caption{text-align:left;font-family:"DM Sans",system-ui,sans-serif;font-size:11.5px;
+caption{text-align:left;font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-size:11.5px;
   font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--terra);padding-bottom:8px}
 th,td{border-bottom:1px solid var(--rule);padding:9px 10px;text-align:left;vertical-align:top}
 th{font-weight:700}
@@ -73,12 +73,33 @@ footer{border-top:1px solid var(--rule);padding:24px 0;color:var(--muted);font-s
 @media print{
   body{background:#fff;font-size:10.5pt;line-height:1.45}
   header.top{background:#fff;color:#000;border-bottom:2px solid #000;padding:0 0 10pt}
-  header.top h1{font-size:19pt}.eyebrow{color:#6B1616}header.top p{color:#000}
+  header.top h1{font-size:19pt}.eyebrow{color:#6E2D24}header.top p{color:#000}
   .chip{background:#fff;color:#000;border:1px solid #000}
   .box,.method,.opener{box-shadow:none;break-inside:avoid}
   h2{break-after:avoid}.skip{display:none}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* Wide tables scroll in their own box rather than pushing the page
+   sideways. Added Sep 6 2026 with the MedMasters type change: Open Sans
+   is wider than Plus Jakarta, so tables that just fitted at 320px no
+   longer did. tabindex makes the scroll box keyboard reachable, which
+   WCAG 2.1.1 requires of any scrollable region. */
+.tblscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%}
+.tblscroll:focus-visible{outline:3px solid var(--maroon,#8B3A2E);outline-offset:2px}
+.tblscroll table{min-width:100%}
+
+/* Go-post-it button. This page is the instructions; the posting happens in
+   Canvas. Without this link a student reads the whole page and then has to go
+   hunt for the discussion, which is exactly where people give up. */
+.gopost{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:22px 0 0}
+.gobtn{display:inline-block;background:var(--terra);color:#FFFFFF;text-decoration:none;
+  font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-size:12px;font-weight:700;
+  letter-spacing:1.6px;text-transform:uppercase;padding:14px 22px;border-radius:6px;
+  border:1px solid var(--terra);transition:background 160ms ease,border-color 160ms ease}
+.gobtn:hover{background:var(--terra-dark);border-color:var(--terra-dark)}
+.gobtn:focus-visible{outline:3px solid var(--navy);outline-offset:3px}
+.gonote{font-size:13.5px;color:var(--muted)}
 </style>
 </head>
 <body>
@@ -92,8 +113,13 @@ footer{border-top:1px solid var(--rule);padding:24px 0;color:var(--muted);font-s
     <div class="chips">
       <span class="chip">10 points</span>
       <span class="chip">Graded on completion</span>
-      <span class="chip">Due Sunday, September 13</span>
+      <span class="chip">Post due Friday, September 11</span>
+      <span class="chip">Replies due Sunday, September 13</span>
       <span class="chip">Two parts to submit</span>
+  </div>
+    <div class="gopost">
+      <a class="gobtn" href="https://yccd.instructure.com/courses/42616/discussion_topics/712733" target="_blank" rel="noopener">Go post it in Canvas</a>
+      <span class="gonote" style="color:#FEF8EE">Read this page first, then post. It opens in a new tab.</span>
     </div>
   </div>
 </header>
@@ -166,7 +192,7 @@ footer{border-top:1px solid var(--rule);padding:24px 0;color:var(--muted);font-s
 
 <h2>What to submit</h2>
 
-<p>Two things, both in the same Canvas discussion post, by <b>Sunday, September 13 at 10:00 pm Pacific</b>. A post with only one of them is not complete.</p>
+<p>Two things, both in the same Canvas discussion post, by <b>Friday, September 11 at 10:00 pm Pacific</b>. A post with only one of them is not complete. Your two replies to classmates come later, by <b>Sunday, September 13 at 10:00 pm Pacific</b>.</p>
 
 <ol class="steps">
   <li><b>The board itself, as a single image file.</b> PNG or JPG. Not a link, not a PDF, not a slide deck. One image, so it displays in the discussion where everyone can see it without downloading anything.</li>
@@ -188,7 +214,7 @@ footer{border-top:1px solid var(--rule);padding:24px 0;color:var(--muted);font-s
   <li><b>Let the browser have your camera and microphone</b> when it asks. If you accidentally block it, the permission can be turned back on from the padlock icon in the address bar.</li>
   <li><b>Record.</b> Say your name, then walk through your board. Two to four minutes. You do not need a script and you do not need a second take.</li>
   <li><b>Give it a title</b> with your name in it, so it is findable later, then insert it into your reply.</li>
-  <li><b>Wait for it to finish processing</b> before you submit. On a slow connection this takes a few minutes, which is the reason not to start this at 9:55 on Sunday.</li>
+  <li><b>Wait for it to finish processing</b> before you submit. On a slow connection this takes a few minutes, which is the reason not to start this at 9:55 on Friday night.</li>
   <li><b>Check your captions.</b> Studio writes them automatically and they are usually close but not perfect. Open the video, edit the caption track, and fix anything that came out wrong.</li>
 </ol>
 
@@ -198,30 +224,35 @@ footer{border-top:1px solid var(--rule);padding:24px 0;color:var(--muted);font-s
 </div>
 
 <h3>Then reply to two classmates</h3>
-<p>Replies are due at the same time, <b>Sunday, September 13 at 10:00 pm Pacific</b>. Find two people you have something in common with, or two whose boards you had a question about, and reply to them. One or two sentences is fine. Say the thing you noticed, and ask them something. "Nice board" is not a reply.</p>
+<p>Replies are due two days after your post, <b>Sunday, September 13 at 10:00 pm Pacific</b>. That gap is on purpose. It gives everyone time to get their board up first, so there is something to read when you come back. Find two people you have something in common with, or two whose boards you had a question about, and reply to them. One or two sentences is fine. Say the thing you noticed, and ask them something. "Nice board" is not a reply.</p>
 
 <h2>How it is graded</h2>
 
 <p>Ten points, and it is graded on completion rather than quality. There is no correct vision board and I am not judging your design. If all six rows below are done, you have full marks.</p>
 
 <div class="tw" tabindex="0" role="group" aria-label="Discussion 1 completion rubric">
-<table>
-<caption>Completion checklist, 10 points total</caption>
+<div class="tblscroll" tabindex="0" role="region" aria-label="Table, scroll sideways to see all columns"><table>
+<caption>Completion checklist, 10 points total. The post is worth 8 and the replies are worth 2, graded separately at their own deadlines.</caption>
 <thead><tr><th scope="col">What</th><th scope="col">Points</th><th scope="col">Complete means</th></tr></thead>
 <tbody>
 <tr><th scope="row">Board posted as an image</th><td>2</td><td>A single PNG or JPG visible in the post, not a link or an attachment nobody can open. If you made it all as one video, a still showing the whole board counts.</td></tr>
 <tr><th scope="row">All four areas covered</th><td>2</td><td>Who you are, what matters to you, why this class, where you are going. All four appear somewhere on the board.</td></tr>
 <tr><th scope="row">Video posted</th><td>2</td><td>Two to four minutes, in the same post, plays for other students. Studio, or your own video file if you made it all in one.</td></tr>
 <tr><th scope="row">You introduce yourself in it</th><td>1</td><td>Your name, and you walk through the board rather than reading a paragraph at the camera.</td></tr>
-<tr><th scope="row">Two replies to classmates</th><td>2</td><td>Two separate people, each reply saying something specific and asking something.</td></tr>
-<tr><th scope="row">Posted on time</th><td>1</td><td>Your post and both replies in by Sunday, September 13 at 10:00 pm Pacific.</td></tr>
+<tr><th scope="row">Post in on time</th><td>1</td><td>Board and video both up by Friday, September 11 at 10:00 pm Pacific.</td></tr>
+<tr><th scope="row">Two replies to classmates</th><td>2</td><td>Two separate people, each reply saying something specific and asking something, both in by Sunday, September 13 at 10:00 pm Pacific.</td></tr>
 </tbody>
-</table>
+</table></div>
 </div>
 
 <div class="box">
 <p class="lab">Late work</p>
-<p>Everything is due <b>Sunday, September 13 at 10:00 pm Pacific</b>. Up to 24 hours late, so by 10:00 pm Monday the 14th, is an automatic 50 percent reduction. After that it is a zero. If something has gone wrong in your week, message me before the deadline rather than after it, and we will sort it out.</p>
+<p>There are two deadlines, and they are graded separately.</p>
+<ul>
+<li><b>Your post</b> (board plus video) is due <b>Friday, September 11 at 10:00 pm Pacific</b>.</li>
+<li><b>Your two replies</b> are due <b>Sunday, September 13 at 10:00 pm Pacific</b>.</li>
+</ul>
+<p>Either piece up to 24 hours late takes an automatic 50 percent reduction on that piece. After 24 hours that piece is a zero. Missing the Friday deadline does not close the Sunday one, so if the post gets away from you, still post it and still reply. If something has gone wrong in your week, message me before the deadline rather than after it, and we will sort it out.</p>
 </div>
 
 <h2>If you are dreading the video</h2>
@@ -236,6 +267,11 @@ footer{border-top:1px solid var(--rule);padding:24px 0;color:var(--muted);font-s
 </div>
 </main>
 
+<div class="box">
+<p class="lab">Ready</p>
+<p>That is everything. Post the board and the video in the Canvas discussion, then come back Saturday or Sunday and reply to two people.</p>
+<p class="gopost"><a class="gobtn" href="https://yccd.instructure.com/courses/42616/discussion_topics/712733" target="_blank" rel="noopener">Open Discussion 1 in Canvas</a></p>
+</div>
 <footer>
 <div class="wrap">
 <p>BIO 005 Human Physiology . Yuba College . Fall 2026 . Dr. Sharilyn Rennie</p>

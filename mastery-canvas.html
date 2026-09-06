@@ -5,27 +5,25 @@
 <link rel="icon" type="image/svg+xml" href="icon.svg">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Drawing Canvas | BIO 004 Human Anatomy</title>
+<link rel="stylesheet" href="assets/fonts-site.css">
 <meta name="description" content="Draw from memory. Pen, shapes, arrows, and text. Save to PDF when you are done.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
   /* Live course tokens, Aug 2026. Matches class1.html and welcome.html. */
-  --navy:#08101F;
-  --navy-deep:#08101F;
+  --navy:#0B1530;
+  --navy-deep:#0B1530;
   --navy-tint:#ECEFF4;
-  --maroon:#7A2A22;
-  --maroon-dark:#5E201A;
-  --terra:#8B1D1D;
-  --terra-dark:#6B1616;
-  --gold:#DCB45C;
-  --straw:#E8CE85;
-  --gold-text:#6E5018;
-  --ink:#08101F;
+  --maroon:#8B3A2E;
+  --maroon-dark:#6E2D24;
+  --terra:#8B3A2E;
+  --terra-dark:#6E2D24;
+  --gold:#C9A14A;
+  --straw:#FEF8EE;
+  --gold-text:#5F4514;
+  --ink:#0B1530;
   --ink-body:#14202F;
   --ink-muted:#3D4860;
-  --offwhite-text:#F4EFE8;
+  --offwhite-text:#FEF8EE;
   --rule:#8C90A0;
   --rule-soft:#DCE0E6;
   --border-blue:#1E2A47;
@@ -35,7 +33,7 @@
   --radius-card:16px;
   --shadow-card:0 1px 3px rgba(11,21,48,.10);
   --shadow-lift:0 12px 26px rgba(11,21,48,.16);
-  --display:"Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, system-ui, Segoe UI, Roboto, sans-serif;
+  --display:'Open Sans', -apple-system, BlinkMacSystemFont, system-ui, Segoe UI, Roboto, sans-serif;
 }
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
@@ -147,6 +145,15 @@ input[type="text"]{width:100%;font-family:var(--display);font-size:.92rem;color:
   body.export-mode #ex_img{max-height:235mm;width:auto;max-width:100%;margin:0 auto}
   @page{margin:14mm}
 }
+
+/* Wide tables scroll in their own box rather than pushing the page
+   sideways. Added Sep 6 2026 with the MedMasters type change: Open Sans
+   is wider than Plus Jakarta, so tables that just fitted at 320px no
+   longer did. tabindex makes the scroll box keyboard reachable, which
+   WCAG 2.1.1 requires of any scrollable region. */
+.tblscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%}
+.tblscroll:focus-visible{outline:3px solid var(--maroon,#8B3A2E);outline-offset:2px}
+.tblscroll table{min-width:100%}
 </style>
 </head>
 <body>
@@ -203,9 +210,9 @@ input[type="text"]{width:100%;font-family:var(--display);font-size:.92rem;color:
       </div>
       <div class="toolgroup" role="group" aria-label="Color">
         <span class="toollabel">Color</span>
-        <button type="button" class="swatch" data-color="#08101F" aria-label="Navy" aria-pressed="true" style="background:#08101F"></button>
-        <button type="button" class="swatch" data-color="#8B1D1D" aria-label="Rust" aria-pressed="false" style="background:#8B1D1D"></button>
-        <button type="button" class="swatch" data-color="#6E5018" aria-label="Gold" aria-pressed="false" style="background:#6E5018"></button>
+        <button type="button" class="swatch" data-color="#0B1530" aria-label="Navy" aria-pressed="true" style="background:#0B1530"></button>
+        <button type="button" class="swatch" data-color="#8B3A2E" aria-label="Rust" aria-pressed="false" style="background:#8B3A2E"></button>
+        <button type="button" class="swatch" data-color="#5F4514" aria-label="Gold" aria-pressed="false" style="background:#5F4514"></button>
         <button type="button" class="swatch" data-color="#1F5130" aria-label="Green" aria-pressed="false" style="background:#1F5130"></button>
         <button type="button" class="swatch" data-color="#1B3F8B" aria-label="Blue" aria-pressed="false" style="background:#1B3F8B"></button>
         <label class="custom-color"><span class="sr-only">Custom color</span><input type="color" id="custom" value="#2C5F66"></label>
@@ -270,7 +277,7 @@ input[type="text"]{width:100%;font-family:var(--display);font-size:.92rem;color:
     </div>
     <h2 class="ex-h2">How this drawing was made</h2>
     <p class="ex-note">Produced inside the course drawing canvas. That tool has no facility to open, paste or import an image, so every mark above was drawn stroke by stroke in the browser. The four snapshots show the same drawing at a quarter, a half, three quarters and all of its marks.</p>
-    <table class="ex-table">
+    <div class="tblscroll" tabindex="0" role="region" aria-label="Table, scroll sideways to see all columns"><table class="ex-table">
       <tbody>
         <tr><th scope="row">Name</th><td id="ex_s_name"></td></tr>
         <tr><th scope="row">Drawing</th><td id="ex_s_title"></td></tr>
@@ -283,7 +290,7 @@ input[type="text"]{width:100%;font-family:var(--display);font-size:.92rem;color:
         <tr><th scope="row">Self check</th><td id="ex_s_check">Not used</td></tr>
         <tr><th scope="row">Verification code</th><td id="ex_s_code" class="ex-code"></td></tr>
       </tbody>
-    </table>
+    </table></div>
     <h2 class="ex-h2">Build up</h2>
     <div class="ex-strip" id="ex_strip"></div>
     <div class="ex-foot"><span>Course drawing canvas</span><span>Dr. Sharilyn Rennie</span></div>
@@ -335,7 +342,7 @@ var FONT = '"Plus Jakarta Sans", system-ui, -apple-system, Segoe UI, Roboto, san
 
 var marks = [], current = null, pendingText = null;
 var startedAt = null, lastPointAt = 0, activeMs = 0, editCount = 0;
-var color = '#08101F', size = 4, tool = 'pen';
+var color = '#0B1530', size = 4, tool = 'pen';
 
 function bg(c){ c.fillStyle = '#FFFFFF'; c.fillRect(0, 0, cv.width, cv.height); }
 

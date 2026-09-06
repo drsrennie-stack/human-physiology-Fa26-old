@@ -5,10 +5,8 @@
 <link rel="icon" type="image/svg+xml" href="icon.svg">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Competency recall &middot; BIO 005 Human Physiology</title>
+<link rel="stylesheet" href="assets/fonts-site.css">
 <meta name="description" content="Track your mastery of the 268 BIO 005 competencies, run spaced recall, find your weak systems, and get your highest-value work for today.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/brand.css">
 <style>
 /* Page-specific only. All palette tokens live in assets/brand.css. */
@@ -57,12 +55,12 @@
 .recall-stage { min-height:210px; display:flex; flex-direction:column; justify-content:center; }
 .recall-prompt { font-family:var(--disp); font-weight:700; font-size:clamp(19px,3vw,25px); color:var(--navy); margin:0 0 10px; }
 .recall-answer { font-family:var(--serif); font-size:17px; background:var(--white); border-radius:var(--r);
-  padding:13px 16px; margin:14px 0; box-shadow:0 1px 2px rgba(8,16,31,.06), 0 8px 18px rgba(8,16,31,.09); }
+  padding:13px 16px; margin:14px 0; box-shadow:0 1px 2px rgba(11,21,48,.06), 0 8px 18px rgba(11,21,48,.09); }
 .grade-row { display:flex; flex-wrap:wrap; gap:8px; margin-top:14px; }
 
 .draw-timer { font-family:var(--disp); font-weight:800; font-size:44px; font-variant-numeric:tabular-nums; color:var(--navy); }
 .note { font-family:var(--serif); font-style:normal; }
-.flag { border-radius:var(--r); padding:12px 15px; background:var(--white); box-shadow:0 1px 2px rgba(8,16,31,.06), 0 8px 18px rgba(8,16,31,.09);
+.flag { border-radius:var(--r); padding:12px 15px; background:var(--white); box-shadow:0 1px 2px rgba(11,21,48,.06), 0 8px 18px rgba(11,21,48,.09);
   border-radius:var(--r-sm); margin:0 0 16px; font-size:14px; }
 .week-pill { display:inline-block; font-size:12px; font-weight:700; padding:4px 9px;
   border:1px solid var(--navy-tint); border-radius:999px; margin:0 4px 4px 0; background:var(--white); }
@@ -70,6 +68,15 @@
 
 /* Scrubs rule: no italics anywhere. Browser defaults included. */
 em,i,cite,dfn,var,address{font-style:normal}
+
+/* Wide tables scroll in their own box rather than pushing the page
+   sideways. Added Sep 6 2026 with the MedMasters type change: Open Sans
+   is wider than Plus Jakarta, so tables that just fitted at 320px no
+   longer did. tabindex makes the scroll box keyboard reachable, which
+   WCAG 2.1.1 requires of any scrollable region. */
+.tblscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%}
+.tblscroll:focus-visible{outline:3px solid var(--maroon,#8B3A2E);outline-offset:2px}
+.tblscroll table{min-width:100%}
 </style>
 </head>
 <body>
@@ -273,7 +280,7 @@ em,i,cite,dfn,var,address{font-style:normal}
   </div>
   <div class="card card-static">
     <h3>What the ratings mean</h3>
-    <table>
+    <div class="tblscroll" tabindex="0" role="region" aria-label="Table, scroll sideways to see all columns"><table>
       <caption>Confidence scale</caption>
       <thead><tr><th scope="col">Rating</th><th scope="col">What it means</th></tr></thead>
       <tbody>
@@ -282,7 +289,7 @@ em,i,cite,dfn,var,address{font-style:normal}
         <tr><th scope="row">Solid</th><td>You can do it with a little thought, most of the time.</td></tr>
         <tr><th scope="row">Mastered</th><td>You can do it from memory, out loud, without hesitating, and explain it to someone else.</td></tr>
       </tbody>
-    </table>
+    </table></div>
   </div>
 </section>
 

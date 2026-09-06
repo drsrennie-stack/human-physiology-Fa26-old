@@ -93,36 +93,36 @@ module.exports = {
       lede: "Two molecules, one weak attraction between them. Multiply this by every water molecule in your 42 L and you have the reason blood is liquid at all.",
       svg: `<svg viewBox="0 0 900 430" role="img" aria-labelledby="x1-t x1-d" xmlns="http://www.w3.org/2000/svg">
   <title id="x1-t">A water molecule and a hydrogen bond to a second water molecule</title>
-  <desc id="x1-d">Two bent water molecules are drawn as circles. In each one a large teal oxygen circle sits above two smaller gold hydrogen circles, joined by thick solid lines at a bent angle of about 105 degrees. The oxygen of the left molecule is labeled delta minus, and both of its hydrogens are labeled delta plus, showing that charge is unevenly shared. A dashed maroon line runs from a hydrogen of the upper right molecule to the oxygen of the left molecule and is labeled hydrogen bond. A note at the bottom states that each water molecule can hydrogen bond with up to four neighbors, and that polar and charged solutes dissolve while nonpolar solutes are shoved together.</desc>
+  <desc id="x1-d">Two bent water molecules are drawn as circles. In each one a large teal oxygen circle sits above two smaller gold hydrogen circles, joined by thick solid lines at a bent angle of about 105 degrees. The oxygen of the left molecule is labelled delta minus, and both of its hydrogens are labelled delta plus, showing that charge is unevenly shared. A dashed maroon line runs from a hydrogen of the upper right molecule to the oxygen of the left molecule and is labelled hydrogen bond. A note at the bottom states that each water molecule can hydrogen bond with up to four neighbours, and that polar and charged solutes dissolve while nonpolar solutes are shoved together.</desc>
   <rect x="0" y="0" width="900" height="430" fill="#FFFFFF"/>
 
-  <line x1="250" y1="175" x2="149" y2="253" stroke="#08101F" stroke-width="9"/>
-  <line x1="250" y1="175" x2="351" y2="253" stroke="#08101F" stroke-width="9"/>
-  <circle cx="149" cy="253" r="31" fill="#DCB45C" stroke="#08101F" stroke-width="3"/>
-  <circle cx="351" cy="253" r="31" fill="#DCB45C" stroke="#08101F" stroke-width="3"/>
-  <circle cx="250" cy="175" r="50" fill="#1F4E55" stroke="#08101F" stroke-width="3"/>
+  <line x1="250" y1="175" x2="149" y2="253" stroke="#0B1530" stroke-width="9"/>
+  <line x1="250" y1="175" x2="351" y2="253" stroke="#0B1530" stroke-width="9"/>
+  <circle cx="149" cy="253" r="31" fill="#C9A14A" stroke="#0B1530" stroke-width="3"/>
+  <circle cx="351" cy="253" r="31" fill="#C9A14A" stroke="#0B1530" stroke-width="3"/>
+  <circle cx="250" cy="175" r="50" fill="#1F4E55" stroke="#0B1530" stroke-width="3"/>
   <text x="250" y="184" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="30" font-weight="700" fill="#FFFFFF">O</text>
-  <text x="149" y="262" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="22" font-weight="700" fill="#08101F">H</text>
-  <text x="351" y="262" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="22" font-weight="700" fill="#08101F">H</text>
+  <text x="149" y="262" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="22" font-weight="700" fill="#0B1530">H</text>
+  <text x="351" y="262" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="22" font-weight="700" fill="#0B1530">H</text>
   <text x="250" y="103" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="19" font-weight="700" fill="#1F4E55">delta minus</text>
-  <text x="149" y="313" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="17" font-weight="700" fill="#8B1D1D">delta plus</text>
-  <text x="351" y="313" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="17" font-weight="700" fill="#8B1D1D">delta plus</text>
+  <text x="149" y="313" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="17" font-weight="700" fill="#8B3A2E">delta plus</text>
+  <text x="351" y="313" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="17" font-weight="700" fill="#8B3A2E">delta plus</text>
 
-  <line x1="620" y1="145" x2="533" y2="218" stroke="#08101F" stroke-width="9"/>
-  <line x1="620" y1="145" x2="715" y2="212" stroke="#08101F" stroke-width="9"/>
-  <circle cx="533" cy="218" r="27" fill="#DCB45C" stroke="#08101F" stroke-width="3"/>
-  <circle cx="715" cy="212" r="27" fill="#DCB45C" stroke="#08101F" stroke-width="3"/>
-  <circle cx="620" cy="145" r="44" fill="#1F4E55" stroke="#08101F" stroke-width="3"/>
+  <line x1="620" y1="145" x2="533" y2="218" stroke="#0B1530" stroke-width="9"/>
+  <line x1="620" y1="145" x2="715" y2="212" stroke="#0B1530" stroke-width="9"/>
+  <circle cx="533" cy="218" r="27" fill="#C9A14A" stroke="#0B1530" stroke-width="3"/>
+  <circle cx="715" cy="212" r="27" fill="#C9A14A" stroke="#0B1530" stroke-width="3"/>
+  <circle cx="620" cy="145" r="44" fill="#1F4E55" stroke="#0B1530" stroke-width="3"/>
   <text x="620" y="154" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="26" font-weight="700" fill="#FFFFFF">O</text>
-  <text x="533" y="226" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="20" font-weight="700" fill="#08101F">H</text>
-  <text x="715" y="220" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="20" font-weight="700" fill="#08101F">H</text>
+  <text x="533" y="226" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="20" font-weight="700" fill="#0B1530">H</text>
+  <text x="715" y="220" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="20" font-weight="700" fill="#0B1530">H</text>
 
-  <line x1="507" y1="223" x2="301" y2="185" stroke="#8B1D1D" stroke-width="5" stroke-dasharray="12 10"/>
+  <line x1="507" y1="223" x2="301" y2="185" stroke="#8B3A2E" stroke-width="5" stroke-dasharray="12 10"/>
   <text x="430" y="118" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="15" fill="#3D4860">weak on its own, decisive in bulk</text>
-  <text x="430" y="142" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="19" font-weight="700" fill="#8B1D1D">hydrogen bond</text>
+  <text x="430" y="142" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="19" font-weight="700" fill="#8B3A2E">hydrogen bond</text>
 
   <line x1="70" y1="352" x2="830" y2="352" stroke="#DCE0E6" stroke-width="3"/>
-  <text x="70" y="382" font-family="Plus Jakarta Sans, sans-serif" font-size="17" font-weight="700" fill="#08101F">Each water molecule can hydrogen bond with up to four neighbors.</text>
+  <text x="70" y="382" font-family="Plus Jakarta Sans, sans-serif" font-size="17" font-weight="700" fill="#0B1530">Each water molecule can hydrogen bond with up to four neighbours.</text>
   <text x="70" y="408" font-family="Plus Jakarta Sans, sans-serif" font-size="16" fill="#3D4860">Polar and charged solutes join that network and dissolve. Nonpolar solutes cannot, so they get shoved together.</text>
 </svg>`,
       cap: "The oxygen end is slightly negative and the hydrogen ends are slightly positive, so water molecules cling to one another. Anything that can join that network dissolves. Anything that cannot gets pushed out of the way.",
@@ -159,7 +159,7 @@ module.exports = {
           label: "Oxygen",
           labelClass: "terra",
           h: "Dissolved oxygen gas",
-          p: ["**Hydrophobic**, and only barely soluble. Two identical atoms share their electrons evenly, so there is no charge separation to grab onto.", "That is exactly why you need hemoglobin. Plasma alone carries almost no oxygen, which is the whole reason week 12 exists."]
+          p: ["**Hydrophobic**, and only barely soluble. Two identical atoms share their electrons evenly, so there is no charge separation to grab onto.", "That is exactly why you need haemoglobin. Plasma alone carries almost no oxygen, which is the whole reason week 12 exists."]
         }
       ],
       big: "Charge or hydrogen bonds means it dissolves. Neither one means it does not.",
@@ -172,7 +172,7 @@ module.exports = {
       cols: 3,
       kicker: "Water and solution properties",
       h: "Three things solubility decides for you, for free",
-      lede: "You do not have to memorize these three separately. They are all the same fact wearing different clothes.",
+      lede: "You do not have to memorise these three separately. They are all the same fact wearing different clothes.",
       cards: [
         {
           h: "Why does a membrane form at all, when nothing is holding it together?",
@@ -277,14 +277,14 @@ module.exports = {
       lede: "Look at how much of the scale exists, and then look at how much of it you are allowed to use.",
       svg: `<svg viewBox="0 0 900 540" role="img" aria-labelledby="x2-t x2-d" xmlns="http://www.w3.org/2000/svg">
   <title id="x2-t">The pH scale from 0 to 14 with a magnified view of the arterial blood range</title>
-  <desc id="x2-d">A horizontal bar runs from pH 0 on the left to pH 14 on the right, labeled acid at the left end, neutral at 7 in the middle, and base at the right end. Markers show stomach acid at about pH 2, urine spanning pH 4.5 to 8, and arterial blood as a very narrow tick just above pH 7.4. Dashed lines funnel down from that narrow tick to a second, magnified bar spanning only pH 6.8 to 7.8. On the magnified bar the range 7.35 to 7.45 is filled gold and labeled normal arterial blood, the zone from 6.8 to 7.35 is labeled acidemia, the zone from 7.45 to 7.8 is labeled alkalemia, and both outer ends at 6.8 and 7.8 are marked in maroon as survival limits.</desc>
+  <desc id="x2-d">A horizontal bar runs from pH 0 on the left to pH 14 on the right, labelled acid at the left end, neutral at 7 in the middle, and base at the right end. Markers show stomach acid at about pH 2, urine spanning pH 4.5 to 8, and arterial blood as a very narrow tick just above pH 7.4. Dashed lines funnel down from that narrow tick to a second, magnified bar spanning only pH 6.8 to 7.8. On the magnified bar the range 7.35 to 7.45 is filled gold and labelled normal arterial blood, the zone from 6.8 to 7.35 is labelled acidemia, the zone from 7.45 to 7.8 is labelled alkalemia, and both outer ends at 6.8 and 7.8 are marked in maroon as survival limits.</desc>
   <rect x="0" y="0" width="900" height="540" fill="#FFFFFF"/>
 
   <rect x="70" y="112" width="760" height="42" fill="#EDF1F3" stroke="#3D4860" stroke-width="2"/>
   <rect x="70" y="112" width="380" height="42" fill="#DCE0E6"/>
-  <line x1="450" y1="104" x2="450" y2="162" stroke="#08101F" stroke-width="3"/>
+  <line x1="450" y1="104" x2="450" y2="162" stroke="#0B1530" stroke-width="3"/>
 
-  <text x="70" y="98" font-family="Plus Jakarta Sans, sans-serif" font-size="17" font-weight="700" fill="#8B1D1D">more acid</text>
+  <text x="70" y="98" font-family="Plus Jakarta Sans, sans-serif" font-size="17" font-weight="700" fill="#8B3A2E">more acid</text>
   <text x="830" y="98" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="17" font-weight="700" fill="#1F4E55">more base</text>
 
   <line x1="70" y1="154" x2="70" y2="168" stroke="#3D4860" stroke-width="2"/>
@@ -304,14 +304,14 @@ module.exports = {
   <text x="721" y="190" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="16" fill="#3D4860">12</text>
   <text x="830" y="190" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="16" fill="#3D4860">14</text>
 
-  <circle cx="179" cy="133" r="11" fill="#8B1D1D"/>
-  <text x="179" y="76" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="700" fill="#8B1D1D">stomach, about 2</text>
-  <rect x="314" y="121" width="191" height="24" fill="#DCB45C" stroke="#08101F" stroke-width="2"/>
-  <text x="410" y="48" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="700" fill="#08101F">urine, 4.5 to 8</text>
-  <line x1="410" y1="56" x2="410" y2="118" stroke="#08101F" stroke-width="2"/>
-  <rect x="468" y="106" width="8" height="54" fill="#08101F"/>
-  <text x="612" y="76" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="700" fill="#08101F">arterial blood, all of it, right here</text>
-  <line x1="500" y1="82" x2="478" y2="108" stroke="#08101F" stroke-width="2"/>
+  <circle cx="179" cy="133" r="11" fill="#8B3A2E"/>
+  <text x="179" y="76" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="700" fill="#8B3A2E">stomach, about 2</text>
+  <rect x="314" y="121" width="191" height="24" fill="#C9A14A" stroke="#0B1530" stroke-width="2"/>
+  <text x="410" y="48" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="700" fill="#0B1530">urine, 4.5 to 8</text>
+  <line x1="410" y1="56" x2="410" y2="118" stroke="#0B1530" stroke-width="2"/>
+  <rect x="468" y="106" width="8" height="54" fill="#0B1530"/>
+  <text x="612" y="76" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="700" fill="#0B1530">arterial blood, all of it, right here</text>
+  <line x1="500" y1="82" x2="478" y2="108" stroke="#0B1530" stroke-width="2"/>
 
   <line x1="468" y1="162" x2="70" y2="322" stroke="#3D4860" stroke-width="2" stroke-dasharray="10 8"/>
   <line x1="476" y1="162" x2="830" y2="322" stroke="#3D4860" stroke-width="2" stroke-dasharray="10 8"/>
@@ -319,19 +319,19 @@ module.exports = {
 
   <rect x="70" y="326" width="760" height="56" fill="#EDF1F3" stroke="#3D4860" stroke-width="2"/>
   <rect x="70" y="326" width="418" height="56" fill="#DCE0E6"/>
-  <rect x="488" y="326" width="76" height="56" fill="#DCB45C" stroke="#08101F" stroke-width="3"/>
-  <rect x="70" y="326" width="14" height="56" fill="#8B1D1D"/>
-  <rect x="816" y="326" width="14" height="56" fill="#8B1D1D"/>
+  <rect x="488" y="326" width="76" height="56" fill="#C9A14A" stroke="#0B1530" stroke-width="3"/>
+  <rect x="70" y="326" width="14" height="56" fill="#8B3A2E"/>
+  <rect x="816" y="326" width="14" height="56" fill="#8B3A2E"/>
 
-  <text x="526" y="313" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="17" font-weight="700" fill="#08101F">7.35 to 7.45</text>
-  <text x="279" y="408" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="17" font-weight="700" fill="#8B1D1D">acidemia</text>
+  <text x="526" y="313" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="17" font-weight="700" fill="#0B1530">7.35 to 7.45</text>
+  <text x="279" y="408" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="17" font-weight="700" fill="#8B3A2E">acidemia</text>
   <text x="690" y="408" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="17" font-weight="700" fill="#1F4E55">alkalemia</text>
-  <text x="70" y="440" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="700" fill="#8B1D1D">6.8</text>
-  <text x="830" y="440" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="700" fill="#8B1D1D">7.8</text>
+  <text x="70" y="440" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="700" fill="#8B3A2E">6.8</text>
+  <text x="830" y="440" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="700" fill="#8B3A2E">7.8</text>
   <text x="450" y="440" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="16" fill="#3D4860">the maroon ends are roughly where survival stops</text>
 
   <line x1="70" y1="466" x2="830" y2="466" stroke="#DCE0E6" stroke-width="3"/>
-  <text x="70" y="496" font-family="Plus Jakarta Sans, sans-serif" font-size="17" font-weight="700" fill="#08101F">The gold band is one tenth of a pH unit wide.</text>
+  <text x="70" y="496" font-family="Plus Jakarta Sans, sans-serif" font-size="17" font-weight="700" fill="#0B1530">The gold band is one tenth of a pH unit wide.</text>
   <text x="70" y="522" font-family="Plus Jakarta Sans, sans-serif" font-size="16" fill="#3D4860">Your whole lifetime of blood chemistry happens inside it, defended by your lungs and your kidneys every minute.</text>
 </svg>`,
       cap: "The top bar is every pH there is. The bottom bar is one pH unit, magnified, and the gold sliver on it is the only part your blood is allowed to visit.",
@@ -350,13 +350,13 @@ module.exports = {
           label: "pH 7.15",
           labelClass: "terra",
           h: "Why does severe acidemia drop the blood pressure?",
-          p: ["Extra hydrogen ions bind the contractile and receptor proteins in vascular smooth muscle and in cardiac muscle and bend them out of shape.", "Vessels stop responding normally to noradrenaline and the heart contracts less forcefully. **The catecholamines are still there. The receptors just stopped answering.** That is a shape problem, not a signaling problem."]
+          p: ["Extra hydrogen ions bind the contractile and receptor proteins in vascular smooth muscle and in cardiac muscle and bend them out of shape.", "Vessels stop responding normally to noradrenaline and the heart contracts less forcefully. **The catecholamines are still there. The receptors just stopped answering.** That is a shape problem, not a signalling problem."]
         },
         {
           label: "pH 7.60",
           labelClass: "teal",
           h: "Why does hyperventilating give you tingling hands and cramps?",
-          p: ["Blowing off carbon dioxide drives pH up. With fewer hydrogen ions competing for the negatively charged sites on albumin, more calcium binds to albumin instead of floating free.", "Total calcium has not changed at all. **Ionized calcium falls**, and ionized calcium is the fraction nerves and muscle actually use. Hence the tingling and the spasm."]
+          p: ["Blowing off carbon dioxide drives pH up. With fewer hydrogen ions competing for the negatively charged sites on albumin, more calcium binds to albumin instead of floating free.", "Total calcium has not changed at all. **Ionised calcium falls**, and ionised calcium is the fraction nerves and muscle actually use. Hence the tingling and the spasm."]
         },
         {
           label: "K+ 6.1",
@@ -393,14 +393,14 @@ module.exports = {
       variant: "paper",
       kicker: "Work it with me",
       h: "Same acid load, buffered and unbuffered",
-      lede: "Ten millimoles of strong acid, dumped into one liter. Once into plain water, once into blood. Watch the difference the bicarbonate pair makes.",
+      lede: "Ten millimoles of strong acid, dumped into one litre. Once into plain water, once into blood. Watch the difference the bicarbonate pair makes.",
       badges: [{ t: "Work it with me" }, { t: "4 min", cls: "time" }],
       given: "10 mmol of H+ added to 1 L. Blood starts at pH 7.40, with HCO3- 24 mEq/L and PCO2 40 mmHg.",
       steps: [
         "Plain water first. 10 mmol/L of H+ is 0.010 mol/L, and pH is just the negative log of that. **pH goes from 7.00 to 2.00.**",
         "Say that as a fold change. Five pH units is ten to the fifth, so the hydrogen ion concentration went up a hundred thousand fold. Nothing was there to stop it.",
         "Now blood, and I am going to hand the whole load to bicarbonate to keep the arithmetic clean: each H+ pairs with a HCO3-, so bicarbonate falls from 24 to **14 mEq/L** and the H+ leaves solution as carbonic acid and then as carbon dioxide.",
-        "That is a deliberate simplification. In real blood **hemoglobin and plasma protein buffer a share of the same load**, so bicarbonate falls by less than the full 10 and the pH lands a little higher than the numbers below. The shape of the answer does not change.",
+        "That is a deliberate simplification. In real blood **haemoglobin and plasma protein buffer a share of the same load**, so bicarbonate falls by less than the full 10 and the pH lands a little higher than the numbers below. The shape of the answer does not change.",
         "pH tracks the ratio of bicarbonate to dissolved carbon dioxide. At the start that ratio is 20 to 1, which is what a pH of 7.40 means.",
         "If the lungs did nothing, the ratio would drop to about 11.7 to 1 and **pH would land near 7.17**. Acidemic and unwell, but alive and treatable.",
         "The lungs do not do nothing. Chemoreceptors sense the acid, breathing deepens, PCO2 falls from 40 to about 30 mmHg. That lifts the ratio back toward 15.6 to 1.",
@@ -444,7 +444,7 @@ module.exports = {
           dot: "1",
           dotClass: "navy",
           h: "Primary. What decides everything downstream?",
-          p: ["The order of the amino acids, written by the gene. That is all it is, a sequence.", "Change one amino acid and you can change every level above it. Sickle cell disease is one substitution in the beta globin chain, and the consequence is a hemoglobin that polymerises and a red cell that deforms."]
+          p: ["The order of the amino acids, written by the gene. That is all it is, a sequence.", "Change one amino acid and you can change every level above it. Sickle cell disease is one substitution in the beta globin chain, and the consequence is a haemoglobin that polymerises and a red cell that deforms."]
         },
         {
           dot: "2",
@@ -462,7 +462,7 @@ module.exports = {
           dot: "4",
           dotClass: "terra",
           h: "Quaternary. What do you get when several folded chains assemble?",
-          p: ["Two or more finished chains joining into one functional unit. Hemoglobin is four chains.", "This is where cooperation becomes possible, because one subunit binding something can change the shape of its neighbors. That is the whole reason the oxygen curve is a sigmoid and not a straight line. Week 12."]
+          p: ["Two or more finished chains joining into one functional unit. Haemoglobin is four chains.", "This is where cooperation becomes possible, because one subunit binding something can change the shape of its neighbours. That is the whole reason the oxygen curve is a sigmoid and not a straight line. Week 12."]
         }
       ],
       lab: "In the Week 1 lab your enzyme is a tertiary structure with a pocket in it, and every condition you change on the bench is an attack on that pocket. Keep this ladder in the front of your lab notebook while you run the assay.",
@@ -556,29 +556,29 @@ module.exports = {
       lede: "Notice what moves and what does not. The peak comes down. The two ends stay exactly where they were.",
       svg: `<svg viewBox="0 0 900 500" role="img" aria-labelledby="x3-t x3-d" xmlns="http://www.w3.org/2000/svg">
   <title id="x3-t">Energy against reaction progress, showing activation energy with and without an enzyme</title>
-  <desc id="x3-d">Energy is on the vertical axis and reaction progress on the horizontal axis. Two curves start together at the reactant energy level, rise over a hump, and finish together at a lower product energy level. The upper maroon curve, labeled no enzyme, peaks high. The lower teal curve, labeled with enzyme, peaks much lower. Two vertical double headed arrows measure the height from the reactant level to each peak: a tall maroon one labeled large activation energy and a short teal one labeled smaller activation energy. Dashed horizontal lines mark the reactant level and the lower product level, with a note that the enzyme lowers the peak but does not move either end, so the products and the overall energy change are unchanged.</desc>
+  <desc id="x3-d">Energy is on the vertical axis and reaction progress on the horizontal axis. Two curves start together at the reactant energy level, rise over a hump, and finish together at a lower product energy level. The upper maroon curve, labelled no enzyme, peaks high. The lower teal curve, labelled with enzyme, peaks much lower. Two vertical double headed arrows measure the height from the reactant level to each peak: a tall maroon one labelled large activation energy and a short teal one labelled smaller activation energy. Dashed horizontal lines mark the reactant level and the lower product level, with a note that the enzyme lowers the peak but does not move either end, so the products and the overall energy change are unchanged.</desc>
   <rect x="0" y="0" width="900" height="500" fill="#FFFFFF"/>
 
-  <line x1="70" y1="50" x2="70" y2="432" stroke="#08101F" stroke-width="3"/>
-  <line x1="70" y1="432" x2="860" y2="432" stroke="#08101F" stroke-width="3"/>
-  <text transform="rotate(-90 26 250)" x="26" y="250" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="17" font-weight="700" fill="#08101F">energy</text>
-  <text x="465" y="462" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="17" font-weight="700" fill="#08101F">reaction progress</text>
+  <line x1="70" y1="50" x2="70" y2="432" stroke="#0B1530" stroke-width="3"/>
+  <line x1="70" y1="432" x2="860" y2="432" stroke="#0B1530" stroke-width="3"/>
+  <text transform="rotate(-90 26 250)" x="26" y="250" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="17" font-weight="700" fill="#0B1530">energy</text>
+  <text x="465" y="462" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="17" font-weight="700" fill="#0B1530">reaction progress</text>
 
   <line x1="90" y1="300" x2="850" y2="300" stroke="#DCE0E6" stroke-width="3" stroke-dasharray="10 8"/>
   <line x1="90" y1="380" x2="850" y2="380" stroke="#DCE0E6" stroke-width="3" stroke-dasharray="10 8"/>
   <text x="96" y="290" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="700" fill="#3D4860">reactants</text>
   <text x="844" y="405" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="700" fill="#3D4860">products</text>
 
-  <path d="M 90 300 C 240 300 330 100 450 100 C 570 100 660 380 810 380" fill="none" stroke="#8B1D1D" stroke-width="5"/>
+  <path d="M 90 300 C 240 300 330 100 450 100 C 570 100 660 380 810 380" fill="none" stroke="#8B3A2E" stroke-width="5"/>
   <path d="M 90 300 C 240 300 340 215 450 215 C 560 215 660 380 810 380" fill="none" stroke="#1F4E55" stroke-width="5"/>
-  <text x="450" y="78" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="17" font-weight="700" fill="#8B1D1D">no enzyme</text>
+  <text x="450" y="78" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="17" font-weight="700" fill="#8B3A2E">no enzyme</text>
   <text x="596" y="207" font-family="Plus Jakarta Sans, sans-serif" font-size="17" font-weight="700" fill="#1F4E55">with enzyme</text>
 
-  <line x1="450" y1="300" x2="450" y2="100" stroke="#8B1D1D" stroke-width="3"/>
-  <polygon points="450,92 444,108 456,108" fill="#8B1D1D"/>
-  <polygon points="450,308 444,292 456,292" fill="#8B1D1D"/>
-  <text x="436" y="258" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="700" fill="#8B1D1D">large</text>
-  <text x="436" y="279" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="700" fill="#8B1D1D">activation energy</text>
+  <line x1="450" y1="300" x2="450" y2="100" stroke="#8B3A2E" stroke-width="3"/>
+  <polygon points="450,92 444,108 456,108" fill="#8B3A2E"/>
+  <polygon points="450,308 444,292 456,292" fill="#8B3A2E"/>
+  <text x="436" y="258" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="700" fill="#8B3A2E">large</text>
+  <text x="436" y="279" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="700" fill="#8B3A2E">activation energy</text>
 
   <line x1="500" y1="300" x2="500" y2="230" stroke="#1F4E55" stroke-width="3"/>
   <polygon points="500,222 494,238 506,238" fill="#1F4E55"/>
@@ -618,13 +618,13 @@ module.exports = {
       lede: "Three curves on one pair of axes. Before you read the labels, look at which ceilings match and which do not.",
       svg: `<svg viewBox="0 0 900 560" role="img" aria-labelledby="x4-t x4-d" xmlns="http://www.w3.org/2000/svg">
   <title id="x4-t">Michaelis Menten curves with no inhibitor, a competitive inhibitor and a non competitive inhibitor</title>
-  <desc id="x4-d">Reaction rate is on the vertical axis from 0 to 100 micromol per minute and substrate concentration on the horizontal axis from 0 to 100 mmol per liter. Three curves all start at the origin and rise steeply then flatten. The navy curve, no inhibitor, climbs fastest and approaches a ceiling of 100, marked by a gold dashed line labeled Vmax equals 100; it reaches half of that ceiling, a rate of 50, at a substrate concentration of 5, marked as Km. The maroon curve, competitive inhibitor, rises more slowly but is still heading for the same ceiling of 100; it reaches a rate of 50 only at a substrate concentration of 20, marked as apparent Km. The teal curve, non competitive inhibitor, flattens early against its own much lower dashed ceiling at a rate of 60, and no amount of extra substrate lifts it above that line.</desc>
+  <desc id="x4-d">Reaction rate is on the vertical axis from 0 to 100 micromol per minute and substrate concentration on the horizontal axis from 0 to 100 mmol per litre. Three curves all start at the origin and rise steeply then flatten. The navy curve, no inhibitor, climbs fastest and approaches a ceiling of 100, marked by a gold dashed line labelled Vmax equals 100; it reaches half of that ceiling, a rate of 50, at a substrate concentration of 5, marked as Km. The maroon curve, competitive inhibitor, rises more slowly but is still heading for the same ceiling of 100; it reaches a rate of 50 only at a substrate concentration of 20, marked as apparent Km. The teal curve, non competitive inhibitor, flattens early against its own much lower dashed ceiling at a rate of 60, and no amount of extra substrate lifts it above that line.</desc>
   <rect x="0" y="0" width="900" height="560" fill="#FFFFFF"/>
 
-  <line x1="90" y1="60" x2="90" y2="440" stroke="#08101F" stroke-width="3"/>
-  <line x1="90" y1="440" x2="866" y2="440" stroke="#08101F" stroke-width="3"/>
-  <text transform="rotate(-90 30 250)" x="30" y="250" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="700" fill="#08101F">rate, micromol/min</text>
-  <text x="478" y="500" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="700" fill="#08101F">substrate concentration, mmol/L</text>
+  <line x1="90" y1="60" x2="90" y2="440" stroke="#0B1530" stroke-width="3"/>
+  <line x1="90" y1="440" x2="866" y2="440" stroke="#0B1530" stroke-width="3"/>
+  <text transform="rotate(-90 30 250)" x="30" y="250" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="700" fill="#0B1530">rate, micromol/min</text>
+  <text x="478" y="500" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="700" fill="#0B1530">substrate concentration, mmol/L</text>
 
   <text x="78" y="446" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="15" fill="#3D4860">0</text>
   <text x="78" y="276" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="15" fill="#3D4860">50</text>
@@ -635,25 +635,25 @@ module.exports = {
   <text x="698" y="466" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="15" fill="#3D4860">80</text>
   <text x="850" y="466" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="15" fill="#3D4860">100</text>
 
-  <line x1="90" y1="100" x2="866" y2="100" stroke="#DCB45C" stroke-width="3" stroke-dasharray="12 9"/>
-  <text x="866" y="88" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="700" fill="#08101F">Vmax = 100</text>
+  <line x1="90" y1="100" x2="866" y2="100" stroke="#C9A14A" stroke-width="3" stroke-dasharray="12 9"/>
+  <text x="866" y="88" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="700" fill="#0B1530">Vmax = 100</text>
   <line x1="90" y1="236" x2="866" y2="236" stroke="#1F4E55" stroke-width="3" stroke-dasharray="12 9"/>
   <text x="866" y="226" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="700" fill="#1F4E55">lower ceiling, 60</text>
 
   <line x1="90" y1="270" x2="242" y2="270" stroke="#3D4860" stroke-width="2" stroke-dasharray="8 7"/>
   <line x1="128" y1="270" x2="128" y2="440" stroke="#3D4860" stroke-width="2" stroke-dasharray="8 7"/>
   <line x1="242" y1="270" x2="242" y2="440" stroke="#3D4860" stroke-width="2" stroke-dasharray="8 7"/>
-  <text x="122" y="486" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="15" font-weight="700" fill="#08101F">Km 5</text>
-  <text x="256" y="486" font-family="Plus Jakarta Sans, sans-serif" font-size="15" font-weight="700" fill="#8B1D1D">apparent Km 20</text>
+  <text x="122" y="486" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="15" font-weight="700" fill="#0B1530">Km 5</text>
+  <text x="256" y="486" font-family="Plus Jakarta Sans, sans-serif" font-size="15" font-weight="700" fill="#8B3A2E">apparent Km 20</text>
 
-  <polyline points="90,440 105,343 128,270 166,213 204,185 242,168 318,149 394,138 546,126 698,120 850,116" fill="none" stroke="#08101F" stroke-width="5"/>
-  <polyline points="90,440 105,409 128,372 166,327 204,294 242,270 318,236 394,213 546,185 698,168 850,157" fill="none" stroke="#8B1D1D" stroke-width="5"/>
+  <polyline points="90,440 105,343 128,270 166,213 204,185 242,168 318,149 394,138 546,126 698,120 850,116" fill="none" stroke="#0B1530" stroke-width="5"/>
+  <polyline points="90,440 105,409 128,372 166,327 204,294 242,270 318,236 394,213 546,185 698,168 850,157" fill="none" stroke="#8B3A2E" stroke-width="5"/>
   <polyline points="90,440 105,382 128,338 166,304 204,287 242,277 318,265 394,259 546,252 698,248 850,246" fill="none" stroke="#1F4E55" stroke-width="5"/>
 
-  <line x1="96" y1="524" x2="146" y2="524" stroke="#08101F" stroke-width="5"/>
-  <text x="156" y="530" font-family="Plus Jakarta Sans, sans-serif" font-size="15" font-weight="700" fill="#08101F">no inhibitor</text>
-  <line x1="300" y1="524" x2="350" y2="524" stroke="#8B1D1D" stroke-width="5"/>
-  <text x="360" y="530" font-family="Plus Jakarta Sans, sans-serif" font-size="15" font-weight="700" fill="#8B1D1D">competitive</text>
+  <line x1="96" y1="524" x2="146" y2="524" stroke="#0B1530" stroke-width="5"/>
+  <text x="156" y="530" font-family="Plus Jakarta Sans, sans-serif" font-size="15" font-weight="700" fill="#0B1530">no inhibitor</text>
+  <line x1="300" y1="524" x2="350" y2="524" stroke="#8B3A2E" stroke-width="5"/>
+  <text x="360" y="530" font-family="Plus Jakarta Sans, sans-serif" font-size="15" font-weight="700" fill="#8B3A2E">competitive</text>
   <line x1="520" y1="524" x2="570" y2="524" stroke="#1F4E55" stroke-width="5"/>
   <text x="580" y="530" font-family="Plus Jakarta Sans, sans-serif" font-size="15" font-weight="700" fill="#1F4E55">non competitive</text>
 </svg>`,
@@ -667,7 +667,7 @@ module.exports = {
       variant: "paper",
       kicker: "Work it with me",
       h: "Read the curve with numbers instead of adjectives",
-      lede: "Same enzyme, three conditions. Do the arithmetic and the difference between the two inhibitors stops being a definition you memorized and becomes a thing you can see.",
+      lede: "Same enzyme, three conditions. Do the arithmetic and the difference between the two inhibitors stops being a definition you memorised and becomes a thing you can see.",
       badges: [{ t: "Work it with me" }, { t: "5 min", cls: "time" }],
       given: "Uninhibited enzyme: Vmax 100 micromol/min, Km 5 mmol/L. Work every rate at a substrate concentration of 15 mmol/L.",
       steps: [
@@ -859,7 +859,7 @@ module.exports = {
           label: "Chemical",
           labelClass: "teal",
           h: "What work is being paid for when a cell builds something?",
-          p: ["Making a large molecule out of small ones, which costs energy every time. Linking amino acids into a protein, glucose into glycogen, or synthesizing a neurotransmitter.", "Your body is rebuilt continuously, not once. Every one of those bonds was paid for with ATP, which is why building tissue costs calories and why starvation eats muscle."]
+          p: ["Making a large molecule out of small ones, which costs energy every time. Linking amino acids into a protein, glucose into glycogen, or synthesising a neurotransmitter.", "Your body is rebuilt continuously, not once. Every one of those bonds was paid for with ATP, which is why building tissue costs calories and why starvation eats muscle."]
         }
       ],
       big: "Transport, mechanical, chemical. Pump, muscle, building a protein. Say the three out loud.",
@@ -906,16 +906,16 @@ module.exports = {
         {
           label: "4 to 5.6 percent",
           labelClass: "terra",
-          big: "Hemoglobin A1c",
+          big: "Haemoglobin A1c",
           h: "What window is this number reporting on?",
-          p: ["The last two to three months. Glucose sticks to hemoglobin slowly and non enzymatically, and once it is stuck it stays stuck for the life of the red cell. A1c is the fraction that got glycated.", "**It is not regulated at all.** Nothing defends it, nothing corrects it. It is a cumulative chemical record, the integral of glucose exposure rather than its current value."]
+          p: ["The last two to three months. Glucose sticks to haemoglobin slowly and non enzymatically, and once it is stuck it stays stuck for the life of the red cell. A1c is the fraction that got glycated.", "**It is not regulated at all.** Nothing defends it, nothing corrects it. It is a cumulative chemical record, the integral of glucose exposure rather than its current value."]
         },
         {
           label: "About 120 days",
           labelClass: "terra",
           big: "The catch",
           h: "How can an A1c change when the glucose has not moved at all?",
-          p: ["Because A1c measures exposure time, and exposure time is set by how long red cells live. Red cells normally last **about 120 days**.", "Shorten that lifespan and cells are replaced before they can accumulate glycation, so **A1c reads falsely low in a patient whose glucose has not changed by a single mg/dL**. Hemolysis does it. So does a recent transfusion, or blood loss, or iron replacement kicking off a burst of new red cells."]
+          p: ["Because A1c measures exposure time, and exposure time is set by how long red cells live. Red cells normally last **about 120 days**.", "Shorten that lifespan and cells are replaced before they can accumulate glycation, so **A1c reads falsely low in a patient whose glucose has not changed by a single mg/dL**. Haemolysis does it. So does a recent transfusion, or blood loss, or iron replacement kicking off a burst of new red cells."]
         },
         {
           label: "Read them together",
@@ -974,7 +974,7 @@ module.exports = {
       k: "close",
       kicker: "Before next class",
       h: "Four things to do before we meet again",
-      lede: "None of these take long. All of them are worth more than rereading the slides, because every one of them makes you produce something instead of recognize something.",
+      lede: "None of these take long. All of them are worth more than rereading the slides, because every one of them makes you produce something instead of recognise something.",
       list: [
         "Say the two rules out loud with the slides shut: **like dissolves like**, and **arterial pH 7.35 to 7.45**. If you have to check, you have not got them yet.",
         "Work one osmolality by hand. Make up a panel, estimate it, then invent a measured value and take the gap. Two minutes, and it never leaves you after that.",

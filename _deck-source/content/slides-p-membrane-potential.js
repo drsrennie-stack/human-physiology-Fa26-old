@@ -9,7 +9,7 @@
 const FIG_IONS = `
 <svg viewBox="0 0 900 470" role="img" aria-labelledby="x1-t x1-d">
   <title id="x1-t">Where the four main ions sit across the cell membrane</title>
-  <desc id="x1-d">A wide diagram split by a vertical membrane band down the middle. The left side is labeled outside the cell, the right side is labeled inside the cell, and a narrow column on the far left names the ion. Values are in millimoles per liter. Potassium is 4 outside and 140 inside. Sodium is 145 outside and 12 inside. Chloride is 100 outside and 10 inside. Free calcium is 1.2 outside and 0.0001 inside. Potassium is the only one of the four that is higher inside than outside, and calcium shows the largest difference, about ten thousand fold.</desc>
+  <desc id="x1-d">A wide diagram split by a vertical membrane band down the middle. The left side is labelled outside the cell, the right side is labelled inside the cell, and a narrow column on the far left names the ion. Values are in millimoles per liter. Potassium is 4 outside and 140 inside. Sodium is 145 outside and 12 inside. Chloride is 100 outside and 10 inside. Free calcium is 1.2 outside and 0.0001 inside. Potassium is the only one of the four that is higher inside than outside, and calcium shows the largest difference, about ten thousand fold.</desc>
   <rect x="0" y="0" width="900" height="470" fill="#FFFFFF"/>
 
   <line x1="30" y1="178" x2="870" y2="178" stroke="#DCE0E6" stroke-width="2"/>
@@ -18,45 +18,45 @@ const FIG_IONS = `
   <line x1="170" y1="70" x2="170" y2="400" stroke="#DCE0E6" stroke-width="2"/>
 
   <text x="40" y="100" font-family="Plus Jakarta Sans, sans-serif" font-size="15" font-weight="700" fill="#3D4860">ION</text>
-  <text x="295" y="100" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="17" font-weight="700" fill="#08101F">Outside the cell (mmol/L)</text>
-  <text x="680" y="100" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="17" font-weight="700" fill="#08101F">Inside the cell (mmol/L)</text>
+  <text x="295" y="100" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="17" font-weight="700" fill="#0B1530">Outside the cell (mmol/L)</text>
+  <text x="680" y="100" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="17" font-weight="700" fill="#0B1530">Inside the cell (mmol/L)</text>
 
   <text x="40" y="152" font-family="Plus Jakarta Sans, sans-serif" font-size="19" font-weight="700" fill="#1F4E55">K+</text>
   <text x="295" y="152" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="24" font-weight="700" fill="#3D4860">4</text>
   <text x="680" y="152" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="24" font-weight="700" fill="#1F4E55">140</text>
 
-  <text x="40" y="227" font-family="Plus Jakarta Sans, sans-serif" font-size="19" font-weight="700" fill="#8B1D1D">Na+</text>
-  <text x="295" y="227" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="24" font-weight="700" fill="#8B1D1D">145</text>
+  <text x="40" y="227" font-family="Plus Jakarta Sans, sans-serif" font-size="19" font-weight="700" fill="#8B3A2E">Na+</text>
+  <text x="295" y="227" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="24" font-weight="700" fill="#8B3A2E">145</text>
   <text x="680" y="227" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="24" font-weight="700" fill="#3D4860">12</text>
 
   <text x="40" y="302" font-family="Plus Jakarta Sans, sans-serif" font-size="19" font-weight="700" fill="#3D4860">Cl-</text>
   <text x="295" y="302" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="24" font-weight="700" fill="#3D4860">100</text>
   <text x="680" y="302" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="24" font-weight="700" fill="#3D4860">10</text>
 
-  <text x="40" y="377" font-family="Plus Jakarta Sans, sans-serif" font-size="19" font-weight="700" fill="#8B1D1D">Ca2+</text>
-  <text x="295" y="377" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="24" font-weight="700" fill="#8B1D1D">1.2</text>
-  <text x="680" y="377" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="24" font-weight="700" fill="#8B1D1D">0.0001</text>
+  <text x="40" y="377" font-family="Plus Jakarta Sans, sans-serif" font-size="19" font-weight="700" fill="#8B3A2E">Ca2+</text>
+  <text x="295" y="377" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="24" font-weight="700" fill="#8B3A2E">1.2</text>
+  <text x="680" y="377" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="24" font-weight="700" fill="#8B3A2E">0.0001</text>
 
-  <rect x="420" y="60" width="44" height="350" fill="#EDF1F3" stroke="#08101F" stroke-width="3"/>
+  <rect x="420" y="60" width="44" height="350" fill="#EDF1F3" stroke="#0B1530" stroke-width="3"/>
   <line x1="434" y1="60" x2="434" y2="410" stroke="#DCE0E6" stroke-width="2"/>
   <line x1="450" y1="60" x2="450" y2="410" stroke="#DCE0E6" stroke-width="2"/>
-  <text x="442" y="44" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="15" font-weight="700" fill="#08101F">Cell membrane</text>
+  <text x="442" y="44" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="15" font-weight="700" fill="#0B1530">Cell membrane</text>
 
-  <text x="30" y="443" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="700" fill="#8B1D1D">Free calcium inside is about 10,000 times lower than the free calcium outside. Nothing else is held that tightly.</text>
+  <text x="30" y="443" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="700" fill="#8B3A2E">Free calcium inside is about 10,000 times lower than the free calcium outside. Nothing else is held that tightly.</text>
 </svg>`;
 
 const FIG_TRACE = `
 <svg viewBox="0 0 900 520" role="img" aria-labelledby="x2-t x2-d">
-  <title id="x2-t">One membrane potential tracing with every phase labeled</title>
+  <title id="x2-t">One membrane potential tracing with every phase labelled</title>
   <desc id="x2-d">A graph of membrane potential in millivolts against time in milliseconds. The vertical axis runs from plus 40 at the top to minus 90 at the bottom, with marked lines at zero, at threshold of minus 55, and at the resting potential of minus 70. The trace sits flat at minus 70, rises past threshold, shoots steeply up to a peak of about plus 30 which is above zero and is called the overshoot, falls just as steeply back down through the resting line, dips to a trough of about minus 80 which is the hyperpolarization, then drifts slowly back up to minus 70 and stays there. Two ticks on the time axis mark zero milliseconds at the foot of the upstroke and three milliseconds where the trace has fallen back through the resting line, so the spike itself takes about three milliseconds.</desc>
   <rect x="0" y="0" width="900" height="520" fill="#FFFFFF"/>
 
-  <line x1="110" y1="60" x2="110" y2="440" stroke="#08101F" stroke-width="3"/>
-  <line x1="110" y1="440" x2="860" y2="440" stroke="#08101F" stroke-width="3"/>
+  <line x1="110" y1="60" x2="110" y2="440" stroke="#0B1530" stroke-width="3"/>
+  <line x1="110" y1="440" x2="860" y2="440" stroke="#0B1530" stroke-width="3"/>
 
-  <line x1="104" y1="60" x2="110" y2="60" stroke="#08101F" stroke-width="2"/>
-  <line x1="104" y1="177" x2="110" y2="177" stroke="#08101F" stroke-width="2"/>
-  <line x1="104" y1="381" x2="110" y2="381" stroke="#08101F" stroke-width="2"/>
+  <line x1="104" y1="60" x2="110" y2="60" stroke="#0B1530" stroke-width="2"/>
+  <line x1="104" y1="177" x2="110" y2="177" stroke="#0B1530" stroke-width="2"/>
+  <line x1="104" y1="381" x2="110" y2="381" stroke="#0B1530" stroke-width="2"/>
   <text x="98" y="66" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="15" fill="#3D4860">+40</text>
   <text x="98" y="183" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="15" fill="#3D4860">0</text>
   <text x="98" y="387" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="15" fill="#3D4860">-70</text>
@@ -70,28 +70,28 @@ const FIG_TRACE = `
   <text x="856" y="403" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="15" font-weight="700" fill="#1F4E55">Resting potential, -70 mV</text>
 
   <path d="M 110 381 L 250 381 C 268 381 278 356 288 338 C 300 300 315 130 340 89 C 362 120 400 300 425 370 C 440 400 470 411 500 411 C 570 411 640 388 700 381 L 860 381"
-        fill="none" stroke="#8B1D1D" stroke-width="4" stroke-linejoin="round"/>
+        fill="none" stroke="#8B3A2E" stroke-width="4" stroke-linejoin="round"/>
 
-  <circle cx="340" cy="89" r="6" fill="#DCB45C" stroke="#08101F" stroke-width="2"/>
-  <text x="352" y="82" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="700" fill="#08101F">Overshoot, peak about +30 mV</text>
+  <circle cx="340" cy="89" r="6" fill="#C9A14A" stroke="#0B1530" stroke-width="2"/>
+  <text x="352" y="82" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="700" fill="#0B1530">Overshoot, peak about +30 mV</text>
   <text x="352" y="104" font-family="Plus Jakarta Sans, sans-serif" font-size="15" fill="#3D4860">the part of the rise that is above 0 mV</text>
 
   <text x="150" y="368" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="700" fill="#1F4E55">Resting</text>
-  <text x="196" y="250" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="700" fill="#8B1D1D">Depolarization</text>
+  <text x="196" y="250" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="700" fill="#8B3A2E">Depolarization</text>
   <text x="196" y="272" font-family="Plus Jakarta Sans, sans-serif" font-size="15" fill="#3D4860">less negative</text>
-  <text x="452" y="250" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="700" fill="#8B1D1D">Repolarization</text>
+  <text x="452" y="250" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="700" fill="#8B3A2E">Repolarization</text>
   <text x="452" y="272" font-family="Plus Jakarta Sans, sans-serif" font-size="15" fill="#3D4860">back toward rest</text>
 
-  <circle cx="500" cy="411" r="6" fill="#DCB45C" stroke="#08101F" stroke-width="2"/>
-  <text x="516" y="440" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="700" fill="#08101F">Hyperpolarization, about -80 mV</text>
+  <circle cx="500" cy="411" r="6" fill="#C9A14A" stroke="#0B1530" stroke-width="2"/>
+  <text x="516" y="440" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="700" fill="#0B1530">Hyperpolarization, about -80 mV</text>
   <text x="516" y="462" font-family="Plus Jakarta Sans, sans-serif" font-size="15" fill="#3D4860">past rest, more negative than it started</text>
 
-  <line x1="250" y1="440" x2="250" y2="452" stroke="#08101F" stroke-width="2"/>
-  <line x1="430" y1="440" x2="430" y2="452" stroke="#08101F" stroke-width="2"/>
+  <line x1="250" y1="440" x2="250" y2="452" stroke="#0B1530" stroke-width="2"/>
+  <line x1="430" y1="440" x2="430" y2="452" stroke="#0B1530" stroke-width="2"/>
   <text x="250" y="470" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="15" fill="#3D4860">0</text>
   <text x="430" y="470" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="15" fill="#3D4860">3</text>
-  <text x="485" y="500" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="700" fill="#08101F">Time (ms)</text>
-  <text x="30" y="250" text-anchor="middle" transform="rotate(-90 30 250)" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="700" fill="#08101F">Membrane potential (mV)</text>
+  <text x="485" y="500" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="700" fill="#0B1530">Time (ms)</text>
+  <text x="30" y="250" text-anchor="middle" transform="rotate(-90 30 250)" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="700" fill="#0B1530">Membrane potential (mV)</text>
 </svg>`;
 
 const FIG_CHANNELS = `
@@ -103,59 +103,59 @@ const FIG_CHANNELS = `
   <g>
     <rect x="20" y="46" width="200" height="330" rx="10" fill="#FFFFFF" stroke="#DCE0E6" stroke-width="2"/>
     <text x="120" y="82" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="18" font-weight="700" fill="#1F4E55">Leak</text>
-    <rect x="30" y="150" width="180" height="44" fill="#EDF1F3" stroke="#08101F" stroke-width="2"/>
+    <rect x="30" y="150" width="180" height="44" fill="#EDF1F3" stroke="#0B1530" stroke-width="2"/>
     <rect x="100" y="150" width="14" height="44" fill="#1F4E55"/>
     <rect x="126" y="150" width="14" height="44" fill="#1F4E55"/>
-    <circle cx="120" cy="132" r="7" fill="#DCB45C" stroke="#08101F" stroke-width="2"/>
-    <circle cx="120" cy="212" r="7" fill="#DCB45C" stroke="#08101F" stroke-width="2"/>
+    <circle cx="120" cy="132" r="7" fill="#C9A14A" stroke="#0B1530" stroke-width="2"/>
+    <circle cx="120" cy="212" r="7" fill="#C9A14A" stroke="#0B1530" stroke-width="2"/>
     <text x="120" y="250" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="14" font-weight="700" fill="#3D4860">WHAT OPENS IT</text>
-    <text x="120" y="276" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="16" fill="#08101F">Nothing. It has</text>
-    <text x="120" y="298" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="16" fill="#08101F">no gate at all.</text>
-    <text x="120" y="344" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="15" font-weight="700" fill="#8B1D1D">Every cell, at rest</text>
+    <text x="120" y="276" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="16" fill="#0B1530">Nothing. It has</text>
+    <text x="120" y="298" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="16" fill="#0B1530">no gate at all.</text>
+    <text x="120" y="344" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="15" font-weight="700" fill="#8B3A2E">Every cell, at rest</text>
   </g>
 
   <g>
     <rect x="240" y="46" width="200" height="330" rx="10" fill="#FFFFFF" stroke="#DCE0E6" stroke-width="2"/>
     <text x="340" y="82" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="18" font-weight="700" fill="#1F4E55">Voltage gated</text>
-    <rect x="250" y="150" width="180" height="44" fill="#EDF1F3" stroke="#08101F" stroke-width="2"/>
+    <rect x="250" y="150" width="180" height="44" fill="#EDF1F3" stroke="#0B1530" stroke-width="2"/>
     <rect x="320" y="150" width="14" height="44" fill="#1F4E55"/>
     <rect x="346" y="150" width="14" height="44" fill="#1F4E55"/>
-    <rect x="334" y="164" width="12" height="16" fill="#8B1D1D"/>
-    <text x="300" y="132" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="17" font-weight="700" fill="#8B1D1D">+ +</text>
-    <text x="380" y="132" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="17" font-weight="700" fill="#8B1D1D">+ +</text>
+    <rect x="334" y="164" width="12" height="16" fill="#8B3A2E"/>
+    <text x="300" y="132" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="17" font-weight="700" fill="#8B3A2E">+ +</text>
+    <text x="380" y="132" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="17" font-weight="700" fill="#8B3A2E">+ +</text>
     <text x="340" y="250" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="14" font-weight="700" fill="#3D4860">WHAT OPENS IT</text>
-    <text x="340" y="276" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="16" fill="#08101F">A change in the</text>
-    <text x="340" y="298" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="16" fill="#08101F">membrane voltage.</text>
-    <text x="340" y="344" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="15" font-weight="700" fill="#8B1D1D">Axons, heart muscle</text>
+    <text x="340" y="276" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="16" fill="#0B1530">A change in the</text>
+    <text x="340" y="298" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="16" fill="#0B1530">membrane voltage.</text>
+    <text x="340" y="344" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="15" font-weight="700" fill="#8B3A2E">Axons, heart muscle</text>
   </g>
 
   <g>
     <rect x="460" y="46" width="200" height="330" rx="10" fill="#FFFFFF" stroke="#DCE0E6" stroke-width="2"/>
     <text x="560" y="82" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="18" font-weight="700" fill="#1F4E55">Ligand gated</text>
-    <rect x="470" y="150" width="180" height="44" fill="#EDF1F3" stroke="#08101F" stroke-width="2"/>
+    <rect x="470" y="150" width="180" height="44" fill="#EDF1F3" stroke="#0B1530" stroke-width="2"/>
     <rect x="540" y="150" width="14" height="44" fill="#1F4E55"/>
     <rect x="566" y="150" width="14" height="44" fill="#1F4E55"/>
-    <rect x="554" y="164" width="12" height="16" fill="#8B1D1D"/>
-    <circle cx="560" cy="126" r="13" fill="#DCB45C" stroke="#08101F" stroke-width="2"/>
+    <rect x="554" y="164" width="12" height="16" fill="#8B3A2E"/>
+    <circle cx="560" cy="126" r="13" fill="#C9A14A" stroke="#0B1530" stroke-width="2"/>
     <text x="560" y="250" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="14" font-weight="700" fill="#3D4860">WHAT OPENS IT</text>
-    <text x="560" y="276" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="16" fill="#08101F">A chemical binds</text>
-    <text x="560" y="298" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="16" fill="#08101F">to the protein.</text>
-    <text x="560" y="344" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="15" font-weight="700" fill="#8B1D1D">Neuromuscular junction</text>
+    <text x="560" y="276" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="16" fill="#0B1530">A chemical binds</text>
+    <text x="560" y="298" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="16" fill="#0B1530">to the protein.</text>
+    <text x="560" y="344" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="15" font-weight="700" fill="#8B3A2E">Neuromuscular junction</text>
   </g>
 
   <g>
     <rect x="680" y="46" width="200" height="330" rx="10" fill="#FFFFFF" stroke="#DCE0E6" stroke-width="2"/>
     <text x="780" y="82" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="18" font-weight="700" fill="#1F4E55">Mechanically gated</text>
-    <rect x="690" y="150" width="180" height="44" fill="#EDF1F3" stroke="#08101F" stroke-width="2"/>
+    <rect x="690" y="150" width="180" height="44" fill="#EDF1F3" stroke="#0B1530" stroke-width="2"/>
     <rect x="760" y="150" width="14" height="44" fill="#1F4E55"/>
     <rect x="786" y="150" width="14" height="44" fill="#1F4E55"/>
-    <rect x="774" y="164" width="12" height="16" fill="#8B1D1D"/>
+    <rect x="774" y="164" width="12" height="16" fill="#8B3A2E"/>
     <line x1="700" y1="112" x2="762" y2="148" stroke="#1F4E55" stroke-width="3"/>
     <line x1="860" y1="112" x2="798" y2="148" stroke="#1F4E55" stroke-width="3"/>
     <text x="780" y="250" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="14" font-weight="700" fill="#3D4860">WHAT OPENS IT</text>
-    <text x="780" y="276" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="16" fill="#08101F">Physical force,</text>
-    <text x="780" y="298" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="16" fill="#08101F">stretch or bending.</text>
-    <text x="780" y="344" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="15" font-weight="700" fill="#8B1D1D">Hair cells in the ear</text>
+    <text x="780" y="276" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="16" fill="#0B1530">Physical force,</text>
+    <text x="780" y="298" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="16" fill="#0B1530">stretch or bending.</text>
+    <text x="780" y="344" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="15" font-weight="700" fill="#8B3A2E">Hair cells in the ear</text>
   </g>
 </svg>`;
 
@@ -165,27 +165,27 @@ const FIG_KPLOT = `
   <desc id="x4-d">A graph with extracellular potassium on a logarithmic horizontal axis running from 1 to 100 millimoles per liter, and resting membrane potential on the vertical axis running from 0 at the top to minus 140 millivolts at the bottom. The Nernst prediction is a perfectly straight line rising from minus 131 millivolts at a potassium of 1, through minus 94 at a potassium of 4, to minus 9 at a potassium of 100. The measured cell values form a curve that sits above the line at low potassium, about minus 80 millivolts at a potassium of 1 and minus 70 at a potassium of 4, and then bends down to meet the straight line at high potassium. Two points are marked, the normal value at potassium 4 and minus 70 millivolts, and Kofi at potassium 2.5 and about minus 75 millivolts.</desc>
   <rect x="0" y="0" width="900" height="500" fill="#FFFFFF"/>
 
-  <line x1="120" y1="60" x2="120" y2="420" stroke="#08101F" stroke-width="3"/>
-  <line x1="120" y1="420" x2="860" y2="420" stroke="#08101F" stroke-width="3"/>
+  <line x1="120" y1="60" x2="120" y2="420" stroke="#0B1530" stroke-width="3"/>
+  <line x1="120" y1="420" x2="860" y2="420" stroke="#0B1530" stroke-width="3"/>
 
-  <line x1="114" y1="60" x2="120" y2="60" stroke="#08101F" stroke-width="2"/>
-  <line x1="114" y1="137" x2="120" y2="137" stroke="#08101F" stroke-width="2"/>
-  <line x1="114" y1="214" x2="120" y2="214" stroke="#08101F" stroke-width="2"/>
-  <line x1="114" y1="291" x2="120" y2="291" stroke="#08101F" stroke-width="2"/>
-  <line x1="114" y1="369" x2="120" y2="369" stroke="#08101F" stroke-width="2"/>
+  <line x1="114" y1="60" x2="120" y2="60" stroke="#0B1530" stroke-width="2"/>
+  <line x1="114" y1="137" x2="120" y2="137" stroke="#0B1530" stroke-width="2"/>
+  <line x1="114" y1="214" x2="120" y2="214" stroke="#0B1530" stroke-width="2"/>
+  <line x1="114" y1="291" x2="120" y2="291" stroke="#0B1530" stroke-width="2"/>
+  <line x1="114" y1="369" x2="120" y2="369" stroke="#0B1530" stroke-width="2"/>
   <text x="108" y="66" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="15" fill="#3D4860">0</text>
   <text x="108" y="143" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="15" fill="#3D4860">-30</text>
   <text x="108" y="220" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="15" fill="#3D4860">-60</text>
   <text x="108" y="297" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="15" fill="#3D4860">-90</text>
   <text x="108" y="375" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="15" fill="#3D4860">-120</text>
 
-  <line x1="120" y1="420" x2="120" y2="426" stroke="#08101F" stroke-width="2"/>
-  <line x1="228" y1="420" x2="228" y2="426" stroke="#08101F" stroke-width="2"/>
-  <line x1="337" y1="420" x2="337" y2="426" stroke="#08101F" stroke-width="2"/>
-  <line x1="480" y1="420" x2="480" y2="426" stroke="#08101F" stroke-width="2"/>
-  <line x1="588" y1="420" x2="588" y2="426" stroke="#08101F" stroke-width="2"/>
-  <line x1="732" y1="420" x2="732" y2="426" stroke="#08101F" stroke-width="2"/>
-  <line x1="840" y1="420" x2="840" y2="426" stroke="#08101F" stroke-width="2"/>
+  <line x1="120" y1="420" x2="120" y2="426" stroke="#0B1530" stroke-width="2"/>
+  <line x1="228" y1="420" x2="228" y2="426" stroke="#0B1530" stroke-width="2"/>
+  <line x1="337" y1="420" x2="337" y2="426" stroke="#0B1530" stroke-width="2"/>
+  <line x1="480" y1="420" x2="480" y2="426" stroke="#0B1530" stroke-width="2"/>
+  <line x1="588" y1="420" x2="588" y2="426" stroke="#0B1530" stroke-width="2"/>
+  <line x1="732" y1="420" x2="732" y2="426" stroke="#0B1530" stroke-width="2"/>
+  <line x1="840" y1="420" x2="840" y2="426" stroke="#0B1530" stroke-width="2"/>
   <text x="120" y="448" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="15" fill="#3D4860">1</text>
   <text x="228" y="448" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="15" fill="#3D4860">2</text>
   <text x="337" y="448" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="15" fill="#3D4860">4</text>
@@ -194,20 +194,20 @@ const FIG_KPLOT = `
   <text x="732" y="448" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="15" fill="#3D4860">50</text>
   <text x="840" y="448" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="15" fill="#3D4860">100</text>
 
-  <line x1="120" y1="397" x2="840" y2="83" stroke="#8B1D1D" stroke-width="4"/>
+  <line x1="120" y1="397" x2="840" y2="83" stroke="#8B3A2E" stroke-width="4"/>
   <polyline points="120,266 263,253 337,241 424,223 480,209 588,175 732,123 840,83" fill="none" stroke="#1F4E55" stroke-width="4" stroke-linejoin="round"/>
 
-  <circle cx="337" cy="241" r="8" fill="#DCB45C" stroke="#08101F" stroke-width="2"/>
-  <text x="349" y="234" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="700" fill="#08101F">Normal: K+ out 4, rest -70 mV</text>
-  <circle cx="263" cy="253" r="8" fill="#DCB45C" stroke="#08101F" stroke-width="2"/>
-  <text x="150" y="296" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="700" fill="#08101F">Kofi: K+ out 2.5, rest about -75 mV</text>
+  <circle cx="337" cy="241" r="8" fill="#C9A14A" stroke="#0B1530" stroke-width="2"/>
+  <text x="349" y="234" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="700" fill="#0B1530">Normal: K+ out 4, rest -70 mV</text>
+  <circle cx="263" cy="253" r="8" fill="#C9A14A" stroke="#0B1530" stroke-width="2"/>
+  <text x="150" y="296" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="700" fill="#0B1530">Kofi: K+ out 2.5, rest about -75 mV</text>
 
-  <text x="620" y="330" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="700" fill="#8B1D1D">Nernst prediction</text>
+  <text x="620" y="330" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="700" fill="#8B3A2E">Nernst prediction</text>
   <text x="620" y="352" font-family="Plus Jakarta Sans, sans-serif" font-size="15" fill="#3D4860">a straight line on a log axis</text>
   <text x="150" y="200" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="700" fill="#1F4E55">What the cell actually does</text>
 
-  <text x="490" y="480" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="700" fill="#08101F">Extracellular potassium (mmol/L, log scale)</text>
-  <text x="34" y="240" text-anchor="middle" transform="rotate(-90 34 240)" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="700" fill="#08101F">Resting potential (mV)</text>
+  <text x="490" y="480" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="700" fill="#0B1530">Extracellular potassium (mmol/L, log scale)</text>
+  <text x="34" y="240" text-anchor="middle" transform="rotate(-90 34 240)" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="700" fill="#0B1530">Resting potential (mV)</text>
 </svg>`;
 
 /* ---------- deck ---------- */
@@ -262,7 +262,7 @@ module.exports = {
     {k:"table",
       kicker:"The numbers",
       h:"Learn these four rows and half of this course gets easier",
-      caption:"Typical concentrations in a human cell at 37 C, in mmol/L. Round numbers on purpose, because you will use them to estimate. Plasma chloride runs about 100 to 105 on a real chemistry panel and we round it to 100 here, and the calcium row is free ionized calcium on both sides, not the total calcium your lab reports.",
+      caption:"Typical concentrations in a human cell at 37 C, in mmol/L. Round numbers on purpose, because you will use them to estimate. Plasma chloride runs about 100 to 105 on a real chemistry panel and we round it to 100 here, and the calcium row is free ionised calcium on both sides, not the total calcium your lab reports.",
       cols:["Ion","Inside the cell","Outside the cell","Which side wins","Where you meet it"],
       rows:[
         ["K+","140","4","Inside, 35 to 1","Sets the resting potential"],

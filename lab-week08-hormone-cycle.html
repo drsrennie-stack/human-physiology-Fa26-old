@@ -4,10 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Week 8 Lab &middot; Reading the Hormone Cycle &middot; BIO 005</title>
+<link rel="stylesheet" href="assets/fonts-site.css">
 <link rel="icon" type="image/svg+xml" href="icon.svg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <!--
   ============================================================
   BIO 005 Human Physiology, Yuba College, Fall 2026
@@ -39,7 +37,7 @@
 <style>
 :root{
   --ink:#0B1530; --maroon:#8B3A2E; --maroon-dk:#6E2D24;
-  --muted:#4F576A; --faint:#505663; --hair:#C7CBD4; --grid:#D8DBE1;
+  --muted:#4A5265; --faint:#505663; --hair:#C7CBD4; --grid:#D8DBE1;
   --lh:#8B3A2E; --fsh:#0B1530; --e2:#1F6F5C; --p4:#8A5A00;
   --f:'Be Vietnam Pro',system-ui,-apple-system,sans-serif;
 }
@@ -116,6 +114,33 @@ a{color:var(--maroon-dk)}
   .blk,.q{break-inside:avoid}
   .note,.b005-back{display:none}
   @page{size:letter portrait;margin:.5in}
+}
+
+/* Wide tables scroll in their own box rather than pushing the page
+   sideways. Added Sep 6 2026 with the MedMasters type change: Open Sans
+   is wider than Plus Jakarta, so tables that just fitted at 320px no
+   longer did. tabindex makes the scroll box keyboard reachable, which
+   WCAG 2.1.1 requires of any scrollable region. */
+.tblscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%}
+.tblscroll:focus-visible{outline:3px solid var(--maroon,#8B3A2E);outline-offset:2px}
+.tblscroll table{min-width:100%}
+
+/* ---- Small-screen reflow, Sep 6 2026 ------------------------------------
+   WCAG 1.4.10 asks for no horizontal scrolling at 320 CSS px. Two things
+   broke it here. Neither is new to the MedMasters change, but Open Sans is
+   a wider face than Plus Jakarta so both got worse and both are now fixed.
+
+   1. The print sheet is 8.5in wide by design. On paper that is right. On a
+      phone it is 816px inside a 320px window. It now shrinks on screen and
+      keeps its exact paper width when printing.
+   2. The header row would not wrap, so the back button hung off the edge. */
+@media screen and (max-width:900px){
+  .sheet{width:auto!important;max-width:100%!important;min-height:0!important;
+         padding:22px 18px!important}
+}
+@media screen and (max-width:640px){
+  .site-header-inner{flex-wrap:wrap;gap:10px}
+  .hdr-btn{white-space:normal}
 }
 </style>
 </head>
@@ -246,7 +271,7 @@ a{color:var(--maroon-dk)}
          ticks there. Do not rebuild this out of divs: a div strip does not
          know where the graph's y-axis ends and the columns drift apart. -->
     <div class="stripwrap">
-    <svg viewBox="0 0 760 104" role="img" aria-label="Two blank strips, one labeled ovary and one labeled uterine lining, running across the same 28 days as the graphs above, for you to divide into phases and label.">
+    <svg viewBox="0 0 760 104" role="img" aria-label="Two blank strips, one labelled ovary and one labelled uterine lining, running across the same 28 days as the graphs above, for you to divide into phases and label.">
       <text class="axl" x="6" y="31">Ovary</text>
       <text class="axl" x="6" y="77">Uterine<tspan x="6" dy="11">lining</tspan></text>
       <g stroke="#D8DBE1" stroke-width=".6">
@@ -310,12 +335,12 @@ a{color:var(--maroon-dk)}
   <div class="q">
     <div class="qh"><span class="bn">7</span><div><span class="qt">Name what is happening in the ovary at each of these four points.</span>
       <span class="qs">One line each. Say which structure is doing it.</span></div></div>
-    <table style="width:100%;border-collapse:collapse">
+    <div class="tblscroll" tabindex="0" role="region" aria-label="Table, scroll sideways to see all columns"><table style="width:100%;border-collapse:collapse">
       <tr><td style="width:1.6in;font-size:9.5px;font-weight:800;padding:5px 9px;border-bottom:.6px solid var(--grid);border-right:.6px solid var(--grid);color:var(--muted)">Estrogen climbing, days 7 to 12</td><td style="border-bottom:.6px solid var(--grid);height:24px"></td></tr>
       <tr><td style="font-size:9.5px;font-weight:800;padding:5px 9px;border-bottom:.6px solid var(--grid);border-right:.6px solid var(--grid);color:var(--muted)">The LH spike, day 13</td><td style="border-bottom:.6px solid var(--grid);height:24px"></td></tr>
       <tr><td style="font-size:9.5px;font-weight:800;padding:5px 9px;border-bottom:.6px solid var(--grid);border-right:.6px solid var(--grid);color:var(--muted)">Progesterone climbing, days 15 to 21</td><td style="border-bottom:.6px solid var(--grid);height:24px"></td></tr>
       <tr><td style="font-size:9.5px;font-weight:800;padding:5px 9px;border-right:.6px solid var(--grid);color:var(--muted)">Everything falling, days 25 to 28</td><td style="height:24px"></td></tr>
-    </table>
+    </table></div>
   </div>
 
   <div class="q">

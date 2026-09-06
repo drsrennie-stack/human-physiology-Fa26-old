@@ -4,9 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Competency Note Sheet &middot; Week 1 &middot; BIO 005</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/fonts-site.css">
 <!--
   ============================================================
   BIO 005 Human Physiology, Yuba College, Fall 2026
@@ -28,11 +26,11 @@
 <style>
 :root{
   --ink:#0B1530; --maroon:#8B3A2E; --maroon-dk:#6E2D24; --maroon-wash:#F7EEEC;
-  --muted:#4F576A; --faint:#505663; --page:#FAFAF9; --card:#FFFFFF;
+  --muted:#4A5265; --faint:#505663; --page:#FAFAF9; --card:#FFFFFF;
   --hair:rgba(11,21,48,.15); --hair-soft:rgba(11,21,48,.07);
-  --gold:#DCB45C; --band:#08101F; --terracotta:#C2734D;
+  --gold:#C9A14A; --band:#0B1530; --terracotta:#C2734D;
   --r-card:8px; --r-btn:4px; --r-badge:3px;
-  --display:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;
+  --display:'Open Sans',system-ui,-apple-system,sans-serif;
   --body:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
 }
 *,*::before,*::after{box-sizing:border-box}
@@ -74,7 +72,7 @@ a{color:var(--maroon-dk)}
   display:flex;align-items:center;justify-content:center;color:#fff}
 .pc .t-anat{background:linear-gradient(150deg,#A8543C,#8B3A2E)}
 .pc .t-math{background:linear-gradient(150deg,#2B3A57,#0B1530)}
-.pc .t-chem{background:linear-gradient(150deg,#DCB45C,#A8842F)}
+.pc .t-chem{background:linear-gradient(150deg,#C9A14A,#A8842F)}
 .pc h3{font-family:var(--display);font-size:16px;font-weight:800;letter-spacing:-.01em;
   text-transform:none;color:var(--ink);margin:0 0 7px}
 .pc p{font-size:13.5px;color:var(--muted);line-height:1.5;margin:0;text-align:left}
@@ -114,6 +112,15 @@ footer{border-top:.5px solid var(--hair);background:var(--card);padding:22px 0;f
 footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 @media(max-width:560px){.steps li{grid-template-columns:1fr}.steps li span{grid-column:1}}
+
+/* Wide tables scroll in their own box rather than pushing the page
+   sideways. Added Sep 6 2026 with the MedMasters type change: Open Sans
+   is wider than Plus Jakarta, so tables that just fitted at 320px no
+   longer did. tabindex makes the scroll box keyboard reachable, which
+   WCAG 2.1.1 requires of any scrollable region. */
+.tblscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%}
+.tblscroll:focus-visible{outline:3px solid var(--maroon,#8B3A2E);outline-offset:2px}
+.tblscroll table{min-width:100%}
 </style>
 </head>
 <body>
@@ -149,7 +156,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
 <section>
   <h2>What you need before you start</h2>
   <p>Gather these five things first. Nothing here needs to be bought beyond the textbook you already have.</p>
-  <table>
+  <div class="tblscroll" tabindex="0" role="region" aria-label="Table, scroll sideways to see all columns"><table>
     <tr><th style="width:31%">What</th><th>Where and why</th></tr>
     <tr>
       <td><strong>My course notes</strong></td>
@@ -173,7 +180,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
       <td><strong>Two pens of different colors</strong></td>
       <td>One for your first pass and one for your second. Any two colors, as long as both read clearly in a photograph. Avoid yellow and light pastels, they disappear on camera.</td>
     </tr>
-  </table>
+  </table></div>
 
   <div class="box">
     <h3>About page numbers</h3>
@@ -222,12 +229,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
 
 <section>
   <h2>How it is graded</h2>
-  <table>
+  <div class="tblscroll" tabindex="0" role="region" aria-label="Table, scroll sideways to see all columns"><table>
     <tr><th>What I look at</th><th>What earns credit</th></tr>
     <tr><td><strong>Five prompts, chosen at random</strong></td><td>Graded for accuracy. You will not know which five ahead of time, so every box has to be real work.</td></tr>
     <tr><td><strong>Everything else</strong></td><td>Checked for completion: every box attempted, both colors present, a source named.</td></tr>
     <tr><td><strong>Both passes visible</strong></td><td>First pass in one color, second pass added in another, first pass not erased.</td></tr>
-  </table>
+  </table></div>
   <h3>Using AI on this</h3>
   <p>AI is closed on this assignment. You may use it to help you organize your own thinking or to check a definition while you study, but nothing on the sheet may be copied from it, and nothing on the sheet may be drawn by it. Everything you turn in is in your handwriting.</p>
 </section>
@@ -297,8 +304,8 @@ var PRE = {
   10: {a:["Vessel types and the main circulatory routes.","OpenStax Anatomy and Physiology, chapter 20"],
        m:["The heaviest math week. Pressure, flow and resistance, rearranging equations for any variable, and calculating mean arterial pressure.","Khan Academy, Algebra, solving for a variable"], c:""},
   11: {a:["Blood components, and the lymphatic organs including spleen, thymus and nodes.","OpenStax Anatomy and Physiology, chapters 18 and 21"],
-       m:["Percentages and cell counts. Hematocrit is a percentage and counts run in scientific notation.","Khan Academy, Scientific notation"],
-       c:["Hemoglobin and iron, and how an antigen and an antibody bind.",""]},
+       m:["Percentages and cell counts. Haematocrit is a percentage and counts run in scientific notation.","Khan Academy, Scientific notation"],
+       c:["Haemoglobin and iron, and how an antigen and an antibody bind.",""]},
   12: {a:["The GI tract in order, plus the accessory organs: liver, gallbladder, pancreas.","OpenStax Anatomy and Physiology, chapter 23"],
        m:["Calorie arithmetic and reading an energy balance.",""],
        c:["Carbohydrates, fats and proteins, and hydrolysis as the reaction that breaks them apart.","OpenStax Chemistry 2e, chapter 20"]},
@@ -356,10 +363,10 @@ var CHAPTERS = {
   15: [["21","Integrative Physiology II: Fluid and Electrolyte Balance"],["25","Integrative Physiology III: Exercise"]]
 };
 var CHNOTE = {
-  1:  "Read chapter 6 this week for homeostasis, feedback loops and control pathways only. The signaling half comes back in week 4.",
+  1:  "Read chapter 6 this week for homeostasis, feedback loops and control pathways only. The signalling half comes back in week 4.",
   2:  "Chapter 2 for water, pH, proteins and enzymes. Chapter 4 for ATP and coupling.",
   3:  "Chapter 3 for the body fluid compartments. Chapter 5 is the core of the week.",
-  4:  "Chapter 6 returns, this time for cell signaling, receptors and second messengers.",
+  4:  "Chapter 6 returns, this time for cell signalling, receptors and second messengers.",
   5:  "Chapter 9 is read across two weeks: the cell last week, the synapse this week.",
   6:  "Sensory input and autonomic output are two halves of the same reflex, so they read well together.",
   7:  "Chapter 12 is split too: the autonomic half was last week, the somatic half sits here beside the muscle it commands.",

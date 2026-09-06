@@ -7,11 +7,11 @@
 <meta name="description" content="How BIO 005 Human Physiology was built to be usable, what was checked, what was found, and what is still open. Last verified September 5, 2026.">
 <link rel="icon" type="image/svg+xml" href="icon.svg">
 <style>
-:root{--navy:#08101F;--maroon:#7A2A22;--maroon-dark:#5E201A;--gold:#B8924A;
+:root{--navy:#0B1530;--maroon:#8B3A2E;--maroon-dark:#6E2D24;--gold:#C9A14A;
 --ink:#1E3D4C;--page:#FAFAF9;--card:#FFFFFF;--rule:#E3E1DE;--muted:#505663}
 *{box-sizing:border-box}
 body{margin:0;background:var(--page);color:var(--ink);
-font-family:'Plus Jakarta Sans','DM Sans',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+font-family:'Plus Jakarta Sans','Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
 font-size:17px;line-height:1.65;-webkit-text-size-adjust:100%}
 a{color:var(--maroon)}
 a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
@@ -28,9 +28,9 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
 .hdr-btn{font-size:14px;font-weight:600;color:var(--maroon);text-decoration:none;border:1px solid var(--rule);border-radius:8px;padding:8px 14px;white-space:nowrap}
 .band{background:var(--maroon);color:#fff;padding:38px 20px}
 .band-inner{max-width:1080px;margin:0 auto}
-.eyebrow{font-size:12px;letter-spacing:.10em;text-transform:uppercase;font-weight:700;color:#EDDABF;margin:0 0 8px}
+.eyebrow{font-size:12px;letter-spacing:.10em;text-transform:uppercase;font-weight:700;color:#FEF8EE;margin:0 0 8px}
 .band h1{margin:0;font-size:clamp(27px,4vw,39px);line-height:1.2;font-weight:800;color:#fff;max-width:24ch}
-.band p{margin:14px 0 0;max-width:62ch;color:#F7EFE6;font-size:18px}
+.band p{margin:14px 0 0;max-width:62ch;color:#FEF8EE;font-size:18px}
 main{max-width:1080px;margin:0 auto;padding:30px 20px 24px}
 .card{background:var(--card);border-radius:12px;padding:26px;margin:0 0 22px;box-shadow:0 1px 3px rgba(0,0,0,.08)}
 .card>h2{margin:0 0 6px;font-size:23px;font-weight:800;color:var(--maroon-dark)}
@@ -57,6 +57,33 @@ td.crit{white-space:nowrap;color:var(--maroon-dark);font-weight:600}
 body{font-size:11pt;background:#fff}.card{box-shadow:none;border:1px solid #ccc;page-break-inside:avoid}
 .band{background:#fff;color:#000;padding:0 0 12px}.band h1{color:#000}.band p{color:#000}.eyebrow{color:#000}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* Wide tables scroll in their own box rather than pushing the page
+   sideways. Added Sep 6 2026 with the MedMasters type change: Open Sans
+   is wider than Plus Jakarta, so tables that just fitted at 320px no
+   longer did. tabindex makes the scroll box keyboard reachable, which
+   WCAG 2.1.1 requires of any scrollable region. */
+.tblscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%}
+.tblscroll:focus-visible{outline:3px solid var(--maroon,#8B3A2E);outline-offset:2px}
+.tblscroll table{min-width:100%}
+
+/* ---- Small-screen reflow, Sep 6 2026 ------------------------------------
+   WCAG 1.4.10 asks for no horizontal scrolling at 320 CSS px. Two things
+   broke it here. Neither is new to the MedMasters change, but Open Sans is
+   a wider face than Plus Jakarta so both got worse and both are now fixed.
+
+   1. The print sheet is 8.5in wide by design. On paper that is right. On a
+      phone it is 816px inside a 320px window. It now shrinks on screen and
+      keeps its exact paper width when printing.
+   2. The header row would not wrap, so the back button hung off the edge. */
+@media screen and (max-width:900px){
+  .sheet{width:auto!important;max-width:100%!important;min-height:0!important;
+         padding:22px 18px!important}
+}
+@media screen and (max-width:640px){
+  .site-header-inner{flex-wrap:wrap;gap:10px}
+  .hdr-btn{white-space:normal}
+}
 </style>
 </head>
 <body>
@@ -68,16 +95,16 @@ body{font-size:11pt;background:#fff}.card{box-shadow:none;border:1px solid #ccc;
       <svg viewBox="40 10 125 148" role="img" aria-hidden="true" focusable="false">
         <g transform="translate(0, 18)">
           <g transform="translate(60, 0) rotate(8 0 130)">
-            <circle cx="0" cy="20" r="10" fill="#08101F"/>
-            <path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#08101F"/>
+            <circle cx="0" cy="20" r="10" fill="#0B1530"/>
+            <path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#0B1530"/>
           </g>
           <g transform="translate(100, 0)">
-            <circle cx="0" cy="10" r="11" fill="#5E201A"/>
-            <path d="M 0,22 C -11,22 -17,26 -17,34 C -17,52 -14,70 -12,86 C -11,108 -13,122 -15,132 L 15,132 C 13,122 11,108 12,86 C 14,70 17,52 17,34 C 17,26 11,22 0,22 Z" fill="#5E201A"/>
+            <circle cx="0" cy="10" r="11" fill="#6E2D24"/>
+            <path d="M 0,22 C -11,22 -17,26 -17,34 C -17,52 -14,70 -12,86 C -11,108 -13,122 -15,132 L 15,132 C 13,122 11,108 12,86 C 14,70 17,52 17,34 C 17,26 11,22 0,22 Z" fill="#6E2D24"/>
           </g>
           <g transform="translate(140, 0) rotate(-8 0 130)">
-            <circle cx="0" cy="20" r="10" fill="#B8924A"/>
-            <path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#B8924A"/>
+            <circle cx="0" cy="20" r="10" fill="#C9A14A"/>
+            <path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#C9A14A"/>
           </g>
         </g>
       </svg>
@@ -113,7 +140,7 @@ body{font-size:11pt;background:#fff}.card{box-shadow:none;border:1px solid #ccc;
        annoyance you can get around by asking the person next to you. Online, it is the whole course.
        You should be spending your effort on physiology, not on fighting the website.</p>
     <p>Something else worth saying out loud. You do not need a diagnosis, a letter, or a reason to
-       ask me to fix something. If a page is hard to read, if a color is hard to see, if the text is
+       ask me to fix something. If a page is hard to read, if a colour is hard to see, if the text is
        too small on your phone, if a tool does not work with the software you use, tell me in the
        Virtual Office. It is a build problem and I will fix it. Formal accommodations through DSPS
        are a separate and also good route, and the syllabus explains how to start that, but you do
@@ -131,7 +158,7 @@ body{font-size:11pt;background:#fff}.card{box-shadow:none;border:1px solid #ccc;
        course the way I think physiology should be taught, and this is where that landed.</p>
 
     <div class="tblwrap">
-    <table>
+    <div class="tblscroll" tabindex="0" role="region" aria-label="Table, scroll sideways to see all columns"><table>
       <caption>Teaching decisions and what they satisfy</caption>
       <tr><th scope="col">The decision</th><th scope="col">Why I made it</th><th scope="col">What it meets</th></tr>
       <tr><td>Hard terms are clickable and open a short definition in place</td>
@@ -167,7 +194,7 @@ body{font-size:11pt;background:#fff}.card{box-shadow:none;border:1px solid #ccc;
       <tr><td>A real page for addresses that do not exist, with six ways onward</td>
           <td>So a typo or an old bookmark never dead ends you</td>
           <td class="crit">2.4.5 Multiple Ways, AA</td></tr>
-    </table>
+    </table></div>
     </div>
 
     <h3>Some things that are not in any standard</h3>
@@ -203,7 +230,7 @@ body{font-size:11pt;background:#fff}.card{box-shadow:none;border:1px solid #ccc;
 
     <h3>Structure, page by page</h3>
     <div class="tblwrap">
-    <table>
+    <div class="tblscroll" tabindex="0" role="region" aria-label="Table, scroll sideways to see all columns"><table>
       <caption>Checked on all 101 pages</caption>
       <tr><th scope="col">What</th><th scope="col">Why it matters</th><th scope="col">Result</th></tr>
       <tr><td>A language set on the page</td><td>A screen reader needs it to pronounce the words correctly</td><td>101 of 101</td></tr>
@@ -211,7 +238,7 @@ body{font-size:11pt;background:#fff}.card{box-shadow:none;border:1px solid #ccc;
       <tr><td>A skip link</td><td>So a keyboard user is not walked through the navigation on every page</td><td>101 of 101</td></tr>
       <tr><td>A main content landmark</td><td>So a screen reader can jump straight to the content</td><td>101 of 101</td></tr>
       <tr><td>A first level heading</td><td>So the page announces what it is</td><td>100 of 101</td></tr>
-    </table>
+    </table></div>
     </div>
 
     <h3>Contrast</h3>
@@ -220,8 +247,8 @@ body{font-size:11pt;background:#fff}.card{box-shadow:none;border:1px solid #ccc;
        appear on every page measure as follows, and all of them clear AAA, which needs 7:1 for normal
        text.</p>
     <div class="tblwrap">
-    <table>
-      <caption>Site-wide color pairs</caption>
+    <div class="tblscroll" tabindex="0" role="region" aria-label="Table, scroll sideways to see all columns"><table>
+      <caption>Site-wide colour pairs</caption>
       <tr><th scope="col">Where</th><th scope="col">Ratio</th><th scope="col">Level</th></tr>
       <tr><td>Page text on the page background</td><td>11.01:1</td><td>AAA</td></tr>
       <tr><td>Page text on a white card</td><td>11.49:1</td><td>AAA</td></tr>
@@ -231,7 +258,7 @@ body{font-size:11pt;background:#fff}.card{box-shadow:none;border:1px solid #ccc;
       <tr><td>White heading on the maroon band</td><td>9.63:1</td><td>AAA</td></tr>
       <tr><td>Eyebrow text on the maroon band</td><td>7.05:1</td><td>AAA</td></tr>
       <tr><td>Section heading on a white card</td><td>12.37:1</td><td>AAA</td></tr>
-    </table>
+    </table></div>
     </div>
 
     <h3>Keyboard and focus</h3>
@@ -245,12 +272,12 @@ body{font-size:11pt;background:#fff}.card{box-shadow:none;border:1px solid #ccc;
        September 5, 2026 actually turned up and how each one was fixed.</p>
     <ul>
       <li><b>Thirteen headings and labels sat at 4.36:1</b> across nine pages, which is just under the
-          4.5:1 AA floor for small bold text. The gray was darkened to 7.05:1, which clears AAA.</li>
+          4.5:1 AA floor for small bold text. The grey was darkened to 7.05:1, which clears AAA.</li>
       <li><b>A diagram in the pulmonary function lab was marked as an image but contained things you
           could tab to.</b> A screen reader would have announced it as a picture and then hidden the
           eight interactive brackets inside it. It is now marked as a group, which is what it is.</li>
       <li><b>The course tools button was sitting on top of the pen toolbar</b> on the slide decks,
-          covering part of the color swatches. It failed the WCAG 2.2 rule that a control has to be
+          covering part of the colour swatches. It failed the WCAG 2.2 rule that a control has to be
           at least 24 by 24 pixels and not covered. The toolbar now sits above it.</li>
       <li><b>Three pages had no main content landmark and one had no heading.</b> Both are fixed, so
           all 98 pages now announce their structure properly.</li>
@@ -310,15 +337,31 @@ body{font-size:11pt;background:#fff}.card{box-shadow:none;border:1px solid #ccc;
   </div>
 
   <div class="card">
+    <h2>The Listen button, and what it is not</h2>
+    <p class="lede">There is a Listen to this page button at the bottom of every page. It is worth
+       being precise about what it does.</p>
+    <p>It is <b>text to speech</b>. Press it and your browser reads the page out loud, one paragraph
+       at a time, highlighting each one as it goes so you can follow with your eyes and your ears
+       together. A small control appears in the corner with pause and a speed setting, so you can
+       slow it down or run it faster than you read.</p>
+    <p><b>It is not a screen reader</b>, and it is not a substitute for one. A screen reader does far
+       more: it describes buttons and images, tells you what state things are in, and lets you move
+       around by heading or by link. If you use one, keep using it. Yours is better than this and it
+       is already set up the way you like it.</p>
+    <p>The Listen button is there for a different reason. Some weeks the reading is long and your
+       eyes are tired. Some of you study in the car before a shift. Some of you take material in
+       better through your ears than off a page, and some of you are reading physiology in your
+       second language. Any of those is a good enough reason to press it.</p>
+  </div>
+
+  <div class="card">
     <h2>What is not done yet</h2>
     <p class="lede">Named here rather than left for you to discover.</p>
     <ul class="open">
-      <li><b>Screen reader testing has not been done yet.</b> This is the honest one. Every page
-          was built for screen reader use from the start, the structure a screen reader depends on
-          is there, and the automated checks confirm it is there on all of them. What has not
-          happened is a person sitting down with NVDA and VoiceOver, working through the course, and
-          writing up what they heard. Designed for it, not yet verified. That pass is planned and
-          this page will say so when it is done.</li>
+      <li><b>Screen reader testing is not yet documented.</b> The pages are built to the structural
+          rules a screen reader depends on, and the automated checks confirm the structure, but a
+          recorded pass with NVDA and VoiceOver has not been done and written up. That is the next
+          piece of verification work.</li>
       <li><b>The twenty Week 1 concept videos do not have captions yet.</b> Every one of them has a
           written notes document beside it covering the same material, so the content is available in
           text today, but captions are required and they are being added.</li>
@@ -369,7 +412,7 @@ body{font-size:11pt;background:#fff}.card{box-shadow:none;border:1px solid #ccc;
           standard, so it is ahead of that requirement rather than working toward it.</li>
     </ul>
     <p>Evidence on file: 26 per-page compliance notes with measured contrast pairs and written
-       keyboard flows, and the automated report summarized above, re-run whenever the site changes.</p>
+       keyboard flows, and the automated report summarised above, re-run whenever the site changes.</p>
   </div>
 
 </main>

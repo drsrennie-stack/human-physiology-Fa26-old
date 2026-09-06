@@ -4,9 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Lab Analysis &middot; Week 1 &middot; BIO 005</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/fonts-site.css">
 <!--
   ============================================================
   BIO 005 Human Physiology, Yuba College, Fall 2026
@@ -28,11 +26,11 @@
 <style>
 :root{
   --ink:#0B1530; --maroon:#8B3A2E; --maroon-dk:#6E2D24; --maroon-wash:#F7EEEC;
-  --muted:#4F576A; --faint:#505663; --page:#FAFAF9; --card:#FFFFFF;
+  --muted:#4A5265; --faint:#505663; --page:#FAFAF9; --card:#FFFFFF;
   --hair:rgba(11,21,48,.15); --hair-soft:rgba(11,21,48,.07);
-  --gold:#DCB45C; --band:#08101F; --terracotta:#C2734D;
+  --gold:#C9A14A; --band:#0B1530; --terracotta:#C2734D;
   --r-card:8px; --r-btn:4px; --r-badge:3px;
-  --display:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;
+  --display:'Open Sans',system-ui,-apple-system,sans-serif;
   --body:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
 }
 *,*::before,*::after{box-sizing:border-box}
@@ -90,6 +88,15 @@ footer{border-top:.5px solid var(--hair);background:var(--card);padding:22px 0;f
 footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 @media(max-width:560px){.steps li{grid-template-columns:1fr}.steps li span{grid-column:1}}
+
+/* Wide tables scroll in their own box rather than pushing the page
+   sideways. Added Sep 6 2026 with the MedMasters type change: Open Sans
+   is wider than Plus Jakarta, so tables that just fitted at 320px no
+   longer did. tabindex makes the scroll box keyboard reachable, which
+   WCAG 2.1.1 requires of any scrollable region. */
+.tblscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%}
+.tblscroll:focus-visible{outline:3px solid var(--maroon,#8B3A2E);outline-offset:2px}
+.tblscroll table{min-width:100%}
 </style>
 </head>
 <body>
@@ -150,7 +157,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
 
 <section>
   <h2>What a complete sheet has</h2>
-  <table>
+  <div class="tblscroll" tabindex="0" role="region" aria-label="Table, scroll sideways to see all columns"><table>
     <tr><th>Section</th><th>What it needs</th></tr>
     <tr><td><strong>Your list of activities</strong></td><td>Every activity you ran this week, by name, all on the one sheet.</td></tr>
     <tr><td><strong>What you thought would happen</strong></td><td>For one activity, written after you read its setup screen and before you pressed start.</td></tr>
@@ -159,7 +166,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
     <tr><td><strong>What surprised you</strong></td><td>The result that was not what you expected, and what you had assumed.</td></tr>
     <tr><td><strong>One cause and effect</strong></td><td>Drawn in arrows, using at least two of your activities.</td></tr>
     <tr><td><strong>What you know now</strong></td><td>Three or four sentences in your own words on what the week showed you.</td></tr>
-  </table>
+  </table></div>
   <div class="box">
     <h3>Print the sheet once, use it all term</h3>
     <p>The sheet lays all six parts out for you, with room for up to six activities. Print fifteen copies at the start of term, one for each week, and fill in the week and the activity names yourself.</p>
@@ -170,7 +177,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
 <section>
   <h2>How to submit it</h2>
   <ul>
-    <li><strong>Photograph the sheet in color, in good light</strong>, held flat above the page so the writing stays readable. Check the image before you upload rather than after.</li>
+    <li><strong>Photograph the sheet in colour, in good light</strong>, held flat above the page so the writing stays readable. Check the image before you upload rather than after.</li>
     <li><strong>Keep the original.</strong> Fifteen of these together are a record of how your thinking changed across the term, which is worth more in December than any single one is in September.</li>
   </ul>
 </section>

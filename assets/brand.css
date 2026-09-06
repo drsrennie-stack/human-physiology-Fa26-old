@@ -2,74 +2,104 @@
    BIO 005 Human Physiology, Yuba College, Fall 2026
    Teaching palette. Single source of truth for this repo.
 
-   AUG 21 2026, PALETTE CHANGE, ON SCRUBS' INSTRUCTION
-   Terra cotta is out and maroon is in. Navy is out and dark navy is
-   in. These are the values her own course home, welcome.html, was
-   already using, carried over from the BIO 004 template, so this
-   change makes the document pages match the front door rather than
-   introducing anything new.
+   SEP 6 2026, MEDMASTERS BRAND, ON SCRUBS' INSTRUCTION
+   "Everything the MedMasters brand." Every value below was read off
+   the live medmasterscollaborative.com with computed styles, not
+   estimated and not carried over from an older file.
 
-     terra      #C2734D  ->  maroon       #7A2A22
-     terra-dark #A0522D  ->  maroon-dark  #5E201A
-     navy       #1E3D4C  ->  navy         #08101F
-     navy-deep  #142a36  ->  navy-deep    #060A18
+   Three palette generations existed in this repo at once. They are
+   now one.
 
-   The token names changed with the values. A token called --terra
-   holding a maroon is how a palette quietly drifts.
+     brand.css maroon      #7A2A22  ->  maroon       #8B3A2E
+     brand.css maroon-dark #5E201A  ->  maroon-dark  #6E2D24
+     deck terra            #8B1D1D  ->  maroon       #8B3A2E
+     deck terra-dark       #6B1616  ->  maroon-dark  #6E2D24
+     navy                  #08101F  ->  navy         #0B1530
+     brand.css gold        #B8924A  ->  gold         #C9A14A
+     deck gold             #DCB45C  ->  gold         #C9A14A
+     navy-deep             #060A18  ->  unchanged, the site uses it too
 
-   Contrast went up everywhere, and one documented AA-only limitation
-   is now gone: terra-dark headings were 5.62:1, AA but not AAA, and
-   maroon-dark is 12.37:1. See section 3 of compliance-notes.md.
+   TYPE ALSO CHANGED. The site sets headlines in Open Sans 800 and
+   everything else in Plus Jakarta Sans. DM Sans is not in the
+   MedMasters system and is gone from this repo.
 
-   Authority: palettes.md at the workspace root names terra cotta and
-   #1E3D4C. It is now behind this file and needs updating. Scrubs'
-   direct instruction outranks the doc; the doc still has to catch up.
+     --disp          Plus Jakarta Sans  ->  Open Sans
+     --eyebrow-font  DM Sans            ->  Plus Jakarta Sans
+
+   Both families are self-hosted in assets/fonts-site.css. No page in
+   this repo requests a font over the network any more.
+
+   WHAT MOVED IN THE WRONG DIRECTION. Maroon got lighter, so its
+   contrast dropped while staying AAA: 9.63:1 -> 7.66:1 on white, and
+   maroon-dark 12.37:1 -> 10.18:1. Gold got brighter, so gold on
+   off-white went 2.77:1 -> 2.32:1. Gold was already never-text, and
+   the gold-deep rule below already covered it, but the margin is
+   thinner now, so the rule is no longer optional. --state-unlocked
+   was changed because of this. See its comment.
+
+   Every ratio in this file was measured, not estimated.
 
    Sage and cream are NOT in this palette. Ever. Do not reintroduce
-   them from an older BIO 004, BIO 304, or MCAS file.
+   them from an older BIO 004, BIO 304, or MCAS file. The live site
+   does use bone #F5F1E8 for text on its dark band; off-white is used
+   here instead, and on near black the two are indistinguishable.
 
-   Every page in this repo links this file. Page-specific rules go in
-   the page, never a second copy of these tokens.
+   Page-specific rules go in the page, never a second copy of these
+   tokens.
    ============================================================ */
 
 :root {
   /* ---- Core palette. See the change note at the top of this file. ---- */
-  --navy:#08101F;          /* primary text, headers, borders. 19.02:1 on white */
-  --navy-deep:#060A18;     /* hover on navy. Has to stay DARKER than --navy.
-                              The old hover #142a36 is lighter than #08101F,
-                              so carrying it over would have made hover lift
-                              instead of deepen. */
-  --navy-tint:#ECEFF4;     /* completed-state fill only, never a page background */
-  --gold:#B8924A;          /* accents, unlocked-state borders, key CTAs. Never text. */
-  --gold-deep:#8A6D33;     /* the only gold that may CARRY white text: 4.87:1.
-                              Bright gold with white on it is 2.90:1 and fails.
-                              Also the frame edge when a gold panel sits on the page,
-                              because bright gold on off-white is 2.77:1, under the 3:1 floor. */
-  --maroon:#7A2A22;        /* eyebrow text, secondary accents. 9.63:1 on
-                              white, so unlike terra cotta before it, this
-                              one may carry text. */
-  --maroon-dark:#5E201A;   /* maroon hover, emphasis, heading color. 12.37:1 */
+  --navy:#0B1530;          /* primary text, headers, borders. 18.04:1 on white */
+  --navy-deep:#060A18;     /* hover on navy, and the full-bleed dark band.
+                              Has to stay DARKER than --navy. Off-white text
+                              on it is 18.89:1. */
+  --navy-tint:#ECEFF4;     /* completed-state fill only, never a page background.
+                              Navy text on it is 15.65:1. */
+  --gold:#C9A14A;          /* accents and eyebrows ON DARK ONLY. 8.16:1 on
+                              navy-deep, 7.46:1 on navy, both AAA.
+                              NEVER text on white: 2.42:1, and never a border
+                              on white either, 2.32:1 on off-white is under
+                              the 3:1 non-text floor. Use --gold-deep there. */
+  --gold-ink:#060A18;      /* the text colour for a gold fill. 8.16:1 on --gold.
+                              White on gold is 2.42:1 and fails. */
+  --gold-deep:#8A6D33;     /* the gold that works on a light page. 4.87:1 on
+                              white, so it may carry text at AA and may be a
+                              border. Also the frame edge when a gold panel
+                              sits on an off-white page. */
+  --maroon:#8B3A2E;        /* eyebrows, CTAs, emphasis. 7.66:1 on white and
+                              7.33:1 on off-white, both AAA, so it may carry
+                              text. White on it is 7.66:1. */
+  --maroon-dark:#6E2D24;   /* maroon hover, emphasis, heading colour. 10.18:1 */
   --white:#FFFFFF;         /* cards only */
   --offwhite:#FAFAF9;      /* page background only */
 
   /* ---- Derived, all verified against the core palette ---- */
   --ink:var(--navy);
-  --ink-soft:#414B5C;      /* 7.02:1 on white, AAA, for secondary body text */
-  --line:rgba(8,16,31,0.16);
-  --line-soft:rgba(8,16,31,0.08);
-  --line-control:#08101F;  /* form control borders, 19.02:1 on white */
+  --ink-soft:#414B5C;      /* 8.80:1 on white, AAA, for secondary body text */
+  --line:rgba(11,21,48,0.16);
+  --line-soft:rgba(11,21,48,0.08);
+  --line-control:#0B1530;  /* form control borders, 18.04:1 on white */
 
   /* State colors for teaching tools. Never green for completed. */
-  --state-locked:#5A6273;        /* gray, dashed border */
-  --state-unlocked:var(--gold);  /* solid gold border */
+  --state-locked:#454B58;        /* gray, dashed border. 8.75:1 on white, AAA.
+                              Was #5A6273 at 6.12:1, which is AA but under the
+                              AAA floor this repo targets. */
+  --state-unlocked:var(--gold-deep); /* WAS var(--gold). Bright gold as a border
+                              on off-white is 2.32:1, under the 3:1 floor in
+                              WCAG 1.4.11, and this border is the ONLY thing
+                              marking the unlocked state, so it has to pass.
+                              gold-deep is 4.87:1 and still reads as gold. */
   --state-complete:var(--navy);  /* solid navy border on navy-tint fill */
 
   /* Status text, used sparingly, all AA or better on white */
-  --ok:#1E4C33; --warn:#7A5310; --bad:#7A2E2E;
+  --ok:#1E4C33;            /* 9.83:1 */
+  --warn:#7A5310;          /* 6.84:1, AA */
+  --bad:#7A2E2E;           /* 9.30:1 */
 
-  /* ---- Type ---- */
-  --disp:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
-  --eyebrow-font:'DM Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  /* ---- Type. Self-hosted in assets/fonts-site.css. ---- */
+  --disp:'Open Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --eyebrow-font:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
   --serif:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
 
   /* ---- Elevation and motion, palettes.md aesthetic principles ---- */
@@ -110,9 +140,9 @@ a:hover { color:var(--navy-deep); }
 
 /* ============================================================
    TYPE SCALE
-   Eyebrow: DM Sans 12px uppercase maroon-dark
-   h1: Plus Jakarta 800 navy
-   h2, h3: Plus Jakarta 600 maroon-dark
+   Eyebrow: Plus Jakarta Sans 12px uppercase maroon-dark
+   h1: Open Sans 800 navy
+   h2, h3: Open Sans 600 maroon-dark
    Usage instructions and body emphasis: Plus Jakarta Sans, never italic
    ============================================================ */
 .eyebrow {
@@ -282,14 +312,14 @@ tr.total-row th, tr.total-row td { font-weight:700; border-top:1px solid var(--n
    document page, and the white-cards-on-off-white rule above does
    not apply to it.
 
-     --navy   #08101F   app canvas and panels, same as the document
+     --navy   #0B1530   app canvas and panels, same as the document
                         pages now use for text
      --card   #0B1530   raised panel inside the canvas
-     --gold   #DCB45C   accent on dark, higher luminance than
-                        #B8924A because it sits on a dark ground
+     --gold   #C9A14A   accent on dark, higher luminance than
+                        #C9A14A because it sits on a dark ground
 
    RESOLVED Aug 21 2026. This block used to carry an open question:
-   palettes.md specified #1E3D4C and the OS used #08101F, and nobody
+   palettes.md specified #1E3D4C and the OS used #0B1530, and nobody
    had said which governed. Scrubs answered it by moving the document
    pages to the dark navy, so there is now one navy in the repo and
    the app surface and the document pages agree on it. The only

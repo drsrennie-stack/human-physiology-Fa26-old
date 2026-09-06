@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" type="image/svg+xml" href="icon.svg">
 <title>The feedback loop switcher &middot; BIO 005</title>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/fonts-site.css">
 <!--
   ============================================================
   BIO 005 Human Physiology, Yuba College, Fall 2026
@@ -44,10 +44,10 @@
 -->
 <style>
 :root{
-  --navy:#08101F; --navy-tint:#ECEFF4; --maroon:#7A2A22; --maroon-dark:#5E201A;
+  --navy:#0B1530; --navy-tint:#ECEFF4; --maroon:#8B3A2E; --maroon-dark:#6E2D24;
   --gold-deep:#8A6D33; --gold-text:#624612; --gold-pale:#F7EFD9;
   --offwhite:#FAFAF9; --ink-soft:#3D4759; --rule:#A3ACBA;
-  --r:8px; --rc:16px; --shadow:0 1px 3px rgba(8,16,31,.08),0 1px 2px rgba(8,16,31,.05);
+  --r:8px; --rc:16px; --shadow:0 1px 3px rgba(11,21,48,.08),0 1px 2px rgba(11,21,48,.05);
   --font:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 }
 *,*::before,*::after{box-sizing:border-box}
@@ -84,7 +84,7 @@ h1{font-size:1.7rem;margin:0 0 10px}
 svg.loop{display:block;width:100%;height:auto;min-width:680px}
 .nodebox{fill:#fff;stroke:var(--navy);stroke-width:2}
 .nodebox.sense{stroke:var(--gold-deep);stroke-width:2.5}
-.nodebox.center{fill:var(--navy-tint)}
+.nodebox.centre{fill:var(--navy-tint)}
 .nodebox.effect{stroke:var(--maroon);stroke-width:2.5}
 .role{font:700 10.5px var(--font);fill:var(--gold-text);letter-spacing:.09em;text-transform:uppercase}
 .lab{font:600 13px var(--font);fill:var(--navy)}
@@ -108,6 +108,15 @@ svg.loop{display:block;width:100%;height:auto;min-width:680px}
   .tabs{display:none}
   .loopfig{box-shadow:none;break-inside:avoid}
 }
+
+/* Wide tables scroll in their own box rather than pushing the page
+   sideways. Added Sep 6 2026 with the MedMasters type change: Open Sans
+   is wider than Plus Jakarta, so tables that just fitted at 320px no
+   longer did. tabindex makes the scroll box keyboard reachable, which
+   WCAG 2.1.1 requires of any scrollable region. */
+.tblscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%}
+.tblscroll:focus-visible{outline:3px solid var(--maroon,#8B3A2E);outline-offset:2px}
+.tblscroll table{min-width:100%}
 </style>
 </head>
 <body>
@@ -131,17 +140,17 @@ svg.loop{display:block;width:100%;height:auto;min-width:680px}
 
         <defs>
           <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
-            <path d="M 0 0 L 10 5 L 0 10 z" fill="#08101F"/>
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#0B1530"/>
           </marker>
           <marker id="ahm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
-            <path d="M 0 0 L 10 5 L 0 10 z" fill="#7A2A22"/>
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#8B3A2E"/>
           </marker>
         </defs>
 
         <!-- top row: stimulus, sensor, integrating center -->
         <g id="n-stimulus"><rect class="nodebox"        x="14"  y="20"  width="200" height="96" rx="10"/></g>
         <g id="n-sensor">  <rect class="nodebox sense"  x="254" y="20"  width="200" height="96" rx="10"/></g>
-        <g id="n-center">  <rect class="nodebox center" x="686" y="20"  width="200" height="96" rx="10"/></g>
+        <g id="n-centre">  <rect class="nodebox centre" x="686" y="20"  width="200" height="96" rx="10"/></g>
 
         <!-- bottom row: effector, response -->
         <g id="n-effector"><rect class="nodebox effect" x="686" y="274" width="200" height="96" rx="10"/></g>
@@ -161,10 +170,10 @@ svg.loop{display:block;width:100%;height:auto;min-width:680px}
     </div>
 
     <div class="readout">
-      <table>
+      <div class="tblscroll" tabindex="0" role="region" aria-label="Table, scroll sideways to see all columns"><table>
         <caption class="vh">The parts of the loop currently shown</caption>
         <tbody id="tbody"></tbody>
-      </table>
+      </table></div>
     </div>
 
     <div class="note" id="note"></div>
@@ -181,7 +190,7 @@ svg.loop{display:block;width:100%;height:auto;min-width:680px}
 
   /* ============================================================
      THE ONLY THING TO EDIT. Add a loop by adding an entry.
-     Order of parts: stimulus, sensor, afferent, center, efferent,
+     Order of parts: stimulus, sensor, afferent, centre, efferent,
      effector, response.
      ============================================================ */
   var LOOPS = [
@@ -190,7 +199,7 @@ svg.loop{display:block;width:100%;height:auto;min-width:680px}
         stimulus: 'The regulated variable moves away from its setpoint',
         sensor:   'A structure that detects the change',
         afferent: 'signal from sensor to center',
-        center:   'Compares the value to the setpoint and decides the response',
+        centre:   'Compares the value to the setpoint and decides the response',
         efferent: 'signal from center to effector',
         effector: 'The muscle or gland that carries out the response',
         response: 'The change that pushes the variable back toward the setpoint and removes the stimulus'
@@ -202,7 +211,7 @@ svg.loop{display:block;width:100%;height:auto;min-width:680px}
         stimulus: 'Core temperature falls below the setpoint near 37 degrees Celsius',
         sensor:   'Thermoreceptors in the skin and in the hypothalamus',
         afferent: 'sensory neurons',
-        center:   'Hypothalamus',
+        centre:   'Hypothalamus',
         efferent: 'sympathetic nerves and somatic motor neurons',
         effector: 'Smooth muscle of skin arterioles, and skeletal muscle',
         response: 'Vasoconstriction cuts heat loss and shivering makes heat, so core temperature rises'
@@ -214,7 +223,7 @@ svg.loop{display:block;width:100%;height:auto;min-width:680px}
         stimulus: 'Plasma glucose rises after a meal',
         sensor:   'Pancreatic beta cell, which takes up glucose directly',
         afferent: 'none needed',
-        center:   'The same beta cell. Sensor and integrating center are one cell',
+        centre:   'The same beta cell. Sensor and integrating center are one cell',
         efferent: 'insulin, carried in the blood',
         effector: 'Skeletal muscle, adipose tissue and liver',
         response: 'Those tissues take up and store glucose, so plasma glucose falls'
@@ -226,7 +235,7 @@ svg.loop{display:block;width:100%;height:auto;min-width:680px}
         stimulus: 'Arterial pressure falls when you stand up',
         sensor:   'Baroreceptors in the carotid sinus and the aortic arch',
         afferent: 'glossopharyngeal and vagus nerves',
-        center:   'Cardiovascular control center in the medulla oblongata',
+        centre:   'Cardiovascular control center in the medulla oblongata',
         efferent: 'sympathetic output up, parasympathetic output down',
         effector: 'SA node and cardiac muscle, and arteriolar smooth muscle',
         response: 'Heart rate, contractility and vasoconstriction all rise, so pressure rises'
@@ -238,7 +247,7 @@ svg.loop{display:block;width:100%;height:auto;min-width:680px}
         stimulus: 'Plasma calcium falls below the setpoint',
         sensor:   'Calcium sensing receptor on the parathyroid chief cell',
         afferent: 'none needed',
-        center:   'The same parathyroid chief cell',
+        centre:   'The same parathyroid chief cell',
         efferent: 'parathyroid hormone, carried in the blood',
         effector: 'Bone, kidney, and the small intestine by way of calcitriol',
         response: 'Calcium leaves bone, the kidney keeps more of it, more is absorbed from food, so plasma calcium rises'
@@ -246,17 +255,17 @@ svg.loop{display:block;width:100%;height:auto;min-width:680px}
       note: 'Same shortcut as glucose: the sensing cell is also the deciding cell. Three effectors here, which is part of why plasma calcium is defended so tightly. You meet this again in Week 9.' }
   ];
 
-  var ORDER = ['stimulus', 'sensor', 'afferent', 'center', 'efferent', 'effector', 'response'];
+  var ORDER = ['stimulus', 'sensor', 'afferent', 'centre', 'efferent', 'effector', 'response'];
   var ROLE = {
     stimulus: 'Stimulus', sensor: 'Sensor', afferent: 'Afferent path',
-    center: 'Integrating center', efferent: 'Efferent path',
+    centre: 'Integrating center', efferent: 'Efferent path',
     effector: 'Effector', response: 'Response'
   };
   /* Boxes on the diagram. afferent and efferent are arrow labels, not boxes. */
   var BOXES = {
     stimulus: { x: 14,  y: 20,  w: 200 },
     sensor:   { x: 254, y: 20,  w: 200 },
-    center:   { x: 686, y: 20,  w: 200 },
+    centre:   { x: 686, y: 20,  w: 200 },
     effector: { x: 686, y: 274, w: 200 },
     response: { x: 254, y: 274, w: 336 }
   };
@@ -315,7 +324,7 @@ svg.loop{display:block;width:100%;height:auto;min-width:680px}
     });
     if (line) { lines.push(line); }
     /* A second line would otherwise land on top of the arrow. Lift the
-       whole block: fully clear of it above a horizontal arrow, centered
+       whole block: fully clear of it above a horizontal arrow, centred
        on it beside a vertical one. */
     var lift = (mode === 'above' ? 14 : 7) * (lines.length - 1);
     e.setAttribute('y', y - lift);

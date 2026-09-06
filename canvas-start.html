@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>BIO 004 Human Anatomy</title>
+<link rel="stylesheet" href="assets/fonts-site.css">
 <meta name="description" content="BIO 004 Human Anatomy, Fall 2026. Enter the course: lab, lecture, study, and your syllabus.">
 <meta name="robots" content="noindex">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 <!--
   ============================================================
   BIO 004 Human Anatomy, Fall 2026
@@ -48,7 +48,7 @@
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
   --ink:#0B1530; --ink-deep:#060A18; --rust:#8B3A2E; --gold:#C9A14A;
-  --slate:#1F2D44; --maroon:#5E201A;
+  --slate:#1F2D44; --maroon:#6E2D24;
   --line:#8C90A0; --muted:#4E5464; --tint:#F3EEE9;
   --rest:0 14px 30px rgba(11,21,48,.18);
   --lift:0 26px 50px rgba(11,21,48,.28);
@@ -138,9 +138,9 @@ footer .sig{color:var(--ink);font-weight:800}
 
    So the embed runs smaller: the hero shrinks, the cards lose their 214px
    floor and some padding, and the grid goes two-up sooner. Nothing is
-   removed, it is the same five cards. The page also centers itself in
+   removed, it is the same five cards. The page also centres itself in
    whatever height it is given, so what spare height remains reads as even
-   padding rather than a gap at the bottom. `safe` centering keeps a narrow
+   padding rather than a gap at the bottom. `safe` centring keeps a narrow
    device top-aligned instead of pushing it off the top. */
 body.framed{display:grid;align-content:safe center;min-height:100vh}
 body.framed .site-header{padding:16px 0}
@@ -168,11 +168,11 @@ body.framed footer{margin-top:22px;padding:16px 0 20px}
 
    These cards carry `border:none` and say everything with a solid background.
    In forced-colors mode the background is replaced, so all four become the
-   same color as the page and the cards vanish as objects. The lift goes too,
+   same colour as the page and the cards vanish as objects. The lift goes too,
    since shadows are dropped. Borders are the only thing that survives, so the
    cards get one.
 
-   System colors only. A hex here is either ignored or honoured, and honoured
+   System colours only. A hex here is either ignored or honoured, and honoured
    is worse: it fights the scheme the reader chose. */
 @media (forced-colors: active){
   .cat{border:2px solid ButtonBorder;background:ButtonFace;color:ButtonText;

@@ -5,30 +5,28 @@
 <link rel="icon" type="image/svg+xml" href="icon.svg">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CBC and PCR Pattern Lab | BIO 005 Human Physiology</title>
+<link rel="stylesheet" href="assets/fonts-site.css">
 <meta name="description" content="Interactive CBC interpretation lab. Read patient charts, find the blood pattern, then build your own case around an assigned organism and defend it with a hand drawn flow chart.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
   /* Live BIO 004 / Mastery OS tokens, read from welcome.html and class1.html, Aug 2026.
      Physiology leads with maroon where the anatomy course leads with navy. */
-  --maroon:#7A2A22;
-  --maroon-dark:#5E201A;
-  --navy:#08101F;
-  --navy-deep:#08101F;
-  --navy-darkest:#08101F;
+  --maroon:#8B3A2E;
+  --maroon-dark:#6E2D24;
+  --navy:#0B1530;
+  --navy-deep:#0B1530;
+  --navy-darkest:#0B1530;
   --navy-tint:#ECEFF4;
-  --terra:#8B1D1D;
-  --terra-dark:#6B1616;
-  --gold:#DCB45C;
-  --straw:#E8CE85;
-  --gold-text:#6E5018;
+  --terra:#8B3A2E;
+  --terra-dark:#6E2D24;
+  --gold:#C9A14A;
+  --straw:#FEF8EE;
+  --gold-text:#5F4514;
   --teal-text:#2C5F66;
-  --ink:#08101F;
+  --ink:#0B1530;
   --ink-body:#14202F;
   --ink-muted:#3D4860;
-  --offwhite-text:#F4EFE8;
+  --offwhite-text:#FEF8EE;
   --rule:#8C90A0;
   --rule-soft:#DCE0E6;
   --border-blue:#1E2A47;
@@ -38,7 +36,7 @@
   --radius-card:16px;
   --shadow-card:0 1px 3px rgba(11,21,48,.10);
   --shadow-lift:0 12px 26px rgba(11,21,48,.16);
-  --display:"Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, system-ui, Segoe UI, Roboto, sans-serif;
+  --display:'Open Sans', -apple-system, BlinkMacSystemFont, system-ui, Segoe UI, Roboto, sans-serif;
   --body:"Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, system-ui, Segoe UI, Roboto, sans-serif;
 }
 *,*::before,*::after{box-sizing:border-box}
@@ -268,6 +266,15 @@ details[open] summary::before{content:"\2212"}
   body.export-mode #ex_img{max-height:235mm;width:auto;max-width:100%;margin:0 auto}
   @page{margin:14mm}
 }
+
+/* Wide tables scroll in their own box rather than pushing the page
+   sideways. Added Sep 6 2026 with the MedMasters type change: Open Sans
+   is wider than Plus Jakarta, so tables that just fitted at 320px no
+   longer did. tabindex makes the scroll box keyboard reachable, which
+   WCAG 2.1.1 requires of any scrollable region. */
+.tblscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%}
+.tblscroll:focus-visible{outline:3px solid var(--maroon,#8B3A2E);outline-offset:2px}
+.tblscroll table{min-width:100%}
 </style>
 </head>
 <body>
@@ -338,7 +345,7 @@ details[open] summary::before{content:"\2212"}
     <h2>Reference key, adult</h2>
     <p class="small muted">Reference intervals vary by laboratory, instrument and population. These are the values used throughout this lab so that everyone is reading against the same yardstick. On a real chart you always read against the range printed on that report.</p>
     <div class="tablewrap">
-    <table class="ref">
+    <div class="tblscroll" tabindex="0" role="region" aria-label="Table, scroll sideways to see all columns"><table class="ref">
       <caption>Complete blood count with differential</caption>
       <thead>
         <tr><th scope="col">Parameter</th><th scope="col">Reference</th><th scope="col">What it is actually measuring, and why it moves</th></tr>
@@ -361,7 +368,7 @@ details[open] summary::before{content:"\2212"}
         <tr><td class="par">Basophils</td><td class="rng">0 to 1 %</td><td>Histamine containing granulocytes. Rarely diagnostic alone, but a persistent rise raises the question of a myeloproliferative process.</td></tr>
         <tr><td class="par">ANC</td><td class="rng">1.8 to 7.7 &times;10<sup>3</sup>/&micro;L</td><td>Absolute neutrophil count, calculated as WBC times the sum of segmented neutrophils and bands. This is the number that predicts infection risk, and a normal percentage on a very low white count can still be a dangerous absolute value.</td></tr>
       </tbody>
-    </table>
+    </table></div>
     </div>
   </div>
 
@@ -402,13 +409,13 @@ details[open] summary::before{content:"\2212"}
 
       <p class="chart-section-label">Laboratory result: complete blood count with differential</p>
       <div class="tablewrap">
-        <table class="lab" id="labTable">
+        <div class="tblscroll" tabindex="0" role="region" aria-label="Table, scroll sideways to see all columns"><table class="lab" id="labTable">
           <caption id="labCaption" class="sr-only">CBC</caption>
           <thead>
             <tr><th scope="col">Test</th><th scope="col">Result</th><th scope="col">Flag</th><th scope="col">Reference</th></tr>
           </thead>
           <tbody id="labBody"></tbody>
-        </table>
+        </table></div>
       </div>
       <p class="note-line" id="pAddendum"></p>
     </div>
@@ -870,7 +877,7 @@ details[open] summary::before{content:"\2212"}
   <div class="card">
     <h3>Rubric</h3>
     <div class="tablewrap">
-      <table class="ref">
+      <div class="tblscroll" tabindex="0" role="region" aria-label="Table, scroll sideways to see all columns"><table class="ref">
         <caption>Total 70 points</caption>
         <thead><tr><th scope="col">Component</th><th scope="col">Points</th><th scope="col">What full credit looks like</th></tr></thead>
         <tbody>
@@ -881,7 +888,7 @@ details[open] summary::before{content:"\2212"}
           <tr><td class="par">Video walkthrough</td><td class="rng">5</td><td>Under three minutes. Drives an actual patient through the chart rather than describing the chart. Reasoning is audible and unscripted.</td></tr>
           <tr><td class="par">Peer replies</td><td class="rng">5</td><td>Two replies, each running a classmate's case through your own chart and naming a specific patient their chart cannot resolve.</td></tr>
         </tbody>
-      </table>
+      </table></div>
     </div>
   </div>
 
@@ -940,9 +947,9 @@ details[open] summary::before{content:"\2212"}
       </div>
       <div class="toolgroup" role="group" aria-label="Color">
         <span class="toollabel">Color</span>
-        <button type="button" class="swatch" data-color="#08101F" aria-label="Navy" aria-pressed="true" style="background:#08101F"></button>
-        <button type="button" class="swatch" data-color="#8B1D1D" aria-label="Rust" aria-pressed="false" style="background:#8B1D1D"></button>
-        <button type="button" class="swatch" data-color="#6E5018" aria-label="Gold" aria-pressed="false" style="background:#6E5018"></button>
+        <button type="button" class="swatch" data-color="#0B1530" aria-label="Navy" aria-pressed="true" style="background:#0B1530"></button>
+        <button type="button" class="swatch" data-color="#8B3A2E" aria-label="Rust" aria-pressed="false" style="background:#8B3A2E"></button>
+        <button type="button" class="swatch" data-color="#5F4514" aria-label="Gold" aria-pressed="false" style="background:#5F4514"></button>
         <button type="button" class="swatch" data-color="#1F5130" aria-label="Green" aria-pressed="false" style="background:#1F5130"></button>
         <button type="button" class="swatch" data-color="#1B3F8B" aria-label="Blue" aria-pressed="false" style="background:#1B3F8B"></button>
         <label class="custom-color"><span class="sr-only">Custom color</span><input type="color" id="dw_custom" value="#2C5F66"></label>
@@ -1018,7 +1025,7 @@ details[open] summary::before{content:"\2212"}
     </div>
     <h2 class="ex-h2">How this drawing was made</h2>
     <p class="ex-note">Produced inside the course drawing canvas. That tool has no facility to open, paste or import an image, so every mark above was drawn stroke by stroke in the browser. The four snapshots show the same drawing at a quarter, a half, three quarters and all of its strokes.</p>
-    <table class="ex-table">
+    <div class="tblscroll" tabindex="0" role="region" aria-label="Table, scroll sideways to see all columns"><table class="ex-table">
       <tbody>
         <tr><th scope="row">Name</th><td id="ex_s_name"></td></tr>
         <tr><th scope="row">Drawing</th><td id="ex_s_title"></td></tr>
@@ -1030,7 +1037,7 @@ details[open] summary::before{content:"\2212"}
         <tr><th scope="row">Undo and erase actions</th><td id="ex_s_edits"></td></tr>
         <tr><th scope="row">Verification code</th><td id="ex_s_code" class="ex-code"></td></tr>
       </tbody>
-    </table>
+    </table></div>
     <h2 class="ex-h2">Build up</h2>
     <div class="ex-strip" id="ex_strip"></div>
     <div class="ex-foot"><span>Course drawing canvas</span><span>Dr. Sharilyn Rennie</span></div>
@@ -1726,7 +1733,7 @@ var startedAt = null;
 var lastPointAt = 0;
 var activeMs = 0;
 var editCount = 0;
-var color = '#08101F';
+var color = '#0B1530';
 var size = 4;
 var tool = 'pen';
 var pendingText = null;

@@ -7,12 +7,12 @@
 <meta name="description" content="Instructor tool. Crawls the course site and reports broken links, dead ends, missing structure and orphaned pages.">
 <link rel="icon" type="image/svg+xml" href="icon.svg">
 <style>
-:root{--navy:#08101F;--maroon:#7A2A22;--maroon-dark:#5E201A;--gold:#B8924A;
---ink:#1E3D4C;--page:#FAFAF9;--card:#FFFFFF;--rule:#E3E1DE;--muted:#4F5663;
+:root{--navy:#0B1530;--maroon:#8B3A2E;--maroon-dark:#6E2D24;--gold:#C9A14A;
+--ink:#1E3D4C;--page:#FAFAF9;--card:#FFFFFF;--rule:#E3E1DE;--muted:#454B58;
 --ok:#1F5C3D;--bad:#8A3A12;--warn:#6B4B12}
 *{box-sizing:border-box}
 body{margin:0;background:var(--page);color:var(--ink);
-font-family:'Plus Jakarta Sans','DM Sans',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+font-family:'Plus Jakarta Sans','Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
 font-size:16px;line-height:1.6}
 a{color:var(--maroon)}
 a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
@@ -20,9 +20,9 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(-
 .skip:focus{left:8px;top:8px}
 .band{background:var(--maroon);color:#fff;padding:26px 22px}
 .band-in{max-width:1180px;margin:0 auto}
-.eyebrow{font-size:12px;letter-spacing:.10em;text-transform:uppercase;font-weight:700;color:#EDDABF;margin:0 0 7px}
+.eyebrow{font-size:12px;letter-spacing:.10em;text-transform:uppercase;font-weight:700;color:#FEF8EE;margin:0 0 7px}
 .band h1{margin:0;font-size:clamp(23px,3vw,31px);font-weight:800;color:#fff}
-.band p{margin:10px 0 0;max-width:80ch;color:#F7EFE6}
+.band p{margin:10px 0 0;max-width:80ch;color:#FEF8EE}
 main{max-width:1180px;margin:0 auto;padding:22px 22px 70px}
 .card{background:var(--card);border-radius:12px;padding:24px;margin:0 0 20px;box-shadow:0 1px 3px rgba(0,0,0,.08)}
 .card h2{margin:0 0 6px;font-size:21px;font-weight:800;color:var(--maroon-dark)}
@@ -58,6 +58,15 @@ background:#F1EFEC;border:1px solid var(--rule);border-radius:5px;padding:1px 5p
 @media print{.row,.skip,.bar{display:none!important}body{background:#fff}
 .card{box-shadow:none;padding:0;margin-bottom:18px}.band{background:#fff;color:#000;padding:0 0 10px}
 .band h1,.band p,.eyebrow{color:#000}}
+
+/* Wide tables scroll in their own box rather than pushing the page
+   sideways. Added Sep 6 2026 with the MedMasters type change: Open Sans
+   is wider than Plus Jakarta, so tables that just fitted at 320px no
+   longer did. tabindex makes the scroll box keyboard reachable, which
+   WCAG 2.1.1 requires of any scrollable region. */
+.tblscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%}
+.tblscroll:focus-visible{outline:3px solid var(--maroon,#8B3A2E);outline-offset:2px}
+.tblscroll table{min-width:100%}
 </style>
 </head>
 <body>
@@ -78,7 +87,7 @@ background:#F1EFEC;border:1px solid var(--rule);border-radius:5px;padding:1px 5p
   <div class="card">
     <h2>Run the check</h2>
     <p>This has to run from the live site, not from a file on your desktop, because a page opened
-       from your hard drive is not allowed to read its neighbors. If the buttons do nothing, that
+       from your hard drive is not allowed to read its neighbours. If the buttons do nothing, that
        is why, and the address bar will say <code>file://</code> instead of
        <code>drsrennie-stack.github.io</code>.</p>
     <div class="row">
@@ -280,13 +289,13 @@ background:#F1EFEC;border:1px solid var(--rule);border-radius:5px;padding:1px 5p
     } else {
       h += '<p class="hint">The 404 page catches these so nobody is stranded, but a student '
          + 'still hit a link that went nowhere. Fix the link or build the page.</p>'
-         + '<div class="tblwrap"><table><tr><th>Missing page</th><th>Linked from</th></tr>';
+         + '<div class="tblwrap"><div class="tblscroll" tabindex="0" role="region" aria-label="Table, scroll sideways to see all columns"><table><tr><th>Missing page</th><th>Linked from</th></tr>';
       results.broken.forEach(function (b) {
         h += '<tr><td><code>' + esc(b.file) + '</code></td><td>'
            + (b.from.length ? b.from.map(function (f) { return '<code>' + esc(f) + '</code>'; }).join(' ')
                             : 'a seed page') + '</td></tr>';
       });
-      h += '</table></div>';
+      h += '</table></div></div>';
     }
 
     h += '<h3>Real problems <span class="n' + (results.structure.length ? '' : ' good') + '">'
@@ -295,11 +304,11 @@ background:#F1EFEC;border:1px solid var(--rule);border-radius:5px;padding:1px 5p
       h += '<p class="none">Nothing. Every page has a language, a title, the navigation, and links that '
          + 'break out of the Canvas frame properly.</p>';
     } else {
-      h += '<div class="tblwrap"><table><tr><th>Page</th><th>What is missing</th></tr>';
+      h += '<div class="tblwrap"><div class="tblscroll" tabindex="0" role="region" aria-label="Table, scroll sideways to see all columns"><table><tr><th>Page</th><th>What is missing</th></tr>';
       results.structure.forEach(function (s) {
         h += '<tr><td><code>' + esc(s.file) + '</code></td><td>' + esc(s.miss.join('; ')) + '</td></tr>';
       });
-      h += '</table></div>';
+      h += '</table></div></div>';
     }
 
     h += '<h3>Worth a look, probably fine <span class="n' + (results.soft.length ? '' : ' good') + '">'
@@ -310,11 +319,11 @@ background:#F1EFEC;border:1px solid var(--rule);border-radius:5px;padding:1px 5p
       h += '<p class="hint">This tool reads the page before its JavaScript runs, so a page that '
          + 'builds its heading or its landmark in script shows up here even though it is correct in '
          + 'a browser. Check one of these by eye once, then you can ignore it.</p>'
-         + '<div class="tblwrap"><table><tr><th>Page</th><th>What the parser saw</th></tr>';
+         + '<div class="tblwrap"><div class="tblscroll" tabindex="0" role="region" aria-label="Table, scroll sideways to see all columns"><table><tr><th>Page</th><th>What the parser saw</th></tr>';
       results.soft.forEach(function (s2) {
         h += '<tr><td><code>' + esc(s2.file) + '</code></td><td>' + esc(s2.miss.join('; ')) + '</td></tr>';
       });
-      h += '</table></div>';
+      h += '</table></div></div>';
     }
 
     if (!structureOnly) {
@@ -325,9 +334,9 @@ background:#F1EFEC;border:1px solid var(--rule);border-radius:5px;padding:1px 5p
       } else {
         h += '<p class="hint">These exist but no page points at them, so a student will never find '
            + 'them by clicking. That is fine for instructor pages. For anything else, add it to the '
-           + 'site map or the dock.</p><div class="tblwrap"><table><tr><th>Page</th></tr>';
+           + 'site map or the dock.</p><div class="tblwrap"><div class="tblscroll" tabindex="0" role="region" aria-label="Table, scroll sideways to see all columns"><table><tr><th>Page</th></tr>';
         results.orphans.forEach(function (f) { h += '<tr><td><code>' + esc(f) + '</code></td></tr>'; });
-        h += '</table></div>';
+        h += '</table></div></div>';
       }
     }
 

@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>BIO 005 Human Physiology, Fall 2026</title>
+<link rel="stylesheet" href="assets/fonts-site.css">
 <meta name="description" content="BIO 005 Human Physiology at Yuba College, Fall 2026. Online. Lab, lecture, study, syllabus and schedule.">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 <!--
   ============================================================
   BIO 005 Human Physiology, Fall 2026, Yuba College
@@ -35,7 +35,7 @@
 :root{
   /* BIO 005's own tokens, from build-week.py. Darker navy than the BIO 004
      card page, because she asked for much darker navy on this course. */
-  --ink:#040711; --rust:#8B3A2E; --rust-dark:#6E2C23; --gold:#DCB45C;
+  --ink:#040711; --rust:#8B3A2E; --rust-dark:#6E2C23; --gold:#C9A14A;
   --page:#FAFAF9; --line:#8C90A0; --muted:#3A4250;
   --rest:0 14px 30px rgba(4,7,17,.20);
   --lift:0 26px 50px rgba(4,7,17,.30);
@@ -122,9 +122,9 @@ footer .sig{color:var(--ink);font-weight:800}
 
    So the embed runs smaller: the hero shrinks, the cards lose their 214px
    floor and some padding, and the grid goes two-up sooner. Nothing is
-   removed, it is the same five cards. The page also centers itself in
+   removed, it is the same five cards. The page also centres itself in
    whatever height it is given, so what spare height remains reads as even
-   padding rather than a gap at the bottom. `safe` centering keeps a narrow
+   padding rather than a gap at the bottom. `safe` centring keeps a narrow
    device top-aligned instead of pushing it off the top. */
 body.framed{display:grid;align-content:safe center;min-height:100vh}
 body.framed .site-header{padding:16px 0}
@@ -151,11 +151,11 @@ body.framed footer{margin-top:22px;padding:16px 0 20px}
 
    These cards carry `border:none` and say everything with a solid background.
    In forced-colors mode the background is replaced, so all four become the
-   same color as the page and the cards vanish as objects. The lift goes too,
+   same colour as the page and the cards vanish as objects. The lift goes too,
    since shadows are dropped. Borders are the only thing that survives, so the
    cards get one.
 
-   System colors only. A hex here is either ignored or honoured, and honoured
+   System colours only. A hex here is either ignored or honoured, and honoured
    is worse: it fights the scheme the reader chose. */
 @media (forced-colors: active){
   .cat{border:2px solid ButtonBorder;background:ButtonFace;color:ButtonText;
@@ -181,9 +181,10 @@ body.framed footer{margin-top:22px;padding:16px 0 20px}
 </head>
 <body>
 
+<div style="background:#8B3A2E;color:#fff;padding:11px 20px;text-align:center;font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:14px;line-height:1.5">This page has moved. <a href="course-start.html" target="_top" style="color:#FEF8EE;font-weight:700">Go to Start Here</a>, the new front page for the course.</div>
 <a class="skip" href="#main">Skip to the doors</a>
 
-<header class="site-header"><div class="wrap"><h1 class="logo"><svg viewBox="40 10 125 148" aria-hidden="true" focusable="false"><g transform="translate(0,18)"><g transform="translate(60,0) rotate(8 0 130)"><circle cx="0" cy="20" r="10" fill="#040711"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#040711"/></g><g transform="translate(100,0)"><circle cx="0" cy="10" r="11" fill="#8B3A2E"/><path d="M 0,22 C -11,22 -17,26 -17,34 C -17,52 -14,70 -12,86 C -11,108 -13,122 -15,132 L 15,132 C 13,122 11,108 12,86 C 14,70 17,52 17,34 C 17,26 11,22 0,22 Z" fill="#8B3A2E"/></g><g transform="translate(140,0) rotate(-8 0 130)"><circle cx="0" cy="20" r="10" fill="#DCB45C"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#DCB45C"/></g></g></svg><span><span class="t">BIO <span class="a">005</span></span><span class="s">Human Physiology &middot; Fall 2026</span></span></h1></div></header>
+<header class="site-header"><div class="wrap"><h1 class="logo"><svg viewBox="40 10 125 148" aria-hidden="true" focusable="false"><g transform="translate(0,18)"><g transform="translate(60,0) rotate(8 0 130)"><circle cx="0" cy="20" r="10" fill="#040711"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#040711"/></g><g transform="translate(100,0)"><circle cx="0" cy="10" r="11" fill="#8B3A2E"/><path d="M 0,22 C -11,22 -17,26 -17,34 C -17,52 -14,70 -12,86 C -11,108 -13,122 -15,132 L 15,132 C 13,122 11,108 12,86 C 14,70 17,52 17,34 C 17,26 11,22 0,22 Z" fill="#8B3A2E"/></g><g transform="translate(140,0) rotate(-8 0 130)"><circle cx="0" cy="20" r="10" fill="#C9A14A"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#C9A14A"/></g></g></svg><span><span class="t">BIO <span class="a">005</span></span><span class="s">Human Physiology &middot; Fall 2026</span></span></h1></div></header>
 
 <main id="main"><div class="wrap">
 
@@ -195,7 +196,7 @@ body.framed footer{margin-top:22px;padding:16px 0 20px}
       <p class="lead">Everything for this course is behind this door.</p>
       </div>
     <div class="cats one">
-      <button class="cat light" type="button" id="enter" style="--bg:#DCB45C;--fg:#040711">
+      <button class="cat light" type="button" id="enter" style="--bg:#C9A14A;--fg:#040711">
         <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h8"/><path d="M11 12h10"/><path d="M17.5 8.5 21 12l-3.5 3.5"/></svg></span><h3>Enter the course</h3>
         <p>Lab, lecture, study, and your syllabus. All four in one place.</p>
         <span class="go">Open the doors <span class="arr" aria-hidden="true">&rarr;</span></span>
@@ -210,7 +211,7 @@ body.framed footer{margin-top:22px;padding:16px 0 20px}
       <h2 class="ph" id="doors-h" tabindex="-1">Where are you <span class="a">headed</span>?</h2>
       <p class="lead">Four doors. Everything in the course is behind one of them.</p>
     </div>
-    <div class="cats"><a class="cat" id="door-lab" data-go="clinical-physiology-lab-manual.html" href="clinical-physiology-lab-manual.html" target="_top" style="--bg:#040711;--fg:#FFFFFF"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.5L4.5 19a2 2 0 0 0 1.8 3h11.4a2 2 0 0 0 1.8-3L14 9.5V2"/><path d="M8 2h8"/></svg></span><h3>Lab</h3><p>PhysioEx setup and the Clinical Physiology Lab manual, in one place.</p><span class="go">Open the lab manual <span class="arr" aria-hidden="true">&rarr;</span></span></a><a class="cat" id="door-lecture" data-go="week-01.html" href="week-01.html" target="_top" style="--bg:#8B3A2E;--fg:#FFFFFF"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span><h3>Lecture</h3><p>This week: your note sheet, concept videos, slide decks, and book problems.</p><span class="go">Open this week <span class="arr" aria-hidden="true">&rarr;</span></span></a><a class="cat light" id="door-study" data-go="mastery-physio-os-standalone.html" href="mastery-physio-os-standalone.html" target="_top" style="--bg:#DCB45C;--fg:#040711"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 1 7 7c0 2.4-1.2 4.2-2.6 5.6-.8.8-1.4 1.9-1.4 3v.4H9v-.4c0-1.1-.6-2.2-1.4-3C6.2 13.2 5 11.4 5 9a7 7 0 0 1 7-7z"/><path d="M9 21h6"/></svg></span><h3>Study</h3><p>The Mastery OS. Spaced recall across all 268 competencies, and exactly where you stand.</p><span class="go">Open the Mastery OS <span class="arr" aria-hidden="true">&rarr;</span></span></a><a class="cat" id="door-syllabus" data-go="syllabus-fall2026.html" href="syllabus-fall2026.html" target="_top" style="--bg:#6E2C23;--fg:#FFFFFF"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="17" rx="2.5"/><path d="M3 10h18M8 2v5M16 2v5"/></svg></span><h3>Syllabus and schedule</h3><p>The syllabus, every date that matters, and how this course runs.</p><span class="go">Open the syllabus <span class="arr" aria-hidden="true">&rarr;</span></span></a></div>
+    <div class="cats"><a class="cat" id="door-lab" data-go="clinical-physiology-lab-manual.html" href="clinical-physiology-lab-manual.html" target="_top" style="--bg:#040711;--fg:#FFFFFF"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.5L4.5 19a2 2 0 0 0 1.8 3h11.4a2 2 0 0 0 1.8-3L14 9.5V2"/><path d="M8 2h8"/></svg></span><h3>Lab</h3><p>PhysioEx setup and the Clinical Physiology Lab manual, in one place.</p><span class="go">Open the lab manual <span class="arr" aria-hidden="true">&rarr;</span></span></a><a class="cat" id="door-lecture" data-go="week-01.html" href="week-01.html" target="_top" style="--bg:#8B3A2E;--fg:#FFFFFF"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span><h3>Lecture</h3><p>This week: your note sheet, concept videos, slide decks, and book problems.</p><span class="go">Open this week <span class="arr" aria-hidden="true">&rarr;</span></span></a><a class="cat light" id="door-study" data-go="mastery-physio-os-standalone.html" href="mastery-physio-os-standalone.html" target="_top" style="--bg:#C9A14A;--fg:#040711"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 1 7 7c0 2.4-1.2 4.2-2.6 5.6-.8.8-1.4 1.9-1.4 3v.4H9v-.4c0-1.1-.6-2.2-1.4-3C6.2 13.2 5 11.4 5 9a7 7 0 0 1 7-7z"/><path d="M9 21h6"/></svg></span><h3>Study</h3><p>The Mastery OS. Spaced recall across all 268 competencies, and exactly where you stand.</p><span class="go">Open the Mastery OS <span class="arr" aria-hidden="true">&rarr;</span></span></a><a class="cat" id="door-syllabus" data-go="syllabus-fall2026.html" href="syllabus-fall2026.html" target="_top" style="--bg:#6E2C23;--fg:#FFFFFF"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="17" rx="2.5"/><path d="M3 10h18M8 2v5M16 2v5"/></svg></span><h3>Syllabus and schedule</h3><p>The syllabus, every date that matters, and how this course runs.</p><span class="go">Open the syllabus <span class="arr" aria-hidden="true">&rarr;</span></span></a></div>
     <div class="calrow">
       <a data-go="index.html" href="index.html" target="_top">Course home, and this week <span class="arr" aria-hidden="true">&rarr;</span></a>
     <a href="welcome.html" style="display:inline-block;margin-top:10px">New here, or want the tour again? Replay the welcome &rarr;</a>

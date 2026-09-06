@@ -309,7 +309,7 @@ const ADD_CSS = `
 }
 `;
 
-const LOGO = `<svg viewBox="40 10 125 148" role="img" aria-hidden="true" focusable="false"><g transform="translate(0, 18)"><g transform="translate(60, 0) rotate(8 0 130)"><circle cx="0" cy="20" r="10" fill="#FFFFFF"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#FFFFFF"/></g><g transform="translate(100, 0)"><circle cx="0" cy="10" r="11" fill="#FBEBC8"/><path d="M 0,22 C -11,22 -17,26 -17,34 C -17,52 -14,70 -12,86 C -11,108 -13,122 -15,132 L 15,132 C 13,122 11,108 12,86 C 14,70 17,52 17,34 C 17,26 11,22 0,22 Z" fill="#FBEBC8"/></g><g transform="translate(140, 0) rotate(-8 0 130)"><circle cx="0" cy="20" r="10" fill="#DCB45C"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#DCB45C"/></g></g></svg>`;
+const LOGO = `<svg viewBox="40 10 125 148" role="img" aria-hidden="true" focusable="false"><g transform="translate(0, 18)"><g transform="translate(60, 0) rotate(8 0 130)"><circle cx="0" cy="20" r="10" fill="#FFFFFF"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#FFFFFF"/></g><g transform="translate(100, 0)"><circle cx="0" cy="10" r="11" fill="#FBEBC8"/><path d="M 0,22 C -11,22 -17,26 -17,34 C -17,52 -14,70 -12,86 C -11,108 -13,122 -15,132 L 15,132 C 13,122 11,108 12,86 C 14,70 17,52 17,34 C 17,26 11,22 0,22 Z" fill="#FBEBC8"/></g><g transform="translate(140, 0) rotate(-8 0 130)"><circle cx="0" cy="20" r="10" fill="#C9A14A"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#C9A14A"/></g></g></svg>`;
 
 /* ---------- page ---------- */
 function page(deck){
@@ -363,7 +363,7 @@ ${ADD_CSS}
 
 <noscript>
   <div class="noscript-note">
-    <p><b>These slides read and print without JavaScript.</b> Every box below is already open, so nothing is hidden from you. What you lose is Present mode, the click to open behavior and the timer. The same material is written out in full on the Week ${deck.week} notes page and in the course lab manual, both of which read and print with no scripting at all.</p>
+    <p><b>These slides read and print without JavaScript.</b> Every box below is already open, so nothing is hidden from you. What you lose is Present mode, the click to open behaviour and the timer. The same material is written out in full on the Week ${deck.week} notes page and in the course lab manual, both of which read and print with no scripting at all.</p>
   </div>
   <style>.rv .rv-body{display:block !important}.rv:not(.open)::after{display:none}</style>
 </noscript>

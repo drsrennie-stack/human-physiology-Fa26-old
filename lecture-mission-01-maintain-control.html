@@ -6,7 +6,7 @@
 <title>Mission 1, Maintain Control. Instructor lecture narrative. BIO 005</title>
 <style>
 :root{
-  --navy:#08101F; --terra:#8B1D1D; --terra-dark:#6B1616; --gold:#DCB45C; --gold-ink:#5A4511;
+  --navy:#0B1530; --terra:#8B3A2E; --terra-dark:#6E2D24; --gold:#C9A14A; --gold-ink:#5A4511;
   --teal:#1F4E55; --white:#FFFFFF; --offwhite:#FAFAF9; --tint:#EDF1F3;
   --muted:#3D4860; --rule:#DCE0E6;
   --shadow:0 1px 3px rgba(0,0,0,.08); --shadow-lg:0 8px 16px rgba(0,0,0,.10);
@@ -21,10 +21,10 @@ body{margin:0;background:var(--offwhite);color:var(--navy);
 .skip:focus{left:0}
 header.top{background:var(--terra);color:var(--white);padding:34px 26px}
 .wrap{max-width:52rem;margin:0 auto}
-.eyebrow{font-family:"DM Sans",system-ui,sans-serif;font-size:12px;font-weight:700;
-  letter-spacing:2px;text-transform:uppercase;color:#FBEBC8;margin:0 0 10px}
+.eyebrow{font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-size:12px;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;color:#FEF8EE;margin:0 0 10px}
 header.top h1{margin:0 0 10px;font-size:clamp(28px,4.6vw,42px);font-weight:800;line-height:1.16}
-header.top p{margin:0;color:#F2EFEF;font-size:16.5px;max-width:44rem}
+header.top p{margin:0;color:#FFFFFF;font-size:16.5px;max-width:44rem}
 main{padding:0 26px 90px}
 .lead{background:var(--white);border:1px solid var(--rule);border-radius:10px;
   box-shadow:var(--shadow);padding:24px 26px;margin:30px 0 0}
@@ -34,7 +34,7 @@ h2{font-size:clamp(22px,3vw,29px);font-weight:800;color:var(--navy);
 h3{font-size:19.5px;font-weight:700;color:var(--terra-dark);margin:30px 0 6px}
 h4{font-size:16px;font-weight:700;color:var(--navy);margin:22px 0 4px}
 p{margin:0 0 16px}
-.seg{font-family:"DM Sans",system-ui,sans-serif;font-size:12px;font-weight:700;
+.seg{font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-size:12px;font-weight:700;
   letter-spacing:1.6px;text-transform:uppercase;color:var(--terra);margin:0 0 2px}
 .runtime{font-size:14px;color:var(--muted);margin:0 0 18px}
 section.concept{border-top:1px solid var(--rule);padding-top:8px;margin-top:44px}
@@ -43,7 +43,7 @@ li{margin:0 0 8px}
 b,strong{font-weight:700}
 .box{background:var(--white);border:1px solid var(--rule);border-radius:10px;
   box-shadow:var(--shadow);padding:20px 22px;margin:22px 0}
-.box .lab{font-family:"DM Sans",system-ui,sans-serif;font-size:11.5px;font-weight:700;
+.box .lab{font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-size:11.5px;font-weight:700;
   letter-spacing:1.5px;text-transform:uppercase;margin:0 0 8px}
 .box p:last-child,.box ul:last-child,.box ol:last-child{margin-bottom:0}
 .draw .lab{color:var(--teal)}
@@ -55,7 +55,7 @@ b,strong{font-weight:700}
 .say{border-left:3px solid var(--rule);padding-left:18px;margin:18px 0;color:var(--navy)}
 .say p:last-child{margin-bottom:0}
 table{width:100%;border-collapse:collapse;margin:18px 0;font-size:15.5px}
-caption{text-align:left;font-family:"DM Sans",system-ui,sans-serif;font-size:11.5px;
+caption{text-align:left;font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-size:11.5px;
   font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--terra);padding-bottom:8px}
 th,td{border-bottom:1px solid var(--rule);padding:9px 10px;text-align:left;vertical-align:top}
 th{font-weight:700;color:var(--navy)}
@@ -67,13 +67,22 @@ a:focus-visible,.tw:focus-visible{outline:3px solid var(--terra);outline-offset:
 @media print{
   body{background:#fff;font-size:10.5pt;line-height:1.5}
   header.top{background:#fff;color:#000;border-bottom:2px solid #000;padding:0 0 12pt}
-  header.top h1{font-size:20pt}.eyebrow{color:#6B1616}header.top p{color:#000}
+  header.top h1{font-size:20pt}.eyebrow{color:#6E2D24}header.top p{color:#000}
   main{padding:0}.box,.lead{box-shadow:none;break-inside:avoid}
   h2{break-after:avoid}h3{break-after:avoid}
   section.concept{break-before:page}
   .skip{display:none}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* Wide tables scroll in their own box rather than pushing the page
+   sideways. Added Sep 6 2026 with the MedMasters type change: Open Sans
+   is wider than Plus Jakarta, so tables that just fitted at 320px no
+   longer did. tabindex makes the scroll box keyboard reachable, which
+   WCAG 2.1.1 requires of any scrollable region. */
+.tblscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%}
+.tblscroll:focus-visible{outline:3px solid var(--maroon,#8B3A2E);outline-offset:2px}
+.tblscroll table{min-width:100%}
 </style>
 </head>
 <body>
@@ -394,7 +403,7 @@ a:focus-visible,.tw:focus-visible{outline:3px solid var(--terra);outline-offset:
 <p>This is the payoff, and it is what the mission patient turns on. Go through them in order and say what each failure looks like.</p>
 
 <div class="tw" tabindex="0" role="group" aria-label="Component failures in a reflex pathway">
-<table>
+<div class="tblscroll" tabindex="0" role="region" aria-label="Table, scroll sideways to see all columns"><table>
 <caption>Five components, five failures</caption>
 <thead><tr><th scope="col">What fails</th><th scope="col">What happens</th></tr></thead>
 <tbody>
@@ -404,7 +413,7 @@ a:focus-visible,.tw:focus-visible{outline:3px solid var(--terra);outline-offset:
 <tr><th scope="row">Efferent pathway</th><td>The correct output is generated and never reaches the effector.</td></tr>
 <tr><th scope="row">Effector</th><td>The signal arrives and the tissue cannot produce the response.</td></tr>
 </tbody>
-</table>
+</table></div>
 </div>
 
 <p>There is a sixth situation and it is worth separating from the five. Every component can work correctly and the disturbance can simply be larger than the pathway is able to correct. That is not a component failure, it is capacity being exceeded, and the distinction matters because the management is completely different.</p>
@@ -562,7 +571,7 @@ a:focus-visible,.tw:focus-visible{outline:3px solid var(--terra);outline-offset:
 <h3>The nervous and endocrine systems solve the same problem oppositely</h3>
 
 <div class="tw" tabindex="0" role="group" aria-label="Nervous and endocrine comparison">
-<table>
+<div class="tblscroll" tabindex="0" role="region" aria-label="Table, scroll sideways to see all columns"><table>
 <caption>Two long distance systems</caption>
 <thead><tr><th scope="col"></th><th scope="col">Nervous</th><th scope="col">Endocrine</th></tr></thead>
 <tbody>
@@ -572,7 +581,7 @@ a:focus-visible,.tw:focus-visible{outline:3px solid var(--terra);outline-offset:
 <tr><th scope="row">Duration</th><td>Brief unless repeated</td><td>Sustained</td></tr>
 <tr><th scope="row">Suited to</th><td>Fast, precise, short term adjustment</td><td>Widespread, sustained adjustment</td></tr>
 </tbody>
-</table>
+</table></div>
 </div>
 
 <p>You rarely get both sets of properties from one system, which is why the body maintains both and why so many variables are regulated by the two together.</p>

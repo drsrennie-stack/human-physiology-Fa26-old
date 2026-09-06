@@ -6,18 +6,18 @@
 
 const FIG_CURVE = `<svg viewBox="0 0 780 480" role="img" aria-labelledby="x1-t x1-d">
   <title id="x1-t">Rate of transport plotted against concentration outside the cell</title>
-  <desc id="x1-d">Two lines start together at the origin. The teal line for simple diffusion is straight and keeps climbing to the top right corner with no upper limit. The maroon line for carrier mediated transport climbs steeply at first, bends over between one third and one half of the way across, and then runs flat for the rest of the graph. A gold dashed horizontal line sits on that flat top and is labeled transport maximum. The horizontal axis is concentration outside the cell and the vertical axis is rate of transport into the cell.</desc>
+  <desc id="x1-d">Two lines start together at the origin. The teal line for simple diffusion is straight and keeps climbing to the top right corner with no upper limit. The maroon line for carrier mediated transport climbs steeply at first, bends over between one third and one half of the way across, and then runs flat for the rest of the graph. A gold dashed horizontal line sits on that flat top and is labelled transport maximum. The horizontal axis is concentration outside the cell and the vertical axis is rate of transport into the cell.</desc>
   <rect x="0" y="0" width="780" height="480" fill="#FFFFFF"/>
-  <line x1="100" y1="400" x2="730" y2="400" stroke="#08101F" stroke-width="2.5"/>
-  <line x1="100" y1="400" x2="100" y2="65" stroke="#08101F" stroke-width="2.5"/>
-  <polygon points="730,392 746,400 730,408" fill="#08101F"/>
-  <polygon points="92,65 100,49 108,65" fill="#08101F"/>
-  <line x1="100" y1="163" x2="722" y2="163" stroke="#DCB45C" stroke-width="2.5" stroke-dasharray="10 7"/>
-  <path d="M 100 400 C 170 300, 230 220, 320 190 C 430 172, 540 166, 700 163" fill="none" stroke="#8B1D1D" stroke-width="4"/>
+  <line x1="100" y1="400" x2="730" y2="400" stroke="#0B1530" stroke-width="2.5"/>
+  <line x1="100" y1="400" x2="100" y2="65" stroke="#0B1530" stroke-width="2.5"/>
+  <polygon points="730,392 746,400 730,408" fill="#0B1530"/>
+  <polygon points="92,65 100,49 108,65" fill="#0B1530"/>
+  <line x1="100" y1="163" x2="722" y2="163" stroke="#C9A14A" stroke-width="2.5" stroke-dasharray="10 7"/>
+  <path d="M 100 400 C 170 300, 230 220, 320 190 C 430 172, 540 166, 700 163" fill="none" stroke="#8B3A2E" stroke-width="4"/>
   <line x1="100" y1="400" x2="700" y2="90" stroke="#1F4E55" stroke-width="4"/>
   <text x="430" y="118" font-family="Plus Jakarta Sans, sans-serif" font-size="17" font-weight="700" fill="#1F4E55">Simple diffusion</text>
-  <text x="430" y="222" font-family="Plus Jakarta Sans, sans-serif" font-size="17" font-weight="700" fill="#8B1D1D">Carrier mediated</text>
-  <text x="722" y="150" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="15" font-weight="700" fill="#08101F">Transport maximum</text>
+  <text x="430" y="222" font-family="Plus Jakarta Sans, sans-serif" font-size="17" font-weight="700" fill="#8B3A2E">Carrier mediated</text>
+  <text x="722" y="150" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="15" font-weight="700" fill="#0B1530">Transport maximum</text>
   <text x="415" y="447" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="15" fill="#3D4860">Concentration outside the cell</text>
   <text x="44" y="232" text-anchor="middle" transform="rotate(-90 44 232)" font-family="Plus Jakarta Sans, sans-serif" font-size="15" fill="#3D4860">Rate of transport into the cell</text>
   <text x="466" y="292" font-family="Plus Jakarta Sans, sans-serif" font-size="14" fill="#3D4860">No binding site, so nothing to fill up</text>
@@ -26,28 +26,28 @@ const FIG_CURVE = `<svg viewBox="0 0 780 480" role="img" aria-labelledby="x1-t x
 
 const FIG_PUMP = `<svg viewBox="0 0 780 470" role="img" aria-labelledby="x2-t x2-d">
   <title id="x2-t">The sodium potassium ATPase in the cell membrane</title>
-  <desc id="x2-d">A horizontal membrane band crosses the picture with the outside of the cell above it and the inside below it. A pump protein spans the band in the middle. To the left of the pump a maroon arrow points upward and out of the cell carrying three sodium ions, from about 12 millimolar inside to about 145 millimolar outside. To the right of the pump a teal arrow points downward into the cell carrying two potassium ions, from about 4 millimolar outside to about 140 millimolar inside. A gold box below the pump marks one ATP hydrolyzed per cycle. Three positive charges leave and two return, so one net positive charge leaves per cycle.</desc>
+  <desc id="x2-d">A horizontal membrane band crosses the picture with the outside of the cell above it and the inside below it. A pump protein spans the band in the middle. To the left of the pump a maroon arrow points upward and out of the cell carrying three sodium ions, from about 12 millimolar inside to about 145 millimolar outside. To the right of the pump a teal arrow points downward into the cell carrying two potassium ions, from about 4 millimolar outside to about 140 millimolar inside. A gold box below the pump marks one ATP hydrolysed per cycle. Three positive charges leave and two return, so one net positive charge leaves per cycle.</desc>
   <rect x="0" y="0" width="780" height="470" fill="#FFFFFF"/>
   <rect x="40" y="170" width="700" height="130" fill="#EDF1F3" stroke="#3D4860" stroke-width="2"/>
-  <text x="60" y="52" font-family="Plus Jakarta Sans, sans-serif" font-size="15" font-weight="800" fill="#08101F">OUTSIDE THE CELL</text>
-  <text x="60" y="345" font-family="Plus Jakarta Sans, sans-serif" font-size="15" font-weight="800" fill="#08101F">INSIDE THE CELL</text>
-  <text x="742" y="52" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="15" fill="#8B1D1D">Na+ about 145 mM</text>
+  <text x="60" y="52" font-family="Plus Jakarta Sans, sans-serif" font-size="15" font-weight="800" fill="#0B1530">OUTSIDE THE CELL</text>
+  <text x="60" y="345" font-family="Plus Jakarta Sans, sans-serif" font-size="15" font-weight="800" fill="#0B1530">INSIDE THE CELL</text>
+  <text x="742" y="52" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="15" fill="#8B3A2E">Na+ about 145 mM</text>
   <text x="742" y="76" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="15" fill="#1F4E55">K+ about 4 mM</text>
-  <text x="742" y="378" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="15" fill="#8B1D1D">Na+ about 12 mM</text>
+  <text x="742" y="378" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="15" fill="#8B3A2E">Na+ about 12 mM</text>
   <text x="742" y="402" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="15" fill="#1F4E55">K+ about 140 mM</text>
-  <rect x="300" y="140" width="170" height="190" rx="16" fill="#1F4E55" stroke="#08101F" stroke-width="2.5"/>
+  <rect x="300" y="140" width="170" height="190" rx="16" fill="#1F4E55" stroke="#0B1530" stroke-width="2.5"/>
   <text x="385" y="222" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="19" font-weight="800" fill="#FFFFFF">Na+ / K+</text>
-  <text x="385" y="250" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="19" font-weight="800" fill="#DCB45C">ATPase</text>
-  <line x1="230" y1="340" x2="230" y2="126" stroke="#8B1D1D" stroke-width="5"/>
-  <polygon points="218,126 230,102 242,126" fill="#8B1D1D"/>
-  <text x="230" y="88" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="19" font-weight="800" fill="#8B1D1D">3 Na+ out</text>
+  <text x="385" y="250" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="19" font-weight="800" fill="#C9A14A">ATPase</text>
+  <line x1="230" y1="340" x2="230" y2="126" stroke="#8B3A2E" stroke-width="5"/>
+  <polygon points="218,126 230,102 242,126" fill="#8B3A2E"/>
+  <text x="230" y="88" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="19" font-weight="800" fill="#8B3A2E">3 Na+ out</text>
   <line x1="545" y1="126" x2="545" y2="340" stroke="#1F4E55" stroke-width="5"/>
   <polygon points="533,340 545,364 557,340" fill="#1F4E55"/>
   <text x="545" y="88" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="19" font-weight="800" fill="#1F4E55">2 K+ in</text>
-  <rect x="322" y="348" width="126" height="40" rx="8" fill="#DCB45C" stroke="#08101F" stroke-width="2"/>
-  <text x="385" y="375" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="17" font-weight="800" fill="#08101F">1 ATP</text>
-  <line x1="385" y1="346" x2="385" y2="336" stroke="#08101F" stroke-width="2.5"/>
-  <polygon points="377,336 385,320 393,336" fill="#08101F"/>
+  <rect x="322" y="348" width="126" height="40" rx="8" fill="#C9A14A" stroke="#0B1530" stroke-width="2"/>
+  <text x="385" y="375" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="17" font-weight="800" fill="#0B1530">1 ATP</text>
+  <line x1="385" y1="346" x2="385" y2="336" stroke="#0B1530" stroke-width="2.5"/>
+  <polygon points="377,336 385,320 393,336" fill="#0B1530"/>
   <text x="60" y="440" font-family="Plus Jakarta Sans, sans-serif" font-size="14" fill="#3D4860">Three positive charges out, two back in, so one net positive charge leaves per cycle.</text>
 </svg>`;
 
@@ -55,20 +55,20 @@ const FIG_RENAL = `<svg viewBox="0 0 800 500" role="img" aria-labelledby="x3-t x
   <title id="x3-t">Renal glucose titration, filtered, reabsorbed and excreted against plasma glucose</title>
   <desc id="x3-d">Plasma glucose runs from 0 to 600 milligrams per decilitre along the bottom and rate runs from 0 to 800 milligrams per minute up the side. The navy filtered load line is straight from the origin and reaches about 750 milligrams per minute at a plasma glucose of 600. The teal reabsorption line follows the filtered line exactly at low values, bends over near a plasma glucose of 300, and then runs flat at a transport maximum of about 375 milligrams per minute. The maroon excretion line sits on zero until a plasma glucose near 180 to 200, marked by a gold dashed vertical line called the renal threshold, then curves upward and finally runs parallel to the filtered line, reaching about 375 milligrams per minute at a plasma glucose of 600.</desc>
   <rect x="0" y="0" width="800" height="500" fill="#FFFFFF"/>
-  <line x1="110" y1="420" x2="756" y2="420" stroke="#08101F" stroke-width="2.5"/>
-  <line x1="110" y1="420" x2="110" y2="66" stroke="#08101F" stroke-width="2.5"/>
-  <polygon points="756,412 772,420 756,428" fill="#08101F"/>
-  <polygon points="102,66 110,50 118,66" fill="#08101F"/>
-  <line x1="110" y1="261" x2="748" y2="261" stroke="#DCB45C" stroke-width="2.5" stroke-dasharray="10 7"/>
-  <line x1="320" y1="420" x2="320" y2="150" stroke="#DCB45C" stroke-width="2.5" stroke-dasharray="10 7"/>
-  <path d="M 110 420 L 740 101" fill="none" stroke="#08101F" stroke-width="4"/>
+  <line x1="110" y1="420" x2="756" y2="420" stroke="#0B1530" stroke-width="2.5"/>
+  <line x1="110" y1="420" x2="110" y2="66" stroke="#0B1530" stroke-width="2.5"/>
+  <polygon points="756,412 772,420 756,428" fill="#0B1530"/>
+  <polygon points="102,66 110,50 118,66" fill="#0B1530"/>
+  <line x1="110" y1="261" x2="748" y2="261" stroke="#C9A14A" stroke-width="2.5" stroke-dasharray="10 7"/>
+  <line x1="320" y1="420" x2="320" y2="150" stroke="#C9A14A" stroke-width="2.5" stroke-dasharray="10 7"/>
+  <path d="M 110 420 L 740 101" fill="none" stroke="#0B1530" stroke-width="4"/>
   <path d="M 110 420 L 360 293 Q 425 261 500 261 L 740 261" fill="none" stroke="#1F4E55" stroke-width="4"/>
-  <path d="M 110 420 L 320 420 C 380 418, 430 408, 477 393 L 740 261" fill="none" stroke="#8B1D1D" stroke-width="4"/>
-  <text x="688" y="92" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="700" fill="#08101F">Filtered load</text>
+  <path d="M 110 420 L 320 420 C 380 418, 430 408, 477 393 L 740 261" fill="none" stroke="#8B3A2E" stroke-width="4"/>
+  <text x="688" y="92" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="700" fill="#0B1530">Filtered load</text>
   <text x="556" y="292" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="700" fill="#1F4E55">Reabsorbed</text>
-  <text x="590" y="362" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="700" fill="#8B1D1D">Excreted</text>
-  <text x="748" y="248" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="14" font-weight="700" fill="#08101F">Transport maximum, about 375 mg/min</text>
-  <text x="332" y="142" font-family="Plus Jakarta Sans, sans-serif" font-size="14" font-weight="700" fill="#08101F">Renal threshold, about 180 to 200 mg/dL</text>
+  <text x="590" y="362" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="700" fill="#8B3A2E">Excreted</text>
+  <text x="748" y="248" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="14" font-weight="700" fill="#0B1530">Transport maximum, about 375 mg/min</text>
+  <text x="332" y="142" font-family="Plus Jakarta Sans, sans-serif" font-size="14" font-weight="700" fill="#0B1530">Renal threshold, about 180 to 200 mg/dL</text>
   <text x="110" y="442" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="13" fill="#3D4860">0</text>
   <text x="320" y="442" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="13" fill="#3D4860">200</text>
   <text x="530" y="442" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="13" fill="#3D4860">400</text>
@@ -81,44 +81,44 @@ const FIG_RENAL = `<svg viewBox="0 0 800 500" role="img" aria-labelledby="x3-t x
 </svg>`;
 
 const FIG_EPI = `<svg viewBox="0 0 820 470" role="img" aria-labelledby="x4-t x4-d">
-  <title id="x4-t">A polarized gut cell moving glucose from the lumen to the blood</title>
+  <title id="x4-t">A polarised gut cell moving glucose from the lumen to the blood</title>
   <desc id="x4-d">A single tall cell sits between the gut lumen on the left and the blood on the right. Its left wall is the apical membrane and carries two proteins: SGLT1 near the top, bringing sodium and glucose into the cell together, and CFTR near the bottom, letting chloride out into the lumen. Its right wall is the basolateral membrane and carries GLUT2 near the top, letting glucose leave into the blood, and the sodium potassium ATPase below it, pumping three sodium out to the blood and two potassium in. Gold blocks at the top corners of the cell mark the tight junctions that keep the two faces different. A long arrow beneath the cell shows water following by osmosis from lumen to blood.</desc>
   <rect x="0" y="0" width="820" height="470" fill="#FFFFFF"/>
   <text x="410" y="28" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="14" fill="#3D4860">Tight junctions at the top of the cell stop the proteins of one face from drifting to the other.</text>
   <rect x="200" y="70" width="400" height="310" fill="#EDF1F3" stroke="#3D4860" stroke-width="2"/>
-  <line x1="200" y1="70" x2="200" y2="380" stroke="#8B1D1D" stroke-width="6"/>
+  <line x1="200" y1="70" x2="200" y2="380" stroke="#8B3A2E" stroke-width="6"/>
   <line x1="600" y1="70" x2="600" y2="380" stroke="#1F4E55" stroke-width="6"/>
-  <rect x="186" y="58" width="28" height="20" fill="#DCB45C" stroke="#08101F" stroke-width="2"/>
-  <rect x="586" y="58" width="28" height="20" fill="#DCB45C" stroke="#08101F" stroke-width="2"/>
-  <text x="208" y="100" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="800" fill="#8B1D1D">APICAL, faces the lumen</text>
+  <rect x="186" y="58" width="28" height="20" fill="#C9A14A" stroke="#0B1530" stroke-width="2"/>
+  <rect x="586" y="58" width="28" height="20" fill="#C9A14A" stroke="#0B1530" stroke-width="2"/>
+  <text x="208" y="100" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="800" fill="#8B3A2E">APICAL, faces the lumen</text>
   <text x="592" y="100" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="800" fill="#1F4E55">BASOLATERAL, faces the blood</text>
-  <text x="40" y="60" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="800" fill="#08101F">GUT LUMEN</text>
-  <text x="780" y="60" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="800" fill="#08101F">BLOOD</text>
-  <rect x="168" y="130" width="64" height="76" rx="10" fill="#8B1D1D" stroke="#08101F" stroke-width="2"/>
+  <text x="40" y="60" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="800" fill="#0B1530">GUT LUMEN</text>
+  <text x="780" y="60" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="800" fill="#0B1530">BLOOD</text>
+  <rect x="168" y="130" width="64" height="76" rx="10" fill="#8B3A2E" stroke="#0B1530" stroke-width="2"/>
   <text x="200" y="174" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="14" font-weight="800" fill="#FFFFFF">SGLT1</text>
-  <line x1="92" y1="168" x2="262" y2="168" stroke="#8B1D1D" stroke-width="4"/>
-  <polygon points="262,158 282,168 262,178" fill="#8B1D1D"/>
-  <text x="86" y="150" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="15" fill="#8B1D1D">2 Na+</text>
-  <text x="86" y="178" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="15" fill="#8B1D1D">glucose</text>
-  <rect x="168" y="278" width="64" height="64" rx="10" fill="#3D4860" stroke="#08101F" stroke-width="2"/>
+  <line x1="92" y1="168" x2="262" y2="168" stroke="#8B3A2E" stroke-width="4"/>
+  <polygon points="262,158 282,168 262,178" fill="#8B3A2E"/>
+  <text x="86" y="150" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="15" fill="#8B3A2E">2 Na+</text>
+  <text x="86" y="178" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="15" fill="#8B3A2E">glucose</text>
+  <rect x="168" y="278" width="64" height="64" rx="10" fill="#3D4860" stroke="#0B1530" stroke-width="2"/>
   <text x="200" y="316" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="14" font-weight="800" fill="#FFFFFF">CFTR</text>
   <line x1="262" y1="310" x2="112" y2="310" stroke="#3D4860" stroke-width="4"/>
   <polygon points="112,300 92,310 112,320" fill="#3D4860"/>
   <text x="86" y="315" text-anchor="end" font-family="Plus Jakarta Sans, sans-serif" font-size="15" fill="#3D4860">Cl-</text>
-  <rect x="568" y="130" width="64" height="76" rx="10" fill="#1F4E55" stroke="#08101F" stroke-width="2"/>
+  <rect x="568" y="130" width="64" height="76" rx="10" fill="#1F4E55" stroke="#0B1530" stroke-width="2"/>
   <text x="600" y="174" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="14" font-weight="800" fill="#FFFFFF">GLUT2</text>
   <line x1="538" y1="168" x2="714" y2="168" stroke="#1F4E55" stroke-width="4"/>
   <polygon points="714,158 734,168 714,178" fill="#1F4E55"/>
   <text x="742" y="173" font-family="Plus Jakarta Sans, sans-serif" font-size="15" fill="#1F4E55">glucose</text>
-  <rect x="556" y="252" width="88" height="92" rx="10" fill="#08101F" stroke="#08101F" stroke-width="2"/>
+  <rect x="556" y="252" width="88" height="92" rx="10" fill="#0B1530" stroke="#0B1530" stroke-width="2"/>
   <text x="600" y="292" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="14" font-weight="800" fill="#FFFFFF">Na+ / K+</text>
-  <text x="600" y="314" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="14" font-weight="800" fill="#DCB45C">ATPase</text>
-  <line x1="538" y1="272" x2="700" y2="272" stroke="#08101F" stroke-width="4"/>
-  <polygon points="700,262 720,272 700,282" fill="#08101F"/>
-  <text x="728" y="277" font-family="Plus Jakarta Sans, sans-serif" font-size="15" fill="#08101F">3 Na+</text>
-  <line x1="700" y1="326" x2="666" y2="326" stroke="#08101F" stroke-width="4"/>
-  <polygon points="666,316 646,326 666,336" fill="#08101F"/>
-  <text x="728" y="331" font-family="Plus Jakarta Sans, sans-serif" font-size="15" fill="#08101F">2 K+</text>
+  <text x="600" y="314" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="14" font-weight="800" fill="#C9A14A">ATPase</text>
+  <line x1="538" y1="272" x2="700" y2="272" stroke="#0B1530" stroke-width="4"/>
+  <polygon points="700,262 720,272 700,282" fill="#0B1530"/>
+  <text x="728" y="277" font-family="Plus Jakarta Sans, sans-serif" font-size="15" fill="#0B1530">3 Na+</text>
+  <line x1="700" y1="326" x2="666" y2="326" stroke="#0B1530" stroke-width="4"/>
+  <polygon points="666,316 646,326 666,336" fill="#0B1530"/>
+  <text x="728" y="331" font-family="Plus Jakarta Sans, sans-serif" font-size="15" fill="#0B1530">2 K+</text>
   <line x1="120" y1="412" x2="694" y2="412" stroke="#1F4E55" stroke-width="4" stroke-dasharray="12 8"/>
   <polygon points="694,402 714,412 694,422" fill="#1F4E55"/>
   <text x="410" y="450" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif" font-size="15" font-weight="700" fill="#1F4E55">Water follows by osmosis. It is never pumped.</text>
@@ -163,7 +163,7 @@ module.exports = {
       k: "rows",
       kicker: "Where we are going",
       h: "Six questions. By the end of the hour you can answer all six out loud",
-      lede: "Open a box to see the answer. You are not memorizing this slide, you are just finding out where we are headed.",
+      lede: "Open a box to see the answer. You are not memorising this slide, you are just finding out where we are headed.",
       rows: [
         { dot: "1", dotClass: "navy", h: "Why does a carrier run out of capacity when simple diffusion never does?", p: "Facilitated diffusion. Channels, carriers, and the binding site that puts a ceiling on the whole thing." },
         { dot: "2", dotClass: "navy", h: "Where does a resting cell spend a quarter of all the energy it makes?", p: "The sodium potassium ATPase. Three Na+ out, two K+ in, one ATP, over and over, for as long as you are alive." },
@@ -180,13 +180,13 @@ module.exports = {
       k: "text",
       kicker: "The case",
       h: "Kofi is still in front of you",
-      lede: "Twenty four years old, back from travel, passing liter after liter of clear rice water stool for two days now. Last week you did the whole body arithmetic on him. This week you go to the membrane.",
+      lede: "Twenty four years old, back from travel, passing litre after litre of clear rice water stool for two days now. Last week you did the whole body arithmetic on him. This week you go to the membrane.",
       body: [
         "At 70 kg his total body water is about **42 L**, two thirds inside cells and one third outside. Of the 14 L outside, only about 3 L is plasma, and that is the part holding his blood pressure up.",
-        "About eight liters out over two days, and next to nothing staying down by mouth, so he is down about 8 L net. That is more than ten percent of his body mass, and it drained out of the compartment that could least afford to lose it.",
+        "About eight litres out over two days, and next to nothing staying down by mouth, so he is down about 8 L net. That is more than ten percent of his body mass, and it drained out of the compartment that could least afford to lose it.",
         "Last week the question was how much he lost. This week the question is harder and more useful. What physically pushed that water out of him, and what is going to pull it back?"
       ],
-      big: "Every liter of that stool was moved by a transporter. So is every liter of the cure."
+      big: "Every litre of that stool was moved by a transporter. So is every litre of the cure."
     },
 
     /* 4 */
@@ -384,7 +384,7 @@ module.exports = {
       h: "The sodium potassium ATPase, three out and two in",
       lede: "It is in the membrane of every cell you own. One cycle, one ATP, three Na+ out, two K+ in, and it does not stop while you are alive.",
       svg: FIG_PUMP,
-      cap: "The pump spans the membrane. On the left, three Na+ leave against a gradient that runs from about 12 mM inside up to about 145 mM outside. On the right, two K+ enter against a gradient that runs from about 4 mM outside up to about 140 mM inside. One ATP is hydrolyzed per cycle.",
+      cap: "The pump spans the membrane. On the left, three Na+ leave against a gradient that runs from about 12 mM inside up to about 145 mM outside. On the right, two K+ enter against a gradient that runs from about 4 mM outside up to about 140 mM inside. One ATP is hydrolysed per cycle.",
       lab: "In the Week 2 lab you classify this pump on the transporter table for Kofi's gut cell. Three columns: carrier or channel, passive or active, and if active, primary or secondary. It is a carrier, it is active, and it is primary, and the reason it is primary is that the transport protein hydrolyses the ATP itself.",
       covers: ["w2-primary-active-transport"],
       big: "**3 Na+ out, 2 K+ in, 1 ATP.** Say it until it is boring."
@@ -395,10 +395,10 @@ module.exports = {
       k: "rows",
       kicker: "One cycle",
       h: "What actually happens in the pump, in five steps",
-      lede: "Do not memorize the words. Follow what the phosphate group does to the shape, because the shape is doing all the work.",
+      lede: "Do not memorise the words. Follow what the phosphate group does to the shape, because the shape is doing all the work.",
       rows: [
         { dot: "1", dotClass: "navy", h: "Where does the cycle start?", p: "The pump is open to the inside of the cell, and three Na+ from the cytosol bind to it. Inside Na+ is low, about 12 mM, so those three are relatively hard to come by. That is not a design flaw, it is the point." },
-        { dot: "2", dotClass: "navy", h: "What does the ATP actually do?", p: "ATP is hydrolyzed and a phosphate group is attached to the pump. That phosphorylation is what changes the protein's shape. The ATP is not burned to shove sodium anywhere, it is burned to buy a change of shape." },
+        { dot: "2", dotClass: "navy", h: "What does the ATP actually do?", p: "ATP is hydrolysed and a phosphate group is attached to the pump. That phosphorylation is what changes the protein's shape. The ATP is not burned to shove sodium anywhere, it is burned to buy a change of shape." },
         { dot: "3", dotClass: "terra", h: "How do those three sodium ions get out into 145 mM?", p: "The new shape opens to the outside and holds Na+ much more loosely, so the three ions are simply released into a solution that is already ten times more concentrated. The shape change did the uphill work before the ions ever left." },
         { dot: "4", dotClass: "navy", h: "What comes back in?", p: "Two K+ bind from the outside, where K+ is only about 4 mM. Their binding is what triggers removal of the phosphate group." },
         { dot: "5", dotClass: "navy", h: "And then?", p: "With the phosphate gone the pump snaps back to facing inward, its grip on K+ loosens, and the two K+ are released into a cytosol that already holds about 140 mM. The pump is back where it started and the cycle runs again." }
@@ -436,7 +436,7 @@ module.exports = {
           h: "What happens to a cell whose pump stops?",
           p: [
             "It swells. A cell is packed with proteins and phosphates that cannot leave, so it is always osmotically pulling water inward. Holding Na+ outside is how the cell offsets that pull.",
-            "Stop the pump and Na+ leaks in, the osmolarity inside climbs, water follows, and the cell swells and eventually bursts. That is a large part of what happens to tissue in ischemia, when the ATP runs out."
+            "Stop the pump and Na+ leaks in, the osmolarity inside climbs, water follows, and the cell swells and eventually bursts. That is a large part of what happens to tissue in ischaemia, when the ATP runs out."
           ]
         }
       ],
@@ -505,7 +505,7 @@ module.exports = {
           h: "How does a heart muscle cell get calcium back out between beats?",
           p: [
             "The sodium calcium exchanger lets three Na+ fall into the cell and throws one Ca2+ out in exchange. Opposite directions, one carrier, no ATP.",
-            "Cytosolic free Ca2+ has to be held around 0.0001 mM against about 1.2 mM of free ionized Ca2+ outside. That is roughly a ten thousand fold gradient, and it is exactly what makes calcium useful as a signal, because a tiny amount entering is an enormous relative change.",
+            "Cytosolic free Ca2+ has to be held around 0.0001 mM against about 1.2 mM of free ionised Ca2+ outside. That is roughly a ten thousand fold gradient, and it is exactly what makes calcium useful as a signal, because a tiny amount entering is an enormous relative change.",
             "In cardiac muscle, calcium leaving through NCX is a large part of how the cell relaxes between beats. Hold on to that for the next slide."
           ]
         }
@@ -521,7 +521,7 @@ module.exports = {
       variant: "dark",
       kicker: "Real medicine",
       h: "Digoxin, a drug that works by poisoning the pump on purpose",
-      lede: "Digoxin comes from the foxglove plant and it has been in use for more than two hundred years. It partly blocks the sodium potassium ATPase in cardiac muscle. Follow the consequence in three steps and you will never need to memorize what it does.",
+      lede: "Digoxin comes from the foxglove plant and it has been in use for more than two hundred years. It partly blocks the sodium potassium ATPase in cardiac muscle. Follow the consequence in three steps and you will never need to memorise what it does.",
       cards: [
         {
           label: "Step 1", labelClass: "terra",
@@ -603,7 +603,7 @@ module.exports = {
         "SGLT2 sits in the apical membrane of the early proximal tubule and does most of the glucose reabsorption in the kidney. Inhibit it and the kidney's capacity to reclaim filtered glucose drops.",
         "On the titration curve you just read, that means the transport maximum falls and the threshold falls with it. Glucose now appears in the urine at a plasma level that would previously have been handled without any trouble, so the patient loses glucose, and the calories in it, and water, every single day.",
         "It is a strange idea the first time you meet it. The treatment for a high blood glucose is to deliberately produce the finding you were taught to worry about. Blood glucose comes down because the sugar is leaving in the urine.",
-        "Two consequences fall straight out of the mechanism, with no memorizing required. Sugary urine feeds yeast, so genital fungal infection is the common side effect. And glucose holding water in the tubule is a mild diuretic, which is part of why this drug class turned out to help patients with heart failure as well."
+        "Two consequences fall straight out of the mechanism, with no memorising required. Sugary urine feeds yeast, so genital fungal infection is the common side effect. And glucose holding water in the tubule is a mild diuretic, which is part of why this drug class turned out to help patients with heart failure as well."
       ],
       covers: ["w2-transport-maximum", "w2-secondary-active-transport"],
       big: "Same curve, same threshold, moved on purpose by a tablet."
@@ -614,7 +614,7 @@ module.exports = {
       k: "fig",
       kicker: "Transepithelial transport",
       h: "One cell, two different membranes, and that is the whole trick",
-      lede: "A cell sitting in a sheet is not the same all the way round. The **apical** membrane faces the lumen, the basolateral membrane faces the blood, and tight junctions between neighboring cells stop the proteins of one face from drifting round to the other.",
+      lede: "A cell sitting in a sheet is not the same all the way round. The **apical** membrane faces the lumen, the basolateral membrane faces the blood, and tight junctions between neighbouring cells stop the proteins of one face from drifting round to the other.",
       svg: FIG_EPI,
       cap: "One gut cell between the lumen on the left and the blood on the right. SGLT1 and CFTR sit in the apical membrane. GLUT2 and the sodium potassium ATPase sit in the basolateral membrane. Glucose comes in at the apical face with sodium and leaves at the basolateral face on its own.",
       covers: ["w2-transepithelial-transport"],
@@ -642,12 +642,12 @@ module.exports = {
       k: "text",
       variant: "dark",
       kicker: "The disease",
-      h: "How cholera gets eight liters out of a person in two days",
+      h: "How cholera gets eight litres out of a person in two days",
       lede: "Kofi's stool is clear because it is not really stool. It is secreted fluid, and the cell is secreting it because a toxin jammed one channel open.",
       body: [
         "Cholera toxin locks an enzyme on inside the gut cell, so cAMP inside the cell rises and stays high. High cAMP holds the apical **CFTR** chloride channel open, and open is the problem.",
         "Cl- pours out of the cell into the lumen through CFTR and keeps pouring, because the cell keeps refilling itself with Cl- from the blood side using NKCC1, a symporter that brings in Na+, K+ and two Cl- on the falling sodium gradient.",
-        "Now the lumen is filling with negative charge, so Na+ follows it out between the cells to balance it. Salt is now traveling the wrong way, lumen bound, and water follows the salt by osmosis. At the peak of it, a liter an hour.",
+        "Now the lumen is filling with negative charge, so Na+ follows it out between the cells to balance it. Salt is now travelling the wrong way, lumen bound, and water follows the salt by osmosis. At the peak of it, a litre an hour.",
         "Notice what the sodium potassium ATPase is doing in that cascade. It never touches the lumen, and yet if you blocked it the secretion would stop, because NKCC1 runs on the sodium gradient the pump maintains. That exact question is waiting for you in this week's lab packet."
       ],
       covers: ["w2-transepithelial-transport"],
@@ -685,7 +685,7 @@ module.exports = {
       h: "A caregiver mixes the drink at home. Eight teaspoons of sugar and a pinch of salt",
       badges: [{ t: "Predict first" }, { t: "4 min", cls: "time" }],
       lede: "Commit to an answer before you start the arithmetic. Does this drink help Kofi, do nothing, or make him worse?",
-      given: "Eight level teaspoons of sugar in a liter is about 32 g. Table sugar is sucrose, molar mass 342, and the gut splits every molecule of it into glucose and fructose before it absorbs anything. A pinch of salt is roughly 30 mM NaCl. Estimate the osmolarity, classify it against plasma, and predict the effect.",
+      given: "Eight level teaspoons of sugar in a litre is about 32 g. Table sugar is sucrose, molar mass 342, and the gut splits every molecule of it into glucose and fructose before it absorbs anything. A pinch of salt is roughly 30 mM NaCl. Estimate the osmolarity, classify it against plasma, and predict the effect.",
       steps: [
         "Do the sugar first. 32 g divided by 342 g/mol is about 94 mmol, so about 94 mM sucrose in the glass. Sucrose does not dissociate in water, so as poured that is about 94 mOsm/L.",
         "NaCl splits into two particles, Na+ and Cl-, so 30 mM gives about 60 mOsm/L. In the glass the total is about 155 mOsm/L.",
@@ -712,7 +712,7 @@ module.exports = {
           label: "Held open", labelClass: "terra",
           h: "Cholera. What does far too much CFTR activity look like?",
           p: [
-            "Cl- pours into the lumen, Na+ follows it out to balance the charge, and water follows the salt. The gut secretes liters an hour and the patient dies of dehydration rather than of infection.",
+            "Cl- pours into the lumen, Na+ follows it out to balance the charge, and water follows the salt. The gut secretes litres an hour and the patient dies of dehydration rather than of infection.",
             "The bacterium never enters the bloodstream. Everything that is hurting Kofi is osmosis obeying a channel that will not close."
           ]
         },
@@ -865,7 +865,7 @@ module.exports = {
       k: "close",
       kicker: "Before next class",
       h: "What to do between now and Thursday",
-      lede: "None of this is memorizing a list of transporters. It is being able to look at one you have never seen and say where its energy is coming from.",
+      lede: "None of this is memorising a list of transporters. It is being able to look at one you have never seen and say where its energy is coming from.",
       list: [
         "Say the pump out loud until it is automatic. Three Na+ out, two K+ in, one ATP, and the two gradients it maintains.",
         "Draw one gut cell from memory. Apical face with SGLT1 and CFTR, basolateral face with GLUT2, the sodium potassium ATPase and NKCC1, and an arrow on every one. That drawing is in your lab packet this week, in pen.",

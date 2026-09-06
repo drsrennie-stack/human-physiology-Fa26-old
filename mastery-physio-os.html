@@ -4,37 +4,35 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Mastery Physio OS · BIO 005 Human Physiology · Fall 2026</title>
+<link rel="stylesheet" href="assets/fonts-site.css">
 <meta name="description" content="A personal learning operating system: diagnose weaknesses, repair gaps, build durable memory, and prove mastery.">
 <!-- Installable app (Add to Home Screen) -->
 <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#08101F">
+<meta name="theme-color" content="#0B1530">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Mastery OS">
 <link rel="apple-touch-icon" href="icon-192.png">
 <link rel="icon" type="image/svg+xml" href="icon.svg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
   /* PRIMARY teaching palette. See palettes.md. Sage and cream are NOT in this
      palette. Repainted 2026-08-11 from the off-spec values (08101F navy,
      8B1D1D terra, F5F1E8 cream) that had drifted into this build. */
-  --navy:#08101F; --navy-deep:#050A14; --navy-tint:#ECEFF4;
-  --card-navy:#08101F; --near-black:#05080F;
-  --rust:#5E201A; --rust-hover:#8A4526; --maroon:#7A2A22; --maroon-dark:#5E201A; --clay:#7A2A22;
-  --gold:#B8924A; --gold-light:#CFA95F; --gold-text:#6F5316;   /* 7.18:1 on white, AAA */
-  --white:#FFFFFF; --offwhite:#FAFAF9; --slate:#5A6273;
-  --ink:#08101F; --ink-soft:#2A3949; --ink-faint:rgba(8,16,31,0.72);
-  --line:rgba(8,16,31,0.16); --line-soft:rgba(8,16,31,0.08);
+  --navy:#0B1530; --navy-deep:#050A14; --navy-tint:#ECEFF4;
+  --card-navy:#0B1530; --near-black:#05080F;
+  --rust:#6E2D24; --rust-hover:#8A4526; --maroon:#8B3A2E; --maroon-dark:#6E2D24; --clay:#8B3A2E;
+  --gold:#C9A14A; --gold-light:#CFA95F; --gold-text:#6F5316;   /* 7.18:1 on white, AAA */
+  --white:#FFFFFF; --offwhite:#FAFAF9; --slate:#454B58;
+  --ink:#0B1530; --ink-soft:#2A3949; --ink-faint:rgba(11,21,48,0.72);
+  --line:rgba(11,21,48,0.16); --line-soft:rgba(11,21,48,0.08);
   --ok:#1E4C33; --warn:#8A5A1E; --bad:#7A2E2E;
   --shadow:0 1px 3px rgba(0,0,0,0.08);
   --lift:0 8px 16px rgba(0,0,0,0.10);
-  --disp:'Plus Jakarta Sans',system-ui,sans-serif;
+  --disp:'Open Sans',system-ui,sans-serif;
   --serif:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
-  --eyebrow:'DM Sans',system-ui,sans-serif;
+  --eyebrow:'Plus Jakarta Sans',system-ui,sans-serif;
   --mono:'Plus Jakarta Sans',system-ui,sans-serif;
   --r-sm:6px; --r:10px; --r-lg:16px;
   --ease:cubic-bezier(.22,.61,.36,1);
@@ -330,9 +328,9 @@ section.block:first-of-type{border-top:none}
 .mode-card{padding:0;overflow:hidden;text-align:left;display:flex;flex-direction:column;background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg)}
 .mode-top{padding:18px 18px 14px;color:#fff;background:var(--navy);position:relative}
 .mode-top.quiz{background:linear-gradient(130deg,#6d2f8f,#3b1a52)}
-.mode-top.race{background:linear-gradient(130deg,#5E201A,#5c241c)}
-.mode-top.tbl{background:linear-gradient(130deg,#08101F,#101B33)}
-.mode-top.escape{background:linear-gradient(130deg,#B8924A,#7a5f28)}
+.mode-top.race{background:linear-gradient(130deg,#6E2D24,#5c241c)}
+.mode-top.tbl{background:linear-gradient(130deg,#0B1530,#101B33)}
+.mode-top.escape{background:linear-gradient(130deg,#C9A14A,#7a5f28)}
 .mode-top.draw{background:linear-gradient(130deg,#2b6b57,#163b30)}
 .mode-top .mtag{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;opacity:.9}
 .mode-top h3{color:#fff;font-size:19px;font-weight:800;margin:6px 0 0}
@@ -370,7 +368,7 @@ section.block:first-of-type{border-top:none}
 .g-tile:hover{transform:translateY(-2px);filter:brightness(1.06)}
 .g-tile:disabled{cursor:default}
 .g-tile .sym{width:26px;height:26px;flex:none;display:grid;place-items:center;background:rgba(255,255,255,.25);border-radius:6px;font-weight:800}
-.g-tile.t0{background:#5E201A}.g-tile.t1{background:#1E6091}.g-tile.t2{background:#B8924A;color:#08101F}.g-tile.t3{background:#2b6b57}
+.g-tile.t0{background:#6E2D24}.g-tile.t1{background:#1E6091}.g-tile.t2{background:#C9A14A;color:#0B1530}.g-tile.t3{background:#2b6b57}
 .g-tile.correct{outline:4px solid #2b6b57;box-shadow:0 0 0 4px rgba(43,107,87,.3)}
 .g-tile.wrong{opacity:.4}
 .g-feedback{text-align:center;font-weight:800;font-size:17px;margin:16px 0 0}
@@ -433,7 +431,7 @@ section.block:first-of-type{border-top:none}
    not a widget, it was a second column, and it sat on top of eight
    buttons including Start the session. Capped to the viewport, and the
    sound panel below is folded away by default. */
-.pomo-float{position:fixed;right:20px;bottom:20px;width:322px;max-width:calc(100vw - 32px);max-height:calc(100vh - 32px);display:flex;flex-direction:column;background:#08101F;background:linear-gradient(158deg,#101B33 0%,#08101F 55%,#08101F 100%);border:1px solid rgba(255,255,255,.12);border-radius:var(--r-lg);box-shadow:0 22px 48px -16px rgba(0,0,0,.62);color:var(--offwhite);z-index:75;overflow:hidden}
+.pomo-float{position:fixed;right:20px;bottom:20px;width:322px;max-width:calc(100vw - 32px);max-height:calc(100vh - 32px);display:flex;flex-direction:column;background:#0B1530;background:linear-gradient(158deg,#101B33 0%,#0B1530 55%,#0B1530 100%);border:1px solid rgba(255,255,255,.12);border-radius:var(--r-lg);box-shadow:0 22px 48px -16px rgba(0,0,0,.62);color:var(--offwhite);z-index:75;overflow:hidden}
 .pomo-float[hidden]{display:none!important}
 /* The task list is the only part that grows without limit, and it was
    what made the widget 716px of column. It scrolls now, so the whole
@@ -486,13 +484,13 @@ section.block:first-of-type{border-top:none}
 @media (prefers-reduced-motion:reduce){
   *{animation-duration:.001ms!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
 }
-.ev-task{margin:0 0 12px;padding:12px 14px;background:#F4F5F7;border-radius:var(--r);box-shadow:0 1px 2px rgba(8,16,31,.06), 0 8px 18px rgba(8,16,31,.09);
-  border-radius:0 7px 7px 0;font-size:14.5px;line-height:1.5;color:#08101F}
-.ev-task span{display:block;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#7A2A22;margin-bottom:3px}
-.ev-swap{font:inherit;font-size:12.5px;font-weight:700;color:#7A2A22;background:none;border:0;
+.ev-task{margin:0 0 12px;padding:12px 14px;background:#F4F5F7;border-radius:var(--r);box-shadow:0 1px 2px rgba(11,21,48,.06), 0 8px 18px rgba(11,21,48,.09);
+  border-radius:0 7px 7px 0;font-size:14.5px;line-height:1.5;color:#0B1530}
+.ev-task span{display:block;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#8B3A2E;margin-bottom:3px}
+.ev-swap{font:inherit;font-size:12.5px;font-weight:700;color:#8B3A2E;background:none;border:0;
   padding:6px 2px;min-height:32px;cursor:pointer;text-decoration:underline}
-.ev-swap:hover{color:#08101F}
-.ev-swap:focus-visible{outline:3px solid #7A2A22;outline-offset:2px;border-radius:3px}
+.ev-swap:hover{color:#0B1530}
+.ev-swap:focus-visible{outline:3px solid #8B3A2E;outline-offset:2px;border-radius:3px}
 .ev-task.ev-soon{color:#3A424B;font-size:13.5px;opacity:.88}
 
 
@@ -513,7 +511,7 @@ section.block:first-of-type{border-top:none}
   font-size:11.5px;font-weight:700;letter-spacing:.06em;color:#EBCE86}
 .dr-meter .bar{flex:1;height:7px;border-radius:99px;background:rgba(255,255,255,.16);overflow:hidden}
 .dr-meter .bar>span{display:block;height:100%;background:var(--gold);transition:width .5s ease}
-.dr-note{background:var(--white);border:1px solid var(--line);box-shadow:0 1px 2px rgba(8,16,31,.06), 0 8px 18px rgba(8,16,31,.09);
+.dr-note{background:var(--white);border:1px solid var(--line);box-shadow:0 1px 2px rgba(11,21,48,.06), 0 8px 18px rgba(11,21,48,.09);
   border-radius:0 var(--r) var(--r) 0;padding:13px 16px;margin:14px 0 0;font-size:13.5px;color:#2A3949}
 .dr-note b{color:var(--navy)}
 
@@ -524,7 +522,7 @@ section.block:first-of-type{border-top:none}
 .dr-slot{position:relative}
 .dr-tile{position:relative;width:100%;display:flex;flex-direction:column;align-items:center;text-align:center;
   gap:7px;background:#0B1530;border-radius:18px;padding:20px 12px 16px;min-height:212px;color:#fff;
-  transform:translateY(-2px);box-shadow:0 8px 18px -12px rgba(8,16,31,.4);
+  transform:translateY(-2px);box-shadow:0 8px 18px -12px rgba(11,21,48,.4);
   transition:transform .34s cubic-bezier(.2,.8,.25,1),box-shadow .34s ease}
 .dr-hit{position:absolute;inset:0;width:100%;height:100%;border:0;background:transparent;cursor:pointer;
   border-radius:18px;z-index:2;font:inherit;color:transparent}
@@ -533,7 +531,7 @@ section.block:first-of-type{border-top:none}
 .dr-ic{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;flex:none;
   background:linear-gradient(145deg,#C9A14A,#A87F2E);box-shadow:inset 0 1px 0 rgba(255,255,255,.45)}
 .dr-ic svg{width:26px;height:26px;stroke:#0B1530;fill:none;stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round}
-.dr-tile.tool-loops .dr-ic{background:linear-gradient(145deg,#7A2A22,#7A2A22)}
+.dr-tile.tool-loops .dr-ic{background:linear-gradient(145deg,#8B3A2E,#8B3A2E)}
 .dr-tile.tool-recall .dr-ic{background:linear-gradient(145deg,#5C7FA8,#2F4C7D)}
 .dr-name{font-family:var(--disp);font-size:16.5px;font-weight:700;letter-spacing:-.012em;color:#EBCE86;margin:2px 0 0;line-height:1.18}
 .dr-tile.tool-loops .dr-name{color:#F0C4AC}
@@ -548,9 +546,9 @@ section.block:first-of-type{border-top:none}
 .dr-pill.now{background:var(--gold);color:#0B1530}
 .dr-pill.done{background:#2E4A3A;color:#CFE6D8}
 .dr-catch{position:absolute;top:10px;left:10px;font-size:9.5px;font-weight:800;letter-spacing:.08em;
-  text-transform:uppercase;padding:3px 7px;border-radius:99px;background:#7A2A22;color:#fff}
+  text-transform:uppercase;padding:3px 7px;border-radius:99px;background:#8B3A2E;color:#fff}
 .dr-slot[data-state="now"] .dr-tile{transform:translateY(-16px) scale(1.06);
-  box-shadow:0 44px 76px -24px rgba(8,16,31,.66),0 12px 26px -10px rgba(8,16,31,.34)}
+  box-shadow:0 44px 76px -24px rgba(11,21,48,.66),0 12px 26px -10px rgba(11,21,48,.34)}
 .dr-slot[data-state="now"]:hover .dr-tile{transform:translateY(-21px) scale(1.07)}
 .dr-slot[data-state="done"] .dr-tile{background:#16203A}
 .dr-slot[data-state="done"] .dr-ic{background:linear-gradient(145deg,#4E5F73,#2B384C)}
@@ -558,7 +556,7 @@ section.block:first-of-type{border-top:none}
 .dr-slot.open{z-index:30}
 .dr-slot.open .dr-tile{position:absolute;top:0;width:372px;max-width:calc(100vw - 44px);
   transform:translateY(-26px) scale(1.02);min-height:280px;
-  box-shadow:0 60px 100px -30px rgba(8,16,31,.7),0 16px 30px -12px rgba(8,16,31,.36)}
+  box-shadow:0 60px 100px -30px rgba(11,21,48,.7),0 16px 30px -12px rgba(11,21,48,.36)}
 .dr-slot.open.left .dr-tile{left:0}
 .dr-slot.open.right .dr-tile{right:0}
 .dr-slot.open .dr-why,.dr-slot.open .dr-pill{display:none}
@@ -567,26 +565,26 @@ section.block:first-of-type{border-top:none}
 .dr-body b{color:#EBCE86}
 .dr-acts{position:relative;z-index:3;display:flex;gap:8px;flex-wrap:wrap;width:100%;margin-top:auto}
 .dr-acts .btn{flex:1;font-size:13px;padding:9px 10px;border-color:rgba(255,255,255,.75);color:#fff;background:transparent}
-.dr-acts .btn.gold{background:var(--gold);border-color:var(--gold);color:#08101F}
+.dr-acts .btn.gold{background:var(--gold);border-color:var(--gold);color:#0B1530}
 .dr-slot:not(.open) .dr-body,.dr-slot:not(.open) .dr-acts{display:none}
 @media(max-width:560px){.dr-slot.open .dr-tile{position:static;width:100%;transform:translateY(-14px)}}
-#dr-scrim{position:fixed;inset:0;background:rgba(8,16,31,.10);opacity:0;pointer-events:none;
+#dr-scrim{position:fixed;inset:0;background:rgba(11,21,48,.10);opacity:0;pointer-events:none;
   transition:opacity .32s ease;z-index:10}
 #dr-scrim.on{opacity:1;pointer-events:auto}
 .dr-stop{background:var(--navy);color:#fff;border-radius:var(--r-lg);padding:20px 24px;
   display:flex;gap:18px;align-items:center;flex-wrap:wrap;margin-top:4px}
 .dr-stop .ic{width:52px;height:52px;border-radius:14px;flex:none;display:grid;place-items:center;
-  background:linear-gradient(145deg,#7A2A22,#7A2A22)}
+  background:linear-gradient(145deg,#8B3A2E,#8B3A2E)}
 .dr-stop .ic svg{width:26px;height:26px;stroke:#fff;fill:none;stroke-width:2.2;stroke-linecap:round}
 .dr-stop h3{margin:0 0 4px;font-size:18px;color:#fff}
 .dr-stop p{margin:0;font-size:14px;color:#E7EAEE;max-width:60ch}
 .dr-stop .eyebrow{color:#EBCE86}
-.dr-fork{margin-top:6px;border:1.5px dashed #7A2A22;border-radius:var(--r-lg);padding:18px 20px;background:#FDF8F5}
+.dr-fork{margin-top:6px;border:1.5px dashed #8B3A2E;border-radius:var(--r-lg);padding:18px 20px;background:#FDF8F5}
 .dr-fork h3{font-weight:600;color:var(--maroon-dark);margin:0 0 4px;font-size:18px}
 .dr-fork .lead{margin:0 0 4px;font-size:14px;color:#2A3949;max-width:62ch}
-.dr-tile.none{background:var(--navy-tint);color:var(--navy);box-shadow:none;border:1.5px dashed rgba(8,16,31,.28)}
+.dr-tile.none{background:var(--navy-tint);color:var(--navy);box-shadow:none;border:1.5px dashed rgba(11,21,48,.28)}
 .dr-tile.none .dr-ic{background:linear-gradient(145deg,#C9CFD6,#9AA5B1)}
-.dr-tile.none .dr-ic svg{stroke:#08101F}
+.dr-tile.none .dr-ic svg{stroke:#0B1530}
 .dr-tile.none .dr-name{color:#6F3A2E;font-size:15px}
 .dr-tile.none .dr-sub,.dr-tile.none .dr-why{color:#2A3949}
 .dr-tile.none .dr-mins{color:#6F3A2E}
@@ -605,10 +603,10 @@ section.block:first-of-type{border-top:none}
 .run-meter{display:flex;align-items:center;gap:10px;margin:0 0 14px;font-size:12.5px;color:var(--ink-soft)}
 .run-meter .rm-bar{flex:1;height:8px;border-radius:999px;background:#E3E7EB;overflow:hidden}
 .run-meter .rm-bar>span{display:block;height:100%;background:var(--gold)}
-.run-topic{background:var(--offwhite);border:1px solid var(--line);box-shadow:0 1px 2px rgba(8,16,31,.06), 0 8px 18px rgba(8,16,31,.09);
+.run-topic{background:var(--offwhite);border:1px solid var(--line);box-shadow:0 1px 2px rgba(11,21,48,.06), 0 8px 18px rgba(11,21,48,.09);
   border-radius:0 var(--r) var(--r) 0;padding:11px 14px;margin:0 0 16px;text-align:left}
 .run-topic b{display:block;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
-  color:#7A2A22;margin-bottom:2px}
+  color:#8B3A2E;margin-bottom:2px}
 .run-topic span{font-size:16px;font-weight:700;color:var(--navy)}
 .run-topic em{display:block;font-style:normal;font-size:12.5px;color:var(--ink-soft);margin-top:2px}
 .run-next{display:grid;gap:10px;margin:0 0 14px}
@@ -618,11 +616,29 @@ section.block:first-of-type{border-top:none}
 .run-opt.primary{border-color:var(--gold);border-width:2px;background:#FFFCF5}
 .run-opt strong{display:block;font-size:15.5px;font-weight:700;color:var(--navy)}
 .run-opt small{display:block;font-size:12.5px;color:var(--ink-soft);line-height:1.45;margin-top:2px}
-.run-opt .ro-min{margin-left:auto;flex:none;font-size:12px;font-weight:800;color:#7A2A22;white-space:nowrap}
+.run-opt .ro-min{margin-left:auto;flex:none;font-size:12px;font-weight:800;color:#8B3A2E;white-space:nowrap}
 .run-opt:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
 .run-done{font-size:12.5px;color:var(--ink-soft);margin:0 0 6px}
 .run-done b{color:var(--navy)}
 @media (prefers-reduced-motion: reduce){.run-opt:hover{transform:none}}
+
+/* ---- Small-screen reflow, Sep 6 2026 ------------------------------------
+   WCAG 1.4.10 asks for no horizontal scrolling at 320 CSS px. Two things
+   broke it here. Neither is new to the MedMasters change, but Open Sans is
+   a wider face than Plus Jakarta so both got worse and both are now fixed.
+
+   1. The print sheet is 8.5in wide by design. On paper that is right. On a
+      phone it is 816px inside a 320px window. It now shrinks on screen and
+      keeps its exact paper width when printing.
+   2. The header row would not wrap, so the back button hung off the edge. */
+@media screen and (max-width:900px){
+  .sheet{width:auto!important;max-width:100%!important;min-height:0!important;
+         padding:22px 18px!important}
+}
+@media screen and (max-width:640px){
+  .site-header-inner{flex-wrap:wrap;gap:10px}
+  .hdr-btn{white-space:normal}
+}
 </style>
 </head>
 <body>
@@ -644,8 +660,8 @@ section.block:first-of-type{border-top:none}
   <div class="hbar">
     <span class="logo">
       <svg viewBox="40 10 125 148" aria-hidden="true"><g transform="translate(0,18)">
-        <g transform="translate(60,0) rotate(8 0 130)"><circle cx="0" cy="20" r="10" fill="#7A2A22"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#7A2A22"/></g>
-        <g transform="translate(100,0)"><circle cx="0" cy="10" r="11" fill="#5E201A"/><path d="M 0,22 C -11,22 -17,26 -17,34 C -17,52 -14,70 -12,86 C -11,108 -13,122 -15,132 L 15,132 C 13,122 11,108 12,86 C 14,70 17,52 17,34 C 17,26 11,22 0,22 Z" fill="#5E201A"/></g>
+        <g transform="translate(60,0) rotate(8 0 130)"><circle cx="0" cy="20" r="10" fill="#8B3A2E"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#8B3A2E"/></g>
+        <g transform="translate(100,0)"><circle cx="0" cy="10" r="11" fill="#6E2D24"/><path d="M 0,22 C -11,22 -17,26 -17,34 C -17,52 -14,70 -12,86 C -11,108 -13,122 -15,132 L 15,132 C 13,122 11,108 12,86 C 14,70 17,52 17,34 C 17,26 11,22 0,22 Z" fill="#6E2D24"/></g>
         <g transform="translate(140,0) rotate(-8 0 130)"><circle cx="0" cy="20" r="10" fill="#FAFAF9"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#FAFAF9"/></g>
       </g></svg>
       <span><span class="lt">Mastery Physio <span class="ac">OS</span></span><span class="ls">Human Physiology</span></span>
@@ -747,7 +763,7 @@ section.block:first-of-type{border-top:none}
       <div class="flow" id="flowWrap"><!-- JS --></div>
       <h3 style="margin:30px 0 4px;font-size:17px">Signature exercises</h3>
       <p style="font-size:14px;color:var(--ink-soft);margin:0 0 12px">Two deep-practice moves you can run on any competency, on paper, from memory.</p>
-      <div class="tip-note" style="display:flex;gap:10px;align-items:flex-start;background:var(--white);border:1px solid var(--line);border-radius:var(--r);box-shadow:0 1px 2px rgba(8,16,31,.06), 0 8px 18px rgba(8,16,31,.09);padding:12px 15px;margin:0 0 16px;font-size:13.5px;color:var(--navy)"><span aria-hidden="true">📓</span><span>Keep one dedicated notebook for these written exercises: your drawings, mind-maps, and brain dumps. Date each page and label it with the competency. It becomes your own recall log to review before exams, and the act of writing by hand is part of what makes it stick.</span></div>
+      <div class="tip-note" style="display:flex;gap:10px;align-items:flex-start;background:var(--white);border:1px solid var(--line);border-radius:var(--r);box-shadow:0 1px 2px rgba(11,21,48,.06), 0 8px 18px rgba(11,21,48,.09);padding:12px 15px;margin:0 0 16px;font-size:13.5px;color:var(--navy)"><span aria-hidden="true">📓</span><span>Keep one dedicated notebook for these written exercises: your drawings, mind-maps, and brain dumps. Date each page and label it with the competency. It becomes your own recall log to review before exams, and the act of writing by hand is part of what makes it stick.</span></div>
       <div class="grid g3" id="exGrid"><!-- JS --></div>
     </div>
   </section>
@@ -868,7 +884,7 @@ section.block:first-of-type{border-top:none}
   </div>
   <div class="pf-ring" id="pfRing">
     <svg class="pf-ring-svg" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
-      <defs><linearGradient id="pfGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#B8924A"/><stop offset="1" stop-color="#7A2A22"/></linearGradient></defs>
+      <defs><linearGradient id="pfGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#C9A14A"/><stop offset="1" stop-color="#8B3A2E"/></linearGradient></defs>
       <circle class="pf-ring-track" cx="60" cy="60" r="52"/>
       <circle class="pf-ring-arc" id="pfArc" cx="60" cy="60" r="52"/>
     </svg>
@@ -944,11 +960,11 @@ function storageBroke(){
   try{
     var d=document.createElement('div');
     d.setAttribute('role','alert');
-    d.style.cssText='position:fixed;left:0;right:0;bottom:0;z-index:99999;background:#6B1616;color:#fff;'
+    d.style.cssText='position:fixed;left:0;right:0;bottom:0;z-index:99999;background:#6E2D24;color:#fff;'
       +'padding:14px 18px;font:600 14px/1.5 "Plus Jakarta Sans",system-ui,sans-serif;text-align:center';
     d.innerHTML='This browser is not saving your progress. Work in this tab will be lost when you close it. '
       +'Private or incognito browsing is the usual cause, so open the course in a normal window. '
-      +'<button type="button" style="margin-left:12px;background:#fff;color:#6B1616;border:0;border-radius:8px;'
+      +'<button type="button" style="margin-left:12px;background:#fff;color:#6E2D24;border:0;border-radius:8px;'
       +'padding:7px 13px;font:inherit;cursor:pointer">Dismiss</button>';
     d.querySelector('button').addEventListener('click',function(){ d.remove(); });
     (document.body||document.documentElement).appendChild(d);
@@ -972,7 +988,7 @@ var TODAY=(function(){
    ICONS
 ========================================================= */
 var I={
-  target:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4" fill="currentColor"/></svg>', flask:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4A2 2 0 0 0 19 18l-5-9V3"/><path d="M7 15h10"/></svg>', recall:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4M9 4h6"/><rect x="5" y="8" width="14" height="12" rx="2"/><path d="M9 13h6M9 16h4"/></svg>', weak:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>', bolt:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7z"/></svg>', clock:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>', diagnose:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>', repair:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2-2z"/></svg>', retrieve:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4v6h6"/><path d="M4 10a8 8 0 1 1 2 5"/></svg>', apply:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 7v6c0 5 3.4 7.7 8 9 4.6-1.3 8-4 8-9V7z"/></svg>', teach:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 11h-6M19 8v6"/></svg>', reflect:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0-4 10.5V17h8v-3.5A6 6 0 0 0 12 3z"/><path d="M9 21h6"/></svg>', draw:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18z"/></svg>', label:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 13.4 12 22l-9-9V3h10z"/><circle cx="7.5" cy="7.5" r="1.5" fill="currentColor"/></svg>', eye:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>', micro:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0M12 19v3"/></svg>', speak:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>', clinical:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><path d="M12 9v6M9 12h6"/></svg>', build:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/><circle cx="12" cy="12" r="3"/></svg>', check:'<svg viewBox="0 0 24 24" fill="none" stroke="#08101F" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-11"/></svg>', chev:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>'
+  target:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4" fill="currentColor"/></svg>', flask:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4A2 2 0 0 0 19 18l-5-9V3"/><path d="M7 15h10"/></svg>', recall:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4M9 4h6"/><rect x="5" y="8" width="14" height="12" rx="2"/><path d="M9 13h6M9 16h4"/></svg>', weak:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>', bolt:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7z"/></svg>', clock:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>', diagnose:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>', repair:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2-2z"/></svg>', retrieve:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4v6h6"/><path d="M4 10a8 8 0 1 1 2 5"/></svg>', apply:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 7v6c0 5 3.4 7.7 8 9 4.6-1.3 8-4 8-9V7z"/></svg>', teach:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 11h-6M19 8v6"/></svg>', reflect:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0-4 10.5V17h8v-3.5A6 6 0 0 0 12 3z"/><path d="M9 21h6"/></svg>', draw:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18z"/></svg>', label:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 13.4 12 22l-9-9V3h10z"/><circle cx="7.5" cy="7.5" r="1.5" fill="currentColor"/></svg>', eye:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>', micro:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0M12 19v3"/></svg>', speak:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>', clinical:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><path d="M12 9v6M9 12h6"/></svg>', build:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/><circle cx="12" cy="12" r="3"/></svg>', check:'<svg viewBox="0 0 24 24" fill="none" stroke="#0B1530" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-11"/></svg>', chev:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>'
 };
 
 /* =========================================================
@@ -1781,15 +1797,15 @@ function renderDailyBuild(){
 function ring(pct,color,big){
   var r=big?46:42,c=2*Math.PI*r,off=c*(1-pct/100),sz=big?120:112,cx=sz/2;
   return '<svg class="ring" viewBox="0 0 '+sz+' '+sz+'" width="'+sz+'" height="'+sz+'" role="img" aria-label="'+pct+' percent">'+
-    '<circle cx="'+cx+'" cy="'+cx+'" r="'+r+'" fill="none" stroke="rgba(8,16,31,.10)" stroke-width="9"/>'+
+    '<circle cx="'+cx+'" cy="'+cx+'" r="'+r+'" fill="none" stroke="rgba(11,21,48,.10)" stroke-width="9"/>'+
     '<circle cx="'+cx+'" cy="'+cx+'" r="'+r+'" fill="none" stroke="'+color+'" stroke-width="9" stroke-linecap="round" stroke-dasharray="'+c.toFixed(1)+'" stroke-dashoffset="'+off.toFixed(1)+'" transform="rotate(-90 '+cx+' '+cx+')"/>'+
     '<text x="50%" y="50%" text-anchor="middle" dominant-baseline="central" font-size="'+(big?26:23)+'" font-weight="800" fill="var(--navy)">'+pct+'</text>'+
   '</svg>';
 }
-function ringColor(v){return v>=70?'#3F7A5B':v>=50?'#B8924A':'#5E201A';}
+function ringColor(v){return v>=70?'#3F7A5B':v>=50?'#C9A14A':'#6E2D24';}
 function renderDashboard(){
   var rd=readiness();
-  var top='<div class="card readiness">'+ring(rd,'#B8924A',true)+'<div class="rtext"><p class="eyebrow" style="color:var(--gold)">Practice Readiness</p><h3>Practice readiness: '+rd+'%</h3><p>'+readinessLine(rd)+'</p><p style="font-size:12px;opacity:.72;margin-top:8px">This reflects only what you have practiced here, not everything your exam may cover. Always cross-check the competency list and syllabus.</p></div><div style="flex:1"></div><button class="btn gold" data-session="today">Start today&#39;s session</button></div>';
+  var top='<div class="card readiness">'+ring(rd,'#C9A14A',true)+'<div class="rtext"><p class="eyebrow" style="color:var(--gold)">Practice Readiness</p><h3>Practice readiness: '+rd+'%</h3><p>'+readinessLine(rd)+'</p><p style="font-size:12px;opacity:.72;margin-top:8px">This reflects only what you have practiced here, not everything your exam may cover. Always cross-check the competency list and syllabus.</p></div><div style="flex:1"></div><button class="btn gold" data-session="today">Start today&#39;s session</button></div>';
   var cards=S.dims.map(function(d){
     return '<div class="card hover ring-card"><div class="ring-wrap">'+ring(d.val,ringColor(d.val))+'</div><h3>'+esc(d.name)+'</h3><p class="rsub">'+bandWord(d.val)+'</p></div>';
   }).join('');
@@ -2053,7 +2069,7 @@ function evTask(k){
   /* Walkthroughs has no URL routing, so naming the tile is the difference between
      an instruction and a scavenger hunt through 39 of them */
   var extra='';
-  if(k==='loop'){ var lp=loopFor(c.id); if(lp) extra=' <em style="font-style:normal;color:#5A6273">Loop tile: '+esc(lp.title)+'</em>'; }
+  if(k==='loop'){ var lp=loopFor(c.id); if(lp) extra=' <em style="font-style:normal;color:#454B58">Loop tile: '+esc(lp.title)+'</em>'; }
   return '<p class="ev-task" data-evcomp="'+esc(c.id)+'"><span>'+esc(EV_VERB[k]||'Do this with')+'</span> '+esc(c.name)+extra
        /* six of these buttons sit on one screen, so "Another one" on its own
           is six identical announcements to a screen reader */
@@ -2508,8 +2524,8 @@ function obSeedData(){
 }
 var OB={step:0,data:obSeedData()};
 var OB_LOGO='<svg viewBox="40 10 125 148" width="70" height="83" aria-hidden="true" style="display:block;margin:0 auto"><g transform="translate(0,18)">'+
-  '<g transform="translate(60,0) rotate(8 0 130)"><circle cx="0" cy="20" r="10" fill="#7A2A22"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#7A2A22"/></g>'+
-  '<g transform="translate(100,0)"><circle cx="0" cy="10" r="11" fill="#5E201A"/><path d="M 0,22 C -11,22 -17,26 -17,34 C -17,52 -14,70 -12,86 C -11,108 -13,122 -15,132 L 15,132 C 13,122 11,108 12,86 C 14,70 17,52 17,34 C 17,26 11,22 0,22 Z" fill="#5E201A"/></g>'+
+  '<g transform="translate(60,0) rotate(8 0 130)"><circle cx="0" cy="20" r="10" fill="#8B3A2E"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#8B3A2E"/></g>'+
+  '<g transform="translate(100,0)"><circle cx="0" cy="10" r="11" fill="#6E2D24"/><path d="M 0,22 C -11,22 -17,26 -17,34 C -17,52 -14,70 -12,86 C -11,108 -13,122 -15,132 L 15,132 C 13,122 11,108 12,86 C 14,70 17,52 17,34 C 17,26 11,22 0,22 Z" fill="#6E2D24"/></g>'+
   '<g transform="translate(140,0) rotate(-8 0 130)"><circle cx="0" cy="20" r="10" fill="#FFFFFF"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#FFFFFF"/></g>'+
   '</g></svg>';
 var OB_STEPS=[
@@ -2711,7 +2727,7 @@ function drawGuess(){
   gSet('Draw & Guess','Draw from memory');
   var item=DRAW_BANK[Math.floor(Math.random()*DRAW_BANK.length)];var DUR=60;
   gBody('<div class="draw-wrap"><div class="g-qmeta"><span>Draw from memory</span><span id="dtime">'+DUR+'s</span></div><p class="g-q">Draw: '+esc(item.name)+'</p><canvas id="drawCanvas" width="640" height="300"></canvas><div class="draw-tools"><button class="btn" id="dClear">Clear</button><button class="btn gold" id="dReveal">I am done, reveal</button></div></div>');
-  var cv=$('#drawCanvas');if(!cv)return;var ctx=cv.getContext('2d');ctx.lineWidth=2.4;ctx.lineCap='round';ctx.strokeStyle='#08101F';var drawing=false;
+  var cv=$('#drawCanvas');if(!cv)return;var ctx=cv.getContext('2d');ctx.lineWidth=2.4;ctx.lineCap='round';ctx.strokeStyle='#0B1530';var drawing=false;
   function pos(e){var r=cv.getBoundingClientRect();var sx=cv.width/r.width,sy=cv.height/r.height;var cx=((e.touches?e.touches[0].clientX:e.clientX)-r.left)*sx;var cy=((e.touches?e.touches[0].clientY:e.clientY)-r.top)*sy;return {x:cx,y:cy};}
   function down(e){drawing=true;var p=pos(e);ctx.beginPath();ctx.moveTo(p.x,p.y);if(e.cancelable)e.preventDefault();}
   function move(e){if(!drawing)return;var p=pos(e);ctx.lineTo(p.x,p.y);ctx.stroke();if(e.cancelable)e.preventDefault();}
@@ -3337,7 +3353,7 @@ function pwCard(id,title,desc,gold,badge){
   return '<button type="button" id="'+id+'" style="position:relative;display:block;width:100%;text-align:left;padding:16px 18px;border-radius:var(--r);cursor:pointer;border:1.5px solid '+(gold?'var(--gold)':'var(--line)')+';background:'+(gold?'var(--gold)':'var(--white)')+';transition:.15s">'+
     (badge?'<span style="position:absolute;top:13px;right:15px;font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:'+(gold?'var(--navy)':'var(--maroon-dark)')+'">'+badge+'</span>':'')+
     '<span style="font-family:var(--disp);font-weight:800;font-size:16px;color:var(--navy);display:block">'+title+'</span>'+
-    '<span style="display:block;font-size:12.5px;margin-top:3px;color:'+(gold?'rgba(8,16,31,.75)':'var(--ink-soft)')+'">'+desc+'</span></button>';
+    '<span style="display:block;font-size:12.5px;margin-top:3px;color:'+(gold?'rgba(11,21,48,.75)':'var(--ink-soft)')+'">'+desc+'</span></button>';
 }
 function pwRow(k,title,desc){
   return '<button type="button" data-pw="'+k+'" style="display:flex;justify-content:space-between;align-items:center;gap:12px;width:100%;text-align:left;padding:13px 15px;border-radius:var(--r);cursor:pointer;border:1.5px solid var(--line);background:var(--white);transition:.15s"><span><span style="font-family:var(--disp);font-weight:700;font-size:15px;color:var(--navy);display:block">'+title+'</span><span style="font-size:12px;color:var(--ink-soft)">'+desc+'</span></span><span style="color:var(--maroon-dark);font-weight:800;font-size:18px">&#8250;</span></button>';
@@ -3556,7 +3572,7 @@ function openGapByTopic(){
   var weeks=Object.keys(byWeek).map(Number).sort(function(a,b){return a-b;});
   gSet('Gap Check by Topic','Check the topics your exam covers');
   function chk(c,on,w){return '<label style="display:flex;gap:8px;align-items:flex-start;padding:5px 0;cursor:pointer;font-size:13.5px"><input type="checkbox" class="topic-chk" data-cid="'+esc(c.id)+'" data-wk="'+w+'"'+(on?' checked':'')+' style="margin-top:3px"><span>'+esc(c.name)+'</span></label>';}
-  var groups=weeks.map(function(w){var on=cover.indexOf(w)>-1;var items=byWeek[w].map(function(c){return chk(c,on,w);}).join('');return '<details'+(on?' open':'')+' style="border:1px solid var(--line);border-radius:10px;padding:8px 12px;margin:8px 0"><summary style="font-weight:700;cursor:pointer">Week '+w+' <span style="color:var(--ink-soft);font-weight:400">('+byWeek[w].length+')</span></summary><div style="margin:6px 0 2px"><button type="button" class="btn" data-weekall="'+w+'" style="padding:5px 11px;font-size:12.5px;margin:0 6px 6px 0">Select all in Week '+w+'</button><button type="button" class="btn" data-weekclear="'+w+'" style="padding:5px 11px;font-size:12.5px;background:#fff;color:#08101F;margin:0 0 6px">Clear week</button></div>'+items+'</details>';}).join('');
+  var groups=weeks.map(function(w){var on=cover.indexOf(w)>-1;var items=byWeek[w].map(function(c){return chk(c,on,w);}).join('');return '<details'+(on?' open':'')+' style="border:1px solid var(--line);border-radius:10px;padding:8px 12px;margin:8px 0"><summary style="font-weight:700;cursor:pointer">Week '+w+' <span style="color:var(--ink-soft);font-weight:400">('+byWeek[w].length+')</span></summary><div style="margin:6px 0 2px"><button type="button" class="btn" data-weekall="'+w+'" style="padding:5px 11px;font-size:12.5px;margin:0 6px 6px 0">Select all in Week '+w+'</button><button type="button" class="btn" data-weekclear="'+w+'" style="padding:5px 11px;font-size:12.5px;background:#fff;color:#0B1530;margin:0 0 6px">Clear week</button></div>'+items+'</details>';}).join('');
   gBody('<p style="font-size:13px;color:var(--ink-soft);margin:0 0 10px">Pick the topics on your exam, then run the gap finder. This is by topic, not by week, so it works no matter how your term is laid out.</p>'+
     '<div class="g-actions" style="margin-bottom:8px"><button class="btn" id="tgMid">Midterm (Weeks 1 to 4)</button><button class="btn" id="tgAll">Select all</button><button class="btn" id="tgNone">Clear</button></div>'+
     groups+
@@ -3681,7 +3697,7 @@ function buildMidPlan(){
   gSet('Mid-Unit Gap Check','Refocus · '+(s.no+s.sh)+' gap'+((s.no+s.sh)===1?'':'s')+' found');
   function nm(arr){return arr.length?arr.slice(0,8).map(function(c){return esc(c.name);}).join(', ')+(arr.length>8?', and more':''):'nothing flagged here';}
   var head='<div class="weak-head" style="margin-bottom:14px"><div><div class="wc">'+(s.no+s.sh)+'</div><div class="wl">gaps found</div></div><p style="flex:1;min-width:180px">'+s.no+' no idea, '+s.sh+' shaky. Lab '+s.byTrack.Lab+', Lecture '+s.byTrack.Lecture+', Both '+s.byTrack.Both+'. These are now flagged on your Weakness Dashboard.</p></div>'+
-  '<div class="card" style="padding:14px 17px;margin-bottom:14px;box-shadow:0 1px 2px rgba(8,16,31,.06), 0 8px 18px rgba(8,16,31,.09)"><p style="font-size:13px;color:var(--ink-soft);margin:0">Closing these through active recall is one of the highest-yield things you can do, retrieval practice and spaced review are among the most reliable ways to raise a score. But the number itself is not the point: what helps is how well these overlap with what the exam tests, and how honest you are in the cold check. No specific grade is promised.</p></div>';
+  '<div class="card" style="padding:14px 17px;margin-bottom:14px;box-shadow:0 1px 2px rgba(11,21,48,.06), 0 8px 18px rgba(11,21,48,.09)"><p style="font-size:13px;color:var(--ink-soft);margin:0">Closing these through active recall is one of the highest-yield things you can do, retrieval practice and spaced review are among the most reliable ways to raise a score. But the number itself is not the point: what helps is how well these overlap with what the exam tests, and how honest you are in the cold check. No specific grade is promised.</p></div>';
   if(s.no+s.sh===0){gBody(head+'<div class="g-center"><div class="g-emoji">✅</div><h3>No gaps this round</h3><p>Solid. Keep it steady and re-check on Sunday through the Weakness Dashboard rather than burning your other cram.</p><div class="g-actions"><button class="btn gold" data-weakjump>Open Weakness Dashboard</button><button class="btn" data-gameclose>Close</button></div></div>');return;}
   function card(tag,title,body,btn){return '<div class="card" style="padding:16px 18px;margin-bottom:12px"><div style="font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--maroon-dark)">'+tag+'</div><h3 style="font-size:16px;margin:4px 0 6px">'+title+'</h3><p style="font-size:13px;color:var(--ink-soft);margin-bottom:10px">'+body+'</p>'+btn+'</div>';}
   gBody(head+'<p style="font-size:13px;color:var(--ink-soft);margin-bottom:14px">Refocus now, while there is still time to fix it. Active formats only: retrieve, draw, label, apply.</p>'+

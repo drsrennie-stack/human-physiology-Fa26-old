@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" type="image/svg+xml" href="icon.svg">
 <title>Figure label kit &middot; BIO 005</title>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/fonts-site.css">
 <!--
   ============================================================
   BIO 005 Human Physiology, Yuba College, Fall 2026
@@ -45,10 +45,10 @@
 -->
 <style>
 :root{
-  --navy:#08101F; --navy-tint:#ECEFF4; --maroon:#7A2A22; --maroon-dark:#5E201A;
-  --gold:#B8924A; --gold-deep:#8A6D33; --gold-text:#624612; --gold-pale:#F7EFD9;
+  --navy:#0B1530; --navy-tint:#ECEFF4; --maroon:#8B3A2E; --maroon-dark:#6E2D24;
+  --gold:#C9A14A; --gold-deep:#8A6D33; --gold-text:#624612; --gold-pale:#F7EFD9;
   --offwhite:#FAFAF9; --ink-soft:#3D4759; --rule:#A3ACBA;
-  --r:8px; --rc:16px; --shadow:0 1px 3px rgba(8,16,31,.08),0 1px 2px rgba(8,16,31,.05);
+  --r:8px; --rc:16px; --shadow:0 1px 3px rgba(11,21,48,.08),0 1px 2px rgba(11,21,48,.05);
   --font:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 }
 *,*::before,*::after{box-sizing:border-box}
@@ -84,16 +84,16 @@ h2{font-size:1.2rem;font-weight:800;margin:0 0 10px}
 /* Lengths inside the overlay are in picture units, where the picture
    is 100 units wide. They scale with the figure, so one setting works
    on a phone, a laptop and a projector. */
-.ov-line{stroke:#08101F;stroke-width:.22;fill:none}
-.ov-dot{fill:#7A2A22;stroke:#fff;stroke-width:.25}
-.ov-text{font-family:var(--font);font-weight:700;font-size:2.2px;fill:#08101F;
+.ov-line{stroke:#0B1530;stroke-width:.22;fill:none}
+.ov-dot{fill:#8B3A2E;stroke:#fff;stroke-width:.25}
+.ov-text{font-family:var(--font);font-weight:700;font-size:2.2px;fill:#0B1530;
          paint-order:stroke;stroke:#fff;stroke-width:.62;stroke-linejoin:round}
-.ov-step circle{fill:#DCB45C;stroke:#5C4110;stroke-width:.28}
-.ov-step text{font-family:var(--font);font-weight:800;font-size:2.1px;fill:#08101F;
+.ov-step circle{fill:#C9A14A;stroke:#5C4110;stroke-width:.28}
+.ov-step text{font-family:var(--font);font-weight:800;font-size:2.1px;fill:#0B1530;
               text-anchor:middle;dominant-baseline:central}
 .keylist{margin:14px 0 0;padding:0;list-style:none;display:grid;gap:8px}
 .keylist li{display:flex;gap:10px;align-items:flex-start;font-size:.94rem}
-.keylist .num{flex:0 0 24px;height:24px;border-radius:999px;background:#DCB45C;color:#08101F;
+.keylist .num{flex:0 0 24px;height:24px;border-radius:999px;background:#C9A14A;color:#0B1530;
               border:1.5px solid #5C4110;font-weight:800;font-size:.8rem;display:flex;
               align-items:center;justify-content:center;margin-top:1px}
 .keylist .bul{flex:0 0 24px;text-align:center;color:var(--maroon);font-weight:800;margin-top:1px}
@@ -206,7 +206,7 @@ textarea{width:100%;min-height:190px;font:400 13px/1.5 ui-monospace,SFMono-Regul
     var s = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ' + w + ' ' + h + '">' +
       '<rect width="' + w + '" height="' + h + '" fill="#FFFFFF"/>' +
       '<rect x="1" y="1" width="' + (w - 2) + '" height="' + (h - 2) + '" fill="none" stroke="#A3ACBA" stroke-dasharray="14 10"/>' +
-      '<ellipse cx="' + (w * 0.42) + '" cy="' + (h * 0.52) + '" rx="' + (w * 0.24) + '" ry="' + (h * 0.3) + '" fill="#ECEFF4" stroke="#08101F" stroke-width="4"/>' +
+      '<ellipse cx="' + (w * 0.42) + '" cy="' + (h * 0.52) + '" rx="' + (w * 0.24) + '" ry="' + (h * 0.3) + '" fill="#ECEFF4" stroke="#0B1530" stroke-width="4"/>' +
       '<circle cx="' + (w * 0.62) + '" cy="' + (h * 0.3) + '" r="' + (h * 0.09) + '" fill="#F7EFD9" stroke="#8A6D33" stroke-width="4"/>' +
       '</svg>';
     return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(s);

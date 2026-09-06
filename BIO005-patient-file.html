@@ -4,14 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>BIO 005 Progressive Patient File</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/fonts-site.css">
 <style>
 :root{
-  --navy:#08101F; --navy-chip:#16233C; --navy-tint:#EDF1F3;
-  --terra:#8B1D1D; --terra-deep:#6E1616;
-  --gold:#DCB45C; --gold-ink:#6B5214; --gold-lite:#FBEBC8;
+  --navy:#0B1530; --navy-chip:#0D1729; --navy-tint:#EDF1F3;
+  --terra:#8B3A2E; --terra-deep:#6E1616;
+  --gold:#C9A14A; --gold-ink:#6B5214; --gold-lite:#FEF8EE;
   --white:#FFFFFF; --offwhite:#FAFAF9; --onred:#FFFFFF;
   --muted:#3D4860; --rule:#DCE0E6; --light:#DDE2EA;
   --lock:#454E5E;
@@ -23,7 +21,7 @@ em,i,cite,dfn,var,address{font-style:normal}
 html{font-size:var(--fs)}
 body{
   margin:0; background:var(--offwhite); color:var(--navy);
-  font-family:"DM Sans",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  font-family:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
   line-height:1.55; font-size:1rem;
 }
 h1,h2,h3,h4{font-family:"Plus Jakarta Sans",system-ui,Arial,sans-serif; margin:0 0 .4em}
@@ -130,7 +128,7 @@ button:disabled{background:#EEF0F3; color:#333C4D; border-color:var(--light); cu
 
 /* modal */
 dialog{border:0; padding:0; color:var(--navy); border-radius:14px; max-width:640px; width:calc(100% - 32px); box-shadow:0 18px 48px rgba(0,0,0,.32)}
-dialog::backdrop{background:rgba(8,16,31,.62)}
+dialog::backdrop{background:rgba(11,21,48,.62)}
 .dlg{background:var(--white); border-radius:14px; overflow:hidden}
 .dlg header{background:var(--navy); color:var(--white); padding:16px 20px}
 .dlg header h2{color:var(--white); margin:0}
@@ -233,7 +231,7 @@ footer.foot{border-top:1px solid var(--rule); margin-top:34px; padding-top:16px;
     <nav aria-label="Weeks" class="noprint">
       <h2 class="sr">Weeks</h2>
       <ul class="rail" id="rail"></ul>
-      <p class="legend">Dashed gray is locked. Solid gold is open. Navy on tint is submitted. Your instructor posts the code that opens each week.</p>
+      <p class="legend">Dashed grey is locked. Solid gold is open. Navy on tint is submitted. Your instructor posts the code that opens each week.</p>
     </nav>
 
     <!-- unlock -->
@@ -760,7 +758,7 @@ function sectionDraw(w, st){
   function move(e){
     if(!drawState.drawing) return;
     var p = pos(e);
-    ctx.strokeStyle = drawState.tool === "eraser" ? "#FFFFFF" : "#08101F";
+    ctx.strokeStyle = drawState.tool === "eraser" ? "#FFFFFF" : "#0B1530";
     ctx.lineWidth = drawState.tool === "eraser" ? 26 : (drawState.tool === "thick" ? 7 : 3);
     ctx.lineTo(p.x,p.y); ctx.stroke();
     e.preventDefault();
