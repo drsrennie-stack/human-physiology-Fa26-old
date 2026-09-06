@@ -398,3 +398,13 @@ footers. The kit and CANVAS-IFRAME.txt both restructured to the pattern:
 embeds for directions, site links for pages, worksheet links for anything
 students print. The learning lab gained a link from the Week 2 hub's
 Discuss step so every page is reachable inside the site's own navigation.
+
+## Assignment pages rebranded, September 6, late
+
+All five assignment direction pages now open with the BIO 005 brand header,
+the three figure mark plus the BIO 005 wordmark with Human Physiology
+underneath, matching the rebranded Course Tools and course-start. Every
+gold pale box became the white lifted card, borderless with the house
+shadow. assignment-discussion.html additionally moved to Plus Jakarta only,
+card radius 12, and its boxes lifted. The upload boxes still carry the
+labeling rules; only the paint changed.
