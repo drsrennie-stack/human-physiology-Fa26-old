@@ -10,13 +10,13 @@
    Three palette generations existed in this repo at once. They are
    now one.
 
-     brand.css maroon      #7A2A22  ->  maroon       #8B3A2E
-     brand.css maroon-dark #5E201A  ->  maroon-dark  #6E2D24
-     deck terra            #8B1D1D  ->  maroon       #8B3A2E
-     deck terra-dark       #6B1616  ->  maroon-dark  #6E2D24
-     navy                  #08101F  ->  navy         #0B1530
-     brand.css gold        #B8924A  ->  gold         #C9A14A
-     deck gold             #DCB45C  ->  gold         #C9A14A
+     brand.css maroon      #8B3A2E  ->  maroon       #8B3A2E
+     brand.css maroon-dark #6E2D24  ->  maroon-dark  #6E2D24
+     deck terra            #8B3A2E  ->  maroon       #8B3A2E
+     deck terra-dark       #6E2D24  ->  maroon-dark  #6E2D24
+     navy                  #0B1530  ->  navy         #0B1530
+     brand.css gold        #C9A14A  ->  gold         #C9A14A
+     deck gold             #C9A14A  ->  gold         #C9A14A
      navy-deep             #060A18  ->  unchanged, the site uses it too
 
    TYPE ALSO CHANGED. The site sets headlines in Open Sans 800 and
@@ -39,10 +39,15 @@
 
    Every ratio in this file was measured, not estimated.
 
-   Sage and cream are NOT in this palette. Ever. Do not reintroduce
-   them from an older BIO 004, BIO 304, or MCAS file. The live site
-   does use bone #F5F1E8 for text on its dark band; off-white is used
-   here instead, and on near black the two are indistinguishable.
+   Sage is NOT in this palette. Ever. Do not reintroduce it from an
+   older BIO 004, BIO 304, or MCAS file.
+
+   CREAM, SEP 6 2026, SCRUBS' CALL. The live site uses cream #F5F1E8
+   on its dark band, so cream is allowed HERE AND ONLY HERE: text and
+   small fills on the dark navy band. It is never a page background,
+   never sits on white, and never appears on a light card. The token
+   is --bone, defined below with its measured ratios. Off-white
+   --offwhite remains the only page background in this repo.
 
    Page-specific rules go in the page, never a second copy of these
    tokens.
@@ -101,6 +106,21 @@
   --disp:'Open Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
   --eyebrow-font:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
   --serif:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+
+  /* Plain-English aliases for the two above. --disp and --eyebrow-font
+     are historical names and both still work; new pages should use these,
+     because "eyebrow-font" set on <body> reads like a mistake. */
+  --display:var(--disp);
+  --body:var(--eyebrow-font);
+
+  /* ---- Bone. The live site's cream, DARK BAND ONLY. ----
+     Scrubs' call, Sep 6 2026: cream is allowed here as text and small
+     fills on the dark navy band, matching the live site exactly, and
+     NOWHERE else. It is never a page background and never sits on
+     white. Off-white --offwhite stays the only page background in this
+     repo. On --navy-deep this measures 18.71:1, AAA. On white it is
+     1.06:1, which is why the rule above is not a style preference. */
+  --bone:#F5F1E8;
 
   /* ---- Elevation and motion, palettes.md aesthetic principles ---- */
   --shadow:0 1px 3px rgba(0,0,0,0.08);
@@ -319,7 +339,7 @@ tr.total-row th, tr.total-row td { font-weight:700; border-top:1px solid var(--n
                         #C9A14A because it sits on a dark ground
 
    RESOLVED Aug 21 2026. This block used to carry an open question:
-   palettes.md specified #1E3D4C and the OS used #0B1530, and nobody
+   palettes.md specified #0B1530 and the OS used #0B1530, and nobody
    had said which governed. Scrubs answered it by moving the document
    pages to the dark navy, so there is now one navy in the repo and
    the app surface and the document pages agree on it. The only

@@ -1,0 +1,74 @@
+/* ============================================================
+   assets/brandbar.css
+   BIO 005 Human Physiology, Fall 2026.
+
+   The shared brand bar and the shared site footer, so every page in
+   this repo carries the same mark, the same wordmark and the same
+   way out. Everything here is namespaced under .mm- so it cannot
+   collide with a page's own classes, and every colour falls back to
+   a literal if assets/brand.css is not linked on that page.
+
+   Brand of record, Sep 6 2026: MedMasters, read off the live site.
+   Navy #0B1530, maroon #8B3A2E, gold #C9A14A. The three figure mark
+   runs navy, maroon, gold, and the third figure is gold.
+
+   Usage: link this file, then paste the markup block documented in
+   BRAND-MIGRATION.md directly after <body> and before </body>.
+   ============================================================ */
+
+.mm-brandbar{
+  position:sticky;top:0;z-index:60;
+  background:#fff;
+  border-bottom:1px solid var(--line,rgba(11,21,48,.16));
+  padding:13px 0;
+  font-family:var(--body,'Plus Jakarta Sans',system-ui,sans-serif);
+}
+.mm-brandbar .mm-wrap{
+  max-width:1000px;margin:0 auto;padding:0 20px;
+  display:flex;align-items:center;gap:11px;flex-wrap:wrap;
+}
+.mm-mark{display:flex;align-items:center;gap:9px;text-decoration:none;border:0}
+.mm-mark:hover{text-decoration:none}
+.mm-wm{
+  display:block;
+  font-family:var(--display,'Open Sans',system-ui,sans-serif);
+  font-size:16px;font-weight:800;letter-spacing:-.02em;line-height:1.05;
+  color:var(--navy,#0B1530);
+}
+.mm-wm b{color:var(--maroon,#8B3A2E);font-weight:800}
+.mm-wmsub{
+  display:block;font-size:8px;font-weight:700;letter-spacing:.3em;
+  text-transform:uppercase;color:var(--ink-soft,#414B5C);margin-top:3px;
+}
+.mm-course{
+  margin-left:auto;font-size:9.5px;font-weight:700;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--ink-soft,#414B5C);
+}
+.mm-brandbar a:focus-visible{
+  outline:3px solid var(--maroon,#8B3A2E);outline-offset:3px;border-radius:3px;
+}
+
+/* ---------- shared site footer ---------- */
+.mm-foot{
+  background:var(--navy-deep,#060A18);
+  color:var(--bone,#F5F1E8);
+  padding:30px 0 36px;margin-top:40px;
+  font-family:var(--body,'Plus Jakarta Sans',system-ui,sans-serif);
+}
+.mm-foot .mm-wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+.mm-foot a{color:var(--bone,#F5F1E8);text-decoration:underline;text-underline-offset:3px}
+.mm-foot a:hover{color:var(--gold,#C9A14A)}
+.mm-foot a:focus-visible{outline:3px solid var(--gold,#C9A14A);outline-offset:3px}
+.mm-flinks{display:flex;flex-wrap:wrap;gap:8px 10px;align-items:center;font-size:14px}
+.mm-dot{color:var(--gold,#C9A14A)}
+.mm-fleg{
+  margin:16px 0 0;font-size:13px;line-height:1.6;max-width:74ch;
+  color:var(--bone,#F5F1E8);opacity:.88;
+}
+
+@media (max-width:620px){
+  .mm-course{margin-left:0;flex-basis:100%}
+}
+@media print{
+  .mm-brandbar,.mm-foot{display:none}
+}

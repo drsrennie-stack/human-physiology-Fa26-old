@@ -86,3 +86,89 @@ So the repo now has two documented surfaces:
 Sage and cream are still out of both. Nothing in that part of the repaint changed.
 
 **Item E is still open and it now matters more.** If `palettes.md` is meant to govern the app surface too, the OS needs repainting onto `#1E3D4C` and the BIO 004 OS does as well. If `palettes.md` describes document pages only, then say so in `palettes.md` itself, because as written it reads like it covers everything and that is how it got applied here the first time.
+
+---
+
+## Update, the MedMasters brand pass, Sep 6 2026
+
+Scrubs' instruction: "This is the branding that we're using, except it is not
+MedMasters, it is BIOL 005 Human Physiology, with logo and all." The brand of
+record is now the live medmasterscollaborative.com system, read off the page
+with computed styles rather than estimated or carried over from an older file.
+
+Three decisions were settled the same day and they close the open questions
+that had been sitting at the bottom of this file.
+
+| Question | Decision |
+|---|---|
+| Course code in the wordmark | **BIOL 005.** The repo, the syllabus, the Yuba section number BIOL-5-D9286 and 130-odd filenames all say 005. Nothing was renamed. |
+| Item E, does `palettes.md` govern the app surface | **No.** The dark Mastery OS is out of scope and keeps its own palette. It was not touched in this pass. |
+| Cream | **Dark band only.** The live site uses cream on its dark band, so cream is allowed there and only there, as the token `--bone`. It is never a page background and never sits on white, where it measures 1.06:1. |
+
+### The palette, one generation now
+
+| Was | Now |
+|---|---|
+| `#08101F`, `#1E3D4C`, `#0F1C3F`, `#16213A` | navy `#0B1530` |
+| `#040711`, `#142a36`, `#050A14` | navy-deep `#060A18` |
+| `#7A2A22`, `#8B1D1D`, `#C2734D`, `#8A4324`, `#D79A78` | maroon `#8B3A2E` |
+| `#5E201A`, `#6B1616`, `#A0522D`, `#743A1E` | maroon-dark `#6E2D24` |
+| `#DCB45C`, `#B8924A`, `#B08B3A` | gold `#C9A14A` |
+| `#EDF1F3` | navy-tint `#ECEFF4` |
+| `#3C5563`, `#6B6258`, `#3D4860`, `#5B7480` | ink-soft `#414B5C` |
+| DM Sans | Plus Jakarta Sans |
+
+131 files repainted. 63 remote font requests removed and pointed at the self
+hosted `assets/fonts-site.css`, so no page in this repo asks the network for a
+font any more.
+
+### The logo, one mark now
+
+Four variants of the three figure mark existed. All of them now run **navy,
+maroon, gold, left to right, and the third figure is gold**, which is what the
+live site does and what most pages in here were getting wrong.
+
+| Variant | Where | Was | Fixed |
+|---|---|---|---|
+| Full figures, `viewBox="40 10 125 148"` | course pages | third figure navy, or middle figure maroon-dark | 71 |
+| Simplified circles and bars, `viewBox="0 0 34 34"` | slide decks, concept videos | third figure navy | 22 |
+| Rounded figures, `viewBox="0 0 64 64"` | lab manual, labs | gold first, navy last | 3 |
+
+### The shared chrome
+
+New file `assets/brandbar.css`, namespaced under `.mm-` so it cannot collide
+with a page's own classes, and every colour falls back to a literal if
+`brand.css` is not linked on that page. It carries the sticky white brand bar
+(mark, two-tone wordmark, course line) and the dark dot-separated footer.
+
+49 pages that had no mark at all got the bar. 9 that had no footer got the
+footer. Three pages were caught carrying two headers afterwards, the lab
+manual and its two labs, and the injected bar was removed from those because
+they already had their own.
+
+Not stamped, deliberately: the Mastery OS, the seven files on the delete list,
+the internal build tools (`site-check`, `wiring-map`, `screen-reader-log`,
+`label-kit`, `canvas-kit`, `build-tracker`), and the four full-bleed surfaces
+that own their whole viewport (`mastery-canvas`, `course-entry`, `course-door`,
+`welcome-tour`).
+
+### Two rules that came out of the contrast measurements
+
+- **Gold never carries text or a border on a light page.** `#C9A14A` on white
+  is 2.42:1. `--gold-deep #8A6D33` is the gold that works there, at 4.87:1.
+- **Cream is dark band only**, as above.
+
+Both are written into `assets/brand.css` beside the tokens they govern, with
+the measured ratios, so the next person does not have to rediscover them.
+
+### Also fixed in passing
+
+- 77 italic elements removed across four pages. No italics anywhere, standing rule.
+- The tinted goldpale boxes on all fifteen week pages became white cards with a
+  shadow and no border, which is the rule: white cards lift off the off-white
+  page, they are never shaded and never bordered.
+- `bio005-nav.js` had a broken string after the font swap and would not parse.
+  Fixed, and every `.js` in the repo now passes a syntax check.
+- `virtual-office.html` is new, built on the brand as the reference page.
+
+Full audit in `compliance-notes-brand-sep06.md`.

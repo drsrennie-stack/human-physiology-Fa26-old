@@ -481,7 +481,7 @@
   var CSS = [
     '.hoo-btn{position:fixed;right:18px;bottom:18px;z-index:60;display:inline-flex;align-items:center;gap:8px;',
     '  font:inherit;font-size:.85rem;font-weight:700;cursor:pointer;padding:11px 16px;border-radius:999px;',
-    '  background:var(--navy,#08101F);color:#fff;border:1px solid var(--navy,#08101F);',
+    '  background:var(--navy,#0B1530);color:#fff;border:1px solid var(--navy,#0B1530);',
     '  box-shadow:0 8px 16px rgba(0,0,0,.18);transition:transform 180ms ease,box-shadow 180ms ease}',
     '.hoo-btn:hover{transform:translateY(-2px);box-shadow:0 12px 22px rgba(0,0,0,.22)}',
     '.hoo-btn .fish{line-height:0;display:inline-flex;background:#fff;border-radius:50%;padding:2px}',
@@ -489,17 +489,17 @@
        the pill's width, and the guess was wrong once the label and
        the mark were in place, so the bubble overlapped the button. */
     '.hoo-nudge{position:fixed;right:18px;bottom:82px;z-index:59;',
-    '  background:var(--gold,#DCB45C);color:var(--navy,#08101F);',
+    '  background:var(--gold,#C9A14A);color:var(--navy,#0B1530);',
     "  font-family:var(--eb,inherit);font-size:12.5px;font-weight:700;white-space:nowrap;",
     '  padding:7px 12px;border-radius:9px;box-shadow:0 6px 14px rgba(0,0,0,.18)}',
-    ".hoo-nudge::after{content:'';position:absolute;bottom:-6px;right:22px;border:6px solid transparent;border-top-color:var(--gold,#DCB45C)}",
+    ".hoo-nudge::after{content:'';position:absolute;bottom:-6px;right:22px;border:6px solid transparent;border-top-color:var(--gold,#C9A14A)}",
     '.hoo-nudge[hidden]{display:none}',
     '.hoo-panel{position:fixed;right:18px;bottom:76px;z-index:61;width:min(390px,calc(100vw - 36px));',
     '  max-height:min(560px,calc(100vh - 110px));display:none;flex-direction:column;',
     '  background:#fff;border:1px solid var(--line,rgba(11,21,48,.12));border-radius:var(--radius,16px);',
     '  box-shadow:0 18px 44px rgba(0,0,0,.24);overflow:hidden}',
     '.hoo-panel.on{display:flex}',
-    '.hoo-hd{display:flex;align-items:center;gap:9px;padding:12px 14px;background:var(--navy,#08101F);color:#fff}',
+    '.hoo-hd{display:flex;align-items:center;gap:9px;padding:12px 14px;background:var(--navy,#0B1530);color:#fff}',
     '.hoo-hd .fish{line-height:0;display:inline-flex;background:#fff;border-radius:50%;padding:2px}',
     '.hoo-hd h2{margin:0;font-size:.95rem;font-weight:700;color:#fff}',
     '.hoo-hd .sub{margin:1px 0 0;font-size:11.5px;color:#fff;opacity:.85}',
@@ -507,23 +507,23 @@
     '.hoo-x:hover{background:rgba(255,255,255,.16)}',
     '.hoo-log{flex:1;overflow-y:auto;padding:13px 14px;display:flex;flex-direction:column;gap:10px;background:var(--offwhite,#F3F5F8)}',
     '.hoo-msg{max-width:92%;padding:10px 12px;border-radius:13px;font-size:13.5px;line-height:1.55}',
-    '.hoo-msg.bot{background:#fff;border:1px solid var(--line,rgba(11,21,48,.12));color:var(--navy,#08101F);align-self:flex-start}',
-    '.hoo-msg.you{background:var(--navy,#08101F);color:#fff;align-self:flex-end}',
-    '.hoo-msg a{color:var(--maroon-dark,#7A2A22);font-weight:700}',
-    '.hoo-msg.you a{color:var(--gold,#DCB45C)}',
+    '.hoo-msg.bot{background:#fff;border:1px solid var(--line,rgba(11,21,48,.12));color:var(--navy,#0B1530);align-self:flex-start}',
+    '.hoo-msg.you{background:var(--navy,#0B1530);color:#fff;align-self:flex-end}',
+    '.hoo-msg a{color:var(--maroon-dark,#8B3A2E);font-weight:700}',
+    '.hoo-msg.you a{color:var(--gold,#C9A14A)}',
     '.hoo-name{display:block;font-family:var(--eb,inherit);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;',
-    '  color:var(--maroon-dark,#7A2A22);font-weight:700;margin-bottom:4px}',
+    '  color:var(--maroon-dark,#8B3A2E);font-weight:700;margin-bottom:4px}',
     '.hoo-chips{display:flex;flex-wrap:wrap;gap:6px;padding:10px 14px;border-top:1px solid var(--line,rgba(11,21,48,.12));background:#fff}',
     '.hoo-chip{font:inherit;font-size:11.5px;font-weight:700;cursor:pointer;padding:6px 10px;border-radius:999px;',
-    '  background:#fff;color:var(--navy,#08101F);border:1px solid var(--line,rgba(11,21,48,.12))}',
-    '.hoo-chip:hover{border-color:var(--maroon-dark,#7A2A22)}',
+    '  background:#fff;color:var(--navy,#0B1530);border:1px solid var(--line,rgba(11,21,48,.12))}',
+    '.hoo-chip:hover{border-color:var(--maroon-dark,#8B3A2E)}',
     '.hoo-form{display:flex;gap:7px;padding:10px 14px;border-top:1px solid var(--line,rgba(11,21,48,.12));background:#fff}',
     '.hoo-in{flex:1;font:inherit;font-size:13.5px;padding:9px 11px;border-radius:10px;',
-    '  border:1.5px solid var(--line,rgba(11,21,48,.12));background:var(--offwhite,#F3F5F8);color:var(--navy,#08101F)}',
+    '  border:1.5px solid var(--line,rgba(11,21,48,.12));background:var(--offwhite,#F3F5F8);color:var(--navy,#0B1530)}',
     '.hoo-send{font:inherit;font-size:12.5px;font-weight:700;cursor:pointer;padding:9px 14px;border-radius:10px;',
-    '  background:var(--gold,#DCB45C);color:var(--navy,#08101F);border:1px solid var(--gold,#DCB45C)}',
+    '  background:var(--gold,#C9A14A);color:var(--navy,#0B1530);border:1px solid var(--gold,#C9A14A)}',
     '.hoo-btn:focus-visible,.hoo-x:focus-visible,.hoo-chip:focus-visible,.hoo-in:focus-visible,.hoo-send:focus-visible{',
-    '  outline:3px solid var(--gold,#DCB45C);outline-offset:2px}',
+    '  outline:3px solid var(--gold,#C9A14A);outline-offset:2px}',
     '@media (prefers-reduced-motion:reduce){.hoo-btn{transition:none}.hoo-btn:hover{transform:none}}',
     /* Every fixed element Hootie owns. The nudge was missing from this
        list and printed as a gold pill across the foot of the page. */
@@ -551,25 +551,25 @@
      Source of truth: the hootieBtn svg in welcome.html. */
   function hootieMark(size) {
     return '<svg viewBox="0 0 64 64" width="' + size + '" height="' + size + '" aria-hidden="true" focusable="false">'
-      + '<path d="M20 39 L6 28 Q3 39 6 50 Z" fill="#DCB45C"/>'
+      + '<path d="M20 39 L6 28 Q3 39 6 50 Z" fill="#C9A14A"/>'
       + '<ellipse cx="35" cy="40" rx="19" ry="16" fill="#E8CE85"/>'
       + '<ellipse cx="37" cy="44" rx="12" ry="9" fill="#F2E2B0"/>'
-      + '<path d="M28 25 Q36 21 44 25 L42 31 Q36 34 30 31 Z" fill="#08101F"/>'
-      + '<path d="M36 11 L55 20 L36 29 L17 20 Z" fill="#08101F"/>'
-      + '<circle cx="36" cy="20" r="1.5" fill="#DCB45C"/>'
-      + '<path d="M36 20 L53 21 L53 32" fill="none" stroke="#DCB45C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>'
-      + '<circle cx="53" cy="34" r="2.4" fill="#DCB45C"/>'
-      + '<circle cx="31" cy="39" r="7" fill="#FFFFFF" stroke="#08101F" stroke-width="2.4"/>'
-      + '<circle cx="45" cy="39" r="7" fill="#FFFFFF" stroke="#08101F" stroke-width="2.4"/>'
-      + '<path d="M37.6 39 H38.4" stroke="#08101F" stroke-width="2.2"/>'
-      + '<circle cx="32" cy="40" r="3" fill="#08101F"/>'
-      + '<circle cx="44" cy="40" r="3" fill="#08101F"/>'
+      + '<path d="M28 25 Q36 21 44 25 L42 31 Q36 34 30 31 Z" fill="#0B1530"/>'
+      + '<path d="M36 11 L55 20 L36 29 L17 20 Z" fill="#0B1530"/>'
+      + '<circle cx="36" cy="20" r="1.5" fill="#C9A14A"/>'
+      + '<path d="M36 20 L53 21 L53 32" fill="none" stroke="#C9A14A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>'
+      + '<circle cx="53" cy="34" r="2.4" fill="#C9A14A"/>'
+      + '<circle cx="31" cy="39" r="7" fill="#FFFFFF" stroke="#0B1530" stroke-width="2.4"/>'
+      + '<circle cx="45" cy="39" r="7" fill="#FFFFFF" stroke="#0B1530" stroke-width="2.4"/>'
+      + '<path d="M37.6 39 H38.4" stroke="#0B1530" stroke-width="2.2"/>'
+      + '<circle cx="32" cy="40" r="3" fill="#0B1530"/>'
+      + '<circle cx="44" cy="40" r="3" fill="#0B1530"/>'
       + '<circle cx="33.1" cy="38.8" r="1" fill="#FFFFFF"/>'
       + '<circle cx="45.1" cy="38.8" r="1" fill="#FFFFFF"/>'
-      + '<path d="M33 46 Q38 51 43 46 Q38.5 48.5 33 46 Z" fill="#7A2A22"/>'
-      + '<path d="M31 49 L31 55 L36.5 52 Z" fill="#7A2A22"/>'
-      + '<path d="M42 49 L42 55 L36.5 52 Z" fill="#7A2A22"/>'
-      + '<rect x="35" y="50.2" width="3" height="3.6" rx="1" fill="#5E201A"/>'
+      + '<path d="M33 46 Q38 51 43 46 Q38.5 48.5 33 46 Z" fill="#8B3A2E"/>'
+      + '<path d="M31 49 L31 55 L36.5 52 Z" fill="#8B3A2E"/>'
+      + '<path d="M42 49 L42 55 L36.5 52 Z" fill="#8B3A2E"/>'
+      + '<rect x="35" y="50.2" width="3" height="3.6" rx="1" fill="#6E2D24"/>'
       + '</svg>';
   }
 
