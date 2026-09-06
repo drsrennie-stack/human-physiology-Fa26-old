@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Learning Lab &middot; BIO 005 Human Physiology</title>
+<link rel="icon" type="image/svg+xml" href="icon.svg">
+<link rel="stylesheet" href="assets/fonts-site.css">
+<!--
+  ============================================================
+  BIO 005 Human Physiology, Yuba College, Fall 2026
+  learning-lab.html
+
+  FOUR LEARNING LABS, ONE FILE. ?week=2 through ?week=5.
+
+  Same pattern as the other assignment pages in this repo, so
+  Canvas embeds it once per week with a different query string
+  and nothing has to be duplicated.
+
+  ------------------------------------------------------------
+  RENUMBERED FROM SCRUBS' SPEC
+  ------------------------------------------------------------
+  Her spec is written as Weeks 1 to 4. Week 1's discussion is
+  already the vision board, so every lab shifts forward one:
+
+    spec Week 1, Reading a figure or graph      -> Week 2
+    spec Week 2, Previewing a chapter           -> Week 3
+    spec Week 3, Spaced recall and gap finder   -> Week 4
+    spec Week 4, Auditing AI on cell transport  -> Week 5
+
+  TWO CONTENT REFERENCES MOVED WITH THE NUMBERS. Both are
+  flagged in the data below as SCOPE, because they are course
+  decisions rather than renumbering:
+
+    - The chapter preview said "Chapter 2 or Chapter 6". At
+      Week 3 both are already taught, so it now points at the
+      current week's chapter. Change PREVIEW_CHAPTER to fix.
+    - The gap finder said "Weeks 1 and 2". At Week 4 it now
+      covers Weeks 2 and 3, keeping her two week window.
+      Change GAP_WEEKS to widen it.
+
+  ------------------------------------------------------------
+  THE TWO BEHAVIOURS THE SPEC REQUIRES
+  ------------------------------------------------------------
+  1. FIRST ANSWERS ARE SAVED BEFORE THE STUDENT SEES WHAT COMES
+     NEXT. A part marked lock:true has a Save button. Saving
+     freezes those answers read only, timestamps them, and only
+     then reveals the next part. A student cannot quietly
+     improve a first guess after reading the caption, which is
+     the whole point of the exercise.
+
+  2. THE DISCUSSION IS LOCKED UNTIL THE LAB IS DONE. It stays
+     sealed, with a plain explanation of what is still missing,
+     until every required part is saved.
+
+  Work is kept in localStorage under bio005-lab-<week>. It never
+  leaves the browser and it is not the submission. Students
+  still post in Canvas. The page says so.
+
+  ------------------------------------------------------------
+  IFRAME AND PRINT
+  ------------------------------------------------------------
+  Nothing position:fixed, no min-widths, fluid to 320px, height
+  sender posts as bio005-learning-lab, internal links _top.
+  Print drops the buttons and locks and prints as a worksheet.
+  ============================================================
+-->
+<style>
+:root{
+  --navy:#0B1530; --ink-deep:#060A18;
+  --maroon:#8B3A2E; --maroon-dk:#6E2D24;
+  --gold:#C9A14A; --gold-deep:#5F4514;
+  --page:#FAFAF9; --card:#FFFFFF;
+  --muted:#4A5265; --faint:#454B58;
+  --rule:#DCE0E6; --tint:#EDF1F3;
+  --ok:#1E4C33;
+  --display:'Open Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --body:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;max-width:100%;overflow-x:hidden}
+body{font-family:var(--body);background:var(--page);color:var(--navy);
+     font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--display);margin:0;font-weight:800;letter-spacing:-.022em}
+p{margin:0}
+a{color:var(--maroon)}
+:focus-visible{outline:3px solid var(--maroon);outline-offset:3px;border-radius:3px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--navy);color:#fff;padding:12px 20px;
+      font-weight:700;text-decoration:none;z-index:40;border-radius:0 0 6px 0}
+.skip:focus{left:0}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+
+header.top{background:var(--maroon);color:#fff;padding:30px 0 26px}
+header.top .eyebrow{font-size:11px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;
+  color:#FEF8EE;margin-bottom:9px}
+header.top h1{font-size:clamp(25px,4.4vw,35px);line-height:1.16;color:#fff}
+header.top .lede{margin-top:12px;color:#fff;max-width:62ch;font-size:15.5px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.chip{font-size:11px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;
+  background:rgba(0,0,0,.22);border-radius:99px;padding:5px 12px;color:#fff}
+
+.bar{background:var(--card);border-bottom:1px solid var(--rule);padding:13px 0;
+     position:sticky;top:0;z-index:20}
+.bar .row{display:flex;align-items:center;gap:13px;flex-wrap:wrap}
+.pcount{font-family:var(--display);font-weight:800;font-size:14.5px;white-space:nowrap}
+.pbar{flex:1;min-width:140px;height:9px;background:var(--tint);border-radius:99px;overflow:hidden}
+.pfill{height:100%;width:0;background:var(--maroon);border-radius:99px;transition:width 260ms ease}
+
+main{padding:26px 0 60px}
+.grade{background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--gold-deep);
+  border-radius:8px;padding:15px 19px;margin:0 0 22px}
+.grade .gl{font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--gold-deep);margin-bottom:6px}
+.grade p{font-size:14.5px;color:var(--muted)}
+
+.part{background:var(--card);border:1px solid var(--rule);border-radius:10px;
+  padding:20px 22px;margin:0 0 14px}
+.part.sealed{background:var(--tint);border-style:dashed}
+/* On the sealed tint #EDF1F3 the page maroon measures 6.74:1 and the page muted
+   grey 6.88:1. Both clear AA and both miss AAA, and every other page in this
+   build holds AAA, so inside a sealed box only they step down to the darker
+   pair. 8.95:1 and 7.70:1. */
+.part.sealed .pnum{color:#6E2D24}
+.part.sealed .pnote{color:#454B58}
+.part.done{border-color:var(--ok)}
+.phd{display:flex;gap:11px;align-items:baseline;flex-wrap:wrap;margin-bottom:3px}
+.pnum{font-family:var(--display);font-weight:800;font-size:13px;color:var(--maroon);
+  letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
+.pttl{font-family:var(--display);font-weight:800;font-size:18px;letter-spacing:-.02em}
+.pnote{font-size:14px;color:var(--muted);margin:6px 0 0;max-width:66ch}
+.warn{font-size:13.5px;color:var(--maroon);font-weight:700;margin:9px 0 0}
+.fields{margin-top:15px}
+.f{margin:0 0 14px}
+.f > label,.f .q{display:block;font-size:14.5px;font-weight:600;margin:0 0 6px}
+.f .hint{font-size:13px;color:var(--muted);font-weight:400;display:block;margin-top:2px}
+.f input[type=text],.f textarea,.f select{width:100%;font-family:var(--body);font-size:15px;
+  color:var(--navy);background:var(--card);border:1px solid var(--navy);border-radius:6px;
+  padding:9px 11px;line-height:1.5}
+.f textarea{min-height:74px;resize:vertical}
+.f textarea.tall{min-height:118px}
+.scale{display:flex;flex-wrap:wrap;gap:6px}
+.scale label{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--rule);
+  border-radius:6px;padding:8px 12px;font-size:14px;cursor:pointer;background:var(--card)}
+.scale input{accent-color:var(--maroon);width:18px;height:18px}
+.scale label:hover{border-color:var(--maroon)}
+fieldset{border:0;margin:0;padding:0}
+legend{font-size:14.5px;font-weight:600;margin:0 0 6px;padding:0}
+
+.act{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:6px}
+.btn{font-family:var(--body);font-size:11.5px;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;padding:12px 18px;border-radius:5px;border:1px solid var(--maroon);
+  background:var(--maroon);color:#fff;cursor:pointer}
+.btn:hover{background:var(--maroon-dk);border-color:var(--maroon-dk)}
+.btn.ghost{background:var(--card);color:var(--navy);border-color:var(--rule)}
+/* The Post button is an anchor, not a button element, so it needs the bits a
+   button gets for free: no underline, and its own line box. */
+a.btn{display:inline-block;text-decoration:none;line-height:1.15}
+.btn.ghost:hover{border-color:var(--maroon);color:var(--maroon)}
+.saved{font-size:13px;color:var(--ok);font-weight:700}
+.lockmsg{font-size:14px;color:var(--muted);margin-top:8px}
+.sealbox{display:flex;gap:12px;align-items:flex-start}
+.sealbox svg{flex:none;margin-top:2px;stroke:var(--faint);fill:none;stroke-width:2}
+
+table.rub{width:100%;border-collapse:collapse;font-size:14.5px;margin-top:10px}
+table.rub th,table.rub td{border-bottom:1px solid var(--rule);padding:9px 10px;text-align:left}
+table.rub th{font-weight:700}
+table.rub td.pts{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+table.rub tr.tot td{font-weight:800;border-bottom:0}
+
+.check li{margin:0 0 7px}
+.disc .req{background:var(--tint);border-radius:7px;padding:13px 16px;margin:14px 0 0;
+  font-size:14.5px}
+footer{border-top:1px solid var(--rule);padding:22px 0 34px;font-size:13.5px;color:var(--muted)}
+
+@media (max-width:560px){ .part{padding:16px 15px} }
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important}
+}
+@media print{
+  .bar,.act,.skip{display:none!important}
+  body{background:#fff;font-size:10pt;line-height:1.35}
+  header.top{background:#fff;color:#000;border-bottom:1.5pt solid #000;padding:0 0 8pt}
+  header.top h1,header.top .lede,header.top .eyebrow{color:#000}
+  .chip{background:#fff;color:#000;border:0.6pt solid #000}
+  .part{border:0.8pt solid #000;break-inside:avoid;padding:8pt 10pt;margin-bottom:6pt;background:#fff}
+  .part.sealed{background:#fff;border-style:solid}
+  .f textarea,.f input[type=text]{border:0.6pt solid #000;min-height:44pt}
+  .scale label{border:0.6pt solid #000}
+  h2,h3{break-after:avoid}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#lab">Skip to the Learning Lab</a>
+
+<header class="top"><div class="wrap">
+  <p class="eyebrow">BIO 005 &middot; <span data-wk>Week 2</span> &middot; Learning Lab</p>
+  <h1 id="labtitle">Learning Lab</h1>
+  <p class="lede" id="labintro"></p>
+  <div class="chips">
+    <span class="chip">30 points</span>
+    <span class="chip" id="chiptime">Time</span>
+    <span class="chip">Lab, then discussion</span>
+  </div>
+</div></header>
+
+<div class="bar"><div class="wrap"><div class="row">
+  <span class="pcount" id="pcount">Loading</span>
+  <span class="pbar"><span class="pfill" id="pfill"></span></span>
+  <button class="btn ghost" type="button" id="printbtn">Print or save as PDF</button>
+</div></div></div>
+
+<main id="lab"><div class="wrap">
+  <div class="grade">
+    <p class="gl">How this is graded</p>
+    <p>Your grade is based on honestly examining your learning process. You are not expected to understand everything on your first attempt. An incorrect initial answer can provide valuable evidence about what you need to do next.</p>
+  </div>
+  <div id="purpose"></div>
+  <div id="parts"></div>
+  <div id="discussion"></div>
+  <div id="rubric"></div>
+  <div id="checklist"></div>
+</div></main>
+
+<footer><div class="wrap">
+  Your answers are saved in this browser only. They are not your submission and I never see them. Post in Canvas when the discussion unlocks.<br>
+  BIO 005 Human Physiology &middot; Yuba College &middot; Fall 2026 &middot; Dr. Sharilyn Rennie
+</div></footer>
+
+<script>
+(function(){
+  "use strict";
+
+  /* SCOPE, both moved with the renumbering. Change here, not in the prose. */
+  var PREVIEW_CHAPTER = "the chapter assigned for this week";
+  var GAP_WEEKS       = "Weeks 2 and 3";
+
+  /* ==================================================================
+     THE FOUR LABS. Field types:
+       t  short text        a  textarea        A  tall textarea
+       s  1 to 5 scale      p  percent 0 to 100 scale
+     A part with lock:true freezes when saved and reveals the next part.
+     ================================================================== */
+  var LABS = {
+
+  /* ---------------- WEEK 2 ---------------- */
+  2: {
+    title: "Reading a Physiology Figure or Graph",
+    intro: "Physiology figures and graphs are compressed explanations. One picture can carry variables, structures, movement, time, feedback and cause and effect all at once. This lab builds a method you can use on any of them.",
+    purpose: "To develop a repeatable method for interpreting a scientific visual, and to find out how much of a figure you can read before anyone explains it to you.",
+    minutes: "45 to 60 minutes",
+    parts: [
+      { id:"pick", n:"Choose", ttl:"Pick your figure", lock:false,
+        note:"Choose one figure or graph from this week's assigned material. Not a photograph and not a simple labelled diagram. Pick something that shows a process, a relationship, a sequence or a change.",
+        f:[ {k:"ch", y:"t", q:"Chapter number"},
+            {k:"fig", y:"t", q:"Figure number"},
+            {k:"ftitle", y:"t", q:"Figure title"},
+            {k:"loc", y:"t", q:"Page number or where it lives in the course"} ] },
+
+      { id:"first", n:"Part 1", ttl:"First look", lock:true,
+        note:"Before you read the caption or anything around it, look at the visual for two minutes. Then answer in your own words. Wrong is fine here. This is the evidence of what you could read on your own.",
+        warn:"Saving this part locks it and opens Part 2. That is deliberate: your first reading is the data.",
+        f:[ {k:"q1", y:"a", q:"1. What caught your attention first?"},
+            {k:"q2", y:"a", q:"2. What do you think it is trying to explain?"},
+            {k:"q3", y:"a", q:"3. What are the major structures, substances or variables?"},
+            {k:"q4", y:"a", q:"4. If it is a graph, what is on each axis?", h:"Write 'not a graph' if it is not one."},
+            {k:"q5", y:"a", q:"5. What do the arrows, colours, lines or symbols seem to represent?"},
+            {k:"q6", y:"a", q:"6. Where does the process appear to begin?"},
+            {k:"q7", y:"a", q:"7. What changes during the process?"},
+            {k:"q8", y:"a", q:"8. What appears to cause that change?"},
+            {k:"q9", y:"a", q:"9. Name one part you think you understand."},
+            {k:"q10", y:"a", q:"10. Name one part that confuses you."},
+            {k:"q11", y:"a", q:"11. Write one question you hope the caption or chapter will answer."},
+            {k:"conf", y:"s", q:"12. Rate your confidence in your reading of this figure."},
+            {k:"confwhy", y:"a", q:"Why that rating?"} ] },
+
+      { id:"invest", n:"Part 2", ttl:"Investigate", lock:true,
+        note:"Now read the figure title, the whole caption, the section of the chapter around it, and any notes or video that cover it. Then come back.",
+        f:[ {k:"i1", y:"a", q:"1. What is the visual actually explaining?"},
+            {k:"i2", y:"a", q:"2. Which part of your first reading was right?"},
+            {k:"i3", y:"a", q:"3. Which part was incomplete or wrong?"},
+            {k:"i4", y:"a", q:"4. What did the caption tell you that you could not get from the picture?"},
+            {k:"i5", y:"a", q:"5. Describe one cause and effect relationship it shows."},
+            {k:"i6", y:"a", q:"6. Finish this sentence.", h:"When ______ changes, ______ changes because ______."},
+            {k:"i7", y:"a", q:"7. Make one prediction.", h:"If ______ increased, decreased or stopped, I predict ______ because ______."} ] },
+
+      { id:"recreate", n:"Part 3", ttl:"Recreate it from memory", lock:true,
+        note:"Cover the original. On paper, draw it from memory with the major components or variables, the labels that matter, directional arrows, the sequence or relationship, and one sentence explaining it. Then uncover the original, compare, and correct your drawing in a second colour. Photograph both and attach them in Canvas.",
+        f:[ {k:"r1", y:"a", q:"What did you get right in your drawing?"},
+            {k:"r2", y:"a", q:"What was missing or in the wrong place?"},
+            {k:"r3", y:"a", q:"Name the single biggest difference between your drawing and the original."},
+            {k:"r4", y:"a", q:"What will you look for first the next time you meet a figure like this?"},
+            {k:"rdone", y:"c", q:"I photographed both the first attempt and the corrections, and I will attach them in Canvas."} ] }
+    ],
+    disc:[ "The figure or graph you chose, by chapter, number and title.",
+           "One feature you interpreted correctly on your first look.",
+           "One feature you misunderstood or missed entirely.",
+           "One difference between your drawing and the original.",
+           "One physiological prediction you can make from the visual.",
+           "The step that helped you most, and why.",
+           "A three step strategy you will use on the next physiology visual you meet." ],
+    peer:[ "Reply to someone who chose a different visual.",
+           "Restate one physiological relationship from their post in your own words.",
+           "Ask one question about the physiology, not about the assignment.",
+           "Make one additional prediction from their visual.",
+           "Name one difference between how they approached it and how you did." ]
+  },
+
+  /* ---------------- WEEK 3 ---------------- */
+  3: {
+    title: "Previewing an Unfamiliar Chapter",
+    intro: "A preview builds the shelf before you put anything on it. You are not trying to learn the chapter here. You are trying to find out what shape it is, in ten minutes, so that the real reading has somewhere to land.",
+    purpose: "To build an organising framework before detailed learning begins, and to test whether that framework actually saves you time later in the week.",
+    minutes: "50 to 70 minutes, including the competency work in Part 4",
+    parts: [
+      { id:"predict", n:"Before you start", ttl:"Predict, before you open anything", lock:true,
+        note:"Answer these before you look at the chapter. SCOPE_PREVIEW",
+        warn:"Saving locks these predictions. You will compare against them at the end, and that comparison is the assignment.",
+        f:[ {k:"p1", y:"a", q:"1. What do you expect this chapter to cover?"},
+            {k:"p2", y:"a", q:"2. Which topic do you expect to be hardest?"},
+            {k:"p3", y:"s", q:"3. How confident are you that you could explain this chapter's major ideas right now?"},
+            {k:"p4", y:"t", q:"4. How long do you predict it will take you to find a specific fact in this chapter?"} ] },
+
+      { id:"preview", n:"Part 1", ttl:"Ten minute preview", lock:false,
+        note:"Set a timer for ten minutes. Look at the chapter title, the learning objectives, the major headings, the subheadings, the bold terms, the figures and captions, the tables, the summary and the review questions. Do not start taking detailed notes. When the timer goes, stop.",
+        f:[ {k:"tdone", y:"c", q:"I set a timer and stopped at ten minutes."} ] },
+
+      { id:"map", n:"Part 2", ttl:"Chapter map", lock:true,
+        f:[ {k:"m1", y:"a", q:"1. What is the chapter's central question?"},
+            {k:"m2", y:"A", q:"2. List three to five major ideas, in the order they appear."},
+            {k:"m3", y:"a", q:"3. List five terms that look important."},
+            {k:"m4", y:"a", q:"4. Name one connection to something you have already learned."},
+            {k:"m5", y:"a", q:"5. Which section looks hardest?"},
+            {k:"m6", y:"a", q:"6. Write one question you expect the chapter to answer."} ] },
+
+      { id:"fig", n:"Part 3", ttl:"Pick one figure", lock:true,
+        note:"Choose one figure from the chapter. You are not trying to understand it fully. You are finding out what a preview can tell you.",
+        f:[ {k:"g1", y:"t", q:"1. Figure number and title"},
+            {k:"g2", y:"a", q:"2. Why did you pick this one?"},
+            {k:"g3", y:"a", q:"3. What process or relationship does it seem to show?"},
+            {k:"g4", y:"a", q:"4. What are its major components?"},
+            {k:"g5", y:"a", q:"5. What do its arrows, colours or symbols represent?"},
+            {k:"g6", y:"a", q:"6. What can you work out without reading the chapter?"},
+            {k:"g7", y:"a", q:"7. What can you not work out yet?"},
+            {k:"g8", y:"a", q:"8. What question do you expect the surrounding text to answer?"} ] },
+
+      { id:"use", n:"Part 4", ttl:"Use the preview", lock:true,
+        note:"Now work this week's competencies. For each one, mark where you found what you needed. P, the preview helped me find it. F, a figure or table helped. R, I found it by reading in detail. O, I needed another course resource. U, I am still unsure.",
+        f:[ {k:"u1", y:"a", q:"Which competency did the preview help you find or understand? Name it and say how."},
+            {k:"u2", y:"a", q:"Which competency did the preview not help with at all? Name it and say why you think that is."},
+            {k:"u3", y:"a", q:"Roughly how did your marks break down across P, F, R, O and U?"} ] }
+    ],
+    disc:[ "Which specific competency became easier to find or understand because of the preview.",
+           "Which competency the preview did not help with.",
+           "How the real chapter compared with the predictions you locked at the start.",
+           "Whether the section you predicted would be hard actually was.",
+           "What the figure you chose let you anticipate.",
+           "Whether previewing saved time, improved organisation, or neither. Give evidence, not an impression.",
+           "What you would keep, drop or change in your next chapter preview." ],
+    peer:[ "Name one difference between your preview and theirs.",
+           "Name one thing they did that you will try.",
+           "Ask one question about the physiology concept they mentioned, not about their method." ]
+  },
+
+  /* ---------------- WEEK 4 ---------------- */
+  4: {
+    title: "Spaced Recall and the Gap Finder",
+    intro: "Material you looked at recently feels familiar. Familiar is not the same as retrievable. This lab separates the two, and the separation is usually uncomfortable, which is exactly why it is useful this early in the term.",
+    purpose: "To find the difference between what you recognise and what you can actually produce, and to turn that difference into a plan.",
+    minutes: "60 to 80 minutes",
+    rule:"The first attempt is closed resource. No notes, no videos, no textbook, no search, no AI. Nothing you find missing here counts against you. Finding it is the point.",
+    parts: [
+      { id:"pred", n:"Part 1", ttl:"Predict, before you try", lock:true,
+        note:"SCOPE_GAP Write these down before you attempt anything.",
+        warn:"Saving locks your prediction. Comparing it against your real score is most of the assignment.",
+        f:[ {k:"s1", y:"t", q:"1. What score out of 10 do you predict?"},
+            {k:"s2", y:"t", q:"2. Which topic do you expect to be your strongest?"},
+            {k:"s3", y:"t", q:"3. Which do you expect to be your weakest?"},
+            {k:"s4", y:"a", q:"4. Name one process or figure you believe you can reproduce from memory right now."},
+            {k:"s5", y:"p", q:"5. Overall confidence"} ] },
+
+      { id:"gap", n:"Part 2", ttl:"Closed resource gap finder", lock:true,
+        note:"Nothing open. Five minute brain dump on the first week, five minutes on the second, one important drawing from memory, then the ten retrieval questions from the week page. Rate every single answer as you go: 3 confident, 2 probably right, 1 guessing, 0 could not answer.",
+        warn:"Save before you open a single resource. An unsaved first attempt is not evidence.",
+        f:[ {k:"g1", y:"A", q:"Brain dump, first week. What came back?"},
+            {k:"g2", y:"A", q:"Brain dump, second week. What came back?"},
+            {k:"g3", y:"a", q:"What did you draw, and how complete was it?"},
+            {k:"g4", y:"a", q:"Your ten ratings, in order.", h:"For example: 3,2,0,1,3,3,2,0,1,2"},
+            {k:"g5", y:"t", q:"Your honest raw score out of 10"} ] },
+
+      { id:"correct", n:"Part 3", ttl:"Check and correct", lock:true,
+        note:"Now open everything. Correct your work in a different colour so the two passes stay separate. Then classify every gap you found.",
+        f:[ {k:"c1", y:"t", q:"Corrected score out of 10"},
+            {k:"c2", y:"A", q:"List each gap and its type.", h:"Types: missing information, incomplete, confused concepts, vocabulary, visual interpretation, application, confident but wrong, correct but not confident."},
+            {k:"c3", y:"a", q:"Which gap surprised you most?"},
+            {k:"c4", y:"a", q:"Where were you confident and wrong? That pair matters more than any other."} ] },
+
+      { id:"plan", n:"Part 4", ttl:"Build a four session recall plan", lock:true,
+        note:"Four sessions. At least three on different days, a mix of both weeks, extra practice on the gaps you just found, at least one drawing or graph prompt, at least one explain why prompt, and a backup plan for the session you will inevitably miss.",
+        f:[ {k:"n1", y:"A", q:"Session 1. Day, time, how many prompts, which topics, new or review, how long."},
+            {k:"n2", y:"A", q:"Session 2"},
+            {k:"n3", y:"A", q:"Session 3"},
+            {k:"n4", y:"A", q:"Session 4"},
+            {k:"n5", y:"a", q:"Your backup plan when one gets missed."} ] }
+    ],
+    disc:[ "The score you predicted.",
+           "The score you actually earned.",
+           "Where your confidence and your accuracy did not match.",
+           "One gap that rereading would probably never have surfaced.",
+           "What type of gap it was.",
+           "The specific activity you will use to close it.",
+           "What you changed in your recall plan because of what the gap finder showed you.",
+           "How many prompts you can realistically finish in one session. Be honest, not aspirational." ],
+    peer:[ "Name the type of gap your classmate found.",
+           "Suggest one retrieval activity that fits that specific gap type.",
+           "Explain why that activity would work better than rereading. Be specific about the mechanism." ],
+    extra:"Include one short example from your original attempt next to your corrected version."
+  },
+
+  /* ---------------- WEEK 5 ---------------- */
+  5: {
+    title: "Auditing AI's Explanation of Cell Transport",
+    intro: "AI will give you a fluent answer to almost anything. Fluent is not the same as correct, and this week you find out how to tell the difference using material you already own.",
+    purpose: "To treat AI as a source that has to be checked rather than an answer key. You evaluate a case yourself, ask AI to evaluate it, audit what it says against the course, challenge one claim, and write the corrected explanation.",
+    minutes: "70 to 90 minutes",
+    rule:"Part 1 is closed to AI and to internet search. Assigned course material only. Everything after that depends on having your own answer first.",
+    caseTitle:"The case, what happened to the cells?",
+    caseBody:[
+      "A laboratory is studying human cells. The intracellular fluid has an osmolarity of roughly 300 mOsm.",
+      "The cells are placed into an extracellular solution with a lower concentration of nonpenetrating solutes than the intracellular fluid. After several minutes the cells become larger.",
+      "The researchers also add a small polar molecule to the extracellular fluid. It cannot pass directly through the phospholipid part of the membrane. It enters through a membrane protein, moving from higher concentration to lower. The cells do not directly use ATP to move it."
+    ],
+    caseClaim:"The cells became larger because solute moved into them by osmosis. Osmosis moves water and solutes across the plasma membrane until the concentrations are equal. The extracellular solution must have been hypertonic because it caused water to enter the cells. Water entered through the sodium potassium pump using ATP. The small polar molecule entered by active transport because anything that uses a membrane protein requires energy. Once equilibrium is reached, water and the small polar molecule will stop moving across the membrane completely. The sodium potassium pump directly pumps water into and out of the cell.",
+    parts: [
+      { id:"own", n:"Part 1", ttl:"Your evaluation, before AI", lock:true,
+        note:"Course materials only. Break the student's explanation into at least seven separate claims. For each one, say whether it is accurate, inaccurate or incomplete, explain why in your own words, and name the course source that backs you up.",
+        warn:"Save before you open AI. An answer written after reading AI is not your answer.",
+        f:[ {k:"a1", y:"A", q:"Your seven or more claims, each with a verdict, your reasoning and your source."},
+            {k:"a2", y:"a", q:"1. Why did the cells become larger?"},
+            {k:"a3", y:"t", q:"2. Was the extracellular solution hypotonic, isotonic or hypertonic?"},
+            {k:"a4", y:"a", q:"3. What substance actually moves during osmosis?"},
+            {k:"a5", y:"a", q:"4. Did water move through the sodium potassium pump?"},
+            {k:"a6", y:"a", q:"5. How did the small polar molecule get in?"},
+            {k:"a7", y:"a", q:"6. Does every protein mediated transport process require ATP?"},
+            {k:"a8", y:"a", q:"7. At equilibrium, do molecules stop moving?"},
+            {k:"a9", y:"a", q:"8. What is the difference between movement and net movement?"},
+            {k:"a10", y:"a", q:"9. What does the sodium potassium pump actually transport?"},
+            {k:"a11", y:"a", q:"10. How can ion gradients influence water movement indirectly?"},
+            {k:"a12", y:"c", q:"I drew the cell with both fluids, relative solute concentrations, net water movement, the size change, the transport protein, the polar molecule's movement and the correct mechanism. I will attach the photo in Canvas."} ] },
+
+      { id:"ask", n:"Part 2", ttl:"Ask AI", lock:true,
+        note:"Use this prompt exactly. Paste the case and the student explanation with it.",
+        prompt:"I am studying osmosis and membrane transport. Evaluate each claim in the student's explanation as accurate, inaccurate, or incomplete. Limit your analysis to the plasma membrane, diffusion, facilitated diffusion, osmosis, tonicity, equilibrium, active transport, and the sodium potassium pump. Do not introduce organ system physiology. Explain your reasoning.",
+        f:[ {k:"b1", y:"t", q:"Which AI system did you use?"},
+            {k:"b2", y:"A", q:"Paste your exact prompt."},
+            {k:"b3", y:"A", q:"Paste the complete, unedited response."} ] },
+
+      { id:"audit", n:"Part 3", ttl:"Audit what it said", lock:true,
+        note:"Pick at least five of its claims. For each, record the claim, whether it is correct, incorrect or incomplete, the course evidence, and whether you keep, revise or reject it. Evidence must be specific: a textbook page, a figure number, a video timestamp, a note sheet heading or a section of your drawing.",
+        f:[ {k:"d1", y:"A", q:"Your five claims, with verdict, evidence and keep, revise or reject."},
+            {k:"d2", y:"a", q:"Two things it got right."},
+            {k:"d3", y:"a", q:"One thing it left incomplete or stated imprecisely."},
+            {k:"d4", y:"a", q:"One thing it missed, if anything."},
+            {k:"d5", y:"a", q:"One statement you verified directly against course material. Name the source."},
+            {k:"d6", y:"a", q:"If it caught every planted error, say which of its explanations was least clear, least supported, overconfident or more complicated than it needed to be."} ] },
+
+      { id:"challenge", n:"Part 4", ttl:"Challenge one claim", lock:true,
+        note:"Pick one claim and push on it with this follow up.",
+        prompt:"You stated that ______. Explain exactly how this follows from the case. Identify the transport mechanism, the direction of the gradient, whether a membrane protein is required, and whether ATP is used directly.",
+        f:[ {k:"e1", y:"a", q:"Which claim did you challenge?"},
+            {k:"e2", y:"A", q:"What did it say back?"},
+            {k:"e3", y:"a", q:"Did it defend the claim, correct it, pad it with extra material, or stay consistent with the course?"} ] },
+
+      { id:"fix", n:"Part 5", ttl:"Write the corrected explanation", lock:true,
+        note:"150 to 250 words, in your own words. It has to cover why the cells enlarged, the tonicity of the solution, what moves during osmosis, how the polar molecule entered, whether ATP was used directly, movement against net movement at equilibrium, what the pump transports, and how the pump can affect water balance indirectly.",
+        f:[ {k:"x1", y:"A", q:"Your corrected explanation."} ] }
+    ],
+    disc:[ "Which claim was hardest to evaluate before you used AI.",
+           "What you got right on your own.",
+           "What you changed after checking the course materials.",
+           "What AI explained accurately.",
+           "What it missed, overstated, overcomplicated or explained badly.",
+           "Which course source you used to judge it.",
+           "The question you asked to challenge it.",
+           "Whether its defence convinced you.",
+           "Whether AI deepened your understanding or mostly made the answer sound polished.",
+           "Finish this: when using AI to study physiology, I should never accept a claim about ______ without checking ______." ],
+    peer:[ "Pick one AI claim your classmate discussed.",
+           "Say whether you agree with their evaluation of it.",
+           "Back your position with a transport principle, named.",
+           "Ask one question that tests their reasoning.",
+           "Suggest one way to make their explanation more precise." ]
+  }
+  };
+
+  var TITLES = ["How physiology works and what keeps you steady","The chemistry that does work in the body","Getting across the membrane","The action potential","The nervous system, from sensing to moving","How muscle makes force","Hormones, the slow control system","Reproduction, and the clearest positive feedback loop","The heart as a pump","Pressure, flow, and holding blood pressure steady","Blood, and how the body defends itself","Digestion, and how you use food for fuel","Breathing, gas transport, and blood pH","The kidney, and body fluid balance","The slow lever on pH, and putting it all together"];
+
+  var q = new URLSearchParams(window.location.search);
+  var w = parseInt(q.get("week"), 10);
+  if (isNaN(w) || !LABS[w]) { w = 2; }
+  var L = LABS[w];
+
+  function esc(s){ return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
+  function scope(s){ return String(s).replace("SCOPE_PREVIEW","Choose "+PREVIEW_CHAPTER+", and do not pick one you already know well.")
+                                     .replace("SCOPE_GAP","This covers "+GAP_WEEKS+"."); }
+
+  /* ---- where each week's discussion actually lives in Canvas ------------
+     Fill a week in and its Post button appears at the bottom of the lab.
+     Leave it out and the lab says the link is coming, rather than showing a
+     button that goes nowhere. Add 3, 4 and 5 here when their topics exist. */
+  var DISC_URL = {
+    2: "https://yccd.instructure.com/courses/42616/discussion_topics/712810"
+  };
+
+  var KEY = "bio005-lab-" + w;
+  var st = {};
+  try { st = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch(e){ st = {}; }
+  function save(){ try { localStorage.setItem(KEY, JSON.stringify(st)); } catch(e){} }
+  st.locked = st.locked || {};
+  st.v = st.v || {};
+
+  document.querySelectorAll("[data-wk]").forEach(function(n){ n.textContent = "Week " + w; });
+  document.getElementById("labtitle").textContent = L.title;
+  document.getElementById("labintro").textContent = L.intro;
+  document.getElementById("chiptime").textContent = L.minutes;
+  document.title = "Learning Lab, Week " + w + ", " + L.title + " · BIO 005";
+
+  /* ---- purpose ---- */
+  var pw = '<section class="part"><div class="phd"><span class="pnum">Purpose</span>'
+         + '<h2 class="pttl">Why you are doing this</h2></div>'
+         + '<p class="pnote">' + esc(L.purpose) + '</p>'
+         + '<p class="pnote" style="margin-top:8px"><strong>This week:</strong> ' + esc(TITLES[w-1]) + '.</p>'
+         + (L.rule ? '<p class="warn">' + esc(L.rule) + '</p>' : '')
+         + '</section>';
+  if (L.caseTitle){
+    pw += '<section class="part"><div class="phd"><span class="pnum">The case</span>'
+        + '<h2 class="pttl">' + esc(L.caseTitle) + '</h2></div>'
+        + L.caseBody.map(function(b){ return '<p class="pnote">' + esc(b) + '</p>'; }).join("")
+        + '<p class="pnote" style="margin-top:12px"><strong>A student explains it like this:</strong></p>'
+        + '<blockquote class="disc"><p class="req">' + esc(L.caseClaim) + '</p></blockquote></section>';
+  }
+  document.getElementById("purpose").innerHTML = pw;
+
+  /* ---- parts ---- */
+  function field(pid, f){
+    var id = pid + "-" + f.k, v = st.v[id] == null ? "" : st.v[id];
+    var lab = '<span class="q">' + esc(f.q) + (f.h ? '<span class="hint">' + esc(f.h) + '</span>' : '') + '</span>';
+    if (f.y === "t")  return '<div class="f"><label for="'+id+'">'+esc(f.q)+(f.h?'<span class="hint">'+esc(f.h)+'</span>':'')+'</label><input type="text" id="'+id+'" data-i="'+id+'" value="'+esc(v)+'"></div>';
+    if (f.y === "a" || f.y === "A")
+      return '<div class="f"><label for="'+id+'">'+esc(f.q)+(f.h?'<span class="hint">'+esc(f.h)+'</span>':'')+'</label><textarea id="'+id+'" data-i="'+id+'" class="'+(f.y==="A"?"tall":"")+'">'+esc(v)+'</textarea></div>';
+    if (f.y === "c")
+      return '<div class="f"><label style="display:flex;gap:10px;align-items:flex-start"><input type="checkbox" id="'+id+'" data-i="'+id+'" style="width:20px;height:20px;margin-top:2px;accent-color:#8B3A2E"'+(v?" checked":"")+'><span>'+esc(f.q)+'</span></label></div>';
+    var max = f.y === "p" ? 100 : 5, step = f.y === "p" ? 25 : 1, opts = "";
+    for (var i = (f.y === "p" ? 0 : 1); i <= max; i += step){
+      opts += '<label><input type="radio" name="'+id+'" data-i="'+id+'" value="'+i+'"'+(String(v)===String(i)?" checked":"")+'>'+i+(f.y==="p"?"%":"")+'</label>';
+    }
+    return '<fieldset class="f"><legend>'+esc(f.q)+'</legend><div class="scale">'+opts+'</div></fieldset>';
+  }
+
+  var host = document.getElementById("parts"), reveal = true;
+  L.parts.forEach(function(P, idx){
+    var locked = !!st.locked[P.id];
+    var sealed = !reveal;
+    var el = document.createElement("section");
+    el.className = "part" + (locked ? " done" : "") + (sealed ? " sealed" : "");
+    el.id = "part-" + P.id;
+
+    if (sealed){
+      el.innerHTML = '<div class="sealbox"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">'
+        + '<rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>'
+        + '<div><div class="phd"><span class="pnum">' + esc(P.n) + '</span><h2 class="pttl">' + esc(P.ttl) + '</h2></div>'
+        + '<p class="pnote">This opens once you save the part above. Your first answers are the evidence, so they get written down before you see what comes next.</p></div></div>';
+      host.appendChild(el);
+      return;
+    }
+
+    var h = '<div class="phd"><span class="pnum">' + esc(P.n) + '</span><h2 class="pttl">' + esc(P.ttl) + '</h2>'
+          + (locked ? '<span class="saved">Saved ' + esc(st.locked[P.id]) + '</span>' : '') + '</div>';
+    if (P.note)   h += '<p class="pnote">' + esc(scope(P.note)) + '</p>';
+    if (P.prompt) h += '<blockquote class="disc"><p class="req">' + esc(P.prompt) + '</p></blockquote>';
+    if (P.warn && !locked) h += '<p class="warn">' + esc(P.warn) + '</p>';
+    h += '<div class="fields">' + P.f.map(function(f){ return field(P.id, f); }).join("") + '</div>';
+    if (P.lock){
+      h += locked
+        ? '<p class="lockmsg">These answers are locked, which is the point. If you truly need to fix a typo, use Unlock, but do not rewrite a first attempt after reading the answer.</p>'
+          + '<div class="act"><button class="btn ghost" type="button" data-unlock="'+P.id+'">Unlock this part</button></div>'
+        : '<div class="act"><button class="btn" type="button" data-save="'+P.id+'">Save and open the next part</button></div>';
+    }
+    el.innerHTML = h;
+    host.appendChild(el);
+    if (P.lock && !locked) reveal = false;
+  });
+
+  /* ---- discussion, sealed until every locking part is saved ---- */
+  var need = L.parts.filter(function(P){ return P.lock; });
+  var doneAll = need.every(function(P){ return st.locked[P.id]; });
+  var d = '<section class="part' + (doneAll ? "" : " sealed") + '" id="disc">';
+  if (!doneAll){
+    var left = need.filter(function(P){ return !st.locked[P.id]; }).map(function(P){ return P.n; });
+    d += '<div class="sealbox"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">'
+      + '<rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>'
+      + '<div><div class="phd"><span class="pnum">Discussion</span><h2 class="pttl">Locked until the lab is done</h2></div>'
+      + '<p class="pnote">Still to save: ' + esc(left.join(", ")) + '. The discussion asks for evidence from your own work, so it opens once that work exists.</p></div></div>';
+  } else {
+    d += '<div class="phd"><span class="pnum">Discussion</span><h2 class="pttl">Your post</h2></div>'
+      + '<p class="pnote">Post this in the Week ' + w + ' discussion in Canvas. Include all of these.</p>'
+      + '<ol class="pnote check" style="margin-top:10px">' + L.disc.map(function(x){ return '<li>' + esc(x) + '</li>'; }).join("") + '</ol>'
+      + (L.extra ? '<p class="warn">' + esc(L.extra) + '</p>' : '')
+      + '<div class="disc"><p class="req"><strong>On every discussion:</strong> write your response in your own words and refer to specific evidence from your Learning Lab. General study advice, or a summary that could have been written without doing the lab, will not receive full credit.</p></div>'
+      + '<h3 class="pttl" style="margin-top:22px;font-size:16px">Your reply to a classmate</h3>'
+      + '<ul class="pnote check" style="margin-top:8px">' + L.peer.map(function(x){ return '<li>' + esc(x) + '</li>'; }).join("") + '</ul>'
+      + '<p class="pnote" style="margin-top:8px">"I agree", "good job" and "this was interesting" do not earn credit on their own.</p>'
+      + (DISC_URL[w]
+          ? '<div class="act" style="margin-top:18px">'
+            + '<a class="btn" href="' + esc(DISC_URL[w]) + '" target="_blank" rel="noopener">'
+            + 'Post in the Week ' + w + ' discussion</a>'
+            + '<span class="pnote" style="margin:0">Opens Canvas in a new tab, so this page keeps your work.</span>'
+            + '</div>'
+          : '<p class="pnote" style="margin-top:14px">The Week ' + w
+            + ' discussion link goes here once it is open in Canvas. Until then, find it under Discussions.</p>');
+  }
+  d += '</section>';
+  document.getElementById("discussion").innerHTML = d;
+
+  /* ---- rubric and checklist ---- */
+  document.getElementById("rubric").innerHTML =
+    '<section class="part"><div class="phd"><span class="pnum">Rubric</span><h2 class="pttl">Thirty points</h2></div>'
+    + '<table class="rub"><caption class="pnote" style="text-align:left;padding-bottom:6px">Graded on completion, honest analysis, correct use of physiology, quality of evidence and how specific your reflection is. Drawings are never graded on artistic quality, and a wrong first attempt that you then evaluate and correct costs you nothing.</caption>'
+    + '<thead><tr><th scope="col">Component</th><th scope="col" class="pts">Points</th></tr></thead><tbody>'
+    + '<tr><td>Completed Learning Lab</td><td class="pts">10</td></tr>'
+    + '<tr><td>Original artifact or first attempt</td><td class="pts">5</td></tr>'
+    + '<tr><td>Corrections and supporting evidence</td><td class="pts">5</td></tr>'
+    + '<tr><td>Metacognitive discussion</td><td class="pts">5</td></tr>'
+    + '<tr><td>Substantive peer response</td><td class="pts">5</td></tr>'
+    + '<tr class="tot"><td>Total</td><td class="pts">30</td></tr></tbody></table></section>';
+
+  document.getElementById("checklist").innerHTML =
+    '<section class="part"><div class="phd"><span class="pnum">Before you close this</span><h2 class="pttl">Completion checklist</h2></div>'
+    + '<ul class="pnote check" style="margin-top:10px">'
+    + L.parts.map(function(P){ return '<li>' + esc(P.n) + ', ' + esc(P.ttl.toLowerCase()) + (P.lock ? ', saved' : '') + '</li>'; }).join("")
+    + '<li>First attempt photographed, before any corrections</li>'
+    + '<li>Corrections made in a second colour</li>'
+    + '<li>Both photographs attached in Canvas</li>'
+    + '<li>Discussion posted, with evidence from this lab</li>'
+    + '<li>One substantive reply to a classmate</li></ul></section>';
+
+  /* ---- wiring ---- */
+  document.addEventListener("input", function(e){
+    var i = e.target.getAttribute && e.target.getAttribute("data-i"); if (!i) return;
+    st.v[i] = e.target.type === "checkbox" ? e.target.checked : e.target.value; save(); paint();
+  });
+  document.addEventListener("change", function(e){
+    var i = e.target.getAttribute && e.target.getAttribute("data-i"); if (!i) return;
+    st.v[i] = e.target.type === "checkbox" ? e.target.checked : e.target.value; save(); paint();
+  });
+  document.addEventListener("click", function(e){
+    var s = e.target.getAttribute && e.target.getAttribute("data-save");
+    var u = e.target.getAttribute && e.target.getAttribute("data-unlock");
+    if (s){
+      var P = L.parts.filter(function(x){ return x.id === s; })[0];
+      var blank = P.f.filter(function(f){ return f.y !== "c" && !String(st.v[P.id+"-"+f.k]||"").trim(); }).length;
+      if (blank && !window.confirm(blank + " of these are still empty. Save anyway? Once saved this part is locked.")) return;
+      var dt = new Date();
+      st.locked[s] = dt.toLocaleDateString(undefined,{month:"short",day:"numeric"}) + ", " +
+                     dt.toLocaleTimeString(undefined,{hour:"numeric",minute:"2-digit"});
+      save(); window.location.reload();
+    }
+    if (u){ if (window.confirm("Unlock this part? Only do this to fix a typo. Rewriting a first attempt after seeing the answer defeats the exercise.")){ delete st.locked[u]; save(); window.location.reload(); } }
+  });
+  document.getElementById("printbtn").addEventListener("click", function(){ window.print(); });
+
+  function paint(){
+    var total = need.length, got = need.filter(function(P){ return st.locked[P.id]; }).length;
+    document.getElementById("pcount").textContent = got + " of " + total + " parts saved";
+    document.getElementById("pfill").style.width = (total ? got/total*100 : 0) + "%";
+  }
+  paint();
+
+  var ID = "bio005-learning-lab";
+  function send(){
+    var h = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+    try { window.parent.postMessage({ id:ID, frameId:ID, type:"resize", height:h }, "*"); } catch(e){}
+  }
+  window.addEventListener("load", send); window.addEventListener("resize", send);
+  if (typeof ResizeObserver !== "undefined"){ try { new ResizeObserver(send).observe(document.body); } catch(e){} }
+  send(); setTimeout(send, 400); setTimeout(send, 1500);
+})();
+</script>
+</body>
+</html>
