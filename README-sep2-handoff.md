@@ -328,3 +328,49 @@ pearson.com. Note: the step's old text said lab is ungraded for points,
 which contradicts Lab 15 percent in the syllabus; the rewrite stays silent
 on points and defers to the grading page, but she should reconcile that
 sentence wherever else it appears.
+
+## Week 1 competencies 15 to 20 removed, September 6
+
+The six chemistry items (water, pH and buffers, protein structure, enzyme
+activity, ATP coupling, enzyme assay) are out of week-01-notesheet-prompts:
+the page now carries fourteen competencies with every count updated, and
+those six live where they belong, in week-02-notesheet-prompts. The
+printable week-01-competencies page needed no change; it already excludes
+chemistry by design and says so in its own header. The sheet data file was
+left untouched.
+
+FLAG, needs one decision: the week 1 count now differs across sources. The
+prompts sheet says 14. assets/bio005-sheet-data.js and the printable
+competencies page carry 18, the extra four being the chapter 6 signaling
+item, receptor modulation, plus the three skills items, experimental
+design, measurement error, and graphing. The static PDF in sheets/ predates
+all of this. Say which set is the canonical Week 1 and everything, data,
+printable, hub count, PDF, gets aligned to it in one pass.
+
+## One source for the note sheet, September 6
+
+The prompts pages (weeks 1 and 2) now open with Your sheet, two ways: print
+the built sheet, which prints boxes only because note-sheet.html's print
+styles already strip every direction panel, or rule your own, no printer
+needed, with the labeling requirements anchored on the same page. The rules
+are stated on the cards: printed and hand drawn only, no typing on it and no
+stylus on the PDF; ruled sheets must carry the full box labeling. The
+assignment page's Print your sheet button now opens note-sheet.html?week=N,
+the single live source, instead of the static PDFs in sheets/, which can go
+stale. Course Tools step 01 dropped its third button; the prompts page is
+the competency source. week-01-competencies.html still exists for anyone
+holding an old link but nothing routes to it.
+
+## Book problems page rebuilt, September 6
+
+assignment-bookproblems.html is now lean and week-aware, matching the note
+sheet and lab pages. Week 1 assigns Silverthorn Chapter 1, questions 1 to
+19, by number only; the questions themselves are Pearson's and stay in the
+eText, never on the public site. The AI work log is embedded in the same
+page per week (ai-work-log.html?week=N, with a height listener so it sizes
+itself), with an open-in-tab link. The turn in rule is two part: hand
+worked answers plus the completed AI worksheet, one PDF, answers first,
+submitted on the assignment in Canvas. Weeks without decided numbers tell
+students the list is on the Canvas assignment itself, which is where she
+can type numbers per week without touching the page. Chapter 6 numbers for
+Week 1, if any, still needed from her.

@@ -46,7 +46,7 @@ h2{font-size:18px;font-weight:800;margin:22px 0 6px}
   </ol>
 
   <div class="btns">
-    <a class="btn solid" id="sheetBtn" href="sheets/BIO005-note-sheet-week-01.pdf" target="_top">Print your sheet</a>
+    <a class="btn solid" id="sheetBtn" href="note-sheet.html?week=1" target="_top">Print your sheet</a>
     <a class="btn line" id="compBtn" href="week-01-notesheet-prompts.html" target="_top">Open the competencies</a>
   </div>
 
@@ -69,7 +69,7 @@ h2{font-size:18px;font-weight:800;margin:22px 0 6px}
   document.title = "Note sheet \u00b7 Week " + w + " \u00b7 BIO 005 Human Physiology";
   document.getElementById("wkline").textContent = "Week " + w + " \u00b7 " + TITLES[w-1];
   document.getElementById("dueline").textContent = "Due " + DUE[w-1] + " at 10:00 pm";
-  document.getElementById("sheetBtn").href = "sheets/BIO005-note-sheet-week-" + pad + ".pdf";
+  document.getElementById("sheetBtn").href = "note-sheet.html?week=" + w;
   document.getElementById("compBtn").href = "week-" + pad + "-notesheet-prompts.html";
   var id = "ns" + pad + "-" + Math.random().toString(36).slice(2,8);
   function post(){ try{ parent.postMessage({frame:id, height:document.documentElement.scrollHeight}, "*"); }catch(e){} }

@@ -118,14 +118,14 @@ footer{border-top:1px solid var(--rule);padding:24px 0;color:var(--muted);font-s
   <div class="wrap">
     <p class="eyebrow">BIO 005 Human Physiology . Week 1 . Note sheet</p>
     <h1>Week 1 note sheet prompts</h1>
-    <p>Twenty competencies. Two prompts each, and you do one of the two. Everything is done by hand, on paper, in two colors.</p>
+    <p>Fourteen competencies. Two prompts each, and you do one of the two. Everything is done by hand, on paper, in two colors.</p>
   </div>
 </header>
 
 <div class="progress">
   <div class="wrap">
     <div class="pbar-row">
-      <span class="pcount" id="pcount">0 of 20 competencies</span>
+      <span class="pcount" id="pcount">0 of 14 competencies</span>
       <div class="pbar" role="progressbar" aria-labelledby="pcount" aria-valuemin="0" aria-valuemax="20" aria-valuenow="0" id="pbar">
         <div class="pfill" id="pfill"></div>
       </div>
@@ -142,6 +142,33 @@ footer{border-top:1px solid var(--rule);padding:24px 0;color:var(--muted);font-s
 <p>Every competency below gets one box on your paper sheet. Two prompts are offered for each. <b>Pick whichever one you want and do that one.</b> If you want to do both, nothing is stopping you, but you are only graded on one per competency.</p>
 <p>The tick boxes are for you. They live in your browser, they do not report to Canvas, and I never see them. They exist so you can put this down on Wednesday and know where you were.</p>
 
+
+<style>
+.twoways{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:14px;margin:18px 0 6px}
+.way{border:1px solid #8C90A0;border-radius:12px;padding:18px 20px;background:#fff;box-shadow:0 14px 30px rgba(11,21,48,.14)}
+.way h3{margin:0 0 6px;font-size:16.5px}
+.way p{margin:0 0 12px;font-size:14px;max-width:60ch}
+.waybtn{display:inline-block;font-weight:800;text-decoration:none;border-radius:8px;padding:11px 18px;font-size:14px}
+.waybtn.solid{background:#8B3A2E;color:#fff}
+.waybtn.line{border:2px solid #0B1530;color:#0B1530}
+.wayrule{font-size:12.5px;font-weight:700;color:#8B3A2E;letter-spacing:.04em;margin-top:10px}
+</style>
+<h2>Your sheet, two ways</h2>
+<p>Same boxes, same labels, same grading either way. Pick the one that fits how you work.</p>
+<div class="twoways">
+  <div class="way">
+    <h3>Print the built sheet</h3>
+    <p>The sheet is already built for this week, one box per competency, and it prints clean: boxes only, no directions, because the directions live on this page.</p>
+    <a class="waybtn solid" href="note-sheet.html?week=1" target="_top">Open and print the sheet</a>
+    <p class="wayrule">Printed and hand drawn only. Work on the paper, in your two colors. Typing on it, or drawing on the PDF with a stylus, earns a zero.</p>
+  </div>
+  <div class="way">
+    <h3>Rule your own instead</h3>
+    <p>No printer needed, and nothing lost. Rule the boxes onto your own paper, one per competency, everything hand drawn.</p>
+    <a class="waybtn line" href="#boxlabel">The boxes and labels it must have</a>
+    <p class="wayrule">The labeling is not optional: competency number and name, prompt letter, your name and date, and the box number, on every box.</p>
+  </div>
+</div>
 <div class="box">
 <p class="lab">The two colors</p>
 <p><b>First pass, color one.</b> Book and your own notes, before the videos. Sparse. Mini mind maps, lists, sequences, flow charts. Not paragraphs. Leave real space in the box, because you are coming back to it.</p>
@@ -161,7 +188,7 @@ footer{border-top:1px solid var(--rule);padding:24px 0;color:var(--muted);font-s
   <text x="38" y="57" font-family="system-ui,sans-serif" font-size="12.5" fill="#3D4860">Prompt A</text>
   <text x="430" y="38" font-family="system-ui,sans-serif" font-size="12.5" fill="#3D4860">Name: A. Student</text>
   <text x="430" y="57" font-family="system-ui,sans-serif" font-size="12.5" fill="#3D4860">Week 1  .  Sept 10</text>
-  <text x="620" y="38" font-family="system-ui,sans-serif" font-size="12.5" fill="#3D4860">Box 4 of 20</text>
+  <text x="620" y="38" font-family="system-ui,sans-serif" font-size="12.5" fill="#3D4860">Box 4 of 14</text>
   <g stroke="#1F4E55" fill="none" stroke-width="2">
     <rect x="52" y="92" width="150" height="34" rx="5"/>
     <rect x="52" y="152" width="150" height="34" rx="5"/>
@@ -204,19 +231,19 @@ footer{border-top:1px solid var(--rule);padding:24px 0;color:var(--muted);font-s
 <p class="samplecap"><b>What makes this one easy to grade.</b> The header names the competency and the prompt. The first pass is sparse and left space. The second pass went into that space rather than onto a new page. The key says which color is which. Nothing on it is a paragraph.</p>
 </div>
 
-<h3>Label every box the same way</h3>
+<h3 id="boxlabel">Label every box the same way</h3>
 <p>Across the top of each box, in this order:</p>
 <ul>
 <li><b>Competency number and name</b>, copied from this page. The number matters more than the name, because it is how I find it.</li>
 <li><b>Which prompt you chose</b>, A or B.</li>
 <li><b>Your name and the date</b> you did the first pass.</li>
-<li><b>Box number out of 20</b>, so a missing one is obvious to both of us.</li>
+<li><b>Box number out of 14</b>, so a missing one is obvious to both of us.</li>
 </ul>
-<p>Put the color key once, on the front page. You do not need it on all twenty.</p>
+<p>Put the color key once, on the front page. You do not need it on all fourteen.</p>
 
 <h2>How it is graded</h2>
 
-<p>Twenty boxes. I grade five of them for accuracy, chosen at random and not announced, and check the rest for completion. That means the way to do well is to do all twenty properly rather than guessing which five I will land on.</p>
+<p>Fourteen boxes. I grade five of them for accuracy, chosen at random and not announced, and check the rest for completion. That means the way to do well is to do all fourteen properly rather than guessing which five I will land on.</p>
 
 <div class="tw" tabindex="0" role="group" aria-label="Note sheet rubric">
 <div class="tblscroll" tabindex="0" role="region" aria-label="Table, scroll sideways to see all columns"><table>
@@ -239,7 +266,7 @@ footer{border-top:1px solid var(--rule);padding:24px 0;color:var(--muted);font-s
 </tr>
 <tr>
   <th scope="row">Completeness</th>
-  <td>All twenty boxes present, both passes visible in both colors, nothing left blank.</td>
+  <td>All fourteen boxes present, both passes visible in both colors, nothing left blank.</td>
   <td>Boxes missing, or a second pass on only some of them.</td>
   <td>Large sections missing, or only one pass done.</td>
 </tr>
@@ -259,7 +286,7 @@ footer{border-top:1px solid var(--rule);padding:24px 0;color:var(--muted);font-s
 <p><b>Paragraphs.</b> A box filled edge to edge with sentences copied from the book scores lower than a half full box with a correct labeled sketch. Copying is not the same as working with the material, and it is obvious on the page.</p>
 </div>
 
-<h2 id="prompts">The twenty competencies</h2>
+<h2 id="prompts">The fourteen competencies</h2>
 <p>Lecture and lab competencies are both here. Lab ones are tagged, and they are worked the same way, by hand, on the same sheet.</p>
 
 <div id="list"></div>
@@ -320,25 +347,7 @@ footer{border-top:1px solid var(--rule);padding:24px 0;color:var(--muted);font-s
       b:"Take a claim from this week and design the control group that would test it. Draw both groups and label the one difference between them."},
     {n:14, id:"lab-measurement-error", name:"Measurement error and variability", lab:true, a:
       "Draw two sets of repeated measurements, one with high variability and one with low. Mark which difference between readings is real.",
-      b:"List three sources of variation in a single measurement. Beside each, one way to reduce it."},
-    {n:15, id:"water-properties", name:"Water and solution properties", lab:false, a:
-      "Draw a water molecule with the partial charges labeled, then show hydrogen bonding between three of them.",
-      b:"Draw what happens when a nonpolar molecule is dropped into water. Write one line on why it ends up clustered, and make sure your reason is about the water."},
-    {n:16, id:"ph-buffers", name:"pH and buffers", lab:false, a:
-      "Draw the pH scale. Mark the arterial range, and mark how far one whole pH unit is compared with it.",
-      b:"Write the bicarbonate equation and draw arrows in both directions. Label which organ controls each end of it."},
-    {n:17, id:"protein-function", name:"Protein structure and function", lab:false, a:
-      "Draw the four levels of protein structure as four small labeled sketches.",
-      b:"Draw a folded protein with a binding site, then the same protein denatured beside it. Mark what was lost and what was not."},
-    {n:18, id:"enzyme-function", name:"Enzyme activity and regulation", lab:false, a:
-      "Draw a rate against substrate concentration curve. Label Vmax and Km on it.",
-      b:"On one set of axes, draw the normal curve, a competitive inhibitor curve and a noncompetitive one. Label which is which and mark what tells them apart."},
-    {n:19, id:"atp-energy", name:"ATP and energy coupling", lab:false, a:
-      "Draw ATP becoming ADP and show where the released energy goes. Label the coupling step.",
-      b:"Draw the three things ATP pays for, one small sketch each, with a physiological example beside each."},
-    {n:20, id:"lab-enzyme-assay", name:"Enzyme assay", lab:true, a:
-      "Sketch the assay setup. Label what you are measuring and what you are holding constant.",
-      b:"Draw a product against time plot and mark where you would read the rate. Write one line on why a single reading at the end is not a rate."}
+      b:"List three sources of variation in a single measurement. Beside each, one way to reduce it."}
   ];
 
   var state = {};

@@ -142,6 +142,33 @@ footer{border-top:1px solid var(--rule);padding:24px 0;color:var(--muted);font-s
 <p>Every competency below gets one box on your paper sheet. Two prompts are offered for each. <b>Pick whichever one you want and do that one.</b> If you want to do both, nothing is stopping you, but you are only graded on one per competency.</p>
 <p>The tick boxes are for you. They live in your browser, they do not report to Canvas, and I never see them. They exist so you can put this down on Wednesday and know where you were.</p>
 
+
+<style>
+.twoways{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:14px;margin:18px 0 6px}
+.way{border:1px solid #8C90A0;border-radius:12px;padding:18px 20px;background:#fff;box-shadow:0 14px 30px rgba(11,21,48,.14)}
+.way h3{margin:0 0 6px;font-size:16.5px}
+.way p{margin:0 0 12px;font-size:14px;max-width:60ch}
+.waybtn{display:inline-block;font-weight:800;text-decoration:none;border-radius:8px;padding:11px 18px;font-size:14px}
+.waybtn.solid{background:#8B3A2E;color:#fff}
+.waybtn.line{border:2px solid #0B1530;color:#0B1530}
+.wayrule{font-size:12.5px;font-weight:700;color:#8B3A2E;letter-spacing:.04em;margin-top:10px}
+</style>
+<h2>Your sheet, two ways</h2>
+<p>Same boxes, same labels, same grading either way. Pick the one that fits how you work.</p>
+<div class="twoways">
+  <div class="way">
+    <h3>Print the built sheet</h3>
+    <p>The sheet is already built for this week, one box per competency, and it prints clean: boxes only, no directions, because the directions live on this page.</p>
+    <a class="waybtn solid" href="note-sheet.html?week=2" target="_top">Open and print the sheet</a>
+    <p class="wayrule">Printed and hand drawn only. Work on the paper, in your two colors. Typing on it, or drawing on the PDF with a stylus, earns a zero.</p>
+  </div>
+  <div class="way">
+    <h3>Rule your own instead</h3>
+    <p>No printer needed, and nothing lost. Rule the boxes onto your own paper, one per competency, everything hand drawn.</p>
+    <a class="waybtn line" href="#boxlabel">The boxes and labels it must have</a>
+    <p class="wayrule">The labeling is not optional: competency number and name, prompt letter, your name and date, and the box number, on every box.</p>
+  </div>
+</div>
 <div class="box">
 <p class="lab">The two colors</p>
 <p><b>First pass, color one.</b> Book and your own notes, before the videos. Sparse. Mini mind maps, lists, sequences, flow charts. Not paragraphs. Leave real space in the box, because you are coming back to it.</p>
@@ -204,7 +231,7 @@ footer{border-top:1px solid var(--rule);padding:24px 0;color:var(--muted);font-s
 <p class="samplecap"><b>What makes this one easy to grade.</b> The header names the competency and the prompt. The first pass is sparse and left space. The second pass went into that space rather than onto a new page. The key says which color is which. Nothing on it is a paragraph.</p>
 </div>
 
-<h3>Label every box the same way</h3>
+<h3 id="boxlabel">Label every box the same way</h3>
 <p>Across the top of each box, in this order:</p>
 <ul>
 <li><b>Competency number and name</b>, copied from this page. The number matters more than the name, because it is how I find it.</li>
