@@ -1,17 +1,20 @@
-CANVAS START HERE PAGE
-======================
-Edit the page, click the </> button (HTML editor), delete everything
-that is there, paste this in, save, then PUBLISH.
+CANVAS EMBEDS  (paste into the </> HTML editor, save, then PUBLISH)
 
+--- START HERE page ---
 <p><iframe
   src="https://drsrennie-stack.github.io/human-physiology-Fa26/course-door.html"
   title="BIO 005 Human Physiology"
-  width="100%"
-  height="1010"
+  width="100%" height="1010"
   style="width:100%; min-height:1010px; border:0; display:block;"
   allowfullscreen="allowfullscreen"></iframe></p>
 
-Measured heights: 961px at 700px wide and up. 1518px at phone width.
-1010 gives desktop a little headroom. On a phone the frame scrolls
-internally, which is the usual Canvas trade and matches how BIO 004
-behaves.
+--- WEEK 1 COMPETENCIES page ---
+<p><iframe
+  src="https://drsrennie-stack.github.io/human-physiology-Fa26/week-01-competencies.html"
+  title="Week 1 competencies and prompts"
+  width="100%" height="8450"
+  style="width:100%; min-height:8450px; border:0; display:block;"
+  allowfullscreen="allowfullscreen"></iframe></p>
+
+Measured 8359px at 900px wide. 8450 gives headroom.
+Printable version: BIO005-Week1-competencies.pdf, 7 pages.

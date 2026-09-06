@@ -121,6 +121,18 @@ footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
 .tblscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%}
 .tblscroll:focus-visible{outline:3px solid var(--maroon,#8B3A2E);outline-offset:2px}
 .tblscroll table{min-width:100%}
+
+/* Square buttons instead of inline underlined links. Added Sep 6 2026. */
+.sqbtn{display:inline-block;font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-size:11px;
+  font-weight:700;letter-spacing:1.6px;text-transform:uppercase;text-decoration:none;
+  padding:10px 14px;border-radius:4px;border:1px solid var(--rule);background:var(--white);
+  color:var(--navy);margin-top:8px;
+  transition:border-color 160ms ease,color 160ms ease,background-color 160ms ease}
+.sqbtn:hover{border-color:var(--terra);color:var(--terra);background:#FBF6F5}
+.sqbtn.key{background:var(--terra);border-color:var(--terra);color:#FFFFFF}
+.sqbtn.key:hover{background:var(--terra-dark);border-color:var(--terra-dark);color:#FFFFFF}
+.btnrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+@media print{ .sqbtn{border:1px solid #000;color:#000;background:#fff} }
 </style>
 </head>
 <body>
@@ -164,8 +176,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
     </tr>
     <tr>
       <td><strong>This week's competencies</strong></td>
-      <td>The boxes on your sheet come straight from this list, so open it first.
-          <a href="competency-study-guide.html" target="_top">Open the competency list &rarr;</a></td>
+      <td>Every competency for Silverthorn 1 and 6 is written out here, with its prompts underneath. You do not have to work out what is in the chapters.
+          <span class="btnrow">
+            <a class="sqbtn key" href="week-01-competencies.html" target="_top">Week 1 competencies</a>
+            <a class="sqbtn" href="competency-study-guide.html" target="_top">Full 268 list</a>
+          </span></td>
     </tr>
     <tr>
       <td><strong>Your Silverthorn chapters</strong></td>
