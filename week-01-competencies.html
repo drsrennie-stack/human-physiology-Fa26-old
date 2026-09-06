@@ -546,6 +546,17 @@ footer{border-top:1px solid var(--rule);padding:22px 0 34px;font-size:13.5px;col
 (function(){
   "use strict";
 
+  /* ------------------------------------------------------------------
+     ONE SWITCH, in case a recording slips.
+
+     Set a group to false and it disappears from the page, from the
+     progress count and from the print version. Nothing else changes,
+     and no student sees a competency for a video that is not up yet.
+
+     Set it back to true the moment the recording is posted.
+     ------------------------------------------------------------------ */
+  var SHOW = { ch1:true, ch6:true, skills:true };
+
   var GROUPS = {
     ch1: { label:"Silverthorn chapter 1",
            title:"Introduction to physiology",
@@ -683,7 +694,7 @@ footer{border-top:1px solid var(--rule);padding:22px 0 34px;font-size:13.5px;col
   function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
 
   var out = document.getElementById("out");
-  var order = ["ch1","ch6","skills"];
+  var order = ["ch1","ch6","skills"].filter(function(g){ return SHOW[g]; });
 
   order.forEach(function(g){
     var items = COMPS.filter(function(c){ return c.g === g; });
@@ -767,7 +778,10 @@ footer{border-top:1px solid var(--rule);padding:22px 0 34px;font-size:13.5px;col
   });
 
   function paint(){
-    var total = COMPS.length, done = Object.keys(state).length;
+    var shown = COMPS.filter(function(c){ return SHOW[c.g]; });
+    var total = shown.length;
+    var ids = {}; shown.forEach(function(c){ ids[c.id] = 1; });
+    var done = Object.keys(state).filter(function(k){ return ids[k]; }).length;
     document.getElementById("pcount").textContent = done + " of " + total + " competencies";
     document.getElementById("pfill").style.width = (total ? (done/total*100) : 0) + "%";
   }

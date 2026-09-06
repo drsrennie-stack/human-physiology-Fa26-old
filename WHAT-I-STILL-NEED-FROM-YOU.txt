@@ -1,0 +1,26 @@
+THREE LISTS. EVERYTHING ELSE IS BUILT AND WIRED.
+================================================
+The machinery for all fifteen weeks is done. Five assignment pages each
+read ?week=N from the URL and relabel themselves, and course-start.html
+now links all of them for every week. What is missing is your content,
+and I will not invent any of it.
+
+1. PHYSIOEX, WEEK BY WEEK
+   Which PhysioEx exercise and activities go with which week.
+   Week 1 is already handled: your assignment-physioex.html says there is
+   no PhysioEx that fits Week 1 and points at the IV fluids lab instead.
+   I need weeks 2 to 15. Format: "Week 3: Exercise 1, activities 1 to 4".
+
+2. SILVERTHORN PROBLEM NUMBERS
+   The end of chapter problems you are assigning, per week. I have been
+   waiting on these since this morning and will not make numbers up,
+   because a wrong problem number posted to students is worse than none.
+   Format: "Week 1: ch 1 #4, 7, 12 to 15; ch 6 #2, 5".
+
+3. DISCUSSION TOPICS
+   The prompt and the Canvas discussion URL for weeks 2 to 15.
+   Week 1 is done, vision board, and its Canvas link is wired in.
+
+Send them in any format and I will load all three.
+
+WHERE THEY GO: one place each, then every week picks them up.
