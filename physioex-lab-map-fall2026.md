@@ -67,3 +67,8 @@ Builds 2 to 4 are one-page data-interpretation sheets, the ten-minute-to-grade k
 - Weight per the credit model: completion-forward, labeled honestly in the syllabus as practice ("cheatable by design, and said so").
 - The syllabus already tells students the package is required and that labs live inside it; no syllabus edits needed for this decision.
 - Retag note for the repo: `workbook_week01/02/03` filenames predate the Aug 23 week remap, their content now belongs to Weeks 1, 3, and 4 respectively. Rename or map in the week pages, don't renumber the content.
+
+
+## Credit rule, September 5
+
+The lab takes both parts. PhysioEx must show complete in Pearson, and the graded artifact is the worksheet and data record, plus the clinical correlation questions in weeks that carry them. The worksheet is only graded once PhysioEx shows complete; check Pearson completion before grading the Canvas submission. Keep Mastering activities completion-weighted; the points live on the Canvas worksheet submission.

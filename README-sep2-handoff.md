@@ -178,3 +178,36 @@ replies Sunday at 10:00 pm. Week 15 closes Wednesday, December 16 at 10:00
 pm with the term. Applied to the syllabus (sections 01, 05, 12, PDF
 regenerated and re-verified tagged), all fifteen week hubs, and the welcome
 page including Hootie.
+
+## Adopted from the September 5 repo update
+
+The updated course model, taken from BIO005-Fall2026-Syllabus-and-Schedule.pdf
+and competencies-by-week.html, supersedes the September 2 decisions where they
+differ. Grade model is now five components: note sheets 20, three midterms 40,
+lab 15, book problems 15, discussions 10. Discussions are one weekly post
+carrying both the physiology and the student's own thinking, initial post
+Friday 10:00 pm, replies Sunday 10:00 pm. Midterm windows are set: Midterm 1,
+Mon Oct 12 8:00 am to Sun Oct 18 10:00 pm. Midterm 2, Mon Nov 16 8:00 am to
+Sun Nov 22 10:00 pm, closing the day after the W deadline. Midterm 3, Mon Dec
+14 8:00 am to Wed Dec 16 10:00 pm, with the term.
+
+Applied: the syllabus HTML and tagged PDF (five-segment grade bar, discussions
+subsection in her wording, windows in sections 07, 09 and 14, both remaining
+not-posted-yet flags cleared, rhythm table now six steps), and all fifteen
+week hubs (Discuss inserted as step 3, real windows in the Part-closing
+banners on weeks 5, 10 and 15, window-open banners on weeks 6 and 11).
+welcome.html and home.html were removed from this bundle: the repo versions
+are current, welcome already carries the 40 percent model, and this drop must
+not roll them back. Zero not-posted-yet flags remain anywhere in the syllabus;
+the course has no unset dates left.
+
+## Lab credit rule, September 5
+
+Running PhysioEx is not the credit. The graded work each week is the
+completed worksheet and data record, plus the clinical correlation questions
+in weeks that carry them. Stated in the syllabus laboratory section (HTML and
+tagged PDF), in the Lab step of all fifteen week hubs (mentioning the
+clinical correlations only on weeks that have them), and in the lab map.
+One line for Hootie's labs answer in welcome.html, which lives ahead in the
+repo and is not in this bundle: Running the simulation is not the credit,
+your worksheet and the clinical correlation questions are.
