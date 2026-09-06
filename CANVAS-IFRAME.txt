@@ -7,7 +7,7 @@ CANVAS EMBEDS  (</> HTML editor, paste, save, PUBLISH)
 
 --- WEEK 1 COMPETENCIES ---
 <p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/week-01-competencies.html"
-  title="Week 1 competencies and prompts" width="100%" height="9400"
-  style="width:100%; min-height:9400px; border:0; display:block;"></iframe></p>
+  title="Week 1 competencies and prompts" width="100%" height="10200"
+  style="width:100%; min-height:10200px; border:0; display:block;"></iframe></p>
 
-Measured 9272px at 900px wide. Printable: BIO005-Week1-competencies.pdf, 7 pages.
+Printable: BIO005-Week1-competencies.pdf, 8 pages, drawings included.
