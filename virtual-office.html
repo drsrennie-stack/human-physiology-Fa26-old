@@ -8,6 +8,22 @@
 <link rel="stylesheet" href="assets/fonts-site.css">
 <link rel="stylesheet" href="assets/brand.css">
 <style>
+/* Fallback tokens, identical to assets/brand.css. They are here so this page
+   renders correctly on its own, in a preview or opened straight from disk,
+   when brand.css is not alongside it. On the live site brand.css loads first
+   and these repeat the same values. If a palette value ever changes, change
+   it in brand.css and mirror it here. */
+:root{
+  --navy:#0B1530; --navy-deep:#060A18; --navy-tint:#ECEFF4;
+  --gold:#C9A14A; --gold-ink:#060A18; --gold-deep:#8A6D33;
+  --maroon:#8B3A2E; --maroon-dark:#6E2D24;
+  --white:#FFFFFF; --offwhite:#FAFAF9; --bone:#F5F1E8;
+  --ink-soft:#414B5C; --line:rgba(11,21,48,0.16);
+  --display:'Open Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+  --body:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+}
+</style>
+<style>
 /* ============================================================
    virtual-office.html
    Page-specific rules only. Every palette token lives in
@@ -103,13 +119,21 @@ section h2{font-size:clamp(21px,3vw,27px);margin-bottom:10px}
 .panel :focus-visible{outline-color:var(--gold)}
 
 /* ---------- call to action ---------- */
-.cta{display:inline-flex;align-items:center;gap:10px;margin-top:6px;
-  background:var(--maroon);color:#fff;text-decoration:none;
+.cta{display:inline-flex;align-items:center;gap:10px;margin:18px 0 0;
+  background:var(--maroon);color:#fff;
   font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;
-  padding:15px 26px;border-radius:8px;
-  transition:background 200ms ease,transform 200ms ease}
-.cta:hover{background:var(--maroon-dark);color:#fff;transform:translateY(-2px)}
+  padding:15px 26px;border-radius:8px;max-width:none}
 .cta .arw{font-size:15px;line-height:1}
+
+/* ---------- the copy-paste post template, a white card inside the dark panel ---------- */
+.tmpl{background:#fff;color:var(--navy);border-radius:10px;padding:18px 20px;margin:20px 0;max-width:56ch}
+.tmpl .role{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--maroon);margin:0 0 10px}
+.tmpl p{margin:0 0 8px;color:var(--navy)}
+.tmpl p.last{margin:0}
+.habits{margin:0;padding-left:22px;max-width:70ch}
+.habits li{margin:0 0 10px}
+.habits li:last-child{margin:0}
 
 /* ---------- footer ---------- */
 footer{background:var(--navy-deep);color:var(--bone);padding:30px 0 36px;margin-top:40px}
@@ -128,11 +152,13 @@ footer :focus-visible{outline-color:var(--gold)}
   .card:hover,.cta:hover{transform:none}
 }
 @media print{
-  .skip,.brandbar,.back,.cta,footer{display:none}
+  .skip,.brandbar,.back,footer{display:none}
+  .cta{background:#fff;color:#000;padding:0;border-radius:0}
   body{background:#fff;font-size:10pt}
   .panel{background:#fff;color:#000;padding:12pt 0}
   .panel h2,.panel p,.steps p,.steps strong{color:#000}
   .steps .n{background:#fff;color:#000;border:1px solid #000}
+  .tmpl{border:1px solid #000;border-radius:0;padding:8pt;break-inside:avoid}
   .card{box-shadow:none;border-top:1px solid #000;border-radius:0;padding:8pt 0;
     break-inside:avoid;page-break-inside:avoid}
   section{padding:10pt 0}
@@ -164,7 +190,7 @@ footer :focus-visible{outline-color:var(--gold)}
   <p class="eyebrow">Getting help, and giving it</p>
   <h1>Dr. Rennie's <span>Virtual Office</span>.</h1>
   <p class="lede">The Virtual Office is a question board in Canvas, open all term. It is the front door for course questions, and it is public on purpose. In a fully online class the hallway conversation after lecture does not happen by accident, so we hold it here, where everyone can benefit from it.</p>
-  <a class="cta" href="https://yccd.instructure.com/courses/42616/discussion_topics/711800" target="_blank" rel="noopener">Open the Virtual Office in Canvas <span class="arw" aria-hidden="true">&rarr;</span></a>
+  <p class="cta"><span class="arw" aria-hidden="true">&darr;</span> To ask something, hit Reply below</p>
 </div></header>
 
 <main id="main">
@@ -184,22 +210,23 @@ footer :focus-visible{outline-color:var(--gold)}
       <h3>The Virtual Office</h3>
       <ul>
         <li>Anything about the course that is not private: content you are stuck on, what an assignment is asking for, where something lives, a page that will not load.</li>
-        <li>Answers help the whole class, and classmates are welcome to answer first.</li>
+        <li>A thread here often collects two or three ways into the same problem, which is worth more than any one of them on its own.</li>
       </ul>
     </div>
     <div class="card">
-      <p class="role">Live, on Zoom</p>
+      <p class="role">Private, live</p>
       <h3>Office hours</h3>
       <ul>
-        <li>Wednesdays, 9:00 to 10:00 am Pacific. No appointment needed, just show up.</li>
-        <li>For anything that needs a conversation: working a concept live with drawing, going over your exam, or rebuilding a study system that is not working.</li>
+        <li>Wednesdays, 9:00 to 10:00 am Pacific, on Zoom. No appointment needed.</li>
+        <li>For private or confidential matters: your grade, an accommodation, or something in your life that is affecting your work in this course.</li>
+        <li>Course content goes on the board, because working a problem through with other people, and seeing how someone else arrived at it, builds the reasoning you are graded on and sticks in a way a handed-over answer does not.</li>
       </ul>
     </div>
     <div class="card">
-      <p class="role">Private</p>
+      <p class="role">Private, in writing</p>
       <h3>The Canvas Inbox</h3>
       <ul>
-        <li>Grades, accommodations, personal circumstances, an emergency, or anything carrying your name and details.</li>
+        <li>The same private matters, in writing, any time. Grades, accommodations, personal circumstances, an emergency, or anything carrying your name and details.</li>
         <li>Private things never go on the public board. Send those to me directly.</li>
       </ul>
     </div>
@@ -207,37 +234,58 @@ footer :focus-visible{outline-color:var(--gold)}
 </div></section>
 
 <section class="panel"><div class="wrap">
-  <p class="eyebrow">Five moves</p>
-  <h2>How to ask a question that gets a great answer</h2>
-  <p>None of this is about being formal. It is about giving whoever answers enough to actually help you.</p>
+  <p class="eyebrow">How to post</p>
+  <h2>Four lines, every post</h2>
+  <p>Every post on this board answers these four questions. This is not red tape. Writing them out is usually the fastest way through the problem, and more often than you would expect you will answer your own question somewhere around the third line.</p>
   <ol class="steps">
     <li><span class="n" aria-hidden="true">1</span><div>
-      <strong>Check whether it is already answered.</strong>
-      <p>The <a href="course-questions.html" target="_top">answered questions page</a> and Hootie resolve most questions in under a minute. Then search the Virtual Office itself. Your question may already have a thread, and replying there beats starting a twin.</p>
+      <strong>What am I trying to figure out?</strong>
+      <p>The actual question, in one sentence. "How does this work" is too broad to answer. "Why does the pressure drop when the vessel widens" can be answered in a paragraph.</p>
     </div></li>
     <li><span class="n" aria-hidden="true">2</span><div>
-      <strong>Give it a real title.</strong>
-      <p>"Confused about the second color on the note sheet" gets found and answered. "Help" gets neither.</p>
+      <strong>Where did I already look?</strong>
+      <p>Name the page, the section of the reading, or the video and roughly where in it. This stops three people sending you back to something you have already read.</p>
     </div></li>
     <li><span class="n" aria-hidden="true">3</span><div>
-      <strong>Say what you tried.</strong>
-      <p>Where you looked, what you expected, and what happened instead. For a broken page, a screenshot and the page name are worth more than a paragraph of description.</p>
+      <strong>What did I try?</strong>
+      <p>Your reasoning so far, even the part you are not sure about. Especially the part you are not sure about, because that is usually where the answer is hiding.</p>
     </div></li>
     <li><span class="n" aria-hidden="true">4</span><div>
-      <strong>One question per post.</strong>
-      <p>Three questions bundled into one post tend to get one and a half answers. Split them and each one gets a real reply.</p>
-    </div></li>
-    <li><span class="n" aria-hidden="true">5</span><div>
-      <strong>Come back and close the loop.</strong>
-      <p>If a reply solved it, say so. The next student with your question needs to know which answer worked.</p>
+      <strong>Where did it stop making sense?</strong>
+      <p>The exact sentence, step, or number where you lost the thread. This is the single most useful line in the post, and it is the one that gets you a fast answer instead of a lecture.</p>
     </div></li>
   </ol>
+  <div class="tmpl">
+    <p class="role">Copy this into your post</p>
+    <p><strong>What I am trying to figure out:</strong></p>
+    <p><strong>Where I already looked:</strong></p>
+    <p><strong>What I tried:</strong></p>
+    <p class="last"><strong>Where it stopped making sense:</strong></p>
+  </div>
+  <p>Worked it out while typing it? Post it anyway, and add the line that fixed it. Those are some of the most useful posts on this board, they take you ten more seconds, and the next person who gets stuck in the same place will find it.</p>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Three habits that keep the board fast</h2>
+  <ul class="habits">
+    <li><strong>Give it a real title.</strong> "Confused about the second color on the note sheet" gets found and answered. "Help" gets neither.</li>
+    <li><strong>One question per post.</strong> Three questions bundled together tend to get one and a half answers. Split them and each one gets a real reply.</li>
+    <li><strong>Come back and close the loop.</strong> If a reply solved it, say so. The next student with your question needs to know which answer worked.</li>
+  </ul>
 </div></section>
 
 <section><div class="wrap">
   <h2>Answering each other</h2>
-  <p>You are allowed, and encouraged, to answer classmates in the Virtual Office. Explaining something you have just learned is one of the strongest study moves there is, and it is a good sign you actually have it. I read the board, so anything that needs correcting gets corrected.</p>
+  <p>Answering each other is not a courtesy, it is the point. Explaining something you have just learned is one of the strongest study moves there is, and a concept you can walk someone else through is a concept you own. Work the problem with each other first, then post where you got stuck. I read the board, so anything that needs correcting gets corrected.</p>
+  <p>Reaching the answer yourselves is what makes it stick, and it is the skill the exams are built to reward, since every one of them asks you to reason out loud rather than pick a letter.</p>
   <p>If a page does not work for you, tell me there and I will fix it.</p>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <h2>About extra credit</h2>
+  <p>At the end of the term I read back through the whole board. Where someone has contributed thoughtfully across the semester, in their own words and their own thinking, I may add a small amount of extra credit.</p>
+  <p>I am saying may on purpose. This is not a promise, there is no set number of posts that earns it, and no single post is worth points on its own. What I am looking for is collaboration rather than transactions. Staying in a thread instead of dropping one answer and leaving. Building on what someone else already said. Asking the follow-up question. Saying "I think it is this, but I cannot work out why that part fits" and letting someone meet you there. Coming back to tell people what finally worked. An answer pasted in from an AI reads differently from a person working something out, and it does not count toward this.</p>
+  <p>Write like yourself and there is nothing here to manage.</p>
 </div></section>
 
 </main>
