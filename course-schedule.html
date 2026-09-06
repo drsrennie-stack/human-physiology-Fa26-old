@@ -23,11 +23,12 @@
   --navy:#0B1530;
   --navy-darkest:#060A18;
   --navy-tint:#ECEFF4;
+  --bone:#F5F1E8;      /* dark band only. 17.50:1 on navy-darkest, 1.06:1 on white */
   --terra:#8B3A2E;
   --terra-dark:#6E2D24;
   --gold:#C9A14A;
   --gold-text:#5F4514;
-  --teal-text:#2C5F66;
+  --maroon-dk-text:#6E2D24;
   --ink-muted:#414B5C;
   --rule:#B8BEC8;
   --rule-soft:#DCE0E6;
@@ -58,16 +59,17 @@ a:hover{color:var(--terra-dark);}
 .site-header .t2{font-size:19px;font-weight:800;letter-spacing:-0.01em;}
 .site-header .t3{font-size:13px;color:var(--ink-muted);}
 
-.hero{background:var(--navy);color:#fff;padding:44px max(20px,4vw) 40px;}
+.hero{background:var(--navy-darkest);color:#fff;padding:44px max(20px,4vw) 40px;}
 .hero .wrap{max-width:1080px;margin:0 auto;}
 .hero .eyebrow{font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:11px;font-weight:700;letter-spacing:0.26em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
 .hero h1{font-size:clamp(28px,4.2vw,42px);font-weight:800;letter-spacing:-0.025em;margin:0 0 12px;line-height:1.12;}
 .hero h1 .accent{color:var(--gold);}
-.hero p{margin:0 0 6px;max-width:70ch;color:#E6E9EF;font-size:15.5px;}
+.hero p{margin:0 0 6px;max-width:70ch;color:var(--bone);font-size:15.5px;}
 .termfacts{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-top:26px;}
-.tf{background:#111C31;border-radius:8px;padding:13px 15px;}
-.tf .k{font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:10px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);}
-.tf .v{font-size:15px;font-weight:700;color:#fff;margin-top:3px;}
+.tf{background:#fff;border-radius:10px;padding:13px 15px;
+  box-shadow:0 6px 16px rgba(0,0,0,.28), 0 1px 3px rgba(0,0,0,.22);}
+.tf .k{font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:10px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--terra);}
+.tf .v{font-size:15px;font-weight:700;color:var(--navy);margin-top:3px;}
 
 main{max-width:1080px;margin:0 auto;padding:0 max(20px,4vw) 72px;}
 .section{padding-top:44px;}
@@ -86,7 +88,7 @@ main{max-width:1080px;margin:0 auto;padding:0 max(20px,4vw) 72px;}
 .beat:hover{transform:translateY(-2px);box-shadow:var(--shadow-lift);}
 .beat .n{font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:10.5px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-text);}
 .beat h3{font-size:17px;font-weight:800;margin:5px 0 3px;}
-.beat .when{font-size:12.5px;color:var(--teal-text);font-weight:700;margin-bottom:9px;}
+.beat .when{font-size:12.5px;color:var(--maroon-dk-text);font-weight:700;margin-bottom:9px;}
 .beat p{margin:0 0 9px;font-size:13.8px;color:var(--ink-muted);}
 .beat .g{font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-muted);border:1px solid var(--rule);border-radius:99px;padding:4px 10px;display:inline-block;}
 
@@ -111,10 +113,10 @@ main{max-width:1080px;margin:0 auto;padding:0 max(20px,4vw) 72px;}
 details.topics{margin-top:14px;}
 details.topics summary{
   cursor:pointer;font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:11px;font-weight:700;
-  letter-spacing:0.14em;text-transform:uppercase;color:var(--teal-text);
+  letter-spacing:0.14em;text-transform:uppercase;color:var(--maroon-dk-text);
   padding:9px 0;
 }
-details.topics summary::-webkit-details-marker{color:var(--teal-text);}
+details.topics summary::-webkit-details-marker{color:var(--maroon-dk-text);}
 .topiclist{margin:6px 0 0;padding-left:20px;font-size:13.8px;color:var(--ink-muted);}
 .topiclist li{margin-bottom:7px;}
 .topiclist b{color:var(--navy);font-weight:700;}
@@ -129,9 +131,9 @@ caption{text-align:left;font-size:13px;color:var(--ink-muted);padding-bottom:10p
 ol.decisions{padding-left:22px;font-size:14.2px;color:var(--ink-muted);}
 ol.decisions li{margin-bottom:12px;}
 ol.decisions b{color:var(--navy);}
-ol.decisions .aff{display:block;font-size:12.8px;color:var(--teal-text);margin-top:2px;}
+ol.decisions .aff{display:block;font-size:12.8px;color:var(--maroon-dk-text);margin-top:2px;}
 
-footer{background:var(--navy-darkest);color:#C7CEDA;padding:34px max(20px,4vw);margin-top:56px;}
+footer{background:var(--navy-darkest);color:var(--bone);padding:34px max(20px,4vw);margin-top:56px;}
 footer .wrap{max-width:1080px;margin:0 auto;}
 footer .who{color:#fff;font-weight:800;font-size:15px;margin-bottom:4px;}
 footer .sm{font-size:12.5px;}
@@ -152,6 +154,47 @@ em,i,cite,dfn,var,address{font-style:normal}
 .tblscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%}
 .tblscroll:focus-visible{outline:3px solid var(--maroon,#8B3A2E);outline-offset:2px}
 .tblscroll table{min-width:100%}
+
+/* ---------- week jump chips ----------
+   Five squares per week, one letter each, always the same five in the
+   same order so the position teaches the meaning as fast as the letter
+   does. Colour is never the only signal: every chip carries its letter,
+   a title, and a visually hidden name, so a screen reader says
+   "Week 3 lab" and not "L".
+   Every pair below is measured. Squares are 30px, above the 24px
+   minimum target size.                                             */
+.wk-jump{display:flex;flex-wrap:wrap;gap:7px;margin:12px 0 0;padding:0;list-style:none}
+.wk-jump a{
+  width:30px;height:30px;border-radius:7px;box-sizing:border-box;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Plus Jakarta Sans',system-ui,sans-serif;
+  font-size:12px;font-weight:800;letter-spacing:0;text-decoration:none;
+  border:1.5px solid transparent;
+  transition:transform 160ms ease,box-shadow 160ms ease;
+}
+.wk-jump a:hover{transform:translateY(-2px);box-shadow:0 4px 10px rgba(11,21,48,.18)}
+.wk-jump a:focus-visible{outline:3px solid #8B3A2E;outline-offset:3px}
+.wk-jump a.j-note{background:#0B1530;color:#fff;border-color:#0B1530}                               /* 18.04:1 */
+.wk-jump a.j-prob{background:#8B3A2E;color:#fff;border-color:#8B3A2E}                               /*  7.66:1 */
+.wk-jump a.j-lab{background:#C9A14A;color:#060A18;border-color:#C9A14A}                            /*  8.16:1 */
+.wk-jump a.j-disc{background:#fff;color:#8B3A2E;border-color:#8B3A2E}          /*  7.66:1 */
+.wk-jump a.j-study{background:#ECEFF4;color:#0B1530;border-color:#0B1530}      /* 15.65:1 */
+.vh{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;
+  clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+/* the legend, shown once above the weeks */
+.jump-key{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;margin:10px 0 0;
+  padding:0;list-style:none;font-size:12.5px;color:#414B5C}
+.jump-key li{display:flex;align-items:center;gap:7px}
+.jump-key .sq{width:22px;height:22px;border-radius:5px;display:flex;align-items:center;
+  justify-content:center;font-family:'Plus Jakarta Sans',system-ui,sans-serif;
+  font-size:10.5px;font-weight:800;border:1.5px solid transparent;flex:0 0 auto}
+.jump-key .j-note{background:#0B1530;color:#fff;border-color:#0B1530}
+.jump-key .j-prob{background:#8B3A2E;color:#fff;border-color:#8B3A2E}
+.jump-key .j-lab{background:#C9A14A;color:#060A18;border-color:#C9A14A}
+.jump-key .j-disc{background:#fff;color:#8B3A2E;border-color:#8B3A2E}
+.jump-key .j-study{background:#ECEFF4;color:#0B1530;border-color:#0B1530}
+@media print{.wk-jump,.jump-key{display:none}}
 </style>
 </head>
 <body>
@@ -184,9 +227,16 @@ em,i,cite,dfn,var,address{font-style:normal}
 
   <section class="section">
     <h2>How every week works</h2>
-    <p class="sub">Four beats, in the same order, every week of the term.</p>
+    <p class="sub">The same six steps, in the same order, every week of the term. Independent study runs alongside them.</p>
     <div class="beats" id="beats"></div>
-  </section>
+    <ul class="jump-key" aria-label="What the week squares mean">
+      <li><span class="sq j-note" aria-hidden="true">N</span> Note sheet</li>
+      <li><span class="sq j-prob" aria-hidden="true">P</span> Problems</li>
+      <li><span class="sq j-lab" aria-hidden="true">L</span> Lab</li>
+      <li><span class="sq j-disc" aria-hidden="true">D</span> Discussion</li>
+      <li><span class="sq j-study" aria-hidden="true">S</span> Study session</li>
+    </ul>
+      </section>
 
   <section class="section">
     <h2>Week by week</h2>
@@ -290,7 +340,6 @@ em,i,cite,dfn,var,address{font-style:normal}
   var beatWrap = document.getElementById('beats');
   SHAPE.forEach(function(b, i){
     var d = el('div','beat');
-    d.appendChild(el('div','n','Beat ' + (i+1)));
     d.appendChild(el('h3', null, b.beat));
     d.appendChild(el('div','when', b.when));
     d.appendChild(el('p', null, b.what));
@@ -327,6 +376,31 @@ em,i,cite,dfn,var,address{font-style:normal}
       ));
       card.appendChild(e);
     }
+
+
+    /* five jump squares, same five, same order, every week */
+    var JUMPS = [
+      ['N','j-note', 'note-sheet.html?week=',            'note sheet'],
+      ['P','j-prob', 'assignment-bookproblems.html?week=','problems'],
+      ['L','j-lab',  'assignment-physioex.html?week=',    'lab'],
+      ['D','j-disc', 'assignment-discussion.html?week=',  'discussion'],
+      ['S','j-study','mastery-physio-os-standalone.html?week=','study session']
+    ];
+    var jump = el('ul','wk-jump');
+    JUMPS.forEach(function(j){
+      var li = document.createElement('li');
+      var a  = document.createElement('a');
+      a.className = j[1];
+      a.href = j[2] + w.wk;
+      a.target = '_top';
+      a.title = 'Week ' + w.wk + ' ' + j[3];
+      a.appendChild(document.createTextNode(j[0]));
+      var vh = el('span','vh','Week ' + w.wk + ' ' + j[3]);
+      a.appendChild(vh);
+      li.appendChild(a);
+      jump.appendChild(li);
+    });
+    card.appendChild(jump);
 
     if (w.extras && w.extras.length){
       var ul = el('ul','wk-extras');
