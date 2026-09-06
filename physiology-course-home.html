@@ -28,7 +28,7 @@
   --maroon-alt:#6E2D24;
   --maroon-dark-2:#6E2D24;
   --maroon-2:#8B3A2E;
-  --dark:#0B1530;
+  --dark:#060A18;
   --line:rgba(11,21,48,0.12);
   --card-border:#ECEFF4;
 }
@@ -217,17 +217,22 @@ em,i,cite,dfn,var,address{font-style:normal}
    quote, the logo accent, the footer column headers and byline,
    and the big problem numerals. None of it was readable.
 
-   On a dark ground the same accent role is filled by a lightened
-   maroon: #D0705F at 5.58:1 for headline-size text, #EDB0A4 at
-   10.28:1 for anything small. Same two-token split course-entry.html
-   uses. The overrides are scoped to the four dark sections by name,
-   because .section-eyebrow also appears on white sections where the
-   original maroon is correct at 9.63:1 and must not be touched.
+   SEP 6 2026. The lightened maroons #D0705F and #EDB0A4 are gone
+   too. Gold #C9A14A is the on-dark accent in the MedMasters brand,
+   and it measures 8.16:1 on the dark band, AAA at every size, so
+   one token now covers both the headline accents and the small
+   text that used to need a second, paler value. The dark band
+   itself moved from the text navy #0B1530 to navy-deep #060A18,
+   which is the band colour in assets/brand.css.
+
+   The overrides stay scoped to the four dark sections by name,
+   because .section-eyebrow also appears on white sections where
+   maroon #8B3A2E is correct at 7.66:1 and must not be touched.
    ============================================================ */
 .prob-section .section-eyebrow, .about-section .section-eyebrow,
 .cta-section .section-eyebrow, .footer-section .section-eyebrow,
 .cta-section .cta-eyebrow, .footer-section .footer-col-header,
-.footer-section .footer-byline, .prob-section .footer-byline{color:#EDB0A4;}
+.footer-section .footer-byline, .prob-section .footer-byline{color:#C9A14A;}
 
 /* Three classes deep, to beat .prob-section .section-headline .accent,
    which is the rule that put maroon on navy in the first place. A two
@@ -238,7 +243,7 @@ em,i,cite,dfn,var,address{font-style:normal}
 .prob-section .accent, .about-section .accent,
 .cta-section .accent, .footer-section .accent,
 .about-section .about-quote, .footer-section .logo-accent,
-.cta-section .logo-accent, .prob-num{color:#D0705F;}
+.cta-section .logo-accent, .prob-num{color:#C9A14A;}
 </style>
 </head>
 <body>
@@ -250,8 +255,8 @@ em,i,cite,dfn,var,address{font-style:normal}
     <svg viewBox="40 10 125 148" role="img" aria-hidden="true" focusable="false">
       <g transform="translate(0, 18)">
         <g transform="translate(60, 0) rotate(8 0 130)"><circle cx="0" cy="20" r="10" fill="#0B1530"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#0B1530"/></g>
-        <g transform="translate(100, 0)"><circle cx="0" cy="10" r="11" fill="#6E2D24"/><path d="M 0,22 C -11,22 -17,26 -17,34 C -17,52 -14,70 -12,86 C -11,108 -13,122 -15,132 L 15,132 C 13,122 11,108 12,86 C 14,70 17,52 17,34 C 17,26 11,22 0,22 Z" fill="#6E2D24"/></g>
-        <g transform="translate(140, 0) rotate(-8 0 130)"><circle cx="0" cy="20" r="10" fill="#D79A78"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#D79A78"/></g>
+        <g transform="translate(100, 0)"><circle cx="0" cy="10" r="11" fill="#8B3A2E"/><path d="M 0,22 C -11,22 -17,26 -17,34 C -17,52 -14,70 -12,86 C -11,108 -13,122 -15,132 L 15,132 C 13,122 11,108 12,86 C 14,70 17,52 17,34 C 17,26 11,22 0,22 Z" fill="#8B3A2E"/></g>
+        <g transform="translate(140, 0) rotate(-8 0 130)"><circle cx="0" cy="20" r="10" fill="#C9A14A"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#C9A14A"/></g>
       </g>
     </svg>
     <span class="logo-text">
@@ -294,7 +299,7 @@ em,i,cite,dfn,var,address{font-style:normal}
     <div class="prob-card">
       <div class="prob-num">03</div>
       <h3 class="prob-title">Do the labs by hand</h3>
-      <p class="prob-body">Each week's dry lab is worked by hand: calculations, graphs, and predictions from real data. Given, not Googled. The hand work is how it sticks.</p>
+      <p class="prob-body">Each week's dry lab is worked by hand: calculations, graphs, and predictions from real data. Working it by hand is what makes it stick.</p>
     </div>
   </div>
 </div>
@@ -485,8 +490,8 @@ em,i,cite,dfn,var,address{font-style:normal}
         <svg viewBox="40 10 125 148" role="img" aria-hidden="true" focusable="false">
           <g transform="translate(0, 18)">
             <g transform="translate(60, 0) rotate(8 0 130)"><circle cx="0" cy="20" r="10" fill="#FFFFFF"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#FFFFFF"/></g>
-            <g transform="translate(100, 0)"><circle cx="0" cy="10" r="11" fill="#8B3A2E"/><path d="M 0,22 C -11,22 -17,26 -17,34 C -17,52 -14,70 -12,86 C -11,108 -13,122 -15,132 L 15,132 C 13,122 11,108 12,86 C 14,70 17,52 17,34 C 17,26 11,22 0,22 Z" fill="#8B3A2E"/></g>
-            <g transform="translate(140, 0) rotate(-8 0 130)"><circle cx="0" cy="20" r="10" fill="#D79A78"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#D79A78"/></g>
+            <g transform="translate(100, 0)"><circle cx="0" cy="10" r="11" fill="#C9856F"/><path d="M 0,22 C -11,22 -17,26 -17,34 C -17,52 -14,70 -12,86 C -11,108 -13,122 -15,132 L 15,132 C 13,122 11,108 12,86 C 14,70 17,52 17,34 C 17,26 11,22 0,22 Z" fill="#C9856F"/></g>
+            <g transform="translate(140, 0) rotate(-8 0 130)"><circle cx="0" cy="20" r="10" fill="#C9A14A"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#C9A14A"/></g>
           </g>
         </svg>
         <span class="logo-text">
