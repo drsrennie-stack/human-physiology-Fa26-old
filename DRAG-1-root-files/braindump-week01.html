@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Brain Dump Packet &middot; Week 1 &middot; BIO 005</title>
+<link rel="icon" type="image/svg+xml" href="icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<!--
+  ============================================================
+  BIO 005 Human Physiology, Yuba College, Fall 2026
+  braindump-week01.html
+
+  THE BRAIN DUMP PACKET. Two prompts per competency. The student
+  builds ONE of the two in the box on their note sheet, and can
+  work the other for practice if they want it.
+
+  WHY TWO. The pair is never the same question asked twice. Each
+  pair offers two different SHAPES: a flow chart against a
+  comparison table, a mechanism drawn forward against the same
+  mechanism broken. A student who thinks in sequences and a
+  student who thinks in categories both get a way in, and neither
+  route is the easy one.
+
+  Every prompt asks for something drawn: a map, a chart, a table,
+  a labeled sequence. None of them can be answered with a
+  paragraph copied out of the book, which is the point.
+
+  PRINT: US Letter, one competency per block, blocks break
+  cleanly across pages.
+  ============================================================
+-->
+<style>
+:root{
+  --ink:#0B1530; --band:#08101F; --terracotta:#C2734D;
+  --maroon:#8B3A2E; --maroon-dk:#6E2D24; --maroon-wash:#F7EEEC;
+  --muted:#4F576A; --faint:#505663; --gold:#DCB45C;
+  --page:#FAFAF9; --card:#FFFFFF;
+  --hair:rgba(11,21,48,.15); --hair-soft:rgba(11,21,48,.07);
+  --r-card:8px; --r-badge:3px;
+  --f:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0}
+body{font-family:var(--f);background:var(--page);color:var(--ink);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+em,i,cite,dfn,var{font-style:normal}
+h1,h2,h3,h4{font-family:var(--f);margin:0;letter-spacing:-.015em}
+p{margin:0}
+a{color:var(--maroon-dk)}
+:focus-visible{outline:3px solid var(--maroon);outline-offset:3px;border-radius:3px}
+.skip{position:absolute;left:-9999px;top:0;z-index:80;background:var(--ink);color:#fff;padding:12px 18px;font-weight:700;text-decoration:none}
+.skip:focus{left:0}
+.wrap{max-width:920px;margin:0 auto;padding:0 24px}
+
+.hdr{background:var(--band);color:#fff;padding:30px 0 28px}
+.hdr .eyebrow{font-size:11px;font-weight:800;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+.hdr h1{font-size:clamp(27px,4.6vw,40px);font-weight:800;margin-top:10px;color:#fff;line-height:1.1}
+.hdr h1 .a{color:var(--terracotta)}
+.hdr .wk{margin-top:11px;color:rgba(255,255,255,.9);font-size:16px}
+
+.rules{background:var(--card);border-bottom:.5px solid var(--hair);padding:26px 0 28px}
+.rules h2{font-size:18px;font-weight:800;margin-bottom:9px}
+.rules p{font-size:14.5px;color:var(--muted);max-width:74ch}
+.rules p+p{margin-top:9px}
+.rules strong{color:var(--ink)}
+.rules ul{margin:11px 0 0;padding-left:20px;font-size:14.5px;color:var(--muted);max-width:74ch}
+.rules li{margin-bottom:7px}
+
+main{padding:30px 0 80px}
+.comp{background:var(--card);border:.5px solid var(--hair);border-radius:var(--r-card);
+  padding:22px 24px 24px;margin-bottom:16px;break-inside:avoid;page-break-inside:avoid}
+.chead{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:start;
+  border-bottom:.5px solid var(--hair-soft);padding-bottom:13px;margin-bottom:16px}
+.cn{font-size:30px;font-weight:800;color:var(--terracotta);line-height:.85;font-variant-numeric:tabular-nums}
+.chead h3{font-size:17.5px;font-weight:800;margin-bottom:4px}
+.chead .able{font-size:13.5px;color:var(--muted);line-height:1.45}
+.tags{display:flex;flex-direction:column;gap:5px;align-items:flex-end}
+.tg{font-size:9.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+  border:.5px solid var(--hair);border-radius:var(--r-badge);padding:3px 8px;color:var(--faint);white-space:nowrap}
+.tg.dok{border-color:var(--maroon);color:var(--maroon-dk);background:var(--maroon-wash)}
+
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.opt{border:.5px solid var(--hair);border-radius:var(--r-card);padding:15px 17px 16px}
+.opt .k{font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--maroon);margin-bottom:7px}
+.opt .form{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin-bottom:8px}
+.opt p{font-size:14.5px;line-height:1.5}
+.opt .push{font-size:13px;color:var(--muted);margin-top:9px}
+@media(max-width:680px){.opts{grid-template-columns:1fr}.chead{grid-template-columns:auto 1fr}.tags{grid-column:2;flex-direction:row;justify-content:flex-start;margin-top:6px}}
+
+footer{border-top:.5px solid var(--hair);background:var(--card);padding:24px 0;font-size:12.5px;color:var(--faint)}
+footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+@media print{
+  body{background:#fff;font-size:11pt}
+  .hdr{background:#fff;color:#000;padding:0 0 12px;border-bottom:1.5px solid #000}
+  .hdr h1,.hdr .wk{color:#000} .hdr h1 .a{color:#000} .hdr .eyebrow{color:#000}
+  .comp{border:1px solid #000;box-shadow:none}
+  .opt{border:1px solid #666}
+  footer{display:none}
+  @page{size:letter;margin:.5in}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the prompts</a>
+
+<header class="hdr"><div class="wrap">
+  <p class="eyebrow">Brain dump packet</p>
+  <h1>Week 1 <span class="a">brain dumps</span></h1>
+  <p class="wk">How physiology works and what keeps you steady</p>
+</div></header>
+
+<section class="rules"><div class="wrap">
+  <h2>How to use this packet</h2>
+  <p><strong>Every competency below gives you two prompts. Build one of them in that competency's box on your note sheet.</strong> The other one is there if you want more practice, and it is a good place to go the week before a midterm.</p>
+  <p>The two are never the same question twice. They ask for different shapes, usually a sequence against a comparison, so pick the one that suits how you think. Neither is the easy option.</p>
+  <ul>
+    <li><strong>Draw it, do not write it.</strong> A mind map, a flow chart, a labeled diagram, a table, a sequence with arrows. If your answer is a paragraph, you have copied rather than built.</li>
+    <li><strong>Make it memorable.</strong> The point of drawing is that you can see it again later with your eyes shut. Sketchy is fine. Neat is not the goal.</li>
+    <li><strong>By hand, in your two colors.</strong> First pass from the book and your notes, second pass in a different color after the videos.</li>
+    <li><strong>AI can help you organize and decide what belongs.</strong> It cannot draw it, and nothing generated by it goes on the page. Every mark is yours.</li>
+  </ul>
+</div></section>
+
+<main id="main"><div class="wrap">
+
+  <!-- 1 -->
+  <div class="comp">
+    <div class="chead">
+      <span class="cn" aria-hidden="true">1</span>
+      <div><h3>Physiology and levels of function</h3>
+        <p class="able">Define physiology and place a given process at the correct level of organization from molecule to organism, then state the level at which that process is best explained.</p></div>
+      <div class="tags"><span class="tg dok">Say it</span><span class="tg">Lecture</span></div>
+    </div>
+    <div class="opts">
+      <div class="opt">
+        <p class="k">Option A</p><p class="form">Ladder diagram</p>
+        <p>Draw the levels of organization as a ladder from molecule up to organism. On each rung, put one real physiological process that lives there, and one question you could only answer at that level.</p>
+        <p class="push">Then mark the rung where "why do we sweat" is best explained, and say in three words why not the one below it.</p>
+      </div>
+      <div class="opt">
+        <p class="k">Option B</p><p class="form">Sorting table</p>
+        <p>Make a table with the levels across the top. Take six processes, one per level, and sort them. In the bottom row of each column, write what you would have to measure to study that process.</p>
+        <p class="push">Then circle the one process that could sit at two levels, and say what changes about the question when you move it.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2 -->
+  <div class="comp">
+    <div class="chead">
+      <span class="cn" aria-hidden="true">2</span>
+      <div><h3>Structure and function relationship</h3>
+        <p class="able">Predict how a change in the structure of a molecule, cell, tissue, or organ alters its function, using examples from two different organ systems.</p></div>
+      <div class="tags"><span class="tg dok">Use it</span><span class="tg">Lecture &middot; Lab</span></div>
+    </div>
+    <div class="opts">
+      <div class="opt">
+        <p class="k">Option A</p><p class="form">Two parallel chains</p>
+        <p>Pick one structure from two different organ systems. For each, draw a chain: normal structure, then the change, then what happens to function, then what you would see in the person. Run both chains side by side.</p>
+        <p class="push">Then draw an arrow between the two chains at the step where they behave the same way, and label what that shared step is.</p>
+      </div>
+      <div class="opt">
+        <p class="k">Option B</p><p class="form">Broken part diagram</p>
+        <p>Draw one structure twice, healthy and altered, side by side and labeled. Around the altered one, map every downstream function that changes, following each until it reaches something a person would notice.</p>
+        <p class="push">Then mark which of those downstream effects would show up first, and which would take longest.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3 -->
+  <div class="comp">
+    <div class="chead">
+      <span class="cn" aria-hidden="true">3</span>
+      <div><h3>Homeostasis defined</h3>
+        <p class="able">Define homeostasis, regulated variable, and setpoint, and distinguish homeostasis from chemical equilibrium and from steady state.</p></div>
+      <div class="tags"><span class="tg dok">Reason it</span><span class="tg">Lecture</span></div>
+    </div>
+    <div class="opts">
+      <div class="opt">
+        <p class="k">Option A</p><p class="form">Three-box comparison</p>
+        <p>Three boxes: equilibrium, steady state, homeostasis. In each, draw the situation, mark whether energy is being spent, and mark whether anything is being actively corrected. Give each a physical example, not a textbook one.</p>
+        <p class="push">Then write the one test you could run that tells the three apart.</p>
+      </div>
+      <div class="opt">
+        <p class="k">Option B</p><p class="form">Annotated graph</p>
+        <p>Draw one variable over time, with the setpoint as a line across it. Show the variable wandering above and below and being pulled back. Label the setpoint, the regulated variable, and the normal range.</p>
+        <p class="push">Then on the same axes, sketch in a second color what equilibrium would look like, and say why a living body never draws that line.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4 -->
+  <div class="comp">
+    <div class="chead">
+      <span class="cn" aria-hidden="true">4</span>
+      <div><h3>Feedback loop components</h3>
+        <p class="able">Diagram a negative feedback loop labeling stimulus, sensor, afferent path, integrating center, efferent path, effector, and response, and trace body temperature or blood glucose through every step.</p></div>
+      <div class="tags"><span class="tg dok">Reason it</span><span class="tg">Lecture &middot; Lab</span></div>
+    </div>
+    <div class="opts">
+      <div class="opt">
+        <p class="k">Option A</p><p class="form">Labeled loop</p>
+        <p>Draw the loop as a closed circle with all seven parts labeled. Then trace body temperature all the way round it, writing at each step what is physically happening and in which direction.</p>
+        <p class="push">Then put a cross through one component and write what the person's temperature does now, and why.</p>
+      </div>
+      <div class="opt">
+        <p class="k">Option B</p><p class="form">Two loops, one skeleton</p>
+        <p>Draw the seven-part skeleton once. Fill it in twice in two colors, once for body temperature and once for blood glucose, naming the real sensor, center and effector for each.</p>
+        <p class="push">Then mark the component that differs most between the two, and say what that difference tells you about how fast each loop can act.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5 -->
+  <div class="comp">
+    <div class="chead">
+      <span class="cn" aria-hidden="true">5</span>
+      <div><h3>Negative and positive feedback</h3>
+        <p class="able">Distinguish negative from positive feedback by the direction of the response and give a physiological example of each, explaining why a positive feedback loop needs an outside event to end it.</p></div>
+      <div class="tags"><span class="tg dok">Reason it</span><span class="tg">Lecture</span></div>
+    </div>
+    <div class="opts">
+      <div class="opt">
+        <p class="k">Option A</p><p class="form">Side by side loops</p>
+        <p>Draw both loops next to each other with the response arrow pointing the opposite way in each. Use a real example in both. On the positive one, draw the outside event that stops it and label it clearly.</p>
+        <p class="push">Then write what would happen to your positive example if that outside event never arrived.</p>
+      </div>
+      <div class="opt">
+        <p class="k">Option B</p><p class="form">Two graphs</p>
+        <p>Plot both over time on separate axes: one settling back toward a line, one running away from it. Mark on each where the response is added to the stimulus and where it is subtracted.</p>
+        <p class="push">Then mark on the runaway graph the exact point where the outside event has to arrive, and name the event.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6 -->
+  <div class="comp">
+    <div class="chead">
+      <span class="cn" aria-hidden="true">6</span>
+      <div><h3>Feedforward control and acclimatization</h3>
+        <p class="able">Explain anticipatory feedforward control and acclimatization and identify which one is operating in a given scenario.</p></div>
+      <div class="tags"><span class="tg dok">Reason it</span><span class="tg">Lecture</span></div>
+    </div>
+    <div class="opts">
+      <div class="opt">
+        <p class="k">Option A</p><p class="form">Timeline</p>
+        <p>Draw one timeline with the disturbance marked on it. Above the line show feedforward, acting before the disturbance arrives. Below it show acclimatization, building slowly over days. Put a real example on each.</p>
+        <p class="push">Then mark on the timeline where ordinary negative feedback would sit, and say what all three are each buying the body.</p>
+      </div>
+      <div class="opt">
+        <p class="k">Option B</p><p class="form">Sorting map</p>
+        <p>Draw four scenarios as quick sketches. Beside each, decide feedforward or acclimatization and write the one clue that decided it. Make at least one of the four genuinely hard to call.</p>
+        <p class="push">Then for the hard one, write what extra information would settle it.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7 -->
+  <div class="comp">
+    <div class="chead">
+      <span class="cn" aria-hidden="true">7</span>
+      <div><h3>Local and reflex control pathways</h3>
+        <p class="able">Distinguish a local control pathway from a long distance reflex pathway and classify a given response as one or the other.</p></div>
+      <div class="tags"><span class="tg dok">Reason it</span><span class="tg">Lecture</span></div>
+    </div>
+    <div class="opts">
+      <div class="opt">
+        <p class="k">Option A</p><p class="form">Body map with two routes</p>
+        <p>Sketch a body outline. Draw a local response happening entirely in one place, and a reflex response that leaves the tissue, travels to a control center and comes back. Label how far the signal travels in each.</p>
+        <p class="push">Then write which of the two is faster, which reaches more tissue, and why those are not the same advantage.</p>
+      </div>
+      <div class="opt">
+        <p class="k">Option B</p><p class="form">Decision chart</p>
+        <p>Build a small flow chart that sorts any response into local or reflex. Start with one question at the top and branch from it. Run three real responses down through it and mark where each lands.</p>
+        <p class="push">Then find a response your chart sorts wrongly, and add the question that fixes it.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8 -->
+  <div class="comp">
+    <div class="chead">
+      <span class="cn" aria-hidden="true">8</span>
+      <div><h3>Mass balance</h3>
+        <p class="able">Apply the mass balance equation to a solute or to body water and calculate the intake, production, and output combination that holds the amount in the body constant.</p></div>
+      <div class="tags"><span class="tg dok">Use it</span><span class="tg">Lecture &middot; Lab</span></div>
+    </div>
+    <div class="opts">
+      <div class="opt">
+        <p class="k">Option A</p><p class="form">Tank diagram</p>
+        <p>Draw the body as a tank. Draw every pipe in and every pipe out for water, labeled with what it is and roughly how much. Write the mass balance equation beside it with an abbreviation key.</p>
+        <p class="push">Then close one output pipe and work out, in numbers, what has to change for the level to hold steady.</p>
+      </div>
+      <div class="opt">
+        <p class="k">Option B</p><p class="form">Worked balance sheet</p>
+        <p>Make a two column sheet, in and out, for one solute. Fill in real numbers with units so the columns balance. Show the arithmetic, not just the answer.</p>
+        <p class="push">Then change one number, rebalance the sheet, and write which pipe the body would actually use to do that.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 9 -->
+  <div class="comp">
+    <div class="chead">
+      <span class="cn" aria-hidden="true">9</span>
+      <div><h3>Units and unit conversion</h3>
+        <p class="able">Convert among the units used in physiology including molarity, osmolarity, milliequivalents, mmHg, liters per minute, and percent solutions.</p></div>
+      <div class="tags"><span class="tg dok">Reason it</span><span class="tg">Lecture &middot; Lab</span></div>
+    </div>
+    <div class="opts">
+      <div class="opt">
+        <p class="k">Option A</p><p class="form">Conversion map</p>
+        <p>Draw the units as a map with arrows between the ones that convert into each other. Write the conversion factor on each arrow. Leave room, because you will add to this map all term.</p>
+        <p class="push">Then mark the two units students most often mix up, and write the one sentence that keeps them apart.</p>
+      </div>
+      <div class="opt">
+        <p class="k">Option B</p><p class="form">Worked chain</p>
+        <p>Take one physiological value and convert it through four different units in a chain, showing every step with units canceling. Choose a value you will meet again, like a plasma concentration.</p>
+        <p class="push">Then do one conversion wrong on purpose, mark it, and write how you would have caught it from the units alone.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10 -->
+  <div class="comp">
+    <div class="chead">
+      <span class="cn" aria-hidden="true">10</span>
+      <div><h3>Graphing and data interpretation</h3>
+        <p class="able">Construct a labeled graph with the independent variable on the x axis, and read slope, direction, and trend from a physiological data set.</p></div>
+      <div class="tags"><span class="tg dok">Reason it</span><span class="tg">Lab</span></div>
+    </div>
+    <div class="opts">
+      <div class="opt">
+        <p class="k">Option A</p><p class="form">Anatomy of a graph</p>
+        <p>Draw a graph and label every part a finished graph needs. Beside each label, write what goes wrong for the reader if it is missing.</p>
+        <p class="push">Then draw the same data a second time with one thing deliberately wrong, and write what a reader would wrongly conclude.</p>
+      </div>
+      <div class="opt">
+        <p class="k">Option B</p><p class="form">Three shapes</p>
+        <p>Sketch three curve shapes you will meet in physiology, such as linear, plateauing and sigmoid. Under each write what slope means there, and what the flat part is telling you about the system.</p>
+        <p class="push">Then mark the point on each where a small change in x stops mattering, and say why that point is often the clinically interesting one.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 11 -->
+  <div class="comp">
+    <div class="chead">
+      <span class="cn" aria-hidden="true">11</span>
+      <div><h3>Experimental design and controls</h3>
+        <p class="able">Identify the hypothesis, independent variable, dependent variable, and control condition in a physiology experiment and state what the control rules out.</p></div>
+      <div class="tags"><span class="tg dok">Use it</span><span class="tg">Lab</span></div>
+    </div>
+    <div class="opts">
+      <div class="opt">
+        <p class="k">Option A</p><p class="form">Experiment skeleton</p>
+        <p>Draw a reusable four part skeleton: hypothesis, independent variable, dependent variable, control. Run one real physiology experiment through it, filling in each part.</p>
+        <p class="push">Then write, in one line, exactly what the control rules out. Not what it is, what it rules out.</p>
+      </div>
+      <div class="opt">
+        <p class="k">Option B</p><p class="form">Broken experiment</p>
+        <p>Sketch an experiment with no control condition. Map every alternative explanation that is now impossible to rule out. Then draw in the control and cross off the ones it kills.</p>
+        <p class="push">Then note the explanations still standing after the control, and what second control you would add.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 12 -->
+  <div class="comp">
+    <div class="chead">
+      <span class="cn" aria-hidden="true">12</span>
+      <div><h3>Measurement error and variability</h3>
+        <p class="able">Distinguish random from systematic error and explain why physiological measurements are repeated and averaged.</p></div>
+      <div class="tags"><span class="tg dok">Reason it</span><span class="tg">Lab</span></div>
+    </div>
+    <div class="opts">
+      <div class="opt">
+        <p class="k">Option A</p><p class="form">Target diagram</p>
+        <p>Draw four targets showing the combinations of accurate and precise. Label which kind of error each shows. Beside each, write a real way that pattern happens when measuring blood pressure.</p>
+        <p class="push">Then mark which pattern averaging fixes and which it does not, and say why.</p>
+      </div>
+      <div class="opt">
+        <p class="k">Option B</p><p class="form">Scatter of repeats</p>
+        <p>Plot ten repeated measurements of one value, scattered around a true line. Draw the mean. Then draw a second set that is tightly clustered but sitting off the true line entirely.</p>
+        <p class="push">Then write what you would change about your method to fix each set, given the fixes are different.</p>
+      </div>
+    </div>
+  </div>
+
+</div></main>
+
+<footer><div class="wrap">
+  <span>BIO 005 Human Physiology &middot; Week 1 brain dump packet &middot; Fall 2026</span>
+  <span>Dr. Sharilyn Rennie</span>
+</div></footer>
+<script src="bio005-back.js"></script>
+<script src="bio005-nav.js" defer></script>
+</body>
+</html>

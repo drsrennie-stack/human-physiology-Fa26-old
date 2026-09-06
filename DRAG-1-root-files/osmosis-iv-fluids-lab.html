@@ -1,0 +1,1981 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="icon" type="image/svg+xml" href="icon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Osmosis and IV Fluids Lab | BIO 005 Human Physiology</title>
+<meta name="description" content="Work eleven fluid orders, run the compartment model yourself, then build the case backward from a consequence and defend it with a hand drawn flow chart.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  /* Live BIO 004 / Mastery OS tokens, read from welcome.html and class1.html, Aug 2026.
+     Physiology leads with maroon where the anatomy course leads with navy. */
+  --maroon:#7A2A22;
+  --maroon-dark:#5E201A;
+  --navy:#08101F;
+  --navy-deep:#08101F;
+  --navy-darkest:#08101F;
+  --navy-tint:#ECEFF4;
+  --terra:#8B1D1D;
+  --terra-dark:#6B1616;
+  --gold:#DCB45C;
+  --straw:#E8CE85;
+  --gold-text:#6E5018;
+  --teal-text:#2C5F66;
+  --ink:#08101F;
+  --ink-body:#14202F;
+  --ink-muted:#3D4860;
+  --offwhite-text:#F4EFE8;
+  --rule:#8C90A0;
+  --rule-soft:#DCE0E6;
+  --border-blue:#1E2A47;
+  --white:#FFFFFF;
+  --off-white:#FAFAF9;
+  --radius:8px;
+  --radius-card:16px;
+  --shadow-card:0 1px 3px rgba(11,21,48,.10);
+  --shadow-lift:0 12px 26px rgba(11,21,48,.16);
+  --display:"Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, system-ui, Segoe UI, Roboto, sans-serif;
+  --body:"Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, system-ui, Segoe UI, Roboto, sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--white);
+  color:var(--ink-body);
+  font-family:var(--body);
+  font-size:17px;
+  line-height:1.65;
+}
+em,i,cite,dfn,var,address{font-style:normal}
+h1,h2,h3,h4,h5{font-family:var(--display);font-style:normal;line-height:1.2;margin:0 0 .5rem}
+h1{font-weight:800;font-size:clamp(1.6rem,3.4vw,2.3rem);color:var(--white)}
+h2{font-weight:700;font-size:clamp(1.3rem,2.6vw,1.75rem);color:var(--navy)}
+h3{font-weight:700;font-size:1.12rem;color:var(--maroon-dark)}
+h4{font-weight:600;font-size:1rem;color:var(--navy)}
+p{margin:0 0 1rem}
+a{color:var(--maroon-dark);text-decoration:underline;text-underline-offset:3px}
+a:hover{color:var(--maroon)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:4px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--navy);color:#fff;padding:.75rem 1.25rem;z-index:100;border-radius:0 0 8px 0;font-family:var(--display);font-weight:700}
+.skip:focus{left:0}
+.wrap{max-width:1080px;margin:0 auto;padding:0 1.25rem}
+
+/* ---------- Header: physiology red band ---------- */
+.site-header{background:var(--maroon);color:var(--white);padding:1.5rem 0 1.35rem}
+.eyebrow{font-family:var(--display);font-weight:700;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--white);margin:0 0 .35rem}
+.site-header p.lede{margin:.55rem 0 0;max-width:62ch;color:var(--offwhite-text)}
+.chipline{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem}
+.chip{font-family:var(--display);font-weight:700;font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;padding:.3rem .75rem;border-radius:99px;background:var(--gold);color:var(--navy)}
+.chip.alt{background:var(--white);color:var(--navy)}
+
+/* ---------- Tabs ---------- */
+.tabbar{background:var(--maroon-dark);position:sticky;top:0;z-index:40}
+.tablist{display:flex;flex-wrap:wrap;gap:0;margin:0;padding:0;list-style:none}
+.tab{
+  appearance:none;background:transparent;border:0;color:var(--offwhite-text);
+  font-family:var(--display);font-weight:600;font-size:.86rem;letter-spacing:.02em;
+  padding:.95rem .95rem;cursor:pointer;border-bottom:4px solid transparent;
+}
+.tab:hover{color:var(--white);background:rgba(255,255,255,.06)}
+.tab[aria-selected="true"]{color:var(--white);border-bottom-color:var(--gold);background:rgba(255,255,255,.08)}
+.panel{padding:2.25rem 0 3rem}
+.panel[hidden]{display:none}
+
+/* ---------- Cards ---------- */
+.card{background:var(--white);border:1px solid var(--rule-soft);border-radius:var(--radius-card);padding:1.5rem;box-shadow:var(--shadow-card);margin:0 0 1.25rem}
+.card.tight{padding:1.15rem}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.muted{color:var(--ink-muted)}
+.small{font-size:.9rem}
+.kicker{font-family:var(--display);font-weight:700;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--maroon-dark);margin:0 0 .4rem}
+
+/* ---------- Patient chart ---------- */
+.chart{border:1px solid var(--rule-soft);border-radius:var(--radius-card);overflow:hidden;background:var(--white);box-shadow:var(--shadow-card)}
+.chart-banner{background:var(--maroon);color:var(--white);padding:.9rem 1.15rem;display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;align-items:baseline}
+.chart-banner .pname{font-family:var(--display);font-weight:800;font-size:1.05rem;letter-spacing:.01em}
+.chart-banner .pmeta{font-family:var(--display);font-weight:500;font-size:.82rem;color:var(--offwhite-text);letter-spacing:.03em}
+.chart-strip{background:var(--navy-tint);border-bottom:1px solid var(--rule-soft);padding:.5rem 1.15rem;font-size:.8rem;color:var(--ink-muted);font-family:var(--display);font-weight:600;letter-spacing:.02em}
+.chart-body{padding:1.15rem}
+.chart-section-label{font-family:var(--display);font-weight:700;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-muted);margin:1.35rem 0 .5rem;padding-bottom:.3rem;border-bottom:1px solid var(--rule-soft)}
+.chart-section-label:first-child{margin-top:0}
+
+/* ---------- Lab table ---------- */
+.tablewrap{overflow-x:auto}
+table.lab{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;font-size:.93rem;min-width:520px}
+table.lab caption{text-align:left;font-family:var(--display);font-weight:700;font-size:.82rem;color:var(--ink-muted);padding-bottom:.5rem}
+table.lab th,table.lab td{padding:.42rem .6rem;border-bottom:1px solid var(--rule-soft);text-align:left;vertical-align:top}
+table.lab thead th{font-family:var(--display);font-weight:700;font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-muted);border-bottom:2px solid var(--rule)}
+table.lab td.val{font-weight:700;color:var(--navy);white-space:nowrap}
+table.lab td.flag{font-family:var(--display);font-weight:800;font-size:.78rem;letter-spacing:.06em;white-space:nowrap}
+.flag-h{color:var(--maroon-dark)}
+.flag-l{color:var(--teal-text)}
+.flag-c{color:var(--maroon);background:var(--navy-tint);padding:.05rem .4rem;border-radius:99px}
+tr.abn td.val{color:var(--maroon-dark)}
+table.lab td.ref{color:var(--ink-muted);white-space:nowrap;font-size:.86rem}
+.note-line{margin:.6rem 0 0;padding:.7rem .9rem;background:var(--off-white);border:1px solid var(--rule-soft);border-radius:8px;font-size:.92rem}
+
+/* ---------- Reference key ---------- */
+table.ref{width:100%;border-collapse:collapse;font-size:.93rem;min-width:640px}
+table.ref th,table.ref td{padding:.55rem .7rem;border-bottom:1px solid var(--rule-soft);text-align:left;vertical-align:top}
+table.ref thead th{font-family:var(--display);font-weight:700;font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-muted);border-bottom:2px solid var(--rule)}
+table.ref td.par{font-family:var(--display);font-weight:700;color:var(--navy);white-space:nowrap}
+table.ref td.rng{white-space:nowrap;font-variant-numeric:tabular-nums;color:var(--ink-muted)}
+
+/* ---------- Forms and buttons ---------- */
+.btn{
+  appearance:none;font-family:var(--display);font-weight:700;font-size:.92rem;letter-spacing:.02em;
+  padding:.7rem 1.15rem;border-radius:var(--radius);cursor:pointer;border:1px solid var(--maroon);
+  background:var(--maroon);color:var(--white);transition:transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+.btn:hover{background:var(--maroon-dark);transform:translateY(-1px);box-shadow:var(--shadow-lift)}
+.btn.secondary{background:var(--white);color:var(--navy);border-color:var(--rule)}
+.btn.secondary:hover{background:var(--navy-tint);color:var(--navy)}
+.btn.accent{background:var(--navy);border-color:var(--navy)}
+.btn.accent:hover{background:var(--navy-darkest)}
+.btn:disabled{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none}
+.btnrow{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1rem}
+fieldset{border:1px solid var(--rule-soft);border-radius:8px;padding:1rem 1.1rem;margin:0 0 1rem}
+legend{font-family:var(--display);font-weight:700;font-size:.86rem;color:var(--navy);padding:0 .4rem}
+.opt{display:flex;gap:.65rem;align-items:flex-start;padding:.55rem .6rem;border:1px solid transparent;border-radius:8px}
+.opt:hover{background:var(--off-white)}
+.opt input{margin-top:.35rem;width:1.05rem;height:1.05rem;accent-color:var(--terra)}
+.opt label{cursor:pointer;flex:1}
+.opt.correct{background:var(--maroon);border-color:var(--maroon)}
+.opt.correct label{color:var(--white);font-weight:700}
+.opt.correct:hover{background:var(--maroon)}
+.opt.wrongpick{background:var(--navy-tint);border-color:var(--navy-mid)}
+.opt .tagline{display:block;font-family:var(--display);font-weight:700;font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;margin-top:.15rem}
+.opt.correct .tagline{color:var(--straw)}
+.opt.wrongpick .tagline{color:var(--navy)}
+label.field{display:block;font-family:var(--display);font-weight:600;font-size:.84rem;color:var(--navy);margin:0 0 .3rem}
+input[type="text"],input[type="number"],textarea,select{
+  width:100%;font-family:var(--body);font-size:.95rem;color:var(--ink);
+  padding:.6rem .7rem;border:1px solid var(--rule);border-radius:8px;background:var(--white);
+}
+textarea{min-height:6rem;resize:vertical;line-height:1.55}
+.fieldrow{margin:0 0 .9rem}
+.numgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.85rem;align-items:end}
+.numgrid > div{display:flex;flex-direction:column;justify-content:flex-end}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.hint{font-size:.83rem;color:var(--ink-muted);margin:.25rem 0 0}
+
+/* ---------- Feedback ---------- */
+.feedback{border:1px solid var(--rule);border-radius:8px;padding:1.1rem 1.15rem;background:var(--white);box-shadow:var(--shadow-card);margin-top:1rem}
+.feedback[hidden]{display:none}
+.verdict{font-family:var(--display);font-weight:800;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;padding:.28rem .7rem;border-radius:99px;display:inline-block;margin-bottom:.6rem}
+.verdict.right{background:var(--navy-tint);color:var(--navy);border:1px solid var(--navy-mid)}
+.verdict.wrong{background:var(--maroon);color:var(--white)}
+.progressline{font-family:var(--display);font-weight:700;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-muted)}
+.dots{display:flex;flex-wrap:wrap;gap:.35rem;margin:.6rem 0 0;padding:0;list-style:none}
+.dot{width:1.55rem;height:1.55rem;border-radius:8px;border:1px dashed var(--rule);background:var(--white);color:var(--ink-muted);font-family:var(--display);font-weight:700;font-size:.72rem;display:grid;place-items:center;cursor:pointer;padding:0}
+.dot[data-state="current"]{border:2px solid var(--gold);border-style:solid;color:var(--navy)}
+.dot[data-state="done"]{border:1px solid var(--navy-mid);border-style:solid;background:var(--navy-tint);color:var(--navy)}
+
+/* ---------- Misc blocks ---------- */
+ul.clean{margin:0 0 1rem;padding-left:1.15rem}
+ul.clean li{margin:0 0 .45rem}
+ol.clean{margin:0 0 1rem;padding-left:1.3rem}
+ol.clean li{margin:0 0 .55rem}
+.branchnote{background:var(--off-white);border:1px solid var(--rule-soft);border-radius:8px;padding:.85rem 1rem;margin-top:.9rem}
+.branchnote .kicker{color:var(--gold-text)}
+details{border:1px solid var(--rule-soft);border-radius:8px;padding:.75rem 1rem;margin:0 0 .75rem;background:var(--white)}
+details summary{font-family:var(--display);font-weight:700;color:var(--navy);cursor:pointer;list-style:none}
+details summary::-webkit-details-marker{display:none}
+details summary::before{content:"+";display:inline-block;width:1.1rem;font-weight:800;color:var(--maroon-dark)}
+details[open] summary::before{content:"\2212"}
+.badge{font-family:var(--display);font-weight:700;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;padding:.2rem .6rem;border-radius:99px;border:1px solid var(--rule);color:var(--ink-muted);white-space:nowrap}
+.badge.req{background:var(--maroon);color:var(--white);border-color:var(--maroon)}
+.badge.gold{background:var(--gold);color:var(--navy);border-color:var(--gold)}
+.checkline{display:flex;gap:.6rem;align-items:flex-start;padding:.45rem 0;border-bottom:1px solid var(--rule-soft)}
+.checkline:last-child{border-bottom:0}
+.checkline .mark{font-family:var(--display);font-weight:800;font-size:.78rem;letter-spacing:.05em;white-space:nowrap;min-width:5.2rem}
+.mark-pass{color:var(--navy)}
+.mark-fail{color:var(--maroon)}
+.mark-wait{color:var(--ink-muted)}
+
+/* ---------- Footer ---------- */
+.site-footer{background:var(--navy);color:#C9D2DE;padding:2rem 0;margin-top:2rem;font-size:.9rem}
+.site-footer strong{color:var(--white);font-family:var(--display)}
+
+/* ---------- Drawing canvas ---------- */
+.toolbar{display:flex;flex-wrap:wrap;gap:1.1rem;align-items:center;padding:.85rem 1rem;border:1px solid var(--rule-soft);border-radius:8px;background:var(--off-white);margin:0 0 .75rem}
+.toolgroup{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center}
+.toollabel{font-family:var(--display);font-weight:700;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-muted);margin-right:.2rem}
+.btn.tiny{padding:.42rem .75rem;font-size:.82rem}
+.btn.tiny[aria-pressed="true"]{background:var(--maroon);color:var(--white);border-color:var(--maroon)}
+.swatch{width:2rem;height:2rem;border-radius:8px;border:2px solid var(--rule);cursor:pointer;padding:0}
+.swatch[aria-pressed="true"]{border-color:var(--gold);border-width:3px;box-shadow:0 0 0 2px var(--white) inset}
+.canvas-card{border-color:var(--rule)}
+.canvas-bar{display:flex;flex-wrap:wrap;gap:.75rem 1rem;align-items:center;background:var(--maroon);color:var(--white);border-radius:8px;padding:.7rem 1rem;margin:0 0 .9rem}
+.canvas-badge{font-family:var(--display);font-weight:800;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;background:var(--gold);color:var(--navy);padding:.25rem .7rem;border-radius:99px}
+.canvas-course{font-family:var(--display);font-weight:600;font-size:.86rem;color:var(--offwhite-text);letter-spacing:.03em}
+.canvas-foot{font-family:var(--display);font-weight:600;font-size:.84rem;color:var(--ink-muted);margin:.75rem 0 0}
+.custom-color{display:inline-flex;align-items:center}
+.custom-color input[type="color"]{width:2rem;height:2rem;padding:0;border:2px solid var(--rule);border-radius:8px;background:var(--white);cursor:pointer}
+.canvas-stage{position:relative}
+#dw_textbox{position:absolute;z-index:5}
+#dw_textbox input{font-family:var(--display);font-weight:700;font-size:.95rem;padding:.3rem .45rem;border:2px solid var(--maroon);border-radius:4px;min-width:12rem;background:var(--white)}
+.canvasframe{border:1px solid var(--rule);border-radius:8px;background:var(--white);padding:.5rem;box-shadow:var(--shadow-card)}
+#dw_canvas{display:block;width:auto;max-width:100%;height:78vh;max-height:78vh;aspect-ratio:1240/1754;margin:0 auto;background:var(--white);touch-action:none;cursor:crosshair;border:1px dashed var(--rule-soft);border-radius:4px}
+@media (max-width: 760px){ #dw_canvas{height:auto;max-height:none;width:100%} }
+.ex-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem}
+.ex-strip figure{margin:0}
+.ex-strip img{width:100%;border:1px solid var(--rule);border-radius:4px;background:#fff}
+.ex-strip figcaption{font-family:var(--display);font-weight:700;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-muted);margin-top:.25rem;text-align:center}
+
+/* ---------- Export sheet ---------- */
+#exportSheet{display:none}
+#exportSheet.onscreen{display:block;border:1px solid var(--rule);border-radius:8px;padding:1rem;background:var(--off-white)}
+.ex-page{background:var(--white);padding:1rem}
+.ex-head{display:flex;justify-content:space-between;gap:1rem;align-items:baseline;border-bottom:1px solid var(--rule);padding-bottom:.4rem;margin-bottom:.8rem}
+.ex-course{font-family:var(--display);font-weight:700;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--maroon-dark)}
+.ex-doc{font-family:var(--display);font-weight:600;font-size:.8rem;color:var(--ink-muted)}
+#ex_img{display:block;width:100%;height:auto;border:1px solid var(--rule-soft)}
+.ex-foot{display:flex;justify-content:space-between;gap:1rem;border-top:1px solid var(--rule);margin-top:.8rem;padding-top:.4rem;font-family:var(--display);font-weight:600;font-size:.72rem;color:var(--ink-muted)}
+.ex-h2{font-size:1rem;margin:1rem 0 .4rem}
+.ex-note{font-size:.82rem;color:var(--ink-muted);max-width:70ch}
+.ex-table{width:100%;border-collapse:collapse;font-size:.86rem;margin:0 0 .6rem}
+.ex-table th,.ex-table td{border-bottom:1px solid var(--rule-soft);padding:.35rem .5rem;text-align:left}
+.ex-table th{font-family:var(--display);font-weight:700;width:14rem;color:var(--navy)}
+.ex-code{font-weight:700;letter-spacing:.12em;color:var(--maroon-dark)}
+
+@media (max-width: 760px){
+  .tablist{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+  .tab{white-space:nowrap;padding:.85rem .8rem;font-size:.82rem}
+  .site-header p.lede{font-size:.98rem}
+  .wrap{padding:0 1rem}
+}
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto !important}
+  .btn:hover{transform:none}
+}
+@media print{
+  .tabbar,.btnrow,.skip,.dots{display:none !important}
+  .panel[hidden]{display:block !important}
+  .card,.chart{box-shadow:none;break-inside:avoid}
+  body{font-size:12pt}
+  #exportSheet{display:none}
+  body.export-mode > *{display:none !important}
+  body.export-mode #exportSheet{display:block !important;border:0;padding:0;background:#fff}
+  body.export-mode .ex-page{padding:0}
+  body.export-mode .ex-drawing{break-after:page;page-break-after:always}
+  body.export-mode #ex_img{max-height:235mm;width:auto;max-width:100%;margin:0 auto}
+  @page{margin:14mm}
+}
+
+/* --- order line, specific to the fluids lab --- */
+.checkline .mark{min-width:7.8rem;padding-right:.5rem}
+.order-line{font-family:var(--display);font-weight:700;font-size:1.02rem;color:var(--navy);background:var(--navy-tint);border-radius:var(--radius);padding:.7rem .9rem;margin:0}
+
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <p class="eyebrow">BIO 005 Human Physiology &middot; Membranes and Transport</p>
+    <h1>Osmosis and IV Fluids Lab</h1>
+    <p class="lede">Every bag of fluid hanging in a hospital is an osmosis problem with a patient attached to it. Work eleven real orders, run the compartment model yourself instead of memorizing where each fluid goes, then build a case backward from a consequence and prove your patient could produce it.</p>
+    <div class="chipline">
+      <span class="chip">11 fluid orders</span>
+      <span class="chip alt">Working compartment model</span>
+      <span class="chip alt">Backward case build</span>
+      <span class="chip alt">Hand drawn flow chart</span>
+    </div>
+  </div>
+</header>
+
+<nav class="tabbar" aria-label="Lab sections">
+  <div class="wrap">
+    <div class="tablist" role="tablist" aria-label="Lab sections">
+      <button class="tab" role="tab" id="tab-read" aria-controls="panel-read" aria-selected="true" tabindex="0">1. The compartments</button>
+      <button class="tab" role="tab" id="tab-bags" aria-controls="panel-bags" aria-selected="false" tabindex="-1">2. What is in the bag</button>
+      <button class="tab" role="tab" id="tab-cases" aria-controls="panel-cases" aria-selected="false" tabindex="-1">3. Fluid orders</button>
+      <button class="tab" role="tab" id="tab-calc" aria-controls="panel-calc" aria-selected="false" tabindex="-1">4. Compartment model</button>
+      <button class="tab" role="tab" id="tab-build" aria-controls="panel-build" aria-selected="false" tabindex="-1">5. Build it backward</button>
+      <button class="tab" role="tab" id="tab-assign" aria-controls="panel-assign" aria-selected="false" tabindex="-1">6. Flow chart and rubric</button>
+      <button class="tab" role="tab" id="tab-canvas" aria-controls="panel-canvas" aria-selected="false" tabindex="-1">7. Drawing canvas</button>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- =============== PANEL 1 =============== -->
+<section class="panel" id="panel-read" role="tabpanel" aria-labelledby="tab-read" tabindex="0">
+<div class="wrap">
+
+  <div class="card">
+    <p class="kicker">Start here</p>
+    <h2>Water has no opinion. It goes where the solute is.</h2>
+    <p>Water crosses cell membranes freely, almost everywhere in the body, through aquaporins and through the lipid bilayer itself. It is not pumped and it is not chosen. It moves down its own concentration gradient, which is the same as saying it moves toward wherever solute is more concentrated, until the concentrations on both sides match.</p>
+    <p>That single sentence predicts every result in this lab. If you know what a fluid does to the solute concentration outside the cells, you already know which way water will move and roughly how much. What you do not get to do is memorize a list of which bag goes where, because the list falls apart the moment the patient is not a healthy adult with a normal sodium.</p>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <h3>The compartments, in a 70 kg adult</h3>
+      <p class="small muted">These fractions are teaching approximations. They shift with age, sex, and body composition, because fat holds much less water than muscle does.</p>
+      <ul class="clean">
+        <li><strong>Total body water</strong> is about 60 percent of body weight in an adult man and about 50 percent in an adult woman, so roughly 42 liters here. Older adults run lower, closer to 50 and 45 percent.</li>
+        <li><strong>Two thirds sits inside cells</strong>, about 28 liters. This is the intracellular compartment, and it is the reservoir that hypotonic and hypertonic fluids move water into and out of.</li>
+        <li><strong>One third sits outside cells</strong>, about 14 liters. Of that, three quarters is interstitial fluid bathing the tissues and one quarter, about 3.5 liters, is plasma.</li>
+      </ul>
+      <p style="margin:0">That last number is why a liter of the wrong fluid does almost nothing for a patient who is bleeding. Only the plasma fraction is holding up the blood pressure.</p>
+    </div>
+    <div class="card">
+      <h3>Osmolarity is a number. Tonicity is a behavior.</h3>
+      <p><strong>Osmolarity</strong> counts every dissolved particle in a liter, whether or not it can cross the membrane. You can calculate the effective part from a chemistry panel as twice the sodium plus the glucose divided by 18.</p>
+      <p><strong>Tonicity</strong> is what a solution actually does to a cell sitting in it, and only particles that cannot cross the membrane count. A solute that crosses freely equilibrates on both sides and ends up pulling on nothing.</p>
+      <p style="margin:0">Urea is the standard example. It raises measured osmolarity, it crosses cell membranes readily, and at steady state it moves no water. Dextrose in a bag of D5W is the same story for a different reason: it is an effective osmole in the bag, and then cells take it up and burn it, and what is left behind is plain water. This is why the bag label and the physiological effect disagree, and why students who memorize the label get D5W wrong every time.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Numbers you will use all lab</h3>
+    <div class="tablewrap">
+      <table class="ref">
+        <thead><tr><th scope="col">Quantity</th><th scope="col">Value</th><th scope="col">Why it is that number</th></tr></thead>
+        <tbody>
+          <tr><td class="par">Plasma osmolality</td><td class="rng">275 to 295 mOsm/kg</td><td>Defended tightly by thirst and by antidiuretic hormone, because cell volume in the brain depends on it.</td></tr>
+          <tr><td class="par">Effective osmolarity</td><td class="rng">2 &times; Na + glucose &divide; 18</td><td>Sodium is the dominant extracellular particle and it is doubled because its anions come along. Urea is deliberately left out, because it crosses membranes and therefore moves no water.</td></tr>
+          <tr><td class="par">Total body water</td><td class="rng">0.6 &times; kg (M), 0.5 &times; kg (F)</td><td>Muscle is roughly three quarters water and fat is roughly one tenth, so body composition sets the fraction. Subtract about 0.05 in older adults.</td></tr>
+          <tr><td class="par">Serum sodium after a fluid</td><td class="rng">(Na &times; TBW + (Na<sub>fluid</sub> + K<sub>fluid</sub>) &times; V) &divide; (TBW + V)</td><td>Sodium concentration behaves like total exchangeable cation divided by total body water, which is why potassium in the bag raises sodium too.</td></tr>
+          <tr><td class="par">Safe sodium correction</td><td class="rng">no more than 8 mEq/L in 24 hours</td><td>Brain cells adapt to a chronic sodium by gaining or shedding internal osmoles over days. Reversing the outside faster than they can readjust shrinks or swells them.</td></tr>
+          <tr><td class="par">Corrected sodium in hyperglycemia</td><td class="rng">measured Na + 1.6 per 100 mg/dL of glucose above 100</td><td>Glucose that cannot enter cells pulls water into the extracellular space and dilutes the sodium there. The sodium is not truly low.</td></tr>
+          <tr><td class="par">Plasma share of the ECF</td><td class="rng">about one quarter</td><td>The rest is interstitial. This ratio is why isotonic fluid raises blood pressure much less than the infused volume suggests.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>How to move through this lab</h3>
+    <ol class="clean">
+      <li>Read section 2 once so you know what is actually dissolved in each bag. You do not need to memorize it, it stays on the page.</li>
+      <li>Work all eleven orders in section 3. Each one makes you commit a prediction before it will show you anything.</li>
+      <li>Use section 4 whenever an order surprises you. It runs the same two compartment model on any patient and any fluid, so you can prove what you suspect instead of hoping.</li>
+      <li>Build your case backward in section 5. You are given a consequence and you have to construct the patient and the order that produce it.</li>
+      <li>Draw your flow chart, on paper or in the canvas in section 7, and defend it in the discussion. Section 6 has the requirements and the rubric.</li>
+    </ol>
+    <p class="note-line"><strong>On using AI in this lab.</strong> You are meant to use it. Every order makes you commit a read before anything unlocks, this page keeps a record of the order you actually checked things in, and the final artifact is drawn by your own hand. None of those three can be produced by a model. Section 6 says exactly where AI helps here and where it cannot follow.</p>
+    <p class="small muted" style="margin:0">Nothing you type into this page is saved anywhere. Close the tab and it is gone, so copy anything you want to keep before you leave. Everything here is teaching material about physiology and is not a guide to treating anyone.</p>
+  </div>
+
+</div>
+</section>
+
+<!-- =============== PANEL 2 =============== -->
+<section class="panel" id="panel-bags" role="tabpanel" aria-labelledby="tab-bags" tabindex="0" hidden>
+<div class="wrap">
+
+  <div class="card">
+    <p class="kicker">Section 2</p>
+    <h2>What is actually in the bag</h2>
+    <p>Two columns matter more than the rest. The <strong>bag osmolarity</strong> is what a machine measures in the fluid before it goes in. The <strong>effective osmolarity</strong> is what is still pulling on water once the body has had a few minutes with it, and it is the number that predicts where the water lands. They differ whenever the bag contains dextrose, because cells take dextrose up and metabolize it, leaving the water behind.</p>
+    <p style="margin:0">Look at plasma in the last row while you read. Normal saline is called normal, and its chloride is more than half again the plasma value. That difference has consequences, and you meet them in order 3.</p>
+  </div>
+
+  <div class="card">
+    <div class="tablewrap">
+      <table class="ref">
+        <caption>Composition per liter. Electrolytes in mEq/L, osmolarity in mOsm/L.</caption>
+        <thead>
+          <tr><th scope="col">Fluid</th><th scope="col">Na</th><th scope="col">K</th><th scope="col">Cl</th><th scope="col">Other</th><th scope="col">Bag</th><th scope="col">Effective</th><th scope="col">Where the water ends up</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="par">0.9% NaCl</td><td class="rng">154</td><td class="rng">0</td><td class="rng">154</td><td class="rng">none</td><td class="rng">308</td><td class="rng">308</td><td>Stays in the extracellular space. About a quarter of it in plasma, the rest interstitial, essentially none into cells.</td></tr>
+          <tr><td class="par">Lactated Ringer's</td><td class="rng">130</td><td class="rng">4</td><td class="rng">109</td><td class="rng">lactate 28, Ca 3</td><td class="rng">273</td><td class="rng">273</td><td>Practically the same as saline, with a chloride load much closer to plasma. Lactate is converted to bicarbonate in the liver.</td></tr>
+          <tr><td class="par">0.45% NaCl</td><td class="rng">77</td><td class="rng">0</td><td class="rng">77</td><td class="rng">none</td><td class="rng">154</td><td class="rng">154</td><td>Hypotonic. Roughly a third goes into cells, the rest spreads through the extracellular space.</td></tr>
+          <tr><td class="par">D5W</td><td class="rng">0</td><td class="rng">0</td><td class="rng">0</td><td class="rng">dextrose 50 g</td><td class="rng">252</td><td class="rng">0</td><td>Free water once the dextrose is burned. Two thirds into cells, one third extracellular, and only about a twelfth reaches plasma.</td></tr>
+          <tr><td class="par">D5 0.45% NaCl</td><td class="rng">77</td><td class="rng">0</td><td class="rng">77</td><td class="rng">dextrose 50 g</td><td class="rng">406</td><td class="rng">154</td><td>Behaves as half normal saline after the dextrose is gone. The usual maintenance backbone, with potassium added.</td></tr>
+          <tr><td class="par">3% NaCl</td><td class="rng">513</td><td class="rng">0</td><td class="rng">513</td><td class="rng">none</td><td class="rng">1026</td><td class="rng">1026</td><td>Hypertonic. Pulls water out of cells, so the extracellular space grows by more than the volume infused.</td></tr>
+          <tr><td class="par">5% albumin</td><td class="rng">145</td><td class="rng">0</td><td class="rng">145</td><td class="rng">albumin 50 g</td><td class="rng">300</td><td class="rng">300</td><td>Isotonic, and the protein is too large to cross the capillary wall freely, so it holds water in the vascular space by oncotic pressure.</td></tr>
+          <tr><td class="par">Sterile water</td><td class="rng">0</td><td class="rng">0</td><td class="rng">0</td><td class="rng">none</td><td class="rng">0</td><td class="rng">0</td><td>A diluent. Never infused on its own. Order 7 is about what happens if it is.</td></tr>
+          <tr><td class="par">Plasma, for comparison</td><td class="rng">140</td><td class="rng">4</td><td class="rng">100</td><td class="rng">bicarbonate 24</td><td class="rng">290</td><td class="rng">285</td><td>The target every one of these is being compared against.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <h3>Why dextrose is in the bag at all</h3>
+      <p style="margin:0">Fifty grams of dextrose is only about 170 kilocalories, nowhere near a day's needs, so it is not feeding anyone. It is there to blunt ketosis. A small steady glucose supply keeps insulin from bottoming out, and that is enough to slow the breakdown of muscle protein for fuel in a patient who is not eating. It also means a fluid that started as sugar water ends as plain water, which is the whole trick of D5W.</p>
+    </div>
+    <div class="card">
+      <h3>Why the chloride number matters</h3>
+      <p style="margin:0">Plasma chloride runs about 100 mEq/L and normal saline delivers 154. Give enough of it and extracellular chloride climbs. As chloride rises relative to sodium, bicarbonate has to fall to keep the charges balanced, and the patient develops an acidosis with a normal anion gap. Lactated Ringer's avoids this by carrying less chloride and replacing the difference with lactate, which the liver converts to bicarbonate.</p>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<!-- =============== PANEL 3 =============== -->
+<section class="panel" id="panel-cases" role="tabpanel" aria-labelledby="tab-cases" tabindex="0" hidden>
+<div class="wrap">
+
+  <div class="card tight">
+    <p class="progressline" id="caseProgress">Order 1 of 11</p>
+    <ul class="dots" id="caseDots" aria-label="Jump to order"></ul>
+  </div>
+
+  <div class="chart" id="chartHost">
+    <div class="chart-banner">
+      <span class="pname" id="pName">Patient</span>
+      <span class="pmeta" id="pMeta"></span>
+    </div>
+    <div class="chart-strip" id="pStrip"></div>
+    <div class="chart-body">
+      <p class="chart-section-label">Presenting note</p>
+      <p id="pNote"></p>
+
+      <p class="chart-section-label">Relevant results</p>
+      <div class="tablewrap">
+        <table class="lab" id="labTable">
+          <caption id="labCaption" class="sr-only">Results</caption>
+          <thead>
+            <tr><th scope="col">Test</th><th scope="col">Result</th><th scope="col">Flag</th><th scope="col">Reference</th></tr>
+          </thead>
+          <tbody id="labBody"></tbody>
+        </table>
+      </div>
+
+      <p class="chart-section-label">Order as written</p>
+      <p class="order-line" id="pOrder"></p>
+      <p class="note-line" id="pAddendum"></p>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:1.25rem">
+    <h3>Step 1. Commit before you look</h3>
+    <p class="small muted">Write your read first. The options and the answer stay locked until you do. Everything you type here feeds the path audit at the bottom of this section, which is what your flow chart has to match.</p>
+    <div class="fieldrow" style="max-width:560px">
+      <label class="field" for="firstCue">Before you write anything, what did you actually check first on this order?</label>
+      <select id="firstCue">
+        <option value="">Choose one</option>
+        <option>The fluid's effective osmolarity against the patient's</option>
+        <option>Which compartment the patient is actually short in</option>
+        <option>The serum sodium</option>
+        <option>The chloride, or the acid base picture</option>
+        <option>The rate, and how fast anything would change</option>
+        <option>The potassium</option>
+        <option>The glucose</option>
+        <option>Whether the patient can tolerate extra extracellular volume</option>
+        <option>The presenting note, before any number</option>
+      </select>
+      <p class="hint">Be honest rather than tidy. The point is to capture the order you really used.</p>
+    </div>
+    <div class="fieldrow">
+      <label class="field" for="predict">Now the read. What will this order do to the compartments, and is that what this patient needs?</label>
+      <textarea id="predict" aria-describedby="predictHint"></textarea>
+      <p class="hint" id="predictHint">At least fifteen words. Session only, nothing is stored or submitted anywhere.</p>
+    </div>
+    <div class="btnrow">
+      <button class="btn" id="lockBtn" type="button">Lock my read and show the options</button>
+    </div>
+  </div>
+
+  <div class="card" id="optionCard" hidden>
+    <h3>Step 2. Call it</h3>
+    <form id="optionForm">
+      <fieldset>
+        <legend id="optLegend">Which statement is right?</legend>
+        <div id="optionList"></div>
+      </fieldset>
+      <div class="btnrow">
+        <button class="btn accent" id="checkBtn" type="submit">Check my read</button>
+        <button class="btn secondary" id="prevBtn" type="button">Previous order</button>
+        <button class="btn secondary" id="nextBtn" type="button">Next order</button>
+      </div>
+    </form>
+    <div class="feedback" id="feedback" hidden aria-live="polite">
+      <span class="verdict" id="verdict"></span>
+      <h4 id="fbTitle"></h4>
+      <p id="fbBody"></p>
+      <p class="kicker">What the numbers show</p>
+      <ul class="clean" id="fbClues"></ul>
+      <div class="branchnote">
+        <p class="kicker">Flow chart branch this order forces</p>
+        <p id="fbBranch" style="margin:0"></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" id="closeCard" hidden>
+    <h3>Step 3. Close the loop</h3>
+    <p class="small muted">This is the graded half. Anyone can read an explanation afterward. What earns credit is an accurate account of what your own reasoning did when it met the order.</p>
+    <div class="fieldrow">
+      <label class="field" for="reflect">What changed between your locked read and the answer, and what specifically corrected it? If nothing changed, say what confirmed it.</label>
+      <textarea id="reflect" aria-describedby="reflectHint"></textarea>
+      <p class="hint" id="reflectHint">Fifteen words minimum. Name the number or the reasoning step that moved you.</p>
+    </div>
+    <div class="fieldrow">
+      <label class="field" for="runner">What should have been ordered instead, and what would you have to know about this patient to be sure?</label>
+      <textarea id="runner"></textarea>
+    </div>
+    <div class="btnrow">
+      <button class="btn" id="completeBtn" type="button">Mark this order complete</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Path audit</h3>
+    <p>As you work, this page keeps a record of what you checked first, order by order. That record is yours and nothing else produces it, which is exactly why your flow chart has to agree with it. If your audit says you went to the sodium first on eight orders and your drawing puts it near the bottom, you drew someone else's chart.</p>
+    <div class="btnrow">
+      <button class="btn accent" id="auditBtn" type="button">Assemble my path audit</button>
+    </div>
+    <div class="fieldrow" id="auditWrap" hidden>
+      <label class="field" for="auditOut">Path audit. Select all and copy it into your submission.</label>
+      <textarea id="auditOut" style="min-height:16rem" readonly></textarea>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<!-- =============== PANEL 4 =============== -->
+<section class="panel" id="panel-calc" role="tabpanel" aria-labelledby="tab-calc" tabindex="0" hidden>
+<div class="wrap">
+
+  <div class="card">
+    <p class="kicker">Section 4</p>
+    <h2>The compartment model</h2>
+    <p>This runs the same two compartment osmotic calculation on any patient and any fluid, and it is worth understanding rather than just using. There are only four steps in it.</p>
+    <ol class="clean">
+      <li>Work out the patient's total body water from weight, and split it two thirds inside cells and one third outside.</li>
+      <li>Work out the starting effective osmolarity from sodium and glucose, and multiply by total body water to get the total effective solute the patient is carrying.</li>
+      <li>Add the fluid. Its volume goes into total body water and its <strong>effective</strong> osmoles go into total solute. Divide one by the other for the new osmolarity.</li>
+      <li>Cell solute did not change, because nothing in these bags crosses into cells and stays there. So the new intracellular volume is old cell solute divided by the new osmolarity, and whatever is left of total body water is extracellular.</li>
+    </ol>
+    <p style="margin:0">That last step is the whole thing. Water moves until concentrations match, so the cells swell or shrink by exactly the amount that restores equality, and you can calculate it rather than guess at it.</p>
+  </div>
+
+  <div class="card">
+    <h3>Run it</h3>
+    <form id="calcForm">
+      <p class="kicker">The patient</p>
+      <div class="numgrid">
+        <div><label class="field" for="c_wt">Weight, kg</label><input type="number" step="0.1" id="c_wt" value="70"></div>
+        <div><label class="field" for="c_frac">Body water fraction</label>
+          <select id="c_frac">
+            <option value="0.6">0.6, adult man</option>
+            <option value="0.5">0.5, adult woman</option>
+            <option value="0.55">0.55, older man</option>
+            <option value="0.45">0.45, older woman</option>
+          </select>
+        </div>
+        <div><label class="field" for="c_na">Serum sodium, mEq/L</label><input type="number" step="0.1" id="c_na" value="140"></div>
+        <div><label class="field" for="c_glu">Serum glucose, mg/dL</label><input type="number" step="1" id="c_glu" value="90"></div>
+      </div>
+      <p class="kicker" style="margin-top:1.1rem">The order</p>
+      <div class="numgrid">
+        <div><label class="field" for="c_fluid">Fluid</label>
+          <select id="c_fluid"></select>
+        </div>
+        <div><label class="field" for="c_vol">Volume, liters</label><input type="number" step="0.05" id="c_vol" value="1"></div>
+        <div><label class="field" for="c_hrs">Given over, hours</label><input type="number" step="0.25" id="c_hrs" value="4"></div>
+      </div>
+      <div class="btnrow">
+        <button class="btn" type="submit">Run the model</button>
+        <button class="btn secondary" type="reset" id="calcReset">Clear</button>
+      </div>
+    </form>
+    <div class="feedback" id="calcOut" hidden aria-live="polite">
+      <h4>Result</h4>
+      <div class="tablewrap"><table class="lab" id="calcTable"><caption class="sr-only">Compartment model result</caption>
+        <thead><tr><th scope="col">Quantity</th><th scope="col">Before</th><th scope="col">After</th><th scope="col">Change</th></tr></thead>
+        <tbody id="calcBody"></tbody></table></div>
+      <div id="calcFlags" style="margin-top:.9rem"></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>What this model does not do</h3>
+    <ul class="clean">
+      <li>It assumes the kidneys are not excreting anything during the infusion. Over hours that is wrong, and a working kidney will blunt everything you see here.</li>
+      <li>It treats the plasma share of the extracellular space as a fixed quarter. Capillary leak in sepsis and low albumin in liver disease both push more of it into the interstitium than that.</li>
+      <li>It does not model oncotic pressure, so it will understate what albumin does to plasma volume. Albumin is flagged separately in the results for that reason.</li>
+      <li>It says nothing about whether a heart, a brain or a lung can tolerate the shift it predicts. That judgment is yours and it is where the orders in section 3 live.</li>
+    </ul>
+    <p class="note-line" style="margin:0">A model you can state the limits of is a model you understand. Being able to name these is worth points in the discussion.</p>
+  </div>
+
+</div>
+</section>
+
+<!-- =============== PANEL 5 =============== -->
+<section class="panel" id="panel-build" role="tabpanel" aria-labelledby="tab-build" tabindex="0" hidden>
+<div class="wrap">
+
+  <div class="card">
+    <p class="kicker">Section 5</p>
+    <h2>Build it backward from the consequence</h2>
+    <p>Solving a case and building one are not the same skill, and the second is harder. You will be assigned a consequence, something that actually went wrong in a patient. Your job is to work backward and construct the patient and the fluid order that would produce it, run your own numbers through the model in section 4 to show it is physiologically possible, and then say what should have been ordered instead.</p>
+    <p style="margin:0">This is the reverse of what you did in section 3, and it is much harder to fake. A consequence has many possible causes and only some of them survive the arithmetic.</p>
+  </div>
+
+  <div class="card">
+    <h3>Step 1. Get your consequence</h3>
+    <p class="small muted">Make up any four digit number. Do not use your student ID, your birthday or your phone number. The code only exists to hand out consequences without anyone entering identifying information.</p>
+    <div style="max-width:340px">
+      <label class="field" for="seedInput">Your four digit code</label>
+      <input type="text" id="seedInput" inputmode="numeric" maxlength="4" aria-describedby="seedHint">
+      <p class="hint" id="seedHint">Write it down. The same code always returns the same consequence.</p>
+    </div>
+    <div class="btnrow">
+      <button class="btn" id="seedBtn" type="button">Assign my consequence</button>
+    </div>
+    <div class="feedback" id="seedOut" hidden aria-live="polite">
+      <span class="verdict right" id="seedTag">Assigned</span>
+      <h4 id="orgName"></h4>
+      <p id="orgSyndrome"></p>
+      <p class="kicker">What you have to work out yourself</p>
+      <ul class="clean" id="orgTasks"></ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Step 2. Construct the patient</h3>
+    <p class="small muted">Fictional patient. Do not use a real person, and do not use anyone you know from clinical or work.</p>
+    <div class="numgrid">
+      <div class="fieldrow"><label class="field" for="b_name">Initials or fictional name</label><input type="text" id="b_name"></div>
+      <div class="fieldrow"><label class="field" for="b_age">Age</label><input type="text" id="b_age"></div>
+      <div class="fieldrow"><label class="field" for="b_sex">Sex</label><input type="text" id="b_sex"></div>
+      <div class="fieldrow"><label class="field" for="b_wt">Weight, kg</label><input type="text" id="b_wt"></div>
+    </div>
+    <div class="fieldrow">
+      <label class="field" for="b_story">Presenting note. Why they were admitted, how long the problem had been developing, and anything about the heart, kidneys, liver or brain that changes what they can tolerate.</label>
+      <textarea id="b_story"></textarea>
+    </div>
+    <div class="fieldrow">
+      <label class="field" for="b_labs">Starting numbers. At minimum sodium, potassium, chloride, bicarbonate and glucose. Add anything else your case needs.</label>
+      <textarea id="b_labs"></textarea>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Step 3. Write the order that caused it</h3>
+    <div class="numgrid">
+      <div class="fieldrow"><label class="field" for="b_fluid">Fluid</label><input type="text" id="b_fluid"></div>
+      <div class="fieldrow"><label class="field" for="b_vol">Volume</label><input type="text" id="b_vol"></div>
+      <div class="fieldrow"><label class="field" for="b_rate">Rate or duration</label><input type="text" id="b_rate"></div>
+      <div class="fieldrow"><label class="field" for="b_who">Why it looked reasonable at the time</label><input type="text" id="b_who"></div>
+    </div>
+    <p class="note-line" style="margin-top:0"><strong>Run it through section 4 before you go further.</strong> Paste the numbers the model gives you into the box below. If the model does not produce a shift big enough to explain your consequence, your case is not yet possible and you need to change the patient, the fluid, the volume or the rate until it is.</p>
+    <div class="fieldrow">
+      <label class="field" for="b_model">Model output for your case</label>
+      <textarea id="b_model" style="min-height:7rem"></textarea>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Step 4. Trace the mechanism, then fix it</h3>
+    <div class="fieldrow">
+      <label class="field" for="b_defend">The chain, one step at a time. The fluid did this to extracellular osmolarity, so water moved this way, so this compartment changed by this much, so this tissue did this, so the patient developed the consequence.</label>
+      <textarea id="b_defend" style="min-height:9rem"></textarea>
+    </div>
+    <div class="fieldrow">
+      <label class="field" for="b_fix">What should have been ordered instead, at what rate, and what would you have watched to know it was working?</label>
+      <textarea id="b_fix"></textarea>
+    </div>
+    <div class="fieldrow">
+      <label class="field" for="b_wrong">What would have to be true for your explanation to be wrong? Name the strongest alternative cause of the same consequence and say what would rule it out.</label>
+      <textarea id="b_wrong"></textarea>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Step 5. Test it against an AI, then log what happened</h3>
+    <p>Give an AI your patient and your order, without naming the consequence, and ask what complication it would expect. This is the point where the model is the thing being tested, not the source.</p>
+    <ul class="clean">
+      <li>If it names your consequence, your case is coherent enough that the picture points where you meant it to point.</li>
+      <li>If it names something else, work out which of two things happened. Either it missed, and you can show with the numbers why your chain still holds, or your case has a contradiction and you need to find it.</li>
+      <li>Then push once more. Ask it to defend an order you know is wrong for your patient and see whether it goes along with you. What it does there is worth writing down.</li>
+    </ul>
+    <div class="fieldrow">
+      <label class="field" for="b_log">AI interrogation log. What you asked, what came back, what you kept, what you threw out, and why.</label>
+      <textarea id="b_log" style="min-height:9rem"></textarea>
+    </div>
+    <div class="btnrow">
+      <button class="btn accent" id="assembleBtn" type="button">Assemble my case sheet</button>
+      <button class="btn secondary" id="printBtn" type="button">Print this page</button>
+    </div>
+    <div class="fieldrow" id="sheetWrap" hidden>
+      <label class="field" for="sheetOut">Case sheet. Select all and copy into your submission.</label>
+      <textarea id="sheetOut" style="min-height:16rem" readonly></textarea>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<!-- =============== PANEL 6 =============== -->
+<section class="panel" id="panel-assign" role="tabpanel" aria-labelledby="tab-assign" tabindex="0" hidden>
+<div class="wrap">
+
+  <div class="card">
+    <p class="kicker">Section 6</p>
+    <h2>The flow chart</h2>
+    <p>After eleven orders you know something you cannot easily say out loud, which is the order in which you actually check things before you agree to hang a bag. The flow chart is where that becomes visible. You are not drawing a summary of IV fluids. You are drawing the decision path you personally used, in the sequence you used it, with the questions written the way you asked them.</p>
+    <p style="margin:0">Your path audit from section 3 gets submitted alongside the drawing, and the two have to agree.</p>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <h3>Required decision points</h3>
+      <p class="small muted">Your chart has to branch on all six of these somewhere, in whatever order you found yourself using them.</p>
+      <ol class="clean">
+        <li><strong>Which compartment is the patient actually short in, or overloaded in.</strong> Nothing else can be decided before this one.</li>
+        <li><strong>What is the fluid's effective osmolarity compared with the patient's.</strong> Not the bag label, the effective number.</li>
+        <li><strong>Which way will water move, and how much.</strong> Into cells, out of cells, or neither.</li>
+        <li><strong>How fast is anything allowed to change.</strong> Especially sodium, in either direction.</li>
+        <li><strong>What comes along with the water.</strong> Chloride, potassium, dextrose, lactate.</li>
+        <li><strong>Can this patient's heart, brain and lungs tolerate the shift you just predicted.</strong></li>
+      </ol>
+    </div>
+    <div class="card">
+      <h3>Requirements</h3>
+      <ul class="clean">
+        <li>Hand drawn on paper, or drawn in the course canvas in section 7 and exported as the stamped PDF. Both are worth the same.</li>
+        <li>Every branch is a question with a yes or no, or a small set of exclusive answers. No branch may be a topic heading.</li>
+        <li>At least eight of the eleven orders end somewhere on your chart, and you label those endpoints.</li>
+        <li>At least one endpoint says stop and do not give this, rather than naming a fluid.</li>
+        <li>Mark the point where the choice of fluid stops mattering and the rate becomes the whole question.</li>
+        <li>Sign it with your name.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Two ways to submit the drawing</h3>
+    <div class="grid2">
+      <div>
+        <p class="kicker">Route A. Paper</p>
+        <p style="margin:0">Draw it on paper in pen or pencil, photograph it, and post the photo. Cross outs and arrows squeezed into the margin are welcome, they are evidence of thinking rather than sloppiness.</p>
+      </div>
+      <div>
+        <p class="kicker">Route B. The course canvas, section 7</p>
+        <p style="margin:0">Draw it in the canvas built into this lab and export the stamped PDF. The canvas cannot open, paste or import a picture, so every mark in that PDF was made stroke by stroke inside the tool, and the stamp on the last page records how it was built.</p>
+      </div>
+    </div>
+    <p class="note-line" style="margin-top:0"><strong>What is not accepted.</strong> A drawing made in any other digital app, including a tablet drawing app, a diagramming tool or anything AI generated. The reason is practical rather than suspicious. A finished digital image gives me no way to tell a drawing from a generated picture, and both of the routes above do.</p>
+  </div>
+
+  <div class="card">
+    <h3>Where AI helps here, and where it cannot follow</h3>
+    <div class="grid2">
+      <div>
+        <p class="kicker">Use it for</p>
+        <ul class="clean">
+          <li>Asking why a mechanism works the way it does, after you have committed your own read.</li>
+          <li>Arguing the other side. Have it defend the fluid you rejected as strongly as it can, then decide whether it beat you.</li>
+          <li>Attacking your built case. Ask it to find the contradiction, and if it finds one, fix it.</li>
+          <li>Rehearsing your walkthrough and telling you where it was unclear.</li>
+        </ul>
+      </div>
+      <div>
+        <p class="kicker">It cannot produce</p>
+        <ul class="clean">
+          <li>Your path audit, which is a record of what you did, order by order.</li>
+          <li>A drawing in your hand on paper, or one built stroke by stroke in the canvas.</li>
+          <li>An account of what changed in your own reasoning, which is the graded half of every order.</li>
+          <li>Your seeded consequence, since no two students have the same one.</li>
+          <li>A live unscripted walkthrough of a patient moving through your chart.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="note-line" style="margin-top:0"><strong>Try this and watch what happens.</strong> Take order 6, the one where a colleague objects to lactated Ringer's because it contains potassium, and put that objection to an AI as though you believed it. Then take order 7 and ask what dose of sterile water would be safe to infuse. You are required to include both exchanges in your log. A model that agrees with a confident wrong premise is showing you its most important failure mode, and in a clinical setting that failure mode has a body attached to it.</p>
+  </div>
+
+  <div class="card">
+    <h3>The discussion</h3>
+    <ol class="clean">
+      <li><strong>Post your chart.</strong> Photo or stamped PDF, plus a Canvas Studio video of three minutes or less. Walk one of the eleven patients through your chart out loud, from the first question to the endpoint. Do not summarize what the chart contains, drive a patient through it.</li>
+      <li><strong>Post your built case.</strong> Patient and order only. Do not name your consequence yet.</li>
+      <li><strong>Reply to two classmates.</strong> Run their case through your own chart and say what complication you land on. Then say where their chart would struggle, using a specific order it cannot resolve.</li>
+      <li><strong>Close your own thread.</strong> Reveal your consequence, say whether your classmates landed on it, and describe one change you would make to your chart based on what came back.</li>
+    </ol>
+    <p class="note-line" style="margin-top:0">Every chart in this class breaks somewhere. Finding out where yours breaks, in public, with a real case, is what makes the next version good. Nobody loses points for a chart that turns out to have a gap. Points come off for a chart nobody could break because it never committed to anything.</p>
+  </div>
+
+  <div class="card">
+    <h3>Rubric</h3>
+    <div class="tablewrap">
+      <table class="ref">
+        <caption>Total 70 points</caption>
+        <thead><tr><th scope="col">Component</th><th scope="col">Points</th><th scope="col">What full credit looks like</th></tr></thead>
+        <tbody>
+          <tr><td class="par">Order work and path audit</td><td class="rng">15</td><td>All eleven worked, each with a read committed before the reveal, an honest account of what changed afterward, and a stated alternative order. The audit is submitted whole rather than edited down.</td></tr>
+          <tr><td class="par">Flow chart</td><td class="rng">15</td><td>All six decision points present, branches phrased as answerable questions, at least eight labeled endpoints, one do-not-give endpoint, and the point marked where rate takes over from fluid choice. The order on the drawing agrees with the audit, or the difference is explained.</td></tr>
+          <tr><td class="par">Built case</td><td class="rng">15</td><td>The model output actually produces a shift large enough to explain the assigned consequence. The mechanism chain runs step by step from osmolarity to water movement to compartment change to tissue effect. The corrected order is appropriate and its monitoring is named.</td></tr>
+          <tr><td class="par">AI interrogation log</td><td class="rng">15</td><td>Shows real exchanges, including the order 6 and order 7 tests. Names at least one thing the model got wrong or went along with, with the correction and the reason.</td></tr>
+          <tr><td class="par">Video walkthrough</td><td class="rng">5</td><td>Under three minutes. Drives an actual patient through the chart rather than describing the chart. Reasoning is audible and unscripted.</td></tr>
+          <tr><td class="par">Peer replies</td><td class="rng">5</td><td>Two replies, each running a classmate's case through your own chart and naming a specific order their chart cannot resolve.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Academic integrity, said plainly</h3>
+    <p style="margin:0">You are expected to use AI in this assignment, and step 5 of the build is designed around it. What you are not permitted to do is have it produce the artifacts that are supposed to show your thinking. The flow chart is drawn by your hand. The path audit is a record of what you did. The mechanism chain, the reflections and the video walkthrough are yours. The log is where AI use gets documented, and a thorough log helps your grade rather than hurting it.</p>
+  </div>
+
+</div>
+</section>
+
+<!-- =============== PANEL 7: CANVAS =============== -->
+<section class="panel" id="panel-canvas" role="tabpanel" aria-labelledby="tab-canvas" tabindex="0" hidden>
+<div class="wrap">
+
+  <div class="card">
+    <p class="kicker">Section 7</p>
+    <h2>Course drawing canvas</h2>
+    <p>Draw your flow chart here if you would rather not work on paper. The page is proportioned like a sheet of letter paper standing upright, because a decision chart runs top to bottom, and it prints at full size.</p>
+    <p>This canvas has no way to open a file, paste a picture or import an image, so nothing can arrive here already drawn. When you export, the PDF carries a stamp page recording how the drawing was built: when you started, how long you actually spent drawing, how many strokes it took, how many times you undid something, and a strip of four snapshots showing the chart at a quarter, a half, three quarters and finished. A picture made somewhere else has no build up, which is what makes this an acceptable submission and a screenshot from a drawing app not one.</p>
+    <p class="note-line" style="margin-top:0"><strong>Nothing here is saved.</strong> Close the tab or reload and the drawing is gone, because this page stores nothing about you anywhere. Export as soon as you have something worth keeping, and export again whenever you have improved it.</p>
+  </div>
+
+  <div class="card">
+    <h3>Before you start</h3>
+    <div class="numgrid" style="max-width:640px">
+      <div><label class="field" for="dw_name">Your name, as it appears in the course</label><input type="text" id="dw_name" autocomplete="off"></div>
+      <div><label class="field" for="dw_title">What this drawing is</label><input type="text" id="dw_title" value="IV fluid decision flow chart"></div>
+    </div>
+    <p class="hint">Your name is printed on the export and is held only in this browser tab while you work. It is never sent anywhere.</p>
+  </div>
+
+  <div class="card canvas-card">
+    <div class="canvas-bar">
+      <span class="canvas-badge">Drawing Canvas</span>
+      <span class="canvas-course">BIO 005 Human Physiology</span>
+    </div>
+    <div class="toolbar" role="group" aria-label="Drawing tools">
+      <div class="toolgroup" role="group" aria-label="Tool">
+        <span class="toollabel">Tool</span>
+        <button type="button" class="btn secondary tiny tool" data-tool="pen" aria-pressed="true">Pen</button>
+        <button type="button" class="btn secondary tiny tool" data-tool="line" aria-pressed="false">Line</button>
+        <button type="button" class="btn secondary tiny tool" data-tool="arrow" aria-pressed="false">Arrow</button>
+        <button type="button" class="btn secondary tiny tool" data-tool="box" aria-pressed="false">Box</button>
+        <button type="button" class="btn secondary tiny tool" data-tool="circle" aria-pressed="false">Circle</button>
+        <button type="button" class="btn secondary tiny tool" data-tool="text" aria-pressed="false">Text</button>
+        <button type="button" class="btn secondary tiny tool" data-tool="erase" aria-pressed="false">Erase</button>
+      </div>
+      <div class="toolgroup" role="group" aria-label="Size">
+        <span class="toollabel">Size</span>
+        <button type="button" class="btn secondary tiny size" data-width="1.5" aria-pressed="false">Very fine</button>
+        <button type="button" class="btn secondary tiny size" data-width="2.5" aria-pressed="false">Fine</button>
+        <button type="button" class="btn secondary tiny size" data-width="4" aria-pressed="true">Medium</button>
+        <button type="button" class="btn secondary tiny size" data-width="7" aria-pressed="false">Bold</button>
+        <button type="button" class="btn secondary tiny size" data-width="12" aria-pressed="false">Marker</button>
+      </div>
+      <div class="toolgroup" role="group" aria-label="Color">
+        <span class="toollabel">Color</span>
+        <button type="button" class="swatch" data-color="#08101F" aria-label="Navy" aria-pressed="true" style="background:#08101F"></button>
+        <button type="button" class="swatch" data-color="#8B1D1D" aria-label="Rust" aria-pressed="false" style="background:#8B1D1D"></button>
+        <button type="button" class="swatch" data-color="#6E5018" aria-label="Gold" aria-pressed="false" style="background:#6E5018"></button>
+        <button type="button" class="swatch" data-color="#1F5130" aria-label="Green" aria-pressed="false" style="background:#1F5130"></button>
+        <button type="button" class="swatch" data-color="#1B3F8B" aria-label="Blue" aria-pressed="false" style="background:#1B3F8B"></button>
+        <label class="custom-color"><span class="sr-only">Custom color</span><input type="color" id="dw_custom" value="#2C5F66"></label>
+      </div>
+      <div class="toolgroup">
+        <button type="button" class="btn secondary tiny" id="dw_undo">Undo</button>
+        <button type="button" class="btn secondary tiny" id="dw_clear">Clear</button>
+      </div>
+    </div>
+    <p class="hint" id="dw_help">Pen draws freehand. Line, arrow, box and circle are drag from one corner to the other. Text places a label where you click, so type it and press Enter. Draw with a mouse, a finger or a stylus.</p>
+    <div class="canvasframe">
+      <div class="canvas-stage">
+        <canvas id="dw_canvas" width="1240" height="1754" role="img" aria-label="Drawing canvas. Flow chart in progress."></canvas>
+        <div id="dw_textbox" hidden>
+          <label class="sr-only" for="dw_textinput">Label text, press Enter to place it</label>
+          <input type="text" id="dw_textinput" autocomplete="off" placeholder="Type, then Enter">
+        </div>
+      </div>
+    </div>
+    <p class="canvas-foot">Draw from memory. Pen, shapes, arrows, and text. Save to PDF when you are done.</p>
+    <p class="progressline" id="dw_stats" aria-live="polite" style="margin-top:.6rem">Nothing drawn yet</p>
+  </div>
+
+  <div class="card">
+    <h3>Export the stamped PDF</h3>
+    <p>The export opens your browser print dialog. Choose <strong>Save as PDF</strong> as the destination rather than a printer. You will get two pages, the drawing and the stamp.</p>
+    <div class="btnrow">
+      <button class="btn accent" id="dw_export" type="button">Build the stamp and export</button>
+      <button class="btn secondary" id="dw_preview" type="button">Preview the stamp on screen</button>
+    </div>
+    <div class="feedback" id="dw_warn" hidden aria-live="polite"></div>
+    <div id="dw_previewHost" hidden style="margin-top:1.25rem"></div>
+  </div>
+
+  <div class="card">
+    <details>
+      <summary>Instructor verification</summary>
+      <p style="margin-top:.8rem">Paste the six values printed in the stamp block and this recalculates the code. A match means the printed figures are the ones the canvas generated at export. It is a checksum, not a lock, so read it alongside the build up strip rather than instead of it.</p>
+      <div class="numgrid">
+        <div><label class="field" for="v_name">Name on the stamp</label><input type="text" id="v_name"></div>
+        <div><label class="field" for="v_started">Started</label><input type="text" id="v_started" placeholder="exactly as printed"></div>
+        <div><label class="field" for="v_finished">Exported</label><input type="text" id="v_finished" placeholder="exactly as printed"></div>
+        <div><label class="field" for="v_strokes">Strokes</label><input type="number" id="v_strokes"></div>
+        <div><label class="field" for="v_points">Points</label><input type="number" id="v_points"></div>
+        <div><label class="field" for="v_active">Active drawing seconds</label><input type="number" id="v_active"></div>
+        <div><label class="field" for="v_code">Code on the stamp</label><input type="text" id="v_code"></div>
+      </div>
+      <div class="btnrow">
+        <button class="btn" id="v_check" type="button">Check the code</button>
+      </div>
+      <div class="feedback" id="v_out" hidden aria-live="polite"></div>
+    </details>
+  </div>
+
+</div>
+</section>
+
+</main>
+
+<div id="exportSheet" aria-hidden="true">
+  <div class="ex-page ex-drawing">
+    <div class="ex-head">
+      <span class="ex-course">BIO 005 Human Physiology &middot; Membranes and Transport</span>
+      <span class="ex-doc" id="ex_title">IV fluid decision flow chart</span>
+    </div>
+    <img id="ex_img" alt="Student flow chart drawing">
+    <div class="ex-foot"><span id="ex_name"></span><span>Dr. Sharilyn Rennie</span></div>
+  </div>
+  <div class="ex-page ex-stamp">
+    <div class="ex-head">
+      <span class="ex-course">BIO 005 Human Physiology &middot; Membranes and Transport</span>
+      <span class="ex-doc">Drawing provenance stamp</span>
+    </div>
+    <h2 class="ex-h2">How this drawing was made</h2>
+    <p class="ex-note">Produced inside the course drawing canvas. That tool has no facility to open, paste or import an image, so every mark above was drawn stroke by stroke in the browser. The four snapshots show the same drawing at a quarter, a half, three quarters and all of its strokes.</p>
+    <table class="ex-table">
+      <tbody>
+        <tr><th scope="row">Name</th><td id="ex_s_name"></td></tr>
+        <tr><th scope="row">Drawing</th><td id="ex_s_title"></td></tr>
+        <tr><th scope="row">Started</th><td id="ex_s_started"></td></tr>
+        <tr><th scope="row">Exported</th><td id="ex_s_finished"></td></tr>
+        <tr><th scope="row">Active drawing time</th><td id="ex_s_active"></td></tr>
+        <tr><th scope="row">Strokes</th><td id="ex_s_strokes"></td></tr>
+        <tr><th scope="row">Points recorded</th><td id="ex_s_points"></td></tr>
+        <tr><th scope="row">Undo and erase actions</th><td id="ex_s_edits"></td></tr>
+        <tr><th scope="row">Verification code</th><td id="ex_s_code" class="ex-code"></td></tr>
+      </tbody>
+    </table>
+    <h2 class="ex-h2">Build up</h2>
+    <div class="ex-strip" id="ex_strip"></div>
+    <div class="ex-foot"><span>Course drawing canvas</span><span>Dr. Sharilyn Rennie</span></div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p style="margin:0 0 .35rem"><strong>Dr. Sharilyn Rennie</strong></p>
+    <p style="margin:0">BIO 005 Human Physiology &middot; Membranes and Transport &middot; Osmosis and IV Fluids Lab</p>
+    <p class="small" style="margin:.6rem 0 0">All patients in this lab are fictional. Nothing typed into this page is stored, transmitted or recorded. This is teaching material about physiology and is not clinical guidance.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+"use strict";
+
+/* ============ TABS ============ */
+var tabs = Array.prototype.slice.call(document.querySelectorAll('[role="tab"]'));
+function selectTab(tab){
+  tabs.forEach(function(t){
+    var sel = (t === tab);
+    t.setAttribute('aria-selected', sel ? 'true' : 'false');
+    t.tabIndex = sel ? 0 : -1;
+    document.getElementById(t.getAttribute('aria-controls')).hidden = !sel;
+  });
+  tab.focus();
+}
+tabs.forEach(function(tab, i){
+  tab.addEventListener('click', function(){ selectTab(tab); });
+  tab.addEventListener('keydown', function(e){
+    var n = null;
+    if(e.key === 'ArrowRight'){ n = tabs[(i+1) % tabs.length]; }
+    else if(e.key === 'ArrowLeft'){ n = tabs[(i-1+tabs.length) % tabs.length]; }
+    else if(e.key === 'Home'){ n = tabs[0]; }
+    else if(e.key === 'End'){ n = tabs[tabs.length-1]; }
+    if(n){ e.preventDefault(); selectTab(n); }
+  });
+});
+
+/* ============ FLUID BANK ============ */
+var FLUIDS = [
+  {id:'ns',    name:'0.9% NaCl, normal saline',        na:154, k:0, cl:154, bag:308,  eff:308},
+  {id:'lr',    name:"Lactated Ringer's",               na:130, k:4, cl:109, bag:273,  eff:273},
+  {id:'half',  name:'0.45% NaCl, half normal',         na:77,  k:0, cl:77,  bag:154,  eff:154},
+  {id:'d5w',   name:'D5W',                             na:0,   k:0, cl:0,   bag:252,  eff:0},
+  {id:'d5half',name:'D5 0.45% NaCl',                   na:77,  k:0, cl:77,  bag:406,  eff:154},
+  {id:'d5ns',  name:'D5 0.9% NaCl',                    na:154, k:0, cl:154, bag:560,  eff:308},
+  {id:'three', name:'3% NaCl, hypertonic saline',      na:513, k:0, cl:513, bag:1026, eff:1026},
+  {id:'alb',   name:'5% albumin',                      na:145, k:0, cl:145, bag:300,  eff:300, oncotic:true},
+  {id:'water', name:'Sterile water for injection',     na:0,   k:0, cl:0,   bag:0,    eff:0, lethal:true}
+];
+var fluidSel = document.getElementById('c_fluid');
+FLUIDS.forEach(function(f){
+  var o = document.createElement('option');
+  o.value = f.id; o.textContent = f.name;
+  fluidSel.appendChild(o);
+});
+
+/* ============ ORDER BANK ============ */
+var CASES = [
+{
+  id:'ORD-01', name:'T. Ramirez', meta:'24 y / M / 68 kg', strip:'Emergency department · Day 3 of illness · 21:40',
+  note:'Three days of vomiting and watery diarrhea after a family barbecue, unable to keep anything down since yesterday. Heart rate 122, blood pressure 88 over 54 lying flat, dry mucous membranes, capillary refill three seconds. Alert but exhausted.',
+  rows:[['Sodium','148','mEq/L','HIGH','135 to 145'],['Potassium','3.2','mEq/L','LOW','3.5 to 5.0'],['Chloride','112','mEq/L','HIGH','98 to 107'],['Bicarbonate','20','mEq/L','LOW','22 to 28'],['BUN','34','mg/dL','HIGH','7 to 20'],['Creatinine','1.4','mg/dL','HIGH','0.7 to 1.2'],['Glucose','96','mg/dL','','70 to 99']],
+  order:'D5W 1 liter IV bolus, then reassess.',
+  add:'Ordered by a covering clinician who wrote it as a rehydration bolus.',
+  options:['A reasonable rehydration bolus, since the patient is dry','Almost useless for his blood pressure, because only about 80 mL of that liter reaches plasma','Dangerous because it will raise his sodium further','Equivalent to normal saline once the dextrose is gone'],
+  answer:1,
+  fbTitle:'The right idea and the wrong compartment',
+  fbBody:'He is short of extracellular volume, and specifically of the plasma quarter of it, which is what is holding up his blood pressure. D5W is dextrose in water, cells take the dextrose up and burn it within minutes, and what is left is free water with nothing dissolved in it to hold it outside the cells. Free water distributes across total body water, so two thirds of it goes straight into cells that are not short of anything. Of the third that stays extracellular, only a quarter is plasma. He needs an isotonic fluid, saline or lactated Ringer’s, whose sodium keeps it in the compartment that is actually empty.',
+  clues:['Total body water 0.6 times 68 kg is about 41 liters, so 1 liter of free water raises it by roughly 2 percent everywhere','About 670 mL ends up inside cells, about 250 mL interstitial, and about 83 mL in plasma','The same liter as isotonic saline puts about 250 mL in plasma, three times as much','His sodium of 148 is high because he has lost more water than salt, which is a separate problem from the volume loss'],
+  branch:'This is the first branch on your chart and it comes before everything else. Which compartment is the patient short in? Answer that and half the fluids on the shelf are eliminated immediately.'
+},
+{
+  id:'ORD-02', name:'K. Devereaux', meta:'28 y / F / 61 kg', strip:'Neuro intensive care · Hospital day 1 · 06:15',
+  note:'Restrained driver in a high speed collision. Glasgow coma scale 12 and fluctuating. Head CT shows a right frontal contusion with surrounding edema and early effacement of the sulci. Blood pressure stable, urine output adequate.',
+  rows:[['Sodium','138','mEq/L','','135 to 145'],['Potassium','3.9','mEq/L','','3.5 to 5.0'],['Glucose','104','mg/dL','HIGH','70 to 99'],['Measured osmolality','283','mOsm/kg','','275 to 295']],
+  order:'0.45% NaCl at 125 mL/hr for maintenance.',
+  add:'Written as routine maintenance fluid on the admission order set.',
+  options:['Appropriate maintenance for a patient who is not eating','Hypotonic, so it lowers extracellular osmolarity and drives water into brain cells that are already swollen','Will raise the sodium too quickly','Will cause a hyperchloremic acidosis'],
+  answer:1,
+  fbTitle:'The one place where a routine maintenance fluid is a serious problem',
+  fbBody:'Half normal saline has an effective osmolarity of 154, barely more than half of hers. Every liter of it lowers the osmolarity of the fluid surrounding her cells, and water follows the gradient into the intracellular compartment everywhere in the body. In most tissues that is harmless. Inside a rigid skull it is not, because the brain has nowhere to expand into. A contused brain is already swollen and its autoregulation is impaired, so a small further gain in cell water can push intracranial pressure up and worsen perfusion. In head injury the fluid of choice is isotonic, and sometimes deliberately hypertonic in order to pull water the other way.',
+  clues:['Effective osmolarity of the bag is 154 against her 283, so the gradient points into cells','A liter of half normal saline puts roughly 300 mL into the intracellular compartment','Isotonic saline at 308 moves essentially none, which is exactly why it is preferred here','Hypertonic saline at 1026 reverses the gradient and is used deliberately when pressure has to come down'],
+  branch:'This forces a branch that most students leave off: does this patient have a compartment that cannot expand? The skull is the obvious one. The others are the lungs and a failing ventricle.'
+},
+{
+  id:'ORD-03', name:'A. Whitmore', meta:'62 y / M / 84 kg', strip:'Intensive care · Hospital hour 18 · 11:05',
+  note:'Severe gallstone pancreatitis, resuscitated overnight with six liters of 0.9% sodium chloride. Blood pressure has stabilized and urine output is adequate. He is now breathing faster than expected and looks uncomfortable.',
+  rows:[['pH','7.28','','LOW','7.35 to 7.45'],['Sodium','141','mEq/L','','135 to 145'],['Chloride','116','mEq/L','HIGH','98 to 107'],['Bicarbonate','17','mEq/L','LOW','22 to 28'],['Anion gap','8','','','8 to 12'],['Lactate','1.4','mmol/L','','0.5 to 2.0'],['Creatinine','1.0','mg/dL','','0.7 to 1.2']],
+  order:'Continue 0.9% NaCl at 200 mL/hr.',
+  add:'Team is asking whether the worsening acidosis means the pancreatitis is progressing.',
+  options:['Lactic acidosis from ongoing poor perfusion','A hyperchloremic acidosis with a normal anion gap, caused by the chloride load in the saline itself','Diabetic ketoacidosis','Acute kidney injury with retained acid'],
+  answer:1,
+  fbTitle:'The fluid is the diagnosis',
+  fbBody:'The anion gap is normal at 8 and the lactate is normal, so this is not the acidosis of poor perfusion, and the creatinine says the kidneys are working. What changed is the chloride, which is 116 against a normal near 100. Plasma is electrically neutral, so the sum of the measured cations has to be balanced by the measured anions plus bicarbonate. Pour in six liters of a fluid carrying 154 mEq of chloride per liter, far more than plasma holds, and chloride rises in the extracellular space. Bicarbonate has to fall to keep the books balanced, and the patient is acidotic without a single extra acid being produced. Lactated Ringer’s carries 109 mEq of chloride and replaces the difference with lactate, which the liver converts to bicarbonate, so large volume resuscitation with it does not do this.',
+  clues:['Anion gap of 8 is normal, which rules out the acidoses that add an unmeasured anion','Lactate normal, so tissue perfusion is not the problem','Chloride 116 after six liters of a fluid containing 154 mEq/L of it','Bicarbonate fell as chloride rose, which is the signature of this pattern'],
+  branch:'Add a branch for what comes along with the water. Sodium is never the only thing in the bag, and chloride, potassium, dextrose and lactate all have their own consequences.'
+},
+{
+  id:'ORD-04', name:'M. Halloran', meta:'44 y / F / 58 kg', strip:'Emergency department · Hour 1 · 03:22',
+  note:'Found confused at home, then had a witnessed generalized seizure in the department. Started on a thiazide diuretic three weeks ago and has been drinking large amounts of water for a headache. Currently postictal, breathing on her own.',
+  rows:[['Sodium','112','mEq/L','LOW','135 to 145'],['Potassium','3.1','mEq/L','LOW','3.5 to 5.0'],['Glucose','88','mg/dL','','70 to 99'],['Measured osmolality','238','mOsm/kg','LOW','275 to 295'],['Urine sodium','62','mEq/L','','varies'],['Urine osmolality','480','mOsm/kg','','varies']],
+  order:'3% NaCl 1 liter IV over 4 hours.',
+  add:'Fluid choice discussed with the senior on call, rate written by the admitting team.',
+  options:['Correct fluid and correct rate for a seizing patient','Correct fluid, but that rate would raise her sodium roughly 13 mEq/L in four hours and risks osmotic demyelination','She should have D5W instead','She should have normal saline instead'],
+  answer:1,
+  fbTitle:'Right bag, dangerous rate',
+  fbBody:'Hypertonic saline is the right choice, because she is seizing from cerebral edema caused by a genuinely low osmolarity, and the only thing that will stop it quickly is raising the osmolarity outside her brain cells. The problem is the arithmetic. Her total body water is about 0.5 times 58, so 29 liters. A liter of 3% saline carries 513 mEq of sodium, and sodium concentration behaves as total exchangeable cation over total body water, so that liter raises her sodium by roughly 513 minus 112, divided by 30, which is about 13 mEq/L. Delivered over four hours, that is far past the limit. Her brain cells have spent three weeks shedding internal osmoles to survive a low outside osmolarity, and they cannot regain them quickly. Pull water out of them faster than they can readjust and you get osmotic demyelination, which appears days later and is often permanent. The accepted approach is a small bolus to raise sodium four to six points and stop the seizure, then a slow correction of no more than about eight in twenty four hours.',
+  clues:['Total body water about 29 liters, so each liter of 3% saline moves her sodium about 13 mEq/L','The safe ceiling is roughly 8 mEq/L over a full day, and this order delivers more than that in four hours','Her low potassium matters too, because replacing it also raises sodium, since exchangeable potassium counts','Three weeks of thiazide means this is chronic, and chronic is exactly when the brain has adapted and correction must be slow'],
+  branch:'This is the rate branch, and it is the one students most often leave off a flow chart entirely. Once the fluid is chosen, how fast anything is allowed to change becomes the whole question.'
+},
+{
+  id:'ORD-05', name:'E. Barlow', meta:'78 y / M / 66 kg', strip:'Hospital ward · Admission day 1 · 14:50',
+  note:'Brought in from a residential facility after five days of poor oral intake during a heat wave. Lethargic, dry, but blood pressure is acceptable. Staff report he had been steadily less responsive over most of a week.',
+  rows:[['Sodium','168','mEq/L','HIGH','135 to 145'],['Potassium','4.2','mEq/L','','3.5 to 5.0'],['BUN','48','mg/dL','HIGH','7 to 20'],['Creatinine','1.6','mg/dL','HIGH','0.7 to 1.2'],['Glucose','102','mg/dL','HIGH','70 to 99'],['Measured osmolality','352','mOsm/kg','HIGH','275 to 295']],
+  order:'D5W 1 liter over 1 hour, then 250 mL/hr.',
+  add:'Written with the intention of correcting the free water deficit quickly.',
+  options:['Appropriate, because the deficit is large','Far too fast, and lowering his osmolarity this quickly risks cerebral edema and seizure','The wrong fluid, he needs normal saline','The wrong fluid, he needs 3% saline'],
+  answer:1,
+  fbTitle:'The mirror image of the last patient, and the same mistake in reverse',
+  fbBody:'D5W is the right fluid, because free water is exactly what he lacks. The rate is the problem, and it is the same principle as the hyponatremia case running the other way. Over five days his brain cells have accumulated internal osmoles to avoid shrinking in a high osmolarity environment. Those extra osmoles are still there. Drop his extracellular osmolarity quickly and water rushes into cells that are now the concentrated side of the gradient, and the brain swells. His total body water is about 0.5 times 66, so 33 liters, and a liter of free water lowers his sodium by roughly 168 divided by 34, about 5 mEq/L. Two liters in the first four hours would take him down about ten points before the day has even started. Chronic hypernatremia is corrected at roughly the same careful pace as chronic hyponatremia, in the region of ten points a day at most.',
+  clues:['A liter of D5W lowers his sodium about 5 mEq/L, so the ordered rate overshoots within hours','Five days of illness makes this chronic, and chronic means the brain has already adapted','The direction of adaptation is opposite to the hyponatremia case, and so is the danger','His kidney numbers say he also needs volume, which is a separate question from the free water deficit'],
+  branch:'Your chart should reach the same rate branch from both directions. Sodium too low and sodium too high converge on one question, which is how fast the brain is allowed to be moved.'
+},
+{
+  id:'ORD-06', name:'D. Achterberg', meta:'55 y / F / 72 kg', strip:'Emergency department · Hour 2 · 09:35',
+  note:'Chronic kidney disease stage 4, three days of profuse diarrhea after a course of antibiotics. Heart rate 108, blood pressure 94 over 60, dry. Making some urine.',
+  rows:[['Potassium','5.9','mEq/L','HIGH','3.5 to 5.0'],['Sodium','137','mEq/L','','135 to 145'],['Chloride','111','mEq/L','HIGH','98 to 107'],['Bicarbonate','16','mEq/L','LOW','22 to 28'],['Creatinine','3.4','mg/dL','HIGH','0.7 to 1.2'],['pH','7.29','','LOW','7.35 to 7.45']],
+  order:"Lactated Ringer's 1 liter bolus.",
+  add:'A colleague objects that lactated Ringer’s contains potassium and should never be used when the potassium is high.',
+  options:['The objection is right, the potassium in the bag will push her higher','The objection is weaker than it sounds, since the bag holds 4 mEq/L against her 5.9, and the chloride load in saline can raise potassium more','Neither fluid is safe, she needs dialysis before any fluid','She should receive D5W instead'],
+  answer:1,
+  fbTitle:'A rule that sounds right and does not survive the numbers',
+  fbBody:'This one is worth arguing with carefully, because the objection is repeated confidently in a lot of places and an AI will usually repeat it back to you. Lactated Ringer’s contains 4 mEq/L of potassium. Her serum potassium is 5.9. Infusing a fluid less concentrated in potassium than the patient already is does not create a gradient that drives potassium up, and the volume itself dilutes. Meanwhile large volumes of normal saline deliver a chloride load that produces the acidosis you saw in order 3, and acidosis shifts potassium out of cells in exchange for hydrogen ions moving in. So the saline route can raise measured potassium by a mechanism that has nothing to do with what was in the bag. Notice what the fluid is not doing either way: neither one treats her potassium. It is being addressed by restoring perfusion and by whatever specific therapy follows.',
+  clues:['Bag potassium 4 mEq/L against a serum of 5.9, so the concentration gradient does not favor a rise','She already has a chloride of 111 and a bicarbonate of 16, so more chloride is the last thing she needs','Acidosis drives potassium out of cells, which is a larger effect than 4 mEq/L in a bag','The fluid is treating her volume, not her potassium, and mixing those two questions is what makes this confusing'],
+  branch:'Put a branch on your chart for the additives, and be careful that it asks about the gradient rather than the mere presence of an ion. The question is not does the bag contain potassium, it is how does the bag compare with the patient.'
+},
+{
+  id:'ORD-07', name:'J. Feldkamp', meta:'39 y / M / 80 kg', strip:'Ward · Order review · 08:10',
+  note:'Admitted for intravenous antibiotics for cellulitis and otherwise well. He is eating, his kidneys are normal and his electrolytes are unremarkable. A pharmacy technician flags the fluid order during a routine check before anything is hung.',
+  rows:[['Sodium','139','mEq/L','','135 to 145'],['Potassium','4.1','mEq/L','','3.5 to 5.0'],['Hemoglobin','14.6','g/dL','','13.5 to 17.5'],['Creatinine','0.9','mg/dL','','0.7 to 1.2'],['Glucose','94','mg/dL','','70 to 99']],
+  order:'Sterile water for injection, 1 liter IV over 2 hours.',
+  add:'Sterile water is a diluent for reconstituting medications. It appears to have been selected from a dropdown in place of the intended diluent volume.',
+  options:['Essentially the same as D5W once the dextrose is gone','Would cause immediate massive hemolysis, because the fluid contains no solute at all','Would cause hypernatremia','Would be acceptable at a slower rate'],
+  answer:1,
+  fbTitle:'This order cannot be made safe by slowing it down',
+  fbBody:'Sterile water has an osmolarity of zero. Not low, zero. Red cells entering it sit in a solution with no solute on the outside at all, so water crosses into them down the steepest gradient the body can produce, and they swell until the membrane fails. The result is intravascular hemolysis, free hemoglobin in the plasma and urine, and acute kidney injury from the pigment load. The comparison with D5W is the trap, and it is worth being precise about why the comparison fails. D5W ends up as free water too, but it arrives at 252 mOsm/L and is diluted into a circulating plasma volume as the dextrose is gradually taken up, so no red cell ever sees a solution with nothing in it. Sterile water arrives at zero and does its damage at the point of entry. The correct action is to stop the order. There is no rate that makes it acceptable, which is why your flow chart needs at least one endpoint that says do not give this rather than naming a fluid.',
+  clues:['Osmolarity of zero against a plasma of about 285, the largest gradient in this entire lab','The damage happens at the point of entry, so it is not diluted away by a slow rate','D5W is not equivalent, because it arrives at 252 mOsm/L and the dextrose is removed gradually','The compartment model in section 4 will refuse this fluid and tell you why'],
+  branch:'Every flow chart needs a stop endpoint. Some orders are not a choice between fluids, they are an error to be caught, and a chart that can only ever recommend a bag will recommend one here.'
+},
+{
+  id:'ORD-08', name:'R. Osei', meta:'71 y / M / 78 kg', strip:'Ward · Hospital day 2 · 16:20',
+  note:'Heart failure with an ejection fraction of 25 percent, admitted with pneumonia. Given two liters of 0.9% sodium chloride over six hours for hydration. Now short of breath, crackles to both mid zones, jugular venous pressure raised, oxygen saturation 88 percent on room air.',
+  rows:[['Sodium','137','mEq/L','','135 to 145'],['Creatinine','1.3','mg/dL','HIGH','0.7 to 1.2'],['BNP','1840','pg/mL','HIGH','under 100'],['Oxygen saturation','88','%','LOW','95 to 100'],['Weight change','plus 2.1','kg','HIGH','stable']],
+  order:'Continue 0.9% NaCl at 100 mL/hr.',
+  add:'Chest radiograph shows pulmonary vascular congestion and small pleural effusions.',
+  options:['Expected, since most of the fluid has gone into cells','Isotonic fluid stays extracellular, and a failing ventricle cannot move the extra preload forward, so it backs up into the lungs','He is dehydrated and needs more fluid','This is the pneumonia alone'],
+  answer:1,
+  fbTitle:'The fluid went exactly where it was supposed to, and that was the problem',
+  fbBody:'Normal saline is isotonic, so essentially none of it enters cells. Two liters therefore expand the extracellular space by close to two liters, and about a quarter of that lands in plasma. In a healthy heart the extra preload is handled and excreted. His ventricle is already operating at the flat end of its length tension relationship, so adding preload gains him almost no extra stroke volume and instead raises the pressure behind it. That pressure is transmitted back through the left atrium into the pulmonary capillaries, where it raises hydrostatic pressure. Filtration across the capillary wall depends on the balance between hydrostatic pressure pushing water out and oncotic pressure holding it in, so once hydrostatic pressure climbs, fluid moves into the interstitium and then the alveoli faster than the lymphatics can clear it. The two kilograms of weight is the fluid, and every liter is about a kilogram.',
+  clues:['Two liters isotonic gives close to two liters of extracellular expansion and essentially no intracellular change','About 500 mL of that lands in plasma, which is a large preload change for this ventricle','Weight up 2.1 kg, which is the retained fluid measured on a scale','The lungs are the compartment that cannot expand here, exactly as the skull was in order 2'],
+  branch:'This is the tolerance branch. Predicting where the water goes is not enough. The last question on your chart has to ask whether this particular patient can absorb the shift you just predicted.'
+},
+{
+  id:'ORD-09', name:'S. Delacroix-Nkemelu', meta:'19 y / F / 55 kg', strip:'Emergency department · Hour 1 · 23:15',
+  note:'Type 1 diabetes, insulin pump failed two days ago. Vomiting, deep rapid breathing, abdominal pain, drowsy but rousable. Blood pressure 96 over 58, heart rate 126.',
+  rows:[['Glucose','812','mg/dL','HIGH','70 to 99'],['Sodium, measured','128','mEq/L','LOW','135 to 145'],['Potassium','5.4','mEq/L','HIGH','3.5 to 5.0'],['Bicarbonate','8','mEq/L','LOW','22 to 28'],['Anion gap','26','','HIGH','8 to 12'],['pH','7.09','','LOW','7.35 to 7.45']],
+  order:'Team asks whether the sodium of 128 means she needs treatment for hyponatremia.',
+  add:'Insulin infusion and isotonic fluid resuscitation are being started.',
+  options:['Yes, she is hyponatremic and needs hypertonic saline','No, glucose that cannot enter cells has pulled water into the extracellular space and diluted the sodium; corrected, it is about 139','Yes, and she needs free water restriction','The sodium cannot be interpreted at all'],
+  answer:1,
+  fbTitle:'A sodium that is diluted rather than deficient',
+  fbBody:'Without insulin, glucose cannot enter most cells, so it stays in the extracellular fluid and acts as an effective osmole there. Water follows it out of cells into the extracellular space, and everything dissolved in that space, sodium included, gets diluted. The sodium concentration falls even though the total amount of sodium in the body has not changed. Correct for it by adding about 1.6 mEq/L for every 100 mg/dL of glucose above 100. Here that is 812 minus 100, divided by 100, times 1.6, which is about 11, giving a corrected sodium near 139. She is not hyponatremic. What matters clinically is the other direction. As insulin drives glucose into cells, that osmotic pull disappears, water moves back into cells, and if the measured sodium does not rise to meet it the effective osmolarity falls. That fall is one of the reasons cerebral edema is a feared complication of treating this condition, particularly in the young.',
+  clues:['Corrected sodium 128 plus 1.6 times 7.12, about 139, which is normal','Glucose is an effective osmole here specifically because insulin is absent','Her measured osmolality would be high, not low, despite the low sodium reading','The risk arrives during treatment, as the glucose comes down and the pull reverses'],
+  branch:'Add a check on your chart for whether a number means what it appears to mean before you act on it. A sodium reading is not the same thing as a sodium problem.'
+},
+{
+  id:'ORD-10', name:'B. Lindgren', meta:'34 y / M / 75 kg', strip:'Surgical ward · Post-operative day 3 · 07:45',
+  note:'Bowel resection three days ago, nil by mouth since surgery, no complications. Alert and comfortable. Nursing staff report he has been receiving the same maintenance fluid since the operation with nothing added to it.',
+  rows:[['Potassium','2.9','mEq/L','LOW','3.5 to 5.0'],['Sodium','142','mEq/L','','135 to 145'],['Chloride','110','mEq/L','HIGH','98 to 107'],['Bicarbonate','23','mEq/L','','22 to 28'],['Glucose','78','mg/dL','','70 to 99'],['Urine ketones','moderate','','ABNORMAL','negative']],
+  order:'0.9% NaCl at 100 mL/hr, no additives, continuous.',
+  add:'Three days at this rate is about 7.2 liters of saline and roughly 1100 mEq of sodium.',
+  options:['Appropriate maintenance for a patient who is not eating','Wrong on three counts: no potassium to replace ongoing renal losses, no dextrose to blunt ketosis, and far more sodium and chloride than maintenance requires','He needs hypertonic saline','He is fluid depleted and needs more'],
+  answer:1,
+  fbTitle:'Maintenance is a different question from resuscitation',
+  fbBody:'Resuscitation replaces a lost extracellular volume, so it uses isotonic fluid and a lot of it. Maintenance replaces what a person loses in a day while not eating, which is a very different list: roughly 25 to 30 mL of water per kilogram, one to two mEq per kilogram of sodium, and about half to one mEq per kilogram of potassium. Plain saline supplies the water and vastly more sodium and chloride than needed, no potassium at all, and no calories. The kidney keeps excreting potassium whether or not any is coming in, so the serum potassium drifts down over days. Meanwhile with no glucose arriving, insulin stays low, and the body turns to fat and then to muscle protein for fuel, which is where the ketones come from. Fifty grams of dextrose per liter is not nutrition, it is just enough to keep insulin high enough to slow that breakdown down.',
+  clues:['Potassium 2.9 after three days with none supplied, while the kidney kept excreting it','Ketones in the urine with a normal glucose, which is fasting metabolism rather than diabetes','Chloride 110 from about 1100 mEq of chloride over three days','Maintenance needs are per kilogram per day, and none of them are met by plain saline'],
+  branch:'Your chart needs to separate resuscitation from maintenance early, because the two questions have different right answers and mixing them is the most common everyday error on this list.'
+},
+{
+  id:'ORD-11', name:'F. Castellanos', meta:'58 y / M / 70 kg', strip:'Ward · Post procedure · 15:30',
+  note:'Cirrhosis with recurrent ascites. Six liters removed by large volume paracentesis this afternoon. He felt better immediately, then over the next two hours became lightheaded, with blood pressure falling from 118 over 70 to 92 over 55 and heart rate rising.',
+  rows:[['Albumin','2.1','g/dL','LOW','3.5 to 5.0'],['Sodium','131','mEq/L','LOW','135 to 145'],['Creatinine','1.5','mg/dL','HIGH','0.7 to 1.2'],['Bilirubin','3.2','mg/dL','HIGH','0.2 to 1.2'],['INR','1.6','','HIGH','0.9 to 1.1']],
+  order:'5% albumin, 50 g intravenously.',
+  add:'Ordered specifically because of the volume removed.',
+  options:['Albumin works here by delivering sodium','Albumin is too large to cross the capillary wall freely, so it raises plasma oncotic pressure and holds water in the vascular space','Albumin is hypotonic and rehydrates cells','It is equivalent to the same volume of saline'],
+  answer:1,
+  fbTitle:'The one fluid on the shelf that works by a different mechanism',
+  fbBody:'Everything else in this lab moves water by osmolarity across cell membranes. Albumin works at a different barrier. The capillary wall is freely permeable to water and small ions but not to plasma proteins, so protein concentration is the one thing that differs meaningfully across it, and the resulting oncotic pressure is what holds water in the vascular space against the hydrostatic pressure pushing it out. He has two problems at once. His albumin was already low, so his oncotic pressure was low to begin with, and removing six liters of ascites dropped the abdominal pressure that had been partly supporting his circulation. Fluid then redistributes out of the vascular space into the space that was just emptied, and his effective blood volume falls. Albumin raises oncotic pressure where it is needed, which is why it outperforms an equal volume of saline in this specific situation even though saline is also isotonic.',
+  clues:['Albumin 2.1, so oncotic pressure was low before anything was removed','The relevant barrier here is the capillary wall, not the cell membrane','Saline crosses the capillary wall freely and distributes through the whole extracellular space','This is why the compartment model in section 4 flags albumin and refuses to model it the same way'],
+  branch:'Mark on your chart where the question stops being about cell membranes and becomes about the capillary wall. They are different barriers with different rules, and a chart that treats them as one will get this patient wrong.'
+}
+];
+
+/* ============ CONSEQUENCE BANK ============ */
+var CONSEQUENCES = [
+ {n:'Osmotic demyelination syndrome, appearing on day three', s:'The patient improved at first, then several days later developed worsening weakness, difficulty swallowing and altered consciousness.'},
+ {n:'Cerebral edema with herniation', s:'The patient became progressively less responsive over hours, with a dilating pupil and a rising blood pressure.'},
+ {n:'Hyperchloremic acidosis with a normal anion gap', s:'The patient began breathing faster, and the bicarbonate fell while the lactate stayed normal.'},
+ {n:'Acute pulmonary edema', s:'The patient became breathless with crackles through both lung fields and falling oxygen saturation.'},
+ {n:'Intravascular hemolysis with pigment induced kidney injury', s:'The plasma turned pink, the urine turned dark, and the creatinine climbed over the next day.'},
+ {n:'Symptomatic hypoglycemia after an infusion was stopped', s:'The patient became sweaty, confused and tremulous shortly after a running drip was discontinued.'},
+ {n:'A sodium that fell further after fluids were started', s:'The patient was given fluid for a low sodium and the next set of labs showed it lower still.'},
+ {n:'A seizure during correction of a high sodium', s:'The sodium was coming down nicely and then the patient had a generalized seizure.'},
+ {n:'Widespread peripheral and periorbital edema with a normal blood pressure', s:'The patient looks puffy everywhere, has gained weight, and yet the blood pressure and heart rate are unremarkable.'},
+ {n:'A potassium that rose during resuscitation', s:'The patient was resuscitated for shock and the repeat potassium came back higher than the first one.'},
+ {n:'Hypokalemia after several days of maintenance fluid', s:'The patient was stable and not eating, and by day four the potassium had drifted well below range.'},
+ {n:'No improvement in blood pressure after three liters', s:'Three liters went in, the patient is now visibly puffy, and the blood pressure has barely moved.'},
+ {n:'A metabolic alkalosis that kept getting worse', s:'The patient had been vomiting for days, was given fluid, and the bicarbonate climbed rather than settled.'},
+ {n:'Severe phlebitis and loss of the peripheral line', s:'The vein above the cannula became hard, painful and cord like within hours of an infusion starting.'},
+ {n:'Dilutional anemia and a coagulopathy after massive volume', s:'After a very large resuscitation the hemoglobin and the clotting studies both deteriorated without any new bleeding being found.'},
+ {n:'Cerebral edema during treatment of diabetic ketoacidosis', s:'A young patient was improving biochemically and then developed a headache and became drowsy.'}
+];
+var CONS_TASKS = [
+ 'Who this patient is, including the organ that limits what they can tolerate',
+ 'What their starting numbers were, at minimum sodium, potassium, chloride, bicarbonate and glucose',
+ 'Which fluid was ordered, at what volume and over what time',
+ 'Why that order looked reasonable to the person who wrote it, since a case where the error is obvious is not interesting',
+ 'The compartment model output showing the shift is large enough to explain the consequence',
+ 'The mechanism chain, one step at a time, from osmolarity to water movement to tissue effect',
+ 'What should have been ordered instead, and what you would have monitored'
+];
+
+/* ============ CASE ENGINE ============ */
+var idx = 0;
+var state = CASES.map(function(){
+  return {locked:false, checked:false, correct:false, complete:false,
+          predictText:'', reflectText:'', runnerText:'', firstCue:'', pick:null};
+});
+var el = {
+  pName:document.getElementById('pName'), pMeta:document.getElementById('pMeta'),
+  pStrip:document.getElementById('pStrip'), pNote:document.getElementById('pNote'),
+  pOrder:document.getElementById('pOrder'), pAdd:document.getElementById('pAddendum'),
+  labBody:document.getElementById('labBody'), labCaption:document.getElementById('labCaption'),
+  progress:document.getElementById('caseProgress'), dots:document.getElementById('caseDots'),
+  predict:document.getElementById('predict'), lockBtn:document.getElementById('lockBtn'),
+  optionCard:document.getElementById('optionCard'), optionList:document.getElementById('optionList'),
+  optLegend:document.getElementById('optLegend'), feedback:document.getElementById('feedback'),
+  verdict:document.getElementById('verdict'), fbTitle:document.getElementById('fbTitle'),
+  fbBody:document.getElementById('fbBody'), fbClues:document.getElementById('fbClues'),
+  fbBranch:document.getElementById('fbBranch'), firstCue:document.getElementById('firstCue'),
+  closeCard:document.getElementById('closeCard'), reflect:document.getElementById('reflect'),
+  runner:document.getElementById('runner'), completeBtn:document.getElementById('completeBtn')
+};
+
+function renderLabs(c){
+  el.labBody.innerHTML = '';
+  c.rows.forEach(function(r){
+    var tr = document.createElement('tr');
+    if(r[3]) tr.className = 'abn';
+    var th = document.createElement('th');
+    th.scope = 'row'; th.style.fontWeight = '400'; th.textContent = r[0];
+    var tdv = document.createElement('td');
+    tdv.className = 'val'; tdv.textContent = r[1] + (r[2] ? ' ' + r[2] : '');
+    var tdf = document.createElement('td');
+    tdf.className = 'flag ' + (r[3] === 'HIGH' ? 'flag-h' : (r[3] === 'LOW' ? 'flag-l' : (r[3] ? 'flag-c' : '')));
+    tdf.textContent = r[3] || '';
+    var tdr = document.createElement('td');
+    tdr.className = 'ref'; tdr.textContent = r[4];
+    tr.appendChild(th); tr.appendChild(tdv); tr.appendChild(tdf); tr.appendChild(tdr);
+    el.labBody.appendChild(tr);
+  });
+}
+function renderDots(){
+  el.dots.innerHTML = '';
+  CASES.forEach(function(c, i){
+    var li = document.createElement('li');
+    var b = document.createElement('button');
+    b.type = 'button'; b.className = 'dot'; b.textContent = String(i+1);
+    b.setAttribute('aria-label', 'Go to order ' + (i+1) + (state[i].complete ? ', completed' : ''));
+    b.dataset.state = (i === idx) ? 'current' : (state[i].complete ? 'done' : 'todo');
+    if(i === idx) b.setAttribute('aria-current','true');
+    b.addEventListener('click', function(){ idx = i; render(); });
+    li.appendChild(b); el.dots.appendChild(li);
+  });
+}
+function render(){
+  var c = CASES[idx], s = state[idx];
+  el.pName.textContent = c.name;
+  el.pMeta.textContent = c.meta;
+  el.pStrip.textContent = c.strip + ' · Order ' + c.id;
+  el.pNote.textContent = c.note;
+  el.pOrder.textContent = c.order;
+  el.pAdd.textContent = c.add;
+  el.labCaption.textContent = 'Relevant results for order ' + c.id;
+  renderLabs(c);
+  el.progress.textContent = 'Order ' + (idx+1) + ' of ' + CASES.length;
+  renderDots();
+
+  el.predict.value = s.predictText || '';
+  el.firstCue.value = s.firstCue || '';
+  el.firstCue.disabled = !!s.locked;
+  el.reflect.value = s.reflectText || '';
+  el.runner.value = s.runnerText || '';
+  el.optionCard.hidden = !s.locked;
+  el.feedback.hidden = !s.checked;
+  el.closeCard.hidden = !s.checked;
+  el.completeBtn.textContent = s.complete ? 'Order marked complete' : 'Mark this order complete';
+  el.completeBtn.disabled = !!s.complete;
+  el.lockBtn.textContent = s.locked ? 'Read locked for this order' : 'Lock my read and show the options';
+  el.lockBtn.disabled = !!s.locked;
+  document.getElementById('checkBtn').disabled = !!s.checked;
+
+  el.optLegend.textContent = 'Which statement is right about this order for ' + c.name + '?';
+  el.optionList.innerHTML = '';
+  c.options.forEach(function(text, i){
+    var wrap = document.createElement('div');
+    wrap.className = 'opt';
+    var input = document.createElement('input');
+    input.type = 'radio'; input.name = 'opt'; input.id = 'opt_' + i; input.value = String(i);
+    if(s.pick === i) input.checked = true;
+    if(s.checked) input.disabled = true;
+    var lab = document.createElement('label');
+    lab.setAttribute('for', 'opt_' + i);
+    lab.appendChild(document.createTextNode(text));
+    if(s.checked){
+      var tag = null;
+      if(i === c.answer){ wrap.classList.add('correct'); tag = 'Correct'; }
+      if(s.pick === i && i !== c.answer){ wrap.classList.add('wrongpick'); tag = 'Your choice'; }
+      if(s.pick === i && i === c.answer){ tag = 'Correct, and your choice'; }
+      if(tag){
+        var sp = document.createElement('span');
+        sp.className = 'tagline'; sp.textContent = tag;
+        lab.appendChild(sp);
+      }
+    }
+    wrap.appendChild(input); wrap.appendChild(lab);
+    el.optionList.appendChild(wrap);
+  });
+
+  if(s.checked){
+    el.verdict.className = 'verdict ' + (s.correct ? 'right' : 'wrong');
+    el.verdict.textContent = s.correct ? 'That is it' : 'Not this one';
+    el.fbTitle.textContent = c.fbTitle;
+    el.fbBody.textContent = c.fbBody;
+    el.fbClues.innerHTML = '';
+    c.clues.forEach(function(t){
+      var li = document.createElement('li'); li.textContent = t; el.fbClues.appendChild(li);
+    });
+    el.fbBranch.textContent = c.branch;
+  }
+}
+function wordCount(s){ return String(s || '').trim().split(/\s+/).filter(Boolean).length; }
+el.predict.addEventListener('input', function(){ state[idx].predictText = el.predict.value; });
+el.reflect.addEventListener('input', function(){ state[idx].reflectText = el.reflect.value; });
+el.runner.addEventListener('input', function(){ state[idx].runnerText = el.runner.value; });
+el.firstCue.addEventListener('change', function(){ state[idx].firstCue = el.firstCue.value; });
+
+el.lockBtn.addEventListener('click', function(){
+  if(!el.firstCue.value){
+    el.lockBtn.textContent = 'Choose what you checked first before locking';
+    el.firstCue.focus(); return;
+  }
+  var words = wordCount(el.predict.value);
+  if(words < 15){
+    el.lockBtn.textContent = 'Write at least fifteen words first, you are at ' + words;
+    el.predict.focus(); return;
+  }
+  state[idx].locked = true;
+  render();
+  el.optionCard.scrollIntoView({block:'nearest'});
+});
+el.completeBtn.addEventListener('click', function(){
+  if(wordCount(el.reflect.value) < 15){
+    el.completeBtn.textContent = 'The reflection needs at least fifteen words';
+    el.reflect.focus(); return;
+  }
+  if(wordCount(el.runner.value) < 10){
+    el.completeBtn.textContent = 'Say what should have been ordered instead';
+    el.runner.focus(); return;
+  }
+  state[idx].complete = true;
+  render();
+});
+document.getElementById('optionForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  var sel = el.optionList.querySelector('input:checked');
+  if(!sel) return;
+  var s = state[idx];
+  s.pick = parseInt(sel.value, 10);
+  s.checked = true;
+  s.correct = (s.pick === CASES[idx].answer);
+  render();
+});
+document.getElementById('prevBtn').addEventListener('click', function(){
+  idx = (idx - 1 + CASES.length) % CASES.length; render(); window.scrollTo({top:0});
+});
+document.getElementById('nextBtn').addEventListener('click', function(){
+  idx = (idx + 1) % CASES.length; render(); window.scrollTo({top:0});
+});
+render();
+
+document.getElementById('auditBtn').addEventListener('click', function(){
+  var out = [], tally = {}, done = 0, firstTry = 0;
+  out.push('OSMOSIS AND IV FLUIDS LAB · PATH AUDIT');
+  out.push('BIO 005 Human Physiology, Membranes and Transport');
+  out.push('');
+  CASES.forEach(function(c, i){
+    var s = state[i];
+    out.push('----------------------------------------');
+    out.push('ORDER ' + (i+1) + ' · ' + c.id + ' · ' + c.name);
+    if(!s.checked){ out.push('Not worked yet.'); out.push(''); return; }
+    done++;
+    if(s.correct) firstTry++;
+    if(s.firstCue){ tally[s.firstCue] = (tally[s.firstCue] || 0) + 1; }
+    out.push('Order as written: ' + c.order);
+    out.push('Checked first: ' + (s.firstCue || 'not recorded'));
+    out.push('Locked read: ' + (s.predictText || '').replace(/\s+/g,' ').trim());
+    out.push('Chose: ' + c.options[s.pick]);
+    out.push('Correct: ' + c.options[c.answer]);
+    out.push('What changed: ' + (s.reflectText || 'not written').replace(/\s+/g,' ').trim());
+    out.push('Should have been ordered: ' + (s.runnerText || 'not written').replace(/\s+/g,' ').trim());
+    out.push('');
+  });
+  out.push('========================================');
+  out.push('SUMMARY');
+  out.push('Orders worked: ' + done + ' of ' + CASES.length);
+  out.push('Called correctly on the first attempt: ' + firstTry);
+  out.push('');
+  out.push('What you checked first, counted across the orders you worked:');
+  var keys = Object.keys(tally).sort(function(a,b){ return tally[b] - tally[a]; });
+  if(!keys.length){ out.push('  nothing recorded yet'); }
+  keys.forEach(function(k){ out.push('  ' + tally[k] + (tally[k] === 1 ? ' time:  ' : ' times: ') + k); });
+  out.push('');
+  out.push('Reconcile this with your drawing. Whatever sits at the top of this list should sit near the top of your flow chart, and if it does not, you owe an explanation for the difference.');
+  var ta = document.getElementById('auditOut');
+  ta.value = out.join('\n');
+  document.getElementById('auditWrap').hidden = false;
+  ta.focus(); ta.select();
+});
+
+/* ============ COMPARTMENT MODEL ============ */
+function num(id){ var v = parseFloat(document.getElementById(id).value); return isNaN(v) ? null : v; }
+function row(label, before, after, change){
+  var tr = document.createElement('tr');
+  [label, before, after, change].forEach(function(t, i){
+    var cell = document.createElement(i === 0 ? 'th' : 'td');
+    if(i === 0){ cell.scope = 'row'; cell.style.fontWeight = '400'; }
+    if(i > 0) cell.className = 'val';
+    cell.textContent = t;
+    tr.appendChild(cell);
+  });
+  return tr;
+}
+function flagLine(mark, cls, text){
+  var d = document.createElement('div');
+  d.className = 'checkline';
+  var m = document.createElement('span');
+  m.className = 'mark ' + cls; m.textContent = mark;
+  var t = document.createElement('span'); t.textContent = text;
+  d.appendChild(m); d.appendChild(t);
+  return d;
+}
+document.getElementById('calcForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  var body = document.getElementById('calcBody');
+  var flags = document.getElementById('calcFlags');
+  body.innerHTML = ''; flags.innerHTML = '';
+  var wt = num('c_wt'), frac = parseFloat(document.getElementById('c_frac').value);
+  var na = num('c_na'), glu = num('c_glu'), vol = num('c_vol'), hrs = num('c_hrs');
+  var f = FLUIDS.filter(function(x){ return x.id === document.getElementById('c_fluid').value; })[0];
+
+  if(!wt || !na || vol === null || vol <= 0){
+    flags.appendChild(flagLine('WAITING', 'mark-wait', 'Enter a weight, a sodium and a volume greater than zero.'));
+    document.getElementById('calcOut').hidden = false;
+    return;
+  }
+  if(glu === null) glu = 90;
+
+  var tbw0 = wt * frac;
+  var icf0 = tbw0 * 2/3, ecf0 = tbw0 / 3, pl0 = ecf0 / 4;
+  var osm0 = 2 * na + glu / 18;
+  var soluteICF = icf0 * osm0;
+  var tbw1 = tbw0 + vol;
+  var osm1 = (tbw0 * osm0 + vol * f.eff) / tbw1;
+  var icf1 = soluteICF / osm1;
+  var ecf1 = tbw1 - icf1;
+  var pl1 = ecf1 / 4;
+  var na1 = (na * tbw0 + (f.na + f.k) * vol) / tbw1;
+  var dNa = na1 - na;
+
+  if(f.oncotic){ pl1 = pl0 + vol; }
+
+  function L(x){ return x.toFixed(2) + ' L'; }
+  function D(x){ return (x >= 0 ? '+' : '') + x.toFixed(2) + ' L'; }
+  body.appendChild(row('Total body water', L(tbw0), L(tbw1), D(tbw1 - tbw0)));
+  body.appendChild(row('Intracellular', L(icf0), L(icf1), D(icf1 - icf0)));
+  body.appendChild(row('Extracellular', L(ecf0), L(ecf1), D(ecf1 - ecf0)));
+  body.appendChild(row('Plasma', L(pl0), L(pl1), D(pl1 - pl0)));
+  body.appendChild(row('Effective osmolarity', osm0.toFixed(1), osm1.toFixed(1), (osm1 - osm0 >= 0 ? '+' : '') + (osm1 - osm0).toFixed(1)));
+  body.appendChild(row('Serum sodium', na.toFixed(1), na1.toFixed(1), (dNa >= 0 ? '+' : '') + dNa.toFixed(1)));
+
+  var diff = f.eff - osm0;
+  flags.appendChild(flagLine('FLUID', 'mark-pass', f.name + ': bag ' + f.bag + ' mOsm/L, effective ' + f.eff + ' mOsm/L against this patient at ' + osm0.toFixed(0) + '. ' +
+    (diff > 35 ? 'Hypertonic to this patient, so water is pulled out of cells. Note that tonicity is relative: the same bag can be isotonic to one patient and hypertonic to another.' :
+     (diff < -35 ? 'Hypotonic to this patient, so water is driven into cells.' :
+      'Close enough to this patient that cell volume barely moves, which is what isotonic means in practice.'))));
+
+  if(f.lethal){
+    flags.appendChild(flagLine('STOP', 'mark-fail', 'This fluid has an osmolarity of zero. Red cells meeting it at the cannula swell until they burst, and no rate makes that safe. The volume arithmetic above is arithmetic only, it is not a description of anything that should be given.'));
+  }
+  if(f.oncotic){
+    flags.appendChild(flagLine('NOTE', 'mark-fail', 'Albumin is held in the vascular space by oncotic pressure, which this model does not calculate. The plasma row assumes the infused volume stays there and the intracellular row is unaffected because the fluid is isotonic. Treat the plasma figure as an upper estimate.'));
+  }
+  var dIcf = icf1 - icf0;
+  if(Math.abs(dIcf) >= 0.1){
+    flags.appendChild(flagLine(dIcf > 0 ? 'CELLS SWELL' : 'CELLS SHRINK', 'mark-fail',
+      'Cell volume changes by ' + Math.abs(dIcf * 1000).toFixed(0) + ' mL. In a closed skull that is the number that matters, whichever direction it goes.'));
+  } else {
+    flags.appendChild(flagLine('CELLS HOLD', 'mark-pass', 'Cell volume moves less than 100 mL, so this fluid is doing its work entirely in the extracellular space.'));
+  }
+  if(hrs && hrs > 0){
+    var per24 = dNa * 24 / hrs;
+    if(Math.abs(per24) > 8){
+      flags.appendChild(flagLine('RATE', 'mark-fail', 'At this rate the sodium moves ' + dNa.toFixed(1) + ' mEq/L in ' + hrs + ' hours, a pace of about ' + per24.toFixed(0) + ' mEq/L per 24 hours. The usual ceiling is 8. Correcting a chronic sodium faster than the brain can readjust is how demyelination and cerebral edema happen.'));
+    } else if(Math.abs(dNa) > 0.2){
+      flags.appendChild(flagLine('RATE', 'mark-pass', 'Sodium moves ' + dNa.toFixed(1) + ' mEq/L over ' + hrs + ' hours, a pace of about ' + per24.toFixed(1) + ' mEq/L per 24 hours, inside the usual ceiling of 8.'));
+    }
+  }
+  var dEcf = ecf1 - ecf0;
+  if(dEcf > 2){
+    flags.appendChild(flagLine('VOLUME', 'mark-fail', 'The extracellular space grows by ' + dEcf.toFixed(2) + ' L, of which about ' + ((pl1 - pl0) * 1000).toFixed(0) + ' mL is plasma. Ask whether this heart and these lungs can absorb that before you accept the order.'));
+  }
+  if(glu > 150){
+    var corr = na + 1.6 * (glu - 100) / 100;
+    flags.appendChild(flagLine('CORRECTED Na', 'mark-pass', 'With a glucose of ' + glu + ', the corrected sodium is about ' + corr.toFixed(1) + ' mEq/L. That is the number to reason from, not the measured one.'));
+  }
+  var out0 = (osm0 < 275 || osm0 > 295), out1 = (osm1 < 275 || osm1 > 295);
+  if(out1){
+    var closer = Math.abs(osm1 - 285) < Math.abs(osm0 - 285);
+    flags.appendChild(flagLine('OSMOLARITY', 'mark-fail',
+      'Effective osmolarity ends at ' + osm1.toFixed(0) + ', outside the 275 to 295 the body defends. ' +
+      (out0 ? (closer ? 'It started outside too, and this order moves it in the right direction. Whether it moves it fast enough, or too fast, is the rate line above.'
+                      : 'It started outside and this order pushes it further out.')
+            : 'It started inside that range, so this order is what took it out.')));
+  }
+  if(f.cl > 120){
+    flags.appendChild(flagLine('CHLORIDE', 'mark-fail', 'This fluid carries ' + f.cl + ' mEq/L of chloride against a plasma value near 100. Give enough of it and bicarbonate falls to keep the charges balanced.'));
+  }
+  document.getElementById('calcOut').hidden = false;
+});
+document.getElementById('calcReset').addEventListener('click', function(){
+  document.getElementById('calcOut').hidden = true;
+});
+
+/* ============ SEEDED CONSEQUENCE ============ */
+document.getElementById('seedBtn').addEventListener('click', function(){
+  var raw = document.getElementById('seedInput').value.replace(/\D/g,'');
+  var out = document.getElementById('seedOut');
+  if(raw.length !== 4){
+    document.getElementById('orgName').textContent = 'Enter a four digit number first';
+    document.getElementById('orgSyndrome').textContent = 'Any four digits you make up will do, as long as they are not part of your student ID, your birthday or your phone number.';
+    document.getElementById('orgTasks').innerHTML = '';
+    document.getElementById('seedTag').textContent = 'Waiting';
+    out.hidden = false;
+    return;
+  }
+  var h = 0;
+  for(var i = 0; i < raw.length; i++){ h = (h * 31 + raw.charCodeAt(i) * (i + 7)) % 100003; }
+  var cons = CONSEQUENCES[h % CONSEQUENCES.length];
+  document.getElementById('seedTag').textContent = 'Assigned';
+  document.getElementById('orgName').textContent = cons.n;
+  document.getElementById('orgSyndrome').textContent = 'How it showed up: ' + cons.s;
+  var ul = document.getElementById('orgTasks');
+  ul.innerHTML = '';
+  CONS_TASKS.forEach(function(t){ var li = document.createElement('li'); li.textContent = t; ul.appendChild(li); });
+  out.hidden = false;
+});
+
+/* ============ CASE SHEET ============ */
+function v(id){ return (document.getElementById(id).value || '').trim(); }
+document.getElementById('assembleBtn').addEventListener('click', function(){
+  var cons = document.getElementById('orgName').textContent || 'not yet assigned';
+  var lines = [];
+  lines.push('OSMOSIS AND IV FLUIDS LAB · BUILT CASE');
+  lines.push('BIO 005 Human Physiology, Membranes and Transport');
+  lines.push('');
+  lines.push('ASSIGNED CONSEQUENCE (do not post this with the case): ' + cons);
+  lines.push('');
+  lines.push('PATIENT');
+  lines.push('Name or initials: ' + v('b_name') + '   Age: ' + v('b_age') + '   Sex: ' + v('b_sex') + '   Weight: ' + v('b_wt') + ' kg');
+  lines.push('');
+  lines.push('PRESENTING NOTE');
+  lines.push(v('b_story'));
+  lines.push('');
+  lines.push('STARTING NUMBERS');
+  lines.push(v('b_labs'));
+  lines.push('');
+  lines.push('THE ORDER');
+  lines.push('Fluid: ' + v('b_fluid') + '   Volume: ' + v('b_vol') + '   Rate or duration: ' + v('b_rate'));
+  lines.push('Why it looked reasonable: ' + v('b_who'));
+  lines.push('');
+  lines.push('COMPARTMENT MODEL OUTPUT');
+  lines.push(v('b_model'));
+  lines.push('');
+  lines.push('MECHANISM CHAIN');
+  lines.push(v('b_defend'));
+  lines.push('');
+  lines.push('WHAT SHOULD HAVE BEEN ORDERED, AND WHAT TO MONITOR');
+  lines.push(v('b_fix'));
+  lines.push('');
+  lines.push('WHAT WOULD HAVE TO BE TRUE FOR THIS EXPLANATION TO BE WRONG');
+  lines.push(v('b_wrong'));
+  lines.push('');
+  lines.push('AI INTERROGATION LOG');
+  lines.push(v('b_log'));
+  var out = document.getElementById('sheetOut');
+  out.value = lines.join('\n');
+  document.getElementById('sheetWrap').hidden = false;
+  out.focus(); out.select();
+});
+document.getElementById('printBtn').addEventListener('click', function(){ window.print(); });
+
+
+/* ============ DRAWING CANVAS ============ */
+(function(){
+var cv = document.getElementById('dw_canvas');
+if(!cv) return;
+var ctx = cv.getContext('2d');
+var W = cv.width, H = cv.height;
+var FONT = '"Plus Jakarta Sans", system-ui, -apple-system, Segoe UI, Roboto, sans-serif';
+
+var marks = [];
+var current = null;
+var startedAt = null;
+var lastPointAt = 0;
+var activeMs = 0;
+var editCount = 0;
+var color = '#08101F';
+var size = 4;
+var tool = 'pen';
+var pendingText = null;
+
+function bg(c){ c.fillStyle = '#FFFFFF'; c.fillRect(0, 0, W, H); }
+
+function drawMark(c, o){
+  c.lineCap = 'round';
+  c.lineJoin = 'round';
+  c.strokeStyle = (o.tool === 'erase') ? '#FFFFFF' : o.color;
+  c.fillStyle = o.color;
+  c.lineWidth = (o.tool === 'erase') ? o.size * 5 : o.size;
+  if(o.tool === 'pen' || o.tool === 'erase'){
+    if(!o.pts.length) return;
+    c.beginPath();
+    c.moveTo(o.pts[0][0], o.pts[0][1]);
+    if(o.pts.length === 1){ c.lineTo(o.pts[0][0] + 0.1, o.pts[0][1] + 0.1); }
+    else { for(var i = 1; i < o.pts.length; i++){ c.lineTo(o.pts[i][0], o.pts[i][1]); } }
+    c.stroke();
+    return;
+  }
+  if(o.tool === 'text'){
+    var px = Math.max(24, o.size * 9);
+    c.font = '700 ' + px + 'px ' + FONT;
+    c.textBaseline = 'top';
+    c.fillText(o.text, o.x1, o.y1);
+    return;
+  }
+  if(o.tool === 'line' || o.tool === 'arrow'){
+    c.beginPath();
+    c.moveTo(o.x1, o.y1);
+    c.lineTo(o.x2, o.y2);
+    c.stroke();
+    if(o.tool === 'arrow'){
+      var a = Math.atan2(o.y2 - o.y1, o.x2 - o.x1);
+      var head = Math.max(12, o.size * 3.4);
+      c.beginPath();
+      c.moveTo(o.x2, o.y2);
+      c.lineTo(o.x2 - head * Math.cos(a - Math.PI / 7), o.y2 - head * Math.sin(a - Math.PI / 7));
+      c.lineTo(o.x2 - head * Math.cos(a + Math.PI / 7), o.y2 - head * Math.sin(a + Math.PI / 7));
+      c.closePath();
+      c.fill();
+    }
+    return;
+  }
+  if(o.tool === 'box'){
+    c.strokeRect(Math.min(o.x1, o.x2), Math.min(o.y1, o.y2), Math.abs(o.x2 - o.x1), Math.abs(o.y2 - o.y1));
+    return;
+  }
+  if(o.tool === 'circle'){
+    var cx = (o.x1 + o.x2) / 2, cy = (o.y1 + o.y2) / 2;
+    var rx = Math.abs(o.x2 - o.x1) / 2, ry = Math.abs(o.y2 - o.y1) / 2;
+    if(rx < 0.5 || ry < 0.5) return;
+    c.beginPath();
+    c.ellipse(cx, cy, rx, ry, 0, 0, Math.PI * 2);
+    c.stroke();
+  }
+}
+function paint(list, c, n){
+  var upTo = (typeof n === 'number') ? n : list.length;
+  bg(c);
+  for(var i = 0; i < upTo; i++){ drawMark(c, list[i]); }
+}
+function redraw(preview){
+  paint(marks, ctx);
+  if(preview) drawMark(ctx, preview);
+}
+bg(ctx);
+
+function pos(e){
+  var r = cv.getBoundingClientRect();
+  return [ (e.clientX - r.left) * (W / r.width), (e.clientY - r.top) * (H / r.height) ];
+}
+function counts(){
+  var texts = 0, pts = 0;
+  marks.forEach(function(o){
+    if(o.tool === 'text') texts++;
+    if(o.pts) pts += o.pts.length; else pts += 2;
+  });
+  return { texts: texts, pts: pts };
+}
+function stats(){
+  var c = counts();
+  var mins = Math.floor(activeMs / 60000), secs = Math.round((activeMs % 60000) / 1000);
+  document.getElementById('dw_stats').textContent = marks.length === 0
+    ? 'Nothing drawn yet'
+    : marks.length + ' marks, ' + c.texts + ' text labels, about ' + mins + ' min ' + secs + ' s of drawing time';
+}
+
+/* --- text placement --- */
+var tbox = document.getElementById('dw_textbox');
+var tinput = document.getElementById('dw_textinput');
+function openText(px, py, ev){
+  var r = cv.getBoundingClientRect();
+  var stage = cv.parentElement.getBoundingClientRect();
+  pendingText = [px, py];
+  tbox.style.left = (r.left - stage.left + px * (r.width / W)) + 'px';
+  tbox.style.top = (r.top - stage.top + py * (r.height / H)) + 'px';
+  tbox.hidden = false;
+  tinput.value = '';
+  tinput.focus();
+}
+function commitText(){
+  if(!pendingText) return;
+  var txt = tinput.value.trim();
+  if(txt){
+    if(startedAt === null) startedAt = Date.now();
+    marks.push({ tool: 'text', color: color, size: size, x1: pendingText[0], y1: pendingText[1], text: txt });
+    activeMs += 1500;
+    redraw();
+    stats();
+  }
+  pendingText = null;
+  tbox.hidden = true;
+  tinput.value = '';
+}
+tinput.addEventListener('keydown', function(e){
+  if(e.key === 'Enter'){ e.preventDefault(); commitText(); }
+  else if(e.key === 'Escape'){ e.preventDefault(); pendingText = null; tbox.hidden = true; }
+});
+tinput.addEventListener('blur', commitText);
+
+/* --- pointer --- */
+cv.addEventListener('pointerdown', function(e){
+  if(e.button !== undefined && e.button !== 0 && e.pointerType === 'mouse') return;
+  e.preventDefault();
+  var p = pos(e);
+  if(tool === 'text'){ openText(p[0], p[1], e); return; }
+  var now = Date.now();
+  if(startedAt === null){ startedAt = now; }
+  lastPointAt = now;
+  if(tool === 'pen' || tool === 'erase'){
+    current = { tool: tool, color: color, size: size, pts: [p] };
+    marks.push(current);
+    redraw();
+  } else {
+    current = { tool: tool, color: color, size: size, x1: p[0], y1: p[1], x2: p[0], y2: p[1], shape: true };
+    redraw(current);
+  }
+  stats();
+  try { cv.setPointerCapture(e.pointerId); } catch(err){ /* capture is a convenience */ }
+});
+cv.addEventListener('pointermove', function(e){
+  if(!current) return;
+  e.preventDefault();
+  var now = Date.now();
+  var gap = now - lastPointAt;
+  if(gap > 0 && gap < 3000){ activeMs += gap; }
+  lastPointAt = now;
+  var p = pos(e);
+  if(current.shape){
+    current.x2 = Math.round(p[0] * 10) / 10;
+    current.y2 = Math.round(p[1] * 10) / 10;
+    redraw(current);
+    return;
+  }
+  var last = current.pts[current.pts.length - 1];
+  if(Math.abs(p[0] - last[0]) + Math.abs(p[1] - last[1]) < 1.2) return;
+  current.pts.push([Math.round(p[0] * 10) / 10, Math.round(p[1] * 10) / 10]);
+  redraw();
+  stats();
+});
+function endMark(e){
+  if(!current) return;
+  if(current.shape){
+    if(Math.abs(current.x2 - current.x1) + Math.abs(current.y2 - current.y1) > 3){
+      delete current.shape;
+      marks.push(current);
+    }
+  }
+  current = null;
+  redraw();
+  stats();
+  try {
+    if(e && e.pointerId !== undefined && cv.hasPointerCapture(e.pointerId)){ cv.releasePointerCapture(e.pointerId); }
+  } catch(err){ /* nothing to release */ }
+}
+cv.addEventListener('pointerup', endMark);
+cv.addEventListener('pointercancel', endMark);
+cv.addEventListener('pointerleave', endMark);
+
+['paste','drop','dragover'].forEach(function(evt){
+  cv.addEventListener(evt, function(e){ e.preventDefault(); }, true);
+});
+
+/* --- toolbar --- */
+function press(sel, el){
+  Array.prototype.forEach.call(document.querySelectorAll(sel), function(o){
+    o.setAttribute('aria-pressed', String(o === el));
+  });
+}
+Array.prototype.forEach.call(document.querySelectorAll('.tool'), function(b){
+  b.addEventListener('click', function(){
+    tool = b.dataset.tool;
+    press('.tool', b);
+    cv.style.cursor = (tool === 'text') ? 'text' : 'crosshair';
+  });
+});
+Array.prototype.forEach.call(document.querySelectorAll('.size'), function(b){
+  b.addEventListener('click', function(){ size = parseFloat(b.dataset.width); press('.size', b); });
+});
+Array.prototype.forEach.call(document.querySelectorAll('.swatch'), function(b){
+  b.addEventListener('click', function(){ color = b.dataset.color; press('.swatch', b); });
+});
+document.getElementById('dw_custom').addEventListener('input', function(){
+  color = this.value;
+  press('.swatch', null);
+});
+document.getElementById('dw_undo').addEventListener('click', function(){
+  if(!marks.length) return;
+  marks.pop(); editCount++; redraw(); stats();
+});
+document.getElementById('dw_clear').addEventListener('click', function(){
+  if(!marks.length) return;
+  marks = []; editCount++; redraw(); stats();
+});
+
+/* --- stamp --- */
+function fmt(ts){
+  var d = new Date(ts);
+  function p(n){ return (n < 10 ? '0' : '') + n; }
+  return d.getFullYear() + '-' + p(d.getMonth()+1) + '-' + p(d.getDate()) + ' ' + p(d.getHours()) + ':' + p(d.getMinutes()) + ':' + p(d.getSeconds());
+}
+var COURSE_KEY = 'BIO005-MEMBRANES-TRANSPORT-v1';
+function codeFrom(name, started, finished, nMarks, nPoints, activeSec){
+  var basis = [COURSE_KEY, String(name || '').trim().toLowerCase(), started, finished, nMarks, nPoints, activeSec].join('|');
+  var h1 = 2166136261, h2 = 5381;
+  for(var i = 0; i < basis.length; i++){
+    var c = basis.charCodeAt(i);
+    h1 = ((h1 ^ c) >>> 0) * 16777619 >>> 0;
+    h2 = (((h2 << 5) + h2) + c) >>> 0;
+  }
+  var hex = (('00000000' + h1.toString(16)).slice(-8) + ('00000000' + h2.toString(16)).slice(-8)).toUpperCase();
+  return hex.slice(0,4) + '-' + hex.slice(4,8) + '-' + hex.slice(8,12) + '-' + hex.slice(12,16);
+}
+function snapshot(n){
+  var off = document.createElement('canvas');
+  off.width = W; off.height = H;
+  paint(marks, off.getContext('2d'), n);
+  return off.toDataURL('image/png');
+}
+function buildStamp(){
+  var name = (document.getElementById('dw_name').value || '').trim();
+  var title = (document.getElementById('dw_title').value || 'Untitled drawing').trim();
+  var finishedAt = Date.now();
+  var c = counts();
+  var activeSec = Math.round(activeMs / 1000);
+  var startedStr = startedAt ? fmt(startedAt) : fmt(finishedAt);
+  var finishedStr = fmt(finishedAt);
+  var code = codeFrom(name, startedStr, finishedStr, marks.length, c.pts, activeSec);
+
+  document.getElementById('ex_title').textContent = title;
+  document.getElementById('ex_name').textContent = name || 'Name not entered';
+  document.getElementById('ex_img').src = snapshot(marks.length);
+  document.getElementById('ex_s_name').textContent = name || 'Name not entered';
+  document.getElementById('ex_s_title').textContent = title;
+  document.getElementById('ex_s_started').textContent = startedStr;
+  document.getElementById('ex_s_finished').textContent = finishedStr;
+  document.getElementById('ex_s_active').textContent = Math.floor(activeSec/60) + ' min ' + (activeSec % 60) + ' s  (' + activeSec + ' seconds)';
+  document.getElementById('ex_s_strokes').textContent = marks.length + '  (' + c.texts + ' of them text labels)';
+  document.getElementById('ex_s_points').textContent = String(c.pts);
+  document.getElementById('ex_s_edits').textContent = String(editCount);
+  document.getElementById('ex_s_code').textContent = code;
+
+  var strip = document.getElementById('ex_strip');
+  strip.innerHTML = '';
+  [0.25, 0.5, 0.75, 1].forEach(function(f){
+    var n = Math.max(1, Math.round(marks.length * f));
+    var fig = document.createElement('figure');
+    var img = document.createElement('img');
+    img.src = snapshot(n);
+    img.alt = 'The drawing after ' + n + ' of ' + marks.length + ' marks';
+    var cap = document.createElement('figcaption');
+    cap.textContent = Math.round(f * 100) + ' percent, ' + n + ' marks';
+    fig.appendChild(img); fig.appendChild(cap);
+    strip.appendChild(fig);
+  });
+  return { marks: marks.length, points: c.pts, activeSec: activeSec, name: name };
+}
+function warn(html){
+  var w = document.getElementById('dw_warn');
+  w.innerHTML = html;
+  w.hidden = false;
+}
+function guard(){
+  var name = (document.getElementById('dw_name').value || '').trim();
+  if(!name){
+    warn('<h4>Enter your name first</h4><p style="margin:0">The stamp prints your name, and without it the export cannot be matched to you.</p>');
+    document.getElementById('dw_name').focus();
+    return false;
+  }
+  if(marks.length === 0){
+    warn('<h4>Nothing drawn yet</h4><p style="margin:0">Draw your chart on the canvas above, then export.</p>');
+    return false;
+  }
+  return true;
+}
+document.getElementById('dw_export').addEventListener('click', function(){
+  if(!guard()) return;
+  var m = buildStamp();
+  document.getElementById('dw_warn').hidden = true;
+  if(m.marks < 20){
+    warn('<h4>Exported, but this is a very light drawing</h4><p style="margin:0">Only ' + m.marks + ' marks were recorded. A flow chart with six decision points usually runs well past that, so check that you exported the version you meant to.</p>');
+  }
+  document.body.classList.add('export-mode');
+  window.print();
+});
+window.addEventListener('afterprint', function(){ document.body.classList.remove('export-mode'); });
+
+document.getElementById('dw_preview').addEventListener('click', function(){
+  if(!guard()) return;
+  buildStamp();
+  document.getElementById('dw_warn').hidden = true;
+  var sheet = document.getElementById('exportSheet');
+  var host = document.getElementById('dw_previewHost');
+  sheet.classList.add('onscreen');
+  sheet.setAttribute('aria-hidden','false');
+  host.hidden = false;
+  host.appendChild(sheet);
+  host.scrollIntoView({block:'nearest'});
+});
+
+document.getElementById('v_check').addEventListener('click', function(){
+  var code = codeFrom(
+    document.getElementById('v_name').value,
+    document.getElementById('v_started').value.trim(),
+    document.getElementById('v_finished').value.trim(),
+    parseInt(document.getElementById('v_strokes').value, 10),
+    parseInt(document.getElementById('v_points').value, 10),
+    parseInt(document.getElementById('v_active').value, 10)
+  );
+  var given = (document.getElementById('v_code').value || '').trim().toUpperCase();
+  var out = document.getElementById('v_out');
+  out.hidden = false;
+  if(!given){
+    out.innerHTML = '<h4>Recalculated code</h4><p style="margin:0" class="ex-code">' + code + '</p>';
+  } else if(given === code){
+    out.innerHTML = '<span class="verdict right">Match</span><p style="margin:0">The code matches the printed figures.</p>';
+  } else {
+    out.innerHTML = '<span class="verdict wrong">No match</span><p style="margin:.4rem 0 0">Recalculated as ' + code + '. Check for a typo in the timestamps first, since they have to be entered exactly as printed.</p>';
+  }
+});
+})();
+
+
+/* ============ IFRAME HEIGHT SENDER ============ */
+function sendHeight(){
+  var h = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight,
+                   document.body.offsetHeight, document.documentElement.offsetHeight);
+  if(window.parent !== window){
+    window.parent.postMessage({ id: 'osmosis-iv-fluids-lab', type: 'resize', height: h }, '*');
+  }
+}
+window.addEventListener('load', sendHeight);
+window.addEventListener('resize', sendHeight);
+if(typeof ResizeObserver !== 'undefined'){ new ResizeObserver(sendHeight).observe(document.body); }
+document.addEventListener('click', function(){ setTimeout(sendHeight, 120); });
+setTimeout(sendHeight, 400);
+
+})();
+
+</script>
+<script src="bio005-nav.js" defer></script>
+</body>
+</html>

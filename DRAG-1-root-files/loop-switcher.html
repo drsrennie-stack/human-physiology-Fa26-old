@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="icon.svg">
+<title>The feedback loop switcher &middot; BIO 005</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<!--
+  ============================================================
+  BIO 005 Human Physiology, Yuba College, Fall 2026
+  loop-switcher.html
+
+  ONE LOOP, FIVE SETS OF LABELS.
+
+  The components of a feedback system, and then the same boxes
+  refilled for body temperature, blood glucose, blood pressure and
+  plasma calcium. The student sees that the four are not four things
+  to memorize. They are one thing wearing four sets of labels.
+
+  WHY THIS IS NOT AN AI IMAGE
+  Three reasons, and they all matter more than the time saved.
+    1. Image generators cannot spell. Anatomical and physiological
+       labels come back mangled, and a mislabeled diagram in a
+       physiology course is worse than no diagram at all.
+    2. Five versions would be five separate images that would not
+       line up, so the boxes would jump as the student toggled, and
+       the whole point, that the STRUCTURE is identical, would be
+       lost.
+    3. A picture of text cannot be read by a screen reader, cannot
+       be searched, cannot be selected, and cannot be recolored for
+       high contrast. This version is real text in real SVG.
+
+  It also weighs about 20 KB instead of five PNGs, and if a label is
+  wrong you fix one line rather than regenerating an image.
+
+  TO REUSE: copy the <style>, the <figure class="loopfig"> block and
+  the <script> into any notes page or slide. The LOOPS array at the
+  top of the script is the only thing to edit. Add a loop by adding
+  an entry: nothing else has to change.
+
+  Covers competencies w1-feedback-components and w1-feedback-types.
+  ============================================================
+-->
+<style>
+:root{
+  --navy:#08101F; --navy-tint:#ECEFF4; --maroon:#7A2A22; --maroon-dark:#5E201A;
+  --gold-deep:#8A6D33; --gold-text:#624612; --gold-pale:#F7EFD9;
+  --offwhite:#FAFAF9; --ink-soft:#3D4759; --rule:#A3ACBA;
+  --r:8px; --rc:16px; --shadow:0 1px 3px rgba(8,16,31,.08),0 1px 2px rgba(8,16,31,.05);
+  --font:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0}
+body{font-family:var(--font);background:var(--offwhite);color:var(--navy);line-height:1.6;font-size:17px;
+     padding:32px max(20px,4vw) 70px}
+em,i,cite,dfn,var,address{font-style:normal}
+h1,h2{margin:0;letter-spacing:-.02em}
+p{margin:0 0 14px}
+.wrap{max-width:1000px;margin:0 auto}
+.vh{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+:focus-visible{outline:3px solid var(--navy);outline-offset:3px;border-radius:4px}
+.page-eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--maroon-dark);margin:0 0 6px}
+h1{font-size:1.7rem;margin:0 0 10px}
+.page-lead{max-width:70ch;color:var(--ink-soft)}
+
+/* ---------- the figure ---------- */
+.loopfig{margin:0;background:#fff;border:1px solid var(--rule);border-radius:var(--rc);
+         box-shadow:var(--shadow);padding:22px max(16px,2vw) 24px}
+.loopfig .eyebrow{font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+                  color:var(--maroon-dark);margin:0 0 6px}
+.loopfig h2{font-size:1.24rem;font-weight:800;margin:0 0 4px}
+.loopfig .lead{color:var(--ink-soft);font-size:.95rem;margin:0 0 16px;max-width:70ch}
+
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}
+.tabs button{font:inherit;font-size:.88rem;font-weight:700;cursor:pointer;color:var(--navy);
+  background:#fff;border:1.5px solid #7C8798;border-radius:999px;padding:10px 18px;min-height:44px;
+  transition:background-color 180ms ease,border-color 180ms ease,color 180ms ease}
+.tabs button:hover{border-color:var(--gold-deep);background:var(--gold-pale)}
+.tabs button[aria-selected="true"]{background:var(--maroon);border-color:var(--maroon);color:#fff}
+
+.panel{margin:0}
+.stage{overflow-x:auto}
+svg.loop{display:block;width:100%;height:auto;min-width:680px}
+.nodebox{fill:#fff;stroke:var(--navy);stroke-width:2}
+.nodebox.sense{stroke:var(--gold-deep);stroke-width:2.5}
+.nodebox.center{fill:var(--navy-tint)}
+.nodebox.effect{stroke:var(--maroon);stroke-width:2.5}
+.role{font:700 10.5px var(--font);fill:var(--gold-text);letter-spacing:.09em;text-transform:uppercase}
+.lab{font:600 13px var(--font);fill:var(--navy)}
+.lab.sm{font-size:11.5px}
+.arrow{stroke:var(--navy);stroke-width:2.5;fill:none}
+.arrow.back{stroke:var(--maroon);stroke-dasharray:7 5}
+.arrowlab{font:700 11.5px var(--font);fill:var(--maroon-dark)}
+
+.readout{margin:18px 0 0;border:1px solid var(--rule);border-radius:var(--r);overflow:hidden}
+.readout table{width:100%;border-collapse:collapse}
+.readout th,.readout td{border-bottom:1px solid var(--rule);padding:10px 12px;text-align:left;font-size:.92rem;vertical-align:top}
+.readout th{width:160px;color:var(--maroon-dark);font-weight:700;background:var(--offwhite);white-space:nowrap}
+.readout tr:last-child th,.readout tr:last-child td{border-bottom:0}
+.note{margin:14px 0 0;background:var(--gold-pale);border-left:4px solid var(--gold-deep);
+      border-radius:0 var(--r) var(--r) 0;padding:12px 15px;font-size:.93rem}
+.note p:last-child{margin-bottom:0}
+
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+@media print{
+  body{background:#fff;padding:0}
+  .tabs{display:none}
+  .loopfig{box-shadow:none;break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<main class="wrap">
+
+<p class="page-eyebrow">BIO 005 &middot; Reusable figure</p>
+<h1>The feedback loop switcher</h1>
+<p class="page-lead">Pick a loop and every box refills. The shape never changes, which is the teaching point.</p>
+
+<figure class="loopfig" aria-labelledby="fig-h">
+  <p class="eyebrow">Figure 1</p>
+  <h2 id="fig-h">One loop, four systems</h2>
+  <p class="lead">Start on <strong>The parts</strong> to learn the seven roles. Then switch systems and watch the same boxes fill with different structures. Four loops, one design. Every arrow runs one way around the loop, and the dashed maroon arrow is what makes it negative feedback: the response feeds back and cancels the thing that started it.</p>
+
+  <div class="tabs" role="tablist" aria-label="Which feedback loop to show" id="tabs"></div>
+
+  <div class="panel" id="panel" role="tabpanel" tabindex="0">
+    <div class="stage">
+      <svg class="loop" viewBox="0 0 900 390" role="img" id="svg" aria-labelledby="svg-title">
+        <title id="svg-title">Negative feedback loop diagram</title>
+
+        <defs>
+          <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#08101F"/>
+          </marker>
+          <marker id="ahm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#7A2A22"/>
+          </marker>
+        </defs>
+
+        <!-- top row: stimulus, sensor, integrating center -->
+        <g id="n-stimulus"><rect class="nodebox"        x="14"  y="20"  width="200" height="96" rx="10"/></g>
+        <g id="n-sensor">  <rect class="nodebox sense"  x="254" y="20"  width="200" height="96" rx="10"/></g>
+        <g id="n-center">  <rect class="nodebox center" x="686" y="20"  width="200" height="96" rx="10"/></g>
+
+        <!-- bottom row: effector, response -->
+        <g id="n-effector"><rect class="nodebox effect" x="686" y="274" width="200" height="96" rx="10"/></g>
+        <g id="n-response"><rect class="nodebox"        x="254" y="274" width="336" height="96" rx="10"/></g>
+
+        <!-- one way round the loop -->
+        <path class="arrow" d="M 218 68 H 250"        marker-end="url(#ah)"/>
+        <path class="arrow" d="M 458 68 H 682"        marker-end="url(#ah)"/>
+        <path class="arrow" d="M 786 120 V 270"       marker-end="url(#ah)"/>
+        <path class="arrow" d="M 682 322 H 594"       marker-end="url(#ah)"/>
+        <path class="arrow back" d="M 250 322 H 100 V 122" marker-end="url(#ahm)"/>
+
+        <text class="arrowlab" x="570" y="55" text-anchor="middle" id="t-aff">afferent path</text>
+        <text class="arrowlab" x="776" y="200" text-anchor="end"   id="t-eff">efferent path</text>
+        <text class="arrowlab" x="110" y="222" id="t-neg">the response removes the stimulus</text>
+      </svg>
+    </div>
+
+    <div class="readout">
+      <table>
+        <caption class="vh">The parts of the loop currently shown</caption>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+
+    <div class="note" id="note"></div>
+  </div>
+
+</figure>
+
+<p class="vh" id="live" role="status" aria-live="polite"></p>
+</main>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ============================================================
+     THE ONLY THING TO EDIT. Add a loop by adding an entry.
+     Order of parts: stimulus, sensor, afferent, center, efferent,
+     effector, response.
+     ============================================================ */
+  var LOOPS = [
+    { key: 'parts', tab: 'The parts', title: 'the parts of any negative feedback loop',
+      parts: {
+        stimulus: 'The regulated variable moves away from its setpoint',
+        sensor:   'A structure that detects the change',
+        afferent: 'signal from sensor to center',
+        center:   'Compares the value to the setpoint and decides the response',
+        efferent: 'signal from center to effector',
+        effector: 'The muscle or gland that carries out the response',
+        response: 'The change that pushes the variable back toward the setpoint and removes the stimulus'
+      },
+      note: 'Learn these seven roles once. Every loop in the other tabs is these same boxes with different structures in them. Some loops merge two roles into one cell, and that is normal.' },
+
+    { key: 'temp', tab: 'Body temperature', title: 'body temperature falling on a cold morning',
+      parts: {
+        stimulus: 'Core temperature falls below the setpoint near 37 degrees Celsius',
+        sensor:   'Thermoreceptors in the skin and in the hypothalamus',
+        afferent: 'sensory neurons',
+        center:   'Hypothalamus',
+        efferent: 'sympathetic nerves and somatic motor neurons',
+        effector: 'Smooth muscle of skin arterioles, and skeletal muscle',
+        response: 'Vasoconstriction cuts heat loss and shivering makes heat, so core temperature rises'
+      },
+      note: 'This is the full loop with nothing merged, so it is the one to learn first and the one to draw from memory.' },
+
+    { key: 'glucose', tab: 'Blood glucose', title: 'plasma glucose rising after a meal',
+      parts: {
+        stimulus: 'Plasma glucose rises after a meal',
+        sensor:   'Pancreatic beta cell, which takes up glucose directly',
+        afferent: 'none needed',
+        center:   'The same beta cell. Sensor and integrating center are one cell',
+        efferent: 'insulin, carried in the blood',
+        effector: 'Skeletal muscle, adipose tissue and liver',
+        response: 'Those tissues take up and store glucose, so plasma glucose falls'
+      },
+      note: 'Notice the loop got shorter. The beta cell senses and decides, so there is no afferent path: nothing has to travel anywhere to report the change. Do not force seven separate boxes onto every loop.' },
+
+    { key: 'bp', tab: 'Blood pressure', title: 'arterial pressure falling on standing up',
+      parts: {
+        stimulus: 'Arterial pressure falls when you stand up',
+        sensor:   'Baroreceptors in the carotid sinus and the aortic arch',
+        afferent: 'glossopharyngeal and vagus nerves',
+        center:   'Cardiovascular control center in the medulla oblongata',
+        efferent: 'sympathetic output up, parasympathetic output down',
+        effector: 'SA node and cardiac muscle, and arteriolar smooth muscle',
+        response: 'Heart rate, contractility and vasoconstriction all rise, so pressure rises'
+      },
+      note: 'Two sets of effectors working together. The heart changes how much blood it pushes out and the arterioles change how hard it is to push blood through. You build this one out in Week 11.' },
+
+    { key: 'calcium', tab: 'Plasma calcium', title: 'plasma calcium falling',
+      parts: {
+        stimulus: 'Plasma calcium falls below the setpoint',
+        sensor:   'Calcium sensing receptor on the parathyroid chief cell',
+        afferent: 'none needed',
+        center:   'The same parathyroid chief cell',
+        efferent: 'parathyroid hormone, carried in the blood',
+        effector: 'Bone, kidney, and the small intestine by way of calcitriol',
+        response: 'Calcium leaves bone, the kidney keeps more of it, more is absorbed from food, so plasma calcium rises'
+      },
+      note: 'Same shortcut as glucose: the sensing cell is also the deciding cell. Three effectors here, which is part of why plasma calcium is defended so tightly. You meet this again in Week 9.' }
+  ];
+
+  var ORDER = ['stimulus', 'sensor', 'afferent', 'center', 'efferent', 'effector', 'response'];
+  var ROLE = {
+    stimulus: 'Stimulus', sensor: 'Sensor', afferent: 'Afferent path',
+    center: 'Integrating center', efferent: 'Efferent path',
+    effector: 'Effector', response: 'Response'
+  };
+  /* Boxes on the diagram. afferent and efferent are arrow labels, not boxes. */
+  var BOXES = {
+    stimulus: { x: 14,  y: 20,  w: 200 },
+    sensor:   { x: 254, y: 20,  w: 200 },
+    center:   { x: 686, y: 20,  w: 200 },
+    effector: { x: 686, y: 274, w: 200 },
+    response: { x: 254, y: 274, w: 336 }
+  };
+  var PAD = 14, MAXLINES = 4, LEAD = 15;
+
+  var svg = document.getElementById('svg');
+  var tabs = document.getElementById('tabs');
+  var panel = document.getElementById('panel');
+  var tbody = document.getElementById('tbody');
+  var live = document.getElementById('live');
+  var NS = 'http://www.w3.org/2000/svg';
+  var current = 0;
+
+  function esc(v) {
+    return String(v == null ? '' : v).replace(/[&<>"]/g, function (c) {
+      return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c];
+    });
+  }
+
+  /* SVG has no text wrapping. Measure the real rendered width with
+     getComputedTextLength and break on whole words, so a label can
+     never run out past the edge of its own box. */
+  var ruler = document.createElementNS(NS, 'text');
+  ruler.setAttribute('class', 'lab');
+  ruler.setAttribute('x', '-9999');
+  ruler.setAttribute('y', '-9999');
+  svg.appendChild(ruler);
+
+  function widthOf(str, small) {
+    ruler.setAttribute('class', small ? 'lab sm' : 'lab');
+    ruler.textContent = str;
+    return ruler.getComputedTextLength();
+  }
+
+  function wrap(text, maxW, small) {
+    var words = String(text).split(' '), lines = [], line = '';
+    words.forEach(function (w) {
+      var test = line ? line + ' ' + w : w;
+      if (line && widthOf(test, small) > maxW) { lines.push(line); line = w; }
+      else { line = test; }
+    });
+    if (line) { lines.push(line); }
+    return lines;
+  }
+
+  function arrowLabel(id, text, x, y, maxW, mode) {
+    var e = document.getElementById(id);
+    e.textContent = '';
+    ruler.setAttribute('class', 'arrowlab');
+    var words = String(text).split(' '), lines = [], line = '';
+    words.forEach(function (w) {
+      var test = line ? line + ' ' + w : w;
+      ruler.textContent = test;
+      if (line && ruler.getComputedTextLength() > maxW) { lines.push(line); line = w; }
+      else { line = test; }
+    });
+    if (line) { lines.push(line); }
+    /* A second line would otherwise land on top of the arrow. Lift the
+       whole block: fully clear of it above a horizontal arrow, centered
+       on it beside a vertical one. */
+    var lift = (mode === 'above' ? 14 : 7) * (lines.length - 1);
+    e.setAttribute('y', y - lift);
+    lines.forEach(function (ln, i) {
+      var ts = document.createElementNS(NS, 'tspan');
+      ts.setAttribute('x', x);
+      ts.setAttribute('dy', i === 0 ? 0 : 14);
+      ts.textContent = ln;
+      e.appendChild(ts);
+    });
+  }
+
+  function paint(loop) {
+    document.getElementById('svg-title').textContent =
+      'Negative feedback loop, ' + loop.title;
+
+    Object.keys(BOXES).forEach(function (k) {
+      var g = document.getElementById('n-' + k), b = BOXES[k];
+      Array.prototype.slice.call(g.querySelectorAll('text')).forEach(function (t) { g.removeChild(t); });
+
+      var role = document.createElementNS(NS, 'text');
+      role.setAttribute('class', 'role');
+      role.setAttribute('x', b.x + PAD);
+      role.setAttribute('y', b.y + 23);
+      role.textContent = ROLE[k];
+      g.appendChild(role);
+
+      /* try it at full size, drop a step if it will not fit in four lines */
+      var maxW = b.w - PAD * 2;
+      var small = false;
+      var lines = wrap(loop.parts[k], maxW, false);
+      if (lines.length > MAXLINES) { small = true; lines = wrap(loop.parts[k], maxW, true); }
+
+      var t = document.createElementNS(NS, 'text');
+      t.setAttribute('class', small ? 'lab sm' : 'lab');
+      t.setAttribute('x', b.x + PAD);
+      t.setAttribute('y', b.y + 44);
+      lines.forEach(function (ln, i) {
+        var ts = document.createElementNS(NS, 'tspan');
+        ts.setAttribute('x', b.x + PAD);
+        ts.setAttribute('dy', i === 0 ? 0 : LEAD);
+        ts.textContent = ln;
+        t.appendChild(ts);
+      });
+      g.appendChild(t);
+    });
+
+    /* the two arrow labels wrap too, so a long nerve name cannot run
+       off the edge of the drawing */
+    arrowLabel('t-aff', loop.parts.afferent, 570, 55, 250, 'above');
+    arrowLabel('t-eff', loop.parts.efferent, 776, 194, 250, 'center');
+
+    tbody.innerHTML = ORDER.map(function (k) {
+      return '<tr><th scope="row">' + esc(ROLE[k]) + '</th><td>' + esc(loop.parts[k]) + '</td></tr>';
+    }).join('');
+
+    document.getElementById('note').innerHTML = '<p>' + esc(loop.note) + '</p>';
+  }
+
+  function select(i, focus, announce) {
+    current = i;
+    Array.prototype.forEach.call(tabs.querySelectorAll('button'), function (b, j) {
+      var on = (i === j);
+      b.setAttribute('aria-selected', on ? 'true' : 'false');
+      b.setAttribute('tabindex', on ? '0' : '-1');
+      if (on) { panel.setAttribute('aria-labelledby', b.id); }
+      if (on && focus) { b.focus(); }
+    });
+    paint(LOOPS[i]);
+    if (announce) { live.textContent = 'Now showing ' + LOOPS[i].title + '.'; }
+  }
+
+  LOOPS.forEach(function (l, i) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.id = 'tab-' + l.key;
+    b.setAttribute('role', 'tab');
+    b.setAttribute('aria-selected', 'false');
+    b.setAttribute('aria-controls', 'panel');
+    b.setAttribute('tabindex', '-1');
+    b.textContent = l.tab;
+    b.addEventListener('click', function () { select(i, false, true); });
+    b.addEventListener('keydown', function (e) {
+      var n = null;
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { n = (i + 1) % LOOPS.length; }
+      if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { n = (i - 1 + LOOPS.length) % LOOPS.length; }
+      if (e.key === 'Home') { n = 0; }
+      if (e.key === 'End') { n = LOOPS.length - 1; }
+      if (n !== null) { e.preventDefault(); select(n, true, true); }
+    });
+    tabs.appendChild(b);
+  });
+
+  select(0, false, false);
+
+  /* The first paint measures text in the fallback font, because the
+     webfont has not arrived yet. Repaint once it has, or the line
+     breaks are computed against the wrong letter widths. */
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(function () { paint(LOOPS[current]); });
+  }
+}());
+</script>
+
+<!-- Canvas iframe height sender. Tells the parent page how tall to make the frame. -->
+<script>
+(function () {
+  var ID = 'loop-switcher';
+  function send() {
+    try {
+      var h = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+      parent.postMessage({ id: ID, frameId: ID, height: h }, '*');
+    } catch (e) {}
+  }
+  window.addEventListener('load', send);
+  window.addEventListener('resize', send);
+  if (window.ResizeObserver) { new ResizeObserver(send).observe(document.body); }
+  send();
+}());
+</script>
+<script src="bio005-nav.js" defer></script>
+</body>
+</html>

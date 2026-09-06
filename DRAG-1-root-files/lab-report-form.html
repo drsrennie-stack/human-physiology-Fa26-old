@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Weekly Lab Analysis Sheet &middot; BIO 005 Human Physiology</title>
+<link rel="icon" type="image/svg+xml" href="icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<!--
+  ============================================================
+  BIO 005 Human Physiology, Yuba College, Fall 2026
+  lab-report-form.html
+
+  THE PRINTABLE LAB REPORT. One page per lab, printed once at
+  the start of term and used all fifteen weeks.
+
+  Why a fixed form rather than a blank sheet: every report has
+  the same seven things in the same place, so a student never
+  wonders what goes where and grading thirty of them is reading
+  the same six inches of page thirty times instead of hunting.
+
+  The week and date are blank lines on purpose. One print job of
+  fifteen copies covers the term.
+
+  Print: US Letter, portrait, 0.5in margins, one form per page.
+  Everything is line work and grid, so it costs almost no ink.
+  ============================================================
+-->
+<style>
+:root{
+  --ink:#0B1530; --maroon:#8B3A2E; --maroon-dk:#6E2D24;
+  --muted:#4F576A; --faint:#505663; --hair:#C7CBD4; --grid:#D8DBE1;
+  /* Be Vietnam Pro, not Plus Jakarta Sans. Same Tokotype lineage, so the
+     letterforms match the rest of the course, but it holds up better in the
+     8.5px uppercase labels on this sheet. Normal (unslashed) zero. */
+  --f:'Be Vietnam Pro',system-ui,-apple-system,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0}
+body{font-family:var(--f);background:#EEECEA;color:var(--ink);font-size:14px;line-height:1.5}
+em,i,cite,dfn,var{font-style:normal}
+h1,h2,h3{font-family:var(--f);margin:0;letter-spacing:-.01em}
+p{margin:0}
+
+.note{max-width:8.5in;margin:20px auto 12px;padding:0 .5in;font-size:13.5px;color:#3A4250}
+.note b{color:var(--ink)}
+.note a{color:var(--maroon-dk)}
+
+.sheet{background:#fff;width:8.5in;min-height:11in;margin:0 auto 18px;padding:.5in .5in .45in}
+
+/* ---------- running head ---------- */
+.rh{display:flex;justify-content:space-between;align-items:flex-end;
+    border-bottom:1.5px solid var(--ink);padding-bottom:5px;margin-bottom:10px}
+.rh .l{font-size:9px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--maroon-dk)}
+.rh h1{font-size:17px;font-weight:800;margin-top:2px}
+.rh .r{font-size:9px;color:var(--faint);text-align:right;letter-spacing:.12em;text-transform:uppercase;font-weight:700}
+
+.idbar{display:flex;gap:14px;margin-bottom:9px}
+.idbar div{flex:1;border-bottom:1px solid var(--ink);height:26px;display:flex;align-items:flex-end;
+  font-size:8.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);padding-bottom:2px}
+.idbar div.w{flex:0 0 78px}
+
+/* ---------- blocks ---------- */
+.blk{border:1px solid var(--ink);margin-bottom:5px}
+.bh{display:flex;align-items:baseline;gap:9px;padding:5px 9px;border-bottom:1px solid var(--hair);background:#F2F3F5}
+.bn{font-size:15px;font-weight:800;color:var(--ink);line-height:1;font-variant-numeric:tabular-nums;flex:none}
+.bt{font-size:11.5px;font-weight:800;flex:0 1 auto}
+.bs{font-size:9px;color:var(--muted);margin-left:auto;text-align:right;flex:0 1 44%}
+.fill{background-image:repeating-linear-gradient(to bottom,transparent 0,transparent 25px,var(--grid) 25px,var(--grid) 25.6px)}
+
+.h-pred{height:.62in}
+.h-thread{height:.8in}
+.h-rec{height:.76in}
+.h-concl{height:.9in}
+
+/* data table */
+.dt{width:100%;border-collapse:collapse}
+.dt th{font-size:8.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);
+  text-align:left;padding:4px 9px;border-bottom:1px solid var(--hair)}
+.dt td{height:20px;border-bottom:.6px solid var(--grid);border-right:.6px solid var(--grid);padding:0 9px}
+.dt td:last-child{border-right:0}
+
+/* graph */
+.gwrap{padding:7px 9px 5px}
+.graph{height:1.9in;border-left:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink);
+  background-image:linear-gradient(to right,var(--grid) .5px,transparent .5px),
+                   linear-gradient(to bottom,var(--grid) .5px,transparent .5px);
+  background-size:.2in .2in;position:relative}
+.axl{font-size:8.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+.axy{position:absolute;left:-4px;top:-13px}
+.axx{text-align:right;margin-top:3px}
+
+/* causal chain */
+.chain{display:flex;align-items:center;gap:6px;padding:6px 9px}
+.cbox{flex:1;height:.34in;border:.8px solid var(--ink)}
+.arw{flex:none;color:var(--ink);font-weight:800;font-size:15px}
+
+/* video row */
+.vid{display:flex;align-items:center;gap:11px;padding:7px 9px;font-size:11px;color:var(--muted)}
+.ck{width:15px;height:15px;border:1.5px solid var(--ink);flex:none}
+.vid b{color:var(--ink);font-weight:800;font-size:11.5px}
+
+.foot{display:flex;justify-content:space-between;font-size:8.5px;color:var(--faint);margin-top:5px;
+  letter-spacing:.1em;text-transform:uppercase;font-weight:700}
+
+@media print{
+  body{background:#fff}
+  .sheet{width:auto;min-height:0;margin:0;padding:0}
+  .blk{break-inside:avoid}
+  .note{display:none}
+  @page{size:letter portrait;margin:.5in}
+}
+</style>
+</head>
+<body>
+
+<p class="note"><b>Print fifteen copies, one for each week.</b> One sheet covers every lab activity you run that week, however many there are. Most weeks that is PhysioEx. Three weeks it is a lab you run yourself. Everything here is line work, so it costs almost no ink. Full instructions are on the <a href="assignment-physioex.html" target="_top">weekly lab analysis page</a>.</p>
+
+<section class="sheet">
+
+  <div class="rh">
+    <div>
+      <p class="l">BIO 005 &middot; Human Physiology &middot; Yuba College</p>
+      <h1>Weekly lab analysis</h1>
+    </div>
+    <p class="r">Fall 2026<br>Dr. Sharilyn Rennie</p>
+  </div>
+
+  <div class="idbar">
+    <div>Name</div>
+    <div class="w">Week</div>
+    <div class="w">Date</div>
+    <div>How many activities</div>
+  </div>
+
+  <!-- 1 ACTIVITY LIST -->
+  <div class="blk">
+    <div class="bh"><span class="bn">1</span><span class="bt">List the activities you did this week</span>
+      <span class="bs">One row for each. Write the name, what you changed, what you measured, and what happened.</span></div>
+    <table class="dt">
+      <tr><th style="width:29%">Activity name</th><th style="width:20%">What you changed</th><th style="width:20%">What you measured</th><th>What happened</th></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+    </table>
+  </div>
+
+  <!-- 2 PREDICTION -->
+  <div class="blk">
+    <div class="bh"><span class="bn">2</span><span class="bt">Pick one activity. Once you saw the setup, what did you expect?</span>
+      <span class="bs">Read the setup first: what is being changed, what is being measured. Then write what you thought would happen and why, before you run it.</span></div>
+    <div class="fill h-pred"></div>
+  </div>
+
+  <!-- 3 THE THREAD -->
+  <div class="blk">
+    <div class="bh"><span class="bn">3</span><span class="bt">What do these activities have in common?</span>
+      <span class="bs">Is the body controlling the same thing in all of them? Name it, and say how you can tell.</span></div>
+    <div class="fill h-thread"></div>
+  </div>
+
+  <!-- 4 CHANGED YOUR MIND -->
+  <div class="blk">
+    <div class="bh"><span class="bn">4</span><span class="bt">What surprised you?</span>
+      <span class="bs">Which result was not what you expected? What had you assumed that turned out to be wrong?</span></div>
+    <div class="fill h-rec"></div>
+  </div>
+
+  <!-- 5 CAUSAL CHAIN -->
+  <div class="blk">
+    <div class="bh"><span class="bn">5</span><span class="bt">Show one cause and effect, step by step</span>
+      <span class="bs">Start with something that changed. Follow it to what you measured. Use at least two activities from your list.</span></div>
+    <div class="chain">
+      <span class="cbox"></span><span class="arw" aria-hidden="true">&rarr;</span>
+      <span class="cbox"></span><span class="arw" aria-hidden="true">&rarr;</span>
+      <span class="cbox"></span><span class="arw" aria-hidden="true">&rarr;</span>
+      <span class="cbox"></span>
+    </div>
+  </div>
+
+  <!-- 6 CONCLUSION -->
+  <div class="blk">
+    <div class="bh"><span class="bn">6</span><span class="bt">What do you know now that you did not know on Monday?</span>
+      <span class="bs">Three or four sentences in your own words about how the body handles this.</span></div>
+    <div class="fill h-concl"></div>
+  </div>
+
+  <div class="foot">
+    <span>Take a color photo of this page, phone held flat above it</span>
+    <span>Due Sunday 10:00 pm</span>
+  </div>
+
+</section>
+<script>
+/* Canvas iframe height sender. Same contract as the assignment pages. */
+(function(){
+  var ID = "bio005-lab-form";
+  function send(){
+    var h = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+    try{ window.parent.postMessage({id:ID,frameId:ID,type:"resize",height:h}, "*"); }catch(e){}
+  }
+  window.addEventListener("load", send); window.addEventListener("resize", send);
+  if (typeof ResizeObserver !== "undefined"){ try{ new ResizeObserver(send).observe(document.body); }catch(e){} }
+  setTimeout(send,400); setTimeout(send,1500);
+})();
+</script>
+<script src="bio005-back.js"></script>
+<script src="bio005-nav.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The competency brain dump &middot; BIO 005 Human Physiology</title>
+<style>@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+:root{
+  --navy:#0B1530; --navy-72:#4F576A; --navy-15:rgba(11,21,48,.15);
+  --terra:#8B3A2E; --terra-dark:#6B2A20;
+  --gold:#DCB45C;
+  --white:#FFFFFF; --page:#FFFFFF; --wash:#FAFAF9;
+  --r-card:8px; --r-btn:4px; --r-pill:99px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+  background:var(--page);color:var(--navy);font-size:16px;line-height:1.6;font-style:normal}
+em,i,cite,dfn,var,address{font-style:normal}
+button{font-family:inherit}
+a{color:var(--terra)}
+a:hover{color:var(--terra-dark)}
+:focus-visible{outline:3px solid var(--terra);outline-offset:3px;border-radius:4px}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:16px;top:16px;position:fixed;background:var(--navy);color:#fff;padding:10px 14px;border-radius:4px;z-index:400}
+
+.site-header{display:flex;align-items:center;gap:16px;flex-wrap:wrap;
+  padding:14px max(16px,3vw);background:#fff;border-bottom:.5px solid var(--navy-15)}
+.site-logo{display:inline-flex;align-items:center;gap:13px;text-decoration:none;flex:1;min-width:250px}
+.site-logo svg{height:42px;width:auto;display:block;flex:0 0 auto}
+.logo-title{font-family:'Open Sans','Plus Jakarta Sans',sans-serif;font-size:19px;font-weight:800;letter-spacing:-.02em;color:var(--navy);display:block}
+.logo-title .logo-accent{color:var(--terra)}
+.logo-sub{display:block;font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--navy-72);margin-top:3px}
+
+.wrap{max-width:940px;margin:0 auto;padding:26px max(16px,4vw) 60px}
+.hero{padding:8px 0 26px;border-bottom:.5px solid var(--navy-15);margin-bottom:26px}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--terra);margin:0 0 10px}
+.eyebrow.navy{color:var(--navy-72)}
+.hero h1{font-family:'Open Sans','Plus Jakarta Sans',sans-serif;font-size:clamp(30px,5vw,50px);
+  font-weight:800;letter-spacing:-.03em;line-height:1.06;margin:0 0 14px}
+.hero h1 .hl{color:var(--terra)}
+.lede{font-size:18px;color:var(--navy-72);max-width:64ch;margin:0 0 22px}
+.metarow{display:flex;flex-wrap:wrap;gap:9px;margin:16px 0 0}
+.pill{display:inline-flex;align-items:center;gap:7px;background:var(--terra);color:#fff;
+  font-size:10px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;
+  padding:7px 14px;border-radius:var(--r-pill)}
+.pill.navy{background:var(--navy)}
+.pill.ghost{background:#fff;color:var(--navy);border:.5px solid var(--navy-15)}
+
+h2{font-family:'Open Sans','Plus Jakarta Sans',sans-serif;font-size:clamp(21px,2.7vw,28px);
+  font-weight:800;letter-spacing:-.02em;margin:40px 0 8px;padding-top:22px;border-top:.5px solid var(--navy-15)}
+h2:first-of-type{border-top:0;padding-top:0}
+h2 .hl{color:var(--terra)}
+h3{font-size:11px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);margin:26px 0 10px}
+h4{font-size:16.5px;font-weight:800;letter-spacing:-.01em;margin:18px 0 6px;color:var(--navy)}
+p{margin:0 0 13px}
+.sub{color:var(--navy-72);margin:0 0 18px;max-width:66ch}
+
+.card{background:#fff;border:.5px solid var(--navy-15);border-radius:var(--r-card);padding:24px 22px}
+.card.navy{background:var(--navy);color:#fff;border-color:var(--navy)}
+.card.navy .eyebrow{color:var(--gold)}
+.card.navy a{color:var(--gold)}
+.card.feature{border:2px solid var(--terra)}
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:repeat(2,1fr)}
+@media(max-width:860px){.g2{grid-template-columns:1fr}}
+
+ul.bul{margin:0 0 14px;padding:0;list-style:none}
+ul.bul>li{padding:5px 0 5px 20px;position:relative}
+ul.bul>li::before{content:"";position:absolute;left:2px;top:14px;width:6px;height:6px;background:var(--terra);border-radius:50%}
+
+.steps{list-style:none;margin:0;padding:0;counter-reset:s}
+.steps>li{counter-increment:s;display:grid;grid-template-columns:64px 1fr;gap:18px;
+  padding:20px 0;border-top:.5px solid var(--navy-15)}
+.steps>li:first-child{border-top:0;padding-top:6px}
+.steps>li::before{content:counter(s,decimal-leading-zero);
+  font-family:'Open Sans','Plus Jakarta Sans',sans-serif;font-weight:800;font-size:34px;
+  color:var(--terra);line-height:1;letter-spacing:-.03em}
+.steps h4{margin:0 0 6px}
+.steps p{margin:0 0 8px}
+.steps p:last-child{margin-bottom:0}
+
+.key{border:2px solid var(--terra);border-radius:var(--r-card);padding:16px 18px;margin:18px 0}
+.key .tag{font-size:10px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--terra);margin:0 0 7px}
+.key p:last-child,.key ul:last-child{margin-bottom:0}
+
+.band{background:var(--navy);color:#fff;border-radius:var(--r-card);padding:26px}
+.band p{margin:0;font-family:'Open Sans','Plus Jakarta Sans',sans-serif;font-weight:700;
+  font-size:clamp(18px,2.2vw,25px);line-height:1.32;letter-spacing:-.01em}
+.band .em{color:var(--gold)}
+
+.tbl{width:100%;border-collapse:collapse;font-size:14.5px}
+.tbl caption{caption-side:top;text-align:left;font-size:10.5px;font-weight:800;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--terra);padding:0 0 10px}
+.tbl th,.tbl td{text-align:left;padding:9px 12px;border-bottom:.5px solid var(--navy-15);vertical-align:top}
+.tbl thead th{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--navy-72);font-weight:700}
+.tbl tbody th{font-weight:800}
+.tblscroll{overflow-x:auto}
+
+/* the label pattern, shown the way it looks on the competency list */
+.lbdemo{display:flex;flex-wrap:wrap;gap:14px;margin:14px 0 0}
+.lbx{position:relative;border-radius:8px;padding:15px 16px 13px;flex:1 1 260px;min-width:240px}
+.lbx p{margin:0;font-size:14.5px}
+.lbx.a{border:1.6px solid var(--terra)}
+.lbx.b{border:1.6px solid var(--navy)}
+.lbx .pl{position:absolute;top:-10px;left:13px;background:#fff;padding:0 7px;
+  font-family:'Open Sans','Plus Jakarta Sans',sans-serif;font-weight:800;font-size:11px;letter-spacing:.16em}
+.lbx.a .pl{color:var(--terra)}
+.lbx.b .pl{color:var(--navy)}
+
+.btnrow{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 0}
+.btn{font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;
+  border-radius:var(--r-btn);padding:13px 20px;border:1px solid var(--terra);background:var(--terra);
+  color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.btn:hover{background:var(--terra-dark);border-color:var(--terra-dark);color:#fff}
+.btn.ghost{background:transparent;color:var(--navy);border-color:var(--navy-15)}
+.btn.ghost:hover{background:var(--wash);border-color:var(--navy);color:var(--navy)}
+
+.page-foot{margin-top:44px;border-top:.5px solid var(--navy-15);padding-top:16px;font-size:13px;color:var(--navy-72)}
+
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+@media print{
+  @page{margin:13mm}
+  body{font-size:10.5pt}
+  .skip,.btnrow{display:none!important}
+  h2{break-after:avoid;page-break-after:avoid}
+  .card,.key,.lbx,.band{break-inside:avoid;page-break-inside:avoid}
+  .card.navy,.band{background:#fff!important;color:#0B1530!important;border:1px solid #bbb!important}
+  .card.navy .eyebrow,.band .em{color:#6B2A20!important}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="site-header">
+  <a class="site-logo" href="welcome.html" target="_top" aria-label="BIO 005 Human Physiology, course home">
+    <svg viewBox="40 10 125 148" aria-hidden="true" focusable="false"><g transform="translate(0,18)"><g transform="translate(60,0) rotate(8 0 130)"><circle cx="0" cy="20" r="10" fill="#0B1530"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#0B1530"/></g><g transform="translate(100,0)"><circle cx="0" cy="10" r="11" fill="#8B3A2E"/><path d="M 0,22 C -11,22 -17,26 -17,34 C -17,52 -14,70 -12,86 C -11,108 -13,122 -15,132 L 15,132 C 13,122 11,108 12,86 C 14,70 17,52 17,34 C 17,26 11,22 0,22 Z" fill="#8B3A2E"/></g><g transform="translate(140,0) rotate(-8 0 130)"><circle cx="0" cy="20" r="10" fill="#0B1530"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#0B1530"/></g></g></svg>
+    <span><span class="logo-title">Human <span class="logo-accent">Physiology</span></span><span class="logo-sub">BIO 005 &middot; Competency brain dump</span></span>
+  </a>
+</header>
+<main class="wrap" id="main">
+
+<div class="hero">
+  <p class="eyebrow">How to do it &middot; Every week</p>
+  <h1>The competency <span class="hl">brain dump</span></h1>
+  <p class="lede">You do this twice for every week of this course. Once before you have been taught anything, and once after. The gap between the two sheets is the part that is actually yours.</p>
+  <div class="metarow">
+    <span class="pill">Two passes</span>
+    <span class="pill navy">Blank paper, closed book</span>
+    <span class="pill ghost">One upload</span>
+  </div>
+</div>
+
+<h2>What this <span class="hl">is</span></h2>
+<p>Every week has a competency list. A competency is one thing you should be able to do by the end of that week, written as a job rather than a topic. Under each one are two prompts, and nearly all of them ask you to draw something and label it.</p>
+<p>The brain dump is you attempting those prompts on paper with nothing open. Not reading them and thinking that you could. Writing and drawing them, badly if that is where you are, and finding out for certain.</p>
+<p>The reason it is graded on effort rather than accuracy is that a first pass done honestly is supposed to be full of holes. If your first pass is perfect, you either already knew the material or you looked something up, and only one of those helps you.</p>
+
+<div class="band">
+  <p>Recognizing something on a page is not the same as being able to produce it. The only way to tell the two apart is to <span class="em">close the page and try</span>.</p>
+</div>
+
+<h2>What you <span class="hl">need</span></h2>
+<ul class="bul">
+  <li>Blank paper. Lined is fine. You will need room to draw, so do not crowd it.</li>
+  <li>Something to write with. Pen is better than pencil, because you should be able to see what you crossed out.</li>
+  <li>The competency list for the week, open on a screen or printed. That is the only thing you are allowed to have open.</li>
+  <li>A timer, if you want one. Most weeks this takes twenty to thirty minutes per pass.</li>
+</ul>
+<p>What you do not need: the week page, the lecture recording, your notes, a search engine, or an AI assistant. All of those are closed for this. They are open for plenty of other things in this course, and this is not one of them.</p>
+
+<h2>The first pass, <span class="hl">before</span> you watch anything</h2>
+<p class="sub">Do this at the very start of the week, before the recording and before the reading.</p>
+
+<ol class="steps">
+  <li>
+    <h4>Read the competency list once, straight through</h4>
+    <p>Do not look anything up while you read it. You are getting the shape of the week, not learning it.</p>
+  </li>
+  <li>
+    <h4>Pick one prompt per competency</h4>
+    <p>Each competency has two. Take whichever one you want. There is no harder or easier one, they come at the same idea from different directions.</p>
+  </li>
+  <li>
+    <h4>Attempt every one of them on paper</h4>
+    <p>Draw what you can. Label what you can. Write the sentences you can. When you get to one where you have nothing, write down what you think it might be about, and then write "not yet". Do not skip it and leave a blank space, because a blank tells you nothing later.</p>
+  </li>
+  <li>
+    <h4>Put the sheet somewhere you will find it again</h4>
+    <p>Do not throw it out, do not correct it, and do not go back and fill anything in after you have watched the lecture. That sheet is the before picture and it stops being useful the moment you improve it.</p>
+  </li>
+</ol>
+
+<div class="key">
+  <p class="tag">This will feel bad, and that is the mechanism</p>
+  <p>Trying to answer something before you have been taught it makes the teaching land harder. You will sit through the lecture recognizing the exact places you got stuck, and those are the parts you will still have in December. Students who skip the first pass because it feels pointless are skipping the part that does the work.</p>
+</div>
+
+<h2>The second pass, <span class="hl">after</span> the lecture and the reading</h2>
+<p class="sub">Do this after you have watched the mission recording and worked the week page, and before you sit the knowledge check.</p>
+
+<ol class="steps">
+  <li>
+    <h4>Fresh paper, and the first sheet stays face down</h4>
+    <p>Same rules as before. Competency list open, nothing else.</p>
+  </li>
+  <li>
+    <h4>Work the same prompts again</h4>
+    <p>Same one you picked the first time, so the two sheets compare directly. If you want the other one as well, do it underneath, not instead.</p>
+  </li>
+  <li>
+    <h4>Now put the two sheets side by side</h4>
+    <p>Anything that filled in between the first pass and the second is something you learned this week. Anything still thin or still blank is what you have not got yet, and it is not going to fix itself.</p>
+  </li>
+  <li>
+    <h4>Write your miss list at the bottom of the second sheet</h4>
+    <p>Just the competency numbers you still could not produce. That list is what you study before the exam, and it is far more useful than re-reading a page you have already read twice.</p>
+  </li>
+</ol>
+
+<div class="grid g2" style="margin-top:18px">
+  <div class="card">
+    <p class="eyebrow navy">First pass</p>
+    <p style="margin:0">Cold, before any teaching. Expect gaps. The gaps are the data.</p>
+  </div>
+  <div class="card feature">
+    <p class="eyebrow">Second pass</p>
+    <p style="margin:0">After the lecture and the reading. Same prompts, fresh paper, still closed book.</p>
+  </div>
+</div>
+
+<h2>How to <span class="hl">label your paper</span></h2>
+<p>You do not copy the prompt out. You write its label and then answer it. The label is the competency number, then a dash, then which of the two prompts you took.</p>
+
+<div class="lbdemo">
+  <div class="lbx a"><p class="pl">3-1</p><p>Competency 3, first prompt.</p></div>
+  <div class="lbx b"><p class="pl">3-2</p><p>Competency 3, second prompt.</p></div>
+</div>
+
+<p style="margin-top:18px">On the competency list the first prompt is in a red box and the second is in a blue one, so you can find them by eye. Head each answer with its label and start a new line. That is the whole system.</p>
+
+<div class="tblscroll">
+<table class="tbl">
+  <caption>What each sheet needs at the top</caption>
+  <thead><tr><th scope="col">Line</th><th scope="col">What goes there</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">1</th><td>Your name</td></tr>
+    <tr><th scope="row">2</th><td>The week number</td></tr>
+    <tr><th scope="row">3</th><td>First pass or second pass</td></tr>
+    <tr><th scope="row">4</th><td>The date you did it</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>What I am <span class="hl">looking for</span></h2>
+<ul class="bul">
+  <li><b>Drawings, not paragraphs.</b> Most of these prompts ask for a diagram with labels on it. A written description of a diagram is not a diagram.</li>
+  <li><b>Labels on the drawing.</b> An unlabelled sketch does not show me what you know. Label the parts, and label the arrows too, because in physiology the arrows are usually the point.</li>
+  <li><b>Your own handwriting on your own paper.</b> Typed answers are not accepted for this. The whole point is that it comes out of your head and onto paper with nothing in between.</li>
+  <li><b>Honest effort.</b> A real attempt earns full credit even when it is wrong. A few scattered words does not.</li>
+</ul>
+
+<div class="key">
+  <p class="tag">What does not count</p>
+  <p>Copying the prompt out and leaving it. Writing "I don't know" with nothing else on the whole page. Answering with the page open, which shows up immediately because those answers use the wording from the page and the real ones do not. And doing both passes in the same sitting, which defeats the entire design.</p>
+</div>
+
+<h2>Turning it <span class="hl">in</span></h2>
+<p>Photograph or scan both sheets and upload them together as one submission in Canvas. Phone photos are fine as long as the whole page is in frame and the writing is readable. If your drawings ran onto extra sheets, include those too.</p>
+
+<div class="btnrow">
+  <!-- ===========================================================
+       PASTE THE CANVAS TURN IN LINK IN THE href BELOW.
+       Replace the # with the full Canvas assignment URL.
+       Leave target="_blank" so it opens outside the embedded frame.
+       =========================================================== -->
+  <a class="btn" id="turnin" href="#" target="_blank" rel="noopener">Open the turn in sheet in Canvas</a>
+  <a class="btn ghost" href="competencies-week-01.html" target="_top">Week 1 competency list</a>
+  <a class="btn ghost" href="competencies-week-02.html" target="_top">Week 2 competency list</a>
+</div>
+
+<h2>Questions people <span class="hl">ask</span></h2>
+
+<h4>Can I do both passes on the same day?</h4>
+<p>No. The first pass has to happen before you have been taught the material and the second after, and there is no way to compress that into one sitting. If you are short on time, do the first pass in ten minutes rather than skipping it.</p>
+
+<h4>What if I genuinely cannot answer anything on the first pass?</h4>
+<p>That is a normal week one result and it is not a problem. Write what you think each prompt is asking about, mark it "not yet", and move on. Your second sheet is going to look very different and that difference is the whole point.</p>
+
+<h4>Do I have to do every competency?</h4>
+<p>Yes, one prompt from each. Some weeks that is seven competencies and some weeks it is twelve. The competency list for the week tells you how many.</p>
+
+<h4>Can I use the other prompt on the second pass?</h4>
+<p>You can add it, but do the one you did the first time as well. If the two sheets do not have the same prompts on them they do not compare, and the comparison is what you are being asked to produce.</p>
+
+<h4>What if my drawing is bad?</h4>
+<p>Nobody is grading the drawing as a drawing. A box with a word in it is a fine box. What matters is that the parts are there, they are labeled, and the arrows go the right way.</p>
+
+<p class="page-foot">Dr. Sharilyn Rennie &middot; BIO 005 Human Physiology &middot; Yuba College</p>
+</main>
+<script src="bio005-nav.js" defer></script>
+<script>
+(function(){ "use strict";
+  var PAGE_ID='bio005-competency-brain-dump';
+  function sendHeight(){
+    try{parent.postMessage({type:'resize',id:PAGE_ID,height:document.documentElement.scrollHeight},'*');}catch(e){}
+  }
+  window.addEventListener('load',sendHeight);
+  window.addEventListener('resize',sendHeight);
+  if(window.ResizeObserver)new ResizeObserver(sendHeight).observe(document.body);
+})();
+</script>
+</body>
+</html>

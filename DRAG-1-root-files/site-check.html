@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Site check &middot; BIO 005 Human Physiology</title>
+<meta name="description" content="Instructor tool. Crawls the course site and reports broken links, dead ends, missing structure and orphaned pages.">
+<link rel="icon" type="image/svg+xml" href="icon.svg">
+<style>
+:root{--navy:#08101F;--maroon:#7A2A22;--maroon-dark:#5E201A;--gold:#B8924A;
+--ink:#1E3D4C;--page:#FAFAF9;--card:#FFFFFF;--rule:#E3E1DE;--muted:#4F5663;
+--ok:#1F5C3D;--bad:#8A3A12;--warn:#6B4B12}
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--ink);
+font-family:'Plus Jakarta Sans','DM Sans',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+font-size:16px;line-height:1.6}
+a{color:var(--maroon)}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--navy);color:#fff;padding:10px 16px;z-index:100}
+.skip:focus{left:8px;top:8px}
+.band{background:var(--maroon);color:#fff;padding:26px 22px}
+.band-in{max-width:1180px;margin:0 auto}
+.eyebrow{font-size:12px;letter-spacing:.10em;text-transform:uppercase;font-weight:700;color:#EDDABF;margin:0 0 7px}
+.band h1{margin:0;font-size:clamp(23px,3vw,31px);font-weight:800;color:#fff}
+.band p{margin:10px 0 0;max-width:80ch;color:#F7EFE6}
+main{max-width:1180px;margin:0 auto;padding:22px 22px 70px}
+.card{background:var(--card);border-radius:12px;padding:24px;margin:0 0 20px;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.card h2{margin:0 0 6px;font-size:21px;font-weight:800;color:var(--maroon-dark)}
+.card>p{margin:0 0 14px;color:var(--muted);max-width:80ch}
+.btn{display:inline-flex;align-items:center;gap:8px;font:inherit;font-size:15px;font-weight:700;
+cursor:pointer;border-radius:9px;padding:11px 17px;border:1px solid var(--rule);background:#fff;
+color:var(--maroon);box-shadow:0 1px 3px rgba(0,0,0,.08);transition:transform 160ms ease,box-shadow 160ms ease}
+.btn:hover{transform:translateY(-1px);box-shadow:0 6px 14px rgba(0,0,0,.10)}
+.btn.primary{background:var(--maroon);color:#fff;border-color:var(--maroon)}
+.btn.primary:hover{background:var(--maroon-dark)}
+.btn[disabled]{opacity:.55;cursor:default;transform:none;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.bar{height:9px;background:#EDEBE8;border-radius:5px;margin:14px 0 6px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--gold);width:0;transition:width 120ms linear}
+.status{font-size:14.5px;color:var(--muted)}
+.tiles{list-style:none;display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));margin:0;padding:0}
+.tiles li{background:var(--page);border:1px solid var(--rule);border-radius:10px;padding:14px 16px}
+.tiles b{display:block;font-size:26px;font-weight:800;line-height:1.15;color:var(--maroon-dark)}
+.tiles b.good{color:var(--ok)} .tiles b.bad{color:var(--bad)} .tiles b.warn{color:var(--warn)}
+.tiles span{display:block;font-size:14px;color:var(--muted);margin-top:3px}
+h3{margin:22px 0 6px;font-size:17px;font-weight:800;color:var(--navy)}
+h3 .n{font-weight:800;color:var(--bad)}
+h3 .n.good{color:var(--ok)}
+.tblwrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14.5px;margin:8px 0 0}
+th,td{text-align:left;vertical-align:top;padding:8px 12px 8px 0;border-bottom:1px solid var(--rule)}
+th{color:var(--navy);font-weight:700;white-space:nowrap}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13.5px;
+background:#F1EFEC;border:1px solid var(--rule);border-radius:5px;padding:1px 5px}
+.none{color:var(--ok);font-weight:700;margin:6px 0 0}
+.hint{font-size:14px;color:var(--muted);max-width:80ch}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}.btn:hover{transform:none}}
+@media print{.row,.skip,.bar{display:none!important}body{background:#fff}
+.card{box-shadow:none;padding:0;margin-bottom:18px}.band{background:#fff;color:#000;padding:0 0 10px}
+.band h1,.band p,.eyebrow{color:#000}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the checker</a>
+
+<div class="band">
+  <div class="band-in">
+    <p class="eyebrow">BIO 005 &middot; Human Physiology &middot; Instructor tool</p>
+    <h1>Site check</h1>
+    <p>Reads every page on the course site and reports what is broken. Links that go nowhere,
+       pages a student cannot get out of, pages nothing links to, and pages missing the structure
+       a screen reader needs. Run it after every upload.</p>
+  </div>
+</div>
+
+<main id="main">
+
+  <div class="card">
+    <h2>Run the check</h2>
+    <p>This has to run from the live site, not from a file on your desktop, because a page opened
+       from your hard drive is not allowed to read its neighbors. If the buttons do nothing, that
+       is why, and the address bar will say <code>file://</code> instead of
+       <code>drsrennie-stack.github.io</code>.</p>
+    <div class="row">
+      <button class="btn primary" type="button" id="runBtn">Check the whole site</button>
+      <button class="btn" type="button" id="quickBtn">Quick check, structure only</button>
+      <button class="btn" type="button" id="stopBtn" disabled>Stop</button>
+    </div>
+    <div class="bar"><i id="bar"></i></div>
+    <p class="status" id="status" role="status" aria-live="polite">Not started.</p>
+    <p class="hint" id="warnLocal" hidden>This page is open from a file on your computer, so it
+       cannot read the other pages. Open it from the course site instead.</p>
+  </div>
+
+  <div class="card" id="resultsCard" hidden>
+    <h2>What it found</h2>
+    <ul class="tiles" id="tiles"></ul>
+
+    <div id="sections"></div>
+
+    <div class="row" style="margin-top:22px">
+      <button class="btn primary" type="button" id="copyBtn">Copy the report</button>
+      <button class="btn" type="button" id="printBtn">Print or save as PDF</button>
+      <span class="status" id="copyMsg" role="status" aria-live="polite"></span>
+    </div>
+  </div>
+
+</main>
+
+<script>
+(function () {
+  'use strict';
+
+  /* Where the crawl starts. Everything else is discovered by following links,
+     so a page added later is found without editing this file. The extras are
+     the pages nothing links to on purpose, like the Canvas front door. */
+  var SEEDS = ['welcome.html','index.html','sitemap.html','course-materials.html',
+               'course-schedule.html','syllabus-fall2026.html','accessibility.html',
+               'canvas-home.html','course-entry.html','start-here.html','404.html'];
+
+  var MAX = 400;            /* never crawl more than this, as a runaway guard */
+  var CONCURRENCY = 6;
+  var stop = false;
+
+  var el = function (id) { return document.getElementById(id); };
+  function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g,function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function base() {
+    var p = location.pathname.split('/'); p.pop();
+    return location.origin + p.join('/') + '/';
+  }
+  function norm(href) {
+    if (!href) return null;
+    if (/^(mailto:|tel:|javascript:|data:|#)/i.test(href)) return null;
+    try {
+      var u = new URL(href, location.href);
+      if (u.origin !== location.origin) return null;      /* external, not ours to check */
+      if (!u.pathname.indexOf(base().replace(location.origin,'')) && false) {}
+      var rel = u.pathname.replace(base().replace(location.origin,''), '');
+      if (rel.charAt(0) === '/') rel = rel.slice(1);
+      return rel || 'index.html';
+    } catch (e) { return null; }
+  }
+
+  var results;
+
+  function reset() {
+    results = { pages:{}, broken:[], orphans:[], structure:[], soft:[], visited:0, links:0 };
+  }
+
+  /* Two buckets on purpose.
+
+     This tool reads the HTML as the server sends it, before any JavaScript runs.
+     Several pages build their heading or their main landmark in script, and the
+     navigation script adds a main landmark to any page that lacks one. Those
+     pages are fine in a real browser but look broken to a parser, so reporting
+     them alongside genuine faults would train you to ignore the report. They go
+     in a separate list that says plainly it may be a false alarm. */
+  function checkStructure(file, doc, html) {
+    var hard = [], soft = [];
+    var hasNav = html.indexOf('bio005-nav.js') !== -1;
+
+    if (!doc.documentElement.getAttribute('lang')) hard.push('no language set on the page');
+    if (!(doc.title || '').trim()) hard.push('no page title');
+    if (!hasNav) hard.push('navigation script not loaded, so no back bar and no footer');
+
+    if (!doc.querySelector('h1')) {
+      (hasNav ? soft : hard).push('no first level heading in the HTML');
+    }
+    if (!doc.querySelector('main,[role="main"]')) {
+      soft.push(hasNav ? 'no main landmark in the HTML, the navigation script adds one when the page loads'
+                       : 'no main landmark');
+      if (!hasNav) { soft.pop(); hard.push('no main landmark and no navigation script to add one'); }
+    }
+
+    var internal = [].filter.call(doc.querySelectorAll('a[href]'), function (a) {
+      var h = a.getAttribute('href') || '';
+      /* A mailto with the page name in its subject line matched this once and got
+         reported as a broken frame target, so schemes are excluded first. */
+      if (/^(mailto:|tel:|javascript:|data:|#|https?:)/i.test(h)) return false;
+      return /\.html($|[?#])/.test(h);
+    });
+    var noTop = internal.filter(function (a) { return a.getAttribute('target') !== '_top'; });
+    if (noTop.length) {
+      hard.push(noTop.length + ' of ' + internal.length + ' internal links missing target="_top", so they '
+        + 'open the course inside itself in Canvas: '
+        + noTop.slice(0, 4).map(function (a) { return a.getAttribute('href'); }).join(', ')
+        + (noTop.length > 4 ? ' and more' : ''));
+    }
+
+    if (hard.length) results.structure.push({ file: file, miss: hard });
+    if (soft.length) results.soft.push({ file: file, miss: soft });
+  }
+
+  function fetchPage(file) {
+    return fetch(base() + file, { credentials: 'same-origin' })
+      .then(function (r) { return r.ok ? r.text() : Promise.reject(r.status); });
+  }
+
+  function crawl(structureOnly) {
+    reset();
+    stop = false;
+    el('resultsCard').hidden = true;
+    el('runBtn').disabled = true; el('quickBtn').disabled = true; el('stopBtn').disabled = false;
+
+    var queue = SEEDS.slice();
+    var seen = {}; queue.forEach(function (f) { seen[f] = true; });
+    var inbound = {};
+    var done = 0;
+
+    function step() {
+      if (stop || (!queue.length)) return Promise.resolve();
+      var batch = queue.splice(0, CONCURRENCY);
+      return Promise.all(batch.map(function (file) {
+        return fetchPage(file).then(function (html) {
+          results.visited++;
+          var doc = new DOMParser().parseFromString(html, 'text/html');
+          results.pages[file] = true;
+          checkStructure(file, doc, html);
+          if (!structureOnly) {
+            [].forEach.call(doc.querySelectorAll('a[href]'), function (a) {
+              var t = norm(a.getAttribute('href'));
+              if (!t || !/\.html$/.test(t)) return;
+              results.links++;
+              (inbound[t] = inbound[t] || []).push(file);
+              if (!seen[t] && Object.keys(seen).length < MAX) { seen[t] = true; queue.push(t); }
+            });
+          }
+        }, function (code) {
+          results.broken.push({ file: file, code: code });
+        }).then(function () {
+          done++;
+          var total = done + queue.length;
+          el('bar').style.width = (done / Math.max(total, 1) * 100) + '%';
+          el('status').textContent = 'Read ' + done + ' pages, ' + queue.length + ' to go.';
+        });
+      })).then(step);
+    }
+
+    return step().then(function () {
+      /* Anything linked but never successfully read is a broken link. Report it
+         with who links to it, because that is the bit you need to fix it. */
+      results.broken = results.broken.map(function (b) {
+        return { file: b.file, code: b.code, from: (inbound[b.file] || []).slice(0, 4) };
+      });
+      Object.keys(results.pages).forEach(function (f) {
+        if (!inbound[f] || !inbound[f].length) {
+          if (SEEDS.indexOf(f) === -1) results.orphans.push(f);
+        }
+      });
+      results.inbound = inbound;
+      render(structureOnly);
+    });
+  }
+
+  function tile(n, label, tone) {
+    return '<li><b class="' + (tone || '') + '">' + n + '</b><span>' + esc(label) + '</span></li>';
+  }
+
+  function render(structureOnly) {
+    el('runBtn').disabled = false; el('quickBtn').disabled = false; el('stopBtn').disabled = true;
+    el('status').textContent = 'Finished. Read ' + results.visited + ' pages.';
+    el('bar').style.width = '100%';
+    el('resultsCard').hidden = false;
+
+    el('tiles').innerHTML =
+        tile(results.visited, 'pages read')
+      + tile(results.links, 'internal links followed')
+      + tile(results.broken.length, 'links going nowhere', results.broken.length ? 'bad' : 'good')
+      + tile(results.structure.length, 'real problems', results.structure.length ? 'bad' : 'good')
+      + tile(results.soft.length, 'worth a look', results.soft.length ? 'warn' : 'good')
+      + tile(results.orphans.length, 'pages nothing links to', results.orphans.length ? 'warn' : 'good');
+
+    var h = '';
+
+    h += '<h3>Links going nowhere <span class="n' + (results.broken.length ? '' : ' good') + '">'
+       + results.broken.length + '</span></h3>';
+    if (!results.broken.length) {
+      h += '<p class="none">Nothing. Every link on the site resolves.</p>';
+    } else {
+      h += '<p class="hint">The 404 page catches these so nobody is stranded, but a student '
+         + 'still hit a link that went nowhere. Fix the link or build the page.</p>'
+         + '<div class="tblwrap"><table><tr><th>Missing page</th><th>Linked from</th></tr>';
+      results.broken.forEach(function (b) {
+        h += '<tr><td><code>' + esc(b.file) + '</code></td><td>'
+           + (b.from.length ? b.from.map(function (f) { return '<code>' + esc(f) + '</code>'; }).join(' ')
+                            : 'a seed page') + '</td></tr>';
+      });
+      h += '</table></div>';
+    }
+
+    h += '<h3>Real problems <span class="n' + (results.structure.length ? '' : ' good') + '">'
+       + results.structure.length + '</span></h3>';
+    if (!results.structure.length) {
+      h += '<p class="none">Nothing. Every page has a language, a title, the navigation, and links that '
+         + 'break out of the Canvas frame properly.</p>';
+    } else {
+      h += '<div class="tblwrap"><table><tr><th>Page</th><th>What is missing</th></tr>';
+      results.structure.forEach(function (s) {
+        h += '<tr><td><code>' + esc(s.file) + '</code></td><td>' + esc(s.miss.join('; ')) + '</td></tr>';
+      });
+      h += '</table></div>';
+    }
+
+    h += '<h3>Worth a look, probably fine <span class="n' + (results.soft.length ? '' : ' good') + '">'
+       + results.soft.length + '</span></h3>';
+    if (!results.soft.length) {
+      h += '<p class="none">Nothing.</p>';
+    } else {
+      h += '<p class="hint">This tool reads the page before its JavaScript runs, so a page that '
+         + 'builds its heading or its landmark in script shows up here even though it is correct in '
+         + 'a browser. Check one of these by eye once, then you can ignore it.</p>'
+         + '<div class="tblwrap"><table><tr><th>Page</th><th>What the parser saw</th></tr>';
+      results.soft.forEach(function (s2) {
+        h += '<tr><td><code>' + esc(s2.file) + '</code></td><td>' + esc(s2.miss.join('; ')) + '</td></tr>';
+      });
+      h += '</table></div>';
+    }
+
+    if (!structureOnly) {
+      h += '<h3>Pages nothing links to <span class="n' + (results.orphans.length ? '' : ' good') + '">'
+         + results.orphans.length + '</span></h3>';
+      if (!results.orphans.length) {
+        h += '<p class="none">Nothing. Every page can be reached by following links.</p>';
+      } else {
+        h += '<p class="hint">These exist but no page points at them, so a student will never find '
+           + 'them by clicking. That is fine for instructor pages. For anything else, add it to the '
+           + 'site map or the dock.</p><div class="tblwrap"><table><tr><th>Page</th></tr>';
+        results.orphans.forEach(function (f) { h += '<tr><td><code>' + esc(f) + '</code></td></tr>'; });
+        h += '</table></div>';
+      }
+    }
+
+    el('sections').innerHTML = h;
+  }
+
+  function report() {
+    var out = '# BIO 005 site check\n\nRun ' + new Date().toString() + '\n\n';
+    out += '- Pages read: ' + results.visited + '\n';
+    out += '- Internal links followed: ' + results.links + '\n';
+    out += '- Links going nowhere: ' + results.broken.length + '\n';
+    out += '- Real problems: ' + results.structure.length + '\n';
+    out += '- Worth a look: ' + results.soft.length + '\n';
+    out += '- Pages nothing links to: ' + results.orphans.length + '\n\n';
+    if (results.broken.length) {
+      out += '## Links going nowhere\n\n';
+      results.broken.forEach(function (b) {
+        out += '- `' + b.file + '` linked from ' + (b.from.join(', ') || 'a seed page') + '\n';
+      });
+      out += '\n';
+    }
+    if (results.structure.length) {
+      out += '## Real problems\n\n';
+      results.structure.forEach(function (s) { out += '- `' + s.file + '`: ' + s.miss.join('; ') + '\n'; });
+      out += '\n';
+    }
+    if (results.soft.length) {
+      out += '## Worth a look, probably fine\n\n';
+      results.soft.forEach(function (s2) { out += '- `' + s2.file + '`: ' + s2.miss.join('; ') + '\n'; });
+      out += '\n';
+    }
+    if (results.orphans.length) {
+      out += '## Pages nothing links to\n\n';
+      results.orphans.forEach(function (f) { out += '- `' + f + '`\n'; });
+    }
+    return out;
+  }
+
+  if (location.protocol === 'file:') {
+    el('warnLocal').hidden = false;
+    el('runBtn').disabled = true; el('quickBtn').disabled = true;
+    el('status').textContent = 'Cannot run from a local file.';
+  }
+
+  el('runBtn').addEventListener('click', function () { crawl(false); });
+  el('quickBtn').addEventListener('click', function () { crawl(true); });
+  el('stopBtn').addEventListener('click', function () {
+    stop = true; el('status').textContent = 'Stopped.';
+    el('runBtn').disabled = false; el('quickBtn').disabled = false; el('stopBtn').disabled = true;
+  });
+  el('printBtn').addEventListener('click', function () { window.print(); });
+  el('copyBtn').addEventListener('click', function () {
+    var txt = report(), msg = el('copyMsg');
+    function fb() {
+      var ta = document.createElement('textarea');
+      ta.value = txt; ta.style.position = 'fixed'; ta.style.left = '-9999px';
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); msg.textContent = 'Copied.'; }
+      catch (e) { msg.textContent = 'Could not copy. Use Print instead.'; }
+      document.body.removeChild(ta);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(txt).then(function () { msg.textContent = 'Copied as markdown.'; }, fb);
+    } else fb();
+  });
+})();
+</script>
+</body>
+</html>

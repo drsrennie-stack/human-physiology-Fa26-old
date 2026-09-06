@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BIO 005 Human Physiology, Fall 2026</title>
+<meta name="description" content="BIO 005 Human Physiology at Yuba College, Fall 2026. Online. Lab, lecture, study, syllabus and schedule.">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<!--
+  ============================================================
+  BIO 005 Human Physiology, Fall 2026, Yuba College
+  home.html
+
+  THE STANDALONE FRONT DOOR. One card: Enter the course.
+  Opening it swaps to the four doors.
+
+  index.html in THIS repo is the course home: the calendar, the
+  current-week marker, all fifteen weeks. It is not one of the
+  four doors, because it is not a peer of them. It is the quiet
+  pill under the deck, always one click away.
+
+  ONLINE, ONE SECTION. No section picker, no ?sec=, no meeting
+  days. Do not add them: this course has none.
+
+  The four doors are the four this repo's own index.html nav
+  already names, pointing at the same files, so the front door
+  and the site cannot disagree about where Lab is.
+
+  Design is the .cat card system from her teaching-resources
+  page, in BIO 005's own darker palette.
+  ============================================================
+-->
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  /* BIO 005's own tokens, from build-week.py. Darker navy than the BIO 004
+     card page, because she asked for much darker navy on this course. */
+  --ink:#040711; --rust:#8B3A2E; --rust-dark:#6E2C23; --gold:#DCB45C;
+  --page:#FAFAF9; --line:#8C90A0; --muted:#3A4250;
+  --rest:0 14px 30px rgba(4,7,17,.20);
+  --lift:0 26px 50px rgba(4,7,17,.30);
+}
+html,body{font-size:17.5px;line-height:1.6}
+body{font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;
+  background:var(--page);color:var(--ink);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit}
+:focus-visible{outline:3px solid var(--rust);outline-offset:3px;border-radius:6px}
+[hidden]{display:none !important}
+.skip{position:absolute;left:-9999px;top:0;z-index:100;background:var(--ink);color:#FFF;
+  padding:12px 18px;border-radius:0 0 8px 0;font-size:14px;font-weight:700}
+.skip:focus{left:0}
+.vh{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+  clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+.wrap{max-width:1120px;margin:0 auto;padding:0 max(28px,5vw)}
+.site-header{padding:26px 0;border-bottom:.5px solid rgba(4,7,17,.12)}
+.logo{display:inline-flex;align-items:center;gap:15px;font-size:inherit;font-weight:400}
+.logo svg{height:54px;width:auto}
+.logo .t{font-size:27px;font-weight:800;letter-spacing:-.02em;color:var(--ink);line-height:1;
+  display:block}
+.logo .t .a{color:var(--rust)}
+.logo .s{font-size:11.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--ink);opacity:.72;display:block;margin-top:3px}
+
+.hero{padding:50px 0 8px;max-width:760px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--rust);margin:0 0 16px;display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--rust)}
+.ph{font-size:52px;font-weight:800;letter-spacing:-.025em;line-height:1.05;margin:0 0 14px}
+.ph .a{color:var(--rust)}
+.lead{font-size:19px;opacity:.82;margin:0}
+
+/* HER CARDS. index.html, value for value. */
+.cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:20px;
+  padding:36px 0 8px}
+.cats.one{grid-template-columns:minmax(0,460px);padding-bottom:0}
+.cat{position:relative;display:flex;flex-direction:column;gap:12px;
+  background:var(--bg);color:var(--fg);border:none;border-radius:18px;padding:28px 26px;
+  box-shadow:var(--rest);transition:transform .22s ease,box-shadow .22s ease;
+  min-height:214px;text-align:left;width:100%}
+.cat:hover{transform:translateY(-6px);box-shadow:var(--lift)}
+.cat:focus-visible{outline:3px solid var(--fg);outline-offset:-5px;border-radius:18px}
+.cat .ic{width:54px;height:54px;border-radius:14px;background:rgba(255,255,255,.18);
+  display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+.cat.light .ic{background:rgba(4,7,17,.14)}
+.cat .ic svg{width:28px;height:28px}
+.cat .ic svg *{stroke:var(--fg)}
+.cat h3{font-size:24px;font-weight:800;letter-spacing:-.01em;line-height:1.15;margin:0;
+  color:var(--fg)}
+.cat p{font-size:15px;color:var(--fg);margin:0;flex:1 1 auto;line-height:1.5}
+.cat .go{margin-top:auto;font-size:13px;font-weight:800;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--fg);display:inline-flex;align-items:center;gap:8px}
+.cat .go .arr{transition:transform .2s}
+.cat:hover .go .arr{transform:translateX(4px)}
+
+.backrow{padding:26px 0 0}
+.backrow button{display:inline-flex;align-items:center;gap:8px;min-height:44px;
+  padding:11px 20px;border:1.5px solid rgba(4,7,17,.30);border-radius:999px;
+  font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--ink)}
+.backrow button:hover{border-color:var(--rust);color:var(--rust)}
+.calrow{padding:20px 0 8px}
+.calrow a{display:inline-flex;align-items:center;gap:8px;min-height:44px;
+  padding:11px 20px;border:1.5px solid rgba(4,7,17,.30);border-radius:999px;
+  font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--ink)}
+.calrow a:hover{border-color:var(--rust);color:var(--rust)}
+
+footer{padding:24px 0 40px;margin-top:34px;border-top:.5px solid rgba(4,7,17,.12);
+  color:var(--muted);font-size:13px;font-weight:600}
+footer .sig{color:var(--ink);font-weight:800}
+
+@media(max-width:760px){.ph{font-size:38px}.hero{padding-top:34px}}
+
+/* THE CANVAS COPY.
+
+   A Canvas iframe gets ONE fixed height for every device and both levels. At
+   full size this page wants 1915px on a 320px phone and 1077px on a laptop,
+   and a single frame tall enough for the phone leaves 840px of nothing under
+   the laptop.
+
+   So the embed runs smaller: the hero shrinks, the cards lose their 214px
+   floor and some padding, and the grid goes two-up sooner. Nothing is
+   removed, it is the same five cards. The page also centers itself in
+   whatever height it is given, so what spare height remains reads as even
+   padding rather than a gap at the bottom. `safe` centering keeps a narrow
+   device top-aligned instead of pushing it off the top. */
+body.framed{display:grid;align-content:safe center;min-height:100vh}
+body.framed .site-header{padding:16px 0}
+body.framed .logo svg{height:40px}
+body.framed .logo .t{font-size:21px}
+body.framed .hero{padding:26px 0 0}
+body.framed .ph{font-size:clamp(26px,4.4vw,34px);margin:0 0 10px}
+body.framed .lead{font-size:16px}
+body.framed .eyebrow{margin-bottom:11px}
+body.framed .cats{padding:22px 0 4px;gap:14px;
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr))}
+body.framed .cats.one{grid-template-columns:minmax(0,400px)}
+body.framed .cat{min-height:0;padding:20px 20px 18px;gap:9px}
+body.framed .cat .ic{width:44px;height:44px;border-radius:12px}
+body.framed .cat .ic svg{width:23px;height:23px}
+body.framed .cat h3{font-size:20px}
+body.framed .cat p{font-size:14px}
+body.framed .backrow{padding:16px 0 0}
+body.framed footer{margin-top:22px;padding:16px 0 20px}
+@media(prefers-reduced-motion:reduce){*{transition:none !important}
+  .cat:hover{transform:none}}
+
+/* WINDOWS HIGH CONTRAST.
+
+   These cards carry `border:none` and say everything with a solid background.
+   In forced-colors mode the background is replaced, so all four become the
+   same color as the page and the cards vanish as objects. The lift goes too,
+   since shadows are dropped. Borders are the only thing that survives, so the
+   cards get one.
+
+   System colors only. A hex here is either ignored or honoured, and honoured
+   is worse: it fights the scheme the reader chose. */
+@media (forced-colors: active){
+  .cat{border:2px solid ButtonBorder;background:ButtonFace;color:ButtonText;
+    forced-color-adjust:none}
+  .cat h2,.cat p,.cat .go{color:ButtonText}
+  .cat .ic{border:1px solid ButtonBorder;background:ButtonFace}
+  .cat .ic svg *{stroke:ButtonText}
+  .cat:hover,.cat:focus-visible{border-color:Highlight}
+  .backrow button,.calrow a{border:2px solid ButtonBorder;color:ButtonText}
+  .skip{border:2px solid ButtonBorder}
+  :focus-visible{outline:3px solid Highlight}
+}
+
+@media print{
+  .cat{border:1px solid #000;box-shadow:none;break-inside:avoid;
+    background:#fff !important;color:#000 !important}
+  .cat h2,.cat p,.cat .go{color:#000 !important}
+  .cat .ic svg *{stroke:#000}
+  #p-doors{display:block !important}
+  .backrow,.skip{display:none}
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to the doors</a>
+
+<header class="site-header"><div class="wrap"><h1 class="logo"><svg viewBox="40 10 125 148" aria-hidden="true" focusable="false"><g transform="translate(0,18)"><g transform="translate(60,0) rotate(8 0 130)"><circle cx="0" cy="20" r="10" fill="#040711"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#040711"/></g><g transform="translate(100,0)"><circle cx="0" cy="10" r="11" fill="#8B3A2E"/><path d="M 0,22 C -11,22 -17,26 -17,34 C -17,52 -14,70 -12,86 C -11,108 -13,122 -15,132 L 15,132 C 13,122 11,108 12,86 C 14,70 17,52 17,34 C 17,26 11,22 0,22 Z" fill="#8B3A2E"/></g><g transform="translate(140,0) rotate(-8 0 130)"><circle cx="0" cy="20" r="10" fill="#DCB45C"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#DCB45C"/></g></g></svg><span><span class="t">BIO <span class="a">005</span></span><span class="s">Human Physiology &middot; Fall 2026</span></span></h1></div></header>
+
+<main id="main"><div class="wrap">
+
+  <!-- level one: one door -->
+  <div class="panel" id="p-home">
+    <div class="hero">
+      <p class="eyebrow">Yuba College &middot; Online &middot; Fall 2026</p>
+      <h2 class="ph">Welcome to <span class="a">Human Physiology</span>.</h2>
+      <p class="lead">Everything for this course is behind this door.</p>
+      </div>
+    <div class="cats one">
+      <button class="cat light" type="button" id="enter" style="--bg:#DCB45C;--fg:#040711">
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h8"/><path d="M11 12h10"/><path d="M17.5 8.5 21 12l-3.5 3.5"/></svg></span><h3>Enter the course</h3>
+        <p>Lab, lecture, study, and your syllabus. All four in one place.</p>
+        <span class="go">Open the doors <span class="arr" aria-hidden="true">&rarr;</span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- level two: the four doors -->
+  <div class="panel" id="p-doors">
+    <div class="backrow"><button type="button" id="back">&#8592; Back</button></div>
+    <div class="hero">
+      <h2 class="ph" id="doors-h" tabindex="-1">Where are you <span class="a">headed</span>?</h2>
+      <p class="lead">Four doors. Everything in the course is behind one of them.</p>
+    </div>
+    <div class="cats"><a class="cat" id="door-lab" data-go="clinical-physiology-lab-manual.html" href="clinical-physiology-lab-manual.html" target="_top" style="--bg:#040711;--fg:#FFFFFF"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.5L4.5 19a2 2 0 0 0 1.8 3h11.4a2 2 0 0 0 1.8-3L14 9.5V2"/><path d="M8 2h8"/></svg></span><h3>Lab</h3><p>PhysioEx setup and the Clinical Physiology Lab manual, in one place.</p><span class="go">Open the lab manual <span class="arr" aria-hidden="true">&rarr;</span></span></a><a class="cat" id="door-lecture" data-go="week-01.html" href="week-01.html" target="_top" style="--bg:#8B3A2E;--fg:#FFFFFF"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span><h3>Lecture</h3><p>This week: your note sheet, concept videos, slide decks, and book problems.</p><span class="go">Open this week <span class="arr" aria-hidden="true">&rarr;</span></span></a><a class="cat light" id="door-study" data-go="mastery-physio-os-standalone.html" href="mastery-physio-os-standalone.html" target="_top" style="--bg:#DCB45C;--fg:#040711"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 1 7 7c0 2.4-1.2 4.2-2.6 5.6-.8.8-1.4 1.9-1.4 3v.4H9v-.4c0-1.1-.6-2.2-1.4-3C6.2 13.2 5 11.4 5 9a7 7 0 0 1 7-7z"/><path d="M9 21h6"/></svg></span><h3>Study</h3><p>The Mastery OS. Spaced recall across all 268 competencies, and exactly where you stand.</p><span class="go">Open the Mastery OS <span class="arr" aria-hidden="true">&rarr;</span></span></a><a class="cat" id="door-syllabus" data-go="syllabus-fall2026.html" href="syllabus-fall2026.html" target="_top" style="--bg:#6E2C23;--fg:#FFFFFF"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="17" rx="2.5"/><path d="M3 10h18M8 2v5M16 2v5"/></svg></span><h3>Syllabus and schedule</h3><p>The syllabus, every date that matters, and how this course runs.</p><span class="go">Open the syllabus <span class="arr" aria-hidden="true">&rarr;</span></span></a></div>
+    <div class="calrow">
+      <a data-go="index.html" href="index.html" target="_top">Course home, and this week <span class="arr" aria-hidden="true">&rarr;</span></a>
+    <a href="welcome.html" style="display:inline-block;margin-top:10px">New here, or want the tour again? Replay the welcome &rarr;</a>
+    </div>
+  </div>
+
+</div></main>
+
+<footer><div class="wrap">
+  Questions about anything here, bring them to office hours.
+  &nbsp;<span class="sig">Dr. Sharilyn Rennie</span>
+</div></footer>
+
+<script>
+(function () {
+  'use strict';
+  function $(s, r) { return (r || document).querySelector(s); }
+
+  /* NO SECTIONS. BIO 005 is online and there is one of it: one syllabus, one
+     schedule, no meeting days to name. The BIO 004 build carried a section
+     picker and a "Class 2, Tue / Thu morning" label, and neither belongs on
+     this course. Links are left exactly as authored. */
+
+  /* ---- the two levels -------------------------------------------------
+     Both panels are in the HTML and both render with no script at all.
+     This is what hides the second one and makes the first tile a control,
+     so nothing is reachable only by JavaScript. */
+  var home = $('#p-home'), doors = $('#p-doors'), enter = $('#enter'), back = $('#back');
+  if (!home || !doors || !enter) { return; }
+
+  doors.hidden = true;
+  enter.setAttribute('aria-expanded', 'false');
+  enter.setAttribute('aria-controls', 'p-doors');
+
+  function show(which) {
+    var toDoors = which === 'doors';
+    home.hidden = toDoors;
+    doors.hidden = !toDoors;
+    enter.setAttribute('aria-expanded', toDoors ? 'true' : 'false');
+    /* Focus has to follow, or a keyboard or screen reader user presses
+       Enter and nothing appears to have happened: the thing that changed
+       is not where they are standing. */
+    var land = toDoors ? $('#doors-h') : enter;
+    if (land) { land.focus(); }
+  }
+
+  enter.addEventListener('click', function () { show('doors'); });
+  if (back) { back.addEventListener('click', function () { show('home'); }); }
+
+  /* Escape goes back a level, the way it does everywhere else. */
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !doors.hidden) { show('home'); }
+  });
+}());
+</script>
+<script>
+(function () {
+  var ID = 'bio005-home';
+  function send() {
+    try {
+      parent.postMessage({ id: ID, frameId: ID, height: Math.max(
+        document.body.scrollHeight, document.documentElement.scrollHeight) }, '*');
+    } catch (e) {}
+  }
+  window.addEventListener('load', send);
+  window.addEventListener('resize', send);
+  window.addEventListener('click', function () { setTimeout(send, 60); });
+  if (window.ResizeObserver) { new ResizeObserver(send).observe(document.body); }
+  send();
+}());
+</script>
+<script src="bio005-nav.js" defer></script>
+</body>
+</html>
