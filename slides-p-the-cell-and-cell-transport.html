@@ -17,8 +17,8 @@
   --terra:#8B3A2E; --terra-dark:#6E2D24; --terra-lite:#D97A62;
   --gold:#C9A14A; --gold-ink:#5A4511; --gold-lite:#FEF8EE;
   --teal:#1F4E55; --teal-lite:#7FC4CE;
-  --white:#FFFFFF; --offwhite:#FAFAF9; --navy-tint:#EDF1F3; --onred:#FFFFFF;
-  --muted:#3D4860; --rule:#DCE0E6; --light:#DDE2EA; --faint:#A8B3C6;
+  --white:#FFFFFF; --offwhite:#FAFAF9; --navy-tint:#ECEFF4; --onred:#FFFFFF;
+  --muted:#414B5C; --rule:#DCE0E6; --light:#DDE2EA; --faint:#A8B3C6;
   --radius:8px; --radius-lg:16px;
   --shadow:0 1px 3px rgba(11,21,48,0.08), 0 1px 2px rgba(11,21,48,0.05);
   --shadow-lift:0 6px 16px rgba(11,21,48,0.10), 0 3px 6px rgba(11,21,48,0.06);
@@ -416,11 +416,11 @@ body.present .rvhint{bottom:136px}
 
 /* dark keys inside the dark bars */
 .pbtn,.ibtn,.cbtn{background:#0D1729;border:1px solid #33436A;color:#FFFFFF;
-  box-shadow:inset 0 1px 0 rgba(255,255,255,0.11), 0 3px 0 #050A14, 0 5px 12px rgba(0,0,0,0.38)}
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.11), 0 3px 0 #060A18, 0 5px 12px rgba(0,0,0,0.38)}
 .pbtn:hover,.ibtn:hover,.cbtn:hover{transform:translateY(-1px);background:#1E2E4C;
-  box-shadow:inset 0 1px 0 rgba(255,255,255,0.14), 0 4px 0 #050A14, 0 9px 18px rgba(0,0,0,0.42)}
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.14), 0 4px 0 #060A18, 0 9px 18px rgba(0,0,0,0.42)}
 .pbtn:active,.ibtn:active,.cbtn:active{transform:translateY(3px);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,0.08), 0 0 0 #050A14, 0 2px 5px rgba(0,0,0,0.34)}
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.08), 0 0 0 #060A18, 0 2px 5px rgba(0,0,0,0.34)}
 
 /* the lit states keep the same relief, in gold */
 .ibtn.on,.cbtn.go{background:#C9A14A;color:#0B1530;border-color:#C9A24C;
@@ -430,12 +430,12 @@ body.present .rvhint{bottom:136px}
 .ibtn.warn:hover{background:#8B3A2E;border-color:#8B3A2E}
 
 /* ink swatches stay round, they read as ink, but they lift too */
-.iswatch{box-shadow:inset 0 1px 0 rgba(255,255,255,0.28), 0 3px 0 #050A14, 0 5px 11px rgba(0,0,0,0.38);
+.iswatch{box-shadow:inset 0 1px 0 rgba(255,255,255,0.28), 0 3px 0 #060A18, 0 5px 11px rgba(0,0,0,0.38);
   transition:transform 110ms ease, box-shadow 110ms ease}
 .iswatch:hover{transform:translateY(-1px)}
 .iswatch:active{transform:translateY(3px);box-shadow:0 1px 4px rgba(0,0,0,0.34)}
 .iswatch.on{border-color:#FFFFFF;
-  box-shadow:0 0 0 2px #C9A14A, inset 0 1px 0 rgba(255,255,255,0.30), 0 3px 0 #050A14, 0 5px 11px rgba(0,0,0,0.38)}
+  box-shadow:0 0 0 2px #C9A14A, inset 0 1px 0 rgba(255,255,255,0.30), 0 3px 0 #060A18, 0 5px 11px rgba(0,0,0,0.38)}
 
 /* badges and chips stay pills, per the design system */
 .typechip,.term,.keys kbd{border-radius:999px}
@@ -497,9 +497,9 @@ body.present .rvhint{bottom:136px}
 <path d="M 300 30 C 620 8, 900 60, 930 200 C 958 336, 700 412, 470 402 C 250 392, 120 330, 118 220 C 116 108, 190 48, 300 30 Z" fill="#FAFAF9" stroke="#0B1530" stroke-width="7"/>
 <path d="M 300 44 C 616 22, 888 72, 916 202 C 942 330, 696 398, 470 388 C 256 378, 134 322, 132 220 C 130 116, 196 62, 300 44 Z" fill="none" stroke="#0B1530" stroke-width="2.5"/>
 <circle cx="520" cy="205" r="98" fill="#FFFFFF" stroke="#8B3A2E" stroke-width="5"/>
-<circle cx="548" cy="185" r="30" fill="#EDF1F3" stroke="#8B3A2E" stroke-width="3"/>
+<circle cx="548" cy="185" r="30" fill="#ECEFF4" stroke="#8B3A2E" stroke-width="3"/>
 <text x="498" y="262" text-anchor="middle" font-size="20" font-weight="800" fill="#8B3A2E">Nucleus</text>
-<text x="548" y="248" text-anchor="middle" font-size="13.5" font-weight="700" fill="#3D4860">nucleolus</text>
+<text x="548" y="248" text-anchor="middle" font-size="13.5" font-weight="700" fill="#414B5C">nucleolus</text>
 <g stroke="#2B3A5C" stroke-width="3.5" fill="#FFFFFF">
   <ellipse cx="270" cy="150" rx="46" ry="24"/>
   <ellipse cx="262" cy="272" rx="40" ry="21"/>
@@ -535,19 +535,19 @@ body.present .rvhint{bottom:136px}
 <desc id="f2d">A double row of phospholipids runs across the picture. Gold circular heads face outward at the top and inward at the bottom, and their two tails point toward each other in the middle. Above the membrane is the extracellular fluid and below it is the cytoplasm. A channel protein spans the membrane with an open pore through it. A carrier protein spans the membrane beside it. A glycoprotein spans the membrane and carries branching sugar chains on its outer surface, and a glycolipid carries a shorter sugar chain. Two cholesterol molecules sit wedged between the tails. A peripheral protein rests on the inner surface and links to a cytoskeleton filament. Braces label the sugar coat as the glycocalyx and the whole sheet as seven to ten nanometres thick.</desc>
 <defs>
 <g id="pl">
-  <circle cx="0" cy="0" r="10.5" fill="#C9A14A" stroke="#0B1530" stroke-width="1.8"/>
+  <circle cx="0" cy="0" r="10.5" fill="#0B1530" stroke="#0B1530" stroke-width="1.8"/>
   <path d="M -4.5 9 q -5 26 1 47" fill="none" stroke="#0B1530" stroke-width="2.6" stroke-linecap="round"/>
   <path d="M 4.5 9 q 5 26 -1 47" fill="none" stroke="#0B1530" stroke-width="2.6" stroke-linecap="round"/>
 </g>
 <g id="sugar">
   <path d="M 0 0 l -14 -20 M 0 0 l 0 -26 M 0 0 l 14 -20 M -14 -20 l -8 -16 M 14 -20 l 8 -16" fill="none" stroke="#2B3A5C" stroke-width="2.6"/>
-  <circle cx="-22" cy="-36" r="6.5" fill="#B7C2D6" stroke="#2B3A5C" stroke-width="2"/>
-  <circle cx="0" cy="-26" r="6.5" fill="#B7C2D6" stroke="#2B3A5C" stroke-width="2"/>
-  <circle cx="22" cy="-36" r="6.5" fill="#B7C2D6" stroke="#2B3A5C" stroke-width="2"/>
+  <circle cx="-22" cy="-36" r="6.5" fill="#8B3A2E" stroke="#2B3A5C" stroke-width="2"/>
+  <circle cx="0" cy="-26" r="6.5" fill="#8B3A2E" stroke="#2B3A5C" stroke-width="2"/>
+  <circle cx="22" cy="-36" r="6.5" fill="#8B3A2E" stroke="#2B3A5C" stroke-width="2"/>
 </g>
 </defs>
-<rect width="1140" height="400" fill="#FFFFFF"/>
-<rect x="0" y="0" width="1140" height="152" fill="#EDF1F3"/>
+<rect width="1140" height="400" fill="#C9A14A"/>
+<rect x="0" y="0" width="1140" height="152" fill="#ECEFF4"/>
 <rect x="0" y="300" width="1140" height="100" fill="#FAFAF9"/>
 <text x="18" y="146" font-size="14" font-weight="800" fill="#0B1530" letter-spacing="1.4">EXTRACELLULAR FLUID</text>
 <text x="18" y="394" font-size="14" font-weight="800" fill="#0B1530" letter-spacing="1.4">CYTOPLASM (INSIDE THE CELL)</text>
@@ -585,7 +585,7 @@ body.present .rvhint{bottom:136px}
 <text x="930" y="322" text-anchor="middle" font-size="13.5" font-weight="800" fill="#0B1530">peripheral</text>
 <line x1="930" y1="337" x2="930" y2="360" stroke="#0B1530" stroke-width="3"/>
 <line x1="840" y1="360" x2="1030" y2="360" stroke="#0B1530" stroke-width="3"/>
-<text x="1042" y="366" font-size="14" font-weight="700" fill="#3D4860">cytoskeleton</text>
+<text x="1042" y="366" font-size="14" font-weight="700" fill="#414B5C">cytoskeleton</text>
 <!-- thickness bracket -->
 <path d="M 1096 158 h 14 v 136 h -14" fill="none" stroke="#0B1530" stroke-width="2.5"/>
 <text x="1126" y="226" font-size="14" font-weight="800" fill="#0B1530" transform="rotate(90 1126 226)" text-anchor="middle">7 to 10 nm</text>
@@ -608,31 +608,31 @@ body.present .rvhint{bottom:136px}
 <desc id="f3d">On the left a single enlarged phospholipid is drawn. Its round gold head is labelled polar head, water is attracted to it, and the two long tails hanging below it are labelled nonpolar tails, water is not attracted to them. On the right the same molecule is repeated in two rows. The heads of the upper row face up into the extracellular fluid and the heads of the lower row face down into the cytoplasm, so both sets of heads touch water while all the tails are shielded in the middle.</desc>
 <defs>
 <g id="pl">
-  <circle cx="0" cy="0" r="10.5" fill="#C9A14A" stroke="#0B1530" stroke-width="1.8"/>
+  <circle cx="0" cy="0" r="10.5" fill="#0B1530" stroke="#0B1530" stroke-width="1.8"/>
   <path d="M -4.5 9 q -5 26 1 47" fill="none" stroke="#0B1530" stroke-width="2.6" stroke-linecap="round"/>
   <path d="M 4.5 9 q 5 26 -1 47" fill="none" stroke="#0B1530" stroke-width="2.6" stroke-linecap="round"/>
 </g>
 <g id="sugar">
   <path d="M 0 0 l -14 -20 M 0 0 l 0 -26 M 0 0 l 14 -20 M -14 -20 l -8 -16 M 14 -20 l 8 -16" fill="none" stroke="#2B3A5C" stroke-width="2.6"/>
-  <circle cx="-22" cy="-36" r="6.5" fill="#B7C2D6" stroke="#2B3A5C" stroke-width="2"/>
-  <circle cx="0" cy="-26" r="6.5" fill="#B7C2D6" stroke="#2B3A5C" stroke-width="2"/>
-  <circle cx="22" cy="-36" r="6.5" fill="#B7C2D6" stroke="#2B3A5C" stroke-width="2"/>
+  <circle cx="-22" cy="-36" r="6.5" fill="#8B3A2E" stroke="#2B3A5C" stroke-width="2"/>
+  <circle cx="0" cy="-26" r="6.5" fill="#8B3A2E" stroke="#2B3A5C" stroke-width="2"/>
+  <circle cx="22" cy="-36" r="6.5" fill="#8B3A2E" stroke="#2B3A5C" stroke-width="2"/>
 </g>
 </defs>
-<rect width="1120" height="380" fill="#FFFFFF"/>
+<rect width="1120" height="380" fill="#C9A14A"/>
 <!-- single molecule -->
 <circle cx="150" cy="100" r="46" fill="#C9A14A" stroke="#0B1530" stroke-width="3.5"/>
 <path d="M 132 142 q -20 88 4 160 M 168 142 q 20 88 -4 160" fill="none" stroke="#0B1530" stroke-width="7" stroke-linecap="round"/>
 <line x1="200" y1="100" x2="252" y2="100" stroke="#5A4511" stroke-width="2.5"/>
 <text x="260" y="92" font-size="17" font-weight="800" fill="#5A4511">Polar head</text>
-<text x="260" y="116" font-size="15" fill="#3D4860">water is attracted to it</text>
+<text x="260" y="116" font-size="15" fill="#414B5C">water is attracted to it</text>
 <line x1="200" y1="240" x2="252" y2="240" stroke="#0B1530" stroke-width="2.5"/>
 <text x="260" y="232" font-size="17" font-weight="800" fill="#0B1530">Two nonpolar tails</text>
-<text x="260" y="256" font-size="15" fill="#3D4860">water is not attracted to them</text>
+<text x="260" y="256" font-size="15" fill="#414B5C">water is not attracted to them</text>
 <line x1="612" y1="30" x2="612" y2="350" stroke="#DCE0E6" stroke-width="2"/>
 <!-- bilayer -->
-<rect x="640" y="24" width="456" height="86" fill="#EDF1F3"/>
-<rect x="640" y="256" width="456" height="94" fill="#EDF1F3"/>
+<rect x="640" y="24" width="456" height="86" fill="#ECEFF4"/>
+<rect x="640" y="256" width="456" height="94" fill="#ECEFF4"/>
 <text x="868" y="60" text-anchor="middle" font-size="14.5" font-weight="800" fill="#0B1530">WATER OUTSIDE (ECF)</text>
 <text x="868" y="320" text-anchor="middle" font-size="14.5" font-weight="800" fill="#0B1530">WATER INSIDE (CYTOSOL)</text>
 <use href="#pl" transform="translate(660,122)"/><use href="#pl" transform="translate(660,244) scale(1,-1)"/><use href="#pl" transform="translate(686,122)"/><use href="#pl" transform="translate(686,244) scale(1,-1)"/><use href="#pl" transform="translate(712,122)"/><use href="#pl" transform="translate(712,244) scale(1,-1)"/><use href="#pl" transform="translate(738,122)"/><use href="#pl" transform="translate(738,244) scale(1,-1)"/><use href="#pl" transform="translate(764,122)"/><use href="#pl" transform="translate(764,244) scale(1,-1)"/><use href="#pl" transform="translate(790,122)"/><use href="#pl" transform="translate(790,244) scale(1,-1)"/><use href="#pl" transform="translate(816,122)"/><use href="#pl" transform="translate(816,244) scale(1,-1)"/><use href="#pl" transform="translate(842,122)"/><use href="#pl" transform="translate(842,244) scale(1,-1)"/><use href="#pl" transform="translate(868,122)"/><use href="#pl" transform="translate(868,244) scale(1,-1)"/><use href="#pl" transform="translate(894,122)"/><use href="#pl" transform="translate(894,244) scale(1,-1)"/><use href="#pl" transform="translate(920,122)"/><use href="#pl" transform="translate(920,244) scale(1,-1)"/><use href="#pl" transform="translate(946,122)"/><use href="#pl" transform="translate(946,244) scale(1,-1)"/><use href="#pl" transform="translate(972,122)"/><use href="#pl" transform="translate(972,244) scale(1,-1)"/><use href="#pl" transform="translate(998,122)"/><use href="#pl" transform="translate(998,244) scale(1,-1)"/><use href="#pl" transform="translate(1024,122)"/><use href="#pl" transform="translate(1024,244) scale(1,-1)"/><use href="#pl" transform="translate(1050,122)"/><use href="#pl" transform="translate(1050,244) scale(1,-1)"/><use href="#pl" transform="translate(1076,122)"/><use href="#pl" transform="translate(1076,244) scale(1,-1)"/>
@@ -648,18 +648,18 @@ body.present .rvhint{bottom:136px}
 <desc id="f4d">A membrane strip runs across the picture with four proteins spanning it. The first is a channel with an open pore and an arrow passing straight through it. The second is a carrier drawn in two shapes, showing that it binds a solute on one side, changes shape, and releases it on the other. The third is a pump with an arrow pointing against the gradient and a gold box marked A T P. The fourth is a receptor with a messenger molecule docking into a notch on its outer surface and an arrow leading from its inner surface into the cell.</desc>
 <defs>
 <g id="pl">
-  <circle cx="0" cy="0" r="10.5" fill="#C9A14A" stroke="#0B1530" stroke-width="1.8"/>
+  <circle cx="0" cy="0" r="10.5" fill="#0B1530" stroke="#0B1530" stroke-width="1.8"/>
   <path d="M -4.5 9 q -5 26 1 47" fill="none" stroke="#0B1530" stroke-width="2.6" stroke-linecap="round"/>
   <path d="M 4.5 9 q 5 26 -1 47" fill="none" stroke="#0B1530" stroke-width="2.6" stroke-linecap="round"/>
 </g>
 <g id="sugar">
   <path d="M 0 0 l -14 -20 M 0 0 l 0 -26 M 0 0 l 14 -20 M -14 -20 l -8 -16 M 14 -20 l 8 -16" fill="none" stroke="#2B3A5C" stroke-width="2.6"/>
-  <circle cx="-22" cy="-36" r="6.5" fill="#B7C2D6" stroke="#2B3A5C" stroke-width="2"/>
-  <circle cx="0" cy="-26" r="6.5" fill="#B7C2D6" stroke="#2B3A5C" stroke-width="2"/>
-  <circle cx="22" cy="-36" r="6.5" fill="#B7C2D6" stroke="#2B3A5C" stroke-width="2"/>
+  <circle cx="-22" cy="-36" r="6.5" fill="#8B3A2E" stroke="#2B3A5C" stroke-width="2"/>
+  <circle cx="0" cy="-26" r="6.5" fill="#8B3A2E" stroke="#2B3A5C" stroke-width="2"/>
+  <circle cx="22" cy="-36" r="6.5" fill="#8B3A2E" stroke="#2B3A5C" stroke-width="2"/>
 </g>
 </defs>
-<rect width="1140" height="330" fill="#FFFFFF"/>
+<rect width="1140" height="330" fill="#C9A14A"/>
 <use href="#pl" transform="translate(30,96)"/><use href="#pl" transform="translate(30,214) scale(1,-1)"/><use href="#pl" transform="translate(56,96)"/><use href="#pl" transform="translate(56,214) scale(1,-1)"/><use href="#pl" transform="translate(82,96)"/><use href="#pl" transform="translate(82,214) scale(1,-1)"/><use href="#pl" transform="translate(108,96)"/><use href="#pl" transform="translate(108,214) scale(1,-1)"/><use href="#pl" transform="translate(290,96)"/><use href="#pl" transform="translate(290,214) scale(1,-1)"/><use href="#pl" transform="translate(316,96)"/><use href="#pl" transform="translate(316,214) scale(1,-1)"/><use href="#pl" transform="translate(498,96)"/><use href="#pl" transform="translate(498,214) scale(1,-1)"/><use href="#pl" transform="translate(524,96)"/><use href="#pl" transform="translate(524,214) scale(1,-1)"/><use href="#pl" transform="translate(550,96)"/><use href="#pl" transform="translate(550,214) scale(1,-1)"/><use href="#pl" transform="translate(732,96)"/><use href="#pl" transform="translate(732,214) scale(1,-1)"/><use href="#pl" transform="translate(758,96)"/><use href="#pl" transform="translate(758,214) scale(1,-1)"/><use href="#pl" transform="translate(966,96)"/><use href="#pl" transform="translate(966,214) scale(1,-1)"/><use href="#pl" transform="translate(992,96)"/><use href="#pl" transform="translate(992,214) scale(1,-1)"/><use href="#pl" transform="translate(1018,96)"/><use href="#pl" transform="translate(1018,214) scale(1,-1)"/><use href="#pl" transform="translate(1044,96)"/><use href="#pl" transform="translate(1044,214) scale(1,-1)"/><use href="#pl" transform="translate(1070,96)"/><use href="#pl" transform="translate(1070,214) scale(1,-1)"/><use href="#pl" transform="translate(1096,96)"/><use href="#pl" transform="translate(1096,214) scale(1,-1)"/>
 <!-- channel -->
 <path d="M 150 74 h 34 v 162 h -34 z M 216 74 h 34 v 162 h -34 z" fill="#2B3A5C" stroke="#0B1530" stroke-width="2.5"/>
@@ -667,7 +667,7 @@ body.present .rvhint{bottom:136px}
 <line x1="200" y1="58" x2="200" y2="248" stroke="#0B1530" stroke-width="3"/>
 <polygon points="192,248 200,268 208,248" fill="#0B1530"/>
 <text x="200" y="300" text-anchor="middle" font-size="16" font-weight="800" fill="#2B3A5C">Channel</text>
-<text x="200" y="320" text-anchor="middle" font-size="13.5" fill="#3D4860">an open pore</text>
+<text x="200" y="320" text-anchor="middle" font-size="13.5" fill="#414B5C">an open pore</text>
 <!-- carrier -->
 <path d="M 360 74 h 46 q 12 40 0 80 q -12 42 0 82 h -46 z" fill="#8B3A2E" stroke="#0B1530" stroke-width="2.5"/>
 <path d="M 470 74 h -46 q -12 40 0 80 q 12 42 0 82 h 46 z" fill="#8B3A2E" stroke="#0B1530" stroke-width="2.5"/>
@@ -675,7 +675,7 @@ body.present .rvhint{bottom:136px}
 <path d="M 415 128 q 0 40 0 80" fill="none" stroke="#0B1530" stroke-width="3" stroke-dasharray="7 6"/>
 <polygon points="407,246 415,266 423,246" fill="#0B1530"/>
 <text x="415" y="300" text-anchor="middle" font-size="16" font-weight="800" fill="#8B3A2E">Carrier</text>
-<text x="415" y="320" text-anchor="middle" font-size="13.5" fill="#3D4860">binds, flips, releases</text>
+<text x="415" y="320" text-anchor="middle" font-size="13.5" fill="#414B5C">binds, flips, releases</text>
 <!-- pump -->
 <rect x="580" y="70" width="110" height="170" rx="26" fill="#0B1530" stroke="#0B1530" stroke-width="2.5"/>
 <text x="635" y="150" text-anchor="middle" font-size="17" font-weight="800" fill="#C9A14A">PUMP</text>
@@ -684,7 +684,7 @@ body.present .rvhint{bottom:136px}
 <rect x="596" y="248" width="78" height="34" rx="8" fill="#C9A14A" stroke="#0B1530" stroke-width="2"/>
 <text x="635" y="272" text-anchor="middle" font-size="15" font-weight="800" fill="#0B1530">ATP</text>
 <text x="635" y="308" text-anchor="middle" font-size="16" font-weight="800" fill="#0B1530">Pump</text>
-<text x="635" y="326" text-anchor="middle" font-size="13.5" fill="#3D4860">uphill, costs energy</text>
+<text x="635" y="326" text-anchor="middle" font-size="13.5" fill="#414B5C">uphill, costs energy</text>
 <!-- receptor -->
 <path d="M 800 74 h 130 v 162 h -130 z" fill="#2B3A5C" stroke="#0B1530" stroke-width="2.5"/>
 <path d="M 848 74 q 17 26 34 0 z" fill="#FFFFFF" stroke="#0B1530" stroke-width="2.5"/>
@@ -693,7 +693,7 @@ body.present .rvhint{bottom:136px}
 <line x1="865" y1="240" x2="865" y2="268" stroke="#0B1530" stroke-width="3"/>
 <polygon points="857,268 865,286 873,268" fill="#0B1530"/>
 <text x="865" y="308" text-anchor="middle" font-size="16" font-weight="800" fill="#2B3A5C">Receptor</text>
-<text x="865" y="326" text-anchor="middle" font-size="13.5" fill="#3D4860">reads the message</text>
+<text x="865" y="326" text-anchor="middle" font-size="13.5" fill="#414B5C">reads the message</text>
 </svg></div>
 <div class="grid4">
 <div class="card"><p class="label" style="color:#0B1530">Transporter</p><h3>Channel</h3><p>A water filled pore through the protein. Solutes move through it down their gradient. Some channels stand open, others are gated and open only on a signal.</p></div>
@@ -734,7 +734,7 @@ body.present .rvhint{bottom:136px}
 <text x="20" y="26" font-size="14" font-weight="800" fill="#0B1530" letter-spacing="1.4">APICAL SURFACE</text>
 <rect x="300" y="40" width="230" height="330" fill="#FAFAF9" stroke="#0B1530" stroke-width="3"/>
 <rect x="560" y="40" width="230" height="330" fill="#FAFAF9" stroke="#0B1530" stroke-width="3"/>
-<rect x="240" y="374" width="610" height="26" fill="#EDF1F3" stroke="#0B1530" stroke-width="2.5"/>
+<rect x="240" y="374" width="610" height="26" fill="#ECEFF4" stroke="#0B1530" stroke-width="2.5"/>
 <text x="860" y="392" font-size="14" font-weight="800" fill="#0B1530">basal lamina</text>
 <g>
   <line x1="530" y1="58" x2="560" y2="58" stroke="#8B3A2E" stroke-width="6"/>
@@ -808,24 +808,24 @@ body.present .rvhint{bottom:136px}
 <title id="f6t">Microvilli, cilia and a flagellum compared</title>
 <desc id="f6d">Three panels. In the first, a row of short blunt finger like projections stands on the surface of a cell and is labelled microvilli, with a note that they multiply the surface area for absorption. In the second, a row of longer slender projections all curve the same way above a cell surface, with a wide arrow above them showing a sheet of mucus being swept sideways. In the third, a single cell with a small oval head carries one very long whip like tail, and an arrow shows the whole cell moving forward.</desc>
 <rect width="1140" height="300" fill="#FFFFFF"/>
-<rect x="20" y="176" width="330" height="60" fill="#EDF1F3" stroke="#0B1530" stroke-width="2.5"/>
+<rect x="20" y="176" width="330" height="60" fill="#ECEFF4" stroke="#0B1530" stroke-width="2.5"/>
 <path d="M 44 176 v -74 q 11 -14 22 0 v 74 z" fill="#FFFFFF" stroke="#0B1530" stroke-width="3"/><path d="M 78 176 v -74 q 11 -14 22 0 v 74 z" fill="#FFFFFF" stroke="#0B1530" stroke-width="3"/><path d="M 112 176 v -74 q 11 -14 22 0 v 74 z" fill="#FFFFFF" stroke="#0B1530" stroke-width="3"/><path d="M 146 176 v -74 q 11 -14 22 0 v 74 z" fill="#FFFFFF" stroke="#0B1530" stroke-width="3"/><path d="M 180 176 v -74 q 11 -14 22 0 v 74 z" fill="#FFFFFF" stroke="#0B1530" stroke-width="3"/><path d="M 214 176 v -74 q 11 -14 22 0 v 74 z" fill="#FFFFFF" stroke="#0B1530" stroke-width="3"/><path d="M 248 176 v -74 q 11 -14 22 0 v 74 z" fill="#FFFFFF" stroke="#0B1530" stroke-width="3"/><path d="M 282 176 v -74 q 11 -14 22 0 v 74 z" fill="#FFFFFF" stroke="#0B1530" stroke-width="3"/>
 <text x="185" y="266" text-anchor="middle" font-size="17" font-weight="800" fill="#0B1530">Microvilli</text>
-<text x="185" y="288" text-anchor="middle" font-size="13.5" fill="#3D4860">more surface, more absorption</text>
-<rect x="410" y="176" width="330" height="60" fill="#EDF1F3" stroke="#0B1530" stroke-width="2.5"/>
+<text x="185" y="288" text-anchor="middle" font-size="13.5" fill="#414B5C">more surface, more absorption</text>
+<rect x="410" y="176" width="330" height="60" fill="#ECEFF4" stroke="#0B1530" stroke-width="2.5"/>
 <path d="M 430 176 q 26 -60 6 -112" fill="none" stroke="#2B3A5C" stroke-width="5" stroke-linecap="round"/><path d="M 464 176 q 26 -60 6 -112" fill="none" stroke="#2B3A5C" stroke-width="5" stroke-linecap="round"/><path d="M 498 176 q 26 -60 6 -112" fill="none" stroke="#2B3A5C" stroke-width="5" stroke-linecap="round"/><path d="M 532 176 q 26 -60 6 -112" fill="none" stroke="#2B3A5C" stroke-width="5" stroke-linecap="round"/><path d="M 566 176 q 26 -60 6 -112" fill="none" stroke="#2B3A5C" stroke-width="5" stroke-linecap="round"/><path d="M 600 176 q 26 -60 6 -112" fill="none" stroke="#2B3A5C" stroke-width="5" stroke-linecap="round"/><path d="M 634 176 q 26 -60 6 -112" fill="none" stroke="#2B3A5C" stroke-width="5" stroke-linecap="round"/><path d="M 668 176 q 26 -60 6 -112" fill="none" stroke="#2B3A5C" stroke-width="5" stroke-linecap="round"/>
 <line x1="420" y1="42" x2="716" y2="42" stroke="#5A4511" stroke-width="5"/>
 <polygon points="716,28 748,42 716,56" fill="#5A4511"/>
 <text x="420" y="26" font-size="14" font-weight="800" fill="#5A4511">mucus swept along</text>
 <text x="575" y="266" text-anchor="middle" font-size="17" font-weight="800" fill="#2B3A5C">Cilia</text>
-<text x="575" y="288" text-anchor="middle" font-size="13.5" fill="#3D4860">the cell stays, the fluid moves</text>
+<text x="575" y="288" text-anchor="middle" font-size="13.5" fill="#414B5C">the cell stays, the fluid moves</text>
 <ellipse cx="830" cy="150" rx="34" ry="24" fill="#0B1530"/>
 <path d="M 864 150 q 40 -40 80 0 q 40 40 80 0 q 34 -34 66 -8" fill="none" stroke="#0B1530" stroke-width="6" stroke-linecap="round"/>
 <line x1="830" y1="96" x2="830" y2="66" stroke="#8B3A2E" stroke-width="4"/>
 <polygon points="820,66 830,42 840,66" fill="#8B3A2E"/>
 <text x="852" y="60" font-size="14" font-weight="800" fill="#8B3A2E">the cell moves</text>
 <text x="930" y="266" text-anchor="middle" font-size="17" font-weight="800" fill="#0B1530">Flagellum</text>
-<text x="930" y="288" text-anchor="middle" font-size="13.5" fill="#3D4860">one per cell, sperm only in humans</text>
+<text x="930" y="288" text-anchor="middle" font-size="13.5" fill="#414B5C">one per cell, sperm only in humans</text>
 </svg></div>
 <div class="grid3">
 <div class="card"><p class="label" style="color:#0B1530">Absorption</p><h3>Microvilli</h3><p>Finger like extensions supported by actin. They multiply the surface area available for absorption. In the small intestine they form the brush border, and the enzymes of the brush border sit right on them.</p></div>

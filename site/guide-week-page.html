@@ -6,7 +6,7 @@
 <link rel="icon" type="image/svg+xml" href="icon.svg">
 <title>How the week page works &middot; BIO 005</title>
 <meta name="description" content="Every week in this course looks the same. Learn the layout once and you will never have to wonder where anything is again.">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/fonts-site.css">
 <style>
 :root{
   /* ============================================================
@@ -15,19 +15,19 @@
      pricing section. Three values changed, each noted, because the
      original drops below the WCAG floor this course has to hold.
      ============================================================ */
-  --navy:#040711;                     /* body text, headings, borders, and the dark band.
+  --navy:#060A18;                     /* body text, headings, borders, and the dark band.
                                          20.12:1 on white. Deepened from the spec's #0B1530
                                          at her request: much darker. */
-  --navy-70:rgba(4,7,17,.70);         /* de-emphasized text. 7.88:1 on white, 7.54:1 on off-white.
+  --navy-70:rgba(6,10,24,.70);         /* de-emphasized text. 7.88:1 on white, 7.54:1 on off-white.
                                          This is the LIGHTEST alpha that still clears AAA on both
                                          grounds, so it de-emphasizes as much as the floor allows.
                                          CHANGED from the spec's --navy-55, which measured 4.04:1
                                          and fails even AA for normal text. */
   --navy-75:var(--navy-70);           /* alias, older rules still name it */
-  --navy-50:rgba(4,7,17,.50);         /* boundary of a control. 3.79:1, clears 1.4.11.
+  --navy-50:rgba(6,10,24,.50);         /* boundary of a control. 3.79:1, clears 1.4.11.
                                          CHANGED: the spec used --navy-15 on .cta-outline, and a
                                          button whose only edge is 1.37:1 is not identifiable. */
-  --navy-15:rgba(4,7,17,.15);         /* decorative hairlines ONLY. Card edges and dividers, which
+  --navy-15:rgba(6,10,24,.15);         /* decorative hairlines ONLY. Card edges and dividers, which
                                          carry no information, so 1.40:1 is fine there. */
   --terra:#8B3A2E;                    /* the only accent on a light ground. 7.66:1 on white */
   --terra-dark:#6E2C23;               /* terra hover. 10.26:1 on white */
@@ -35,7 +35,7 @@
 
   /* Dark grounds need their own accent: terra on navy is 2.36:1, which is
      unusable (2.63:1). These three are her own BIO 004 tokens, not cream. */
-  --gold-bright:#DCB45C;              /* 10.28:1 on navy */
+  --gold-bright:#C9A14A;              /* 10.28:1 on navy */
   --straw:#E8CE85;
   --straw-light:#F2E2B8;              /* 15.66:1 on navy */
   --navy-deep:#01030A;                /* the footer, deeper still */
@@ -57,10 +57,10 @@
   /* The pricing cards in her spec are flat by design and stay flat: .vl-card
      declares no shadow. These three are for the page furniture that has to
      read as lifted, above all the hero card that straddles the band edge. */
-  --shadow:0 1px 3px rgba(4,7,17,.10);
-  --shadow-rest:0 1px 3px rgba(4,7,17,.10);
-  --shadow-hover:0 14px 30px rgba(4,7,17,.24);
-  --shadow-lift:0 22px 48px rgba(4,7,17,.45);
+  --shadow:0 1px 3px rgba(6,10,24,.10);
+  --shadow-rest:0 1px 3px rgba(6,10,24,.10);
+  --shadow-hover:0 14px 30px rgba(6,10,24,.24);
+  --shadow-lift:0 22px 48px rgba(6,10,24,.45);
 
   --font:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;
   --display:'Open Sans',system-ui,-apple-system,sans-serif;
@@ -428,7 +428,7 @@ details.drop > summary .tag{font-size:.72rem;font-weight:700;color:var(--ink-sof
 <header class="topbar">
   <div class="tb">
     <a class="brand" href="index.html" target="_top">
-      <svg viewBox="40 10 125 148" aria-hidden="true" focusable="false"><g transform="translate(0,18)"><g transform="translate(60,0) rotate(8 0 130)"><circle cx="0" cy="20" r="10" fill="#040711"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#040711"/></g><g transform="translate(100,0)"><circle cx="0" cy="10" r="11" fill="#8B3A2E"/><path d="M 0,22 C -11,22 -17,26 -17,34 C -17,52 -14,70 -12,86 C -11,108 -13,122 -15,132 L 15,132 C 13,122 11,108 12,86 C 14,70 17,52 17,34 C 17,26 11,22 0,22 Z" fill="#8B3A2E"/></g><g transform="translate(140,0) rotate(-8 0 130)"><circle cx="0" cy="20" r="10" fill="#DCB45C"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#DCB45C"/></g></g></svg>
+      <svg viewBox="40 10 125 148" aria-hidden="true" focusable="false"><g transform="translate(0,18)"><g transform="translate(60,0) rotate(8 0 130)"><circle cx="0" cy="20" r="10" fill="#0B1530"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#0B1530"/></g><g transform="translate(100,0)"><circle cx="0" cy="10" r="11" fill="#8B3A2E"/><path d="M 0,22 C -11,22 -17,26 -17,34 C -17,52 -14,70 -12,86 C -11,108 -13,122 -15,132 L 15,132 C 13,122 11,108 12,86 C 14,70 17,52 17,34 C 17,26 11,22 0,22 Z" fill="#8B3A2E"/></g><g transform="translate(140,0) rotate(-8 0 130)"><circle cx="0" cy="20" r="10" fill="#C9A14A"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#C9A14A"/></g></g></svg>
       <span><b>BIO 005</b><i>Human Physiology</i></span>
     </a>
     <nav class="mainnav" aria-label="Course sections">

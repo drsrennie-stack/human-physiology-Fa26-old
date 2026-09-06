@@ -7,12 +7,14 @@
 <meta name="description" content="Instructor tool. Sixteen pages that cover all 99, the four checks to run on each, and a record of what was found.">
 <link rel="icon" type="image/svg+xml" href="icon.svg">
 <style>
+em,i,cite,dfn,var,address,blockquote{font-style:normal}
+
 :root{--navy:#0B1530;--maroon:#8B3A2E;--maroon-dark:#6E2D24;--gold:#C9A14A;
---ink:#1E3D4C;--page:#FAFAF9;--card:#FFFFFF;--rule:#E3E1DE;--muted:#505663;
+--ink:#0B1530;--page:#FAFAF9;--card:#FFFFFF;--rule:#E3E1DE;--muted:#505663;
 --ok:#1F5C3D;--issue:#8A3A12;--todo:#454B58}
 *{box-sizing:border-box}
 body{margin:0;background:var(--page);color:var(--ink);
-font-family:'Plus Jakarta Sans','Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+font-family:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
 font-size:16px;line-height:1.6;-webkit-text-size-adjust:100%}
 a{color:var(--maroon)}
 a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
@@ -58,7 +60,7 @@ ul.pages button{width:100%;text-align:left;font:inherit;cursor:pointer;backgroun
 border:1px solid var(--rule);border-radius:9px;padding:11px 13px;color:var(--navy);
 box-shadow:0 1px 3px rgba(0,0,0,.08);transition:transform 160ms ease,box-shadow 160ms ease}
 ul.pages button:hover{transform:translateY(-1px);box-shadow:0 6px 14px rgba(0,0,0,.10)}
-ul.pages button[aria-current="true"]{border-color:var(--maroon);box-shadow:0 0 0 2px rgba(122,42,34,.16),0 1px 3px rgba(0,0,0,.08)}
+ul.pages button[aria-current="true"]{border-color:var(--maroon);box-shadow:0 0 0 2px rgba(139,58,46,.16),0 1px 3px rgba(0,0,0,.08)}
 .pn{display:block;font-weight:700;font-size:15px}
 .pc{display:block;font-size:13px;color:var(--muted);margin-top:2px}
 .dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:7px;
@@ -93,7 +95,7 @@ background:#F1EFEC;border:1px solid var(--rule);border-radius:5px;padding:1px 6p
 .radios label{display:inline-flex;align-items:center;gap:7px;font-size:14.5px;font-weight:600;
 border:1px solid var(--rule);border-radius:8px;padding:8px 13px;cursor:pointer;background:#fff}
 .radios input{margin:0}
-.radios label:has(input:checked){border-color:var(--maroon);box-shadow:0 0 0 2px rgba(122,42,34,.15)}
+.radios label:has(input:checked){border-color:var(--maroon);box-shadow:0 0 0 2px rgba(139,58,46,.15)}
 textarea{min-height:70px;resize:vertical}
 
 .foot{border-top:1px solid var(--rule);margin-top:22px;padding-top:18px;

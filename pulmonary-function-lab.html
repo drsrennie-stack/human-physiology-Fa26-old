@@ -10,7 +10,7 @@
   --navy:#0B1530; --navy-2:#0A1322; --navy-darkest:#060A18; --navy-tint:#ECEFF4;
   --terra:#6E2D24; --terra-dark:#5A1212; --terra-text:#7A2F18;
   --gold:#C9A14A; --gold-text:#5F4514; --teal-text:#2C5F66;
-  --ink:#0A1322; --ink-muted:#3D4860; --rule:#7F8798; --rule-soft:#DCE0E6;
+  --ink:#0A1322; --ink-muted:#414B5C; --rule:#7F8798; --rule-soft:#DCE0E6;
   --off:#FAFAF9; --white:#ffffff;
   --shadow:0 1px 3px rgba(10,19,34,.08), 0 1px 2px rgba(10,19,34,.05);
   --shadow-lift:0 6px 16px rgba(10,19,34,.10), 0 3px 6px rgba(10,19,34,.06);
@@ -227,7 +227,7 @@ ol.recap li{margin-bottom:.6em}
 .chip-drag.dragging{opacity:.45}
 .chip-drag.placed{display:none}
 .dnd-hint{font-size:.9rem;color:var(--ink-muted);margin:0 0 8px}
-.brk.drop-ready rect{fill:rgba(220,180,92,.30)}
+.brk.drop-ready rect{fill:rgba(201,161,74,.30)}
 .brk.drop-over rect{fill:rgba(139,58,46,.22);stroke:#8B3A2E;stroke-width:3}
 
 /* ---------- readouts ---------- */
@@ -301,19 +301,22 @@ ul.tight li,ol.tight li{margin-bottom:.4em}
   .sheet{width:auto!important;max-width:100%!important}
 }
 </style>
+<link rel="stylesheet" href="assets/fonts-site.css">
+<link rel="stylesheet" href="assets/brandbar.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to the lab</a>
 
+
 <div class="brandbar">
   <div class="wrap">
     <svg viewBox="0 0 64 64" role="img" aria-label="Course logo, three figures side by side">
-      <circle cx="14" cy="17" r="7.4" fill="#C9A14A"/>
-      <path d="M14 27.5c-7 0-11.6 4.6-11.6 11.4V57h23.2V38.9c0-6.8-4.6-11.4-11.6-11.4z" fill="#C9A14A"/>
-      <circle cx="32" cy="12.5" r="8.2" fill="#6E2D24"/>
-      <path d="M32 24c-7.7 0-12.8 5.1-12.8 12.6V57h25.6V36.6C44.8 29.1 39.7 24 32 24z" fill="#6E2D24"/>
-      <circle cx="50" cy="17" r="7.4" fill="#0B1530"/>
-      <path d="M50 27.5c-7 0-11.6 4.6-11.6 11.4V57h23.2V38.9c0-6.8-4.6-11.4-11.6-11.4z" fill="#0B1530"/>
+      <circle cx="14" cy="17" r="7.4" fill="#0B1530"/>
+      <path d="M14 27.5c-7 0-11.6 4.6-11.6 11.4V57h23.2V38.9c0-6.8-4.6-11.4-11.6-11.4z" fill="#0B1530"/>
+      <circle cx="32" cy="12.5" r="8.2" fill="#8B3A2E"/>
+      <path d="M32 24c-7.7 0-12.8 5.1-12.8 12.6V57h25.6V36.6C44.8 29.1 39.7 24 32 24z" fill="#8B3A2E"/>
+      <circle cx="50" cy="17" r="7.4" fill="#C9A14A"/>
+      <path d="M50 27.5c-7 0-11.6 4.6-11.6 11.4V57h23.2V38.9c0-6.8-4.6-11.4-11.6-11.4z" fill="#C9A14A"/>
     </svg>
     <span class="brandlines">
       <span class="b1">Human Physiology</span>
@@ -1065,7 +1068,7 @@ function spirogramSVG(v, opts) {
   /* grid */
   for (var g = 0; g <= VMAX; g++) {
     s += '<line x1="' + x0 + '" y1="' + fmt(Y(g), 1) + '" x2="' + x1 + '" y2="' + fmt(Y(g), 1) + '" stroke="#DCE0E6" stroke-width="1"/>';
-    s += '<text x="' + (x0 - 9) + '" y="' + fmt(Y(g) + 4, 1) + '" text-anchor="end" font-size="11" fill="#3D4860" font-family="Plus Jakarta Sans">' + g + '</text>';
+    s += '<text x="' + (x0 - 9) + '" y="' + fmt(Y(g) + 4, 1) + '" text-anchor="end" font-size="11" fill="#414B5C" font-family="Plus Jakarta Sans">' + g + '</text>';
   }
   s += '<line x1="' + x0 + '" y1="' + y0 + '" x2="' + x0 + '" y2="' + y1 + '" stroke="#0A1322" stroke-width="1.5"/>';
   s += '<line x1="' + x0 + '" y1="' + y1 + '" x2="' + x1 + '" y2="' + y1 + '" stroke="#0A1322" stroke-width="1.5"/>';
@@ -1144,14 +1147,14 @@ function loopSVG(cfg) {
 
   var s = '<svg viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="' + (cfg.label || 'Flow volume loop') + '">';
   for (var g = 0; g <= Math.floor(axisMax); g++) {
-    s += '<line x1="' + fmt(X(g), 1) + '" y1="' + ytop + '" x2="' + fmt(X(g), 1) + '" y2="' + ybot + '" stroke="#EDF1F3" stroke-width="1"/>';
-    s += '<text x="' + fmt(X(g), 1) + '" y="' + (ybot + 18) + '" text-anchor="middle" font-size="11" fill="#3D4860" font-family="Plus Jakarta Sans">' + g + '</text>';
+    s += '<line x1="' + fmt(X(g), 1) + '" y1="' + ytop + '" x2="' + fmt(X(g), 1) + '" y2="' + ybot + '" stroke="#ECEFF4" stroke-width="1"/>';
+    s += '<text x="' + fmt(X(g), 1) + '" y="' + (ybot + 18) + '" text-anchor="middle" font-size="11" fill="#414B5C" font-family="Plus Jakarta Sans">' + g + '</text>';
   }
   for (var fl = -Math.floor(flowMax); fl <= Math.floor(flowMax); fl += 2) {
     if (fl === 0) continue;
     var yy = Y(fl); if (yy < ytop || yy > ybot) continue;
-    s += '<line x1="' + x0 + '" y1="' + fmt(yy, 1) + '" x2="' + x1 + '" y2="' + fmt(yy, 1) + '" stroke="#EDF1F3" stroke-width="1"/>';
-    s += '<text x="' + (x0 - 8) + '" y="' + fmt(yy + 4, 1) + '" text-anchor="end" font-size="11" fill="#3D4860" font-family="Plus Jakarta Sans">' + Math.abs(fl) + '</text>';
+    s += '<line x1="' + x0 + '" y1="' + fmt(yy, 1) + '" x2="' + x1 + '" y2="' + fmt(yy, 1) + '" stroke="#ECEFF4" stroke-width="1"/>';
+    s += '<text x="' + (x0 - 8) + '" y="' + fmt(yy + 4, 1) + '" text-anchor="end" font-size="11" fill="#414B5C" font-family="Plus Jakarta Sans">' + Math.abs(fl) + '</text>';
   }
   s += '<line x1="' + x0 + '" y1="' + ymid + '" x2="' + x1 + '" y2="' + ymid + '" stroke="#0A1322" stroke-width="1.5"/>';
   s += '<line x1="' + x0 + '" y1="' + ytop + '" x2="' + x0 + '" y2="' + ybot + '" stroke="#0A1322" stroke-width="1.5"/>';
@@ -1745,8 +1748,8 @@ var st = document.createElement('style');
 st.textContent = '.fvl-draw{stroke-dasharray:2600;stroke-dashoffset:2600;animation:fvlDraw 1.5s ease-out forwards}' +
   '@keyframes fvlDraw{to{stroke-dashoffset:0}}' +
   '@media (prefers-reduced-motion:reduce){.fvl-draw{animation:none;stroke-dashoffset:0}}' +
-  '.brk{cursor:pointer}.brk rect{transition:fill .15s ease}.brk:hover rect{fill:rgba(220,180,92,.28)}' +
-  '.brk:focus{outline:none}.brk:focus rect{fill:rgba(220,180,92,.45);stroke:#8B3A2E;stroke-width:3}' +
+  '.brk{cursor:pointer}.brk rect{transition:fill .15s ease}.brk:hover rect{fill:rgba(201,161,74,.28)}' +
+  '.brk:focus{outline:none}.brk:focus rect{fill:rgba(201,161,74,.45);stroke:#8B3A2E;stroke-width:3}' +
   '.brk.hit rect{fill:rgba(139,58,46,.16)}.brk.miss rect{fill:rgba(10,19,34,.10)}';
 document.head.appendChild(st);
 
@@ -2445,11 +2448,11 @@ function volumeTimeSVG(p) {
   }
   var s = '<svg viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="Volume against time curve for the forced blow, with FEV1 marked at one second">';
   for (var g = 0; g <= VMAX; g++) {
-    s += '<line x1="' + x0 + '" y1="' + fmt(Y(g), 1) + '" x2="' + x1 + '" y2="' + fmt(Y(g), 1) + '" stroke="#EDF1F3"/>';
-    s += '<text x="' + (x0 - 8) + '" y="' + fmt(Y(g) + 4, 1) + '" text-anchor="end" font-size="11" fill="#3D4860" font-family="Plus Jakarta Sans">' + g + '</text>';
+    s += '<line x1="' + x0 + '" y1="' + fmt(Y(g), 1) + '" x2="' + x1 + '" y2="' + fmt(Y(g), 1) + '" stroke="#ECEFF4"/>';
+    s += '<text x="' + (x0 - 8) + '" y="' + fmt(Y(g) + 4, 1) + '" text-anchor="end" font-size="11" fill="#414B5C" font-family="Plus Jakarta Sans">' + g + '</text>';
   }
   for (var tt = 0; tt <= TMAX; tt += 2) {
-    s += '<text x="' + fmt(X(tt), 1) + '" y="' + (y1 + 18) + '" text-anchor="middle" font-size="11" fill="#3D4860" font-family="Plus Jakarta Sans">' + tt + '</text>';
+    s += '<text x="' + fmt(X(tt), 1) + '" y="' + (y1 + 18) + '" text-anchor="middle" font-size="11" fill="#414B5C" font-family="Plus Jakarta Sans">' + tt + '</text>';
   }
   s += '<line x1="' + x0 + '" y1="' + y0 + '" x2="' + x0 + '" y2="' + y1 + '" stroke="#0A1322" stroke-width="1.5"/>';
   s += '<line x1="' + x0 + '" y1="' + y1 + '" x2="' + x1 + '" y2="' + y1 + '" stroke="#0A1322" stroke-width="1.5"/>';
@@ -2463,7 +2466,7 @@ function volumeTimeSVG(p) {
   s += '<path d="' + d + '" fill="none" stroke="#8B3A2E" stroke-width="2.8" stroke-linecap="round"/>';
   s += '<circle cx="' + fmt(X(1), 1) + '" cy="' + fmt(Y(v1), 1) + '" r="4.5" fill="#C9A14A" stroke="#5F4514" stroke-width="1.5"/>';
   s += '<text x="' + fmt(X(1) + 9, 1) + '" y="' + fmt(Y(v1) - 8, 1) + '" font-size="12" font-weight="800" fill="#5F4514" font-family="Plus Jakarta Sans">FEV1 ' + fmt(v1) + ' L</text>';
-  s += '<text x="' + (x1 - 6) + '" y="' + fmt(Y(FVC) - 8, 1) + '" text-anchor="end" font-size="12" font-weight="800" fill="#3D4860" font-family="Plus Jakarta Sans">FVC ' + fmt(FVC) + ' L</text>';
+  s += '<text x="' + (x1 - 6) + '" y="' + fmt(Y(FVC) - 8, 1) + '" text-anchor="end" font-size="12" font-weight="800" fill="#414B5C" font-family="Plus Jakarta Sans">FVC ' + fmt(FVC) + ' L</text>';
   s += '</svg>';
   return s;
 }
@@ -3003,8 +3006,8 @@ function waveformSVG(sc, s, o) {
   /* pressure panel */
   s2 += '<text x="' + x0 + '" y="16" font-size="12" font-weight="800" fill="#0A1322" font-family="Plus Jakarta Sans">Pressure (cmH2O)</text>';
   for (var pg = 0; pg <= Pmax; pg += 10) {
-    s2 += '<line x1="' + x0 + '" y1="' + fmt(YP(pg), 1) + '" x2="' + x1 + '" y2="' + fmt(YP(pg), 1) + '" stroke="#EDF1F3"/>';
-    s2 += '<text x="' + (x0 - 8) + '" y="' + fmt(YP(pg) + 4, 1) + '" text-anchor="end" font-size="11" fill="#3D4860" font-family="Plus Jakarta Sans">' + pg + '</text>';
+    s2 += '<line x1="' + x0 + '" y1="' + fmt(YP(pg), 1) + '" x2="' + x1 + '" y2="' + fmt(YP(pg), 1) + '" stroke="#ECEFF4"/>';
+    s2 += '<text x="' + (x0 - 8) + '" y="' + fmt(YP(pg) + 4, 1) + '" text-anchor="end" font-size="11" fill="#414B5C" font-family="Plus Jakarta Sans">' + pg + '</text>';
   }
   s2 += '<line x1="' + x0 + '" y1="' + fmt(YP(30), 1) + '" x2="' + x1 + '" y2="' + fmt(YP(30), 1) + '" stroke="#8B3A2E" stroke-width="1.5" stroke-dasharray="6 4"/>';
   s2 += '<text x="' + (x1 - 4) + '" y="' + fmt(YP(30) - 5, 1) + '" text-anchor="end" font-size="11" font-weight="700" fill="#8B3A2E" font-family="Plus Jakarta Sans">Plateau limit 30</text>';
@@ -3018,7 +3021,7 @@ function waveformSVG(sc, s, o) {
   /* flow panel */
   s2 += '<text x="' + x0 + '" y="' + (fTop - 8) + '" font-size="12" font-weight="800" fill="#0A1322" font-family="Plus Jakarta Sans">Flow (L/s)</text>';
   s2 += '<line x1="' + x0 + '" y1="' + fMid + '" x2="' + x1 + '" y2="' + fMid + '" stroke="#0A1322" stroke-width="1.5"/>';
-  s2 += '<text x="' + (x0 - 8) + '" y="' + (fMid + 4) + '" text-anchor="end" font-size="11" fill="#3D4860" font-family="Plus Jakarta Sans">0</text>';
+  s2 += '<text x="' + (x0 - 8) + '" y="' + (fMid + 4) + '" text-anchor="end" font-size="11" fill="#414B5C" font-family="Plus Jakarta Sans">0</text>';
   s2 += '<path d="' + dF + '" fill="none" stroke="#2C5F66" stroke-width="2.4"/>';
 
   /* end expiratory flow marker */
@@ -3032,8 +3035,8 @@ function waveformSVG(sc, s, o) {
   for (var b = 0; b <= breaths; b++) {
     s2 += '<line x1="' + fmt(X(b * o.cycle), 1) + '" y1="' + pTop + '" x2="' + fmt(X(b * o.cycle), 1) + '" y2="' + fBot + '" stroke="#DCE0E6" stroke-dasharray="3 4"/>';
   }
-  s2 += '<text x="' + fmt(X(o.Ti / 2), 1) + '" y="' + (fBot + 20) + '" text-anchor="middle" font-size="11" font-weight="700" fill="#3D4860" font-family="Plus Jakarta Sans">In</text>';
-  s2 += '<text x="' + fmt(X(o.Ti + o.Te / 2), 1) + '" y="' + (fBot + 20) + '" text-anchor="middle" font-size="11" font-weight="700" fill="#3D4860" font-family="Plus Jakarta Sans">Out</text>';
+  s2 += '<text x="' + fmt(X(o.Ti / 2), 1) + '" y="' + (fBot + 20) + '" text-anchor="middle" font-size="11" font-weight="700" fill="#414B5C" font-family="Plus Jakarta Sans">In</text>';
+  s2 += '<text x="' + fmt(X(o.Ti + o.Te / 2), 1) + '" y="' + (fBot + 20) + '" text-anchor="middle" font-size="11" font-weight="700" fill="#414B5C" font-family="Plus Jakarta Sans">Out</text>';
   s2 += '</svg>';
   return s2;
 }
