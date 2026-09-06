@@ -761,7 +761,7 @@
         <!-- The task first, the tour second. The audit found students
              meeting four prompts before one course word; this button is
              the one answer to the question they actually arrive with. -->
-        <a class="btn btn-primary" id="todayBtn" href="week-01.html" target="_top">What do I do today?</a>
+        <a class="btn btn-primary" id="todayBtn" href="home.html" target="_top">Enter the course</a>
         <button type="button" class="btn btn-ghost" id="startTourBtn">Show me around first</button>
         <button type="button" class="btn btn-ghost" id="skipTourBtn">Skip the tour</button>
       </div>
@@ -1183,11 +1183,7 @@
     var preterm = wk < 1;
     wk = Math.max(1, Math.min(15, wk));
     var mod = wk<=5 ? 1 : wk<=10 ? 2 : 3;
-    return {week:wk, module:mod, preterm:preterm}
-  (function(){
-    var tb = document.getElementById('todayBtn');
-    if(tb){ var cw = currentWeek(); tb.href = 'week-' + ('0' + cw.week).slice(-2) + '.html'; }
-  })();;
+    return {week:wk, module:mod, preterm:preterm};
   }
 
   // 5 modules, each holds its week hubs. Every week stays clickable (past weeks included).

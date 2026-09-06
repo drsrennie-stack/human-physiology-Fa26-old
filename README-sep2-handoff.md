@@ -211,3 +211,35 @@ clinical correlations only on weeks that have them), and in the lab map.
 One line for Hootie's labs answer in welcome.html, which lives ahead in the
 repo and is not in this bundle: Running the simulation is not the credit,
 your worksheet and the clinical correlation questions are.
+
+## 250 questions, answered, September 5
+
+course-questions.html is the student-facing page: every question filtered
+live by a search box, grouped in 14 sections, each answer written from the
+decided course facts with working links. bio005-faq.js is the same 250 in
+machine-readable form, the feed for Hootie or any future helper, so his brain
+and the page never drift apart. Standing expectation: whenever a course rule
+changes, both files get updated in the same pass as the syllabus.
+
+Suggested wiring, one link each: from the home page footer (Questions?
+Start here) and from Hootie's fallback answer. The page carries no dock and
+does one job.
+
+Categories: getting started, navigating, grading, note sheets, discussions,
+midterms, labs and PhysioEx, deadlines, time and workload, studying, tech and
+submitting, help and support, enrollment and transfer, and succeeding online
+anywhere, which is the general online-course survival guidance. Zero dash
+violations, zero dead internal links, four external links, all live services.
+
+## Success advice folded in, September 5, from her success program repo
+
+Six thin questions retired, six added from her program, terminology stripped
+as directed: the error log method (log every miss, retry cold a week later,
+retire a row only when the whole type is solid), the exam wrapper (classify
+every lost point by error type, each type has a different fix), spacing
+versus cramming at equal hours, the active versus passive honesty scale,
+why effective studying feels strange at first, and plans as hypotheses with
+a weekly assess, work, revise cycle. Four existing answers enriched with the
+same material. Still exactly 250, zero dashes, zero program terminology,
+zero dead links. Her standalone error log tool exists in that repo and could
+be ported into this course later if she wants it as a page.
