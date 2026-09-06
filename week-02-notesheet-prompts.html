@@ -19,11 +19,13 @@ body{margin:0;background:var(--offwhite);color:var(--navy);
   padding:12px 18px;z-index:20;font-weight:700;border-radius:0 0 8px 0}
 .skip:focus{left:0}
 .wrap{max-width:54rem;margin:0 auto;padding:0 22px}
-header.top{background:var(--terra);color:var(--white);padding:30px 0 26px}
+header.top{background:var(--navy-deep,#060A18);color:var(--white);padding:30px 0 26px}
 .eyebrow{font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-size:12px;font-weight:700;
-  letter-spacing:2px;text-transform:uppercase;color:#FEF8EE;margin:0 0 8px}
+  letter-spacing:2px;text-transform:uppercase;color:var(--gold,#C9A14A);margin:0 0 8px}
 header.top h1{margin:0 0 8px;font-size:clamp(26px,4.4vw,38px);font-weight:800;line-height:1.18}
 header.top p{margin:0;color:#FFFFFF;max-width:44rem}
+/* the eyebrow is a <p> too, so it needs to beat header.top p */
+header.top .eyebrow{color:var(--gold,#C9A14A)}
 h2{font-size:clamp(21px,2.8vw,27px);font-weight:800;margin:46px 0 8px;line-height:1.25}
 h3{font-size:18px;font-weight:700;color:var(--terra-dark);margin:26px 0 6px}
 p{margin:0 0 14px}
