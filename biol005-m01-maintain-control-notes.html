@@ -268,12 +268,46 @@ body.present .slide.clinopen .cprof{padding:18px 20px}
 .lightbox .lb-close{position:absolute;top:16px;right:18px;background:var(--terra);color:#fff;border:0;
   border-radius:var(--r-btn);padding:12px 18px;font-weight:800;font-size:11px;letter-spacing:.2em;
   text-transform:uppercase;cursor:pointer}
+
+/* ---------- competency close-out, shared by the notes and the decks ---------- */
+.cmpwrap{margin:10px 0 0}
+.cmp{background:#fff;border:.5px solid var(--navy-15);border-radius:var(--r-card);padding:16px 18px 18px}
+.cmp .cn{font-family:'Open Sans','Plus Jakarta Sans',sans-serif;font-weight:800;font-size:30px;
+  line-height:1;letter-spacing:-.03em;color:var(--terra);margin:0 0 6px}
+.cmp h4{margin:0 0 4px;font-size:16.5px;font-weight:800;letter-spacing:-.01em;color:var(--navy)}
+.cmp .ccan{margin:0;font-size:14px;color:var(--navy-72)}
+.cmp .pick{margin:13px 0 0;font-size:12.5px;font-weight:700;color:var(--navy-72)}
+.pr{position:relative;border-radius:8px;padding:13px 15px 12px;margin:14px 0 0}
+.pr p{margin:0;font-size:14.5px;line-height:1.5}
+.pr.a{border:1.6px solid var(--terra)}
+.pr.b{border:1.6px solid var(--navy)}
+.pr .pl{position:absolute;top:-10px;left:13px;background:#fff;padding:0 7px;
+  font-family:'Open Sans','Plus Jakarta Sans',sans-serif;font-weight:800;font-size:11px;
+  letter-spacing:.16em}
+.pr.a .pl{color:var(--terra)}
+.pr.b .pl{color:var(--navy)}
+.cmplist{list-style:none;margin:10px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:8px 18px}
+.cmplist li{display:grid;grid-template-columns:32px 1fr;gap:10px;align-items:baseline;
+  padding:7px 0;border-top:.5px solid var(--navy-15);font-size:15px}
+.cmplist li .k{font-family:'Open Sans','Plus Jakarta Sans',sans-serif;font-weight:800;
+  color:var(--terra);font-variant-numeric:tabular-nums}
+@media(max-width:760px){.cmplist{grid-template-columns:1fr}.cmpwrap .grid{grid-template-columns:1fr}}
+@media print{.cmp,.pr{break-inside:avoid;page-break-inside:avoid}}
+
+.prereq .card{padding:18px 20px}
+.prereq .eyebrow{margin-bottom:8px}
+.prereq ul.bul{margin-bottom:6px}
+.prereq ul.bul>li{padding:3px 0 3px 18px;font-size:14.5px}
+.prereq ul.bul>li::before{top:12px;width:5px;height:5px}
+.prereq .pqnote{font-size:13.5px;color:var(--navy-72);margin:10px 0 0}
+.prereq .pqlink{margin:12px 0 0;font-size:13.5px;font-weight:700}
+@media(max-width:860px){.prereq{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to the content</a>
 <header class="site-header">
-  <a class="site-logo" href="index.html" target="_top" aria-label="BIOL 005 Human Physiology, course home">
+  <a class="site-logo" href="welcome.html" target="_top" aria-label="BIOL 005 Human Physiology, course home">
     <svg viewBox="40 10 125 148" aria-hidden="true" focusable="false"><g transform="translate(0,18)"><g transform="translate(60,0) rotate(8 0 130)"><circle cx="0" cy="20" r="10" fill="#0B1530"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#0B1530"/></g><g transform="translate(100,0)"><circle cx="0" cy="10" r="11" fill="#8B3A2E"/><path d="M 0,22 C -11,22 -17,26 -17,34 C -17,52 -14,70 -12,86 C -11,108 -13,122 -15,132 L 15,132 C 13,122 11,108 12,86 C 14,70 17,52 17,34 C 17,26 11,22 0,22 Z" fill="#8B3A2E"/></g><g transform="translate(140,0) rotate(-8 0 130)"><circle cx="0" cy="20" r="10" fill="#0B1530"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#0B1530"/></g></g></svg>
     <span><span class="logo-title">Human <span class="logo-accent">Physiology</span></span><span class="logo-sub">BIOL 005 &middot; Mission 1</span></span>
   </a>
@@ -285,9 +319,7 @@ body.present .slide.clinopen .cprof{padding:18px 20px}
   <h1>Maintain <span class="hl">Control</span></h1>
   <p class="lede">What a control system has to contain before it can hold anything steady, and what each part looks like when it fails. Silverthorn chapter 1, plus the homeostatic reflex pathways section of chapter 6.</p>
   <div class="metarow">
-    <span class="pill">Competencies 1, 3, 4, 5</span>
-    <span class="pill navy">Must teach</span>
-    <span class="pill ghost">Note sheet: one box per section</span>
+    <span class="pill">All 12 week 1 competencies</span>
     <span class="pill ghost">Ch 1 and the reflex half of ch 6</span>
   </div>
 </div>
@@ -295,7 +327,7 @@ body.present .slide.clinopen .cprof{padding:18px 20px}
 <h2>What physiology <span class="hl">is</span></h2>
 <dl class="terms"><div class="term"><dt>Physiology</dt><dd>The study of the normal functioning of a living organism and its parts, including the physical and chemical processes involved.</dd></div><div class="term"><dt>Anatomy</dt><dd>The study of structure. Physiology asks what that structure does and by what mechanism.</dd></div><div class="term"><dt>Pathophysiology</dt><dd>What function looks like when a normal mechanism fails. Not a separate subject, the same mechanisms running wrong.</dd></div><div class="term"><dt>Emergent property</dt><dd>A property of the whole system that none of its individual parts possesses. Blood pressure, consciousness, urine concentrating ability.</dd></div><div class="term"><dt>Teleological answer</dt><dd>An answer that says what something is for. Useful shorthand, not an explanation.</dd></div><div class="term"><dt>Mechanistic answer</dt><dd>An answer that says how something happens. This is what physiology means by an explanation, and what earns credit.</dd></div></dl>
 
-<figure style="margin-top:24px"><svg class="fig" viewBox="0 0 900 424" role="img" aria-labeledby="figT8 figD8">
+<figure style="margin-top:24px"><svg class="fig" viewBox="0 0 900 424" role="img" aria-labelledby="figT8 figD8">
 <title id="figT8">Levels of organization in the body</title><desc id="figD8">Six levels stacked from molecules at the top through cells, tissues, organs and organ systems to the whole organism at the bottom, where emergent properties appear.</desc>
 <rect width="900" height="424" fill="#ffffff"/>
 <rect x="300" y="26" width="300" height="52" rx="8" fill="#ffffff" stroke="#8B3A2E" stroke-width="1.5"/>
@@ -395,10 +427,10 @@ body.present .slide.clinopen .cprof{padding:18px 20px}
     <span>What this means in the clinic</span><span class="chev" aria-hidden="true">&#9656;</span></button>
   <div class="clin-body" id="clin12" hidden>
     <div class="clin-grid">
-      <div class="cprof n"><p class="who">Nursing</p><p class="means">Where fluid sits decides what you see on assessment.</p><p class="eg"><b>Example:</b> A patient can be visibly swollen, with fluid sitting in the interstitial space, and still be low on volume inside the vessels.</p></div>
-      <div class="cprof x"><p class="who">Radiologic technology</p><p class="means">Contrast is injected into one compartment and then leaves it, so scan timing decides which compartment you are actually imaging.</p><p class="eg"><b>Example:</b> An arterial-phase scan catches contrast still inside the vessels. A delayed scan catches it after it has moved out into the interstitial space. Same injection, two different-looking images, because the contrast moved compartments.</p></div>
-      <div class="cprof m"><p class="who">Medicine</p><p class="means">Choosing an IV fluid is a compartment question before it is anything else.</p><p class="eg"><b>Example:</b> A liter of isotonic saline stays largely in the extracellular fluid. A liter of 5 percent dextrose in water spreads across total body water, so much less of it stays in the vessels.</p></div>
-      <div class="cprof r"><p class="who">Respiratory therapy</p><p class="means">Airway secretions sit in the external compartment, not the internal one.</p><p class="eg"><b>Example:</b> A dry airway is a local humidity problem. It is not the same thing as whole-body dehydration, and it is not fixed the same way.</p></div>
+      <div class="cprof n"><p class="who">Nursing</p><p class="means">Where the extra fluid is sitting is what changes the things you see when you assess the patient.</p><p class="eg"><b>Example:</b> A patient can be visibly swollen, with fluid sitting in the interstitial space, and still be low on volume inside the vessels.</p></div>
+      <div class="cprof x"><p class="who">Radiologic technology</p><p class="means">Contrast goes into the blood first and then leaks out into the tissue. So when you scan decides which of those two you are actually looking at.</p><p class="eg"><b>Example:</b> An arterial-phase scan catches contrast still inside the vessels. A delayed scan catches it after it has moved out into the interstitial space. Same injection, two different-looking images, because the contrast moved compartments.</p></div>
+      <div class="cprof m"><p class="who">Medicine</p><p class="means">Before you pick an IV fluid you have to decide which fluid space you are trying to fill.</p><p class="eg"><b>Example:</b> A liter of isotonic saline stays largely in the extracellular fluid. A liter of 5 percent dextrose in water spreads across total body water, so much less of it stays in the vessels.</p></div>
+      <div class="cprof r"><p class="who">Respiratory therapy</p><p class="means">Mucus in the airway counts as outside the body, in the same way that food sitting in your gut is still outside you.</p><p class="eg"><b>Example:</b> A dry airway is a local humidity problem. It is not the same thing as whole-body dehydration, and it is not fixed the same way.</p></div>
     </div>
   </div>
 </div>
@@ -406,7 +438,7 @@ body.present .slide.clinopen .cprof{padding:18px 20px}
 <h2>Homeostasis is not <span class="hl">equilibrium</span></h2>
 <dl class="terms"><div class="term"><dt>Homeostasis</dt><dd>The maintenance of a relatively stable internal environment. The word relatively is load bearing: the variable oscillates, it does not sit still.</dd></div><div class="term"><dt>Dynamic steady state</dt><dd>Material and energy move continuously, but the amount in each compartment stays roughly constant. This is what homeostasis actually is.</dd></div><div class="term"><dt>Equilibrium</dt><dd>A state in which no further net change occurs and no energy is required to maintain it. A cell at equilibrium with its surroundings is dead.</dd></div><div class="term"><dt>Regulated variable</dt><dd>The quantity the body is actually holding in range, such as core temperature, plasma pH, or blood glucose.</dd></div><div class="term"><dt>Set point</dt><dd>The target value the integrating center compares against. Set points move: they reset in fever, drift on a circadian cycle, and shift with acclimatization.</dd></div><div class="term"><dt>Normal range</dt><dd>The band of values a variable is allowed to occupy. Usually defined to cover the middle 95 percent of a healthy population, so one healthy person in twenty falls outside it.</dd></div></dl>
 
-<figure style="margin-top:24px"><svg class="fig" viewBox="0 0 980 300" role="img" aria-labeledby="figT7 figD7">
+<figure style="margin-top:24px"><svg class="fig" viewBox="0 0 980 300" role="img" aria-labelledby="figT7 figD7">
 <title id="figT7">Equilibrium compared with steady state</title><desc id="figD7">Two columns. Equilibrium costs no energy, ends with equal concentrations, defends nothing, and is what a dead cell reaches. Steady state costs ATP continuously, keeps gradients unequal, is actively defended, and only a living cell holds it.</desc>
 <rect width="980" height="300" fill="#ffffff"/>
 <rect x="18" y="22" width="458" height="48" rx="8" fill="#0B1530"/>
@@ -429,7 +461,7 @@ body.present .slide.clinopen .cprof{padding:18px 20px}
 </svg>
 <figcaption><b>Figure 3.</b> The sodium gradient is the standard example. Extracellular sodium near 145 mM, intracellular near 12 mM, held apart by a pump spending ATP every second of your life.</figcaption></figure>
 
-<figure style="margin-top:22px"><svg class="fig" viewBox="0 0 980 322" role="img" aria-labeledby="figT9 figD9">
+<figure style="margin-top:22px"><svg class="fig" viewBox="0 0 980 322" role="img" aria-labelledby="figT9 figD9">
 <title id="figT9">A regulated variable oscillating around its set point</title><desc id="figD9">A wavy line moves up and down inside a shaded normal range, crossing a dashed set point line. The variable is never exactly at the set point, only near it.</desc>
 <rect width="980" height="322" fill="#ffffff"/>
 <rect x="70" y="116.0" width="850" height="68" fill="#FAFAF9" stroke="#C9CDD6"/>
@@ -450,10 +482,10 @@ body.present .slide.clinopen .cprof{padding:18px 20px}
     <span>What this means in the clinic</span><span class="chev" aria-hidden="true">&#9656;</span></button>
   <div class="clin-body" id="clin13" hidden>
     <div class="clin-grid">
-      <div class="cprof n"><p class="who">Nursing</p><p class="means">A patient losing perfusion is a patient losing gradients, and the signs appear before the labs do.</p><p class="eg"><b>Example:</b> Cool mottled skin and a rising lactate are gradient failure becoming visible at the bedside.</p></div>
-      <div class="cprof x"><p class="who">Radiologic technology</p><p class="means">Nuclear medicine images gradients directly. A tracer collects only where cells are still spending ATP to hold one.</p><p class="eg"><b>Example:</b> Technetium sestamibi concentrates in heart muscle because living mitochondria maintain their charge gradient. Dead tissue cannot, so it takes up nothing. That is what makes the cold spot on the scan.</p></div>
-      <div class="cprof m"><p class="who">Medicine</p><p class="means">Every gradient in the body is being paid for in ATP, continuously, for as long as the patient is alive.</p><p class="eg"><b>Example:</b> When perfusion stops, the sodium potassium pump stops with it, potassium leaks out of cells, and measured plasma potassium rises.</p></div>
-      <div class="cprof r"><p class="who">Respiratory therapy</p><p class="means">The work of breathing is the ATP price of holding the carbon dioxide gradient.</p><p class="eg"><b>Example:</b> A patient who is tiring can no longer afford that gradient, which is why carbon dioxide starts to climb as they wear out.</p></div>
+      <div class="cprof n"><p class="who">Nursing</p><p class="means">When blood flow drops, cells can no longer hold their gradients. You see that in the patient before you see it in the labs.</p><p class="eg"><b>Example:</b> Cool mottled skin and a rising lactate are gradient failure becoming visible at the bedside.</p></div>
+      <div class="cprof x"><p class="who">Radiologic technology</p><p class="means">A nuclear medicine tracer only builds up where cells are still alive and still spending energy. The picture is a map of which tissue is still working.</p><p class="eg"><b>Example:</b> Technetium sestamibi concentrates in heart muscle because living mitochondria maintain their charge gradient. Dead tissue cannot, so it takes up nothing. That is what makes the cold spot on the scan.</p></div>
+      <div class="cprof m"><p class="who">Medicine</p><p class="means">Every gradient in the body costs energy to hold, and that bill never stops while the patient is alive.</p><p class="eg"><b>Example:</b> When perfusion stops, the sodium potassium pump stops with it, potassium leaks out of cells, and measured plasma potassium rises.</p></div>
+      <div class="cprof r"><p class="who">Respiratory therapy</p><p class="means">Breathing is muscle work, and that work is the price of keeping carbon dioxide moving out.</p><p class="eg"><b>Example:</b> A patient who is tiring can no longer afford that gradient, which is why carbon dioxide starts to climb as they wear out.</p></div>
     </div>
   </div>
 </div>
@@ -579,10 +611,10 @@ body.present .slide.clinopen .cprof{padding:18px 20px}
     <span>What this means in the clinic</span><span class="chev" aria-hidden="true">&#9656;</span></button>
   <div class="clin-body" id="clin14" hidden>
     <div class="clin-grid">
-      <div class="cprof n"><p class="who">Nursing</p><p class="means">Intake and output charting is mass balance, which is why loose I and O hides the problem.</p><p class="eg"><b>Example:</b> A patient in positive balance across three shifts has gained fluid, and the daily weight usually shows it before anything else does.</p></div>
-      <div class="cprof x"><p class="who">Radiologic technology</p><p class="means">Contrast obeys mass balance like anything else. What you inject stays in the patient until it is cleared out.</p><p class="eg"><b>Example:</b> A patient who had contrast yesterday has not finished clearing it today. A repeat study too soon adds to a load that is still there, which is why prior studies get checked before the next injection.</p></div>
-      <div class="cprof m"><p class="who">Medicine</p><p class="means">A concentration can change because the amount changed or because the volume changed, and those have opposite corrections.</p><p class="eg"><b>Example:</b> A rising sodium can mean sodium was gained or water was lost. Treating the wrong one moves the patient in the wrong direction.</p></div>
-      <div class="cprof r"><p class="who">Respiratory therapy</p><p class="means">Fluid balance changes lung water, and lung water changes gas exchange.</p><p class="eg"><b>Example:</b> A patient several liters positive becomes harder to oxygenate, and the chest film tends to follow the balance sheet.</p></div>
+      <div class="cprof n"><p class="who">Nursing</p><p class="means">Intake and output charting is just what went in minus what came out. Record it loosely and the problem hides in the gap.</p><p class="eg"><b>Example:</b> A patient in positive balance across three shifts has gained fluid, and the daily weight usually shows it before anything else does.</p></div>
+      <div class="cprof x"><p class="who">Radiologic technology</p><p class="means">Contrast follows the same rule as everything else. What you put in stays in the patient until the kidney clears it out.</p><p class="eg"><b>Example:</b> A patient who had contrast yesterday has not finished clearing it today. A repeat study too soon adds to a load that is still there, which is why prior studies get checked before the next injection.</p></div>
+      <div class="cprof m"><p class="who">Medicine</p><p class="means">A number can rise because there is more of the substance, or because there is less water. Those two need opposite treatments.</p><p class="eg"><b>Example:</b> A rising sodium can mean sodium was gained or water was lost. Treating the wrong one moves the patient in the wrong direction.</p></div>
+      <div class="cprof r"><p class="who">Respiratory therapy</p><p class="means">Extra fluid ends up in the lung, and water in the lung gets in the way of gas crossing over.</p><p class="eg"><b>Example:</b> A patient several liters positive becomes harder to oxygenate, and the chest film tends to follow the balance sheet.</p></div>
     </div>
   </div>
 </div>
@@ -666,16 +698,16 @@ body.present .slide.clinopen .cprof{padding:18px 20px}
     <span>What this means in the clinic</span><span class="chev" aria-hidden="true">&#9656;</span></button>
   <div class="clin-body" id="clin15" hidden>
     <div class="clin-grid">
-      <div class="cprof n"><p class="who">Nursing</p><p class="means">Knowing whether a response is local or whole-body tells you what to expect when you intervene.</p><p class="eg"><b>Example:</b> Warming one limb changes blood flow in that limb without changing the patient's core temperature.</p></div>
-      <div class="cprof x"><p class="who">Radiologic technology</p><p class="means">Enhancement on a scan is a picture of local control, because contrast only reaches tissue that local vessels are delivering to.</p><p class="eg"><b>Example:</b> A tumor lights up because its own vessels are dilated and leaky, a purely local change. Nothing whole-body happened. The bright spot is local blood flow made visible.</p></div>
-      <div class="cprof m"><p class="who">Medicine</p><p class="means">Local control needs no nerves and no hormones, so it keeps working when the long-distance systems do not.</p><p class="eg"><b>Example:</b> In a transplanted heart the nerves are cut, and local metabolic control of the coronary vessels still works normally.</p></div>
-      <div class="cprof r"><p class="who">Respiratory therapy</p><p class="means">The lung uses local control to match blood flow to ventilation.</p><p class="eg"><b>Example:</b> Low oxygen in one region narrows the vessels there, pushing blood toward regions that are actually being ventilated.</p></div>
+      <div class="cprof n"><p class="who">Nursing</p><p class="means">Knowing whether the response is happening in one spot or across the whole body tells you what to expect when you do something about it.</p><p class="eg"><b>Example:</b> Warming one limb changes blood flow in that limb without changing the patient's core temperature.</p></div>
+      <div class="cprof x"><p class="who">Radiologic technology</p><p class="means">Contrast only lights up tissue that is actually getting blood. So the bright areas are a picture of which local vessels are open.</p><p class="eg"><b>Example:</b> A tumor lights up because its own vessels are dilated and leaky, a purely local change. Nothing whole-body happened. The bright spot is local blood flow made visible.</p></div>
+      <div class="cprof m"><p class="who">Medicine</p><p class="means">Local control does not need nerves or hormones, so it keeps working even when the long distance systems have failed.</p><p class="eg"><b>Example:</b> In a transplanted heart the nerves are cut, and local metabolic control of the coronary vessels still works normally.</p></div>
+      <div class="cprof r"><p class="who">Respiratory therapy</p><p class="means">The lung sends blood to the parts that are getting air, and it does that locally, with no instruction from the brain.</p><p class="eg"><b>Example:</b> Low oxygen in one region narrows the vessels there, pushing blood toward regions that are actually being ventilated.</p></div>
     </div>
   </div>
 </div>
 
 <h2>The reflex <span class="hl">loop</span></h2>
-<figure><svg class="fig" viewBox="0 0 1040 194" role="img" aria-labeledby="figT5 figD5">
+<figure><svg class="fig" viewBox="0 0 1040 194" role="img" aria-labelledby="figT5 figD5">
 <title id="figT5">The seven steps of a reflex control pathway</title><desc id="figD5">A left to right chain: stimulus, sensor, afferent path, integrating center, efferent path, effector, response. A dashed arrow returns from the response to the sensor, labeled negative feedback.</desc>
 <rect width="1040" height="194" fill="#ffffff"/>
 <defs><marker id="ah5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#8B3A2E"/></marker><marker id="ahm5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#4F576A"/></marker></defs>
@@ -728,10 +760,10 @@ body.present .slide.clinopen .cprof{padding:18px 20px}
     <span>What this means in the clinic</span><span class="chev" aria-hidden="true">&#9656;</span></button>
   <div class="clin-body" id="clin16" hidden>
     <div class="clin-grid">
-      <div class="cprof n"><p class="who">Nursing</p><p class="means">Naming the broken box tells you what to watch instead of the sign that will never come.</p><p class="eg"><b>Example:</b> In a patient on a beta blocker, do not wait for a rising heart rate to tell you they are bleeding. Watch the other signs.</p></div>
-      <div class="cprof x"><p class="who">Radiologic technology</p><p class="means">Reactions on the table sort themselves by which pathway is firing, and the two most common ones look nothing alike.</p><p class="eg"><b>Example:</b> A patient who goes pale, sweaty and slow-pulsed after an injection is a vagal reaction: the efferent nerve output dropped the heart rate. Anaphylaxis drives the heart rate up instead. Same table, opposite pathways, opposite responses from you.</p></div>
-      <div class="cprof m"><p class="who">Medicine</p><p class="means">The seven boxes work as a differential. Whichever box is broken produces a different picture.</p><p class="eg"><b>Example:</b> A patient who cannot raise their heart rate while bleeding may have an intact sensor and a blocked efferent path, which is exactly what a beta blocker does.</p></div>
-      <div class="cprof r"><p class="who">Respiratory therapy</p><p class="means">Chemoreceptors are the sensor for your entire specialty.</p><p class="eg"><b>Example:</b> If the sensor is blunted, the drive to breathe falls even though the stimulus telling it to rise is still there.</p></div>
+      <div class="cprof n"><p class="who">Nursing</p><p class="means">Name which part of the loop is broken and you know which sign to watch for, and which sign is never going to show up.</p><p class="eg"><b>Example:</b> In a patient on a beta blocker, do not wait for a rising heart rate to tell you they are bleeding. Watch the other signs.</p></div>
+      <div class="cprof x"><p class="who">Radiologic technology</p><p class="means">Reactions on the table fall into two groups depending on which pathway is firing, and the two look nothing alike.</p><p class="eg"><b>Example:</b> A patient who goes pale, sweaty and slow-pulsed after an injection is a vagal reaction: the efferent nerve output dropped the heart rate. Anaphylaxis drives the heart rate up instead. Same table, opposite pathways, opposite responses from you.</p></div>
+      <div class="cprof m"><p class="who">Medicine</p><p class="means">The seven boxes give you a list of suspects. Each broken box produces its own picture.</p><p class="eg"><b>Example:</b> A patient who cannot raise their heart rate while bleeding may have an intact sensor and a blocked efferent path, which is exactly what a beta blocker does.</p></div>
+      <div class="cprof r"><p class="who">Respiratory therapy</p><p class="means">Nearly everything you do starts with a chemoreceptor noticing something. That is the sensor box of the loop.</p><p class="eg"><b>Example:</b> If the sensor is blunted, the drive to breathe falls even though the stimulus telling it to rise is still there.</p></div>
     </div>
   </div>
 </div>
@@ -745,7 +777,7 @@ body.present .slide.clinopen .cprof{padding:18px 20px}
   <li>It cannot prevent the initial change, only correct it, which is why regulated variables oscillate.</li>
 </ul>
 
-<figure style="margin-top:14px"><svg class="fig" viewBox="0 0 1040 194" role="img" aria-labeledby="figT6 figD6">
+<figure style="margin-top:14px"><svg class="fig" viewBox="0 0 1040 194" role="img" aria-labelledby="figT6 figD6">
 <title id="figT6">Thermoregulation as a worked negative feedback loop</title><desc id="figD6">Core temperature falls in a cold room, thermoreceptors detect it, the hypothalamus compares it with the set point near 37 C (98.6 F), sympathetic and motor output constrict vessels and start shivering, heat production rises and heat loss falls, and core temperature returns toward the set point. A dashed arrow returns from the last step to the receptors.</desc>
 <rect width="1040" height="194" fill="#ffffff"/>
 <defs><marker id="ah6" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#8B3A2E"/></marker><marker id="ahm6" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#4F576A"/></marker></defs>
@@ -788,10 +820,10 @@ body.present .slide.clinopen .cprof{padding:18px 20px}
     <span>What this means in the clinic</span><span class="chev" aria-hidden="true">&#9656;</span></button>
   <div class="clin-body" id="clin17" hidden>
     <div class="clin-grid">
-      <div class="cprof n"><p class="who">Nursing</p><p class="means">A correction in progress looks different from a system that has failed.</p><p class="eg"><b>Example:</b> A brief drop on standing that recovers is the loop working. A drop that stays down is the loop failing.</p></div>
-      <div class="cprof x"><p class="who">Radiologic technology</p><p class="means">Positioning a patient is a live test of this loop, and you run it several times a day.</p><p class="eg"><b>Example:</b> Sitting a patient up from a supine scan, or standing them for an upright film, drops their pressure for a few seconds before the reflex catches it. In an older or dehydrated patient the catch is slow, and that is the moment they go down. It is why you move them in stages and stay with them.</p></div>
-      <div class="cprof m"><p class="who">Medicine</p><p class="means">Negative feedback cannot prevent a change, only correct it, so the variable always moves first.</p><p class="eg"><b>Example:</b> Blood pressure dips on standing before the reflex catches it. The dip is normal. Failing to recover from it is not.</p></div>
-      <div class="cprof r"><p class="who">Respiratory therapy</p><p class="means">Ventilation is a negative feedback response to carbon dioxide.</p><p class="eg"><b>Example:</b> Rising carbon dioxide normally drives ventilation up. If the carbon dioxide is high and ventilation is not rising, the loop is broken somewhere.</p></div>
+      <div class="cprof n"><p class="who">Nursing</p><p class="means">A body that is still fixing the problem looks different from one that has run out of room. Telling those apart is most of assessment.</p><p class="eg"><b>Example:</b> A brief drop on standing that recovers is the loop working. A drop that stays down is the loop failing.</p></div>
+      <div class="cprof x"><p class="who">Radiologic technology</p><p class="means">Every time you sit a patient up or lay them flat you are running this loop live and watching what it does.</p><p class="eg"><b>Example:</b> Sitting a patient up from a supine scan, or standing them for an upright film, drops their pressure for a few seconds before the reflex catches it. In an older or dehydrated patient the catch is slow, and that is the moment they go down. It is why you move them in stages and stay with them.</p></div>
+      <div class="cprof m"><p class="who">Medicine</p><p class="means">Negative feedback cannot stop a change from happening. It can only pull it back. So the value always moves first.</p><p class="eg"><b>Example:</b> Blood pressure dips on standing before the reflex catches it. The dip is normal. Failing to recover from it is not.</p></div>
+      <div class="cprof r"><p class="who">Respiratory therapy</p><p class="means">Breathing harder is the body's negative feedback answer to carbon dioxide going up.</p><p class="eg"><b>Example:</b> Rising carbon dioxide normally drives ventilation up. If the carbon dioxide is high and ventilation is not rising, the loop is broken somewhere.</p></div>
     </div>
   </div>
 </div>
@@ -828,10 +860,10 @@ body.present .slide.clinopen .cprof{padding:18px 20px}
     <span>What this means in the clinic</span><span class="chev" aria-hidden="true">&#9656;</span></button>
   <div class="clin-body" id="clin18" hidden>
     <div class="clin-grid">
-      <div class="cprof n"><p class="who">Nursing</p><p class="means">Cooling a shivering patient means fighting the thermostat rather than resetting it.</p><p class="eg"><b>Example:</b> Shivering generates heat, so external cooling during the rise can drive the temperature higher rather than lower.</p></div>
-      <div class="cprof x"><p class="who">Radiologic technology</p><p class="means">Scanner rooms are held cold for the equipment, and the patient's thermostat responds to that whether you want it to or not.</p><p class="eg"><b>Example:</b> A cold, uncovered patient shivers, and shivering is movement, and movement is motion artifact. The warm blanket is an image quality tool, not just a comfort measure.</p></div>
-      <div class="cprof m"><p class="who">Medicine</p><p class="means">Fever is a raised set point, not a broken thermostat.</p><p class="eg"><b>Example:</b> The patient shivers while their temperature is already climbing, because the body reads its current temperature as too cold against the new target.</p></div>
-      <div class="cprof r"><p class="who">Respiratory therapy</p><p class="means">Chemoreceptor set points can reset over time.</p><p class="eg"><b>Example:</b> In long-standing carbon dioxide retention the body adapts to a higher normal, so the textbook number is no longer that patient's target.</p></div>
+      <div class="cprof n"><p class="who">Nursing</p><p class="means">Cool a patient who is shivering and you are fighting the thermostat instead of turning it down.</p><p class="eg"><b>Example:</b> Shivering generates heat, so external cooling during the rise can drive the temperature higher rather than lower.</p></div>
+      <div class="cprof x"><p class="who">Radiologic technology</p><p class="means">Scanner rooms are kept cold for the machine. The patient's thermostat reacts to that whether you want it to or not.</p><p class="eg"><b>Example:</b> A cold, uncovered patient shivers, and shivering is movement, and movement is motion artifact. The warm blanket is an image quality tool, not just a comfort measure.</p></div>
+      <div class="cprof m"><p class="who">Medicine</p><p class="means">In a fever the thermostat is not broken. It has been turned up, and the body is working hard to reach the new number.</p><p class="eg"><b>Example:</b> The patient shivers while their temperature is already climbing, because the body reads its current temperature as too cold against the new target.</p></div>
+      <div class="cprof r"><p class="who">Respiratory therapy</p><p class="means">If carbon dioxide stays high for long enough, the sensor stops treating it as an emergency and settles on a new normal.</p><p class="eg"><b>Example:</b> In long-standing carbon dioxide retention the body adapts to a higher normal, so the textbook number is no longer that patient's target.</p></div>
     </div>
   </div>
 </div>
@@ -841,7 +873,7 @@ body.present .slide.clinopen .cprof{padding:18px 20px}
 
 <div class="key">
   <p class="tag">Why one flagged value is not an answer</p>
-  <p>If a reference range covers the middle 95 percent of healthy people, then each test flags one healthy person in twenty. Run a twenty-analyte panel on a completely healthy person and the odds are close to even that something comes back flagged. A flagged value is a reason to look further. Your patient file will punish you all term for treating a single number as a diagnosis.</p>
+  <p>If a reference range covers the middle 95 percent of healthy people, then each test flags one healthy person in twenty. Run a twenty-analyte panel on a completely healthy person and the odds are close to even that something comes back flagged. A flagged value is a reason to look further, not an answer. You will meet this again in your patient file: every week you get one more set of numbers for the same person, and the story only shows up across all of them.</p>
 </div>
 
 <div class="clin">
@@ -849,23 +881,157 @@ body.present .slide.clinopen .cprof{padding:18px 20px}
     <span>What this means in the clinic</span><span class="chev" aria-hidden="true">&#9656;</span></button>
   <div class="clin-body" id="clin19" hidden>
     <div class="clin-grid">
-      <div class="cprof n"><p class="who">Nursing</p><p class="means">A trend beats a single value, which is why the previous result matters as much as this one.</p><p class="eg"><b>Example:</b> A creatinine at the top of normal that doubled since yesterday is a bigger problem than one that is mildly high and unchanged.</p></div>
-      <div class="cprof x"><p class="who">Radiologic technology</p><p class="means">You screen against reference ranges before contrast, so you need to know that a flag is not automatically a stop.</p><p class="eg"><b>Example:</b> A creatinine sitting slightly high and unchanged for a year is a different situation from one that doubled this week. Both print with the same flag on the report. Only one of them changes what happens next.</p></div>
-      <div class="cprof m"><p class="who">Medicine</p><p class="means">A range covering the middle 95 percent of healthy people flags one healthy person in twenty on every test.</p><p class="eg"><b>Example:</b> Run a twenty-analyte panel on a completely healthy person and something comes back flagged more often than not.</p></div>
-      <div class="cprof r"><p class="who">Respiratory therapy</p><p class="means">A blood gas is a snapshot of a process that is still moving.</p><p class="eg"><b>Example:</b> The same value on the way up and on the way down mean opposite things about where the patient is heading.</p></div>
+      <div class="cprof n"><p class="who">Nursing</p><p class="means">One number on its own tells you very little. What that number did since last time tells you a lot.</p><p class="eg"><b>Example:</b> A creatinine at the top of normal that doubled since yesterday is a bigger problem than one that is mildly high and unchanged.</p></div>
+      <div class="cprof x"><p class="who">Radiologic technology</p><p class="means">You check lab numbers before giving contrast. A number outside the normal range does not automatically mean stop.</p><p class="eg"><b>Example:</b> A creatinine sitting slightly high and unchanged for a year is a different situation from one that doubled this week. Both print with the same flag on the report. Only one of them changes what happens next.</p></div>
+      <div class="cprof m"><p class="who">Medicine</p><p class="means">Normal ranges are built to cover most healthy people, not every healthy person. So about one healthy person in twenty gets flagged on any given test.</p><p class="eg"><b>Example:</b> Run a twenty-analyte panel on a completely healthy person and something comes back flagged more often than not.</p></div>
+      <div class="cprof r"><p class="who">Respiratory therapy</p><p class="means">A blood gas is one photo of something that is still moving.</p><p class="eg"><b>Example:</b> The same value on the way up and on the way down mean opposite things about where the patient is heading.</p></div>
     </div>
   </div>
 </div>
 
-<h2>Draw it from <span class="hl">memory</span></h2>
-<p class="sub">Six minutes, blank paper, nothing open. This is the note sheet box for this mission.</p>
-<ul class="bul">
-  <li>Draw the seven boxes of a reflex loop and label every arrow, including the feedback arrow.</li>
-  <li>Fill it with thermoregulation, putting the real anatomy in each box.</li>
-  <li>Mark where negative feedback returns and write what it does when it arrives.</li>
-  <li>Break one box of your choosing and write two sentences describing what the patient looks like.</li>
-  <li>Underneath, write the mass balance equation and one sentence on what it says about concentration.</li>
-</ul>
+<h2>What this mission assumes you <span class="hl">already have</span></h2>
+<p class="sub">This is the Unit 1 prerequisite list, and it covers Mission 1 and Mission 2 together. If any line here is shaky, fix it before you work the mission rather than after. Unit 1 has a short self-check for each of the three groups.</p>
+<div class="grid g3 prereq">
+  <div class="card">
+    <p class="eyebrow">Chemistry</p>
+    <ul class="bul">
+      <li>Ions and charge</li>
+      <li>Concentration and gradients</li>
+      <li>Water, polarity and solubility</li>
+      <li>Acids, bases and pH</li>
+      <li>Buffers</li>
+      <li>Proteins and shape</li>
+      <li>ATP and energy</li>
+      <li>Units and simple calculation</li>
+    </ul>
+    <p class="pqlink"><a href="unit-01.html#chem" target="_top">Chemistry self-check, 10 questions</a></p>
+  </div>
+  <div class="card">
+    <p class="eyebrow">Anatomy</p>
+    <ul class="bul">
+      <li>The cell and its parts</li>
+      <li>The four tissue types</li>
+    </ul>
+    <p class="pqnote">This is a physiology course, so anatomy shows up only where you need it to follow a mechanism. Two items is the whole list for Unit 1, and that is not an oversight.</p>
+    <p class="pqlink"><a href="unit-01.html#anat" target="_top">Anatomy self-check, 3 questions</a></p>
+  </div>
+  <div class="card">
+    <p class="eyebrow">Math</p>
+    <ul class="bul">
+      <li>Metric prefixes and unit conversion</li>
+      <li>Counting particles, not molecules</li>
+      <li>Rates, and what per means</li>
+      <li>Reading a graph</li>
+      <li>What a log scale does</li>
+      <li>In minus out</li>
+      <li>Charge, and why mEq is not mM</li>
+      <li>Sanity checking an answer</li>
+    </ul>
+    <p class="pqlink"><a href="unit-01.html#math" target="_top">Math self-check, 9 questions</a></p>
+  </div>
+</div>
+
+<h2>Close the page and <span class="hl">produce it</span></h2>
+<p class="sub">These are the 12 competencies for this mission, straight off the study guide, with the two prompts that go with each one. Pick one prompt per competency. Blank paper, nothing open.</p>
+<p class="sub"><a href="competency-brain-dump.html" target="_top">Read the full instructions first</a>, including how the first pass before the lecture differs from the second pass after it.</p>
+<div class="cmpwrap"><div class="grid g2">
+  <section class="cmp">
+    <p class="cn" aria-hidden="true">01</p>
+    <h4>Physiology and levels of function</h4>
+    <p class="ccan">Define physiology and place a given process at the correct level of organization from molecule to organism, then state the level at which that process is best explained.</p>
+    <p class="pick">Do one of the two. Head your paper with the number.</p>
+    <div class="pr a"><p class="pl">1-1</p><p>Draw a ladder with the levels of organization on it, from molecule at the bottom to whole organism at the top. Take one thing that happens in the body, write it beside the level where you would see it happening, then draw an arrow down to the level that actually explains it.</p></div>
+    <div class="pr b"><p class="pl">1-2</p><p>Draw one thing you have seen a person do or experience. Around your drawing, sketch what is happening at three different levels for that same event and label each level. Circle the level a physiologist would use to explain it and write one line saying why that level and not the others.</p></div>
+  </section>
+  <section class="cmp">
+    <p class="cn" aria-hidden="true">02</p>
+    <h4>Structure and function relationship</h4>
+    <p class="ccan">Predict how a change in the structure of a molecule, cell, tissue, or organ alters its function, using examples from two different organ systems.</p>
+    <p class="pick">Do one of the two. Head your paper with the number.</p>
+    <div class="pr a"><p class="pl">2-1</p><p>Pick a structure from one organ system and draw it. Then draw it again with one thing about its structure changed. Beside the second drawing write what its function can no longer do, and why that follows from the change rather than being a separate problem.</p></div>
+    <div class="pr b"><p class="pl">2-2</p><p>Draw two structures from two different organ systems that are shaped the way they are for the same reason. Label the shared reason. Then for each one write what would go wrong if that feature were taken away.</p></div>
+  </section>
+  <section class="cmp">
+    <p class="cn" aria-hidden="true">03</p>
+    <h4>Homeostasis defined</h4>
+    <p class="ccan">Define homeostasis, regulated variable, and setpoint, and distinguish homeostasis from chemical equilibrium and from steady state.</p>
+    <p class="pick">Do one of the two. Head your paper with the number.</p>
+    <div class="pr a"><p class="pl">3-1</p><p>Draw three small sketches side by side: chemical equilibrium, steady state, and homeostasis. Label what is the same in all three and what is different. Under each, write one example from the body or from ordinary life.</p></div>
+    <div class="pr b"><p class="pl">3-2</p><p>Draw a regulated variable being held near its setpoint over time, with the setpoint marked. Show what the line looks like when the system is working. Then write what a flat reading does and does not tell you about what is happening underneath it.</p></div>
+  </section>
+  <section class="cmp">
+    <p class="cn" aria-hidden="true">04</p>
+    <h4>Feedback loop components</h4>
+    <p class="ccan">Diagram a negative feedback loop labeling stimulus, sensor, afferent path, integrating center, efferent path, effector, and response, and trace body temperature or blood glucose through every step.</p>
+    <p class="pick">Do one of the two. Head your paper with the number.</p>
+    <div class="pr a"><p class="pl">4-1</p><p>Draw a negative feedback loop with every part labelled: stimulus, sensor, afferent path, integrating centre, efferent path, effector, response. Then run body temperature through it, writing what each part actually is in that example.</p></div>
+    <div class="pr b"><p class="pl">4-2</p><p>Draw the negative feedback loop again from memory, then run blood glucose through it. Now show two or three places the loop could break, and beside each one predict what you would see in the person if it broke there.</p></div>
+  </section>
+  <section class="cmp">
+    <p class="cn" aria-hidden="true">05</p>
+    <h4>Negative and positive feedback</h4>
+    <p class="ccan">Distinguish negative from positive feedback by the direction of the response and give a physiological example of each, explaining why a positive feedback loop needs an outside event to end it.</p>
+    <p class="pick">Do one of the two. Head your paper with the number.</p>
+    <div class="pr a"><p class="pl">5-1</p><p>Draw a negative feedback loop and a positive feedback loop side by side. Mark the difference with an arrow on each. Under the positive one, write a real example from the body and then write what ends it, because a positive loop that nothing ends does not stop.</p></div>
+    <div class="pr b"><p class="pl">5-2</p><p>Write down three positive feedback examples from the body. For each one, draw what is amplifying and write the outside event that shuts it off. Then write one sentence on why the ending is the part people leave out.</p></div>
+  </section>
+  <section class="cmp">
+    <p class="cn" aria-hidden="true">06</p>
+    <h4>Feedforward control and acclimatization</h4>
+    <p class="ccan">Explain anticipatory feedforward control and acclimatization and identify which one is operating in a given scenario.</p>
+    <p class="pick">Do one of the two. Head your paper with the number.</p>
+    <div class="pr a"><p class="pl">6-1</p><p>Draw a timeline of something happening to the body, and mark where a feedforward response would sit compared with where a feedback response would sit. Write what feedforward is anticipating and what it costs if the prediction is wrong.</p></div>
+    <div class="pr b"><p class="pl">6-2</p><p>Write two short scenarios, one where feedforward control is operating and one where acclimatization is. Draw what is happening in each and label which is which, then write the one question you would ask to tell them apart.</p></div>
+  </section>
+  <section class="cmp">
+    <p class="cn" aria-hidden="true">07</p>
+    <h4>Local and reflex control pathways</h4>
+    <p class="ccan">Distinguish a local control pathway from a long distance reflex pathway and classify a given response as one or the other.</p>
+    <p class="pick">Do one of the two. Head your paper with the number.</p>
+    <div class="pr a"><p class="pl">7-1</p><p>Draw a local control pathway and a long distance reflex pathway on the same page. Label what does the sensing and what does the responding in each, and mark how far the signal travels.</p></div>
+    <div class="pr b"><p class="pl">7-2</p><p>Write down three responses the body makes. Draw each one, label it local or reflex, and write the feature of your drawing that decided it. If one is hard to classify, say what makes it hard.</p></div>
+  </section>
+  <section class="cmp">
+    <p class="cn" aria-hidden="true">08</p>
+    <h4>Mass balance</h4>
+    <p class="ccan">Apply the mass balance equation to a solute or to body water and calculate the intake, production, and output combination that holds the amount in the body constant.</p>
+    <p class="pick">Do one of the two. Head your paper with the number.</p>
+    <div class="pr a"><p class="pl">8-1</p><p>Write the mass balance equation from memory. Then draw a person with arrows for everything coming in and everything going out for water in one day. Put numbers on your arrows that balance, and mark what would change first if one arrow got bigger.</p></div>
+    <div class="pr b"><p class="pl">8-2</p><p>Take a solute and draw the intake, production and output that would hold the amount in the body constant. Then change one of the three and show what has to happen to the others to keep the total steady. Write what happens if nothing else changes.</p></div>
+  </section>
+  <section class="cmp">
+    <p class="cn" aria-hidden="true">09</p>
+    <h4>Units and unit conversion</h4>
+    <p class="ccan">Convert among the units used in physiology including molarity, osmolarity, milliequivalents, mmHg, liters per minute, and percent solutions.</p>
+    <p class="pick">Do one of the two. Head your paper with the number.</p>
+    <div class="pr a"><p class="pl">9-1</p><p>Draw a conversion map. Put each unit this course uses in its own box, then draw arrows between the ones you can convert between and write the conversion along each arrow. Mark the two you keep getting wrong.</p></div>
+    <div class="pr b"><p class="pl">9-2</p><p>Work three conversions you find awkward, showing every step with the units carried through. Beside each answer, draw the place in the body where you would meet that number, so the number has somewhere to live.</p></div>
+  </section>
+  <section class="cmp">
+    <p class="cn" aria-hidden="true">10</p>
+    <h4>Graphing and data interpretation</h4>
+    <p class="ccan">Construct a labeled graph with the independent variable on the x axis, and read slope, direction, and trend from a physiological data set.</p>
+    <p class="pick">Do one of the two. Head your paper with the number.</p>
+    <div class="pr a"><p class="pl">10-1</p><p>Draw a set of axes and label them properly, with the independent variable in the right place. Sketch a physiological relationship you already know. Then mark on it where the slope is steep, where it is flat, and write what each of those means about the body.</p></div>
+    <div class="pr b"><p class="pl">10-2</p><p>Sketch three different graph shapes: a straight line, a curve that flattens, and a curve that rises then falls. Beside each write what that shape is telling you, and give a physiological example of each.</p></div>
+  </section>
+  <section class="cmp">
+    <p class="cn" aria-hidden="true">11</p>
+    <h4>Experimental design and controls</h4>
+    <p class="ccan">Identify the hypothesis, independent variable, dependent variable, and control condition in a physiology experiment and state what the control rules out.</p>
+    <p class="pick">Do one of the two. Head your paper with the number.</p>
+    <div class="pr a"><p class="pl">11-1</p><p>Draw a small physiology experiment as a diagram: what you change, what you measure, and what you hold still. Label the hypothesis, the independent variable, the dependent variable and the control condition on the drawing. Then write what your control rules out, in a full sentence, because that is the part that gets marked.</p></div>
+    <div class="pr b"><p class="pl">11-2</p><p>Draw an experiment with something wrong in its design. Mark on the drawing what is missing or confounded. Then draw the fixed version beside it and write what the fix now lets you conclude that you could not conclude before.</p></div>
+  </section>
+  <section class="cmp">
+    <p class="cn" aria-hidden="true">12</p>
+    <h4>Measurement error and variability</h4>
+    <p class="ccan">Distinguish random from systematic error and explain why physiological measurements are repeated and averaged.</p>
+    <p class="pick">Do one of the two. Head your paper with the number.</p>
+    <div class="pr a"><p class="pl">12-1</p><p>Draw a target with shots on it showing random error, then another showing systematic error, then another showing both. Label each. Under them write how you would detect each kind in a set of real measurements.</p></div>
+    <div class="pr b"><p class="pl">12-2</p><p>Draw the same measurement taken five times, plotted as five dots. Draw it again for a measurement with a systematic error in it, so the dots sit together but in the wrong place. Label which is which, and mark on each drawing whether repeating and averaging would fix it.</p></div>
+  </section>
+</div></div>
 
 <p class="page-foot">Dr. Sharilyn Rennie &middot; BIOL 005 Human Physiology &middot; Mission 1, Maintain Control. Values given are typical teaching figures, not laboratory reference ranges.</p>
 </main>
@@ -1334,6 +1500,10 @@ var PAGE_ID='biol005-m01-notes';
   });
 
   document.querySelectorAll('.fig').forEach(function(f){
+    /* A map whose branches are themselves buttons is a group, not a single
+       image. Giving it a tab stop of its own nests one control inside another,
+       which is a real problem for anyone moving by keyboard. */
+    if (f.querySelector('[tabindex],button,a')) { f.setAttribute('role','group'); return; }
     f.setAttribute('tabindex','0'); f.setAttribute('role','img');
     function open(e){
       if(document.body.classList.contains('wb-on'))return;
@@ -1373,5 +1543,6 @@ var PAGE_ID='biol005-m01-notes';
 
 })();
 </script>
+<script src="bio005-nav.js" defer></script>
 </body>
 </html>

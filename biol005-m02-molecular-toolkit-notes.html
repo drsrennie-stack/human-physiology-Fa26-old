@@ -268,12 +268,46 @@ body.present .slide.clinopen .cprof{padding:18px 20px}
 .lightbox .lb-close{position:absolute;top:16px;right:18px;background:var(--terra);color:#fff;border:0;
   border-radius:var(--r-btn);padding:12px 18px;font-weight:800;font-size:11px;letter-spacing:.2em;
   text-transform:uppercase;cursor:pointer}
+
+/* ---------- competency close-out, shared by the notes and the decks ---------- */
+.cmpwrap{margin:10px 0 0}
+.cmp{background:#fff;border:.5px solid var(--navy-15);border-radius:var(--r-card);padding:16px 18px 18px}
+.cmp .cn{font-family:'Open Sans','Plus Jakarta Sans',sans-serif;font-weight:800;font-size:30px;
+  line-height:1;letter-spacing:-.03em;color:var(--terra);margin:0 0 6px}
+.cmp h4{margin:0 0 4px;font-size:16.5px;font-weight:800;letter-spacing:-.01em;color:var(--navy)}
+.cmp .ccan{margin:0;font-size:14px;color:var(--navy-72)}
+.cmp .pick{margin:13px 0 0;font-size:12.5px;font-weight:700;color:var(--navy-72)}
+.pr{position:relative;border-radius:8px;padding:13px 15px 12px;margin:14px 0 0}
+.pr p{margin:0;font-size:14.5px;line-height:1.5}
+.pr.a{border:1.6px solid var(--terra)}
+.pr.b{border:1.6px solid var(--navy)}
+.pr .pl{position:absolute;top:-10px;left:13px;background:#fff;padding:0 7px;
+  font-family:'Open Sans','Plus Jakarta Sans',sans-serif;font-weight:800;font-size:11px;
+  letter-spacing:.16em}
+.pr.a .pl{color:var(--terra)}
+.pr.b .pl{color:var(--navy)}
+.cmplist{list-style:none;margin:10px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:8px 18px}
+.cmplist li{display:grid;grid-template-columns:32px 1fr;gap:10px;align-items:baseline;
+  padding:7px 0;border-top:.5px solid var(--navy-15);font-size:15px}
+.cmplist li .k{font-family:'Open Sans','Plus Jakarta Sans',sans-serif;font-weight:800;
+  color:var(--terra);font-variant-numeric:tabular-nums}
+@media(max-width:760px){.cmplist{grid-template-columns:1fr}.cmpwrap .grid{grid-template-columns:1fr}}
+@media print{.cmp,.pr{break-inside:avoid;page-break-inside:avoid}}
+
+.prereq .card{padding:18px 20px}
+.prereq .eyebrow{margin-bottom:8px}
+.prereq ul.bul{margin-bottom:6px}
+.prereq ul.bul>li{padding:3px 0 3px 18px;font-size:14.5px}
+.prereq ul.bul>li::before{top:12px;width:5px;height:5px}
+.prereq .pqnote{font-size:13.5px;color:var(--navy-72);margin:10px 0 0}
+.prereq .pqlink{margin:12px 0 0;font-size:13.5px;font-weight:700}
+@media(max-width:860px){.prereq{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to the content</a>
 <header class="site-header">
-  <a class="site-logo" href="index.html" target="_top" aria-label="BIOL 005 Human Physiology, course home">
+  <a class="site-logo" href="welcome.html" target="_top" aria-label="BIOL 005 Human Physiology, course home">
     <svg viewBox="40 10 125 148" aria-hidden="true" focusable="false"><g transform="translate(0,18)"><g transform="translate(60,0) rotate(8 0 130)"><circle cx="0" cy="20" r="10" fill="#0B1530"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#0B1530"/></g><g transform="translate(100,0)"><circle cx="0" cy="10" r="11" fill="#8B3A2E"/><path d="M 0,22 C -11,22 -17,26 -17,34 C -17,52 -14,70 -12,86 C -11,108 -13,122 -15,132 L 15,132 C 13,122 11,108 12,86 C 14,70 17,52 17,34 C 17,26 11,22 0,22 Z" fill="#8B3A2E"/></g><g transform="translate(140,0) rotate(-8 0 130)"><circle cx="0" cy="20" r="10" fill="#0B1530"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#0B1530"/></g></g></svg>
     <span><span class="logo-title">Human <span class="logo-accent">Physiology</span></span><span class="logo-sub">BIOL 005 &middot; Mission 2</span></span>
   </a>
@@ -285,9 +319,7 @@ body.present .slide.clinopen .cprof{padding:18px 20px}
   <h1>Build the Molecular <span class="hl">Toolkit</span></h1>
   <p class="lede">Every box in the control loop you drew last time was carried out by a molecule. This is the toolkit, and the rule that runs through all of it is that shape decides function. Silverthorn chapter 2.</p>
   <div class="metarow">
-    <span class="pill">Competencies 1, 2, 3</span>
-    <span class="pill navy">Must teach</span>
-    <span class="pill ghost">Note sheet: one box per section</span>
+    <span class="pill">Competencies 1 to 4 of week 2</span>
   </div>
 </div>
 
@@ -318,10 +350,10 @@ body.present .slide.clinopen .cprof{padding:18px 20px}
     <span>What this means in the clinic</span><span class="chev" aria-hidden="true">&#9656;</span></button>
   <div class="clin-body" id="clin9" hidden>
     <div class="clin-grid">
-      <div class="cprof n"><p class="who">Nursing</p><p class="means">Potassium sits at the top of the list because the heart's excitability depends on it.</p><p class="eg"><b>Example:</b> Potassium is replaced with monitoring and never pushed fast, because the margin between correcting it and causing an arrhythmia is small.</p></div>
-      <div class="cprof x"><p class="who">Radiologic technology</p><p class="means">Ionizing radiation is named for exactly this. The beam strips electrons off atoms in tissue and leaves charged particles behind.</p><p class="eg"><b>Example:</b> Most of that happens in water, because water is most of the tissue. The reactive fragments it makes are what go on to damage DNA, and that chain is the entire reason dose limits, shielding and time-distance-shielding exist.</p></div>
-      <div class="cprof m"><p class="who">Medicine</p><p class="means">A charged particle cannot cross a membrane on its own, so every ion that moves needs a protein to move through.</p><p class="eg"><b>Example:</b> That is why a drug that blocks one channel can change the behavior of an entire organ.</p></div>
-      <div class="cprof r"><p class="who">Respiratory therapy</p><p class="means">Electrolytes set muscle strength, and breathing is muscle work.</p><p class="eg"><b>Example:</b> Low potassium or low phosphate weakens the diaphragm, which shows up as a failed weaning trial rather than as breathlessness.</p></div>
+      <div class="cprof n"><p class="who">Nursing</p><p class="means">Potassium matters more than the other electrolytes because the heart's ability to fire depends on it.</p><p class="eg"><b>Example:</b> Potassium is replaced with monitoring and never pushed fast, because the margin between correcting it and causing an arrhythmia is small.</p></div>
+      <div class="cprof x"><p class="who">Radiologic technology</p><p class="means">Ionizing radiation is named for exactly this. The beam knocks electrons off atoms in tissue and leaves charged particles behind.</p><p class="eg"><b>Example:</b> Most of that happens in water, because water is most of the tissue. The reactive fragments it makes are what go on to damage DNA, and that chain is the entire reason dose limits, shielding and time-distance-shielding exist.</p></div>
+      <div class="cprof m"><p class="who">Medicine</p><p class="means">A charged particle cannot get through a membrane by itself. Every ion that moves needs a protein to go through.</p><p class="eg"><b>Example:</b> That is why a drug that blocks one channel can change the behavior of an entire organ.</p></div>
+      <div class="cprof r"><p class="who">Respiratory therapy</p><p class="means">Electrolytes decide how hard a muscle can pull, and breathing is muscle work.</p><p class="eg"><b>Example:</b> Low potassium or low phosphate weakens the diaphragm, which shows up as a failed weaning trial rather than as breathlessness.</p></div>
     </div>
   </div>
 </div>
@@ -339,10 +371,10 @@ body.present .slide.clinopen .cprof{padding:18px 20px}
     <span>What this means in the clinic</span><span class="chev" aria-hidden="true">&#9656;</span></button>
   <div class="clin-body" id="clin10" hidden>
     <div class="clin-grid">
-      <div class="cprof n"><p class="who">Nursing</p><p class="means">Solubility explains why some drugs need a particular fluid, filter or line.</p><p class="eg"><b>Example:</b> Oily preparations separate out or stick to tubing, so the route matters as much as the dose.</p></div>
-      <div class="cprof x"><p class="who">Radiologic technology</p><p class="means">MRI does not image tissue. It images hydrogen nuclei, and almost all of them are sitting in water and fat.</p><p class="eg"><b>Example:</b> Two soft tissues look different on MRI because they hold different amounts of water and fat. That is why MRI separates soft tissues an X-ray cannot tell apart, and why a dense bone that dominates a radiograph can be nearly silent on MRI.</p></div>
-      <div class="cprof m"><p class="who">Medicine</p><p class="means">Whether a molecule is water loving or oily predicts where in the body it can go.</p><p class="eg"><b>Example:</b> A fat soluble drug crosses into the brain readily. A water soluble one largely does not, which is why two similar drugs can have very different effects on alertness.</p></div>
-      <div class="cprof r"><p class="who">Respiratory therapy</p><p class="means">An aerosolized drug has to survive as droplets and reach the small airways.</p><p class="eg"><b>Example:</b> Particle size and humidity change how much of a nebulized dose gets past the upper airway at all.</p></div>
+      <div class="cprof n"><p class="who">Nursing</p><p class="means">Whether a drug dissolves is why some of them need a certain fluid, a filter, or a line of their own.</p><p class="eg"><b>Example:</b> Oily preparations separate out or stick to tubing, so the route matters as much as the dose.</p></div>
+      <div class="cprof x"><p class="who">Radiologic technology</p><p class="means">MRI is not really imaging tissue. It is imaging hydrogen, and nearly all the hydrogen in a person is sitting in water and fat.</p><p class="eg"><b>Example:</b> Two soft tissues look different on MRI because they hold different amounts of water and fat. That is why MRI separates soft tissues an X-ray cannot tell apart, and why a dense bone that dominates a radiograph can be nearly silent on MRI.</p></div>
+      <div class="cprof m"><p class="who">Medicine</p><p class="means">Whether a molecule likes water or likes oil tells you where in the body it can get to.</p><p class="eg"><b>Example:</b> A fat soluble drug crosses into the brain readily. A water soluble one largely does not, which is why two similar drugs can have very different effects on alertness.</p></div>
+      <div class="cprof r"><p class="who">Respiratory therapy</p><p class="means">An inhaled drug has to hold together as droplets the whole way down and still reach the small airways.</p><p class="eg"><b>Example:</b> Particle size and humidity change how much of a nebulized dose gets past the upper airway at all.</p></div>
     </div>
   </div>
 </div>
@@ -428,10 +460,10 @@ body.present .slide.clinopen .cprof{padding:18px 20px}
     <span>What this means in the clinic</span><span class="chev" aria-hidden="true">&#9656;</span></button>
   <div class="clin-body" id="clin11" hidden>
     <div class="clin-grid">
-      <div class="cprof n"><p class="who">Nursing</p><p class="means">The earliest sign of an acid problem is often behavior rather than a number.</p><p class="eg"><b>Example:</b> New confusion or agitation can arrive before anyone has drawn a gas.</p></div>
-      <div class="cprof x"><p class="who">Radiologic technology</p><p class="means">Anything you inject enters a body that holds pH in a very narrow window, so contrast agents are formulated to match it.</p><p class="eg"><b>Example:</b> Older high-osmolar agents sat further from the body's own chemistry, and patients felt it as heat, pain and far more reactions. Modern low-osmolar agents are tolerated better because the chemistry is closer to what the blood already is.</p></div>
-      <div class="cprof m"><p class="who">Medicine</p><p class="means">A pH change that looks small is not small, because the scale is logarithmic.</p><p class="eg"><b>Example:</b> Falling from 7.4 to 7.1 roughly doubles the hydrogen ion concentration, which is enough to change protein shape throughout the body.</p></div>
-      <div class="cprof r"><p class="who">Respiratory therapy</p><p class="means">Interpreting acid base status is the core skill of the specialty.</p><p class="eg"><b>Example:</b> Ventilation is the fast lever on pH, so a change in minute ventilation moves the pH within minutes, not hours.</p></div>
+      <div class="cprof n"><p class="who">Nursing</p><p class="means">The first sign of an acid problem is often how the person is acting, not a number on a report.</p><p class="eg"><b>Example:</b> New confusion or agitation can arrive before anyone has drawn a gas.</p></div>
+      <div class="cprof x"><p class="who">Radiologic technology</p><p class="means">The body holds its pH in a very narrow window, so anything you inject has to be mixed to match it.</p><p class="eg"><b>Example:</b> Older high-osmolar agents sat further from the body's own chemistry, and patients felt it as heat, pain and far more reactions. Modern low-osmolar agents are tolerated better because the chemistry is closer to what the blood already is.</p></div>
+      <div class="cprof m"><p class="who">Medicine</p><p class="means">A pH change that looks tiny is not tiny. Every whole step on the scale is ten times more acid.</p><p class="eg"><b>Example:</b> Falling from 7.4 to 7.1 roughly doubles the hydrogen ion concentration, which is enough to change protein shape throughout the body.</p></div>
+      <div class="cprof r"><p class="who">Respiratory therapy</p><p class="means">Reading acid and base status is the main skill of the entire specialty.</p><p class="eg"><b>Example:</b> Ventilation is the fast lever on pH, so a change in minute ventilation moves the pH within minutes, not hours.</p></div>
     </div>
   </div>
 </div>
@@ -511,7 +543,7 @@ body.present .slide.clinopen .cprof{padding:18px 20px}
 <dl class="terms"><div class="term"><dt>Carbohydrate</dt><dd>Built from C, H and O in roughly a 1:2:1 ratio. Fast fuel, and a labeling system on cell surfaces.</dd></div><div class="term"><dt>Monosaccharide</dt><dd>A single sugar unit. Glucose, fructose, galactose.</dd></div><div class="term"><dt>Polysaccharide</dt><dd>Many sugar units joined. Glycogen is the animal storage form, stored in liver and muscle.</dd></div><div class="term"><dt>Lipid</dt><dd>Largely carbon and hydrogen, so nonpolar and not water soluble.</dd></div><div class="term"><dt>Triglyceride</dt><dd>Three fatty acids on a glycerol backbone. The dense energy store.</dd></div><div class="term"><dt>Phospholipid</dt><dd>Two fatty acid tails plus a phosphate head. Amphipathic, and therefore the basis of every membrane.</dd></div><div class="term"><dt>Steroid</dt><dd>A lipid built on four linked carbon rings, derived from cholesterol. Cortisol, aldosterone, the sex hormones.</dd></div><div class="term"><dt>Nucleotide</dt><dd>A sugar, a base and one or more phosphate groups. ATP, cAMP, NAD, FAD, and the units of DNA and RNA.</dd></div></dl>
 
 <h2>Proteins: shape decides <span class="hl">everything</span></h2>
-<figure><svg class="fig" viewBox="0 0 900 300" role="img" aria-labeledby="figT3 figD3">
+<figure><svg class="fig" viewBox="0 0 900 300" role="img" aria-labelledby="figT3 figD3">
 <title id="figT3">The four levels of protein structure</title><desc id="figD3">Four levels stacked: primary structure is the amino acid sequence, secondary is local folding into helices and sheets, tertiary is the full three-dimensional shape of one chain, and quaternary is several chains assembled into one functional protein.</desc>
 <rect width="900" height="300" fill="#ffffff"/>
 <rect x="300" y="26" width="300" height="52" rx="8" fill="#ffffff" stroke="#8B3A2E" stroke-width="1.5"/>
@@ -622,16 +654,16 @@ body.present .slide.clinopen .cprof{padding:18px 20px}
     <span>What this means in the clinic</span><span class="chev" aria-hidden="true">&#9656;</span></button>
   <div class="clin-body" id="clin12" hidden>
     <div class="clin-grid">
-      <div class="cprof n"><p class="who">Nursing</p><p class="means">Temperature control is protein protection.</p><p class="eg"><b>Example:</b> Above roughly 40 C (104 F) the concern shifts from comfort to enzymes losing their shape.</p></div>
-      <div class="cprof x"><p class="who">Radiologic technology</p><p class="means">MRI puts radiofrequency energy into the patient, and that energy turns into heat in tissue.</p><p class="eg"><b>Example:</b> The SAR limit the scanner enforces on a sequence exists for this reason. It is a cap on how much the patient is allowed to warm, because tissue proteins have a temperature they will not survive.</p></div>
-      <div class="cprof m"><p class="who">Medicine</p><p class="means">Losing the folded shape means losing the function, and often it does not come back.</p><p class="eg"><b>Example:</b> That is why a very high body temperature is an emergency in its own right and not just an uncomfortable symptom.</p></div>
-      <div class="cprof r"><p class="who">Respiratory therapy</p><p class="means">Heated humidifiers are limited on purpose.</p><p class="eg"><b>Example:</b> Delivered gas is warmed to body temperature and no higher, because airway proteins denature the same way any other protein does.</p></div>
+      <div class="cprof n"><p class="who">Nursing</p><p class="means">Keeping a patient's temperature in range is really about protecting their proteins.</p><p class="eg"><b>Example:</b> Above roughly 40 C (104 F) the concern shifts from comfort to enzymes losing their shape.</p></div>
+      <div class="cprof x"><p class="who">Radiologic technology</p><p class="means">MRI puts radio energy into the patient, and that energy turns into heat in the tissue.</p><p class="eg"><b>Example:</b> The SAR limit the scanner enforces on a sequence exists for this reason. It is a cap on how much the patient is allowed to warm, because tissue proteins have a temperature they will not survive.</p></div>
+      <div class="cprof m"><p class="who">Medicine</p><p class="means">When a protein loses its folded shape it loses its job, and often it does not get that job back.</p><p class="eg"><b>Example:</b> That is why a very high body temperature is an emergency in its own right and not just an uncomfortable symptom.</p></div>
+      <div class="cprof r"><p class="who">Respiratory therapy</p><p class="means">Heated humidifiers have a ceiling on purpose, because too hot burns the tissue you are trying to help.</p><p class="eg"><b>Example:</b> Delivered gas is warmed to body temperature and no higher, because airway proteins denature the same way any other protein does.</p></div>
     </div>
   </div>
 </div>
 
 <h2>Binding, the mechanism under <span class="hl">all of it</span></h2>
-<figure><svg class="fig" viewBox="0 0 1040 127" role="img" aria-labeledby="figT4 figD4">
+<figure><svg class="fig" viewBox="0 0 1040 127" role="img" aria-labelledby="figT4 figD4">
 <title id="figT4">The five steps of protein binding</title><desc id="figD4">A left to right chain: a ligand approaches, fits a binding site whose shape and charge match, forms a complex held by weak reversible bonds, causes the protein to change shape and carry out its function, then dissociates and leaves the site free.</desc>
 <rect width="1040" height="127" fill="#ffffff"/>
 <defs><marker id="ah4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#8B3A2E"/></marker><marker id="ahm4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#4F576A"/></marker></defs>
@@ -698,16 +730,16 @@ body.present .slide.clinopen .cprof{padding:18px 20px}
     <span>What this means in the clinic</span><span class="chev" aria-hidden="true">&#9656;</span></button>
   <div class="clin-body" id="clin13" hidden>
     <div class="clin-grid">
-      <div class="cprof n"><p class="who">Nursing</p><p class="means">A saturation curve is why the same size change means different things at different points on it.</p><p class="eg"><b>Example:</b> A drop from 99 to 95 percent is small. The same four point drop from 90 to 86 is not.</p></div>
-      <div class="cprof x"><p class="who">Radiologic technology</p><p class="means">Detectors saturate the same way proteins do. Past a point, more of the input buys none of the output.</p><p class="eg"><b>Example:</b> An overexposed region of a digital image is saturated: every pixel there is already reading maximum, so the detail is gone and more dose will not bring it back. It only adds exposure to the patient for no image.</p></div>
-      <div class="cprof m"><p class="who">Medicine</p><p class="means">Anything that saturates involves a protein, and saturation produces thresholds rather than gradual leaks.</p><p class="eg"><b>Example:</b> Glucose appears in the urine only once the transporters are overwhelmed, which is why there is a threshold instead of a steady trickle.</p></div>
-      <div class="cprof r"><p class="who">Respiratory therapy</p><p class="means">The oxyhemoglobin dissociation curve is exactly this shape.</p><p class="eg"><b>Example:</b> Above about 90 percent, adding more oxygen buys very little extra saturation, so the fix usually has to be somewhere other than the oxygen dial.</p></div>
+      <div class="cprof n"><p class="who">Nursing</p><p class="means">The curve is steep in the middle and flat at the top. So the same size drop means something very different depending on where you started.</p><p class="eg"><b>Example:</b> A drop from 99 to 95 percent is small. The same four point drop from 90 to 86 is not.</p></div>
+      <div class="cprof x"><p class="who">Radiologic technology</p><p class="means">Detectors fill up the same way proteins do. Past a point, more input buys you nothing.</p><p class="eg"><b>Example:</b> An overexposed region of a digital image is saturated: every pixel there is already reading maximum, so the detail is gone and more dose will not bring it back. It only adds exposure to the patient for no image.</p></div>
+      <div class="cprof m"><p class="who">Medicine</p><p class="means">If something in the body saturates, a protein is behind it. And saturation gives you a cliff rather than a slow drift.</p><p class="eg"><b>Example:</b> Glucose appears in the urine only once the transporters are overwhelmed, which is why there is a threshold instead of a steady trickle.</p></div>
+      <div class="cprof r"><p class="who">Respiratory therapy</p><p class="means">The oxygen and hemoglobin curve you will work with every day is exactly this shape.</p><p class="eg"><b>Example:</b> Above about 90 percent, adding more oxygen buys very little extra saturation, so the fix usually has to be somewhere other than the oxygen dial.</p></div>
     </div>
   </div>
 </div>
 
 <h2>Turning proteins up and <span class="hl">down</span></h2>
-<figure><svg class="fig" viewBox="0 0 980 300" role="img" aria-labeledby="figT7 figD7">
+<figure><svg class="fig" viewBox="0 0 980 300" role="img" aria-labelledby="figT7 figD7">
 <title id="figT7">Competitive inhibition compared with allosteric modulation</title><desc id="figD7">Two columns. A competitive inhibitor binds the active site, resembles the substrate, can be outcompeted by more substrate, and still allows the maximum rate. An allosteric modulator binds a separate site, changes the shape of the active site, cannot be overcome by more substrate, and can activate as well as inhibit.</desc>
 <rect width="980" height="300" fill="#ffffff"/>
 <rect x="18" y="22" width="458" height="48" rx="8" fill="#0B1530"/>
@@ -742,10 +774,10 @@ body.present .slide.clinopen .cprof{padding:18px 20px}
     <span>What this means in the clinic</span><span class="chev" aria-hidden="true">&#9656;</span></button>
   <div class="clin-body" id="clin14" hidden>
     <div class="clin-grid">
-      <div class="cprof n"><p class="who">Nursing</p><p class="means">A competitive block can be outcompeted, which changes how a reversal behaves over time.</p><p class="eg"><b>Example:</b> As a reversal agent clears, the original drug can win the site back, so the patient has to be watched past the first improvement.</p></div>
-      <div class="cprof x"><p class="who">Radiologic technology</p><p class="means">Premedication before contrast is competitive inhibition, and that is why the timing is not negotiable.</p><p class="eg"><b>Example:</b> Diphenhydramine and steroids are given to occupy the sites histamine would use, ahead of the injection. A competitive blocker has to already be sitting on the receptor when the histamine arrives. Given afterward it is competing against a site that is already taken.</p></div>
-      <div class="cprof m"><p class="who">Medicine</p><p class="means">Whether inhibition is competitive decides whether more substrate can overcome it.</p><p class="eg"><b>Example:</b> Methanol poisoning is treated by flooding the same enzyme with a rival substrate, and that only works because the block is competitive.</p></div>
-      <div class="cprof r"><p class="who">Respiratory therapy</p><p class="means">Some drugs act at a separate site and cannot be outcompeted.</p><p class="eg"><b>Example:</b> Adding more of the natural signal will not restore function if the active site itself has already changed shape.</p></div>
+      <div class="cprof n"><p class="who">Nursing</p><p class="means">A competitive blocker can be pushed off by more of the real thing, and that changes how a reversal behaves over time.</p><p class="eg"><b>Example:</b> As a reversal agent clears, the original drug can win the site back, so the patient has to be watched past the first improvement.</p></div>
+      <div class="cprof x"><p class="who">Radiologic technology</p><p class="means">Premedication before contrast works by getting to the site first, which is why the timing is not negotiable.</p><p class="eg"><b>Example:</b> Diphenhydramine and steroids are given to occupy the sites histamine would use, ahead of the injection. A competitive blocker has to already be sitting on the receptor when the histamine arrives. Given afterward it is competing against a site that is already taken.</p></div>
+      <div class="cprof m"><p class="who">Medicine</p><p class="means">Whether a blocker is competitive decides whether adding more of the real thing can beat it.</p><p class="eg"><b>Example:</b> Methanol poisoning is treated by flooding the same enzyme with a rival substrate, and that only works because the block is competitive.</p></div>
+      <div class="cprof r"><p class="who">Respiratory therapy</p><p class="means">Some drugs bind somewhere else entirely, and no amount of the real thing will push them off.</p><p class="eg"><b>Example:</b> Adding more of the natural signal will not restore function if the active site itself has already changed shape.</p></div>
     </div>
   </div>
 </div>
@@ -773,23 +805,93 @@ body.present .slide.clinopen .cprof{padding:18px 20px}
     <span>What this means in the clinic</span><span class="chev" aria-hidden="true">&#9656;</span></button>
   <div class="clin-body" id="clin15" hidden>
     <div class="clin-grid">
-      <div class="cprof n"><p class="who">Nursing</p><p class="means">Respiratory rate is a pH instrument.</p><p class="eg"><b>Example:</b> A patient who stops breathing adequately becomes acidotic within minutes, well before any lab result returns.</p></div>
-      <div class="cprof x"><p class="who">Radiologic technology</p><p class="means">The breath hold you coach on every chest CT is a mass action problem the patient is losing.</p><p class="eg"><b>Example:</b> Holding a breath lets carbon dioxide build, the reaction shifts toward acid, and that shift is what the patient feels as the urge to breathe. Coaching a few deep breaths first drives carbon dioxide down before the hold, which buys a longer and steadier hold and a sharper image.</p></div>
-      <div class="cprof m"><p class="who">Medicine</p><p class="means">Push one side of a reversible reaction and it shifts away from you.</p><p class="eg"><b>Example:</b> Carbon dioxide accumulating shifts the reaction toward acid, and the pH falls as a direct consequence.</p></div>
-      <div class="cprof r"><p class="who">Respiratory therapy</p><p class="means">Minute ventilation is the fastest control you have over blood pH.</p><p class="eg"><b>Example:</b> Change ventilation, carbon dioxide changes, and pH changes with it, all inside a few minutes.</p></div>
+      <div class="cprof n"><p class="who">Nursing</p><p class="means">How fast someone breathes is a pH control, not only an oxygen control.</p><p class="eg"><b>Example:</b> A patient who stops breathing adequately becomes acidotic within minutes, well before any lab result returns.</p></div>
+      <div class="cprof x"><p class="who">Radiologic technology</p><p class="means">The breath hold you coach on every chest CT is carbon dioxide piling up, and the patient is losing that race.</p><p class="eg"><b>Example:</b> Holding a breath lets carbon dioxide build, the reaction shifts toward acid, and that shift is what the patient feels as the urge to breathe. Coaching a few deep breaths first drives carbon dioxide down before the hold, which buys a longer and steadier hold and a sharper image.</p></div>
+      <div class="cprof m"><p class="who">Medicine</p><p class="means">Push on one side of a reversible reaction and the whole thing slides the other way.</p><p class="eg"><b>Example:</b> Carbon dioxide accumulating shifts the reaction toward acid, and the pH falls as a direct consequence.</p></div>
+      <div class="cprof r"><p class="who">Respiratory therapy</p><p class="means">Changing how much air someone moves each minute is the fastest way to change their blood pH.</p><p class="eg"><b>Example:</b> Change ventilation, carbon dioxide changes, and pH changes with it, all inside a few minutes.</p></div>
     </div>
   </div>
 </div>
 
-<h2>Draw it from <span class="hl">memory</span></h2>
-<p class="sub">Six minutes, blank paper, nothing open. This is the note sheet box for this mission.</p>
-<ul class="bul">
-  <li>Draw a binding site with its ligand, and label specificity and affinity on the drawing itself.</li>
-  <li>Sketch the saturation curve, mark half saturation, and write one sentence on what that point tells you.</li>
-  <li>Beside it, draw a competitive inhibitor and an allosteric modulator, marking where each one binds.</li>
-  <li>Write out the four levels of protein structure with one phrase each.</li>
-  <li>Answer in writing: which type of inhibition can be defeated by adding more substrate, and why the other cannot.</li>
-</ul>
+<h2>What this mission assumes you <span class="hl">already have</span></h2>
+<p class="sub">This is the Unit 1 prerequisite list, and it covers Mission 1 and Mission 2 together. If any line here is shaky, fix it before you work the mission rather than after. Unit 1 has a short self-check for each of the three groups.</p>
+<div class="grid g3 prereq">
+  <div class="card">
+    <p class="eyebrow">Chemistry</p>
+    <ul class="bul">
+      <li>Ions and charge</li>
+      <li>Concentration and gradients</li>
+      <li>Water, polarity and solubility</li>
+      <li>Acids, bases and pH</li>
+      <li>Buffers</li>
+      <li>Proteins and shape</li>
+      <li>ATP and energy</li>
+      <li>Units and simple calculation</li>
+    </ul>
+    <p class="pqlink"><a href="unit-01.html#chem" target="_top">Chemistry self-check, 10 questions</a></p>
+  </div>
+  <div class="card">
+    <p class="eyebrow">Anatomy</p>
+    <ul class="bul">
+      <li>The cell and its parts</li>
+      <li>The four tissue types</li>
+    </ul>
+    <p class="pqnote">This is a physiology course, so anatomy shows up only where you need it to follow a mechanism. Two items is the whole list for Unit 1, and that is not an oversight.</p>
+    <p class="pqlink"><a href="unit-01.html#anat" target="_top">Anatomy self-check, 3 questions</a></p>
+  </div>
+  <div class="card">
+    <p class="eyebrow">Math</p>
+    <ul class="bul">
+      <li>Metric prefixes and unit conversion</li>
+      <li>Counting particles, not molecules</li>
+      <li>Rates, and what per means</li>
+      <li>Reading a graph</li>
+      <li>What a log scale does</li>
+      <li>In minus out</li>
+      <li>Charge, and why mEq is not mM</li>
+      <li>Sanity checking an answer</li>
+    </ul>
+    <p class="pqlink"><a href="unit-01.html#math" target="_top">Math self-check, 9 questions</a></p>
+  </div>
+</div>
+
+<h2>Close the page and <span class="hl">produce it</span></h2>
+<p class="sub">These are the 4 competencies this mission covers, straight off the study guide, with the two prompts that go with each one. Week 2 has three more, the enzyme assay, ATP production pathways, and the rest of ATP and energy coupling. Those are on the week 2 page and in the lab, not in this recording. Pick one prompt per competency. Blank paper, nothing open.</p>
+<p class="sub"><a href="competency-brain-dump.html" target="_top">Read the full instructions first</a>, including how the first pass before the lecture differs from the second pass after it.</p>
+<div class="cmpwrap"><div class="grid g2">
+  <section class="cmp">
+    <p class="cn" aria-hidden="true">01</p>
+    <h4>Water and solution properties</h4>
+    <p class="ccan">Explain how the polarity and hydrogen bonding of water determine solubility and identify whether a given solute is hydrophilic or hydrophobic.</p>
+    <p class="pick">Do one of the two. Head your paper with the number.</p>
+    <div class="pr a"><p class="pl">1-1</p><p>Draw a water molecule and label the partial charges on it. Beside it draw one thing that dissolves in body water and one thing that does not, and write one sentence under each saying why. Then write what the body has to do for the one that does not dissolve.</p></div>
+    <div class="pr b"><p class="pl">1-2</p><p>Draw a blood vessel in cross section. Show one substance travelling free in the plasma and one travelling bound to a carrier protein. Label both, and write what decides which way a substance has to travel.</p></div>
+  </section>
+  <section class="cmp">
+    <p class="cn" aria-hidden="true">02</p>
+    <h4>pH and buffers</h4>
+    <p class="ccan">Define pH, state the normal pH range of arterial blood, and explain how a buffer pair resists a change in pH when acid or base is added.</p>
+    <p class="pick">Do one of the two. Head your paper with the number.</p>
+    <div class="pr a"><p class="pl">2-1</p><p>Write the bicarbonate buffer equation from memory. Draw an arrow showing which way it shifts when acid is added and mark what happens to bicarbonate. Then write what the lung does to this equation and what the kidney does, and how fast each one works.</p></div>
+    <div class="pr b"><p class="pl">2-2</p><p>Draw the pH scale from 6.8 to 7.8. Mark the normal arterial range, mark which end is acidaemia and which is alkalaemia, and mark the survival limits. Under it write the Henderson equation with the normal numbers filled in, and show that it gives 7.4.</p></div>
+  </section>
+  <section class="cmp">
+    <p class="cn" aria-hidden="true">03</p>
+    <h4>Protein structure and function</h4>
+    <p class="ccan">Relate the levels of protein structure to binding site shape and explain how denaturation by heat or pH change destroys function.</p>
+    <p class="pick">Do one of the two. Head your paper with the number.</p>
+    <div class="pr a"><p class="pl">3-1</p><p>Draw the four levels of protein structure as four small sketches in order and label each one. On the tertiary sketch mark where the binding site is, and write one sentence saying why the shape is the job rather than a consequence of the job.</p></div>
+    <div class="pr b"><p class="pl">3-2</p><p>Draw a folded protein with its binding site. Then draw it again after heat, and again after a pH change. Label what happened to the fold each time, and write what the protein can no longer do and whether it can recover.</p></div>
+  </section>
+  <section class="cmp">
+    <p class="cn" aria-hidden="true">04</p>
+    <h4>Enzyme activity and regulation</h4>
+    <p class="ccan">Describe how enzymes lower activation energy and predict the effect of substrate concentration, temperature, pH, and competitive or allosteric inhibition on reaction rate.</p>
+    <p class="pick">Do one of the two. Head your paper with the number.</p>
+    <div class="pr a"><p class="pl">4-1</p><p>Draw rate against substrate concentration and label Vmax and Km. Then draw the same axes twice more, once with a competitive inhibitor added and once with an allosteric one. Beside each, write what happened to Vmax, what happened to Km, and whether adding more substrate helps.</p></div>
+    <div class="pr b"><p class="pl">4-2</p><p>Draw rate against temperature, and rate against pH, on separate axes. Mark the optimum on each. Beside each curve write what is happening on the way up and what is happening on the way down, and say which side of the peak can be reversed and which cannot.</p></div>
+  </section>
+</div></div>
 
 <p class="page-foot">Dr. Sharilyn Rennie &middot; BIOL 005 Human Physiology &middot; Mission 2, Build the Molecular Toolkit. Values given are typical teaching figures, not laboratory reference ranges.</p>
 </main>
@@ -1258,6 +1360,10 @@ var PAGE_ID='biol005-m02-notes';
   });
 
   document.querySelectorAll('.fig').forEach(function(f){
+    /* A map whose branches are themselves buttons is a group, not a single
+       image. Giving it a tab stop of its own nests one control inside another,
+       which is a real problem for anyone moving by keyboard. */
+    if (f.querySelector('[tabindex],button,a')) { f.setAttribute('role','group'); return; }
     f.setAttribute('tabindex','0'); f.setAttribute('role','img');
     function open(e){
       if(document.body.classList.contains('wb-on'))return;
@@ -1297,5 +1403,6 @@ var PAGE_ID='biol005-m02-notes';
 
 })();
 </script>
+<script src="bio005-nav.js" defer></script>
 </body>
 </html>
