@@ -60,13 +60,15 @@ h2{font-size:18px;font-weight:800;margin:22px 0 6px}
     how.push("<li><strong>This week's lab:</strong> " + NOPEX[w][0] + "</li>");
     how.push("<li>Work it <strong>by hand</strong>, in your two colors, answering everything it asks.</li>");
     if (NOPEX[w][1]) btns.push('<a class="btn solid" href="' + NOPEX[w][1] + '" target="_top">' + NOPEX[w][2] + '</a>');
-    up.push("<li>Handwritten, on paper. Photograph or scan every page into <strong>one PDF</strong>, in order.</li>");
+    up.push("<li><strong>Your own paper is always fine.</strong> Label every page the way the worksheet is labeled: your name, the week, the lab, the part number, and a few words on what it asked.</li>");
+    up.push("<li>Handwritten, photographed or scanned into <strong>one PDF</strong>, in order.</li>");
     up.push("<li>Submit the PDF here before <strong>10:00 pm</strong>. Check for the Canvas confirmation screen.</li>");
   } else {
     how.push("<li><strong>Run PhysioEx first.</strong> Open our Canvas course, click <strong>Access Pearson</strong>, and complete this week's assigned activities until Pearson shows them complete.</li>");
     how.push("<li><strong>Then the worksheet.</strong> Record your data and answer everything it asks, by hand, including the clinical correlation questions where the week has them.</li>");
     if (SHEETS[w]) btns.push('<a class="btn solid" href="' + SHEETS[w][0] + '" target="_top">' + SHEETS[w][1] + '</a>');
     up.push("<li>The points live on <strong>this worksheet</strong>; PhysioEx itself carries no points and is only the gate. It must <strong>show complete in Pearson</strong> before the worksheet is graded. One part without the other earns nothing.</li>");
+    up.push("<li><strong>Your own paper is always fine.</strong> Label every page the way the worksheet is labeled: your name, the week, the lab, the part number, and a few words on what it asked.</li>");
     up.push("<li>Handwritten, photographed or scanned into <strong>one PDF</strong>, submitted here before <strong>10:00 pm</strong>.</li>");
   }
   document.getElementById("how").innerHTML = how.join("");

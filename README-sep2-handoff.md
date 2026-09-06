@@ -374,3 +374,27 @@ submitted on the assignment in Canvas. Weeks without decided numbers tell
 students the list is on the Canvas assignment itself, which is where she
 can type numbers per week without touching the page. Chapter 6 numbers for
 Week 1, if any, still needed from her.
+
+## The assignment page standard, September 6
+
+Locked in for every assignment: the Canvas page carries directions and the
+assigned work only, plus one link or button to the HTML that produces the
+printable PDF. Nothing interactive gets embedded for on screen work; the
+AI worksheet embed was already replaced with an open to print link. Own
+paper is always allowed and now says so on every assignment page, with the
+labeling requirement: name, week, question or part number, and a few words
+on what the question asked, above each answer. The kit gained link type
+snippets for worksheet pages (anchor opening a new tab, never an iframe)
+and the Week 2 learning lab, Reading a Physiology Figure or Graph, is
+wired that way as the first example.
+
+## Doctrine change: one site, thin Canvas, September 6 afternoon
+
+Per advice she received, the Canvas layer now iframes only the assignment
+direction pages (notesheet, discussion, bookproblems, physioex, and the
+vision board) plus one front page embed. Everything else is the course
+site itself, entered by link and navigated by its own doors, hubs, and
+footers. The kit and CANVAS-IFRAME.txt both restructured to the pattern:
+embeds for directions, site links for pages, worksheet links for anything
+students print. The learning lab gained a link from the Week 2 hub's
+Discuss step so every page is reachable inside the site's own navigation.
