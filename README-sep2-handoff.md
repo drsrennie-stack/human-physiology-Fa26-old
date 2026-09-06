@@ -134,3 +134,38 @@ Experience chain as it now stands: Canvas card, canvas-home.html,
 welcome.html (this port), home.html dashboard, with the dock on every page.
 Next fixes in the walk: bring canvas-home and home.html up to the
 design-system doc, and align start-here.html's hours framing.
+
+## Wired and organized for cognitive load, September 2, late
+
+Weeks 2 to 15 regenerated. Every already-built asset is now hooked into its
+week: the osmosis and IV fluids lab (Week 3), the membranes and membrane
+potential workbooks (Weeks 3 and 4, mapped by content, their filenames carry
+the old week numbers), the CBC and PCR lab (Week 11), the pulmonary function
+lab (Week 13), and the patient case file (Week 15). Six dead wires in
+existing pages fixed (three in the Mastery OS, three in index.html), and
+start-here now tells the same hours story as the syllabus.
+
+The load design: every week page carries its orientation in the eyebrow
+(Part, week N of 15), and knows its own open date. Before a week opens, a
+student who clicks ahead sees one calm line, this week opens on its Monday
+and nothing is due, with zero warning chips. After it opens, the chips appear
+only where content is genuinely still pending. The five steps read as bare
+rust numerals on hairline rows, one action per row, one link per action.
+
+Final crawl: 31 pages, zero dead wires. The wiring map (wiring-map.html) is
+the review surface; the gold content flags on it are the build list, which is
+note sheets, weekly videos and problem numbers, the Week 5 home lab, the
+hormone cycle worksheet, and the ECG strip packet.
+
+## Week 1 split for cognitive load, September 5
+
+week-01.html is now the one to do page: the same five step hub as every other
+week, the Week 1 dates (everything due Sunday September 13 at 10:00 pm, the
+introduce yourself post by Friday the 11th), and nothing else. The 232KB
+notes page moved whole to week-01-notes.html, reachable from step 2, with the
+dock removed so it is only the notes and their own contents list. Every week
+hub footer trimmed to three links: Course home, Schedule, Syllabus. The
+Mastery OS link lives inline in the Practice step where it is used. Note: the
+version of week-01 with the at a glance card grid in the screenshot is local
+and not in the repo; this split was rebuilt from the repo page plus the dates
+visible in the screenshot. Crawl after the split: zero dead links.

@@ -1,126 +1,95 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Week 11. Blood and how the body defends itself &middot; BIO 005 Human Physiology</title>
-<meta name="description" content="Week 11 of BIO 005 Human Physiology. Opens Monday, November 16. Early access from Saturday, November 14 at 8 pm.">
-<link rel="icon" type="image/svg+xml" href="icon.svg">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 11 &middot; Blood, and how the body defends itself &middot; BIO 005 Human Physiology</title>
+<link href="https://cdn.jsdelivr.net/npm/@fontsource-variable/plus-jakarta-sans/index.css" rel="stylesheet">
 <style>
-:root{--navy:#0B1530;--maroon:#8B3A2E;--maroon-dark:#6E2D24;--gold:#C9A14A;
---ink:#1E3D4C;--page:#FAFAF9;--card:#FFFFFF;--rule:#E3E1DE;--muted:#4A4A4A}
-*{box-sizing:border-box}
-body{margin:0;background:var(--page);color:var(--ink);
-font-family:'Plus Jakarta Sans','Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
-font-size:17px;line-height:1.65;-webkit-text-size-adjust:100%}
-a{color:var(--maroon)}
-a:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
-.skip{position:absolute;left:-9999px;top:0;background:var(--navy);color:#fff;padding:10px 16px;z-index:100}
-.skip:focus{left:8px;top:8px}
-.site-header{background:#fff;border-bottom:1px solid var(--rule)}
-.site-header-inner{max-width:1080px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-.site-logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--navy)}
-.site-logo svg{width:44px;height:52px;flex:0 0 auto}
-.logo-text{display:flex;flex-direction:column;line-height:1.2}
-.logo-title{font-weight:800;font-size:18px;color:var(--navy)}
-.logo-accent{color:var(--maroon)}
-.logo-sub{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
-.hdr-btn{font-size:14px;font-weight:600;color:var(--maroon);text-decoration:none;border:1px solid var(--rule);border-radius:8px;padding:8px 14px;white-space:nowrap}
-.band{background:var(--maroon);color:#fff;padding:34px 20px}
-.band-inner{max-width:1080px;margin:0 auto}
-.eyebrow{font-size:12px;letter-spacing:.10em;text-transform:uppercase;font-weight:700;color:#FEF8EE;margin:0 0 8px}
-.band h1{margin:0;font-size:clamp(26px,4vw,38px);line-height:1.2;font-weight:800;color:#fff}
-main{max-width:1080px;margin:0 auto;padding:28px 20px 20px}
-@media (prefers-reduced-motion:reduce){*{transition:none!important}}
-
-/* ---- Small-screen reflow, Sep 6 2026 ------------------------------------
-   WCAG 1.4.10 asks for no horizontal scrolling at 320 CSS px. Two things
-   broke it here. Neither is new to the MedMasters change, but Open Sans is
-   a wider face than Plus Jakarta so both got worse and both are now fixed.
-
-   1. The print sheet is 8.5in wide by design. On paper that is right. On a
-      phone it is 816px inside a 320px window. It now shrinks on screen and
-      keeps its exact paper width when printing.
-   2. The header row would not wrap, so the back button hung off the edge. */
-@media screen and (max-width:900px){
-  .sheet{width:auto!important;max-width:100%!important;min-height:0!important;
-         padding:22px 18px!important}
-}
-@media screen and (max-width:640px){
-  .site-header-inner{flex-wrap:wrap;gap:10px}
-  .hdr-btn{white-space:normal}
-}
+:root{--navy:#0B1530;--nearblack:#060A18;--rust:#8B3A2E;--gold:#C9A14A;--cream:#F5F1E8;--white:#FFFFFF;--slate:#8C90A0;--goldpale:#F7EFD9}
+*,*::before,*::after{box-sizing:border-box}
+em,i,cite,dfn,var,address{font-style:normal}
+html,body{margin:0}
+body{font-family:'Plus Jakarta Sans Variable','Plus Jakarta Sans',system-ui,sans-serif;color:var(--navy);background:var(--white);line-height:1.65;font-size:15px}
+.skip{position:absolute;left:-9999px;top:0;z-index:80;background:var(--navy);color:#fff;padding:12px 18px;font-weight:700;text-decoration:none}
+.skip:focus{left:0;top:0}
+a{color:var(--rust)}
+:focus-visible{outline:3px solid var(--rust);outline-offset:3px}
+.band{padding:60px max(40px,5vw)}
+.band.dark{background:var(--nearblack)}
+.band.dark :focus-visible{outline-color:var(--gold)}
+.inner{max-width:1080px;margin:0 auto}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--rust);margin:0 0 16px}
+.eyebrow.gold{color:var(--gold)}
+h1{font-size:clamp(32px,5vw,46px);font-weight:800;letter-spacing:-.025em;margin:0 0 10px;line-height:1.08}
+h2{font-size:clamp(23px,3vw,30px);font-weight:800;letter-spacing:-.02em;margin:0 0 10px}
+.cream{color:var(--cream)}.soft{opacity:.85;max-width:640px}
+.lede{font-size:15px;max-width:640px;margin:0}
+.duetag{display:inline-block;margin-top:14px;font-weight:700;color:var(--rust)}
+.opensnote{margin-top:18px;background:var(--goldpale);border:1px solid var(--slate);border-radius:12px;padding:14px 18px;max-width:640px;display:none}
+body.preweek .opensnote{display:block}
+body.preweek .chip.pend{display:none}
+.midbanner{margin-top:18px;background:var(--goldpale);border:1px solid var(--slate);border-radius:12px;padding:14px 18px;max-width:640px}
+.steps{list-style:none;margin:26px 0 0;padding:0;counter-reset:s}
+.steps li{counter-increment:s;position:relative;padding:18px 0 18px 74px;border-bottom:1px solid rgba(11,21,48,.14)}
+.steps li:first-child{border-top:1px solid rgba(11,21,48,.14)}
+.steps li::before{content:"0" counter(s);position:absolute;left:0;top:14px;color:var(--rust);font-weight:800;font-size:32px;line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.steps h3{font-size:17px;font-weight:800;margin:0 0 4px}
+.stepbody{margin:0 0 4px;max-width:640px;font-size:14px}
+.steplink{font-weight:700;white-space:nowrap}
+.chip{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;background:var(--goldpale);border:1px solid var(--slate);border-radius:4px;padding:2px 8px;color:var(--navy)}
+.cclist{list-style:none;margin:18px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:10px}
+.cclist a{display:block;background:#1C2E4F;border:1px solid rgba(245,241,232,.28);border-radius:12px;padding:14px 18px;color:var(--cream);font-weight:700;text-decoration:none;transition:transform 200ms ease,box-shadow 200ms ease}
+.cclist a:hover{transform:translateY(-3px);box-shadow:0 10px 22px rgba(0,0,0,.3)}
+footer{padding:26px max(40px,5vw) 40px;border-top:1px solid rgba(11,21,48,.14)}
+footer .inner{display:flex;flex-wrap:wrap;gap:8px 26px;font-size:14px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
 </style>
 </head>
-<body>
-<a class="skip" href="#main">Skip to the week 11 information</a>
-
-<header class="site-header">
-  <div class="site-header-inner">
-    <a href="welcome.html" class="site-logo" target="_top" aria-label="BIO 005 Human Physiology, course home">
-      <svg viewBox="40 10 125 148" role="img" aria-hidden="true" focusable="false">
-        <g transform="translate(0, 18)">
-          <g transform="translate(60, 0) rotate(8 0 130)">
-            <circle cx="0" cy="20" r="10" fill="#0B1530"/>
-            <path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#0B1530"/>
-          </g>
-          <g transform="translate(100, 0)">
-            <circle cx="0" cy="10" r="11" fill="#6E2D24"/>
-            <path d="M 0,22 C -11,22 -17,26 -17,34 C -17,52 -14,70 -12,86 C -11,108 -13,122 -15,132 L 15,132 C 13,122 11,108 12,86 C 14,70 17,52 17,34 C 17,26 11,22 0,22 Z" fill="#6E2D24"/>
-          </g>
-          <g transform="translate(140, 0) rotate(-8 0 130)">
-            <circle cx="0" cy="20" r="10" fill="#C9A14A"/>
-            <path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#C9A14A"/>
-          </g>
-        </g>
-      </svg>
-      <span class="logo-text">
-        <span class="logo-title">Human <span class="logo-accent">Physiology</span></span>
-        <span class="logo-sub">BIO 005 &middot; Yuba College</span>
-      </span>
-    </a>
-    <a class="hdr-btn" href="course-schedule.html" target="_top">&larr; Back to the schedule</a>
+<body data-opens="2026-11-16">
+<a class="skip" href="#main">Skip to main content</a>
+<header class="band">
+  <div class="inner">
+    <p class="eyebrow">BIO 005 &middot; Part 3 &middot; Week 11 of 15</p>
+    <h1>Blood, and how the body defends itself</h1>
+    <p class="lede">19 competencies this week, each one a single thing you will be able to do. Your note sheet lists them all.</p>
+    <span class="duetag">Everything below is due Sunday night.</span>
+    <div class="opensnote"><strong>This week opens Monday, November 16.</strong> Everything for it posts by then. You are welcome to read ahead; nothing here is due yet.</div>
   </div>
 </header>
-
-<div class="band">
-  <div class="band-inner">
-    <p class="eyebrow">BIO 005 &middot; Human Physiology &middot; Week 11</p>
-    <h1>Blood and how the body defends itself</h1>
-  </div>
-</div>
-
-<main id="main" data-b5-week="11">
-  <div data-b5-gate>
-    <div class="b5gate-card">
-      <h2>Week 11 is open</h2>
-      <p>This week opened Monday, November 16 and the work is due Sunday, November 22 at 11:59 pm.</p>
-      <p>The full week page is being posted. Until it is here, the reading for this week is on the
-         course schedule, the recall cards for it are already loaded in the Mastery OS, and the
-         competency study guide lists everything you should be able to do by the end of it.</p>
-    </div>
-    <div class="b5gate-card">
-      <h2>Start here</h2>
-      <ul class="b5gate-links">
-        <li><a href="course-schedule.html" target="_top">Course schedule<span>The reading for this week</span></a></li>
-        <li><a href="os/mastery-physio-os.html" target="_top">Mastery OS<span>This week's recall cards</span></a></li>
-        <li><a href="competency-study-guide.html" target="_top">Competency study guide<span>What you should be able to do</span></a></li>
-        <li><a href="clinical-physiology-lab-manual.html" target="_top">Lab manual<span>This week's lab</span></a></li>
-        <li><a href="welcome.html" target="_top">Course home<span>Back to the start</span></a></li>
-        <li><a href="sitemap.html" target="_top">All course pages<span>Everything in one list</span></a></li>
-      </ul>
-    </div>
+<main id="main" class="band" style="padding-top:20px">
+  <div class="inner">
+    <p class="eyebrow">The five steps, in order</p>
+    <ol class="steps">
+      <li><h3>Prepare</h3><p class="stepbody">Complete this week's note sheet from the reading and the videos. It comes first, always. <span class="chip pend">Note sheet posts when the week opens</span></p><p class="stepbody">Silverthorn Chapter 17 and Chapter 7.</p></li>
+      <li><h3>Watch</h3><p class="stepbody">Work through this week's concept videos and slide decks with your note sheet beside you. <span class="chip pend">Videos post when the week opens</span></p></li>
+      <li><h3>Practice</h3><p class="stepbody">Do the assigned Silverthorn problems, and run your recall cards in the <a href="mastery-physio-os-standalone.html" target="_top">Mastery OS</a>. <span class="chip pend">Problem numbers post when the week opens</span></p></li>
+      <li><h3>Lab</h3><p class="stepbody">PhysioEx Exercise 11: hematocrit, hemoglobin, blood typing. Plus the CBC and PCR lab. Assigned in Pearson through <strong>Access Pearson</strong> in Canvas. <a class="steplink" href="cbc-pcr-lab.html" target="_top">Open the CBC and PCR lab &rarr;</a></p></li>
+      <li><h3>Prove</h3><p class="stepbody">The five minute draw and teach practice round, in the exact midterm format, ungraded. <span class="chip pend">Posts when the week opens</span></p></li>
+    </ol>
   </div>
 </main>
-
-<script src="bio005-gate.js" defer></script>
-<script src="bio005-dock.js" defer></script>
-<script src="dock-coachmark.js" defer></script>
-<script src="bio005-nav.js" defer></script>
+  <section class="band dark" aria-labelledby="cc-h"><div class="inner">
+    <p class="eyebrow gold">Clinical correlations</p>
+    <h2 id="cc-h" class="cream">Watch the exam. Explain the physiology.</h2>
+    <p class="cream soft">Real bedside exams from Stanford Medicine 25. Watch the maneuver, name the variable it interrogates, predict what an abnormal finding means, and explain why. The questions are on your note sheet.</p>
+    <ul class="cclist"><li><a href="https://stanfordmedicine25.stanford.edu/the25/lymph.html" target="_blank" rel="noopener">Lymph Node Exam</a></li><li><a href="https://stanfordmedicine25.stanford.edu/the25/tongue.html" target="_blank" rel="noopener">Tongue Exam</a></li><li><a href="https://stanfordmedicine25.stanford.edu/the25/spleen.html" target="_blank" rel="noopener">Spleen Exam</a></li></ul>
+  </div></section>
+<footer>
+  <div class="inner">
+    <a href="home.html" target="_top">Course home</a>
+    <a href="course-schedule.html" target="_top">Schedule</a>
+    <a href="syllabus-fall2026.html" target="_top">Syllabus</a>
+  </div>
+</footer>
 <script>
-(function(){var I='bio005-week-11';function s(){var h=Math.max(document.body.scrollHeight,document.documentElement.scrollHeight);try{parent.postMessage({id:I,frameHeight:h,height:h},'*');}catch(e){}}
-window.addEventListener('load',s);window.addEventListener('resize',s);
-if(window.ResizeObserver){new ResizeObserver(s).observe(document.body);}s();})();
+(function(){
+  var opens = new Date(document.body.getAttribute('data-opens') + 'T00:00:00');
+  if(new Date() < opens){ document.body.classList.add('preweek'); }
+  var id='wk11-'+Math.random().toString(36).slice(2,8);
+  function post(){try{parent.postMessage({frame:id,height:document.documentElement.scrollHeight},'*');}catch(e){}}
+  if('ResizeObserver' in window){new ResizeObserver(post).observe(document.documentElement);}
+  window.addEventListener('load',post);window.addEventListener('resize',post);post();
+})();
 </script>
 </body>
 </html>
