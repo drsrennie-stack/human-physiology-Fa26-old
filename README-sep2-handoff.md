@@ -169,3 +169,12 @@ Mastery OS link lives inline in the Practice step where it is used. Note: the
 version of week-01 with the at a glance card grid in the screenshot is local
 and not in the repo; this split was rebuilt from the repo page plus the dates
 visible in the screenshot. Crawl after the split: zero dead links.
+
+## Standing deadline rule, September 5
+
+Course-wide time of day is 10:00 pm. Everything is due Sunday at 10:00 pm.
+Discussions run ahead: the initial post is due Friday at 10:00 pm, peer
+replies Sunday at 10:00 pm. Week 15 closes Wednesday, December 16 at 10:00
+pm with the term. Applied to the syllabus (sections 01, 05, 12, PDF
+regenerated and re-verified tagged), all fifteen week hubs, and the welcome
+page including Hootie.
