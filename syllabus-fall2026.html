@@ -106,6 +106,13 @@ footer{margin-top:64px;padding:24px;color:var(--navy-70);font-size:14px;text-ali
   tr.exam td{background:#eee}
   .grade-bar > div{color:#000!important;background:#fff;border:1px solid #000}
 }
+
+.printbar{margin:18px 0 6px;display:flex;gap:12px;flex-wrap:wrap}
+.printbtn{font:inherit;font-weight:800;font-size:14px;letter-spacing:.04em;background:#8B3A2E;color:#fff;border:0;border-radius:8px;padding:12px 20px;cursor:pointer}
+.printbtn:hover{background:#6E2D24}
+.printbtn:focus-visible{outline:3px solid #8B3A2E;outline-offset:3px}
+.pdfalt{align-self:center;font-size:14px;font-weight:700}
+@media print{.printbar{display:none}}
 </style>
 </head>
 <body>
@@ -115,7 +122,11 @@ footer{margin-top:64px;padding:24px;color:var(--navy-70);font-size:14px;text-ali
   <div class="wrap">
     <p class="eyebrow">BIO 005 &middot; Yuba College &middot; Fall 2026</p>
     <h1>Human Physiology.</h1>
-    <p class="sub">Course Syllabus &middot; Section BIOL-5-D9286 &middot; Sutter Internet (NET)</p>
+<div class="printbar">
+  <button type="button" class="printbtn" onclick="window.print()">Print or save as PDF</button>
+  <a class="pdfalt" href="syllabus-fall2026.pdf" target="_blank" rel="noopener">Or download the tagged PDF</a>
+</div>
+<p class="sub">Course Syllabus &middot; Section BIOL-5-D9286 &middot; Sutter Internet (NET)</p>
     <p class="subq">4.0 units &middot; 15 weeks &middot; September 8 to December 16, 2026</p>
     <p class="subq">Fully online, lecture and lab &middot; nothing meets at a set time &middot; everything due Sunday at 10:00 pm</p>
     <p class="subq">C-ID BIOL 120B &middot; IGETC 5B and 5C &middot; CSU GE B2 and B3 &middot; Transferable to CSU and UC</p>
@@ -376,6 +387,7 @@ footer{margin-top:64px;padding:24px;color:var(--navy-70);font-size:14px;text-ali
   <p>For studying, AI is encouraged. Tools like ChatGPT and Claude are useful for the same things a good study partner is useful for: explaining a concept a second way, quizzing you, helping you plan your week. Teaching a concept to something that asks follow-up questions is one of the better ways to find out whether you actually have it.</p>
   <p><span class="rule-line">For graded work, the rules are strict. What you turn in must be your own work, in your own hand, from your own head. Turning in AI-written work as yours is cheating, and no outside help of any kind is allowed during exams.</span></p>
   <p>Here's the honest reason, beyond the rules: the midterms are half your grade, and they're you, on camera, teaching with no notes. A tool that does your weekly work for you is quietly taking the practice you'll desperately want back in exam week. Nobody can outsource their own understanding.</p>
+  <p><strong>The full picture, including how I use AI to build this course and the complete lists of where you can and cannot use it, is on the <a href="ai-in-this-course.html" target="_top">How AI is used in this course</a> page.</strong></p>
   <h3>No extra credit</h3>
   <p><span class="rule-line">There's no individual extra credit, and asking for it won't create any.</span> If I ever offer extra credit, I offer it to the whole class at once.</p>
 </section>
