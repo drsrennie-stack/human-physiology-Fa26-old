@@ -990,6 +990,8 @@
         add(sibling('schedule-fall2026.js'));
       }
     }
+    /* the answer bank first: hootie reads window.BIO005_QUESTIONS */
+    if (!window.BIO005_QUESTIONS) add(sibling('bio005-question-bank.js'));
     add(sibling('hootie.js'));
   })();
 })();

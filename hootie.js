@@ -232,6 +232,7 @@
   var INTENTS = [
     {id:'contact',  kw:['contact','email','e-mail','reach','who do i','who should i','talk to','office hour','professor','instructor','teacher','rennie','tutor','tutoring','accommodat','disab','dsp','tech ','technolog','login','log in','canvas help','password','it help']},
     {id:'struggle', kw:['struggl','behind','failing','fail ','so hard','too hard','confus','overwhelm','stress','anxious','burn','falling','fall behind','drowning','give up','quit','really hard','cant keep','can not keep','keep up','lost and','hate this','crying','panic']},
+    {id:'ai',       kw:['ai ','a.i','chatgpt','chat gpt','gpt','claude','gemini','copilot','artificial intelligence','use ai','using ai','ai on','cheat','cheating','plagiar','academic integrity','integrity']},
     {id:'grades',   kw:['grade','grading','points','percent','weight','how much is','worth','scholar point','extra credit','curve','my grade','pass the class','passing','gpa']},
     {id:'exams',    kw:['exam','test','midterm','practical','how many test','final']},
     {id:'tbl',      kw:['tbl','team based','team-based','irat','trat','readiness','team quiz']},
@@ -328,18 +329,24 @@
           + '<br><br>Reach out early. Do not wait for the next exam, and do not wait until you feel you have earned the right to ask.'
           + (ctx.nextExam ? '<br><br>' + examLine(ctx, ctx.nextExam) : '');
 
+      case 'ai':
+        return '<p>The short version: AI is open on some things, closed on others, and the line is about whether the work is evidence of <b>your</b> reasoning.</p>'
+          + '<p><b>Closed.</b> The exams, the discussions, and anything where the point is that you can do it yourself. Retrieval is closed too, not because you would be caught, but because using AI there defeats the only reason to do it.</p>'
+          + '<p><b>Open, with disclosure.</b> Labs and application cases. Say what you used it for. The reasoning still has to be yours, and it is what gets graded.</p>'
+          + '<p>The full lists, and how I use AI to build this course, are on <a href="ai-in-this-course.html" target="_blank" rel="noopener">How AI is used in this course</a>.</p>';
+
       case 'grades':
-        return '<p>Your grade:</p>'
-          + '1. Weekly checkpoints: weight TO CONFIRM'
-          + '<br>2. Lecture exams: 30% (5, one per module)'
-          + '<br>3. Lab practical exams: 30% (5)'
-          + '<br>4. Lab quizzes: 5%'
-          + '<br>5. iChecks and tChecks: 5%'
-          + '<br><br>Up to 3% in Scholar Points for verified engagement hours plus a strong exam average. No exam counts above 102%. Full detail in your ' + ilink(s.syllabus, 'syllabus') + '.';
+        return '<p>Four categories:</p>'
+          + '<b>35%</b> Show Me What You Know. Two exams, draw and teach on video, 17.5 each.'
+          + '<br><b>25%</b> Investigate It. The weekly labs.'
+          + '<br><b>25%</b> Use It. Your weekly application case, building into your patient file.'
+          + '<br><b>15%</b> Think About It. The weekly discussion.'
+          + '<br><br>Your note sheet, the practice items, the Mastery Check and the recall cards carry <b>no points at all</b>, on purpose. They are the route to the four above, not extras. Full detail in your ' + ilink(s.syllabus, 'syllabus') + '.';
 
       case 'exams':
         return examLine(ctx, ctx.nextExam)
-          + '<br><br>Five exams in all, one at the end of each module, each with a lecture part and a lab practical. No exam counts above 102%, in-exam bonus only. Every date is on the ' + a('calendar') + ' and in your ' + ilink(s.syllabus, 'syllabus') + '.';
+          + '<br><br>Two exams, not five. Midterm 1 covers Weeks 1 to 7 and its window is Oct 26 to 28. Midterm 2 covers Weeks 8 to 14, Dec 14 to 16. Each is a window of three days, not an hour, and each is worth 17.5 percent.'
+          + '<br><br>Neither is multiple choice. You draw a physiological pathway and teach it out loud on video with no notes. Every week\'s Retrieve step is that same task in miniature, ungraded, so the format is familiar long before it counts. Dates are on the ' + a('calendar') + ' and in your ' + ilink(s.syllabus, 'syllabus') + '.';
 
       case 'tbl':
         return '<p>Weekly checkpoints are how this course replaces attendance. Each week opens Monday and closes Sunday. Weight is still to be set, see the syllabus. Placeholder grade.</p>'
@@ -360,12 +367,13 @@
 
       case 'contact': {
         var c = (L() && L().contact) || {};
-        return '<p><b>Class, grades, or an extension.</b> Message Dr. Rennie in ' + (c.canvasInbox || 'the Canvas Inbox')
-          + ', or email ' + (c.email || 'srennie@solano.edu') + ' (' + (c.turnaround || 'about 48 to 72 hours on weekdays') + '). '
-          + 'Office hours are ' + (c.officeHours || '30 minutes before each class, or by appointment') + '.</p>'
-          + '<p><b>Accommodations.</b> The Accessibility Support Center, ' + (c.ascEmail || 'ASC@solano.edu')
-          + ' or ' + (c.ascPhone || '(707) 864-7136') + '. Set this up in Week 1, then tell Dr. Rennie your approved accommodations.</p>'
-          + '<p><b>Free tutoring.</b> In person at Fairfield, Vacaville and Vallejo, or online by Zoom. See the ' + a('astc') + '.</p>';
+        return '<p><b>Anything private: your grade, an extension, something going on in your life.</b> Message Dr. Rennie in '
+          + (c.canvasInbox || 'the Canvas Inbox') + ', or email ' + (c.email || 'srennie@yccd.edu')
+          + ' (' + (c.turnaround || 'about 48 to 72 hours on weekdays') + ').</p>'
+          + '<p><b>Anything about the course itself</b> goes in the <a href="virtual-office.html" target="_top">virtual office</a> instead, where the answer reaches everyone. Say what your question is, what you already tried, and where it stopped answering your question.</p>'
+          + '<p><b>Office hours.</b> ' + (c.officeHours || 'Wednesdays 9:00 to 10:00 am on Zoom, drop in, no appointment needed') + '.</p>'
+          + '<p><b>Accommodations.</b> Yuba DSPS, ' + (c.ascEmail || 'dspsinfo@yccd.edu')
+          + '. Set this up in Week 1, then tell Dr. Rennie your approved accommodations.</p>';
       }
 
       case 'prework':
@@ -434,9 +442,85 @@
   /* One function, everything it needs passed in. Swap this for a
      proxied model call if free-form content answers are ever
      wanted, and the 22 pages do not change. */
+
+  /* ----------------------------------------------------------
+     THE 248 ANSWERS THAT ARE ALREADY WRITTEN DOWN
+
+     Scrubs, Sep 7 2026: anything a student asks that the course
+     questions page already answers should be answered here, not
+     shrugged at. bio005-question-bank.js is generated from
+     course-questions.html, so the page stays the single source
+     and Hootie never drifts from it.
+
+     This runs AFTER the intent matcher, because an intent answer
+     knows what week it is and a stored answer does not. It runs
+     BEFORE the refusal, because "I do not know" is the wrong
+     reply to a question with an answer already on the site.
+
+     Scoring is deliberately dumb and predictable: overlap of
+     meaningful words between the question asked and the stored
+     question, weighted so a word in the stored question counts
+     more than a word buried in its answer. A weak best match is
+     no match, because a confidently wrong answer is worse than
+     an honest miss.
+     ---------------------------------------------------------- */
+  var STOP = {' the':1,a:1,an:1,and:1,are:1,as:1,at:1,be:1,but:1,by:1,can:1,do:1,does:1,
+    for:1,from:1,get:1,how:1,i:1,if:1,in:1,is:1,it:1,me:1,my:1,of:1,on:1,or:1,should:1,
+    that:1,the:1,then:1,this:1,to:1,was:1,what:1,when:1,where:1,which:1,who:1,why:1,
+    will:1,with:1,you:1,your:1,am:1,we:1,us:1,so:1,any:1,'':1};
+
+  function words(t) {
+    return String(t || '').toLowerCase().replace(/<[^>]+>/g, ' ')
+      .split(/[^a-z0-9]+/).filter(function (w) { return w.length > 2 && !STOP[w]; });
+  }
+
+  function searchBank(q) {
+    var bank = window.BIO005_QUESTIONS;
+    if (!bank || !bank.length) return null;
+    var asked = words(q);
+    if (asked.length < 2) return null;
+
+    var best = null, bestScore = 0, runnerUp = null;
+    bank.forEach(function (e) {
+      if (!e.__qw) { e.__qw = words(e.q); e.__aw = words(e.a); }
+      var score = 0;
+      asked.forEach(function (w) {
+        if (e.__qw.indexOf(w) > -1) score += 3;
+        else if (e.__aw.indexOf(w) > -1) score += 1;
+      });
+      /* a short stored question matched fully beats a long one matched partly */
+      score = score / Math.sqrt(e.__qw.length + 2);
+      if (score > bestScore) { runnerUp = best; bestScore = score; best = e; }
+    });
+
+    /* Below this the match is noise. Tuned so a two word question with one
+       real overlap does not fire. */
+    if (!best || bestScore < 1.15) return null;
+
+    var html = '<p>' + esc(best.q) + '</p>' + best.a;
+    if (runnerUp) {
+      html += '<p class="hoot-more">Not what you meant? The '
+        + '<a href="course-questions.html" target="_top">answered questions page</a> has '
+        + bank.length + ' of these, and you can filter it by typing a word.</p>';
+    }
+    return html;
+  }
+
   function hootieAnswer(qRaw, ctx) {
     var q = String(qRaw || '').toLowerCase().trim();
     if (!q) return { html: 'Ask me what is on this week, when your next exam is, how grading works, or what to do tonight.' };
+
+    /* buildContext returns null on any page that does not carry the schedule
+       globals. Every date aware branch below then throws, and the student sees
+       a dead assistant rather than an answer. The stored answers do not need a
+       context at all, so on a null context go straight to them. */
+    if (!ctx) {
+      var only = searchBank(q);
+      if (only) return { html: only, intent: 'bank' };
+      return { html: 'I cannot see the schedule from this page. The '
+        + '<a href="course-questions.html" target="_top">answered questions page</a> covers most of what students ask, '
+        + 'and the <a href="virtual-office.html" target="_top">virtual office</a> is where to put anything it does not.' };
+    }
 
     /* Explicit week number wins over everything. */
     var wkAsk = q.match(/week\s*(\d{1,2})/);
@@ -462,6 +546,10 @@
       var html = answerFor(id, ctx);
       if (html) return { html: html, intent: id };
     }
+
+    /* Already answered on the course questions page? Say that answer. */
+    var stored = searchBank(q);
+    if (stored) return { html: stored, intent: 'bank' };
 
     /* Physiology content, or anything else. Say so; do not guess. */
     var res = weekResources(ctx, ctx.viewWk || ctx.curWk);

@@ -67,7 +67,6 @@
     "clinical-physiology-lab-manual.html": "the lab manual",
     "mastery-canvas.html":          "the drawing canvas",
     "lab-report-form.html":         "the lab report form",
-    "lab-week05-sensory-reflex.html": "the week 5 sensory lab",
     "lab-week08-hormone-cycle.html":  "the week 8 hormone cycle lab",
     "assignment-notesheet.html":    "the note sheet assignment",
     "assignment-physioex.html":     "the lab report instructions",
