@@ -1,0 +1,98 @@
+{
+ "Sensory transduction": {
+  "a": "Draw one sensory neuron stretched across your space, from its receptor ending to a point well along the axon. Above it, draw the membrane potential recorded at three places, the receptor ending, the trigger zone, and further down the axon. Label which traces are graded and which are all or none, and mark threshold. One line: what happens to the information at the trigger zone that cannot be undone afterwards.",
+  "b": "Draw three stimulus strengths as three bars of different height on a time axis, weak, medium, and strong. Under each, draw the receptor potential it produces, and under that, the train of action potentials leaving the trigger zone. Keep every spike exactly the same height. One line: since the spikes are all identical, name what actually carries the message that the third stimulus was the strongest."
+ },
+ "Receptor classification": {
+  "a": "Draw a body outline and place one real receptor from each of the five classes on it, mechanoreceptor, chemoreceptor, thermoreceptor, photoreceptor, and nociceptor. Put each where it genuinely exists, inside the body as well as on the surface. Beside each, draw the stimulus arriving as an arrow and name the form of energy it carries. One line: which class is spread over the most locations, and what that says about its job.",
+  "b": "Pick a moment, drinking something hot, walking into the cold, or one of your own. Draw the scene and mark every receptor class firing during it, with an arrow from each stimulus to its receptor. Some classes will appear more than once at different sites. One line: name one class that is not firing in your scene, and the change that would recruit it."
+ },
+ "Stimulus coding": {
+  "a": "Draw four panels in a row, one each for modality, location, intensity, and duration. In each, draw the actual mechanism, a labeled line running to a specific cortical area, a receptive field on the skin, a firing rate, and a firing pattern held over time. Use spikes on a time axis wherever a rate is the answer. One line: which of the four still works if you stimulate the nerve trunk directly with an electrode.",
+  "b": "Draw what happens when you press hard on your own closed eyelid. Trace the path from the pressed photoreceptors to the cortical area that receives them, and draw what the person actually perceives. Beside it, draw the same mechanical pressure applied to the back of the hand and what that produces. One line: the same stimulus gave two different sensations, say what decided which one."
+ },
+ "Receptive fields and acuity": {
+  "a": "Draw two patches of skin side by side, a fingertip and the middle of the back, with the sensory neuron receptive fields on each drawn to scale as circles. Set the same pair of caliper points on both and show why one is felt as two points and the other as one. Write your own measured thresholds in millimetres on each patch. One line: what would have to change on the back to make it match the fingertip.",
+  "b": "Draw three sensory neurons in a row receiving a stimulus that is strongest on the middle one. Add the inhibitory interneurons that connect them sideways. Then draw the firing rate of all three as bars, once before the lateral connections act and once after. One line: what the sharpened pattern lets the brain do that the raw pattern did not."
+ },
+ "Receptor adaptation": {
+  "a": "Draw one stimulus bar on a time axis, held perfectly steady from start to finish. Under it, on the same axis, draw two firing rate traces responding to that same stimulus, a tonic receptor and a phasic receptor. Show clearly where the phasic one falls silent while the stimulus is still on, and mark any response when it switches off. Name a real receptor for each trace. One line: what the phasic receptor is reporting that the tonic one is not.",
+  "b": "Pick two things the body monitors, one it needs to know continuously and one it only needs at the moment of change. Choose your own, not the shirt on your skin. Draw the receptor you would assign to each and its firing over a long steady stimulus. Then swap the two assignments and draw what goes wrong in each case. One line: which swap is actually dangerous, and why."
+ },
+ "Somatosensory pathways": {
+  "a": "Draw one diagram running from a fingertip up to the cortex with two tracts on it, one carrying fine touch and one carrying pain. Mark where each crosses the midline, where each synapses on the way, and where each arrives in the postcentral gyrus. Use two colours or two line styles. One line: name a level where a single lesion would knock out one of them and spare the other.",
+  "b": "Draw a strip of postcentral gyrus in cross section and lay the homunculus along it, sizing each body part by the cortical area it gets rather than by its real size. Beside it, draw the same body parts at true relative size. Use your own two point discrimination data to decide what to enlarge. One line: given both drawings, state what cortical area is actually proportional to."
+ },
+ "Pain and its modulation": {
+  "a": "Draw one painful stimulus and the two fibers carrying it away, an A delta and a C fiber, drawn to show the difference in diameter and myelination. On a shared time axis, mark when each signal arrives and write the sensation each produces. Then add the dorsal horn gate, a large touch fiber, the inhibitory interneuron, and the projection neuron. One line: why rubbing a bruise helps, judging from your own circuit.",
+  "b": "Draw a spinal cord segment with a visceral afferent from the heart and a somatic afferent from the left arm skin converging on the same projection neuron. Follow that one neuron up to the cortex and draw where the brain places the pain. Then draw an endogenous opioid acting somewhere on this circuit and mark whether it works before or after the synapse. One line: why the brain guesses skin and not heart."
+ },
+ "Tactile mapping and adaptation testing": {
+  "a": "Draw a body outline and write your own measured two point threshold in millimetres at every site you tested. Before looking at anyone else's data, circle the site you predicted would be finest. Then draw a bar for each site ordered from finest to coarsest with the real numbers on them. One line: name a site where your measurement and your prediction disagreed, and one method error that could explain it.",
+  "b": "Draw a time axis and plot your own adaptation data on it, how long the sensation took to fade for each stimulus you tested. Beside it, draw a body outline with your referred sensation result on it, marking where the stimulus was applied and where it was actually felt. One line: what the distance between those two marks tells you about where in the pathway the mistake is being made."
+ },
+ "Optics and accommodation": {
+  "a": "Draw an eye in cross section twice at the same scale with light rays coming in. In the first, the object is far away. In the second, it is close. In each, draw the lens shape, the ciliary muscle, the zonule fibers taut or slack, and where the rays come to a focus. One line: name which of the two states has the ciliary muscle working, and why that catches most people out.",
+  "b": "Draw the pupillary light reflex as a circuit, light into one eye, the afferent nerve, the brainstem, and the efferent nerve running back out to both irises. Show the muscle that contracts and draw both pupils before and after. Then move the light to the other eye and draw the result. One line: what a response missing in one eye only tells you about where the lesion sits."
+ },
+ "Phototransduction": {
+  "a": "Draw a photoreceptor twice, side by side, once in darkness and once in bright light. In each, show the cyclic GMP level, whether the cation channels are open or closed, the membrane potential, and how much glutamate is leaving the base of the cell. One line: name the state in which the cell releases the most transmitter, and say why that is the opposite of what you would expect.",
+  "b": "Draw the cascade as a chain of labelled boxes from photon absorption through retinal, the pigment, the G protein, the enzyme, cyclic GMP, and the channel, with arrows between every box. On each arrow, mark whether the next thing goes up or down. Then break one box of your choosing and write what the cell now does when light hits it."
+ },
+ "Rods cones and visual processing": {
+  "a": "Draw a patch of retina at the fovea and a patch from the far periphery, side by side, each showing photoreceptors, bipolar cells, and one ganglion cell. Make the convergence ratio visible by how many photoreceptors feed that one ganglion cell. Beside each, write which receptor type dominates, its sensitivity, and its acuity. One line: why the same wiring cannot give you both sensitivity and acuity at once.",
+  "b": "Draw the visual pathway from both eyes through the chiasm to the cortex, marking which fibers cross and which do not. Then cut it in two places, once at the left optic nerve and once through the middle of the chiasm. For each cut, draw the two visual fields as a pair of circles and shade what is lost. One line: which lesion the patient notices first, and why."
+ },
+ "Refractive errors and clinical vision": {
+  "a": "Draw four eyes in a row with parallel rays entering each, normal, myopic, hyperopic, and astigmatic. In each, mark where the rays come to a focus relative to the retina and mark whether the eyeball shape or the corneal surface is the problem. Then draw the corrective lens in front of each, bending the rays back onto the retina. One line: why the astigmatic eye needs a differently shaped lens than the other two.",
+  "b": "Draw one eye reading a page at 25 cm at age 20 and the same eye at age 60, showing the lens shape and where the image falls in each. Beside them, draw a hyperopic 20 year old reading the same page. Both people end up holding it further away. One line: name the one structure that differs between the two cases, and a test that would tell them apart."
+ },
+ "Auditory transduction": {
+  "a": "Draw the path of one sound from air to auditory nerve, tympanic membrane, the three ossicles named in order, oval window, cochlear fluid, basilar membrane, hair cell, nerve. Draw the round window and show what it is doing. Enlarge one hair cell and draw its stereocilia bending and the channel that opens. One line: name what the ossicles are correcting for at the boundary between air and fluid.",
+  "b": "Draw the basilar membrane unrolled as one long strip, narrow and stiff at the end nearest the oval window and wide and floppy at the far end. Mark where a high pitched sound peaks and where a low one peaks. Then draw two hair cell firing traces for the same pitch at two loudness levels. One line: pitch and loudness are coded two different ways, say which one is place and which is rate."
+ },
+ "Conductive and sensorineural hearing loss": {
+  "a": "Draw the ear in one cross section from the canal through to the auditory nerve, with outer, middle, and inner ear marked off. Put an X at a site that would cause conductive loss and a different X at a site that would cause sensorineural loss. Beside each X, draw the tuning fork on the mastoid and beside the ear, and mark which position is heard louder. One line: name what bone conduction bypasses.",
+  "b": "Draw a head from the front three times with a tuning fork on the midline of the skull in each, once with normal hearing, once with a conductive loss on the right, and once with a sensorineural loss on the right. Draw an arrow from the fork to the ear where the sound is heard louder in each. One line: those arrows point opposite ways, say what it costs you to run Weber alone."
+ },
+ "Equilibrium": {
+  "a": "Draw one semicircular canal with its cupula and one macula with its otolith membrane and otoconia, side by side and both enlarged. On each, draw the head movement it detects as an arrow and show what physically pushes on the hair cells in that case. One line: name a head movement that bends the cupula but leaves the otoliths sitting where they are.",
+  "b": "Draw the endolymph and cupula inside one horizontal canal at four moments, sitting still, at the start of a spin, during a long steady spin at constant speed, and the instant you stop. Show the cupula position in every panel. One line: using your fourth panel, say why you still feel like you are turning after you have stopped."
+ },
+ "Taste and smell": {
+  "a": "Draw a taste bud with one taste cell enlarged beside an olfactory epithelium with one olfactory receptor neuron enlarged, at the same scale. On each, show the stimulus arriving, what it binds to or passes through, and how the cell signals the next neuron along. Mark which of your two cells is itself a neuron. One line: name a taste that works by an ion entering the cell directly rather than by a receptor protein.",
+  "b": "Draw both pathways from receptor to cortex on one page, taste on one side and smell on the other. Put the thalamus in the middle and route each pathway correctly, through it or around it. Mark where the smell pathway reaches the limbic system. One line: why a smell can drop you into a memory before you have even named the smell."
+ },
+ "Vision testing": {
+  "a": "Draw four panels in a row, one for each test you ran, acuity, blind spot, accommodation, and colour vision. In each panel, draw the setup and your own result, with real numbers where you have them, including your acuity fraction and your near point in centimetres. One line: name the test whose result depends most on the subject being honest, and what that means for trusting the number.",
+  "b": "Draw the eye in cross section and mark the optic disc and the fovea in their correct positions relative to each other. Draw rays from the target in your blind spot experiment to work out where the spot falls in the visual field and on which side. Then do the same for the other eye. One line: why you never notice the blind spot in ordinary life."
+ },
+ "Hearing and equilibrium testing": {
+  "a": "Draw the Weber and Rinne procedures as you actually performed them, with the fork position marked on a head for each and your own subject's result written beside it. Then add your balance test, drawing the subject's stance and marking how the sway changed when the eyes closed. One line: name which system takes over when vision is removed, judging from your own sway result.",
+  "b": "Draw a branching chart of boxes and arrows that starts at a Weber result and ends at a named finding, with Rinne as the second branch. Fill in every ending, normal, conductive on one side, sensorineural on one side. Then run your own subject's results through it and mark the path they took. One line: name an ending your chart cannot reach, and what you would need to add to reach it."
+ },
+ "Autonomic and somatic organization": {
+  "a": "Draw the somatic motor pathway and the autonomic pathway side by side, both starting in the CNS and ending at an effector. Count the neurons in each and put the ganglion in its correct place on the autonomic one. Label the transmitter released at every synapse and at both endings. Name the effector tissue at the end of each. One line: what the extra neuron buys the autonomic system.",
+  "b": "Draw one somatic motor neuron reaching skeletal muscle, and one autonomic pathway branching to cardiac muscle, a smooth muscle, and a gland. Then cut every nerve on your drawing and show what happens to each effector. One line: one of these effectors is completely paralysed by the cut while the others keep working, say which and why."
+ },
+ "Sympathetic and parasympathetic divisions": {
+  "a": "Draw the CNS as one tall outline from brainstem to sacrum and mark the outflow region for each division on it. From each region, draw a preganglionic and a postganglionic neuron with the ganglion at its true distance from the cord, and make the fiber lengths honestly different between the two divisions. One line: what the ganglion position does to how widely one preganglionic neuron can spread its signal.",
+  "b": "Draw a heart and a length of gut side by side. Run a sympathetic fiber and a parasympathetic fiber to each, four pathways in total. On each pathway, write the effect with a direction, what happens to heart rate and what happens to gut motility and secretion. One line: name the whole body situation each of your two columns is built for."
+ },
+ "Autonomic neurotransmitters and receptors": {
+  "a": "Draw four complete pathways from the cord out to an effector, sympathetic to a blood vessel, sympathetic to sweat glands, sympathetic to the adrenal medulla, and parasympathetic to the heart. At every synapse and every ending, write the transmitter and the receptor type. One line: name the two places where your labels broke the pattern, and state what the pattern was.",
+  "b": "Draw four postsynaptic membranes in a row, one each for nicotinic, muscarinic, alpha, and beta receptors. On each, draw the transmitter that binds it, name one real location in the body, and draw the response it produces, contract, relax, speed up, or secrete. One line: two of your four bind the same transmitter, name them and say what makes their responses different."
+ },
+ "Dual innervation and tonic control": {
+  "a": "Draw an organ with both divisions on it as a dial with a pointer, sympathetic pushing one way and parasympathetic the other. Set the pointer at rest and mark which division is pulling harder there. Beside it, draw a blood vessel, which gets only one division, and show how its diameter is adjusted with a single input. One line: define tone using both of your drawings.",
+  "b": "Draw a heart with both divisions attached and write its resting rate on it. Then draw it twice more, once with the parasympathetic supply cut and once with the sympathetic supply cut, putting a rate on each and an arrow for the direction it moved. The pacemaker's own intrinsic rate is higher than the resting rate. One line: say what that fact tells you about which division dominates at rest."
+ },
+ "Autonomic pharmacology": {
+  "a": "Draw a body outline with four organs on it, heart, airways, blood vessels, and gut, and label the autonomic receptor type that dominates at each. Then draw a non selective beta blocker arriving and mark every organ it lands on with the effect it produces there. One line: name the organ where this drug does something the prescriber did not want, and the receptor responsible for it.",
+  "b": "Pick a muscarinic antagonist and draw its effect at four places at once, pupil, salivary gland, heart, and gut. In each drawing, show the parasympathetic input being blocked and the change that follows. Then write which of the four you were actually treating and which three are side effects. One line: what would have to change about the drug to keep only the effect you wanted."
+ },
+ "Autonomic function testing": {
+  "a": "Draw a heart rate trace across several breathing cycles, with the breathing cycle drawn underneath on the same time axis. Show heart rate rising and falling against inspiration and expiration, using your own recorded data, and mark the beat to beat variation you measured. One line: name the division being withdrawn and restored fast enough to make that pattern, and say how the speed alone tells you.",
+  "b": "Draw a time axis running through one challenge you performed, cold pressor or standing up. Plot heart rate and blood pressure on it as two curves, before, during, and after, using your own numbers, and mark the moment of the challenge. One line: read your own curves and say which division took over, naming the receptor doing the work out at the effector."
+ }
+}
