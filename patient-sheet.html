@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your patient sheet &middot; BIO 005 Human Physiology</title>
+<link rel="stylesheet" href="assets/fonts-site.css">
+<!-- ==========================================================
+     THE PATIENT SHEET. One patient, fifteen weeks, one running record.
+
+     Scrubs, Sep 7 2026: "rather than just say work it and talk vaguely,
+     you need to create a worksheet that walks them through it", and
+     "they should have a patient sheet that they can use to collect
+     information that they will use at the end of the semester."
+
+     Those are one thing, not two. Each week's entry IS the walkthrough:
+     the five questions, each broken into the steps a student actually
+     has to take, with somewhere to put the answer. Fifteen filled
+     entries are the patient file they synthesise in Week 15.
+
+     ?week=N   one week's sheet
+     ?all=1    every week that has been written, as one semester file
+     &embed=1  panel mode, chrome dropped
+
+     WHAT THIS IS NOT. It is not a second copy of the case. The chart,
+     the entry points and the five questions all come from
+     bio005-patient-chart.js. This file adds the scaffolding and the
+     space, and nothing else.
+
+     TYPED ANSWERS ARE NOT SAVED ANYWHERE. The fields are here so the
+     sheet can be filled on a laptop and printed to PDF in one go. That
+     is stated on the page in plain language, because a student who
+     assumes otherwise loses an hour of work.
+     ========================================================== -->
+<style>
+:root{--navy:#0B1530;--rust:#8B3A2E;--rust-dark:#6E2D24;--page:#FAFAF9;--hair:rgba(11,21,48,.16)}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{font-family:'Plus Jakarta Sans Variable','Plus Jakarta Sans',system-ui,sans-serif;
+  color:var(--navy);background:var(--page);line-height:1.6;font-size:15.5px;padding:34px max(22px,4vw)}
+.inner{max-width:860px;margin:0 auto}
+.skip{position:absolute;left:-9999px;top:0;background:var(--navy);color:#fff;padding:12px 18px;font-weight:700;text-decoration:none;z-index:20}
+.skip:focus{left:0;top:0}
+a{color:var(--rust)}
+:focus-visible{outline:3px solid var(--rust);outline-offset:2px}
+
+header.brand{display:flex;align-items:center;gap:12px;padding:16px max(22px,4vw);
+  border-bottom:1px solid var(--hair);margin:-34px max(-22px,-4vw) 24px;background:#fff}
+header.brand .bwm{font-weight:800;font-size:16px;color:var(--navy)}
+header.brand .bwm b{color:var(--rust)}
+header.brand .bsub{display:block;font-size:10.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#4F5468}
+
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--rust);margin:0 0 10px}
+h1{font-size:clamp(25px,4.2vw,34px);font-weight:800;letter-spacing:-.02em;margin:0 0 6px;line-height:1.1}
+.sub{margin:0 0 4px;font-weight:700}
+p{max-width:70ch}
+h2{font-size:18px;font-weight:800;margin:30px 0 6px;letter-spacing:-.01em}
+h2 .num{color:var(--rust);font-variant-numeric:tabular-nums;margin-right:9px}
+h3{font-size:15px;font-weight:800;margin:0 0 6px}
+.note{font-size:13.5px;color:#414B5C;max-width:66ch}
+
+.idbar{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;
+  background:#fff;border-radius:12px;padding:16px 18px;box-shadow:0 1px 3px rgba(11,21,48,.10);margin:10px 0 6px}
+.fld label{display:block;font-size:10.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);margin:0 0 4px}
+.fld input,.fld select{width:100%;font:inherit;font-size:14.5px;padding:8px 10px;
+  border:1px solid var(--hair);border-radius:8px;background:#fff;color:var(--navy)}
+
+.card{background:#fff;border-radius:12px;padding:16px 18px 14px;box-shadow:0 1px 3px rgba(11,21,48,.10);margin:10px 0 4px}
+.card p:last-child{margin-bottom:0}
+.chart dt{font-size:10.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);margin:12px 0 3px}
+.chart dd{margin:0 0 3px}
+.chart dl{margin:0}
+
+/* one step of the walkthrough */
+.stp{background:#fff;border-radius:12px;padding:16px 18px 14px;box-shadow:0 1px 3px rgba(11,21,48,.10);margin:10px 0;break-inside:avoid}
+.stp .q{font-weight:800;margin:0 0 8px}
+.stp .how{margin:0 0 10px;padding-left:20px;font-size:14px;color:#2A3448}
+.stp .how li{margin:0 0 5px}
+.ans{width:100%;font:inherit;font-size:14.5px;line-height:1.55;padding:10px 12px;
+  border:1px solid var(--hair);border-radius:8px;background:#fff;color:var(--navy);resize:vertical}
+.ans.short{min-height:180px}
+.ans.tall{min-height:285px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:640px){.two{grid-template-columns:1fr}}
+
+table.loop{width:100%;border-collapse:collapse;margin:6px 0 0;font-size:14px}
+table.loop th,table.loop td{border:1px solid var(--hair);padding:7px 9px;text-align:left;vertical-align:top}
+table.loop th{background:#ECEFF4;font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;width:24%}
+table.loop td{height:66px}
+
+.btns{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0 4px}
+.btn{font:inherit;display:inline-block;font-weight:800;text-decoration:none;border-radius:10px;padding:12px 18px;cursor:pointer}
+.btn.solid{background:var(--rust);color:#fff;border:1.5px solid var(--rust)}
+.btn.solid:hover{background:var(--rust-dark);border-color:var(--rust-dark)}
+.btn.line{background:#fff;color:var(--rust);border:1.5px solid var(--rust)}
+
+.wkblock{margin:0 0 34px}
+.wkrule{margin:34px 0 0;border:0;border-top:1px solid var(--hair)}
+
+html.embedded body{padding-top:0}
+html.embedded header.brand,html.embedded .skip{display:none!important}
+html.embedded{scrollbar-gutter:stable;scrollbar-width:thin}
+
+@media print{
+  body{background:#fff;padding:0;font-size:10.5pt}
+  header.brand,.btns,.skip,.noprint{display:none!important}
+  .card,.stp,.idbar{box-shadow:none;border:.6pt solid #999;break-inside:avoid}
+  .ans{border:.6pt solid #666;background:#fff}
+  /* Scrubs: bigger boxes, use the white space, do not waste it. These are
+     the sizes a handwritten answer actually needs. A short box is four or
+     five lines, a tall one is ten to twelve. */
+  .ans.short{min-height:2.1in}
+  .ans.tall{min-height:3.1in}
+  table.loop td{height:0.55in}
+  h2{break-after:avoid}
+  .stp{break-inside:avoid}
+  /* One week per page break only when there is a next week to start. A
+     single week printed alone used to leave most of its last page empty. */
+  .wkblock + .wkrule + .wkblock{break-before:page}
+  .wkrule{display:none}
+  a{color:#000;text-decoration:none}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the sheet</a>
+<header class="brand">
+  <svg width="28" height="34" viewBox="40 10 125 148" role="img" aria-label="BIO 005 Human Physiology">
+    <g transform="translate(0,18)">
+      <g transform="translate(60,0) rotate(8 0 130)"><circle cx="0" cy="20" r="10" fill="#0B1530"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#0B1530"/></g>
+      <g transform="translate(100,0)"><circle cx="0" cy="10" r="11" fill="#8B3A2E"/><path d="M 0,22 C -11,22 -17,26 -17,34 C -17,52 -14,70 -12,86 C -11,108 -13,122 -15,132 L 15,132 C 13,122 11,108 12,86 C 14,70 17,52 17,34 C 17,26 11,22 0,22 Z" fill="#8B3A2E"/></g>
+      <g transform="translate(140,0) rotate(-8 0 130)"><circle cx="0" cy="20" r="10" fill="#C9A14A"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#C9A14A"/></g>
+    </g>
+  </svg>
+  <span><span class="bwm">BIO <b>005</b></span><span class="bsub">Human Physiology &middot; Fall 2026</span></span>
+</header>
+
+<main id="main" class="inner">
+  <p class="eyebrow" id="eyebrow">Your patient sheet</p>
+  <h1 id="h1">Your patient sheet</h1>
+  <p class="sub" id="wkline"></p>
+  <p id="patient"></p>
+
+  <div class="idbar noprint">
+    <span class="fld"><label for="nm">Your name</label><input id="nm" type="text" autocomplete="name"></span>
+    <span class="fld"><label for="tr">Your entry point</label><select id="tr"></select></span>
+    <span class="fld"><label for="dt">Date</label><input id="dt" type="date"></span>
+  </div>
+
+  <p class="note noprint"><strong>Nothing you type here is saved.</strong> The boxes are so you can fill this in on a laptop and print it to PDF in one go. If you close the tab, it is gone. Print it blank and write on it if that suits you better; both are the same to me.</p>
+
+  <div class="btns noprint">
+    <button class="btn solid" id="printbtn" type="button">Print or save as PDF</button>
+    <a class="btn line" id="allbtn" href="patient-sheet.html?all=1">Open the whole semester</a>
+  </div>
+
+  <div id="body"></div>
+
+  <p class="note" style="margin-top:26px">Keep every week. In Week 15 you will be asked to read her first blood gas again using things you will not learn until November, and the only way to do that well is to still have what you wrote in September.</p>
+</main>
+
+<script src="bio005-patient-chart.js"></script>
+<script>
+(function(){
+  var C = window.BIO005_CHART;
+  if (/[?&]embed=1/.test(location.search)) document.documentElement.className += ' embedded';
+
+  var qs   = String(location.search);
+  var all  = /[?&]all=1/.test(qs);
+  var m    = /[?&]week=(\d{1,2})/.exec(qs);
+  var week = m ? Math.max(1, Math.min(15, parseInt(m[1],10))) : 1;
+
+  document.getElementById('patient').innerHTML =
+    '<strong>' + C.patient.name + '.</strong> ' + C.patient.line + ' ' +
+    'She is the same patient for everyone in the class, and the same patient every week. ' +
+    'What you choose is your entry point, and you keep that too.';
+
+  /* the entry point selector, from the chart's own list */
+  var sel = document.getElementById('tr');
+  sel.innerHTML = '<option value="">Choose one</option>' +
+    C.tracks.map(function(t){ return '<option value="' + t.id + '">' + t.name + '</option>'; }).join('');
+  try {
+    var saved = localStorage.getItem('bio005-track-v1');
+    if (saved) sel.value = saved;
+  } catch(e){}
+  sel.addEventListener('change', function(){
+    try { if (sel.value) localStorage.setItem('bio005-track-v1', sel.value); } catch(e){}
+    render();
+  });
+
+  document.getElementById('printbtn').addEventListener('click', function(){ window.print(); });
+
+  function esc(x){ return String(x); }
+
+  /* ------------------------------------------------------------------
+     THE WALKTHROUGH. Each of the week's five questions becomes a step
+     with the moves spelled out, then somewhere to answer. The moves are
+     generic on purpose: they are the same five moves every week, which
+     is how a student stops needing them by November.
+     ------------------------------------------------------------------ */
+  var HOW = [
+    ['Be precise about the noun. Not "the pressure" but which pressure, not "the enzyme" but which one and where it works.',
+     'Say what is doing the regulating, by name.',
+     'If you cannot name it in one line, that is the gap. Write the line anyway and mark it.'],
+    ['Commit to a direction before you explain anything. Up, down, or held steady.',
+     'Write the prediction as a sentence, not an arrow.',
+     'You are allowed to be wrong here. You are not allowed to skip it.'],
+    ['Go in order. Do not jump from cause to outcome.',
+     'Name every step, including the one that feels obvious.',
+     'Where a step is a guess, write "I think" in front of it so you can find it later.'],
+    ['Split the page: what the evidence shows, and what you are inferring from it.',
+     'Both are allowed. Mixing them is what costs marks.',
+     'Name the single number that did the most work in your answer.'],
+    ['Two sentences of conclusion, no more.',
+     'Then the measurement that would change your mind, and which way the result would have to go.',
+     'A conclusion nothing could overturn is not a conclusion.']
+  ];
+
+  function stepHTML(q, i, w){
+    var id = 'w' + w + 'q' + (i+1);
+    var moves = HOW[i] || [];
+    var extra = '';
+
+    /* question 3 is the mechanism, every week. It gets a table rather than
+       a box, because a trace written as a paragraph loses its order and
+       the order is the thing being assessed. */
+    if (i === 2){
+      extra =
+        '<table class="loop"><caption class="note" style="text-align:left;margin-bottom:6px">' +
+        'One row per step, in the order it happens. Add rows on your own paper if you need more.</caption>' +
+        '<tbody>' +
+          '<tr><th scope="row">Step 1</th><td></td></tr>' +
+          '<tr><th scope="row">Step 2</th><td></td></tr>' +
+          '<tr><th scope="row">Step 3</th><td></td></tr>' +
+          '<tr><th scope="row">Step 4</th><td></td></tr>' +
+          '<tr><th scope="row">Step 5</th><td></td></tr>' +
+        '</tbody></table>' +
+        '<label class="note" for="' + id + 'x" style="display:block;margin:10px 0 4px">' +
+        'Now say it in prose, in four or five sentences, using the rows above in order.</label>' +
+        '<textarea class="ans tall" id="' + id + 'x"></textarea>';
+    } else if (i === 3){
+      extra =
+        '<div class="two">' +
+          '<div><label class="note" for="' + id + 'a" style="display:block;margin:0 0 4px">What the evidence shows</label>' +
+          '<textarea class="ans tall" id="' + id + 'a"></textarea></div>' +
+          '<div><label class="note" for="' + id + 'b" style="display:block;margin:0 0 4px">What it cannot show</label>' +
+          '<textarea class="ans tall" id="' + id + 'b"></textarea></div>' +
+        '</div>' +
+        '<label class="note" for="' + id + 'c" style="display:block;margin:10px 0 4px">' +
+        'The one number that did the most work in your answer, and why</label>' +
+        '<textarea class="ans short" id="' + id + 'c"></textarea>';
+    } else if (i === 4){
+      extra =
+        '<label class="note" for="' + id + 'a" style="display:block;margin:0 0 4px">Your conclusion, two sentences</label>' +
+        '<textarea class="ans short" id="' + id + 'a"></textarea>' +
+        '<label class="note" for="' + id + 'b" style="display:block;margin:10px 0 4px">' +
+        'The measurement that would change it, and which way the result would have to go</label>' +
+        '<textarea class="ans short" id="' + id + 'b"></textarea>';
+    } else {
+      extra = '<textarea class="ans ' + (i===0?'short':'short') + '" id="' + id + 'a" aria-label="Your answer"></textarea>';
+    }
+
+    return '<div class="stp">' +
+      '<p class="q">' + (i+1) + '. ' + q + '</p>' +
+      '<ul class="how">' + moves.map(function(x){ return '<li>' + x + '</li>'; }).join('') + '</ul>' +
+      extra +
+    '</div>';
+  }
+
+  function weekHTML(w){
+    var wk = C.weeks[w];
+    if (!wk) return '';
+    var track = sel.value;
+    var desk  = track && wk.tracks[track];
+    var tname = '';
+    for (var i=0;i<C.tracks.length;i++) if (C.tracks[i].id === track) tname = C.tracks[i].name;
+
+    var toolsBlock = '';
+    if (wk.tools && wk.tools.length){
+      toolsBlock = '<h2><span class="num">&#9679;</span>Before you start</h2>' +
+        '<div class="card"><ul>' + wk.tools.map(function(t){
+          return '<li><strong>' + t[0] + '.</strong> ' + t[1] +
+                 (t[2] ? ' <em style="font-style:normal;font-weight:700;color:#8B3A2E">You build this properly in Week ' + t[2] + '.</em>' : '') + '</li>';
+        }).join('') + '</ul></div>';
+    }
+
+    return '<section class="wkblock">' +
+      '<h2><span class="num">' + (w<10?'0':'') + w + '</span>' + wk.title + '</h2>' +
+      '<p class="note">' + wk.encounter + ' &middot; ' + wk.date + ' &middot; ' + wk.when + '.</p>' +
+      '<p>' + wk.arc + '</p>' +
+      toolsBlock +
+      '<h2>The chart</h2>' +
+      '<div class="card chart"><dl>' + wk.chart.map(function(r){
+        return '<dt>' + r[0] + '</dt><dd>' + r[1] + '</dd>';
+      }).join('') + '</dl></div>' +
+      (desk
+        ? '<h2>On your desk &middot; ' + tname + '</h2><div class="card"><p>' + desk.data + '</p>' +
+          '<p><strong>Work through:</strong> ' + desk.go + '</p></div>'
+        : '<h2>On your desk</h2><div class="card"><p>Choose an entry point above and this fills in with the data your discipline would have, plus the question written from that desk.</p></div>') +
+      '<h2>Work it through</h2>' +
+      '<p class="note">Five questions, the same five every week. The bullets under each are the moves, not decoration: do them in that order.</p>' +
+      wk.five.map(function(q,i){ return stepHTML(q, i, w); }).join('') +
+      '<div class="stp"><p class="q">Before you close this week</p>' +
+        '<ul class="how">' +
+          '<li>One line: what changed in your thinking about this patient since last week.</li>' +
+          '<li>"Nothing changed" is a real answer if you say why that is informative.</li>' +
+        '</ul>' +
+        '<textarea class="ans short" id="w' + w + 'thread" aria-label="What changed in my thinking"></textarea>' +
+        '<label class="note" for="w' + w + 'ai" style="display:block;margin:10px 0 4px">' +
+        'AI disclosure. What you used it for, and what you did with what it gave you. One line saying you used none is a complete answer.</label>' +
+        '<textarea class="ans short" id="w' + w + 'ai"></textarea>' +
+      '</div>' +
+    '</section>';
+  }
+
+  function render(){
+    var host = document.getElementById('body');
+    if (all){
+      var weeks = Object.keys(C.weeks).map(Number).sort(function(a,b){ return a-b; });
+      document.title = 'Your patient sheet, the whole semester · BIO 005';
+      document.getElementById('h1').textContent = 'Your patient sheet, the whole semester';
+      document.getElementById('eyebrow').textContent = 'Fifteen weeks, one patient';
+      document.getElementById('wkline').textContent =
+        weeks.length + ' weeks written. Print this once and keep it in one place.';
+      document.getElementById('allbtn').style.display = 'none';
+      host.innerHTML = weeks.map(function(w){ return weekHTML(w); }).join('<hr class="wkrule">');
+    } else {
+      var wk = C.weeks[week];
+      document.title = 'Your patient sheet · Week ' + week + ' · BIO 005 Human Physiology';
+      document.getElementById('h1').textContent = 'Your patient sheet';
+      document.getElementById('eyebrow').innerHTML = 'Use It &middot; Week ' + week;
+      document.getElementById('wkline').textContent =
+        wk ? ('Week ' + week + ' · ' + wk.title) : ('Week ' + week + ' is not written yet.');
+      document.getElementById('allbtn').href = 'patient-sheet.html?all=1';
+      host.innerHTML = weekHTML(week);
+    }
+    post();
+  }
+
+  render();
+
+  function post(){ try{ parent.postMessage({frame:'bio005-patient-sheet',
+    height:document.documentElement.scrollHeight}, '*'); }catch(e){} }
+  if ('ResizeObserver' in window){ new ResizeObserver(post).observe(document.documentElement); }
+  window.addEventListener('load', post); window.addEventListener('resize', post);
+})();
+</script>
+</body>
+</html>
