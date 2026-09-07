@@ -76,7 +76,12 @@ var DISCUSSIONS = {"1": ["The digital vision board", "Embed assignment-discussio
 
 function pad(n){ return (n < 10 ? "0" : "") + n; }
 function sitelink(url, label){
-  return '<p><a href="' + BASE + url + '" target="_blank" rel="noopener"><strong>' + label + '</strong></a><br>Opens the course site in a new tab.</p>';
+  /* _blank, not _top. These snippets are pasted into Canvas pages, and _top
+     would navigate the student's whole Canvas tab away from where they were.
+     The arrow is decorative: the sentence underneath already says where the
+     link goes, so a screen reader does not need to hear "north east arrow". */
+  return '<p><a href="' + BASE + url + '" target="_blank" rel="noopener"><strong>' + label
+    + '</strong> <span aria-hidden="true">&#8599;</span></a><br>Opens the course site in a new tab.</p>';
 }
 function linksnip(url, label){
   return '<p><a href="' + BASE + url + '" target="_blank" rel="noopener"><strong>' + label + '</strong></a><br>Open it in a new tab, print to PDF or copy to your own paper, work it by hand, and upload it here.</p>';
@@ -127,7 +132,7 @@ function buildStatic(){
     ['Door: the study tools', 'door-study.html'],
     ['Syllabus', 'syllabus-fall2026.html'],
     ['Schedule', 'course-schedule.html'],
-    ['250 questions, answered', 'course-questions.html'],
+    ['Have questions about the course? Here are some answers', 'course-questions.html'],
     ['How AI is used in this course', 'ai-in-this-course.html'],
     ['Competency Packet', 'competency-packet-fall2026.html']
   ];

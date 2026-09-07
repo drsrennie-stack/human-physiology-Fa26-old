@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Week 5 notes · BIO 005 Human Physiology</title>
+<link rel="icon" type="image/svg+xml" href="icon.svg">
+<link rel="stylesheet" href="assets/fonts-site.css">
+<link rel="stylesheet" href="assets/brandbar.css">
+<style>
+/* Page-specific rules only. Palette and the shared chrome live in
+   assets/brand.css and assets/brandbar.css. The fallback tokens below
+   let the page render on its own if brand.css is not beside it. */
+:root{
+  --navy:#0B1530; --navy-deep:#060A18; --navy-tint:#ECEFF4;
+  --gold:#C9A14A; --gold-ink:#060A18; --gold-deep:#8A6D33;
+  --maroon:#8B3A2E; --maroon-dark:#6E2D24;
+  --offwhite:#FAFAF9; --bone:#F5F1E8; --ink-soft:#414B5C;
+  --line:rgba(11,21,48,0.16);
+  --display:'Open Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+  --body:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0}
+body{font-family:var(--body);background:var(--offwhite);color:var(--navy);
+  font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--display);font-weight:800;letter-spacing:-.022em;margin:0}
+em,i,cite,dfn{font-style:normal;color:var(--maroon)}
+p{margin:0 0 14px;max-width:68ch}
+a{color:var(--maroon);text-underline-offset:3px}
+a:hover{color:var(--maroon-dark)}
+:focus-visible{outline:3px solid var(--maroon);outline-offset:3px;border-radius:3px}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+.skip{position:absolute;left:-9999px;top:0;z-index:90;background:var(--navy);color:#fff;
+  padding:12px 18px;font-weight:700;text-decoration:none}
+.skip:focus{left:0;top:0}
+header.top{background:var(--navy-deep);color:#fff;padding:34px 0 30px;margin-top:16px}
+header.top .eyebrow{font-size:11px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--gold);margin:0 0 10px}
+header.top h1{font-size:clamp(26px,4.4vw,38px);line-height:1.14;color:#fff;max-width:22ch}
+header.top p{margin:12px 0 0;color:var(--bone);max-width:62ch;font-size:15.5px}
+main{padding:30px 0 10px}
+section{margin:0 0 30px}
+h2{font-size:clamp(20px,3vw,25px);color:var(--maroon-dark);margin:0 0 10px}
+.card{background:#fff;border:0;border-radius:12px;padding:20px 22px;margin:0 0 14px;
+  box-shadow:0 1px 3px rgba(11,21,48,.08);transition:transform 200ms ease,box-shadow 200ms ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 16px rgba(11,21,48,.10)}
+.card h3{font-size:16.5px;margin:0 0 6px}
+.card .num{font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--maroon);margin:0 0 6px}
+.card p{margin:0;max-width:64ch}
+.pending{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--navy);background:var(--navy-tint);
+  border-radius:99px;padding:5px 12px;margin-top:12px}
+.notice{background:#fff;border:0;border-radius:12px;padding:20px 22px;margin:0 0 24px;
+  box-shadow:0 1px 3px rgba(11,21,48,.08)}
+.notice .t{font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--maroon);margin:0 0 8px}
+ol.plain{margin:0;padding-left:22px}
+ol.plain li{margin:0 0 10px;max-width:66ch}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}.card:hover{transform:none}}
+@media print{
+  .skip,.mm-brandbar,.mm-jumpwrap,.mm-foot{display:none}
+  body{background:#fff;font-size:10pt}
+  header.top{background:#fff;color:#000;padding:0 0 10pt}
+  header.top h1,header.top p,header.top .eyebrow{color:#000}
+  .card,.notice{box-shadow:none;border-top:1px solid #000;border-radius:0;padding:8pt 0;
+    break-inside:avoid;page-break-inside:avoid}
+  h1,h2,h3{break-after:avoid;page-break-after:avoid}
+  a{color:#000;text-decoration:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<div class="mm-brandbar"><div class="mm-wrap">
+  <a class="mm-mark" href="course-start.html" target="_top">
+    <svg viewBox="40 10 125 148" width="22" height="26" role="img" aria-label="BIO 005 Human Physiology, course home">
+      <g transform="translate(0,18)">
+        <g transform="translate(60,0) rotate(8 0 130)"><circle cx="0" cy="20" r="10" fill="#0B1530"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#0B1530"/></g>
+        <g transform="translate(100,0)"><circle cx="0" cy="10" r="11" fill="#8B3A2E"/><path d="M 0,22 C -11,22 -17,26 -17,34 C -17,52 -14,70 -12,86 C -11,108 -13,122 -15,132 L 15,132 C 13,122 11,108 12,86 C 14,70 17,52 17,34 C 17,26 11,22 0,22 Z" fill="#8B3A2E"/></g>
+        <g transform="translate(140,0) rotate(-8 0 130)"><circle cx="0" cy="20" r="10" fill="#C9A14A"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#C9A14A"/></g>
+      </g>
+    </svg>
+    <span><span class="mm-wm">BIO <b>005</b></span><span class="mm-wmsub">Human Physiology</span></span>
+  </a>
+  <span class="mm-course">BIO 005 &middot; Fall 2026</span>
+</div></div>
+
+<div class="mm-jumpwrap">
+  <span class="lbl">This week</span>
+  <ul class="mm-jump" aria-label="Week 5 assignments">
+    <li><a class="j-note" href="note-sheet.html?week=5" target="_top" title="Week 5 note sheet">N<span class="mm-vh">Week 5 note sheet</span></a></li>
+    <li><a class="j-prob" href="assignment-bookproblems.html?week=5" target="_top" title="Week 5 problems">P<span class="mm-vh">Week 5 problems</span></a></li>
+    <li><a class="j-lab" href="assignment-physioex.html?week=5" target="_top" title="Week 5 lab">L<span class="mm-vh">Week 5 lab</span></a></li>
+    <li><a class="j-disc" href="assignment-discussion.html?week=5" target="_top" title="Week 5 discussion">D<span class="mm-vh">Week 5 discussion</span></a></li>
+    <li><a class="j-study" href="mastery-physio-os-standalone.html?week=5" target="_top" title="Week 5 study session">S<span class="mm-vh">Week 5 study session</span></a></li>
+  </ul>
+</div>
+
+<header class="top"><div class="wrap">
+  <p class="eyebrow">BIO 005 · Week 5 · Control Systems</p>
+  <h1>Synapses and central integration</h1>
+  <p>The written notes for this week. Outline is final, the teaching prose posts when the week opens.</p>
+</div></header>
+
+<main id="main"><div class="wrap">
+<section>
+  <div class="notice">
+    <p class="t">Being written</p>
+    <p>The written notes for this week are still being drafted. They post when the week opens on October 5. In the meantime the outline below is real: it is the week's competency list, in teaching order, and it is what the notes will be built around. Your reading in Silverthorn covers the same ground now.</p>
+  </div>
+  <h2>What this week covers</h2>
+  <p>Synapses and central integration. Work through these in order. Each line is one thing you will be able to do by Sunday.</p>
+  <ol class="plain">
+    <li><b>Sequence at a chemical synapse.</b> Order the events of chemical synaptic transmission from action potential arrival through calcium entry and vesicle fusion to receptor binding and postsynaptic response.</li>
+    <li><b>Neurotransmitter classes.</b> Match acetylcholine, the catecholamines, serotonin, glutamate, GABA, glycine, and the neuropeptides to their usual excitatory or inhibitory effect and to a site of action.</li>
+    <li><b>Neurotransmitter removal.</b> Name the three routes that clear a neurotransmitter from the synaptic cleft, degradation, reuptake, and diffusion, and give a drug that blocks one of them.</li>
+    <li><b>Excitatory and inhibitory postsynaptic potentials.</b> Distinguish an EPSP from an IPSP by the ion channel opened and the direction of the membrane potential change.</li>
+    <li><b>Summation and integration.</b> Distinguish temporal from spatial summation and determine whether a stated combination of EPSPs and IPSPs will bring the trigger zone to threshold.</li>
+    <li><b>Presynaptic modulation.</b> Compare presynaptic inhibition and facilitation with postsynaptic modulation and state the advantage of presynaptic control at a single input, which is selectivity.</li>
+    <li><b>Synaptic plasticity.</b> Explain long term potentiation as a mechanism of learning and identify the roles of repeated stimulation and receptor insertion.</li>
+    <li><b>Electrical synapses.</b> Compare an electrical synapse at a gap junction with a chemical synapse by speed and by capacity for modulation.</li>
+    <li><b>Synapse simulation.</b> Alter neurotransmitter release and receptor availability in a synapse simulation and interpret the resulting postsynaptic recording.</li>
+    <li><b>Reflex arc components.</b> Diagram a reflex arc naming the receptor, sensory neuron, integrating center, motor neuron, and effector, and classify the reflex as monosynaptic or polysynaptic.</li>
+    <li><b>Muscle spindle and stretch reflex.</b> Explain how the muscle spindle detects stretch and trace the stretch reflex including reciprocal inhibition of the antagonist.</li>
+    <li><b>Golgi tendon organ.</b> Contrast the stimulus and the reflex response of the Golgi tendon organ with those of the muscle spindle.</li>
+    <li><b>Withdrawal and crossed extensor reflexes.</b> Trace the flexor withdrawal reflex and the crossed extensor reflex and explain how the two together preserve balance.</li>
+    <li><b>Ascending and descending pathways.</b> Compare the dorsal column, spinothalamic, and corticospinal pathways by the information carried, the side of decussation, and the deficit produced by a lesion.</li>
+    <li><b>Cerebrospinal fluid and the blood brain barrier.</b> State the functions of cerebrospinal fluid and explain how the blood brain barrier selects what reaches neurons, including why lipid soluble drugs cross readily.</li>
+    <li><b>Reflex testing and reaction time.</b> Elicit and grade deep tendon reflexes and measure reaction time to distinguish a reflex response from a voluntary response by latency.</li>
+  </ol>
+</section>
+
+<section>
+  <h2>What to do while the notes are being written</h2>
+  <ol class="plain">
+    <li>Print your note sheet and do the first pass from the textbook and your own notes, in your first color. That pass does not need my notes to be useful.</li>
+    <li>Run this week's recall cards in the Mastery OS. They are already built for all fifteen weeks.</li>
+    <li>Bring whatever will not come together to the Virtual Office. Questions asked while I am writing a week often change what I write.</li>
+  </ol>
+</section>
+</div></main>
+
+<footer class="mm-foot"><div class="mm-wrap">
+  <nav class="mm-flinks" aria-label="Course links">
+    <a href="course-start.html" target="_top">Course home</a><span class="mm-dot" aria-hidden="true">&middot;</span>
+    <a href="course-schedule.html" target="_top">Schedule</a><span class="mm-dot" aria-hidden="true">&middot;</span>
+    <a href="syllabus-fall2026.html" target="_top">Syllabus</a><span class="mm-dot" aria-hidden="true">&middot;</span>
+    <a href="course-questions.html" target="_top">Questions, answered</a><span class="mm-dot" aria-hidden="true">&middot;</span>
+    <a href="accessibility.html" target="_top">Accessibility</a><span class="mm-dot" aria-hidden="true">&middot;</span>
+    <a href="https://yccd.instructure.com/courses/42616" target="_blank" rel="noopener">Canvas</a>
+  </nav>
+  <p class="mm-fleg">BIO 005 Human Physiology &middot; Fall 2026 &middot; Dr. Sharilyn Rennie<br>
+     If a page does not work for you, tell me in the Virtual Office and I will fix it.</p>
+</div></footer>
+
+<script>
+(function(){var id=document.title.replace(/\W+/g,'-').toLowerCase();
+function post(){try{parent.postMessage({frame:id,height:document.documentElement.scrollHeight},'*');}catch(e){}}
+if('ResizeObserver' in window){new ResizeObserver(post).observe(document.documentElement);}
+window.addEventListener('load',post);window.addEventListener('resize',post);post();})();
+</script>
+</body>
+</html>

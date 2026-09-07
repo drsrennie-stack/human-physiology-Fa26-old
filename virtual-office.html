@@ -22,6 +22,8 @@
   --display:'Open Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
   --body:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
 }
+.vh{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;
+  clip:rect(0 0 0 0);white-space:nowrap;border:0}
 </style>
 <style>
 /* ============================================================
@@ -293,10 +295,10 @@ footer :focus-visible{outline-color:var(--gold)}
 <footer><div class="wrap">
   <nav class="flinks" aria-label="Course links">
     <a href="course-start.html" target="_top">Course home</a><span class="dot" aria-hidden="true">&middot;</span>
-    <a href="course-questions.html" target="_top">Answered questions</a><span class="dot" aria-hidden="true">&middot;</span>
+    <a href="course-questions.html" target="_top">Questions, answered</a><span class="dot" aria-hidden="true">&middot;</span>
     <a href="syllabus-fall2026.html" target="_top">Syllabus</a><span class="dot" aria-hidden="true">&middot;</span>
     <a href="course-schedule.html" target="_top">Schedule</a><span class="dot" aria-hidden="true">&middot;</span>
-    <a href="ai-in-this-course.html" target="_top">How AI is used here</a><span class="dot" aria-hidden="true">&middot;</span>
+    <a href="ai-in-this-course.html" target="_blank" rel="noopener">How AI is used in this course <span aria-hidden="true">&#8599;</span><span class="vh"> Opens the course site in a new tab.</span></a><span class="dot" aria-hidden="true">&middot;</span>
     <a href="accessibility.html" target="_top">Accessibility</a><span class="dot" aria-hidden="true">&middot;</span>
     <a href="https://yccd.instructure.com/courses/42616" target="_blank" rel="noopener">Canvas</a>
   </nav>

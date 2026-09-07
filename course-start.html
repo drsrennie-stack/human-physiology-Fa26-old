@@ -3,527 +3,262 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Start Here &middot; BIO 005 Human Physiology</title>
+<title>Start here &middot; BIO 005 Human Physiology</title>
+<meta name="description" content="BIO 005 Human Physiology, Yuba College, Fall 2026. Four things before Week 1.">
 <link rel="icon" type="image/svg+xml" href="icon.svg">
 <link rel="stylesheet" href="assets/fonts-site.css">
-<!--
-  ============================================================
-  BIO 005 Human Physiology, Yuba College, Fall 2026
-  course-start.html   THE ENTRY POINT
-
-  This replaces welcome.html as the page the Canvas "Start Here"
-  page embeds. Point that iframe at:
-
-    https://drsrennie-stack.github.io/human-physiology-Fa26/course-start.html
-
-  ------------------------------------------------------------
-  WHY THIS PAGE EXISTS
-  ------------------------------------------------------------
-  welcome.html breaks inside the Canvas iframe. Its hero is wider
-  than the frame so the headline gets cut off down the left edge,
-  and its footer is position:fixed, so it floats on top of the
-  reading instead of sitting at the bottom. This page has neither
-  problem, by construction:
-
-    - Nothing is position:fixed. Ever. The footer is in flow.
-    - No element has a min-width. Everything is fluid to 320px.
-    - One max-width container, no negative margins, no full-bleed
-      elements that assume the viewport is the window.
-    - Height sender posts to the parent so Canvas can size the
-      frame, with the id bio005-course-start.
-    - Every internal link is target="_top" so it escapes the frame
-      instead of loading a whole course inside a 700px box.
-
-  ------------------------------------------------------------
-  THE STRUCTURE
-  ------------------------------------------------------------
-  The whole page is generated from the WEEKS array in the script
-  at the bottom. Every week gets the SAME seven slots whether the
-  file exists yet or not:
-
-    note sheet . watch . deck . read . problems . lab . discussion
-
-  A slot with a URL is a link. A slot without one renders as a
-  greyed "posted when the week opens" line. That is deliberate: a
-  student should see the shape of every week from day one, so the
-  week that is not built yet still tells them what is coming
-  rather than being an empty space they have to interpret.
-
-  TO OPEN A WEEK: fill in that week's urls in WEEKS. Nothing else
-  changes. The slot flips from placeholder to link on its own.
-
-  The current week is worked out from today's date and pinned to
-  the top, already open. Everything else is a collapsed
-  <details>, which is keyboard accessible with no ARIA of its own.
-  ============================================================
--->
+<link rel="stylesheet" href="assets/brandbar.css">
 <style>
+/* ============================================================
+   START HERE
+   BIO 005 Human Physiology, Yuba College, Fall 2026
+
+   Rebuilt Sep 7 2026, second pass, to Scrubs' spec.
+
+   The first rebuild still carried all fifteen weeks and ten
+   tool cards. Her call, and she is right: a student opening
+   this on September 8 does not need to see the shape of Week
+   13, and eight or ten cards sitting in a row read as eight or
+   ten things they might be supposed to be doing. That is
+   exactly the executive load an asynchronous course is
+   supposed to remove, not add.
+
+   The term schedule already exists on course-schedule.html.
+   This page does not duplicate it, it links to it, once, from
+   the small row at the bottom.
+
+   Three levels, and this page is only the first:
+     START HERE  ->  WEEK  ->  ACTIVITY
+
+   Four numbered steps and one dominant button. Nothing else
+   competes with it.
+   ============================================================ */
+
 :root{
-  /* MedMasters Collaborative. Same tokens as assets/brand.css. */
-  --navy:#0B1530; --ink-deep:#060A18;
-  --maroon:#8B3A2E; --maroon-dk:#6E2D24;
-  --gold:#C9A14A; --gold-deep:#8A6D33;
-  --bone:#FAFAF9; --card:#FFFFFF;
-  --muted:#4A5265; --faint:#454B58;
-  --hair:rgba(11,21,48,.16); --hair-soft:rgba(11,21,48,.09);
-  --hair-dark:rgba(250,250,249,.18);
-  --display:'Open Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
-  --body:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --navy:#0B1530; --navy-deep:#060A18; --navy-tint:#ECEFF4;
+  --maroon:#8B3A2E; --maroon-dk:#6E2D24; --gold:#C9A14A;
+  --page:#FAFAF9; --card:#FFFFFF;
+  --ink:#0B1530; --muted:#414B5C; --faint:#5A6675;
+  --rule:rgba(11,21,48,.16); --rule-soft:rgba(11,21,48,.10);
+  --shadow:0 1px 3px rgba(11,21,48,.08);
+  --lift:0 10px 22px rgba(11,21,48,.12);
+  --display:'Open Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+  --body:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
 }
 *,*::before,*::after{box-sizing:border-box}
-html,body{margin:0;max-width:100%;overflow-x:hidden}
-body{font-family:var(--body);background:var(--card);color:var(--navy);
-     font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
-em,i,cite,dfn,var{font-style:normal}
-h1,h2,h3{font-family:var(--display);margin:0;letter-spacing:-.022em;font-weight:800}
-p{margin:0}
-a{color:var(--maroon)}
-img,svg{max-width:100%}
-:focus-visible{outline:3px solid var(--maroon);outline-offset:3px;border-radius:2px}
-.skip{position:absolute;left:-9999px;top:0;z-index:80;background:var(--navy);color:#fff;
-      padding:12px 20px;font-weight:700;text-decoration:none;border-radius:4px}
-.skip:focus{left:8px;top:8px}
-.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+html,body{margin:0}
+body{font-family:var(--body);background:var(--page);color:var(--ink);
+  font-size:17.5px;line-height:1.68;-webkit-font-smoothing:antialiased}
+em,i,cite,dfn,address,var{font-style:normal;font-weight:700}
+h1,h2,h3{font-family:var(--display);font-weight:800;letter-spacing:-.022em;margin:0}
+p{margin:0 0 16px;max-width:64ch}
+a{color:var(--maroon);text-underline-offset:3px}
+a:hover{color:var(--maroon-dk)}
+:focus-visible{outline:3px solid var(--maroon);outline-offset:3px;border-radius:4px}
+.wrap{max-width:760px;margin:0 auto;padding:0 22px}
+.skip{position:absolute;left:-9999px;top:0;z-index:120;background:var(--navy);color:#fff;
+  padding:13px 20px;font-weight:700;text-decoration:none}
+.skip:focus{left:0;top:0}
 
-.eyebrow{font-family:var(--body);font-size:10.5px;font-weight:700;letter-spacing:.26em;
-         text-transform:uppercase;color:var(--maroon);margin:0}
+header.top{background:var(--navy-deep);color:#fff;padding:52px 0 44px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--gold);margin:0 0 14px}
+header.top h1{font-size:clamp(31px,5.2vw,46px);line-height:1.1;color:#fff}
+header.top p{color:#D7DCE3;margin:16px 0 0;font-size:18px;max-width:48ch}
 
-/* ---------- brand bar ---------- */
-.brandbar{background:var(--card);border-bottom:1px solid var(--hair-soft);padding:13px 0}
-.brandbar .wrap{display:flex;align-items:center;gap:11px;flex-wrap:wrap}
-.wm{display:block;font-family:var(--display);font-size:16px;font-weight:800;
-    letter-spacing:-.02em;line-height:1;color:var(--navy)}
-.wm b{color:var(--maroon);font-weight:800}
-.wmsub{display:block;font-family:var(--body);font-size:8px;font-weight:700;
-       letter-spacing:.32em;text-transform:uppercase;color:var(--faint);margin-top:4px}
-.course{margin-left:auto;font-family:var(--body);font-size:9.5px;font-weight:700;
-        letter-spacing:.18em;text-transform:uppercase;color:var(--faint)}
+main{padding:0 0 70px}
+.beforeh{margin:46px 0 4px;font-size:12px;font-weight:700;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--maroon)}
 
-/* ---------- hero ---------- */
-.hero{padding:40px 0 34px;border-bottom:1px solid var(--hair-soft)}
-.hero h1{font-size:clamp(26px,5vw,40px);line-height:1.13;margin-top:12px;max-width:17ch}
-.hero h1 em{color:var(--maroon)}
-.hero .lede{margin-top:14px;color:var(--muted);max-width:58ch;font-size:16px}
-
-/* ---------- right now ---------- */
-
-/* ---------- week cards ---------- */
-.weeks{padding:38px 0 46px}
-.wkhead{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:6px}
-.wkhead h2{font-size:clamp(20px,3vw,26px)}
-.wknote{font-size:14px;color:var(--muted);max-width:60ch;margin:8px 0 22px}
-
-.wk{border:1px solid var(--hair);border-radius:6px;margin-bottom:10px;background:var(--card);
-    overflow:hidden}
-.wk.is-now{border-color:var(--maroon);border-width:2px}
-
-.wk > summary{list-style:none;cursor:pointer;padding:15px 17px;display:grid;
-              grid-template-columns:44px 1fr auto;gap:12px;align-items:center}
-.wk > summary::-webkit-details-marker{display:none}
-.wk > summary:hover .wt{color:var(--maroon)}
-.wn{font-family:var(--display);font-size:22px;font-weight:800;line-height:1;
-    color:var(--maroon);font-variant-numeric:tabular-nums}
-.wt{font-family:var(--display);font-weight:800;font-size:15.5px;line-height:1.3;
-    letter-spacing:-.02em;display:block;transition:color 160ms ease}
-.wmeta{font-size:12px;color:var(--muted);margin-top:3px;display:block}
-.wchev{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
-       color:var(--faint);white-space:nowrap}
-.wk[open] > summary .wchev::after{content:" \2212"}
-.wk:not([open]) > summary .wchev::after{content:" +"}
-.tagnow{display:inline-block;font-size:9px;font-weight:700;letter-spacing:.18em;
-        text-transform:uppercase;background:var(--maroon);color:#fff;
-        padding:3px 8px;border-radius:3px;margin-left:8px;vertical-align:2px}
-
-/* The .now and .on-dark rules that used to live here styled the dark pinned
-   "Right now" panel. That panel showed the current week a second time above
-   the list that already contains it, so it was removed and these rules with
-   it. One list, one colour scheme, current week open in place. */
-
-/* ---------- the seven slots ---------- */
-.slots{border-top:1px solid var(--hair);padding:4px 0 6px;margin:0}
-.slot{display:grid;grid-template-columns:118px 1fr;gap:10px;align-items:baseline;
-      padding:11px 17px;border-bottom:1px solid var(--hair-soft)}
-.slot:last-child{border-bottom:0}
-.slot-exam{background:#F7EFD9}                 /* navy on it 15.99:1, maroon-dark 8.83:1 */
-.slot-exam .sk{color:#6E2D24}                  /* 8.83:1 */
-/* The default link maroon is 6.60:1 on this pale gold and the default desc grey
-   is 6.81:1. Both clear AA and both miss AAA, so on the exam row only they step
-   down to the darker pair. */
-.slot-exam .sv > a{font-weight:800;color:#6E2D24}        /* 8.83:1 */
-.slot-exam .sv .desc{color:#3B4150}                      /* 10.06:1 */
-@media (forced-colors:active){ .slot-exam{border:1px solid CanvasText} }
-.sk{font-family:var(--body);font-size:9.5px;font-weight:700;letter-spacing:.18em;
-    text-transform:uppercase;color:var(--faint)}
-.sv a{font-weight:700;text-decoration:none;font-size:14.5px}
-.sv a:hover{text-decoration:underline}
-.sv .soon{color:var(--muted);font-size:14px}
-.sv .desc{display:block;font-size:13px;color:var(--muted);margin-top:2px}
-
-/* ---------- always-on resources ---------- */
-.always{padding:34px 0 40px;border-top:1px solid var(--hair)}
-.always h2{font-family:var(--body);font-size:10.5px;font-weight:700;letter-spacing:.26em;
-           text-transform:uppercase;color:var(--faint);margin-bottom:16px}
-.acards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
-.ac{border:1px solid var(--hair);border-radius:5px;padding:14px 16px;text-decoration:none;
-    color:var(--navy);display:block;transition:border-color 160ms ease,background-color 160ms ease}
-.ac:hover{border-color:var(--maroon);background:#FBF6F5}
-.ac .t{font-family:var(--display);font-weight:800;font-size:14.5px;letter-spacing:-.02em;display:block}
-.ac .d{font-size:12.5px;color:var(--muted);margin-top:3px;display:block}
-
-/* ---------- footer, IN FLOW, never fixed ---------- */
-footer{background:var(--ink-deep);color:var(--bone);padding:28px 0 32px}
-.flinks{display:flex;flex-wrap:wrap;gap:0 2px;justify-content:center;font-size:13.5px;line-height:2.1}
-.flinks a{color:var(--bone);text-decoration:none;font-weight:600;padding:0 6px}
-.flinks a:hover{color:var(--gold);text-decoration:underline}
-.flinks .dot{color:rgba(250,250,249,.78);padding:0 4px}
-footer :focus-visible{outline-color:var(--gold)}
-.fleg{text-align:center;margin-top:14px;padding-top:14px;border-top:1px solid var(--hair-dark);
-      font-size:12px;color:rgba(250,250,249,.84);line-height:1.6}
-
-@media (max-width:600px){
-  .slot{grid-template-columns:1fr;gap:2px;padding:10px 15px}
-  .wk > summary{grid-template-columns:34px 1fr;padding:13px 15px}
-  .wchev{grid-column:1 / -1;margin-top:4px}
-  .wn{font-size:19px}
-  .course{margin-left:0;flex-basis:100%}
+/* the four steps */
+.steps{list-style:none;padding:0;margin:18px 0 0;counter-reset:st}
+.steps > li{counter-increment:st;position:relative;padding:0 0 0 56px;margin:0 0 26px}
+.steps > li::before{
+  content:counter(st);position:absolute;left:0;top:2px;
+  width:38px;height:38px;border-radius:50%;
+  background:var(--navy-tint);color:var(--navy);
+  font-family:var(--display);font-weight:800;font-size:16px;
+  display:flex;align-items:center;justify-content:center;
 }
-@media (prefers-reduced-motion:reduce){
-  *,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important}
+.steps h2{font-size:20.5px;margin:0 0 5px;line-height:1.3}
+.steps p{font-size:16.5px;color:var(--muted);margin:0 0 12px}
+
+.btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;
+  font-family:var(--body);font-size:16px;font-weight:700;border-radius:10px;
+  padding:13px 21px;min-height:48px;border:1.5px solid var(--navy);
+  background:transparent;color:var(--navy);
+  transition:background 160ms ease,color 160ms ease,border-color 160ms ease}
+.btn:hover{background:var(--navy);color:#fff}
+
+/* step 4 is meant to win. It is the only filled button on the page. */
+.steps > li.go{padding-top:6px}
+.gobtn{
+  display:flex;align-items:center;justify-content:center;gap:14px;
+  text-decoration:none;text-align:center;
+  background:var(--navy);color:#fff;border:0;border-radius:14px;
+  font-family:var(--display);font-weight:800;letter-spacing:.02em;
+  font-size:clamp(21px,3.4vw,27px);
+  padding:28px 26px;min-height:88px;box-shadow:var(--lift);
+  transition:background 180ms ease,transform 180ms ease;
+}
+.gobtn:hover{background:var(--maroon);color:#fff;transform:translateY(-2px)}
+.gobtn .arw{font-size:.9em}
+.wkline{margin:16px 0 0;font-size:16.5px;color:var(--ink);font-weight:700;max-width:56ch}
+.wkdates{margin:3px 0 0;font-size:15.5px;color:var(--muted);font-weight:700}
+
+/* the small row at the bottom, deliberately quiet */
+.need{margin:54px 0 0;padding:22px 0 0;border-top:1px solid var(--rule-soft)}
+.need h2{font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--faint);margin:0 0 10px}
+.need ul{list-style:none;display:flex;flex-wrap:wrap;gap:6px 0;padding:0;margin:0}
+.need li{display:flex;align-items:center;margin:0}
+.need li + li::before{content:"\00B7";margin:0 12px;color:var(--faint)}
+.need a{font-size:16px;font-weight:600;color:var(--navy);text-decoration:none;
+  border-radius:5px;padding:6px 2px;min-height:34px;display:inline-flex;align-items:center}
+.need a:hover{color:var(--maroon);text-decoration:underline}
+
+.foot{margin:44px 0 0;font-size:14.5px;color:var(--muted);display:flex;
+  justify-content:space-between;gap:16px;flex-wrap:wrap}
+.vh{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;
+  clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+@media (max-width:560px){
+  .steps > li{padding-left:0}
+  .steps > li::before{position:static;margin:0 0 10px}
+  .gobtn{font-size:21px;padding:24px 18px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}.gobtn:hover{transform:none}}
+@media print{
+  .mm-brandbar,.skip{display:none!important}
+  body{background:#fff;font-size:11pt}
+  header.top{background:#fff;color:#000;padding:0 0 12pt}
+  header.top h1,header.top p,.eyebrow{color:#000}
+  .gobtn{background:#fff;color:#000;border:1.5pt solid #000;box-shadow:none}
 }
 </style>
 </head>
 <body>
-<a class="skip" href="#thisweek">Skip to this week</a>
+<a class="skip" href="#before">Skip to what to do first</a>
 
-<div class="brandbar"><div class="wrap">
-  <span style="display:flex;align-items:center;gap:9px">
-    <svg viewBox="40 10 125 148" width="22" height="26" role="img" aria-label="BIO 005 Human Physiology">
-      <g transform="translate(0,18)">
-        <g transform="translate(60,0) rotate(8 0 130)"><circle cx="0" cy="20" r="10" fill="#0B1530"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#0B1530"/></g>
-        <g transform="translate(100,0)"><circle cx="0" cy="10" r="11" fill="#8B3A2E"/><path d="M 0,22 C -11,22 -17,26 -17,34 C -17,52 -14,70 -12,86 C -11,108 -13,122 -15,132 L 15,132 C 13,122 11,108 12,86 C 14,70 17,52 17,34 C 17,26 11,22 0,22 Z" fill="#8B3A2E"/></g>
-        <g transform="translate(140,0) rotate(-8 0 130)"><circle cx="0" cy="20" r="10" fill="#C9A14A"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#C9A14A"/></g>
-      </g>
-    </svg>
-    <span><span class="wm">BIO <b>005</b></span><span class="wmsub">Human Physiology</span></span>
-  </span>
-  <span class="course">BIO 005 &middot; Yuba College &middot; Fall 2026</span>
+<div class="mm-brandbar"><div class="mm-wrap">
+  <a class="mm-mark" href="course-start.html" target="_top">
+    <span class="mm-wm">Med<b>Masters</b><span class="mm-wmsub">Collaborative</span></span>
+  </a>
+  <span class="mm-course">BIO 005 &middot; Human Physiology</span>
 </div></div>
 
-<header class="hero"><div class="wrap">
-  <p class="eyebrow">Human Physiology &middot; Fully online</p>
-  <h1>Everything for this course, <em>week by week</em>.</h1>
-  <p class="lede">Fifteen weeks, each with the same seven pieces in the same order, so you never have to work out where anything is. This week is already open. Open any other one to see what is in it.</p>
+<header class="top"><div class="wrap">
+  <p class="eyebrow">BIO 005 &middot; Yuba College &middot; Fall 2026</p>
+  <h1>Welcome. Start here.</h1>
+  <p>This course is organised one week at a time. You do not need to figure everything out today.</p>
 </div></header>
 
 <main>
-<!-- ============ ALL FIFTEEN WEEKS ============ -->
-<!-- There used to be a dark "Right now" panel above this list holding the
-     current week, expanded. It was the same week, with the same seven links,
-     that the list below already shows and already opens. Two copies of one
-     week in two colour schemes. The panel is gone and the current week is
-     simply open where it belongs, first in the list, marked "This week". -->
-<section class="weeks" id="thisweek" aria-labelledby="h-all">
-  <div class="wrap">
-    <div class="wkhead"><h2 id="h-all">All fifteen weeks</h2></div>
-    <p class="wknote" id="wknote">Every week has the same seven pieces. A piece that says "posted when the week opens" is not missing, it just is not up yet, and it will appear in exactly this spot when it is.</p>
-    <div id="allweeks"></div>
-  </div>
-</section>
+<div class="wrap">
 
-<!-- ============ ALWAYS OPEN ============ -->
-<section class="always" aria-labelledby="h-always">
-  <div class="wrap">
-    <h2 id="h-always">Open all term, not tied to a week</h2>
-    <div class="acards">
-      <a class="ac" href="course-materials.html" target="_top">
-        <span class="t">All course tools</span><span class="d">The full hub, everything in one place</span></a>
-      <a class="ac" href="os/mastery-physio-os.html" target="_top">
-        <span class="t">Mastery OS</span><span class="d">Spaced recall cards, a few minutes a day</span></a>
-      <a class="ac" href="competency-study-guide.html" target="_top">
-        <span class="t">The competency list</span><span class="d">All 268. Exams come from here</span></a>
-      <a class="ac" href="course-schedule.html" target="_top">
-        <span class="t">Course schedule</span><span class="d">Every week and every due date</span></a>
-      <a class="ac" href="syllabus-fall2026.html" target="_top">
-        <span class="t">Syllabus</span><span class="d">How the course runs, and what is graded</span></a>
-      <a class="ac" href="clinical-physiology-lab-manual.html" target="_top">
-        <span class="t">Lab manual</span><span class="d">Every lab, background and procedure</span></a>
-      <a class="ac" href="mastery-canvas.html" target="_top">
-        <span class="t">Drawing canvas</span><span class="d">Draw a pathway from memory, save as PDF</span></a>
-      <a class="ac" href="https://yccd.instructure.com/courses/42616" target="_blank" rel="noopener">
-        <span class="t">Canvas</span><span class="d">Grades and submissions</span></a>
-    </div>
-  </div>
-</section>
+  <p class="beforeh" id="before">Before Week 1</p>
 
+  <ol class="steps">
+
+    <li>
+      <h2>Meet your course</h2>
+      <p>A short orientation on how the class actually works: what a week looks like, what you choose, and what stays the same for everyone. Ten minutes, once.</p>
+      <a class="btn" href="syllabus-fall2026.html#s04" target="_top">How this course works</a>
+    </li>
+
+    <li>
+      <h2>Know how you will be graded</h2>
+      <p>Four categories, what each one asks of you, and which weekly work carries no points at all.</p>
+      <a class="btn" href="syllabus-fall2026.html#s07" target="_top">Grading and course expectations</a>
+    </li>
+
+    <li>
+      <h2>Introduce yourself</h2>
+      <p>Three lines and a reply to two classmates. Low stakes, and not graded on depth.</p>
+      <a class="btn" href="https://yccd.instructure.com/courses/42616/discussion_topics" target="_blank" rel="noopener">
+        Introduction discussion <span aria-hidden="true">&#8599;</span>
+        <span class="vh">Opens Canvas in a new tab.</span></a>
+    </li>
+
+    <li class="go">
+      <h2>Begin Week 1</h2>
+      <a class="gobtn" id="go" href="week-01.html" target="_top">
+        <span class="arw" aria-hidden="true">&rarr;</span> Go to Week 1
+      </a>
+      <p class="wkline" id="wkTitle">Week 1: How physiology works and what keeps you steady</p>
+      <p class="wkdates" id="wkDates">Opens September 8 &middot; Due September 13</p>
+    </li>
+
+  </ol>
+
+  <section class="need" aria-labelledby="need-h">
+    <h2 id="need-h">Need something?</h2>
+    <ul>
+      <li><a href="syllabus-fall2026.html" target="_top">Syllabus</a></li>
+      <li><a href="course-schedule.html" target="_top">Full schedule</a></li>
+      <li><a href="clinical-physiology-lab-manual.html" target="_top">Lab manual</a></li>
+      <li><a href="virtual-office.html" target="_top">Virtual office</a></li>
+    </ul>
+  </section>
+
+  <p class="foot">
+    <span>BIO 005 Human Physiology &middot; Yuba College &middot; Fall 2026</span>
+    <span>Dr. Sharilyn Rennie</span>
+  </p>
+
+</div>
 </main>
 
-<footer><div class="wrap">
-  <nav class="flinks" aria-label="Course links">
-    <a href="course-materials.html" target="_top">Course tools</a><span class="dot" aria-hidden="true">&middot;</span>
-    <a href="syllabus-fall2026.html" target="_top">Syllabus</a><span class="dot" aria-hidden="true">&middot;</span>
-    <a href="course-schedule.html" target="_top">Schedule</a><span class="dot" aria-hidden="true">&middot;</span>
-    <a href="clinical-physiology-lab-manual.html" target="_top">Lab manual</a><span class="dot" aria-hidden="true">&middot;</span>
-    <a href="sitemap.html" target="_top">All pages</a><span class="dot" aria-hidden="true">&middot;</span>
-    <a href="syllabus-fall2026.html#s13" target="_top">Accessibility</a><span class="dot" aria-hidden="true">&middot;</span>
-    <a href="https://yccd.instructure.com/courses/42616" target="_blank" rel="noopener">Canvas</a><span class="dot" aria-hidden="true">&middot;</span>
-    <a href="https://yccd.instructure.com/courses/42616/discussion_topics/711800" target="_blank" rel="noopener">Virtual Office</a>
-  </nav>
-  <p class="fleg">BIO 005 Human Physiology &middot; Yuba College &middot; Fall 2026 &middot; Dr. Sharilyn Rennie<br>
-     If a page does not work for you, tell me in the Virtual Office and I will fix it.</p>
-</div></footer>
-
 <script>
-/* ============================================================
-   ONE ARRAY DRIVES THE WHOLE PAGE.
-
-   To open a week, fill in its urls. A slot with no url renders as
-   "posted when the week opens" and flips to a link the moment you
-   add one. Nothing else on this page has to change.
-
-   Slot keys, in the order they render:
-     sheet  watch  deck  read  problems  lab  discussion
-   ============================================================ */
 (function(){
   "use strict";
-
-  /* Shared pages that are the same every week. */
-  var SCHEDULE = "course-schedule.html";
-  var LABMANUAL = "clinical-physiology-lab-manual.html";
-  var PHYSIOEX  = "assignment-physioex.html";
-
+  /* Step 4 follows the calendar so this page never sends a student in
+     October to Week 1. Titles and dates match the schedule of record.
+     Everything else on this page is the same in every week of the term. */
   var WEEKS = [
-    { n:1, unit:"Foundations", title:"How physiology works and what keeps you steady",
-      opens:"Tuesday September 8", due:"Sunday September 13",
-      watch:      {u:"concept-videos-week01.html", t:"Week 1 lecture videos", d:"Short segments. Play straight through or take one concept at a time."},
-      read:       {u:"week-01-notes.html", t:"Week 1 notes, homeostasis and control", d:"The content itself, written out: what physiology asks, the internal environment, homeostasis and what people mix it up with, mass balance, and control systems. Prints cleanly if you would rather work on paper."},
-      sheet:      {u:"note-sheet.html?week=1", t:"Print or design your Week 1 note sheet", d:"Start here. Eighteen competencies, one printed page each, four labelled spaces on every page. Print mine or lay out your own. Pass one is the book and your own notes, before you watch anything. Pass two goes into the same boxes in a second colour after the videos.",
-                   also:{u:"week-01-competencies.html", t:"The competencies and their prompts"}},
-      problems:   {u:"assignment-bookproblems.html?week=1", t:"Silverthorn chapters 1 and 6", d:"End of chapter problems. Work them on paper before you check the back."},
-      ailog:      {u:"ai-work-log.html?week=1", t:"Problem log", d:"Solve it by hand, write down where each piece came from, then check it with AI. Fill it in as you work."},
-      lab:        {u:"assignment-physioex.html?week=1", t:"Lab analysis, Week 1", d:"There is no PhysioEx exercise that fits Week 1, so the lab is the clinical correlations IV fluids lab. Same sheet, same deadline.",
-                   also:{u:"osmosis-iv-fluids-lab.html", t:"Open the IV fluids lab"}},
-      discussion: {u:"https://yccd.instructure.com/courses/42616/discussion_topics/712733", ext:true,
-                   t:"Discussion 1, your vision board", d:"Post due Friday September 11 at 10 pm. Two replies due Sunday September 13 at 10 pm.",
-                   also:{u:"assignment-discussion-01-visionboard.html", t:"Read the instructions and rubric first"}}
-    },
-    { n:2,  unit:"Foundations",      title:"The chemistry that does work in the body",              opens:"Monday September 14", due:"Sunday September 20" },
-    { n:3,  unit:"Foundations",      title:"Getting across the membrane",                            opens:"Monday September 21", due:"Sunday September 27" },
-    { n:4,  unit:"Control systems",  title:"How cells talk, and the electrical signal",              opens:"Monday September 28", due:"Sunday October 4" },
-    { n:5,  unit:"Control systems",  title:"Synapses and central integration",                       opens:"Monday October 5",    due:"Sunday October 11" },
-    { n:6,  unit:"Control systems",  title:"Sensing the world, and the responses you do not control",opens:"Monday October 12",   due:"Sunday October 18" },
-    { n:7,  unit:"Control systems",  title:"Muscle, and how movement gets commanded",                opens:"Monday October 19",   due:"Sunday October 25" },
-    { n:8,  unit:"Control systems",  title:"Hormones and reproduction, the slow control system",     opens:"Monday October 26",   due:"Sunday November 1" },
-    { n:9,  unit:"Systems in action",title:"The heart as a pump",                                    opens:"Monday November 2",   due:"Sunday November 8" },
-    { n:10, unit:"Systems in action",title:"Pressure, flow, and holding blood pressure steady",      opens:"Monday November 9",   due:"Sunday November 15" },
-    { n:11, unit:"Systems in action",title:"Blood and how the body defends itself",                  opens:"Monday November 16",  due:"Sunday November 22" },
-    { n:12, unit:"Systems in action",title:"Digestion, and how you use food for fuel",               opens:"Monday November 23",  due:"Sunday November 29" },
-    { n:13, unit:"Systems in action",title:"Breathing, gas transport, and the fast pH lever",        opens:"Monday November 30",  due:"Sunday December 6" },
-    { n:14, unit:"Systems in action",title:"The kidney and body fluid balance",                      opens:"Monday December 7",   due:"Sunday December 13" },
-    { n:15, unit:"Systems in action",title:"The slow pH lever, and putting it all together",         opens:"Monday December 14",  due:"Wednesday December 16" }
+    [1,'2026-09-08','2026-09-13','How physiology works and what keeps you steady'],
+    [2,'2026-09-14','2026-09-20','The chemistry that does work in the body'],
+    [3,'2026-09-21','2026-09-27','Getting across the membrane'],
+    [4,'2026-09-28','2026-10-04','How cells talk, and the electrical signal'],
+    [5,'2026-10-05','2026-10-11','Synapses and central integration'],
+    [6,'2026-10-12','2026-10-18','Sensing the world, and the responses you do not control'],
+    [7,'2026-10-19','2026-10-25','Muscle, and how movement gets commanded'],
+    [8,'2026-10-26','2026-11-01','Hormones and reproduction, the slow control system'],
+    [9,'2026-11-02','2026-11-08','The heart as a pump'],
+    [10,'2026-11-09','2026-11-15','Pressure, flow, and holding blood pressure steady'],
+    [11,'2026-11-16','2026-11-22','Blood and how the body defends itself'],
+    [12,'2026-11-23','2026-11-29','Digestion, and how you use food for fuel'],
+    [13,'2026-11-30','2026-12-06','Breathing, gas transport, and the fast pH lever'],
+    [14,'2026-12-07','2026-12-13','The kidney and body fluid balance'],
+    [15,'2026-12-14','2026-12-16','The slow pH lever, and putting it all together']
   ];
-
-  /* ------------------------------------------------------------------
-     FOUR ASSIGNMENT PAGES ALREADY DO ALL FIFTEEN WEEKS BY THEMSELVES.
-
-     assignment-notesheet, assignment-bookproblems, assignment-physioex,
-     assignment-discussion and now ai-work-log each read ?week=N from the
-     URL and relabel themselves. So every week gets a real, correctly
-     titled page for each of those slots without anybody writing fifteen
-     copies of anything.
-
-     What those pages do NOT yet carry is the per-week CONTENT: which
-     PhysioEx exercise, which Silverthorn problem numbers, which discussion
-     topic. That is Scrubs' to supply. Until she does, the link is live and
-     the page is correct, it just does not name the specific exercise.
-     ------------------------------------------------------------------ */
-  WEEKS.forEach(function(w){
-    var q = "?week=" + w.n;
-    if (!w.read) {
-      w.read = { u:"week-" + (w.n<10?"0"+w.n:w.n) + ".html",
-                 t:"Week " + w.n + " page",
-                 d:"Dates, what is coming, and where this week's reading is until the full page is up." };
-    }
-    if (!w.sheet) {
-      /* The sheet is built for them now, one page per competency with four
-         labelled spaces. They print it, they do not construct it. */
-      w.sheet = { u:"note-sheet.html" + q, t:"Print your Week " + w.n + " note sheet",
-                  d:"Already built, one page per competency. Two passes, two colours, into the same boxes.",
-                  also:{ u:"assignment-notesheet.html" + q, t:"How it is graded" } };
-    }
-    if (!w.problems) {
-      w.problems = { u:"assignment-bookproblems.html" + q, t:"Book problems, Week " + w.n,
-                     d:"How to work them and how AI may be used on them." };
-    }
-    /* The Pearson build sheet, so the slot names the actual exercise. */
-    var EX = [null,
-      "Exercise 8, amylase only",
-      "Exercise 1, all five activities",
-      "Exercise 3, all activities",
-      null,
-      "Exercise 2, all activities",
-      "Exercise 4 plus Exercise 12, ELISA",
-      null,
-      "Exercise 6, all activities",
-      "Exercise 5, all activities",
-      "Exercise 11, plus Exercise 12 if unused",
-      "Exercise 8, pepsin and lipase, plus Exercise 4, BMR",
-      "Exercise 7 plus Exercise 10, hyperventilation",
-      "Exercise 9, all activities",
-      "Exercise 10, compensation activities"];
-    var NOEXALT = {1:"the standards and ranges lab runs instead",
-                   6:"the Week 6 lab posts when the week opens"};
-    if (!w.lab) {
-      var ex = EX[w.n - 1];
-      w.lab = { u:"assignment-physioex.html" + q, t:"Lab analysis, Week " + w.n,
-                d: ex ? ("PhysioEx in Mastering: " + ex + ". One handwritten sheet covers everything you ran.")
-                      : ("No PhysioEx this week, " + NOEXALT[w.n] + ". Same sheet, same deadline.") };
-    }
-    if (!w.discussion) {
-      w.discussion = { u:"assignment-discussion.html" + q, t:"Discussion, Week " + w.n,
-                       d:"What goes in your post, replying to two classmates, and how AI may be used." };
-    }
-    /* The problem log rides with every problem set, so it is on every week. */
-    if (!w.ailog) {
-      w.ailog = { u:"ai-work-log.html" + q, t:"Problem log",
-                  d:"Solve it by hand, cite where each piece came from, then check it with AI. Fill this in as you work, not after." };
-    }
-  });
-
-  /* The note sheet is first on purpose. Pass one is the book and your own
-     notes, before you watch anything. Pass two goes into the same boxes in
-     a second colour after the videos. Putting the sheet at the top is what
-     makes that order the obvious one. */
-  var SLOTS = [
-    ["sheet",      "Note sheet"],
-    ["watch",      "Watch"],
-    ["deck",       "Slides"],
-    ["read",       "Read"],
-    ["problems",   "Problems"],
-    ["lab",        "Lab"],
-    ["discussion", "Discussion"],
-    ["ailog",      "Problem log"],
-    ["exam",       "Midterm"]
-  ];
-
-  /* ---- the two midterm windows, set Sep 7 2026 ---------------------
-     Two exams, 35 percent together, 17.5 each. Each window
-     runs Monday 8 am to Wednesday 10 pm at the FRONT of the week named
-     here, so the block before it is finished before students sit it and
-     the week it sits in is still open to them afterwards. Week 15 is not
-     on an exam; it closes the term with the synthesis work. */
-  var EXAMS = {
-    8:  { t:"Midterm 1, Weeks 1 to 7",
-          d:"Window opens Monday October 26 at 8 am and closes Wednesday October 28 at 10 pm. Draw and teach on video, out loud, no notes. It sits at the front of this week on purpose: Week 7 is finished before you sit it, and the rest of Week 8 is still open to you afterwards. Worth 17.5 percent." },
-    15: { t:"Midterm 2, Weeks 8 to 14",
-          d:"Window opens Monday December 14 at 8 am and closes Wednesday December 16 at 10 pm, when the term ends. Draw and teach on video, out loud, no notes. This week is not on it. Worth 17.5 percent." }
-  };
-  WEEKS.forEach(function(w){
-    var e = EXAMS[w.n];
-    if (e) w.exam = { u:"syllabus-fall2026.html#exam-dates", t:e.t, d:e.d };
-  });
-
-  /* ---- the four Physiology Learning Labs, Weeks 2 to 5 -------------
-     Each one carries its own paired discussion, sealed until the lab
-     work is saved, so for these four weeks the lab IS the discussion
-     slot rather than a second thing to do.
-
-     LABELLED BY WEEK, NEVER BY LAB NUMBER. These used to read
-     "Learning Lab 1" on Week 2, "Learning Lab 3" on Week 4 and so on,
-     which made students carry a second index that was always off by
-     one from the week they were actually in. Every assignment in this
-     course is "Week N <thing>". The labs are no exception. */
-  var LABS = {
-    2: "Reading a physiology figure or graph",
-    3: "Previewing an unfamiliar chapter",
-    4: "Spaced recall and the gap finder",
-    5: "Auditing AI on cell transport"
-  };
-  WEEKS.forEach(function(w){
-    var t = LABS[w.n];
-    if (!t) return;
-    w.discussion = {
-      u: "learning-lab.html?week=" + w.n,
-      t: "Week " + w.n + " Learning Lab, " + t.charAt(0).toLowerCase() + t.slice(1),
-      d: "Do the lab first. The discussion at the bottom unlocks once your answers are saved, because it asks for evidence from your own work."
-    };
-  });
-
-  /* ---- which week is it ---- */
-  var STARTS = [
-    "2026-09-08","2026-09-14","2026-09-21","2026-09-28","2026-10-05","2026-10-12",
-    "2026-10-19","2026-10-26","2026-11-02","2026-11-09","2026-11-16","2026-11-23",
-    "2026-11-30","2026-12-07","2026-12-14"
-  ].map(function(s){ var p=s.split("-"); return new Date(+p[0], p[1]-1, +p[2]); });
+  function d(s){ var p = s.split('-'); return new Date(+p[0], +p[1] - 1, +p[2]); }
+  function fmt(s){ return d(s).toLocaleDateString('en-US', { month:'long', day:'numeric' }); }
 
   var today = new Date(); today.setHours(0,0,0,0);
-  var cur = 1;
-  for (var i = 0; i < STARTS.length; i++){ if (today >= STARTS[i]) cur = i + 1; }
-  var beforeTerm = today < STARTS[0];
+  var cur = WEEKS[0];
+  WEEKS.forEach(function(w){ if (d(w[1]) <= today) cur = w; });
 
-  function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
+  var n = cur[0], pad = (n < 10 ? '0' : '') + n;
+  document.getElementById('go').innerHTML =
+    '<span class="arw" aria-hidden="true">&rarr;</span> Go to Week ' + n;
+  document.getElementById('go').href = 'week-' + pad + '.html';
+  document.getElementById('wkTitle').textContent = 'Week ' + n + ': ' + cur[3];
+  document.getElementById('wkDates').textContent =
+    'Opens ' + fmt(cur[1]) + ' · Due ' + fmt(cur[2]);
 
-  function slotHTML(w, key, label){
-    var it = w[key];
-    var v;
-    if (!it || !it.u){
-      v = '<span class="soon">Posted when the week opens</span>';
-    } else {
-      var tgt = it.ext ? ' target="_blank" rel="noopener"' : ' target="_top"';
-      v = '<a href="' + esc(it.u) + '"' + tgt + '>' + esc(it.t) + '</a>';
-      if (it.d) v += '<span class="desc">' + esc(it.d) + '</span>';
-      if (it.also) v += '<span class="desc"><a href="' + esc(it.also.u) + '" target="_top">' + esc(it.also.t) + '</a></span>';
-    }
-    var cls = "slot" + (key === "exam" ? " slot-exam" : "");
-    return '<div class="' + cls + '"><span class="sk">' + esc(label) + '</span><span class="sv">' + v + '</span></div>';
-  }
+  /* Step 4's heading should match the button once the term is running. */
+  var h = document.querySelector('.steps > li.go h2');
+  if (h) h.textContent = (n === 1 ? 'Begin Week 1' : 'Go to this week');
+}());
+</script>
 
-  function slotsHTML(w){
-    /* Twelve of the fifteen weeks have no midterm in them. Those weeks drop the
-       row entirely rather than printing "posted when the week opens", which
-       would read as an exam nobody has scheduled yet. */
-    var keys = SLOTS.filter(function(s){ return s[0] !== "exam" || w.exam; });
-    return '<div class="slots">' + keys.map(function(s){ return slotHTML(w, s[0], s[1]); }).join("") + '</div>';
-  }
-
-  function summaryHTML(w, isNow){
-    return '<summary>' +
-      '<span class="wn">' + (w.n<10?"0"+w.n:w.n) + '</span>' +
-      '<span><span class="wt">' + esc(w.title) +
-        (isNow ? '<span class="tagnow">This week</span>' : '') + '</span>' +
-        '<span class="wmeta">' + esc(w.unit) + ' &middot; Opens ' + esc(w.opens) + ' &middot; Due ' + esc(w.due) + '</span>' +
-      '</span>' +
-      '<span class="wchev">Open</span></summary>';
-  }
-
-  /* ---- all fifteen. The current one is marked, and it is the one that
-         starts open, so nothing has to be duplicated above the list. ---- */
-  var w = WEEKS[cur - 1];
-  document.getElementById("wknote").textContent = beforeTerm
-    ? "The term starts Tuesday September 8. Week 1 is open below. Every week has the same seven pieces, and a piece that says \u201cposted when the week opens\u201d is not missing, it just is not up yet."
-    : "Week " + cur + " opened " + w.opens + " and its work is due " + w.due +
-      " at 11:59 pm. It is open below. Every week has the same seven pieces, and a piece that says \u201cposted when the week opens\u201d is not missing, it just is not up yet.";
-
-  var all = document.getElementById("allweeks");
-  WEEKS.forEach(function(wk){
-    var el = document.createElement("details");
-    el.className = "wk" + (wk.n === cur ? " is-now" : "");
-    el.open = (wk.n === cur);
-    el.innerHTML = summaryHTML(wk, wk.n === cur) + slotsHTML(wk);
-    all.appendChild(el);
-  });
-
-  /* ---- tell Canvas how tall we are ---- */
-  var ID = "bio005-course-start";
-  function send(){
-    var h = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
-    try { window.parent.postMessage({ id:ID, frameId:ID, type:"resize", height:h }, "*"); } catch(e){}
-  }
-  window.addEventListener("load", send);
-  window.addEventListener("resize", send);
-  document.addEventListener("toggle", send, true);   /* every details open or close */
-  if (typeof ResizeObserver !== "undefined"){ try { new ResizeObserver(send).observe(document.body); } catch(e){} }
-  send(); setTimeout(send, 400); setTimeout(send, 1500);
-})();
+<script>
+/* iframe height sender, for the Canvas embed */
+(function(){var id=document.title.replace(/\W+/g,'-').toLowerCase();
+function post(){try{parent.postMessage({frame:id,height:document.documentElement.scrollHeight},'*');}catch(e){}}
+if('ResizeObserver' in window){new ResizeObserver(post).observe(document.documentElement);}
+window.addEventListener('load',post);window.addEventListener('resize',post);post();})();
 </script>
 </body>
 </html>

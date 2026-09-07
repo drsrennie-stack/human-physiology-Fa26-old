@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Week 12 notes · BIO 005 Human Physiology</title>
+<link rel="icon" type="image/svg+xml" href="icon.svg">
+<link rel="stylesheet" href="assets/fonts-site.css">
+<link rel="stylesheet" href="assets/brandbar.css">
+<style>
+/* Page-specific rules only. Palette and the shared chrome live in
+   assets/brand.css and assets/brandbar.css. The fallback tokens below
+   let the page render on its own if brand.css is not beside it. */
+:root{
+  --navy:#0B1530; --navy-deep:#060A18; --navy-tint:#ECEFF4;
+  --gold:#C9A14A; --gold-ink:#060A18; --gold-deep:#8A6D33;
+  --maroon:#8B3A2E; --maroon-dark:#6E2D24;
+  --offwhite:#FAFAF9; --bone:#F5F1E8; --ink-soft:#414B5C;
+  --line:rgba(11,21,48,0.16);
+  --display:'Open Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+  --body:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0}
+body{font-family:var(--body);background:var(--offwhite);color:var(--navy);
+  font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--display);font-weight:800;letter-spacing:-.022em;margin:0}
+em,i,cite,dfn{font-style:normal;color:var(--maroon)}
+p{margin:0 0 14px;max-width:68ch}
+a{color:var(--maroon);text-underline-offset:3px}
+a:hover{color:var(--maroon-dark)}
+:focus-visible{outline:3px solid var(--maroon);outline-offset:3px;border-radius:3px}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+.skip{position:absolute;left:-9999px;top:0;z-index:90;background:var(--navy);color:#fff;
+  padding:12px 18px;font-weight:700;text-decoration:none}
+.skip:focus{left:0;top:0}
+header.top{background:var(--navy-deep);color:#fff;padding:34px 0 30px;margin-top:16px}
+header.top .eyebrow{font-size:11px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--gold);margin:0 0 10px}
+header.top h1{font-size:clamp(26px,4.4vw,38px);line-height:1.14;color:#fff;max-width:22ch}
+header.top p{margin:12px 0 0;color:var(--bone);max-width:62ch;font-size:15.5px}
+main{padding:30px 0 10px}
+section{margin:0 0 30px}
+h2{font-size:clamp(20px,3vw,25px);color:var(--maroon-dark);margin:0 0 10px}
+.card{background:#fff;border:0;border-radius:12px;padding:20px 22px;margin:0 0 14px;
+  box-shadow:0 1px 3px rgba(11,21,48,.08);transition:transform 200ms ease,box-shadow 200ms ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 16px rgba(11,21,48,.10)}
+.card h3{font-size:16.5px;margin:0 0 6px}
+.card .num{font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--maroon);margin:0 0 6px}
+.card p{margin:0;max-width:64ch}
+.pending{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--navy);background:var(--navy-tint);
+  border-radius:99px;padding:5px 12px;margin-top:12px}
+.notice{background:#fff;border:0;border-radius:12px;padding:20px 22px;margin:0 0 24px;
+  box-shadow:0 1px 3px rgba(11,21,48,.08)}
+.notice .t{font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--maroon);margin:0 0 8px}
+ol.plain{margin:0;padding-left:22px}
+ol.plain li{margin:0 0 10px;max-width:66ch}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}.card:hover{transform:none}}
+@media print{
+  .skip,.mm-brandbar,.mm-jumpwrap,.mm-foot{display:none}
+  body{background:#fff;font-size:10pt}
+  header.top{background:#fff;color:#000;padding:0 0 10pt}
+  header.top h1,header.top p,header.top .eyebrow{color:#000}
+  .card,.notice{box-shadow:none;border-top:1px solid #000;border-radius:0;padding:8pt 0;
+    break-inside:avoid;page-break-inside:avoid}
+  h1,h2,h3{break-after:avoid;page-break-after:avoid}
+  a{color:#000;text-decoration:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<div class="mm-brandbar"><div class="mm-wrap">
+  <a class="mm-mark" href="course-start.html" target="_top">
+    <svg viewBox="40 10 125 148" width="22" height="26" role="img" aria-label="BIO 005 Human Physiology, course home">
+      <g transform="translate(0,18)">
+        <g transform="translate(60,0) rotate(8 0 130)"><circle cx="0" cy="20" r="10" fill="#0B1530"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#0B1530"/></g>
+        <g transform="translate(100,0)"><circle cx="0" cy="10" r="11" fill="#8B3A2E"/><path d="M 0,22 C -11,22 -17,26 -17,34 C -17,52 -14,70 -12,86 C -11,108 -13,122 -15,132 L 15,132 C 13,122 11,108 12,86 C 14,70 17,52 17,34 C 17,26 11,22 0,22 Z" fill="#8B3A2E"/></g>
+        <g transform="translate(140,0) rotate(-8 0 130)"><circle cx="0" cy="20" r="10" fill="#C9A14A"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#C9A14A"/></g>
+      </g>
+    </svg>
+    <span><span class="mm-wm">BIO <b>005</b></span><span class="mm-wmsub">Human Physiology</span></span>
+  </a>
+  <span class="mm-course">BIO 005 &middot; Fall 2026</span>
+</div></div>
+
+<div class="mm-jumpwrap">
+  <span class="lbl">This week</span>
+  <ul class="mm-jump" aria-label="Week 12 assignments">
+    <li><a class="j-note" href="note-sheet.html?week=12" target="_top" title="Week 12 note sheet">N<span class="mm-vh">Week 12 note sheet</span></a></li>
+    <li><a class="j-prob" href="assignment-bookproblems.html?week=12" target="_top" title="Week 12 problems">P<span class="mm-vh">Week 12 problems</span></a></li>
+    <li><a class="j-lab" href="assignment-physioex.html?week=12" target="_top" title="Week 12 lab">L<span class="mm-vh">Week 12 lab</span></a></li>
+    <li><a class="j-disc" href="assignment-discussion.html?week=12" target="_top" title="Week 12 discussion">D<span class="mm-vh">Week 12 discussion</span></a></li>
+    <li><a class="j-study" href="mastery-physio-os-standalone.html?week=12" target="_top" title="Week 12 study session">S<span class="mm-vh">Week 12 study session</span></a></li>
+  </ul>
+</div>
+
+<header class="top"><div class="wrap">
+  <p class="eyebrow">BIO 005 · Week 12 · Systems in Action</p>
+  <h1>Digestion, and how you use food for fuel</h1>
+  <p>The written notes for this week. Outline is final, the teaching prose posts when the week opens.</p>
+</div></header>
+
+<main id="main"><div class="wrap">
+<section>
+  <div class="notice">
+    <p class="t">Being written</p>
+    <p>The written notes for this week are still being drafted. They post when the week opens on November 23. In the meantime the outline below is real: it is the week's competency list, in teaching order, and it is what the notes will be built around. Your reading in Silverthorn covers the same ground now.</p>
+  </div>
+  <h2>What this week covers</h2>
+  <p>Digestion, and how you use food for fuel. Work through these in order. Each line is one thing you will be able to do by Sunday.</p>
+  <ol class="plain">
+    <li><b>Growth hormone.</b> Describe the direct and insulin like growth factor mediated actions of growth hormone and predict the result of excess or deficiency before and after epiphyseal closure.</li>
+    <li><b>Thyroid hormone.</b> Trace thyroid hormone synthesis, state the metabolic actions of T3 and T4, and match hyperthyroid and hypothyroid signs to the underlying rate of metabolism.</li>
+    <li><b>Cortisol and the stress response.</b> Describe the metabolic, immune, and cardiovascular actions of cortisol and explain the consequences of chronic elevation.</li>
+    <li><b>Pancreatic islet hormones.</b> Compare insulin and glucagon by stimulus and by effect on liver glycogen and on plasma glucose and identify the islet cell that secretes each.</li>
+    <li><b>Diabetes mellitus.</b> Distinguish type 1 from type 2 diabetes by mechanism and explain how untreated hyperglycemia produces polyuria and ketoacidosis.</li>
+    <li><b>Glucose tolerance testing.</b> Plot a glucose tolerance curve from measured or simulated data and distinguish a normal response from an impaired one.</li>
+    <li><b>Four digestive processes.</b> Distinguish motility, secretion, digestion, and absorption and identify where in the tract each dominates.</li>
+    <li><b>Motility patterns.</b> Compare peristalsis, segmentation, and the migrating motor complex by pattern and purpose.</li>
+    <li><b>Neural and hormonal regulation.</b> Explain short and long reflex control by the enteric nervous system and match gastrin, secretin, cholecystokinin, and glucose dependent insulinotropic peptide to their stimulus and action.</li>
+    <li><b>Phases of digestive control.</b> Describe the cephalic, gastric, and intestinal phases and state the dominant control mechanism in each.</li>
+    <li><b>Gastric secretion and mucosal protection.</b> Trace the production of hydrochloric acid by the parietal cell and explain how the mucosal barrier protects the stomach and how ulcers develop when it fails.</li>
+    <li><b>Pancreatic and biliary secretion.</b> State the components of pancreatic juice and bile and explain how bicarbonate neutralizes chyme and how bile salts emulsify fat.</li>
+    <li><b>Carbohydrate and protein digestion and absorption.</b> Trace a starch and a protein from mouth to bloodstream naming the enzymes at each step and the transport mechanism at the brush border.</li>
+    <li><b>Lipid digestion and absorption.</b> Trace a triglyceride through emulsification, lipase action, micelle formation, and chylomicron packaging to the lymphatic route and explain why fat takes a different path than glucose.</li>
+    <li><b>Liver function and enterohepatic circulation.</b> State the metabolic, storage, and detoxification functions of the liver and trace the enterohepatic circulation of bile salts.</li>
+    <li><b>Large intestine and microbiome.</b> Describe water and electrolyte absorption in the colon, the contribution of the microbiome, and the defecation reflex.</li>
+    <li><b>Digestive enzyme experiment.</b> Test the effect of pH, temperature, and substrate on a digestive enzyme and relate the results to the region of the tract where that enzyme works.</li>
+    <li><b>Absorptive state.</b> Describe the fate of glucose, amino acids, and fats in the absorptive state and identify insulin as the dominant hormone.</li>
+    <li><b>Postabsorptive state.</b> Explain how glycogenolysis, gluconeogenesis, lipolysis, and ketogenesis maintain plasma glucose during fasting and name the hormones that drive each.</li>
+    <li><b>Integrated glucose regulation.</b> Predict the hormonal and metabolic response to a carbohydrate meal and to a prolonged fast and explain how plasma glucose stays within range in both.</li>
+    <li><b>Energy balance and metabolic rate.</b> Define basal metabolic rate, state the factors that raise and lower it, and explain how indirect calorimetry estimates energy expenditure.</li>
+    <li><b>Thermoregulation.</b> Trace the negative feedback response to heat and to cold through the hypothalamus and the effectors and explain the mechanism of fever.</li>
+    <li><b>Metabolic rate measurement.</b> Estimate metabolic rate from measured or simulated oxygen consumption and compare resting values with values after activity.</li>
+  </ol>
+</section>
+
+<section>
+  <h2>What to do while the notes are being written</h2>
+  <ol class="plain">
+    <li>Print your note sheet and do the first pass from the textbook and your own notes, in your first color. That pass does not need my notes to be useful.</li>
+    <li>Run this week's recall cards in the Mastery OS. They are already built for all fifteen weeks.</li>
+    <li>Bring whatever will not come together to the Virtual Office. Questions asked while I am writing a week often change what I write.</li>
+  </ol>
+</section>
+</div></main>
+
+<footer class="mm-foot"><div class="mm-wrap">
+  <nav class="mm-flinks" aria-label="Course links">
+    <a href="course-start.html" target="_top">Course home</a><span class="mm-dot" aria-hidden="true">&middot;</span>
+    <a href="course-schedule.html" target="_top">Schedule</a><span class="mm-dot" aria-hidden="true">&middot;</span>
+    <a href="syllabus-fall2026.html" target="_top">Syllabus</a><span class="mm-dot" aria-hidden="true">&middot;</span>
+    <a href="course-questions.html" target="_top">Questions, answered</a><span class="mm-dot" aria-hidden="true">&middot;</span>
+    <a href="accessibility.html" target="_top">Accessibility</a><span class="mm-dot" aria-hidden="true">&middot;</span>
+    <a href="https://yccd.instructure.com/courses/42616" target="_blank" rel="noopener">Canvas</a>
+  </nav>
+  <p class="mm-fleg">BIO 005 Human Physiology &middot; Fall 2026 &middot; Dr. Sharilyn Rennie<br>
+     If a page does not work for you, tell me in the Virtual Office and I will fix it.</p>
+</div></footer>
+
+<script>
+(function(){var id=document.title.replace(/\W+/g,'-').toLowerCase();
+function post(){try{parent.postMessage({frame:id,height:document.documentElement.scrollHeight},'*');}catch(e){}}
+if('ResizeObserver' in window){new ResizeObserver(post).observe(document.documentElement);}
+window.addEventListener('load',post);window.addEventListener('resize',post);post();})();
+</script>
+</body>
+</html>
