@@ -10,6 +10,10 @@
 
 
 <style>
+/* the shared brand bar is sticky, so anchored jumps need to clear it */
+html{scroll-padding-top:86px}
+section[id]{scroll-margin-top:86px}
+
 :root{
   --navy:#0B1530;--navy-70:rgba(11,21,48,.75);--navy-50:rgba(11,21,48,.50);--navy-15:rgba(11,21,48,.15);
   --navy-tint:#EBEDF2;--terra:#8B3A2E;--terra-dark:#6E2C23;--gold-bright:#C9A14A;--straw-light:#F5F1E8;
@@ -74,13 +78,12 @@ tr.closed td{color:var(--navy-70);background:var(--offwhite)}
 .grade-bar{display:flex;border-radius:var(--r);overflow:hidden;margin:14px 0 6px;box-shadow:0 14px 30px rgba(11,21,48,.14)}
 .grade-bar > div{color:#fff;padding:14px 6px;text-align:center;min-height:44px;display:flex;flex-direction:column;justify-content:center;gap:2px;min-width:0}
 .grade-bar .gl{font-weight:700;font-size:13.5px;line-height:1.25;overflow-wrap:anywhere}
-.gb-book .gl,.gb-disc .gl{font-size:12px}
+.gb-think .gl{font-size:12px}
 .grade-bar .gp{font-weight:800;font-size:19px;line-height:1;font-family:var(--display);letter-spacing:-.01em}
-.gb-notes{flex:20 1 0;background:#485064}
-.gb-mid{flex:40 1 0;background:var(--terra)}
-.gb-lab{flex:15 1 0;background:var(--navy)}
-.gb-book{flex:15 1 0;background:var(--gold-bright);color:var(--navy)!important}
-.gb-disc{flex:10 1 0;background:#1C2E4F}
+.gb-show{flex:35 1 0;background:var(--terra)}
+.gb-inv{flex:25 1 0;background:var(--navy)}
+.gb-use{flex:25 1 0;background:#1C2E4F}
+.gb-think{flex:15 1 0;background:var(--gold-bright);color:var(--navy)!important}
 @media(max-width:760px){.grade-bar{flex-direction:column}.grade-bar > div{flex-direction:row;justify-content:space-between;align-items:center;text-align:left;padding:12px 16px}}
 
 .rule-line{font-weight:700;color:var(--terra-dark)}
@@ -140,7 +143,7 @@ footer{margin-top:64px;padding:24px;color:var(--navy-70);font-size:14px;text-ali
     <h1>Human Physiology.</h1>
 <div class="printbar">
   <button type="button" class="printbtn" onclick="window.print()">Print or save as PDF</button>
-  <a class="pdfalt" href="syllabus-fall2026.pdf" target="_blank" rel="noopener">Or download the tagged PDF</a>
+  <a class="pdfalt" href="BIO005-Fall2026-Syllabus.pdf" target="_blank" rel="noopener">Or download the tagged PDF</a>
 </div>
 <p class="sub">Course Syllabus &middot; Section BIOL-5-D9286 &middot; Sutter Internet (NET)</p>
     <p class="subq">4.0 units &middot; 15 weeks &middot; September 8 to December 16, 2026</p>
@@ -231,31 +234,74 @@ footer{margin-top:64px;padding:24px;color:var(--navy-70);font-size:14px;text-ali
 
 <!-- ============================== -->
 <section id="s04">
-  <h2 class="sec"><span class="n">04</span>How this course works</h2>
-  <p>This is a fully online course, and the design is honest about what that means: nobody schedules your hours, so the course gives you a fixed weekly shape to pour them into. Your first meeting with every concept happens in the weekly <strong>note sheet</strong>, built from that week's competencies, worked against the reading and the concept lectures. The harder work, predicting, explaining, drawing a mechanism and teaching it out loud, is what the practice rounds and the midterms ask of you.</p>
+  <h2 class="sec"><span class="n">04</span>How this course works, and why it is built this way</h2>
+  <p>This is a fully online course, which means nobody schedules your hours for you. So the course gives you a fixed weekly shape to pour them into, and inside that shape it gives you real choices about how you learn. Both halves of that sentence matter, and the rest of this section is about why.</p>
+
+  <h3>One path, several ways to walk it, one standard at the end</h3>
+  <p>Every week is a single page with the same seven steps in the same order. You never have to work out where to go next or what this week is about. What you do choose, every week, is how you get there.</p>
+  <table>
+    <tr><th scope="col">You do not choose</th><th scope="col">You do choose</th></tr>
+    <tr><td>Where to go next</td><td>Which representation helps you learn: video, notes, textbook, or a combination</td></tr>
+    <tr><td>What the week is about</td><td>How you retrieve: drawing, brain dump, explaining out loud, rebuilding the process</td></tr>
+    <tr><td>What the competencies are</td><td>Which application case you solve, and which room it is set in</td></tr>
+    <tr><td>What is due, or when</td><td>Which support you use, and when in the week you work</td></tr>
+    <tr><td>What you have to be able to do at the end</td><td>What you change when something is not working</td></tr>
+  </table>
+  <p>That balance is deliberate. A course with no choice in it ignores that you are all arriving from different places. A course that is nothing but choice hands you a menu and leaves you to work out what mattered. This one fixes the destination and opens up the route.</p>
+
+  <h3>What mastery means here</h3>
+  <p>If I am going to tell you that you choose how you learn, I owe you a reliable way to find out whether your choice actually produced learning. Otherwise choice quietly becomes <span class="rule-line">I watched the video, therefore I am done</span>, and that is not the same thing at all.</p>
+  <p>So here is the definition this course runs on. <strong>You have not mastered something because you watched it, read it, highlighted it, or recognised it when you saw it. You have mastered a competency when you can retrieve what you know without your resources and use it to solve a problem you have not seen before.</strong></p>
+  <table>
+    <tr><th scope="col">Level</th><th scope="col">What it sounds like</th></tr>
+    <tr><th scope="row" class="k">1 &middot; I recognise it</th><td>I have seen this before. It looks familiar.</td></tr>
+    <tr><th scope="row" class="k">2 &middot; I can recall it</th><td>I can explain or reconstruct it without looking at anything.</td></tr>
+    <tr><th scope="row" class="k">3 &middot; I can use it</th><td>I can apply it to a problem I have not seen before.</td></tr>
+    <tr><th scope="row" class="k">4 &middot; I can reason with it</th><td>I can predict what happens when the system changes, and explain why.</td></tr>
+  </table>
+  <p><strong>In this course, mastery means levels 3 and 4,</strong> with recall as the foundation that makes either possible. Recognition is not on the list. It is the level that feels like understanding while you are reading and disappears the moment the notes are closed.</p>
+
+  <h3>The Mastery Check, and why it has no points</h3>
+  <p>Every week ends its learning half with a <strong>Mastery Check</strong>. It is not a quiz, and it is not called one, because the word quiz makes everyone think about points instead of about information.</p>
   <ul>
-    <li><strong>The note sheet is the pre-work.</strong> One prompt for each thing you must be able to do that week. It comes first, always, and it doubles as your midterm study guide.</li>
-    <li><strong>The lectures teach the content.</strong> Recorded concept lectures and steppable slide decks, built to answer the questions the note sheet just made you ask.</li>
-    <li><strong>The Mastery OS tracks your competencies</strong> and runs spaced recall cards, ungraded, so you find out what you actually know before a grade depends on it.</li>
-    <li><strong>Clinical Correlations</strong> appear through the course: a real bedside exam on video, then questions asking you to explain the physiology that makes it work. The clinician's hands are the problem; the physiology is the answer.</li>
-    <li><strong>The midterms are draw-and-teach.</strong> You draw a physiological pathway and teach it on video, out loud, no notes, the way you'd teach a classmate. If you can teach it, you know it. Every week includes a five-minute ungraded rehearsal in exactly this format, so by Midterm 1 the format is familiar.</li>
+    <li><strong>No points, no penalty, and nothing about it reaches Canvas.</strong> Its only job is to tell you whether the way you chose to learn that week worked.</li>
+    <li><strong>Do not use your notes the first time.</strong> If you look things up it will tell you what you can find. You already know you can find things. What you need to know is what you can retrieve.</li>
+    <li><strong>Unlimited attempts, and the questions change between them.</strong> Try, find the gap, relearn it, try again. That sequence is the whole point, and it is impossible to build if the first attempt is being scored.</li>
+    <li><strong>Every competency is asked twice, at two levels.</strong> Once at Retrieve, where you reconstruct the mechanism, and once at Use It, where you meet a situation you have not seen and have to predict what changes and why. Asking only the first kind lets you look fluent while still being unable to do physiology. The pair is what tells the truth.</li>
+    <li><strong>It never gives you a score.</strong> A percentage is a grade wearing a different hat, and it tells you nothing about what to do on Tuesday. Instead it gives you a line for each competency and a specific next move: what you are solid on, what to go back to, and which resource to try that is not the one that already did not work for you.</li>
   </ul>
-  <p>The one habit that makes this work: do the note sheet before anything else. Come to the lectures prepared and the problems, the labs and the practice rounds all click. Come in cold and none of them do.</p>
+  <p>Then the discussion closes the loop. It does not ask what study strategy you used. It asks what the check revealed, what you did about it, and what happened when you tried again. That is evidence of your thinking, and it is gradeable without anyone having to grade your learning process itself.</p>
+
+  <h3>Where the effort actually goes</h3>
+  <p>Your first meeting with every concept is the weekly <strong>note sheet</strong>, built from that week&#39;s competencies. It is not graded, and doing it before anything else is the single habit that makes the rest of the week work. Come to the videos and the reading with questions already in hand and they answer something. Come cold and they wash over you.</p>
+  <p>The <strong>Mastery OS</strong> runs spaced recall cards, also ungraded, so material from Week 3 is still there in October when Midterm 1 asks for it.</p>
+  <p>And the <strong>application cases</strong> are where the physiology stops being a subject and becomes something you do. You pick the room. The reasoning is the same in all of them.</p>
 </section>
 
 <!-- ============================== -->
 <section id="s05">
   <h2 class="sec"><span class="n">05</span>The weekly rhythm</h2>
-  <p>Every week follows the same five steps in the same order. Learn the shape once and the term runs on rails.</p>
+  <p>Seven steps, the same seven every week, in the same order, on one page. Learn the shape once in Week 1 and the term runs on rails.</p>
   <table>
-    <tr><th scope="col">Step</th><th scope="col">Do this</th></tr>
-    <tr><th scope="row" class="k">1 &middot; Prepare</th><td>Open the week's note sheet and complete it from the assigned reading and the concept lectures. This comes first, always.</td></tr>
-    <tr><th scope="row" class="k">2 &middot; Watch</th><td>Work through the week's lectures and slide decks with your note sheet beside you.</td></tr>
-    <tr><th scope="row" class="k">3 &middot; Practice</th><td>Do the assigned book problems, and run your recall cards in the Mastery OS.</td></tr>
-    <tr><th scope="row" class="k">4 &middot; Lab</th><td>Complete the week's PhysioEx lab and turn in your data record.</td></tr>
-    <tr><th scope="row" class="k">5 &middot; Prove</th><td>Do the week's short draw-and-teach practice round. Five minutes, ungraded, exam format in miniature.</td></tr>
+    <tr><th scope="col">Step</th><th scope="col">The question it answers</th><th scope="col">Graded</th></tr>
+    <tr><th scope="row" class="k">Mission</th><td>What problem are we trying to understand this week?</td><td>No</td></tr>
+    <tr><th scope="row" class="k">1 &middot; Learn</th><td>Build what you need to know. Choose your format.</td><td>No</td></tr>
+    <tr><th scope="row" class="k">2 &middot; Retrieve</th><td>Can you reconstruct it without looking?</td><td>No</td></tr>
+    <tr><th scope="row" class="k">3 &middot; Practice</th><td>Can you use it? Predict, commit, check, correct, explain.</td><td>No</td></tr>
+    <tr><th scope="row" class="k">4 &middot; Mastery Check</th><td>Did the way you learned it actually work?</td><td>No</td></tr>
+    <tr><th scope="row" class="k">5 &middot; Investigate</th><td>What does the evidence show?</td><td>Yes, 25%</td></tr>
+    <tr><th scope="row" class="k">6 &middot; Apply</th><td>Choose a case. Use the physiology.</td><td>Yes, 25%</td></tr>
+    <tr><th scope="row" class="k">7 &middot; Reflect</th><td>What did the evidence tell you, and what did you do with it?</td><td>Yes, 15%</td></tr>
   </table>
-  <p><strong>Everything is due Sunday at 10:00 pm.</strong> One due day, every week, all fifteen weeks. The one exception: when a discussion is assigned, your initial post is due Friday at 10:00 pm, so there is something to reply to, and peer replies are due Sunday at 10:00 pm with everything else. You choose when in the week each step happens: five in the morning before work, nine at night after the kids are down, all day Saturday. The order above is the order that works; the schedule is yours.</p>
+
+  <h3>The branch at step 4</h3>
+  <p>The Mastery Check sits where it does on purpose. It is the gate between learning the material and using it, and it sends you one of two ways.</p>
+  <ul>
+    <li><strong>All competencies solid.</strong> Move to Investigate and Apply. Do not keep reviewing material you can already use, it is the least valuable hour available to you.</li>
+    <li><strong>Not yet.</strong> You will be told exactly which competency, and given a different resource to try. Retrieve and practise that one thing, then retake the check. Then move on.</li>
+  </ul>
+  <p>Going round that loop twice is not falling behind. It is the course working the way it was built to work, and it costs far less than arriving at a midterm having found out too late.</p>
+  <p><strong>Everything graded is due Sunday at 10:00 pm.</strong> One due day, every week, all fifteen weeks. The one exception: your initial discussion post is due Friday at 10:00 pm so there is something for your classmates to reply to, and replies are due Sunday with everything else. Within that, when you work is yours. Five in the morning before a shift, nine at night once the house is quiet, or the whole thing on a Saturday. The order above is the order that works. The schedule is yours.</p>
 </section>
 
 <!-- ============================== -->
@@ -279,57 +325,61 @@ footer{margin-top:64px;padding:24px;color:var(--navy-70);font-size:14px;text-ali
 <!-- ============================== -->
 <section id="s07">
   <h2 class="sec"><span class="n">07</span>Grading and assessment</h2>
-  <p>Five components. The work you can prove is your own carries the most weight.</p>
-  <div class="grade-bar" role="img" aria-label="Grade weights: note sheets 20 percent, midterms 40 percent, lab 15 percent, book problems 15 percent, discussions 10 percent">
-    <div class="gb-notes"><span class="gl">Note sheets</span><span class="gp">20%</span></div>
-    <div class="gb-mid"><span class="gl">Two midterms</span><span class="gp">40%</span></div>
-    <div class="gb-lab"><span class="gl">Lab</span><span class="gp">15%</span></div>
-    <div class="gb-book"><span class="gl">Book problems</span><span class="gp">15%</span></div>
-    <div class="gb-disc"><span class="gl">Discussions</span><span class="gp">10%</span></div>
+  <p>Four categories, and each one is named for what it asks you to do rather than for the format it arrives in. The work that carries the most weight is the work that proves the reasoning is yours.</p>
+  <div class="grade-bar" role="img" aria-label="Grade weights: Show Me What You Know, exams, 35 percent. Investigate It, labs, 25 percent. Use It, applications and the patient file, 25 percent. Think About It, discussions and metacognition, 15 percent.">
+    <div class="gb-show"><span class="gl">Show Me What You Know</span><span class="gp">35%</span></div>
+    <div class="gb-inv"><span class="gl">Investigate It</span><span class="gp">25%</span></div>
+    <div class="gb-use"><span class="gl">Use It</span><span class="gp">25%</span></div>
+    <div class="gb-think"><span class="gl">Think About It</span><span class="gp">15%</span></div>
   </div>
   <table>
-    <tr><th scope="col">Component</th><th scope="col">Detail</th><th scope="col">Weight</th></tr>
-    <tr><th scope="row" class="k">Competency note sheets</th><td>15 weekly sheets, one prompt per competency. Five prompts graded for accuracy, the rest checked for completion.</td><td>20%</td></tr>
-    <tr><th scope="row" class="k">Midterm exams</th><td>2 exams, draw-and-teach on video. No notes. Mostly apply-and-reason, not pure recall. 20% each.</td><td>40%</td></tr>
-    <tr><th scope="row" class="k">Laboratory</th><td>15 weekly PhysioEx labs with data records.</td><td>15%</td></tr>
-    <tr><th scope="row" class="k">Book problems</th><td>Assigned Silverthorn problems each week.</td><td>15%</td></tr>
-    <tr><th scope="row" class="k">Discussions</th><td>One post a week, carrying both the physiology and your thinking about it.</td><td>10%</td></tr>
+    <tr><th scope="col">Category</th><th scope="col">What it is</th><th scope="col">Weight</th></tr>
+    <tr><th scope="row" class="k">Show Me What You Know</th><td>Two midterm exams, draw and teach on video. No notes.</td><td>35%</td></tr>
+    <tr><th scope="row" class="k">Investigate It</th><td>Weekly labs. PhysioEx, the repo labs, and the data records that go with them.</td><td>25%</td></tr>
+    <tr><th scope="row" class="k">Use It</th><td>The weekly application case you choose, and the patient file you build across the term.</td><td>25%</td></tr>
+    <tr><th scope="row" class="k">Think About It</th><td>The weekly discussion, carrying the physiology and your thinking about it in one post.</td><td>15%</td></tr>
   </table>
 
-  <h3>Competency note sheets, 20 percent</h3>
+  <h3>Show Me What You Know, 35 percent</h3>
   <ul>
-    <li><strong>Work them in this order.</strong> Read the questions first. Preview the text. Organize your notes so you know where to find things, no flashcards. Answer the best you can from what you know, in your first color, on the master sheet you will draw and create from. Then watch each concept's video, name and number at the top of the prompt, and add what you did not know in a second color. Color one is your baseline; color two is what you must commit to memory.</li>
-    <li>Every week's sheet is built directly from that week's competencies. You complete it from the reading and the lectures before anything else that week.</li>
-    <li>You submit the whole sheet. I choose <strong>five prompts</strong> and grade those for accuracy, you won't know which five ahead of time, so every prompt has to be real. The rest is checked for completion.</li>
-    <li>It doubles as your midterm study guide, so doing it well pays you twice.</li>
+    <li>These are not multiple choice tests. Each midterm asks you to <strong>draw a physiological pathway and teach it to me</strong> on video, out loud, with no notes. Draw the mechanism, label it, explain each step and say why it happens.</li>
+    <li>The format is chosen for a reason. Recognising the right answer on a list and being able to build the answer from nothing are different skills, and only one of them is any use to you in a clinical program.</li>
+    <li><strong>Midterm 1</strong> covers Weeks 1 to 7. <strong>Midterm 2</strong> covers Weeks 8 to 14. Each is worth 17.5 percent.</li>
+    <li><strong>Each is a window, not an hour.</strong> Midterm 1 opens Monday, October 26 at 8:00 am and closes Wednesday, October 28 at 10:00 pm. Midterm 2 opens Monday, December 14 at 8:00 am and closes Wednesday, December 16 at 10:00 pm. Each window sits at the front of its week so the week before it is finished and the week it sits in is still open to you afterwards.</li>
+    <li>You will not be surprised by the format. Every week&#39;s Retrieve step is this exact task in miniature, ungraded.</li>
   </ul>
 
-  <h3>Midterm exams, 40 percent</h3>
+  <h3>Investigate It, 25 percent</h3>
   <ul>
-    <li>These are not multiple-choice tests. Each midterm asks you to <strong>draw a physiological pathway and teach it to me</strong> on video, out loud, no notes: draw the mechanism, label it, explain each step and why it happens.</li>
-    <li>If you can teach it, you know it. If you can only recognize it on a list of options, you don't, and this format is honest about the difference.</li>
-    <li><strong>Midterm 1</strong> covers Weeks 1 to 7: foundations, membranes, the electrical signal, synapses, the senses, and muscle. <strong>Midterm 2</strong> covers Weeks 8 to 14: hormones and reproduction, the heart and circulation, blood, digestion, breathing, and the kidney. Each is worth 20 percent.</li>
-    <li>You will not be surprised by the format: every week includes an ungraded rehearsal round in exactly this shape.</li>
-    <li><strong>Each midterm is a window, not an hour.</strong> Midterm 1: Monday, October 26, 8:00 am to Wednesday, October 28, 10:00 pm. Midterm 2: Monday, December 14, 8:00 am to Wednesday, December 16, 10:00 pm. Each window sits at the front of its week on purpose, so the week before it is finished and the week it sits in is still open to you afterwards.</li>
+    <li>One lab a week, aligned to that week&#39;s material. You generate and interpret real physiological output: a trace, a curve, a set of values, a calculation.</li>
+    <li>Every lab uses the same reasoning structure, and it is the structure a clinical write up uses too: question, prediction, evidence, interpretation, conclusion. You write the prediction before you see the data. That order is not optional, and it is where most of the learning is.</li>
+    <li><span class="rule-line">Where the lab uses PhysioEx, it takes both halves.</span> PhysioEx must show complete in Pearson, and you must turn in the worksheet and data record. The points live on the worksheet. PhysioEx carries no points and is only the gate. Clicking through PhysioEx alone earns nothing, and a worksheet with no PhysioEx behind it does not get graded.</li>
   </ul>
 
-  <h3>Discussions, 10 percent</h3>
+  <h3>Use It, 25 percent</h3>
   <ul>
-    <li>One post a week, not two. Each post does two jobs at once: it works through something from that week's physiology, and it says something honest about your own thinking on that same material. Not a content post and a separate reflection post; one post that carries both.</li>
-    <li>The second half is the part students tend to skip, so here is what it looks like. Where did your prediction turn out to be wrong, and what were you assuming that made it seem right? What did you have to go back and re-learn? Which part still feels shaky when you try to explain it without looking?</li>
-    <li>Your initial post is due Friday at 10:00 pm, so there is something to reply to. Peer replies are due Sunday at 10:00 pm.</li>
+    <li>Every week gives you three or four <strong>application cases</strong> set in different rooms: nursing, medicine, radiology, and exercise or allied health. <strong>You choose one.</strong> They differ in context. They do not differ in rigour, and every one of them assesses the same underlying competency.</li>
+    <li>Whichever case you choose, it asks the same five things: name the physiological variable and the system regulating it, predict what is happening, explain the mechanism step by step, interpret the evidence you were given, and justify your conclusion including what would change it.</li>
+    <li>The cases accumulate into <strong>your patient file</strong>, which is the capstone. By Week 15 you are holding a body of your own reasoning across every system in the course, in the setting you are actually heading for.</li>
+    <li>This is the category where the choice is real and the standard is not. You pick the room. The physiology you have to be able to do in it is fixed.</li>
   </ul>
 
-  <h3>Laboratory, 15 percent</h3>
+  <h3>Think About It, 15 percent</h3>
   <ul>
-    <li>One PhysioEx lab every week, aligned with that week's lecture material. You generate and interpret real physiological output: a trace, a curve, a set of values, a calculation.</li>
-    <li><span class="rule-line">The lab has two parts, and it takes both.</span> PhysioEx must show as complete in Pearson, and you must turn in the worksheet and data record for that lab, plus the clinical correlation questions in the weeks that have them. The points live entirely on the completed worksheet; PhysioEx itself carries no points and is only the gate. The worksheet is graded once PhysioEx shows complete. Clicking through PhysioEx alone earns nothing; a worksheet without the PhysioEx behind it does not get graded.</li>
+    <li>One post a week, not two. It carries the physiology and your thinking about it together, in one post.</li>
+    <li>What it asks for is a <strong>decision, the evidence, and the adjustment.</strong> What did your Mastery Check reveal? What did you do about it? What happened when you tried again? And one question about the physiology itself, which changes each week.</li>
+    <li><strong>Do not post your Mastery Check result.</strong> Not the number, not how many attempts. Nobody learns anything from that, and it turns the thread into a leaderboard. What is worth reading is what you changed and whether it worked.</li>
+    <li>Your initial post is due Friday at 10:00 pm so there is something to reply to. Peer replies are due Sunday at 10:00 pm.</li>
   </ul>
 
-  <h3>Book problems, 15 percent</h3>
+  <h3>What is not graded, and why that is deliberate</h3>
+  <p>Three things you will do every week carry no points at all.</p>
   <ul>
-    <li>Assigned problems from the Silverthorn chapters you read each week, the calculations and predict-and-explain reasoning the midterms ask for. Problem numbers are on each week's page.</li>
+    <li><strong>The note sheet and the retrieval work.</strong> This is where you find out what you do not know. Grading it would push you to make it look finished instead of making it honest, and an honest sheet with gaps in it is worth more to you than a tidy one.</li>
+    <li><strong>The practice items.</strong> Predict, commit, check, correct, explain. Getting these wrong is the point of doing them.</li>
+    <li><strong>The Mastery Check.</strong> No points, no penalty, unlimited attempts, and it never gives you a score. It reports competency by competency and tells you what to go back to. See section 04 for why it works that way.</li>
   </ul>
+  <p>None of this is optional in any way that matters. It is the entire route to the four graded categories above, and the students who skip it are the ones who arrive at a midterm able to recognise a pathway and unable to draw one.</p>
 </section>
 
 <!-- ============================== -->

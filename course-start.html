@@ -406,16 +406,16 @@ footer :focus-visible{outline-color:var(--gold)}
   ];
 
   /* ---- the two midterm windows, set Sep 7 2026 ---------------------
-     Three midterms became two, still 40 percent, 20 each. Each window
+     Two exams, 35 percent together, 17.5 each. Each window
      runs Monday 8 am to Wednesday 10 pm at the FRONT of the week named
      here, so the block before it is finished before students sit it and
      the week it sits in is still open to them afterwards. Week 15 is not
      on an exam; it closes the term with the synthesis work. */
   var EXAMS = {
     8:  { t:"Midterm 1, Weeks 1 to 7",
-          d:"Window opens Monday October 26 at 8 am and closes Wednesday October 28 at 10 pm. Draw and teach on video, out loud, no notes. It sits at the front of this week on purpose: Week 7 is finished before you sit it, and the rest of Week 8 is still open to you afterwards. Worth 20 percent." },
+          d:"Window opens Monday October 26 at 8 am and closes Wednesday October 28 at 10 pm. Draw and teach on video, out loud, no notes. It sits at the front of this week on purpose: Week 7 is finished before you sit it, and the rest of Week 8 is still open to you afterwards. Worth 17.5 percent." },
     15: { t:"Midterm 2, Weeks 8 to 14",
-          d:"Window opens Monday December 14 at 8 am and closes Wednesday December 16 at 10 pm, when the term ends. Draw and teach on video, out loud, no notes. This week is not on it. Worth 20 percent." }
+          d:"Window opens Monday December 14 at 8 am and closes Wednesday December 16 at 10 pm, when the term ends. Draw and teach on video, out loud, no notes. This week is not on it. Worth 17.5 percent." }
   };
   WEEKS.forEach(function(w){
     var e = EXAMS[w.n];
