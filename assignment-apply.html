@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Use It &middot; the patient chart &middot; BIO 005 Human Physiology</title>
+<link rel="stylesheet" href="assets/fonts-site.css">
+<!-- ==========================================================
+     USE IT, THE WEEKLY PATIENT CHART. One file, fifteen weeks.
+
+     Embed in Canvas with ?week=N. Everything on the page comes from
+     bio005-patient-chart.js: one patient, five entry points, fifteen
+     weekly entries.
+
+     The student picks an entry point once and it sticks, in
+     localStorage under bio005-track-v1. The key is prefixed bio005-
+     because BIO 004 and BIO 005 share drsrennie-stack.github.io and
+     localStorage is scoped by origin, not by path.
+
+     No accent bars anywhere: cards are white, lifted by shadow only.
+     Entry point color lives in the label text, which is where it can
+     also be read by someone who cannot see the color.
+     ========================================================== -->
+<style>
+:root{
+  --navy:#0B1530; --navy-tint:#ECEFF4;
+  --rust:#8B3A2E; --rust-dark:#6E2D24;
+  --gold-text:#624612;
+  --page:#FAFAF9;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{font-family:'Plus Jakarta Sans Variable','Plus Jakarta Sans',system-ui,sans-serif;
+  color:var(--navy);background:var(--page);line-height:1.65;font-size:15.5px;
+  padding:40px max(28px,4vw)}
+.inner{max-width:840px;margin:0 auto}
+.skip{position:absolute;left:-9999px;top:0;background:var(--navy);color:#fff;padding:12px 18px;font-weight:700;text-decoration:none;z-index:20}
+.skip:focus{left:0;top:0}
+a{color:var(--rust)}
+:focus-visible{outline:3px solid var(--rust);outline-offset:3px}
+
+header.brand{display:flex;align-items:center;gap:12px;padding:18px max(28px,4vw);
+  border-bottom:1px solid rgba(11,21,48,.14);margin:-40px max(-28px,-4vw) 28px;background:#fff}
+header.brand .bwm{font-weight:800;font-size:16px;letter-spacing:-.01em;color:var(--navy)}
+header.brand .bwm b{color:var(--rust)}
+header.brand .bsub{display:block;font-size:10.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#4F5468}
+
+.homebar{margin:0 0 18px}
+.homebtn{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:800;
+  letter-spacing:.18em;text-transform:uppercase;text-decoration:none;color:var(--rust);
+  background:#fff;border:1px solid rgba(11,21,48,.16);border-radius:8px;padding:10px 16px;
+  transition:transform 160ms ease,box-shadow 160ms ease}
+.homebtn:hover{transform:translateY(-2px);box-shadow:0 8px 16px rgba(11,21,48,.10)}
+@media print{.homebar,.picker{display:none}}
+
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--rust);margin:0 0 12px}
+h1{font-size:clamp(27px,4.6vw,38px);font-weight:800;letter-spacing:-.02em;margin:0 0 6px;line-height:1.08}
+h1 .two{color:var(--rust)}
+.sub{margin:0 0 4px;font-weight:700}
+.due{color:var(--rust);font-weight:800;margin:0 0 20px}
+p{max-width:70ch}
+h2{font-size:19px;font-weight:800;margin:32px 0 8px;letter-spacing:-.01em}
+h3{font-size:16.5px;font-weight:800;margin:0 0 8px;letter-spacing:-.01em}
+
+.card{background:#fff;border-radius:12px;padding:18px 20px 16px;
+  box-shadow:0 1px 3px rgba(11,21,48,.10);margin:12px 0 4px}
+.card .label{font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--rust);margin:0 0 10px}
+.card ol,.card ul{margin:0;padding-left:22px}
+.card li{margin:0 0 9px;max-width:66ch}
+.card li:last-child{margin-bottom:0}
+.card p{margin:0 0 10px}
+.card p:last-child{margin-bottom:0}
+
+/* The patient, stated once at the top. */
+.who{background:#fff;border-radius:12px;padding:16px 20px;box-shadow:0 1px 3px rgba(11,21,48,.10);margin:0 0 6px}
+.who .nm{font-weight:800;font-size:17px;margin:0 0 4px}
+.who p{margin:0;font-size:14.5px;color:#2A3448}
+
+/* The chart itself: label and value rows, no rules, no bars. */
+.chart{background:#fff;border-radius:12px;padding:6px 20px 10px;box-shadow:0 1px 3px rgba(11,21,48,.10);margin:12px 0 4px}
+.chart dl{margin:0}
+.chart dt{font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);margin:16px 0 4px}
+.chart dd{margin:0 0 4px;max-width:70ch}
+
+/* Entry point picker. Real radios, visually styled, keyboard operable. */
+.picker{margin:10px 0 4px}
+.picker fieldset{border:0;margin:0;padding:0}
+.picker legend{font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--rust);padding:0;margin:0 0 10px}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px}
+.opt{position:relative;background:#fff;border-radius:10px;box-shadow:0 1px 3px rgba(11,21,48,.10);
+  transition:transform 160ms ease,box-shadow 160ms ease}
+.opt:hover{transform:translateY(-2px);box-shadow:0 8px 16px rgba(11,21,48,.10)}
+.opt input{position:absolute;opacity:0;width:1px;height:1px}
+.opt label{display:block;padding:14px 16px;cursor:pointer;border-radius:10px}
+.opt .nmm{display:block;font-weight:800;font-size:15px;margin:0 0 2px}
+.opt .dk{display:block;font-size:13px;color:#414B5C;line-height:1.5}
+.opt input:focus-visible + label{outline:3px solid var(--rust);outline-offset:2px}
+.opt input:checked + label{background:var(--navy-tint)}
+.opt input:checked + label .nmm::after{content:" \2713";color:var(--rust)}
+
+.t-nursing  .nmm{color:#8B3A2E}
+.t-medicine .nmm{color:#0B1530}
+.t-radiology .nmm{color:#624612}
+.t-rt       .nmm{color:#6E2D24}
+.t-exercise .nmm{color:#2A3448}
+
+details{background:#fff;border-radius:12px;box-shadow:0 1px 3px rgba(11,21,48,.10);margin:14px 0 4px;overflow:hidden}
+details>summary{cursor:pointer;padding:14px 20px;font-weight:800;list-style:none}
+details>summary::-webkit-details-marker{display:none}
+details>summary::before{content:"+ ";color:var(--rust);font-weight:800}
+details[open]>summary::before{content:"\2212 "}
+details>summary:focus-visible{outline:3px solid var(--rust);outline-offset:-3px}
+details .body{padding:0 20px 18px}
+details .body ul{margin:0;padding-left:22px}
+details .body li{margin:0 0 9px;max-width:66ch}
+details .body h3{font-size:14px;font-weight:800;margin:16px 0 4px;letter-spacing:.02em}
+details .body h3:first-child{margin-top:0}
+details .body p{margin:0 0 8px;font-size:14.5px}
+
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0 4px}
+.btn{display:inline-block;font-weight:800;text-decoration:none;border-radius:10px;padding:13px 20px;letter-spacing:.03em}
+.btn.solid{background:var(--rust);color:#fff;border:1.5px solid var(--rust)}
+.btn.solid:hover{background:var(--rust-dark);border-color:var(--rust-dark)}
+.btn.line{background:#fff;color:var(--rust);border:1.5px solid var(--rust)}
+.btn.line:hover{color:var(--rust-dark);border-color:var(--rust-dark)}
+
+.note{font-size:14px;color:#414B5C;max-width:66ch}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+@media(max-width:620px){.opts{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the assignment</a>
+<header class="brand">
+  <svg width="30" height="36" viewBox="40 10 125 148" role="img" aria-label="BIO 005 Human Physiology">
+    <g transform="translate(0,18)">
+      <g transform="translate(60,0) rotate(8 0 130)">
+        <circle cx="0" cy="20" r="10" fill="#0B1530"/>
+        <path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#0B1530"/>
+      </g>
+      <g transform="translate(100,0)">
+        <circle cx="0" cy="10" r="11" fill="#8B3A2E"/>
+        <path d="M 0,22 C -11,22 -17,26 -17,34 C -17,52 -14,70 -12,86 C -11,108 -13,122 -15,132 L 15,132 C 13,122 11,108 12,86 C 14,70 17,52 17,34 C 17,26 11,22 0,22 Z" fill="#8B3A2E"/>
+      </g>
+      <g transform="translate(140,0) rotate(-8 0 130)">
+        <circle cx="0" cy="20" r="10" fill="#C9A14A"/>
+        <path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#C9A14A"/>
+      </g>
+    </g>
+  </svg>
+  <span><span class="bwm">BIO <b>005</b></span><span class="bsub">Human Physiology &middot; Fall 2026</span></span>
+</header>
+
+<main id="main" class="inner">
+  <div class="homebar"><a class="homebtn" href="course-start.html" target="_top"><span aria-hidden="true">&larr;</span> Course home</a></div>
+
+  <p class="eyebrow">Assignment &middot; graded &middot; Use It, 25% of your grade</p>
+  <h1>The patient chart: <span class="two" id="hwk">week</span></h1>
+  <p class="sub" id="wkline"></p>
+  <p class="due" id="dueline"></p>
+
+  <div class="who">
+    <p class="nm" id="pname"></p>
+    <p id="pline"></p>
+  </div>
+
+  <h2 id="where-h">Where this week sits in her story</h2>
+  <p id="arc"></p>
+  <p class="note" id="dateline"></p>
+
+  <h2 id="chart-h">The chart</h2>
+  <p class="note">Everyone reads this, whichever entry point you chose.</p>
+  <div class="chart" aria-labelledby="chart-h"><dl id="chart"></dl></div>
+
+  <h2 id="pick-h">Your entry point</h2>
+  <p>Pick one in Week 1 and stay in it all term. Every entry point assesses the same physiology and none of them is the easier one. Pick the room you are heading for, or the one you know least about, whichever you would rather spend an hour in.</p>
+  <div class="picker">
+    <fieldset>
+      <legend>Choose your entry point</legend>
+      <div class="opts" id="opts"></div>
+    </fieldset>
+  </div>
+  <p class="note">Your choice is remembered in this browser on this device. On a different browser or a different computer you will be asked again, so pick the same one. Nothing is sent anywhere.</p>
+
+  <h2 id="desk-h">On your desk this week</h2>
+  <div class="card" id="desk" aria-labelledby="desk-h" aria-live="polite">
+    <p class="label" id="desklab">Your entry point</p>
+    <div id="deskbody"></div>
+  </div>
+
+  <h2 id="five-h">Answer these five, whichever entry point you chose</h2>
+  <div class="card" aria-labelledby="five-h">
+    <ol id="five"></ol>
+  </div>
+
+  <details id="others">
+    <summary>What the other four entry points got this week</summary>
+    <div class="body" id="othersbody"></div>
+  </details>
+
+  <details>
+    <summary>What a strong answer looks like</summary>
+    <div class="body">
+      <p>Length is not what makes it strong. A good answer fits on about a page and does four things.</p>
+      <ul>
+        <li><strong>It names the thing precisely.</strong> Not "her sodium is low" but which sodium, measured or corrected, and what each one is a concentration of.</li>
+        <li><strong>It traces the mechanism in order</strong> rather than jumping from cause to outcome. Every step gets named, including the easy ones to skip.</li>
+        <li><strong>It separates what the chart shows from what you are inferring.</strong> Both are allowed. Confusing them is not.</li>
+        <li><strong>It names what would change the answer.</strong> The most useful sentence in a clinical write up starts "I would want to know".</li>
+      </ul>
+      <p style="margin-bottom:0">A correct number with no explanation earns half credit. That is true every week, on every question.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>Using AI on this one</summary>
+    <div class="body">
+      <p><strong>Open, with disclosure.</strong> Use It is the category where AI is allowed, and where you have to say what you used it for.</p>
+      <ul>
+        <li>Use it to check a definition, ask how a mechanism works, or push back on your own reasoning.</li>
+        <li>At the end, add a line or two: what you used it for and what you did with what it gave you. "I asked it to explain the corrected sodium and then rewrote question three because I had the direction backwards" is a good disclosure.</li>
+        <li>What is graded is whether your naming, your mechanism and your interpretation hold together as one person thinking, week over week, about one patient. That is very visible when it is missing.</li>
+      </ul>
+      <p style="margin-bottom:0">Undisclosed use is the only version of this that is a problem.</p>
+    </div>
+  </details>
+
+  <h2>Turning it in</h2>
+  <div class="card">
+    <ol>
+      <li><strong>Put your entry point at the top of the page.</strong> Same one every week.</li>
+      <li><strong>Answer all five questions</strong> in order, numbered, then answer the "work it" prompt from your own desk. About a page in total. Handwritten is fine and always has been.</li>
+      <li><strong>Add your AI disclosure</strong> at the end, even if it is one line saying you used none.</li>
+      <li>Photograph or scan into <strong>one PDF</strong>, in order, and submit it here before <strong>10:00 pm</strong>. Wait for the Canvas confirmation screen.</li>
+    </ol>
+  </div>
+
+  <p class="note">Keep every week. These fifteen entries are your patient file, and in Week 15 you will be asked to read her first blood gas again using things you will not learn until November.</p>
+
+  <div class="btns" id="btns"></div>
+</main>
+
+<script src="bio005-patient-chart.js"></script>
+<script>
+(function(){
+  var C = window.BIO005_CHART;
+  var KEY = 'bio005-track-v1';
+  var DUE = ['Sunday, September 13','Sunday, September 20','Sunday, September 27',
+             'Sunday, October 4','Sunday, October 11','Sunday, October 18',
+             'Sunday, October 25','Sunday, November 1','Sunday, November 8',
+             'Sunday, November 15','Sunday, November 22','Sunday, November 29',
+             'Sunday, December 6','Sunday, December 13','Wednesday, December 16'];
+
+  var m = /[?&]week=(\d{1,2})/.exec(location.search);
+  var w = m ? Math.max(1, Math.min(15, parseInt(m[1],10))) : 1;
+  var wk = C && C.weeks && C.weeks[w];
+  if (!wk){
+    document.getElementById('wkline').textContent =
+      'Week ' + w + ' is missing from the chart. Tell Dr. Rennie, because that is a mistake and not a design choice.';
+    return;
+  }
+
+  document.title = 'Use It · Week ' + w + ' · BIO 005 Human Physiology';
+  document.getElementById('hwk').textContent = 'week ' + w;
+  document.getElementById('wkline').innerHTML = 'Week ' + w + ' · ' + wk.title;
+  document.getElementById('dueline').textContent = 'Due ' + DUE[w-1] + ' at 10:00 pm';
+  document.getElementById('pname').textContent = C.patient.name + ', ' + C.patient.line.split('.')[0].replace(/^\s+/,'') + '.';
+  document.getElementById('pline').textContent = C.patient.line.split('. ').slice(1).join('. ') + ' ' + C.patient.why;
+  document.getElementById('arc').innerHTML = wk.arc;
+  document.getElementById('dateline').textContent = wk.encounter + ' · ' + wk.date + ' · ' + wk.when + '.';
+
+  document.getElementById('chart').innerHTML = wk.chart.map(function(row){
+    return '<dt>' + row[0] + '</dt><dd>' + row[1] + '</dd>';
+  }).join('');
+
+  document.getElementById('five').innerHTML =
+    wk.five.map(function(q){ return '<li>' + q + '</li>'; }).join('');
+
+  /* ---- entry point ---- */
+  function read(){ try{ return localStorage.getItem(KEY); }catch(e){ return null; } }
+  function write(v){ try{ localStorage.setItem(KEY, v); }catch(e){} }
+
+  var ids = C.tracks.map(function(t){ return t.id; });
+  var current = read();
+  if (ids.indexOf(current) === -1) current = null;
+
+  document.getElementById('opts').innerHTML = C.tracks.map(function(t){
+    return '<div class="opt t-' + t.id + '">' +
+             '<input type="radio" name="track" id="tr-' + t.id + '" value="' + t.id + '"' +
+               (t.id === current ? ' checked' : '') + '>' +
+             '<label for="tr-' + t.id + '">' +
+               '<span class="nmm">' + t.name + '</span>' +
+               '<span class="dk">' + t.desk + '</span>' +
+             '</label></div>';
+  }).join('');
+
+  function nameOf(id){
+    for (var i=0;i<C.tracks.length;i++){ if (C.tracks[i].id === id) return C.tracks[i].name; }
+    return id;
+  }
+
+  function paint(){
+    var lab = document.getElementById('desklab');
+    var body = document.getElementById('deskbody');
+    if (!current){
+      lab.textContent = 'No entry point chosen yet';
+      body.innerHTML = '<p>Choose one above and this fills in. Until then you can read all five below, ' +
+                       'which is worth doing once, in Week 1, before you commit.</p>';
+    } else {
+      var t = wk.tracks[current];
+      lab.textContent = nameOf(current);
+      body.innerHTML = '<p>' + t.data + '</p>' +
+                       '<p><strong>Work it:</strong> ' + t.go + '</p>';
+    }
+    document.getElementById('othersbody').innerHTML = C.tracks.filter(function(t){
+      return t.id !== current;
+    }).map(function(t){
+      var e = wk.tracks[t.id];
+      return '<h3>' + t.name + '</h3><p>' + e.data + '</p>' +
+             '<p><strong>Work it:</strong> ' + e.go + '</p>';
+    }).join('');
+    document.getElementById('others').querySelector('summary').textContent =
+      current ? 'What the other four entry points got this week'
+              : 'All five entry points for this week';
+  }
+
+  document.getElementById('opts').addEventListener('change', function(e){
+    if (e.target && e.target.name === 'track'){
+      current = e.target.value;
+      write(current);
+      paint();
+      post();
+    }
+  });
+  paint();
+
+  document.getElementById('btns').innerHTML =
+    '<a class="btn line" href="week-' + (w<10?'0':'') + w +
+    '-competencies.html" target="_top">The competencies behind it</a>';
+
+  /* iframe height sender. The id keeps this page's messages distinct
+     from the other embeds on the same Canvas page. */
+  var fid = 'apply-' + Math.random().toString(36).slice(2,8);
+  function post(){ try{ parent.postMessage({frame:fid, height:document.documentElement.scrollHeight}, '*'); }catch(e){} }
+  if ('ResizeObserver' in window){ new ResizeObserver(post).observe(document.documentElement); }
+  window.addEventListener('load', post);
+  window.addEventListener('resize', post);
+  document.addEventListener('toggle', post, true);
+  post();
+})();
+</script>
+</body>
+</html>
