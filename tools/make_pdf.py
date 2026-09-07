@@ -35,9 +35,21 @@ JOBS = {
     # template and the on screen h1 are the web page around it, and leaving
     # them in gave the PDF a second H1.
     '.sheetpage'),
+ 'BIO005-Week1-Ungraded-Work.pdf':
+   ('ungraded-sheet.html?week=1', 'BIO 005 Week 1 ungraded work',
+    'Everything ungraded in Week 1: retrieval target, brain dumps, drawing prompts, book problems'),
  'BIO005-Week1-Competencies.pdf':
    ('week-01-competencies.html', 'BIO 005 Week 1 competencies',
     'Week 1 competencies with both brain dump prompts'),
+ # The desk sheet, added Sep 7 2026. Names and tags only, no "can"
+ # statements: the packet below is the version with those, and it runs
+ # eleven pages, which is not something anybody keeps beside them.
+ # `keep` is the sheet itself, so the on screen buttons and the warning
+ # about statement length stay out of the structure tree.
+ 'BIO005-Fall2026-Competency-Sheet.pdf':
+   ('competency-sheet-print.html', 'BIO 005 competency sheet, Fall 2026',
+    'All 268 competencies by week, tagged lecture or lab, for printing',
+    '#sheet'),
  'BIO005-Fall2026-Competency-Packet.pdf':
    ('competency-packet.html', 'BIO 005 competency packet, Fall 2026',
     'All 268 competencies for the term'),
@@ -159,8 +171,47 @@ def stamp(path: pathlib.Path, title: str, subject: str):
             pdf.Root['/ViewerPreferences'] = pdf.make_indirect(pikepdf.Dictionary())
             vp = pdf.Root['/ViewerPreferences']
         vp['/DisplayDocTitle'] = True
+        relabel_list_bodies(pdf)
         pdf.save(path.with_suffix('.tmp.pdf'))
     os.replace(path.with_suffix('.tmp.pdf'), path)
+
+def relabel_list_bodies(pdf) -> int:
+    """Retype the /Div inside a list item to /LBody.
+
+    PDF/UA wants a list item to be a label plus a body: /LI containing
+    /Lbl and /LBody. WeasyPrint emits /Lbl for the marker but tags the
+    wrapper element as a plain /Div, so the LBody is missing and a
+    screen reader gets the item text as a loose group rather than as the
+    body of item N.
+
+    Wrapping the content in a div in the HTML is what creates a single
+    child to retype; this pass renames it. Only a /Div that is a direct
+    child of an /LI is touched, so nothing else in the tree moves.
+    """
+    n = 0
+    for obj in pdf.objects:
+        try:
+            if not isinstance(obj, pikepdf.Dictionary):
+                continue
+            if obj.get('/Type', None) != '/StructElem':
+                continue
+            if str(obj.get('/S', '')) != '/LI':
+                continue
+            kids = obj.get('/K', None)
+            if kids is None:
+                continue
+            if not isinstance(kids, pikepdf.Array):
+                kids = [kids]
+            for k in kids:
+                if (isinstance(k, pikepdf.Dictionary)
+                        and k.get('/Type', None) == '/StructElem'
+                        and str(k.get('/S', '')) == '/Div'):
+                    k['/S'] = pikepdf.Name('/LBody')
+                    n += 1
+        except Exception:
+            continue
+    return n
+
 
 def audit(path: pathlib.Path) -> str:
     with pikepdf.open(path) as p:

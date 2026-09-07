@@ -141,6 +141,41 @@ h2{font-size:clamp(23px,3.4vw,30px);color:var(--maroon);line-height:1.18;margin-
 .btn.ghost{background:transparent;color:var(--navy)}
 .btn.ghost:hover{background:var(--navy);color:#fff}
 .btnrow{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 0}
+/* ---------- WHAT TO DO NEXT, rebuilt Sep 7 2026 ----------
+   Same treatment as course-start.html: the three buttons that used to sit
+   here became numbered steps, the first two open in place as panels you X
+   out of, and the syllabus and Week 1 sit at the very bottom as buttons.
+
+   A centered modal is wrong inside a Canvas iframe: the height sender makes
+   the iframe as tall as its content, so the iframe never scrolls and a
+   position:fixed overlay pins itself to the top of the frame, which can be
+   well above what the student is looking at. The panel opens in place. */
+.steps{counter-reset:st;list-style:none;padding:0;margin:18px 0 0}
+.steps > li{counter-increment:st;position:relative;padding:0 0 0 62px;margin:0 0 26px}
+.steps > li::before{content:counter(st,decimal-leading-zero);position:absolute;left:0;top:-6px;
+  font-family:var(--display);font-weight:800;font-size:34px;line-height:1;color:var(--maroon);
+  font-variant-numeric:tabular-nums;letter-spacing:-.03em}
+.steps > li h3{font-size:20px;color:var(--navy);margin:0 0 6px}
+.steps > li p{margin:0 0 12px}
+@media (max-width:560px){.steps > li{padding-left:0}.steps > li::before{position:static;display:block;margin:0 0 8px}}
+
+.panelwrap{margin:12px 0 0}
+.panel{position:relative;background:var(--card,#fff);border-radius:14px;
+  box-shadow:0 8px 18px rgba(11,21,48,.10);overflow:hidden}
+.panel[hidden]{display:none}
+.panel .phead{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px 12px 20px}
+.panel .ptitle{font-family:var(--display);font-weight:800;font-size:16px;color:var(--navy);margin:0}
+.panel .pscroll{display:inline-block;margin-left:10px;font-family:var(--body);font-weight:600;
+  font-size:12.5px;color:var(--muted,#414B5C)}
+.panel .pclose{appearance:none;background:#fff;border:1.5px solid rgba(11,21,48,.16);border-radius:9px;
+  width:38px;height:38px;line-height:1;cursor:pointer;font-size:19px;font-weight:800;color:var(--maroon);flex:0 0 auto}
+.panel .pclose:hover{border-color:var(--maroon);color:var(--maroon-dk)}
+.panel .pclose:focus-visible{outline:3px solid var(--maroon);outline-offset:2px}
+.panel iframe{display:block;width:100%;border:0;background:#fff;height:1150px}
+@media (max-width:700px){.panel iframe{height:1400px}}
+.stepbtn[aria-expanded="true"]{background:var(--navy);color:#fff;border-color:var(--navy)}
+body.paneling #whatblock,body.paneling #partsblock,body.paneling #styleblock{display:none}
+@media print{.panelwrap{display:none}}
 
 .foot{margin:50px 0 0;padding-top:20px;border-top:1px solid var(--rule);
   display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
@@ -187,14 +222,14 @@ h2{font-size:clamp(23px,3.4vw,30px);color:var(--maroon);line-height:1.18;margin-
 <main>
 <div class="wrap">
 
-  <section aria-labelledby="what-h">
+  <section id="whatblock" aria-labelledby="what-h">
     <h2 id="what-h">What this course is about</h2>
     <p class="sub">One idea, used everywhere.</p>
     <p>Anatomy asks what the parts are. Physiology asks how they work, and what happens when they stop. Over fifteen weeks you will build one idea and then use it in every system in the body: <strong>your body is constantly being pushed off balance, and almost everything it does is the work of pushing back.</strong></p>
     <p>By December you should be able to look at a patient, a lab value or a graph and say what is being regulated, which direction the body is pushing, and what would happen if one step in that chain failed.</p>
   </section>
 
-  <section aria-labelledby="parts-h">
+  <section id="partsblock" aria-labelledby="parts-h">
     <h2 id="parts-h">What you will learn</h2>
     <p class="sub">Three parts, fifteen weeks.</p>
 
@@ -215,7 +250,7 @@ h2{font-size:clamp(23px,3.4vw,30px);color:var(--maroon);line-height:1.18;margin-
     </div>
   </section>
 
-  <section aria-labelledby="style-h">
+  <section id="styleblock" aria-labelledby="style-h">
     <h2 id="style-h">A little about how I teach</h2>
     <p class="sub">Rigorous and flexible at the same time. Those are usually treated as a trade. They are not.</p>
 
@@ -234,10 +269,50 @@ h2{font-size:clamp(23px,3.4vw,30px);color:var(--maroon);line-height:1.18;margin-
 
   <section aria-labelledby="next-h">
     <h2 id="next-h">What to do next</h2>
+
+    <ol class="steps">
+
+      <li>
+        <h3>Learn how to get around</h3>
+        <p>Where everything lives, what one week looks like from start to finish, and what to open first when a new week unlocks.</p>
+        <button type="button" class="btn stepbtn" aria-expanded="false" aria-controls="panel-works"
+                data-panel="panel-works" data-src="how-this-course-works.html?embed=1">How this course works</button>
+        <div class="panelwrap">
+          <div class="panel" id="panel-works" role="group" aria-label="How this course works" hidden>
+            <div class="phead">
+              <p class="ptitle">How this course works <span class="pscroll">scroll inside to read it all</span></p>
+              <button type="button" class="pclose" aria-label="Close, how this course works">&times;</button>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <h3>Know how you will be graded</h3>
+        <p>Four categories, what each one asks of you, and which weekly work carries no points at all.</p>
+        <button type="button" class="btn stepbtn" aria-expanded="false" aria-controls="panel-grade"
+                data-panel="panel-grade" data-src="how-grading-works.html?embed=1">How grading works</button>
+        <div class="panelwrap">
+          <div class="panel" id="panel-grade" role="group" aria-label="How grading works" hidden>
+            <div class="phead">
+              <p class="ptitle">How grading works <span class="pscroll">scroll inside to read it all</span></p>
+              <button type="button" class="pclose" aria-label="Close, how grading works">&times;</button>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <h3>Post your vision board</h3>
+        <p>This is your introduction, and there is no separate one. One post, a short video walking us through it, and a reply to two classmates. Low stakes, and not graded on depth.</p>
+        <a class="btn ghost" href="assignment-discussion-01-visionboard.html" target="_top">Vision board discussion</a>
+      </li>
+
+    </ol>
+
     <div class="btnrow">
-      <a class="btn" href="how-this-course-works.html" target="_top">How this course works</a>
-      <a class="btn ghost" href="how-grading-works.html" target="_top">How grading works</a>
-      <a class="btn ghost" href="syllabus-fall2026.html" target="_top">The syllabus</a>
+      <a class="btn" href="week-01.html" target="_top">Go to Week 1</a>
+      <a class="btn ghost" href="syllabus-fall2026.html" target="_top">Read the whole syllabus</a>
     </div>
   </section>
 
@@ -249,6 +324,57 @@ h2{font-size:clamp(23px,3.4vw,30px);color:var(--maroon);line-height:1.18;margin-
 
 </div>
 </main>
+
+<script>
+/* The two panels. Same behaviour as course-start.html: open in place, close
+   with the X or Escape, one at a time, and the long sections above collapse
+   while a panel is open so the page keeps fitting its fixed Canvas height. */
+(function(){
+  var frames = [];
+  function build(panel, src){
+    var f = document.createElement('iframe');
+    f.src = src; f.title = panel.getAttribute('aria-label');
+    f.setAttribute('scrolling','auto'); f.loading = 'lazy';
+    panel.appendChild(f); frames.push(f); return f;
+  }
+  function tell(){
+    try { parent.postMessage({ frame: document.title.replace(/\W+/g,'-').toLowerCase(),
+                               height: document.documentElement.scrollHeight }, '*'); } catch(e){}
+  }
+  function sync(){
+    document.body.classList.toggle('paneling',
+      !!document.querySelector('.stepbtn[aria-expanded="true"]'));
+    tell();
+  }
+  function closeAll(except){
+    document.querySelectorAll('.stepbtn').forEach(function(b){
+      if (b === except) return;
+      var pn = document.getElementById(b.getAttribute('data-panel'));
+      if (pn){ pn.hidden = true; b.setAttribute('aria-expanded','false'); }
+    });
+  }
+  document.querySelectorAll('.stepbtn').forEach(function(btn){
+    var panel = document.getElementById(btn.getAttribute('data-panel'));
+    if (!panel) return;
+    var x = panel.querySelector('.pclose');
+    btn.addEventListener('click', function(){
+      if (btn.getAttribute('aria-expanded') === 'true'){
+        panel.hidden = true; btn.setAttribute('aria-expanded','false'); btn.focus(); sync(); return;
+      }
+      closeAll(btn);
+      if (!panel.querySelector('iframe')) build(panel, btn.getAttribute('data-src'));
+      panel.hidden = false; btn.setAttribute('aria-expanded','true'); x.focus(); sync();
+    });
+    x.addEventListener('click', function(){
+      panel.hidden = true; btn.setAttribute('aria-expanded','false'); btn.focus(); sync();
+    });
+    panel.addEventListener('keydown', function(e){
+      if (e.key === 'Escape'){ e.stopPropagation();
+        panel.hidden = true; btn.setAttribute('aria-expanded','false'); btn.focus(); sync(); }
+    });
+  });
+}());
+</script>
 
 <script>
 (function(){

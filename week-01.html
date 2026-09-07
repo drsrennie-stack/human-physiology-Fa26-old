@@ -342,6 +342,38 @@ legend{font-size:11.5px;font-weight:700;letter-spacing:.18em;text-transform:uppe
   details:not([open]) .body{display:block}
   .answer{background:#fff;border:1px solid #999}
 }
+
+/* ---------- the two ungraded-work panels, Sep 7 2026 ----------
+   Scrubs asked for the book problems and the note sheet to open as a
+   pop-up you X out of, with a PDF of everything downloadable from inside
+   it. Same in-place panel pattern used on course-start.html and
+   welcome-to-physiology.html, for the same reason: this page is inside a
+   Canvas iframe that never scrolls, so a fixed overlay would pin itself
+   somewhere the student is not looking.
+
+   The panel loads ungraded-sheet.html?week=1&embed=1, which is the single
+   place the retrieval target, brain dumps, drawing prompts and book
+   problems live. The Download the PDF button inside it points at the
+   tagged BIO005-Week1-Ungraded-Work.pdf. */
+.panelwrap{margin:12px 0 0}
+.panel{position:relative;background:#fff;border-radius:14px;
+  box-shadow:0 8px 18px rgba(11,21,48,.10);overflow:hidden}
+.panel[hidden]{display:none}
+.panel .phead{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px 12px 20px}
+.panel .ptitle{font-weight:800;font-size:16px;color:#0B1530;margin:0}
+.panel .pscroll{display:inline-block;margin-left:10px;font-weight:600;font-size:12.5px;color:#414B5C}
+.panel .pclose{appearance:none;background:#fff;border:1.5px solid rgba(11,21,48,.16);border-radius:9px;
+  width:38px;height:38px;line-height:1;cursor:pointer;font-size:19px;font-weight:800;color:#8B3A2E;flex:0 0 auto}
+.panel .pclose:hover{border-color:#8B3A2E;color:#6E2D24}
+.panel .pclose:focus-visible{outline:3px solid #8B3A2E;outline-offset:2px}
+.panel iframe{display:block;width:100%;border:0;background:#fff;height:1200px}
+@media (max-width:700px){.panel iframe{height:1450px}}
+button.sheetbtn{font:inherit;font-weight:800;cursor:pointer;background:#fff;color:#8B3A2E;
+  border:1.5px solid #8B3A2E;border-radius:10px;padding:11px 18px}
+button.sheetbtn:hover{color:#6E2D24;border-color:#6E2D24}
+button.sheetbtn[aria-expanded="true"]{background:#0B1530;color:#fff;border-color:#0B1530}
+@media print{.panelwrap{display:none}}
+
 </style>
 </head>
 <body>
@@ -618,7 +650,8 @@ legend{font-size:11.5px;font-weight:700;letter-spacing:.18em;text-transform:uppe
       <div class="choice">
         <h3>Draw it</h3>
         <p>Boxes and arrows on paper, labels only, no sentences. The fastest way to find a missing component.</p>
-        <p class="go"><a href="note-sheet.html?week=1" target="_top">Open your note sheet</a></p>
+        <p class="go"><button type="button" class="sheetbtn" aria-expanded="false" aria-controls="panel-sheet"
+                data-panel="panel-sheet" data-src="ungraded-sheet.html?week=1&amp;embed=1#dr-h">All the drawing prompts</button></p>
       </div>
       <div class="choice">
         <h3>Brain dump it</h3>
@@ -640,7 +673,23 @@ legend{font-size:11.5px;font-weight:700;letter-spacing:.18em;text-transform:uppe
       <div class="choice">
         <h3>Work the book problems</h3>
         <p>Silverthorn Chapter 1. Try them cold if you have a way in. If you open one and have no idea where to start, read the solution and write why each step is there, then reproduce it from blank paper. Both count.</p>
-        <p class="go"><a href="assignment-bookproblems.html?week=1" target="_top">The problems, and the two routes</a></p>
+        <p class="go"><button type="button" class="sheetbtn" aria-expanded="false" aria-controls="panel-book"
+                data-panel="panel-book" data-src="ungraded-sheet.html?week=1&amp;embed=1#bk-h">The problems, and the two routes</button></p>
+      </div>
+    </div>
+
+    <div class="panelwrap">
+      <div class="panel" id="panel-sheet" role="group" aria-label="Your ungraded work for Week 1" hidden>
+        <div class="phead">
+          <p class="ptitle">Your ungraded work, Week 1 <span class="pscroll">scroll inside, and the PDF button is at the top</span></p>
+          <button type="button" class="pclose" aria-label="Close, your ungraded work">&times;</button>
+        </div>
+      </div>
+      <div class="panel" id="panel-book" role="group" aria-label="Book problems and everything else ungraded, Week 1" hidden>
+        <div class="phead">
+          <p class="ptitle">Your ungraded work, Week 1 <span class="pscroll">scroll inside, and the PDF button is at the top</span></p>
+          <button type="button" class="pclose" aria-label="Close, book problems">&times;</button>
+        </div>
       </div>
     </div>
 
@@ -1216,6 +1265,47 @@ legend{font-size:11.5px;font-weight:700;letter-spacing:.18em;text-transform:uppe
 function post(){try{parent.postMessage({frame:id,height:document.documentElement.scrollHeight},'*');}catch(e){}}
 if('ResizeObserver' in window){new ResizeObserver(post).observe(document.documentElement);}
 window.addEventListener('load',post);window.addEventListener('resize',post);post();})();
+</script>
+<script>
+/* The two ungraded-work panels on stage 02. Open in place, close with the X
+   or Escape, one at a time. Both load the same sheet; they differ only in
+   the anchor they land on, so there is one file to edit and no second copy
+   of the prompts. */
+(function(){
+  function build(panel, src){
+    var f = document.createElement('iframe');
+    f.src = src; f.title = panel.getAttribute('aria-label');
+    f.setAttribute('scrolling','auto'); f.loading = 'lazy';
+    panel.appendChild(f);
+  }
+  function tell(){
+    try { parent.postMessage({ frame: 'bio005-week-01',
+      height: document.documentElement.scrollHeight }, '*'); } catch(e){}
+  }
+  function shut(btn, panel){
+    panel.hidden = true; btn.setAttribute('aria-expanded','false'); btn.focus(); tell();
+  }
+  var btns = document.querySelectorAll('.sheetbtn');
+  btns.forEach(function(btn){
+    var panel = document.getElementById(btn.getAttribute('data-panel'));
+    if (!panel) return;
+    var x = panel.querySelector('.pclose');
+    btn.addEventListener('click', function(){
+      if (btn.getAttribute('aria-expanded') === 'true'){ shut(btn, panel); return; }
+      btns.forEach(function(o){
+        if (o === btn) return;
+        var pn = document.getElementById(o.getAttribute('data-panel'));
+        if (pn){ pn.hidden = true; o.setAttribute('aria-expanded','false'); }
+      });
+      if (!panel.querySelector('iframe')) build(panel, btn.getAttribute('data-src'));
+      panel.hidden = false; btn.setAttribute('aria-expanded','true'); x.focus(); tell();
+    });
+    x.addEventListener('click', function(){ shut(btn, panel); });
+    panel.addEventListener('keydown', function(e){
+      if (e.key === 'Escape'){ e.stopPropagation(); shut(btn, panel); }
+    });
+  });
+}());
 </script>
 </body>
 </html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your ungraded work &middot; BIO 005 Human Physiology</title>
+<link rel="stylesheet" href="assets/fonts-site.css">
+<!-- ==========================================================
+     THE UNGRADED WORK SHEET. One file, fifteen weeks.
+
+     Everything in a week that carries no points, on one page: the
+     retrieval target, the brain dumps, the drawings, the book
+     problems and the teach-it prompt. Open with ?week=N.
+
+     Three ways it gets used:
+       ?week=N            the full page, and what the panels on the
+                          week page load
+       ?week=N&embed=1    panel mode, drops the chrome
+       print              the same content, laid out for paper, which
+                          is what tools/make_pdf.py renders into the
+                          tagged PDF
+
+     The drawing prompts come from assets/bio005-sheet-data.js and are
+     not copied here. The book problems and the retrieval target come
+     from bio005-ungraded.js. Nothing on this page is written twice.
+     ========================================================== -->
+<style>
+:root{--navy:#0B1530;--rust:#8B3A2E;--rust-dark:#6E2D24;--page:#FAFAF9}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{font-family:'Plus Jakarta Sans Variable','Plus Jakarta Sans',system-ui,sans-serif;
+  color:var(--navy);background:var(--page);line-height:1.65;font-size:15.5px;
+  padding:36px max(24px,4vw)}
+.inner{max-width:800px;margin:0 auto}
+.skip{position:absolute;left:-9999px;top:0;background:var(--navy);color:#fff;padding:12px 18px;font-weight:700;text-decoration:none;z-index:20}
+.skip:focus{left:0;top:0}
+a{color:var(--rust)}
+:focus-visible{outline:3px solid var(--rust);outline-offset:3px}
+
+header.brand{display:flex;align-items:center;gap:12px;padding:18px max(24px,4vw);
+  border-bottom:1px solid rgba(11,21,48,.14);margin:-36px max(-24px,-4vw) 26px;background:#fff}
+header.brand .bwm{font-weight:800;font-size:16px;letter-spacing:-.01em;color:var(--navy)}
+header.brand .bwm b{color:var(--rust)}
+header.brand .bsub{display:block;font-size:10.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#4F5468}
+
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--rust);margin:0 0 12px}
+h1{font-size:clamp(26px,4.4vw,36px);font-weight:800;letter-spacing:-.02em;margin:0 0 6px;line-height:1.09}
+.sub{margin:0 0 18px;font-weight:700}
+p{max-width:70ch}
+h2{font-size:19px;font-weight:800;margin:34px 0 6px;letter-spacing:-.01em}
+h2 .num{color:var(--rust);font-variant-numeric:tabular-nums;margin-right:10px}
+h3{font-size:15.5px;font-weight:800;margin:0 0 6px}
+.lede{color:#414B5C;margin:0 0 12px;max-width:66ch}
+
+.card{background:#fff;border-radius:12px;padding:18px 20px 16px;
+  box-shadow:0 1px 3px rgba(11,21,48,.10);margin:12px 0 4px}
+.card ol,.card ul{margin:0;padding-left:22px}
+.card li{margin:0 0 10px;max-width:66ch}
+.card li:last-child{margin-bottom:0}
+.card p{margin:0 0 10px}
+.card p:last-child{margin-bottom:0}
+
+/* one competency, its statement, and its two drawing prompts */
+.comp{background:#fff;border-radius:12px;padding:16px 20px 14px;
+  box-shadow:0 1px 3px rgba(11,21,48,.10);margin:0 0 12px;break-inside:avoid}
+.comp .cn{font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);margin:0 0 4px}
+.comp .can{margin:0 0 10px;color:#2A3448}
+.comp .pr{margin:0 0 8px;padding-left:26px;position:relative;font-size:15px;color:#2A3448}
+.comp .pr:last-child{margin-bottom:0}
+.comp .pr .lt{position:absolute;left:0;top:0;font-weight:800;color:var(--rust)}
+.tag{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.14em;
+  text-transform:uppercase;color:#4F5468;margin-left:8px}
+
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0 4px}
+.btn{display:inline-block;font-weight:800;text-decoration:none;border-radius:10px;padding:13px 20px;letter-spacing:.03em}
+.btn.solid{background:var(--rust);color:#fff;border:1.5px solid var(--rust)}
+.btn.solid:hover{background:var(--rust-dark);border-color:var(--rust-dark)}
+.btn.line{background:#fff;color:var(--rust);border:1.5px solid var(--rust)}
+.btn.line:hover{color:var(--rust-dark);border-color:var(--rust-dark)}
+.note{font-size:14px;color:#414B5C;max-width:66ch}
+
+/* PANEL MODE, ?embed=1 */
+html.embedded body{padding-top:0}
+html.embedded header.brand,html.embedded .skip,html.embedded .homebar{display:none!important}
+html.embedded{scrollbar-gutter:stable;scrollbar-width:thin;scrollbar-color:rgba(11,21,48,.35) transparent}
+html.embedded::-webkit-scrollbar{width:11px}
+html.embedded::-webkit-scrollbar-track{background:rgba(11,21,48,.05)}
+html.embedded::-webkit-scrollbar-thumb{background:rgba(11,21,48,.32);border-radius:99px;border:3px solid transparent;background-clip:content-box}
+
+@media print{
+  body{background:#fff;padding:0;font-size:11.5pt}
+  header.brand,.btns,.skip,.noprint{display:none!important}
+  .card,.comp{box-shadow:none;border:0.6pt solid #999;break-inside:avoid}
+  h2{break-after:avoid}
+  a{color:#000;text-decoration:none}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the sheet</a>
+<header class="brand">
+  <svg width="30" height="36" viewBox="40 10 125 148" role="img" aria-label="BIO 005 Human Physiology">
+    <g transform="translate(0,18)">
+      <g transform="translate(60,0) rotate(8 0 130)">
+        <circle cx="0" cy="20" r="10" fill="#0B1530"/>
+        <path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#0B1530"/>
+      </g>
+      <g transform="translate(100,0)">
+        <circle cx="0" cy="10" r="11" fill="#8B3A2E"/>
+        <path d="M 0,22 C -11,22 -17,26 -17,34 C -17,52 -14,70 -12,86 C -11,108 -13,122 -15,132 L 15,132 C 13,122 11,108 12,86 C 14,70 17,52 17,34 C 17,26 11,22 0,22 Z" fill="#8B3A2E"/>
+      </g>
+      <g transform="translate(140,0) rotate(-8 0 130)">
+        <circle cx="0" cy="20" r="10" fill="#C9A14A"/>
+        <path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#C9A14A"/>
+      </g>
+    </g>
+  </svg>
+  <span><span class="bwm">BIO <b>005</b></span><span class="bsub">Human Physiology &middot; Fall 2026</span></span>
+</header>
+
+<main id="main" class="inner">
+  <p class="eyebrow" id="eyebrow">Not graded &middot; not optional</p>
+  <h1>Your ungraded work</h1>
+  <p class="sub" id="wkline"></p>
+
+  <p>None of this carries points, and all of it is the route to the work that does. Print it, or work it on your own paper. Anything you cannot do from a blank page is the thing to take to your Mastery Check.</p>
+
+  <div class="btns noprint">
+    <a class="btn solid" id="pdf" href="#" target="_blank" rel="noopener">Download the PDF</a>
+    <a class="btn line" href="#" id="printbtn">Print this sheet</a>
+  </div>
+  <p class="note noprint" id="pdfnote"></p>
+
+  <h2 id="tg-h"><span class="num">01</span>Retrieval target</h2>
+  <p class="lede">Ten minutes, one sheet of paper, nothing open. Do this before anything else on the page.</p>
+  <div class="card" aria-labelledby="tg-h"><p id="target"></p></div>
+
+  <h2 id="bd-h"><span class="num">02</span>Brain dumps</h2>
+  <p class="lede">Three minutes each, blank page, everything you can get down. Then read the statement under it and mark, in a second color, what you left out. The second color is the useful part.</p>
+  <div id="dumps"></div>
+
+  <h2 id="dr-h"><span class="num">03</span>Draw it</h2>
+  <p class="lede">Two prompts per competency. Do either one. Boxes, arrows and labels, not sentences, because a missing arrow shows up immediately and a missing sentence does not.</p>
+  <p class="note">These are the same prompts as your printable note sheet, gathered here so you can see the whole week at once.</p>
+  <div id="draws"></div>
+
+  <h2 id="bk-h"><span class="num">04</span>Book problems</h2>
+  <div class="card" aria-labelledby="bk-h">
+    <p id="book"></p>
+    <p id="bookwhere" class="note"></p>
+    <p><strong>Two routes, and both count.</strong></p>
+    <ol id="routes"></ol>
+  </div>
+
+  <h2 id="tc-h"><span class="num">05</span>Teach it</h2>
+  <p class="lede">Pick one competency from the list above and explain it out loud to an empty room, or record yourself, with nothing in front of you.</p>
+  <div class="card" aria-labelledby="tc-h">
+    <p>Where you stall is the gap. That is the whole diagnostic, and it is faster than any other one on this page.</p>
+    <p style="margin-bottom:0">If you get through it cleanly, do it again with the hardest competency on the list, not the easiest.</p>
+  </div>
+
+  <h2 id="ck-h"><span class="num">06</span>Then check yourself</h2>
+  <div class="card" aria-labelledby="ck-h">
+    <p>Build a Mastery Check for this week. It is drawn fresh every time, so a second attempt measures what you learned rather than what you remembered, and it tells you which competencies to come back to.</p>
+    <div class="btns" style="margin-bottom:0">
+      <a class="btn solid" id="mc" href="practice-exam.html?week=1&amp;n=30" target="_blank" rel="noopener">Build my Mastery Check &#8599;</a>
+    </div>
+  </div>
+</main>
+
+<script src="assets/bio005-sheet-data.js"></script>
+<script src="bio005-ungraded.js"></script>
+<script>
+(function(){
+  if (/[?&]embed=1/.test(location.search))
+    document.documentElement.className += ' embedded';
+
+  var S = window.BIO005_SHEET || {};
+  var U = window.BIO005_UNGRADED || {};
+  var m = /[?&]week=(\d{1,2})/.exec(location.search);
+  var w = m ? Math.max(1, Math.min(15, parseInt(m[1],10))) : 1;
+  var wk = S[w] || S[String(w)];
+  var pad = (w < 10 ? '0' : '') + w;
+
+  document.title = 'Your ungraded work · Week ' + w + ' · BIO 005 Human Physiology';
+  document.getElementById('eyebrow').innerHTML = 'Not graded, not optional &middot; Week ' + w;
+  document.getElementById('wkline').textContent =
+    'Week ' + w + (wk && wk.title ? ' · ' + wk.title : '');
+  document.getElementById('mc').href = 'practice-exam.html?week=' + w + '&n=30';
+
+  /* the PDF is prebuilt per week; if this week has none, say so rather
+     than offering a button that 404s */
+  var pdfName = 'BIO005-Week' + w + '-Ungraded-Work.pdf';
+  var pdfBtn = document.getElementById('pdf');
+  if (w === 1){
+    pdfBtn.href = pdfName;
+    pdfBtn.setAttribute('download','');
+    document.getElementById('pdfnote').textContent =
+      'A tagged PDF, so it reads properly in a screen reader as well as on paper.';
+  } else {
+    pdfBtn.parentNode.removeChild(pdfBtn);
+    document.getElementById('pdfnote').textContent =
+      'The PDF for this week posts when the week opens. Print this page in the meantime; it is laid out for paper.';
+  }
+  document.getElementById('printbtn').addEventListener('click', function(e){
+    e.preventDefault(); window.print();
+  });
+
+  document.getElementById('target').textContent =
+    (U.target && U.target[w]) ||
+    'This week’s retrieval target is on the week page, at stage 02.';
+
+  var items = (wk && wk.items) || [];
+
+  document.getElementById('dumps').innerHTML = items.map(function(it){
+    return '<div class="comp">' +
+      '<p class="cn">' + it.n + ' &middot; ' + it.name +
+        (it.lab ? '<span class="tag">Lab</span>' : '') + '</p>' +
+      '<p class="pr"><span class="lt" aria-hidden="true">&rarr;</span>' +
+        'Brain dump everything you have on <strong>' + it.name.toLowerCase() + '</strong>. Three minutes.</p>' +
+      '<p class="can"><strong>Check against this:</strong> ' + it.can + '</p>' +
+      '</div>';
+  }).join('') || '<div class="card"><p>No competencies are listed for this week yet.</p></div>';
+
+  document.getElementById('draws').innerHTML = items.map(function(it){
+    return '<div class="comp">' +
+      '<p class="cn">' + it.n + ' &middot; ' + it.name +
+        (it.lab ? '<span class="tag">Lab</span>' : '') + '</p>' +
+      '<p class="pr"><span class="lt">A</span>' + it.a + '</p>' +
+      '<p class="pr"><span class="lt">B</span>' + it.b + '</p>' +
+      '</div>';
+  }).join('') || '<div class="card"><p>No drawing prompts are listed for this week yet.</p></div>';
+
+  document.getElementById('book').textContent =
+    (U.book && U.book[w]) || U.bookNone || '';
+  document.getElementById('bookwhere').textContent =
+    (U.book && U.book[w]) ? (U.bookWhere || '') : '';
+  document.getElementById('routes').innerHTML =
+    (U.bookRoutes || []).map(function(r){ return '<li>' + r + '</li>'; }).join('');
+
+  /* iframe height sender, for the panel and for Canvas */
+  var fid = 'ungraded' + w + '-' + Math.random().toString(36).slice(2,8);
+  function post(){ try{ parent.postMessage({frame:fid, height:document.documentElement.scrollHeight}, '*'); }catch(e){} }
+  if ('ResizeObserver' in window){ new ResizeObserver(post).observe(document.documentElement); }
+  window.addEventListener('load', post); window.addEventListener('resize', post); post();
+})();
+</script>
+</body>
+</html>
