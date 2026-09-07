@@ -370,9 +370,8 @@ footer :focus-visible{outline-color:var(--gold)}
       "Exercise 7 plus Exercise 10, hyperventilation",
       "Exercise 9, all activities",
       "Exercise 10, compensation activities"];
-    var NOEXALT = {1:"the fluid homeostasis workbook runs instead",
-                   5:"the at home sensory and reflex lab runs instead",
-                   8:"the hormone cycle worksheet runs instead"};
+    var NOEXALT = {1:"the standards and ranges lab runs instead",
+                   6:"the Week 6 lab posts when the week opens"};
     if (!w.lab) {
       var ex = EX[w.n - 1];
       w.lab = { u:"assignment-physioex.html" + q, t:"Lab analysis, Week " + w.n,
@@ -406,18 +405,17 @@ footer :focus-visible{outline-color:var(--gold)}
     ["exam",       "Midterm"]
   ];
 
-  /* ---- the three midterm windows, set Sep 6 2026 -------------------
-     Each one runs Monday 8 am to Sunday 10 pm inside the week named here,
-     so it never collides with Thanksgiving and Midterm 3 closes with the
-     term. Midterm 2 closes the day after the November 21 W deadline on
-     purpose: grades post Wednesday November 18 for the drop decision. */
+  /* ---- the two midterm windows, set Sep 7 2026 ---------------------
+     Three midterms became two, still 40 percent, 20 each. Each window
+     runs Monday 8 am to Wednesday 10 pm at the FRONT of the week named
+     here, so the block before it is finished before students sit it and
+     the week it sits in is still open to them afterwards. Week 15 is not
+     on an exam; it closes the term with the synthesis work. */
   var EXAMS = {
-    6:  { t:"Midterm 1, Weeks 1 to 5",
-          d:"Window opens Monday October 12 at 8 am and closes Sunday October 18 at 10 pm. Draw and teach on video, no notes. This week your book problems and lab move to the following Sunday." },
-    11: { t:"Midterm 2, Weeks 6 to 10",
-          d:"Window opens Monday November 16 at 8 am and closes Sunday November 22 at 10 pm. Every grade posts Wednesday November 18, before the November 21 drop deadline. Book problems and lab move to the following Sunday." },
-    15: { t:"Midterm 3, Weeks 11 to 15",
-          d:"Window opens Monday December 14 at 8 am and closes Wednesday December 16 at 10 pm, when the term ends. Not cumulative. Nothing else is due this week." }
+    8:  { t:"Midterm 1, Weeks 1 to 7",
+          d:"Window opens Monday October 26 at 8 am and closes Wednesday October 28 at 10 pm. Draw and teach on video, out loud, no notes. It sits at the front of this week on purpose: Week 7 is finished before you sit it, and the rest of Week 8 is still open to you afterwards. Worth 20 percent." },
+    15: { t:"Midterm 2, Weeks 8 to 14",
+          d:"Window opens Monday December 14 at 8 am and closes Wednesday December 16 at 10 pm, when the term ends. Draw and teach on video, out loud, no notes. This week is not on it. Worth 20 percent." }
   };
   WEEKS.forEach(function(w){
     var e = EXAMS[w.n];

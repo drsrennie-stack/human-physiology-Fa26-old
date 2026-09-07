@@ -908,8 +908,8 @@
        desc:'The concept lectures. Watch them as you work your note sheet.',
        say:'This week\u2019s videos are the concept lectures. Press play once and the whole week runs, one concept into the next, or jump to any single concept. Work your note sheet alongside them; the two are built for each other.'},
       {key:'schedule', name:'Course schedule', icon:iconLoop, internal:true, frame:true, url:'course-schedule.html',
-       desc:'All 15 weeks at a glance, with the three midterm blocks.',
-       say:'The schedule shows the whole term: fifteen weeks, three midterm blocks, and what each week covers. Everything is due Sunday night, every week, so the rhythm never changes.'},
+       desc:'All 15 weeks at a glance, with both midterm windows.',
+       say:'The schedule shows the whole term: fifteen weeks, two midterm windows, and what each week covers. Everything is due Sunday night, every week, so the rhythm never changes.'},
       {key:'labs', name:'Labs in PhysioEx', icon:iconFlask, internal:true, frame:false, url:'',
        desc:'Weekly virtual labs in Pearson. Set up your access in Week 1.',
        say:'Your labs run in PhysioEx, inside Pearson. Open our Canvas course, click Access Pearson in the left menu, and purchase there. That one path gets you the right package, the labs, and the free eText of our book. Do this in Week 1, because the labs are 15 percent of your grade and they live inside it.'},
@@ -1447,11 +1447,11 @@
           '<p>Reach out early. Do not wait for the next midterm, and do not wait until you feel you have earned the right to ask.</p>';
         case 'grades': return '<p>Your grade:</p><ol class="steps">'+
           '<li>Competency note sheets: 20% (weekly; five prompts graded for accuracy, the rest checked complete)</li>'+
-          '<li>Three midterms, draw and teach: 50%</li>'+
+          '<li>Two midterms, draw and teach: 40%</li>'+
           '<li>Lab in PhysioEx: 15%</li>'+
           '<li>Book problems: 15%</li></ol>'+
           '<p>There is no extra credit and no curve. Full detail in your '+link(l.syllabus,'syllabus',true)+'.</p>';
-        case 'exams': return '<p>Three midterms, and they are not multiple choice. Each one asks you to draw a physiological pathway and teach it on video, out loud, no notes. Midterm 1 covers Weeks 1 to 5, Midterm 2 covers Weeks 6 to 10, Midterm 3 covers Weeks 11 to 15. Every week includes a short ungraded practice round in exactly this format, so the format will be familiar. Exam windows are announced in Canvas and in your '+link(l.syllabus,'syllabus',true)+'.</p>';
+        case 'exams': return '<p>Two midterms, and they are not multiple choice. Each one asks you to draw a physiological pathway and teach it on video, out loud, no notes. Midterm 1 covers Weeks 1 to 7, Midterm 2 covers Weeks 8 to 14, and each is worth 20 percent. Every week includes a short ungraded practice round in exactly this format, so the format will be familiar. Exam windows are announced in Canvas and in your '+link(l.syllabus,'syllabus',true)+'.</p>';
         case 'notesheets': return '<p>The note sheet is your weekly pre-work: one prompt for each competency you must be able to do that week, worked from the reading and the videos before anything else. You submit the whole sheet; five prompts are graded for accuracy (you will not know which five), and the rest are checked for completion. It doubles as your midterm study guide, so doing it well pays you twice.</p>';
         case 'mastery': return '<p>The '+link(MOS,'Mastery OS',true)+' is your study engine: spaced recall cards across all 268 competencies and a gap finder that shows exactly what is weak before a grade depends on it. Open it and set up your plan.</p>';
         case 'labs': return '<p>Your labs run in PhysioEx, inside Pearson. Open our Canvas course, click Access Pearson in the left menu, and purchase there; that one path gets the right package, the labs, and the free eText of our Silverthorn book. Set it up in Week 1. One lab every week, due Sunday with everything else.</p>';

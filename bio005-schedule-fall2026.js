@@ -211,29 +211,32 @@ window.BIO005_CREDIT = {
 
 
 window.BIO005_GRADING = {
-  status: 'ADOPTED Aug 23 2026, assessment model of record',
-  note:   'Sorted by whether the work can be verified as the student\'s own, not by topic. '
-        + 'Tier 1 practice is AI-open and weighted light. Tier 2 verified work carries the grade.',
+  status: 'GRADE MODEL OF RECORD, Sep 7 2026, from the published syllabus-fall2026.html. ' +
+          'Two midterms, not three. Supersedes the Aug 23 model that had checks, chart entries, ' +
+          'module videos, a conference and two discussion threads; none of that is in the syllabus.',
+  note:   'Sorted by whether the work can be verified as the student\'s own. The midterms are the ' +
+          'only identity-verified, notes-closed evidence in the course, which is why they carry 40.',
   categories: [
-    { key:'checks',      name:'Weekly knowledge checks', weight:10, n:15,
-      ai:'open',   note:'Two lowest dropped. Retrieval practice, not sorting. Cheatable by design, and said so in the syllabus.' },
-    { key:'lab',         name:'Weekly lab exercise and data record', weight:20, n:15,
-      ai:'open for setup, closed for interpretation',
-      note:'Inside the weekly cycle, not beside it. The lab produces the numbers the chart entry interprets.' },
-    { key:'chart',       name:'Weekly patient chart entry with hand drawing', weight:20, n:15,
-      ai:'closed', note:'Paper only, no digital devices. Fifteen entries that have to agree with each other in December.' },
-    { key:'videos',      name:'Module explanation videos', weight:15, n:4,
-      ai:'closed', note:'Three minute hard cap, prompt drawn at random from a pool at the moment the recorder opens.' },
-    { key:'midterm',     name:'Midterm checkpoint, Week 8', weight:10, n:1,
-      ai:'closed', note:'Due Sun Nov 1.' },
-    { key:'conference',  name:'Case conference and final patient file, Week 15', weight:20, n:1,
-      ai:'closed', note:'Ten minute recording. Name the condition, defend it from entries written in October.' },
-    { key:'discussions', name:'Discussions, two threads', weight:5, n:2,
-      ai:'open',   note:'Thread one all term. Thread two is the build log, Weeks 8 to 15.' }
+    { key:'notesheets',  name:'Competency note sheets', weight:20, n:15,
+      ai:'closed', note:'One prompt per competency. Five prompts graded for accuracy, the rest checked for completion.' },
+    { key:'midterms',    name:'Midterm exams', weight:40, n:2,
+      ai:'closed', note:'20 percent each. Draw and teach on video, no notes. ' +
+                        'Midterm 1 covers weeks 1 to 7, window Mon Oct 26 8:00 am to Wed Oct 28 10:00 pm. ' +
+                        'Midterm 2 covers weeks 8 to 14, window Mon Dec 14 8:00 am to Wed Dec 16 10:00 pm. ' +
+                        'Each window sits at the front of its week so the week before is finished and the week it sits in stays open.' },
+    { key:'lab',         name:'Laboratory', weight:15, n:15,
+      ai:'open for setup, closed for interpretation', note:'Weekly PhysioEx labs with data records.' },
+    { key:'problems',    name:'Book problems', weight:15, n:15,
+      ai:'open, with the log', note:'Assigned Silverthorn problems each week.' },
+    { key:'discussions', name:'Discussions', weight:10, n:15,
+      ai:'open',   note:'One post a week carrying both the physiology and the thinking about it.' }
   ],
-  bonus: { name:'Scholar Points', cap:3, note:'Capped bonus on top of 100. Every route available live is also available async.' },
-  verifiableShare: 65,
-  retired: 'Four unit exams, a cumulative final, Build One and Build Two, and virtual labs as a separate category are NOT in this model. See bio005-audit-aug24.md.'
+  exams: [
+    { n:1, covers:[1,2,3,4,5,6,7],       opens:'2026-10-26', closes:'2026-10-28', weight:20 },
+    { n:2, covers:[8,9,10,11,12,13,14],  opens:'2026-12-14', closes:'2026-12-16', weight:20 }
+  ],
+  retired: 'Three midterms covering 1-5, 6-10 and 11-15 are retired as of Sep 7 2026. ' +
+           'So are the Aug 23 categories. Week 15 is not on an exam; it closes with the synthesis work.'
 };
 
 /* ============================================================
