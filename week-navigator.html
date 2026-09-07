@@ -126,7 +126,7 @@ a.wk.exam:hover,a.wk.exam:focus-visible{background:rgba(201,161,74,.14)}
     <p class="eyebrow" id="navh">Your weekly hubs</p>
     <p class="now" id="now"></p>
   </div>
-  <p class="instr">Grouped by which midterm covers them. A week opens the Saturday before it starts, at noon, and then stays open for the rest of the term, so you can always go back.</p>
+  <p class="instr">Grouped by which midterm covers them. Two weeks are open at any time: the one you are in and the one after it, so you can work a week ahead if you need to. Weeks you have finished stay open for the rest of the term, so you can always go back.</p>
 
   <div class="tabs" role="tablist" aria-label="Which half of the term" id="tabs"></div>
   <ul class="weeks" id="weeks"></ul>
@@ -177,17 +177,25 @@ a.wk.exam:hover,a.wk.exam:focus-visible{background:rgba(201,161,74,.14)}
   function pad(n){ return (n < 10 ? '0' : '') + n; }
 
   /* WHEN A WEEK UNLOCKS.
-     Scrubs' rule: the Saturday before the week, at noon. That gives a
-     student the weekend to get ahead on the week they are about to be in,
-     and stops them opening Week 9 in September.
+     Scrubs' rule, revised Sep 7 2026: two weeks open at a time, so a
+     student who has to work ahead can get one week ahead and no further.
+
+     A week now unlocks on the Saturday BEFORE THE PREVIOUS WEEK starts,
+     at noon. Sit in Week 5 and Weeks 1 to 6 are open: everything you have
+     finished, the week you are in, and exactly one week in front of you.
+     Week 7 is not, which is the point. The old rule opened a week on the
+     Saturday before it started, which gave a weekend of lead time rather
+     than a full week.
 
      Weeks open Monday, except Week 1 which opens Tuesday Sep 8, so this
      walks back to the most recent Saturday rather than assuming a fixed
-     number of days. */
+     number of days, then takes a further seven. */
+  var LEAD_DAYS = 7;   /* one full week of lead time */
   function unlockAt(openISO){
     var o = d(openISO);
     var back = (o.getDay() - 6 + 7) % 7 || 7;   /* most recent Saturday before */
-    var u = new Date(o.getFullYear(), o.getMonth(), o.getDate() - back, 12, 0, 0, 0);
+    var u = new Date(o.getFullYear(), o.getMonth(),
+                     o.getDate() - back - LEAD_DAYS, 12, 0, 0, 0);
     return u;
   }
   function shortDate(dt){

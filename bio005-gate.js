@@ -2,6 +2,23 @@
    BIO 005 Human Physiology, Yuba College, Fall 2026
    bio005-gate.js
 
+   NOT IN USE, and not the rule. Checked Sep 7 2026: no page in this
+   repo loads this file. It is a third implementation of week gating,
+   left behind from an earlier design, and the rule it describes below
+   (Monday open, early access 8 pm the Saturday before, conditional on
+   having submitted the current week) is not the rule the course runs.
+
+   THE LIVE RULE lives in two places, and they must stay identical:
+       week-navigator.html   unlockAt()  + LEAD_DAYS
+       welcome.html          hgUnlock()  + HG_LEAD_DAYS
+   Two weeks are open at any time, the current week and the next one.
+   A week unlocks at noon on the Saturday before the PREVIOUS week
+   starts, and finished weeks stay open for the rest of the term.
+
+   Either wire this file up to that rule or delete it. Leaving a third
+   version of a student-facing policy sitting in the repo is how a page
+   ends up telling a student something the course does not do.
+
    Date gating for the week pages.
 
    A week opens on its Monday. Early access opens the Saturday night

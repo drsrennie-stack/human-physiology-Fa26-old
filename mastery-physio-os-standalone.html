@@ -9150,7 +9150,7 @@ window.BIO005_SESSIONS = {
    ------------
        <script src="schedule-fall2026.js"><\/script>
        <script src="section-sync.js"><\/script>
-       <script src="bio005-question-bank.js"><\/script>\n       <script src="hootie.js"><\/script>
+       <script src="hootie.js"><\/script>
 
    It mounts a launcher button in the bottom corner by itself. To
    scope it to a week, the page's nav already carries the week
@@ -9348,13 +9348,20 @@ window.BIO005_SESSIONS = {
   var INTENTS = [
     {id:'contact',  kw:['contact','email','e-mail','reach','who do i','who should i','talk to','office hour','professor','instructor','teacher','rennie','tutor','tutoring','accommodat','disab','dsp','tech ','technolog','login','log in','canvas help','password','it help']},
     {id:'struggle', kw:['struggl','behind','failing','fail ','so hard','too hard','confus','overwhelm','stress','anxious','burn','falling','fall behind','drowning','give up','quit','really hard','cant keep','can not keep','keep up','lost and','hate this','crying','panic']},
+    {id:'ai',       kw:['ai ','a.i','chatgpt','chat gpt','gpt','claude','gemini','copilot','artificial intelligence','use ai','using ai','ai on','cheat','cheating','plagiar','academic integrity','integrity']},
     {id:'grades',   kw:['grade','grading','points','percent','weight','how much is','worth','scholar point','extra credit','curve','my grade','pass the class','passing','gpa']},
     {id:'exams',    kw:['exam','test','midterm','practical','how many test','final']},
     {id:'tbl',      kw:['tbl','team based','team-based','irat','trat','readiness','team quiz']},
     {id:'mastery',  kw:['mastery','recall','flashcard','gap finder','cram','spaced','study tool','study engine']},
     {id:'study',    kw:['study with me','co-study','study session','study group','sign up','study hours','engagement hour']},
-    {id:'atlas',    kw:['atlas','3d','model','viewer','explore structure']},
-    {id:'loops',    kw:['loop','practice question','practice q']},
+    {id:'atlas',    kw:['atlas','3d','model','viewer','explore structure','anatomy review','refresher']},
+    /* The 'loops' intent is retired, Sep 7 2026. Its keyword was the bare
+       word 'loop', and in a physiology course "how do feedback loops work"
+       is close to the most common question a student can type. Every one of
+       those got answered with "loops are quick lab-based practice questions",
+       which is a BIO 004 tool and not a thing in this course. Practice
+       questions now match under 'howstudy' and 'prework'. */
+    {id:'practice', kw:['practice question','practice q','practice items','predict commit']},
     {id:'prework',  kw:['pre-work','prework','packet','before class','homework','tonight','what should i do','assignment']},
     {id:'howstudy', kw:['how do i study','how should i study','memor','forget','remember','stick','retain','draw','retrieval','revise','review']},
     {id:'week',     kw:['this week','today','due','coming up','next class','whats due','what is due','what is on','schedule']},
@@ -9444,44 +9451,61 @@ window.BIO005_SESSIONS = {
           + '<br><br>Reach out early. Do not wait for the next exam, and do not wait until you feel you have earned the right to ask.'
           + (ctx.nextExam ? '<br><br>' + examLine(ctx, ctx.nextExam) : '');
 
+      case 'ai':
+        return '<p>The short version: AI is open on some things, closed on others, and the line is about whether the work is evidence of <b>your</b> reasoning.</p>'
+          + '<p><b>Closed.</b> The exams, the discussions, and anything where the point is that you can do it yourself. Retrieval is closed too, not because you would be caught, but because using AI there defeats the only reason to do it.</p>'
+          + '<p><b>Open, with disclosure.</b> Labs and application cases. Say what you used it for. The reasoning still has to be yours, and it is what gets graded.</p>'
+          + '<p>The full lists, and how I use AI to build this course, are on <a href="ai-in-this-course.html" target="_blank" rel="noopener">How AI is used in this course</a>.</p>';
+
       case 'grades':
-        return '<p>Your grade:</p>'
-          + '1. Weekly checkpoints: weight TO CONFIRM'
-          + '<br>2. Lecture exams: 30% (5, one per module)'
-          + '<br>3. Lab practical exams: 30% (5)'
-          + '<br>4. Lab quizzes: 5%'
-          + '<br>5. iChecks and tChecks: 5%'
-          + '<br><br>Up to 3% in Scholar Points for verified engagement hours plus a strong exam average. No exam counts above 102%. Full detail in your ' + ilink(s.syllabus, 'syllabus') + '.';
+        return '<p>Four categories:</p>'
+          + '<b>35%</b> Show Me What You Know. Two exams, draw and teach on video, 17.5 each.'
+          + '<br><b>25%</b> Investigate It. The weekly labs.'
+          + '<br><b>25%</b> Use It. Your weekly application case, building into your patient file.'
+          + '<br><b>15%</b> Think About It. The weekly discussion.'
+          + '<br><br>Your note sheet, the practice items, the Mastery Check and the recall cards carry <b>no points at all</b>, on purpose. They are the route to the four above, not extras. Full detail in your ' + ilink(s.syllabus, 'syllabus') + '.';
 
       case 'exams':
         return examLine(ctx, ctx.nextExam)
-          + '<br><br>Two exams in all, Midterm 1 covering Weeks 1 to 7 and Midterm 2 covering Weeks 8 to 14. Each is a three day window and each is worth 17.5 percent. Every date is on the ' + a('calendar') + ' and in your ' + ilink(s.syllabus, 'syllabus') + '.';
+          + '<br><br>Two exams, not five. Midterm 1 covers Weeks 1 to 7 and its window is Oct 26 to 28. Midterm 2 covers Weeks 8 to 14, Dec 14 to 16. Each is a window of three days, not an hour, and each is worth 17.5 percent.'
+          + '<br><br>Neither is multiple choice. You draw a physiological pathway and teach it out loud on video with no notes. Every week\'s Retrieve step is that same task in miniature, ungraded, so the format is familiar long before it counts. Dates are on the ' + a('calendar') + ' and in your ' + ilink(s.syllabus, 'syllabus') + '.';
 
+      /* Rewritten Sep 7 2026. This answer used to describe "weekly
+         checkpoints" with the words "Weight is still to be set" and
+         "Placeholder grade" in it, which is a build note that reached
+         students. There are no checkpoints and no placeholder. */
       case 'tbl':
-        return '<p>Weekly checkpoints are how this course replaces attendance. Each week opens Monday and closes Sunday. Weight is still to be set, see the syllabus. Placeholder grade.</p>'
-          + 'You work the week on your own time and close it with a checkpoint. There are no teams and no synchronous sessions in this course.'
+        return '<p>There is no TBL in this course. No teams, no iRAT or tRAT, and nothing that meets at a set time. BIO 005 is fully online and asynchronous.</p>'
+          + '<p>What replaces attendance is what you turn in: your Mastery Check, your discussion post, and any lab the week requires. The note sheet and the practice work carry no points, so nothing is measuring whether you showed up, only whether the work is there.</p>'
           + '<br><br>Studying the work across the week is what makes these go well. There is no version of a checkpoint that goes well if you start it Sunday night. More in your ' + ilink(s.syllabus, 'syllabus') + '.';
 
       case 'mastery':
-        return a('masteryOS', 'Mastery OS') + ' is your study engine: spaced recall, a 3-Day Cram planner, and a Gap Finder that shows exactly what is weak. Open it and set up your plan.';
+        return '<p>' + a('masteryOS', 'The Mastery OS') + ' is your study engine: spaced recall across all 268 competencies and a gap finder that shows exactly what is weak.</p>'
+          + '<p>It works with the weekly <b>Mastery Check</b>, which is not a quiz. No points, no penalty, and no limit on attempts. It asks two levels on each competency, one to see whether you can retrieve it and one to see whether you can use it, and instead of a score it tells you which competencies are solid, which are partly there, and which are still a gap. Bring the gaps back to the OS.</p>';
 
+      /* Scholar Points are retired, and so is the engagement hours bank
+         they fed. Sep 7 2026. */
       case 'study':
-        return a('study') + ' is live co-study time. Sign up, show up, and you bank verified engagement hours toward Scholar Points at the same time.';
+        return 'There is no scheduled co-study session and no Scholar Points system in this course; both are retired. If you want to study with people, say so in the discussion thread and set something up. Office hours are Wednesdays 9:00 to 10:00 am on Zoom, drop in, and bringing a study question to those is the closest thing to co-study on the calendar.';
 
+      /* The interactive Atlas is a BIO 004 anatomy tool and is not part of
+         this course. What physiology students want when they ask about
+         anatomy is the refresher. Sep 7 2026. */
       case 'atlas':
-        return 'The ' + a('atlas') + ' lets you explore structures interactively. It is the fastest way to build the mental picture before lab.';
+        return 'The interactive Atlas belongs to the anatomy course, not this one. What you want here is the <a href="anatomy-review.html" target="_top">anatomy refresher</a>: the anatomy this course leans on, with self-checks, so you can close a gap in Week 1 rather than find it in Week 6.';
 
-      case 'loops':
-        return a('loops') + ' are quick lab-based practice questions. Use them for fast visual review between study blocks.';
+      case 'practice':
+        return 'Practice items live inside each week, in the Practice stage: predict, commit, check, correct, explain. They carry no points, and getting them wrong is the entire point of doing them. The book problems sit alongside them and are also ungraded.';
 
       case 'contact': {
         var c = (L() && L().contact) || {};
-        return '<p><b>Class, grades, or an extension.</b> Message Dr. Rennie in ' + (c.canvasInbox || 'the Canvas Inbox')
-          + ', or email ' + (c.email || 'srennie@solano.edu') + ' (' + (c.turnaround || 'about 48 to 72 hours on weekdays') + '). '
-          + 'Office hours are ' + (c.officeHours || '30 minutes before each class, or by appointment') + '.</p>'
-          + '<p><b>Accommodations.</b> The Accessibility Support Center, ' + (c.ascEmail || 'ASC@solano.edu')
-          + ' or ' + (c.ascPhone || '(707) 864-7136') + '. Set this up in Week 1, then tell Dr. Rennie your approved accommodations.</p>'
-          + '<p><b>Free tutoring.</b> In person at Fairfield, Vacaville and Vallejo, or online by Zoom. See the ' + a('astc') + '.</p>';
+        return '<p><b>Anything private: your grade, an extension, something going on in your life.</b> Message Dr. Rennie in '
+          + (c.canvasInbox || 'the Canvas Inbox') + ', or email ' + (c.email || 'srennie@yccd.edu')
+          + ' (' + (c.turnaround || 'about 48 to 72 hours on weekdays') + ').</p>'
+          + '<p><b>Anything about the course itself</b> goes in the <a href="virtual-office.html" target="_top">virtual office</a> instead, where the answer reaches everyone. Say what your question is, what you already tried, and where it stopped answering your question.</p>'
+          + '<p><b>Office hours.</b> ' + (c.officeHours || 'Wednesdays 9:00 to 10:00 am on Zoom, drop in, no appointment needed') + '.</p>'
+          + '<p><b>Accommodations.</b> Yuba DSPS, ' + (c.ascEmail || 'dspsinfo@yccd.edu')
+          + '. Set this up in Week 1, then tell Dr. Rennie your approved accommodations.</p>';
       }
 
       case 'prework':
@@ -9550,9 +9574,85 @@ window.BIO005_SESSIONS = {
   /* One function, everything it needs passed in. Swap this for a
      proxied model call if free-form content answers are ever
      wanted, and the 22 pages do not change. */
+
+  /* ----------------------------------------------------------
+     THE 248 ANSWERS THAT ARE ALREADY WRITTEN DOWN
+
+     Scrubs, Sep 7 2026: anything a student asks that the course
+     questions page already answers should be answered here, not
+     shrugged at. bio005-question-bank.js is generated from
+     course-questions.html, so the page stays the single source
+     and Hootie never drifts from it.
+
+     This runs AFTER the intent matcher, because an intent answer
+     knows what week it is and a stored answer does not. It runs
+     BEFORE the refusal, because "I do not know" is the wrong
+     reply to a question with an answer already on the site.
+
+     Scoring is deliberately dumb and predictable: overlap of
+     meaningful words between the question asked and the stored
+     question, weighted so a word in the stored question counts
+     more than a word buried in its answer. A weak best match is
+     no match, because a confidently wrong answer is worse than
+     an honest miss.
+     ---------------------------------------------------------- */
+  var STOP = {' the':1,a:1,an:1,and:1,are:1,as:1,at:1,be:1,but:1,by:1,can:1,do:1,does:1,
+    for:1,from:1,get:1,how:1,i:1,if:1,in:1,is:1,it:1,me:1,my:1,of:1,on:1,or:1,should:1,
+    that:1,the:1,then:1,this:1,to:1,was:1,what:1,when:1,where:1,which:1,who:1,why:1,
+    will:1,with:1,you:1,your:1,am:1,we:1,us:1,so:1,any:1,'':1};
+
+  function words(t) {
+    return String(t || '').toLowerCase().replace(/<[^>]+>/g, ' ')
+      .split(/[^a-z0-9]+/).filter(function (w) { return w.length > 2 && !STOP[w]; });
+  }
+
+  function searchBank(q) {
+    var bank = window.BIO005_QUESTIONS;
+    if (!bank || !bank.length) return null;
+    var asked = words(q);
+    if (asked.length < 2) return null;
+
+    var best = null, bestScore = 0, runnerUp = null;
+    bank.forEach(function (e) {
+      if (!e.__qw) { e.__qw = words(e.q); e.__aw = words(e.a); }
+      var score = 0;
+      asked.forEach(function (w) {
+        if (e.__qw.indexOf(w) > -1) score += 3;
+        else if (e.__aw.indexOf(w) > -1) score += 1;
+      });
+      /* a short stored question matched fully beats a long one matched partly */
+      score = score / Math.sqrt(e.__qw.length + 2);
+      if (score > bestScore) { runnerUp = best; bestScore = score; best = e; }
+    });
+
+    /* Below this the match is noise. Tuned so a two word question with one
+       real overlap does not fire. */
+    if (!best || bestScore < 1.15) return null;
+
+    var html = '<p>' + esc(best.q) + '</p>' + best.a;
+    if (runnerUp) {
+      html += '<p class="hoot-more">Not what you meant? The '
+        + '<a href="course-questions.html" target="_top">answered questions page</a> has '
+        + bank.length + ' of these, and you can filter it by typing a word.</p>';
+    }
+    return html;
+  }
+
   function hootieAnswer(qRaw, ctx) {
     var q = String(qRaw || '').toLowerCase().trim();
     if (!q) return { html: 'Ask me what is on this week, when your next exam is, how grading works, or what to do tonight.' };
+
+    /* buildContext returns null on any page that does not carry the schedule
+       globals. Every date aware branch below then throws, and the student sees
+       a dead assistant rather than an answer. The stored answers do not need a
+       context at all, so on a null context go straight to them. */
+    if (!ctx) {
+      var only = searchBank(q);
+      if (only) return { html: only, intent: 'bank' };
+      return { html: 'I cannot see the schedule from this page. The '
+        + '<a href="course-questions.html" target="_top">answered questions page</a> covers most of what students ask, '
+        + 'and the <a href="virtual-office.html" target="_top">virtual office</a> is where to put anything it does not.' };
+    }
 
     /* Explicit week number wins over everything. */
     var wkAsk = q.match(/week\s*(\d{1,2})/);
@@ -9579,6 +9679,10 @@ window.BIO005_SESSIONS = {
       if (html) return { html: html, intent: id };
     }
 
+    /* Already answered on the course questions page? Say that answer. */
+    var stored = searchBank(q);
+    if (stored) return { html: stored, intent: 'bank' };
+
     /* Physiology content, or anything else. Say so; do not guess. */
     var res = weekResources(ctx, ctx.viewWk || ctx.curWk);
     return { html:
@@ -9597,7 +9701,7 @@ window.BIO005_SESSIONS = {
   var CSS = [
     '.hoo-btn{position:fixed;right:18px;bottom:18px;z-index:60;display:inline-flex;align-items:center;gap:8px;',
     '  font:inherit;font-size:.85rem;font-weight:700;cursor:pointer;padding:11px 16px;border-radius:999px;',
-    '  background:var(--navy,#08101F);color:#fff;border:1px solid var(--navy,#08101F);',
+    '  background:var(--navy,#0B1530);color:#fff;border:1px solid var(--navy,#0B1530);',
     '  box-shadow:0 8px 16px rgba(0,0,0,.18);transition:transform 180ms ease,box-shadow 180ms ease}',
     '.hoo-btn:hover{transform:translateY(-2px);box-shadow:0 12px 22px rgba(0,0,0,.22)}',
     '.hoo-btn .fish{line-height:0;display:inline-flex;background:#fff;border-radius:50%;padding:2px}',
@@ -9605,17 +9709,17 @@ window.BIO005_SESSIONS = {
        the pill's width, and the guess was wrong once the label and
        the mark were in place, so the bubble overlapped the button. */
     '.hoo-nudge{position:fixed;right:18px;bottom:82px;z-index:59;',
-    '  background:var(--gold,#DCB45C);color:var(--navy,#08101F);',
+    '  background:var(--gold,#C9A14A);color:var(--navy,#0B1530);',
     "  font-family:var(--eb,inherit);font-size:12.5px;font-weight:700;white-space:nowrap;",
     '  padding:7px 12px;border-radius:9px;box-shadow:0 6px 14px rgba(0,0,0,.18)}',
-    ".hoo-nudge::after{content:'';position:absolute;bottom:-6px;right:22px;border:6px solid transparent;border-top-color:var(--gold,#DCB45C)}",
+    ".hoo-nudge::after{content:'';position:absolute;bottom:-6px;right:22px;border:6px solid transparent;border-top-color:var(--gold,#C9A14A)}",
     '.hoo-nudge[hidden]{display:none}',
     '.hoo-panel{position:fixed;right:18px;bottom:76px;z-index:61;width:min(390px,calc(100vw - 36px));',
     '  max-height:min(560px,calc(100vh - 110px));display:none;flex-direction:column;',
     '  background:#fff;border:1px solid var(--line,rgba(11,21,48,.12));border-radius:var(--radius,16px);',
     '  box-shadow:0 18px 44px rgba(0,0,0,.24);overflow:hidden}',
     '.hoo-panel.on{display:flex}',
-    '.hoo-hd{display:flex;align-items:center;gap:9px;padding:12px 14px;background:var(--navy,#08101F);color:#fff}',
+    '.hoo-hd{display:flex;align-items:center;gap:9px;padding:12px 14px;background:var(--navy,#0B1530);color:#fff}',
     '.hoo-hd .fish{line-height:0;display:inline-flex;background:#fff;border-radius:50%;padding:2px}',
     '.hoo-hd h2{margin:0;font-size:.95rem;font-weight:700;color:#fff}',
     '.hoo-hd .sub{margin:1px 0 0;font-size:11.5px;color:#fff;opacity:.85}',
@@ -9623,23 +9727,23 @@ window.BIO005_SESSIONS = {
     '.hoo-x:hover{background:rgba(255,255,255,.16)}',
     '.hoo-log{flex:1;overflow-y:auto;padding:13px 14px;display:flex;flex-direction:column;gap:10px;background:var(--offwhite,#F3F5F8)}',
     '.hoo-msg{max-width:92%;padding:10px 12px;border-radius:13px;font-size:13.5px;line-height:1.55}',
-    '.hoo-msg.bot{background:#fff;border:1px solid var(--line,rgba(11,21,48,.12));color:var(--navy,#08101F);align-self:flex-start}',
-    '.hoo-msg.you{background:var(--navy,#08101F);color:#fff;align-self:flex-end}',
-    '.hoo-msg a{color:var(--maroon-dark,#7A2A22);font-weight:700}',
-    '.hoo-msg.you a{color:var(--gold,#DCB45C)}',
+    '.hoo-msg.bot{background:#fff;border:1px solid var(--line,rgba(11,21,48,.12));color:var(--navy,#0B1530);align-self:flex-start}',
+    '.hoo-msg.you{background:var(--navy,#0B1530);color:#fff;align-self:flex-end}',
+    '.hoo-msg a{color:var(--maroon-dark,#8B3A2E);font-weight:700}',
+    '.hoo-msg.you a{color:var(--gold,#C9A14A)}',
     '.hoo-name{display:block;font-family:var(--eb,inherit);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;',
-    '  color:var(--maroon-dark,#7A2A22);font-weight:700;margin-bottom:4px}',
+    '  color:var(--maroon-dark,#8B3A2E);font-weight:700;margin-bottom:4px}',
     '.hoo-chips{display:flex;flex-wrap:wrap;gap:6px;padding:10px 14px;border-top:1px solid var(--line,rgba(11,21,48,.12));background:#fff}',
     '.hoo-chip{font:inherit;font-size:11.5px;font-weight:700;cursor:pointer;padding:6px 10px;border-radius:999px;',
-    '  background:#fff;color:var(--navy,#08101F);border:1px solid var(--line,rgba(11,21,48,.12))}',
-    '.hoo-chip:hover{border-color:var(--maroon-dark,#7A2A22)}',
+    '  background:#fff;color:var(--navy,#0B1530);border:1px solid var(--line,rgba(11,21,48,.12))}',
+    '.hoo-chip:hover{border-color:var(--maroon-dark,#8B3A2E)}',
     '.hoo-form{display:flex;gap:7px;padding:10px 14px;border-top:1px solid var(--line,rgba(11,21,48,.12));background:#fff}',
     '.hoo-in{flex:1;font:inherit;font-size:13.5px;padding:9px 11px;border-radius:10px;',
-    '  border:1.5px solid var(--line,rgba(11,21,48,.12));background:var(--offwhite,#F3F5F8);color:var(--navy,#08101F)}',
+    '  border:1.5px solid var(--line,rgba(11,21,48,.12));background:var(--offwhite,#F3F5F8);color:var(--navy,#0B1530)}',
     '.hoo-send{font:inherit;font-size:12.5px;font-weight:700;cursor:pointer;padding:9px 14px;border-radius:10px;',
-    '  background:var(--gold,#DCB45C);color:var(--navy,#08101F);border:1px solid var(--gold,#DCB45C)}',
+    '  background:var(--gold,#C9A14A);color:var(--navy,#0B1530);border:1px solid var(--gold,#C9A14A)}',
     '.hoo-btn:focus-visible,.hoo-x:focus-visible,.hoo-chip:focus-visible,.hoo-in:focus-visible,.hoo-send:focus-visible{',
-    '  outline:3px solid var(--gold,#DCB45C);outline-offset:2px}',
+    '  outline:3px solid var(--gold,#C9A14A);outline-offset:2px}',
     '@media (prefers-reduced-motion:reduce){.hoo-btn{transition:none}.hoo-btn:hover{transform:none}}',
     /* Every fixed element Hootie owns. The nudge was missing from this
        list and printed as a gold pill across the foot of the page. */
@@ -9667,25 +9771,25 @@ window.BIO005_SESSIONS = {
      Source of truth: the hootieBtn svg in welcome.html. */
   function hootieMark(size) {
     return '<svg viewBox="0 0 64 64" width="' + size + '" height="' + size + '" aria-hidden="true" focusable="false">'
-      + '<path d="M20 39 L6 28 Q3 39 6 50 Z" fill="#DCB45C"/>'
+      + '<path d="M20 39 L6 28 Q3 39 6 50 Z" fill="#C9A14A"/>'
       + '<ellipse cx="35" cy="40" rx="19" ry="16" fill="#E8CE85"/>'
       + '<ellipse cx="37" cy="44" rx="12" ry="9" fill="#F2E2B0"/>'
-      + '<path d="M28 25 Q36 21 44 25 L42 31 Q36 34 30 31 Z" fill="#08101F"/>'
-      + '<path d="M36 11 L55 20 L36 29 L17 20 Z" fill="#08101F"/>'
-      + '<circle cx="36" cy="20" r="1.5" fill="#DCB45C"/>'
-      + '<path d="M36 20 L53 21 L53 32" fill="none" stroke="#DCB45C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>'
-      + '<circle cx="53" cy="34" r="2.4" fill="#DCB45C"/>'
-      + '<circle cx="31" cy="39" r="7" fill="#FFFFFF" stroke="#08101F" stroke-width="2.4"/>'
-      + '<circle cx="45" cy="39" r="7" fill="#FFFFFF" stroke="#08101F" stroke-width="2.4"/>'
-      + '<path d="M37.6 39 H38.4" stroke="#08101F" stroke-width="2.2"/>'
-      + '<circle cx="32" cy="40" r="3" fill="#08101F"/>'
-      + '<circle cx="44" cy="40" r="3" fill="#08101F"/>'
+      + '<path d="M28 25 Q36 21 44 25 L42 31 Q36 34 30 31 Z" fill="#0B1530"/>'
+      + '<path d="M36 11 L55 20 L36 29 L17 20 Z" fill="#0B1530"/>'
+      + '<circle cx="36" cy="20" r="1.5" fill="#C9A14A"/>'
+      + '<path d="M36 20 L53 21 L53 32" fill="none" stroke="#C9A14A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>'
+      + '<circle cx="53" cy="34" r="2.4" fill="#C9A14A"/>'
+      + '<circle cx="31" cy="39" r="7" fill="#FFFFFF" stroke="#0B1530" stroke-width="2.4"/>'
+      + '<circle cx="45" cy="39" r="7" fill="#FFFFFF" stroke="#0B1530" stroke-width="2.4"/>'
+      + '<path d="M37.6 39 H38.4" stroke="#0B1530" stroke-width="2.2"/>'
+      + '<circle cx="32" cy="40" r="3" fill="#0B1530"/>'
+      + '<circle cx="44" cy="40" r="3" fill="#0B1530"/>'
       + '<circle cx="33.1" cy="38.8" r="1" fill="#FFFFFF"/>'
       + '<circle cx="45.1" cy="38.8" r="1" fill="#FFFFFF"/>'
-      + '<path d="M33 46 Q38 51 43 46 Q38.5 48.5 33 46 Z" fill="#7A2A22"/>'
-      + '<path d="M31 49 L31 55 L36.5 52 Z" fill="#7A2A22"/>'
-      + '<path d="M42 49 L42 55 L36.5 52 Z" fill="#7A2A22"/>'
-      + '<rect x="35" y="50.2" width="3" height="3.6" rx="1" fill="#5E201A"/>'
+      + '<path d="M33 46 Q38 51 43 46 Q38.5 48.5 33 46 Z" fill="#8B3A2E"/>'
+      + '<path d="M31 49 L31 55 L36.5 52 Z" fill="#8B3A2E"/>'
+      + '<path d="M42 49 L42 55 L36.5 52 Z" fill="#8B3A2E"/>'
+      + '<rect x="35" y="50.2" width="3" height="3.6" rx="1" fill="#6E2D24"/>'
       + '</svg>';
   }
 
@@ -9822,7 +9926,6 @@ window.BIO005_SESSIONS = {
     mount();
   }
 })();
-
 </script>
 <script>
 /* ===== inlined: bio005-dock.js ===== */
@@ -10060,10 +10163,56 @@ window.BIO005_SESSIONS = {
      404 in production while working perfectly on a local server opened
      from inside os/. */
   var BASE = 'https://drsrennie-stack.github.io/human-physiology-Fa26/';
+  /* ---------------------------------------------------------------
+     OPENING DATES
+
+     A tile with a date here stops saying "Soon" and says when it opens,
+     for example "Opens Sat Oct 10". It becomes a working link on its own
+     the moment that time passes, with nothing to switch on by hand.
+
+     Write the date as 'YYYY-MM-DDTHH:MM:SS-07:00' for Pacific daylight
+     time, which runs to Nov 1 2026, and '-08:00' after that.
+
+     A tile with no entry here keeps saying "Soon", which is the honest
+     answer when there is no date yet. Add a line and it changes.
+     --------------------------------------------------------------- */
+  var BIO005_PLANNED = {
+    /* 'review-chemistry.html':      '2026-09-19T20:00:00-07:00', */
+    /* 'review-math.html':           '2026-09-19T20:00:00-07:00', */
+    /* 'lab-sprints.html':           '2026-09-26T20:00:00-07:00', */
+    /* 'lab-competencies.html':      '2026-09-26T20:00:00-07:00', */
+    /* 'clinical-tests.html':        '2026-10-03T20:00:00-07:00', */
+    /* 'reading-data.html':          '2026-10-03T20:00:00-07:00', */
+    /* 'practice-lecture-exam.html': '2026-10-03T20:00:00-07:00', */
+    /* 'bio005-day-review.html':     '2026-10-10T20:00:00-07:00', */
+    /* 'study-session-signup.html':  '2026-09-12T20:00:00-07:00', */
+    /* 'bio005-tour-poster.html':    '2026-09-12T20:00:00-07:00'  */
+  };
+
+  var B5_DAYS = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  var B5_MONS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+  /* Returns the badge text for a tile that is not open yet, or null when
+     it is open. A tile flagged soon with no date still reads "Soon". */
+  function b5Pending(t) {
+    var key = null, u = String(t.url || '');
+    for (var k in BIO005_PLANNED) {
+      if (u.indexOf(k) !== -1) { key = k; break; }
+    }
+    if (key) {
+      var when = new Date(BIO005_PLANNED[key]);
+      if (when > new Date()) {
+        return 'Opens ' + B5_DAYS[when.getDay()] + ' ' + B5_MONS[when.getMonth()] + ' ' + when.getDate();
+      }
+      return null;                 /* the date has passed, the tile goes live */
+    }
+    return t.soon ? 'Soon' : null;
+  }
+
   var SEC_KEY = 'bio005-section';
 
   var SECTIONS = {
-    'net':    { label: 'Yuba College, fully online', syllabus: 'syllabus.html', hub: 'welcome.html' }
+    'net':    { label: 'Yuba College, fully online', syllabus: 'syllabus-fall2026.html', hub: 'course-start.html' }
   };
 
   function section() {
@@ -10075,19 +10224,19 @@ window.BIO005_SESSIONS = {
 
   /* QR codes, inline SVG, generated at build time. */
   var QR = {
-    howto: "<svg width=\"39\" height=\"39\" class=\"segno\"><path class=\"qrline\" stroke=\"#0b1530\" d=\"M1 1.5h7m1 0h1m2 0h2m2 0h1m1 0h1m5 0h2m1 0h3m1 0h7m-37 1h1m5 0h1m2 0h1m2 0h3m2 0h1m1 0h4m1 0h3m1 0h1m1 0h1m5 0h1m-37 1h1m1 0h3m1 0h1m3 0h1m1 0h2m1 0h1m1 0h2m2 0h1m4 0h3m1 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m1 0h2m2 0h3m1 0h1m1 0h2m3 0h1m1 0h2m1 0h1m1 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m1 0h3m1 0h2m1 0h1m2 0h1m1 0h2m1 0h1m2 0h3m1 0h1m1 0h3m1 0h1m-37 1h1m5 0h1m1 0h3m4 0h2m2 0h1m2 0h1m1 0h1m5 0h1m5 0h1m-37 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-29 1h1m1 0h1m1 0h1m2 0h3m1 0h3m2 0h1m1 0h1m-27 1h1m3 0h1m1 0h3m1 0h2m2 0h4m2 0h4m2 0h2m1 0h5m2 0h1m-37 1h2m1 0h3m3 0h3m1 0h2m2 0h2m2 0h3m1 0h1m1 0h2m3 0h1m2 0h1m-34 1h1m1 0h4m1 0h3m3 0h1m2 0h1m2 0h4m1 0h3m2 0h3m-34 1h2m1 0h1m3 0h1m2 0h3m1 0h4m1 0h3m1 0h2m1 0h1m1 0h2m1 0h2m1 0h2m-32 1h1m1 0h2m1 0h2m1 0h1m4 0h1m2 0h3m1 0h1m1 0h1m2 0h3m2 0h3m-36 1h1m3 0h1m6 0h1m1 0h5m3 0h8m2 0h2m-33 1h4m1 0h1m3 0h3m1 0h2m1 0h2m1 0h5m2 0h2m1 0h5m-35 1h1m1 0h1m1 0h2m3 0h1m4 0h5m2 0h2m6 0h1m1 0h2m1 0h1m-32 1h1m1 0h2m5 0h4m1 0h1m2 0h4m2 0h2m1 0h3m1 0h3m-36 1h1m1 0h3m2 0h3m1 0h1m2 0h1m1 0h1m1 0h1m1 0h1m2 0h1m3 0h2m3 0h1m1 0h2m-33 1h1m1 0h3m3 0h2m1 0h1m1 0h3m2 0h1m1 0h2m1 0h2m1 0h1m1 0h2m1 0h1m-34 1h1m6 0h2m1 0h2m4 0h3m1 0h2m1 0h1m1 0h1m2 0h2m3 0h2m-36 1h1m2 0h4m1 0h2m1 0h1m1 0h1m1 0h1m1 0h1m1 0h6m2 0h1m1 0h3m2 0h1m-35 1h1m1 0h2m4 0h1m2 0h3m1 0h3m3 0h1m1 0h1m1 0h1m1 0h3m1 0h2m-32 1h2m2 0h4m2 0h2m2 0h1m1 0h2m4 0h2m2 0h1m1 0h1m1 0h5m-35 1h1m5 0h1m2 0h1m4 0h1m1 0h1m1 0h3m5 0h1m3 0h2m1 0h2m-34 1h5m2 0h1m3 0h2m1 0h1m1 0h1m2 0h2m1 0h1m1 0h1m2 0h2m2 0h4m-37 1h1m2 0h1m3 0h1m1 0h1m1 0h1m6 0h1m2 0h3m1 0h1m1 0h1m4 0h3m-33 1h1m2 0h3m3 0h3m1 0h1m2 0h1m1 0h4m1 0h1m1 0h1m1 0h1m1 0h1m-30 1h2m3 0h2m2 0h1m2 0h5m1 0h5m1 0h1m3 0h5m1 0h1m-37 1h2m1 0h1m2 0h4m1 0h3m2 0h7m1 0h1m2 0h9m-28 1h1m1 0h2m3 0h2m1 0h1m1 0h1m1 0h2m1 0h1m2 0h1m3 0h1m-33 1h7m1 0h3m3 0h4m4 0h3m1 0h1m1 0h1m1 0h1m1 0h1m-33 1h1m5 0h1m5 0h1m1 0h1m1 0h2m1 0h1m1 0h1m1 0h1m4 0h1m3 0h4m-36 1h1m1 0h3m1 0h1m1 0h1m5 0h1m3 0h5m3 0h1m1 0h8m-36 1h1m1 0h3m1 0h1m4 0h2m1 0h1m1 0h3m3 0h2m1 0h2m1 0h4m1 0h1m2 0h1m-37 1h1m1 0h3m1 0h1m2 0h4m3 0h3m2 0h1m1 0h2m1 0h3m1 0h1m2 0h2m-35 1h1m5 0h1m3 0h2m2 0h1m2 0h2m1 0h2m1 0h2m2 0h1m2 0h1m1 0h4m-36 1h7m1 0h1m1 0h1m1 0h4m1 0h1m1 0h6m2 0h1m3 0h1m2 0h3\"/></svg>",
-    histology: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 35 35\" class=\"segno\"><path class=\"qrline\" stroke=\"#0b1530\" d=\"M1 1.5h7m2 0h1m2 0h1m1 0h1m1 0h4m3 0h1m2 0h7m-33 1h1m5 0h1m1 0h2m2 0h1m1 0h3m4 0h1m2 0h1m1 0h1m5 0h1m-33 1h1m1 0h3m1 0h1m2 0h1m10 0h2m4 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m1 0h2m1 0h7m4 0h1m3 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m4 0h1m1 0h1m2 0h1m1 0h6m2 0h1m1 0h3m1 0h1m-33 1h1m5 0h1m1 0h1m1 0h1m2 0h6m2 0h2m3 0h1m5 0h1m-33 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-19 1h2m2 0h1m1 0h3m1 0h1m-25 1h5m1 0h9m2 0h1m1 0h1m2 0h4m1 0h1m1 0h1m1 0h1m-32 1h4m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m2 0h6m1 0h1m2 0h1m3 0h3m-32 1h1m1 0h4m1 0h2m2 0h1m1 0h2m2 0h1m1 0h1m5 0h4m1 0h1m-32 1h3m1 0h1m2 0h1m1 0h2m4 0h1m5 0h1m1 0h1m1 0h1m2 0h1m1 0h1m-30 1h1m2 0h4m1 0h1m3 0h2m2 0h1m1 0h1m4 0h2m1 0h3m-29 1h2m2 0h1m2 0h1m1 0h2m1 0h1m2 0h5m2 0h1m2 0h1m4 0h2m-33 1h2m4 0h2m2 0h1m1 0h6m2 0h1m1 0h1m1 0h2m1 0h2m2 0h1m-32 1h2m1 0h3m1 0h3m2 0h1m1 0h1m1 0h1m3 0h2m1 0h1m1 0h1m2 0h1m1 0h1m-30 1h1m1 0h1m2 0h2m3 0h4m2 0h2m1 0h1m1 0h3m2 0h2m2 0h1m-32 1h1m2 0h3m5 0h1m7 0h2m2 0h2m1 0h1m2 0h1m1 0h2m-29 1h4m1 0h1m2 0h5m4 0h1m3 0h2m2 0h1m1 0h1m-31 1h2m5 0h1m2 0h1m2 0h1m1 0h1m1 0h2m1 0h5m4 0h1m-30 1h1m1 0h2m1 0h2m1 0h6m2 0h2m3 0h4m1 0h2m2 0h1m-32 1h6m5 0h4m1 0h5m2 0h1m1 0h2m2 0h1m1 0h2m-33 1h1m5 0h3m3 0h1m2 0h1m4 0h1m1 0h1m4 0h3m1 0h1m-32 1h1m3 0h1m2 0h1m2 0h1m1 0h1m1 0h1m1 0h1m3 0h8m1 0h2m-31 1h1m3 0h1m1 0h1m1 0h1m1 0h1m2 0h1m3 0h1m1 0h1m4 0h5m3 0h1m-25 1h1m1 0h2m1 0h1m2 0h1m2 0h1m4 0h1m3 0h3m1 0h1m-33 1h7m1 0h1m3 0h1m1 0h5m1 0h1m1 0h3m1 0h1m1 0h1m1 0h2m-32 1h1m5 0h1m2 0h1m4 0h2m3 0h6m3 0h5m-33 1h1m1 0h3m1 0h1m1 0h2m1 0h5m1 0h1m2 0h1m1 0h1m1 0h6m2 0h1m-33 1h1m1 0h3m1 0h1m1 0h4m1 0h1m2 0h5m2 0h3m2 0h1m1 0h1m-31 1h1m1 0h3m1 0h1m1 0h1m6 0h1m1 0h1m2 0h1m1 0h1m1 0h3m4 0h1m-32 1h1m5 0h1m1 0h3m4 0h2m3 0h2m3 0h1m2 0h3m-31 1h7m1 0h1m1 0h1m1 0h3m2 0h1m4 0h3m2 0h1m1 0h1m1 0h1\"/></svg>",
-    mastery: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 39 39\" class=\"segno\"><path class=\"qrline\" stroke=\"#0b1530\" d=\"M1 1.5h7m1 0h1m1 0h4m1 0h1m2 0h1m1 0h3m7 0h7m-37 1h1m5 0h1m2 0h2m6 0h2m2 0h2m1 0h1m3 0h1m1 0h1m5 0h1m-37 1h1m1 0h3m1 0h1m1 0h2m1 0h2m2 0h1m1 0h1m3 0h1m1 0h1m1 0h1m1 0h2m1 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m2 0h2m1 0h2m1 0h1m1 0h2m2 0h3m1 0h2m3 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m4 0h2m3 0h1m1 0h1m1 0h3m2 0h2m3 0h1m1 0h3m1 0h1m-37 1h1m5 0h1m1 0h1m1 0h9m1 0h3m2 0h1m4 0h1m5 0h1m-37 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-27 1h4m2 0h1m2 0h2m2 0h2m1 0h3m-29 1h1m1 0h1m3 0h2m3 0h5m8 0h1m3 0h1m2 0h1m2 0h1m1 0h1m-37 1h1m2 0h2m4 0h1m2 0h1m4 0h1m1 0h1m1 0h1m1 0h1m2 0h3m1 0h2m3 0h2m-37 1h2m1 0h1m1 0h3m2 0h1m1 0h4m3 0h5m1 0h1m1 0h1m2 0h1m2 0h1m2 0h1m-37 1h1m2 0h3m2 0h1m2 0h2m6 0h1m2 0h2m2 0h1m1 0h1m2 0h3m-34 1h1m2 0h2m1 0h2m1 0h1m2 0h5m2 0h2m2 0h2m1 0h1m1 0h1m1 0h2m1 0h1m2 0h1m-37 1h3m2 0h1m2 0h2m1 0h3m1 0h3m1 0h2m1 0h2m3 0h5m1 0h1m2 0h1m-35 1h2m1 0h3m1 0h2m1 0h4m1 0h3m1 0h3m1 0h1m1 0h2m4 0h2m1 0h1m-37 1h2m3 0h1m3 0h1m2 0h3m7 0h2m3 0h2m2 0h3m1 0h1m-36 1h2m2 0h1m1 0h1m4 0h2m1 0h1m1 0h1m11 0h1m1 0h2m-31 1h1m7 0h1m3 0h2m1 0h1m1 0h2m3 0h3m1 0h2m1 0h2m2 0h3m-37 1h4m1 0h2m2 0h1m6 0h2m1 0h3m1 0h1m1 0h1m1 0h1m1 0h2m3 0h1m1 0h1m-37 1h2m1 0h3m3 0h3m1 0h1m1 0h2m1 0h1m4 0h2m1 0h3m1 0h1m2 0h1m-34 1h1m1 0h1m3 0h3m4 0h2m1 0h1m2 0h2m3 0h1m3 0h1m1 0h2m1 0h1m1 0h1m-34 1h3m4 0h2m1 0h1m2 0h2m1 0h4m1 0h2m1 0h5m5 0h1m-37 1h1m3 0h3m1 0h1m2 0h1m3 0h1m1 0h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h2m2 0h4m-36 1h2m1 0h2m5 0h2m3 0h1m2 0h2m2 0h1m2 0h1m1 0h2m1 0h3m-32 1h1m1 0h1m1 0h1m8 0h2m6 0h2m2 0h2m1 0h1m5 0h1m-35 1h1m4 0h6m1 0h1m4 0h1m1 0h1m1 0h2m1 0h2m2 0h2m1 0h2m1 0h1m-37 1h2m1 0h7m2 0h2m1 0h2m2 0h5m2 0h2m1 0h2m1 0h1m3 0h1m-34 1h1m3 0h4m3 0h1m3 0h2m4 0h1m1 0h7m2 0h1m-36 1h4m2 0h5m1 0h1m1 0h2m2 0h3m3 0h1m3 0h5m2 0h2m-29 1h2m1 0h2m2 0h3m1 0h1m1 0h4m1 0h1m1 0h1m3 0h1m3 0h1m-37 1h7m1 0h1m4 0h1m1 0h3m1 0h3m1 0h1m2 0h1m1 0h1m1 0h1m1 0h1m3 0h1m-37 1h1m5 0h1m4 0h3m1 0h1m2 0h2m7 0h2m3 0h1m-33 1h1m1 0h3m1 0h1m2 0h1m1 0h1m1 0h4m2 0h1m2 0h3m2 0h6m-33 1h1m1 0h3m1 0h1m5 0h1m4 0h1m1 0h1m3 0h1m2 0h1m1 0h2m2 0h2m1 0h1m-36 1h1m1 0h3m1 0h1m1 0h2m3 0h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h1m1 0h2m2 0h4m1 0h1m-37 1h1m5 0h1m3 0h1m3 0h1m1 0h1m1 0h1m1 0h1m1 0h1m5 0h3m1 0h1m-33 1h7m1 0h2m1 0h2m3 0h1m3 0h1m3 0h1m3 0h2m1 0h1m1 0h1m2 0h1\"/></svg>",
-    recall: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 39 39\" class=\"segno\"><path class=\"qrline\" stroke=\"#0b1530\" d=\"M1 1.5h7m1 0h2m2 0h7m1 0h1m2 0h1m2 0h3m1 0h7m-37 1h1m5 0h1m2 0h3m1 0h2m1 0h2m1 0h4m2 0h2m1 0h1m1 0h1m5 0h1m-37 1h1m1 0h3m1 0h1m2 0h1m3 0h2m2 0h2m1 0h2m4 0h3m1 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m1 0h1m2 0h3m1 0h2m1 0h2m3 0h1m1 0h2m1 0h1m1 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m1 0h3m1 0h1m2 0h1m1 0h2m1 0h1m2 0h1m2 0h3m1 0h1m1 0h3m1 0h1m-37 1h1m5 0h1m1 0h4m2 0h4m1 0h1m2 0h1m1 0h1m5 0h1m5 0h1m-37 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-29 1h3m1 0h1m2 0h1m1 0h1m1 0h3m2 0h1m1 0h1m-27 1h1m3 0h1m1 0h5m1 0h2m2 0h2m2 0h5m1 0h2m1 0h5m2 0h1m-35 1h1m1 0h2m3 0h1m1 0h1m1 0h2m2 0h2m2 0h1m1 0h1m1 0h1m1 0h2m3 0h1m2 0h1m-34 1h2m1 0h4m1 0h1m1 0h1m2 0h1m2 0h1m2 0h4m1 0h3m2 0h3m-34 1h1m2 0h1m4 0h5m2 0h3m2 0h2m1 0h1m2 0h1m1 0h2m1 0h2m1 0h2m-36 1h1m1 0h1m2 0h3m2 0h5m2 0h1m2 0h3m1 0h1m1 0h1m2 0h3m2 0h3m-33 1h2m1 0h1m1 0h1m1 0h1m1 0h6m3 0h8m2 0h2m-34 1h2m1 0h1m1 0h2m1 0h1m1 0h1m4 0h1m1 0h1m2 0h2m1 0h2m2 0h2m1 0h5m-34 1h1m1 0h1m5 0h1m1 0h2m2 0h3m3 0h2m6 0h1m1 0h2m1 0h1m-32 1h1m2 0h1m5 0h1m1 0h2m1 0h1m2 0h2m1 0h2m1 0h2m1 0h3m1 0h3m-36 1h1m1 0h1m5 0h3m3 0h1m1 0h1m6 0h1m3 0h2m3 0h1m1 0h2m-34 1h1m2 0h2m2 0h1m1 0h1m1 0h2m1 0h3m1 0h2m1 0h1m2 0h2m1 0h1m1 0h2m1 0h1m-35 1h2m5 0h1m3 0h3m3 0h2m2 0h3m2 0h1m2 0h2m3 0h2m-36 1h1m1 0h9m2 0h3m1 0h1m1 0h4m1 0h1m2 0h1m1 0h3m2 0h1m-35 1h2m1 0h2m2 0h2m1 0h1m2 0h4m4 0h1m1 0h1m1 0h1m1 0h3m1 0h2m-33 1h3m2 0h3m1 0h1m1 0h2m2 0h1m1 0h2m2 0h1m1 0h2m2 0h1m1 0h1m1 0h5m-36 1h5m5 0h1m1 0h2m1 0h1m1 0h1m1 0h3m5 0h1m3 0h2m1 0h2m-35 1h2m3 0h1m4 0h2m1 0h1m2 0h1m2 0h3m3 0h1m2 0h2m2 0h4m-37 1h3m6 0h2m2 0h2m3 0h1m2 0h3m1 0h1m1 0h1m4 0h3m-33 1h5m1 0h2m1 0h2m1 0h3m1 0h1m1 0h6m1 0h1m1 0h1m1 0h1m-30 1h1m1 0h2m1 0h1m3 0h2m1 0h6m1 0h2m3 0h1m3 0h5m-35 1h2m2 0h5m3 0h1m1 0h1m1 0h7m1 0h1m2 0h8m1 0h1m-29 1h2m1 0h1m2 0h5m1 0h1m1 0h2m1 0h1m2 0h1m3 0h1m-33 1h7m1 0h1m1 0h1m1 0h2m1 0h4m3 0h3m1 0h1m1 0h1m1 0h1m1 0h1m-33 1h1m5 0h1m2 0h2m1 0h1m3 0h4m1 0h3m4 0h1m3 0h4m-36 1h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h2m3 0h1m1 0h4m3 0h1m1 0h8m-36 1h1m1 0h3m1 0h1m4 0h1m1 0h2m2 0h2m4 0h1m1 0h2m1 0h4m1 0h1m1 0h2m-37 1h1m1 0h3m1 0h1m2 0h1m4 0h5m1 0h2m1 0h2m1 0h3m1 0h1m2 0h2m-35 1h1m5 0h1m2 0h1m4 0h2m1 0h2m1 0h2m1 0h2m2 0h1m2 0h1m1 0h4m-36 1h7m1 0h1m1 0h3m2 0h1m1 0h1m1 0h6m2 0h1m3 0h1m2 0h3\"/></svg>",
-    loops: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 31 31\" class=\"segno\"><path class=\"qrline\" stroke=\"#0b1530\" d=\"M1 1.5h7m1 0h1m1 0h3m1 0h1m3 0h1m3 0h7m-29 1h1m5 0h1m2 0h3m1 0h2m1 0h2m2 0h1m1 0h1m5 0h1m-29 1h1m1 0h3m1 0h1m1 0h2m1 0h3m3 0h1m2 0h1m1 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m2 0h1m3 0h3m1 0h1m4 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m2 0h1m2 0h2m4 0h1m3 0h1m1 0h3m1 0h1m-29 1h1m5 0h1m1 0h1m1 0h2m5 0h2m1 0h1m1 0h1m5 0h1m-29 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-20 1h4m3 0h1m-17 1h1m1 0h1m3 0h2m1 0h1m1 0h2m3 0h1m2 0h2m2 0h1m2 0h1m1 0h1m-27 1h1m1 0h1m3 0h1m1 0h2m2 0h3m2 0h2m1 0h2m3 0h2m-29 1h2m2 0h3m1 0h1m2 0h1m2 0h2m3 0h2m1 0h2m1 0h2m1 0h1m-29 1h2m2 0h1m5 0h1m3 0h3m1 0h1m1 0h2m3 0h1m-25 1h2m3 0h1m1 0h3m3 0h1m1 0h1m2 0h1m2 0h1m5 0h1m-29 1h2m1 0h3m2 0h1m2 0h3m1 0h1m1 0h1m1 0h2m1 0h2m3 0h2m-27 1h2m2 0h1m1 0h1m1 0h1m4 0h1m1 0h3m8 0h1m-29 1h1m1 0h1m1 0h2m2 0h1m2 0h2m1 0h3m1 0h2m2 0h1m-23 1h1m1 0h1m2 0h4m4 0h2m1 0h1m2 0h1m2 0h1m5 0h1m-28 1h5m1 0h4m1 0h1m2 0h2m1 0h3m1 0h2m2 0h3m-29 1h3m3 0h1m1 0h4m1 0h3m1 0h1m1 0h1m3 0h1m1 0h1m2 0h1m-27 1h1m1 0h1m2 0h1m1 0h1m1 0h1m8 0h1m1 0h1m-23 1h3m1 0h1m1 0h1m3 0h1m1 0h3m1 0h1m3 0h6m1 0h1m-20 1h4m1 0h1m1 0h3m2 0h1m3 0h3m1 0h1m-29 1h7m1 0h1m1 0h1m1 0h1m2 0h4m1 0h1m1 0h1m1 0h1m3 0h1m-29 1h1m5 0h1m2 0h2m1 0h2m1 0h2m3 0h1m3 0h1m-25 1h1m1 0h3m1 0h1m2 0h1m1 0h1m1 0h1m2 0h1m2 0h7m1 0h1m-28 1h1m1 0h3m1 0h1m3 0h2m3 0h1m2 0h2m1 0h1m1 0h4m1 0h1m-29 1h1m1 0h3m1 0h1m1 0h1m3 0h2m1 0h3m2 0h2m2 0h1m2 0h2m-29 1h1m5 0h1m2 0h1m1 0h1m1 0h3m2 0h1m1 0h1m1 0h1m2 0h1m-26 1h7m1 0h1m1 0h7m3 0h1m1 0h1m1 0h2m2 0h1\"/></svg>",
-    atlas: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 35 35\" class=\"segno\"><path class=\"qrline\" stroke=\"#0b1530\" d=\"M1 1.5h7m1 0h6m2 0h1m1 0h1m4 0h2m1 0h7m-33 1h1m5 0h1m3 0h1m1 0h3m1 0h1m1 0h3m1 0h1m3 0h1m5 0h1m-33 1h1m1 0h3m1 0h1m2 0h1m1 0h2m1 0h1m2 0h2m1 0h2m1 0h2m1 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m1 0h2m6 0h2m1 0h1m1 0h1m1 0h2m1 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m1 0h3m2 0h1m2 0h1m2 0h1m1 0h3m2 0h1m1 0h3m1 0h1m-33 1h1m5 0h1m1 0h1m1 0h4m1 0h1m2 0h1m1 0h3m1 0h1m1 0h1m5 0h1m-33 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-25 1h2m4 0h1m2 0h7m-24 1h1m3 0h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h1m2 0h10m2 0h1m-31 1h1m6 0h2m1 0h1m1 0h2m1 0h1m5 0h1m1 0h1m3 0h3m-32 1h1m1 0h1m3 0h1m1 0h2m3 0h3m2 0h1m1 0h2m1 0h1m1 0h2m2 0h1m1 0h1m-27 1h1m4 0h2m1 0h1m1 0h1m4 0h2m3 0h1m5 0h1m-32 1h3m2 0h2m4 0h3m1 0h2m2 0h2m1 0h1m3 0h1m1 0h2m2 0h1m-33 1h1m2 0h1m4 0h1m1 0h1m3 0h1m3 0h3m1 0h1m3 0h2m1 0h2m-31 1h2m2 0h1m1 0h1m5 0h1m1 0h2m1 0h2m2 0h3m1 0h4m2 0h1m-31 1h1m2 0h1m2 0h11m3 0h1m2 0h3m1 0h2m-28 1h2m1 0h3m3 0h1m1 0h1m3 0h1m1 0h1m1 0h3m2 0h1m1 0h2m1 0h1m-31 1h2m1 0h1m4 0h2m1 0h1m1 0h3m1 0h1m3 0h2m5 0h4m-33 1h4m1 0h2m2 0h1m3 0h1m1 0h1m1 0h1m2 0h2m1 0h3m1 0h1m1 0h1m1 0h1m-29 1h1m3 0h1m2 0h1m1 0h3m2 0h3m1 0h3m3 0h1m-28 1h3m1 0h1m1 0h2m1 0h1m3 0h3m2 0h3m1 0h1m1 0h1m1 0h1m2 0h1m1 0h1m-32 1h3m1 0h2m4 0h2m1 0h2m1 0h1m2 0h2m2 0h1m1 0h3m2 0h2m-30 1h6m2 0h2m4 0h3m3 0h2m3 0h1m2 0h2m-30 1h1m4 0h1m1 0h4m1 0h1m2 0h3m1 0h6m1 0h1m3 0h1m-33 1h4m2 0h1m1 0h3m1 0h4m1 0h6m1 0h6m1 0h2m-25 1h5m1 0h5m3 0h1m1 0h1m3 0h1m1 0h3m-33 1h7m1 0h2m4 0h2m2 0h1m1 0h2m2 0h1m1 0h1m1 0h2m1 0h1m-32 1h1m5 0h1m3 0h4m2 0h1m4 0h1m2 0h1m3 0h1m2 0h2m-33 1h1m1 0h3m1 0h1m1 0h1m2 0h1m4 0h1m4 0h1m2 0h6m-30 1h1m1 0h3m1 0h1m2 0h1m1 0h3m3 0h2m1 0h1m1 0h1m1 0h1m1 0h3m1 0h1m-31 1h1m1 0h3m1 0h1m2 0h1m2 0h4m2 0h1m2 0h1m1 0h2m1 0h4m-30 1h1m5 0h1m2 0h1m2 0h2m1 0h3m3 0h2m1 0h1m4 0h1m-30 1h7m1 0h3m1 0h1m4 0h1m1 0h4m1 0h1m4 0h1m2 0h1\"/></svg>",
-    calendar: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 39 39\" class=\"segno\"><path class=\"qrline\" stroke=\"#0b1530\" d=\"M1 1.5h7m1 0h5m4 0h7m1 0h1m2 0h1m1 0h7m-37 1h1m5 0h1m1 0h1m1 0h3m5 0h1m1 0h4m2 0h1m1 0h1m1 0h1m5 0h1m-37 1h1m1 0h3m1 0h1m2 0h3m1 0h1m1 0h1m2 0h3m2 0h1m1 0h2m1 0h1m1 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m1 0h1m1 0h1m5 0h2m4 0h1m1 0h3m3 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m2 0h1m1 0h1m2 0h4m1 0h2m3 0h5m1 0h1m1 0h3m1 0h1m-37 1h1m5 0h1m3 0h3m1 0h3m2 0h4m3 0h1m1 0h1m1 0h1m5 0h1m-37 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-29 1h2m1 0h2m1 0h2m1 0h3m2 0h1m1 0h1m2 0h2m-29 1h1m1 0h2m1 0h3m8 0h3m2 0h1m1 0h2m2 0h2m1 0h1m2 0h1m1 0h2m-37 1h1m2 0h2m4 0h2m3 0h2m1 0h1m1 0h2m2 0h1m2 0h1m1 0h1m2 0h1m1 0h1m1 0h1m-32 1h4m2 0h1m1 0h3m3 0h1m1 0h1m2 0h2m6 0h1m2 0h1m-35 1h5m7 0h3m1 0h1m3 0h1m3 0h5m3 0h3m-35 1h1m1 0h1m3 0h1m1 0h3m2 0h3m1 0h1m1 0h1m2 0h1m1 0h2m1 0h1m1 0h2m1 0h5m-37 1h2m2 0h1m2 0h2m1 0h2m3 0h3m1 0h1m2 0h1m3 0h3m1 0h4m1 0h2m-37 1h2m4 0h1m2 0h1m2 0h3m2 0h1m1 0h2m3 0h2m2 0h3m1 0h1m1 0h2m-34 1h4m1 0h1m1 0h2m1 0h1m1 0h2m2 0h1m2 0h4m3 0h1m1 0h3m2 0h2m-35 1h1m2 0h4m2 0h3m1 0h1m3 0h3m2 0h4m5 0h2m1 0h1m-36 1h3m4 0h5m1 0h1m1 0h1m3 0h1m1 0h3m1 0h2m2 0h1m4 0h2m-36 1h1m2 0h1m1 0h1m3 0h1m4 0h1m4 0h3m3 0h3m1 0h3m2 0h2m-37 1h1m2 0h3m1 0h1m1 0h1m1 0h1m1 0h1m2 0h3m5 0h1m2 0h4m1 0h2m1 0h1m-36 1h1m1 0h6m7 0h5m1 0h1m1 0h1m2 0h4m1 0h2m3 0h1m-35 1h2m1 0h1m1 0h1m1 0h1m1 0h1m2 0h1m1 0h2m1 0h2m2 0h1m2 0h1m1 0h2m3 0h1m-34 1h10m1 0h1m2 0h1m1 0h1m1 0h1m1 0h1m1 0h3m1 0h1m1 0h2m1 0h1m3 0h1m-35 1h2m4 0h2m1 0h1m1 0h1m1 0h1m5 0h1m2 0h1m1 0h1m3 0h1m2 0h3m-35 1h3m3 0h1m1 0h1m1 0h1m4 0h1m1 0h1m1 0h1m2 0h1m1 0h2m1 0h1m1 0h4m1 0h3m-36 1h1m1 0h1m1 0h1m4 0h1m2 0h5m1 0h1m1 0h1m2 0h1m2 0h1m1 0h8m-36 1h3m2 0h1m1 0h7m2 0h3m2 0h1m1 0h1m8 0h1m1 0h1m-36 1h1m2 0h2m2 0h1m5 0h4m3 0h2m1 0h2m1 0h1m1 0h2m1 0h3m1 0h1m-31 1h2m4 0h2m2 0h2m2 0h5m1 0h1m1 0h9m-28 1h1m2 0h3m1 0h1m1 0h1m5 0h4m1 0h1m3 0h1m1 0h1m1 0h1m-37 1h7m1 0h3m3 0h2m2 0h1m7 0h1m1 0h1m1 0h1m1 0h1m1 0h3m-37 1h1m5 0h1m1 0h3m4 0h1m1 0h1m1 0h2m1 0h2m2 0h3m3 0h1m2 0h1m-36 1h1m1 0h3m1 0h1m2 0h2m1 0h1m1 0h1m1 0h4m1 0h1m6 0h6m1 0h2m-37 1h1m1 0h3m1 0h1m1 0h5m3 0h2m1 0h3m1 0h1m3 0h4m1 0h1m2 0h2m-37 1h1m1 0h3m1 0h1m1 0h2m1 0h3m3 0h2m3 0h3m5 0h1m1 0h1m-33 1h1m5 0h1m2 0h3m1 0h1m4 0h2m4 0h2m3 0h4m1 0h1m-35 1h7m1 0h1m1 0h3m2 0h1m1 0h1m4 0h5m5 0h5\"/></svg>",
-    study: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 39 39\" class=\"segno\"><path class=\"qrline\" stroke=\"#0b1530\" d=\"M1 1.5h7m1 0h1m1 0h1m2 0h1m1 0h2m1 0h1m1 0h3m7 0h7m-37 1h1m5 0h1m1 0h10m1 0h4m2 0h2m3 0h1m5 0h1m-37 1h1m1 0h3m1 0h1m1 0h2m1 0h1m2 0h2m3 0h1m1 0h1m2 0h4m2 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m2 0h1m1 0h1m1 0h2m1 0h2m2 0h2m1 0h3m2 0h1m1 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m1 0h1m1 0h4m4 0h3m5 0h1m1 0h1m1 0h1m1 0h3m1 0h1m-37 1h1m5 0h1m3 0h1m4 0h1m4 0h2m1 0h2m1 0h1m1 0h1m1 0h1m5 0h1m-37 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-27 1h2m1 0h1m2 0h1m1 0h1m3 0h2m1 0h1m1 0h2m-29 1h1m2 0h6m1 0h1m1 0h1m1 0h2m1 0h1m2 0h1m2 0h2m1 0h1m2 0h1m2 0h1m1 0h3m-36 1h1m3 0h1m1 0h3m6 0h4m1 0h3m2 0h2m3 0h2m1 0h2m-36 1h1m3 0h3m1 0h1m2 0h1m2 0h3m4 0h1m1 0h1m3 0h2m1 0h2m1 0h2m1 0h1m-29 1h1m1 0h1m5 0h3m1 0h1m3 0h1m1 0h11m-37 1h1m2 0h2m1 0h2m1 0h1m2 0h5m2 0h2m2 0h2m1 0h3m1 0h2m1 0h1m2 0h1m-37 1h1m3 0h2m1 0h1m1 0h1m1 0h1m2 0h5m2 0h9m2 0h2m-31 1h2m1 0h3m1 0h3m1 0h2m2 0h3m4 0h5m2 0h5m-35 1h1m2 0h1m2 0h2m6 0h1m1 0h1m1 0h1m1 0h3m1 0h2m2 0h2m1 0h4m-36 1h1m1 0h1m2 0h2m3 0h4m4 0h1m5 0h1m2 0h1m1 0h1m3 0h1m-35 1h1m1 0h4m3 0h6m2 0h1m1 0h2m1 0h1m2 0h3m1 0h1m1 0h1m-32 1h3m2 0h3m1 0h1m1 0h1m4 0h2m1 0h3m1 0h1m1 0h1m1 0h1m1 0h2m3 0h1m1 0h1m-33 1h2m3 0h2m1 0h1m1 0h3m6 0h3m1 0h2m2 0h3m2 0h1m-37 1h1m4 0h3m3 0h1m1 0h1m2 0h2m6 0h1m1 0h1m1 0h6m-34 1h1m2 0h2m3 0h1m5 0h2m3 0h1m1 0h3m1 0h1m1 0h1m1 0h1m2 0h1m1 0h1m-34 1h1m2 0h5m1 0h2m1 0h1m1 0h3m2 0h4m2 0h6m1 0h1m1 0h2m-36 1h2m11 0h1m2 0h4m3 0h1m1 0h1m3 0h7m-36 1h2m1 0h1m1 0h1m2 0h2m2 0h1m1 0h2m3 0h1m2 0h1m2 0h3m1 0h1m5 0h1m-37 1h1m8 0h2m2 0h2m3 0h1m2 0h3m1 0h3m4 0h3m-35 1h5m1 0h1m2 0h1m2 0h6m1 0h4m4 0h1m2 0h1m4 0h2m-37 1h1m1 0h1m1 0h1m3 0h2m1 0h1m4 0h1m2 0h1m2 0h1m4 0h1m1 0h1m1 0h1m2 0h3m-37 1h1m2 0h2m1 0h4m2 0h5m1 0h1m1 0h1m1 0h4m2 0h5m1 0h3m-29 1h3m2 0h1m1 0h1m2 0h2m5 0h2m1 0h1m3 0h1m1 0h2m-36 1h7m1 0h1m6 0h3m1 0h2m1 0h2m1 0h1m2 0h1m1 0h1m1 0h1m3 0h1m-37 1h1m5 0h1m1 0h1m2 0h1m2 0h2m4 0h1m1 0h1m1 0h2m1 0h2m3 0h1m3 0h1m-37 1h1m1 0h3m1 0h1m1 0h3m3 0h4m1 0h1m4 0h1m1 0h7m2 0h1m-36 1h1m1 0h3m1 0h1m1 0h1m3 0h1m1 0h1m1 0h4m2 0h2m5 0h2m2 0h4m-37 1h1m1 0h3m1 0h1m2 0h3m3 0h1m1 0h1m3 0h3m3 0h1m4 0h2m2 0h1m-37 1h1m5 0h1m4 0h2m1 0h1m2 0h1m6 0h1m7 0h1m1 0h3m-37 1h7m1 0h2m2 0h1m3 0h1m3 0h1m2 0h2m3 0h2m1 0h1m1 0h1m2 0h1\"/></svg>",
-    home: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 39 39\" class=\"segno\"><path class=\"qrline\" stroke=\"#0b1530\" d=\"M1 1.5h7m4 0h1m5 0h2m1 0h2m1 0h1m1 0h1m2 0h1m1 0h7m-37 1h1m5 0h1m2 0h1m2 0h1m4 0h1m1 0h1m2 0h1m4 0h2m1 0h1m5 0h1m-37 1h1m1 0h3m1 0h1m1 0h1m1 0h1m5 0h1m2 0h4m3 0h3m1 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h2m2 0h1m1 0h1m2 0h6m2 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m1 0h1m3 0h1m5 0h2m3 0h1m1 0h1m2 0h1m1 0h1m1 0h3m1 0h1m-37 1h1m5 0h1m1 0h3m1 0h1m2 0h2m1 0h1m1 0h3m1 0h1m1 0h2m2 0h1m5 0h1m-37 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-29 1h2m4 0h2m3 0h3m1 0h1m4 0h1m-29 1h1m1 0h5m2 0h1m2 0h1m5 0h4m1 0h4m3 0h5m-33 1h1m1 0h1m2 0h3m1 0h2m1 0h4m5 0h1m4 0h1m2 0h1m1 0h1m1 0h1m-35 1h2m1 0h4m2 0h5m2 0h1m2 0h2m2 0h1m1 0h11m-37 1h2m1 0h3m7 0h1m2 0h1m1 0h1m2 0h2m3 0h1m1 0h1m1 0h3m3 0h1m-35 1h1m3 0h1m10 0h1m4 0h1m1 0h2m1 0h1m1 0h2m1 0h5m-37 1h1m1 0h4m1 0h3m1 0h1m1 0h1m2 0h9m3 0h2m1 0h1m-32 1h9m1 0h8m2 0h2m3 0h1m1 0h1m1 0h1m1 0h3m1 0h2m-35 1h4m2 0h5m1 0h2m1 0h2m2 0h1m1 0h2m1 0h1m1 0h1m1 0h3m2 0h2m-37 1h2m1 0h4m1 0h2m1 0h1m1 0h2m1 0h1m2 0h1m1 0h1m1 0h1m1 0h2m1 0h3m1 0h1m1 0h2m-35 1h1m2 0h1m3 0h1m1 0h1m1 0h2m1 0h1m2 0h1m1 0h2m1 0h1m1 0h1m2 0h1m2 0h1m1 0h3m-36 1h1m1 0h2m2 0h1m2 0h1m1 0h1m2 0h3m2 0h1m1 0h2m1 0h1m1 0h3m1 0h3m2 0h2m-34 1h3m2 0h1m1 0h3m1 0h2m3 0h3m2 0h1m1 0h1m1 0h1m7 0h1m-35 1h1m2 0h2m4 0h1m3 0h1m1 0h1m1 0h1m2 0h5m2 0h2m1 0h3m-34 1h1m2 0h1m2 0h2m3 0h2m2 0h1m2 0h2m2 0h1m1 0h2m1 0h2m3 0h1m-34 1h3m2 0h2m1 0h1m1 0h1m1 0h1m1 0h3m1 0h1m3 0h1m2 0h4m1 0h4m2 0h1m-37 1h2m1 0h3m1 0h1m1 0h1m1 0h2m1 0h3m2 0h2m2 0h2m1 0h7m3 0h1m-35 1h2m1 0h2m1 0h4m1 0h3m2 0h5m1 0h4m1 0h4m1 0h3m-37 1h1m2 0h3m1 0h1m1 0h1m1 0h2m1 0h3m6 0h1m7 0h1m2 0h1m-35 1h1m2 0h2m1 0h2m1 0h1m1 0h4m2 0h1m2 0h2m2 0h2m1 0h2m1 0h2m2 0h3m-37 1h1m2 0h3m1 0h2m1 0h5m1 0h1m4 0h1m1 0h1m2 0h1m1 0h2m1 0h3m2 0h1m-37 1h1m2 0h1m2 0h3m1 0h1m1 0h3m1 0h3m3 0h5m1 0h5m1 0h3m-29 1h1m1 0h1m5 0h4m1 0h3m1 0h4m3 0h2m-34 1h7m3 0h1m4 0h1m1 0h1m3 0h1m4 0h1m1 0h1m1 0h1m1 0h1m1 0h3m-37 1h1m5 0h1m1 0h1m2 0h2m4 0h3m1 0h2m1 0h1m1 0h1m1 0h1m3 0h2m2 0h1m-37 1h1m1 0h3m1 0h1m1 0h1m2 0h1m1 0h4m4 0h1m2 0h9m1 0h2m-36 1h1m1 0h3m1 0h1m1 0h4m3 0h1m1 0h2m1 0h5m2 0h4m1 0h1m3 0h1m-37 1h1m1 0h3m1 0h1m1 0h1m3 0h5m2 0h1m1 0h2m3 0h2m1 0h1m3 0h1m1 0h2m-37 1h1m5 0h1m2 0h2m1 0h1m2 0h1m3 0h4m4 0h3m2 0h2m2 0h1m-37 1h7m1 0h4m2 0h2m1 0h1m1 0h1m2 0h1m1 0h3m5 0h5\"/></svg>",
-    exams: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 39 39\" class=\"segno\"><path class=\"qrline\" stroke=\"#0b1530\" d=\"M1 1.5h7m2 0h3m2 0h1m1 0h1m1 0h1m2 0h2m1 0h1m1 0h1m3 0h7m-37 1h1m5 0h1m1 0h2m1 0h3m3 0h1m3 0h2m5 0h1m1 0h1m5 0h1m-37 1h1m1 0h3m1 0h1m1 0h2m2 0h3m4 0h4m3 0h2m2 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m1 0h1m2 0h1m2 0h1m1 0h2m1 0h3m1 0h3m1 0h2m1 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m2 0h2m1 0h2m2 0h4m3 0h1m1 0h1m2 0h1m1 0h1m1 0h3m1 0h1m-37 1h1m5 0h1m3 0h4m1 0h1m2 0h1m1 0h1m1 0h1m1 0h3m3 0h1m5 0h1m-37 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-29 1h4m1 0h4m1 0h3m1 0h2m2 0h3m-29 1h1m5 0h1m1 0h3m6 0h1m1 0h1m2 0h4m3 0h2m2 0h3m-35 1h2m2 0h1m1 0h1m2 0h1m1 0h2m3 0h1m1 0h5m3 0h1m3 0h2m1 0h2m-36 1h2m2 0h1m1 0h7m4 0h1m2 0h2m4 0h2m1 0h8m-34 1h1m1 0h1m2 0h1m1 0h1m1 0h1m1 0h3m1 0h2m2 0h1m1 0h1m1 0h2m2 0h4m2 0h1m-34 1h1m1 0h4m1 0h1m2 0h1m2 0h1m2 0h2m2 0h2m1 0h3m1 0h2m1 0h1m2 0h1m-37 1h2m1 0h1m1 0h1m1 0h1m3 0h1m1 0h4m1 0h7m2 0h3m1 0h1m1 0h1m-34 1h3m1 0h4m1 0h1m1 0h6m3 0h3m4 0h1m1 0h1m1 0h3m1 0h2m-37 1h6m2 0h2m1 0h1m4 0h1m1 0h1m1 0h1m2 0h2m1 0h2m2 0h2m1 0h4m-37 1h1m2 0h5m3 0h2m1 0h1m1 0h2m1 0h2m1 0h4m3 0h2m1 0h1m1 0h2m-36 1h6m1 0h2m9 0h3m2 0h1m1 0h4m2 0h1m2 0h2m-35 1h3m2 0h2m1 0h1m3 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h3m1 0h1m1 0h2m3 0h1m1 0h1m-37 1h1m2 0h3m2 0h2m1 0h1m1 0h2m5 0h1m3 0h1m1 0h3m4 0h1m2 0h1m-37 1h2m4 0h4m2 0h4m1 0h1m4 0h5m2 0h2m1 0h3m-35 1h3m1 0h2m2 0h5m2 0h1m1 0h1m1 0h1m1 0h3m3 0h1m1 0h1m2 0h1m1 0h1m-34 1h2m1 0h1m1 0h2m1 0h1m2 0h2m1 0h2m5 0h1m4 0h2m1 0h4m2 0h1m-37 1h4m1 0h1m1 0h2m1 0h4m2 0h1m2 0h2m1 0h3m3 0h6m2 0h1m-35 1h5m2 0h1m1 0h2m1 0h3m3 0h1m2 0h1m2 0h3m1 0h1m5 0h1m-37 1h4m4 0h1m7 0h1m1 0h4m1 0h1m2 0h2m3 0h1m1 0h2m-35 1h1m1 0h1m3 0h3m2 0h1m5 0h1m3 0h1m3 0h1m1 0h2m1 0h2m2 0h3m-37 1h1m1 0h4m1 0h1m1 0h3m3 0h1m6 0h1m4 0h1m1 0h1m1 0h1m2 0h1m1 0h1m-37 1h1m5 0h3m1 0h3m1 0h1m1 0h4m2 0h1m1 0h3m1 0h5m1 0h1m1 0h1m-29 1h1m4 0h7m2 0h2m2 0h1m1 0h1m3 0h1m-33 1h7m2 0h1m1 0h1m2 0h4m1 0h3m1 0h1m1 0h1m2 0h1m1 0h1m1 0h1m3 0h1m-37 1h1m5 0h1m2 0h2m2 0h1m1 0h1m2 0h2m4 0h1m2 0h2m3 0h1m3 0h1m-37 1h1m1 0h3m1 0h1m2 0h3m3 0h1m2 0h1m3 0h1m1 0h2m1 0h6m1 0h2m-36 1h1m1 0h3m1 0h1m2 0h4m3 0h4m3 0h1m2 0h1m2 0h2m2 0h4m-37 1h1m1 0h3m1 0h1m3 0h3m1 0h2m4 0h3m3 0h2m1 0h1m3 0h1m1 0h2m-37 1h1m5 0h1m4 0h1m1 0h1m6 0h1m1 0h1m5 0h2m2 0h1m3 0h1m-37 1h7m1 0h1m4 0h1m1 0h2m2 0h2m3 0h1m3 0h2m1 0h1m1 0h1m2 0h1\"/></svg>",
-    canvas: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 39 39\" class=\"segno\"><path class=\"qrline\" stroke=\"#0b1530\" d=\"M1 1.5h7m2 0h1m3 0h3m1 0h2m1 0h2m1 0h3m2 0h1m1 0h7m-37 1h1m5 0h1m4 0h2m1 0h4m1 0h1m2 0h1m4 0h2m1 0h1m5 0h1m-37 1h1m1 0h3m1 0h1m1 0h1m3 0h1m2 0h1m3 0h5m2 0h2m2 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m1 0h2m1 0h1m4 0h2m1 0h1m2 0h1m1 0h3m3 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m1 0h3m1 0h4m2 0h2m3 0h1m1 0h1m2 0h1m1 0h1m1 0h3m1 0h1m-37 1h1m5 0h1m1 0h1m3 0h1m2 0h2m1 0h1m1 0h1m1 0h1m1 0h4m2 0h1m5 0h1m-37 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-29 1h3m1 0h1m6 0h3m1 0h1m2 0h1m1 0h1m-29 1h1m1 0h5m2 0h1m1 0h3m4 0h3m1 0h2m1 0h1m4 0h5m-31 1h1m4 0h1m2 0h6m5 0h1m2 0h1m1 0h1m2 0h1m1 0h1m1 0h1m-36 1h2m2 0h1m1 0h1m3 0h1m1 0h1m1 0h1m2 0h1m2 0h2m4 0h2m1 0h8m-35 1h1m2 0h1m2 0h3m2 0h2m1 0h1m1 0h1m2 0h2m1 0h1m1 0h1m3 0h3m3 0h1m-37 1h2m1 0h1m2 0h1m3 0h1m1 0h2m3 0h1m4 0h1m1 0h2m1 0h1m1 0h2m1 0h5m-37 1h4m1 0h1m1 0h1m4 0h2m2 0h5m1 0h3m3 0h2m1 0h1m-32 1h5m1 0h5m3 0h4m2 0h2m5 0h1m1 0h1m1 0h3m1 0h2m-36 1h1m2 0h1m3 0h4m2 0h2m1 0h2m2 0h1m1 0h2m3 0h1m1 0h3m2 0h2m-37 1h3m1 0h1m1 0h2m2 0h1m3 0h1m1 0h1m2 0h1m2 0h4m3 0h2m1 0h1m1 0h2m-34 1h1m1 0h2m1 0h1m1 0h2m2 0h3m2 0h1m1 0h4m1 0h2m1 0h1m2 0h1m1 0h3m-34 1h2m1 0h3m4 0h5m2 0h1m1 0h2m1 0h1m1 0h3m1 0h3m2 0h2m-36 1h1m1 0h1m1 0h1m3 0h2m4 0h1m3 0h3m1 0h2m1 0h1m1 0h1m7 0h1m-35 1h2m2 0h1m2 0h1m1 0h5m1 0h1m1 0h1m2 0h1m1 0h3m2 0h2m1 0h3m-33 1h4m3 0h1m3 0h2m1 0h1m2 0h3m1 0h1m2 0h1m1 0h2m3 0h1m-30 1h1m1 0h1m2 0h1m1 0h2m2 0h2m1 0h1m2 0h2m4 0h2m1 0h4m2 0h1m-37 1h1m2 0h3m4 0h4m1 0h2m2 0h3m1 0h2m2 0h6m3 0h1m-37 1h1m1 0h1m1 0h5m1 0h1m4 0h1m2 0h2m2 0h1m2 0h1m1 0h1m1 0h4m1 0h3m-37 1h4m3 0h6m1 0h3m6 0h1m2 0h1m4 0h1m2 0h1m-35 1h1m1 0h1m2 0h2m1 0h2m2 0h3m2 0h1m3 0h1m2 0h2m1 0h2m1 0h2m2 0h3m-37 1h1m2 0h3m2 0h2m1 0h1m1 0h2m1 0h1m4 0h1m4 0h1m1 0h2m1 0h3m2 0h1m-37 1h1m1 0h2m1 0h2m4 0h1m2 0h1m1 0h3m3 0h1m1 0h3m1 0h5m1 0h1m-27 1h1m1 0h2m1 0h2m1 0h4m2 0h2m2 0h3m3 0h2m-34 1h7m2 0h3m3 0h1m1 0h1m3 0h2m3 0h1m1 0h1m1 0h1m1 0h1m1 0h3m-37 1h1m5 0h1m1 0h1m1 0h1m1 0h3m2 0h3m1 0h2m1 0h1m3 0h1m3 0h2m2 0h1m-37 1h1m1 0h3m1 0h1m1 0h2m2 0h1m2 0h2m5 0h1m1 0h2m1 0h6m1 0h2m-36 1h1m1 0h3m1 0h1m1 0h2m3 0h1m1 0h1m1 0h2m2 0h1m1 0h1m3 0h4m1 0h1m3 0h1m-37 1h1m1 0h3m1 0h1m1 0h1m2 0h2m1 0h3m4 0h2m3 0h2m1 0h1m3 0h1m1 0h2m-37 1h1m5 0h1m2 0h2m1 0h1m1 0h2m4 0h3m4 0h3m2 0h2m2 0h1m-37 1h7m1 0h1m2 0h1m3 0h1m1 0h1m1 0h1m2 0h5m5 0h5\"/></svg>",
-    weak: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 43 43\" class=\"segno\"><path class=\"qrline\" stroke=\"#0b1530\" d=\"M1 1.5h7m2 0h2m2 0h5m1 0h2m2 0h1m4 0h1m1 0h2m2 0h7m-41 1h1m5 0h1m3 0h2m2 0h1m2 0h1m2 0h3m2 0h1m1 0h4m3 0h1m5 0h1m-41 1h1m1 0h3m1 0h1m1 0h2m1 0h3m1 0h1m1 0h2m1 0h3m9 0h1m1 0h1m1 0h3m1 0h1m-41 1h1m1 0h3m1 0h1m1 0h2m1 0h3m1 0h1m3 0h1m2 0h1m1 0h4m1 0h1m4 0h1m1 0h3m1 0h1m-41 1h1m1 0h3m1 0h1m1 0h1m2 0h1m2 0h2m1 0h5m1 0h1m1 0h1m2 0h1m1 0h3m1 0h1m1 0h3m1 0h1m-41 1h1m5 0h1m1 0h2m1 0h3m2 0h2m2 0h1m3 0h5m5 0h1m5 0h1m-41 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-33 1h1m7 0h1m1 0h2m1 0h4m2 0h2m1 0h3m-33 1h1m1 0h5m5 0h3m2 0h1m4 0h1m2 0h3m1 0h1m1 0h1m2 0h5m-39 1h2m5 0h2m3 0h3m2 0h3m2 0h2m1 0h1m2 0h1m2 0h6m1 0h3m-41 1h1m1 0h1m1 0h1m1 0h2m1 0h1m1 0h1m5 0h1m2 0h2m5 0h2m3 0h2m1 0h2m-36 1h2m4 0h2m2 0h2m2 0h2m2 0h1m1 0h2m3 0h3m2 0h2m1 0h1m2 0h1m2 0h1m-41 1h1m1 0h1m1 0h1m1 0h1m3 0h1m1 0h1m1 0h2m1 0h1m1 0h2m1 0h8m1 0h3m3 0h4m-40 1h1m1 0h3m2 0h1m1 0h2m2 0h1m3 0h1m2 0h1m1 0h1m4 0h2m1 0h6m1 0h3m-41 1h2m2 0h5m1 0h2m1 0h5m2 0h1m3 0h1m1 0h3m3 0h2m-34 1h1m3 0h2m1 0h1m2 0h1m1 0h1m1 0h2m5 0h2m3 0h2m6 0h2m1 0h1m1 0h2m-40 1h3m2 0h1m1 0h4m3 0h1m1 0h1m4 0h1m1 0h4m1 0h1m2 0h2m1 0h1m1 0h2m1 0h1m-41 1h4m1 0h1m1 0h1m2 0h1m1 0h1m2 0h1m2 0h2m3 0h1m4 0h2m1 0h1m2 0h7m-39 1h1m2 0h3m1 0h4m1 0h2m2 0h1m2 0h2m1 0h1m1 0h3m1 0h1m2 0h2m1 0h3m-37 1h1m1 0h1m3 0h1m2 0h4m5 0h2m1 0h2m2 0h1m2 0h1m5 0h1m2 0h1m-39 1h1m2 0h3m2 0h3m4 0h1m1 0h4m2 0h2m1 0h3m5 0h1m2 0h1m-39 1h1m1 0h1m1 0h2m3 0h1m1 0h1m1 0h2m1 0h1m2 0h3m1 0h1m1 0h1m2 0h1m1 0h11m-40 1h1m1 0h1m1 0h2m1 0h2m1 0h7m2 0h3m2 0h3m1 0h2m1 0h1m1 0h2m2 0h1m-37 1h2m1 0h1m1 0h4m2 0h3m4 0h2m8 0h3m1 0h1m1 0h2m1 0h1m-38 1h1m1 0h3m2 0h5m2 0h2m1 0h1m2 0h6m1 0h1m1 0h1m1 0h1m4 0h1m-39 1h4m1 0h1m1 0h1m1 0h2m2 0h1m2 0h5m2 0h3m2 0h1m2 0h1m2 0h4m1 0h2m-41 1h1m1 0h2m1 0h3m1 0h3m3 0h2m3 0h1m1 0h1m3 0h2m1 0h1m2 0h1m1 0h1m-33 1h2m3 0h3m1 0h1m2 0h3m1 0h2m1 0h2m8 0h2m3 0h2m-37 1h3m2 0h1m1 0h1m1 0h2m1 0h1m2 0h2m7 0h3m1 0h3m5 0h3m-40 1h1m1 0h1m1 0h1m2 0h3m1 0h3m4 0h1m1 0h4m4 0h1m1 0h5m1 0h2m1 0h2m-41 1h1m4 0h4m5 0h1m1 0h1m2 0h1m1 0h1m2 0h1m1 0h5m2 0h2m2 0h1m-38 1h1m1 0h1m5 0h1m1 0h3m3 0h1m2 0h4m1 0h1m3 0h1m3 0h3m1 0h2m-38 1h1m2 0h5m1 0h1m1 0h5m1 0h1m1 0h1m2 0h2m1 0h1m3 0h1m2 0h5m1 0h2m-32 1h1m2 0h2m1 0h8m1 0h1m1 0h1m2 0h1m2 0h2m3 0h3m1 0h1m-41 1h7m3 0h5m1 0h2m3 0h1m3 0h3m1 0h4m1 0h1m1 0h3m-39 1h1m5 0h1m1 0h2m1 0h1m3 0h1m1 0h2m1 0h2m5 0h1m2 0h1m1 0h1m3 0h2m-38 1h1m1 0h3m1 0h1m1 0h4m7 0h1m1 0h1m1 0h5m1 0h1m2 0h5m1 0h3m-41 1h1m1 0h3m1 0h1m1 0h2m2 0h1m4 0h3m1 0h1m1 0h3m2 0h1m1 0h1m2 0h1m1 0h1m1 0h1m1 0h2m-41 1h1m1 0h3m1 0h1m1 0h5m3 0h1m4 0h1m2 0h1m2 0h4m2 0h5m-38 1h1m5 0h1m2 0h3m3 0h2m3 0h3m3 0h3m3 0h1m1 0h1m1 0h2m1 0h1m-40 1h7m1 0h3m1 0h2m1 0h1m1 0h1m4 0h1m1 0h3m1 0h2m4 0h5\"/></svg>",
-    today: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 39 39\" class=\"segno\"><path class=\"qrline\" stroke=\"#0b1530\" d=\"M1 1.5h7m3 0h3m4 0h7m1 0h1m2 0h1m1 0h7m-37 1h1m5 0h1m3 0h2m1 0h1m1 0h3m4 0h1m4 0h2m1 0h1m5 0h1m-37 1h1m1 0h3m1 0h1m1 0h1m1 0h1m2 0h1m1 0h2m3 0h3m3 0h2m2 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m1 0h1m1 0h1m3 0h1m2 0h1m4 0h5m3 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m1 0h3m1 0h1m3 0h4m1 0h1m1 0h1m1 0h1m2 0h1m1 0h1m1 0h3m1 0h1m-37 1h1m5 0h1m1 0h1m1 0h1m1 0h1m1 0h1m5 0h1m3 0h4m2 0h1m5 0h1m-37 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-29 1h1m1 0h2m2 0h1m4 0h3m1 0h1m2 0h1m1 0h1m-29 1h1m1 0h5m3 0h2m1 0h1m1 0h1m1 0h1m1 0h2m1 0h4m4 0h5m-35 1h2m2 0h2m1 0h1m1 0h2m1 0h2m1 0h6m2 0h2m1 0h1m1 0h1m2 0h1m1 0h1m1 0h1m-36 1h3m3 0h1m3 0h1m6 0h1m3 0h1m4 0h2m1 0h8m-36 1h1m1 0h1m1 0h1m1 0h1m2 0h1m1 0h1m3 0h1m1 0h1m2 0h2m1 0h1m1 0h1m3 0h3m3 0h1m-37 1h2m1 0h1m1 0h2m2 0h1m3 0h1m3 0h1m1 0h1m2 0h4m1 0h1m1 0h2m1 0h5m-37 1h1m4 0h1m3 0h1m2 0h3m1 0h9m3 0h2m1 0h1m-32 1h2m2 0h6m3 0h4m3 0h3m4 0h1m1 0h1m1 0h3m1 0h2m-37 1h4m1 0h1m4 0h1m1 0h4m2 0h1m2 0h4m3 0h1m1 0h3m2 0h2m-34 1h2m1 0h2m2 0h4m2 0h1m1 0h2m2 0h2m1 0h1m3 0h2m1 0h1m1 0h2m-36 1h4m1 0h1m3 0h1m2 0h1m2 0h1m2 0h6m1 0h2m1 0h1m2 0h1m1 0h3m-33 1h6m1 0h2m1 0h4m4 0h2m3 0h3m1 0h3m2 0h2m-35 1h4m1 0h3m1 0h2m1 0h2m3 0h3m2 0h1m1 0h1m1 0h1m7 0h1m-37 1h2m4 0h5m1 0h2m1 0h1m1 0h1m1 0h1m2 0h1m1 0h3m2 0h2m1 0h3m-33 1h4m1 0h1m2 0h1m2 0h1m2 0h1m2 0h3m1 0h1m2 0h1m1 0h2m3 0h1m-33 1h2m2 0h6m1 0h1m2 0h2m1 0h1m3 0h1m4 0h2m1 0h4m2 0h1m-34 1h2m3 0h2m1 0h1m1 0h1m1 0h2m1 0h4m1 0h2m2 0h6m3 0h1m-36 1h1m1 0h2m1 0h3m2 0h2m2 0h1m2 0h2m2 0h1m1 0h2m1 0h1m1 0h4m1 0h3m-37 1h2m3 0h1m1 0h1m1 0h2m2 0h4m1 0h2m3 0h1m2 0h1m4 0h1m2 0h1m-35 1h1m1 0h1m1 0h1m1 0h2m1 0h1m1 0h1m1 0h2m2 0h1m2 0h2m2 0h2m1 0h2m1 0h2m2 0h3m-37 1h1m1 0h1m1 0h1m2 0h2m3 0h1m1 0h1m1 0h1m2 0h3m4 0h1m1 0h2m1 0h3m-34 1h1m1 0h12m2 0h3m3 0h1m1 0h3m1 0h5m1 0h2m-28 1h3m2 0h1m2 0h4m2 0h2m2 0h3m3 0h2m-34 1h7m5 0h2m1 0h1m1 0h1m3 0h1m4 0h1m1 0h1m1 0h1m1 0h1m1 0h3m-37 1h1m5 0h1m1 0h1m4 0h1m3 0h3m1 0h2m1 0h1m3 0h1m3 0h2m2 0h1m-37 1h1m1 0h3m1 0h1m1 0h4m3 0h2m3 0h1m1 0h1m1 0h2m1 0h6m1 0h2m-36 1h1m1 0h3m1 0h1m1 0h1m3 0h4m1 0h5m1 0h1m3 0h4m1 0h1m3 0h1m-37 1h1m1 0h3m1 0h1m1 0h1m3 0h1m2 0h2m3 0h3m3 0h2m1 0h1m3 0h1m1 0h2m-37 1h1m5 0h1m3 0h1m1 0h2m1 0h1m4 0h3m4 0h3m2 0h2m2 0h1m-37 1h7m1 0h1m1 0h1m2 0h1m1 0h1m1 0h1m4 0h5m5 0h5\"/></svg>",
+    howto: "<svg width=\"39\" height=\"39\" class=\"segno\"><path class=\"qrline\" stroke=\"#0B1530\" d=\"M1 1.5h7m1 0h1m2 0h2m2 0h1m1 0h1m5 0h2m1 0h3m1 0h7m-37 1h1m5 0h1m2 0h1m2 0h3m2 0h1m1 0h4m1 0h3m1 0h1m1 0h1m5 0h1m-37 1h1m1 0h3m1 0h1m3 0h1m1 0h2m1 0h1m1 0h2m2 0h1m4 0h3m1 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m1 0h2m2 0h3m1 0h1m1 0h2m3 0h1m1 0h2m1 0h1m1 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m1 0h3m1 0h2m1 0h1m2 0h1m1 0h2m1 0h1m2 0h3m1 0h1m1 0h3m1 0h1m-37 1h1m5 0h1m1 0h3m4 0h2m2 0h1m2 0h1m1 0h1m5 0h1m5 0h1m-37 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-29 1h1m1 0h1m1 0h1m2 0h3m1 0h3m2 0h1m1 0h1m-27 1h1m3 0h1m1 0h3m1 0h2m2 0h4m2 0h4m2 0h2m1 0h5m2 0h1m-37 1h2m1 0h3m3 0h3m1 0h2m2 0h2m2 0h3m1 0h1m1 0h2m3 0h1m2 0h1m-34 1h1m1 0h4m1 0h3m3 0h1m2 0h1m2 0h4m1 0h3m2 0h3m-34 1h2m1 0h1m3 0h1m2 0h3m1 0h4m1 0h3m1 0h2m1 0h1m1 0h2m1 0h2m1 0h2m-32 1h1m1 0h2m1 0h2m1 0h1m4 0h1m2 0h3m1 0h1m1 0h1m2 0h3m2 0h3m-36 1h1m3 0h1m6 0h1m1 0h5m3 0h8m2 0h2m-33 1h4m1 0h1m3 0h3m1 0h2m1 0h2m1 0h5m2 0h2m1 0h5m-35 1h1m1 0h1m1 0h2m3 0h1m4 0h5m2 0h2m6 0h1m1 0h2m1 0h1m-32 1h1m1 0h2m5 0h4m1 0h1m2 0h4m2 0h2m1 0h3m1 0h3m-36 1h1m1 0h3m2 0h3m1 0h1m2 0h1m1 0h1m1 0h1m1 0h1m2 0h1m3 0h2m3 0h1m1 0h2m-33 1h1m1 0h3m3 0h2m1 0h1m1 0h3m2 0h1m1 0h2m1 0h2m1 0h1m1 0h2m1 0h1m-34 1h1m6 0h2m1 0h2m4 0h3m1 0h2m1 0h1m1 0h1m2 0h2m3 0h2m-36 1h1m2 0h4m1 0h2m1 0h1m1 0h1m1 0h1m1 0h1m1 0h6m2 0h1m1 0h3m2 0h1m-35 1h1m1 0h2m4 0h1m2 0h3m1 0h3m3 0h1m1 0h1m1 0h1m1 0h3m1 0h2m-32 1h2m2 0h4m2 0h2m2 0h1m1 0h2m4 0h2m2 0h1m1 0h1m1 0h5m-35 1h1m5 0h1m2 0h1m4 0h1m1 0h1m1 0h3m5 0h1m3 0h2m1 0h2m-34 1h5m2 0h1m3 0h2m1 0h1m1 0h1m2 0h2m1 0h1m1 0h1m2 0h2m2 0h4m-37 1h1m2 0h1m3 0h1m1 0h1m1 0h1m6 0h1m2 0h3m1 0h1m1 0h1m4 0h3m-33 1h1m2 0h3m3 0h3m1 0h1m2 0h1m1 0h4m1 0h1m1 0h1m1 0h1m1 0h1m-30 1h2m3 0h2m2 0h1m2 0h5m1 0h5m1 0h1m3 0h5m1 0h1m-37 1h2m1 0h1m2 0h4m1 0h3m2 0h7m1 0h1m2 0h9m-28 1h1m1 0h2m3 0h2m1 0h1m1 0h1m1 0h2m1 0h1m2 0h1m3 0h1m-33 1h7m1 0h3m3 0h4m4 0h3m1 0h1m1 0h1m1 0h1m1 0h1m-33 1h1m5 0h1m5 0h1m1 0h1m1 0h2m1 0h1m1 0h1m1 0h1m4 0h1m3 0h4m-36 1h1m1 0h3m1 0h1m1 0h1m5 0h1m3 0h5m3 0h1m1 0h8m-36 1h1m1 0h3m1 0h1m4 0h2m1 0h1m1 0h3m3 0h2m1 0h2m1 0h4m1 0h1m2 0h1m-37 1h1m1 0h3m1 0h1m2 0h4m3 0h3m2 0h1m1 0h2m1 0h3m1 0h1m2 0h2m-35 1h1m5 0h1m3 0h2m2 0h1m2 0h2m1 0h2m1 0h2m2 0h1m2 0h1m1 0h4m-36 1h7m1 0h1m1 0h1m1 0h4m1 0h1m1 0h6m2 0h1m3 0h1m2 0h3\"/></svg>",
+    histology: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 35 35\" class=\"segno\"><path class=\"qrline\" stroke=\"#0B1530\" d=\"M1 1.5h7m2 0h1m2 0h1m1 0h1m1 0h4m3 0h1m2 0h7m-33 1h1m5 0h1m1 0h2m2 0h1m1 0h3m4 0h1m2 0h1m1 0h1m5 0h1m-33 1h1m1 0h3m1 0h1m2 0h1m10 0h2m4 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m1 0h2m1 0h7m4 0h1m3 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m4 0h1m1 0h1m2 0h1m1 0h6m2 0h1m1 0h3m1 0h1m-33 1h1m5 0h1m1 0h1m1 0h1m2 0h6m2 0h2m3 0h1m5 0h1m-33 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-19 1h2m2 0h1m1 0h3m1 0h1m-25 1h5m1 0h9m2 0h1m1 0h1m2 0h4m1 0h1m1 0h1m1 0h1m-32 1h4m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m2 0h6m1 0h1m2 0h1m3 0h3m-32 1h1m1 0h4m1 0h2m2 0h1m1 0h2m2 0h1m1 0h1m5 0h4m1 0h1m-32 1h3m1 0h1m2 0h1m1 0h2m4 0h1m5 0h1m1 0h1m1 0h1m2 0h1m1 0h1m-30 1h1m2 0h4m1 0h1m3 0h2m2 0h1m1 0h1m4 0h2m1 0h3m-29 1h2m2 0h1m2 0h1m1 0h2m1 0h1m2 0h5m2 0h1m2 0h1m4 0h2m-33 1h2m4 0h2m2 0h1m1 0h6m2 0h1m1 0h1m1 0h2m1 0h2m2 0h1m-32 1h2m1 0h3m1 0h3m2 0h1m1 0h1m1 0h1m3 0h2m1 0h1m1 0h1m2 0h1m1 0h1m-30 1h1m1 0h1m2 0h2m3 0h4m2 0h2m1 0h1m1 0h3m2 0h2m2 0h1m-32 1h1m2 0h3m5 0h1m7 0h2m2 0h2m1 0h1m2 0h1m1 0h2m-29 1h4m1 0h1m2 0h5m4 0h1m3 0h2m2 0h1m1 0h1m-31 1h2m5 0h1m2 0h1m2 0h1m1 0h1m1 0h2m1 0h5m4 0h1m-30 1h1m1 0h2m1 0h2m1 0h6m2 0h2m3 0h4m1 0h2m2 0h1m-32 1h6m5 0h4m1 0h5m2 0h1m1 0h2m2 0h1m1 0h2m-33 1h1m5 0h3m3 0h1m2 0h1m4 0h1m1 0h1m4 0h3m1 0h1m-32 1h1m3 0h1m2 0h1m2 0h1m1 0h1m1 0h1m1 0h1m3 0h8m1 0h2m-31 1h1m3 0h1m1 0h1m1 0h1m1 0h1m2 0h1m3 0h1m1 0h1m4 0h5m3 0h1m-25 1h1m1 0h2m1 0h1m2 0h1m2 0h1m4 0h1m3 0h3m1 0h1m-33 1h7m1 0h1m3 0h1m1 0h5m1 0h1m1 0h3m1 0h1m1 0h1m1 0h2m-32 1h1m5 0h1m2 0h1m4 0h2m3 0h6m3 0h5m-33 1h1m1 0h3m1 0h1m1 0h2m1 0h5m1 0h1m2 0h1m1 0h1m1 0h6m2 0h1m-33 1h1m1 0h3m1 0h1m1 0h4m1 0h1m2 0h5m2 0h3m2 0h1m1 0h1m-31 1h1m1 0h3m1 0h1m1 0h1m6 0h1m1 0h1m2 0h1m1 0h1m1 0h3m4 0h1m-32 1h1m5 0h1m1 0h3m4 0h2m3 0h2m3 0h1m2 0h3m-31 1h7m1 0h1m1 0h1m1 0h3m2 0h1m4 0h3m2 0h1m1 0h1m1 0h1\"/></svg>",
+    mastery: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 39 39\" class=\"segno\"><path class=\"qrline\" stroke=\"#0B1530\" d=\"M1 1.5h7m1 0h1m1 0h4m1 0h1m2 0h1m1 0h3m7 0h7m-37 1h1m5 0h1m2 0h2m6 0h2m2 0h2m1 0h1m3 0h1m1 0h1m5 0h1m-37 1h1m1 0h3m1 0h1m1 0h2m1 0h2m2 0h1m1 0h1m3 0h1m1 0h1m1 0h1m1 0h2m1 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m2 0h2m1 0h2m1 0h1m1 0h2m2 0h3m1 0h2m3 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m4 0h2m3 0h1m1 0h1m1 0h3m2 0h2m3 0h1m1 0h3m1 0h1m-37 1h1m5 0h1m1 0h1m1 0h9m1 0h3m2 0h1m4 0h1m5 0h1m-37 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-27 1h4m2 0h1m2 0h2m2 0h2m1 0h3m-29 1h1m1 0h1m3 0h2m3 0h5m8 0h1m3 0h1m2 0h1m2 0h1m1 0h1m-37 1h1m2 0h2m4 0h1m2 0h1m4 0h1m1 0h1m1 0h1m1 0h1m2 0h3m1 0h2m3 0h2m-37 1h2m1 0h1m1 0h3m2 0h1m1 0h4m3 0h5m1 0h1m1 0h1m2 0h1m2 0h1m2 0h1m-37 1h1m2 0h3m2 0h1m2 0h2m6 0h1m2 0h2m2 0h1m1 0h1m2 0h3m-34 1h1m2 0h2m1 0h2m1 0h1m2 0h5m2 0h2m2 0h2m1 0h1m1 0h1m1 0h2m1 0h1m2 0h1m-37 1h3m2 0h1m2 0h2m1 0h3m1 0h3m1 0h2m1 0h2m3 0h5m1 0h1m2 0h1m-35 1h2m1 0h3m1 0h2m1 0h4m1 0h3m1 0h3m1 0h1m1 0h2m4 0h2m1 0h1m-37 1h2m3 0h1m3 0h1m2 0h3m7 0h2m3 0h2m2 0h3m1 0h1m-36 1h2m2 0h1m1 0h1m4 0h2m1 0h1m1 0h1m11 0h1m1 0h2m-31 1h1m7 0h1m3 0h2m1 0h1m1 0h2m3 0h3m1 0h2m1 0h2m2 0h3m-37 1h4m1 0h2m2 0h1m6 0h2m1 0h3m1 0h1m1 0h1m1 0h1m1 0h2m3 0h1m1 0h1m-37 1h2m1 0h3m3 0h3m1 0h1m1 0h2m1 0h1m4 0h2m1 0h3m1 0h1m2 0h1m-34 1h1m1 0h1m3 0h3m4 0h2m1 0h1m2 0h2m3 0h1m3 0h1m1 0h2m1 0h1m1 0h1m-34 1h3m4 0h2m1 0h1m2 0h2m1 0h4m1 0h2m1 0h5m5 0h1m-37 1h1m3 0h3m1 0h1m2 0h1m3 0h1m1 0h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h2m2 0h4m-36 1h2m1 0h2m5 0h2m3 0h1m2 0h2m2 0h1m2 0h1m1 0h2m1 0h3m-32 1h1m1 0h1m1 0h1m8 0h2m6 0h2m2 0h2m1 0h1m5 0h1m-35 1h1m4 0h6m1 0h1m4 0h1m1 0h1m1 0h2m1 0h2m2 0h2m1 0h2m1 0h1m-37 1h2m1 0h7m2 0h2m1 0h2m2 0h5m2 0h2m1 0h2m1 0h1m3 0h1m-34 1h1m3 0h4m3 0h1m3 0h2m4 0h1m1 0h7m2 0h1m-36 1h4m2 0h5m1 0h1m1 0h2m2 0h3m3 0h1m3 0h5m2 0h2m-29 1h2m1 0h2m2 0h3m1 0h1m1 0h4m1 0h1m1 0h1m3 0h1m3 0h1m-37 1h7m1 0h1m4 0h1m1 0h3m1 0h3m1 0h1m2 0h1m1 0h1m1 0h1m1 0h1m3 0h1m-37 1h1m5 0h1m4 0h3m1 0h1m2 0h2m7 0h2m3 0h1m-33 1h1m1 0h3m1 0h1m2 0h1m1 0h1m1 0h4m2 0h1m2 0h3m2 0h6m-33 1h1m1 0h3m1 0h1m5 0h1m4 0h1m1 0h1m3 0h1m2 0h1m1 0h2m2 0h2m1 0h1m-36 1h1m1 0h3m1 0h1m1 0h2m3 0h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h1m1 0h2m2 0h4m1 0h1m-37 1h1m5 0h1m3 0h1m3 0h1m1 0h1m1 0h1m1 0h1m1 0h1m5 0h3m1 0h1m-33 1h7m1 0h2m1 0h2m3 0h1m3 0h1m3 0h1m3 0h2m1 0h1m1 0h1m2 0h1\"/></svg>",
+    recall: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 39 39\" class=\"segno\"><path class=\"qrline\" stroke=\"#0B1530\" d=\"M1 1.5h7m1 0h2m2 0h7m1 0h1m2 0h1m2 0h3m1 0h7m-37 1h1m5 0h1m2 0h3m1 0h2m1 0h2m1 0h4m2 0h2m1 0h1m1 0h1m5 0h1m-37 1h1m1 0h3m1 0h1m2 0h1m3 0h2m2 0h2m1 0h2m4 0h3m1 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m1 0h1m2 0h3m1 0h2m1 0h2m3 0h1m1 0h2m1 0h1m1 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m1 0h3m1 0h1m2 0h1m1 0h2m1 0h1m2 0h1m2 0h3m1 0h1m1 0h3m1 0h1m-37 1h1m5 0h1m1 0h4m2 0h4m1 0h1m2 0h1m1 0h1m5 0h1m5 0h1m-37 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-29 1h3m1 0h1m2 0h1m1 0h1m1 0h3m2 0h1m1 0h1m-27 1h1m3 0h1m1 0h5m1 0h2m2 0h2m2 0h5m1 0h2m1 0h5m2 0h1m-35 1h1m1 0h2m3 0h1m1 0h1m1 0h2m2 0h2m2 0h1m1 0h1m1 0h1m1 0h2m3 0h1m2 0h1m-34 1h2m1 0h4m1 0h1m1 0h1m2 0h1m2 0h1m2 0h4m1 0h3m2 0h3m-34 1h1m2 0h1m4 0h5m2 0h3m2 0h2m1 0h1m2 0h1m1 0h2m1 0h2m1 0h2m-36 1h1m1 0h1m2 0h3m2 0h5m2 0h1m2 0h3m1 0h1m1 0h1m2 0h3m2 0h3m-33 1h2m1 0h1m1 0h1m1 0h1m1 0h6m3 0h8m2 0h2m-34 1h2m1 0h1m1 0h2m1 0h1m1 0h1m4 0h1m1 0h1m2 0h2m1 0h2m2 0h2m1 0h5m-34 1h1m1 0h1m5 0h1m1 0h2m2 0h3m3 0h2m6 0h1m1 0h2m1 0h1m-32 1h1m2 0h1m5 0h1m1 0h2m1 0h1m2 0h2m1 0h2m1 0h2m1 0h3m1 0h3m-36 1h1m1 0h1m5 0h3m3 0h1m1 0h1m6 0h1m3 0h2m3 0h1m1 0h2m-34 1h1m2 0h2m2 0h1m1 0h1m1 0h2m1 0h3m1 0h2m1 0h1m2 0h2m1 0h1m1 0h2m1 0h1m-35 1h2m5 0h1m3 0h3m3 0h2m2 0h3m2 0h1m2 0h2m3 0h2m-36 1h1m1 0h9m2 0h3m1 0h1m1 0h4m1 0h1m2 0h1m1 0h3m2 0h1m-35 1h2m1 0h2m2 0h2m1 0h1m2 0h4m4 0h1m1 0h1m1 0h1m1 0h3m1 0h2m-33 1h3m2 0h3m1 0h1m1 0h2m2 0h1m1 0h2m2 0h1m1 0h2m2 0h1m1 0h1m1 0h5m-36 1h5m5 0h1m1 0h2m1 0h1m1 0h1m1 0h3m5 0h1m3 0h2m1 0h2m-35 1h2m3 0h1m4 0h2m1 0h1m2 0h1m2 0h3m3 0h1m2 0h2m2 0h4m-37 1h3m6 0h2m2 0h2m3 0h1m2 0h3m1 0h1m1 0h1m4 0h3m-33 1h5m1 0h2m1 0h2m1 0h3m1 0h1m1 0h6m1 0h1m1 0h1m1 0h1m-30 1h1m1 0h2m1 0h1m3 0h2m1 0h6m1 0h2m3 0h1m3 0h5m-35 1h2m2 0h5m3 0h1m1 0h1m1 0h7m1 0h1m2 0h8m1 0h1m-29 1h2m1 0h1m2 0h5m1 0h1m1 0h2m1 0h1m2 0h1m3 0h1m-33 1h7m1 0h1m1 0h1m1 0h2m1 0h4m3 0h3m1 0h1m1 0h1m1 0h1m1 0h1m-33 1h1m5 0h1m2 0h2m1 0h1m3 0h4m1 0h3m4 0h1m3 0h4m-36 1h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h2m3 0h1m1 0h4m3 0h1m1 0h8m-36 1h1m1 0h3m1 0h1m4 0h1m1 0h2m2 0h2m4 0h1m1 0h2m1 0h4m1 0h1m1 0h2m-37 1h1m1 0h3m1 0h1m2 0h1m4 0h5m1 0h2m1 0h2m1 0h3m1 0h1m2 0h2m-35 1h1m5 0h1m2 0h1m4 0h2m1 0h2m1 0h2m1 0h2m2 0h1m2 0h1m1 0h4m-36 1h7m1 0h1m1 0h3m2 0h1m1 0h1m1 0h6m2 0h1m3 0h1m2 0h3\"/></svg>",
+    loops: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 31 31\" class=\"segno\"><path class=\"qrline\" stroke=\"#0B1530\" d=\"M1 1.5h7m1 0h1m1 0h3m1 0h1m3 0h1m3 0h7m-29 1h1m5 0h1m2 0h3m1 0h2m1 0h2m2 0h1m1 0h1m5 0h1m-29 1h1m1 0h3m1 0h1m1 0h2m1 0h3m3 0h1m2 0h1m1 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m2 0h1m3 0h3m1 0h1m4 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m2 0h1m2 0h2m4 0h1m3 0h1m1 0h3m1 0h1m-29 1h1m5 0h1m1 0h1m1 0h2m5 0h2m1 0h1m1 0h1m5 0h1m-29 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-20 1h4m3 0h1m-17 1h1m1 0h1m3 0h2m1 0h1m1 0h2m3 0h1m2 0h2m2 0h1m2 0h1m1 0h1m-27 1h1m1 0h1m3 0h1m1 0h2m2 0h3m2 0h2m1 0h2m3 0h2m-29 1h2m2 0h3m1 0h1m2 0h1m2 0h2m3 0h2m1 0h2m1 0h2m1 0h1m-29 1h2m2 0h1m5 0h1m3 0h3m1 0h1m1 0h2m3 0h1m-25 1h2m3 0h1m1 0h3m3 0h1m1 0h1m2 0h1m2 0h1m5 0h1m-29 1h2m1 0h3m2 0h1m2 0h3m1 0h1m1 0h1m1 0h2m1 0h2m3 0h2m-27 1h2m2 0h1m1 0h1m1 0h1m4 0h1m1 0h3m8 0h1m-29 1h1m1 0h1m1 0h2m2 0h1m2 0h2m1 0h3m1 0h2m2 0h1m-23 1h1m1 0h1m2 0h4m4 0h2m1 0h1m2 0h1m2 0h1m5 0h1m-28 1h5m1 0h4m1 0h1m2 0h2m1 0h3m1 0h2m2 0h3m-29 1h3m3 0h1m1 0h4m1 0h3m1 0h1m1 0h1m3 0h1m1 0h1m2 0h1m-27 1h1m1 0h1m2 0h1m1 0h1m1 0h1m8 0h1m1 0h1m-23 1h3m1 0h1m1 0h1m3 0h1m1 0h3m1 0h1m3 0h6m1 0h1m-20 1h4m1 0h1m1 0h3m2 0h1m3 0h3m1 0h1m-29 1h7m1 0h1m1 0h1m1 0h1m2 0h4m1 0h1m1 0h1m1 0h1m3 0h1m-29 1h1m5 0h1m2 0h2m1 0h2m1 0h2m3 0h1m3 0h1m-25 1h1m1 0h3m1 0h1m2 0h1m1 0h1m1 0h1m2 0h1m2 0h7m1 0h1m-28 1h1m1 0h3m1 0h1m3 0h2m3 0h1m2 0h2m1 0h1m1 0h4m1 0h1m-29 1h1m1 0h3m1 0h1m1 0h1m3 0h2m1 0h3m2 0h2m2 0h1m2 0h2m-29 1h1m5 0h1m2 0h1m1 0h1m1 0h3m2 0h1m1 0h1m1 0h1m2 0h1m-26 1h7m1 0h1m1 0h7m3 0h1m1 0h1m1 0h2m2 0h1\"/></svg>",
+    atlas: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 35 35\" class=\"segno\"><path class=\"qrline\" stroke=\"#0B1530\" d=\"M1 1.5h7m1 0h6m2 0h1m1 0h1m4 0h2m1 0h7m-33 1h1m5 0h1m3 0h1m1 0h3m1 0h1m1 0h3m1 0h1m3 0h1m5 0h1m-33 1h1m1 0h3m1 0h1m2 0h1m1 0h2m1 0h1m2 0h2m1 0h2m1 0h2m1 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m1 0h2m6 0h2m1 0h1m1 0h1m1 0h2m1 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m1 0h3m2 0h1m2 0h1m2 0h1m1 0h3m2 0h1m1 0h3m1 0h1m-33 1h1m5 0h1m1 0h1m1 0h4m1 0h1m2 0h1m1 0h3m1 0h1m1 0h1m5 0h1m-33 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-25 1h2m4 0h1m2 0h7m-24 1h1m3 0h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h1m2 0h10m2 0h1m-31 1h1m6 0h2m1 0h1m1 0h2m1 0h1m5 0h1m1 0h1m3 0h3m-32 1h1m1 0h1m3 0h1m1 0h2m3 0h3m2 0h1m1 0h2m1 0h1m1 0h2m2 0h1m1 0h1m-27 1h1m4 0h2m1 0h1m1 0h1m4 0h2m3 0h1m5 0h1m-32 1h3m2 0h2m4 0h3m1 0h2m2 0h2m1 0h1m3 0h1m1 0h2m2 0h1m-33 1h1m2 0h1m4 0h1m1 0h1m3 0h1m3 0h3m1 0h1m3 0h2m1 0h2m-31 1h2m2 0h1m1 0h1m5 0h1m1 0h2m1 0h2m2 0h3m1 0h4m2 0h1m-31 1h1m2 0h1m2 0h11m3 0h1m2 0h3m1 0h2m-28 1h2m1 0h3m3 0h1m1 0h1m3 0h1m1 0h1m1 0h3m2 0h1m1 0h2m1 0h1m-31 1h2m1 0h1m4 0h2m1 0h1m1 0h3m1 0h1m3 0h2m5 0h4m-33 1h4m1 0h2m2 0h1m3 0h1m1 0h1m1 0h1m2 0h2m1 0h3m1 0h1m1 0h1m1 0h1m-29 1h1m3 0h1m2 0h1m1 0h3m2 0h3m1 0h3m3 0h1m-28 1h3m1 0h1m1 0h2m1 0h1m3 0h3m2 0h3m1 0h1m1 0h1m1 0h1m2 0h1m1 0h1m-32 1h3m1 0h2m4 0h2m1 0h2m1 0h1m2 0h2m2 0h1m1 0h3m2 0h2m-30 1h6m2 0h2m4 0h3m3 0h2m3 0h1m2 0h2m-30 1h1m4 0h1m1 0h4m1 0h1m2 0h3m1 0h6m1 0h1m3 0h1m-33 1h4m2 0h1m1 0h3m1 0h4m1 0h6m1 0h6m1 0h2m-25 1h5m1 0h5m3 0h1m1 0h1m3 0h1m1 0h3m-33 1h7m1 0h2m4 0h2m2 0h1m1 0h2m2 0h1m1 0h1m1 0h2m1 0h1m-32 1h1m5 0h1m3 0h4m2 0h1m4 0h1m2 0h1m3 0h1m2 0h2m-33 1h1m1 0h3m1 0h1m1 0h1m2 0h1m4 0h1m4 0h1m2 0h6m-30 1h1m1 0h3m1 0h1m2 0h1m1 0h3m3 0h2m1 0h1m1 0h1m1 0h1m1 0h3m1 0h1m-31 1h1m1 0h3m1 0h1m2 0h1m2 0h4m2 0h1m2 0h1m1 0h2m1 0h4m-30 1h1m5 0h1m2 0h1m2 0h2m1 0h3m3 0h2m1 0h1m4 0h1m-30 1h7m1 0h3m1 0h1m4 0h1m1 0h4m1 0h1m4 0h1m2 0h1\"/></svg>",
+    calendar: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 39 39\" class=\"segno\"><path class=\"qrline\" stroke=\"#0B1530\" d=\"M1 1.5h7m1 0h5m4 0h7m1 0h1m2 0h1m1 0h7m-37 1h1m5 0h1m1 0h1m1 0h3m5 0h1m1 0h4m2 0h1m1 0h1m1 0h1m5 0h1m-37 1h1m1 0h3m1 0h1m2 0h3m1 0h1m1 0h1m2 0h3m2 0h1m1 0h2m1 0h1m1 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m1 0h1m1 0h1m5 0h2m4 0h1m1 0h3m3 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m2 0h1m1 0h1m2 0h4m1 0h2m3 0h5m1 0h1m1 0h3m1 0h1m-37 1h1m5 0h1m3 0h3m1 0h3m2 0h4m3 0h1m1 0h1m1 0h1m5 0h1m-37 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-29 1h2m1 0h2m1 0h2m1 0h3m2 0h1m1 0h1m2 0h2m-29 1h1m1 0h2m1 0h3m8 0h3m2 0h1m1 0h2m2 0h2m1 0h1m2 0h1m1 0h2m-37 1h1m2 0h2m4 0h2m3 0h2m1 0h1m1 0h2m2 0h1m2 0h1m1 0h1m2 0h1m1 0h1m1 0h1m-32 1h4m2 0h1m1 0h3m3 0h1m1 0h1m2 0h2m6 0h1m2 0h1m-35 1h5m7 0h3m1 0h1m3 0h1m3 0h5m3 0h3m-35 1h1m1 0h1m3 0h1m1 0h3m2 0h3m1 0h1m1 0h1m2 0h1m1 0h2m1 0h1m1 0h2m1 0h5m-37 1h2m2 0h1m2 0h2m1 0h2m3 0h3m1 0h1m2 0h1m3 0h3m1 0h4m1 0h2m-37 1h2m4 0h1m2 0h1m2 0h3m2 0h1m1 0h2m3 0h2m2 0h3m1 0h1m1 0h2m-34 1h4m1 0h1m1 0h2m1 0h1m1 0h2m2 0h1m2 0h4m3 0h1m1 0h3m2 0h2m-35 1h1m2 0h4m2 0h3m1 0h1m3 0h3m2 0h4m5 0h2m1 0h1m-36 1h3m4 0h5m1 0h1m1 0h1m3 0h1m1 0h3m1 0h2m2 0h1m4 0h2m-36 1h1m2 0h1m1 0h1m3 0h1m4 0h1m4 0h3m3 0h3m1 0h3m2 0h2m-37 1h1m2 0h3m1 0h1m1 0h1m1 0h1m1 0h1m2 0h3m5 0h1m2 0h4m1 0h2m1 0h1m-36 1h1m1 0h6m7 0h5m1 0h1m1 0h1m2 0h4m1 0h2m3 0h1m-35 1h2m1 0h1m1 0h1m1 0h1m1 0h1m2 0h1m1 0h2m1 0h2m2 0h1m2 0h1m1 0h2m3 0h1m-34 1h10m1 0h1m2 0h1m1 0h1m1 0h1m1 0h1m1 0h3m1 0h1m1 0h2m1 0h1m3 0h1m-35 1h2m4 0h2m1 0h1m1 0h1m1 0h1m5 0h1m2 0h1m1 0h1m3 0h1m2 0h3m-35 1h3m3 0h1m1 0h1m1 0h1m4 0h1m1 0h1m1 0h1m2 0h1m1 0h2m1 0h1m1 0h4m1 0h3m-36 1h1m1 0h1m1 0h1m4 0h1m2 0h5m1 0h1m1 0h1m2 0h1m2 0h1m1 0h8m-36 1h3m2 0h1m1 0h7m2 0h3m2 0h1m1 0h1m8 0h1m1 0h1m-36 1h1m2 0h2m2 0h1m5 0h4m3 0h2m1 0h2m1 0h1m1 0h2m1 0h3m1 0h1m-31 1h2m4 0h2m2 0h2m2 0h5m1 0h1m1 0h9m-28 1h1m2 0h3m1 0h1m1 0h1m5 0h4m1 0h1m3 0h1m1 0h1m1 0h1m-37 1h7m1 0h3m3 0h2m2 0h1m7 0h1m1 0h1m1 0h1m1 0h1m1 0h3m-37 1h1m5 0h1m1 0h3m4 0h1m1 0h1m1 0h2m1 0h2m2 0h3m3 0h1m2 0h1m-36 1h1m1 0h3m1 0h1m2 0h2m1 0h1m1 0h1m1 0h4m1 0h1m6 0h6m1 0h2m-37 1h1m1 0h3m1 0h1m1 0h5m3 0h2m1 0h3m1 0h1m3 0h4m1 0h1m2 0h2m-37 1h1m1 0h3m1 0h1m1 0h2m1 0h3m3 0h2m3 0h3m5 0h1m1 0h1m-33 1h1m5 0h1m2 0h3m1 0h1m4 0h2m4 0h2m3 0h4m1 0h1m-35 1h7m1 0h1m1 0h3m2 0h1m1 0h1m4 0h5m5 0h5\"/></svg>",
+    study: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 39 39\" class=\"segno\"><path class=\"qrline\" stroke=\"#0B1530\" d=\"M1 1.5h7m1 0h1m1 0h1m2 0h1m1 0h2m1 0h1m1 0h3m7 0h7m-37 1h1m5 0h1m1 0h10m1 0h4m2 0h2m3 0h1m5 0h1m-37 1h1m1 0h3m1 0h1m1 0h2m1 0h1m2 0h2m3 0h1m1 0h1m2 0h4m2 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m2 0h1m1 0h1m1 0h2m1 0h2m2 0h2m1 0h3m2 0h1m1 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m1 0h1m1 0h4m4 0h3m5 0h1m1 0h1m1 0h1m1 0h3m1 0h1m-37 1h1m5 0h1m3 0h1m4 0h1m4 0h2m1 0h2m1 0h1m1 0h1m1 0h1m5 0h1m-37 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-27 1h2m1 0h1m2 0h1m1 0h1m3 0h2m1 0h1m1 0h2m-29 1h1m2 0h6m1 0h1m1 0h1m1 0h2m1 0h1m2 0h1m2 0h2m1 0h1m2 0h1m2 0h1m1 0h3m-36 1h1m3 0h1m1 0h3m6 0h4m1 0h3m2 0h2m3 0h2m1 0h2m-36 1h1m3 0h3m1 0h1m2 0h1m2 0h3m4 0h1m1 0h1m3 0h2m1 0h2m1 0h2m1 0h1m-29 1h1m1 0h1m5 0h3m1 0h1m3 0h1m1 0h11m-37 1h1m2 0h2m1 0h2m1 0h1m2 0h5m2 0h2m2 0h2m1 0h3m1 0h2m1 0h1m2 0h1m-37 1h1m3 0h2m1 0h1m1 0h1m1 0h1m2 0h5m2 0h9m2 0h2m-31 1h2m1 0h3m1 0h3m1 0h2m2 0h3m4 0h5m2 0h5m-35 1h1m2 0h1m2 0h2m6 0h1m1 0h1m1 0h1m1 0h3m1 0h2m2 0h2m1 0h4m-36 1h1m1 0h1m2 0h2m3 0h4m4 0h1m5 0h1m2 0h1m1 0h1m3 0h1m-35 1h1m1 0h4m3 0h6m2 0h1m1 0h2m1 0h1m2 0h3m1 0h1m1 0h1m-32 1h3m2 0h3m1 0h1m1 0h1m4 0h2m1 0h3m1 0h1m1 0h1m1 0h1m1 0h2m3 0h1m1 0h1m-33 1h2m3 0h2m1 0h1m1 0h3m6 0h3m1 0h2m2 0h3m2 0h1m-37 1h1m4 0h3m3 0h1m1 0h1m2 0h2m6 0h1m1 0h1m1 0h6m-34 1h1m2 0h2m3 0h1m5 0h2m3 0h1m1 0h3m1 0h1m1 0h1m1 0h1m2 0h1m1 0h1m-34 1h1m2 0h5m1 0h2m1 0h1m1 0h3m2 0h4m2 0h6m1 0h1m1 0h2m-36 1h2m11 0h1m2 0h4m3 0h1m1 0h1m3 0h7m-36 1h2m1 0h1m1 0h1m2 0h2m2 0h1m1 0h2m3 0h1m2 0h1m2 0h3m1 0h1m5 0h1m-37 1h1m8 0h2m2 0h2m3 0h1m2 0h3m1 0h3m4 0h3m-35 1h5m1 0h1m2 0h1m2 0h6m1 0h4m4 0h1m2 0h1m4 0h2m-37 1h1m1 0h1m1 0h1m3 0h2m1 0h1m4 0h1m2 0h1m2 0h1m4 0h1m1 0h1m1 0h1m2 0h3m-37 1h1m2 0h2m1 0h4m2 0h5m1 0h1m1 0h1m1 0h4m2 0h5m1 0h3m-29 1h3m2 0h1m1 0h1m2 0h2m5 0h2m1 0h1m3 0h1m1 0h2m-36 1h7m1 0h1m6 0h3m1 0h2m1 0h2m1 0h1m2 0h1m1 0h1m1 0h1m3 0h1m-37 1h1m5 0h1m1 0h1m2 0h1m2 0h2m4 0h1m1 0h1m1 0h2m1 0h2m3 0h1m3 0h1m-37 1h1m1 0h3m1 0h1m1 0h3m3 0h4m1 0h1m4 0h1m1 0h7m2 0h1m-36 1h1m1 0h3m1 0h1m1 0h1m3 0h1m1 0h1m1 0h4m2 0h2m5 0h2m2 0h4m-37 1h1m1 0h3m1 0h1m2 0h3m3 0h1m1 0h1m3 0h3m3 0h1m4 0h2m2 0h1m-37 1h1m5 0h1m4 0h2m1 0h1m2 0h1m6 0h1m7 0h1m1 0h3m-37 1h7m1 0h2m2 0h1m3 0h1m3 0h1m2 0h2m3 0h2m1 0h1m1 0h1m2 0h1\"/></svg>",
+    home: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 39 39\" class=\"segno\"><path class=\"qrline\" stroke=\"#0B1530\" d=\"M1 1.5h7m4 0h1m5 0h2m1 0h2m1 0h1m1 0h1m2 0h1m1 0h7m-37 1h1m5 0h1m2 0h1m2 0h1m4 0h1m1 0h1m2 0h1m4 0h2m1 0h1m5 0h1m-37 1h1m1 0h3m1 0h1m1 0h1m1 0h1m5 0h1m2 0h4m3 0h3m1 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h2m2 0h1m1 0h1m2 0h6m2 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m1 0h1m3 0h1m5 0h2m3 0h1m1 0h1m2 0h1m1 0h1m1 0h3m1 0h1m-37 1h1m5 0h1m1 0h3m1 0h1m2 0h2m1 0h1m1 0h3m1 0h1m1 0h2m2 0h1m5 0h1m-37 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-29 1h2m4 0h2m3 0h3m1 0h1m4 0h1m-29 1h1m1 0h5m2 0h1m2 0h1m5 0h4m1 0h4m3 0h5m-33 1h1m1 0h1m2 0h3m1 0h2m1 0h4m5 0h1m4 0h1m2 0h1m1 0h1m1 0h1m-35 1h2m1 0h4m2 0h5m2 0h1m2 0h2m2 0h1m1 0h11m-37 1h2m1 0h3m7 0h1m2 0h1m1 0h1m2 0h2m3 0h1m1 0h1m1 0h3m3 0h1m-35 1h1m3 0h1m10 0h1m4 0h1m1 0h2m1 0h1m1 0h2m1 0h5m-37 1h1m1 0h4m1 0h3m1 0h1m1 0h1m2 0h9m3 0h2m1 0h1m-32 1h9m1 0h8m2 0h2m3 0h1m1 0h1m1 0h1m1 0h3m1 0h2m-35 1h4m2 0h5m1 0h2m1 0h2m2 0h1m1 0h2m1 0h1m1 0h1m1 0h3m2 0h2m-37 1h2m1 0h4m1 0h2m1 0h1m1 0h2m1 0h1m2 0h1m1 0h1m1 0h1m1 0h2m1 0h3m1 0h1m1 0h2m-35 1h1m2 0h1m3 0h1m1 0h1m1 0h2m1 0h1m2 0h1m1 0h2m1 0h1m1 0h1m2 0h1m2 0h1m1 0h3m-36 1h1m1 0h2m2 0h1m2 0h1m1 0h1m2 0h3m2 0h1m1 0h2m1 0h1m1 0h3m1 0h3m2 0h2m-34 1h3m2 0h1m1 0h3m1 0h2m3 0h3m2 0h1m1 0h1m1 0h1m7 0h1m-35 1h1m2 0h2m4 0h1m3 0h1m1 0h1m1 0h1m2 0h5m2 0h2m1 0h3m-34 1h1m2 0h1m2 0h2m3 0h2m2 0h1m2 0h2m2 0h1m1 0h2m1 0h2m3 0h1m-34 1h3m2 0h2m1 0h1m1 0h1m1 0h1m1 0h3m1 0h1m3 0h1m2 0h4m1 0h4m2 0h1m-37 1h2m1 0h3m1 0h1m1 0h1m1 0h2m1 0h3m2 0h2m2 0h2m1 0h7m3 0h1m-35 1h2m1 0h2m1 0h4m1 0h3m2 0h5m1 0h4m1 0h4m1 0h3m-37 1h1m2 0h3m1 0h1m1 0h1m1 0h2m1 0h3m6 0h1m7 0h1m2 0h1m-35 1h1m2 0h2m1 0h2m1 0h1m1 0h4m2 0h1m2 0h2m2 0h2m1 0h2m1 0h2m2 0h3m-37 1h1m2 0h3m1 0h2m1 0h5m1 0h1m4 0h1m1 0h1m2 0h1m1 0h2m1 0h3m2 0h1m-37 1h1m2 0h1m2 0h3m1 0h1m1 0h3m1 0h3m3 0h5m1 0h5m1 0h3m-29 1h1m1 0h1m5 0h4m1 0h3m1 0h4m3 0h2m-34 1h7m3 0h1m4 0h1m1 0h1m3 0h1m4 0h1m1 0h1m1 0h1m1 0h1m1 0h3m-37 1h1m5 0h1m1 0h1m2 0h2m4 0h3m1 0h2m1 0h1m1 0h1m1 0h1m3 0h2m2 0h1m-37 1h1m1 0h3m1 0h1m1 0h1m2 0h1m1 0h4m4 0h1m2 0h9m1 0h2m-36 1h1m1 0h3m1 0h1m1 0h4m3 0h1m1 0h2m1 0h5m2 0h4m1 0h1m3 0h1m-37 1h1m1 0h3m1 0h1m1 0h1m3 0h5m2 0h1m1 0h2m3 0h2m1 0h1m3 0h1m1 0h2m-37 1h1m5 0h1m2 0h2m1 0h1m2 0h1m3 0h4m4 0h3m2 0h2m2 0h1m-37 1h7m1 0h4m2 0h2m1 0h1m1 0h1m2 0h1m1 0h3m5 0h5\"/></svg>",
+    exams: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 39 39\" class=\"segno\"><path class=\"qrline\" stroke=\"#0B1530\" d=\"M1 1.5h7m2 0h3m2 0h1m1 0h1m1 0h1m2 0h2m1 0h1m1 0h1m3 0h7m-37 1h1m5 0h1m1 0h2m1 0h3m3 0h1m3 0h2m5 0h1m1 0h1m5 0h1m-37 1h1m1 0h3m1 0h1m1 0h2m2 0h3m4 0h4m3 0h2m2 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m1 0h1m2 0h1m2 0h1m1 0h2m1 0h3m1 0h3m1 0h2m1 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m2 0h2m1 0h2m2 0h4m3 0h1m1 0h1m2 0h1m1 0h1m1 0h3m1 0h1m-37 1h1m5 0h1m3 0h4m1 0h1m2 0h1m1 0h1m1 0h1m1 0h3m3 0h1m5 0h1m-37 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-29 1h4m1 0h4m1 0h3m1 0h2m2 0h3m-29 1h1m5 0h1m1 0h3m6 0h1m1 0h1m2 0h4m3 0h2m2 0h3m-35 1h2m2 0h1m1 0h1m2 0h1m1 0h2m3 0h1m1 0h5m3 0h1m3 0h2m1 0h2m-36 1h2m2 0h1m1 0h7m4 0h1m2 0h2m4 0h2m1 0h8m-34 1h1m1 0h1m2 0h1m1 0h1m1 0h1m1 0h3m1 0h2m2 0h1m1 0h1m1 0h2m2 0h4m2 0h1m-34 1h1m1 0h4m1 0h1m2 0h1m2 0h1m2 0h2m2 0h2m1 0h3m1 0h2m1 0h1m2 0h1m-37 1h2m1 0h1m1 0h1m1 0h1m3 0h1m1 0h4m1 0h7m2 0h3m1 0h1m1 0h1m-34 1h3m1 0h4m1 0h1m1 0h6m3 0h3m4 0h1m1 0h1m1 0h3m1 0h2m-37 1h6m2 0h2m1 0h1m4 0h1m1 0h1m1 0h1m2 0h2m1 0h2m2 0h2m1 0h4m-37 1h1m2 0h5m3 0h2m1 0h1m1 0h2m1 0h2m1 0h4m3 0h2m1 0h1m1 0h2m-36 1h6m1 0h2m9 0h3m2 0h1m1 0h4m2 0h1m2 0h2m-35 1h3m2 0h2m1 0h1m3 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h3m1 0h1m1 0h2m3 0h1m1 0h1m-37 1h1m2 0h3m2 0h2m1 0h1m1 0h2m5 0h1m3 0h1m1 0h3m4 0h1m2 0h1m-37 1h2m4 0h4m2 0h4m1 0h1m4 0h5m2 0h2m1 0h3m-35 1h3m1 0h2m2 0h5m2 0h1m1 0h1m1 0h1m1 0h3m3 0h1m1 0h1m2 0h1m1 0h1m-34 1h2m1 0h1m1 0h2m1 0h1m2 0h2m1 0h2m5 0h1m4 0h2m1 0h4m2 0h1m-37 1h4m1 0h1m1 0h2m1 0h4m2 0h1m2 0h2m1 0h3m3 0h6m2 0h1m-35 1h5m2 0h1m1 0h2m1 0h3m3 0h1m2 0h1m2 0h3m1 0h1m5 0h1m-37 1h4m4 0h1m7 0h1m1 0h4m1 0h1m2 0h2m3 0h1m1 0h2m-35 1h1m1 0h1m3 0h3m2 0h1m5 0h1m3 0h1m3 0h1m1 0h2m1 0h2m2 0h3m-37 1h1m1 0h4m1 0h1m1 0h3m3 0h1m6 0h1m4 0h1m1 0h1m1 0h1m2 0h1m1 0h1m-37 1h1m5 0h3m1 0h3m1 0h1m1 0h4m2 0h1m1 0h3m1 0h5m1 0h1m1 0h1m-29 1h1m4 0h7m2 0h2m2 0h1m1 0h1m3 0h1m-33 1h7m2 0h1m1 0h1m2 0h4m1 0h3m1 0h1m1 0h1m2 0h1m1 0h1m1 0h1m3 0h1m-37 1h1m5 0h1m2 0h2m2 0h1m1 0h1m2 0h2m4 0h1m2 0h2m3 0h1m3 0h1m-37 1h1m1 0h3m1 0h1m2 0h3m3 0h1m2 0h1m3 0h1m1 0h2m1 0h6m1 0h2m-36 1h1m1 0h3m1 0h1m2 0h4m3 0h4m3 0h1m2 0h1m2 0h2m2 0h4m-37 1h1m1 0h3m1 0h1m3 0h3m1 0h2m4 0h3m3 0h2m1 0h1m3 0h1m1 0h2m-37 1h1m5 0h1m4 0h1m1 0h1m6 0h1m1 0h1m5 0h2m2 0h1m3 0h1m-37 1h7m1 0h1m4 0h1m1 0h2m2 0h2m3 0h1m3 0h2m1 0h1m1 0h1m2 0h1\"/></svg>",
+    canvas: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 39 39\" class=\"segno\"><path class=\"qrline\" stroke=\"#0B1530\" d=\"M1 1.5h7m2 0h1m3 0h3m1 0h2m1 0h2m1 0h3m2 0h1m1 0h7m-37 1h1m5 0h1m4 0h2m1 0h4m1 0h1m2 0h1m4 0h2m1 0h1m5 0h1m-37 1h1m1 0h3m1 0h1m1 0h1m3 0h1m2 0h1m3 0h5m2 0h2m2 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m1 0h2m1 0h1m4 0h2m1 0h1m2 0h1m1 0h3m3 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m1 0h3m1 0h4m2 0h2m3 0h1m1 0h1m2 0h1m1 0h1m1 0h3m1 0h1m-37 1h1m5 0h1m1 0h1m3 0h1m2 0h2m1 0h1m1 0h1m1 0h1m1 0h4m2 0h1m5 0h1m-37 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-29 1h3m1 0h1m6 0h3m1 0h1m2 0h1m1 0h1m-29 1h1m1 0h5m2 0h1m1 0h3m4 0h3m1 0h2m1 0h1m4 0h5m-31 1h1m4 0h1m2 0h6m5 0h1m2 0h1m1 0h1m2 0h1m1 0h1m1 0h1m-36 1h2m2 0h1m1 0h1m3 0h1m1 0h1m1 0h1m2 0h1m2 0h2m4 0h2m1 0h8m-35 1h1m2 0h1m2 0h3m2 0h2m1 0h1m1 0h1m2 0h2m1 0h1m1 0h1m3 0h3m3 0h1m-37 1h2m1 0h1m2 0h1m3 0h1m1 0h2m3 0h1m4 0h1m1 0h2m1 0h1m1 0h2m1 0h5m-37 1h4m1 0h1m1 0h1m4 0h2m2 0h5m1 0h3m3 0h2m1 0h1m-32 1h5m1 0h5m3 0h4m2 0h2m5 0h1m1 0h1m1 0h3m1 0h2m-36 1h1m2 0h1m3 0h4m2 0h2m1 0h2m2 0h1m1 0h2m3 0h1m1 0h3m2 0h2m-37 1h3m1 0h1m1 0h2m2 0h1m3 0h1m1 0h1m2 0h1m2 0h4m3 0h2m1 0h1m1 0h2m-34 1h1m1 0h2m1 0h1m1 0h2m2 0h3m2 0h1m1 0h4m1 0h2m1 0h1m2 0h1m1 0h3m-34 1h2m1 0h3m4 0h5m2 0h1m1 0h2m1 0h1m1 0h3m1 0h3m2 0h2m-36 1h1m1 0h1m1 0h1m3 0h2m4 0h1m3 0h3m1 0h2m1 0h1m1 0h1m7 0h1m-35 1h2m2 0h1m2 0h1m1 0h5m1 0h1m1 0h1m2 0h1m1 0h3m2 0h2m1 0h3m-33 1h4m3 0h1m3 0h2m1 0h1m2 0h3m1 0h1m2 0h1m1 0h2m3 0h1m-30 1h1m1 0h1m2 0h1m1 0h2m2 0h2m1 0h1m2 0h2m4 0h2m1 0h4m2 0h1m-37 1h1m2 0h3m4 0h4m1 0h2m2 0h3m1 0h2m2 0h6m3 0h1m-37 1h1m1 0h1m1 0h5m1 0h1m4 0h1m2 0h2m2 0h1m2 0h1m1 0h1m1 0h4m1 0h3m-37 1h4m3 0h6m1 0h3m6 0h1m2 0h1m4 0h1m2 0h1m-35 1h1m1 0h1m2 0h2m1 0h2m2 0h3m2 0h1m3 0h1m2 0h2m1 0h2m1 0h2m2 0h3m-37 1h1m2 0h3m2 0h2m1 0h1m1 0h2m1 0h1m4 0h1m4 0h1m1 0h2m1 0h3m2 0h1m-37 1h1m1 0h2m1 0h2m4 0h1m2 0h1m1 0h3m3 0h1m1 0h3m1 0h5m1 0h1m-27 1h1m1 0h2m1 0h2m1 0h4m2 0h2m2 0h3m3 0h2m-34 1h7m2 0h3m3 0h1m1 0h1m3 0h2m3 0h1m1 0h1m1 0h1m1 0h1m1 0h3m-37 1h1m5 0h1m1 0h1m1 0h1m1 0h3m2 0h3m1 0h2m1 0h1m3 0h1m3 0h2m2 0h1m-37 1h1m1 0h3m1 0h1m1 0h2m2 0h1m2 0h2m5 0h1m1 0h2m1 0h6m1 0h2m-36 1h1m1 0h3m1 0h1m1 0h2m3 0h1m1 0h1m1 0h2m2 0h1m1 0h1m3 0h4m1 0h1m3 0h1m-37 1h1m1 0h3m1 0h1m1 0h1m2 0h2m1 0h3m4 0h2m3 0h2m1 0h1m3 0h1m1 0h2m-37 1h1m5 0h1m2 0h2m1 0h1m1 0h2m4 0h3m4 0h3m2 0h2m2 0h1m-37 1h7m1 0h1m2 0h1m3 0h1m1 0h1m1 0h1m2 0h5m5 0h5\"/></svg>",
+    weak: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 43 43\" class=\"segno\"><path class=\"qrline\" stroke=\"#0B1530\" d=\"M1 1.5h7m2 0h2m2 0h5m1 0h2m2 0h1m4 0h1m1 0h2m2 0h7m-41 1h1m5 0h1m3 0h2m2 0h1m2 0h1m2 0h3m2 0h1m1 0h4m3 0h1m5 0h1m-41 1h1m1 0h3m1 0h1m1 0h2m1 0h3m1 0h1m1 0h2m1 0h3m9 0h1m1 0h1m1 0h3m1 0h1m-41 1h1m1 0h3m1 0h1m1 0h2m1 0h3m1 0h1m3 0h1m2 0h1m1 0h4m1 0h1m4 0h1m1 0h3m1 0h1m-41 1h1m1 0h3m1 0h1m1 0h1m2 0h1m2 0h2m1 0h5m1 0h1m1 0h1m2 0h1m1 0h3m1 0h1m1 0h3m1 0h1m-41 1h1m5 0h1m1 0h2m1 0h3m2 0h2m2 0h1m3 0h5m5 0h1m5 0h1m-41 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-33 1h1m7 0h1m1 0h2m1 0h4m2 0h2m1 0h3m-33 1h1m1 0h5m5 0h3m2 0h1m4 0h1m2 0h3m1 0h1m1 0h1m2 0h5m-39 1h2m5 0h2m3 0h3m2 0h3m2 0h2m1 0h1m2 0h1m2 0h6m1 0h3m-41 1h1m1 0h1m1 0h1m1 0h2m1 0h1m1 0h1m5 0h1m2 0h2m5 0h2m3 0h2m1 0h2m-36 1h2m4 0h2m2 0h2m2 0h2m2 0h1m1 0h2m3 0h3m2 0h2m1 0h1m2 0h1m2 0h1m-41 1h1m1 0h1m1 0h1m1 0h1m3 0h1m1 0h1m1 0h2m1 0h1m1 0h2m1 0h8m1 0h3m3 0h4m-40 1h1m1 0h3m2 0h1m1 0h2m2 0h1m3 0h1m2 0h1m1 0h1m4 0h2m1 0h6m1 0h3m-41 1h2m2 0h5m1 0h2m1 0h5m2 0h1m3 0h1m1 0h3m3 0h2m-34 1h1m3 0h2m1 0h1m2 0h1m1 0h1m1 0h2m5 0h2m3 0h2m6 0h2m1 0h1m1 0h2m-40 1h3m2 0h1m1 0h4m3 0h1m1 0h1m4 0h1m1 0h4m1 0h1m2 0h2m1 0h1m1 0h2m1 0h1m-41 1h4m1 0h1m1 0h1m2 0h1m1 0h1m2 0h1m2 0h2m3 0h1m4 0h2m1 0h1m2 0h7m-39 1h1m2 0h3m1 0h4m1 0h2m2 0h1m2 0h2m1 0h1m1 0h3m1 0h1m2 0h2m1 0h3m-37 1h1m1 0h1m3 0h1m2 0h4m5 0h2m1 0h2m2 0h1m2 0h1m5 0h1m2 0h1m-39 1h1m2 0h3m2 0h3m4 0h1m1 0h4m2 0h2m1 0h3m5 0h1m2 0h1m-39 1h1m1 0h1m1 0h2m3 0h1m1 0h1m1 0h2m1 0h1m2 0h3m1 0h1m1 0h1m2 0h1m1 0h11m-40 1h1m1 0h1m1 0h2m1 0h2m1 0h7m2 0h3m2 0h3m1 0h2m1 0h1m1 0h2m2 0h1m-37 1h2m1 0h1m1 0h4m2 0h3m4 0h2m8 0h3m1 0h1m1 0h2m1 0h1m-38 1h1m1 0h3m2 0h5m2 0h2m1 0h1m2 0h6m1 0h1m1 0h1m1 0h1m4 0h1m-39 1h4m1 0h1m1 0h1m1 0h2m2 0h1m2 0h5m2 0h3m2 0h1m2 0h1m2 0h4m1 0h2m-41 1h1m1 0h2m1 0h3m1 0h3m3 0h2m3 0h1m1 0h1m3 0h2m1 0h1m2 0h1m1 0h1m-33 1h2m3 0h3m1 0h1m2 0h3m1 0h2m1 0h2m8 0h2m3 0h2m-37 1h3m2 0h1m1 0h1m1 0h2m1 0h1m2 0h2m7 0h3m1 0h3m5 0h3m-40 1h1m1 0h1m1 0h1m2 0h3m1 0h3m4 0h1m1 0h4m4 0h1m1 0h5m1 0h2m1 0h2m-41 1h1m4 0h4m5 0h1m1 0h1m2 0h1m1 0h1m2 0h1m1 0h5m2 0h2m2 0h1m-38 1h1m1 0h1m5 0h1m1 0h3m3 0h1m2 0h4m1 0h1m3 0h1m3 0h3m1 0h2m-38 1h1m2 0h5m1 0h1m1 0h5m1 0h1m1 0h1m2 0h2m1 0h1m3 0h1m2 0h5m1 0h2m-32 1h1m2 0h2m1 0h8m1 0h1m1 0h1m2 0h1m2 0h2m3 0h3m1 0h1m-41 1h7m3 0h5m1 0h2m3 0h1m3 0h3m1 0h4m1 0h1m1 0h3m-39 1h1m5 0h1m1 0h2m1 0h1m3 0h1m1 0h2m1 0h2m5 0h1m2 0h1m1 0h1m3 0h2m-38 1h1m1 0h3m1 0h1m1 0h4m7 0h1m1 0h1m1 0h5m1 0h1m2 0h5m1 0h3m-41 1h1m1 0h3m1 0h1m1 0h2m2 0h1m4 0h3m1 0h1m1 0h3m2 0h1m1 0h1m2 0h1m1 0h1m1 0h1m1 0h2m-41 1h1m1 0h3m1 0h1m1 0h5m3 0h1m4 0h1m2 0h1m2 0h4m2 0h5m-38 1h1m5 0h1m2 0h3m3 0h2m3 0h3m3 0h3m3 0h1m1 0h1m1 0h2m1 0h1m-40 1h7m1 0h3m1 0h2m1 0h1m1 0h1m4 0h1m1 0h3m1 0h2m4 0h5\"/></svg>",
+    today: "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 39 39\" class=\"segno\"><path class=\"qrline\" stroke=\"#0B1530\" d=\"M1 1.5h7m3 0h3m4 0h7m1 0h1m2 0h1m1 0h7m-37 1h1m5 0h1m3 0h2m1 0h1m1 0h3m4 0h1m4 0h2m1 0h1m5 0h1m-37 1h1m1 0h3m1 0h1m1 0h1m1 0h1m2 0h1m1 0h2m3 0h3m3 0h2m2 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m1 0h1m1 0h1m3 0h1m2 0h1m4 0h5m3 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m1 0h3m1 0h1m3 0h4m1 0h1m1 0h1m1 0h1m2 0h1m1 0h1m1 0h3m1 0h1m-37 1h1m5 0h1m1 0h1m1 0h1m1 0h1m1 0h1m5 0h1m3 0h4m2 0h1m5 0h1m-37 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-29 1h1m1 0h2m2 0h1m4 0h3m1 0h1m2 0h1m1 0h1m-29 1h1m1 0h5m3 0h2m1 0h1m1 0h1m1 0h1m1 0h2m1 0h4m4 0h5m-35 1h2m2 0h2m1 0h1m1 0h2m1 0h2m1 0h6m2 0h2m1 0h1m1 0h1m2 0h1m1 0h1m1 0h1m-36 1h3m3 0h1m3 0h1m6 0h1m3 0h1m4 0h2m1 0h8m-36 1h1m1 0h1m1 0h1m1 0h1m2 0h1m1 0h1m3 0h1m1 0h1m2 0h2m1 0h1m1 0h1m3 0h3m3 0h1m-37 1h2m1 0h1m1 0h2m2 0h1m3 0h1m3 0h1m1 0h1m2 0h4m1 0h1m1 0h2m1 0h5m-37 1h1m4 0h1m3 0h1m2 0h3m1 0h9m3 0h2m1 0h1m-32 1h2m2 0h6m3 0h4m3 0h3m4 0h1m1 0h1m1 0h3m1 0h2m-37 1h4m1 0h1m4 0h1m1 0h4m2 0h1m2 0h4m3 0h1m1 0h3m2 0h2m-34 1h2m1 0h2m2 0h4m2 0h1m1 0h2m2 0h2m1 0h1m3 0h2m1 0h1m1 0h2m-36 1h4m1 0h1m3 0h1m2 0h1m2 0h1m2 0h6m1 0h2m1 0h1m2 0h1m1 0h3m-33 1h6m1 0h2m1 0h4m4 0h2m3 0h3m1 0h3m2 0h2m-35 1h4m1 0h3m1 0h2m1 0h2m3 0h3m2 0h1m1 0h1m1 0h1m7 0h1m-37 1h2m4 0h5m1 0h2m1 0h1m1 0h1m1 0h1m2 0h1m1 0h3m2 0h2m1 0h3m-33 1h4m1 0h1m2 0h1m2 0h1m2 0h1m2 0h3m1 0h1m2 0h1m1 0h2m3 0h1m-33 1h2m2 0h6m1 0h1m2 0h2m1 0h1m3 0h1m4 0h2m1 0h4m2 0h1m-34 1h2m3 0h2m1 0h1m1 0h1m1 0h2m1 0h4m1 0h2m2 0h6m3 0h1m-36 1h1m1 0h2m1 0h3m2 0h2m2 0h1m2 0h2m2 0h1m1 0h2m1 0h1m1 0h4m1 0h3m-37 1h2m3 0h1m1 0h1m1 0h2m2 0h4m1 0h2m3 0h1m2 0h1m4 0h1m2 0h1m-35 1h1m1 0h1m1 0h1m1 0h2m1 0h1m1 0h1m1 0h2m2 0h1m2 0h2m2 0h2m1 0h2m1 0h2m2 0h3m-37 1h1m1 0h1m1 0h1m2 0h2m3 0h1m1 0h1m1 0h1m2 0h3m4 0h1m1 0h2m1 0h3m-34 1h1m1 0h12m2 0h3m3 0h1m1 0h3m1 0h5m1 0h2m-28 1h3m2 0h1m2 0h4m2 0h2m2 0h3m3 0h2m-34 1h7m5 0h2m1 0h1m1 0h1m3 0h1m4 0h1m1 0h1m1 0h1m1 0h1m1 0h3m-37 1h1m5 0h1m1 0h1m4 0h1m3 0h3m1 0h2m1 0h1m3 0h1m3 0h2m2 0h1m-37 1h1m1 0h3m1 0h1m1 0h4m3 0h2m3 0h1m1 0h1m1 0h2m1 0h6m1 0h2m-36 1h1m1 0h3m1 0h1m1 0h1m3 0h4m1 0h5m1 0h1m3 0h4m1 0h1m3 0h1m-37 1h1m1 0h3m1 0h1m1 0h1m3 0h1m2 0h2m3 0h3m3 0h2m1 0h1m3 0h1m1 0h2m-37 1h1m5 0h1m3 0h1m1 0h2m1 0h1m4 0h3m4 0h3m2 0h2m2 0h1m-37 1h7m1 0h1m1 0h1m2 0h1m1 0h1m1 0h1m4 0h5m5 0h5\"/></svg>",
   };
 
   var I = {
@@ -10115,175 +10264,151 @@ window.BIO005_SESSIONS = {
     var q = sec ? ('?sec=' + sec) : '';
     var t = [];
 
-    /* First tile in the dock, on purpose. It is the only one that answers
-       "what do I do right now" without the student choosing anything, and
-       it was previously reachable from nowhere at all. */
-    /* The tour sheet. It is a page of QR codes, one per short video, so a
-       student can watch on a phone while they work on the laptop. First in
-       This week because that group is the one open by default. */
-    t.push({ g: 'This week', name: 'How to videos', sub: 'Short tours of the course. Scan a code, watch on your phone',
-             url: BASE + 'bio005-tour-poster.html', icon: 'doc', tone: 'gold', qr: 'howto', soon: true,
-             kw: 'how to video videos tour tours walkthrough guide scan qr getting started orientation help' });
-    t.push({ g: 'This week', name: 'Today', sub: 'The one thing to do now, and your other class days',
-             url: BASE + 'os/mastery-physio-os.html' + q, icon: 'play', tone: 'gold', qr: 'today', key: 'today',
-             kw: 'today now next what do i do day daily plan tonight prework ahead' });
-    /* The Week N tile is gone. Today already opens on the right day and
-       carries Earlier week and Later week, and the course calendar tile
-       below covers browsing the whole term. Three doors onto the same
-       week was two too many. */
-    t.push({ g: 'This week', name: 'Study With Me', sub: 'Join a session this week or start one yourself',
-             url: BASE + 'study-session-signup.html' + q, icon: 'people', tone: 'terra', qr: 'study', kw: 'study with me sessions group hours host', soon: true });
-    t.push({ g: 'This week', name: 'Course calendar', sub: 'Every class day and what to prepare for it',
+    /* ============================================================
+       CATALOG, REORGANIZED Aug 2026 ON SCRUBS' INSTRUCTION
+
+       The groups now mirror the way the main page sorts things, so a
+       student learns one vocabulary and it holds everywhere:
+
+         This week   what is live today, pinned open
+         Lecture     the material you read and watch
+         Lab         the clinical physiology lab
+         Study       everything you do to make it stick
+         Admin       schedule, syllabus, how the course runs
+
+       WHAT CAME OUT, AND WHY
+       Digital Atlas, Loops and Muscle charts are anatomy tools that
+       rode over from the BIO 004 template. Structures on a model are
+       not what this lab trains. Repair Round came out too: it is an
+       in-class activity and this section never meets.
+
+       Exam modules pointed at competency-map.html, which is the
+       instructor tool. It carries open decisions and editing notes
+       and students should not be reading it. Competency study guide
+       is the student-facing page with the same content, written as
+       tasks, and that is what the tile points at now.
+
+       NOTES AND VIDEOS ARE SEPARATE TILES AGAIN
+       An earlier pass collapsed them into one Course materials tile,
+       on the reasoning that the materials page shows its own tabs.
+       Scrubs asked for the two buttons back. Both tiles deep-link to
+       the right tab, so the page still does the sorting, and the
+       student gets the shortcut without having to know the page has
+       tabs before they open it.
+       ============================================================ */
+
+    /* ---------- THIS WEEK. Open by default, on purpose. It is the
+       only group that answers "what do I do right now" without the
+       student choosing anything. ---------- */
+    t.push({ g: 'This week', name: 'Today', sub: 'What is due, what is open, and what to work on next',
+             url: BASE + 'os/mastery-physio-os.html' + q, icon: 'target', tone: 'gold', qr: 'today',
+             kw: 'today now due next dashboard week current' });
+    t.push({ g: 'This week', name: 'Course calendar', sub: 'Every week, every due date, every exam window',
              url: BASE + 'course-schedule.html' + q, icon: 'cal', tone: 'navy', qr: 'calendar',
-             /* 'start here' and 'how this course works' land here on
-                purpose. Both had their own tiles and came out, and the
-                Start here walkthrough is a dialog on this page now, so
-                a student searching the old names arrives at the thing
-                itself rather than at an empty result. */
-             kw: 'calendar schedule dates start here checklist orientation walkthrough '
-               + 'how this course works pedagogy tbl why week one' });
+             kw: 'calendar schedule dates due deadlines weeks exam window when' });
+    t.push({ g: 'This week', name: 'Study With Me', sub: 'Join a session this week or start one yourself',
+             url: BASE + 'study-session-signup.html' + q, icon: 'people', tone: 'terra', qr: 'study', soon: true,
+             kw: 'study with me session group together live signup partner' });
 
-    /* ---------- COURSE MATERIALS ----------
+    /* ---------- LECTURE ---------- */
+    t.push({ g: 'Lecture', name: 'Notes', sub: 'The written version of every topic, by module',
+             url: BASE + 'course-materials.html#notes', icon: 'doc', tone: 'navy', qr: 'materials',
+             kw: 'notes reading written text module chapter topic' });
+    t.push({ g: 'Lecture', name: 'Concept videos', sub: 'Watch the mechanism explained, then read the page',
+             url: BASE + 'course-materials.html#videos', icon: 'play', tone: 'terra', qr: 'materials',
+             kw: 'video videos concept watch lecture recording loom walkthrough captions' });
+    t.push({ g: 'Lecture', name: 'Slide decks', sub: 'Step through a lecture one slide at a time, or print the set',
+             url: BASE + 'course-materials.html#slides', icon: 'doc', tone: 'navy', qr: 'materials',
+             kw: 'slides deck powerpoint print packet lecture step' });
+    t.push({ g: 'Lecture', name: 'Pre-work', sub: 'What to do before the week opens',
+             url: BASE + 'course-materials.html#prework', icon: 'pencil', tone: 'gold', qr: 'materials',
+             kw: 'prework pre-work before homework guided sheet night before' });
+    t.push({ g: 'Lecture', name: 'All course materials', sub: 'Everything above in one place, sorted by module',
+             url: BASE + 'course-materials.html', icon: 'doc', tone: 'navy', qr: 'materials',
+             kw: 'materials everything all index module' });
+    t.push({ g: 'Lecture', name: 'OpenStax reference', sub: 'Free online text. Nothing to buy for this course',
+             url: 'https://openstax.org/details/books/anatomy-and-physiology-2e', icon: 'globe', tone: 'gold',
+             ext: true, qr: 'materials', kw: 'openstax book text textbook free reference chapter reading' });
 
-       This group did not exist. Nine unrelated things sat under
-       "Study tools": the notes a student reads and the engine that
-       decides what to test them on, side by side, with nothing to
-       tell them apart. Material you study is not the same kind of
-       thing as machinery that studies you, and one heading over
-       both makes the list something to scan rather than use.
+    /* ---------- LAB. Clinical Physiology Lab, not a structures lab.
+       The four skills underneath every exercise are measuring,
+       calculating, collecting data and interpreting data. ---------- */
+    t.push({ g: 'Lab', name: 'Lab manual', sub: 'Every exercise for the term, in one place',
+             url: BASE + 'clinical-physiology-lab-manual.html', icon: 'flask', tone: 'terra', qr: 'labs',
+             kw: 'lab manual exercises bench protocol procedure book' });
+    t.push({ g: 'Lab', name: 'Lab sprints', sub: 'What you have to be able to do in lab, week by week',
+             url: BASE + 'lab-sprints.html', icon: 'flask', tone: 'navy', qr: 'labs', soon: true,
+             kw: 'lab sprints week skills able measure calculate interpret checklist' });
+    t.push({ g: 'Lab', name: 'Lab skills checklist', sub: 'Tick off what you can do, how it is measured, and what you turn in',
+             url: BASE + 'lab-competencies.html', icon: 'target', tone: 'gold', qr: 'labs', soon: true,
+             kw: 'checklist competency competencies skills can i do measured submit rubric evidence' });
+    t.push({ g: 'Lab', name: 'Clinical test bank', sub: 'What each lab test measures, and what high and low mean',
+             url: BASE + 'clinical-tests.html', icon: 'flask', tone: 'navy', qr: 'labs', soon: true,
+             kw: 'clinical tests labs cbc abg urinalysis blood typing panel reference range values' });
+    t.push({ g: 'Lab', name: 'Reading charts and data', sub: 'Curves, tracings, threshold plots, panels and trends',
+             url: BASE + 'reading-data.html', icon: 'brain', tone: 'terra', qr: 'labs', soon: true,
+             kw: 'graph chart data curve tracing waveform plot interpret read trend ecg spirometry' });
 
-       Still ONE dock. Two headings inside it, not two buttons. A
-       second floating button is another entryway to the same files
-       ordered a third way, and too many entryways is the problem
-       this course already had. */
-    /* ONE DOOR TO THE MATERIALS.
-
-       Third pass on this, and the page changed under it, which is
-       what settles it. Notes, Pre-work sheets and Concept videos
-       were separate tiles because the materials page did not show
-       its own categories. The redesigned page does: Everything,
-       Pre-work sheets, Notes, Concept videos, Workbooks, Slide
-       decks and Practice exams are tabs across the top, visible the
-       moment it opens, with the modules underneath.
-
-       So the tiles were duplicating a control that is now the first
-       thing a student sees. One tile, and the page does the sorting
-       it was built to do. Their keywords stay here, so typing
-       prework or videos still lands in the right place. */
-    t.push({ g: 'Course materials', name: 'Course materials', sub: 'Notes, pre-work, videos, workbooks and decks, by module',
-             url: BASE + 'course-materials.html', icon: 'doc', tone: 'navy', qr: 'materials', soon: true,
-             kw: 'materials notes reading module chapter prework pre-work worksheet sheet night '
-               + 'before homework guided videos concept watch lecture walkthrough workbooks slides '
-               + 'decks practice exams index everything all' });
-    t.push({ g: 'Lab materials', name: 'Lab sprints', sub: 'Every structure you are responsible for on the models',
-             url: BASE + 'lab-sprints.html', icon: 'flask', tone: 'navy', soon: true,
-             qr: 'labs', kw: 'lab sprints models dissection structures practical stations bench' });
-    t.push({ g: 'Lab materials', name: 'Digital Atlas', sub: 'Turn the structures around and look at them',
-             url: 'https://share.articulate.com/UOHEe3p6DmTC4nXuUTE02', icon: 'globe', tone: 'gold',
-             qr: 'atlas', ext: true, kw: 'atlas 3d explore rotate structures lab' });
-    t.push({ g: 'Course materials', name: 'Exam modules', sub: 'Exactly what each exam covers',
-             url: BASE + 'competency-map.html' + q, icon: 'flask', tone: 'navy', qr: 'exams', kw: 'exam modules covers scope' });
-    /* OPENSTAX, AS A REFERENCE, NOT AS A TEXT.
-
-       There is no book to buy in this course and the required
-       materials page says so plainly. This tile has to not undo
-       that, which is why it is named for what it is and the
-       subtitle says 'not required' before a student has to wonder.
-
-       The live edition is Anatomy and Physiology 2e, and the second
-       half of that title is the catch: BIO 005 is anatomy only. A
-       student who reads it cover to cover will study a lot of
-       physiology that is not on any exam here. It earns its place
-       as a second explanation and a second set of figures when the
-       notes have not landed, and that is the job the subtitle
-       gives it. */
-    t.push({ g: 'Course materials', name: 'OpenStax reference', sub: 'Free online book, for a second explanation or more figures. Not required',
-             url: 'https://openstax.org/details/books/anatomy-and-physiology-2e',
-             icon: 'globe', tone: 'terra', ext: true,
-             kw: 'openstax textbook book text reference free online chapter reading second '
-               + 'explanation figures diagrams anatomy physiology' });
-    /* soon:true pulls this out of its group and drops it at the end
-       under Coming soon, rendered as plain text rather than a link.
-       A tile that goes somewhere unfinished is worse than one that
-       says plainly it is not ready. */
-    t.push({ g: 'Course materials', name: 'Case deep dives', sub: 'One clinical case per topic, with the PDF',
-             url: BASE + 'welcome.html' + q, icon: 'flask', tone: 'terra', soon: true,
-             kw: 'deep dive cases clinical index topics' });
-    t.push({ g: 'Practice and recall', name: 'Mastery OS', sub: 'Your cards, your weak spots, and a plan around them',
+    /* ---------- STUDY ---------- */
+    t.push({ g: 'Study', name: 'Mastery OS', sub: 'Your gaps, your weakest competencies, and what is due for recall',
              url: BASE + 'os/mastery-physio-os.html' + q, icon: 'brain', tone: 'gold', qr: 'mastery',
-             kw: 'mastery os plan cram competency recall cards flashcards spaced question rx study '
-               + 'weakness weak spot board dashboard gaps' });
-    t.push({ g: 'Practice and recall', name: 'Recall cards', sub: 'Straight into the cards that are due today',
-             url: BASE + 'os/mastery-physio-os.html#s-recall' + '', icon: 'cards', tone: 'green', qr: 'recall',
-             kw: 'recall cards flashcards spaced due today question' });
-    /* Lives on the MedMasters site, not in this repo, and it was only
-       reachable from the Loops upload kit. It is a drill tool, so it
-       belongs beside the other drill tools. */
-    t.push({ g: 'Practice and recall', name: 'Muscle charts, I O A', sub: 'Origins, insertions, actions and innervation, drilled interactively',
-             url: 'https://www.medmasterscollaborative.com/muscle-charts-i-o-a-inn', icon: 'cards', tone: 'terra',
-             ext: true, qr: 'muscles',
-             kw: 'muscle charts origin insertion action innervation ioa oia drill table muscles' });
-    t.push({ g: 'Lab materials', name: 'Loops', sub: 'Thirty-nine image loops for fast visual practice',
-             url: 'https://drsrennie-stack.github.io/loops/', icon: 'loop', tone: 'terra', qr: 'loops', ext: true, kw: 'loops images practice lab' });
-    /* The histology help tile was removed on Aug 22. It was an anatomy
-       leftover, slide tools and microscope work, and this course retires
-       histology entirely. It also carried no url, so it rendered as a
-       live link to href="undefined" on every page the dock is on, which
-       is every page. See the guard in the renderer below. */
-    /* The weak spot board was a tile here. It is the front panel of
-       Mastery OS, one tile up, and the practice exam links straight
-       into it when a paper is marked, which is the moment a student
-       actually wants it. Its keywords moved onto Mastery OS. */
-    t.push({ g: 'Practice and recall', name: 'Draw it from memory', sub: 'Draw the structure first, then check it against the list',
-             url: BASE + 'mastery-canvas.html', icon: 'pencil', tone: 'gold', qr: 'canvas', kw: 'draw drawing canvas memory checklist', soon: true });
-    t.push({ g: 'Practice and recall', name: 'What I got done today', sub: 'And what you meant to do and did not',
-             url: BASE + 'bio005-day-review.html', icon: 'target', tone: 'terra', qr: 'today', kw: 'today review day summary time missed', soon: true });
-    /* THE BANK IS NOT THE STUDENT TOOL.
+             kw: 'mastery os dashboard gaps weakness progress track' });
+    t.push({ g: 'Study', name: 'Recall cards', sub: 'Spaced retrieval practice on the course competencies',
+             url: BASE + 'os/mastery-physio-os.html#s-recall', icon: 'cards', tone: 'navy', qr: 'recall',
+             kw: 'cards recall flashcards spaced repetition quiz retrieval practice' });
+    t.push({ g: 'Study', name: 'Draw it from memory', sub: 'Draw the mechanism first, then check it',
+             url: BASE + 'mastery-canvas.html', icon: 'pencil', tone: 'terra', qr: 'canvas',
+             kw: 'draw drawing canvas memory loop mechanism sketch diagram' });
+    t.push({ g: 'Study', name: 'Competency study guide', sub: 'Everything you are expected to be able to do, written as tasks',
+             url: BASE + 'competency-study-guide.html' + q, icon: 'doc', tone: 'navy', qr: 'exams',
+             kw: 'competency competencies study guide exam covers scope objectives able to' });
+    t.push({ g: 'Study', name: 'Practice exam', sub: 'A fresh paper in the real format, scored, with the reasoning',
+             url: BASE + 'practice-lecture-exam.html', icon: 'doc', tone: 'navy', qr: 'pexam', soon: true,
+             kw: 'practice exam test mock paper score questions' });
+    t.push({ g: 'Study', name: 'Brain dump practice', sub: 'Spin a prompt, set your clock, write it on paper, then check yourself',
+             url: BASE + 'braindump-week01.html', icon: 'pencil', tone: 'terra', qr: 'braindump',
+             kw: 'brain dump blurt write timer prompt blank paper' });
+    t.push({ g: 'Study', name: 'What I got done today', sub: 'And what you meant to do and did not',
+             url: BASE + 'bio005-day-review.html', icon: 'target', tone: 'navy', soon: true,
+             kw: 'day review done today log reflect plan' });
 
-       This used to point at bio005-braindump-bank-fall2026.html, which is
-       the printable list of every prompt with its answer key beside it,
-       built to run the class from. Handing a student the answer key and
-       calling it practice is the one thing a brain dump cannot survive.
-       The practice tool spins for one prompt, times it, and keeps the key
-       hidden until they say they are done. */
-    /* The three Summer midterm practice exams are still in the repo
-       but they are a fixed paper for a term that no longer exists.
-       This draws a fresh one per exam from the live question bank. */
-    t.push({ g: 'Practice and recall', name: 'Practice exam', sub: 'A fresh 100 point paper in the real format, scored, with the reasoning',
-             url: BASE + 'practice-lecture-exam.html', icon: 'doc', tone: 'terra', qr: 'pexam', soon: true,
-             kw: 'practice exam lecture test mock paper multiple choice quiz midterm final revision' });
-    t.push({ g: 'Practice and recall', name: 'Brain dump practice', sub: 'Spin for a prompt, set your clock, write it on paper, then check yourself',
-             url: BASE + 'brain-dump-practice.html', icon: 'pencil', tone: 'navy', qr: 'braindump', soon: true,
-             kw: 'brain dump practice prompt wheel spin timer paper retrieval blank page' });
-    /* soon:true pulls a tile out of its group and drops it into Coming
-       soon at the very bottom, dimmed and not clickable. Set it on
-       anything that exists but is not finished, rather than hiding it,
-       so students can see what is on the way. */
-    t.push({ g: 'Practice and recall', name: 'Repair Round', sub: 'The in-class repair activity, still being built',
-             url: BASE + 'repair-round-activity.html', icon: 'target', tone: 'gold', soon: true,
-             kw: 'repair round activity capture sheet pairs in class' });
+    /* ---------- STUDY, the review pages. Physiology assumes chemistry,
+       math and anatomy it does not teach. before-you-start.html tells a
+       student whether they have a gap; these three are where they go to
+       close one. ---------- */
+    t.push({ g: 'Study', name: 'Before you start', sub: 'Three short checks that tell you whether you need to review',
+             url: BASE + 'before-you-start.html', icon: 'target', tone: 'gold',
+             kw: 'before start readiness check prerequisite assumed chemistry anatomy math gap' });
+    t.push({ g: 'Study', name: 'Chemistry review', sub: 'The chemistry physiology runs on, and nothing more',
+             url: BASE + 'review-chemistry.html', icon: 'flask', tone: 'terra', soon: true,
+             kw: 'chemistry review ions gradient ph buffer protein atp bonds concentration' });
+    t.push({ g: 'Study', name: 'Math review', sub: 'The calculations this course actually asks for',
+             url: BASE + 'review-math.html', icon: 'brain', tone: 'navy', soon: true,
+             kw: 'math review calculation units conversion ratio percent log formula' });
+    t.push({ g: 'Study', name: 'Anatomy review', sub: 'The structures you need so the mechanisms make sense',
+             url: BASE + 'anatomy-review.html', icon: 'globe', tone: 'gold',
+             kw: 'anatomy review structure nephron heart lung neuron muscle location' });
 
-    t.push({ g: 'About the course', name: 'Syllabus', sub: S ? S.label : 'Pick your section first',
-             url: BASE + (S ? S.syllabus : 'syllabus-fall2026.html'), icon: 'doc', tone: 'navy', kw: 'syllabus grading policy', soon: true });
+    /* ---------- ADMIN ---------- */
+    t.push({ g: 'Admin', name: 'Syllabus', sub: 'How the course runs, in full',
+             url: BASE + (S ? S.syllabus : 'syllabus-fall2026.html'), icon: 'doc', tone: 'navy',
+             kw: 'syllabus policy rules grading late work ai policy contact' });
+    t.push({ g: 'Admin', name: 'What you do and what it is worth', sub: 'Every graded thing, the points, and the AI policy',
+             url: BASE + 'what-you-do.html' + q, icon: 'target', tone: 'gold',
+             kw: 'grading points worth graded assignments weight ai policy scholar' });
+    t.push({ g: 'Admin', name: 'How to videos', sub: 'Short tours of the course. Scan a code, watch on your phone',
+             url: BASE + 'bio005-tour-poster.html', icon: 'play', tone: 'terra', qr: 'howto', soon: true,
+             kw: 'how to tour help video walkthrough getting started orientation' });
+    t.push({ g: 'Admin', name: 'Accessibility', sub: 'How this was built, what was checked, what is still open',
+             url: BASE + 'accessibility.html' + q, icon: 'target', tone: 'terra',
+             kw: 'accessibility access screen reader contrast keyboard captions dsps accommodation wcag' });
+    t.push({ g: 'Admin', name: 'Course home', sub: 'Back to the front of the course',
+             url: BASE + 'course-start.html' + q, icon: 'home', tone: 'navy', qr: 'home',
+             kw: 'home hub front start main course' });
+    t.push({ g: 'Admin', name: 'Virtual Office', sub: 'Ask a question where the whole class sees the answer',
+             url: 'https://yccd.instructure.com/courses/42616/discussion_topics/711800', icon: 'people', tone: 'terra',
+             kw: 'office hours ask question help contact instructor forum' });
 
-    /* welcome.html IS the course home. Offering a "Course home" tile
-       while a student is standing on it is a dead click, so it is left
-       out on that page. */
-    if (!/\/welcome\.html$|\/$/.test(location.pathname)) {
-      t.push({ g: 'About the course', name: 'Course home', sub: S ? S.label : 'Pick your section',
-               url: BASE + 'welcome.html' + q, icon: 'home', tone: 'gold', qr: 'home', kw: 'home welcome start' });
-    }
-    /* First in Course, because the question a student cannot answer is the
-       thing most likely to stop them, and the board is faster than my inbox. */
-    t.push({ g: 'About the course', name: 'Virtual Office', sub: 'Ask a question where the whole class sees the answer',
-             url: BASE + 'virtual-office.html' + q, icon: 'people', tone: 'terra', soon: true,
-             kw: 'virtual office question board discussion ask help stuck forum post canvas' });
-    /* Start here and How this course works were tiles in this group.
-       Both are week-one orientation: read once, never opened again,
-       and occupying two of the dock's slots for the other sixteen
-       weeks. The pages stay where they are, linked from the calendar
-       walkthrough and the syllabus, which is where a student is when
-       the question comes up. */
     return t;
   }
 
@@ -10377,10 +10502,10 @@ window.BIO005_SESSIONS = {
 '  box-shadow:inset 0 1px 0 rgba(255,255,255,.4)}',
 '.bd-ic svg{width:20px;height:20px}',
 '.bd-ic.navy{background:linear-gradient(145deg,#31527a,#16294a);color:#fff}',
-'.bd-ic.gold{background:linear-gradient(145deg,#DCB45C,#A87F2E);color:#0B1530}',
-'.bd-ic.terra{background:linear-gradient(145deg,#7A2A22,#8B3A2E);color:#fff}',
+'.bd-ic.gold{background:linear-gradient(145deg,#C9A14A,#A87F2E);color:#0B1530}',
+'.bd-ic.terra{background:linear-gradient(145deg,#8B3A2E,#8B3A2E);color:#fff}',
 '/* Was a sage-teal, which is not in the palette. Terra, like every other accent. */',
-'.bd-ic.green{background:linear-gradient(145deg,#7A2A22,#8B3A2E);color:#fff}',
+'.bd-ic.green{background:linear-gradient(145deg,#8B3A2E,#8B3A2E);color:#fff}',
 '.bd-tx{min-width:0;padding-right:22px}',
 '/* Room for the QR button so a long name never runs under it. */',
 '.bd-n{display:block;font-weight:800;font-size:14px;color:#fff;letter-spacing:-.01em}',
@@ -10395,9 +10520,9 @@ window.BIO005_SESSIONS = {
 '.bd-tile.soon{background:rgba(255,255,255,.035);border-color:rgba(255,255,255,.09);cursor:default}',
 '.bd-tile.soon:hover{transform:none;background:rgba(255,255,255,.035);border-color:rgba(255,255,255,.09)}',
 '.bd-tile.soon .bd-n{color:#C3CAD6}',
-'.bd-tile.soon .bd-s{color:#98A3B4;opacity:1}',
+'.bd-tile.soon .bd-s{color:#AEB8C6;opacity:1}',   /* was #98A3B4 at 5.95:1 on the tile, under AA for small text. 7.57:1 now. */
 '.bd-tile.soon .bd-ic{filter:grayscale(.75)}',
-'.bd-soon{display:inline-block;margin-left:7px;font-size:9.5px;font-weight:800;letter-spacing:.12em;',
+'.bd-soon{display:inline-block;margin-left:7px;font-size:9.5px;font-weight:800;letter-spacing:.08em;white-space:nowrap;',
 '  text-transform:uppercase;color:#0B1530;background:#C3CAD6;border-radius:999px;padding:2px 7px;vertical-align:1px}',
 
 '.bd-qrb{position:absolute;z-index:2;top:8px;right:8px;width:26px;height:26px;border-radius:8px;border:0;cursor:pointer;',
@@ -10522,17 +10647,33 @@ window.BIO005_SESSIONS = {
       return;
     }
 
-    /* Anything flagged soon leaves its own group and collects at the end
-       under one heading, so the tools that work are not interleaved with
-       the ones that do not. */
-    var SOON_G = 'Coming soon';
-    var ready = list.filter(function (t) { return !t.soon; });
-    var soon  = list.filter(function (t) { return t.soon; });
-    soon.forEach(function (t) { t.g = SOON_G; });
-    list = ready.concat(soon);
+    /* SOON TILES STAY IN THEIR OWN GROUP. Reversed Aug 2026.
+
+       This used to hoist everything flagged soon into one Coming soon
+       heap at the end, on the reasoning that working tools should not
+       be interleaved with ones that do not work. That reasoning holds
+       when three things are unfinished. It fails at twenty one: the
+       dock became one long Coming soon pile with four nearly empty
+       headings above it, and the Lecture, Lab, Study and Admin shape
+       stopped being visible at all.
+
+       The shape is the point. A student who opens the dock in week 1
+       should see what the course is made of, including the parts that
+       are not switched on yet. Inside each group the ready tiles sort
+       first and the soon ones follow, so nothing working is buried,
+       and every soon tile still says Soon and is not a link. */
 
     var groups = [], seen = {};
     list.forEach(function (t) { if (!seen[t.g]) { seen[t.g] = []; groups.push(t.g); } seen[t.g].push(t); });
+
+    /* Group ORDER comes from the catalog, so Lecture, Lab, Study and Admin
+       stay in that order even when a whole group is still unbuilt. Only the
+       tiles INSIDE a group are reordered, ready first and soon after. A
+       global sort would have done both and pushed Lab to the bottom for
+       having nothing switched on yet, which is the opposite of the point. */
+    groups.forEach(function (g) {
+      seen[g].sort(function (a, b) { return (b5Pending(a) ? 1 : 0) - (b5Pending(b) ? 1 : 0); });
+    });
 
     /* Searching opens everything: a hit hidden inside a folded group
        reads as no result. Browsing folds everything but This week. */
@@ -10554,11 +10695,12 @@ window.BIO005_SESSIONS = {
       seen[g].forEach(function (t) {
         /* Not a link. A tile that goes somewhere unfinished is worse than
            one that plainly says it is not ready yet. */
-        if (t.soon) {
+        var b5p = b5Pending(t);
+        if (b5p) {
           html += '<div class="bd-cell"><div class="bd-tile soon">' +
             '<span class="bd-ic ' + t.tone + '">' + icon(t.icon) + '</span>' +
             '<span class="bd-tx"><span class="bd-n">' + esc(t.name) +
-              '<span class="bd-soon">Soon</span></span>' +
+              '<span class="bd-soon">' + esc(b5p) + '</span></span>' +
             '<span class="bd-s">' + esc(t.sub) + '</span></span>' +
           '</div></div>';
           return;
@@ -10752,10 +10894,21 @@ window.BIO005_SESSIONS = {
 
      To take it off the whole course, delete this block.
      ============================================================ */
+  /* DATA AND ENGINE SEPARATED, Sep 7 2026.
+     This used to bail out entirely on `if (window.BIO005_HOOTIE) return`.
+     That is correct for the engine and wrong for the data. The two
+     standalone pages, mastery-physio-os-standalone.html and
+     unit-05-standalone.html, inline hootie.js rather than loading it, so
+     BIO005_HOOTIE was already set by the time this ran, the function
+     returned on line one, and neither the schedule nor the 248 answer
+     bank was ever fetched. Hootie was mounted on both pages and answered
+     every single question with "I cannot see the schedule from this
+     page." Now the data loads whether or not the engine is already here,
+     and only the engine load is skipped. */
   (function loadHootie() {
     if (window.BIO005_OPEN_VIEW) return;   /* public link, see ?open=1 above */
-    if (window.BIO005_HOOTIE) return;
-    if (document.querySelector('script[src*="hootie.js"]')) return;
+    var engineHere = !!window.BIO005_HOOTIE
+                  || !!document.querySelector('script[src*="hootie.js"]');
 
     var here = document.querySelector('script[src*="bio005-dock.js"]');
     function sibling(name) {
@@ -10779,11 +10932,11 @@ window.BIO005_SESSIONS = {
         add(sibling('schedule-fall2026.js'));
       }
     }
+    /* the answer bank first: hootie reads window.BIO005_QUESTIONS */
     if (!window.BIO005_QUESTIONS) add(sibling('bio005-question-bank.js'));
-    add(sibling('hootie.js'));
+    if (!engineHere) add(sibling('hootie.js'));
   })();
 })();
-
 </script>
 <script>
 /* ===== inlined: dock-coachmark.js ===== */

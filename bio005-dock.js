@@ -963,10 +963,21 @@
 
      To take it off the whole course, delete this block.
      ============================================================ */
+  /* DATA AND ENGINE SEPARATED, Sep 7 2026.
+     This used to bail out entirely on `if (window.BIO005_HOOTIE) return`.
+     That is correct for the engine and wrong for the data. The two
+     standalone pages, mastery-physio-os-standalone.html and
+     unit-05-standalone.html, inline hootie.js rather than loading it, so
+     BIO005_HOOTIE was already set by the time this ran, the function
+     returned on line one, and neither the schedule nor the 248 answer
+     bank was ever fetched. Hootie was mounted on both pages and answered
+     every single question with "I cannot see the schedule from this
+     page." Now the data loads whether or not the engine is already here,
+     and only the engine load is skipped. */
   (function loadHootie() {
     if (window.BIO005_OPEN_VIEW) return;   /* public link, see ?open=1 above */
-    if (window.BIO005_HOOTIE) return;
-    if (document.querySelector('script[src*="hootie.js"]')) return;
+    var engineHere = !!window.BIO005_HOOTIE
+                  || !!document.querySelector('script[src*="hootie.js"]');
 
     var here = document.querySelector('script[src*="bio005-dock.js"]');
     function sibling(name) {
@@ -992,6 +1003,6 @@
     }
     /* the answer bank first: hootie reads window.BIO005_QUESTIONS */
     if (!window.BIO005_QUESTIONS) add(sibling('bio005-question-bank.js'));
-    add(sibling('hootie.js'));
+    if (!engineHere) add(sibling('hootie.js'));
   })();
 })();

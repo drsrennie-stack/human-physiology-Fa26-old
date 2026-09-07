@@ -188,7 +188,7 @@ window.BIO005_QUESTIONS = [
  {
   "id": "q30",
   "q": "Can I work ahead?",
-  "a": "<p>You can read ahead any time; every week page is visible. Materials that post when a week opens, like note sheets and videos, arrive on that Monday.</p>",
+  "a": "<p>Yes, one week. Two weeks are open at any time: the week you are in and the week after it. So if you know a hard week is coming at work, you can get the next week done early.</p><p>You cannot open more than that. It is a deliberate limit, not a technical one. Working several weeks ahead in physiology tends to mean covering material fast and retaining very little of it, and the whole design of this course assumes you meet each week once and then keep meeting it in retrieval. Weeks you have finished stay open all term, so you can always go back.</p>",
   "topic": "Navigating the course"
  },
  {
@@ -398,7 +398,7 @@ window.BIO005_QUESTIONS = [
  {
   "id": "q65",
   "q": "Where did Scholar Points or bonus systems go?",
-  "a": "<p>This course does not use them. Five components, no curve, no extra credit. Simple on purpose.</p>",
+  "a": "<p>This course does not use them. Four categories, no curve, no extra credit. Simple on purpose.</p>",
   "topic": "Grading"
  },
  {

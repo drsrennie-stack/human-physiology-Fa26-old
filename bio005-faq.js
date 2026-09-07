@@ -108,7 +108,7 @@ var BIO005_FAQ = [
  {
   "cat": "Navigating the course",
   "q": "Where is the course schedule?",
-  "a": "The <a href=\"course-schedule.html\">course schedule</a>: all fifteen weeks, the three midterm windows, and what each week covers."
+  "a": "The <a href=\"course-schedule.html\">course schedule</a>: all fifteen weeks, both midterm windows, and what each week covers."
  },
  {
   "cat": "Navigating the course",
@@ -138,7 +138,7 @@ var BIO005_FAQ = [
  {
   "cat": "Navigating the course",
   "q": "Can I work ahead?",
-  "a": "You can read ahead any time; every week page is visible. Materials that post when a week opens, like note sheets and videos, arrive on that Monday."
+  "a": "Yes, one week. Two weeks are open at any time: the week you are in and the week after it, so if you know a hard week is coming at work you can get the next week done early. You cannot open more than that, which is a deliberate limit. Weeks you have finished stay open all term."
  },
  {
   "cat": "Navigating the course",
@@ -1163,7 +1163,7 @@ var BIO005_FAQ = [
  {
   "cat": "Grading",
   "q": "Where did Scholar Points or bonus systems go?",
-  "a": "This course does not use them. Five components, no curve, no extra credit. Simple on purpose."
+  "a": "This course does not use them. Four categories, no curve, no extra credit. Simple on purpose."
  },
  {
   "cat": "Midterms",

@@ -855,7 +855,7 @@
         <p class="hg-eyebrow">Your weekly hubs</p>
         <p class="hg-now" id="hgNow"></p>
       </div>
-      <p class="hg-instr">Grouped by which midterm covers them. A week opens the Saturday before it starts, at noon, and stays open for the rest of the term, so you can always go back to one you have finished.</p>
+      <p class="hg-instr">Grouped by which midterm covers them. Two weeks are open at any time: the one you are in and the one after it, so you can work a week ahead if you need to. Weeks you have finished stay open for the rest of the term, so you can always go back to one.</p>
       <div class="hg-modtabs" id="hgModtabs" role="tablist" aria-label="Modules"></div>
       <div class="hg-weeks" id="hgWeeks"></div>
     </section>
@@ -960,7 +960,7 @@
        say:'The syllabus is the whole agreement in one document. How the course works, how your grade is built, the Sunday deadline, the two exam windows, and every date that matters this term.'},
       {key:'weeks', name:'Your weekly hubs', icon:iconHome, internal:true, frame:true, url:'week-navigator.html',
        desc:'All 15 weeks, with the current one marked. Each hub holds that week in order.',
-       say:'This is the way into every week of the term. The week you are in is marked, and a week opens the Saturday before it starts, at noon. Inside a hub you get that week in order: the videos, your note sheet, the retrieval work, the Mastery Check, the lab, the application case, and the discussion. Finished weeks stay open, so you can always go back.'},
+       say:'This is the way into every week of the term. The week you are in is marked, and two weeks are open at any time: the one you are in and the one after it, so you can work a week ahead if you need to. Inside a hub you get that week in order: the videos, your note sheet, the retrieval work, the Mastery Check, the lab, the application case, and the discussion. Finished weeks stay open, so you can always go back.'},
       {key:'packet', name:'Competency Packet', icon:iconDoc, internal:true, frame:true, url:'competency-packet-fall2026.html',
        desc:'All 268 things this course asks of you. Nothing else is graded.',
        say:'The Competency Packet is the whole course on one list: 268 specific things you will be able to do, grouped by midterm and by week. Every exam question traces back to this list, and nothing is graded that is not on it. It is also where you check the anatomy, chemistry, and math the course assumes you arrive with.'},
@@ -1276,18 +1276,22 @@
     return 'Open hub';
   }
 
-  /* A week opens the Saturday before it starts, at noon, and then stays open
-     for good. Identical rule to week-navigator.html; if one changes, change
-     both. Weeks open Monday except Week 1, which opens Tuesday Sep 8, so this
-     walks back to the most recent Saturday rather than a fixed offset. */
+  /* Two weeks open at a time, revised Sep 7 2026: a week unlocks on the
+     Saturday before the PREVIOUS week starts, at noon, and then stays open
+     for good. One week of lead time, no more. Identical rule to
+     week-navigator.html; if one changes, change both. Weeks open Monday
+     except Week 1, which opens Tuesday Sep 8, so this walks back to the
+     most recent Saturday rather than a fixed offset, then takes seven more. */
   var HG_OPENS = ['2026-09-08','2026-09-14','2026-09-21','2026-09-28','2026-10-05',
                   '2026-10-12','2026-10-19','2026-10-26','2026-11-02','2026-11-09',
                   '2026-11-16','2026-11-23','2026-11-30','2026-12-07','2026-12-14'];
+  var HG_LEAD_DAYS = 7;   /* one full week of lead time */
   function hgUnlock(wk){
     var t = HG_OPENS[wk-1].split('-');
     var o = new Date(+t[0], +t[1]-1, +t[2]);
     var back = (o.getDay() - 6 + 7) % 7 || 7;
-    return new Date(o.getFullYear(), o.getMonth(), o.getDate() - back, 12, 0, 0, 0);
+    return new Date(o.getFullYear(), o.getMonth(),
+                    o.getDate() - back - HG_LEAD_DAYS, 12, 0, 0, 0);
   }
   function hgShort(dt){ return dt.toLocaleDateString('en-US',{month:'short',day:'numeric'}); }
   function hgLong(dt){ return dt.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'}); }

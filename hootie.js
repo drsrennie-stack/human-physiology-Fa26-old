@@ -238,8 +238,14 @@
     {id:'tbl',      kw:['tbl','team based','team-based','irat','trat','readiness','team quiz']},
     {id:'mastery',  kw:['mastery','recall','flashcard','gap finder','cram','spaced','study tool','study engine']},
     {id:'study',    kw:['study with me','co-study','study session','study group','sign up','study hours','engagement hour']},
-    {id:'atlas',    kw:['atlas','3d','model','viewer','explore structure']},
-    {id:'loops',    kw:['loop','practice question','practice q']},
+    {id:'atlas',    kw:['atlas','3d','model','viewer','explore structure','anatomy review','refresher']},
+    /* The 'loops' intent is retired, Sep 7 2026. Its keyword was the bare
+       word 'loop', and in a physiology course "how do feedback loops work"
+       is close to the most common question a student can type. Every one of
+       those got answered with "loops are quick lab-based practice questions",
+       which is a BIO 004 tool and not a thing in this course. Practice
+       questions now match under 'howstudy' and 'prework'. */
+    {id:'practice', kw:['practice question','practice q','practice items','predict commit']},
     {id:'prework',  kw:['pre-work','prework','packet','before class','homework','tonight','what should i do','assignment']},
     {id:'howstudy', kw:['how do i study','how should i study','memor','forget','remember','stick','retain','draw','retrieval','revise','review']},
     {id:'week',     kw:['this week','today','due','coming up','next class','whats due','what is due','what is on','schedule']},
@@ -348,22 +354,32 @@
           + '<br><br>Two exams, not five. Midterm 1 covers Weeks 1 to 7 and its window is Oct 26 to 28. Midterm 2 covers Weeks 8 to 14, Dec 14 to 16. Each is a window of three days, not an hour, and each is worth 17.5 percent.'
           + '<br><br>Neither is multiple choice. You draw a physiological pathway and teach it out loud on video with no notes. Every week\'s Retrieve step is that same task in miniature, ungraded, so the format is familiar long before it counts. Dates are on the ' + a('calendar') + ' and in your ' + ilink(s.syllabus, 'syllabus') + '.';
 
+      /* Rewritten Sep 7 2026. This answer used to describe "weekly
+         checkpoints" with the words "Weight is still to be set" and
+         "Placeholder grade" in it, which is a build note that reached
+         students. There are no checkpoints and no placeholder. */
       case 'tbl':
-        return '<p>Weekly checkpoints are how this course replaces attendance. Each week opens Monday and closes Sunday. Weight is still to be set, see the syllabus. Placeholder grade.</p>'
-          + 'You work the week on your own time and close it with a checkpoint. There are no teams and no synchronous sessions in this course.'
+        return '<p>There is no TBL in this course. No teams, no iRAT or tRAT, and nothing that meets at a set time. BIO 005 is fully online and asynchronous.</p>'
+          + '<p>What replaces attendance is what you turn in: your Mastery Check, your discussion post, and any lab the week requires. The note sheet and the practice work carry no points, so nothing is measuring whether you showed up, only whether the work is there.</p>'
           + '<br><br>Studying the work across the week is what makes these go well. There is no version of a checkpoint that goes well if you start it Sunday night. More in your ' + ilink(s.syllabus, 'syllabus') + '.';
 
       case 'mastery':
-        return a('masteryOS', 'Mastery OS') + ' is your study engine: spaced recall, a 3-Day Cram planner, and a Gap Finder that shows exactly what is weak. Open it and set up your plan.';
+        return '<p>' + a('masteryOS', 'The Mastery OS') + ' is your study engine: spaced recall across all 268 competencies and a gap finder that shows exactly what is weak.</p>'
+          + '<p>It works with the weekly <b>Mastery Check</b>, which is not a quiz. No points, no penalty, and no limit on attempts. It asks two levels on each competency, one to see whether you can retrieve it and one to see whether you can use it, and instead of a score it tells you which competencies are solid, which are partly there, and which are still a gap. Bring the gaps back to the OS.</p>';
 
+      /* Scholar Points are retired, and so is the engagement hours bank
+         they fed. Sep 7 2026. */
       case 'study':
-        return a('study') + ' is live co-study time. Sign up, show up, and you bank verified engagement hours toward Scholar Points at the same time.';
+        return 'There is no scheduled co-study session and no Scholar Points system in this course; both are retired. If you want to study with people, say so in the discussion thread and set something up. Office hours are Wednesdays 9:00 to 10:00 am on Zoom, drop in, and bringing a study question to those is the closest thing to co-study on the calendar.';
 
+      /* The interactive Atlas is a BIO 004 anatomy tool and is not part of
+         this course. What physiology students want when they ask about
+         anatomy is the refresher. Sep 7 2026. */
       case 'atlas':
-        return 'The ' + a('atlas') + ' lets you explore structures interactively. It is the fastest way to build the mental picture before lab.';
+        return 'The interactive Atlas belongs to the anatomy course, not this one. What you want here is the <a href="anatomy-review.html" target="_top">anatomy refresher</a>: the anatomy this course leans on, with self-checks, so you can close a gap in Week 1 rather than find it in Week 6.';
 
-      case 'loops':
-        return a('loops') + ' are quick lab-based practice questions. Use them for fast visual review between study blocks.';
+      case 'practice':
+        return 'Practice items live inside each week, in the Practice stage: predict, commit, check, correct, explain. They carry no points, and getting them wrong is the entire point of doing them. The book problems sit alongside them and are also ungraded.';
 
       case 'contact': {
         var c = (L() && L().contact) || {};

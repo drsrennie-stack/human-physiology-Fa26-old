@@ -24,8 +24,14 @@ file; the only thing that changes is ?week=N.
 Week 1 has two discussions. This is the second one, and it is the one
 that repeats all fifteen weeks. Its first three questions never change;
 only the physiology question at the end does.
+
+Week 1 only: post due Sun Sep 13, 10:00 pm, and replies are optional.
+The vision board already takes Friday, and the Mastery Check that three
+of these questions ask about happens later in the week. Set the Canvas
+due date to Sunday and leave the reply requirement off for this one.
+From Week 2 it runs on the usual Fri post, Sun replies pattern.
 <p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion-01-metacognition.html"
-  title="Week 1 Reflect discussion" width="100%" height="2500"
+  title="Week 1 Reflect discussion" width="100%" height="2700"
   style="width:100%; border:0; display:block;"></iframe></p>
 
 --- WEEK 2 &middot; The chemistry that does work in the body ---
