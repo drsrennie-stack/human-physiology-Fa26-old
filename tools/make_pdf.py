@@ -64,7 +64,7 @@ JOBS = {
     'Three figures to read and answer by hand'),
 }
 
-async def render(page_url: str, keep: str = None) -> str:
+async def render(page_url: str, keep: str = None, title: str = '') -> str:
     """Load the page in Chromium, let its JS settle, return the printable DOM."""
     async with async_playwright() as pw:
         b = await pw.chromium.launch()
@@ -81,6 +81,20 @@ async def render(page_url: str, keep: str = None) -> str:
               document.body.innerHTML = '';
               document.body.appendChild(holder);
             }""", keep)
+        # A cropped artifact can end up with no H1, because the page's own H1 is
+        # chrome that print hides. A PDF whose top-level headings are H2 has a
+        # broken outline for anyone navigating by heading, so give the crop a
+        # real H1 carrying the PDF's own title. It is positioned off screen, so
+        # it costs no space on paper and still lands in the structure tree.
+        if keep:
+            await p.evaluate("""(t) => {
+              if (document.querySelector('h1')) return;
+              const h = document.createElement('h1');
+              h.textContent = t;
+              h.setAttribute('style',
+                'position:absolute;left:-9999px;top:0;width:1px;height:1px;overflow:hidden');
+              document.body.insertBefore(h, document.body.firstChild);
+            }""", title)
         html = await p.evaluate("""() => {
           /* Anything the page's own print stylesheet hides is not part of the
              printed document. Playwright is in print emulation here, so this
@@ -242,7 +256,7 @@ def main():
         if not (ROOT / src.split('?')[0]).exists():
             print(f"skip {name}: {src.split('?')[0]} not in repo"); continue
         print(f"building {name} from {src}")
-        html = asyncio.run(render(src, keep))
+        html = asyncio.run(render(src, keep, title))
         target = OUT / name
         HTML(string=html, base_url=str(ROOT) + '/').write_pdf(
             target, pdf_variant='pdf/ua-1', uncompressed_pdf=False)

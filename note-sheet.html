@@ -29,10 +29,14 @@
   sheets, at three per page it is six.
 
   And printing is optional. A student who is not printing rules
-  the same four boxes onto their own paper, and the drawn
-  template on this page shows them exactly how, including what
-  belongs in each box. That template is screen only, it never
-  eats a printed page.
+  the same box onto their own paper, or sets it up on a tablet.
+  The worked SVG template that used to sit on this page came out
+  Sep 7 2026 at Scrubs' request; a short note in the ABOUT THE
+  PAPER card says the same thing in three lines.
+
+  THE PROMPTS ARE ON THE SHEET as of Sep 7 2026. Both prompts for
+  each competency print beside the drawing box, two across, so the
+  competency page no longer has to be printed alongside it.
 
   FOUR SPACES PER COMPETENCY, ALL FOUR DRAWN
     1  Draw it                     the big one, on the left
@@ -124,7 +128,7 @@ a{color:var(--maroon-dark);font-weight:700}
 
 .band{max-width:940px;margin:22px auto 0;padding:0 20px;display:grid;
       grid-template-columns:1fr 1fr;gap:16px}
-.band .box{background:#fff;border:1px solid var(--hair);border-left:3px solid var(--maroon);
+.band .box{background:#fff;border:1px solid var(--hair);
            padding:18px 20px}
 .band h2{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--maroon-dark);
          font-family:var(--body);font-weight:700;margin-bottom:9px}
@@ -135,39 +139,7 @@ a{color:var(--maroon-dark);font-weight:700}
 .band p:last-child{margin-bottom:0}
 @media (max-width:760px){ .band{grid-template-columns:1fr} }
 
-/* ---------------- the hand ruling template, screen only ------------- */
-.tpl{max-width:940px;margin:22px auto 0;padding:0 20px}
-.tpl .box{background:#fff;border:1px solid var(--hair);padding:22px 22px 18px}
-.tpl h2{font-size:19px;color:var(--navy);margin-bottom:7px}
-.tpl .cap{font-size:14.5px;color:var(--muted);max-width:74ch;margin-bottom:14px}
-.tplwrap{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%}
-.tplwrap:focus-visible{outline:3px solid var(--maroon);outline-offset:2px}
-.tplsvg{display:block;width:100%;height:auto;min-width:520px;max-width:720px;margin:0 auto}
-.tplsvg text{stroke:none}
-.tplsvg .rule{fill:none;stroke:var(--navy);stroke-width:2}
-.tplsvg .lab{font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:800;
-             letter-spacing:.09em;fill:#fff}
-.tplsvg .tab{fill:var(--navy)}
-.tplsvg .tab4{fill:var(--maroon)}
-.tplsvg .p1{fill:none;stroke:var(--pen1);stroke-width:1.7;
-            stroke-linecap:round;stroke-linejoin:round}
-.tplsvg .p1t{font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;
-             font-weight:600;fill:var(--pen1)}
-.tplsvg .p2{fill:none;stroke:var(--pen2);stroke-width:1.7;
-            stroke-linecap:round;stroke-linejoin:round}
-.tplsvg .p2t{font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;
-             font-weight:600;fill:var(--pen2)}
-.tplsvg .hd{font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;
-            font-weight:700;fill:var(--muted)}
-.legend{display:flex;flex-wrap:wrap;gap:18px;margin:0 0 12px}
-.legend span{font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
-             display:flex;align-items:center;gap:7px}
-.legend .k1{color:var(--pen1)} .legend .k2{color:var(--pen2)}
-.legend .swatch{width:13px;height:13px;border-radius:2px;display:inline-block}
-.legend .k1 .swatch{background:var(--pen1)} .legend .k2 .swatch{background:var(--pen2)}
-.tpl .after{margin-top:14px;font-size:14.5px;color:var(--ink);max-width:74ch}
-
-.sheets{max-width:940px;margin:0 auto;padding:22px 20px 60px}
+/* The hand ruling template CSS came out with the template, Sep 7 2026. */
 
 /* ---------------- one sheet of paper ---------------- */
 .sheetpage{background:var(--card);border:1px solid var(--hair);padding:24px 22px 20px;
@@ -331,6 +303,30 @@ a{color:var(--maroon-dark);font-weight:700}
   .d2 .ptitle h2{font-size:12pt}
   .d2 .meta{padding:4pt 0}
 }
+
+/* ---------- the two prompts, on the sheet ---------- */
+.picklab{font-size:9.5px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--rust,#8B3A2E);margin:11px 0 6px}
+.prompts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.pk{position:relative;padding:8px 10px 8px 40px;border:1px solid var(--hair);border-radius:6px;
+  font-size:11.5px;line-height:1.42}
+.pk .tick{position:absolute;left:10px;top:8px;width:13px;height:13px;
+  border:1.2px solid var(--navy);border-radius:2px;display:inline-block}
+.pk .lt{position:absolute;left:27px;top:7px;font-weight:800;color:var(--rust,#8B3A2E);font-size:11.5px}
+.pk .tx{display:block}
+@media (max-width:820px){.prompts{grid-template-columns:1fr}}
+@media print{
+  .picklab{font-size:7.6pt;margin:0.07in 0 0.04in}
+  .prompts{gap:0.08in}
+  .pk{font-size:7.8pt;line-height:1.34;padding:0.05in 0.07in 0.05in 0.26in;border:.5pt solid #999}
+  .pk .tick{left:0.06in;top:0.055in;width:8.5pt;height:8.5pt;border:.7pt solid #000}
+  .pk .lt{left:0.17in;top:0.05in;font-size:7.8pt}
+  /* the box gives up the room the prompts take, and stays usable */
+  .d1 .sp.open{min-height:0}
+  .d2 .sp.open{min-height:0}
+  .d3 .sp.open{min-height:0}
+}
+@media (forced-colors:active){.pk,.pk .tick{border:1px solid CanvasText}}
 </style>
 </head>
 <body>
@@ -354,10 +350,9 @@ a{color:var(--maroon-dark);font-weight:700}
 <header class="top"><div class="wrap">
   <p class="eyebrow" id="eyebrow">BIO 005 &middot; Human Physiology &middot; Fall 2026</p>
   <h1 id="h1">Your note sheet, already built.</h1>
-  <p class="sub">One open box per competency, and the box gets drawn, not written. Your prompt says what goes in it, so you divide it however that prompt needs. Print it at whatever density fits your paper budget, or rule the same box onto your own sheet. The template below shows you what a finished one looks like, and both are graded the same.</p>
+  <p class="sub">One open box per competency, and the box gets drawn, not written. Your prompt says what goes in it, so you divide it however that prompt needs. Print it, rule the same box onto your own paper, or work it on a tablet. All three are graded the same.</p>
   <p class="btnrow">
     <button class="sqbtn" type="button" id="printbtn">Print or save as PDF</button>
-    <a class="sqbtn ghost" href="#template">Rule your own instead</a>
     <a class="sqbtn ghost" id="compbtn" href="week-01-competencies.html" target="_top">The competencies behind it</a>
   </p>
 </div></header>
@@ -390,133 +385,19 @@ a{color:var(--maroon-dark);font-weight:700}
   </div>
   <div class="box">
     <h2>About the paper</h2>
-    <p><strong>You do not have to print this.</strong> Two per competency page is what it opens on, and three fits a whole week onto a few sheets. Printing at home, at work, or in the library all count. So does not printing.</p>
-    <p>If you are not printing, rule one box per competency onto your own paper. <a href="#template">The template below</a> shows a finished one. A hand ruled sheet is graded exactly the same as a printed one.</p>
-    <p>Working on a tablet counts too. Import the PDF into whatever you draw in and use two pen colors.</p>
+    <p><strong>You do not have to print this.</strong> Two competencies to a page is what it opens on, and three fits a whole week onto a few sheets. Printing at home, at work or in the library all count.</p>
+    <p><strong>You do not have to use this sheet at all.</strong> Rule one box per competency onto your own paper, or set the same thing up in whatever you already use. A hand ruled sheet is graded exactly the same as a printed one.</p>
+    <p>Working on a device is fine too. Save the PDF into a drawing app, or draw straight into a notes app, as long as you can still do two passes in two colors. None of this carries points, so use whatever you will actually still be doing in November.</p>
   </div>
 </div>
 
 <!-- =============== the hand ruling template, screen only =============== -->
-<section class="tpl" id="template"><div class="box">
-  <h2>Not printing? Rule this onto your own paper.</h2>
-  <p class="cap">One competency to a sheet, or fold a page in half and do two. The dashed lines in this example are the student’s own, not printed rules. This one is worked from a Week 1 prompt so you can see the habit, not so you can copy the answer. Your prompt will ask for a different division.</p>
-
-  <div class="legend">
-    <span class="k1"><span class="swatch" aria-hidden="true"></span>First pass, before the video</span>
-    <span class="k2"><span class="swatch" aria-hidden="true"></span>Second pass, after the video</span>
-  </div>
-
-  <div class="tplwrap" tabindex="0" role="region" aria-label="Template drawing, scroll sideways to see all of it">
-  <svg class="tplsvg" viewBox="0 0 700 470" role="img" aria-labelledby="tplT tplD">
-    <title id="tplT">Template for a hand ruled note sheet, filled in with a worked example</title>
-    <desc id="tplD">A sheet of paper with a header line and one large open box below it. Across the top, short lines for the competency number, the concept name and which prompt was chosen, filled in as number 5, negative feedback, prompt A. The single box has been divided by the student into four regions, not by any printed rule. Top left holds a drawing of a body temperature loop: a thermometer reading thirty nine degrees, an arrow to a sensor in the skin, an arrow to a box marked hypothalamus, and arrows out to two effectors, sweat glands and skin blood vessels, with a return arrow closing the loop back to the thermometer. Short labels run out of that drawing on leader lines to the top right, naming stimulus, sensor, integrating center, effector and response, with the words in the second pen color reading the loop defends a set point near thirty seven degrees. Lower left holds three small boxes joined by arrows reading temperature rises, then hypothalamus compares to set point, then sweating and vasodilation, with a return arrow from the last box to the first. Lower right repeats those three boxes with the middle one crossed out in the second color, and an arrow to a note reading cut the integrating center and the loop cannot correct, temperature keeps climbing.</desc>
-
-    <!-- ============ the header lines the student rules first ============ -->
-    <text class="hd" x="3" y="13">Comp no.</text>
-    <path class="rule" d="M 68,16 L 100,16" stroke-width="1.2"/>
-    <text class="hd" x="112" y="13">Concept name</text>
-    <path class="rule" d="M 200,16 L 470,16" stroke-width="1.2"/>
-    <text class="hd" x="486" y="13">Prompt A / B</text>
-    <path class="rule" d="M 570,16 L 620,16" stroke-width="1.2"/>
-    <text class="p1t" x="70" y="12">5</text>
-    <text class="p1t" x="208" y="12">Negative feedback</text>
-    <text class="p1t" x="580" y="12">A</text>
-
-    <!-- ============ ONE box. Everything below is the student's own division. ============ -->
-    <rect class="rule" x="3" y="32" width="694" height="424"/>
-    <rect class="tab"  x="3" y="32" width="76" height="18"/>
-    <text class="lab"  x="11" y="45">DRAW IT</text>
-
-    <!-- the student's own dividing lines, dashed to show they are not printed -->
-    <g class="rule" stroke-dasharray="5 5" opacity="0.55">
-      <path d="M 350,60 L 350,432"/>
-      <path d="M 12,250 L 688,250"/>
-    </g>
-
-    <!-- ---- upper left: the loop as a picture ---- -->
-    <g class="p1">
-      <rect x="26" y="72" width="34" height="74" rx="5"/>
-      <circle cx="43" cy="152" r="11"/>
-      <path d="M 43,86 L 43,146" stroke-width="3"/>
-      <path d="M 74,110 L 104,110 M 98,105 L 104,110 L 98,115"/>
-      <rect x="108" y="92" width="74" height="36" rx="3"/>
-      <path d="M 186,110 L 214,110 M 208,105 L 214,110 L 208,115"/>
-      <rect x="218" y="92" width="86" height="36" rx="3"/>
-      <path d="M 261,132 L 261,158 M 256,152 L 261,158 L 266,152"/>
-      <rect x="150" y="162" width="88" height="32" rx="3"/>
-      <rect x="252" y="162" width="88" height="32" rx="3"/>
-      <path d="M 194,198 L 194,232 L 43,232 L 43,170 M 38,176 L 43,170 L 48,176"/>
-    </g>
-    <text class="p1t" x="27" y="66">39 &#176;C</text>
-    <text class="p1t" x="116" y="107">skin</text>
-    <text class="p1t" x="116" y="120">thermoreceptor</text>
-    <text class="p1t" x="226" y="114">hypothalamus</text>
-    <text class="p1t" x="158" y="182">sweat glands</text>
-    <text class="p1t" x="260" y="182">skin vessels</text>
-    <text class="p2t" x="60" y="246">this arrow is what makes it a loop</text>
-
-    <!-- leaders out to the labels the student parked on the right -->
-    <g class="p1">
-      <path d="M 62,100 L 322,100 L 322,84 L 378,84"/>
-      <path d="M 186,104 L 200,104 L 200,66 L 330,66 L 330,104 L 378,104"/>
-      <path d="M 306,110 L 340,110 L 340,124 L 378,124"/>
-      <path d="M 340,186 L 358,186 L 358,144 L 378,144"/>
-    </g>
-
-    <!-- ---- upper right: short labels on lines ---- -->
-    <text class="p1t" x="392" y="88">stimulus, the rise itself</text>
-    <text class="p1t" x="392" y="108">sensor, reads the variable</text>
-    <text class="p1t" x="392" y="128">integrating center, holds the set point</text>
-    <text class="p1t" x="392" y="148">effectors, two of them, both cooling</text>
-    <text class="p2t" x="392" y="176">response returns the variable, so the</text>
-    <text class="p2t" x="392" y="192">stimulus for the loop goes away</text>
-    <text class="p2t" x="392" y="220">defends a set point near 37 &#176;C</text>
-
-    <!-- ---- lower left: the same thing as a chain ---- -->
-    <g class="p1">
-      <rect x="20" y="286" width="96" height="38" rx="3"/>
-      <rect x="132" y="286" width="96" height="38" rx="3"/>
-      <rect x="244" y="286" width="92" height="38" rx="3"/>
-      <path d="M 120,305 L 128,305 M 123,300 L 128,305 L 123,310"/>
-      <path d="M 232,305 L 240,305 M 235,300 L 240,305 L 235,310"/>
-      <path d="M 290,328 L 290,352 L 68,352 L 68,328 M 63,334 L 68,328 L 73,334"/>
-    </g>
-    <text class="p1t" x="28" y="301">temperature</text>
-    <text class="p1t" x="28" y="315">rises</text>
-    <text class="p1t" x="140" y="301">compared to</text>
-    <text class="p1t" x="140" y="315">the set point</text>
-    <text class="p1t" x="252" y="301">sweat and</text>
-    <text class="p1t" x="252" y="315">vasodilation</text>
-    <text class="p2t" x="20" y="372">negative: the response cancels the stimulus</text>
-
-    <!-- ---- lower right: break one link ---- -->
-    <g class="p1">
-      <rect x="392" y="286" width="86" height="38" rx="3"/>
-      <rect x="492" y="286" width="86" height="38" rx="3"/>
-      <rect x="592" y="286" width="86" height="38" rx="3"/>
-      <path d="M 482,305 L 488,305 M 484,300 L 488,305 L 484,310"/>
-      <path d="M 582,305 L 588,305 M 584,300 L 588,305 L 584,310"/>
-    </g>
-    <text class="p1t" x="400" y="301">temperature</text>
-    <text class="p1t" x="400" y="315">rises</text>
-    <text class="p1t" x="500" y="301">compared to</text>
-    <text class="p1t" x="500" y="315">the set point</text>
-    <text class="p1t" x="600" y="301">sweat and</text>
-    <text class="p1t" x="600" y="315">vasodilation</text>
-    <g class="p2">
-      <path d="M 492,286 L 578,324 M 578,286 L 492,324" stroke-width="2"/>
-      <path d="M 535,332 L 535,352 M 530,346 L 535,352 L 540,346"/>
-    </g>
-    <text class="p2t" x="392" y="370">cut the integrating center and nothing compares the</text>
-    <text class="p2t" x="392" y="386">reading to anything, so the effectors never fire and</text>
-    <text class="p2t" x="392" y="402">the temperature keeps climbing</text>
-
-    <text class="p2t" x="14" y="446">The dashed lines are yours, not printed. Divide the box however this week&#39;s prompt needs.</text>
-  </svg>
-  </div>
-
-  <p class="after"><strong>What to copy from this.</strong> Not the layout, the habit. A picture rather than a paragraph. Short labels on lines that run out to that picture. Small boxes joined by arrows when something happens in an order. And somewhere on the page, the thing broken on purpose, with the arrows followed to what stops. Two pen colors throughout, both passes into the same box.</p>
-</div></section>
+<!-- THE HAND RULED TEMPLATE CAME OUT, Sep 7 2026. Scrubs: make this
+     disappear and just leave a note that they can set up their own sheet
+     if they do not want to print, and that working on a device is fine,
+     since it is not graded. The worked SVG example and its long
+     description went with it. The two links that pointed at #template
+     were rewritten in the same pass. -->
 
 <main id="sheets" class="sheets" aria-label="The note sheet"></main>
 
@@ -612,8 +493,24 @@ a{color:var(--maroon-dark);font-weight:700}
         '<p class="can"><b>You should be able to:</b> ' + can + '</p></span>' +
       '</div>' +
 
+      /* THE PROMPTS ARE ON THE SHEET NOW, Sep 7 2026. Scrubs asked for the
+         question and the concept title to sit with the drawing box so the
+         competency page does not have to be printed alongside it. They run
+         two across, A beside B, because stacked they cost about twice the
+         vertical space and at three competencies to a page that is the
+         difference between a usable box and a stripe. In blank mode there
+         is nothing to print: the student writes their own. */
+      (BLANK ? '' :
+        '<p class="picklab">Pick one and do that one</p>' +
+        '<div class="prompts">' +
+          '<div class="pk"><span class="tick" aria-hidden="true"></span>' +
+            '<span class="lt">A</span><span class="tx">' + esc(it.a) + '</span></div>' +
+          '<div class="pk"><span class="tick" aria-hidden="true"></span>' +
+            '<span class="lt">B</span><span class="tx">' + esc(it.b) + '</span></div>' +
+        '</div>') +
+
       '<div class="meta">' +
-        '<span>Prompt <i class="tick" aria-hidden="true"></i> A <i class="tick" aria-hidden="true"></i> B</span>' +
+        (BLANK ? '<span>Prompt <i class="tick" aria-hidden="true"></i> A <i class="tick" aria-hidden="true"></i> B</span>' : '') +
         '<span>Pass 1 color <i class="cl" aria-hidden="true"></i></span>' +
         '<span>Pass 2 color <i class="cl" aria-hidden="true"></i></span>' +
         (it.lab ? '<span>Also a lab skill</span>' : '') +
@@ -632,7 +529,7 @@ a{color:var(--maroon-dark);font-weight:700}
        sheet page is that document's h1. On later pages it stays a span, so the
        PDF gets exactly one h1. */
     var runner = first
-      ? '<h1 class="runner">BIO 005 &middot; Week ' + wk + ' &middot; Note sheet</h1>'
+      ? '<p class="runner" role="presentation">BIO 005 &middot; Week ' + wk + ' &middot; Note sheet</p>'
       : '<span class="runner">BIO 005 &middot; Week ' + wk + ' &middot; Note sheet</span>';
     return '' +
     '<section class="sheetpage d' + per + '">' +
