@@ -9164,7 +9164,7 @@ window.BIO005_SESSIONS = {
 
    ACCESSIBILITY
    -------------
-   The panel is a labelled dialog. The launcher is a real button
+   The panel is a labeled dialog. The launcher is a real button
    with aria-expanded. The transcript is an aria-live polite log
    so replies are announced. Focus moves into the input on open
    and back to the launcher on close. Escape closes. Nothing here
@@ -9455,7 +9455,7 @@ window.BIO005_SESSIONS = {
 
       case 'exams':
         return examLine(ctx, ctx.nextExam)
-          + '<br><br>Five exams in all, one at the end of each module, each with a lecture part and a lab practical. No exam counts above 102%, in-exam bonus only. Every date is on the ' + a('calendar') + ' and in your ' + ilink(s.syllabus, 'syllabus') + '.';
+          + '<br><br>Two exams in all, Midterm 1 covering Weeks 1 to 7 and Midterm 2 covering Weeks 8 to 14. Each is a three day window and each is worth 17.5 percent. Every date is on the ' + a('calendar') + ' and in your ' + ilink(s.syllabus, 'syllabus') + '.';
 
       case 'tbl':
         return '<p>Weekly checkpoints are how this course replaces attendance. Each week opens Monday and closes Sunday. Weight is still to be set, see the syllabus. Placeholder grade.</p>'
@@ -9568,7 +9568,7 @@ window.BIO005_SESSIONS = {
     if (exAsk) {
       var want = parseInt(exAsk[1], 10);
       var ex = ctx.exams.filter(function (e) { return e.n === want; })[0];
-      if (!ex) return { html: 'There are five exams in this course, 1 to 5. There is no Exam ' + want + '.' };
+      if (!ex) return { html: 'There are two exams in this course, Midterm 1 and Midterm 2. There is no Exam ' + want + '.' };
       return { html: examLine(ctx, ex) };
     }
 

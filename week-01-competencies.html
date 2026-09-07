@@ -156,13 +156,13 @@ footer{border-top:1px solid var(--rule);padding:22px 0 34px;font-size:13.5px;col
 }
 
 /* The sample is a DRAWING, because the note sheet is a drawing assignment.
-   A bulleted list would model the wrong behaviour on the one page students
+   A bulleted list would model the wrong behavior on the one page students
    look at before they pick up a pen.
 
-   Two ink colours, first pass and second pass, and every label is real SVG
+   Two ink colors, first pass and second pass, and every label is real SVG
    text so it scales, prints crisply and is read out by a screen reader. Each
    drawing carries a title and a full desc, so the whole diagram is available
-   to anyone who cannot see it. Colour is never the only cue: the legend above
+   to anyone who cannot see it. Color is never the only cue: the legend above
    each drawing names both passes in words. */
 .draw{display:block;width:100%;height:auto;max-width:620px;margin:2px auto 0}
 /* Shapes are stroke only, text is fill only. A CSS fill on the group beats the
@@ -190,14 +190,14 @@ footer{border-top:1px solid var(--rule);padding:22px 0 34px;font-size:13.5px;col
 
 /* ---- What a finished box looks like ------------------------------------
    The worked example on competency 1 shows the thinking. This shows the
-   PAGE: how a box is headed, how the two colours sit inside one box, and
+   PAGE: how a box is headed, how the two colors sit inside one box, and
    that a new concept starts a NEW box rather than continuing the old one.
 
    The content is deliberately ANATOMY, from BIO 004. If the sample were
    physiology, half the class would copy it straight onto their sheet and
    learn nothing. Anatomy shows the format with nothing worth lifting.
 
-   Colour never carries meaning on its own. Every pass is labelled in text
+   Color never carries meaning on its own. Every pass is labeled in text
    as well, so the boxes read correctly in greyscale, on a printout, and to
    a screen reader. The swatches are aria-hidden decoration. */
 .sheet{background:var(--card);border:1px solid var(--rule);border-radius:10px;
@@ -365,7 +365,7 @@ footer{border-top:1px solid var(--rule);padding:22px 0 34px;font-size:13.5px;col
 <div class="legend"><span class="k1"><span class="swatch" aria-hidden="true"></span>First pass, before the video</span><span class="k2"><span class="swatch" aria-hidden="true"></span>Second pass, after the video</span></div>
 <svg viewBox="-60 0 650 430" role="img" aria-labelledby="boneT boneD" class="draw">
   <title id="boneT">Sample note sheet drawing, a long bone in longitudinal section</title>
-  <desc id="boneD">A long bone cut lengthwise. First pass labels in the first pen colour name the diaphysis, the two epiphyses, the metaphysis, compact bone, spongy bone, the medullary cavity and the periosteum. Second pass labels in the second pen colour add the articular cartilage capping each end, the endosteum lining the cavity, the epiphyseal line where the growth plate closed, and a note that the hollow shaft gives more strength per gram.</desc>
+  <desc id="boneD">A long bone cut lengthwise. First pass labels in the first pen color name the diaphysis, the two epiphyses, the metaphysis, compact bone, spongy bone, the medullary cavity and the periosteum. Second pass labels in the second pen color add the articular cartilage capping each end, the endosteum lining the cavity, the epiphyseal line where the growth plate closed, and a note that the hollow shaft gives more strength per gram.</desc>
 
   <!-- ============ the bone, first pass ============ -->
   <g class="ink1" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
@@ -462,7 +462,7 @@ footer{border-top:1px solid var(--rule);padding:22px 0 34px;font-size:13.5px;col
 <div class="legend"><span class="k1"><span class="swatch" aria-hidden="true"></span>First pass, before the video</span><span class="k2"><span class="swatch" aria-hidden="true"></span>Second pass, after the video</span></div>
 <svg viewBox="-170 0 930 400" role="img" aria-labelledby="jntT jntD" class="draw">
   <title id="jntT">Sample note sheet drawing, a synovial joint in section</title>
-  <desc id="jntD">Two bone ends facing each other with a cavity between them. First pass labels in the first pen colour name the joint cavity, the articular cartilage on each bone end, the capsule around the joint and a ligament outside it. Second pass labels in the second pen colour split the capsule into an outer fibrous layer and an inner synovial membrane, name the synovial membrane as the source of the fluid, note that the fluid both lubricates and feeds the cartilage because cartilage has no blood supply, and separate ligament from tendon.</desc>
+  <desc id="jntD">Two bone ends facing each other with a cavity between them. First pass labels in the first pen color name the joint cavity, the articular cartilage on each bone end, the capsule around the joint and a ligament outside it. Second pass labels in the second pen color split the capsule into an outer fibrous layer and an inner synovial membrane, name the synovial membrane as the source of the fluid, note that the fluid both lubricates and feeds the cartilage because cartilage has no blood supply, and separate ligament from tendon.</desc>
 
   <g class="ink1" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
     <!-- upper bone -->
@@ -501,7 +501,7 @@ footer{border-top:1px solid var(--rule);padding:22px 0 34px;font-size:13.5px;col
 
   <!-- second pass -->
   <g class="ink2">
-    <!-- the cartilage caps, thickened in the second colour -->
+    <!-- the cartilage caps, thickened in the second color -->
     <path d="M 200,164 C 216,176 254,181 290,181 C 326,181 364,176 380,164"
           fill="none" stroke-width="4" stroke-linecap="round"/>
     <path d="M 200,238 C 216,226 254,221 290,221 C 326,221 364,226 380,238"
@@ -544,7 +544,7 @@ footer{border-top:1px solid var(--rule);padding:22px 0 34px;font-size:13.5px;col
         </div>
       </div>
 
-      <p class="cap">Notice what makes these gradeable. The header names the competency and says which prompt was chosen. The first pass is a real drawing with labels, not a paragraph, and it leaves white space. The second pass goes into the same drawing, adds what was missing and says what was wrong, not just what is right. That gap between the two colours is the first thing I look at.</p>
+      <p class="cap">Notice what makes these gradeable. The header names the competency and says which prompt was chosen. The first pass is a real drawing with labels, not a paragraph, and it leaves white space. The second pass goes into the same drawing, adds what was missing and says what was wrong, not just what is right. That gap between the two colors is the first thing I look at.</p>
     </div>
   </div>
 
@@ -667,7 +667,7 @@ footer{border-top:1px solid var(--rule);padding:22px 0 34px;font-size:13.5px;col
    b:"Draw a saturation curve. Label the plateau, then write one line on what the plateau means physiologically."},
   {n:12, g:"skills", id:"units-conversion", lab:true,
    name:"Units and unit conversion",
-   can:"Convert between the units physiology actually reports, including litres and millilitres, moles and millimoles, mg/dL and mmol/L, and mmHg and kPa, and say which unit a given measurement belongs in.",
+   can:"Convert between the units physiology actually reports, including liters and milliliters, moles and millimoles, mg/dL and mmol/L, and mmHg and kPa, and say which unit a given measurement belongs in.",
    pending:true,
    prompts:["Write the conversion you use most often, then work one clinical value through it both directions.",
             "Take three lab values off a real panel and put each one in the other unit system."]}
