@@ -1,52 +1,179 @@
-==================================================================
-BIO 005, CANVAS SNIPPETS. Regenerated September 6, 2026, afternoon.
+======================================================================
+BIO 005, CANVAS SNIPPETS. Regenerated September 6 2026, evening.
+
+Every height below was measured on the current file at a 1000px wide
+column, then padded about 6 percent so nothing is clipped. Where a page
+
+----------------------------------------------------------------------
+IF YOU CHANGE A HEIGHT AND NOTHING HAPPENS
+
+The height appears ONCE now, in height="...". Change that number and the
+box changes.
+
+Earlier versions of these snippets also carried min-height in the style
+attribute, with the same number in it. Editing only one of the two did
+nothing visible, because min-height held the box open at the old value.
+If you have a snippet already pasted into Canvas that will not resize,
+look for min-height in its style attribute and delete it.
+
+Too much white space under the content means the height is larger than
+the page. Too little means the iframe is scrolling internally. Adjust
+in steps of about 100 and reload.
+----------------------------------------------------------------------
+changes size by week, the tallest week was measured and used.
+
+All of these carry the MedMasters branding of record: navy #0B1530,
+maroon #8B3A2E, gold #C9A14A, Open Sans headlines, Plus Jakarta Sans
+body, and the three figure mark running navy, maroon, gold.
+
 THE RULE: only assignment directions get iframed. Everything else is
-the course site, one connected system; link into it. Worksheets are
-links students open and print.
-==================================================================
+the course site, one connected system; link into it. Anything students
+have to ACT in, like a discussion, gets pasted into the Canvas item
+itself, never framed, because the reply box belongs to Canvas.
+======================================================================
 
---- EMBED ONCE: THE FRONT PAGE ---
-<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/course-door.html"
-  title="BIO 005 Human Physiology" width="100%" height="1300"
-  style="width:100%; min-height:1300px; border:0; display:block;"></iframe></p>
+--- PER WEEK: THE FOUR ASSIGNMENT DIRECTION PAGES ---
+Change only the week number. Everything else stays the same.
 
---- EMBED, PER WEEK: THE FOUR ASSIGNMENT DIRECTION PAGES (?week=N) ---
 <p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-notesheet.html?week=1"
-  title="Week 1 note sheet" width="100%" height="950"
-  style="width:100%; min-height:950px; border:0; display:block;"></iframe></p>
-<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion.html?week=1"
-  title="Week 1 discussion" width="100%" height="1500"
-  style="width:100%; min-height:1500px; border:0; display:block;"></iframe></p>
+  title="Week 1 note sheet" width="100%" height="900"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
 <p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-bookproblems.html?week=1"
-  title="Week 1 book problems" width="100%" height="1900"
-  style="width:100%; min-height:1900px; border:0; display:block;"></iframe></p>
+  title="Week 1 book problems" width="100%" height="1350"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
 <p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=1"
-  title="Week 1 lab" width="100%" height="1100"
-  style="width:100%; min-height:1100px; border:0; display:block;"></iframe></p>
+  title="Week 1 lab" width="100%" height="900"
+  style="width:100%; border:0; display:block;"></iframe></p>
 
---- EMBED ONCE: WEEK 1 VISION BOARD DIRECTIONS ---
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion.html?week=1"
+  title="Week 1 discussion" width="100%" height="2400"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+--- PER WEEK: THE STUDY PAGES ---
+
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/note-sheet.html?week=1"
+  title="Week 1 note sheet, printable" width="100%" height="15200"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/ai-work-log.html?week=1"
+  title="Week 1 problem log" width="100%" height="3000"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+--- EMBED ONCE ---
+
+Course home  (course-door.html)
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/course-door.html"
+  title="Course home" width="100%" height="1300"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+Start here, the fifteen weeks  (course-start.html)
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/course-start.html"
+  title="Start here, the fifteen weeks" width="100%" height="3200"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+Welcome  (welcome.html)
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/welcome.html"
+  title="Welcome" width="100%" height="900"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+Syllabus  (syllabus-fall2026.html)
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/syllabus-fall2026.html"
+  title="Syllabus" width="100%" height="14200"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+Course schedule  (course-schedule.html)
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/course-schedule.html"
+  title="Course schedule" width="100%" height="7950"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+Answered questions  (course-questions.html)
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/course-questions.html"
+  title="Answered questions" width="100%" height="15400"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+Dr. Rennie's Virtual Office  (virtual-office.html)
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/virtual-office.html"
+  title="Dr. Rennie's Virtual Office" width="100%" height="3800"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+Accessibility  (accessibility.html)
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/accessibility.html"
+  title="Accessibility" width="100%" height="2800"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+How AI is used in this course  (ai-in-this-course.html)
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/ai-in-this-course.html"
+  title="How AI is used in this course" width="100%" height="2150"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+Course tools  (course-materials.html)
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/course-materials.html"
+  title="Course tools" width="100%" height="4850"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+Clinical Physiology Lab manual  (clinical-physiology-lab-manual.html)
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/clinical-physiology-lab-manual.html"
+  title="Clinical Physiology Lab manual" width="100%" height="50550"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+Week 1 competencies  (week-01-competencies.html)
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/week-01-competencies.html"
+  title="Week 1 competencies" width="100%" height="10100"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+Week 1 note sheet prompts  (week-01-notesheet-prompts.html)
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/week-01-notesheet-prompts.html"
+  title="Week 1 note sheet prompts" width="100%" height="8200"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+Week 1 notes  (week-01-notes.html)
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/week-01-notes.html"
+  title="Week 1 notes" width="100%" height="21200"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+Vision board directions  (assignment-discussion-01-visionboard.html)
 <p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion-01-visionboard.html"
-  title="Your digital vision board" width="100%" height="1900"
-  style="width:100%; min-height:1900px; border:0; display:block;"></iframe></p>
+  title="Vision board directions" width="100%" height="1550"
+  style="width:100%; border:0; display:block;"></iframe></p>
 
---- LINKS INTO THE SITE (paste as links, not iframes) ---
-<p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/welcome.html" target="_blank" rel="noopener"><strong>The welcome</strong></a><br>Opens the course site in a new tab.</p>
-<p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/course-materials.html" target="_blank" rel="noopener"><strong>Course tools, this week in order</strong></a><br>Opens the course site in a new tab.</p>
-<p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/door-assignments.html" target="_blank" rel="noopener"><strong>Every assignment, all fifteen weeks</strong></a><br>Opens the course site in a new tab.</p>
-<p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/door-lab.html" target="_blank" rel="noopener"><strong>Every lab</strong></a><br>Opens the course site in a new tab.</p>
-<p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/door-lecture.html" target="_blank" rel="noopener"><strong>Every lecture</strong></a><br>Opens the course site in a new tab.</p>
-<p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/door-study.html" target="_blank" rel="noopener"><strong>The study tools</strong></a><br>Opens the course site in a new tab.</p>
-<p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/syllabus-fall2026.html" target="_blank" rel="noopener"><strong>Syllabus</strong></a><br>Opens the course site in a new tab.</p>
-<p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/course-schedule.html" target="_blank" rel="noopener"><strong>Schedule</strong></a><br>Opens the course site in a new tab.</p>
-<p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/course-questions.html" target="_blank" rel="noopener"><strong>250 questions, answered</strong></a><br>Opens the course site in a new tab.</p>
+Reflect discussion directions  (assignment-discussion-01-metacognition.html)
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion-01-metacognition.html"
+  title="Week 1 Reflect discussion directions" width="100%" height="2500"
+  style="width:100%; border:0; display:block;"></iframe></p>
 
---- WORKSHEET LINKS (students print these) ---
-<p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/reference-range-lab.html" target="_blank" rel="noopener"><strong>Week 1 lab: standards and ranges</strong></a><br>Open it in a new tab, print to PDF or copy to your own paper, work it by hand, and upload it here.</p>
-<p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/week-01-notesheet-prompts.html" target="_blank" rel="noopener"><strong>Week 1 note sheet prompts</strong></a><br>Opens the course site in a new tab.</p>
-<p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/enzyme-amylase-lab.html" target="_blank" rel="noopener"><strong>Week 2 enzyme lab</strong></a><br>Open it in a new tab, print to PDF or copy to your own paper, work it by hand, and upload it here.</p>
-<p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/week-02-notesheet-prompts.html" target="_blank" rel="noopener"><strong>Week 2 note sheet prompts</strong></a><br>Opens the course site in a new tab.</p>
-<p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/learning-lab.html" target="_blank" rel="noopener"><strong>Learning lab: Reading a Physiology Figure or Graph</strong></a><br>Open it in a new tab, print to PDF or copy to your own paper, work it by hand, and upload it here.</p>
-<p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/ai-work-log.html?week=1" target="_blank" rel="noopener"><strong>Week 1 AI worksheet</strong></a><br>Open it in a new tab, print to PDF or copy to your own paper, work it by hand, and upload it here.</p>
+Week 1 lab, standards and ranges  (reference-range-lab.html)
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/reference-range-lab.html"
+  title="Week 1 lab, standards and ranges" width="100%" height="3100"
+  style="width:100%; border:0; display:block;"></iframe></p>
 
-The full week by week tool with copy buttons is canvas-kit.html.
-==================================================================
+Learning lab, reading a figure  (learning-lab.html)
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/learning-lab.html"
+  title="Learning lab, reading a figure" width="100%" height="4750"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+Week 1 concept videos  (concept-videos-week01.html)
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/concept-videos-week01.html"
+  title="Week 1 concept videos" width="100%" height="2650"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+Before you start  (before-you-start.html)
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/before-you-start.html"
+  title="Before you start" width="100%" height="4850"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+Anatomy review  (anatomy-review.html)
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/anatomy-review.html"
+  title="Anatomy review" width="100%" height="3900"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+--- PASTE, DO NOT IFRAME ---
+
+Dr. Rennie's Virtual Office. Paste the contents of
+canvas-virtual-office-body.html into the discussion body with the </>
+HTML editor. It is inline styles only, because Canvas strips <style>.
+An iframe cannot work there: the reply box belongs to the discussion,
+not to the frame.
+
+======================================================================

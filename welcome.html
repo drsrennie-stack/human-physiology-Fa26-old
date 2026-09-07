@@ -781,7 +781,7 @@
     <div class="intro-title" id="introTitle">
       <p class="eyebrow" style="color:var(--gold);">BIO 005 · Human Physiology · Fall 2026</p>
       <h1 id="intro-h1">Human Physiology starts here.</h1>
-      <p class="intro-sub">Everything for the term lives here. Give me two minutes and I will show you around.</p>
+      <p class="intro-sub">Fully online, fifteen weeks, everything due Sunday at 10:00 pm. Give me two minutes and I will show you around, or go straight to Start Here.</p>
       <p class="intro-sec-chip" id="introSecChip" hidden></p>
 
       <!-- Section picker (shown only when section is unknown) -->
@@ -796,7 +796,7 @@
         <!-- The task first, the tour second. The audit found students
              meeting four prompts before one course word; this button is
              the one answer to the question they actually arrive with. -->
-        <a class="btn btn-primary" id="todayBtn" href="home.html" target="_top">Enter the course</a>
+        <a class="btn btn-primary" id="todayBtn" href="course-start.html" target="_top">Start here</a>
         <button type="button" class="btn btn-ghost" id="startTourBtn">Show me around first</button>
         <button type="button" class="btn btn-ghost" id="skipTourBtn">Skip the tour</button>
       </div>
@@ -809,12 +809,12 @@
   <div class="tour-wrap">
     <div class="tour-head">
       <p class="eyebrow">Guided tour</p>
-      <h2 id="tour-h2">Where everything lives, and the eight things that carry you through this course</h2>
-      <p>Tap any card to see it right here. Start with the first one, because it is the button that opens all the others. Explore as much as you like, then head to your dashboard whenever you are ready. You can replay this any time from the bottom of the home page.</p>
+      <h2 id="tour-h2">Where everything lives, and the pieces that carry you through this course</h2>
+      <p>Tap any card to see it right here. Start with the first one, because it is the button that opens all the others. Explore as much as you like, then go to your weekly hubs whenever you are ready. You can replay this any time from the bottom of that page.</p>
     </div>
     <div class="tour-bar">
-      <span class="tour-progress" id="tourProgress" aria-live="polite">0 of 8 explored</span>
-      <button type="button" class="btn btn-primary tour-finish" id="finishTour">Go to my dashboard &#8594;</button>
+      <span class="tour-progress" id="tourProgress" aria-live="polite">0 explored</span>
+      <button type="button" class="btn btn-primary tour-finish" id="finishTour">Go to my weekly hubs &#8594;</button>
     </div>
     <div class="tour-grid" id="tourGrid" role="list"><!-- resource cards injected --></div>
   </div>
@@ -888,7 +888,8 @@
 
   <footer>
     <p><strong>BIO 005 Human Physiology</strong> · Fall 2026 · Yuba College, Vacaville Center</p>
-    <p>Dr. Sharilyn Rennie</span><span class="build-stamp" data-build-stamp title="Which copy of this page you are looking at">build 2026-08-12 55787e2</p>
+    <p>Dr. Sharilyn Rennie</p>
+    <p><span class="build-stamp" data-build-stamp title="Which copy of this page you are looking at">build 2026-09-07</span></p>
   </footer>
 </section>
 
@@ -932,27 +933,46 @@
   function buildResources(secKey){
     var s = SECTIONS[secKey];
     return [
+      /* CARD SET REBUILT Sep 7 2026 to match the course as it now runs.
+         What changed and why:
+           - Added How this course works and How you are graded. The seven
+             stage week and the four grade categories are the course now,
+             and neither had a card.
+           - Added Your weekly hubs, pointed at week-navigator.html. The
+             week hub is where a student actually spends the term, and the
+             tour never showed it.
+           - Retired the standalone videos card. It hard linked Week 1, so
+             it was wrong from Week 2 on. The videos live in the hub and are
+             described there.
+           - Schedule copy said three midterm blocks. There are two.
+           - Labs copy said 15 percent. Investigate It is 25 percent. */
       {key:'tools', name:'Course tools', icon:iconTools, internal:true, frame:false, url:'',
        desc:'The button at the bottom of every page. Everything else is inside it.',
        say:'Start here, because this one opens all the others. Look at the bottom left corner of any page in this course and you will see a button marked Course tools. Everything lives in there: this week, your note sheet, the Mastery OS, your labs, the schedule, your syllabus. You do not need to remember where anything is. You only need to remember that button.'},
+      {key:'works', name:'How this course works', icon:iconLoop, internal:true, frame:true, url:'how-this-course-works.html',
+       desc:'The seven parts of a week, from Learn through Reflect. Click any one to open it up.',
+       say:'Every week in this course runs through the same seven parts: Learn, Retrieve, Practice, Mastery Check, Investigate, Apply, Reflect. Three of them are graded and four are not, and the four that are not are the ones that make the three work. On this page you can click any part and it will tell you what it is, what you actually do in it, and what happens if you skip it. Look at it once and the rest of the term stops being a surprise.'},
+      {key:'grading', name:'How you are graded', icon:iconSlides, internal:true, frame:true, url:'how-grading-works.html',
+       desc:'Four categories, two exams, and a plain list of what carries no points.',
+       say:'Your grade comes from four categories. Show Me What You Know is 35 percent, two exams at 17.5 percent each, where you draw a pathway and teach it out loud on video with no notes. Investigate It is 25 percent, the weekly labs. Use It is 25 percent, your weekly application case, which builds into your patient file. Think About It is 15 percent, one discussion a week. The page also lists what carries no points at all, and why that is deliberate.'},
       {key:'syllabus', name:'Syllabus', icon:iconDoc, internal:true, frame:true, url:s.syllabus,
-       desc:'How the course works, the grade model, and every important date.',
-       say:'Start with the syllabus. It lays out how the course works, how your grade is built, the Sunday deadline, and every date that matters this term.'},
-      {key:'packet', name:'Competency Packet', icon:iconSlides, internal:true, frame:true, url:'competency-packet-fall2026.html',
+       desc:'The full document: how the course works, the grade model, and every date.',
+       say:'The syllabus is the whole agreement in one document. How the course works, how your grade is built, the Sunday deadline, the two exam windows, and every date that matters this term.'},
+      {key:'weeks', name:'Your weekly hubs', icon:iconHome, internal:true, frame:true, url:'week-navigator.html',
+       desc:'All 15 weeks, with the current one marked. Each hub holds that week in order.',
+       say:'This is the way into every week of the term. The week you are in is marked, and a week opens the Saturday before it starts, at noon. Inside a hub you get that week in order: the videos, your note sheet, the retrieval work, the Mastery Check, the lab, the application case, and the discussion. Finished weeks stay open, so you can always go back.'},
+      {key:'packet', name:'Competency Packet', icon:iconDoc, internal:true, frame:true, url:'competency-packet-fall2026.html',
        desc:'All 268 things this course asks of you. Nothing else is graded.',
        say:'The Competency Packet is the whole course on one list: 268 specific things you will be able to do, grouped by midterm and by week. Every exam question traces back to this list, and nothing is graded that is not on it. It is also where you check the anatomy, chemistry, and math the course assumes you arrive with.'},
       {key:'mastery', name:'Mastery OS', icon:iconBrain, internal:true, frame:true, url:'mastery-physio-os-standalone.html',
        desc:'Spaced recall and gap finders that track your 268 competencies.',
-       say:'The Mastery OS is your study engine. It tracks every competency, runs spaced recall cards, and shows you exactly where you are weak before a grade depends on it.'},
-      {key:'videos', name:"This week's videos", icon:iconPlay, internal:true, frame:true, url:'concept-videos-week01.html',
-       desc:'The concept lectures. Watch them as you work your note sheet.',
-       say:'This week\u2019s videos are the concept lectures. Press play once and the whole week runs, one concept into the next, or jump to any single concept. Work your note sheet alongside them; the two are built for each other.'},
-      {key:'schedule', name:'Course schedule', icon:iconLoop, internal:true, frame:true, url:'course-schedule.html',
-       desc:'All 15 weeks at a glance, with the three midterm blocks.',
-       say:'The schedule shows the whole term: fifteen weeks, three midterm blocks, and what each week covers. Everything is due Sunday at 10:00 pm, every week, so the rhythm never changes.'},
+       say:'The Mastery OS is your study engine. It tracks every competency, runs spaced recall cards, and shows you exactly where you are weak. Use it with the weekly Mastery Check, which carries no points and has no limit on attempts: the Check tells you which competencies are solid and which are not, and the OS is where you go to fix the ones that are not.'},
       {key:'labs', name:'Labs in PhysioEx', icon:iconFlask, internal:true, frame:false, url:'',
        desc:'Weekly virtual labs in Pearson. Set up your access in Week 1.',
-       say:'Your labs run in PhysioEx, inside Pearson. Open our Canvas course, click Access Pearson in the left menu, and purchase there. That one path gets you the right package, the labs, and the free eText of our book. Do this in Week 1, because the labs are 15 percent of your grade and they live inside it.'},
+       say:'Your labs run in PhysioEx, inside Pearson. Open our Canvas course, click Access Pearson in the left menu, and purchase there. That one path gets you the right package, the labs, and the free eText of our book. Do this in Week 1, because Investigate It is 25 percent of your grade and it lives inside PhysioEx.'},
+      {key:'schedule', name:'Course schedule', icon:iconLoop, internal:true, frame:true, url:'course-schedule.html',
+       desc:'All 15 weeks in one list, with both exam windows on it.',
+       say:'The schedule shows the whole term in one list: fifteen weeks, what each one covers, and both exam windows. Midterm 1 covers Weeks 1 to 7 and its window is October 26 to 28. Midterm 2 covers Weeks 8 to 14 and its window is December 14 to 16. Everything else is due Sunday at 10:00 pm, every week, so the rhythm never changes.'},
       {key:'refresher', name:'Anatomy refresher', icon:iconAtlas, internal:true, frame:true, url:'anatomy-review.html',
        desc:'The anatomy this course assumes, with self-checks to find your gaps.',
        say:'Physiology assumes you know the parts. The refresher covers the anatomy this course leans on, with self-checks, so if it has been a while, or you are taking anatomy at the same time, you can close your gaps in Week 1 instead of discovering them in Week 6.'}
@@ -1452,16 +1472,14 @@
 
   // ---------- Hootie (the Know Fish) ----------
   function bindHootie(){
-    (function(){
-      /* keep the hero's Today button pointed at the student's section */
-      var tb = document.getElementById('todayBtn');
-      if (tb) {
-        var sec = null;
-        try { var m = location.search.match(/[?&]sec=(mw|tr-am|tr-eve)/); if (m) sec = m[1]; } catch(e){}
-        if (!sec) { try { sec = localStorage.getItem('bio005-section'); } catch(e){} }
-        if (sec) tb.href = 'today.html?sec=' + sec;
-      }
-    })();
+    /* The section rewrite that used to sit here is gone, Sep 7 2026.
+       It read bio005-section out of localStorage and pointed the hero
+       button at today.html?sec=..., which is a page from the in person
+       three section model and does not exist in this repo. Because the
+       page writes 'net' into that key on first load, every returning
+       student got a 404 on the one button the screen is built around.
+       BIO 005 has a single fully online section, so there is nothing to
+       branch on: the button goes to Start Here and stays there. */
     var btn = document.getElementById('hootieBtn');
     var panel = document.getElementById('hootiePanel');
     var closeBtn = document.getElementById('hootieClose');
@@ -1475,7 +1493,7 @@
     function secLinks(){
       var s = section ? SECTIONS[section] : null;
       return {
-        syllabus: s ? s.syllabus : 'fall-2026-syllabus.html',
+        syllabus: s ? s.syllabus : 'syllabus-fall2026.html',
         hub: s ? s.hub : 'course-schedule.html'
       };
     }
@@ -1493,6 +1511,8 @@
       {id:'notesheets', q:'How do note sheets work?'},
       {id:'grades',     q:'How does grading work?'},
       {id:'exams',      q:'How do the midterms work?'},
+      {id:'works',      q:'How does a week work?'},
+      {id:'ai',         q:'Can I use AI?'},
       {id:'contact',    q:'Who do I contact?'}
     ];
 
@@ -1502,6 +1522,8 @@
     var INTENTS = [
       {id:'contact',   kw:['contact','email','e-mail','reach','who do i','who should i','talk to','office hour','professor','instructor','teacher','rennie','tutor','tutoring','accommodat','disab','dsp','tech ','technolog','login','log in','canvas help','password','it help']},
       {id:'struggle',  kw:['struggl','behind','failing','fail ','so hard','too hard','confus','overwhelm','stress','anxious','burn','falling','fall behind','drowning','give up','quit','really hard','cant keep','keep up','lost and']},
+      {id:'ai',        kw:['ai','a.i.','chatgpt','chat gpt','claude','gemini','copilot','llm','cheat','plagiar','academic integrity','integrity policy']},
+      {id:'works',     kw:['how does the course work','how the course works','structure','structured','seven','stages','learn retrieve','mastery check','how a week','weekly rhythm','what order','how it works']},
       {id:'grades',    kw:['grade','grading','points','percent','weight','how much is','worth','extra credit','curve','my grade','pass the class','passing','gpa']},
       {id:'exams',     kw:['exam','test','midterm','draw','teach back','teach-back','video exam','proctor','how many test']},
       {id:'notesheets',kw:['note sheet','notesheet','pre-work','prework','pick five','five prompts','competency sheet','worksheet']},
@@ -1533,7 +1555,7 @@
       if (bestScore < 3) return null;
       var out = '<p><strong>' + best.q + '</strong></p><p>' + best.a + '</p>';
       if (second && second !== best){
-        out += '<p style="font-size:13px;opacity:.85">You might also ask: ' + second.q + ' All 250 questions live on the <a href="course-questions.html" target="_top">questions page</a>.</p>';
+        out += '<p style="font-size:13px;opacity:.85">You might also ask: ' + second.q + ' More answers live on the <a href="course-questions.html" target="_top">questions page</a>.</p>';
       }
       return out;
     }
@@ -1565,26 +1587,51 @@
           '<li>Read the note sheet questions first. Then preview the text and organize your notes so you know where to find things. No flashcards; organize.</li>'+
           '<li>Answer the questions the best you can from what you already know, in your first color, on your master note sheet.</li>'+
           '<li>Now watch each concept\u2019s video, the name and number are at the top of the prompt, and add what you did not know in a second color. Color one is your baseline; color two is what you need to commit to memory.</li>'+
-          '<li>Turn it in. For lab: PhysioEx first, then the worksheet, then the clinical correlations.</li></ol>'+
-          '<p>If a step does not fit the way you learn, adapt it. What cannot change: answer from memory at some point, keep the two colors honest, PhysioEx before the worksheet, and Sunday stays Sunday. Your '+link(l.syllabus,'syllabus',true)+' has the rest.</p>';
-        case 'week': return '<p>Everything for the current week is on the '+link(CAL,'course schedule',true)+
-          '. The rhythm never changes: note sheet first, then the videos, then book problems and your PhysioEx lab, then the five minute practice round. All of it is due Sunday at 10:00 pm. When a discussion is assigned, the initial post runs early: Friday at 10:00 pm, with peer replies due Sunday.</p>';
+          '<li>Take the Mastery Check. No points, no penalty, no limit on attempts. It tells you which competencies are solid and which are not, so you find out before a grade depends on it.</li>'+
+          '<li>Then the graded three: your lab, your application case, and the discussion. For lab, PhysioEx first, then the worksheet, then the clinical correlations.</li></ol>'+
+          '<p>If a step does not fit the way you learn, adapt it. What cannot change: answer from memory at some point, keep the two colors honest, PhysioEx before the worksheet, and Sunday stays Sunday. '+link('course-start.html','Start Here',true)+' has the short version and your '+link(l.syllabus,'syllabus',true)+' has the rest.</p>';
+        case 'week': return '<p>Open '+link('week-navigator.html','your week hub',true)+' and work it top to bottom. The rhythm never changes, seven parts in the same order:</p>'+
+          '<p><strong>Learn</strong> the concept videos alongside your note sheet, <strong>Retrieve</strong> from memory, <strong>Practice</strong> the items, take the <strong>Mastery Check</strong>, then <strong>Investigate</strong> in your lab, <strong>Apply</strong> it to your case, and <strong>Reflect</strong> in the discussion. The first four carry no points. The last three do.</p>'+
+          '<p>Everything is due Sunday at 10:00 pm. The one exception is the discussion: your initial post is Friday at 10:00 pm so there is something for people to reply to, and replies are due Sunday. '+link('how-this-course-works.html','How this course works',true)+' walks through all seven.</p>';
         case 'struggle': return '<p>This is normal and fixable. Try this, in order:</p><ol class="steps">'+
           '<li>Open the '+link(MOS,'Mastery OS',true)+' and let the gap finder show you exactly what is weak.</li>'+
           '<li>Run your recall cards on just those competencies.</li>'+
           '<li>Come to office hours: Wednesdays 9:00 to 10:00 am on Zoom, no appointment needed.</li>'+
           '<li>Book free tutoring through the college at (530) 751-5558.</li></ol>'+
           '<p>Reach out early. Do not wait for the next midterm, and do not wait until you feel you have earned the right to ask.</p>';
-        case 'grades': return '<p>Your grade:</p><ol class="steps">'+
-          '<li>Competency note sheets: 20% (weekly; five prompts graded for accuracy, the rest checked complete)</li>'+
-          '<li>Show Me What You Know, two exams, draw and teach: 35%</li>'+
-          '<li>Lab in PhysioEx: 15%</li>'+
-          '<li>Book problems: 15%</li></ol>'+
-          '<p>There is no extra credit and no curve. Full detail in your '+link(l.syllabus,'syllabus',true)+'.</p>';
-        case 'exams': return '<p>Two exams, and they are not multiple choice. Each one asks you to draw a physiological pathway and teach it on video, out loud, no notes. Midterm 1 covers Weeks 1 to 7, Midterm 2 covers Weeks 8 to 14. Every week includes a short ungraded practice round in exactly this format, so the format will be familiar. Exam windows are announced in Canvas and in your '+link(l.syllabus,'syllabus',true)+'.</p>';
-        case 'notesheets': return '<p>The note sheet is your weekly pre-work: one prompt for each competency, worked in a specific order. Read the questions first, preview the text, organize your notes, answer from what you know in your first color, then watch the videos and add what you did not know in a second color. Color two is your commit to memory list. You submit the whole sheet; five prompts are graded for accuracy, you will not know which five, and the rest are checked for completion. It doubles as your midterm study guide.</p>';
-        case 'mastery': return '<p>The '+link(MOS,'Mastery OS',true)+' is your study engine: spaced recall cards across all 268 competencies and a gap finder that shows exactly what is weak before a grade depends on it. Open it and set up your plan.</p>';
-        case 'labs': return '<p>Your labs run in PhysioEx, inside Pearson. Open our Canvas course, click Access Pearson in the left menu, and purchase there; that one path gets the right package, the labs, and the free eText of our Silverthorn book. Set it up in Week 1. One lab every week, due Sunday at 10:00 pm with everything else.</p>';
+        /* GRADE MODEL CORRECTED Sep 7 2026. This answer still listed note
+           sheets at 20 percent and book problems at 15, from the retired
+           model. Note sheets and book problems carry no points now, and
+           saying otherwise on the welcome page contradicted both the
+           syllabus and how-grading-works.html. */
+        case 'grades': return '<p>Four categories:</p><ol class="steps">'+
+          '<li><strong>Show Me What You Know, 35%.</strong> Two exams, 17.5% each. You draw a physiological pathway and teach it out loud on video, no notes.</li>'+
+          '<li><strong>Investigate It, 25%.</strong> The weekly labs, written up as question, prediction, evidence, interpretation, conclusion.</li>'+
+          '<li><strong>Use It, 25%.</strong> Your weekly application case. These accumulate into your patient file, which is the capstone.</li>'+
+          '<li><strong>Think About It, 15%.</strong> One discussion a week, physiology and your thinking about it together.</li></ol>'+
+          '<p>Your note sheet, the retrieval work, the practice items, the book problems and the Mastery Check carry no points at all. That is deliberate: they are where you find out what you do not know, and grading them would push you to make them look finished instead of honest.</p>'+
+          '<p>There is no extra credit and no curve. Full detail in '+link('how-grading-works.html','how you are graded',true)+' and in your '+link(l.syllabus,'syllabus',true)+'.</p>';
+        case 'exams': return '<p>Two exams, 17.5% each, and they are not multiple choice. Each one asks you to draw a physiological pathway and teach it on video, out loud, no notes.</p>'+
+          '<p><strong>Midterm 1</strong> covers Weeks 1 to 7. Window: October 26 to 28.<br><strong>Midterm 2</strong> covers Weeks 8 to 14. Window: December 14 to 16.</p>'+
+          '<p>Each one is a three day window, not an hour, so you pick your time inside it. Every week includes a short ungraded practice round in exactly this format, so nothing about the exam will be new to you. Details in your '+link(l.syllabus,'syllabus',true)+'.</p>';
+        case 'notesheets': return '<p>The note sheet is your weekly pre-work: one prompt for each competency, worked in a specific order. Read the questions first, preview the text, organize your notes, answer from what you know in your first color, then watch the videos and add what you did not know in a second color. Color two is your commit to memory list.</p>'+
+          '<p>It carries no points. Nobody grades it and nobody scores it. It is the honest picture of what you do and do not know yet, which is exactly what makes it useful, and it doubles as your midterm study guide. A sheet with real gaps showing is worth more to you than a tidy one.</p>';
+        case 'works': return '<p>Every week runs through the same seven parts, in the same order:</p><ol class="steps">'+
+          '<li><strong>Learn.</strong> The concept videos, worked alongside your note sheet.</li>'+
+          '<li><strong>Retrieve.</strong> Put the book down and answer from memory.</li>'+
+          '<li><strong>Practice.</strong> Predict, commit, check, correct, explain.</li>'+
+          '<li><strong>Mastery Check.</strong> No points, no penalty, unlimited attempts. It tells you which competencies are solid and which are not.</li>'+
+          '<li><strong>Investigate.</strong> Your lab.</li>'+
+          '<li><strong>Apply.</strong> Your application case, which builds into your patient file.</li>'+
+          '<li><strong>Reflect.</strong> The discussion.</li></ol>'+
+          '<p>The first four carry no points. The last three do. That is on purpose: the ungraded four are where you find out what you do not know, and they are what make the graded three go well. '+link('how-this-course-works.html','How this course works',true)+' lets you click into each one.</p>';
+        case 'ai': return '<p>The short version: AI is open on some things, closed on others, and the line is about whether the work is evidence of <strong>your</strong> reasoning.</p>'+
+          '<p><strong>Closed.</strong> The exams, the discussions, and anything where the point is that you can do it yourself. Retrieval is closed too, not because you would be caught, but because using AI there defeats the only reason to do it.</p>'+
+          '<p><strong>Open, with disclosure.</strong> Labs and application cases. Say what you used it for. The reasoning still has to be yours, and it is what gets graded.</p>'+
+          '<p>The full lists, and how I use AI to build this course, are on <a href="ai-in-this-course.html" target="_blank" rel="noopener">How AI is used in this course &#8599;</a>.</p>';
+        case 'mastery': return '<p>The '+link(MOS,'Mastery OS',true)+' is your study engine: spaced recall cards across all 268 competencies and a gap finder that shows exactly what is weak before a grade depends on it.</p>'+
+          '<p>It pairs with the weekly <strong>Mastery Check</strong>, which is not a quiz. No points, no penalty, and you can take it as many times as you want. It asks two levels on each competency, one to see whether you can retrieve it and one to see whether you can use it, and instead of a score it tells you which competencies are solid, which are partly there, and which are still a gap. Then you bring the gaps back here.</p>';
+        case 'labs': return '<p>Your labs run in PhysioEx, inside Pearson. Open our Canvas course, click Access Pearson in the left menu, and purchase there; that one path gets the right package, the labs, and the free eText of our Silverthorn book. Set it up in Week 1. One lab every week, due Sunday at 10:00 pm with everything else. This is Investigate It, 25% of your grade. Where a week uses PhysioEx it has to show complete in Pearson, and the points live on your worksheet.</p>';
         case 'packet': return '<p>The '+link(PACKET,'Competency Packet',true)+' is the whole course on one list: 268 things you will be able to do, grouped by midterm and week, plus the anatomy, chemistry, and math the course assumes you arrive with. Nothing is graded that is not on that list.</p>';
         case 'refresher': return '<p>The '+link(REFRESH,'anatomy refresher',true)+' covers the anatomy this course leans on, with self-checks. If it has been a while, or you are taking anatomy at the same time, close your gaps there in Week 1.</p>';
         case 'contact': return '<p><strong>Class, grades, or the course:</strong> message Dr. Rennie in the Canvas Inbox, or email srennie@yccd.edu (about 48 to 72 hours on weekdays). Office hours are Wednesdays 9:00 to 10:00 am on Zoom, or by appointment.</p>'+
@@ -1632,7 +1679,7 @@
 
     function showFallback(){
       var html = '<div class="hootie-answer"><p class="hootie-src">Hmm, I did not quite catch that.</p>'+
-        '<p>I can help with where to start, this week\'s work, note sheets, grading, the midterms, studying, and who to contact. Tap one below, browse <a href="course-questions.html" target="_top">all 250 answered questions</a>, or message Dr. Rennie in the Canvas Inbox.</p></div>'+
+        '<p>I can help with where to start, this week\'s work, note sheets, grading, the midterms, studying, and who to contact. Tap one below, browse the <a href="course-questions.html" target="_top">course questions page</a>, or message Dr. Rennie in the Canvas Inbox.</p></div>'+
         '<div class="hootie-q">';
       SUGGEST.forEach(function(m){ html += '<button type="button" data-q="'+m.id+'">'+m.q+'</button>'; });
       html += '</div><button type="button" class="hootie-back" id="hootieBack">← Back</button>';

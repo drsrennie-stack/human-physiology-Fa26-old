@@ -144,6 +144,18 @@ h2.stitle{font-size:clamp(25px,3.6vw,37px);font-weight:800;margin:0 0 14px;line-
 .fig svg{display:block;width:100%;height:auto}
 .fig figcaption{font-size:13px;color:var(--muted);line-height:1.6;margin:14px 0 0;padding-top:12px;border-top:1px solid var(--rule)}
 .fig figcaption b{color:var(--navy)}
+/* The two lab report screenshots on slide 23. Deliberately stacked, one
+   per row, not side by side. The deck is capped at 1060px, so a two
+   column layout would render each screenshot around 400px wide and the
+   printed range values inside them, which are the entire point, would be
+   about three pixels tall. Full width and scrolling beats a tidy pair
+   nobody can read. The caption carries the comparison instead. */
+.figpair{display:grid;gap:18px;grid-template-columns:1fr}
+.figpair figure{margin:0}
+.figpair .plab{font-family:'DM Sans',system-ui,sans-serif;font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--terra);margin:0 0 6px}
+.figpair img{display:block;width:100%;height:auto;border:1px solid var(--rule);border-radius:10px}
+.figpair figcaption{font-size:12.5px;color:var(--muted);line-height:1.6;margin:8px 0 0;padding:0;border:0}
+.figpair figcaption b{color:var(--navy)}
 
 /* comparison table */
 .tablewrap{margin-top:14px;overflow-x:auto;-webkit-overflow-scrolling:touch}
@@ -745,8 +757,49 @@ body.present .rvhint{display:block}
   </div>
 </section>
 
-<!-- 23 LOCAL VS REFLEX -->
+<!-- 23 HOW A RANGE IS DRAWN ON A REAL LAB REPORT -->
 <section class="slide"><span class="snum">23</span>
+  <p class="kicker">Reading a real result</p>
+  <h2 class="stitle">The same idea, <span class="hl">drawn two different ways</span></h2>
+  <p class="lede">Here are two real results from the same blood panel. Before you read a single number, look at the colored bars on the left of each one. The shape of that graphic is already telling you something about the physiology.</p>
+
+  <figure class="fig">
+    <div class="figpair">
+      <figure>
+        <p class="plab">Panel A &middot; a two sided range</p>
+        <img src="img/range-calcium-in-range.png" alt="A lab report for calcium. The result is 9.7 milligrams per deciliter, labeled In Range. To the left, a vertical bar is divided into three sections: a long red section at the top labeled Above Range, greater than 10.4; a short green section in the middle labeled In Range, 8.6 to 10.4; and a long red section at the bottom labeled Below Range, less than 8.6. To the right, the result is plotted as a single green point on a timeline.">
+        <figcaption><b>Calcium, 9.7 mg/dL, in range.</b> Red above, green in the middle, red below. Three bands.</figcaption>
+      </figure>
+      <figure>
+        <p class="plab">Panel B &middot; a one sided range</p>
+        <img src="img/range-hscrp-above-range.png" alt="A lab report for high sensitivity C reactive protein. The result is 5.2 milligrams per liter, labeled Above Range. To the left, a vertical bar is divided into only two sections: a long red section at the top labeled Above Range, greater than 1, and a short green section at the bottom labeled In Range, less than or equal to 1. There is no Below Range section. To the right, the result is plotted as a single red point on a timeline.">
+        <figcaption><b>hs-CRP, 5.2 mg/L, above range.</b> Red above, green below it, and nothing under that. Two bands.</figcaption>
+      </figure>
+    </div>
+    <figcaption><b>Count the bands before you read the numbers.</b> Calcium has a band on both sides of normal because too little and too much are both dangerous. hs-CRP has only one, because there is no such thing as too little of it. That difference is not a design choice by the lab. It is a statement about whether the body is defending the variable.</figcaption>
+  </figure>
+
+  <div class="grid2">
+    <div class="card"><p class="label teal">Two sided</p><h3>Calcium is a regulated variable</h3><p class="kw">Normal range <b>8.6 to 10.4 mg/dL</b>, and that window is narrow on purpose.</p><p>Calcium sits at the setpoint picture you just saw. Parathyroid hormone, calcitriol, and calcitonin work in both directions to hold it there. Nerve and muscle cells need a stable extracellular calcium to fire normally, so falling out either side causes real trouble: too low and nerves become overexcitable, too high and they become sluggish. A value of 9.7 sits comfortably inside, which is why the report says In Range and nothing more.</p></div>
+    <div class="card"><p class="label terra">One sided</p><h3>hs-CRP is not regulated at all</h3><p class="kw">The report wants it <b>at or below 1 mg/L</b>, and there is no lower limit.</p><p>C reactive protein is an acute phase protein the liver releases when inflammation is present. Nothing in the body holds it at a setpoint, so a low value is not a deficiency, it is just an absence of the signal. That is why the graphic has no Below Range band. The number is not a variable being defended. It is a report on something else that is happening.</p></div>
+  </div>
+
+  <div class="rows">
+    <div class="row"><div class="dot terra">1</div><div><h3>Ask who set the range, and for what</h3><p class="kw">"Normal" is <b>a decision, not a fact of nature</b>.</p><p>This report draws the hs-CRP line at 1 mg/L. That is the cardiovascular low risk threshold, not the ordinary laboratory reference interval, which is usually below 3 mg/L. Same molecule, same blood, two defensible cutoffs, because one is answering "is this person inflamed right now" and the other is answering "what is this person's long term heart risk." Neither is wrong. They are answering different questions.</p></div></div>
+    <div class="row"><div class="dot terra">2</div><div><h3>A flagged value is a question, not a diagnosis</h3><p class="kw">Above range means <b>look closer</b>.</p><p>An hs-CRP of 5.2 tells you inflammation is present somewhere. It does not tell you where or why, and a recent cold, an injury, or a flare of an ongoing condition will all raise it. This is exactly why a single hs-CRP is not used alone for heart risk, and why a value over 10 is usually read as acute inflammation rather than as a cardiovascular number at all.</p></div></div>
+    <div class="row"><div class="dot terra">3</div><div><h3>The band heights are not to scale</h3><p class="kw">The picture is a <b>legend, not a graph</b>.</p><p>On the calcium panel the green band looks about as tall as each red one, but the real in range window is under 2 mg/dL wide while "above range" runs upward without limit. The bars are drawn for readability. Read the numbers printed beside them, not the pixels.</p></div></div>
+    <div class="row"><div class="dot terra">4</div><div><h3>One point is not a trend</h3><p class="kw">A line needs <b>at least two real draws</b>.</p><p>The timeline on the right of each panel has one filled point on it. The dashes running out to the second marker are the space where the next result will go, not a measurement and not a prediction. Watching a regulated variable move over time is far more informative than any single value, which is the whole reason these reports are built to be plotted.</p></div></div>
+  </div>
+
+  <div class="hook">
+    <span class="hicon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M9 21h6v-1H9v1zm3-19a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg></span>
+    <div><p class="label">Memory hook</p><p class="say">Two red bands means the body is guarding it. One red band means the body is reporting on something else.</p><p>Every lab slip you ever read can be sorted this way in about two seconds. Sodium, potassium, calcium, glucose, pH and blood pressure are guarded from both sides, so they get a range with a floor and a ceiling. Inflammatory markers, tumor markers, and most toxins only have a ceiling, because there is no amount that is too low. Which shape a value has tells you whether you are looking at a control system or at a messenger.</p></div>
+  </div>
+
+  <p class="bigline terra">If a value has a normal range with a floor and a ceiling, some control system is working to keep it there. Find the sensor, the integrating center, and the effector, and you have found the loop.</p>
+</section>
+<!-- 24 LOCAL VS REFLEX -->
+<section class="slide"><span class="snum">24</span>
   <p class="kicker">Two kinds of control</p>
   <h2 class="stitle">Local control and <span class="hl">reflex control</span></h2>
   <div class="grid2">
@@ -760,8 +813,8 @@ body.present .rvhint{display:block}
   <p class="bigline terra">Anything that uses a long distance pathway, blood pressure regulation being the standard example, is reflex control.</p>
 </section>
 
-<!-- 24 THREE COMPONENTS -->
-<section class="slide"><span class="snum">24</span>
+<!-- 25 THREE COMPONENTS -->
+<section class="slide"><span class="snum">25</span>
   <p class="kicker">Anatomy of a control system</p>
   <h2 class="stitle">Every control system has <span class="hl">the same three parts</span></h2>
   <p class="lede">Local and reflex control differ in how far the signal travels, not in what the pieces are. Learn these three and you can dissect any loop in the course.</p>
@@ -776,8 +829,8 @@ body.present .rvhint{display:block}
   </div>
 </section>
 
-<!-- 25 REFLEX CONTROL -->
-<section class="slide"><span class="snum">25</span>
+<!-- 26 REFLEX CONTROL -->
+<section class="slide"><span class="snum">26</span>
   <p class="kicker">Reflex control</p>
   <h2 class="stitle">Response loops and <span class="hl">feedback loops</span></h2>
   <p class="lede">These two terms get used interchangeably by students and they are not the same thing. Keep them separate and the rest of this unit is much easier.</p>
@@ -788,8 +841,8 @@ body.present .rvhint{display:block}
   <div class="darkpanel" style="margin-top:18px"><p class="label">Say it this way</p><h3>The response loop acts. The feedback loop reports back.</h3><p class="kw">Response loops <b>begin with a stimulus</b>. Feedback loops <b>modulate the response loop</b>.</p><p>Without feedback the body could turn a correction on but would have no way to know when to turn it off. That is a system that overshoots every single time.</p></div>
 </section>
 
-<!-- 26 SEVEN STEPS -->
-<section class="slide"><span class="snum">26</span>
+<!-- 27 SEVEN STEPS -->
+<section class="slide"><span class="snum">27</span>
   <p class="kicker">The response loop, in order</p>
   <h2 class="stitle">The <span class="hl">seven steps</span> you will use all term</h2>
   <figure class="fig">
@@ -838,8 +891,8 @@ body.present .rvhint{display:block}
   </div>
 </section>
 
-<!-- 27 NEGATIVE FEEDBACK -->
-<section class="slide"><span class="snum">27</span>
+<!-- 28 NEGATIVE FEEDBACK -->
+<section class="slide"><span class="snum">28</span>
   <p class="kicker">Negative feedback</p>
   <h2 class="stitle">Negative feedback is <span class="hl">how the body holds the line</span></h2>
   <p class="lede">Negative here does not mean bad. It means the response moves the variable in the direction opposite the stimulus. If something pushes up, the loop pushes down.</p>
@@ -855,8 +908,8 @@ body.present .rvhint{display:block}
   </div>
 </section>
 
-<!-- 28 SENSOR SENSITIVITY -->
-<section class="slide paper"><span class="snum">28</span>
+<!-- 29 SENSOR SENSITIVITY -->
+<section class="slide paper"><span class="snum">29</span>
   <p class="kicker">Sensitivity</p>
   <h2 class="stitle">Not every sensor has <span class="hl">the same trigger point</span></h2>
   <p class="lede">Each regulated variable has its own sensitivity level, and some sensors are far touchier than others. The body guards what it cannot afford to lose and tolerates drift in what it can.</p>
@@ -870,8 +923,8 @@ body.present .rvhint{display:block}
   </div>
 </section>
 
-<!-- 29 NEGATIVE FEEDBACK EXAMPLE -->
-<section class="slide"><span class="snum">29</span>
+<!-- 30 NEGATIVE FEEDBACK EXAMPLE -->
+<section class="slide"><span class="snum">30</span>
   <p class="kicker">Worked example</p>
   <h2 class="stitle">Blood pressure regulation, <span class="hl">all seven steps</span></h2>
   <figure class="fig">
@@ -927,8 +980,8 @@ body.present .rvhint{display:block}
   </figure>
 </section>
 
-<!-- 30 POSITIVE FEEDBACK -->
-<section class="slide"><span class="snum">30</span>
+<!-- 31 POSITIVE FEEDBACK -->
+<section class="slide"><span class="snum">31</span>
   <p class="kicker">Positive feedback</p>
   <h2 class="stitle">Positive feedback loops are <span class="hl">not homeostatic</span></h2>
   <p class="lede">Read that heading twice. Positive feedback reinforces the stimulus instead of opposing it, which means it drives the variable away from normal on purpose. The body uses it when the goal is to finish something quickly, not to hold something steady.</p>
@@ -943,8 +996,8 @@ body.present .rvhint{display:block}
   </div>
 </section>
 
-<!-- 31 CHILDBIRTH -->
-<section class="slide"><span class="snum">31</span>
+<!-- 32 CHILDBIRTH -->
+<section class="slide"><span class="snum">32</span>
   <p class="kicker">Worked example</p>
   <h2 class="stitle">Childbirth, the classic <span class="hl">positive feedback loop</span></h2>
   <figure class="fig">
@@ -1005,8 +1058,8 @@ body.present .rvhint{display:block}
   </figure>
 </section>
 
-<!-- 32 COMPARISON -->
-<section class="slide paper"><span class="snum">32</span>
+<!-- 33 COMPARISON -->
+<section class="slide paper"><span class="snum">33</span>
   <p class="kicker">Side by side</p>
   <h2 class="stitle">Negative and positive feedback, <span class="hl">the exam version</span></h2>
   <div class="tablewrap" role="region" aria-label="Negative and positive feedback compared" tabindex="0">
@@ -1029,8 +1082,8 @@ body.present .rvhint{display:block}
   </div>
 </section>
 
-<!-- 33 FEEDFORWARD -->
-<section class="slide"><span class="snum">33</span>
+<!-- 34 FEEDFORWARD -->
+<section class="slide"><span class="snum">34</span>
   <p class="kicker">Feedforward control</p>
   <h2 class="stitle">Some reflexes let the body <span class="hl">see it coming</span></h2>
   <p class="lede">Negative feedback can adjust a function and hold it in range, but it can never prevent the disturbance that triggered it. Some reflexes have evolved to anticipate that a change is about to happen and start the response loop in advance. That is feedforward control.</p>
@@ -1045,8 +1098,8 @@ body.present .rvhint{display:block}
   </div>
 </section>
 
-<!-- 34 BIOLOGICAL RHYTHMS -->
-<section class="slide"><span class="snum">34</span>
+<!-- 35 BIOLOGICAL RHYTHMS -->
+<section class="slide"><span class="snum">35</span>
   <p class="kicker">Biological rhythms</p>
   <h2 class="stitle">Setpoints <span class="hl">move on a schedule</span></h2>
   <p class="lede">A regulated variable can change predictably and create repeating cycles. Those repeating patterns are called biological rhythms, or biorhythms. The best known are circadian rhythms, which run on a roughly 24 hour cycle.</p>
@@ -1085,8 +1138,8 @@ body.present .rvhint{display:block}
   </div>
 </section>
 
-<!-- 35 SETPOINT VARIABILITY -->
-<section class="slide"><span class="snum">35</span>
+<!-- 36 SETPOINT VARIABILITY -->
+<section class="slide"><span class="snum">36</span>
   <p class="kicker">Whose normal?</p>
   <h2 class="stitle">Normal <span class="hl">is not the same for everyone</span></h2>
   <p class="lede">Each regulated variable has a setpoint range that will not trigger a correction. Those normals vary from person to person and can change within the same person over time. Three factors do most of that work.</p>
@@ -1101,8 +1154,8 @@ body.present .rvhint{display:block}
   </div>
 </section>
 
-<!-- 36 ACCLIMATIZATION -->
-<section class="slide paper"><span class="snum">36</span>
+<!-- 37 ACCLIMATIZATION -->
+<section class="slide paper"><span class="snum">37</span>
   <p class="kicker">Adapting to conditions</p>
   <h2 class="stitle">Acclimatization and <span class="hl">acclimation</span></h2>
   <p class="lede">Setpoints can shift when environmental conditions change, and adaptation to those changes has a name. Which name depends entirely on where the change happened.</p>
@@ -1117,8 +1170,8 @@ body.present .rvhint{display:block}
   </div>
 </section>
 
-<!-- 37 SCIENCE OF PHYSIOLOGY -->
-<section class="slide dark"><span class="snum">37</span>
+<!-- 38 SCIENCE OF PHYSIOLOGY -->
+<section class="slide dark"><span class="snum">38</span>
   <p class="kicker">How we know any of this</p>
   <h2 class="stitle">Physiology is built on <span class="hl">evidence, not authority</span></h2>
   <p class="lede">Everything in this course came from someone running an experiment. Understanding that chain matters, because you are going to be the person at the end of it making decisions about a patient.</p>
@@ -1134,8 +1187,8 @@ body.present .rvhint{display:block}
   </div>
 </section>
 
-<!-- 38 EXPERIMENT DESIGN -->
-<section class="slide"><span class="snum">38</span>
+<!-- 39 EXPERIMENT DESIGN -->
+<section class="slide"><span class="snum">39</span>
   <p class="kicker">Designing a good experiment</p>
   <h2 class="stitle">Change one thing, <span class="hl">measure what happens</span></h2>
   <p class="lede">A common biological experiment removes or alters one variable in a phenomenon in order to study its effects. Everything else is held still on purpose.</p>
@@ -1151,8 +1204,8 @@ body.present .rvhint{display:block}
   </div>
 </section>
 
-<!-- 39 BIRD EXPERIMENT -->
-<section class="slide paper"><span class="snum">39</span>
+<!-- 40 BIRD EXPERIMENT -->
+<section class="slide paper"><span class="snum">40</span>
   <p class="kicker">Worked example</p>
   <h2 class="stitle">The birds at the feeder, <span class="hl">taken apart</span></h2>
   <p class="lede" style="max-width:56em">A biologist notices that birds at a feeder seem to eat more in winter than in summer. That is an observation. Here is how it becomes an experiment.</p>
@@ -1166,8 +1219,8 @@ body.present .rvhint{display:block}
   <p class="bigline terra">Practice reading questions this way. Find the thing that was changed, find the thing that was measured, and find the group that was left alone.</p>
 </section>
 
-<!-- 40 REPLICATION AND THEORY -->
-<section class="slide"><span class="snum">40</span>
+<!-- 41 REPLICATION AND THEORY -->
+<section class="slide"><span class="snum">41</span>
   <p class="kicker">What makes it hold up</p>
   <h2 class="stitle">One result is a story. <span class="hl">Repeated results are science</span></h2>
   <div class="grid2">
@@ -1180,8 +1233,8 @@ body.present .rvhint{display:block}
   </div>
 </section>
 
-<!-- 41 SYNTHESIS ACTIVITY -->
-<section class="slide" data-timer="600"><span class="snum">41</span>
+<!-- 42 SYNTHESIS ACTIVITY -->
+<section class="slide" data-timer="600"><span class="snum">42</span>
   <div class="badges"><span class="badge">Draw it</span><span class="badge time">10 min</span><span class="badge teal">Synthesis</span></div>
   <p class="kicker">Retrieval, not recognition</p>
   <h2 class="stitle">Build the loop <span class="hl">from memory</span></h2>
@@ -1200,8 +1253,8 @@ body.present .rvhint{display:block}
   </div>
 </section>
 
-<!-- 42 CLOSING -->
-<section class="slide dark"><span class="snum">42</span>
+<!-- 43 CLOSING -->
+<section class="slide dark"><span class="snum">43</span>
   <p class="kicker">Before next class</p>
   <h2 class="stitle">What to do <span class="hl">tonight</span></h2>
   <ul class="plain">

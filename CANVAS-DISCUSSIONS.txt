@@ -1,0 +1,105 @@
+======================================================================
+BIO 005 DISCUSSION IFRAMES, one per week. Sep 7 2026.
+
+Paste the snippet into the Canvas discussion body with the </> HTML
+editor. The instructions render at the top and the Reply box sits
+underneath, where Canvas puts it.
+
+Heights were measured on the current file at an 820px column, which
+is narrower than most Canvas layouts, then padded 6 percent. If your
+theme runs wider the page gets shorter, not taller, so these will
+not clip.
+
+Week 1 has two discussions, the vision board and the Reflect
+discussion, each on its own page. Weeks 2 to 15 all come from one
+file; the only thing that changes is ?week=N.
+======================================================================
+
+--- WEEK 1, THE VISION BOARD ---
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion-01-visionboard.html"
+  title="Discussion 1, your vision board" width="100%" height="1550"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+--- WEEK 1, THE REFLECT DISCUSSION (metacognitive) ---
+Week 1 has two discussions. This is the second one, and it is the one
+that repeats all fifteen weeks. Its first three questions never change;
+only the physiology question at the end does.
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion-01-metacognition.html"
+  title="Week 1 Reflect discussion" width="100%" height="2500"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+--- WEEK 2 &middot; The chemistry that does work in the body ---
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion.html?week=2"
+  title="Week 2 discussion" width="100%" height="3350"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+    Week 2 also needs the worksheet link in the discussion, or on the
+    assignment beside it, because the post is not complete without it:
+    <p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/worksheet-week02-graphing.html" target="_blank" rel="noopener"><strong>Print the Week 2 graphing worksheet</strong></a><br>Print it, work it by hand, then photograph or scan it and attach it to your post.</p>
+
+--- WEEK 3 &middot; Getting across the membrane ---
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion.html?week=3"
+  title="Week 3 discussion" width="100%" height="3250"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+--- WEEK 4 &middot; How cells talk, and the electrical signal ---
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion.html?week=4"
+  title="Week 4 discussion" width="100%" height="3250"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+--- WEEK 5 &middot; Synapses and central integration ---
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion.html?week=5"
+  title="Week 5 discussion" width="100%" height="3250"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+--- WEEK 6 &middot; Sensing the world, and the responses you do not control ---
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion.html?week=6"
+  title="Week 6 discussion" width="100%" height="3250"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+--- WEEK 7 &middot; Muscle, and how movement gets commanded ---
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion.html?week=7"
+  title="Week 7 discussion" width="100%" height="3250"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+--- WEEK 8 &middot; Hormones and reproduction, the slow control system ---
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion.html?week=8"
+  title="Week 8 discussion" width="100%" height="3200"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+--- WEEK 9 &middot; The heart as a pump ---
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion.html?week=9"
+  title="Week 9 discussion" width="100%" height="3250"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+--- WEEK 10 &middot; Pressure, flow, and holding blood pressure steady ---
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion.html?week=10"
+  title="Week 10 discussion" width="100%" height="3200"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+--- WEEK 11 &middot; Blood and how the body defends itself ---
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion.html?week=11"
+  title="Week 11 discussion" width="100%" height="3250"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+--- WEEK 12 &middot; Digestion, and how you use food for fuel ---
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion.html?week=12"
+  title="Week 12 discussion" width="100%" height="3200"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+--- WEEK 13 &middot; Breathing, gas transport, and the fast pH lever ---
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion.html?week=13"
+  title="Week 13 discussion" width="100%" height="3200"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+--- WEEK 14 &middot; The kidney and body fluid balance ---
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion.html?week=14"
+  title="Week 14 discussion" width="100%" height="3200"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+--- WEEK 15 &middot; The slow pH lever, and putting it all together ---
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion.html?week=15"
+  title="Week 15 discussion" width="100%" height="3250"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+======================================================================
