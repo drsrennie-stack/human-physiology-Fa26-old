@@ -62,18 +62,26 @@ em,i{font-style:normal;font-weight:700}
 
 .weeks{display:flex;flex-wrap:wrap;gap:11px;margin:0;padding:0;list-style:none}
 .weeks li{margin:0}
-a.wk{position:relative;display:inline-flex;flex-direction:column;align-items:center;gap:3px;
+.wk{position:relative;display:inline-flex;flex-direction:column;align-items:center;gap:3px;
   text-decoration:none;background:#fff;border:1px solid #fff;
   color:var(--navy);border-radius:12px;padding:12px 16px;min-width:96px;min-height:62px;
   text-align:center;transition:border-color 200ms ease,transform 200ms ease,background 200ms ease}
 a.wk:hover,a.wk:focus-visible{border-color:var(--gold);transform:translateY(-2px)}
 a.wk:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
-a.wk .m{font-family:var(--display);font-weight:800;font-size:15px;color:var(--navy)}   /* 17.9:1 on white */
-a.wk .s{font-size:11px;color:#414B5C;font-weight:600}                                   /* 8.80:1 on white */
+.wk .m{font-family:var(--display);font-weight:800;font-size:15px;color:var(--navy)}   /* 17.9:1 on white */
+.wk .s{font-size:11px;color:#414B5C;font-weight:600}                                   /* 8.80:1 on white */
 a.wk.current{background:var(--maroon);border-color:var(--gold)}
 a.wk.current .m{color:#fff}                                                             /* 7.66:1 on maroon */
 a.wk.current .s{color:#F5F1E8;font-weight:700;letter-spacing:.09em;text-transform:uppercase;font-size:10px}  /* 6.94:1 on maroon, gold measured 3.17:1 and failed */
 a.wk.done{opacity:.78}
+
+/* A week that has not opened yet. Dimmed AND worded AND marked with a dot,
+   because colour on its own is not a signal. */
+.wk.locked{background:rgba(245,241,232,.07);border:1px dashed rgba(245,241,232,.34);
+  color:rgba(245,241,232,.80);cursor:default}
+.wk.locked .m{color:rgba(245,241,232,.82)}                /* 9.3:1 on the panel */
+.wk.locked .s{color:rgba(245,241,232,.72);font-weight:700}
+.wk.locked .lk{margin-right:5px;font-size:8px;vertical-align:1px;color:var(--gold)}
 
 /* the exam closes the half. Not another week, so it is gold, not maroon. */
 .endcap{display:flex;align-items:center;gap:10px;flex-basis:100%;margin:16px 0 2px;
@@ -118,7 +126,7 @@ a.wk.exam:hover,a.wk.exam:focus-visible{background:rgba(201,161,74,.14)}
     <p class="eyebrow" id="navh">Your weekly hubs</p>
     <p class="now" id="now"></p>
   </div>
-  <p class="instr">Two halves, split at Midterm 1. Every week stays open all term, so you can go back to one you have already done, or look ahead.</p>
+  <p class="instr">Two halves, split at Midterm 1. A week opens the Saturday before it starts, at noon, and then stays open for the rest of the term, so you can always go back.</p>
 
   <div class="tabs" role="tablist" aria-label="Which half of the term" id="tabs"></div>
   <ul class="weeks" id="weeks"></ul>
@@ -168,6 +176,27 @@ a.wk.exam:hover,a.wk.exam:focus-visible{background:rgba(201,161,74,.14)}
   function d(s){ var p = s.split('-'); return new Date(+p[0], +p[1]-1, +p[2]); }
   function pad(n){ return (n < 10 ? '0' : '') + n; }
 
+  /* WHEN A WEEK UNLOCKS.
+     Scrubs' rule: the Saturday before the week, at noon. That gives a
+     student the weekend to get ahead on the week they are about to be in,
+     and stops them opening Week 9 in September.
+
+     Weeks open Monday, except Week 1 which opens Tuesday Sep 8, so this
+     walks back to the most recent Saturday rather than assuming a fixed
+     number of days. */
+  function unlockAt(openISO){
+    var o = d(openISO);
+    var back = (o.getDay() - 6 + 7) % 7 || 7;   /* most recent Saturday before */
+    var u = new Date(o.getFullYear(), o.getMonth(), o.getDate() - back, 12, 0, 0, 0);
+    return u;
+  }
+  function shortDate(dt){
+    return dt.toLocaleDateString('en-US', { month:'short', day:'numeric' });
+  }
+  function longDate(dt){
+    return dt.toLocaleDateString('en-US', { weekday:'long', month:'long', day:'numeric' });
+  }
+
   /* WHICH WEEK IS IT. This is the whole reason one file can serve every week:
      nothing is hard coded to a week, so the same paste keeps pointing at the
      right one as the term moves. */
@@ -192,9 +221,31 @@ a.wk.exam:hover,a.wk.exam:focus-visible{background:rgba(201,161,74,.14)}
     weeksEl.innerHTML = '';
 
     H.weeks.forEach(function(w){
-      var isNow = started && w === cur;
+      var isNow  = started && w === cur;
       var isPast = started && w < cur;
+      var unlock = unlockAt(OPENS[w-1]);
+      var locked = new Date() < unlock;
+
       var li = document.createElement('li');
+
+      /* A locked week is not a link. Rendering it as one that refuses to go
+         anywhere is worse than not offering it: a disabled control should not
+         be focusable, and a student should be able to see the date it opens
+         without clicking to find out. */
+      if (locked){
+        var box = document.createElement('span');
+        box.className = 'wk locked';
+        box.setAttribute('aria-disabled', 'true');
+        box.title = 'Week ' + w + ' opens ' + longDate(unlock) + ' at noon';
+        box.innerHTML =
+          '<span class="m">Week ' + w + '</span>' +
+          '<span class="s"><span class="lk" aria-hidden="true">&#9679;</span>Opens ' + shortDate(unlock) + '</span>' +
+          '<span class="vh">. ' + TITLES[w-1] + '. Not open yet. Opens ' + longDate(unlock) + ' at noon.</span>';
+        li.appendChild(box);
+        weeksEl.appendChild(li);
+        return;
+      }
+
       var a = document.createElement('a');
       a.className = 'wk' + (isNow ? ' current' : '') + (isPast ? ' done' : '');
       a.href = 'week-' + pad(w) + '.html';

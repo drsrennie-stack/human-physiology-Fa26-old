@@ -125,7 +125,16 @@ function buildStatic(){
      an existing embed does not break. Heights measured Sep 7 2026; the pages
      also postMessage their real height, so a Canvas theme that listens will
      resize them anyway. */
+  /* THE START HERE MODULE, in the order Scrubs has it in Canvas.
+     One embed per Canvas page. Heights measured Sep 7 2026; each page also
+     postMessages its real height, so a theme that listens will resize it. */
   var EMBEDS = [
+    ['START HERE 1. Welcome to Human Physiology', 'welcome-to-physiology.html', 2560],
+    ['START HERE 2. How this Course Works', 'how-this-course-works.html', 3450],
+    ['START HERE 3. How Grading Works', 'how-grading-works.html', 2650],
+    ['START HERE 4. Syllabus and Course Policies', 'syllabus-fall2026.html', 9000],
+    ['START HERE 5. Weekly Schedule', 'week-navigator.html', 470],
+    ['START HERE 6. AI Use in this Course', 'ai-in-this-course.html', 2200],
     ['Canvas front page: Start Here', 'course-start.html', 1540],
     ['This week, the full weekly page', 'week-01.html', 14420],
     ['Week navigator, paste this on EVERY week', 'week-navigator.html', 460],
