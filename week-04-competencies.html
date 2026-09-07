@@ -31,11 +31,13 @@ a:hover{color:var(--maroon-dk)}
   padding:12px 18px;font-weight:700;text-decoration:none}
 .skip:focus{left:0;top:0}
 
-header.top{background:var(--navy-deep);color:#fff;padding:34px 0 30px}
+/* light page, maroon eyebrow, two tone headline. No dark band. */
+header.top{padding:30px 0 24px}
 header.top .eyebrow{font-size:11px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;
-  color:var(--gold);margin:0 0 10px}
-header.top h1{font-size:clamp(26px,4.4vw,38px);line-height:1.14;color:#fff;max-width:24ch}
-header.top p.sub{color:#D7DCE3;margin:12px 0 0;font-size:16px}
+  color:var(--maroon);margin:0 0 10px}
+header.top h1{font-size:clamp(26px,4.4vw,38px);line-height:1.14;color:var(--navy);max-width:24ch}
+header.top h1 b{color:var(--maroon);font-weight:800}
+header.top p.sub{color:var(--muted);margin:12px 0 0;font-size:16px}
 
 .homebar{max-width:1000px;margin:0 auto;padding:16px 20px 0}
 .home{display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:#fff;
@@ -53,7 +55,7 @@ main{padding:8px 0 60px}
 .chead{border-left:4px solid var(--maroon);padding:2px 0 2px 16px;margin:32px 0 6px}
 .chead .cl{font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;
   color:var(--maroon);display:block;margin-bottom:4px}
-.chead h2{font-size:21px}
+.chead h2{font-size:21px;color:var(--maroon)}
 
 .comp{background:var(--card);border:1px solid var(--rule);border-radius:10px;
   padding:18px 20px;margin:12px 0;break-inside:avoid}
@@ -89,8 +91,7 @@ main{padding:8px 0 60px}
   .mm-brandbar,.mm-jumpwrap,.homebar,.pwrap,.skip{display:none!important}
   body{background:#fff;font-size:10.5pt}
   .comp{break-inside:avoid;border-color:#999}
-  header.top{background:#fff;color:#000;padding:0 0 12pt}
-  header.top h1{color:#000}header.top .eyebrow{color:#000}header.top p.sub{color:#000}
+
 }
 </style>
 </head>
@@ -99,9 +100,16 @@ main{padding:8px 0 60px}
 
 <div class="mm-brandbar"><div class="mm-wrap">
   <a class="mm-mark" href="course-start.html" target="_top">
-    <span class="mm-wm">Med<b>Masters</b><span class="mm-wmsub">Collaborative</span></span>
+    <svg viewBox="40 10 125 148" width="22" height="26" role="img" aria-label="BIO 005 Human Physiology, course home">
+      <g transform="translate(0,18)">
+        <g transform="translate(60,0) rotate(8 0 130)"><circle cx="0" cy="20" r="10" fill="#0B1530"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#0B1530"/></g>
+        <g transform="translate(100,0)"><circle cx="0" cy="10" r="11" fill="#8B3A2E"/><path d="M 0,22 C -11,22 -17,26 -17,34 C -17,52 -14,70 -12,86 C -11,108 -13,122 -15,132 L 15,132 C 13,122 11,108 12,86 C 14,70 17,52 17,34 C 17,26 11,22 0,22 Z" fill="#8B3A2E"/></g>
+        <g transform="translate(140,0) rotate(-8 0 130)"><circle cx="0" cy="20" r="10" fill="#C9A14A"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#C9A14A"/></g>
+      </g>
+    </svg>
+    <span class="mm-wm">BIO <b>005</b><span class="mm-wmsub">Human Physiology</span></span>
   </a>
-  <span class="mm-course">BIO 005 &middot; Human Physiology</span>
+  <span class="mm-course">BIO 005 &middot; Fall 2026</span>
 </div></div>
 
 <div class="homebar"><a class="home" href="course-start.html" target="_top">
@@ -120,7 +128,7 @@ main{padding:8px 0 60px}
 
 <header class="top"><div class="wrap">
   <p class="eyebrow">BIO 005 &middot; Week 4 &middot; Part 2</p>
-  <h1>Everything Week 4 asks you to be able to do.</h1>
+  <h1>Everything Week 4 <b>asks you to be able to do.</b></h1>
   <p class="sub">How cells talk, and the electrical signal. 20 competencies, each one a single thing you will be able to do by Sunday, October 4.</p>
 </div></header>
 
@@ -138,106 +146,146 @@ main{padding:8px 0 60px}
   <section class="comp" id="c-w2-electrochemical-gradient" aria-labelledby="h-w2-electrochemical-gradient">
       <div class="chd"><span class="cnum">1</span><h3 class="cname" id="h-w2-electrochemical-gradient">Ion distribution and electrochemical gradients</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>State the typical intracellular and extracellular concentrations of sodium, potassium, chloride, and calcium and separate the chemical from the electrical component of the driving force on each ion.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w2-electrochemical-gradient" data-l="a"><input type="checkbox" id="w2-electrochemical-gradient-a"><label for="w2-electrochemical-gradient-a"><span class="plet">A</span>Draw a cell and give each ion a pair of bars, inside and outside, height for concentration: sodium 145 mM out against 15 mM in, potassium 4 out against 140 in, chloride 110 out against 10 in, calcium about 1 out against 0.0001 free in. Mark the membrane inside negative. On each ion draw two separate arrows, chemical force and electrical force. One line: two ions have arrows pointing opposite ways, so name both and say which force wins.</label></div>
+      <div class="prompt" data-c="w2-electrochemical-gradient" data-l="b"><input type="checkbox" id="w2-electrochemical-gradient-b"><label for="w2-electrochemical-gradient-b"><span class="plet">B</span>Draw four vertical voltage scales side by side, one per ion, from minus 100 mV up to plus 150 mV. Mark each ion&#39;s equilibrium potential: potassium near minus 90, sodium near plus 60, calcium near plus 120, chloride wherever your own numbers put it. Draw one horizontal line at minus 70 mV across all four. One line: each gap from that line is a driving force, so name the ion with the largest gap and say what stops it moving at rest.</label></div>
   </section>
   <section class="comp" id="c-w2-nernst" aria-labelledby="h-w2-nernst">
       <div class="chd"><span class="cnum">2</span><h3 class="cname" id="h-w2-nernst">Nernst equation</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Calculate the equilibrium potential for an ion with the Nernst equation and explain what the sign of the result means for the direction that ion will move.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w2-nernst" data-l="a"><input type="checkbox" id="w2-nernst-a"><label for="w2-nernst-a"><span class="plet">A</span>Write the Nernst equation at the top of your box, then work potassium through by hand at body temperature, 4 mM outside against 140 mM inside, every step shown, to an answer in mV. Do sodium underneath, 145 mM out against 15 mM in. Draw a voltage scale beside your working and place both answers on it. One line: an equilibrium potential is where that ion stops moving, so say which way potassium moves at minus 70 mV.</label></div>
+      <div class="prompt" data-c="w2-nernst" data-l="b"><input type="checkbox" id="w2-nernst-b"><label for="w2-nernst-b"><span class="plet">B</span>Draw one set of axes, equilibrium potential in mV on the y and extracellular potassium on the x. Plot the Nernst prediction for potassium at 2, 4, 10, and 20 mM outside with 140 mM held inside, calculating at least two of the points yourself. Draw a horizontal dashed line at threshold, about minus 55 mV. One line: say what happens to the cell as the curve climbs toward that line, and whether the cell gets easier or harder to excite.</label></div>
   </section>
   <section class="comp" id="c-w2-resting-potential" aria-labelledby="h-w2-resting-potential">
       <div class="chd"><span class="cnum">3</span><h3 class="cname" id="h-w2-resting-potential">Resting membrane potential</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Explain why the resting membrane potential sits near the potassium equilibrium potential and predict how it shifts when membrane permeability to potassium or sodium changes.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w2-resting-potential" data-l="a"><input type="checkbox" id="w2-resting-potential-a"><label for="w2-resting-potential-a"><span class="plet">A</span>Draw a cell at rest with minus 70 mV written inside. On its membrane draw potassium leak channels as many, sodium leak channels as few, and the sodium potassium pump. Beside the cell draw a voltage scale with the potassium equilibrium potential near minus 90 and the sodium equilibrium potential near plus 60, and mark where minus 70 sits between them. One line: the resting potential sits close to one of those two and nowhere near halfway, so say what makes it lean.</label></div>
+      <div class="prompt" data-c="w2-resting-potential" data-l="b"><input type="checkbox" id="w2-resting-potential-b"><label for="w2-resting-potential-b"><span class="plet">B</span>Draw a voltage scale from minus 90 to plus 60 mV with the resting potential marked, then draw four labelled arrows off it showing where the potential moves when you open more potassium channels, open sodium channels, block the potassium leak, and stop the sodium potassium pump. One line: one of those four shifts the potential only a few mV even though it eventually ruins the cell, so name it and say why the immediate effect is so small.</label></div>
   </section>
   <section class="comp" id="c-w2-ion-channels" aria-labelledby="h-w2-ion-channels">
       <div class="chd"><span class="cnum">4</span><h3 class="cname" id="h-w2-ion-channels">Ion channel gating</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Compare leak, voltage gated, ligand gated, and mechanically gated channels by what opens each one and give a physiological location for each.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w2-ion-channels" data-l="a"><input type="checkbox" id="w2-ion-channels-a"><label for="w2-ion-channels-a"><span class="plet">A</span>Draw four channels in a row in a strip of membrane: leak, voltage gated, ligand gated, and mechanically gated. Draw each one twice, closed and open, and draw whatever opens it right beside it, a voltage change, a bound molecule, a stretch or a bend. Under each write one real place in the body it is found. One line: only one of the four is open at rest, so say what job that gives it.</label></div>
+      <div class="prompt" data-c="w2-ion-channels" data-l="b"><input type="checkbox" id="w2-ion-channels-b"><label for="w2-ion-channels-b"><span class="plet">B</span>Draw one neuron stretched across the whole width of your box. Along it place each channel type where it actually works: ligand gated on the dendrites, voltage gated sodium and potassium along the axon, leak channels everywhere, voltage gated calcium at the terminal. Add a mechanically gated channel on a sensory ending drawn off to the side. One line: number the order these open during one real signal and say which one starts it.</label></div>
   </section>
   <section class="comp" id="c-w2-potential-terms" aria-labelledby="h-w2-potential-terms">
       <div class="chd"><span class="cnum">5</span><h3 class="cname" id="h-w2-potential-terms">Depolarization and hyperpolarization</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Define depolarization, repolarization, hyperpolarization, and overshoot and label each on a membrane potential tracing.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w2-potential-terms" data-l="a"><input type="checkbox" id="w2-potential-terms-a"><label for="w2-potential-terms-a"><span class="plet">A</span>Draw a membrane potential tracing with time on the x and mV on the y, starting at minus 70. Take it up past zero to about plus 30 and back down below minus 70 before it returns. Bracket and label depolarization, overshoot, repolarization, hyperpolarization, and the return to rest. Draw zero mV as a dashed line. One line: define overshoot using that dashed line, not using the peak.</label></div>
+      <div class="prompt" data-c="w2-potential-terms" data-l="b"><input type="checkbox" id="w2-potential-terms-b"><label for="w2-potential-terms-b"><span class="plet">B</span>Draw one set of axes with a dashed line at minus 70 mV and another at zero. Plot four traces from rest: a small depolarization that fades away, a hyperpolarization, a depolarization that crosses threshold, and a repolarization from plus 30 back down. Label each with its correct term. One line: say which of your traces make the cell easier to fire and which make it harder, and how you can tell from direction alone.</label></div>
   </section>
   <section class="comp" id="c-w2-lab-membrane-potential" aria-labelledby="h-w2-lab-membrane-potential">
       <div class="chd"><span class="cnum">6</span><h3 class="cname" id="h-w2-lab-membrane-potential">Membrane potential simulation</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Manipulate extracellular potassium and sodium in a simulation and record the resulting change in resting membrane potential against the Nernst prediction.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w2-lab-membrane-potential" data-l="a"><input type="checkbox" id="w2-lab-membrane-potential-a"><label for="w2-lab-membrane-potential-a"><span class="plet">A</span>Before you touch the simulation, draw your predicted graph: resting membrane potential on the y and extracellular potassium on the x, with the Nernst prediction drawn as one line. Run the simulation at several potassium values and plot the measured points on the same axes in a second colour. One line: the measured points sit above the Nernst line at low potassium, so name the other ion whose permeability accounts for that gap.</label></div>
+      <div class="prompt" data-c="w2-lab-membrane-potential" data-l="b"><input type="checkbox" id="w2-lab-membrane-potential-b"><label for="w2-lab-membrane-potential-b"><span class="plet">B</span>Draw two panels side by side using the same y axis. On the left, plot resting membrane potential against extracellular potassium from your runs. On the right, plot resting membrane potential against extracellular sodium over a comparable range. One line: one plot is nearly flat and one is not, so say what that comparison tells you about the relative permeability of the resting membrane.</label></div>
   </section>
 
   <div class="chead"><span class="cl">5 competencies</span><h2>Neurons and Neuroglia</h2></div>
   <section class="comp" id="c-w4-neuron-classes" aria-labelledby="h-w4-neuron-classes">
       <div class="chd"><span class="cnum">7</span><h3 class="cname" id="h-w4-neuron-classes">Neuron structural and functional classes</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Classify a neuron as multipolar, bipolar, or pseudounipolar by structure and as sensory, motor, or interneuron by function, and match each class to a location in the nervous system.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w4-neuron-classes" data-l="a"><input type="checkbox" id="w4-neuron-classes-a"><label for="w4-neuron-classes-a"><span class="plet">A</span>Draw a multipolar, a bipolar, and a pseudounipolar neuron side by side, each with its dendrites, cell body, and axon in the right arrangement and the cell body in the right position relative to the signal path. Under each write one real location in the body where you would find it. One line: one of the three has its cell body off to the side of the signal path, so say what advantage that gives a sensory neuron.</label></div>
+      <div class="prompt" data-c="w4-neuron-classes" data-l="b"><input type="checkbox" id="w4-neuron-classes-b"><label for="w4-neuron-classes-b"><span class="plet">B</span>Draw a reflex arc across your box, from a receptor in the skin to a skeletal muscle, with three neurons in it. Label every neuron twice, once by structure and once by function, and mark whether each cell body sits inside or outside the CNS. One line: name the functional class that outnumbers the other two enormously in a human, and say what that tells you about what the CNS mostly does.</label></div>
   </section>
   <section class="comp" id="c-w4-neuron-regions" aria-labelledby="h-w4-neuron-regions">
       <div class="chd"><span class="cnum">8</span><h3 class="cname" id="h-w4-neuron-regions">Functional regions of a neuron</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Label the dendrites, cell body, axon hillock, trigger zone, axon, and axon terminal and state which signal type each region carries.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w4-neuron-regions" data-l="a"><input type="checkbox" id="w4-neuron-regions-a"><label for="w4-neuron-regions-a"><span class="plet">A</span>Draw one motor neuron big, across the whole width of your box. Label the dendrites, cell body, axon hillock, trigger zone, axon, myelin, nodes, and axon terminal. Above each region write the signal type it carries, graded or all or none, and sketch the shape of that signal there. One line: mark the spot where graded becomes all or none and say what has to be true at that spot for the change to happen.</label></div>
+      <div class="prompt" data-c="w4-neuron-regions" data-l="b"><input type="checkbox" id="w4-neuron-regions-b"><label for="w4-neuron-regions-b"><span class="plet">B</span>Draw the same neuron three times as three narrow strips stacked up. In the first, shade every region where graded potentials happen. In the second, shade every region with a high density of voltage gated sodium channels. In the third, shade where chemical signalling takes over from electrical. One line: name the region that appears in more than one strip and say why that makes it the decision point.</label></div>
   </section>
   <section class="comp" id="c-w4-glia-functions" aria-labelledby="h-w4-glia-functions">
       <div class="chd"><span class="cnum">9</span><h3 class="cname" id="h-w4-glia-functions">Glial cell functions</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Match astrocytes, oligodendrocytes, microglia, ependymal cells, satellite cells, and Schwann cells to their physiological roles.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w4-glia-functions" data-l="a"><input type="checkbox" id="w4-glia-functions-a"><label for="w4-glia-functions-a"><span class="plet">A</span>Draw a CNS scene and a PNS scene side by side. In the CNS scene put an astrocyte touching both a capillary and a neuron, an oligodendrocyte myelinating more than one axon, a microglial cell, and ependymal cells lining a fluid space. In the PNS scene put a Schwann cell on one axon segment and satellite cells wrapped around a cell body. One line: two of these six make myelin, so say the one structural difference in how they do it.</label></div>
+      <div class="prompt" data-c="w4-glia-functions" data-l="b"><input type="checkbox" id="w4-glia-functions-b"><label for="w4-glia-functions-b"><span class="plet">B</span>Draw one neuron in the middle of your box with six arrows pointing at it, one from each glial type. On each arrow write the single job that glia does for the neuron or its surroundings. Then cross out one arrow of your own choosing and draw what goes wrong. One line: name the glial cell you removed and the first symptom you would expect, not the last.</label></div>
   </section>
   <section class="comp" id="c-w4-myelin" aria-labelledby="h-w4-myelin">
       <div class="chd"><span class="cnum">10</span><h3 class="cname" id="h-w4-myelin">Myelin and its loss</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Explain how myelin and the nodes of Ranvier speed conduction and predict the functional consequence of demyelination.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w4-myelin" data-l="a"><input type="checkbox" id="w4-myelin-a"><label for="w4-myelin-a"><span class="plet">A</span>Draw two axons the same length side by side, one bare and one myelinated with nodes of Ranvier. On each, mark with dots every place the action potential has to be regenerated. Put a clock reading beside each showing which signal arrives first. One line: myelin is an insulator and does nothing electrical itself, so say in one sentence how adding insulation makes a signal faster.</label></div>
+      <div class="prompt" data-c="w4-myelin" data-l="b"><input type="checkbox" id="w4-myelin-b"><label for="w4-myelin-b"><span class="plet">B</span>Draw a myelinated axon with three intact internodes, then draw the same axon with the middle internode stripped bare. Show the action potential travelling along it and mark where it slows or fails. On both, draw the sodium channel distribution, dense at the nodes and sparse under the myelin. One line: the demyelinated stretch has few sodium channels, so say why conduction fails there rather than simply slowing down.</label></div>
   </section>
   <section class="comp" id="c-w4-axonal-transport" aria-labelledby="h-w4-axonal-transport">
       <div class="chd"><span class="cnum">11</span><h3 class="cname" id="h-w4-axonal-transport">Axonal transport</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Distinguish fast anterograde and retrograde axonal transport from slow transport and state what each carries.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w4-axonal-transport" data-l="a"><input type="checkbox" id="w4-axonal-transport-a"><label for="w4-axonal-transport-a"><span class="plet">A</span>Draw a long neuron with the cell body on the left and the terminal on the right, and run a microtubule track down the axon. On the track draw fast anterograde transport with kinesin and fast retrograde transport with dynein, arrows in opposite directions, with the cargo written beside each. One line: the cell body makes everything, so say what the retrograde direction is even for.</label></div>
+      <div class="prompt" data-c="w4-axonal-transport" data-l="b"><input type="checkbox" id="w4-axonal-transport-b"><label for="w4-axonal-transport-b"><span class="plet">B</span>Draw the same axon and add slow transport as a third, much slower stream with its cargo written beside it. Draw a scale bar showing the real speed difference, hundreds of mm per day for fast transport against a few mm per day for slow. Then draw a virus entering at the terminal and mark the route it takes to the cell body. One line: say which transport system it hijacked and why that is bad news for the neuron.</label></div>
   </section>
 
   <div class="chead"><span class="cl">9 competencies</span><h2>Electrical Signaling</h2></div>
   <section class="comp" id="c-w4-graded-potentials" aria-labelledby="h-w4-graded-potentials">
       <div class="chd"><span class="cnum">12</span><h3 class="cname" id="h-w4-graded-potentials">Graded potentials</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Describe how a graded potential is produced and explain why it varies with stimulus strength and decays with distance, using the terms current leak and cytoplasmic resistance.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w4-graded-potentials" data-l="a"><input type="checkbox" id="w4-graded-potentials-a"><label for="w4-graded-potentials-a"><span class="plet">A</span>Draw a dendrite as a long tube with a stimulus at one end. At four points along it, draw the membrane potential as a small trace, showing the signal shrinking as you move away. Draw current leaking out through channels along the way and label the cytoplasmic resistance inside the tube. One line: name the two reasons the signal shrank, and say which one you could reduce by making the tube wider.</label></div>
+      <div class="prompt" data-c="w4-graded-potentials" data-l="b"><input type="checkbox" id="w4-graded-potentials-b"><label for="w4-graded-potentials-b"><span class="plet">B</span>Draw one set of axes, membrane potential against time, and plot three graded potentials from the same spot produced by a weak, a medium, and a strong stimulus. Then plot two of them arriving close together and summing. Mark threshold as a dashed line. One line: a graded potential changes size with stimulus strength and an action potential does not, so say what the graded potential&#39;s actual job is.</label></div>
   </section>
   <section class="comp" id="c-w4-action-potential" aria-labelledby="h-w4-action-potential">
       <div class="chd"><span class="cnum">13</span><h3 class="cname" id="h-w4-action-potential">Action potential phases</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Diagram an action potential and state the channel state and ion movement responsible for depolarization to peak and for repolarization and afterhyperpolarization.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w4-action-potential" data-l="a"><input type="checkbox" id="w4-action-potential-a"><label for="w4-action-potential-a"><span class="plet">A</span>Draw an action potential tracing, mV on the y and ms on the x, from minus 70 up to about plus 30 and back down through an afterhyperpolarization near minus 80. Label threshold, depolarization, peak, repolarization, and afterhyperpolarization on the curve. Underneath, draw two permeability traces lined up in time with it, one for sodium and one for potassium. One line: say what closes at the peak and what is still open during the afterhyperpolarization.</label></div>
+      <div class="prompt" data-c="w4-action-potential" data-l="b"><input type="checkbox" id="w4-action-potential-b"><label for="w4-action-potential-b"><span class="plet">B</span>Draw a voltage gated sodium channel four times across the top of your box, in its resting, activated, inactivated, and recovered states, with both of its gates drawn separately every time. Under each, write the membrane voltage at which that state occurs. Beneath that row, draw a voltage gated potassium channel in its two states with its timing. One line: both open on depolarization, so say what makes potassium arrive late and why the cell needs that delay.</label></div>
   </section>
   <section class="comp" id="c-w4-threshold" aria-labelledby="h-w4-threshold">
       <div class="chd"><span class="cnum">14</span><h3 class="cname" id="h-w4-threshold">Threshold and all or none</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Explain what threshold represents at the trigger zone and why action potential amplitude does not change with a stronger stimulus.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w4-threshold" data-l="a"><input type="checkbox" id="w4-threshold-a"><label for="w4-threshold-a"><span class="plet">A</span>Draw the trigger zone as a close up patch of membrane with voltage gated sodium channels in it, three times over: below threshold with a few channels open and the leak winning, exactly at threshold with the two currents balanced, and above threshold with the positive feedback running away. Draw the current arrows in and out in every panel. One line: define threshold from your three drawings in terms of two currents, not a number.</label></div>
+      <div class="prompt" data-c="w4-threshold" data-l="b"><input type="checkbox" id="w4-threshold-b"><label for="w4-threshold-b"><span class="plet">B</span>Draw one set of axes with four stimuli of increasing strength as bars on a bottom trace and the resulting membrane potential plotted above them. Show the first two failing to reach threshold and the last two producing identical full sized action potentials. Mark threshold. One line: the fourth stimulus was far stronger than the third and the spike came out the same size, so say what actually fixes the amplitude.</label></div>
   </section>
   <section class="comp" id="c-w4-intensity-coding" aria-labelledby="h-w4-intensity-coding">
       <div class="chd"><span class="cnum">15</span><h3 class="cname" id="h-w4-intensity-coding">Coding of stimulus intensity</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Explain how the nervous system encodes stimulus strength when action potential amplitude is fixed.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w4-intensity-coding" data-l="a"><input type="checkbox" id="w4-intensity-coding-a"><label for="w4-intensity-coding-a"><span class="plet">A</span>Draw three stimulus bars of increasing strength across the bottom of your box, weak, medium, and strong. Above each, draw the spike train one sensory neuron sends, as vertical marks on a time line. Keep every spike exactly the same height. One line: say precisely what changed between your three trains, and what could not have changed.</label></div>
+      <div class="prompt" data-c="w4-intensity-coding" data-l="b"><input type="checkbox" id="w4-intensity-coding-b"><label for="w4-intensity-coding-b"><span class="plet">B</span>Draw a patch of skin with a stimulus pressed into it, gentle on the left and hard on the right. In each, draw how many receptors and how many axons get recruited, and draw the spike train on one of those axons underneath. One line: the nervous system has two ways to say louder, so name both from your drawing and say which one a single axon can do on its own.</label></div>
   </section>
   <section class="comp" id="c-w4-refractory" aria-labelledby="h-w4-refractory">
       <div class="chd"><span class="cnum">16</span><h3 class="cname" id="h-w4-refractory">Refractory periods</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Distinguish the absolute from the relative refractory period by channel state and explain how the refractory period sets maximum firing frequency and prevents backward conduction.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w4-refractory" data-l="a"><input type="checkbox" id="w4-refractory-a"><label for="w4-refractory-a"><span class="plet">A</span>Draw an action potential tracing and bracket the absolute and relative refractory periods underneath it. Along each bracket, draw the state of the voltage gated sodium channels, inactivated and then recovering, and show whether the potassium channels are still open. Then draw a second stimulus arriving inside each period and show the result. One line: say why no stimulus at all, however large, works during the absolute period.</label></div>
+      <div class="prompt" data-c="w4-refractory" data-l="b"><input type="checkbox" id="w4-refractory-b"><label for="w4-refractory-b"><span class="plet">B</span>Draw an axon with an action potential halfway along it and an arrow for the direction it is travelling. Shade the membrane behind it and mark what state its sodium channels are in. Draw the local current spreading both forward and backward, and show why only one direction succeeds. One line: an absolute refractory period of about 1 to 2 ms sets a ceiling on firing rate, so work out that ceiling in spikes per second.</label></div>
   </section>
   <section class="comp" id="c-w4-conduction-velocity" aria-labelledby="h-w4-conduction-velocity">
       <div class="chd"><span class="cnum">17</span><h3 class="cname" id="h-w4-conduction-velocity">Conduction velocity</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Rank axons by conduction velocity using diameter and myelination and contrast continuous with saltatory conduction.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w4-conduction-velocity" data-l="a"><input type="checkbox" id="w4-conduction-velocity-a"><label for="w4-conduction-velocity-a"><span class="plet">A</span>Draw four axons stacked vertically: large myelinated, small myelinated, large unmyelinated, and small unmyelinated. Rank them fastest to slowest and write a rough velocity beside each, using the real range of about 0.5 up to about 120 m per second. One line: say which buys more speed per unit of space taken up, diameter or myelin, and why that matters for a nerve running down a limb.</label></div>
+      <div class="prompt" data-c="w4-conduction-velocity" data-l="b"><input type="checkbox" id="w4-conduction-velocity-b"><label for="w4-conduction-velocity-b"><span class="plet">B</span>Draw one myelinated and one unmyelinated axon of similar diameter side by side, the same length. On each, shade where the membrane actually depolarizes, continuously along one and node to node on the other. Draw the local current loops on both. One line: saltatory means jumping, but the action potential does not really jump, so say what is actually moving between the nodes.</label></div>
   </section>
   <section class="comp" id="c-w4-ion-disturbance" aria-labelledby="h-w4-ion-disturbance">
       <div class="chd"><span class="cnum">18</span><h3 class="cname" id="h-w4-ion-disturbance">Effects of altered extracellular ions</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Predict the effect of hyperkalemia and hypokalemia on resting potential and excitability and explain why local anesthetics that block sodium channels abolish the action potential.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w4-ion-disturbance" data-l="a"><input type="checkbox" id="w4-ion-disturbance-a"><label for="w4-ion-disturbance-a"><span class="plet">A</span>Draw a voltage scale from minus 100 to plus 30 mV with the resting potential at minus 70 and threshold at about minus 55 marked on it. Using the Nernst logic for potassium, draw where the resting potential moves in hyperkalemia and in hypokalemia, and show the remaining gap to threshold in each. One line: hyperkalemia first makes the cell more excitable and then less, so say what happens to the sodium channels in between.</label></div>
+      <div class="prompt" data-c="w4-ion-disturbance" data-l="b"><input type="checkbox" id="w4-ion-disturbance-b"><label for="w4-ion-disturbance-b"><span class="plet">B</span>Draw a normal action potential tracing, then draw the same axon after a local anesthetic such as lidocaine has blocked its voltage gated sodium channels, and show what is left of the trace. Beside it, draw the axon in low extracellular sodium and show what changes about the peak, not about the resting level. One line: say why blocking the channel abolishes the signal while low extracellular sodium only shrinks it.</label></div>
   </section>
   <section class="comp" id="c-w4-lab-ap-simulation" aria-labelledby="h-w4-lab-ap-simulation">
       <div class="chd"><span class="cnum">19</span><h3 class="cname" id="h-w4-lab-ap-simulation">Action potential simulation</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Run a neuron simulation with sodium and potassium channel blockers and interpret the resulting change in the action potential tracing.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w4-lab-ap-simulation" data-l="a"><input type="checkbox" id="w4-lab-ap-simulation-a"><label for="w4-lab-ap-simulation-a"><span class="plet">A</span>Before you run it, draw three predicted tracings on one set of axes: a normal action potential, one with the sodium channels blocked, and one with the potassium channels blocked. Run the simulation and draw the actual tracings underneath in a second colour. One line: name the phase that changed most under the potassium blocker, and say what that tells you about which channel ends the spike.</label></div>
+      <div class="prompt" data-c="w4-lab-ap-simulation" data-l="b"><input type="checkbox" id="w4-lab-ap-simulation-b"><label for="w4-lab-ap-simulation-b"><span class="plet">B</span>Draw one set of axes and plot your normal action potential, then overlay the tracing you got with a partial sodium blocker rather than a full one. Mark exactly where the two curves separate and where they rejoin. Beside the plot, sketch the sodium and potassium channel populations at the moment of separation. One line: say what a partial block did to threshold in your run, and whether the spikes that still happened came out smaller.</label></div>
   </section>
   <section class="comp" id="c-w4-lab-nerve-conduction" aria-labelledby="h-w4-lab-nerve-conduction">
       <div class="chd"><span class="cnum">20</span><h3 class="cname" id="h-w4-lab-nerve-conduction">Nerve conduction measurement</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Measure conduction velocity from a recorded compound action potential and account for the difference between the fastest and slowest fibers.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w4-lab-nerve-conduction" data-l="a"><input type="checkbox" id="w4-lab-nerve-conduction-a"><label for="w4-lab-nerve-conduction-a"><span class="plet">A</span>Draw the nerve with a stimulating electrode at one end and a recording electrode a measured distance away. Draw the trace you record, marking the stimulus artifact, the latency, and the compound action potential. Write your distance and your latency on the drawing and show the division that gives velocity in m per second. One line: say what would have to go wrong in your setup to make the measured velocity come out too high.</label></div>
+      <div class="prompt" data-c="w4-lab-nerve-conduction" data-l="b"><input type="checkbox" id="w4-lab-nerve-conduction-b"><label for="w4-lab-nerve-conduction-b"><span class="plet">B</span>Draw the compound action potential recorded close to the stimulus and again recorded much further along, one above the other on the same time base, the second lower and wider. Underneath, draw several individual fibers of different diameters arriving at different times to account for that shape. One line: say which fibers set the leading edge of the wave and which fibers make it broaden with distance.</label></div>
   </section>
 
   <p class="foot"><span>BIO 005 Human Physiology &middot; Yuba College &middot; Fall 2026</span><span>Dr. Sharilyn Rennie</span></p>

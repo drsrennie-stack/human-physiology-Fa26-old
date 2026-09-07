@@ -31,11 +31,13 @@ a:hover{color:var(--maroon-dk)}
   padding:12px 18px;font-weight:700;text-decoration:none}
 .skip:focus{left:0;top:0}
 
-header.top{background:var(--navy-deep);color:#fff;padding:34px 0 30px}
+/* light page, maroon eyebrow, two tone headline. No dark band. */
+header.top{padding:30px 0 24px}
 header.top .eyebrow{font-size:11px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;
-  color:var(--gold);margin:0 0 10px}
-header.top h1{font-size:clamp(26px,4.4vw,38px);line-height:1.14;color:#fff;max-width:24ch}
-header.top p.sub{color:#D7DCE3;margin:12px 0 0;font-size:16px}
+  color:var(--maroon);margin:0 0 10px}
+header.top h1{font-size:clamp(26px,4.4vw,38px);line-height:1.14;color:var(--navy);max-width:24ch}
+header.top h1 b{color:var(--maroon);font-weight:800}
+header.top p.sub{color:var(--muted);margin:12px 0 0;font-size:16px}
 
 .homebar{max-width:1000px;margin:0 auto;padding:16px 20px 0}
 .home{display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:#fff;
@@ -53,7 +55,7 @@ main{padding:8px 0 60px}
 .chead{border-left:4px solid var(--maroon);padding:2px 0 2px 16px;margin:32px 0 6px}
 .chead .cl{font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;
   color:var(--maroon);display:block;margin-bottom:4px}
-.chead h2{font-size:21px}
+.chead h2{font-size:21px;color:var(--maroon)}
 
 .comp{background:var(--card);border:1px solid var(--rule);border-radius:10px;
   padding:18px 20px;margin:12px 0;break-inside:avoid}
@@ -89,8 +91,7 @@ main{padding:8px 0 60px}
   .mm-brandbar,.mm-jumpwrap,.homebar,.pwrap,.skip{display:none!important}
   body{background:#fff;font-size:10.5pt}
   .comp{break-inside:avoid;border-color:#999}
-  header.top{background:#fff;color:#000;padding:0 0 12pt}
-  header.top h1{color:#000}header.top .eyebrow{color:#000}header.top p.sub{color:#000}
+
 }
 </style>
 </head>
@@ -99,9 +100,16 @@ main{padding:8px 0 60px}
 
 <div class="mm-brandbar"><div class="mm-wrap">
   <a class="mm-mark" href="course-start.html" target="_top">
-    <span class="mm-wm">Med<b>Masters</b><span class="mm-wmsub">Collaborative</span></span>
+    <svg viewBox="40 10 125 148" width="22" height="26" role="img" aria-label="BIO 005 Human Physiology, course home">
+      <g transform="translate(0,18)">
+        <g transform="translate(60,0) rotate(8 0 130)"><circle cx="0" cy="20" r="10" fill="#0B1530"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#0B1530"/></g>
+        <g transform="translate(100,0)"><circle cx="0" cy="10" r="11" fill="#8B3A2E"/><path d="M 0,22 C -11,22 -17,26 -17,34 C -17,52 -14,70 -12,86 C -11,108 -13,122 -15,132 L 15,132 C 13,122 11,108 12,86 C 14,70 17,52 17,34 C 17,26 11,22 0,22 Z" fill="#8B3A2E"/></g>
+        <g transform="translate(140,0) rotate(-8 0 130)"><circle cx="0" cy="20" r="10" fill="#C9A14A"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#C9A14A"/></g>
+      </g>
+    </svg>
+    <span class="mm-wm">BIO <b>005</b><span class="mm-wmsub">Human Physiology</span></span>
   </a>
-  <span class="mm-course">BIO 005 &middot; Human Physiology</span>
+  <span class="mm-course">BIO 005 &middot; Fall 2026</span>
 </div></div>
 
 <div class="homebar"><a class="home" href="course-start.html" target="_top">
@@ -120,7 +128,7 @@ main{padding:8px 0 60px}
 
 <header class="top"><div class="wrap">
   <p class="eyebrow">BIO 005 &middot; Week 12 &middot; Part 3</p>
-  <h1>Everything Week 12 asks you to be able to do.</h1>
+  <h1>Everything Week 12 <b>asks you to be able to do.</b></h1>
   <p class="sub">Digestion, and how you use food for fuel. 23 competencies, each one a single thing you will be able to do by Sunday, November 29.</p>
 </div></header>
 
@@ -138,121 +146,167 @@ main{padding:8px 0 60px}
   <section class="comp" id="c-w9-growth-hormone" aria-labelledby="h-w9-growth-hormone">
       <div class="chd"><span class="cnum">1</span><h3 class="cname" id="h-w9-growth-hormone">Growth hormone</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Describe the direct and insulin like growth factor mediated actions of growth hormone and predict the result of excess or deficiency before and after epiphyseal closure.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w9-growth-hormone" data-l="a"><input type="checkbox" id="w9-growth-hormone-a"><label for="w9-growth-hormone-a"><span class="plet">A</span>Draw the anterior pituitary with two arrow paths leaving it. Path one goes straight to liver, muscle and adipose: label lipolysis, reduced glucose uptake, plasma glucose rising. Path two goes to the liver, makes insulin like growth factor 1, and that arrow lands on the epiphyseal plate of a long bone. Label which effects are direct and which are IGF mediated. One line: name the effect that would show up in a fasting glucose reading, and say which path it came from.</label></div>
+      <div class="prompt" data-c="w9-growth-hormone" data-l="b"><input type="checkbox" id="w9-growth-hormone-b"><label for="w9-growth-hormone-b"><span class="plet">B</span>Draw four long bones side by side, each with its epiphyseal plate drawn open or fused. Bone one is normal. Bone two has excess growth hormone with the plate still open. Bone three has excess with the plate fused. Bone four has deficiency with the plate open. Sketch the shape change in each and name the condition. One line: say why bone three gets thicker and coarser instead of longer.</label></div>
   </section>
   <section class="comp" id="c-w9-thyroid" aria-labelledby="h-w9-thyroid">
       <div class="chd"><span class="cnum">2</span><h3 class="cname" id="h-w9-thyroid">Thyroid hormone</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Trace thyroid hormone synthesis, state the metabolic actions of T3 and T4, and match hyperthyroid and hypothyroid signs to the underlying rate of metabolism.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w9-thyroid" data-l="a"><input type="checkbox" id="w9-thyroid-a"><label for="w9-thyroid-a"><span class="plet">A</span>Draw one thyroid follicle: follicular cells around a colloid centre, with a capillary outside. Number the synthesis steps on the drawing: iodide pulled in at the blood side, iodide oxidised and attached to tyrosines on thyroglobulin at the colloid side, coupling to make T3 and T4, storage in colloid, endocytosis and release. Show where T4 becomes T3 in a target tissue. One line: say which step iodine deficiency blocks and what happens to follicle size.</label></div>
+      <div class="prompt" data-c="w9-thyroid" data-l="b"><input type="checkbox" id="w9-thyroid-b"><label for="w9-thyroid-b"><span class="plet">B</span>Draw a horizontal metabolic rate scale with normal in the middle, low at one end, high at the other. Hang at least four signs off each end, and pick things you can actually observe: heart rate, body temperature and heat tolerance, body weight on a steady diet, bowel activity, energy level. Draw a small arrow from each sign to the rate it reflects. One line: name one sign that is easy to misread, and say what else could cause it.</label></div>
   </section>
   <section class="comp" id="c-w9-stress-response" aria-labelledby="h-w9-stress-response">
       <div class="chd"><span class="cnum">3</span><h3 class="cname" id="h-w9-stress-response">Cortisol and the stress response</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Describe the metabolic, immune, and cardiovascular actions of cortisol and explain the consequences of chronic elevation.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w9-stress-response" data-l="a"><input type="checkbox" id="w9-stress-response-a"><label for="w9-stress-response-a"><span class="plet">A</span>Draw the axis top to bottom: hypothalamus, anterior pituitary, adrenal cortex, cortisol, with the negative feedback arrows running back up. From cortisol draw three labelled arrows out: metabolic, immune, cardiovascular. Under each, draw the actual effect, gluconeogenesis and protein breakdown, suppressed inflammation, and vessels holding tone in response to catecholamines. One line: say what the feedback arrows are doing to the axis in someone taking a steroid drug for months.</label></div>
+      <div class="prompt" data-c="w9-stress-response" data-l="b"><input type="checkbox" id="w9-stress-response-b"><label for="w9-stress-response-b"><span class="plet">B</span>Draw a body outline with the signs of months of high cortisol placed where they show: trunk, face, limb muscle, skin, bone. Beside each sign, draw a short arrow back to the cortisol action that caused it. Add a small glucose axis showing where plasma glucose sits. One line: pick the one sign a patient would notice first and say whether it is the one that matters most.</label></div>
   </section>
   <section class="comp" id="c-w9-islet-hormones" aria-labelledby="h-w9-islet-hormones">
       <div class="chd"><span class="cnum">4</span><h3 class="cname" id="h-w9-islet-hormones">Pancreatic islet hormones</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Compare insulin and glucagon by stimulus and by effect on liver glycogen and on plasma glucose and identify the islet cell that secretes each.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w9-islet-hormones" data-l="a"><input type="checkbox" id="w9-islet-hormones-a"><label for="w9-islet-hormones-a"><span class="plet">A</span>Draw one islet with alpha, beta and delta cells labelled and the hormone each secretes. Beside it draw one set of axes, plasma glucose on the horizontal and secretion rate on the vertical, and put insulin and glucagon on it as two curves running opposite ways. Mark roughly where a fasting glucose sits. One line: say what the crossing region of the two curves is doing for you between meals.</label></div>
+      <div class="prompt" data-c="w9-islet-hormones" data-l="b"><input type="checkbox" id="w9-islet-hormones-b"><label for="w9-islet-hormones-b"><span class="plet">B</span>Draw the same hepatocyte twice. In the first, insulin has arrived: show glucose entering, glycogen granules being built, and the arrow direction for plasma glucose. In the second, glucagon has arrived: show glycogen being broken down, glucose leaving the cell, and the arrow for plasma glucose. Write the stimulus that released each hormone above its panel. One line: say which of the two the liver can keep doing after twenty four hours without food, and why the other one stops.</label></div>
   </section>
   <section class="comp" id="c-w9-diabetes" aria-labelledby="h-w9-diabetes">
       <div class="chd"><span class="cnum">5</span><h3 class="cname" id="h-w9-diabetes">Diabetes mellitus</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Distinguish type 1 from type 2 diabetes by mechanism and explain how untreated hyperglycemia produces polyuria and ketoacidosis.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w9-diabetes" data-l="a"><input type="checkbox" id="w9-diabetes-a"><label for="w9-diabetes-a"><span class="plet">A</span>Draw two panels, each with a beta cell, insulin in the blood, and a muscle or fat cell with its receptor. Panel one is type 1: show immune destruction of the beta cell and what that does to the insulin arrow. Panel two is type 2: show the beta cell working and the receptor failing to respond. Mark the plasma insulin level in each. One line: say which panel could still have a high plasma insulin measurement, and what that tells you.</label></div>
+      <div class="prompt" data-c="w9-diabetes" data-l="b"><input type="checkbox" id="w9-diabetes-b"><label for="w9-diabetes-b"><span class="plet">B</span>Draw two chains running down the page from one starting box, high plasma glucose. Chain one: glucose past the renal threshold near 180 mg per dL, glucose in the filtrate, water dragged with it, high urine volume, thirst. Chain two: cells short of glucose, unopposed fat breakdown, ketone acids in blood, plasma pH falling below 7.35, deep rapid breathing. One line: say which chain is far more typical of type 1 than type 2, and why.</label></div>
   </section>
   <section class="comp" id="c-w9-lab-glucose-tolerance" aria-labelledby="h-w9-lab-glucose-tolerance">
       <div class="chd"><span class="cnum">6</span><h3 class="cname" id="h-w9-lab-glucose-tolerance">Glucose tolerance testing</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Plot a glucose tolerance curve from measured or simulated data and distinguish a normal response from an impaired one.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w9-lab-glucose-tolerance" data-l="a"><input type="checkbox" id="w9-lab-glucose-tolerance-a"><label for="w9-lab-glucose-tolerance-a"><span class="plet">A</span>Draw one set of axes, time in hours from 0 to 3 on the horizontal, plasma glucose in mg per dL on the vertical. Mark the 75 gram drink at time zero. Plot three curves: a normal response, an impaired one, and a diabetic one. Mark the fasting line and the two hour line and write the cut values on both: fasting under 100 and two hour under 140 for normal, two hour at or over 200 for diabetes. One line: say which single point on the curve you would keep if you could only measure one.</label></div>
+      <div class="prompt" data-c="w9-lab-glucose-tolerance" data-l="b"><input type="checkbox" id="w9-lab-glucose-tolerance-b"><label for="w9-lab-glucose-tolerance-b"><span class="plet">B</span>Draw a stacked pair of graphs sharing one time axis: plasma glucose on top, plasma insulin underneath. Plot the normal pair first, insulin rising early and glucose coming back down by two hours. Then overlay in a second colour the pair for someone with insulin resistance. One line: say what the insulin curve is doing in the second case while glucose is still high, and what that costs the beta cells over years.</label></div>
   </section>
 
   <div class="chead"><span class="cl">11 competencies</span><h2>Digestive Physiology</h2></div>
   <section class="comp" id="c-w14-digestive-processes" aria-labelledby="h-w14-digestive-processes">
       <div class="chd"><span class="cnum">7</span><h3 class="cname" id="h-w14-digestive-processes">Four digestive processes</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Distinguish motility, secretion, digestion, and absorption and identify where in the tract each dominates.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w14-digestive-processes" data-l="a"><input type="checkbox" id="w14-digestive-processes-a"><label for="w14-digestive-processes-a"><span class="plet">A</span>Draw the tract as one long tube from mouth to anus with the named regions marked. Along it, draw four labelled bands showing where motility, secretion, digestion and absorption each dominate, and let them overlap where they truly do. Put a real example in each band, a named enzyme, a named secretion, a named nutrient crossing. One line: name the region where absorption dominates and say what its wall does to make that possible.</label></div>
+      <div class="prompt" data-c="w14-digestive-processes" data-l="b"><input type="checkbox" id="w14-digestive-processes-b"><label for="w14-digestive-processes-b"><span class="plet">B</span>Draw a cross section of the gut wall with the four layers, mucosa to serosa. Place each of the four processes on the layer that carries it out, with the actual structure doing the work: smooth muscle sheets, glands and gland cells, enzymes in the lumen, epithelial transporters. Draw the lumen contents changing as you move along. One line: say which of the four processes is the only one that moves a molecule into your body, and where the other three stop.</label></div>
   </section>
   <section class="comp" id="c-w14-gi-motility" aria-labelledby="h-w14-gi-motility">
       <div class="chd"><span class="cnum">8</span><h3 class="cname" id="h-w14-gi-motility">Motility patterns</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Compare peristalsis, segmentation, and the migrating motor complex by pattern and purpose.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w14-gi-motility" data-l="a"><input type="checkbox" id="w14-gi-motility-a"><label for="w14-gi-motility-a"><span class="plet">A</span>Draw three horizontal strips of gut, each with three snapshots in time left to right. Strip one is peristalsis: show the contracted ring behind and the relaxed segment ahead, and the net movement. Strip two is segmentation: show alternating contractions with no net movement. Strip three is the migrating motor complex sweeping down an empty tract. Label the region and the timing of each. One line: say which pattern you would lose if food never left the stomach, and what would collect there.</label></div>
+      <div class="prompt" data-c="w14-gi-motility" data-l="b"><input type="checkbox" id="w14-gi-motility-b"><label for="w14-gi-motility-b"><span class="plet">B</span>Draw a timeline across the page: a meal at the left, then the hours after it, then the fasted state. Above the line, draw which motility pattern dominates at each point and in which region. Below the line, draw what the pattern is doing to the contents, moving them, mixing them with secretions, or clearing debris. One line: say what an antibiotic or a drug that stops the fasting sweep would let build up in the small intestine.</label></div>
   </section>
   <section class="comp" id="c-w14-gi-regulation" aria-labelledby="h-w14-gi-regulation">
       <div class="chd"><span class="cnum">9</span><h3 class="cname" id="h-w14-gi-regulation">Neural and hormonal regulation</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Explain short and long reflex control by the enteric nervous system and match gastrin, secretin, cholecystokinin, and glucose dependent insulinotropic peptide to their stimulus and action.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w14-gi-regulation" data-l="a"><input type="checkbox" id="w14-gi-regulation-a"><label for="w14-gi-regulation-a"><span class="plet">A</span>Draw a length of gut wall with the two enteric plexuses in place, the submucosal and the myenteric, and name what each controls. On it, draw a short reflex arc that never leaves the gut wall, sensor to plexus to effector. Then draw a long reflex looping out to the brainstem and back down the vagus. Mark the stimulus that starts each. One line: say which reflex still works in a transplanted gut with the vagus cut, and what that gut cannot do.</label></div>
+      <div class="prompt" data-c="w14-gi-regulation" data-l="b"><input type="checkbox" id="w14-gi-regulation-b"><label for="w14-gi-regulation-b"><span class="plet">B</span>Draw the stomach and duodenum, and place four hormone secreting cells where they actually sit: G cells, S cells, I cells and K cells. For each, draw an arrow in for its stimulus and an arrow out to its target with the action written on it. Use real stimuli, peptides and stretch, acid, fat and protein, glucose. One line: pick the hormone whose job is to protect a downstream organ rather than to digest anything, and say what it protects.</label></div>
   </section>
   <section class="comp" id="c-w14-digestive-phases" aria-labelledby="h-w14-digestive-phases">
       <div class="chd"><span class="cnum">10</span><h3 class="cname" id="h-w14-digestive-phases">Phases of digestive control</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Describe the cephalic, gastric, and intestinal phases and state the dominant control mechanism in each.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w14-digestive-phases" data-l="a"><input type="checkbox" id="w14-digestive-phases-a"><label for="w14-digestive-phases-a"><span class="plet">A</span>Draw one set of axes, time on the horizontal, gastric acid secretion rate on the vertical, and mark the moment food is swallowed. Divide the curve into cephalic, gastric and intestinal phases with vertical lines. Under each phase write the trigger and the dominant control mechanism, neural or hormonal. Show the intestinal phase pulling the curve down. One line: say what is stimulating secretion during the phase before any food reaches the stomach.</label></div>
+      <div class="prompt" data-c="w14-digestive-phases" data-l="b"><input type="checkbox" id="w14-digestive-phases-b"><label for="w14-digestive-phases-b"><span class="plet">B</span>Draw the stomach three times in a row. In the first, food is still in the mouth or only smelled: draw the vagal pathway arriving and what it turns on. In the second, food is in the stomach: draw distension receptors, peptides in the lumen, gastrin in the blood. In the third, chyme has entered the duodenum: draw the reflex and the hormones sending inhibition back. One line: say why the third panel exists at all, given the stomach is done with the meal.</label></div>
   </section>
   <section class="comp" id="c-w14-gastric-secretion" aria-labelledby="h-w14-gastric-secretion">
       <div class="chd"><span class="cnum">11</span><h3 class="cname" id="h-w14-gastric-secretion">Gastric secretion and mucosal protection</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Trace the production of hydrochloric acid by the parietal cell and explain how the mucosal barrier protects the stomach and how ulcers develop when it fails.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w14-gastric-secretion" data-l="a"><input type="checkbox" id="w14-gastric-secretion-a"><label for="w14-gastric-secretion-a"><span class="plet">A</span>Draw one parietal cell with the lumen above and the capillary below. Inside it show carbon dioxide and water combining under carbonic anhydrase to give hydrogen ion and bicarbonate. Send the hydrogen ion into the lumen through the proton pump in exchange for potassium, send the bicarbonate into the blood in exchange for chloride, and send that chloride out to the lumen. Draw the three receptors on the basolateral side with their ligands. One line: say what happens to venous blood pH leaving the stomach during a meal, and why.</label></div>
+      <div class="prompt" data-c="w14-gastric-secretion" data-l="b"><input type="checkbox" id="w14-gastric-secretion-b"><label for="w14-gastric-secretion-b"><span class="plet">B</span>Draw a strip of gastric mucosa with its defences drawn to scale: the mucus layer, the bicarbonate trapped in it, the tight junctions between surface cells, and the blood supply underneath. Write the luminal pH above the mucus and the pH at the cell surface below it. Then draw the same strip after the barrier fails, with acid and pepsin reaching the cells. One line: name one thing that breaks this barrier and say which defence it takes out.</label></div>
   </section>
   <section class="comp" id="c-w14-pancreatic-bile-secretion" aria-labelledby="h-w14-pancreatic-bile-secretion">
       <div class="chd"><span class="cnum">12</span><h3 class="cname" id="h-w14-pancreatic-bile-secretion">Pancreatic and biliary secretion</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>State the components of pancreatic juice and bile and explain how bicarbonate neutralizes chyme and how bile salts emulsify fat.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w14-pancreatic-bile-secretion" data-l="a"><input type="checkbox" id="w14-pancreatic-bile-secretion-a"><label for="w14-pancreatic-bile-secretion-a"><span class="plet">A</span>Draw the duodenum with the pancreatic duct and the bile duct arriving at it. On the pancreas draw an acinar cell and a duct cell, and label what each secretes, enzymes from one and a watery bicarbonate fluid from the other. Draw a pH scale along the duodenum showing chyme arriving acidic and being neutralised. Mark the hormone that drives each secretion. One line: say what happens to pancreatic enzyme activity if the bicarbonate fails, and why the enzymes care.</label></div>
+      <div class="prompt" data-c="w14-pancreatic-bile-secretion" data-l="b"><input type="checkbox" id="w14-pancreatic-bile-secretion-b"><label for="w14-pancreatic-bile-secretion-b"><span class="plet">B</span>Draw one large fat droplet in watery chyme, then draw it again after bile salts arrive, now as many small droplets with bile salt molecules at each surface. Show the polar and nonpolar ends of one bile salt. Beside the two pictures, draw a bar for total droplet surface area in each case. Then draw lipase working on a surface. One line: say whether bile salts break any chemical bonds, and if not, name what they actually changed.</label></div>
   </section>
   <section class="comp" id="c-w14-carb-protein-absorption" aria-labelledby="h-w14-carb-protein-absorption">
       <div class="chd"><span class="cnum">13</span><h3 class="cname" id="h-w14-carb-protein-absorption">Carbohydrate and protein digestion and absorption</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Trace a starch and a protein from mouth to bloodstream naming the enzymes at each step and the transport mechanism at the brush border.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w14-carb-protein-absorption" data-l="a"><input type="checkbox" id="w14-carb-protein-absorption-a"><label for="w14-carb-protein-absorption-a"><span class="plet">A</span>Draw one starch molecule and follow it left to right across the page: mouth, stomach, small intestine lumen, brush border, enterocyte, blood. At each step name the enzyme and what it leaves behind, and mark where salivary amylase stops working and why. At the brush border draw the apical transporter that moves glucose in with sodium and the basolateral carrier that moves it out. One line: say which single transport step in your drawing is the one that actually needs energy, and where that energy comes from.</label></div>
+      <div class="prompt" data-c="w14-carb-protein-absorption" data-l="b"><input type="checkbox" id="w14-carb-protein-absorption-b"><label for="w14-carb-protein-absorption-b"><span class="plet">B</span>Draw a protein chain and follow it from stomach to blood. In the stomach show pepsinogen becoming pepsin and mark the pH it needs. In the small intestine show the pancreatic enzymes arriving inactive, enteropeptidase at the brush border switching on trypsin, and trypsin switching on the rest. At the enterocyte, draw two apical routes in, one for single amino acids and one for short peptides. One line: say why the pancreas ships these enzymes out inactive, and what goes wrong when they activate early.</label></div>
   </section>
   <section class="comp" id="c-w14-lipid-absorption" aria-labelledby="h-w14-lipid-absorption">
       <div class="chd"><span class="cnum">14</span><h3 class="cname" id="h-w14-lipid-absorption">Lipid digestion and absorption</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Trace a triglyceride through emulsification, lipase action, micelle formation, and chylomicron packaging to the lymphatic route and explain why fat takes a different path than glucose.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w14-lipid-absorption" data-l="a"><input type="checkbox" id="w14-lipid-absorption-a"><label for="w14-lipid-absorption-a"><span class="plet">A</span>Draw one triglyceride and follow it across the page in five stages: emulsified into small droplets by bile salts, cut by pancreatic lipase into free fatty acids and monoglyceride, carried in a micelle to the brush border, rebuilt into triglyceride inside the enterocyte, and packaged with protein into a chylomicron. End with the chylomicron leaving the basolateral side. One line: say what the micelle is for, given the products can cross the membrane on their own once they get there.</label></div>
+      <div class="prompt" data-c="w14-lipid-absorption" data-l="b"><input type="checkbox" id="w14-lipid-absorption-b"><label for="w14-lipid-absorption-b"><span class="plet">B</span>Draw a single villus with a blood capillary and a lacteal inside it. Send glucose in one colour from the enterocyte into the capillary and on to the hepatic portal vein and liver. Send a chylomicron in another colour into the lacteal, up the lymph, and into the venous blood near the neck. Mark the two entry points into the circulation. One line: say what a chylomicron cannot get through that glucose can, and what that means for when the liver first sees dietary fat.</label></div>
   </section>
   <section class="comp" id="c-w14-liver-function" aria-labelledby="h-w14-liver-function">
       <div class="chd"><span class="cnum">15</span><h3 class="cname" id="h-w14-liver-function">Liver function and enterohepatic circulation</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>State the metabolic, storage, and detoxification functions of the liver and trace the enterohepatic circulation of bile salts.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w14-liver-function" data-l="a"><input type="checkbox" id="w14-liver-function-a"><label for="w14-liver-function-a"><span class="plet">A</span>Draw the loop as a closed circuit: liver makes bile salts, bile duct to gallbladder, gallbladder to duodenum, bile salts work on fat down the small intestine, reabsorbed in the terminal ileum, hepatic portal vein back to the liver. Put an arrow at each leg and mark the recycled fraction as most of the pool. Add a small leak arrow for what is lost in faeces. One line: say what happens to fat digestion after the terminal ileum is surgically removed.</label></div>
+      <div class="prompt" data-c="w14-liver-function" data-l="b"><input type="checkbox" id="w14-liver-function-b"><label for="w14-liver-function-b"><span class="plet">B</span>Draw a hepatocyte with the sinusoid on one side and the bile canaliculus on the other. Around it draw four labelled jobs with a real example in each: a metabolic job, a storage job, a synthetic job, and a detoxification job. Show which side of the cell each product leaves by. One line: pick the liver job whose failure shows up first in a blood test, and name the substance you would measure.</label></div>
   </section>
   <section class="comp" id="c-w14-large-intestine" aria-labelledby="h-w14-large-intestine">
       <div class="chd"><span class="cnum">16</span><h3 class="cname" id="h-w14-large-intestine">Large intestine and microbiome</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Describe water and electrolyte absorption in the colon, the contribution of the microbiome, and the defecation reflex.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w14-large-intestine" data-l="a"><input type="checkbox" id="w14-large-intestine-a"><label for="w14-large-intestine-a"><span class="plet">A</span>Draw a length of colon in cross section with the lumen contents drawn wet at the entry end and formed at the exit end. Show sodium being pumped out of the lumen across the epithelium and water following it osmotically. Add the microbiome in the lumen with two things it makes for you and one thing it makes that you notice. One line: say what happens to stool water content when transit through the colon is too fast, and name one cause.</label></div>
+      <div class="prompt" data-c="w14-large-intestine" data-l="b"><input type="checkbox" id="w14-large-intestine-b"><label for="w14-large-intestine-b"><span class="plet">B</span>Draw the rectum and both anal sphincters, and label which is smooth muscle and which is skeletal. Draw the reflex in sequence: stool distends the rectum, stretch receptors fire, the spinal reflex relaxes the internal sphincter, and a voluntary pathway from the brain holds or releases the external one. Mark which limb you control. One line: say what the voluntary limb is doing when you delay, and where the stool goes in the meantime.</label></div>
   </section>
   <section class="comp" id="c-w14-lab-digestion-enzymes" aria-labelledby="h-w14-lab-digestion-enzymes">
       <div class="chd"><span class="cnum">17</span><h3 class="cname" id="h-w14-lab-digestion-enzymes">Digestive enzyme experiment</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Test the effect of pH, temperature, and substrate on a digestive enzyme and relate the results to the region of the tract where that enzyme works.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w14-lab-digestion-enzymes" data-l="a"><input type="checkbox" id="w14-lab-digestion-enzymes-a"><label for="w14-lab-digestion-enzymes-a"><span class="plet">A</span>Draw one set of axes, pH from 1 to 9 on the horizontal, enzyme activity on the vertical. Plot three curves with their peaks in the right places: salivary amylase, pepsin, and a pancreatic enzyme working in the duodenum. Under the axis, draw the region of the tract that matches each pH so the curves line up with the anatomy. One line: say what happens to the amylase curve when the bolus reaches the stomach, and whether that change reverses.</label></div>
+      <div class="prompt" data-c="w14-lab-digestion-enzymes" data-l="b"><input type="checkbox" id="w14-lab-digestion-enzymes-b"><label for="w14-lab-digestion-enzymes-b"><span class="plet">B</span>Draw a rack of test tubes for an experiment on one enzyme you pick, not amylase. Draw every tube you would need, including the controls, and write inside each what it contains and what you changed. Draw the expected result you would see in each tube. Beside the rack, sketch the graph you would build from those tubes. One line: name the tube that tells you the result came from the enzyme and not from the conditions alone.</label></div>
   </section>
 
   <div class="chead"><span class="cl">6 competencies</span><h2>Metabolism and Energy Balance</h2></div>
   <section class="comp" id="c-w14-absorptive-state" aria-labelledby="h-w14-absorptive-state">
       <div class="chd"><span class="cnum">18</span><h3 class="cname" id="h-w14-absorptive-state">Absorptive state</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Describe the fate of glucose, amino acids, and fats in the absorptive state and identify insulin as the dominant hormone.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w14-absorptive-state" data-l="a"><input type="checkbox" id="w14-absorptive-state-a"><label for="w14-absorptive-state-a"><span class="plet">A</span>Draw the small intestine at the left with three fuels leaving it, glucose, amino acids, and fat. Follow each to the tissues that take it up, liver, muscle, adipose, and draw what it is turned into there, glycogen, protein, stored triglyceride. Draw insulin arriving from the pancreas and mark every arrow it is driving. One line: say which single tissue in your drawing takes up glucose without needing insulin, and why that matters.</label></div>
+      <div class="prompt" data-c="w14-absorptive-state" data-l="b"><input type="checkbox" id="w14-absorptive-state-b"><label for="w14-absorptive-state-b"><span class="plet">B</span>Draw three panels, liver, skeletal muscle, and adipose tissue, all in the hour after a large meal. In each, draw the transporters and the storage form actually used there, and show insulin at the cell surface. Mark which panels have an insulin sensitive glucose transporter moving to the membrane and which does not. One line: say why muscle glycogen cannot raise your plasma glucose later, and which panel can.</label></div>
   </section>
   <section class="comp" id="c-w14-postabsorptive-state" aria-labelledby="h-w14-postabsorptive-state">
       <div class="chd"><span class="cnum">19</span><h3 class="cname" id="h-w14-postabsorptive-state">Postabsorptive state</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Explain how glycogenolysis, gluconeogenesis, lipolysis, and ketogenesis maintain plasma glucose during fasting and name the hormones that drive each.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w14-postabsorptive-state" data-l="a"><input type="checkbox" id="w14-postabsorptive-state-a"><label for="w14-postabsorptive-state-a"><span class="plet">A</span>Draw a time axis from the last meal out to several days of fasting. Above it, draw stacked bands showing which source is supplying plasma glucose at each point: liver glycogen first, then glucose made new from amino acids, glycerol and lactate. Below the axis, draw fat breakdown rising and ketone bodies appearing later. Name the hormone driving each band. One line: say what runs out first and roughly when, and what takes over.</label></div>
+      <div class="prompt" data-c="w14-postabsorptive-state" data-l="b"><input type="checkbox" id="w14-postabsorptive-state-b"><label for="w14-postabsorptive-state-b"><span class="plet">B</span>Draw one hepatocyte in a fasting person with four labelled pathways running out of it or through it: glycogen breakdown, glucose made from noncarbohydrate precursors, and arriving from elsewhere, fatty acids from adipose and their conversion to ketone bodies. Draw the precursors arriving from muscle and fat with arrows. Write the hormone driving each pathway beside it. One line: name the tissue that switches to ketones during a long fast, and say what it is protecting.</label></div>
   </section>
   <section class="comp" id="c-w14-glucose-regulation" aria-labelledby="h-w14-glucose-regulation">
       <div class="chd"><span class="cnum">20</span><h3 class="cname" id="h-w14-glucose-regulation">Integrated glucose regulation</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Predict the hormonal and metabolic response to a carbohydrate meal and to a prolonged fast and explain how plasma glucose stays within range in both.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w14-glucose-regulation" data-l="a"><input type="checkbox" id="w14-glucose-regulation-a"><label for="w14-glucose-regulation-a"><span class="plet">A</span>Draw one wide set of axes covering 24 hours, plasma glucose on the vertical with a shaded normal band across it. Plot the trace through three meals and an overnight fast. Underneath, on the same time axis, draw insulin and glucagon as two traces. Mark every point where a correction is being made and by which hormone. One line: say what the shaded band would look like if only one of the two hormones existed, and which one you would keep.</label></div>
+      <div class="prompt" data-c="w14-glucose-regulation" data-l="b"><input type="checkbox" id="w14-glucose-regulation-b"><label for="w14-glucose-regulation-b"><span class="plet">B</span>Draw two negative feedback loops side by side, each with a stimulus, a sensor, the islet cell that responds, the hormone, the target tissue, and the response that returns glucose to range. Loop one starts with a carbohydrate meal. Loop two starts with 18 hours without food. Draw the return arrow on both. One line: say which loop has more backup hormones behind it, and offer a reason why.</label></div>
   </section>
   <section class="comp" id="c-w14-metabolic-rate" aria-labelledby="h-w14-metabolic-rate">
       <div class="chd"><span class="cnum">21</span><h3 class="cname" id="h-w14-metabolic-rate">Energy balance and metabolic rate</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Define basal metabolic rate, state the factors that raise and lower it, and explain how indirect calorimetry estimates energy expenditure.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w14-metabolic-rate" data-l="a"><input type="checkbox" id="w14-metabolic-rate-a"><label for="w14-metabolic-rate-a"><span class="plet">A</span>Draw energy in on one side and energy out on the other, balanced on a pivot. Split energy out into its parts, the resting cost of staying alive, physical activity, and the cost of digesting the food itself. Beside the pivot, draw a row of short bars showing what raises and lowers basal metabolic rate: thyroid hormone, lean muscle mass, fever, age, prolonged food restriction. One line: say which side of the pivot is easier to change by a large amount, and what that means for weight change.</label></div>
+      <div class="prompt" data-c="w14-metabolic-rate" data-l="b"><input type="checkbox" id="w14-metabolic-rate-b"><label for="w14-metabolic-rate-b"><span class="plet">B</span>Draw a person breathing through a mouthpiece into a measuring device, with inspired and expired gas drawn as two streams. Show the difference in oxygen between them being measured. Write the conversion beside it, roughly 4.8 to 5 kilocalories of energy released per litre of oxygen consumed. Add a small scale for the ratio of carbon dioxide made to oxygen used, near 1.0 for carbohydrate and near 0.7 for fat. One line: say what the ratio tells you that the oxygen number alone does not.</label></div>
   </section>
   <section class="comp" id="c-w14-thermoregulation" aria-labelledby="h-w14-thermoregulation">
       <div class="chd"><span class="cnum">22</span><h3 class="cname" id="h-w14-thermoregulation">Thermoregulation</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Trace the negative feedback response to heat and to cold through the hypothalamus and the effectors and explain the mechanism of fever.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w14-thermoregulation" data-l="a"><input type="checkbox" id="w14-thermoregulation-a"><label for="w14-thermoregulation-a"><span class="plet">A</span>Draw two negative feedback loops meeting at the hypothalamus in the middle. On the hot side, run the loop from a rise in core temperature through the hypothalamus to the effectors, skin vessel dilation and sweating, and back to core temperature. On the cold side, run it to vessel constriction, shivering, and heat generated without shivering. Draw the sensors in both skin and core. One line: say which effector on the hot side stops working in high humidity, and what that does to core temperature.</label></div>
+      <div class="prompt" data-c="w14-thermoregulation" data-l="b"><input type="checkbox" id="w14-thermoregulation-b"><label for="w14-thermoregulation-b"><span class="plet">B</span>Draw one set of axes, time on the horizontal, temperature on the vertical, and plot two lines through a fever: the set point and the actual core temperature. Show the set point jumping first, the gap that opens under it, and the core temperature climbing to meet it. Then show the set point dropping back and the second gap that opens above it. Mark where the person shivers and where they sweat. One line: say why a person with a rising fever feels cold at 39 degrees Celsius.</label></div>
   </section>
   <section class="comp" id="c-w14-lab-metabolic-rate" aria-labelledby="h-w14-lab-metabolic-rate">
       <div class="chd"><span class="cnum">23</span><h3 class="cname" id="h-w14-lab-metabolic-rate">Metabolic rate measurement</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Estimate metabolic rate from measured or simulated oxygen consumption and compare resting values with values after activity.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w14-lab-metabolic-rate" data-l="a"><input type="checkbox" id="w14-lab-metabolic-rate-a"><label for="w14-lab-metabolic-rate-a"><span class="plet">A</span>Draw a bar chart with oxygen consumption in litres per minute on the vertical and four bars across the bottom: lying quietly, sitting, walking, and hard exercise. Draw the bars at believable relative heights, not exact values. Beside the chart, write out the conversion from litres of oxygen to kilocalories per minute and carry one bar through it. One line: say which bar comes closest to a true basal measurement, and name one condition it still fails.</label></div>
+      <div class="prompt" data-c="w14-lab-metabolic-rate" data-l="b"><input type="checkbox" id="w14-lab-metabolic-rate-b"><label for="w14-lab-metabolic-rate-b"><span class="plet">B</span>Draw one set of axes, time on the horizontal, oxygen consumption on the vertical, and plot a person through rest, then three minutes of exercise, then recovery. Show the rise, the plateau during work, and the slow fall after stopping. Shade the area above resting level after exercise ended. One line: say what the body is still paying for in that shaded area, and why oxygen use does not drop the moment the work stops.</label></div>
   </section>
 
   <p class="foot"><span>BIO 005 Human Physiology &middot; Yuba College &middot; Fall 2026</span><span>Dr. Sharilyn Rennie</span></p>

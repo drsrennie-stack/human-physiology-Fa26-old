@@ -31,11 +31,13 @@ a:hover{color:var(--maroon-dk)}
   padding:12px 18px;font-weight:700;text-decoration:none}
 .skip:focus{left:0;top:0}
 
-header.top{background:var(--navy-deep);color:#fff;padding:34px 0 30px}
+/* light page, maroon eyebrow, two tone headline. No dark band. */
+header.top{padding:30px 0 24px}
 header.top .eyebrow{font-size:11px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;
-  color:var(--gold);margin:0 0 10px}
-header.top h1{font-size:clamp(26px,4.4vw,38px);line-height:1.14;color:#fff;max-width:24ch}
-header.top p.sub{color:#D7DCE3;margin:12px 0 0;font-size:16px}
+  color:var(--maroon);margin:0 0 10px}
+header.top h1{font-size:clamp(26px,4.4vw,38px);line-height:1.14;color:var(--navy);max-width:24ch}
+header.top h1 b{color:var(--maroon);font-weight:800}
+header.top p.sub{color:var(--muted);margin:12px 0 0;font-size:16px}
 
 .homebar{max-width:1000px;margin:0 auto;padding:16px 20px 0}
 .home{display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:#fff;
@@ -53,7 +55,7 @@ main{padding:8px 0 60px}
 .chead{border-left:4px solid var(--maroon);padding:2px 0 2px 16px;margin:32px 0 6px}
 .chead .cl{font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;
   color:var(--maroon);display:block;margin-bottom:4px}
-.chead h2{font-size:21px}
+.chead h2{font-size:21px;color:var(--maroon)}
 
 .comp{background:var(--card);border:1px solid var(--rule);border-radius:10px;
   padding:18px 20px;margin:12px 0;break-inside:avoid}
@@ -89,8 +91,7 @@ main{padding:8px 0 60px}
   .mm-brandbar,.mm-jumpwrap,.homebar,.pwrap,.skip{display:none!important}
   body{background:#fff;font-size:10.5pt}
   .comp{break-inside:avoid;border-color:#999}
-  header.top{background:#fff;color:#000;padding:0 0 12pt}
-  header.top h1{color:#000}header.top .eyebrow{color:#000}header.top p.sub{color:#000}
+
 }
 </style>
 </head>
@@ -99,9 +100,16 @@ main{padding:8px 0 60px}
 
 <div class="mm-brandbar"><div class="mm-wrap">
   <a class="mm-mark" href="course-start.html" target="_top">
-    <span class="mm-wm">Med<b>Masters</b><span class="mm-wmsub">Collaborative</span></span>
+    <svg viewBox="40 10 125 148" width="22" height="26" role="img" aria-label="BIO 005 Human Physiology, course home">
+      <g transform="translate(0,18)">
+        <g transform="translate(60,0) rotate(8 0 130)"><circle cx="0" cy="20" r="10" fill="#0B1530"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#0B1530"/></g>
+        <g transform="translate(100,0)"><circle cx="0" cy="10" r="11" fill="#8B3A2E"/><path d="M 0,22 C -11,22 -17,26 -17,34 C -17,52 -14,70 -12,86 C -11,108 -13,122 -15,132 L 15,132 C 13,122 11,108 12,86 C 14,70 17,52 17,34 C 17,26 11,22 0,22 Z" fill="#8B3A2E"/></g>
+        <g transform="translate(140,0) rotate(-8 0 130)"><circle cx="0" cy="20" r="10" fill="#C9A14A"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#C9A14A"/></g>
+      </g>
+    </svg>
+    <span class="mm-wm">BIO <b>005</b><span class="mm-wmsub">Human Physiology</span></span>
   </a>
-  <span class="mm-course">BIO 005 &middot; Human Physiology</span>
+  <span class="mm-course">BIO 005 &middot; Fall 2026</span>
 </div></div>
 
 <div class="homebar"><a class="home" href="course-start.html" target="_top">
@@ -120,7 +128,7 @@ main{padding:8px 0 60px}
 
 <header class="top"><div class="wrap">
   <p class="eyebrow">BIO 005 &middot; Week 11 &middot; Part 3</p>
-  <h1>Everything Week 11 asks you to be able to do.</h1>
+  <h1>Everything Week 11 <b>asks you to be able to do.</b></h1>
   <p class="sub">Blood and how the body defends itself. 19 competencies, each one a single thing you will be able to do by Sunday, November 22.</p>
 </div></header>
 
@@ -138,101 +146,139 @@ main{padding:8px 0 60px}
   <section class="comp" id="c-w10-plasma" aria-labelledby="h-w10-plasma">
       <div class="chd"><span class="cnum">1</span><h3 class="cname" id="h-w10-plasma">Plasma and blood functions</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>State the three functional categories of blood, transport, regulation, and protection, and name the major plasma proteins and the function of each.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w10-plasma" data-l="a"><input type="checkbox" id="w10-plasma-a"><label for="w10-plasma-a"><span class="plet">A</span>Draw a centrifuged blood tube with the layers to scale: plasma at about 55 percent, the buffy coat as a thin line, packed red cells at about 45 percent. Beside the plasma layer, draw its contents split by volume, mostly water with a protein slice, and name the three protein groups with the job of each. One line: name the protein group that holds fluid inside the vessels and say what happens to that fluid when it runs low.</label></div>
+      <div class="prompt" data-c="w10-plasma" data-l="b"><input type="checkbox" id="w10-plasma-b"><label for="w10-plasma-b"><span class="plet">B</span>Draw three columns headed transport, regulation, and protection, and under each draw two things your blood is doing right now with the component doing it, a cell, a protein, or an ion. Use real cargo: oxygen, glucose, heat, hydrogen ion, a clotting factor, an antibody. One line: name the single job that would kill you fastest if blood stopped doing it, and say roughly how fast.</label></div>
   </section>
   <section class="comp" id="c-w10-hematocrit" aria-labelledby="h-w10-hematocrit">
       <div class="chd"><span class="cnum">2</span><h3 class="cname" id="h-w10-hematocrit">Hematocrit and formed elements</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Define hematocrit and interpret a value as normal or abnormal in the context of anemia and dehydration.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w10-hematocrit" data-l="a"><input type="checkbox" id="w10-hematocrit-a"><label for="w10-hematocrit-a"><span class="plet">A</span>Draw four spun hematocrit tubes of equal length, filled to the right level: a normal man at about 45 percent, a normal woman at about 40 percent, someone with iron deficiency anemia, and someone badly dehydrated. Write the reference ranges beside them, about 42 to 52 percent in men and 37 to 47 percent in women. One line: hematocrit is a ratio, so name the tube that reads abnormal while the number of red cells is normal.</label></div>
+      <div class="prompt" data-c="w10-hematocrit" data-l="b"><input type="checkbox" id="w10-hematocrit-b"><label for="w10-hematocrit-b"><span class="plet">B</span>Draw a blood sample as one tall bar, split into plasma and formed elements, then split the formed elements into red cells, white cells and platelets at their true relative numbers, with red cells swamping the other two. Beside it, draw the same bar for the same person after two liters of intravenous saline. One line: say what the saline did to the hematocrit and what it did not do to the red cells.</label></div>
   </section>
   <section class="comp" id="c-w10-rbc-hemoglobin" aria-labelledby="h-w10-rbc-hemoglobin">
       <div class="chd"><span class="cnum">3</span><h3 class="cname" id="h-w10-rbc-hemoglobin">Erythrocyte structure and hemoglobin</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Relate the biconcave shape and absent nucleus of the erythrocyte to its function and describe how the four heme groups of hemoglobin carry oxygen.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w10-rbc-hemoglobin" data-l="a"><input type="checkbox" id="w10-rbc-hemoglobin-a"><label for="w10-rbc-hemoglobin-a"><span class="plet">A</span>Draw a red cell in face view and in cross section, biconcave, about 7.5 micrometers across, with no nucleus and no mitochondria. Beside each feature write what it buys: short diffusion distance, surface area, room for hemoglobin, and the ability to fold through a capillary narrower than the cell. One line: it has no mitochondria, so say how it makes ATP and why that is convenient given what it is carrying.</label></div>
+      <div class="prompt" data-c="w10-rbc-hemoglobin" data-l="b"><input type="checkbox" id="w10-rbc-hemoglobin-b"><label for="w10-rbc-hemoglobin-b"><span class="plet">B</span>Draw one hemoglobin molecule big, with its four globin chains, a heme group on each, and the iron atom at the center of each heme. Show how many oxygen molecules it holds when fully loaded. Then draw the same molecule at three loading states, empty, half, and full. One line: say why loading the first oxygen makes the next one easier, and what that does to the shape of the loading curve.</label></div>
   </section>
   <section class="comp" id="c-w10-erythropoiesis" aria-labelledby="h-w10-erythropoiesis">
       <div class="chd"><span class="cnum">4</span><h3 class="cname" id="h-w10-erythropoiesis">Erythropoiesis and its regulation</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Trace the erythropoietin negative feedback loop from tissue hypoxia to increased red cell production and state the nutrients required.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w10-erythropoiesis" data-l="a"><input type="checkbox" id="w10-erythropoiesis-a"><label for="w10-erythropoiesis-a"><span class="plet">A</span>Draw the erythropoietin loop closed: a tissue low in oxygen, the kidney sensing it, erythropoietin traveling in blood, the red bone marrow, new red cells, oxygen carrying restored, and the signal switching off. Label the sensor, the integrator and the effector on your drawing. Beside the marrow, draw the raw materials it needs, iron, vitamin B12, folate and amino acids. One line: name the step that breaks in chronic kidney disease and say what that does to the loop.</label></div>
+      <div class="prompt" data-c="w10-erythropoiesis" data-l="b"><input type="checkbox" id="w10-erythropoiesis-b"><label for="w10-erythropoiesis-b"><span class="plet">B</span>Draw the maturation series from stem cell down to reticulocyte and mature red cell, showing the nucleus shrinking and being ejected while hemoglobin fills in. Beside it, draw three failure points: no iron, no vitamin B12, and no erythropoietin, with the kind of cell each one leaves you holding. One line: two of these give cells of the wrong size in opposite directions, so say which is small and which is large.</label></div>
   </section>
   <section class="comp" id="c-w10-rbc-destruction" aria-labelledby="h-w10-rbc-destruction">
       <div class="chd"><span class="cnum">5</span><h3 class="cname" id="h-w10-rbc-destruction">Red cell destruction and bilirubin</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Trace the fate of hemoglobin after red cell breakdown and explain how failure to clear bilirubin produces jaundice.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w10-rbc-destruction" data-l="a"><input type="checkbox" id="w10-rbc-destruction-a"><label for="w10-rbc-destruction-a"><span class="plet">A</span>Draw a red cell at the end of its 120 days being taken apart by a macrophage in the spleen, and follow all three products out on separate arrows: globin to amino acids, iron bound and shipped back to the marrow, heme to biliverdin to bilirubin. Carry the bilirubin to the liver, into bile, into the gut, and out. Label what colours the stool and the urine. One line: almost nothing here is wasted, so say what actually leaves the body and why it has to.</label></div>
+      <div class="prompt" data-c="w10-rbc-destruction" data-l="b"><input type="checkbox" id="w10-rbc-destruction-b"><label for="w10-rbc-destruction-b"><span class="plet">B</span>Draw three jaundiced patients with the block in a different place in each: massive red cell breakdown, liver cell failure, and a stone in the bile duct. Draw the same pathway under each and dam it at the right point. Show what backs up and what colour the stool is in each. One line: one of the three has pale stool, so name it and say why the colour locates the block.</label></div>
   </section>
   <section class="comp" id="c-w10-leukocytes" aria-labelledby="h-w10-leukocytes">
       <div class="chd"><span class="cnum">6</span><h3 class="cname" id="h-w10-leukocytes">Leukocytes</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Match neutrophils, lymphocytes, monocytes, eosinophils, and basophils to their defensive function and to the condition that raises each.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w10-leukocytes" data-l="a"><input type="checkbox" id="w10-leukocytes-a"><label for="w10-leukocytes-a"><span class="plet">A</span>Draw the five white cells at their true relative numbers, so neutrophils crowd your field and basophils are one or two cells. Draw each with the nucleus shape and granules you would use to identify it under the microscope. Beside each, write its defensive job and one condition that raises it. One line: you are handed a differential with high eosinophils, so name the two causes you would consider first.</label></div>
+      <div class="prompt" data-c="w10-leukocytes" data-l="b"><input type="checkbox" id="w10-leukocytes-b"><label for="w10-leukocytes-b"><span class="plet">B</span>Draw four panels: a bacterial infection, a viral infection, a parasitic worm, and an allergic reaction. In each, draw which white cell arrives and what it does on arrival, engulfing, killing an infected host cell, or emptying granules onto a surface. One line: name the panel where the cell cannot swallow its target and say what it does instead.</label></div>
   </section>
   <section class="comp" id="c-w10-hemostasis" aria-labelledby="h-w10-hemostasis">
       <div class="chd"><span class="cnum">7</span><h3 class="cname" id="h-w10-hemostasis">Hemostasis</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Order the three phases of hemostasis, vascular spasm, platelet plug formation, and coagulation, and identify the role of von Willebrand factor and thromboxane.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w10-hemostasis" data-l="a"><input type="checkbox" id="w10-hemostasis-a"><label for="w10-hemostasis-a"><span class="plet">A</span>Draw a cut vessel across three panels in time order: vascular spasm, platelet plug, coagulation. In the middle panel, draw the exposed collagen, von Willebrand factor bridging a platelet to it, and the platelets releasing ADP and thromboxane A2 to recruit more. Show what thromboxane does to the vessel itself. One line: the plug builds by positive feedback, so say what stops it spreading down the whole vessel.</label></div>
+      <div class="prompt" data-c="w10-hemostasis" data-l="b"><input type="checkbox" id="w10-hemostasis-b"><label for="w10-hemostasis-b"><span class="plet">B</span>Draw the same cut vessel three times, with one phase disabled in each: no vascular spasm, no functioning platelets, no coagulation factors. Draw what the bleeding looks like in each and how quickly it shows. One line: say which failure you would notice first from a paper cut and which you would only notice from a deep injury.</label></div>
   </section>
   <section class="comp" id="c-w10-coagulation" aria-labelledby="h-w10-coagulation">
       <div class="chd"><span class="cnum">8</span><h3 class="cname" id="h-w10-coagulation">Coagulation cascade</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Compare the intrinsic and extrinsic pathways to the common pathway and identify the roles of thrombin, fibrin, calcium, and vitamin K.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w10-coagulation" data-l="a"><input type="checkbox" id="w10-coagulation-a"><label for="w10-coagulation-a"><span class="plet">A</span>Draw the cascade as two branches meeting one trunk. On one side the intrinsic pathway starting from contact with exposed collagen, on the other the extrinsic pathway starting from tissue factor released by damaged tissue, joining at factor X. Then draw the common trunk: prothrombin to thrombin, fibrinogen to fibrin, and the mesh. Mark every point where calcium is required. One line: the two branches start differently, so say which is faster and what it starts from.</label></div>
+      <div class="prompt" data-c="w10-coagulation" data-l="b"><input type="checkbox" id="w10-coagulation-b"><label for="w10-coagulation-b"><span class="plet">B</span>Draw the finished clot as a fibrin mesh with red cells caught in it, then work backwards up the cascade, writing at each step the factor that made it happen. Circle the four factors the liver cannot make without vitamin K (II, VII, IX and X) and mark where each sits in your drawing. One line: a patient on warfarin has a normal platelet count, so say what part of your drawing still works and what does not.</label></div>
   </section>
   <section class="comp" id="c-w10-fibrinolysis" aria-labelledby="h-w10-fibrinolysis">
       <div class="chd"><span class="cnum">9</span><h3 class="cname" id="h-w10-fibrinolysis">Clot limitation and fibrinolysis</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Explain how anticoagulants and plasmin limit and remove a clot and predict the effect of a drug that blocks vitamin K or platelet aggregation.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w10-fibrinolysis" data-l="a"><input type="checkbox" id="w10-fibrinolysis-a"><label for="w10-fibrinolysis-a"><span class="plet">A</span>Draw one clot at three times: fresh, held in check, and being dissolved. In the middle drawing show what stops it growing, the healthy endothelium beside it and the antithrombin in the plasma. In the third, show plasminogen already trapped inside the mesh, tissue plasminogen activator turning it into plasmin, and the mesh being cut apart. One line: say why plasminogen is built into the clot from the start rather than delivered later.</label></div>
+      <div class="prompt" data-c="w10-fibrinolysis" data-l="b"><input type="checkbox" id="w10-fibrinolysis-b"><label for="w10-fibrinolysis-b"><span class="plet">B</span>Draw two patients bleeding from the same cut. Give one a drug that blocks vitamin K and the other a drug that blocks thromboxane and platelet aggregation. Draw exactly which half of the clot fails in each, the mesh or the plug. One line: both bleed, so say which one you could reverse with vitamin K and which you would have to wait out, and roughly how long.</label></div>
   </section>
   <section class="comp" id="c-w10-blood-types" aria-labelledby="h-w10-blood-types">
       <div class="chd"><span class="cnum">10</span><h3 class="cname" id="h-w10-blood-types">ABO and Rh blood types</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Predict agglutination for any donor and recipient ABO and Rh combination and explain the mechanism of hemolytic disease of the newborn.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w10-blood-types" data-l="a"><input type="checkbox" id="w10-blood-types-a"><label for="w10-blood-types-a"><span class="plet">A</span>Draw four red cells in a row, A, B, AB and O, with the antigens on the surface of each. Under each cell, draw the antibodies floating in that person&#39;s plasma. Then draw a grid of donor against recipient and mark every combination that agglutinates. One line: O is called the universal donor, so say what your own grid shows about O as a recipient.</label></div>
+      <div class="prompt" data-c="w10-blood-types" data-l="b"><input type="checkbox" id="w10-blood-types-b"><label for="w10-blood-types-b"><span class="plet">B</span>Draw an Rh negative mother and an Rh positive fetus across two pregnancies. In the first, show where fetal cells get into the maternal circulation and what the mother makes in response. In the second, draw that antibody crossing the placenta and what it does to fetal red cells. Mark where an injection of anti D immunoglobulin breaks the sequence. One line: say why the first baby is usually fine and the second is not.</label></div>
   </section>
   <section class="comp" id="c-w10-lab-hematocrit" aria-labelledby="h-w10-lab-hematocrit">
       <div class="chd"><span class="cnum">11</span><h3 class="cname" id="h-w10-lab-hematocrit">Hematocrit and hemoglobin determination</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Determine hematocrit and hemoglobin from a sample or simulation and evaluate the result against reference ranges.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w10-lab-hematocrit" data-l="a"><input type="checkbox" id="w10-lab-hematocrit-a"><label for="w10-lab-hematocrit-a"><span class="plet">A</span>Before you spin anything, draw the tube you predict for yourself with a percentage on it. Spin, read, and draw the real tube beside your prediction with the layers measured. Write the reference range for your sex next to it. Do the same for hemoglobin in g/dL and check whether your hemoglobin is roughly a third of your hematocrit. One line: if those two numbers break that rule, say which measurement you would repeat first and why.</label></div>
+      <div class="prompt" data-c="w10-lab-hematocrit" data-l="b"><input type="checkbox" id="w10-lab-hematocrit-b"><label for="w10-lab-hematocrit-b"><span class="plet">B</span>Draw a row of four spun tubes for four blind samples, at 30, 42, 52 and 60 percent, and beside each write the hemoglobin you get from the rule of three. Under each tube, draw the person it could belong to and write one plausible cause. One line: one of these could be an ordinary person who is simply dehydrated, so name it and say what you would measure next to check.</label></div>
   </section>
   <section class="comp" id="c-w10-lab-blood-typing" aria-labelledby="h-w10-lab-blood-typing">
       <div class="chd"><span class="cnum">12</span><h3 class="cname" id="h-w10-lab-blood-typing">Blood typing</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Perform simulated ABO and Rh typing and determine compatible donor types for the result obtained.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w10-lab-blood-typing" data-l="a"><input type="checkbox" id="w10-lab-blood-typing-a"><label for="w10-lab-blood-typing-a"><span class="plet">A</span>Draw three wells for one sample, labeled anti A, anti B and anti D, and fill in what you actually saw, clumped or smooth, for the sample you were given. Then draw the full grid of well patterns for all eight types, so any future result can be read straight off it. One line: name the pattern that is easiest to misread and say what you would do to be sure.</label></div>
+      <div class="prompt" data-c="w10-lab-blood-typing" data-l="b"><input type="checkbox" id="w10-lab-blood-typing-b"><label for="w10-lab-blood-typing-b"><span class="plet">B</span>Draw your typed result as a patient on an emergency table, then draw the units of donor blood you could safely hang and the ones you could not, with the antigen and antibody reason drawn on every rejected bag. Then draw what actually happens inside a vessel during an incompatible transfusion. One line: say where the clinical damage comes from, and it is not the clumping by itself.</label></div>
   </section>
 
   <div class="chead"><span class="cl">1 competency</span><h2>Vascular Physiology</h2></div>
   <section class="comp" id="c-w11-lymph-return" aria-labelledby="h-w11-lymph-return">
       <div class="chd"><span class="cnum">13</span><h3 class="cname" id="h-w11-lymph-return">Lymphatic return</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>State the volume of fluid the lymphatic system returns each day and trace lymph from an interstitial space to the subclavian vein.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w11-lymph-return" data-l="a"><input type="checkbox" id="w11-lymph-return-a"><label for="w11-lymph-return-a"><span class="plet">A</span>Draw a capillary bed with filtration and reabsorption marked, then show the roughly 3 liters a day that is not reabsorbed leaving as lymph. Follow it from the interstitial space into a lymphatic capillary (draw the overlapping endothelial flaps that let fluid in but not out), through a node, into a trunk, into the thoracic duct, and into the vein at the base of the neck. One line: name the one thing lymph carries back that the blood capillary could not take.</label></div>
+      <div class="prompt" data-c="w11-lymph-return" data-l="b"><input type="checkbox" id="w11-lymph-return-b"><label for="w11-lymph-return-b"><span class="plet">B</span>Draw the body divided into the drainage territory of the thoracic duct and that of the right lymphatic duct, shaded differently, and mark where each one empties into the venous system. Then draw an arm whose axillary nodes have been removed and follow the fluid balance in that limb over weeks. One line: lymph has no central pump, so say what moves it and what that predicts for a limb that cannot move.</label></div>
   </section>
 
   <div class="chead"><span class="cl">6 competencies</span><h2>Immune Physiology</h2></div>
   <section class="comp" id="c-w15-innate-immunity" aria-labelledby="h-w15-innate-immunity">
       <div class="chd"><span class="cnum">14</span><h3 class="cname" id="h-w15-innate-immunity">Innate defenses</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Describe the physical, chemical, and cellular innate defenses and explain what makes them nonspecific and immediate.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w15-innate-immunity" data-l="a"><input type="checkbox" id="w15-innate-immunity-a"><label for="w15-innate-immunity-a"><span class="plet">A</span>Draw a body outline and one bacterium trying three routes in: through the skin, through the airway, and in swallowed food. On each route draw the barrier it meets and name it properly, keratinized skin with its acid film, mucus with cilia sweeping upward, and stomach acid near pH 2. Then draw what waits inside if it gets past. One line: say what makes all of these nonspecific, in terms of what they actually recognize.</label></div>
+      <div class="prompt" data-c="w15-innate-immunity" data-l="b"><input type="checkbox" id="w15-innate-immunity-b"><label for="w15-innate-immunity-b"><span class="plet">B</span>Draw a splinter carrying bacteria into the dermis, then follow the innate response as a row of small panels from the first minutes onward: the chemicals released, the phagocytes arriving, complement punching a hole in a bacterial membrane, and a natural killer cell handling a host cell that has gone wrong. Put a rough time on each panel. One line: adaptive immunity needs days, so say what innate defense is buying with them.</label></div>
   </section>
   <section class="comp" id="c-w15-inflammation" aria-labelledby="h-w15-inflammation">
       <div class="chd"><span class="cnum">15</span><h3 class="cname" id="h-w15-inflammation">Inflammation and fever</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Order the events of the inflammatory response and explain how the cardinal signs arise and why fever aids defense.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w15-inflammation" data-l="a"><input type="checkbox" id="w15-inflammation-a"><label for="w15-inflammation-a"><span class="plet">A</span>Draw a small injury with the tissue around it and build the cardinal signs from the mechanism rather than the word: redness and heat from vasodilation, swelling from increased permeability and fluid leaving the capillary, pain from the chemicals released and the pressure. Draw the vessel changes that make each one. One line: swelling both helps and hurts, so name one thing it does that is genuinely useful.</label></div>
+      <div class="prompt" data-c="w15-inflammation" data-l="b"><input type="checkbox" id="w15-inflammation-b"><label for="w15-inflammation-b"><span class="plet">B</span>Draw a temperature axis from 37 degrees Celsius upward against time and plot a fever from onset through plateau to breaking. On the drawing mark the pyrogen arriving, the hypothalamic set point moving up, the shivering and vasoconstriction while the body chases the new set point, and the sweating when the set point drops back. One line: you feel cold while your temperature is climbing, so say what in your drawing explains that.</label></div>
   </section>
   <section class="comp" id="c-w15-adaptive-immunity" aria-labelledby="h-w15-adaptive-immunity">
       <div class="chd"><span class="cnum">16</span><h3 class="cname" id="h-w15-adaptive-immunity">Adaptive immunity</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Compare humoral and cell mediated immunity by the cell responsible, the target, and the mechanism of elimination.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w15-adaptive-immunity" data-l="a"><input type="checkbox" id="w15-adaptive-immunity-a"><label for="w15-adaptive-immunity-a"><span class="plet">A</span>Draw a line down the middle of your space. On the left draw humoral immunity: the B cell, the plasma cell, antibodies leaving, and a target they can reach, a toxin or a bacterium out in the fluid. On the right draw cell mediated immunity: the helper T cell, the cytotoxic T cell, and a target they have to reach, a virus infected cell or a tumor cell, with the killing mechanism shown. One line: say why an antibody cannot solve the right hand problem.</label></div>
+      <div class="prompt" data-c="w15-adaptive-immunity" data-l="b"><input type="checkbox" id="w15-adaptive-immunity-b"><label for="w15-adaptive-immunity-b"><span class="plet">B</span>Draw one virus and follow it through both arms of the adaptive response on a single page, first while it is still outside a cell, then after it has got inside one. Show which cell handles it at each stage and what becomes of it. Put the helper T cell where it belongs in both halves. One line: untreated HIV infection destroys helper T cells, so say what that costs each arm.</label></div>
   </section>
   <section class="comp" id="c-w15-antibodies" aria-labelledby="h-w15-antibodies">
       <div class="chd"><span class="cnum">17</span><h3 class="cname" id="h-w15-antibodies">Antibody structure and function</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Relate antibody structure to antigen binding and name the mechanisms by which antibodies neutralize or mark a target.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w15-antibodies" data-l="a"><input type="checkbox" id="w15-antibodies-a"><label for="w15-antibodies-a"><span class="plet">A</span>Draw one antibody large enough to label properly: two heavy chains, two light chains, the disulfide bonds, the variable regions forming two antigen binding sites at the tips, and the constant stem. Mark which part decides what it binds and which part decides what happens next. Draw an antigen sitting in one of the two sites. One line: it has two binding sites, so say what a population of these can do to a suspension of bacteria.</label></div>
+      <div class="prompt" data-c="w15-antibodies" data-l="b"><input type="checkbox" id="w15-antibodies-b"><label for="w15-antibodies-b"><span class="plet">B</span>Draw one antigen in the middle of your space with four antibody mechanisms acting on it around the edges: neutralization of a toxin or a viral binding site, agglutination of several cells into a clump, complement activated on the surface, and opsonization marking it for a phagocyte. Draw the outcome of each. One line: some of these destroy the target and some only label it, so say which only label it and who finishes the job.</label></div>
   </section>
   <section class="comp" id="c-w15-immune-memory" aria-labelledby="h-w15-immune-memory">
       <div class="chd"><span class="cnum">18</span><h3 class="cname" id="h-w15-immune-memory">Immune memory and immunization</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Compare the primary and secondary antibody responses and explain how active and passive immunization produce protection.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w15-immune-memory" data-l="a"><input type="checkbox" id="w15-immune-memory-a"><label for="w15-immune-memory-a"><span class="plet">A</span>Draw one set of axes, antibody concentration on the y and time in days on the x, and plot the primary response to a first exposure and the secondary response to the same antigen weeks later. Get all three differences right, the lag before the rise, the height of the peak, and how long it stays up. Mark where IgM leads and where IgG does. One line: say which of the three differences is the one a vaccine is really buying you.</label></div>
+      <div class="prompt" data-c="w15-immune-memory" data-l="b"><input type="checkbox" id="w15-immune-memory-b"><label for="w15-immune-memory-b"><span class="plet">B</span>Draw four people getting protection four different ways: a natural infection, a vaccine, a fetus receiving antibodies across the placenta, and a patient given an antivenom injection. Under each, draw whether memory cells were made and a bar for how long the protection lasts. One line: two of these run out, so name them and say what that person would need to be protected again.</label></div>
   </section>
   <section class="comp" id="c-w15-immune-dysfunction" aria-labelledby="h-w15-immune-dysfunction">
       <div class="chd"><span class="cnum">19</span><h3 class="cname" id="h-w15-immune-dysfunction">Immune dysfunction</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Classify allergy, autoimmunity, and immunodeficiency by what the immune system is doing wrong in each.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w15-immune-dysfunction" data-l="a"><input type="checkbox" id="w15-immune-dysfunction-a"><label for="w15-immune-dysfunction-a"><span class="plet">A</span>Draw three panels, one per fault, and in each show the immune system doing the wrong thing: allergy responding hard to a harmless antigen, autoimmunity attacking a self tissue, and immunodeficiency failing to answer a real pathogen. In each, draw the target and the cell or antibody doing the damage. One line: pick your own autoimmune example, not type 1 diabetes, and say what self molecule is being mistaken for foreign.</label></div>
+      <div class="prompt" data-c="w15-immune-dysfunction" data-l="b"><input type="checkbox" id="w15-immune-dysfunction-b"><label for="w15-immune-dysfunction-b"><span class="plet">B</span>Draw a dial with the normal setting in the middle, turned too far up on one side and too far down on the other, then draw a third fault that is not about the amount at all but about the target. Place allergy, autoimmunity and immunodeficiency on your drawing and sketch a real clinical picture beside each. One line: one of the three is something a drug is given to produce on purpose, so name it and say when you would want that.</label></div>
   </section>
 
   <p class="foot"><span>BIO 005 Human Physiology &middot; Yuba College &middot; Fall 2026</span><span>Dr. Sharilyn Rennie</span></p>

@@ -31,11 +31,13 @@ a:hover{color:var(--maroon-dk)}
   padding:12px 18px;font-weight:700;text-decoration:none}
 .skip:focus{left:0;top:0}
 
-header.top{background:var(--navy-deep);color:#fff;padding:34px 0 30px}
+/* light page, maroon eyebrow, two tone headline. No dark band. */
+header.top{padding:30px 0 24px}
 header.top .eyebrow{font-size:11px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;
-  color:var(--gold);margin:0 0 10px}
-header.top h1{font-size:clamp(26px,4.4vw,38px);line-height:1.14;color:#fff;max-width:24ch}
-header.top p.sub{color:#D7DCE3;margin:12px 0 0;font-size:16px}
+  color:var(--maroon);margin:0 0 10px}
+header.top h1{font-size:clamp(26px,4.4vw,38px);line-height:1.14;color:var(--navy);max-width:24ch}
+header.top h1 b{color:var(--maroon);font-weight:800}
+header.top p.sub{color:var(--muted);margin:12px 0 0;font-size:16px}
 
 .homebar{max-width:1000px;margin:0 auto;padding:16px 20px 0}
 .home{display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:#fff;
@@ -53,7 +55,7 @@ main{padding:8px 0 60px}
 .chead{border-left:4px solid var(--maroon);padding:2px 0 2px 16px;margin:32px 0 6px}
 .chead .cl{font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;
   color:var(--maroon);display:block;margin-bottom:4px}
-.chead h2{font-size:21px}
+.chead h2{font-size:21px;color:var(--maroon)}
 
 .comp{background:var(--card);border:1px solid var(--rule);border-radius:10px;
   padding:18px 20px;margin:12px 0;break-inside:avoid}
@@ -89,8 +91,7 @@ main{padding:8px 0 60px}
   .mm-brandbar,.mm-jumpwrap,.homebar,.pwrap,.skip{display:none!important}
   body{background:#fff;font-size:10.5pt}
   .comp{break-inside:avoid;border-color:#999}
-  header.top{background:#fff;color:#000;padding:0 0 12pt}
-  header.top h1{color:#000}header.top .eyebrow{color:#000}header.top p.sub{color:#000}
+
 }
 </style>
 </head>
@@ -99,9 +100,16 @@ main{padding:8px 0 60px}
 
 <div class="mm-brandbar"><div class="mm-wrap">
   <a class="mm-mark" href="course-start.html" target="_top">
-    <span class="mm-wm">Med<b>Masters</b><span class="mm-wmsub">Collaborative</span></span>
+    <svg viewBox="40 10 125 148" width="22" height="26" role="img" aria-label="BIO 005 Human Physiology, course home">
+      <g transform="translate(0,18)">
+        <g transform="translate(60,0) rotate(8 0 130)"><circle cx="0" cy="20" r="10" fill="#0B1530"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#0B1530"/></g>
+        <g transform="translate(100,0)"><circle cx="0" cy="10" r="11" fill="#8B3A2E"/><path d="M 0,22 C -11,22 -17,26 -17,34 C -17,52 -14,70 -12,86 C -11,108 -13,122 -15,132 L 15,132 C 13,122 11,108 12,86 C 14,70 17,52 17,34 C 17,26 11,22 0,22 Z" fill="#8B3A2E"/></g>
+        <g transform="translate(140,0) rotate(-8 0 130)"><circle cx="0" cy="20" r="10" fill="#C9A14A"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#C9A14A"/></g>
+      </g>
+    </svg>
+    <span class="mm-wm">BIO <b>005</b><span class="mm-wmsub">Human Physiology</span></span>
   </a>
-  <span class="mm-course">BIO 005 &middot; Human Physiology</span>
+  <span class="mm-course">BIO 005 &middot; Fall 2026</span>
 </div></div>
 
 <div class="homebar"><a class="home" href="course-start.html" target="_top">
@@ -120,7 +128,7 @@ main{padding:8px 0 60px}
 
 <header class="top"><div class="wrap">
   <p class="eyebrow">BIO 005 &middot; Week 9 &middot; Part 3</p>
-  <h1>Everything Week 9 asks you to be able to do.</h1>
+  <h1>Everything Week 9 <b>asks you to be able to do.</b></h1>
   <p class="sub">The heart as a pump. 17 competencies, each one a single thing you will be able to do by Sunday, November 8.</p>
 </div></header>
 
@@ -138,91 +146,125 @@ main{padding:8px 0 60px}
   <section class="comp" id="c-w8-adrenal-medulla" aria-labelledby="h-w8-adrenal-medulla">
       <div class="chd"><span class="cnum">1</span><h3 class="cname" id="h-w8-adrenal-medulla">Adrenal medulla</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Explain why the adrenal medulla is a modified sympathetic ganglion and compare the duration of its circulating catecholamine effect with direct sympathetic innervation.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w8-adrenal-medulla" data-l="a"><input type="checkbox" id="w8-adrenal-medulla-a"><label for="w8-adrenal-medulla-a"><span class="plet">A</span>Draw a preganglionic sympathetic neuron running to an ordinary sympathetic ganglion, and below it the same kind of neuron running to the adrenal medulla. Show the transmitter and receptor at each synapse, and show what leaves the second one into a blood vessel (about 80 percent epinephrine, about 20 percent norepinephrine). Mark which cell is the postganglionic neuron that never grew an axon. One line: what the medulla gains by dumping into blood instead of onto a target.</label></div>
+      <div class="prompt" data-c="w8-adrenal-medulla" data-l="b"><input type="checkbox" id="w8-adrenal-medulla-b"><label for="w8-adrenal-medulla-b"><span class="plet">B</span>Draw one time axis in seconds and put two response curves on it starting at the same instant: one target reached by direct sympathetic nerve endings, one reached by adrenal catecholamines in the blood. Make the hormonal curve outlast the neural one by roughly five to ten times. On each, mark what ends it, fast reuptake at the synapse against slow clearance from blood over two to four minutes. One line: why a bloodborne signal cannot be switched off quickly.</label></div>
   </section>
 
   <div class="chead"><span class="cl">7 competencies</span><h2>Cardiac Electrophysiology</h2></div>
   <section class="comp" id="c-w10-pacemaker-potential" aria-labelledby="h-w10-pacemaker-potential">
       <div class="chd"><span class="cnum">2</span><h3 class="cname" id="h-w10-pacemaker-potential">Pacemaker potential</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Explain the unstable pacemaker potential of the sinoatrial node by the funny current, calcium entry, and potassium exit and state what sets intrinsic heart rate.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w10-pacemaker-potential" data-l="a"><input type="checkbox" id="w10-pacemaker-potential-a"><label for="w10-pacemaker-potential-a"><span class="plet">A</span>Draw the SA node membrane potential over two full cycles, voltage on the y axis and time on the x. Mark the most negative point near -60 mV and threshold near -40 mV. Along the slow drift upward, label the funny current sodium leak, then the calcium entry that carries the upstroke, then the potassium exit that brings it back down. One line: what sets the rate on this trace, and it is not the height of the spike.</label></div>
+      <div class="prompt" data-c="w10-pacemaker-potential" data-l="b"><input type="checkbox" id="w10-pacemaker-potential-b"><label for="w10-pacemaker-potential-b"><span class="plet">B</span>Draw three pacemaker slopes on one set of axes, all rising to the same threshold: normal, one steeper, one shallower. Mark where each fires and how far apart the firings are. Beside them draw a fourth that has the normal slope but starts from a more negative point. Write the normal sinus range, 60 to 100 beats per minute, next to the normal one. One line: two of your changes slow the heart by different means, so name which does which.</label></div>
   </section>
   <section class="comp" id="c-w10-cardiac-ap" aria-labelledby="h-w10-cardiac-ap">
       <div class="chd"><span class="cnum">3</span><h3 class="cname" id="h-w10-cardiac-ap">Contractile cell action potential</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Diagram the ventricular action potential and identify the ion movement responsible for the rapid upstroke, the plateau, and repolarization.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w10-cardiac-ap" data-l="a"><input type="checkbox" id="w10-cardiac-ap-a"><label for="w10-cardiac-ap-a"><span class="plet">A</span>Draw the ventricular contractile cell action potential, voltage against time, resting near -90 mV, peaking near +20 mV, and lasting about 250 ms. Number the phases 0 through 4 and write on each the ion and the direction that makes it: fast sodium in, brief potassium out, calcium in balanced against potassium out, potassium out, rest. One line: which phase has no counterpart in a skeletal muscle fiber, and what the heart buys with it.</label></div>
+      <div class="prompt" data-c="w10-cardiac-ap" data-l="b"><input type="checkbox" id="w10-cardiac-ap-b"><label for="w10-cardiac-ap-b"><span class="plet">B</span>Draw a ventricular action potential and a skeletal muscle action potential on one time axis, drawn to their true durations, about 250 ms against about 2 ms. Directly under each, on the same axis, draw the twitch it produces. Keep the scale honest. One line: with the four traces drawn to scale in front of you, say what the heart cannot do that the skeletal fiber can.</label></div>
   </section>
   <section class="comp" id="c-w10-conduction-system" aria-labelledby="h-w10-conduction-system">
       <div class="chd"><span class="cnum">4</span><h3 class="cname" id="h-w10-conduction-system">Conduction system</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Trace an impulse through the sinoatrial node, internodal pathways, atrioventricular node, bundle of His, bundle branches, and Purkinje fibers and explain the purpose of the atrioventricular delay.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w10-conduction-system" data-l="a"><input type="checkbox" id="w10-conduction-system-a"><label for="w10-conduction-system-a"><span class="plet">A</span>Draw the heart in outline with four chambers and place the conduction system in order: SA node in the right atrial wall, internodal pathways, AV node at the base of the interatrial septum, bundle of His, right and left bundle branches down the interventricular septum, and Purkinje fibers running from the apex up the ventricular walls. Number the arrows 1 through 6. One line: why the ventricles are wired to squeeze from the apex upward.</label></div>
+      <div class="prompt" data-c="w10-conduction-system" data-l="b"><input type="checkbox" id="w10-conduction-system-b"><label for="w10-conduction-system-b"><span class="plet">B</span>Draw a horizontal time line for one beat, in milliseconds, and mark where each part of the conduction system fires. Draw the AV nodal delay as a labeled gap of about 100 ms. Above the line, draw what the atria are doing during that gap and what the ventricles are doing. One line: name one thing that would go wrong on the very next beat if the delay were zero.</label></div>
   </section>
   <section class="comp" id="c-w10-cardiac-refractory" aria-labelledby="h-w10-cardiac-refractory">
       <div class="chd"><span class="cnum">5</span><h3 class="cname" id="h-w10-cardiac-refractory">Cardiac refractory period</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Explain why the long refractory period of cardiac muscle prevents tetanus and why that matters for pump function.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w10-cardiac-refractory" data-l="a"><input type="checkbox" id="w10-cardiac-refractory-a"><label for="w10-cardiac-refractory-a"><span class="plet">A</span>Draw a cardiac action potential and, directly under it on the same time axis, the twitch it produces. Shade the absolute refractory period across both drawings. Now stimulate again at three points, early, middle, and just after the shading ends, and draw what you get each time. One line: at which of the three could you get summation, and what that answer means for a chamber that has to refill between beats.</label></div>
+      <div class="prompt" data-c="w10-cardiac-refractory" data-l="b"><input type="checkbox" id="w10-cardiac-refractory-b"><label for="w10-cardiac-refractory-b"><span class="plet">B</span>Draw two panels on one time scale. Left, skeletal muscle: a train of stimuli, the brief action potentials, and the twitches fusing into tetanus. Right, cardiac muscle: the same stimulus train, the long action potentials, and what the twitches actually do. One line: name the single feature of the cardiac trace that makes the right panel look different, and say what a heart in tetanus could not do.</label></div>
   </section>
   <section class="comp" id="c-w10-ecg-basics" aria-labelledby="h-w10-ecg-basics">
       <div class="chd"><span class="cnum">6</span><h3 class="cname" id="h-w10-ecg-basics">ECG waves and intervals</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Label the P wave, QRS complex, T wave, PR interval, and QT interval and state the electrical event each represents.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w10-ecg-basics" data-l="a"><input type="checkbox" id="w10-ecg-basics-a"><label for="w10-ecg-basics-a"><span class="plet">A</span>Rule your own grid with small boxes of 0.04 s and draw a clean lead II tracing of two beats on it. Label the P wave, QRS complex and T wave, and beside each write the electrical event it is, not the mechanical one. Bracket the PR interval and the QT interval and write the normal duration of each. One line: name the electrical event that has no wave of its own, and say why.</label></div>
+      <div class="prompt" data-c="w10-ecg-basics" data-l="b"><input type="checkbox" id="w10-ecg-basics-b"><label for="w10-ecg-basics-b"><span class="plet">B</span>Draw an ECG tracing across the top of your space, then under it on the same time axis draw the heart four times with the region that is depolarizing or repolarizing shaded: mid P, during QRS, during the ST segment, and during T. One line: say what the ventricles are doing electrically during the ST segment, and why that keeps the trace flat at baseline.</label></div>
   </section>
   <section class="comp" id="c-w10-ecg-interpretation" aria-labelledby="h-w10-ecg-interpretation">
       <div class="chd"><span class="cnum">7</span><h3 class="cname" id="h-w10-ecg-interpretation">ECG interpretation</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Calculate heart rate from an ECG strip and identify sinus rhythm, tachycardia, bradycardia, and a first degree or complete heart block.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w10-ecg-interpretation" data-l="a"><input type="checkbox" id="w10-ecg-interpretation-a"><label for="w10-ecg-interpretation-a"><span class="plet">A</span>Draw four rhythm strips stacked on one ruled grid: normal sinus rhythm, sinus tachycardia, sinus bradycardia, and first degree block. Keep P, QRS and T in every one. Under each strip write the rate you get by counting boxes, 1500 divided by the small boxes between R waves, and the one feature that names it. One line: three of these are named by a rate and one by an interval, so say which and give the cutoff.</label></div>
+      <div class="prompt" data-c="w10-ecg-interpretation" data-l="b"><input type="checkbox" id="w10-ecg-interpretation-b"><label for="w10-ecg-interpretation-b"><span class="plet">B</span>Draw a complete heart block strip: P waves marching out at their own regular rate, QRS complexes marching out at a slower regular rate, no fixed relationship between them. Mark two places where a P falls inside a QRS. Beside the strip, draw where the conduction pathway is broken and which tissue is now pacing the ventricles. One line: say why the ventricular rate lands where it does and not somewhere else.</label></div>
   </section>
   <section class="comp" id="c-w10-lab-ecg" aria-labelledby="h-w10-lab-ecg">
       <div class="chd"><span class="cnum">8</span><h3 class="cname" id="h-w10-lab-ecg">ECG recording</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Record a lead II ECG, measure the intervals, and correlate each wave with the mechanical event that follows it.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w10-lab-ecg" data-l="a"><input type="checkbox" id="w10-lab-ecg-a"><label for="w10-lab-ecg-a"><span class="plet">A</span>Before you record anything, draw the lead II tracing you expect from your own resting heart, with the electrode placement sketched beside it. Record, then draw the real tracing directly under your prediction at the same scale, with your measured PR, QRS and QT written on it. One line: say where prediction and recording disagreed, and whether the cause was your heart, your technique, or the equipment.</label></div>
+      <div class="prompt" data-c="w10-lab-ecg" data-l="b"><input type="checkbox" id="w10-lab-ecg-b"><label for="w10-lab-ecg-b"><span class="plet">B</span>Draw your recorded lead II strip across the page. Under it, on the same time axis, draw a row of small panels for the mechanical event that follows each wave: atrial contraction after P, ventricular contraction beginning after QRS, ventricular relaxation after T. Put S1 and S2 on the same axis. One line: every mechanical mark sits to the right of its electrical trigger, so say what fills that gap.</label></div>
   </section>
 
   <div class="chead"><span class="cl">9 competencies</span><h2>Cardiac Mechanics</h2></div>
   <section class="comp" id="c-w11-cardiac-cycle" aria-labelledby="h-w11-cardiac-cycle">
       <div class="chd"><span class="cnum">9</span><h3 class="cname" id="h-w11-cardiac-cycle">Cardiac cycle</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Order the phases of the cardiac cycle and state the pressure relationship that opens and closes the atrioventricular and semilunar valves in each phase.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w11-cardiac-cycle" data-l="a"><input type="checkbox" id="w11-cardiac-cycle-a"><label for="w11-cardiac-cycle-a"><span class="plet">A</span>Draw one time axis for a single beat and stack three pressure curves on it: left ventricular, aortic, and left atrial. Mark the four moments a valve moves, and at each one write the pressure inequality that caused it, which chamber is higher than which. Add ventricular volume as a fourth curve underneath. One line: name the two phases in which all four valves are shut, and say what the volume is doing then.</label></div>
+      <div class="prompt" data-c="w11-cardiac-cycle" data-l="b"><input type="checkbox" id="w11-cardiac-cycle-b"><label for="w11-cardiac-cycle-b"><span class="plet">B</span>Draw the cardiac cycle as five panels in a row: atrial systole, isovolumetric contraction, ventricular ejection, isovolumetric relaxation, ventricular filling. In each panel draw the heart with every valve shown open or shut and an arrow for where blood is moving. Under each panel write which pressure exceeds which. One line: say which comes first, the pressure change or the valve movement, and point to the panel that proves it.</label></div>
   </section>
   <section class="comp" id="c-w11-pv-loop" aria-labelledby="h-w11-pv-loop">
       <div class="chd"><span class="cnum">10</span><h3 class="cname" id="h-w11-pv-loop">Pressure volume loop</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Label the four phases of a ventricular pressure volume loop and predict how the loop changes with increased preload, increased afterload, or increased contractility.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w11-pv-loop" data-l="a"><input type="checkbox" id="w11-pv-loop-a"><label for="w11-pv-loop-a"><span class="plet">A</span>Draw a left ventricular pressure volume loop, volume on the x axis running from about 50 to 120 mL, pressure in mmHg on the y. Travel around it in the correct direction, label the four phases, and label the four corners where a valve opens or shuts. Mark EDV, ESV and stroke volume on the volume axis. One line: two sides of your loop are isovolumetric, so say how you can spot them by eye alone.</label></div>
+      <div class="prompt" data-c="w11-pv-loop" data-l="b"><input type="checkbox" id="w11-pv-loop-b"><label for="w11-pv-loop-b"><span class="plet">B</span>Draw the normal loop once, then draw three altered loops over it in different colours: increased preload, increased afterload, and increased contractility. For each, show what happened to the width of the loop and to ESV, and label the corner that moved. One line: only two of the three raised stroke volume, so name the one that did not and say what it raised instead.</label></div>
   </section>
   <section class="comp" id="c-w11-heart-sounds" aria-labelledby="h-w11-heart-sounds">
       <div class="chd"><span class="cnum">11</span><h3 class="cname" id="h-w11-heart-sounds">Heart sounds</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Explain the origin of the first and second heart sounds and relate a murmur to valve stenosis or regurgitation by its timing.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w11-heart-sounds" data-l="a"><input type="checkbox" id="w11-heart-sounds-a"><label for="w11-heart-sounds-a"><span class="plet">A</span>Draw one cardiac cycle with ventricular and aortic pressure curves on a single time axis. Mark S1 and S2 exactly where they fall and run an arrow from each to the valve closure that made it. Bracket systole on the axis, between the two sounds. One line: the sound comes from closing and not from opening, so say what is actually vibrating to make it.</label></div>
+      <div class="prompt" data-c="w11-heart-sounds" data-l="b"><input type="checkbox" id="w11-heart-sounds-b"><label for="w11-heart-sounds-b"><span class="plet">B</span>Draw four timing diagrams in a row, each with S1 and S2 marked and the murmur shaded in where it falls: aortic stenosis, aortic regurgitation, mitral stenosis, mitral regurgitation. Label each as systolic or diastolic. One line: write, in your own words, the rule that takes you from timing plus valve to stenosis or regurgitation.</label></div>
   </section>
   <section class="comp" id="c-w11-stroke-volume" aria-labelledby="h-w11-stroke-volume">
       <div class="chd"><span class="cnum">12</span><h3 class="cname" id="h-w11-stroke-volume">Stroke volume and ejection fraction</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Calculate stroke volume and ejection fraction from end diastolic and end systolic volumes and interpret a reduced ejection fraction.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w11-stroke-volume" data-l="a"><input type="checkbox" id="w11-stroke-volume-a"><label for="w11-stroke-volume-a"><span class="plet">A</span>Draw a ventricle three times in a row: at end diastole, at end systole, and with the difference between the two shaded. Put real numbers on the drawing, EDV about 120 mL and ESV about 50 mL, and work stroke volume and ejection fraction out beside it with the arithmetic showing. One line: redraw or describe what an ejection fraction of 30 percent would do to those same three pictures.</label></div>
+      <div class="prompt" data-c="w11-stroke-volume" data-l="b"><input type="checkbox" id="w11-stroke-volume-b"><label for="w11-stroke-volume-b"><span class="plet">B</span>Draw two patients side by side, both with a stroke volume of 55 mL. Give the first an EDV of 110 mL and the second an EDV of 180 mL, and draw the two ventricles at those relative sizes. Compute each ejection fraction on the page. One line: the stroke volumes are identical, so say which heart you would rather have and what the ratio caught that the volume missed.</label></div>
   </section>
   <section class="comp" id="c-w11-cardiac-output" aria-labelledby="h-w11-cardiac-output">
       <div class="chd"><span class="cnum">13</span><h3 class="cname" id="h-w11-cardiac-output">Cardiac output</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Calculate cardiac output and cardiac reserve and predict the effect of a change in heart rate or stroke volume on each.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w11-cardiac-output" data-l="a"><input type="checkbox" id="w11-cardiac-output-a"><label for="w11-cardiac-output-a"><span class="plet">A</span>Draw the cardiac output equation as a picture rather than algebra: a heart with a rate written on it, a stroke volume drawn as a shaded slug of blood, and the product leaving as a labeled flow per minute. Use 70 beats per minute and 70 mL and show the arithmetic to about 5 L/min. Draw the same picture again at maximum exercise and label the gap between them as cardiac reserve. One line: which of the two variables has more room to grow.</label></div>
+      <div class="prompt" data-c="w11-cardiac-output" data-l="b"><input type="checkbox" id="w11-cardiac-output-b"><label for="w11-cardiac-output-b"><span class="plet">B</span>Draw a row of three small graphs, cardiac output on the y axis of each. First, output against heart rate with stroke volume held fixed. Second, output against stroke volume with rate fixed. Third, output against heart rate again, but let the axis run past 180 beats per minute and draw what the curve really does up there. One line: name what falls at very high rates and which part of the cycle gets squeezed.</label></div>
   </section>
   <section class="comp" id="c-w11-frank-starling" aria-labelledby="h-w11-frank-starling">
       <div class="chd"><span class="cnum">14</span><h3 class="cname" id="h-w11-frank-starling">Frank Starling relationship</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>State the Frank Starling law and explain how venous return and end diastolic volume determine the force of the next contraction.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w11-frank-starling" data-l="a"><input type="checkbox" id="w11-frank-starling-a"><label for="w11-frank-starling-a"><span class="plet">A</span>Draw the Frank Starling curve, end diastolic volume on the x axis and stroke volume on the y. Put three dots on it: at rest, after a rapid fluid infusion, and after standing still for ten minutes in the heat. Beside each dot, draw a sarcomere at that length with the thick and thin filament overlap shown. One line: say what the sarcomere drawings explain that the curve on its own does not.</label></div>
+      <div class="prompt" data-c="w11-frank-starling" data-l="b"><input type="checkbox" id="w11-frank-starling-b"><label for="w11-frank-starling-b"><span class="plet">B</span>Draw a closed loop: venous return feeding end diastolic volume, feeding force of contraction, feeding stroke volume, feeding back into what the veins deliver. Now run one beat in which the right ventricle ejects more than the left, and draw where blood piles up over the next two or three beats. One line: say what this loop guarantees about the two sides of the heart with no nerve or hormone involved.</label></div>
   </section>
   <section class="comp" id="c-w11-preload-afterload" aria-labelledby="h-w11-preload-afterload">
       <div class="chd"><span class="cnum">15</span><h3 class="cname" id="h-w11-preload-afterload">Preload afterload and contractility</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Distinguish preload, afterload, and contractility and predict how a change in each alters stroke volume.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w11-preload-afterload" data-l="a"><input type="checkbox" id="w11-preload-afterload-a"><label for="w11-preload-afterload-a"><span class="plet">A</span>Draw one ventricle three times. On the first, mark preload with the thing that actually stretches it before it contracts. On the second, mark afterload with what it must push against, and put a pressure value on the aorta. On the third, show contractility as more force at the same starting length. Under each, an arrow for what a rise in that variable does to stroke volume. One line: name the one that can rise while the other two hold still, and what does that in the body.</label></div>
+      <div class="prompt" data-c="w11-preload-afterload" data-l="b"><input type="checkbox" id="w11-preload-afterload-b"><label for="w11-preload-afterload-b"><span class="plet">B</span>Draw a normal ventricle in the middle of your space and four altered versions around it: hemorrhage, severe untreated hypertension, a sympathetic surge, and an intravenous fluid overload. On every version, draw the filling volume, the pressure it ejects against, and the strength of the squeeze as three things you can see. One line: pick the version where two of the three moved at once and say which one decided stroke volume.</label></div>
   </section>
   <section class="comp" id="c-w11-cardiac-regulation" aria-labelledby="h-w11-cardiac-regulation">
       <div class="chd"><span class="cnum">16</span><h3 class="cname" id="h-w11-cardiac-regulation">Autonomic regulation of the heart</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Explain how sympathetic and parasympathetic input alter heart rate and contractility at the receptor and second messenger level.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w11-cardiac-regulation" data-l="a"><input type="checkbox" id="w11-cardiac-regulation-a"><label for="w11-cardiac-regulation-a"><span class="plet">A</span>Draw the SA node cell twice, side by side. Left, sympathetic: norepinephrine, the beta 1 receptor, the G protein, cAMP, and what that does to the funny current and to calcium channels. Right, parasympathetic: the vagus, acetylcholine, the M2 muscarinic receptor, and what that does to cAMP and to potassium channels. Under each, draw the pacemaker slope it produces. One line: one of them hyperpolarizes the cell, so say why that alone slows the rate.</label></div>
+      <div class="prompt" data-c="w11-cardiac-regulation" data-l="b"><input type="checkbox" id="w11-cardiac-regulation-b"><label for="w11-cardiac-regulation-b"><span class="plet">B</span>Draw a pacemaker trace with three versions on the same axes: resting with normal vagal tone, with the vagus cut, and under maximal sympathetic drive. Beside it, draw a ventricular cell showing the two places sympathetic signalling raises contractility, calcium entry and the calcium pump of the sarcoplasmic reticulum. One line: the vagus does little to the ventricles, so say what that predicts about slowing a heart against weakening one.</label></div>
   </section>
   <section class="comp" id="c-w11-lab-heart-sounds" aria-labelledby="h-w11-lab-heart-sounds">
       <div class="chd"><span class="cnum">17</span><h3 class="cname" id="h-w11-lab-heart-sounds">Heart sound and pulse correlation</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Auscultate the heart sounds, locate the valve areas, and correlate the sounds with the pulse and with the cardiac cycle phases.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w11-lab-heart-sounds" data-l="a"><input type="checkbox" id="w11-lab-heart-sounds-a"><label for="w11-lab-heart-sounds-a"><span class="plet">A</span>Draw the chest with the four auscultation areas in their real positions: aortic at the second right intercostal space beside the sternum, pulmonic at the second left, tricuspid at the lower left sternal border, mitral at the fifth intercostal space in the midclavicular line. Run an arrow from each spot to the valve it reports on, and note that the spot is not sitting on top of the valve. One line: say what carries the sound from the valve to the spot.</label></div>
+      <div class="prompt" data-c="w11-lab-heart-sounds" data-l="b"><input type="checkbox" id="w11-lab-heart-sounds-b"><label for="w11-lab-heart-sounds-b"><span class="plet">B</span>Draw one long time axis and stack four traces on it: the ECG, the heart sounds, left ventricular pressure, and the radial pulse under your fingers. Line up S1, S2 and the pulse wave against the electrical and pressure events above them. One line: the radial pulse arrives after S1, so say what that delay is made of.</label></div>
   </section>
 
   <p class="foot"><span>BIO 005 Human Physiology &middot; Yuba College &middot; Fall 2026</span><span>Dr. Sharilyn Rennie</span></p>

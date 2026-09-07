@@ -31,11 +31,13 @@ a:hover{color:var(--maroon-dk)}
   padding:12px 18px;font-weight:700;text-decoration:none}
 .skip:focus{left:0;top:0}
 
-header.top{background:var(--navy-deep);color:#fff;padding:34px 0 30px}
+/* light page, maroon eyebrow, two tone headline. No dark band. */
+header.top{padding:30px 0 24px}
 header.top .eyebrow{font-size:11px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;
-  color:var(--gold);margin:0 0 10px}
-header.top h1{font-size:clamp(26px,4.4vw,38px);line-height:1.14;color:#fff;max-width:24ch}
-header.top p.sub{color:#D7DCE3;margin:12px 0 0;font-size:16px}
+  color:var(--maroon);margin:0 0 10px}
+header.top h1{font-size:clamp(26px,4.4vw,38px);line-height:1.14;color:var(--navy);max-width:24ch}
+header.top h1 b{color:var(--maroon);font-weight:800}
+header.top p.sub{color:var(--muted);margin:12px 0 0;font-size:16px}
 
 .homebar{max-width:1000px;margin:0 auto;padding:16px 20px 0}
 .home{display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:#fff;
@@ -53,7 +55,7 @@ main{padding:8px 0 60px}
 .chead{border-left:4px solid var(--maroon);padding:2px 0 2px 16px;margin:32px 0 6px}
 .chead .cl{font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;
   color:var(--maroon);display:block;margin-bottom:4px}
-.chead h2{font-size:21px}
+.chead h2{font-size:21px;color:var(--maroon)}
 
 .comp{background:var(--card);border:1px solid var(--rule);border-radius:10px;
   padding:18px 20px;margin:12px 0;break-inside:avoid}
@@ -89,8 +91,7 @@ main{padding:8px 0 60px}
   .mm-brandbar,.mm-jumpwrap,.homebar,.pwrap,.skip{display:none!important}
   body{background:#fff;font-size:10.5pt}
   .comp{break-inside:avoid;border-color:#999}
-  header.top{background:#fff;color:#000;padding:0 0 12pt}
-  header.top h1{color:#000}header.top .eyebrow{color:#000}header.top p.sub{color:#000}
+
 }
 </style>
 </head>
@@ -99,9 +100,16 @@ main{padding:8px 0 60px}
 
 <div class="mm-brandbar"><div class="mm-wrap">
   <a class="mm-mark" href="course-start.html" target="_top">
-    <span class="mm-wm">Med<b>Masters</b><span class="mm-wmsub">Collaborative</span></span>
+    <svg viewBox="40 10 125 148" width="22" height="26" role="img" aria-label="BIO 005 Human Physiology, course home">
+      <g transform="translate(0,18)">
+        <g transform="translate(60,0) rotate(8 0 130)"><circle cx="0" cy="20" r="10" fill="#0B1530"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#0B1530"/></g>
+        <g transform="translate(100,0)"><circle cx="0" cy="10" r="11" fill="#8B3A2E"/><path d="M 0,22 C -11,22 -17,26 -17,34 C -17,52 -14,70 -12,86 C -11,108 -13,122 -15,132 L 15,132 C 13,122 11,108 12,86 C 14,70 17,52 17,34 C 17,26 11,22 0,22 Z" fill="#8B3A2E"/></g>
+        <g transform="translate(140,0) rotate(-8 0 130)"><circle cx="0" cy="20" r="10" fill="#C9A14A"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#C9A14A"/></g>
+      </g>
+    </svg>
+    <span class="mm-wm">BIO <b>005</b><span class="mm-wmsub">Human Physiology</span></span>
   </a>
-  <span class="mm-course">BIO 005 &middot; Human Physiology</span>
+  <span class="mm-course">BIO 005 &middot; Fall 2026</span>
 </div></div>
 
 <div class="homebar"><a class="home" href="course-start.html" target="_top">
@@ -120,7 +128,7 @@ main{padding:8px 0 60px}
 
 <header class="top"><div class="wrap">
   <p class="eyebrow">BIO 005 &middot; Week 15 &middot; Part 3</p>
-  <h1>Everything Week 15 asks you to be able to do.</h1>
+  <h1>Everything Week 15 <b>asks you to be able to do.</b></h1>
   <p class="sub">The slow pH lever, and putting it all together. 7 competencies, each one a single thing you will be able to do by Wednesday, December 16.</p>
 </div></header>
 
@@ -138,39 +146,53 @@ main{padding:8px 0 60px}
   <section class="comp" id="c-w13-renal-ph-control" aria-labelledby="h-w13-renal-ph-control">
       <div class="chd"><span class="cnum">1</span><h3 class="cname" id="h-w13-renal-ph-control">Renal control of pH</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Describe how the kidney secretes hydrogen ion and reclaims or generates bicarbonate and explain why renal compensation is slower and more complete than respiratory compensation.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w13-renal-ph-control" data-l="a"><input type="checkbox" id="w13-renal-ph-control-a"><label for="w13-renal-ph-control-a"><span class="plet">A</span>Draw two tubule cells side by side. In the first, a proximal tubule cell reclaiming filtered bicarbonate: hydrogen ion secreted into the lumen, carbonic anhydrase there, carbon dioxide crossing into the cell, bicarbonate returned to blood. In the second, an intercalated cell generating new bicarbonate by pumping hydrogen ion onto phosphate or ammonia buffer. One line: say which of the two can push plasma bicarbonate above where it started, and why the other one cannot.</label></div>
+      <div class="prompt" data-c="w13-renal-ph-control" data-l="b"><input type="checkbox" id="w13-renal-ph-control-b"><label for="w13-renal-ph-control-b"><span class="plet">B</span>Draw one set of axes, time in hours to days on the x and arterial pH on the y with the band 7.35 to 7.45 marked. Load the patient with metabolic acid at time zero, then plot two correction curves, the respiratory response and the renal response, each starting when it really starts and reaching as far as it really gets. One line: say why the fast one cannot finish the job, and name what the slow one is physically excreting.</label></div>
   </section>
   <section class="comp" id="c-w13-acid-base-disorders" aria-labelledby="h-w13-acid-base-disorders">
       <div class="chd"><span class="cnum">2</span><h3 class="cname" id="h-w13-acid-base-disorders">The four acid base disorders</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Classify a disorder as respiratory or metabolic and as acidosis or alkalosis from pH, partial pressure of carbon dioxide, and bicarbonate.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w13-acid-base-disorders" data-l="a"><input type="checkbox" id="w13-acid-base-disorders-a"><label for="w13-acid-base-disorders-a"><span class="plet">A</span>Draw a two by two grid, respiratory and metabolic down the side, acidosis and alkalosis across the top. Write the normal values once at the top: pH 7.35 to 7.45, PCO2 35 to 45 mmHg, bicarbonate 22 to 26 mEq/L. In every cell draw three arrows for pH, PCO2, and bicarbonate pointing the right way, and circle the one that is the primary disturbance. One line: state the single rule that identifies the primary value, using the direction of pH.</label></div>
+      <div class="prompt" data-c="w13-acid-base-disorders" data-l="b"><input type="checkbox" id="w13-acid-base-disorders-b"><label for="w13-acid-base-disorders-b"><span class="plet">B</span>Draw four patients, one per disorder, each with the organ or process that caused it and the blood gas numbers it would produce. Do not use diabetic ketoacidosis, pick your own metabolic acidosis. Mark the primary change on the drawing itself so it is visible without reading. One line: two of your four have a low pH, so name the single value that separates them and say which way it points in each.</label></div>
   </section>
   <section class="comp" id="c-w13-acid-base-compensation" aria-labelledby="h-w13-acid-base-compensation">
       <div class="chd"><span class="cnum">3</span><h3 class="cname" id="h-w13-acid-base-compensation">Compensation</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Determine whether an acid base disorder is uncompensated, partially compensated, or fully compensated and name the system doing the compensating.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w13-acid-base-compensation" data-l="a"><input type="checkbox" id="w13-acid-base-compensation-a"><label for="w13-acid-base-compensation-a"><span class="plet">A</span>Draw one time axis for a patient in respiratory acidosis with three vertical slices on it, uncompensated, partially compensated, and fully compensated. At each slice draw pH, PCO2, and bicarbonate as small bars against their normal bands. Show bicarbonate climbing while PCO2 stays high, and pH walking back into range. One line: at the fully compensated slice two values are still abnormal, so say which one still tells you what the original problem was.</label></div>
+      <div class="prompt" data-c="w13-acid-base-compensation" data-l="b"><input type="checkbox" id="w13-acid-base-compensation-b"><label for="w13-acid-base-compensation-b"><span class="plet">B</span>Draw two blood gas sets that both read pH 7.32, one a respiratory acidosis partly compensated by the kidney and one a metabolic acidosis partly compensated by the lung. Draw the compensating organ in each with the actual action it is taking, retaining bicarbonate or blowing off carbon dioxide. Mark on each which value is the disturbance and which is the response. One line: say why compensation never carries pH past 7.4 to the other side.</label></div>
   </section>
   <section class="comp" id="c-w13-lab-abg-interpretation" aria-labelledby="h-w13-lab-abg-interpretation">
       <div class="chd"><span class="cnum">4</span><h3 class="cname" id="h-w13-lab-abg-interpretation">Arterial blood gas interpretation</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Interpret a set of arterial blood gas values and match the result to a plausible clinical cause.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w13-lab-abg-interpretation" data-l="a"><input type="checkbox" id="w13-lab-abg-interpretation-a"><label for="w13-lab-abg-interpretation-a"><span class="plet">A</span>Draw a decision tree you could use cold, with a blood gas at the top. Branch first on pH, low, high, or in range. Branch next on which of PCO2 and bicarbonate moved the way that would cause that pH. Branch last on whether the other moved to oppose it. End every path in a named disorder and its compensation state, then run one set of numbers down your tree. One line: say what a pH of exactly 7.40 with both other values abnormal means.</label></div>
+      <div class="prompt" data-c="w13-lab-abg-interpretation" data-l="b"><input type="checkbox" id="w13-lab-abg-interpretation-b"><label for="w13-lab-abg-interpretation-b"><span class="plet">B</span>Draw three patients with a short clinical picture each: a severe asthma attack, two days of vomiting, and shock with poor tissue perfusion. Beside each draw pH, PCO2, and bicarbonate as arrows against their normal bands, and mark which value is the primary disturbance. One line: pick the one where you would treat the underlying cause rather than the number, and say what would go wrong if you chased the number instead.</label></div>
   </section>
 
   <div class="chead"><span class="cl">3 competencies</span><h2>Integration</h2></div>
   <section class="comp" id="c-w15-integration-case" aria-labelledby="h-w15-integration-case">
       <div class="chd"><span class="cnum">5</span><h3 class="cname" id="h-w15-integration-case">Multisystem integration case</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Given a clinical scenario, trace the disturbance through at least three organ systems and identify the compensatory responses in the order they occur.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w15-integration-case" data-l="a"><input type="checkbox" id="w15-integration-case-a"><label for="w15-integration-case-a"><span class="plet">A</span>Pick a disturbance from this term, not dehydration, and draw it crossing at least three organ systems. Set the page up as a chain of organs rather than a list: the insult, the first system to respond, what it changes, and the next system reacting to that change. Number every arrow in the order things actually happen and mark where a slow step lags. One line: name the point where a compensation creates a second problem, and say what that second problem is.</label></div>
+      <div class="prompt" data-c="w15-integration-case" data-l="b"><input type="checkbox" id="w15-integration-case-b"><label for="w15-integration-case-b"><span class="plet">B</span>Draw a person who has lost about a liter of blood, then draw the response across four panels on one page, seconds, minutes, hours, and days. Seconds gets the baroreceptor reflex. Minutes gets fluid shifting from interstitium into the capillaries. Hours gets renin angiotensin aldosterone and ADH acting on the kidney. Days gets erythropoietin and the marrow. One line: say which panel restores blood pressure and which restores oxygen carrying, and why those are not the same problem.</label></div>
   </section>
   <section class="comp" id="c-w15-exercise-integration" aria-labelledby="h-w15-exercise-integration">
       <div class="chd"><span class="cnum">6</span><h3 class="cname" id="h-w15-exercise-integration">Exercise as an integrated response</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Build an integrated account of moderate exercise across the muscular, cardiovascular, respiratory, endocrine, and renal systems.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w15-exercise-integration" data-l="a"><input type="checkbox" id="w15-exercise-integration-a"><label for="w15-exercise-integration-a"><span class="plet">A</span>Draw one time axis from rest through twenty minutes of moderate exercise and stack five curves on it: heart rate, cardiac output, ventilation, muscle blood flow, and renal blood flow. Get the directions and the relative sizes right, including the one that falls. Mark where each begins to move. One line: total peripheral resistance drops while mean arterial pressure rises, so say how both of those can be true at the same time.</label></div>
+      <div class="prompt" data-c="w15-exercise-integration" data-l="b"><input type="checkbox" id="w15-exercise-integration-b"><label for="w15-exercise-integration-b"><span class="plet">B</span>Draw a working muscle in the middle of the page with five systems running into it as spokes: cardiovascular delivering oxygen, respiratory loading it, endocrine supplying fuel with the hormones named, renal conserving salt and water, and the muscle itself putting out heat and carbon dioxide. On every spoke draw the actual molecule moving and its direction. One line: pick the system that sets the limit on how long you can hold this intensity, and say what runs out.</label></div>
   </section>
   <section class="comp" id="c-w15-drawing-synthesis" aria-labelledby="h-w15-drawing-synthesis">
       <div class="chd"><span class="cnum">7</span><h3 class="cname" id="h-w15-drawing-synthesis">Drawing based synthesis check</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Draw and annotate a homeostatic pathway from memory and explain each step aloud or in writing without notes.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w15-drawing-synthesis" data-l="a"><input type="checkbox" id="w15-drawing-synthesis-a"><label for="w15-drawing-synthesis-a"><span class="plet">A</span>Pick any homeostatic loop from this term that you have not already drawn twice, close everything, and draw it complete from memory: stimulus, receptor, afferent path, integrating center, efferent path, effector, response, and the arrow closing back onto the stimulus. Name the real anatomical structure at every position rather than a generic box. One line: mark the single step you were least certain about while drawing, and say what you would check to settle it.</label></div>
+      <div class="prompt" data-c="w15-drawing-synthesis" data-l="b"><input type="checkbox" id="w15-drawing-synthesis-b"><label for="w15-drawing-synthesis-b"><span class="plet">B</span>Pick one regulated variable, your choice, and draw it pushed off its set point and then corrected twice on the same time axis, once by a fast neural reflex and once by a slow hormonal loop. Show the two responses starting at different times and correcting by different amounts. Label the receptor, center, and effector for each. One line: say what the fast loop buys you given that the slow one was going to fix it anyway.</label></div>
   </section>
 
   <p class="foot"><span>BIO 005 Human Physiology &middot; Yuba College &middot; Fall 2026</span><span>Dr. Sharilyn Rennie</span></p>

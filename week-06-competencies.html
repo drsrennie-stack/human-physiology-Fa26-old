@@ -31,11 +31,13 @@ a:hover{color:var(--maroon-dk)}
   padding:12px 18px;font-weight:700;text-decoration:none}
 .skip:focus{left:0;top:0}
 
-header.top{background:var(--navy-deep);color:#fff;padding:34px 0 30px}
+/* light page, maroon eyebrow, two tone headline. No dark band. */
+header.top{padding:30px 0 24px}
 header.top .eyebrow{font-size:11px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;
-  color:var(--gold);margin:0 0 10px}
-header.top h1{font-size:clamp(26px,4.4vw,38px);line-height:1.14;color:#fff;max-width:24ch}
-header.top p.sub{color:#D7DCE3;margin:12px 0 0;font-size:16px}
+  color:var(--maroon);margin:0 0 10px}
+header.top h1{font-size:clamp(26px,4.4vw,38px);line-height:1.14;color:var(--navy);max-width:24ch}
+header.top h1 b{color:var(--maroon);font-weight:800}
+header.top p.sub{color:var(--muted);margin:12px 0 0;font-size:16px}
 
 .homebar{max-width:1000px;margin:0 auto;padding:16px 20px 0}
 .home{display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:#fff;
@@ -53,7 +55,7 @@ main{padding:8px 0 60px}
 .chead{border-left:4px solid var(--maroon);padding:2px 0 2px 16px;margin:32px 0 6px}
 .chead .cl{font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;
   color:var(--maroon);display:block;margin-bottom:4px}
-.chead h2{font-size:21px}
+.chead h2{font-size:21px;color:var(--maroon)}
 
 .comp{background:var(--card);border:1px solid var(--rule);border-radius:10px;
   padding:18px 20px;margin:12px 0;break-inside:avoid}
@@ -89,8 +91,7 @@ main{padding:8px 0 60px}
   .mm-brandbar,.mm-jumpwrap,.homebar,.pwrap,.skip{display:none!important}
   body{background:#fff;font-size:10.5pt}
   .comp{break-inside:avoid;border-color:#999}
-  header.top{background:#fff;color:#000;padding:0 0 12pt}
-  header.top h1{color:#000}header.top .eyebrow{color:#000}header.top p.sub{color:#000}
+
 }
 </style>
 </head>
@@ -99,9 +100,16 @@ main{padding:8px 0 60px}
 
 <div class="mm-brandbar"><div class="mm-wrap">
   <a class="mm-mark" href="course-start.html" target="_top">
-    <span class="mm-wm">Med<b>Masters</b><span class="mm-wmsub">Collaborative</span></span>
+    <svg viewBox="40 10 125 148" width="22" height="26" role="img" aria-label="BIO 005 Human Physiology, course home">
+      <g transform="translate(0,18)">
+        <g transform="translate(60,0) rotate(8 0 130)"><circle cx="0" cy="20" r="10" fill="#0B1530"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#0B1530"/></g>
+        <g transform="translate(100,0)"><circle cx="0" cy="10" r="11" fill="#8B3A2E"/><path d="M 0,22 C -11,22 -17,26 -17,34 C -17,52 -14,70 -12,86 C -11,108 -13,122 -15,132 L 15,132 C 13,122 11,108 12,86 C 14,70 17,52 17,34 C 17,26 11,22 0,22 Z" fill="#8B3A2E"/></g>
+        <g transform="translate(140,0) rotate(-8 0 130)"><circle cx="0" cy="20" r="10" fill="#C9A14A"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#C9A14A"/></g>
+      </g>
+    </svg>
+    <span class="mm-wm">BIO <b>005</b><span class="mm-wmsub">Human Physiology</span></span>
   </a>
-  <span class="mm-course">BIO 005 &middot; Human Physiology</span>
+  <span class="mm-course">BIO 005 &middot; Fall 2026</span>
 </div></div>
 
 <div class="homebar"><a class="home" href="course-start.html" target="_top">
@@ -120,7 +128,7 @@ main{padding:8px 0 60px}
 
 <header class="top"><div class="wrap">
   <p class="eyebrow">BIO 005 &middot; Week 6 &middot; Part 2</p>
-  <h1>Everything Week 6 asks you to be able to do.</h1>
+  <h1>Everything Week 6 <b>asks you to be able to do.</b></h1>
   <p class="sub">Sensing the world, and the responses you do not control. 24 competencies, each one a single thing you will be able to do by Sunday, October 18.</p>
 </div></header>
 
@@ -138,126 +146,174 @@ main{padding:8px 0 60px}
   <section class="comp" id="c-w7-transduction" aria-labelledby="h-w7-transduction">
       <div class="chd"><span class="cnum">1</span><h3 class="cname" id="h-w7-transduction">Sensory transduction</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Explain how a stimulus is converted into a receptor potential and how that graded potential becomes a train of action potentials in the sensory neuron.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w7-transduction" data-l="a"><input type="checkbox" id="w7-transduction-a"><label for="w7-transduction-a"><span class="plet">A</span>Draw one sensory neuron stretched across your space, from its receptor ending to a point well along the axon. Above it, draw the membrane potential recorded at three places, the receptor ending, the trigger zone, and further down the axon. Label which traces are graded and which are all or none, and mark threshold. One line: what happens to the information at the trigger zone that cannot be undone afterwards.</label></div>
+      <div class="prompt" data-c="w7-transduction" data-l="b"><input type="checkbox" id="w7-transduction-b"><label for="w7-transduction-b"><span class="plet">B</span>Draw three stimulus strengths as three bars of different height on a time axis, weak, medium, and strong. Under each, draw the receptor potential it produces, and under that, the train of action potentials leaving the trigger zone. Keep every spike exactly the same height. One line: since the spikes are all identical, name what actually carries the message that the third stimulus was the strongest.</label></div>
   </section>
   <section class="comp" id="c-w7-receptor-classes" aria-labelledby="h-w7-receptor-classes">
       <div class="chd"><span class="cnum">2</span><h3 class="cname" id="h-w7-receptor-classes">Receptor classification</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Classify a receptor by stimulus type as a mechanoreceptor, chemoreceptor, thermoreceptor, photoreceptor, or nociceptor and give a body location for each.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w7-receptor-classes" data-l="a"><input type="checkbox" id="w7-receptor-classes-a"><label for="w7-receptor-classes-a"><span class="plet">A</span>Draw a body outline and place one real receptor from each of the five classes on it, mechanoreceptor, chemoreceptor, thermoreceptor, photoreceptor, and nociceptor. Put each where it genuinely exists, inside the body as well as on the surface. Beside each, draw the stimulus arriving as an arrow and name the form of energy it carries. One line: which class is spread over the most locations, and what that says about its job.</label></div>
+      <div class="prompt" data-c="w7-receptor-classes" data-l="b"><input type="checkbox" id="w7-receptor-classes-b"><label for="w7-receptor-classes-b"><span class="plet">B</span>Pick a moment, drinking something hot, walking into the cold, or one of your own. Draw the scene and mark every receptor class firing during it, with an arrow from each stimulus to its receptor. Some classes will appear more than once at different sites. One line: name one class that is not firing in your scene, and the change that would recruit it.</label></div>
   </section>
   <section class="comp" id="c-w7-stimulus-coding" aria-labelledby="h-w7-stimulus-coding">
       <div class="chd"><span class="cnum">3</span><h3 class="cname" id="h-w7-stimulus-coding">Stimulus coding</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Explain how the nervous system encodes modality, location, intensity, and duration and identify the labeled line principle.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w7-stimulus-coding" data-l="a"><input type="checkbox" id="w7-stimulus-coding-a"><label for="w7-stimulus-coding-a"><span class="plet">A</span>Draw four panels in a row, one each for modality, location, intensity, and duration. In each, draw the actual mechanism, a labeled line running to a specific cortical area, a receptive field on the skin, a firing rate, and a firing pattern held over time. Use spikes on a time axis wherever a rate is the answer. One line: which of the four still works if you stimulate the nerve trunk directly with an electrode.</label></div>
+      <div class="prompt" data-c="w7-stimulus-coding" data-l="b"><input type="checkbox" id="w7-stimulus-coding-b"><label for="w7-stimulus-coding-b"><span class="plet">B</span>Draw what happens when you press hard on your own closed eyelid. Trace the path from the pressed photoreceptors to the cortical area that receives them, and draw what the person actually perceives. Beside it, draw the same mechanical pressure applied to the back of the hand and what that produces. One line: the same stimulus gave two different sensations, say what decided which one.</label></div>
   </section>
   <section class="comp" id="c-w7-receptive-fields" aria-labelledby="h-w7-receptive-fields">
       <div class="chd"><span class="cnum">4</span><h3 class="cname" id="h-w7-receptive-fields">Receptive fields and acuity</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Relate receptive field size and lateral inhibition to two point discrimination and predict which body regions have the finest acuity.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w7-receptive-fields" data-l="a"><input type="checkbox" id="w7-receptive-fields-a"><label for="w7-receptive-fields-a"><span class="plet">A</span>Draw two patches of skin side by side, a fingertip and the middle of the back, with the sensory neuron receptive fields on each drawn to scale as circles. Set the same pair of caliper points on both and show why one is felt as two points and the other as one. Write your own measured thresholds in millimetres on each patch. One line: what would have to change on the back to make it match the fingertip.</label></div>
+      <div class="prompt" data-c="w7-receptive-fields" data-l="b"><input type="checkbox" id="w7-receptive-fields-b"><label for="w7-receptive-fields-b"><span class="plet">B</span>Draw three sensory neurons in a row receiving a stimulus that is strongest on the middle one. Add the inhibitory interneurons that connect them sideways. Then draw the firing rate of all three as bars, once before the lateral connections act and once after. One line: what the sharpened pattern lets the brain do that the raw pattern did not.</label></div>
   </section>
   <section class="comp" id="c-w7-receptor-adaptation" aria-labelledby="h-w7-receptor-adaptation">
       <div class="chd"><span class="cnum">5</span><h3 class="cname" id="h-w7-receptor-adaptation">Receptor adaptation</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Distinguish tonic from phasic receptors by their adaptation rate and match each to a stimulus the body needs to monitor continuously or only at onset.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w7-receptor-adaptation" data-l="a"><input type="checkbox" id="w7-receptor-adaptation-a"><label for="w7-receptor-adaptation-a"><span class="plet">A</span>Draw one stimulus bar on a time axis, held perfectly steady from start to finish. Under it, on the same axis, draw two firing rate traces responding to that same stimulus, a tonic receptor and a phasic receptor. Show clearly where the phasic one falls silent while the stimulus is still on, and mark any response when it switches off. Name a real receptor for each trace. One line: what the phasic receptor is reporting that the tonic one is not.</label></div>
+      <div class="prompt" data-c="w7-receptor-adaptation" data-l="b"><input type="checkbox" id="w7-receptor-adaptation-b"><label for="w7-receptor-adaptation-b"><span class="plet">B</span>Pick two things the body monitors, one it needs to know continuously and one it only needs at the moment of change. Choose your own, not the shirt on your skin. Draw the receptor you would assign to each and its firing over a long steady stimulus. Then swap the two assignments and draw what goes wrong in each case. One line: which swap is actually dangerous, and why.</label></div>
   </section>
   <section class="comp" id="c-w7-somatosensory-pathways" aria-labelledby="h-w7-somatosensory-pathways">
       <div class="chd"><span class="cnum">6</span><h3 class="cname" id="h-w7-somatosensory-pathways">Somatosensory pathways</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Trace touch and pain information from receptor to cortex and explain why the somatosensory homunculus is disproportionate.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w7-somatosensory-pathways" data-l="a"><input type="checkbox" id="w7-somatosensory-pathways-a"><label for="w7-somatosensory-pathways-a"><span class="plet">A</span>Draw one diagram running from a fingertip up to the cortex with two tracts on it, one carrying fine touch and one carrying pain. Mark where each crosses the midline, where each synapses on the way, and where each arrives in the postcentral gyrus. Use two colours or two line styles. One line: name a level where a single lesion would knock out one of them and spare the other.</label></div>
+      <div class="prompt" data-c="w7-somatosensory-pathways" data-l="b"><input type="checkbox" id="w7-somatosensory-pathways-b"><label for="w7-somatosensory-pathways-b"><span class="plet">B</span>Draw a strip of postcentral gyrus in cross section and lay the homunculus along it, sizing each body part by the cortical area it gets rather than by its real size. Beside it, draw the same body parts at true relative size. Use your own two point discrimination data to decide what to enlarge. One line: given both drawings, state what cortical area is actually proportional to.</label></div>
   </section>
   <section class="comp" id="c-w7-pain-modulation" aria-labelledby="h-w7-pain-modulation">
       <div class="chd"><span class="cnum">7</span><h3 class="cname" id="h-w7-pain-modulation">Pain and its modulation</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Distinguish fast and slow pain by fiber type, explain referred pain by convergence, and describe how gate control and endogenous opioids reduce pain transmission.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w7-pain-modulation" data-l="a"><input type="checkbox" id="w7-pain-modulation-a"><label for="w7-pain-modulation-a"><span class="plet">A</span>Draw one painful stimulus and the two fibers carrying it away, an A delta and a C fiber, drawn to show the difference in diameter and myelination. On a shared time axis, mark when each signal arrives and write the sensation each produces. Then add the dorsal horn gate, a large touch fiber, the inhibitory interneuron, and the projection neuron. One line: why rubbing a bruise helps, judging from your own circuit.</label></div>
+      <div class="prompt" data-c="w7-pain-modulation" data-l="b"><input type="checkbox" id="w7-pain-modulation-b"><label for="w7-pain-modulation-b"><span class="plet">B</span>Draw a spinal cord segment with a visceral afferent from the heart and a somatic afferent from the left arm skin converging on the same projection neuron. Follow that one neuron up to the cortex and draw where the brain places the pain. Then draw an endogenous opioid acting somewhere on this circuit and mark whether it works before or after the synapse. One line: why the brain guesses skin and not heart.</label></div>
   </section>
   <section class="comp" id="c-w7-lab-tactile-mapping" aria-labelledby="h-w7-lab-tactile-mapping">
       <div class="chd"><span class="cnum">8</span><h3 class="cname" id="h-w7-lab-tactile-mapping">Tactile mapping and adaptation testing</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Measure two point discrimination at several body sites and show receptor adaptation and referred sensation experimentally.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w7-lab-tactile-mapping" data-l="a"><input type="checkbox" id="w7-lab-tactile-mapping-a"><label for="w7-lab-tactile-mapping-a"><span class="plet">A</span>Draw a body outline and write your own measured two point threshold in millimetres at every site you tested. Before looking at anyone else&#39;s data, circle the site you predicted would be finest. Then draw a bar for each site ordered from finest to coarsest with the real numbers on them. One line: name a site where your measurement and your prediction disagreed, and one method error that could explain it.</label></div>
+      <div class="prompt" data-c="w7-lab-tactile-mapping" data-l="b"><input type="checkbox" id="w7-lab-tactile-mapping-b"><label for="w7-lab-tactile-mapping-b"><span class="plet">B</span>Draw a time axis and plot your own adaptation data on it, how long the sensation took to fade for each stimulus you tested. Beside it, draw a body outline with your referred sensation result on it, marking where the stimulus was applied and where it was actually felt. One line: what the distance between those two marks tells you about where in the pathway the mistake is being made.</label></div>
   </section>
 
   <div class="chead"><span class="cl">10 competencies</span><h2>Special Senses</h2></div>
   <section class="comp" id="c-w7-vision-optics" aria-labelledby="h-w7-vision-optics">
       <div class="chd"><span class="cnum">9</span><h3 class="cname" id="h-w7-vision-optics">Optics and accommodation</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Explain refraction by the cornea and lens and describe how accommodation and the pupillary reflex focus near and far images.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w7-vision-optics" data-l="a"><input type="checkbox" id="w7-vision-optics-a"><label for="w7-vision-optics-a"><span class="plet">A</span>Draw an eye in cross section twice at the same scale with light rays coming in. In the first, the object is far away. In the second, it is close. In each, draw the lens shape, the ciliary muscle, the zonule fibers taut or slack, and where the rays come to a focus. One line: name which of the two states has the ciliary muscle working, and why that catches most people out.</label></div>
+      <div class="prompt" data-c="w7-vision-optics" data-l="b"><input type="checkbox" id="w7-vision-optics-b"><label for="w7-vision-optics-b"><span class="plet">B</span>Draw the pupillary light reflex as a circuit, light into one eye, the afferent nerve, the brainstem, and the efferent nerve running back out to both irises. Show the muscle that contracts and draw both pupils before and after. Then move the light to the other eye and draw the result. One line: what a response missing in one eye only tells you about where the lesion sits.</label></div>
   </section>
   <section class="comp" id="c-w7-phototransduction" aria-labelledby="h-w7-phototransduction">
       <div class="chd"><span class="cnum">10</span><h3 class="cname" id="h-w7-phototransduction">Phototransduction</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Trace phototransduction from photon absorption by retinal through the change in cyclic GMP to the decrease in glutamate release and explain why photoreceptors hyperpolarize to light.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w7-phototransduction" data-l="a"><input type="checkbox" id="w7-phototransduction-a"><label for="w7-phototransduction-a"><span class="plet">A</span>Draw a photoreceptor twice, side by side, once in darkness and once in bright light. In each, show the cyclic GMP level, whether the cation channels are open or closed, the membrane potential, and how much glutamate is leaving the base of the cell. One line: name the state in which the cell releases the most transmitter, and say why that is the opposite of what you would expect.</label></div>
+      <div class="prompt" data-c="w7-phototransduction" data-l="b"><input type="checkbox" id="w7-phototransduction-b"><label for="w7-phototransduction-b"><span class="plet">B</span>Draw the cascade as a chain of labelled boxes from photon absorption through retinal, the pigment, the G protein, the enzyme, cyclic GMP, and the channel, with arrows between every box. On each arrow, mark whether the next thing goes up or down. Then break one box of your choosing and write what the cell now does when light hits it.</label></div>
   </section>
   <section class="comp" id="c-w7-visual-processing" aria-labelledby="h-w7-visual-processing">
       <div class="chd"><span class="cnum">11</span><h3 class="cname" id="h-w7-visual-processing">Rods cones and visual processing</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Compare rods and cones by sensitivity and acuity and trace the visual pathway to predict the field deficit produced by a lesion at the optic nerve or the optic chiasm.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w7-visual-processing" data-l="a"><input type="checkbox" id="w7-visual-processing-a"><label for="w7-visual-processing-a"><span class="plet">A</span>Draw a patch of retina at the fovea and a patch from the far periphery, side by side, each showing photoreceptors, bipolar cells, and one ganglion cell. Make the convergence ratio visible by how many photoreceptors feed that one ganglion cell. Beside each, write which receptor type dominates, its sensitivity, and its acuity. One line: why the same wiring cannot give you both sensitivity and acuity at once.</label></div>
+      <div class="prompt" data-c="w7-visual-processing" data-l="b"><input type="checkbox" id="w7-visual-processing-b"><label for="w7-visual-processing-b"><span class="plet">B</span>Draw the visual pathway from both eyes through the chiasm to the cortex, marking which fibers cross and which do not. Then cut it in two places, once at the left optic nerve and once through the middle of the chiasm. For each cut, draw the two visual fields as a pair of circles and shade what is lost. One line: which lesion the patient notices first, and why.</label></div>
   </section>
   <section class="comp" id="c-w7-vision-clinical" aria-labelledby="h-w7-vision-clinical">
       <div class="chd"><span class="cnum">12</span><h3 class="cname" id="h-w7-vision-clinical">Refractive errors and clinical vision</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Explain myopia, hyperopia, presbyopia, and astigmatism in terms of focal point and eyeball or lens shape and state the corrective lens for each.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w7-vision-clinical" data-l="a"><input type="checkbox" id="w7-vision-clinical-a"><label for="w7-vision-clinical-a"><span class="plet">A</span>Draw four eyes in a row with parallel rays entering each, normal, myopic, hyperopic, and astigmatic. In each, mark where the rays come to a focus relative to the retina and mark whether the eyeball shape or the corneal surface is the problem. Then draw the corrective lens in front of each, bending the rays back onto the retina. One line: why the astigmatic eye needs a differently shaped lens than the other two.</label></div>
+      <div class="prompt" data-c="w7-vision-clinical" data-l="b"><input type="checkbox" id="w7-vision-clinical-b"><label for="w7-vision-clinical-b"><span class="plet">B</span>Draw one eye reading a page at 25 cm at age 20 and the same eye at age 60, showing the lens shape and where the image falls in each. Beside them, draw a hyperopic 20 year old reading the same page. Both people end up holding it further away. One line: name the one structure that differs between the two cases, and a test that would tell them apart.</label></div>
   </section>
   <section class="comp" id="c-w7-hearing-transduction" aria-labelledby="h-w7-hearing-transduction">
       <div class="chd"><span class="cnum">13</span><h3 class="cname" id="h-w7-hearing-transduction">Auditory transduction</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Trace sound from the tympanic membrane through the ossicles and cochlear fluid to hair cell bending and auditory nerve firing and explain how pitch and loudness are coded.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w7-hearing-transduction" data-l="a"><input type="checkbox" id="w7-hearing-transduction-a"><label for="w7-hearing-transduction-a"><span class="plet">A</span>Draw the path of one sound from air to auditory nerve, tympanic membrane, the three ossicles named in order, oval window, cochlear fluid, basilar membrane, hair cell, nerve. Draw the round window and show what it is doing. Enlarge one hair cell and draw its stereocilia bending and the channel that opens. One line: name what the ossicles are correcting for at the boundary between air and fluid.</label></div>
+      <div class="prompt" data-c="w7-hearing-transduction" data-l="b"><input type="checkbox" id="w7-hearing-transduction-b"><label for="w7-hearing-transduction-b"><span class="plet">B</span>Draw the basilar membrane unrolled as one long strip, narrow and stiff at the end nearest the oval window and wide and floppy at the far end. Mark where a high pitched sound peaks and where a low one peaks. Then draw two hair cell firing traces for the same pitch at two loudness levels. One line: pitch and loudness are coded two different ways, say which one is place and which is rate.</label></div>
   </section>
   <section class="comp" id="c-w7-hearing-clinical" aria-labelledby="h-w7-hearing-clinical">
       <div class="chd"><span class="cnum">14</span><h3 class="cname" id="h-w7-hearing-clinical">Conductive and sensorineural hearing loss</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Distinguish conductive from sensorineural hearing loss by the site of the lesion and by the expected Weber and Rinne results.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w7-hearing-clinical" data-l="a"><input type="checkbox" id="w7-hearing-clinical-a"><label for="w7-hearing-clinical-a"><span class="plet">A</span>Draw the ear in one cross section from the canal through to the auditory nerve, with outer, middle, and inner ear marked off. Put an X at a site that would cause conductive loss and a different X at a site that would cause sensorineural loss. Beside each X, draw the tuning fork on the mastoid and beside the ear, and mark which position is heard louder. One line: name what bone conduction bypasses.</label></div>
+      <div class="prompt" data-c="w7-hearing-clinical" data-l="b"><input type="checkbox" id="w7-hearing-clinical-b"><label for="w7-hearing-clinical-b"><span class="plet">B</span>Draw a head from the front three times with a tuning fork on the midline of the skull in each, once with normal hearing, once with a conductive loss on the right, and once with a sensorineural loss on the right. Draw an arrow from the fork to the ear where the sound is heard louder in each. One line: those arrows point opposite ways, say what it costs you to run Weber alone.</label></div>
   </section>
   <section class="comp" id="c-w7-equilibrium" aria-labelledby="h-w7-equilibrium">
       <div class="chd"><span class="cnum">15</span><h3 class="cname" id="h-w7-equilibrium">Equilibrium</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Explain how the semicircular canals detect angular acceleration and how the utricle and saccule detect linear acceleration and head position.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w7-equilibrium" data-l="a"><input type="checkbox" id="w7-equilibrium-a"><label for="w7-equilibrium-a"><span class="plet">A</span>Draw one semicircular canal with its cupula and one macula with its otolith membrane and otoconia, side by side and both enlarged. On each, draw the head movement it detects as an arrow and show what physically pushes on the hair cells in that case. One line: name a head movement that bends the cupula but leaves the otoliths sitting where they are.</label></div>
+      <div class="prompt" data-c="w7-equilibrium" data-l="b"><input type="checkbox" id="w7-equilibrium-b"><label for="w7-equilibrium-b"><span class="plet">B</span>Draw the endolymph and cupula inside one horizontal canal at four moments, sitting still, at the start of a spin, during a long steady spin at constant speed, and the instant you stop. Show the cupula position in every panel. One line: using your fourth panel, say why you still feel like you are turning after you have stopped.</label></div>
   </section>
   <section class="comp" id="c-w7-chemical-senses" aria-labelledby="h-w7-chemical-senses">
       <div class="chd"><span class="cnum">16</span><h3 class="cname" id="h-w7-chemical-senses">Taste and smell</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Compare gustatory and olfactory transduction and explain why olfactory input reaches the limbic system without a thalamic relay.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w7-chemical-senses" data-l="a"><input type="checkbox" id="w7-chemical-senses-a"><label for="w7-chemical-senses-a"><span class="plet">A</span>Draw a taste bud with one taste cell enlarged beside an olfactory epithelium with one olfactory receptor neuron enlarged, at the same scale. On each, show the stimulus arriving, what it binds to or passes through, and how the cell signals the next neuron along. Mark which of your two cells is itself a neuron. One line: name a taste that works by an ion entering the cell directly rather than by a receptor protein.</label></div>
+      <div class="prompt" data-c="w7-chemical-senses" data-l="b"><input type="checkbox" id="w7-chemical-senses-b"><label for="w7-chemical-senses-b"><span class="plet">B</span>Draw both pathways from receptor to cortex on one page, taste on one side and smell on the other. Put the thalamus in the middle and route each pathway correctly, through it or around it. Mark where the smell pathway reaches the limbic system. One line: why a smell can drop you into a memory before you have even named the smell.</label></div>
   </section>
   <section class="comp" id="c-w7-lab-vision-tests" aria-labelledby="h-w7-lab-vision-tests">
       <div class="chd"><span class="cnum">17</span><h3 class="cname" id="h-w7-lab-vision-tests">Vision testing</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Perform visual acuity, blind spot, accommodation, and color vision testing and interpret each result.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w7-lab-vision-tests" data-l="a"><input type="checkbox" id="w7-lab-vision-tests-a"><label for="w7-lab-vision-tests-a"><span class="plet">A</span>Draw four panels in a row, one for each test you ran, acuity, blind spot, accommodation, and colour vision. In each panel, draw the setup and your own result, with real numbers where you have them, including your acuity fraction and your near point in centimetres. One line: name the test whose result depends most on the subject being honest, and what that means for trusting the number.</label></div>
+      <div class="prompt" data-c="w7-lab-vision-tests" data-l="b"><input type="checkbox" id="w7-lab-vision-tests-b"><label for="w7-lab-vision-tests-b"><span class="plet">B</span>Draw the eye in cross section and mark the optic disc and the fovea in their correct positions relative to each other. Draw rays from the target in your blind spot experiment to work out where the spot falls in the visual field and on which side. Then do the same for the other eye. One line: why you never notice the blind spot in ordinary life.</label></div>
   </section>
   <section class="comp" id="c-w7-lab-hearing-tests" aria-labelledby="h-w7-lab-hearing-tests">
       <div class="chd"><span class="cnum">18</span><h3 class="cname" id="h-w7-lab-hearing-tests">Hearing and equilibrium testing</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Perform Weber and Rinne tuning fork tests and a balance test and interpret the findings.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w7-lab-hearing-tests" data-l="a"><input type="checkbox" id="w7-lab-hearing-tests-a"><label for="w7-lab-hearing-tests-a"><span class="plet">A</span>Draw the Weber and Rinne procedures as you actually performed them, with the fork position marked on a head for each and your own subject&#39;s result written beside it. Then add your balance test, drawing the subject&#39;s stance and marking how the sway changed when the eyes closed. One line: name which system takes over when vision is removed, judging from your own sway result.</label></div>
+      <div class="prompt" data-c="w7-lab-hearing-tests" data-l="b"><input type="checkbox" id="w7-lab-hearing-tests-b"><label for="w7-lab-hearing-tests-b"><span class="plet">B</span>Draw a branching chart of boxes and arrows that starts at a Weber result and ends at a named finding, with Rinne as the second branch. Fill in every ending, normal, conductive on one side, sensorineural on one side. Then run your own subject&#39;s results through it and mark the path they took. One line: name an ending your chart cannot reach, and what you would need to add to reach it.</label></div>
   </section>
 
   <div class="chead"><span class="cl">6 competencies</span><h2>Autonomic Nervous System</h2></div>
   <section class="comp" id="c-w8-ans-organization" aria-labelledby="h-w8-ans-organization">
       <div class="chd"><span class="cnum">19</span><h3 class="cname" id="h-w8-ans-organization">Autonomic and somatic organization</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Contrast the somatic motor system with the autonomic two neuron pathway by neuron count and by effector tissue.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w8-ans-organization" data-l="a"><input type="checkbox" id="w8-ans-organization-a"><label for="w8-ans-organization-a"><span class="plet">A</span>Draw the somatic motor pathway and the autonomic pathway side by side, both starting in the CNS and ending at an effector. Count the neurons in each and put the ganglion in its correct place on the autonomic one. Label the transmitter released at every synapse and at both endings. Name the effector tissue at the end of each. One line: what the extra neuron buys the autonomic system.</label></div>
+      <div class="prompt" data-c="w8-ans-organization" data-l="b"><input type="checkbox" id="w8-ans-organization-b"><label for="w8-ans-organization-b"><span class="plet">B</span>Draw one somatic motor neuron reaching skeletal muscle, and one autonomic pathway branching to cardiac muscle, a smooth muscle, and a gland. Then cut every nerve on your drawing and show what happens to each effector. One line: one of these effectors is completely paralysed by the cut while the others keep working, say which and why.</label></div>
   </section>
   <section class="comp" id="c-w8-ans-divisions" aria-labelledby="h-w8-ans-divisions">
       <div class="chd"><span class="cnum">20</span><h3 class="cname" id="h-w8-ans-divisions">Sympathetic and parasympathetic divisions</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Compare the two autonomic divisions by CNS origin and ganglion location and predict the effect of each on heart rate and on the gastrointestinal tract.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w8-ans-divisions" data-l="a"><input type="checkbox" id="w8-ans-divisions-a"><label for="w8-ans-divisions-a"><span class="plet">A</span>Draw the CNS as one tall outline from brainstem to sacrum and mark the outflow region for each division on it. From each region, draw a preganglionic and a postganglionic neuron with the ganglion at its true distance from the cord, and make the fiber lengths honestly different between the two divisions. One line: what the ganglion position does to how widely one preganglionic neuron can spread its signal.</label></div>
+      <div class="prompt" data-c="w8-ans-divisions" data-l="b"><input type="checkbox" id="w8-ans-divisions-b"><label for="w8-ans-divisions-b"><span class="plet">B</span>Draw a heart and a length of gut side by side. Run a sympathetic fiber and a parasympathetic fiber to each, four pathways in total. On each pathway, write the effect with a direction, what happens to heart rate and what happens to gut motility and secretion. One line: name the whole body situation each of your two columns is built for.</label></div>
   </section>
   <section class="comp" id="c-w8-ans-receptors" aria-labelledby="h-w8-ans-receptors">
       <div class="chd"><span class="cnum">21</span><h3 class="cname" id="h-w8-ans-receptors">Autonomic neurotransmitters and receptors</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Match nicotinic, muscarinic, alpha, and beta receptors to their neurotransmitter, their location, and the response each produces.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w8-ans-receptors" data-l="a"><input type="checkbox" id="w8-ans-receptors-a"><label for="w8-ans-receptors-a"><span class="plet">A</span>Draw four complete pathways from the cord out to an effector, sympathetic to a blood vessel, sympathetic to sweat glands, sympathetic to the adrenal medulla, and parasympathetic to the heart. At every synapse and every ending, write the transmitter and the receptor type. One line: name the two places where your labels broke the pattern, and state what the pattern was.</label></div>
+      <div class="prompt" data-c="w8-ans-receptors" data-l="b"><input type="checkbox" id="w8-ans-receptors-b"><label for="w8-ans-receptors-b"><span class="plet">B</span>Draw four postsynaptic membranes in a row, one each for nicotinic, muscarinic, alpha, and beta receptors. On each, draw the transmitter that binds it, name one real location in the body, and draw the response it produces, contract, relax, speed up, or secrete. One line: two of your four bind the same transmitter, name them and say what makes their responses different.</label></div>
   </section>
   <section class="comp" id="c-w8-ans-tone" aria-labelledby="h-w8-ans-tone">
       <div class="chd"><span class="cnum">22</span><h3 class="cname" id="h-w8-ans-tone">Dual innervation and tonic control</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Explain dual innervation and autonomic tone and predict the effect of removing one division from a dually innervated organ.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w8-ans-tone" data-l="a"><input type="checkbox" id="w8-ans-tone-a"><label for="w8-ans-tone-a"><span class="plet">A</span>Draw an organ with both divisions on it as a dial with a pointer, sympathetic pushing one way and parasympathetic the other. Set the pointer at rest and mark which division is pulling harder there. Beside it, draw a blood vessel, which gets only one division, and show how its diameter is adjusted with a single input. One line: define tone using both of your drawings.</label></div>
+      <div class="prompt" data-c="w8-ans-tone" data-l="b"><input type="checkbox" id="w8-ans-tone-b"><label for="w8-ans-tone-b"><span class="plet">B</span>Draw a heart with both divisions attached and write its resting rate on it. Then draw it twice more, once with the parasympathetic supply cut and once with the sympathetic supply cut, putting a rate on each and an arrow for the direction it moved. The pacemaker&#39;s own intrinsic rate is higher than the resting rate. One line: say what that fact tells you about which division dominates at rest.</label></div>
   </section>
   <section class="comp" id="c-w8-ans-pharmacology" aria-labelledby="h-w8-ans-pharmacology">
       <div class="chd"><span class="cnum">23</span><h3 class="cname" id="h-w8-ans-pharmacology">Autonomic pharmacology</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Predict the effect of a beta blocker or a muscarinic antagonist on a named organ from the receptor it targets.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w8-ans-pharmacology" data-l="a"><input type="checkbox" id="w8-ans-pharmacology-a"><label for="w8-ans-pharmacology-a"><span class="plet">A</span>Draw a body outline with four organs on it, heart, airways, blood vessels, and gut, and label the autonomic receptor type that dominates at each. Then draw a non selective beta blocker arriving and mark every organ it lands on with the effect it produces there. One line: name the organ where this drug does something the prescriber did not want, and the receptor responsible for it.</label></div>
+      <div class="prompt" data-c="w8-ans-pharmacology" data-l="b"><input type="checkbox" id="w8-ans-pharmacology-b"><label for="w8-ans-pharmacology-b"><span class="plet">B</span>Pick a muscarinic antagonist and draw its effect at four places at once, pupil, salivary gland, heart, and gut. In each drawing, show the parasympathetic input being blocked and the change that follows. Then write which of the four you were actually treating and which three are side effects. One line: what would have to change about the drug to keep only the effect you wanted.</label></div>
   </section>
   <section class="comp" id="c-w8-lab-autonomic-testing" aria-labelledby="h-w8-lab-autonomic-testing">
       <div class="chd"><span class="cnum">24</span><h3 class="cname" id="h-w8-lab-autonomic-testing">Autonomic function testing</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Measure heart rate variability and the response to a cold pressor or orthostatic challenge and interpret the result as sympathetic or parasympathetic dominance.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w8-lab-autonomic-testing" data-l="a"><input type="checkbox" id="w8-lab-autonomic-testing-a"><label for="w8-lab-autonomic-testing-a"><span class="plet">A</span>Draw a heart rate trace across several breathing cycles, with the breathing cycle drawn underneath on the same time axis. Show heart rate rising and falling against inspiration and expiration, using your own recorded data, and mark the beat to beat variation you measured. One line: name the division being withdrawn and restored fast enough to make that pattern, and say how the speed alone tells you.</label></div>
+      <div class="prompt" data-c="w8-lab-autonomic-testing" data-l="b"><input type="checkbox" id="w8-lab-autonomic-testing-b"><label for="w8-lab-autonomic-testing-b"><span class="plet">B</span>Draw a time axis running through one challenge you performed, cold pressor or standing up. Plot heart rate and blood pressure on it as two curves, before, during, and after, using your own numbers, and mark the moment of the challenge. One line: read your own curves and say which division took over, naming the receptor doing the work out at the effector.</label></div>
   </section>
 
   <p class="foot"><span>BIO 005 Human Physiology &middot; Yuba College &middot; Fall 2026</span><span>Dr. Sharilyn Rennie</span></p>

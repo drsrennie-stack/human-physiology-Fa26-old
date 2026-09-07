@@ -119,9 +119,17 @@ function build(w){
   wireCopy();
 }
 function buildStatic(){
+  /* The Canvas front page is Start Here now. It is the first of the three
+     levels: START HERE, then WEEK, then ACTIVITY. course-door.html and
+     canvas-home.html are the older front page variants and are kept only so
+     an existing embed does not break. Heights measured Sep 7 2026; the pages
+     also postMessage their real height, so a Canvas theme that listens will
+     resize them anyway. */
   var EMBEDS = [
-    ['Canvas front page: course door with the This Week card', 'course-door.html', 1300],
-    ['Minimal front card, two buttons', 'canvas-home.html', 820]
+    ['Canvas front page: Start Here', 'course-start.html', 1540],
+    ['This week, the full weekly page', 'week-01.html', 14420],
+    ['Older front page: course door', 'course-door.html', 1260],
+    ['Older front page: minimal card', 'canvas-home.html', 840]
   ];
   var SITEPAGES = [
     ['The welcome', 'welcome.html'],

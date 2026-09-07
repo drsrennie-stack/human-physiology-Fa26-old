@@ -31,11 +31,13 @@ a:hover{color:var(--maroon-dk)}
   padding:12px 18px;font-weight:700;text-decoration:none}
 .skip:focus{left:0;top:0}
 
-header.top{background:var(--navy-deep);color:#fff;padding:34px 0 30px}
+/* light page, maroon eyebrow, two tone headline. No dark band. */
+header.top{padding:30px 0 24px}
 header.top .eyebrow{font-size:11px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;
-  color:var(--gold);margin:0 0 10px}
-header.top h1{font-size:clamp(26px,4.4vw,38px);line-height:1.14;color:#fff;max-width:24ch}
-header.top p.sub{color:#D7DCE3;margin:12px 0 0;font-size:16px}
+  color:var(--maroon);margin:0 0 10px}
+header.top h1{font-size:clamp(26px,4.4vw,38px);line-height:1.14;color:var(--navy);max-width:24ch}
+header.top h1 b{color:var(--maroon);font-weight:800}
+header.top p.sub{color:var(--muted);margin:12px 0 0;font-size:16px}
 
 .homebar{max-width:1000px;margin:0 auto;padding:16px 20px 0}
 .home{display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:#fff;
@@ -53,7 +55,7 @@ main{padding:8px 0 60px}
 .chead{border-left:4px solid var(--maroon);padding:2px 0 2px 16px;margin:32px 0 6px}
 .chead .cl{font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;
   color:var(--maroon);display:block;margin-bottom:4px}
-.chead h2{font-size:21px}
+.chead h2{font-size:21px;color:var(--maroon)}
 
 .comp{background:var(--card);border:1px solid var(--rule);border-radius:10px;
   padding:18px 20px;margin:12px 0;break-inside:avoid}
@@ -89,8 +91,7 @@ main{padding:8px 0 60px}
   .mm-brandbar,.mm-jumpwrap,.homebar,.pwrap,.skip{display:none!important}
   body{background:#fff;font-size:10.5pt}
   .comp{break-inside:avoid;border-color:#999}
-  header.top{background:#fff;color:#000;padding:0 0 12pt}
-  header.top h1{color:#000}header.top .eyebrow{color:#000}header.top p.sub{color:#000}
+
 }
 </style>
 </head>
@@ -99,9 +100,16 @@ main{padding:8px 0 60px}
 
 <div class="mm-brandbar"><div class="mm-wrap">
   <a class="mm-mark" href="course-start.html" target="_top">
-    <span class="mm-wm">Med<b>Masters</b><span class="mm-wmsub">Collaborative</span></span>
+    <svg viewBox="40 10 125 148" width="22" height="26" role="img" aria-label="BIO 005 Human Physiology, course home">
+      <g transform="translate(0,18)">
+        <g transform="translate(60,0) rotate(8 0 130)"><circle cx="0" cy="20" r="10" fill="#0B1530"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#0B1530"/></g>
+        <g transform="translate(100,0)"><circle cx="0" cy="10" r="11" fill="#8B3A2E"/><path d="M 0,22 C -11,22 -17,26 -17,34 C -17,52 -14,70 -12,86 C -11,108 -13,122 -15,132 L 15,132 C 13,122 11,108 12,86 C 14,70 17,52 17,34 C 17,26 11,22 0,22 Z" fill="#8B3A2E"/></g>
+        <g transform="translate(140,0) rotate(-8 0 130)"><circle cx="0" cy="20" r="10" fill="#C9A14A"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#C9A14A"/></g>
+      </g>
+    </svg>
+    <span class="mm-wm">BIO <b>005</b><span class="mm-wmsub">Human Physiology</span></span>
   </a>
-  <span class="mm-course">BIO 005 &middot; Human Physiology</span>
+  <span class="mm-course">BIO 005 &middot; Fall 2026</span>
 </div></div>
 
 <div class="homebar"><a class="home" href="course-start.html" target="_top">
@@ -120,7 +128,7 @@ main{padding:8px 0 60px}
 
 <header class="top"><div class="wrap">
   <p class="eyebrow">BIO 005 &middot; Week 13 &middot; Part 3</p>
-  <h1>Everything Week 13 asks you to be able to do.</h1>
+  <h1>Everything Week 13 <b>asks you to be able to do.</b></h1>
   <p class="sub">Breathing, gas transport, and the fast pH lever. 24 competencies, each one a single thing you will be able to do by Sunday, December 6.</p>
 </div></header>
 
@@ -138,128 +146,176 @@ main{padding:8px 0 60px}
   <section class="comp" id="c-w12-respiratory-functions" aria-labelledby="h-w12-respiratory-functions">
       <div class="chd"><span class="cnum">1</span><h3 class="cname" id="h-w12-respiratory-functions">Functions and functional zones</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>State the functions of the respiratory system and distinguish the conducting zone from the respiratory zone by structure and by role in gas exchange.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w12-respiratory-functions" data-l="a"><input type="checkbox" id="w12-respiratory-functions-a"><label for="w12-respiratory-functions-a"><span class="plet">A</span>Draw the airway as a branching tree from the nose down to the alveoli, with the named levels marked. Draw a line across it at the terminal bronchiole and label the conducting zone above and the respiratory zone below. Beside the conducting zone write its jobs and its volume, about 150 mL of air that never exchanges. Beside the respiratory zone draw an alveolus against a capillary. One line: say what the conducting zone is doing to the air that the alveoli would suffer without.</label></div>
+      <div class="prompt" data-c="w12-respiratory-functions" data-l="b"><input type="checkbox" id="w12-respiratory-functions-b"><label for="w12-respiratory-functions-b"><span class="plet">B</span>Draw five boxes for five jobs the respiratory system does, and in each draw the structure that does it, not just the word. Include gas exchange, the fast control of blood pH, sound production, smell, and defence against what you inhale. Mark which of the five happen in the respiratory zone and which do not. One line: name the job that is not usually listed as respiratory but kills you fastest when it fails, and say why it belongs here.</label></div>
   </section>
   <section class="comp" id="c-w12-ventilation-mechanics" aria-labelledby="h-w12-ventilation-mechanics">
       <div class="chd"><span class="cnum">2</span><h3 class="cname" id="h-w12-ventilation-mechanics">Pressure gradients and airflow</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Apply Boyle&#39;s law to inspiration and expiration and relate alveolar pressure to atmospheric pressure at each point in a quiet breath.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w12-ventilation-mechanics" data-l="a"><input type="checkbox" id="w12-ventilation-mechanics-a"><label for="w12-ventilation-mechanics-a"><span class="plet">A</span>Draw one set of axes, time across one quiet breath on the horizontal, pressure on the vertical, with atmospheric pressure drawn as a flat line at 760 mmHg. Plot alveolar pressure through the whole cycle: about one below atmospheric during inspiration, equal at the end of inspiration, about one above during expiration, equal again at rest. Under the trace, draw the thorax expanding and recoiling at the matching moments. One line: say at which two moments in the cycle no air is moving, and why.</label></div>
+      <div class="prompt" data-c="w12-ventilation-mechanics" data-l="b"><input type="checkbox" id="w12-ventilation-mechanics-b"><label for="w12-ventilation-mechanics-b"><span class="plet">B</span>Draw a sealed container with a movable wall and a fixed amount of gas in it, in two states: small volume with the molecules crowded, large volume with them spread out. Write the pressure comparison between them. Then draw the thorax twice beside it, at rest and mid inspiration, with the diaphragm and rib position in each and the resulting alveolar pressure. Draw the airflow arrow. One line: say which happens first in inspiration, the volume change or the pressure change, and how you know.</label></div>
   </section>
   <section class="comp" id="c-w12-intrapleural-pressure" aria-labelledby="h-w12-intrapleural-pressure">
       <div class="chd"><span class="cnum">3</span><h3 class="cname" id="h-w12-intrapleural-pressure">Intrapleural pressure</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Explain why intrapleural pressure is subatmospheric and predict what happens to the lung and chest wall when the pleural seal is broken.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w12-intrapleural-pressure" data-l="a"><input type="checkbox" id="w12-intrapleural-pressure-a"><label for="w12-intrapleural-pressure-a"><span class="plet">A</span>Draw a cross section of one lung inside the chest wall with the pleural space between them, drawn thin and holding a film of fluid. Draw two opposing arrows on the space: the lung recoiling inward, the chest wall springing outward. Write the pressures at rest, alveolar equal to atmospheric and intrapleural about 4 mmHg below it, and write what those two become at peak inspiration. One line: say what holds the two pleural layers together despite the arrows pulling opposite ways.</label></div>
+      <div class="prompt" data-c="w12-intrapleural-pressure" data-l="b"><input type="checkbox" id="w12-intrapleural-pressure-b"><label for="w12-intrapleural-pressure-b"><span class="plet">B</span>Draw the same chest twice. On the left, intact, with the lung filling the cavity and the subatmospheric pleural pressure marked. On the right, a hole has let air into the pleural space and the pressure there is now atmospheric. Draw what the lung does and what the chest wall does, and draw the other lung in the same picture. One line: say why one lung can collapse while the other keeps working, and what that tells you about the pleural spaces.</label></div>
   </section>
   <section class="comp" id="c-w12-compliance" aria-labelledby="h-w12-compliance">
       <div class="chd"><span class="cnum">4</span><h3 class="cname" id="h-w12-compliance">Compliance and elastic recoil</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Define lung compliance and elastic recoil and predict the effect of fibrosis and of emphysema on each.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w12-compliance" data-l="a"><input type="checkbox" id="w12-compliance-a"><label for="w12-compliance-a"><span class="plet">A</span>Draw one set of axes, transpulmonary pressure on the horizontal, lung volume on the vertical, and plot three curves: a normal lung, a fibrotic lung, and an emphysematous lung. Make the slopes right, since the slope is compliance. Mark on each curve which is hard to inflate and which is hard to empty. One line: say which patient works harder breathing in and which works harder breathing out, and point at the slope that told you.</label></div>
+      <div class="prompt" data-c="w12-compliance" data-l="b"><input type="checkbox" id="w12-compliance-b"><label for="w12-compliance-b"><span class="plet">B</span>Draw two balloons side by side to represent the two failures. One is stiff walled and takes real effort to inflate but snaps shut on its own. One is stretched out and floppy, easy to inflate and slow to empty. Label which lung disease each represents and what happened to the elastic fibres in the wall. Draw the breathing pattern each patient adopts. One line: say which one traps air and roughly where that air sits at the end of a breath.</label></div>
   </section>
   <section class="comp" id="c-w12-surfactant" aria-labelledby="h-w12-surfactant">
       <div class="chd"><span class="cnum">5</span><h3 class="cname" id="h-w12-surfactant">Surfactant and surface tension</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Explain how surfactant lowers surface tension and why its absence causes alveolar collapse in the premature newborn.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w12-surfactant" data-l="a"><input type="checkbox" id="w12-surfactant-a"><label for="w12-surfactant-a"><span class="plet">A</span>Draw one alveolus lined with a water film, with the water molecules at the surface pulling toward each other and the net inward force on the alveolar wall. Then draw the same alveolus with surfactant molecules spread through that film, breaking up the water to water attraction. Show the type II cell that made it. Beside the pair, write the relationship: for a given surface tension, the smaller the radius the greater the collapsing pressure. One line: say what surfactant lets you do with the very first breath after birth.</label></div>
+      <div class="prompt" data-c="w12-surfactant" data-l="b"><input type="checkbox" id="w12-surfactant-b"><label for="w12-surfactant-b"><span class="plet">B</span>Draw two alveoli of different sizes sharing one duct, first with the same surface tension in both. Show where the air goes and what happens to the small one. Then draw the same pair with surfactant, and show it concentrated more in the small alveolus so its tension falls further. Draw the outcome now. Beside it, draw a premature newborn&#39;s alveoli without surfactant. One line: say why the premature infant has to generate so much more pressure for every single breath.</label></div>
   </section>
   <section class="comp" id="c-w12-airway-resistance" aria-labelledby="h-w12-airway-resistance">
       <div class="chd"><span class="cnum">6</span><h3 class="cname" id="h-w12-airway-resistance">Airway resistance</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Identify the main determinant of airway resistance and predict the effect of bronchoconstriction, mucus, and sympathetic stimulation on airflow.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w12-airway-resistance" data-l="a"><input type="checkbox" id="w12-airway-resistance-a"><label for="w12-airway-resistance-a"><span class="plet">A</span>Draw two airways in cross section, one normal and one with the radius halved, and write what that does to resistance given that resistance changes with the fourth power of the radius. Then draw a row of four small airway cross sections: normal, bronchoconstricted, plugged with mucus and swollen, and under sympathetic stimulation. Draw the airflow arrow through each, sized to match. One line: say which of the four you can reverse with an inhaler, and name what the drug is imitating.</label></div>
+      <div class="prompt" data-c="w12-airway-resistance" data-l="b"><input type="checkbox" id="w12-airway-resistance-b"><label for="w12-airway-resistance-b"><span class="plet">B</span>Draw an asthma attack as a sequence down the page: trigger, airway smooth muscle contracting, wall swelling, mucus in the lumen, radius falling, resistance rising, airflow falling. Draw the airway cross section changing at each step. Beside it, draw a forced expiration trace for that patient against a normal one on the same axes. One line: say why expiration is harder than inspiration for this patient, and what happens to airway radius as the chest squeezes down.</label></div>
   </section>
   <section class="comp" id="c-w12-lung-volumes" aria-labelledby="h-w12-lung-volumes">
       <div class="chd"><span class="cnum">7</span><h3 class="cname" id="h-w12-lung-volumes">Lung volumes and capacities</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Define tidal volume, inspiratory and expiratory reserve volume, residual volume, vital capacity, and total lung capacity and read each from a spirogram.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w12-lung-volumes" data-l="a"><input type="checkbox" id="w12-lung-volumes-a"><label for="w12-lung-volumes-a"><span class="plet">A</span>Draw a spirogram trace across the page: several quiet tidal breaths, then a maximal inspiration, then a maximal expiration, then back to quiet breathing. Bracket and label tidal volume, inspiratory reserve volume, expiratory reserve volume, residual volume, vital capacity and total lung capacity, and write an approximate value beside each. Draw residual volume as a band the trace never enters. One line: say which one of these a spirometer can never measure, and say why not.</label></div>
+      <div class="prompt" data-c="w12-lung-volumes" data-l="b"><input type="checkbox" id="w12-lung-volumes-b"><label for="w12-lung-volumes-b"><span class="plet">B</span>Draw a single tall column representing total lung capacity, divided into four stacked volumes in true proportion, labelled and valued. Beside it, draw the same column for a patient with severe fibrosis and a third for a patient with severe emphysema, keeping the same scale so the heights differ. Mark residual volume in all three. One line: say which patient has a larger total lung capacity than normal and why that is not good news.</label></div>
   </section>
   <section class="comp" id="c-w12-spirometry-patterns" aria-labelledby="h-w12-spirometry-patterns">
       <div class="chd"><span class="cnum">8</span><h3 class="cname" id="h-w12-spirometry-patterns">Obstructive and restrictive patterns</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Use the ratio of forced expiratory volume in one second to forced vital capacity to classify a spirometry result as obstructive or restrictive.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w12-spirometry-patterns" data-l="a"><input type="checkbox" id="w12-spirometry-patterns-a"><label for="w12-spirometry-patterns-a"><span class="plet">A</span>Draw one set of axes, time in seconds on the horizontal, volume expired on the vertical, and plot three forced expiration curves from a full breath: normal, obstructive, restrictive. Mark the one second point on all three and the final forced vital capacity on all three. Write the ratio underneath each, with the normal ratio near 0.8 and the obstructive under 0.7. One line: say which pattern has a low volume and a normal ratio, and what that ratio is telling you about the airways.</label></div>
+      <div class="prompt" data-c="w12-spirometry-patterns" data-l="b"><input type="checkbox" id="w12-spirometry-patterns-b"><label for="w12-spirometry-patterns-b"><span class="plet">B</span>Draw a table on the page as a grid you sketch yourself, with obstructive down one side and restrictive down the other, and three columns: what happened to the lung, what happens to forced vital capacity, what happens to the ratio. Fill each cell with a small drawing rather than only words, an airway for one row and a stiff lung wall for the other. Name one real disease in each row. One line: say which measurement alone would mislead you, and what second number you would demand.</label></div>
   </section>
   <section class="comp" id="c-w12-dead-space" aria-labelledby="h-w12-dead-space">
       <div class="chd"><span class="cnum">9</span><h3 class="cname" id="h-w12-dead-space">Alveolar ventilation and dead space</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Calculate minute ventilation and alveolar ventilation and explain why slow deep breathing ventilates the alveoli better than rapid shallow breathing.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w12-dead-space" data-l="a"><input type="checkbox" id="w12-dead-space-a"><label for="w12-dead-space-a"><span class="plet">A</span>Draw the airway with the conducting zone shaded as dead space, about 150 mL, and the alveoli beyond it. Then work three cases across the page, each with the same minute ventilation of 6000 mL per minute: 500 mL twelve times, 250 mL twenty four times, and 1000 mL six times. For each, draw the tidal volume as a bar split into dead space and fresh alveolar air, then write the alveolar ventilation. One line: say which case ventilates the alveoli worst and name the part of the bar that did not change.</label></div>
+      <div class="prompt" data-c="w12-dead-space" data-l="b"><input type="checkbox" id="w12-dead-space-b"><label for="w12-dead-space-b"><span class="plet">B</span>Draw one tidal breath as a moving column of air in three frames: end of expiration with dead space full of stale air, inspiration with that stale air pushed into the alveoli first and fresh air behind it, and end of inspiration. Show where the fresh air actually ended up. Then draw the same three frames for a very shallow breath. One line: say what a panicking patient breathing fast and shallow is doing to their alveolar ventilation, and to their arterial carbon dioxide.</label></div>
   </section>
   <section class="comp" id="c-w12-lab-spirometry" aria-labelledby="h-w12-lab-spirometry">
       <div class="chd"><span class="cnum">10</span><h3 class="cname" id="h-w12-lab-spirometry">Spirometry</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Record a spirogram, calculate the lung volumes and capacities available from it, and compare the results with predicted values.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w12-lab-spirometry" data-l="a"><input type="checkbox" id="w12-lab-spirometry-a"><label for="w12-lab-spirometry-a"><span class="plet">A</span>Draw the spirogram you would produce yourself, quiet breathing then a maximal inspiration and a maximal forced expiration, with volume on the vertical axis and time on the horizontal. Read off and bracket every volume and capacity the trace actually gives you, and shade the region it cannot give you. Beside the trace, draw a second axis for predicted values and show yours as a percentage of predicted. One line: say what a result at 85 percent of predicted means, and whether that is a diagnosis.</label></div>
+      <div class="prompt" data-c="w12-lab-spirometry" data-l="b"><input type="checkbox" id="w12-lab-spirometry-b"><label for="w12-lab-spirometry-b"><span class="plet">B</span>Draw two traces on one set of axes from the same person: one recorded sitting upright and one recorded lying flat, or one before and one after hard exercise, your choice. Label which volumes changed and which did not. Beside them draw the anatomical reason for the change, the diaphragm and the abdominal contents in each position. One line: say which volume moved most and whether the change was in the lung itself or in what surrounds it.</label></div>
   </section>
 
   <div class="chead"><span class="cl">8 competencies</span><h2>Gas Exchange and Transport</h2></div>
   <section class="comp" id="c-w12-partial-pressures" aria-labelledby="h-w12-partial-pressures">
       <div class="chd"><span class="cnum">11</span><h3 class="cname" id="h-w12-partial-pressures">Partial pressures</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Apply Dalton&#39;s law to calculate the partial pressure of oxygen in inspired and alveolar air and state the normal partial pressures in alveolar air, arterial blood, and venous blood.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w12-partial-pressures" data-l="a"><input type="checkbox" id="w12-partial-pressures-a"><label for="w12-partial-pressures-a"><span class="plet">A</span>Draw a vertical bar for atmospheric air at sea level, total 760 mmHg, split into slices for nitrogen, oxygen and the trace gases in true proportion, with the oxygen slice labelled about 160 mmHg. Beside it draw the bar for air in the alveoli, now with water vapour taking about 47 mmHg and carbon dioxide taking a real slice, and the oxygen slice down near 100 mmHg. One line: say what happened between the two bars to knock oxygen down by that much, and name both causes.</label></div>
+      <div class="prompt" data-c="w12-partial-pressures" data-l="b"><input type="checkbox" id="w12-partial-pressures-b"><label for="w12-partial-pressures-b"><span class="plet">B</span>Draw a circuit: alveolus, pulmonary capillary, systemic artery, tissue capillary, systemic vein, back to the alveolus. Write the partial pressure of oxygen and of carbon dioxide at each station, using the standard values, 100 and 40 in alveolar air and arterial blood, 40 and 46 in venous blood. Draw the gradient arrows at the two exchange sites, sized to the gradient. One line: say which gas has the smaller gradient at the lung and why it still crosses fast enough.</label></div>
   </section>
   <section class="comp" id="c-w12-gas-diffusion" aria-labelledby="h-w12-gas-diffusion">
       <div class="chd"><span class="cnum">12</span><h3 class="cname" id="h-w12-gas-diffusion">Diffusion at the respiratory membrane</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Apply the determinants of diffusion to the respiratory membrane and predict the effect of edema, fibrosis, and emphysema on gas transfer.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w12-gas-diffusion" data-l="a"><input type="checkbox" id="w12-gas-diffusion-a"><label for="w12-gas-diffusion-a"><span class="plet">A</span>Draw the respiratory membrane in cross section, alveolar air to red cell, with every layer the gas crosses drawn and labelled, and mark it as very thin. Write the four things that set the rate beside it: surface area, thickness, the partial pressure gradient, and how soluble the gas is. Then draw three damaged versions: fluid in the alveolus, a thickened scarred membrane, and alveolar walls broken down into fewer larger spaces. One line: say which of the three attacks surface area rather than thickness, and how a scan would look different.</label></div>
+      <div class="prompt" data-c="w12-gas-diffusion" data-l="b"><input type="checkbox" id="w12-gas-diffusion-b"><label for="w12-gas-diffusion-b"><span class="plet">B</span>Draw one pulmonary capillary as a long channel with a red cell travelling along it, and plot the partial pressure of oxygen in that red cell against distance travelled, from 40 mmHg at the arterial end up to 100 mmHg. Show it reaching equilibrium well before the end of the capillary. Then draw the same plot for a thickened membrane, and again for that patient during exercise when transit time is shorter. One line: say why the damaged lung can look normal at rest and fail during exercise.</label></div>
   </section>
   <section class="comp" id="c-w12-va-q-matching" aria-labelledby="h-w12-va-q-matching">
       <div class="chd"><span class="cnum">13</span><h3 class="cname" id="h-w12-va-q-matching">Ventilation perfusion matching</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Explain how local hypoxic vasoconstriction and bronchiolar responses match ventilation to perfusion and predict the consequence of a mismatch.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w12-va-q-matching" data-l="a"><input type="checkbox" id="w12-va-q-matching-a"><label for="w12-va-q-matching-a"><span class="plet">A</span>Draw two alveoli side by side, each with its own bronchiole and its own pulmonary arteriole. In the first, a mucus plug has blocked the bronchiole, so alveolar oxygen falls: draw what the arteriole does to send blood elsewhere. In the second, a clot has blocked the arteriole, so alveolar carbon dioxide falls: draw what the bronchiole does. Label which gas is sensed by which vessel. One line: say what the blood leaving the first alveolus would do to arterial oxygen if the arteriole did nothing.</label></div>
+      <div class="prompt" data-c="w12-va-q-matching" data-l="b"><input type="checkbox" id="w12-va-q-matching-b"><label for="w12-va-q-matching-b"><span class="plet">B</span>Draw a lung with three regions and give each a different ratio of ventilation to perfusion: one matched, one ventilated but not perfused, one perfused but not ventilated. Under each, write what the blood leaving it looks like compared with mixed arterial blood. Draw all three streams merging into the pulmonary vein. One line: say which mismatch giving extra oxygen would fix and which it would barely touch, and explain the difference.</label></div>
   </section>
   <section class="comp" id="c-w12-oxygen-transport" aria-labelledby="h-w12-oxygen-transport">
       <div class="chd"><span class="cnum">14</span><h3 class="cname" id="h-w12-oxygen-transport">Oxygen transport and the oxyhemoglobin curve</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Explain the sigmoid shape of the oxyhemoglobin dissociation curve and state the physiological advantage of the steep and the flat portions.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w12-oxygen-transport" data-l="a"><input type="checkbox" id="w12-oxygen-transport-a"><label for="w12-oxygen-transport-a"><span class="plet">A</span>Draw the curve properly: partial pressure of oxygen in mmHg on the horizontal from 0 to 100, percent saturation of hemoglobin on the vertical from 0 to 100, sigmoid in shape. Mark the arterial point near 100 mmHg and about 98 percent, and the resting venous point near 40 mmHg and about 75 percent. Shade the steep portion and the flat portion in different colours. One line: say what the flat top buys you when someone&#39;s arterial oxygen falls from 100 to 70 mmHg, and read the saturation off your own curve to prove it.</label></div>
+      <div class="prompt" data-c="w12-oxygen-transport" data-l="b"><input type="checkbox" id="w12-oxygen-transport-b"><label for="w12-oxygen-transport-b"><span class="plet">B</span>Draw four hemoglobin molecules in a row, each with four binding sites, holding nothing, one, three and four oxygens. Beside each, mark how easy the next oxygen is to bind, showing the shape change that makes the later sites bind more readily. Underneath, draw the curve those four points trace out and mark the shallow foot, the steep middle and the flat top. One line: say what the curve would look like if the four sites did not talk to each other, and what you would lose.</label></div>
   </section>
   <section class="comp" id="c-w12-hb-curve-shifts" aria-labelledby="h-w12-hb-curve-shifts">
       <div class="chd"><span class="cnum">15</span><h3 class="cname" id="h-w12-hb-curve-shifts">Curve shifts</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Predict the direction of the oxyhemoglobin curve shift produced by a change in pH, carbon dioxide, temperature, or 2,3 bisphosphoglycerate and state what the shift means for tissue oxygen delivery.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w12-hb-curve-shifts" data-l="a"><input type="checkbox" id="w12-hb-curve-shifts-a"><label for="w12-hb-curve-shifts-a"><span class="plet">A</span>Draw the oxyhemoglobin dissociation curve with the axes labelled, then draw a shifted copy on either side of it. Beside the right shifted curve list the four conditions that produce it, falling pH, rising carbon dioxide, rising temperature, rising 2,3 bisphosphoglycerate, and beside the left shifted one list their opposites. Draw a vertical line at a tissue partial pressure of 40 mmHg and read the saturation off all three curves. One line: say how much extra oxygen the right shift released at that one partial pressure, and name the tissue that made it happen.</label></div>
+      <div class="prompt" data-c="w12-hb-curve-shifts" data-l="b"><input type="checkbox" id="w12-hb-curve-shifts-b"><label for="w12-hb-curve-shifts-b"><span class="plet">B</span>Draw exercising skeletal muscle in one panel and the lung capillary in the other, and put the local conditions in each: temperature, pH, carbon dioxide. Draw the curve that hemoglobin sees in each panel, shifted in the right direction, and mark the loading and unloading points. Show the same red cell passing through both. One line: say why the shift that helps unloading at the muscle does not hurt loading at the lung, and use the shape of the curve to say it.</label></div>
   </section>
   <section class="comp" id="c-w12-co2-transport" aria-labelledby="h-w12-co2-transport">
       <div class="chd"><span class="cnum">16</span><h3 class="cname" id="h-w12-co2-transport">Carbon dioxide transport</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Name the three forms in which carbon dioxide is carried, state the approximate percentage of each, and trace the chloride shift in a systemic capillary.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w12-co2-transport" data-l="a"><input type="checkbox" id="w12-co2-transport-a"><label for="w12-co2-transport-a"><span class="plet">A</span>Draw one red cell inside a systemic capillary with tissue outside. Bring carbon dioxide in from the tissue and split it into the three transport forms: dissolved in plasma, bound to hemoglobin as a carbamino compound, and converted by carbonic anhydrase into bicarbonate. Write beside each the percentage your textbook gives, and make the three add to 100. Show bicarbonate leaving the cell and chloride entering to replace it. One line: say what would happen to plasma pH if the bicarbonate stayed inside the red cell instead.</label></div>
+      <div class="prompt" data-c="w12-co2-transport" data-l="b"><input type="checkbox" id="w12-co2-transport-b"><label for="w12-co2-transport-b"><span class="plet">B</span>Draw the same red cell twice, once in a tissue capillary and once in a lung capillary, and run every reaction in the correct direction in each. Show carbon dioxide entering and bicarbonate forming on one side, and bicarbonate re entering and carbon dioxide leaving on the other. Draw the chloride moving the opposite way in both. Mark where carbonic anhydrase sits. One line: say which single enzyme makes the whole system fast enough to work in the second a red cell spends in a capillary.</label></div>
   </section>
   <section class="comp" id="c-w12-bohr-haldane" aria-labelledby="h-w12-bohr-haldane">
       <div class="chd"><span class="cnum">17</span><h3 class="cname" id="h-w12-bohr-haldane">Bohr and Haldane effects</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Distinguish the Bohr effect from the Haldane effect and explain how the two work together at the tissue and at the lung.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w12-bohr-haldane" data-l="a"><input type="checkbox" id="w12-bohr-haldane-a"><label for="w12-bohr-haldane-a"><span class="plet">A</span>Draw a tissue capillary and a lung capillary side by side, with one red cell in each. In the tissue, draw carbon dioxide and hydrogen ion arriving and show what they do to hemoglobin&#39;s grip on oxygen and which way the curve shifts. In the lung, draw oxygen arriving and show what that does to hemoglobin&#39;s willingness to hold carbon dioxide and hydrogen ion. Label which effect is which. One line: say which effect describes a gas changing oxygen carriage and which describes oxygen changing gas carriage.</label></div>
+      <div class="prompt" data-c="w12-bohr-haldane" data-l="b"><input type="checkbox" id="w12-bohr-haldane-b"><label for="w12-bohr-haldane-b"><span class="plet">B</span>Draw one hemoglobin molecule at the centre of a loop, and run it around the circuit: tissue, vein, lung, artery, back to tissue. At each station draw what it is carrying, oxygen, hydrogen ion, carbon dioxide as carbamino, and show the handoffs. Mark the two points where the two effects are helping each other rather than competing. One line: say what happens to carbon dioxide unloading at the lung in someone whose hemoglobin cannot be fully oxygenated.</label></div>
   </section>
   <section class="comp" id="c-w12-oxygen-content" aria-labelledby="h-w12-oxygen-content">
       <div class="chd"><span class="cnum">18</span><h3 class="cname" id="h-w12-oxygen-content">Oxygen content versus partial pressure</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Distinguish oxygen content from oxygen partial pressure and saturation and explain why anemia and carbon monoxide poisoning reduce delivery differently.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w12-oxygen-content" data-l="a"><input type="checkbox" id="w12-oxygen-content-a"><label for="w12-oxygen-content-a"><span class="plet">A</span>Draw three test tubes of arterial blood side by side: a healthy person, a person with half the normal hemoglobin, and a person who has breathed carbon monoxide. Under each, draw three separate scales and fill them in: partial pressure of oxygen, percent saturation, and total oxygen content in mL per 100 mL of blood, with normal content near 20. Draw the red cells to match. One line: say which of the three numbers looks completely normal in the anaemic patient, and why a blood gas machine can miss it.</label></div>
+      <div class="prompt" data-c="w12-oxygen-content" data-l="b"><input type="checkbox" id="w12-oxygen-content-b"><label for="w12-oxygen-content-b"><span class="plet">B</span>Draw one set of axes, partial pressure of oxygen on the horizontal and total oxygen content on the vertical, and plot three curves: normal blood, anaemic blood, and blood with carbon monoxide bound to some of the hemoglobin. Draw the carbon monoxide curve shifted left as well as lowered. Mark the arterial point on all three. One line: say why carbon monoxide is worse than losing the same number of binding sites to anaemia, and point at the feature of the curve that shows it.</label></div>
   </section>
 
   <div class="chead"><span class="cl">4 competencies</span><h2>Control of Ventilation</h2></div>
   <section class="comp" id="c-w12-respiratory-centers" aria-labelledby="h-w12-respiratory-centers">
       <div class="chd"><span class="cnum">19</span><h3 class="cname" id="h-w12-respiratory-centers">Respiratory centers</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Identify the medullary and pontine respiratory centers and explain how the basic breathing rhythm is generated and modified.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w12-respiratory-centers" data-l="a"><input type="checkbox" id="w12-respiratory-centers-a"><label for="w12-respiratory-centers-a"><span class="plet">A</span>Draw a brainstem in side view with the medulla and the pons marked. Place the medullary groups and the pontine group where they sit, and label which one generates the basic rhythm. Draw the output pathway down to the diaphragm and the external intercostals, and mark that quiet expiration needs no output at all. Add inputs arriving from higher centres and from the lung. One line: say what stops working first if the connection between the medulla and the diaphragm is cut, and whether the person can hold their breath at all.</label></div>
+      <div class="prompt" data-c="w12-respiratory-centers" data-l="b"><input type="checkbox" id="w12-respiratory-centers-b"><label for="w12-respiratory-centers-b"><span class="plet">B</span>Draw one set of axes, time on the horizontal, activity in the inspiratory neurons on the vertical, and plot quiet breathing as a repeating ramp that rises then switches off. Beneath it, on the same time axis, draw the resulting lung volume trace. Then draw the same pair for forced breathing, showing the expiratory group now firing too. One line: say which part of the trace lengthens when the pontine input is removed, and what breathing would look like.</label></div>
   </section>
   <section class="comp" id="c-w12-chemoreceptors" aria-labelledby="h-w12-chemoreceptors">
       <div class="chd"><span class="cnum">20</span><h3 class="cname" id="h-w12-chemoreceptors">Chemoreceptor control</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Compare central and peripheral chemoreceptors by stimulus and explain why carbon dioxide is the primary minute to minute drive to breathe.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w12-chemoreceptors" data-l="a"><input type="checkbox" id="w12-chemoreceptors-a"><label for="w12-chemoreceptors-a"><span class="plet">A</span>Draw the two receptor sites: the central chemoreceptors on the surface of the medulla with the blood brain barrier drawn beside them, and the peripheral chemoreceptors in the carotid and aortic bodies with their nerves labelled. Show carbon dioxide crossing the barrier and being converted to hydrogen ion in the cerebrospinal fluid, and show hydrogen ion and bicarbonate failing to cross. Mark what each site actually senses. One line: say why a rise in blood carbon dioxide reaches the central receptors but a rise in blood acid does not, in the same way.</label></div>
+      <div class="prompt" data-c="w12-chemoreceptors" data-l="b"><input type="checkbox" id="w12-chemoreceptors-b"><label for="w12-chemoreceptors-b"><span class="plet">B</span>Draw two graphs side by side, both with ventilation on the vertical. On the first, arterial carbon dioxide on the horizontal near the normal 40 mmHg, plotted as a steep line that responds to small changes. On the second, arterial oxygen on the horizontal from 100 down to 30 mmHg, plotted as a line that stays flat until it falls off below about 60. Mark normal on both. One line: say which stimulus is doing the minute to minute work, and say what has to happen before the other one matters.</label></div>
   </section>
   <section class="comp" id="c-w12-ventilation-adaptation" aria-labelledby="h-w12-ventilation-adaptation">
       <div class="chd"><span class="cnum">21</span><h3 class="cname" id="h-w12-ventilation-adaptation">Ventilation in exercise and at altitude</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Predict the ventilatory response to exercise and to acute and chronic altitude exposure and explain the acclimatization changes.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w12-ventilation-adaptation" data-l="a"><input type="checkbox" id="w12-ventilation-adaptation-a"><label for="w12-ventilation-adaptation-a"><span class="plet">A</span>Draw one set of axes, time on the horizontal through rest, the start of exercise, steady exercise, and recovery, with ventilation on the vertical. Plot the abrupt jump at the moment work begins, the plateau, and the fall at the end. On the same time axis underneath, plot arterial carbon dioxide staying close to normal through moderate exercise. One line: say why the ventilation jump cannot have been caused by a rise in carbon dioxide, and name what you think triggered it.</label></div>
+      <div class="prompt" data-c="w12-ventilation-adaptation" data-l="b"><input type="checkbox" id="w12-ventilation-adaptation-b"><label for="w12-ventilation-adaptation-b"><span class="plet">B</span>Draw a person arriving at 4000 metres and follow them down the page over days. Day one: inspired oxygen partial pressure low, peripheral chemoreceptors firing, ventilation up, and carbon dioxide blown off so plasma pH rises above 7.45, which limits the response. Then over days draw the kidney excreting bicarbonate to bring pH back down, ventilation rising further, red cell production climbing, and 2,3 bisphosphoglycerate rising. One line: say which acclimatisation change helps at the tissue rather than at the lung, and how.</label></div>
   </section>
   <section class="comp" id="c-w12-lab-ventilation-response" aria-labelledby="h-w12-lab-ventilation-response">
       <div class="chd"><span class="cnum">22</span><h3 class="cname" id="h-w12-lab-ventilation-response">Ventilatory response testing</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Measure the change in breathing rate and depth after hyperventilation, breath holding, and rebreathing and explain each result by the change in carbon dioxide.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w12-lab-ventilation-response" data-l="a"><input type="checkbox" id="w12-lab-ventilation-response-a"><label for="w12-lab-ventilation-response-a"><span class="plet">A</span>Draw three linked strips across the page, one for each test. For each, draw the breathing trace, and underneath on the same time axis draw arterial carbon dioxide. Strip one, one minute of hard voluntary hyperventilation followed by whatever the subject does next. Strip two, a maximal breath hold up to the break point. Strip three, rebreathing into a bag. Mark the moment carbon dioxide crosses back through normal in each. One line: say why the breath hold after hyperventilation lasts longer, and say whether that is safe.</label></div>
+      <div class="prompt" data-c="w12-lab-ventilation-response" data-l="b"><input type="checkbox" id="w12-lab-ventilation-response-b"><label for="w12-lab-ventilation-response-b"><span class="plet">B</span>Draw one prediction chart before the data: three columns for hyperventilation, breath holding and rebreathing, and three rows for arterial carbon dioxide, plasma pH, and the ventilation that follows. Draw an up arrow, a down arrow, or no change in every cell, with a small sketch beside each. Then mark the one cell you are least sure about. One line: name the cell you would need a measurement to settle, and say what instrument would settle it.</label></div>
   </section>
 
   <div class="chead"><span class="cl">2 competencies</span><h2>Acid Base and Fluid Balance</h2></div>
   <section class="comp" id="c-w13-buffer-systems" aria-labelledby="h-w13-buffer-systems">
       <div class="chd"><span class="cnum">23</span><h3 class="cname" id="h-w13-buffer-systems">Buffer systems</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Compare the bicarbonate, phosphate, and protein buffer systems by location and speed and explain why bicarbonate is the dominant extracellular buffer.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w13-buffer-systems" data-l="a"><input type="checkbox" id="w13-buffer-systems-a"><label for="w13-buffer-systems-a"><span class="plet">A</span>Draw three compartments on the page, blood plasma, the inside of a cell, and the tubule fluid in the kidney. Put the bicarbonate buffer, the phosphate buffer and the protein buffer where each actually does its work, and draw the buffer reaction for each with a hydrogen ion arriving. Beside each, mark how fast it acts, in seconds or longer. Include hemoglobin as a protein buffer inside the red cell. One line: say what happens to a closed buffer system after it has soaked up acid all day, and why bicarbonate does not have that problem.</label></div>
+      <div class="prompt" data-c="w13-buffer-systems" data-l="b"><input type="checkbox" id="w13-buffer-systems-b"><label for="w13-buffer-systems-b"><span class="plet">B</span>Draw a pH scale from 6.8 to 7.8 with the normal arterial range 7.35 to 7.45 shaded. Draw an acid load arriving and show it being handled in three stages down the page: chemical buffering in seconds, the lungs changing ventilation in minutes, and the kidneys changing bicarbonate and acid excretion over hours to days. Draw the pH recovering a little at each stage. One line: say which stage actually removes hydrogen ion from the body, and what the other two did instead.</label></div>
   </section>
   <section class="comp" id="c-w13-respiratory-ph-control" aria-labelledby="h-w13-respiratory-ph-control">
       <div class="chd"><span class="cnum">24</span><h3 class="cname" id="h-w13-respiratory-ph-control">Respiratory control of pH</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Explain how a change in ventilation shifts the carbon dioxide and bicarbonate equilibrium and therefore plasma pH.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w13-respiratory-ph-control" data-l="a"><input type="checkbox" id="w13-respiratory-ph-control-a"><label for="w13-respiratory-ph-control-a"><span class="plet">A</span>Draw the equilibrium across the page as one line: carbon dioxide plus water, then carbonic acid, then hydrogen ion plus bicarbonate, with double arrows and carbonic anhydrase named above it. Put the lung at one end of the line and the kidney at the other. Then draw the same equation twice more, once with hyperventilation pulling carbon dioxide off and once with hypoventilation letting it build, marking which way the equilibrium moves and what plasma pH does. One line: say which way pH moves in the hyperventilating student, and name the value it is leaving.</label></div>
+      <div class="prompt" data-c="w13-respiratory-ph-control" data-l="b"><input type="checkbox" id="w13-respiratory-ph-control-b"><label for="w13-respiratory-ph-control-b"><span class="plet">B</span>Draw one set of axes, arterial carbon dioxide in mmHg on the horizontal from 20 to 70, plasma pH on the vertical from 7.1 to 7.6, and plot the relationship as a falling line. Shade the normal box, 35 to 45 mmHg and 7.35 to 7.45. Plot three points on the line: a panicking student breathing fast, a person sedated to shallow breathing, and normal rest. Label each with the direction of the pH change. One line: say which point you could move back into the box within a minute using breathing alone, and which one you could not.</label></div>
   </section>
 
   <p class="foot"><span>BIO 005 Human Physiology &middot; Yuba College &middot; Fall 2026</span><span>Dr. Sharilyn Rennie</span></p>

@@ -31,11 +31,13 @@ a:hover{color:var(--maroon-dk)}
   padding:12px 18px;font-weight:700;text-decoration:none}
 .skip:focus{left:0;top:0}
 
-header.top{background:var(--navy-deep);color:#fff;padding:34px 0 30px}
+/* light page, maroon eyebrow, two tone headline. No dark band. */
+header.top{padding:30px 0 24px}
 header.top .eyebrow{font-size:11px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;
-  color:var(--gold);margin:0 0 10px}
-header.top h1{font-size:clamp(26px,4.4vw,38px);line-height:1.14;color:#fff;max-width:24ch}
-header.top p.sub{color:#D7DCE3;margin:12px 0 0;font-size:16px}
+  color:var(--maroon);margin:0 0 10px}
+header.top h1{font-size:clamp(26px,4.4vw,38px);line-height:1.14;color:var(--navy);max-width:24ch}
+header.top h1 b{color:var(--maroon);font-weight:800}
+header.top p.sub{color:var(--muted);margin:12px 0 0;font-size:16px}
 
 .homebar{max-width:1000px;margin:0 auto;padding:16px 20px 0}
 .home{display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:#fff;
@@ -53,7 +55,7 @@ main{padding:8px 0 60px}
 .chead{border-left:4px solid var(--maroon);padding:2px 0 2px 16px;margin:32px 0 6px}
 .chead .cl{font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;
   color:var(--maroon);display:block;margin-bottom:4px}
-.chead h2{font-size:21px}
+.chead h2{font-size:21px;color:var(--maroon)}
 
 .comp{background:var(--card);border:1px solid var(--rule);border-radius:10px;
   padding:18px 20px;margin:12px 0;break-inside:avoid}
@@ -89,8 +91,7 @@ main{padding:8px 0 60px}
   .mm-brandbar,.mm-jumpwrap,.homebar,.pwrap,.skip{display:none!important}
   body{background:#fff;font-size:10.5pt}
   .comp{break-inside:avoid;border-color:#999}
-  header.top{background:#fff;color:#000;padding:0 0 12pt}
-  header.top h1{color:#000}header.top .eyebrow{color:#000}header.top p.sub{color:#000}
+
 }
 </style>
 </head>
@@ -99,9 +100,16 @@ main{padding:8px 0 60px}
 
 <div class="mm-brandbar"><div class="mm-wrap">
   <a class="mm-mark" href="course-start.html" target="_top">
-    <span class="mm-wm">Med<b>Masters</b><span class="mm-wmsub">Collaborative</span></span>
+    <svg viewBox="40 10 125 148" width="22" height="26" role="img" aria-label="BIO 005 Human Physiology, course home">
+      <g transform="translate(0,18)">
+        <g transform="translate(60,0) rotate(8 0 130)"><circle cx="0" cy="20" r="10" fill="#0B1530"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#0B1530"/></g>
+        <g transform="translate(100,0)"><circle cx="0" cy="10" r="11" fill="#8B3A2E"/><path d="M 0,22 C -11,22 -17,26 -17,34 C -17,52 -14,70 -12,86 C -11,108 -13,122 -15,132 L 15,132 C 13,122 11,108 12,86 C 14,70 17,52 17,34 C 17,26 11,22 0,22 Z" fill="#8B3A2E"/></g>
+        <g transform="translate(140,0) rotate(-8 0 130)"><circle cx="0" cy="20" r="10" fill="#C9A14A"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#C9A14A"/></g>
+      </g>
+    </svg>
+    <span class="mm-wm">BIO <b>005</b><span class="mm-wmsub">Human Physiology</span></span>
   </a>
-  <span class="mm-course">BIO 005 &middot; Human Physiology</span>
+  <span class="mm-course">BIO 005 &middot; Fall 2026</span>
 </div></div>
 
 <div class="homebar"><a class="home" href="course-start.html" target="_top">
@@ -120,7 +128,7 @@ main{padding:8px 0 60px}
 
 <header class="top"><div class="wrap">
   <p class="eyebrow">BIO 005 &middot; Week 7 &middot; Part 2</p>
-  <h1>Everything Week 7 asks you to be able to do.</h1>
+  <h1>Everything Week 7 <b>asks you to be able to do.</b></h1>
   <p class="sub">Muscle, and how movement gets commanded. 24 competencies, each one a single thing you will be able to do by Sunday, October 25.</p>
 </div></header>
 
@@ -138,126 +146,174 @@ main{padding:8px 0 60px}
   <section class="comp" id="c-w6-nmj" aria-labelledby="h-w6-nmj">
       <div class="chd"><span class="cnum">1</span><h3 class="cname" id="h-w6-nmj">Neuromuscular junction</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Trace transmission at the neuromuscular junction from the motor neuron action potential to the end plate potential and explain why every action potential in the motor neuron produces one in the muscle fiber.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w6-nmj" data-l="a"><input type="checkbox" id="w6-nmj-a"><label for="w6-nmj-a"><span class="plet">A</span>Draw the axon terminal, the cleft, and the motor end plate large enough to number six steps in order: action potential arrives, calcium channels open, vesicles fuse, ACh crosses, receptor channels open, end plate potential. Mark which ion moves at each channel and which direction. Then write one line: the end plate potential is far bigger than it needs to be, so say what that margin buys the muscle.</label></div>
+      <div class="prompt" data-c="w6-nmj" data-l="b"><input type="checkbox" id="w6-nmj-b"><label for="w6-nmj-b"><span class="plet">B</span>Draw the same junction three times, normal, then with the receptors on the end plate blocked, then with the calcium channels in the terminal blocked. In each version show how far the signal gets before it dies and circle the last structure still working. One line: two of the three look identical to someone watching the patient, so write what you would measure to tell those two apart.</label></div>
   </section>
   <section class="comp" id="c-w6-ec-coupling" aria-labelledby="h-w6-ec-coupling">
       <div class="chd"><span class="cnum">2</span><h3 class="cname" id="h-w6-ec-coupling">Excitation contraction coupling</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Trace excitation contraction coupling from the T tubule through the DHP and ryanodine receptors to calcium release from the sarcoplasmic reticulum.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w6-ec-coupling" data-l="a"><input type="checkbox" id="w6-ec-coupling-a"><label for="w6-ec-coupling-a"><span class="plet">A</span>Draw one T tubule diving into the fiber with a terminal cisterna of sarcoplasmic reticulum on each side. Put the DHP receptor in the T tubule membrane and the ryanodine receptor in the SR membrane, touching each other. Draw the action potential arriving and use arrows to show what moves and what only changes shape. Mark where the calcium comes from. One line: say why the T tubule has to go inside the fiber rather than stay on the surface.</label></div>
+      <div class="prompt" data-c="w6-ec-coupling" data-l="b"><input type="checkbox" id="w6-ec-coupling-b"><label for="w6-ec-coupling-b"><span class="plet">B</span>Draw skeletal and cardiac coupling side by side with the same structures in both. In the skeletal one, show the DHP receptor opening the ryanodine receptor by physical contact. In the cardiac one, show calcium entering from outside first and that calcium opening the ryanodine receptor. Label the calcium source in each. One line: one of the two stops working if you remove calcium from the fluid outside the cell, so name it and say why.</label></div>
   </section>
   <section class="comp" id="c-w6-crossbridge-cycle" aria-labelledby="h-w6-crossbridge-cycle">
       <div class="chd"><span class="cnum">3</span><h3 class="cname" id="h-w6-crossbridge-cycle">Crossbridge cycle</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Order the steps of the crossbridge cycle, binding, power stroke, detachment, and reactivation, and state where ATP binds and where it is hydrolyzed.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w6-crossbridge-cycle" data-l="a"><input type="checkbox" id="w6-crossbridge-cycle-a"><label for="w6-crossbridge-cycle-a"><span class="plet">A</span>Draw the cycle as four myosin heads around a loop in order: binding, power stroke, detachment, reactivation. At each head show the thin filament position and what is sitting on the head, nothing, ATP, or ADP and phosphate. Put a star where ATP binds and a different mark where ATP is hydrolyzed, because they are not the same step. One line: name the step that stalls in rigor mortis and what the head is stuck to.</label></div>
+      <div class="prompt" data-c="w6-crossbridge-cycle" data-l="b"><input type="checkbox" id="w6-crossbridge-cycle-b"><label for="w6-crossbridge-cycle-b"><span class="plet">B</span>Draw a stretch of thin filament with a ruler under it, and draw the myosin head at all four points of the cycle above it, showing how far the filament has travelled by each point. Mark the one step where movement actually happens and the three where the filament does not move. Then write one line on why taking ATP away leaves the muscle stiff rather than limp, using the step you marked.</label></div>
   </section>
   <section class="comp" id="c-w6-calcium-regulation" aria-labelledby="h-w6-calcium-regulation">
       <div class="chd"><span class="cnum">4</span><h3 class="cname" id="h-w6-calcium-regulation">Calcium and the regulatory proteins</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Explain how calcium binding to troponin moves tropomyosin off the myosin binding site and predict what happens to contraction if calcium cannot be released.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w6-calcium-regulation" data-l="a"><input type="checkbox" id="w6-calcium-regulation-a"><label for="w6-calcium-regulation-a"><span class="plet">A</span>Draw a stretch of thin filament twice, with actin, tropomyosin, and the troponin complex on both. In the first, no calcium, with tropomyosin lying over the myosin binding sites. In the second, calcium bound to troponin and tropomyosin rolled away. Draw a myosin head reaching in on both and show what it meets. One line: calcium never touches actin or myosin here, so name what it does bind and what that binding moves.</label></div>
+      <div class="prompt" data-c="w6-calcium-regulation" data-l="b"><input type="checkbox" id="w6-calcium-regulation-b"><label for="w6-calcium-regulation-b"><span class="plet">B</span>Draw a resting sarcomere with a full sarcoplasmic reticulum, then draw the same sarcomere in a fiber whose ryanodine receptors will not open. In both, show the calcium, the troponin, the tropomyosin, and the myosin heads. The nerve, the end plate potential, and the ATP supply are all normal in the second one. One line: say whether that muscle feels stiff or limp to a doctor moving the limb, and why.</label></div>
   </section>
   <section class="comp" id="c-w6-relaxation" aria-labelledby="h-w6-relaxation">
       <div class="chd"><span class="cnum">5</span><h3 class="cname" id="h-w6-relaxation">Relaxation and calcium removal</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Explain how SERCA and acetylcholinesterase end a contraction and predict the result if either one fails.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w6-relaxation" data-l="a"><input type="checkbox" id="w6-relaxation-a"><label for="w6-relaxation-a"><span class="plet">A</span>Draw both shut off jobs on one page: acetylcholinesterase chopping ACh in the synaptic cleft, and SERCA in the sarcoplasmic reticulum membrane pumping calcium back in. Mark which of the two costs ATP. Under each, draw a small graph of cytosolic calcium against time and shade the part of the falling limb that job is responsible for. One line: say why relaxation burns energy when it looks like nothing is happening.</label></div>
+      <div class="prompt" data-c="w6-relaxation" data-l="b"><input type="checkbox" id="w6-relaxation-b"><label for="w6-relaxation-b"><span class="plet">B</span>Draw two failures side by side, acetylcholinesterase blocked by an organophosphate, and SERCA stopped. For each, show where the signal is stuck, ACh piled up in the cleft or calcium piled up in the cytosol, and draw the muscle underneath in the state it ends up in. One line: both muscles are contracted and will not release, so name the one thing you could measure or do that separates the two.</label></div>
   </section>
   <section class="comp" id="c-w6-twitch" aria-labelledby="h-w6-twitch">
       <div class="chd"><span class="cnum">6</span><h3 class="cname" id="h-w6-twitch">The muscle twitch</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Label the latent period, contraction phase, and relaxation phase on a twitch tracing and explain what limits each phase.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w6-twitch" data-l="a"><input type="checkbox" id="w6-twitch-a"><label for="w6-twitch-a"><span class="plet">A</span>Draw a twitch tracing with time on the x axis and tension on the y, and put an arrow on the axis at the stimulus. Bracket and label the latent period, the contraction phase, and the relaxation phase. Beside each bracket write the one event inside the fiber that sets how long that phase lasts. One line: the tension trace is flat through the latent period, so say what is going on during it.</label></div>
+      <div class="prompt" data-c="w6-twitch" data-l="b"><input type="checkbox" id="w6-twitch-b"><label for="w6-twitch-b"><span class="plet">B</span>Draw three traces stacked on one shared time axis: the muscle action potential on top, cytosolic calcium in the middle, and tension at the bottom, all lined up. Show that the action potential has finished long before tension peaks. One line: say which of the upper two curves the tension curve actually follows, and what that lag lets you do by stimulating again.</label></div>
   </section>
   <section class="comp" id="c-w6-summation-tetanus" aria-labelledby="h-w6-summation-tetanus">
       <div class="chd"><span class="cnum">7</span><h3 class="cname" id="h-w6-summation-tetanus">Summation and tetanus</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Explain wave summation and distinguish unfused from fused tetanus by stimulus frequency and calcium accumulation.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w6-summation-tetanus" data-l="a"><input type="checkbox" id="w6-summation-tetanus-a"><label for="w6-summation-tetanus-a"><span class="plet">A</span>Draw one time axis with stimulus marks below it, and above it draw four tension traces at rising frequency: a single twitch, two twitches close enough to add, unfused tetanus, and fused tetanus. Keep the y axis identical on all four so the heights are comparable. Mark where the trace dips between stimuli and where the dips disappear. One line: say what stops dipping first, the tension or the cytosolic calcium.</label></div>
+      <div class="prompt" data-c="w6-summation-tetanus" data-l="b"><input type="checkbox" id="w6-summation-tetanus-b"><label for="w6-summation-tetanus-b"><span class="plet">B</span>Draw cytosolic calcium against time for a low frequency train and a high frequency train, one above the other, with SERCA pulling calcium back between stimuli in both. Show why calcium stacks up in one and clears in the other. Under each, draw the tension trace it produces. One line: the action potentials themselves never add together, so write what does.</label></div>
   </section>
   <section class="comp" id="c-w6-motor-units" aria-labelledby="h-w6-motor-units">
       <div class="chd"><span class="cnum">8</span><h3 class="cname" id="h-w6-motor-units">Motor units and recruitment</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Define the motor unit and explain how size of the unit and orderly recruitment grade the force a whole muscle produces.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w6-motor-units" data-l="a"><input type="checkbox" id="w6-motor-units-a"><label for="w6-motor-units-a"><span class="plet">A</span>Draw one alpha motor neuron with its axon branching onto every fiber it owns, then draw a much larger motor unit beside it. Name a real muscle for each and label which is which. Underneath, draw a force trace as units are switched on one at a time, smallest first. One line: say why an eye muscle and a calf muscle are built with different unit sizes, in terms of the job each one has.</label></div>
+      <div class="prompt" data-c="w6-motor-units" data-l="b"><input type="checkbox" id="w6-motor-units-b"><label for="w6-motor-units-b"><span class="plet">B</span>Draw a rising force curve for a whole muscle, from a light hold up to maximum, with force on the y axis and effort on the x. Along the curve, mark the stretch where new motor units are still being added and the stretch where the units already firing are simply firing faster. At three points along it, draw the fiber type being brought in. One line: name the fibers that lifted the coffee cup, and say why those and not the others.</label></div>
   </section>
   <section class="comp" id="c-w6-length-tension" aria-labelledby="h-w6-length-tension">
       <div class="chd"><span class="cnum">9</span><h3 class="cname" id="h-w6-length-tension">Length tension relationship</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Interpret a length tension curve and explain why tension falls at very short and very long sarcomere lengths.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w6-length-tension" data-l="a"><input type="checkbox" id="w6-length-tension-a"><label for="w6-length-tension-a"><span class="plet">A</span>Draw the length tension curve with sarcomere length on the x axis and active tension on the y, and mark the plateau at about 2.0 to 2.2 micrometres. Above three points on the curve, one short, one on the plateau, one long, draw the sarcomere at that length with the thick and thin filaments overlapping correctly. One line: tension falls at both ends of this curve, so say why the two ends fall for different reasons.</label></div>
+      <div class="prompt" data-c="w6-length-tension" data-l="b"><input type="checkbox" id="w6-length-tension-b"><label for="w6-length-tension-b"><span class="plet">B</span>Draw a sarcomere at a very short length and at a very long length, big enough to show the Z discs, the thick filaments, and where the thin filaments end. In the short one, show the two things that physically get in the way. In the long one, show what has run out. One line: say which of the two you can actually reach in a joint in your own body, and what stops you reaching the other.</label></div>
   </section>
   <section class="comp" id="c-w6-contraction-types" aria-labelledby="h-w6-contraction-types">
       <div class="chd"><span class="cnum">10</span><h3 class="cname" id="h-w6-contraction-types">Isometric and isotonic contraction</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Distinguish isometric, concentric, and eccentric contractions and predict shortening velocity from the load applied.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w6-contraction-types" data-l="a"><input type="checkbox" id="w6-contraction-types-a"><label for="w6-contraction-types-a"><span class="plet">A</span>Draw the same arm and dumbbell three times: holding it still, curling it up, and lowering it under control. Label each isometric, concentric, or eccentric, and draw an arrow for whether the active muscle is staying the same length, shortening, or lengthening. Beside each, write whether the load is smaller than, equal to, or larger than the tension the muscle is making. One line: say which of the three leaves you sorest two days later.</label></div>
+      <div class="prompt" data-c="w6-contraction-types" data-l="b"><input type="checkbox" id="w6-contraction-types-b"><label for="w6-contraction-types-b"><span class="plet">B</span>Draw a force velocity curve with load on the x axis and shortening velocity on the y. Mark the point where velocity is highest and the point where velocity hits zero, and write what the load equals at that second point. Beside the curve, draw the arm at three loads along it. One line: the muscle is fully activated at every point on this curve, so say what is actually changing as the load climbs.</label></div>
   </section>
   <section class="comp" id="c-w6-fiber-types" aria-labelledby="h-w6-fiber-types">
       <div class="chd"><span class="cnum">11</span><h3 class="cname" id="h-w6-fiber-types">Muscle fiber types</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Compare slow oxidative, fast oxidative glycolytic, and fast glycolytic fibers by speed, ATP source, fatigue resistance, and typical task.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w6-fiber-types" data-l="a"><input type="checkbox" id="w6-fiber-types-a"><label for="w6-fiber-types-a"><span class="plet">A</span>Draw three fibers in cross section at the same scale, slow oxidative, fast oxidative glycolytic, and fast glycolytic. Draw the differences you could actually see: fiber diameter, mitochondria, capillaries wrapped around it, and myoglobin shading. Under each, write its main ATP source, its fatigue resistance, and one task it does. One line: name the single feature on your drawing that best predicts fatigue resistance, and defend picking that one.</label></div>
+      <div class="prompt" data-c="w6-fiber-types" data-l="b"><input type="checkbox" id="w6-fiber-types-b"><label for="w6-fiber-types-b"><span class="plet">B</span>Pick a sport or a job, not marathon running, and draw the muscle that person needs as a bundle in cross section with the fiber types shaded in the proportions you expect. Beside it, draw a bundle for someone doing the opposite kind of work. Under both, draw force against time out to ten minutes. One line: say where your two curves cross and what that crossing point means for choosing between the two athletes.</label></div>
   </section>
   <section class="comp" id="c-w6-muscle-energetics" aria-labelledby="h-w6-muscle-energetics">
       <div class="chd"><span class="cnum">12</span><h3 class="cname" id="h-w6-muscle-energetics">ATP sources during activity</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Order creatine phosphate, anaerobic glycolysis, and oxidative phosphorylation by how quickly each supplies ATP and how long each can sustain it.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w6-muscle-energetics" data-l="a"><input type="checkbox" id="w6-muscle-energetics-a"><label for="w6-muscle-energetics-a"><span class="plet">A</span>Draw one time axis running from a few seconds out to an hour, and draw three curves above it for the rate of ATP supply from stored creatine phosphate, from anaerobic glycolysis, and from oxidative phosphorylation. Show where each peaks and where each fades out. Label which of the three needs oxygen. One line: the fastest source is also the shortest lived, so write what a sprinter has already used up by the ten second mark.</label></div>
+      <div class="prompt" data-c="w6-muscle-energetics" data-l="b"><input type="checkbox" id="w6-muscle-energetics-b"><label for="w6-muscle-energetics-b"><span class="plet">B</span>Draw three fuel tanks in a row, each sized to how long it can run the muscle, and put a tap on each sized to how fast it delivers. Keep the tank size and the tap size clearly separate, because they are not the same property. Draw the order the muscle opens them in. One line: name the biggest tank and say why the muscle still cannot start a sprint on it.</label></div>
   </section>
   <section class="comp" id="c-w6-fatigue" aria-labelledby="h-w6-fatigue">
       <div class="chd"><span class="cnum">13</span><h3 class="cname" id="h-w6-fatigue">Fatigue and oxygen debt</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Distinguish central from peripheral fatigue and explain the metabolic basis of excess post exercise oxygen consumption.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w6-fatigue" data-l="a"><input type="checkbox" id="w6-fatigue-a"><label for="w6-fatigue-a"><span class="plet">A</span>Draw the path from motor cortex to crossbridge as a row of boxes: brain, spinal cord, motor neuron, neuromuscular junction, T tubule, sarcoplasmic reticulum, crossbridge. Draw a vertical line through the row separating central from peripheral. Put a cross at two plausible failure points on each side of your line. One line: name the test you would run on a tired person to tell you which side of that line has failed.</label></div>
+      <div class="prompt" data-c="w6-fatigue" data-l="b"><input type="checkbox" id="w6-fatigue-b"><label for="w6-fatigue-b"><span class="plet">B</span>Draw oxygen consumption against time across three stages, rest, a hard bout of exercise, then recovery, and shade the region after exercise where consumption is still above resting. Inside that shaded region, draw the things being restored or paid for, one small item each. One line: the muscle stopped working minutes ago, so say why oxygen use has not come back to baseline yet.</label></div>
   </section>
   <section class="comp" id="c-w6-muscle-adaptation" aria-labelledby="h-w6-muscle-adaptation">
       <div class="chd"><span class="cnum">14</span><h3 class="cname" id="h-w6-muscle-adaptation">Muscle plasticity</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Predict the change in fiber size, capillary supply, and mitochondrial content produced by endurance training, resistance training, and disuse.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w6-muscle-adaptation" data-l="a"><input type="checkbox" id="w6-muscle-adaptation-a"><label for="w6-muscle-adaptation-a"><span class="plet">A</span>Draw one fiber in cross section as your baseline, then draw three more at the same scale beside it: after months of endurance training, after months of heavy resistance training, and after six weeks in a cast. In each, draw mitochondria, capillaries, and myofibrils, and keep the diameters honest. One line: say which of the four could lift the most and which could go the longest, and why those are not the same fiber.</label></div>
+      <div class="prompt" data-c="w6-muscle-adaptation" data-l="b"><input type="checkbox" id="w6-muscle-adaptation-b"><label for="w6-muscle-adaptation-b"><span class="plet">B</span>Draw three arrows leaving one starting fiber, labelled endurance training, resistance training, and disuse. Along each arrow, draw what changes early and what changes only after months. Then draw what happens on each path when the stimulus stops. One line: one of these adaptations is lost far faster than it was gained, so name it and say what that means for someone coming back from an injury.</label></div>
   </section>
   <section class="comp" id="c-w6-lab-emg-fatigue" aria-labelledby="h-w6-lab-emg-fatigue">
       <div class="chd"><span class="cnum">15</span><h3 class="cname" id="h-w6-lab-emg-fatigue">Electromyography and grip fatigue</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Record grip force and surface EMG over a sustained contraction and relate the decline in force to recruitment and fatigue.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w6-lab-emg-fatigue" data-l="a"><input type="checkbox" id="w6-lab-emg-fatigue-a"><label for="w6-lab-emg-fatigue-a"><span class="plet">A</span>Before you squeeze anything, draw the two traces you predict for a long hold at a constant submaximal grip force: force on top, EMG amplitude below, both against time. Then run it and draw the real traces on the same axes in a second colour. Mark where prediction and data part company. One line: the force was held flat on purpose, so say what the EMG had to do to keep it there and what that tells you about the units doing the work.</label></div>
+      <div class="prompt" data-c="w6-lab-emg-fatigue" data-l="b"><input type="checkbox" id="w6-lab-emg-fatigue-b"><label for="w6-lab-emg-fatigue-b"><span class="plet">B</span>Draw the raw EMG burst from the start of a maximal squeeze and from the end of it, side by side at the same scale, with the grip force trace running underneath across the whole hold. Mark on the force trace the moment you first felt it slipping. One line: say whether the falling force proves the motor neurons stopped firing, and name what else could produce the same trace.</label></div>
   </section>
   <section class="comp" id="c-w6-lab-muscle-sim" aria-labelledby="h-w6-lab-muscle-sim">
       <div class="chd"><span class="cnum">16</span><h3 class="cname" id="h-w6-lab-muscle-sim">Twitch and tetanus simulation</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Generate twitch and tetanus tracings in a muscle simulation by varying stimulus voltage and frequency and identify threshold and maximal stimulus.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w6-lab-muscle-sim" data-l="a"><input type="checkbox" id="w6-lab-muscle-sim-a"><label for="w6-lab-muscle-sim-a"><span class="plet">A</span>Draw peak twitch tension against stimulus voltage, from zero up past the point where the curve flattens. Put arrows on the x axis at threshold and at maximal stimulus. Above three voltages along the curve, draw the twitch tracing you would get there. One line: nothing about any single fiber changed as you turned the voltage up, so write what did change to make the whole muscle pull harder.</label></div>
+      <div class="prompt" data-c="w6-lab-muscle-sim" data-l="b"><input type="checkbox" id="w6-lab-muscle-sim-b"><label for="w6-lab-muscle-sim-b"><span class="plet">B</span>Draw a grid with stimulus voltage on one axis and frequency on the other, and sketch the tracing you would get at four corners of it: low voltage low frequency, low voltage high frequency, maximal voltage low frequency, maximal voltage high frequency. Label each tracing twitch, tetanus, or something in between. One line: say which knob you turn for the strongest contraction available, and why the other knob on its own cannot get you there.</label></div>
   </section>
 
   <div class="chead"><span class="cl">4 competencies</span><h2>Cardiac and Smooth Muscle</h2></div>
   <section class="comp" id="c-w6-smooth-muscle" aria-labelledby="h-w6-smooth-muscle">
       <div class="chd"><span class="cnum">17</span><h3 class="cname" id="h-w6-smooth-muscle">Smooth muscle contraction mechanism</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Trace smooth muscle contraction through calcium entry and release to calmodulin and myosin light chain kinase and explain why the mechanism is slower and more economical than in skeletal muscle.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w6-smooth-muscle" data-l="a"><input type="checkbox" id="w6-smooth-muscle-a"><label for="w6-smooth-muscle-a"><span class="plet">A</span>Draw a smooth muscle cell and trace one pathway across it in order: calcium entering from outside and released from the sarcoplasmic reticulum, calcium binding calmodulin, calcium calmodulin switching on myosin light chain kinase, the kinase phosphorylating the myosin light chain, and the head then cycling on actin. Draw the phosphate landing where it actually lands. One line: there is no troponin anywhere in this drawing, so name what took over its job.</label></div>
+      <div class="prompt" data-c="w6-smooth-muscle" data-l="b"><input type="checkbox" id="w6-smooth-muscle-b"><label for="w6-smooth-muscle-b"><span class="plet">B</span>Draw skeletal and smooth muscle contraction as two ladders side by side, both starting at calcium and both ending at tension, one step per rung. Count the rungs in each. Beside the smooth ladder, draw a tension trace that rises slowly and then holds for a long time on very little ATP. One line: say which part of your ladder explains the slow onset and which part explains the cheap holding.</label></div>
   </section>
   <section class="comp" id="c-w6-smooth-regulation" aria-labelledby="h-w6-smooth-regulation">
       <div class="chd"><span class="cnum">18</span><h3 class="cname" id="h-w6-smooth-regulation">Smooth muscle types and regulation</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Compare single unit and multi unit smooth muscle and list the stimuli that alter smooth muscle tone including stretch and local chemical signals.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w6-smooth-regulation" data-l="a"><input type="checkbox" id="w6-smooth-regulation-a"><label for="w6-smooth-regulation-a"><span class="plet">A</span>Draw a sheet of single unit smooth muscle with gap junctions between the cells and one pacemaker cell in it, then draw multi unit smooth muscle beside it with separate cells each carrying its own nerve ending. Name a real location in the body under each. Draw one stimulus spreading through both sheets. One line: say which arrangement lets a whole organ empty in one go, and which lets you grade the response finely.</label></div>
+      <div class="prompt" data-c="w6-smooth-regulation" data-l="b"><input type="checkbox" id="w6-smooth-regulation-b"><label for="w6-smooth-regulation-b"><span class="plet">B</span>Draw a ring of smooth muscle in a vessel wall in the middle of your page, and bring an arrow into it from every stimulus that changes its tone: stretch of the wall, a sympathetic nerve ending, a circulating hormone, and a local chemical signal from the tissue outside. Mark each arrow tighten or relax. One line: pick the local chemical you drew and say what the surrounding tissue is asking the vessel to do by releasing it.</label></div>
   </section>
   <section class="comp" id="c-w6-cardiac-muscle" aria-labelledby="h-w6-cardiac-muscle">
       <div class="chd"><span class="cnum">19</span><h3 class="cname" id="h-w6-cardiac-muscle">Cardiac muscle properties</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Explain how intercalated discs and gap junctions allow the myocardium to act as a functional syncytium and state why cardiac muscle cannot be tetanized.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w6-cardiac-muscle" data-l="a"><input type="checkbox" id="w6-cardiac-muscle-a"><label for="w6-cardiac-muscle-a"><span class="plet">A</span>Draw two cardiac cells joined at an intercalated disc, big enough to show the desmosomes and the gap junctions as separate structures. Show what passes through the gap junctions and what force the desmosomes are holding against. Then draw four cells in a row and trace one signal through all of them with no nerve involved. One line: name what acting as a functional syncytium buys the ventricle that a set of independent cells could not.</label></div>
+      <div class="prompt" data-c="w6-cardiac-muscle" data-l="b"><input type="checkbox" id="w6-cardiac-muscle-b"><label for="w6-cardiac-muscle-b"><span class="plet">B</span>Draw a cardiac action potential with the tension it produces on the same time axis, lined up, then draw a skeletal action potential and its twitch below at the same time scale. Bracket the absolute refractory period on both. One line: skeletal muscle can be driven into tetanus and cardiac muscle cannot, so say what would happen to the output of a heart that could be.</label></div>
   </section>
   <section class="comp" id="c-w6-muscle-comparison" aria-labelledby="h-w6-muscle-comparison">
       <div class="chd"><span class="cnum">20</span><h3 class="cname" id="h-w6-muscle-comparison">Comparison of the three muscle types</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Build a comparison of skeletal, cardiac, and smooth muscle by calcium source, regulatory protein, control, and speed of contraction.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w6-muscle-comparison" data-l="a"><input type="checkbox" id="w6-muscle-comparison-a"><label for="w6-muscle-comparison-a"><span class="plet">A</span>Draw a three column chart, skeletal, cardiac, smooth, and fill it with drawings rather than words: one cell of each at the same magnification with striations present or absent, the calcium source drawn as arrows into the cytosol, the protein that calcium binds, and what gives the command. One line: two of the three share a regulatory protein, so name the odd one out and what it uses instead.</label></div>
+      <div class="prompt" data-c="w6-muscle-comparison" data-l="b"><input type="checkbox" id="w6-muscle-comparison-b"><label for="w6-muscle-comparison-b"><span class="plet">B</span>Pick one property, calcium source, regulatory protein, control, or speed, and draw all three muscle types along a single line ordered by that property, with the drawing that justifies each placement underneath. Then do it again on a second line using a different property. One line: your two orderings do not match, so say which property matters more for the job each muscle is actually asked to do.</label></div>
   </section>
 
   <div class="chead"><span class="cl">4 competencies</span><h2>Motor Control</h2></div>
   <section class="comp" id="c-w8-motor-hierarchy" aria-labelledby="h-w8-motor-hierarchy">
       <div class="chd"><span class="cnum">21</span><h3 class="cname" id="h-w8-motor-hierarchy">Motor control hierarchy</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Order the levels of motor control from spinal reflex through brainstem to cortex and state what each level contributes to a voluntary movement.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w8-motor-hierarchy" data-l="a"><input type="checkbox" id="w8-motor-hierarchy-a"><label for="w8-motor-hierarchy-a"><span class="plet">A</span>Draw the levels stacked, spinal cord at the bottom, brainstem in the middle, cortex on top, and trace one voluntary movement of your own choosing, not walking, from the decision down to the muscle. At each level write what that level contributed. Draw the cerebellum and basal ganglia off to the side with arrows showing they adjust rather than command. One line: remove the top level only, and say what movement the person can still produce.</label></div>
+      <div class="prompt" data-c="w8-motor-hierarchy" data-l="b"><input type="checkbox" id="w8-motor-hierarchy-b"><label for="w8-motor-hierarchy-b"><span class="plet">B</span>Draw the same three levels and drop a hot pan into the picture. Trace the withdrawal reflex through the lowest level alone, then trace the slower conscious response that arrives afterwards through all three. Put both on a shared time axis underneath. One line: the reflex is faster because it skipped something, so name what it skipped and what the person gave up by skipping it.</label></div>
   </section>
   <section class="comp" id="c-w8-corticospinal" aria-labelledby="h-w8-corticospinal">
       <div class="chd"><span class="cnum">22</span><h3 class="cname" id="h-w8-corticospinal">Corticospinal pathway</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Trace the corticospinal pathway from the primary motor cortex to the skeletal muscle and identify where it crosses.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w8-corticospinal" data-l="a"><input type="checkbox" id="w8-corticospinal-a"><label for="w8-corticospinal-a"><span class="plet">A</span>Draw a coronal outline of the brain, brainstem, spinal cord, and one arm. Run the corticospinal neuron from the precentral gyrus down through the internal capsule, midbrain, and pons, and mark the pyramidal decussation in the medulla where most fibers cross. Synapse it in the ventral horn on the lower motor neuron and continue out to the muscle. Label upper and lower motor neuron. One line: name the side of the body the left motor cortex moves, and the structure that decided that.</label></div>
+      <div class="prompt" data-c="w8-corticospinal" data-l="b"><input type="checkbox" id="w8-corticospinal-b"><label for="w8-corticospinal-b"><span class="plet">B</span>Draw the pathway once, then place a lesion on it at three sites: in the motor cortex, in the medulla just above the crossing, and in the spinal cord below the crossing. For each, shade the side of the body that ends up weak. One line: two of your three lesions weaken the same side, so write what a clinician would look for to separate those two.</label></div>
   </section>
   <section class="comp" id="c-w8-cerebellum-basal-ganglia" aria-labelledby="h-w8-cerebellum-basal-ganglia">
       <div class="chd"><span class="cnum">23</span><h3 class="cname" id="h-w8-cerebellum-basal-ganglia">Cerebellum and basal ganglia</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Contrast the contributions of the cerebellum and the basal ganglia to movement and match a described motor sign to the structure involved.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w8-cerebellum-basal-ganglia" data-l="a"><input type="checkbox" id="w8-cerebellum-basal-ganglia-a"><label for="w8-cerebellum-basal-ganglia-a"><span class="plet">A</span>Draw a hand reaching toward a target three times: normally, with cerebellar damage, and with basal ganglia damage. Draw the actual path the hand takes each time rather than writing about it. Beside each path, draw the tremor if there is one and mark the point in the movement where it shows up. One line: both patients tremble, so say when each one&#39;s tremor appears and what that timing tells you about the structure involved.</label></div>
+      <div class="prompt" data-c="w8-cerebellum-basal-ganglia" data-l="b"><input type="checkbox" id="w8-cerebellum-basal-ganglia-b"><label for="w8-cerebellum-basal-ganglia-b"><span class="plet">B</span>Draw a loop diagram with the motor cortex at the top, the cerebellum on one side and the basal ganglia on the other, each with its arrows out to and back from the cortex. Label what each loop does to the command, comparing it against feedback or selecting and scaling it. One line: name the loop that needs sensory information from the moving limb to work, and say what happens to it when that information is lost.</label></div>
   </section>
   <section class="comp" id="c-w8-umn-lmn" aria-labelledby="h-w8-umn-lmn">
       <div class="chd"><span class="cnum">24</span><h3 class="cname" id="h-w8-umn-lmn">Upper and lower motor neuron signs</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Distinguish upper from lower motor neuron lesions by tone, reflexes, and muscle bulk and assign a set of findings to the correct level.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w8-umn-lmn" data-l="a"><input type="checkbox" id="w8-umn-lmn-a"><label for="w8-umn-lmn-a"><span class="plet">A</span>Draw the two neuron chain from cortex to muscle once, and mark two lesion sites, one on the upper neuron and one on the lower. Beside each, draw the limb as it behaves: the tone, the reflex hammer response drawn as a big or a small kick, the muscle bulk, and whether the muscle twitches on its own at rest. One line: both patients are weak, so name the single finding you would check first and say why that one.</label></div>
+      <div class="prompt" data-c="w8-umn-lmn" data-l="b"><input type="checkbox" id="w8-umn-lmn-b"><label for="w8-umn-lmn-b"><span class="plet">B</span>You are handed a limb with raised tone, brisk reflexes, normal bulk, and a big toe that goes up when you stroke the sole. Draw the neuron chain and mark where the lesion has to be. Then draw a second chain with the opposite findings and mark that lesion. Label both. One line: one of these two patients wastes away quickly and the other does not, so say what that muscle lost contact with.</label></div>
   </section>
 
   <p class="foot"><span>BIO 005 Human Physiology &middot; Yuba College &middot; Fall 2026</span><span>Dr. Sharilyn Rennie</span></p>

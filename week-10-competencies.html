@@ -31,11 +31,13 @@ a:hover{color:var(--maroon-dk)}
   padding:12px 18px;font-weight:700;text-decoration:none}
 .skip:focus{left:0;top:0}
 
-header.top{background:var(--navy-deep);color:#fff;padding:34px 0 30px}
+/* light page, maroon eyebrow, two tone headline. No dark band. */
+header.top{padding:30px 0 24px}
 header.top .eyebrow{font-size:11px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;
-  color:var(--gold);margin:0 0 10px}
-header.top h1{font-size:clamp(26px,4.4vw,38px);line-height:1.14;color:#fff;max-width:24ch}
-header.top p.sub{color:#D7DCE3;margin:12px 0 0;font-size:16px}
+  color:var(--maroon);margin:0 0 10px}
+header.top h1{font-size:clamp(26px,4.4vw,38px);line-height:1.14;color:var(--navy);max-width:24ch}
+header.top h1 b{color:var(--maroon);font-weight:800}
+header.top p.sub{color:var(--muted);margin:12px 0 0;font-size:16px}
 
 .homebar{max-width:1000px;margin:0 auto;padding:16px 20px 0}
 .home{display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:#fff;
@@ -53,7 +55,7 @@ main{padding:8px 0 60px}
 .chead{border-left:4px solid var(--maroon);padding:2px 0 2px 16px;margin:32px 0 6px}
 .chead .cl{font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;
   color:var(--maroon);display:block;margin-bottom:4px}
-.chead h2{font-size:21px}
+.chead h2{font-size:21px;color:var(--maroon)}
 
 .comp{background:var(--card);border:1px solid var(--rule);border-radius:10px;
   padding:18px 20px;margin:12px 0;break-inside:avoid}
@@ -89,8 +91,7 @@ main{padding:8px 0 60px}
   .mm-brandbar,.mm-jumpwrap,.homebar,.pwrap,.skip{display:none!important}
   body{background:#fff;font-size:10.5pt}
   .comp{break-inside:avoid;border-color:#999}
-  header.top{background:#fff;color:#000;padding:0 0 12pt}
-  header.top h1{color:#000}header.top .eyebrow{color:#000}header.top p.sub{color:#000}
+
 }
 </style>
 </head>
@@ -99,9 +100,16 @@ main{padding:8px 0 60px}
 
 <div class="mm-brandbar"><div class="mm-wrap">
   <a class="mm-mark" href="course-start.html" target="_top">
-    <span class="mm-wm">Med<b>Masters</b><span class="mm-wmsub">Collaborative</span></span>
+    <svg viewBox="40 10 125 148" width="22" height="26" role="img" aria-label="BIO 005 Human Physiology, course home">
+      <g transform="translate(0,18)">
+        <g transform="translate(60,0) rotate(8 0 130)"><circle cx="0" cy="20" r="10" fill="#0B1530"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#0B1530"/></g>
+        <g transform="translate(100,0)"><circle cx="0" cy="10" r="11" fill="#8B3A2E"/><path d="M 0,22 C -11,22 -17,26 -17,34 C -17,52 -14,70 -12,86 C -11,108 -13,122 -15,132 L 15,132 C 13,122 11,108 12,86 C 14,70 17,52 17,34 C 17,26 11,22 0,22 Z" fill="#8B3A2E"/></g>
+        <g transform="translate(140,0) rotate(-8 0 130)"><circle cx="0" cy="20" r="10" fill="#C9A14A"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#C9A14A"/></g>
+      </g>
+    </svg>
+    <span class="mm-wm">BIO <b>005</b><span class="mm-wmsub">Human Physiology</span></span>
   </a>
-  <span class="mm-course">BIO 005 &middot; Human Physiology</span>
+  <span class="mm-course">BIO 005 &middot; Fall 2026</span>
 </div></div>
 
 <div class="homebar"><a class="home" href="course-start.html" target="_top">
@@ -120,7 +128,7 @@ main{padding:8px 0 60px}
 
 <header class="top"><div class="wrap">
   <p class="eyebrow">BIO 005 &middot; Week 10 &middot; Part 3</p>
-  <h1>Everything Week 10 asks you to be able to do.</h1>
+  <h1>Everything Week 10 <b>asks you to be able to do.</b></h1>
   <p class="sub">Pressure, flow, and holding blood pressure steady. 13 competencies, each one a single thing you will be able to do by Sunday, November 15.</p>
 </div></header>
 
@@ -138,71 +146,97 @@ main{padding:8px 0 60px}
   <section class="comp" id="c-w9-adrenal-cortex" aria-labelledby="h-w9-adrenal-cortex">
       <div class="chd"><span class="cnum">1</span><h3 class="cname" id="h-w9-adrenal-cortex">Adrenal cortex</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Match the three cortical zones to aldosterone, cortisol, and the adrenal androgens and state the primary action of each.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w9-adrenal-cortex" data-l="a"><input type="checkbox" id="w9-adrenal-cortex-a"><label for="w9-adrenal-cortex-a"><span class="plet">A</span>Draw a wedge of adrenal gland in cross section from the capsule inward, with the three cortical zones at their real relative thicknesses and the medulla at the core. Label each zone with its hormone and, beside it, the one job that hormone is for: sodium retention, glucose mobilization, or androgen output. One line: one of these zones is not driven mainly by ACTH, so name it and say what does drive it.</label></div>
+      <div class="prompt" data-c="w9-adrenal-cortex" data-l="b"><input type="checkbox" id="w9-adrenal-cortex-b"><label for="w9-adrenal-cortex-b"><span class="plet">B</span>Draw three targets on one page, a kidney tubule, a liver cell, and a whole body outline. Draw the hormone from the matching cortical zone arriving at each and show inside the target exactly what changes, which ion moves, which fuel gets made, which tissue responds. Then draw all three targets again with the entire cortex destroyed. One line: say which loss kills fastest and why it is the salt one.</label></div>
   </section>
 
   <div class="chead"><span class="cl">8 competencies</span><h2>Vascular Physiology</h2></div>
   <section class="comp" id="c-w11-flow-resistance" aria-labelledby="h-w11-flow-resistance">
       <div class="chd"><span class="cnum">2</span><h3 class="cname" id="h-w11-flow-resistance">Pressure flow and resistance</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Apply the relationship among flow, pressure gradient, and resistance and predict the effect of a change in vessel radius, blood viscosity, or vessel length on flow.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w11-flow-resistance" data-l="a"><input type="checkbox" id="w11-flow-resistance-a"><label for="w11-flow-resistance-a"><span class="plet">A</span>Draw a straight tube with a pressure at each end and flow through it, and write on the drawing that flow equals the pressure gradient divided by resistance. Below it draw three more tubes: one twice as long, one with the radius halved, and one carrying blood of twice the viscosity. Under each, write what flow does and by what factor. One line: name the one of the three the body actually adjusts moment to moment.</label></div>
+      <div class="prompt" data-c="w11-flow-resistance" data-l="b"><input type="checkbox" id="w11-flow-resistance-b"><label for="w11-flow-resistance-b"><span class="plet">B</span>Draw one arteriole in cross section at three radii, normal, constricted, and dilated, drawn so the lumen areas look honest. Under each, draw a bar for the flow through it, sized by the fourth power relationship. Beside the three, draw the smooth muscle layer and what makes it change. One line: a tiny change in radius does something huge, so say what that costs you in fine control.</label></div>
   </section>
   <section class="comp" id="c-w11-vessel-function" aria-labelledby="h-w11-vessel-function">
       <div class="chd"><span class="cnum">3</span><h3 class="cname" id="h-w11-vessel-function">Vessel structure and function</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Match arteries, arterioles, capillaries, venules, and veins to their role in pressure buffering, resistance, exchange, and capacitance.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w11-vessel-function" data-l="a"><input type="checkbox" id="w11-vessel-function-a"><label for="w11-vessel-function-a"><span class="plet">A</span>Draw the circuit as one loop: aorta, arteries, arterioles, capillaries, venules, veins, vena cava. Directly under the loop, on the same horizontal axis, draw the pressure curve falling from about 120 over 80 in the aorta to near zero at the right atrium. Beside the loop, draw each vessel type&#39;s wall in cross section. One line: name the segment with the steepest pressure drop and say what makes it steep.</label></div>
+      <div class="prompt" data-c="w11-vessel-function" data-l="b"><input type="checkbox" id="w11-vessel-function-b"><label for="w11-vessel-function-b"><span class="plet">B</span>Draw four boxes headed pressure buffering, resistance, exchange, and capacitance. In each, draw the vessel that does the job with the one wall feature that lets it: elastic sheets, thick smooth muscle, a single endothelial layer, a thin distensible wall with valves. Then shade the share of total blood volume sitting in the capacitance vessels at rest, about 60 percent. One line: say what happens to that reservoir when the sympathetic system fires.</label></div>
   </section>
   <section class="comp" id="c-w11-blood-pressure" aria-labelledby="h-w11-blood-pressure">
       <div class="chd"><span class="cnum">4</span><h3 class="cname" id="h-w11-blood-pressure">Arterial blood pressure</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Define systolic, diastolic, pulse, and mean arterial pressure, calculate mean arterial pressure, and explain how it is determined by cardiac output and total peripheral resistance.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w11-blood-pressure" data-l="a"><input type="checkbox" id="w11-blood-pressure-a"><label for="w11-blood-pressure-a"><span class="plet">A</span>Draw an aortic pressure trace over three beats, with the systolic peak at 120 and the diastolic trough at 80 marked on a y axis in mmHg. Bracket and label pulse pressure. Then compute mean arterial pressure on the page with the arithmetic showing, diastolic plus one third of pulse pressure. One line: the mean is not the midpoint of 120 and 80, so say what about the shape of the trace pulls it lower.</label></div>
+      <div class="prompt" data-c="w11-blood-pressure" data-l="b"><input type="checkbox" id="w11-blood-pressure-b"><label for="w11-blood-pressure-b"><span class="plet">B</span>Draw mean arterial pressure as a product of two things, a pump for cardiac output and a set of narrowed vessels for total peripheral resistance. Then draw three altered versions: output up with resistance unchanged, resistance up with output unchanged, and output up with resistance down by the same proportion. Show what mean pressure does in each. One line: the third case is exercise, so say why the pressure barely shifts.</label></div>
   </section>
   <section class="comp" id="c-w11-local-blood-flow" aria-labelledby="h-w11-local-blood-flow">
       <div class="chd"><span class="cnum">5</span><h3 class="cname" id="h-w11-local-blood-flow">Local control of blood flow</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Explain myogenic, metabolic, and endothelial control of arteriolar tone and predict the local flow response to increased tissue metabolism.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w11-local-blood-flow" data-l="a"><input type="checkbox" id="w11-local-blood-flow-a"><label for="w11-local-blood-flow-a"><span class="plet">A</span>Draw one arteriole three times, each answering a different local signal. First myogenic, with a sudden pressure rise stretching the wall and the smooth muscle response. Second metabolic, with a working muscle beside it releasing carbon dioxide, hydrogen ion, potassium and adenosine, and the arteriole response. Third endothelial, with the endothelial cell releasing nitric oxide. One line: the first two point opposite ways during exercise, so say which one wins locally.</label></div>
+      <div class="prompt" data-c="w11-local-blood-flow" data-l="b"><input type="checkbox" id="w11-local-blood-flow-b"><label for="w11-local-blood-flow-b"><span class="plet">B</span>Draw a tissue at rest and the same tissue working hard, each with its feeding arteriole and the capillary bed beyond it drawn with the number of open capillaries you would expect. Between the two drawings, draw the chain of signals that took you from the first to the second, in order. One line: say what would hold flow steady instead if you kept the metabolism fixed and only changed the perfusion pressure.</label></div>
   </section>
   <section class="comp" id="c-w11-capillary-exchange" aria-labelledby="h-w11-capillary-exchange">
       <div class="chd"><span class="cnum">6</span><h3 class="cname" id="h-w11-capillary-exchange">Capillary exchange and Starling forces</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Identify the four Starling forces at a capillary and determine the net direction of fluid movement at the arterial and venous ends.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w11-capillary-exchange" data-l="a"><input type="checkbox" id="w11-capillary-exchange-a"><label for="w11-capillary-exchange-a"><span class="plet">A</span>Draw one capillary running from its arterial end to its venous end, wide enough to write inside. Put all four Starling forces on it as arrows with their true directions, and write the values: capillary hydrostatic pressure about 35 mmHg at the arterial end falling to about 15 mmHg at the venous end, plasma colloid osmotic pressure about 25 mmHg the whole way. Work out the net direction at each end. One line: not everything filtered comes back, so say where the rest goes.</label></div>
+      <div class="prompt" data-c="w11-capillary-exchange" data-l="b"><input type="checkbox" id="w11-capillary-exchange-b"><label for="w11-capillary-exchange-b"><span class="plet">B</span>Draw the same capillary as a graph instead. Distance along the capillary on the x axis, pressure in mmHg on the y, hydrostatic pressure as a falling line and colloid osmotic pressure as a flat one. Mark where the lines cross and shade the filtration region and the reabsorption region. One line: say what dropping the flat line by 10 mmHg does to the crossing point, and name a condition that drops it.</label></div>
   </section>
   <section class="comp" id="c-w11-edema" aria-labelledby="h-w11-edema">
       <div class="chd"><span class="cnum">7</span><h3 class="cname" id="h-w11-edema">Edema</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Explain how increased capillary hydrostatic pressure, reduced plasma protein, increased permeability, or lymphatic blockage each produce edema and match a clinical scenario to its mechanism.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w11-edema" data-l="a"><input type="checkbox" id="w11-edema-a"><label for="w11-edema-a"><span class="plet">A</span>Draw four capillaries in a row, each with the interstitial space around it. In each, break one Starling factor: raise capillary hydrostatic pressure, drop plasma protein, open the wall to protein leak, block the lymphatic. Draw the fluid piling up in each and mark whether interstitial protein went up or stayed put. One line: two of the four raise interstitial protein, so name them and say why that changes what you would do about it.</label></div>
+      <div class="prompt" data-c="w11-edema" data-l="b"><input type="checkbox" id="w11-edema-b"><label for="w11-edema-b"><span class="plet">B</span>Draw a body outline for each of four patients and shade where the swelling actually sits: right heart failure, liver failure with low albumin, a bee sting on the forearm, and lymph node removal from one armpit. Beside each, draw the capillary picture that produced it. One line: pick the one where a diuretic would help least and say why.</label></div>
   </section>
   <section class="comp" id="c-w11-venous-return" aria-labelledby="h-w11-venous-return">
       <div class="chd"><span class="cnum">8</span><h3 class="cname" id="h-w11-venous-return">Venous return</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Explain the skeletal muscle pump, the respiratory pump, and venoconstriction and predict the effect of prolonged standing on venous return and stroke volume.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w11-venous-return" data-l="a"><input type="checkbox" id="w11-venous-return-a"><label for="w11-venous-return-a"><span class="plet">A</span>Draw a leg vein in a standing person with its valves and the blood in it, three times over: calf muscle relaxed, calf contracting, calf relaxing again. Show which valve is open in each. Beside it, draw the thorax during inspiration with the pressure change that pulls blood toward the heart. One line: standing at attention shuts one of these pumps off, so say which and what the body does instead.</label></div>
+      <div class="prompt" data-c="w11-venous-return" data-l="b"><input type="checkbox" id="w11-venous-return-b"><label for="w11-venous-return-b"><span class="plet">B</span>Draw a person standing still for ten minutes, with the blood pooled in the leg veins shaded. Then follow it through a chain of small panels: venous return, end diastolic volume, stroke volume by Frank Starling, cardiac output, and blood pressure at the head. Draw what happens in the last panel. One line: say what one calf squeeze would do to the whole chain and how fast.</label></div>
   </section>
   <section class="comp" id="c-w11-lab-bp-measurement" aria-labelledby="h-w11-lab-bp-measurement">
       <div class="chd"><span class="cnum">9</span><h3 class="cname" id="h-w11-lab-bp-measurement">Blood pressure measurement</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Measure blood pressure by auscultation, explain the origin of the Korotkoff sounds, and record the response to a postural or exercise challenge.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w11-lab-bp-measurement" data-l="a"><input type="checkbox" id="w11-lab-bp-measurement-a"><label for="w11-lab-bp-measurement-a"><span class="plet">A</span>Draw the arm, the cuff, and the artery under it at three cuff pressures: above systolic, between systolic and diastolic, and below diastolic. In each, draw the vessel cross section, whether blood is moving, and whether the flow is smooth or turbulent. Mark where the first Korotkoff sound appears and where the last one vanishes, and write a real reading. One line: the sounds come from turbulence, so say why silence means two opposite things at the two ends.</label></div>
+      <div class="prompt" data-c="w11-lab-bp-measurement" data-l="b"><input type="checkbox" id="w11-lab-bp-measurement-b"><label for="w11-lab-bp-measurement-b"><span class="plet">B</span>Draw one axis of pressure in mmHg against time in minutes and plot systolic and diastolic for a subject who lies down, stands up suddenly, rests, then steps for two minutes. Mark each transition. Include the brief dip on standing and the recovery after it. One line: name the reflex that closed that dip and say how many seconds you would give it before you worried.</label></div>
   </section>
 
   <div class="chead"><span class="cl">4 competencies</span><h2>Cardiovascular Regulation</h2></div>
   <section class="comp" id="c-w11-baroreflex" aria-labelledby="h-w11-baroreflex">
       <div class="chd"><span class="cnum">10</span><h3 class="cname" id="h-w11-baroreflex">Baroreceptor reflex</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Trace the baroreceptor reflex from the carotid sinus and aortic arch through the medulla to the heart and vessels and state the response to a fall in blood pressure.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w11-baroreflex" data-l="a"><input type="checkbox" id="w11-baroreflex-a"><label for="w11-baroreflex-a"><span class="plet">A</span>Draw the reflex as a labeled loop with every step in it: baroreceptors in the carotid sinus and the aortic arch, the afferent nerves (glossopharyngeal from the carotid, vagus from the arch), the cardiovascular center in the medulla, and both efferent arms, sympathetic and vagal, running to the SA node, the ventricles, the arterioles and the veins. Run a fall in pressure around the loop and write the direction of change at every step. One line: name the step where the signal is less firing, not more.</label></div>
+      <div class="prompt" data-c="w11-baroreflex" data-l="b"><input type="checkbox" id="w11-baroreflex-b"><label for="w11-baroreflex-b"><span class="plet">B</span>Draw the same loop skeleton twice in different colours, once for a fall in blood pressure and once for a rise. On each, mark with up or down arrows the receptor firing rate, sympathetic outflow, vagal outflow, heart rate, contractility, and arteriolar tone. Below them, draw a time axis comparing how fast this reflex acts against the hormonal control of pressure. One line: this reflex resets over days, so say what it cannot fix.</label></div>
   </section>
   <section class="comp" id="c-w11-cv-hormonal" aria-labelledby="h-w11-cv-hormonal">
       <div class="chd"><span class="cnum">11</span><h3 class="cname" id="h-w11-cv-hormonal">Hormonal control of blood pressure</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Describe the roles of angiotensin II, aldosterone, antidiuretic hormone, and atrial natriuretic peptide in long term blood pressure control.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w11-cv-hormonal" data-l="a"><input type="checkbox" id="w11-cv-hormonal-a"><label for="w11-cv-hormonal-a"><span class="plet">A</span>Draw a kidney, a liver, a lung, an adrenal gland, a posterior pituitary and a cardiac atrium on one page and connect them into the renin angiotensin aldosterone pathway in order, labeling where each conversion happens and what does it. Draw angiotensin II leaving for four destinations at once. Then draw atrial natriuretic peptide from the stretched atrium pushing the other way. One line: pick the arm you would block to lower pressure and say what you break along with it.</label></div>
+      <div class="prompt" data-c="w11-cv-hormonal" data-l="b"><input type="checkbox" id="w11-cv-hormonal-b"><label for="w11-cv-hormonal-b"><span class="plet">B</span>Draw a person who has lost a liter of blood, then draw four hormones converging on that person&#39;s blood pressure: angiotensin II, aldosterone, antidiuretic hormone, and atrial natriuretic peptide. For each, draw whether it rises or falls and what it moves, water, sodium, or vessel diameter. Put a time axis under the drawing running from minutes to hours. One line: three of the four pull the same way and one is quiet here, so name it and say why.</label></div>
   </section>
   <section class="comp" id="c-w11-exercise-cv" aria-labelledby="h-w11-exercise-cv">
       <div class="chd"><span class="cnum">12</span><h3 class="cname" id="h-w11-exercise-cv">Cardiovascular response to exercise</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Predict the change in heart rate, stroke volume, cardiac output, total peripheral resistance, and regional blood flow distribution during moderate exercise.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w11-exercise-cv" data-l="a"><input type="checkbox" id="w11-exercise-cv-a"><label for="w11-exercise-cv-a"><span class="plet">A</span>Draw five small graphs in a row, all with time on the x axis running from rest through moderate exercise into recovery: heart rate, stroke volume, cardiac output, total peripheral resistance, and mean arterial pressure. Get the real shape of each, including the plateau in one and the fall in another. One line: output rose and resistance fell, so say what that combination did to mean pressure and why it is not a contradiction.</label></div>
+      <div class="prompt" data-c="w11-exercise-cv" data-l="b"><input type="checkbox" id="w11-exercise-cv-b"><label for="w11-exercise-cv-b"><span class="plet">B</span>Draw a body outline twice, at rest and during moderate exercise, and shade the share of cardiac output going to skeletal muscle, the gut and kidneys, the skin, the brain, and the heart muscle in each. Write the total output beside each figure, about 5 L/min at rest. One line: one of the five gets about the same absolute flow in both drawings, so name it and say what protects it.</label></div>
   </section>
   <section class="comp" id="c-w11-shock-compensation" aria-labelledby="h-w11-shock-compensation">
       <div class="chd"><span class="cnum">13</span><h3 class="cname" id="h-w11-shock-compensation">Compensation in hemorrhage and shock</h3><span class="tag">Lecture</span></div>
       <p class="can"><span class="canlab">You should be able to</span>Sequence the compensatory responses to blood loss and explain the point at which compensation fails.</p>
-      <p class="pick pending">Prompts post when the week opens</p>
+      <p class="pick">Pick one and do that one</p>
+      <div class="prompt" data-c="w11-shock-compensation" data-l="a"><input type="checkbox" id="w11-shock-compensation-a"><label for="w11-shock-compensation-a"><span class="plet">A</span>Draw a time axis running from seconds to days after a serious blood loss and place each compensation where it acts: the baroreceptor reflex, fluid shifting from the interstitium back into the capillaries, thirst and antidiuretic hormone, the renin angiotensin aldosterone system, and erythropoiesis. Draw the blood pressure trace above the axis. One line: only one of these restores oxygen carrying rather than volume, so name it and say how long it needs.</label></div>
+      <div class="prompt" data-c="w11-shock-compensation" data-l="b"><input type="checkbox" id="w11-shock-compensation-b"><label for="w11-shock-compensation-b"><span class="plet">B</span>Draw the compensation first as a negative feedback loop that is holding, then redraw the same loop as a positive feedback spiral: falling pressure, falling coronary and cerebral perfusion, a weaker pump and a failing vasomotor center, falling pressure again. Mark the point where you would say compensation has failed. One line: name the sign at the bedside that tells you the patient has crossed it.</label></div>
   </section>
 
   <p class="foot"><span>BIO 005 Human Physiology &middot; Yuba College &middot; Fall 2026</span><span>Dr. Sharilyn Rennie</span></p>
