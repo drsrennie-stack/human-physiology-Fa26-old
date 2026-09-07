@@ -124,6 +124,8 @@ details .body p{margin:0 0 8px;font-size:14.5px}
 .btn.line:hover{color:var(--rust-dark);border-color:var(--rust-dark)}
 
 .note{font-size:14px;color:#414B5C;max-width:66ch}
+#tools li{margin-bottom:14px}
+.later{display:block;margin-top:4px;font-size:13.5px;font-weight:700;color:#8B3A2E}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
 @media(max-width:620px){.opts{grid-template-columns:1fr}}
 </style>
@@ -166,6 +168,12 @@ details .body p{margin:0 0 8px;font-size:14.5px}
   <h2 id="where-h">Where this week sits in her story</h2>
   <p id="arc"></p>
   <p class="note" id="dateline"></p>
+
+  <section id="toolsec" hidden>
+    <h2 id="tools-h">Before you start</h2>
+    <p>A real patient does not present her physiology in the order a course teaches it, so this week's chart carries one or two things the course has not built yet. Each one below starts from what you are already learning this week and walks it one step further. Nothing here is assumed, and nothing here is something you need to memorize.</p>
+    <div class="card" aria-labelledby="tools-h"><ul id="tools"></ul></div>
+  </section>
 
   <h2 id="chart-h">The chart</h2>
   <p class="note">Everyone reads this, whichever entry point you chose.</p>
@@ -267,6 +275,14 @@ details .body p{margin:0 0 8px;font-size:14.5px}
   document.getElementById('pline').textContent = C.patient.line.split('. ').slice(1).join('. ') + ' ' + C.patient.why;
   document.getElementById('arc').innerHTML = wk.arc;
   document.getElementById('dateline').textContent = wk.encounter + ' · ' + wk.date + ' · ' + wk.when + '.';
+
+  if (wk.tools && wk.tools.length){
+    document.getElementById('toolsec').hidden = false;
+    document.getElementById('tools').innerHTML = wk.tools.map(function(t){
+      var later = t[2] ? ' <span class="later">You build this properly in Week ' + t[2] + '.</span>' : '';
+      return '<li><strong>' + t[0] + '.</strong> ' + t[1] + later + '</li>';
+    }).join('');
+  }
 
   document.getElementById('chart').innerHTML = wk.chart.map(function(row){
     return '<dt>' + row[0] + '</dt><dd>' + row[1] + '</dd>';

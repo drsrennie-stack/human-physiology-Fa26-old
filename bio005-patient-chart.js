@@ -40,6 +40,33 @@
        class-wide patient. The tool is not deleted. See
        compliance-notes.md limitations 17 and 21.
 
+   THE FORWARD REFERENCE PROBLEM, and how it is handled. Scrubs
+   raised this on Sep 7 2026: a real patient does not present her
+   physiology in course order, so a chart entry in Week 3 can contain
+   a bicarbonate of 4 when acid-base is Week 15. An audit found 38
+   forward references in this file. Three rules now govern them.
+
+     1. A NUMBER MAY APPEAR BEFORE ITS WEEK. A student can read
+        "bicarbonate 4" in Week 3 without being asked anything about
+        it. Charts have numbers on them. That is not a problem.
+     2. A TOOL MAY NOT BE ASKED FOR BEFORE IT IS TAUGHT OR HANDED
+        OVER. Where a week's prompt needs a formula, a rule or a
+        definition the course has not reached, the week carries a
+        'tools' entry: the tool written out in full, and the week the
+        student will actually build it. The page renders this as
+        "Before you start" above the chart. Being handed a tool and
+        told plainly that you are being handed it is honest; being
+        expected to already have it is not.
+     3. WHERE THE ASK OVERREACHED, THE ASK WAS CUT. Week 13's
+        medicine prompt used to require Henderson-Hasselbalch as well
+        as Winter's formula. Winter's is handed over, because her
+        breathing in Week 13 makes no sense without it. The
+        Henderson-Hasselbalch half moved to Week 15 where it belongs.
+
+   Each 'tools' item is [name, what the student is given, the week it
+   is properly built]. Weeks with nothing to hand over have no
+   'tools' key and the page renders no box.
+
    ACCURACY. Every value here is internally consistent and meant to
    be checked. The arrival gas satisfies Henderson-Hasselbalch, the
    respiratory compensation satisfies Winter's formula, the anion gap
@@ -139,6 +166,21 @@ window.BIO005_CHART = {
     title:'Membranes, Transport &amp; Compartments',
     date:'September 22, 06:40', when:'Emergency department, arrival',
     encounter:'Arrival in the emergency department',
+    /* Handed over this week. See the forward reference rules in the header:
+       a number may sit on a chart before its week, but a tool may not be
+       asked for before it is taught or handed over, and question 3 asks for
+       a formula the course has not reached. */
+    tools:[
+      ['Correcting a sodium for the glucose',
+       'This week is about water moving between compartments when a solute pulls on it, and her glucose is exactly such a solute: it stays outside her cells and drags water out with it. That water arrives in the extracellular space and dilutes everything already dissolved there, sodium included. So a measured sodium of 128 is not telling you she has lost sodium. It is telling you the water moved, which is the thing you are studying this week. The formula only puts a number on a shift you can already explain: <strong>corrected sodium = measured sodium + 1.6 &times; (glucose &minus; 100) &divide; 100</strong>, with glucose in mg/dL. Some sources use 2.4 rather than 1.6, and here the two differ enough to matter, which is why question 3 asks which one you used.',
+       0],
+      ['Why her bicarbonate is 4',
+       'Bicarbonate is a solute in her extracellular fluid, so it turns up on the same panel as everything else you are working with. Its number is low for a reason that belongs to a system you have not met yet: she is making acid faster than she can buffer it, and bicarbonate is what gets spent doing the buffering. That is the whole of it. Notice the number, and leave it alone. Nothing in this week\'s questions turns on it.',
+       15],
+      ['Minute ventilation',
+       'Respiratory therapy prompt only, and it is a compartment question like every other one this week. Water leaving through her airway is fluid going out of the extracellular space, and unlike her urine it never reaches the intake and output chart. To size that loss you need one number the course has not defined yet: minute ventilation is simply how much air moves in and out each minute, <strong>tidal volume &times; breaths per minute</strong>. Hers is running at roughly four times normal.',
+       13]
+    ],
     arc:'She is brought in by a teammate. This is the entry where the fluid decisions get made, and every one of them is a decision about which compartment you are filling.',
     chart:[
       ['Vitals','HR 128, BP 96/58, RR 32, temperature 36.4 &deg;C (97.5 &deg;F), SpO<sub>2</sub> 99% on room air. Weight 55 kg (121 lb).'],
