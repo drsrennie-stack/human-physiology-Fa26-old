@@ -358,7 +358,7 @@
   html.standalone #screen-back{min-height:100vh;}
   html.standalone #screen-tour{min-height:100vh;}
   /* Content stacks at its natural height and the page ends where the
-     content ends. The stretch-and-centre version below is standalone
+     content ends. The stretch-and-center version below is standalone
      only: inside a Kajabi frame the frame's height is whatever the page
      last reported, so stretching to fill it padded the page out with
      white and pushed the footer far down. */
@@ -639,7 +639,7 @@
   }
   .back-body .chip:hover{background:rgba(244,239,232,.12)}
 
-  /* The manage row was grey-on-off-white; on navy it disappears. */
+  /* The manage row was gray-on-off-white; on navy it disappears. */
   .back-body .manage button{color:#C6CEDA}
   .back-body .manage button:hover{color:var(--gold)}
 
@@ -855,7 +855,7 @@
         <p class="hg-eyebrow">Your weekly hubs</p>
         <p class="hg-now" id="hgNow"></p>
       </div>
-      <p class="hg-instr">Two halves, split at Midterm 1. A week opens the Saturday before it starts, at noon, and stays open for the rest of the term, so you can always go back to one you have finished.</p>
+      <p class="hg-instr">Grouped by which midterm covers them. A week opens the Saturday before it starts, at noon, and stays open for the rest of the term, so you can always go back to one you have finished.</p>
       <div class="hg-modtabs" id="hgModtabs" role="tablist" aria-label="Modules"></div>
       <div class="hg-weeks" id="hgWeeks"></div>
     </section>
@@ -1238,9 +1238,9 @@
      three five week modules with exams at Weeks 5, 10 and 15, which is the
      retired five exam model. */
   var HG_MODULES = [
-    {m:1, name:'First half',  w:[1,2,3,4,5,6,7,8],
+    {m:1, name:'Weeks 1 to 8',  w:[1,2,3,4,5,6,7,8],
      exam:{n:1, wk:8,  window:'Oct 26 to 28', covers:'Weeks 1 to 7'}},
-    {m:2, name:'Second half', w:[9,10,11,12,13,14,15],
+    {m:2, name:'Weeks 9 to 15', w:[9,10,11,12,13,14,15],
      exam:{n:2, wk:15, window:'Dec 14 to 16', covers:'Weeks 8 to 14'}}
   ];
   /* Which exam sits in which week, so a shared week reads as the
@@ -1278,7 +1278,7 @@
     if(now){
       now.innerHTML = cur.preterm
         ? 'Term starts Sep 8. First stop: <b>Week 1</b>.'
-        : 'You are here: <b>' + HG_MODULES[cur.module-1].name + ' &middot; Week ' + cur.week + '</b>.';
+        : 'You are here: <b>Week ' + cur.week + '</b>.';
     }
     var tabs = document.getElementById('hgModtabs');
     var weeksBox = document.getElementById('hgWeeks');
@@ -1320,7 +1320,7 @@
       if(MO.exam){
         var cap = document.createElement('p');
         cap.className = 'hg-endcap';
-        cap.textContent = 'Closes the ' + MO.name.toLowerCase();
+        cap.textContent = 'Closes weeks ' + MO.w[0] + ' to ' + MO.w[MO.w.length-1];
         weeksBox.appendChild(cap);
 
         var x = document.createElement('a');
@@ -1577,11 +1577,11 @@
           '<p>Reach out early. Do not wait for the next midterm, and do not wait until you feel you have earned the right to ask.</p>';
         case 'grades': return '<p>Your grade:</p><ol class="steps">'+
           '<li>Competency note sheets: 20% (weekly; five prompts graded for accuracy, the rest checked complete)</li>'+
-          '<li>Three midterms, draw and teach: 50%</li>'+
+          '<li>Show Me What You Know, two exams, draw and teach: 35%</li>'+
           '<li>Lab in PhysioEx: 15%</li>'+
           '<li>Book problems: 15%</li></ol>'+
           '<p>There is no extra credit and no curve. Full detail in your '+link(l.syllabus,'syllabus',true)+'.</p>';
-        case 'exams': return '<p>Three midterms, and they are not multiple choice. Each one asks you to draw a physiological pathway and teach it on video, out loud, no notes. Midterm 1 covers Weeks 1 to 5, Midterm 2 covers Weeks 6 to 10, Midterm 3 covers Weeks 11 to 15. Every week includes a short ungraded practice round in exactly this format, so the format will be familiar. Exam windows are announced in Canvas and in your '+link(l.syllabus,'syllabus',true)+'.</p>';
+        case 'exams': return '<p>Two exams, and they are not multiple choice. Each one asks you to draw a physiological pathway and teach it on video, out loud, no notes. Midterm 1 covers Weeks 1 to 7, Midterm 2 covers Weeks 8 to 14. Every week includes a short ungraded practice round in exactly this format, so the format will be familiar. Exam windows are announced in Canvas and in your '+link(l.syllabus,'syllabus',true)+'.</p>';
         case 'notesheets': return '<p>The note sheet is your weekly pre-work: one prompt for each competency, worked in a specific order. Read the questions first, preview the text, organize your notes, answer from what you know in your first color, then watch the videos and add what you did not know in a second color. Color two is your commit to memory list. You submit the whole sheet; five prompts are graded for accuracy, you will not know which five, and the rest are checked for completion. It doubles as your midterm study guide.</p>';
         case 'mastery': return '<p>The '+link(MOS,'Mastery OS',true)+' is your study engine: spaced recall cards across all 268 competencies and a gap finder that shows exactly what is weak before a grade depends on it. Open it and set up your plan.</p>';
         case 'labs': return '<p>Your labs run in PhysioEx, inside Pearson. Open our Canvas course, click Access Pearson in the left menu, and purchase there; that one path gets the right package, the labs, and the free eText of our Silverthorn book. Set it up in Week 1. One lab every week, due Sunday at 10:00 pm with everything else.</p>';

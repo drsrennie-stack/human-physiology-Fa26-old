@@ -76,7 +76,7 @@ a.wk.current .s{color:#F5F1E8;font-weight:700;letter-spacing:.09em;text-transfor
 a.wk.done{opacity:.78}
 
 /* A week that has not opened yet. Dimmed AND worded AND marked with a dot,
-   because colour on its own is not a signal. */
+   because color on its own is not a signal. */
 .wk.locked{background:rgba(245,241,232,.07);border:1px dashed rgba(245,241,232,.34);
   color:rgba(245,241,232,.80);cursor:default}
 .wk.locked .m{color:rgba(245,241,232,.82)}                /* 9.3:1 on the panel */
@@ -126,7 +126,7 @@ a.wk.exam:hover,a.wk.exam:focus-visible{background:rgba(201,161,74,.14)}
     <p class="eyebrow" id="navh">Your weekly hubs</p>
     <p class="now" id="now"></p>
   </div>
-  <p class="instr">Two halves, split at Midterm 1. A week opens the Saturday before it starts, at noon, and then stays open for the rest of the term, so you can always go back.</p>
+  <p class="instr">Grouped by which midterm covers them. A week opens the Saturday before it starts, at noon, and then stays open for the rest of the term, so you can always go back.</p>
 
   <div class="tabs" role="tablist" aria-label="Which half of the term" id="tabs"></div>
   <ul class="weeks" id="weeks"></ul>
@@ -166,9 +166,9 @@ a.wk.exam:hover,a.wk.exam:focus-visible{background:rgba(201,161,74,.14)}
      first half runs 1 to 8 and closes on it. Midterm 2 (Dec 14 to 16) falls
      inside Week 15. */
   var HALVES = [
-    { name:'First half',  weeks:[1,2,3,4,5,6,7,8],
+    { name:'Weeks 1 to 8',  weeks:[1,2,3,4,5,6,7,8],
       exam:{ n:1, window:'Oct 26 to 28', covers:'Weeks 1 to 7' } },
-    { name:'Second half', weeks:[9,10,11,12,13,14,15],
+    { name:'Weeks 9 to 15', weeks:[9,10,11,12,13,14,15],
       exam:{ n:2, window:'Dec 14 to 16', covers:'Weeks 8 to 14' } }
   ];
   var EXAM_WEEK = { 8:1, 15:2 };
@@ -210,7 +210,7 @@ a.wk.exam:hover,a.wk.exam:focus-visible{background:rgba(201,161,74,.14)}
 
   var nowEl = document.getElementById('now');
   nowEl.innerHTML = started
-    ? 'You are here: <b>' + HALVES[curHalf-1].name + ' &middot; Week ' + cur + '</b>'
+    ? 'You are here: <b>Week ' + cur + '</b>'
     : 'Term starts Sep 8. First stop: <b>Week 1</b>';
 
   var tabsEl = document.getElementById('tabs');
@@ -264,7 +264,7 @@ a.wk.exam:hover,a.wk.exam:focus-visible{background:rgba(201,161,74,.14)}
 
     var cap = document.createElement('li');
     cap.className = 'endcap';
-    cap.textContent = 'Closes the ' + H.name.toLowerCase();
+    cap.textContent = 'Closes weeks ' + H.weeks[0] + ' to ' + H.weeks[H.weeks.length-1];
     weeksEl.appendChild(cap);
 
     var xli = document.createElement('li');
