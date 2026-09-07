@@ -35,6 +35,10 @@ JOBS = {
     # template and the on screen h1 are the web page around it, and leaving
     # them in gave the PDF a second H1.
     '.sheetpage'),
+ 'BIO005-Week1-NoteSheet-Tall.pdf':
+   ('note-sheet.html?week=1&per=1', 'BIO 005 Week 1 note sheet, one per page',
+    'One competency to a page, so the drawing box is taller than it is wide',
+    '.sheetpage'),
  'BIO005-Week1-Ungraded-Work.pdf':
    ('ungraded-sheet.html?week=1', 'BIO 005 Week 1 ungraded work',
     'Everything ungraded in Week 1: retrieval target, brain dumps, drawing prompts, book problems'),

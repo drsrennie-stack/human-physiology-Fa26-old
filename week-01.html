@@ -374,6 +374,24 @@ button.sheetbtn:hover{color:#6E2D24;border-color:#6E2D24}
 button.sheetbtn[aria-expanded="true"]{background:#0B1530;color:#fff;border-color:#0B1530}
 @media print{.panelwrap{display:none}}
 
+
+/* ---------- the Retrieve cards get an icon, a color and a time ----------
+   Sep 7 2026. Scrubs wanted the little method cards from the Mastery OS
+   track on the week page itself, and a card for the recall bank alongside
+   Draw to Know It. Same shape as the study door tiles: white card, colored
+   tab on the boundary, icon, one line, and how long it takes. The tab color
+   never carries meaning on its own; every card says what it is in words. */
+.choice{position:relative;overflow:hidden}
+.choice::before{content:'';position:absolute;left:0;right:0;top:0;height:5px;background:var(--tab,#8B3A2E)}
+.choice .ico{display:inline-flex;align-items:center;justify-content:center;
+  width:42px;height:42px;border-radius:11px;margin:2px 0 10px;background:var(--tab,#8B3A2E)}
+.choice .ico svg{width:22px;height:22px;stroke:var(--icoink,#fff);fill:none;stroke-width:2;
+  stroke-linecap:round;stroke-linejoin:round}
+.choice .mins{display:block;margin-top:10px;font-size:11px;font-weight:800;
+  letter-spacing:.16em;text-transform:uppercase;color:#4F5468}
+.c-maroon{--tab:#8B3A2E;--icoink:#fff}
+.c-navy{--tab:#0B1530;--icoink:#fff}
+.c-gold{--tab:#C9A14A;--icoink:#0B1530}
 </style>
 </head>
 <body>
@@ -647,35 +665,64 @@ button.sheetbtn[aria-expanded="true"]{background:#0B1530;color:#fff;border-color
     <p class="hint" style="margin-bottom:16px">The target is the same in every mode. Choose the one that will show you your gaps fastest.</p>
 
     <div class="choices">
-      <div class="choice">
-        <h3>Draw it</h3>
-        <p>Boxes and arrows on paper, labels only, no sentences. The fastest way to find a missing component.</p>
+
+      <div class="choice c-gold">
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 19l7-7a2.8 2.8 0 0 0-4-4l-7 7-1 5z"/><path d="M4 20h6"/></svg></span>
+        <h3>Draw to know it</h3>
+        <p>Boxes and arrows, labels only, no sentences. The fastest way to find a missing component.</p>
+        <span class="mins">20 min</span>
         <p class="go"><button type="button" class="sheetbtn" aria-expanded="false" aria-controls="panel-sheet"
                 data-panel="panel-sheet" data-src="ungraded-sheet.html?week=1&amp;embed=1#dr-h">All the drawing prompts</button></p>
+        <p class="go" style="margin-top:8px"><a href="mastery-canvas.html?week=1" target="_blank" rel="noopener">Or draw it on screen &#8599;</a></p>
       </div>
-      <div class="choice">
+
+      <div class="choice c-navy">
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="14" height="12" rx="2"/><path d="M7 3h14v12"/></svg></span>
+        <h3>Recall cards</h3>
+        <p>Spaced recall over this week's competencies, with the reason every answer is right or wrong. It brings Week 1 back in October, which is the whole point of spacing.</p>
+        <span class="mins">10 min</span>
+        <p class="go"><a href="mastery-physio-os-standalone.html?week=1" target="_blank" rel="noopener">Open the recall cards &#8599;</a></p>
+      </div>
+
+      <div class="choice c-navy">
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 3h11l4 4v14H5z"/><path d="M15 3v5h5"/><path d="M9 12h6M9 16h4"/></svg></span>
         <h3>Brain dump it</h3>
-        <p>Blank page, three minutes, write down everything you can about the loop. Then check what you left out.</p>
+        <p>Blank page, three minutes, everything you can get down about the loop. Then check what you left out, in a second color.</p>
+        <span class="mins">3 min each</span>
+        <p class="go"><a href="braindump-week01.html" target="_blank" rel="noopener">Open the brain dumps &#8599;</a></p>
       </div>
-      <div class="choice">
-        <h3>Explain it out loud</h3>
-        <p>Say it to an empty room, or record yourself. Where you stall is the gap. Nobody has to hear it.</p>
+
+      <div class="choice c-maroon">
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v9"/><rect x="9" y="3" width="6" height="9" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v3"/></svg></span>
+        <h3>Teach it out loud</h3>
+        <p>Say it to an empty room, or record yourself. Where you stall is the gap, and it is the fastest diagnostic on this page. Nobody has to hear it.</p>
+        <span class="mins">10 min</span>
       </div>
-      <div class="choice">
+
+      <div class="choice c-maroon">
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20h4v-5h4v-5h4V5h4"/></svg></span>
         <h3>Reconstruct the process</h3>
         <p>Write the seven steps of the reflex pathway in order from memory, then trace temperature through every one.</p>
+        <span class="mins">10 min</span>
       </div>
-      <div class="choice">
+
+      <div class="choice c-gold">
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg></span>
         <h3>Quiz yourself on a fresh draw</h3>
-        <p>Ten questions, built new every time you press it, so a second run measures what you learned rather than what you remembered. Every attempt is logged with the competencies that need another pass.</p>
+        <p>Ten questions, built new every time, so a second run measures what you learned rather than what you remembered. Every attempt is logged with the competencies that need another pass.</p>
+        <span class="mins">15 min</span>
         <p class="go"><a href="practice-exam.html?week=1&amp;n=10" target="_blank" rel="noopener">Build a 10 question draw &#8599;</a></p>
       </div>
-      <div class="choice">
+
+      <div class="choice c-navy">
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 4h11a3 3 0 0 1 3 3v13H7a3 3 0 0 1-3-3z"/><path d="M18 7h2v13H7"/></svg></span>
         <h3>Work the book problems</h3>
         <p>Silverthorn Chapter 1. Try them cold if you have a way in. If you open one and have no idea where to start, read the solution and write why each step is there, then reproduce it from blank paper. Both count.</p>
+        <span class="mins">45 min</span>
         <p class="go"><button type="button" class="sheetbtn" aria-expanded="false" aria-controls="panel-book"
                 data-panel="panel-book" data-src="ungraded-sheet.html?week=1&amp;embed=1#bk-h">The problems, and the two routes</button></p>
       </div>
+
     </div>
 
     <div class="panelwrap">

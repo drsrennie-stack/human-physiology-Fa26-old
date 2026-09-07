@@ -308,25 +308,62 @@ a{color:var(--maroon-dark);font-weight:700}
 .picklab{font-size:9.5px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;
   color:var(--rust,#8B3A2E);margin:11px 0 6px}
 .prompts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.pk{position:relative;padding:8px 10px 8px 40px;border:1px solid var(--hair);border-radius:6px;
+.pk{position:relative;padding:8px 10px 8px 46px;border:1px solid var(--hair);border-radius:6px;
   font-size:11.5px;line-height:1.42}
 .pk .tick{position:absolute;left:10px;top:8px;width:13px;height:13px;
   border:1.2px solid var(--navy);border-radius:2px;display:inline-block}
-.pk .lt{position:absolute;left:27px;top:7px;font-weight:800;color:var(--rust,#8B3A2E);font-size:11.5px}
+.pk .lt{position:absolute;left:31px;top:7px;font-weight:800;color:var(--rust,#8B3A2E);font-size:11.5px}
 .pk .tx{display:block}
 @media (max-width:820px){.prompts{grid-template-columns:1fr}}
 @media print{
   .picklab{font-size:7.6pt;margin:0.07in 0 0.04in}
   .prompts{gap:0.08in}
-  .pk{font-size:7.8pt;line-height:1.34;padding:0.05in 0.07in 0.05in 0.26in;border:.5pt solid #999}
-  .pk .tick{left:0.06in;top:0.055in;width:8.5pt;height:8.5pt;border:.7pt solid #000}
-  .pk .lt{left:0.17in;top:0.05in;font-size:7.8pt}
+  .pk{font-size:6.8pt;line-height:1.24;padding:0.04in 0.055in 0.04in 0.29in;border:.5pt solid #999}
+  .pk .tick{left:0.05in;top:0.05in;width:7.5pt;height:7.5pt;border:.7pt solid #000}
+  .pk .lt{left:0.185in;top:0.042in;font-size:7pt}
+  /* the left column has to fit whatever the longest prompt pair is */
+  .info .can{font-size:7.4pt;line-height:1.3}
+  .info .ptitle h2{font-size:9.6pt;line-height:1.16}
+  .info .meta{font-size:6.2pt;gap:0.06in;line-height:1.2}
+  /* the pass-colour lines must not be the thing that clips */
+  .info .meta .cl{width:0.62in}
   /* the box gives up the room the prompts take, and stays usable */
   .d1 .sp.open{min-height:0}
   .d2 .sp.open{min-height:0}
   .d3 .sp.open{min-height:0}
 }
 @media (forced-colors:active){.pk,.pk .tick{border:1px solid CanvasText}}
+
+/* ---------- INFORMATION LEFT, BOX RIGHT AND TALL ----------
+   Sep 7 2026. Scrubs: put the information on the left, even stacked
+   vertically, and let the square take the rest, so the drawing box ends up
+   taller than it is wide. It was a wide short strip before, which is the
+   wrong shape for a mechanism drawn top to bottom.
+
+   The left column is a fixed width rather than a percentage, because the
+   prompts have to stay readable and a percentage column collapses at three
+   competencies to a page. The box takes whatever is left and stretches to
+   the full height of the row. Narrow screens stack, since a 2.3in column
+   beside a box does not survive a phone. */
+.pg{display:grid;grid-template-columns:270px minmax(0,1fr);gap:16px;align-items:stretch}
+.info{min-width:0;display:flex;flex-direction:column}
+.info .prompts{grid-template-columns:1fr}      /* stacked in a narrow column */
+.info .meta{margin-top:auto;padding-top:10px}  /* pass colors sit at the foot */
+.grid{margin-top:0}
+@media (max-width:900px){
+  .pg{grid-template-columns:1fr}
+  .info .prompts{grid-template-columns:1fr 1fr}
+  .info .meta{margin-top:10px}
+}
+@media print{
+  .pg{grid-template-columns:2.25in minmax(0,1fr);gap:0.16in}
+  .info .prompts{grid-template-columns:1fr;gap:0.06in}
+  .info .meta{margin-top:auto;padding-top:0.06in}
+  .grid{margin-top:0}
+}
+.pdflinks{font-size:13px;color:#414B5C;margin-left:auto}
+.pdflinks a{font-weight:700}
+@media print{.pdflinks{display:none}}
 </style>
 </head>
 <body>
@@ -371,6 +408,10 @@ a{color:var(--maroon-dark);font-weight:700}
     </span>
   </fieldset>
   <span class="cnt" id="cnt"></span>
+  <span class="pdflinks">Tagged PDF:
+    <a href="BIO005-Week1-NoteSheet.pdf" target="_blank" rel="noopener">two to a page</a> &middot;
+    <a href="BIO005-Week1-NoteSheet-Tall.pdf" target="_blank" rel="noopener">one to a page, taller box</a>
+  </span>
 </div></div>
 
 <div class="band">
@@ -487,6 +528,7 @@ a{color:var(--maroon-dark);font-weight:700}
 
     return '' +
     '<article class="pg">' +
+      '<div class="info">' +
       '<div class="ptitle">' +
         '<span>' + num + '<span class="numlab">' + (BLANK ? "No." : "Comp") + '</span></span>' +
         '<span style="flex:1"><h2>' + name + '</h2>' +
@@ -514,6 +556,8 @@ a{color:var(--maroon-dark);font-weight:700}
         '<span>Pass 1 color <i class="cl" aria-hidden="true"></i></span>' +
         '<span>Pass 2 color <i class="cl" aria-hidden="true"></i></span>' +
         (it.lab ? '<span>Also a lab skill</span>' : '') +
+      '</div>' +
+
       '</div>' +
 
       '<div class="grid">' +
