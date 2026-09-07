@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Week 13 competencies &middot; BIO 005 Human Physiology</title>
+<link rel="icon" type="image/svg+xml" href="icon.svg">
+<link rel="stylesheet" href="assets/fonts-site.css">
+<link rel="stylesheet" href="assets/brandbar.css">
+<style>
+:root{
+  --navy:#0B1530; --navy-deep:#060A18; --tint:#ECEFF4;
+  --gold:#C9A14A; --gold-deep:#8A6D33;
+  --maroon:#8B3A2E; --maroon-dk:#6E2D24;
+  --page:#FAFAF9; --card:#FFFFFF;
+  --muted:#414B5C; --faint:#5A6675; --rule:rgba(11,21,48,.16);
+  --display:'Open Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+  --body:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0}
+body{font-family:var(--body);background:var(--page);color:var(--navy);font-size:16px;
+  line-height:1.65;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--display);font-weight:800;letter-spacing:-.022em;margin:0}
+p{margin:0 0 14px;max-width:70ch}
+a{color:var(--maroon);text-underline-offset:3px}
+a:hover{color:var(--maroon-dk)}
+:focus-visible{outline:3px solid var(--maroon);outline-offset:3px;border-radius:3px}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+.skip{position:absolute;left:-9999px;top:0;z-index:90;background:var(--navy);color:#fff;
+  padding:12px 18px;font-weight:700;text-decoration:none}
+.skip:focus{left:0;top:0}
+
+header.top{background:var(--navy-deep);color:#fff;padding:34px 0 30px}
+header.top .eyebrow{font-size:11px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--gold);margin:0 0 10px}
+header.top h1{font-size:clamp(26px,4.4vw,38px);line-height:1.14;color:#fff;max-width:24ch}
+header.top p.sub{color:#D7DCE3;margin:12px 0 0;font-size:16px}
+
+.homebar{max-width:1000px;margin:0 auto;padding:16px 20px 0}
+.home{display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:#fff;
+  text-decoration:none;font-weight:700;font-size:14.5px;border-radius:8px;padding:9px 15px;
+  transition:background 160ms ease}
+.home:hover{background:var(--maroon);color:#fff}
+
+.pwrap{background:var(--card);border:1px solid var(--rule);border-radius:10px;
+  padding:16px 20px;margin:22px 0 0}
+.pbar{height:9px;background:var(--tint);border-radius:99px;overflow:hidden;margin-top:9px}
+.pfill{height:100%;width:0;background:var(--maroon);border-radius:99px;transition:width 260ms ease}
+.pnote{font-size:12.5px;color:var(--muted);margin:7px 0 0}
+
+main{padding:8px 0 60px}
+.chead{border-left:4px solid var(--maroon);padding:2px 0 2px 16px;margin:32px 0 6px}
+.chead .cl{font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--maroon);display:block;margin-bottom:4px}
+.chead h2{font-size:21px}
+
+.comp{background:var(--card);border:1px solid var(--rule);border-radius:10px;
+  padding:18px 20px;margin:12px 0;break-inside:avoid}
+.comp.done{background:var(--tint);border-color:var(--maroon)}
+.chd{display:flex;gap:11px;align-items:baseline;flex-wrap:wrap}
+.cnum{font-family:var(--display);font-weight:800;font-size:14px;color:var(--maroon);
+  white-space:nowrap;font-variant-numeric:tabular-nums}
+.cname{font-family:var(--display);font-weight:800;font-size:17.5px;letter-spacing:-.02em}
+.tag{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  border:1px solid var(--rule);border-radius:99px;padding:2px 9px;color:var(--faint);white-space:nowrap}
+.tag.lab{color:var(--maroon);border-color:var(--maroon)}
+.can{font-size:15px;color:var(--navy);margin:9px 0 0}
+.canlab{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--faint);display:block;margin-bottom:3px}
+.pick{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--faint);margin:16px 0 8px}
+.pick.pending{color:#5F4514}
+.prompt{display:flex;gap:11px;align-items:flex-start;padding:11px 13px;
+  border:1px solid var(--rule);border-radius:7px;margin:0 0 8px;background:var(--card)}
+.prompt:last-child{margin-bottom:0}
+.prompt input[type=checkbox]{flex:0 0 auto;width:22px;height:22px;margin:1px 0 0;
+  accent-color:var(--maroon);cursor:pointer}
+.prompt label{cursor:pointer;margin:0;font-size:14.5px}
+.prompt.checked{background:var(--tint);border-color:var(--maroon)}
+.plet{font-family:var(--display);font-weight:800;color:var(--maroon-dk);margin-right:7px}
+
+.foot{margin:40px 0 0;padding-top:18px;border-top:1px solid var(--rule);
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-size:13px;color:var(--muted)}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+@media print{
+  .mm-brandbar,.mm-jumpwrap,.homebar,.pwrap,.skip{display:none!important}
+  body{background:#fff;font-size:10.5pt}
+  .comp{break-inside:avoid;border-color:#999}
+  header.top{background:#fff;color:#000;padding:0 0 12pt}
+  header.top h1{color:#000}header.top .eyebrow{color:#000}header.top p.sub{color:#000}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the competencies</a>
+
+<div class="mm-brandbar"><div class="mm-wrap">
+  <a class="mm-mark" href="course-start.html" target="_top">
+    <span class="mm-wm">Med<b>Masters</b><span class="mm-wmsub">Collaborative</span></span>
+  </a>
+  <span class="mm-course">BIO 005 &middot; Human Physiology</span>
+</div></div>
+
+<div class="homebar"><a class="home" href="course-start.html" target="_top">
+  <span aria-hidden="true">&larr;</span> Course home</a></div>
+
+<div class="mm-jumpwrap">
+  <span class="lbl">Week 13</span>
+  <ul class="mm-jump">
+    <li><a class="j-note" href="note-sheet.html?week=13" target="_top" title="Week 13 note sheet">N<span class="mm-vh">Week 13 note sheet</span></a></li>
+    <li><a class="j-prob" href="assignment-bookproblems.html?week=13" target="_top" title="Week 13 problems">P<span class="mm-vh">Week 13 problems</span></a></li>
+    <li><a class="j-lab" href="assignment-physioex.html?week=13" target="_top" title="Week 13 lab">L<span class="mm-vh">Week 13 lab</span></a></li>
+    <li><a class="j-disc" href="assignment-discussion.html?week=13" target="_top" title="Week 13 discussion">D<span class="mm-vh">Week 13 discussion</span></a></li>
+    <li><a class="j-study" href="mastery-physio-os-standalone.html?week=13" target="_top" title="Week 13 study session">S<span class="mm-vh">Week 13 study session</span></a></li>
+  </ul>
+</div>
+
+<header class="top"><div class="wrap">
+  <p class="eyebrow">BIO 005 &middot; Week 13 &middot; Part 3</p>
+  <h1>Everything Week 13 asks you to be able to do.</h1>
+  <p class="sub">Breathing, gas transport, and the fast pH lever. 24 competencies, each one a single thing you will be able to do by Sunday, December 6.</p>
+</div></header>
+
+<div class="wrap">
+  <div class="pwrap">
+    <p style="margin:0;font-size:14px"><strong id="pcount">0 of 24</strong> picked</p>
+    <div class="pbar" role="progressbar" aria-labelledby="pcount" aria-valuemin="0" aria-valuemax="24" aria-valuenow="0"><div class="pfill" id="pfill"></div></div>
+    <p class="pnote">Tick the prompt you are going to do for each competency. Your ticks stay on this device, so you can come back to the same list.</p>
+  </div>
+</div>
+
+<main id="main"><div class="wrap">
+
+  <div class="chead"><span class="cl">10 competencies</span><h2>Respiratory Mechanics</h2></div>
+  <section class="comp" id="c-w12-respiratory-functions" aria-labelledby="h-w12-respiratory-functions">
+      <div class="chd"><span class="cnum">1</span><h3 class="cname" id="h-w12-respiratory-functions">Functions and functional zones</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>State the functions of the respiratory system and distinguish the conducting zone from the respiratory zone by structure and by role in gas exchange.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w12-ventilation-mechanics" aria-labelledby="h-w12-ventilation-mechanics">
+      <div class="chd"><span class="cnum">2</span><h3 class="cname" id="h-w12-ventilation-mechanics">Pressure gradients and airflow</h3><span class="tag">Lecture</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Apply Boyle&#39;s law to inspiration and expiration and relate alveolar pressure to atmospheric pressure at each point in a quiet breath.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w12-intrapleural-pressure" aria-labelledby="h-w12-intrapleural-pressure">
+      <div class="chd"><span class="cnum">3</span><h3 class="cname" id="h-w12-intrapleural-pressure">Intrapleural pressure</h3><span class="tag">Lecture</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Explain why intrapleural pressure is subatmospheric and predict what happens to the lung and chest wall when the pleural seal is broken.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w12-compliance" aria-labelledby="h-w12-compliance">
+      <div class="chd"><span class="cnum">4</span><h3 class="cname" id="h-w12-compliance">Compliance and elastic recoil</h3><span class="tag">Lecture</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Define lung compliance and elastic recoil and predict the effect of fibrosis and of emphysema on each.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w12-surfactant" aria-labelledby="h-w12-surfactant">
+      <div class="chd"><span class="cnum">5</span><h3 class="cname" id="h-w12-surfactant">Surfactant and surface tension</h3><span class="tag">Lecture</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Explain how surfactant lowers surface tension and why its absence causes alveolar collapse in the premature newborn.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w12-airway-resistance" aria-labelledby="h-w12-airway-resistance">
+      <div class="chd"><span class="cnum">6</span><h3 class="cname" id="h-w12-airway-resistance">Airway resistance</h3><span class="tag">Lecture</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Identify the main determinant of airway resistance and predict the effect of bronchoconstriction, mucus, and sympathetic stimulation on airflow.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w12-lung-volumes" aria-labelledby="h-w12-lung-volumes">
+      <div class="chd"><span class="cnum">7</span><h3 class="cname" id="h-w12-lung-volumes">Lung volumes and capacities</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Define tidal volume, inspiratory and expiratory reserve volume, residual volume, vital capacity, and total lung capacity and read each from a spirogram.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w12-spirometry-patterns" aria-labelledby="h-w12-spirometry-patterns">
+      <div class="chd"><span class="cnum">8</span><h3 class="cname" id="h-w12-spirometry-patterns">Obstructive and restrictive patterns</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Use the ratio of forced expiratory volume in one second to forced vital capacity to classify a spirometry result as obstructive or restrictive.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w12-dead-space" aria-labelledby="h-w12-dead-space">
+      <div class="chd"><span class="cnum">9</span><h3 class="cname" id="h-w12-dead-space">Alveolar ventilation and dead space</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Calculate minute ventilation and alveolar ventilation and explain why slow deep breathing ventilates the alveoli better than rapid shallow breathing.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w12-lab-spirometry" aria-labelledby="h-w12-lab-spirometry">
+      <div class="chd"><span class="cnum">10</span><h3 class="cname" id="h-w12-lab-spirometry">Spirometry</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Record a spirogram, calculate the lung volumes and capacities available from it, and compare the results with predicted values.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+
+  <div class="chead"><span class="cl">8 competencies</span><h2>Gas Exchange and Transport</h2></div>
+  <section class="comp" id="c-w12-partial-pressures" aria-labelledby="h-w12-partial-pressures">
+      <div class="chd"><span class="cnum">11</span><h3 class="cname" id="h-w12-partial-pressures">Partial pressures</h3><span class="tag">Lecture</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Apply Dalton&#39;s law to calculate the partial pressure of oxygen in inspired and alveolar air and state the normal partial pressures in alveolar air, arterial blood, and venous blood.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w12-gas-diffusion" aria-labelledby="h-w12-gas-diffusion">
+      <div class="chd"><span class="cnum">12</span><h3 class="cname" id="h-w12-gas-diffusion">Diffusion at the respiratory membrane</h3><span class="tag">Lecture</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Apply the determinants of diffusion to the respiratory membrane and predict the effect of edema, fibrosis, and emphysema on gas transfer.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w12-va-q-matching" aria-labelledby="h-w12-va-q-matching">
+      <div class="chd"><span class="cnum">13</span><h3 class="cname" id="h-w12-va-q-matching">Ventilation perfusion matching</h3><span class="tag">Lecture</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Explain how local hypoxic vasoconstriction and bronchiolar responses match ventilation to perfusion and predict the consequence of a mismatch.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w12-oxygen-transport" aria-labelledby="h-w12-oxygen-transport">
+      <div class="chd"><span class="cnum">14</span><h3 class="cname" id="h-w12-oxygen-transport">Oxygen transport and the oxyhemoglobin curve</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Explain the sigmoid shape of the oxyhemoglobin dissociation curve and state the physiological advantage of the steep and the flat portions.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w12-hb-curve-shifts" aria-labelledby="h-w12-hb-curve-shifts">
+      <div class="chd"><span class="cnum">15</span><h3 class="cname" id="h-w12-hb-curve-shifts">Curve shifts</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Predict the direction of the oxyhemoglobin curve shift produced by a change in pH, carbon dioxide, temperature, or 2,3 bisphosphoglycerate and state what the shift means for tissue oxygen delivery.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w12-co2-transport" aria-labelledby="h-w12-co2-transport">
+      <div class="chd"><span class="cnum">16</span><h3 class="cname" id="h-w12-co2-transport">Carbon dioxide transport</h3><span class="tag">Lecture</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Name the three forms in which carbon dioxide is carried, state the approximate percentage of each, and trace the chloride shift in a systemic capillary.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w12-bohr-haldane" aria-labelledby="h-w12-bohr-haldane">
+      <div class="chd"><span class="cnum">17</span><h3 class="cname" id="h-w12-bohr-haldane">Bohr and Haldane effects</h3><span class="tag">Lecture</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Distinguish the Bohr effect from the Haldane effect and explain how the two work together at the tissue and at the lung.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w12-oxygen-content" aria-labelledby="h-w12-oxygen-content">
+      <div class="chd"><span class="cnum">18</span><h3 class="cname" id="h-w12-oxygen-content">Oxygen content versus partial pressure</h3><span class="tag">Lecture</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Distinguish oxygen content from oxygen partial pressure and saturation and explain why anemia and carbon monoxide poisoning reduce delivery differently.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+
+  <div class="chead"><span class="cl">4 competencies</span><h2>Control of Ventilation</h2></div>
+  <section class="comp" id="c-w12-respiratory-centers" aria-labelledby="h-w12-respiratory-centers">
+      <div class="chd"><span class="cnum">19</span><h3 class="cname" id="h-w12-respiratory-centers">Respiratory centers</h3><span class="tag">Lecture</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Identify the medullary and pontine respiratory centers and explain how the basic breathing rhythm is generated and modified.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w12-chemoreceptors" aria-labelledby="h-w12-chemoreceptors">
+      <div class="chd"><span class="cnum">20</span><h3 class="cname" id="h-w12-chemoreceptors">Chemoreceptor control</h3><span class="tag">Lecture</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Compare central and peripheral chemoreceptors by stimulus and explain why carbon dioxide is the primary minute to minute drive to breathe.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w12-ventilation-adaptation" aria-labelledby="h-w12-ventilation-adaptation">
+      <div class="chd"><span class="cnum">21</span><h3 class="cname" id="h-w12-ventilation-adaptation">Ventilation in exercise and at altitude</h3><span class="tag">Lecture</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Predict the ventilatory response to exercise and to acute and chronic altitude exposure and explain the acclimatization changes.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w12-lab-ventilation-response" aria-labelledby="h-w12-lab-ventilation-response">
+      <div class="chd"><span class="cnum">22</span><h3 class="cname" id="h-w12-lab-ventilation-response">Ventilatory response testing</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Measure the change in breathing rate and depth after hyperventilation, breath holding, and rebreathing and explain each result by the change in carbon dioxide.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+
+  <div class="chead"><span class="cl">2 competencies</span><h2>Acid Base and Fluid Balance</h2></div>
+  <section class="comp" id="c-w13-buffer-systems" aria-labelledby="h-w13-buffer-systems">
+      <div class="chd"><span class="cnum">23</span><h3 class="cname" id="h-w13-buffer-systems">Buffer systems</h3><span class="tag">Lecture</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Compare the bicarbonate, phosphate, and protein buffer systems by location and speed and explain why bicarbonate is the dominant extracellular buffer.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w13-respiratory-ph-control" aria-labelledby="h-w13-respiratory-ph-control">
+      <div class="chd"><span class="cnum">24</span><h3 class="cname" id="h-w13-respiratory-ph-control">Respiratory control of pH</h3><span class="tag">Lecture</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Explain how a change in ventilation shifts the carbon dioxide and bicarbonate equilibrium and therefore plasma pH.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+
+  <p class="foot"><span>BIO 005 Human Physiology &middot; Yuba College &middot; Fall 2026</span><span>Dr. Sharilyn Rennie</span></p>
+</div></main>
+
+<script>
+(function(){
+  var KEY = 'bio005-comp-week-13';
+  var state = {};
+  try { state = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch(e) { state = {}; }
+
+  var rows = [].slice.call(document.querySelectorAll('.prompt'));
+  var total = 24;
+
+  function paint(){
+    var picked = 0, seen = {};
+    rows.forEach(function(r){
+      var c = r.getAttribute('data-c'), l = r.getAttribute('data-l');
+      var on = state[c] === l;
+      r.classList.toggle('checked', on);
+      r.querySelector('input').checked = on;
+      var comp = document.getElementById('c-' + c);
+      if (comp) comp.classList.toggle('done', !!state[c]);
+      if (state[c] && !seen[c]) { seen[c] = 1; picked++; }
+    });
+    var pct = total ? Math.round(picked / total * 100) : 0;
+    document.getElementById('pfill').style.width = pct + '%';
+    document.getElementById('pcount').textContent = picked + ' of ' + total;
+    var bar = document.querySelector('.pbar');
+    if (bar) bar.setAttribute('aria-valuenow', picked);
+  }
+
+  rows.forEach(function(r){
+    r.querySelector('input').addEventListener('change', function(){
+      var c = r.getAttribute('data-c'), l = r.getAttribute('data-l');
+      /* one prompt per competency: ticking B unticks A */
+      state[c] = (state[c] === l) ? null : l;
+      if (!state[c]) delete state[c];
+      try { localStorage.setItem(KEY, JSON.stringify(state)); } catch(e) {}
+      paint();
+    });
+  });
+  paint();
+}());
+</script>
+
+<script>
+(function(){var id=document.title.replace(/\W+/g,'-').toLowerCase();
+function post(){try{parent.postMessage({frame:id,height:document.documentElement.scrollHeight},'*');}catch(e){}}
+if('ResizeObserver' in window){new ResizeObserver(post).observe(document.documentElement);}
+window.addEventListener('load',post);window.addEventListener('resize',post);post();})();
+</script>
+</body>
+</html>

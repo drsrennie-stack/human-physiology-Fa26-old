@@ -327,8 +327,8 @@ footer{border-top:1px solid var(--rule);padding:22px 0 34px;font-size:13.5px;col
 
 
 <header class="top"><div class="wrap">
-  <p class="eyebrow">BIO 005 &middot; Week 1 &middot; Silverthorn chapters 1 and 6</p>
-  <h1>Everything these two chapters ask you to be able to do.</h1>
+  <p class="eyebrow">BIO 005 &middot; Week 1 &middot; Silverthorn chapter 1</p>
+  <h1>Everything Week 1 asks you to be able to do.</h1>
   <p>Each competency is written out in full, with two brain dump prompts underneath it. Pick one prompt per competency and do that one on your note sheet. You do not need to open any other list.</p>
   <p class="btnrow">
     <!-- These used to be: how to build the sheet, week 1 reading, full 268 list.
@@ -575,7 +575,7 @@ footer{border-top:1px solid var(--rule);padding:22px 0 34px;font-size:13.5px;col
 
      Set it back to true the moment the recording is posted.
      ------------------------------------------------------------------ */
-  var SHOW = { ch1:true, ch6:true, skills:true };
+  var SHOW = { ch1:true, skills:true };
 
   var GROUPS = {
     ch1: { label:"Silverthorn chapter 1",
@@ -583,10 +583,7 @@ footer{border-top:1px solid var(--rule);padding:22px 0 34px;font-size:13.5px;col
            desc:"What physiology asks, homeostasis, mass balance, the reflex pathway, and the two kinds of feedback." },
     skills:{ label:"Concept 13 and the lab",
            title:"Doing physiology as a science",
-           desc:"How a physiology claim gets tested, and how you tell a real difference from noise." },
-    ch6: { label:"Silverthorn chapter 6",
-           title:"How signals travel",
-           desc:"The four routes cells use to reach each other, where a receptor sits and why, how one bound molecule becomes a large response, and how a cell changes its own sensitivity." }
+           desc:"How a physiology claim gets tested, and how you tell a real difference from noise." }
   };
 
   var COMPS = [
@@ -623,86 +620,57 @@ footer{border-top:1px solid var(--rule);padding:22px 0 34px;font-size:13.5px;col
    can:"Predict how a change in the structure of a molecule, cell, tissue, or organ alters its function, using examples from two different organ systems.",
    a:"Draw one structure from this week and label the single feature that makes its job possible. Then sketch what would stop working if that feature changed.",
    b:"List three structures from this week. Beside each, write the one property its function depends on, in six words or fewer."},
-  {n:3, g:"ch1", id:"fluid-compartments", lab:true,
-   name:"Body fluid compartments",
-   can:"State the approximate volumes of total body water, intracellular fluid, extracellular fluid, plasma, and interstitial fluid in a 70 kg adult and compare the dominant solutes of the intracellular and extracellular compartments.",
-   a:"Draw the fluid compartments top down with the fractions. Use one border style for inside cells and a different one for outside.",
-   b:"On a compartment drawing, mark where a blood sample is taken and which compartment you are actually drawing a conclusion about."},
-  {n:4, g:"ch1", id:"compartment-shifts", lab:false,
-   name:"Compartment separation and clinical volume shifts",
-   can:"Predict the direction of water movement between compartments when extracellular osmolarity rises or falls and name a clinical situation that produces each shift.",
-   a:"Draw a patient with swollen ankles and a low blood pressure. Use arrows to show where the water went.",
-   b:"Draw three scenarios: water gained in the vessels, water lost from the body, water moved into tissue. Predict blood pressure under each."},
-  {n:5, g:"ch1", id:"homeostasis", lab:false,
+  {n:3, g:"ch1", id:"homeostasis", lab:false,
    name:"Homeostasis defined",
    can:"Define homeostasis, regulated variable, and setpoint, and distinguish homeostasis from chemical equilibrium and from steady state.",
    a:"Write the definition of homeostasis, then underline the three words doing the real work. Beside each underlined word, one line on why it matters.",
    b:"Draw two graphs side by side, a value in steady state and a value at equilibrium. On each, label what is still moving and what it costs."},
-  {n:6, g:"ch1", id:"mass-balance", lab:true,
+  {n:4, g:"ch1", id:"mass-balance", lab:true,
    name:"Mass balance",
    can:"Apply the mass balance equation to a solute or to body water and calculate the intake, production, and output combination that holds the amount in the body constant.",
    a:"Write the mass balance equation and label every term. Then draw a body outline with arrows in and out for sodium, labeling which arrow is which term.",
    b:"Work a mass balance for one substance across one day. Then change a single term and show the new result underneath."},
-  {n:7, g:"ch1", id:"mass-flow-clearance", lab:false,
-   name:"Mass flow and clearance",
-   can:"Calculate mass flow as concentration times volume flow, and clearance as rate of removal divided by plasma concentration, and explain why two patients with the same concentration can have very different delivery.",
-   a:"Write both equations from memory with the units written under every term, and show the units cancelling. Then work the two patient case: identical oxygen content, one with half the cardiac output. Numbers, not sentences.",
-   b:"Draw one vessel delivering to a tissue. Label the concentration and the volume flow. Draw it again with the flow halved and write what happened to delivery. Then say in one line which one you would change first in a patient, and why."},
-  {n:8, g:"ch1", id:"feedback-components", lab:true,
+  {n:5, g:"ch1", id:"feedback-components", lab:true,
    name:"Feedback loop components",
    can:"Diagram a negative feedback loop labeling stimulus, sensor, afferent path, integrating center, efferent path, effector, and response, and trace body temperature or blood glucose through every step.",
    a:"Draw the five component reflex pathway top down and label all five plus the feedback arrow. Labels only, no sentences.",
    b:"Fill in the five components for thermoregulation on a cold day. Then mark which component you would suspect first if the patient never shivered."},
-  {n:9, g:"ch1", id:"control-pathways", lab:false,
+  {n:6, g:"ch1", id:"control-pathways", lab:false,
    name:"Local and reflex control pathways",
    can:"Distinguish a local control pathway from a long distance reflex pathway and classify a given response as one or the other.",
    a:"Draw a local control example and a reflex control example side by side. On each, mark how far the signal travels.",
    b:"Standing up suddenly: draw the reflex, label all five components, and write one line on why local control could not have handled it."},
-  {n:10, g:"ch1", id:"feedback-types", lab:false,
+  {n:7, g:"ch1", id:"feedback-types", lab:false,
    name:"Negative and positive feedback",
    can:"Distinguish negative from positive feedback by the direction of the response and give a physiological example of each, explaining why a positive feedback loop needs an outside event to end it.",
    a:"Draw one negative feedback loop and one positive feedback loop as arrow diagrams. On each, mark what makes it stop.",
    b:"Draw clotting as a positive feedback loop, then show what ends it. Underneath, write one line on why the body can afford to use positive feedback here."},
-  {n:11, g:"ch1", id:"feedforward", lab:false,
+  {n:8, g:"ch1", id:"feedforward", lab:false,
    name:"Feedforward control and acclimatization",
    can:"Explain anticipatory feedforward control and acclimatization and identify which one is operating in a given scenario.",
    a:"Draw a timeline of eating a meal. Mark where feedforward starts and where feedback takes over.",
    b:"Draw a setpoint as a horizontal line. Show what fever does to it, and mark at each stage what the patient feels."},
-  {n:12, g:"ch6", id:"signal-types", lab:false,
-   name:"Signal types and range",
-   can:"Classify a chemical signal as autocrine, paracrine, neurotransmitter, neurohormone, or hormone by its route and distance of travel.",
-   a:"Draw one target cell in the middle of the box. Draw an arrow in from each of the five signal types, autocrine, paracrine, neurotransmitter, neurohormone, hormone. Label each arrow with how far it travelled and what carried it.",
-   b:"Make a five row table. Signal type, where it is released, how far it goes, what it travels through. Fill it from memory, then check one row against the book."},
-  {n:13, g:"ch6", id:"receptor-location", lab:false,
-   name:"Receptor location and ligand solubility",
-   can:"Predict whether a signal molecule binds a surface receptor or an intracellular receptor from its lipid solubility and relate that to the speed and duration of the response.",
-   a:"Draw a cell with one surface receptor and one intracellular receptor. Show the path a lipid soluble signal takes and the path a water soluble one takes. Mark which response is faster and which lasts longer.",
-   b:"Write the two questions you would ask about any new signal molecule to predict where its receptor sits. Then answer both for a steroid and for a peptide hormone."},
-  {n:14, g:"ch6", id:"signal-amplification", lab:false,
-   name:"Signal amplification",
-   can:"Explain how a cascade amplifies a signal and estimate the size of the amplification across the steps of a given pathway.",
-   a:"Draw a three step cascade as a widening funnel. Put a number on each step and multiply them down the side to get the total amplification.",
-   b:"Start from one ligand and write the count at each step of a cascade until you reach the response. One line per step, numbers only, no sentences."},
-  {n:15, g:"ch6", id:"receptor-modulation", lab:false,
-   name:"Receptor modulation",
-   can:"Define agonist, antagonist, competitive inhibition, up regulation, and down regulation, and predict the effect of chronic ligand excess on target cell sensitivity.",
-   a:"Draw one target cell three times. Normal, after a long stretch of scarce signal, after a long stretch of excess signal. Show the receptor count changing in each and label which is up regulation and which is down.",
-   b:"Define agonist, antagonist, up regulation and down regulation in your own words, one line each. Then explain in two lines why a patient who needs more opioid for the same effect is usually showing down regulation rather than drug seeking."},
-  {n:16, g:"skills", id:"lab-experimental-design", lab:true,
+  {n:9, g:"skills", id:"lab-experimental-design", lab:true,
    name:"Experimental design and controls",
    can:"Identify the hypothesis, independent variable, dependent variable, and control condition in a physiology experiment and state what the control rules out.",
    a:"Sketch an experiment as three labeled boxes: what you changed, what you measured, and your control.",
    b:"Take a claim from this week and design the control group that would test it. Draw both groups and label the one difference between them."},
-  {n:17, g:"skills", id:"lab-measurement-error", lab:true,
+  {n:10, g:"skills", id:"lab-measurement-error", lab:true,
    name:"Measurement error and variability",
    can:"Distinguish random from systematic error and explain why physiological measurements are repeated and averaged.",
    a:"Draw two sets of repeated measurements, one with high variability and one with low. Mark which difference between readings is real.",
    b:"List three sources of variation in a single measurement. Beside each, one way to reduce it."},
-  {n:18, g:"skills", id:"lab-graphing", lab:true,
+  {n:11, g:"skills", id:"lab-graphing", lab:true,
    name:"Graphing and data interpretation",
    can:"Construct a labeled graph with the independent variable on the x axis, and read slope, direction, and trend from a physiological data set.",
    a:"Plot the case patient's sodium across the three days. Label both axes with units and mark the reference range on the graph.",
    b:"Draw a saturation curve. Label the plateau, then write one line on what the plateau means physiologically."},
+  {n:12, g:"skills", id:"units-conversion", lab:true,
+   name:"Units and unit conversion",
+   can:"Convert between the units physiology actually reports, including litres and millilitres, moles and millimoles, mg/dL and mmol/L, and mmHg and kPa, and say which unit a given measurement belongs in.",
+   pending:true,
+   prompts:["Write the conversion you use most often, then work one clinical value through it both directions.",
+            "Take three lab values off a real panel and put each one in the other unit system."]}
   ];
 
   var KEY = "bio005-w1-competencies";

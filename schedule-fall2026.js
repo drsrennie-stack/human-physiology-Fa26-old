@@ -1,3 +1,6 @@
+/* NOTE, Sep 7 2026: the five unit exams and the cumulative final in this
+   file are retired. The model of record is two midterms, weeks 1 to 7 and
+   8 to 14, in bio005-schedule-fall2026.js and the published syllabus. */
 /* ============================================================
    BIO 005 Human Physiology, Yuba College, Fall 2026
    schedule-fall2026.js
@@ -19,9 +22,9 @@ window.BIO005_MODULES_SCHEDULE = [
    2,
    3
   ],
-  "exam": 1,
+  "exam": "Midterm 1",
   "title": "Foundations, membranes and cell signaling",
-  "detail": "Exam 1 window 2026-09-25 to 2026-09-27. Proposed, not set."
+  "detail": "Assessed on Midterm 1 (opens 2026-10-26, closes 2026-10-28)."
  },
  {
   "n": 2,
@@ -30,9 +33,9 @@ window.BIO005_MODULES_SCHEDULE = [
    5,
    6
   ],
-  "exam": 2,
+  "exam": "Midterm 1",
   "title": "Neurophysiology and muscle physiology",
-  "detail": "Exam 2 window 2026-10-16 to 2026-10-18. Proposed, not set."
+  "detail": "Assessed on Midterm 1 (opens 2026-10-26, closes 2026-10-28)."
  },
  {
   "n": 3,
@@ -41,9 +44,9 @@ window.BIO005_MODULES_SCHEDULE = [
    8,
    9
   ],
-  "exam": 3,
+  "exam": "Midterms 1 and 2",
   "title": "Sensory, motor, autonomic and endocrine physiology",
-  "detail": "Exam 3 window 2026-11-06 to 2026-11-08. Proposed, not set."
+  "detail": "Assessed on Midterms 1 and 2 (opens 2026-10-26, closes 2026-10-28, opens 2026-12-14, closes 2026-12-16)."
  },
  {
   "n": 4,
@@ -52,9 +55,9 @@ window.BIO005_MODULES_SCHEDULE = [
    11,
    12
   ],
-  "exam": 4,
+  "exam": "Midterm 2",
   "title": "Cardiovascular and respiratory physiology",
-  "detail": "Exam 4 window 2026-11-25 to 2026-12-01. Proposed, not set."
+  "detail": "Assessed on Midterm 2 (opens 2026-12-14, closes 2026-12-16)."
  },
  {
   "n": 5,
@@ -63,9 +66,9 @@ window.BIO005_MODULES_SCHEDULE = [
    14,
    15
   ],
-  "exam": 5,
+  "exam": "Midterm 2",
   "title": "Renal, digestive, metabolic, immune and reproductive physiology",
-  "detail": "Exam 5 window 2026-12-11 to 2026-12-13. Proposed, not set."
+  "detail": "Assessed on Midterm 2 (opens 2026-12-14, closes 2026-12-16)."
  }
 ];
 
@@ -128,8 +131,8 @@ window.BIO005_SESSIONS = {
    "opens": "2026-09-21",
    "closes": "2026-09-27",
    "title": "Membrane potential, and how cells send signals",
-   "exam": "Exam 1",
-   "note": "Census is Sun Sep 27, the same day this week closes. Exam 1 feedback should be posted before census so students choosing to drop can decide on evidence."
+   "exam": null,
+   "note": "Census is Sun Sep 27, the same day this week closes. Week 1 to 3 feedback should be posted before census so students choosing to drop can decide on evidence."
   },
   {
    "wk": 4,
@@ -152,7 +155,7 @@ window.BIO005_SESSIONS = {
    "opens": "2026-10-12",
    "closes": "2026-10-18",
    "title": "How muscle contracts and makes force",
-   "exam": "Exam 2",
+   "exam": null,
    "note": null
   },
   {
@@ -176,8 +179,8 @@ window.BIO005_SESSIONS = {
    "opens": "2026-11-02",
    "closes": "2026-11-08",
    "title": "Hormones: your body's slower control system",
-   "exam": "Exam 3",
-   "note": "Exam 3 closes Nov 8. The last day to drop is Nov 21, so students have three graded exams in hand before that decision. Keep it that way."
+   "exam": null,
+   "note": "The last day to drop is Nov 21. Midterm 1 closed Oct 28, so students have that grade in hand before the drop decision."
   },
   {
    "wk": 10,
@@ -200,8 +203,8 @@ window.BIO005_SESSIONS = {
    "opens": "2026-11-23",
    "closes": "2026-11-29",
    "title": "Breathing, and how oxygen gets to your cells",
-   "exam": "Exam 4",
-   "note": "THANKSGIVING WEEK. Thu Nov 26 and Fri Nov 27 are holidays. The natural Exam 4 close (Sun Nov 29) sits on the holiday weekend. The proposed window below opens Wed Nov 25 and closes Tue Dec 1 so it straddles the break instead of landing in it. This is the one date in the term that needs a deliberate decision."
+   "exam": null,
+   "note": "THANKSGIVING WEEK. Thu Nov 26 and Fri Nov 27 are holidays. Nothing graded should be due on either day."
   },
   {
    "wk": 13,
@@ -216,7 +219,7 @@ window.BIO005_SESSIONS = {
    "opens": "2026-12-07",
    "closes": "2026-12-13",
    "title": "Blood pH, digestion, and how you use food for fuel",
-   "exam": "Exam 5",
+   "exam": null,
    "note": null
   },
   {
@@ -224,7 +227,7 @@ window.BIO005_SESSIONS = {
    "opens": "2026-12-14",
    "closes": "2026-12-16",
    "title": "Immune defense, reproduction, and putting it all together",
-   "exam": "Cumulative final",
+   "exam": null,
    "note": "Three days only. This week carries immune and reproductive physiology plus the integration capstone, and the cumulative final closes it. If the term runs tight, this is the trim: immune and reproductive are the lowest-yield block in the map, and the integration capstone can move to Week 14 as the drawing task."
   }
  ]

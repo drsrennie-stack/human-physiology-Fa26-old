@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Week 14 competencies &middot; BIO 005 Human Physiology</title>
+<link rel="icon" type="image/svg+xml" href="icon.svg">
+<link rel="stylesheet" href="assets/fonts-site.css">
+<link rel="stylesheet" href="assets/brandbar.css">
+<style>
+:root{
+  --navy:#0B1530; --navy-deep:#060A18; --tint:#ECEFF4;
+  --gold:#C9A14A; --gold-deep:#8A6D33;
+  --maroon:#8B3A2E; --maroon-dk:#6E2D24;
+  --page:#FAFAF9; --card:#FFFFFF;
+  --muted:#414B5C; --faint:#5A6675; --rule:rgba(11,21,48,.16);
+  --display:'Open Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+  --body:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0}
+body{font-family:var(--body);background:var(--page);color:var(--navy);font-size:16px;
+  line-height:1.65;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--display);font-weight:800;letter-spacing:-.022em;margin:0}
+p{margin:0 0 14px;max-width:70ch}
+a{color:var(--maroon);text-underline-offset:3px}
+a:hover{color:var(--maroon-dk)}
+:focus-visible{outline:3px solid var(--maroon);outline-offset:3px;border-radius:3px}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+.skip{position:absolute;left:-9999px;top:0;z-index:90;background:var(--navy);color:#fff;
+  padding:12px 18px;font-weight:700;text-decoration:none}
+.skip:focus{left:0;top:0}
+
+header.top{background:var(--navy-deep);color:#fff;padding:34px 0 30px}
+header.top .eyebrow{font-size:11px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--gold);margin:0 0 10px}
+header.top h1{font-size:clamp(26px,4.4vw,38px);line-height:1.14;color:#fff;max-width:24ch}
+header.top p.sub{color:#D7DCE3;margin:12px 0 0;font-size:16px}
+
+.homebar{max-width:1000px;margin:0 auto;padding:16px 20px 0}
+.home{display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:#fff;
+  text-decoration:none;font-weight:700;font-size:14.5px;border-radius:8px;padding:9px 15px;
+  transition:background 160ms ease}
+.home:hover{background:var(--maroon);color:#fff}
+
+.pwrap{background:var(--card);border:1px solid var(--rule);border-radius:10px;
+  padding:16px 20px;margin:22px 0 0}
+.pbar{height:9px;background:var(--tint);border-radius:99px;overflow:hidden;margin-top:9px}
+.pfill{height:100%;width:0;background:var(--maroon);border-radius:99px;transition:width 260ms ease}
+.pnote{font-size:12.5px;color:var(--muted);margin:7px 0 0}
+
+main{padding:8px 0 60px}
+.chead{border-left:4px solid var(--maroon);padding:2px 0 2px 16px;margin:32px 0 6px}
+.chead .cl{font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--maroon);display:block;margin-bottom:4px}
+.chead h2{font-size:21px}
+
+.comp{background:var(--card);border:1px solid var(--rule);border-radius:10px;
+  padding:18px 20px;margin:12px 0;break-inside:avoid}
+.comp.done{background:var(--tint);border-color:var(--maroon)}
+.chd{display:flex;gap:11px;align-items:baseline;flex-wrap:wrap}
+.cnum{font-family:var(--display);font-weight:800;font-size:14px;color:var(--maroon);
+  white-space:nowrap;font-variant-numeric:tabular-nums}
+.cname{font-family:var(--display);font-weight:800;font-size:17.5px;letter-spacing:-.02em}
+.tag{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  border:1px solid var(--rule);border-radius:99px;padding:2px 9px;color:var(--faint);white-space:nowrap}
+.tag.lab{color:var(--maroon);border-color:var(--maroon)}
+.can{font-size:15px;color:var(--navy);margin:9px 0 0}
+.canlab{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--faint);display:block;margin-bottom:3px}
+.pick{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--faint);margin:16px 0 8px}
+.pick.pending{color:#5F4514}
+.prompt{display:flex;gap:11px;align-items:flex-start;padding:11px 13px;
+  border:1px solid var(--rule);border-radius:7px;margin:0 0 8px;background:var(--card)}
+.prompt:last-child{margin-bottom:0}
+.prompt input[type=checkbox]{flex:0 0 auto;width:22px;height:22px;margin:1px 0 0;
+  accent-color:var(--maroon);cursor:pointer}
+.prompt label{cursor:pointer;margin:0;font-size:14.5px}
+.prompt.checked{background:var(--tint);border-color:var(--maroon)}
+.plet{font-family:var(--display);font-weight:800;color:var(--maroon-dk);margin-right:7px}
+
+.foot{margin:40px 0 0;padding-top:18px;border-top:1px solid var(--rule);
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-size:13px;color:var(--muted)}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+@media print{
+  .mm-brandbar,.mm-jumpwrap,.homebar,.pwrap,.skip{display:none!important}
+  body{background:#fff;font-size:10.5pt}
+  .comp{break-inside:avoid;border-color:#999}
+  header.top{background:#fff;color:#000;padding:0 0 12pt}
+  header.top h1{color:#000}header.top .eyebrow{color:#000}header.top p.sub{color:#000}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the competencies</a>
+
+<div class="mm-brandbar"><div class="mm-wrap">
+  <a class="mm-mark" href="course-start.html" target="_top">
+    <span class="mm-wm">Med<b>Masters</b><span class="mm-wmsub">Collaborative</span></span>
+  </a>
+  <span class="mm-course">BIO 005 &middot; Human Physiology</span>
+</div></div>
+
+<div class="homebar"><a class="home" href="course-start.html" target="_top">
+  <span aria-hidden="true">&larr;</span> Course home</a></div>
+
+<div class="mm-jumpwrap">
+  <span class="lbl">Week 14</span>
+  <ul class="mm-jump">
+    <li><a class="j-note" href="note-sheet.html?week=14" target="_top" title="Week 14 note sheet">N<span class="mm-vh">Week 14 note sheet</span></a></li>
+    <li><a class="j-prob" href="assignment-bookproblems.html?week=14" target="_top" title="Week 14 problems">P<span class="mm-vh">Week 14 problems</span></a></li>
+    <li><a class="j-lab" href="assignment-physioex.html?week=14" target="_top" title="Week 14 lab">L<span class="mm-vh">Week 14 lab</span></a></li>
+    <li><a class="j-disc" href="assignment-discussion.html?week=14" target="_top" title="Week 14 discussion">D<span class="mm-vh">Week 14 discussion</span></a></li>
+    <li><a class="j-study" href="mastery-physio-os-standalone.html?week=14" target="_top" title="Week 14 study session">S<span class="mm-vh">Week 14 study session</span></a></li>
+  </ul>
+</div>
+
+<header class="top"><div class="wrap">
+  <p class="eyebrow">BIO 005 &middot; Week 14 &middot; Part 3</p>
+  <h1>Everything Week 14 asks you to be able to do.</h1>
+  <p class="sub">The kidney and body fluid balance. 21 competencies, each one a single thing you will be able to do by Sunday, December 13.</p>
+</div></header>
+
+<div class="wrap">
+  <div class="pwrap">
+    <p style="margin:0;font-size:14px"><strong id="pcount">0 of 21</strong> picked</p>
+    <div class="pbar" role="progressbar" aria-labelledby="pcount" aria-valuemin="0" aria-valuemax="21" aria-valuenow="0"><div class="pfill" id="pfill"></div></div>
+    <p class="pnote">Tick the prompt you are going to do for each competency. Your ticks stay on this device, so you can come back to the same list.</p>
+  </div>
+</div>
+
+<main id="main"><div class="wrap">
+
+  <div class="chead"><span class="cl">1 competency</span><h2>Endocrine Glands</h2></div>
+  <section class="comp" id="c-w9-calcium-homeostasis" aria-labelledby="h-w9-calcium-homeostasis">
+      <div class="chd"><span class="cnum">1</span><h3 class="cname" id="h-w9-calcium-homeostasis">Calcium homeostasis</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Trace the response to falling plasma calcium through parathyroid hormone, calcitriol, and the actions on bone, kidney, and intestine, and state the role of calcitonin.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+
+  <div class="chead"><span class="cl">19 competencies</span><h2>Renal Physiology</h2></div>
+  <section class="comp" id="c-w13-kidney-functions" aria-labelledby="h-w13-kidney-functions">
+      <div class="chd"><span class="cnum">2</span><h3 class="cname" id="h-w13-kidney-functions">Kidney functions</h3><span class="tag">Lecture</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>List the homeostatic functions of the kidney including water and electrolyte balance, acid base regulation, waste excretion, blood pressure control, and hormone production.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w13-nephron-function" aria-labelledby="h-w13-nephron-function">
+      <div class="chd"><span class="cnum">3</span><h3 class="cname" id="h-w13-nephron-function">Nephron structure and function</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Match each nephron segment to its dominant transport function and distinguish a cortical from a juxtamedullary nephron by capability.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w13-renal-processes" aria-labelledby="h-w13-renal-processes">
+      <div class="chd"><span class="cnum">4</span><h3 class="cname" id="h-w13-renal-processes">Three renal processes</h3><span class="tag">Lecture</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Define filtration, reabsorption, secretion, and excretion and write the equation that relates them for any solute.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w13-filtration-membrane" aria-labelledby="h-w13-filtration-membrane">
+      <div class="chd"><span class="cnum">5</span><h3 class="cname" id="h-w13-filtration-membrane">Filtration membrane and selectivity</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Describe the three layers of the filtration membrane and predict which plasma components appear in the filtrate based on size and charge.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w13-gfr-forces" aria-labelledby="h-w13-gfr-forces">
+      <div class="chd"><span class="cnum">6</span><h3 class="cname" id="h-w13-gfr-forces">Net filtration pressure and GFR</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Calculate net filtration pressure from glomerular hydrostatic pressure, capsular pressure, and colloid osmotic pressure and predict the effect of each change on glomerular filtration rate.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w13-gfr-regulation" aria-labelledby="h-w13-gfr-regulation">
+      <div class="chd"><span class="cnum">7</span><h3 class="cname" id="h-w13-gfr-regulation">Regulation of GFR</h3><span class="tag">Lecture</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Compare myogenic autoregulation, tubuloglomerular feedback, sympathetic control, and hormonal control and predict the effect of afferent and efferent arteriolar constriction on filtration rate.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w13-renal-clearance" aria-labelledby="h-w13-renal-clearance">
+      <div class="chd"><span class="cnum">8</span><h3 class="cname" id="h-w13-renal-clearance">Renal clearance</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Calculate the clearance of a substance and use inulin and creatinine clearance to estimate glomerular filtration rate.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w13-clearance-inference" aria-labelledby="h-w13-clearance-inference">
+      <div class="chd"><span class="cnum">9</span><h3 class="cname" id="h-w13-clearance-inference">Clearance and handling inference</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Use a clearance value relative to glomerular filtration rate to determine whether a substance is net reabsorbed or net secreted.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w13-proximal-reabsorption" aria-labelledby="h-w13-proximal-reabsorption">
+      <div class="chd"><span class="cnum">10</span><h3 class="cname" id="h-w13-proximal-reabsorption">Proximal tubule reabsorption</h3><span class="tag">Lecture</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Explain how the sodium gradient drives reabsorption of glucose, amino acids, and water in the proximal tubule and state why reabsorption there is described as isosmotic.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w13-renal-threshold" aria-labelledby="h-w13-renal-threshold">
+      <div class="chd"><span class="cnum">11</span><h3 class="cname" id="h-w13-renal-threshold">Transport maximum and renal threshold</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Distinguish transport maximum from renal threshold and explain the appearance of glucose in urine when plasma glucose is elevated.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w13-tubular-secretion" aria-labelledby="h-w13-tubular-secretion">
+      <div class="chd"><span class="cnum">12</span><h3 class="cname" id="h-w13-tubular-secretion">Tubular secretion</h3><span class="tag">Lecture</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>State the purpose of tubular secretion and name substances secreted including hydrogen ion, potassium, and organic anions such as drugs.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w13-countercurrent" aria-labelledby="h-w13-countercurrent">
+      <div class="chd"><span class="cnum">13</span><h3 class="cname" id="h-w13-countercurrent">Countercurrent mechanism</h3><span class="tag">Lecture</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Explain how the countercurrent multiplier of the loop of Henle and the countercurrent exchanger of the vasa recta build and preserve the medullary osmotic gradient.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w13-adh-water-balance" aria-labelledby="h-w13-adh-water-balance">
+      <div class="chd"><span class="cnum">14</span><h3 class="cname" id="h-w13-adh-water-balance">Antidiuretic hormone and urine concentration</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Trace the response to dehydration from osmoreceptor firing through antidiuretic hormone release to aquaporin insertion and concentrated urine.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w13-raas" aria-labelledby="h-w13-raas">
+      <div class="chd"><span class="cnum">15</span><h3 class="cname" id="h-w13-raas">Renin angiotensin aldosterone system</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Trace the renin angiotensin aldosterone pathway from the stimulus for renin release to the effects of angiotensin II and aldosterone on vessels, tubules, and blood pressure.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w13-natriuretic-peptides" aria-labelledby="h-w13-natriuretic-peptides">
+      <div class="chd"><span class="cnum">16</span><h3 class="cname" id="h-w13-natriuretic-peptides">Natriuretic peptides</h3><span class="tag">Lecture</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Explain how atrial natriuretic peptide opposes the renin angiotensin aldosterone system and state the stimulus for its release.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w13-potassium-handling" aria-labelledby="h-w13-potassium-handling">
+      <div class="chd"><span class="cnum">17</span><h3 class="cname" id="h-w13-potassium-handling">Potassium handling</h3><span class="tag">Lecture</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Explain how aldosterone and plasma potassium regulate potassium secretion in the collecting duct and predict the effect of a potassium wasting diuretic.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w13-micturition" aria-labelledby="h-w13-micturition">
+      <div class="chd"><span class="cnum">18</span><h3 class="cname" id="h-w13-micturition">Micturition</h3><span class="tag">Lecture</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Trace the micturition reflex and explain how the internal and external sphincters allow voluntary control.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w13-lab-urinalysis" aria-labelledby="h-w13-lab-urinalysis">
+      <div class="chd"><span class="cnum">19</span><h3 class="cname" id="h-w13-lab-urinalysis">Urinalysis</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Perform a urinalysis measuring specific gravity, pH, glucose, protein, ketones, and blood and relate any abnormal finding to the renal process that failed.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w13-lab-renal-calculation" aria-labelledby="h-w13-lab-renal-calculation">
+      <div class="chd"><span class="cnum">20</span><h3 class="cname" id="h-w13-lab-renal-calculation">Renal function calculation</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Calculate glomerular filtration rate, clearance, and filtered load from a data set and interpret the values in a clinical case.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+
+  <div class="chead"><span class="cl">1 competency</span><h2>Acid Base and Fluid Balance</h2></div>
+  <section class="comp" id="c-w13-volume-osmolarity" aria-labelledby="h-w13-volume-osmolarity">
+      <div class="chd"><span class="cnum">21</span><h3 class="cname" id="h-w13-volume-osmolarity">Volume and osmolarity disturbances</h3><span class="tag">Lecture</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Classify a disturbance as volume depletion or overload and as hypoosmotic, isosmotic, or hyperosmotic and predict the resulting fluid shift between compartments.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+
+  <p class="foot"><span>BIO 005 Human Physiology &middot; Yuba College &middot; Fall 2026</span><span>Dr. Sharilyn Rennie</span></p>
+</div></main>
+
+<script>
+(function(){
+  var KEY = 'bio005-comp-week-14';
+  var state = {};
+  try { state = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch(e) { state = {}; }
+
+  var rows = [].slice.call(document.querySelectorAll('.prompt'));
+  var total = 21;
+
+  function paint(){
+    var picked = 0, seen = {};
+    rows.forEach(function(r){
+      var c = r.getAttribute('data-c'), l = r.getAttribute('data-l');
+      var on = state[c] === l;
+      r.classList.toggle('checked', on);
+      r.querySelector('input').checked = on;
+      var comp = document.getElementById('c-' + c);
+      if (comp) comp.classList.toggle('done', !!state[c]);
+      if (state[c] && !seen[c]) { seen[c] = 1; picked++; }
+    });
+    var pct = total ? Math.round(picked / total * 100) : 0;
+    document.getElementById('pfill').style.width = pct + '%';
+    document.getElementById('pcount').textContent = picked + ' of ' + total;
+    var bar = document.querySelector('.pbar');
+    if (bar) bar.setAttribute('aria-valuenow', picked);
+  }
+
+  rows.forEach(function(r){
+    r.querySelector('input').addEventListener('change', function(){
+      var c = r.getAttribute('data-c'), l = r.getAttribute('data-l');
+      /* one prompt per competency: ticking B unticks A */
+      state[c] = (state[c] === l) ? null : l;
+      if (!state[c]) delete state[c];
+      try { localStorage.setItem(KEY, JSON.stringify(state)); } catch(e) {}
+      paint();
+    });
+  });
+  paint();
+}());
+</script>
+
+<script>
+(function(){var id=document.title.replace(/\W+/g,'-').toLowerCase();
+function post(){try{parent.postMessage({frame:id,height:document.documentElement.scrollHeight},'*');}catch(e){}}
+if('ResizeObserver' in window){new ResizeObserver(post).observe(document.documentElement);}
+window.addEventListener('load',post);window.addEventListener('resize',post);post();})();
+</script>
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Week 15 competencies &middot; BIO 005 Human Physiology</title>
+<link rel="icon" type="image/svg+xml" href="icon.svg">
+<link rel="stylesheet" href="assets/fonts-site.css">
+<link rel="stylesheet" href="assets/brandbar.css">
+<style>
+:root{
+  --navy:#0B1530; --navy-deep:#060A18; --tint:#ECEFF4;
+  --gold:#C9A14A; --gold-deep:#8A6D33;
+  --maroon:#8B3A2E; --maroon-dk:#6E2D24;
+  --page:#FAFAF9; --card:#FFFFFF;
+  --muted:#414B5C; --faint:#5A6675; --rule:rgba(11,21,48,.16);
+  --display:'Open Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+  --body:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0}
+body{font-family:var(--body);background:var(--page);color:var(--navy);font-size:16px;
+  line-height:1.65;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--display);font-weight:800;letter-spacing:-.022em;margin:0}
+p{margin:0 0 14px;max-width:70ch}
+a{color:var(--maroon);text-underline-offset:3px}
+a:hover{color:var(--maroon-dk)}
+:focus-visible{outline:3px solid var(--maroon);outline-offset:3px;border-radius:3px}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+.skip{position:absolute;left:-9999px;top:0;z-index:90;background:var(--navy);color:#fff;
+  padding:12px 18px;font-weight:700;text-decoration:none}
+.skip:focus{left:0;top:0}
+
+header.top{background:var(--navy-deep);color:#fff;padding:34px 0 30px}
+header.top .eyebrow{font-size:11px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--gold);margin:0 0 10px}
+header.top h1{font-size:clamp(26px,4.4vw,38px);line-height:1.14;color:#fff;max-width:24ch}
+header.top p.sub{color:#D7DCE3;margin:12px 0 0;font-size:16px}
+
+.homebar{max-width:1000px;margin:0 auto;padding:16px 20px 0}
+.home{display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:#fff;
+  text-decoration:none;font-weight:700;font-size:14.5px;border-radius:8px;padding:9px 15px;
+  transition:background 160ms ease}
+.home:hover{background:var(--maroon);color:#fff}
+
+.pwrap{background:var(--card);border:1px solid var(--rule);border-radius:10px;
+  padding:16px 20px;margin:22px 0 0}
+.pbar{height:9px;background:var(--tint);border-radius:99px;overflow:hidden;margin-top:9px}
+.pfill{height:100%;width:0;background:var(--maroon);border-radius:99px;transition:width 260ms ease}
+.pnote{font-size:12.5px;color:var(--muted);margin:7px 0 0}
+
+main{padding:8px 0 60px}
+.chead{border-left:4px solid var(--maroon);padding:2px 0 2px 16px;margin:32px 0 6px}
+.chead .cl{font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--maroon);display:block;margin-bottom:4px}
+.chead h2{font-size:21px}
+
+.comp{background:var(--card);border:1px solid var(--rule);border-radius:10px;
+  padding:18px 20px;margin:12px 0;break-inside:avoid}
+.comp.done{background:var(--tint);border-color:var(--maroon)}
+.chd{display:flex;gap:11px;align-items:baseline;flex-wrap:wrap}
+.cnum{font-family:var(--display);font-weight:800;font-size:14px;color:var(--maroon);
+  white-space:nowrap;font-variant-numeric:tabular-nums}
+.cname{font-family:var(--display);font-weight:800;font-size:17.5px;letter-spacing:-.02em}
+.tag{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  border:1px solid var(--rule);border-radius:99px;padding:2px 9px;color:var(--faint);white-space:nowrap}
+.tag.lab{color:var(--maroon);border-color:var(--maroon)}
+.can{font-size:15px;color:var(--navy);margin:9px 0 0}
+.canlab{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--faint);display:block;margin-bottom:3px}
+.pick{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--faint);margin:16px 0 8px}
+.pick.pending{color:#5F4514}
+.prompt{display:flex;gap:11px;align-items:flex-start;padding:11px 13px;
+  border:1px solid var(--rule);border-radius:7px;margin:0 0 8px;background:var(--card)}
+.prompt:last-child{margin-bottom:0}
+.prompt input[type=checkbox]{flex:0 0 auto;width:22px;height:22px;margin:1px 0 0;
+  accent-color:var(--maroon);cursor:pointer}
+.prompt label{cursor:pointer;margin:0;font-size:14.5px}
+.prompt.checked{background:var(--tint);border-color:var(--maroon)}
+.plet{font-family:var(--display);font-weight:800;color:var(--maroon-dk);margin-right:7px}
+
+.foot{margin:40px 0 0;padding-top:18px;border-top:1px solid var(--rule);
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-size:13px;color:var(--muted)}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+@media print{
+  .mm-brandbar,.mm-jumpwrap,.homebar,.pwrap,.skip{display:none!important}
+  body{background:#fff;font-size:10.5pt}
+  .comp{break-inside:avoid;border-color:#999}
+  header.top{background:#fff;color:#000;padding:0 0 12pt}
+  header.top h1{color:#000}header.top .eyebrow{color:#000}header.top p.sub{color:#000}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the competencies</a>
+
+<div class="mm-brandbar"><div class="mm-wrap">
+  <a class="mm-mark" href="course-start.html" target="_top">
+    <span class="mm-wm">Med<b>Masters</b><span class="mm-wmsub">Collaborative</span></span>
+  </a>
+  <span class="mm-course">BIO 005 &middot; Human Physiology</span>
+</div></div>
+
+<div class="homebar"><a class="home" href="course-start.html" target="_top">
+  <span aria-hidden="true">&larr;</span> Course home</a></div>
+
+<div class="mm-jumpwrap">
+  <span class="lbl">Week 15</span>
+  <ul class="mm-jump">
+    <li><a class="j-note" href="note-sheet.html?week=15" target="_top" title="Week 15 note sheet">N<span class="mm-vh">Week 15 note sheet</span></a></li>
+    <li><a class="j-prob" href="assignment-bookproblems.html?week=15" target="_top" title="Week 15 problems">P<span class="mm-vh">Week 15 problems</span></a></li>
+    <li><a class="j-lab" href="assignment-physioex.html?week=15" target="_top" title="Week 15 lab">L<span class="mm-vh">Week 15 lab</span></a></li>
+    <li><a class="j-disc" href="assignment-discussion.html?week=15" target="_top" title="Week 15 discussion">D<span class="mm-vh">Week 15 discussion</span></a></li>
+    <li><a class="j-study" href="mastery-physio-os-standalone.html?week=15" target="_top" title="Week 15 study session">S<span class="mm-vh">Week 15 study session</span></a></li>
+  </ul>
+</div>
+
+<header class="top"><div class="wrap">
+  <p class="eyebrow">BIO 005 &middot; Week 15 &middot; Part 3</p>
+  <h1>Everything Week 15 asks you to be able to do.</h1>
+  <p class="sub">The slow pH lever, and putting it all together. 7 competencies, each one a single thing you will be able to do by Wednesday, December 16.</p>
+</div></header>
+
+<div class="wrap">
+  <div class="pwrap">
+    <p style="margin:0;font-size:14px"><strong id="pcount">0 of 7</strong> picked</p>
+    <div class="pbar" role="progressbar" aria-labelledby="pcount" aria-valuemin="0" aria-valuemax="7" aria-valuenow="0"><div class="pfill" id="pfill"></div></div>
+    <p class="pnote">Tick the prompt you are going to do for each competency. Your ticks stay on this device, so you can come back to the same list.</p>
+  </div>
+</div>
+
+<main id="main"><div class="wrap">
+
+  <div class="chead"><span class="cl">4 competencies</span><h2>Acid Base and Fluid Balance</h2></div>
+  <section class="comp" id="c-w13-renal-ph-control" aria-labelledby="h-w13-renal-ph-control">
+      <div class="chd"><span class="cnum">1</span><h3 class="cname" id="h-w13-renal-ph-control">Renal control of pH</h3><span class="tag">Lecture</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Describe how the kidney secretes hydrogen ion and reclaims or generates bicarbonate and explain why renal compensation is slower and more complete than respiratory compensation.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w13-acid-base-disorders" aria-labelledby="h-w13-acid-base-disorders">
+      <div class="chd"><span class="cnum">2</span><h3 class="cname" id="h-w13-acid-base-disorders">The four acid base disorders</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Classify a disorder as respiratory or metabolic and as acidosis or alkalosis from pH, partial pressure of carbon dioxide, and bicarbonate.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w13-acid-base-compensation" aria-labelledby="h-w13-acid-base-compensation">
+      <div class="chd"><span class="cnum">3</span><h3 class="cname" id="h-w13-acid-base-compensation">Compensation</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Determine whether an acid base disorder is uncompensated, partially compensated, or fully compensated and name the system doing the compensating.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w13-lab-abg-interpretation" aria-labelledby="h-w13-lab-abg-interpretation">
+      <div class="chd"><span class="cnum">4</span><h3 class="cname" id="h-w13-lab-abg-interpretation">Arterial blood gas interpretation</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Interpret a set of arterial blood gas values and match the result to a plausible clinical cause.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+
+  <div class="chead"><span class="cl">3 competencies</span><h2>Integration</h2></div>
+  <section class="comp" id="c-w15-integration-case" aria-labelledby="h-w15-integration-case">
+      <div class="chd"><span class="cnum">5</span><h3 class="cname" id="h-w15-integration-case">Multisystem integration case</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Given a clinical scenario, trace the disturbance through at least three organ systems and identify the compensatory responses in the order they occur.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w15-exercise-integration" aria-labelledby="h-w15-exercise-integration">
+      <div class="chd"><span class="cnum">6</span><h3 class="cname" id="h-w15-exercise-integration">Exercise as an integrated response</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Build an integrated account of moderate exercise across the muscular, cardiovascular, respiratory, endocrine, and renal systems.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w15-drawing-synthesis" aria-labelledby="h-w15-drawing-synthesis">
+      <div class="chd"><span class="cnum">7</span><h3 class="cname" id="h-w15-drawing-synthesis">Drawing based synthesis check</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Draw and annotate a homeostatic pathway from memory and explain each step aloud or in writing without notes.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+
+  <p class="foot"><span>BIO 005 Human Physiology &middot; Yuba College &middot; Fall 2026</span><span>Dr. Sharilyn Rennie</span></p>
+</div></main>
+
+<script>
+(function(){
+  var KEY = 'bio005-comp-week-15';
+  var state = {};
+  try { state = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch(e) { state = {}; }
+
+  var rows = [].slice.call(document.querySelectorAll('.prompt'));
+  var total = 7;
+
+  function paint(){
+    var picked = 0, seen = {};
+    rows.forEach(function(r){
+      var c = r.getAttribute('data-c'), l = r.getAttribute('data-l');
+      var on = state[c] === l;
+      r.classList.toggle('checked', on);
+      r.querySelector('input').checked = on;
+      var comp = document.getElementById('c-' + c);
+      if (comp) comp.classList.toggle('done', !!state[c]);
+      if (state[c] && !seen[c]) { seen[c] = 1; picked++; }
+    });
+    var pct = total ? Math.round(picked / total * 100) : 0;
+    document.getElementById('pfill').style.width = pct + '%';
+    document.getElementById('pcount').textContent = picked + ' of ' + total;
+    var bar = document.querySelector('.pbar');
+    if (bar) bar.setAttribute('aria-valuenow', picked);
+  }
+
+  rows.forEach(function(r){
+    r.querySelector('input').addEventListener('change', function(){
+      var c = r.getAttribute('data-c'), l = r.getAttribute('data-l');
+      /* one prompt per competency: ticking B unticks A */
+      state[c] = (state[c] === l) ? null : l;
+      if (!state[c]) delete state[c];
+      try { localStorage.setItem(KEY, JSON.stringify(state)); } catch(e) {}
+      paint();
+    });
+  });
+  paint();
+}());
+</script>
+
+<script>
+(function(){var id=document.title.replace(/\W+/g,'-').toLowerCase();
+function post(){try{parent.postMessage({frame:id,height:document.documentElement.scrollHeight},'*');}catch(e){}}
+if('ResizeObserver' in window){new ResizeObserver(post).observe(document.documentElement);}
+window.addEventListener('load',post);window.addEventListener('resize',post);post();})();
+</script>
+</body>
+</html>

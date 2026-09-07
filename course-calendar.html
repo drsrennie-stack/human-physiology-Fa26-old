@@ -300,13 +300,17 @@ em,i,cite,dfn,var,address{font-style:normal}
     add(w.closes, 'due', 'Week ' + w.wk + ' work due');
   });
 
-  MODS.forEach(function (m) {
-    var d = (m.detail || '');
-    var win = d.match(/(\d{4}-\d{2}-\d{2})\s*(?:to|through|-)\s*(\d{4}-\d{2}-\d{2})/);
-    if (win) {
-      add(win[1], 'exam', 'Exam ' + (m.exam || m.n) + ' opens');
-      add(win[2], 'exam', 'Exam ' + (m.exam || m.n) + ' closes');
-    }
+  /* Two midterms, Sep 7 2026. This used to read exam windows out of the
+     module data, which still carries five unit exams and a cumulative
+     final from a retired model. The exams of record are named here so the
+     calendar cannot drift from the syllabus again. */
+  var EXAMS = [
+    { n:1, opens:'2026-10-26', closes:'2026-10-28', covers:'Weeks 1 to 7' },
+    { n:2, opens:'2026-12-14', closes:'2026-12-16', covers:'Weeks 8 to 14' }
+  ];
+  EXAMS.forEach(function (e) {
+    add(e.opens,  'exam', 'Midterm ' + e.n + ' opens, ' + e.covers);
+    add(e.closes, 'exam', 'Midterm ' + e.n + ' closes');
   });
 
   if (T.census)   { add(T.census,   'admin', 'Census'); }
@@ -438,8 +442,7 @@ em,i,cite,dfn,var,address{font-style:normal}
   if (T.lastDrop) { kd.push(['Last day to drop with a W', T.lastDrop]); }
   (T.observances || []).forEach(function (o) { kd.push([o.name || 'Campus holiday', o.date]); });
   MODS.forEach(function (m) {
-    var win = (m.detail || '').match(/(\d{4}-\d{2}-\d{2})\s*(?:to|through|-)\s*(\d{4}-\d{2}-\d{2})/);
-    if (win) { kd.push(['Exam ' + (m.exam || m.n) + ' window closes', win[2]]); }
+    var win = null;   /* exam key dates now come from EXAMS above */
   });
   if (T.end) { kd.push(['Term ends', T.end]); }
 

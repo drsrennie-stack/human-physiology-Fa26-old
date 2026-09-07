@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Week 12 competencies &middot; BIO 005 Human Physiology</title>
+<link rel="icon" type="image/svg+xml" href="icon.svg">
+<link rel="stylesheet" href="assets/fonts-site.css">
+<link rel="stylesheet" href="assets/brandbar.css">
+<style>
+:root{
+  --navy:#0B1530; --navy-deep:#060A18; --tint:#ECEFF4;
+  --gold:#C9A14A; --gold-deep:#8A6D33;
+  --maroon:#8B3A2E; --maroon-dk:#6E2D24;
+  --page:#FAFAF9; --card:#FFFFFF;
+  --muted:#414B5C; --faint:#5A6675; --rule:rgba(11,21,48,.16);
+  --display:'Open Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+  --body:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0}
+body{font-family:var(--body);background:var(--page);color:var(--navy);font-size:16px;
+  line-height:1.65;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--display);font-weight:800;letter-spacing:-.022em;margin:0}
+p{margin:0 0 14px;max-width:70ch}
+a{color:var(--maroon);text-underline-offset:3px}
+a:hover{color:var(--maroon-dk)}
+:focus-visible{outline:3px solid var(--maroon);outline-offset:3px;border-radius:3px}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+.skip{position:absolute;left:-9999px;top:0;z-index:90;background:var(--navy);color:#fff;
+  padding:12px 18px;font-weight:700;text-decoration:none}
+.skip:focus{left:0;top:0}
+
+header.top{background:var(--navy-deep);color:#fff;padding:34px 0 30px}
+header.top .eyebrow{font-size:11px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--gold);margin:0 0 10px}
+header.top h1{font-size:clamp(26px,4.4vw,38px);line-height:1.14;color:#fff;max-width:24ch}
+header.top p.sub{color:#D7DCE3;margin:12px 0 0;font-size:16px}
+
+.homebar{max-width:1000px;margin:0 auto;padding:16px 20px 0}
+.home{display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:#fff;
+  text-decoration:none;font-weight:700;font-size:14.5px;border-radius:8px;padding:9px 15px;
+  transition:background 160ms ease}
+.home:hover{background:var(--maroon);color:#fff}
+
+.pwrap{background:var(--card);border:1px solid var(--rule);border-radius:10px;
+  padding:16px 20px;margin:22px 0 0}
+.pbar{height:9px;background:var(--tint);border-radius:99px;overflow:hidden;margin-top:9px}
+.pfill{height:100%;width:0;background:var(--maroon);border-radius:99px;transition:width 260ms ease}
+.pnote{font-size:12.5px;color:var(--muted);margin:7px 0 0}
+
+main{padding:8px 0 60px}
+.chead{border-left:4px solid var(--maroon);padding:2px 0 2px 16px;margin:32px 0 6px}
+.chead .cl{font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--maroon);display:block;margin-bottom:4px}
+.chead h2{font-size:21px}
+
+.comp{background:var(--card);border:1px solid var(--rule);border-radius:10px;
+  padding:18px 20px;margin:12px 0;break-inside:avoid}
+.comp.done{background:var(--tint);border-color:var(--maroon)}
+.chd{display:flex;gap:11px;align-items:baseline;flex-wrap:wrap}
+.cnum{font-family:var(--display);font-weight:800;font-size:14px;color:var(--maroon);
+  white-space:nowrap;font-variant-numeric:tabular-nums}
+.cname{font-family:var(--display);font-weight:800;font-size:17.5px;letter-spacing:-.02em}
+.tag{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  border:1px solid var(--rule);border-radius:99px;padding:2px 9px;color:var(--faint);white-space:nowrap}
+.tag.lab{color:var(--maroon);border-color:var(--maroon)}
+.can{font-size:15px;color:var(--navy);margin:9px 0 0}
+.canlab{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--faint);display:block;margin-bottom:3px}
+.pick{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--faint);margin:16px 0 8px}
+.pick.pending{color:#5F4514}
+.prompt{display:flex;gap:11px;align-items:flex-start;padding:11px 13px;
+  border:1px solid var(--rule);border-radius:7px;margin:0 0 8px;background:var(--card)}
+.prompt:last-child{margin-bottom:0}
+.prompt input[type=checkbox]{flex:0 0 auto;width:22px;height:22px;margin:1px 0 0;
+  accent-color:var(--maroon);cursor:pointer}
+.prompt label{cursor:pointer;margin:0;font-size:14.5px}
+.prompt.checked{background:var(--tint);border-color:var(--maroon)}
+.plet{font-family:var(--display);font-weight:800;color:var(--maroon-dk);margin-right:7px}
+
+.foot{margin:40px 0 0;padding-top:18px;border-top:1px solid var(--rule);
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-size:13px;color:var(--muted)}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+@media print{
+  .mm-brandbar,.mm-jumpwrap,.homebar,.pwrap,.skip{display:none!important}
+  body{background:#fff;font-size:10.5pt}
+  .comp{break-inside:avoid;border-color:#999}
+  header.top{background:#fff;color:#000;padding:0 0 12pt}
+  header.top h1{color:#000}header.top .eyebrow{color:#000}header.top p.sub{color:#000}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the competencies</a>
+
+<div class="mm-brandbar"><div class="mm-wrap">
+  <a class="mm-mark" href="course-start.html" target="_top">
+    <span class="mm-wm">Med<b>Masters</b><span class="mm-wmsub">Collaborative</span></span>
+  </a>
+  <span class="mm-course">BIO 005 &middot; Human Physiology</span>
+</div></div>
+
+<div class="homebar"><a class="home" href="course-start.html" target="_top">
+  <span aria-hidden="true">&larr;</span> Course home</a></div>
+
+<div class="mm-jumpwrap">
+  <span class="lbl">Week 12</span>
+  <ul class="mm-jump">
+    <li><a class="j-note" href="note-sheet.html?week=12" target="_top" title="Week 12 note sheet">N<span class="mm-vh">Week 12 note sheet</span></a></li>
+    <li><a class="j-prob" href="assignment-bookproblems.html?week=12" target="_top" title="Week 12 problems">P<span class="mm-vh">Week 12 problems</span></a></li>
+    <li><a class="j-lab" href="assignment-physioex.html?week=12" target="_top" title="Week 12 lab">L<span class="mm-vh">Week 12 lab</span></a></li>
+    <li><a class="j-disc" href="assignment-discussion.html?week=12" target="_top" title="Week 12 discussion">D<span class="mm-vh">Week 12 discussion</span></a></li>
+    <li><a class="j-study" href="mastery-physio-os-standalone.html?week=12" target="_top" title="Week 12 study session">S<span class="mm-vh">Week 12 study session</span></a></li>
+  </ul>
+</div>
+
+<header class="top"><div class="wrap">
+  <p class="eyebrow">BIO 005 &middot; Week 12 &middot; Part 3</p>
+  <h1>Everything Week 12 asks you to be able to do.</h1>
+  <p class="sub">Digestion, and how you use food for fuel. 23 competencies, each one a single thing you will be able to do by Sunday, November 29.</p>
+</div></header>
+
+<div class="wrap">
+  <div class="pwrap">
+    <p style="margin:0;font-size:14px"><strong id="pcount">0 of 23</strong> picked</p>
+    <div class="pbar" role="progressbar" aria-labelledby="pcount" aria-valuemin="0" aria-valuemax="23" aria-valuenow="0"><div class="pfill" id="pfill"></div></div>
+    <p class="pnote">Tick the prompt you are going to do for each competency. Your ticks stay on this device, so you can come back to the same list.</p>
+  </div>
+</div>
+
+<main id="main"><div class="wrap">
+
+  <div class="chead"><span class="cl">6 competencies</span><h2>Endocrine Glands</h2></div>
+  <section class="comp" id="c-w9-growth-hormone" aria-labelledby="h-w9-growth-hormone">
+      <div class="chd"><span class="cnum">1</span><h3 class="cname" id="h-w9-growth-hormone">Growth hormone</h3><span class="tag">Lecture</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Describe the direct and insulin like growth factor mediated actions of growth hormone and predict the result of excess or deficiency before and after epiphyseal closure.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w9-thyroid" aria-labelledby="h-w9-thyroid">
+      <div class="chd"><span class="cnum">2</span><h3 class="cname" id="h-w9-thyroid">Thyroid hormone</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Trace thyroid hormone synthesis, state the metabolic actions of T3 and T4, and match hyperthyroid and hypothyroid signs to the underlying rate of metabolism.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w9-stress-response" aria-labelledby="h-w9-stress-response">
+      <div class="chd"><span class="cnum">3</span><h3 class="cname" id="h-w9-stress-response">Cortisol and the stress response</h3><span class="tag">Lecture</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Describe the metabolic, immune, and cardiovascular actions of cortisol and explain the consequences of chronic elevation.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w9-islet-hormones" aria-labelledby="h-w9-islet-hormones">
+      <div class="chd"><span class="cnum">4</span><h3 class="cname" id="h-w9-islet-hormones">Pancreatic islet hormones</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Compare insulin and glucagon by stimulus and by effect on liver glycogen and on plasma glucose and identify the islet cell that secretes each.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w9-diabetes" aria-labelledby="h-w9-diabetes">
+      <div class="chd"><span class="cnum">5</span><h3 class="cname" id="h-w9-diabetes">Diabetes mellitus</h3><span class="tag">Lecture</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Distinguish type 1 from type 2 diabetes by mechanism and explain how untreated hyperglycemia produces polyuria and ketoacidosis.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w9-lab-glucose-tolerance" aria-labelledby="h-w9-lab-glucose-tolerance">
+      <div class="chd"><span class="cnum">6</span><h3 class="cname" id="h-w9-lab-glucose-tolerance">Glucose tolerance testing</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Plot a glucose tolerance curve from measured or simulated data and distinguish a normal response from an impaired one.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+
+  <div class="chead"><span class="cl">11 competencies</span><h2>Digestive Physiology</h2></div>
+  <section class="comp" id="c-w14-digestive-processes" aria-labelledby="h-w14-digestive-processes">
+      <div class="chd"><span class="cnum">7</span><h3 class="cname" id="h-w14-digestive-processes">Four digestive processes</h3><span class="tag">Lecture</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Distinguish motility, secretion, digestion, and absorption and identify where in the tract each dominates.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w14-gi-motility" aria-labelledby="h-w14-gi-motility">
+      <div class="chd"><span class="cnum">8</span><h3 class="cname" id="h-w14-gi-motility">Motility patterns</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Compare peristalsis, segmentation, and the migrating motor complex by pattern and purpose.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w14-gi-regulation" aria-labelledby="h-w14-gi-regulation">
+      <div class="chd"><span class="cnum">9</span><h3 class="cname" id="h-w14-gi-regulation">Neural and hormonal regulation</h3><span class="tag">Lecture</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Explain short and long reflex control by the enteric nervous system and match gastrin, secretin, cholecystokinin, and glucose dependent insulinotropic peptide to their stimulus and action.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w14-digestive-phases" aria-labelledby="h-w14-digestive-phases">
+      <div class="chd"><span class="cnum">10</span><h3 class="cname" id="h-w14-digestive-phases">Phases of digestive control</h3><span class="tag">Lecture</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Describe the cephalic, gastric, and intestinal phases and state the dominant control mechanism in each.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w14-gastric-secretion" aria-labelledby="h-w14-gastric-secretion">
+      <div class="chd"><span class="cnum">11</span><h3 class="cname" id="h-w14-gastric-secretion">Gastric secretion and mucosal protection</h3><span class="tag">Lecture</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Trace the production of hydrochloric acid by the parietal cell and explain how the mucosal barrier protects the stomach and how ulcers develop when it fails.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w14-pancreatic-bile-secretion" aria-labelledby="h-w14-pancreatic-bile-secretion">
+      <div class="chd"><span class="cnum">12</span><h3 class="cname" id="h-w14-pancreatic-bile-secretion">Pancreatic and biliary secretion</h3><span class="tag">Lecture</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>State the components of pancreatic juice and bile and explain how bicarbonate neutralizes chyme and how bile salts emulsify fat.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w14-carb-protein-absorption" aria-labelledby="h-w14-carb-protein-absorption">
+      <div class="chd"><span class="cnum">13</span><h3 class="cname" id="h-w14-carb-protein-absorption">Carbohydrate and protein digestion and absorption</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Trace a starch and a protein from mouth to bloodstream naming the enzymes at each step and the transport mechanism at the brush border.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w14-lipid-absorption" aria-labelledby="h-w14-lipid-absorption">
+      <div class="chd"><span class="cnum">14</span><h3 class="cname" id="h-w14-lipid-absorption">Lipid digestion and absorption</h3><span class="tag">Lecture</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Trace a triglyceride through emulsification, lipase action, micelle formation, and chylomicron packaging to the lymphatic route and explain why fat takes a different path than glucose.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w14-liver-function" aria-labelledby="h-w14-liver-function">
+      <div class="chd"><span class="cnum">15</span><h3 class="cname" id="h-w14-liver-function">Liver function and enterohepatic circulation</h3><span class="tag">Lecture</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>State the metabolic, storage, and detoxification functions of the liver and trace the enterohepatic circulation of bile salts.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w14-large-intestine" aria-labelledby="h-w14-large-intestine">
+      <div class="chd"><span class="cnum">16</span><h3 class="cname" id="h-w14-large-intestine">Large intestine and microbiome</h3><span class="tag">Lecture</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Describe water and electrolyte absorption in the colon, the contribution of the microbiome, and the defecation reflex.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w14-lab-digestion-enzymes" aria-labelledby="h-w14-lab-digestion-enzymes">
+      <div class="chd"><span class="cnum">17</span><h3 class="cname" id="h-w14-lab-digestion-enzymes">Digestive enzyme experiment</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Test the effect of pH, temperature, and substrate on a digestive enzyme and relate the results to the region of the tract where that enzyme works.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+
+  <div class="chead"><span class="cl">6 competencies</span><h2>Metabolism and Energy Balance</h2></div>
+  <section class="comp" id="c-w14-absorptive-state" aria-labelledby="h-w14-absorptive-state">
+      <div class="chd"><span class="cnum">18</span><h3 class="cname" id="h-w14-absorptive-state">Absorptive state</h3><span class="tag">Lecture</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Describe the fate of glucose, amino acids, and fats in the absorptive state and identify insulin as the dominant hormone.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w14-postabsorptive-state" aria-labelledby="h-w14-postabsorptive-state">
+      <div class="chd"><span class="cnum">19</span><h3 class="cname" id="h-w14-postabsorptive-state">Postabsorptive state</h3><span class="tag">Lecture</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Explain how glycogenolysis, gluconeogenesis, lipolysis, and ketogenesis maintain plasma glucose during fasting and name the hormones that drive each.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w14-glucose-regulation" aria-labelledby="h-w14-glucose-regulation">
+      <div class="chd"><span class="cnum">20</span><h3 class="cname" id="h-w14-glucose-regulation">Integrated glucose regulation</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Predict the hormonal and metabolic response to a carbohydrate meal and to a prolonged fast and explain how plasma glucose stays within range in both.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w14-metabolic-rate" aria-labelledby="h-w14-metabolic-rate">
+      <div class="chd"><span class="cnum">21</span><h3 class="cname" id="h-w14-metabolic-rate">Energy balance and metabolic rate</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Define basal metabolic rate, state the factors that raise and lower it, and explain how indirect calorimetry estimates energy expenditure.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w14-thermoregulation" aria-labelledby="h-w14-thermoregulation">
+      <div class="chd"><span class="cnum">22</span><h3 class="cname" id="h-w14-thermoregulation">Thermoregulation</h3><span class="tag">Lecture</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Trace the negative feedback response to heat and to cold through the hypothalamus and the effectors and explain the mechanism of fever.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w14-lab-metabolic-rate" aria-labelledby="h-w14-lab-metabolic-rate">
+      <div class="chd"><span class="cnum">23</span><h3 class="cname" id="h-w14-lab-metabolic-rate">Metabolic rate measurement</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Estimate metabolic rate from measured or simulated oxygen consumption and compare resting values with values after activity.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+
+  <p class="foot"><span>BIO 005 Human Physiology &middot; Yuba College &middot; Fall 2026</span><span>Dr. Sharilyn Rennie</span></p>
+</div></main>
+
+<script>
+(function(){
+  var KEY = 'bio005-comp-week-12';
+  var state = {};
+  try { state = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch(e) { state = {}; }
+
+  var rows = [].slice.call(document.querySelectorAll('.prompt'));
+  var total = 23;
+
+  function paint(){
+    var picked = 0, seen = {};
+    rows.forEach(function(r){
+      var c = r.getAttribute('data-c'), l = r.getAttribute('data-l');
+      var on = state[c] === l;
+      r.classList.toggle('checked', on);
+      r.querySelector('input').checked = on;
+      var comp = document.getElementById('c-' + c);
+      if (comp) comp.classList.toggle('done', !!state[c]);
+      if (state[c] && !seen[c]) { seen[c] = 1; picked++; }
+    });
+    var pct = total ? Math.round(picked / total * 100) : 0;
+    document.getElementById('pfill').style.width = pct + '%';
+    document.getElementById('pcount').textContent = picked + ' of ' + total;
+    var bar = document.querySelector('.pbar');
+    if (bar) bar.setAttribute('aria-valuenow', picked);
+  }
+
+  rows.forEach(function(r){
+    r.querySelector('input').addEventListener('change', function(){
+      var c = r.getAttribute('data-c'), l = r.getAttribute('data-l');
+      /* one prompt per competency: ticking B unticks A */
+      state[c] = (state[c] === l) ? null : l;
+      if (!state[c]) delete state[c];
+      try { localStorage.setItem(KEY, JSON.stringify(state)); } catch(e) {}
+      paint();
+    });
+  });
+  paint();
+}());
+</script>
+
+<script>
+(function(){var id=document.title.replace(/\W+/g,'-').toLowerCase();
+function post(){try{parent.postMessage({frame:id,height:document.documentElement.scrollHeight},'*');}catch(e){}}
+if('ResizeObserver' in window){new ResizeObserver(post).observe(document.documentElement);}
+window.addEventListener('load',post);window.addEventListener('resize',post);post();})();
+</script>
+</body>
+</html>

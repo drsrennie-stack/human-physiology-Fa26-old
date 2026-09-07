@@ -1,0 +1,30 @@
+{
+ "Water and solution properties": {
+  "a": "Draw one water molecule big, with the partial charges marked, then draw four more hydrogen bonding to it. Beside that, drop in a sodium ion and a drop of oil. Show what the water does around each one, arrows for how the molecules turn. Underneath, one line: why the same property that dissolves the salt refuses the oil.",
+  "b": "Draw a cross section of a cell membrane with water on both sides. Put four solutes on your drawing: glucose, sodium, oxygen, and a steroid hormone. Mark each one hydrophilic or hydrophobic, then draw where each one sits relative to the membrane and whether it can pass. One line under it on which property of the solute decided that, not which property of the membrane."
+ },
+ "pH and buffers": {
+  "a": "Draw a pH scale as a horizontal line from 0 to 14. Mark arterial blood, stomach contents, and urine in the right places, with the actual numbers. Then draw the bicarbonate buffer pair as a two-way arrow above the blood mark, and show with arrows what the pair does when acid is added and when base is added. One line: what would happen to blood pH without it.",
+  "b": "Draw the same beaker twice, one with buffer and one without, and add the same amount of acid to each. Draw the pH before and after in both. Then draw a third panel: the buffered beaker after so much acid that the buffer runs out. Under it, one line naming what 'the buffer runs out' actually means at the molecular level."
+ },
+ "Protein structure and function": {
+  "a": "Pick one protein you will meet later this term: hemoglobin, a sodium channel, or an enzyme. Draw it at all four levels of structure, one box per level, in order. On the fourth box, circle the binding site. Then draw the same protein after heat denaturation and mark exactly what changed. One line: which level of structure was lost first, and why the binding site stopped working.",
+  "b": "Draw a binding site and its ligand as two shapes that fit, like a lock and key, then draw three failed versions beside it: one where the ligand is the wrong shape, one where the site has been distorted by low pH, and one where a second molecule is already sitting in the site. Label which of the three is competition and which is denaturation. One line on why shape is the whole story here."
+ },
+ "Enzyme activity and regulation": {
+  "a": "Draw an energy diagram with reactants, products, and the activation energy hump, then draw the same reaction with enzyme on top of it in a second colour. Show what the enzyme changed and what it did not. Underneath, draw four small graphs in a row: rate against substrate concentration, against temperature, against pH, and with a competitive inhibitor added. Label the axes on every one. One line on which of the four curves has a plateau and what the plateau means.",
+  "b": "Draw an enzyme with its active site, then draw three copies of it: one with a competitive inhibitor in the active site, one with an allosteric inhibitor at a second site, and one with an allosteric activator. In each copy show what happened to the active site's shape. Then write which one you could overcome by adding more substrate, and why that works for one and not the other."
+ },
+ "ATP and energy coupling": {
+  "a": "Draw ATP, then draw the hydrolysis to ADP plus phosphate with the energy released as an arrow leaving. Now draw three cellular jobs that arrow can go and do: a pump moving sodium uphill, a muscle filament sliding, and a molecule being built. In each one show where the phosphate or the energy actually goes. One line: why the cell cannot just store the energy as heat instead.",
+  "b": "Draw ATP as a rechargeable battery on one side of a cycle and draw the cycle closed, with what charges it and what drains it. Then break the cycle at one point of your choosing, either the charging half or the draining half, and write what fails first in a real cell within seconds, and what fails within minutes. Be specific about which cell you picked."
+ },
+ "Enzyme assay": {
+  "a": "Before you run anything, draw the graph you predict: rate on the y axis, whichever variable you are testing on the x, with your predicted optimum marked. Run the assay, then draw the real curve on the same axes in a second colour. Label the optimum you measured. Underneath, write one line on where your prediction and the data disagreed, and one line on what in the method could have moved the measured optimum away from the true one.",
+  "b": "Draw your assay as a flow of steps, one box each, from tube to number, with an arrow between every step. Under each box write the one thing that step controls. Then circle the single step where a mistake would change your answer the most, and write what that mistake would do to the shape of your curve, not just to one point."
+ },
+ "ATP production pathways": {
+  "a": "Draw a cell outline with the cytosol and one mitochondrion. Place glycolysis, the citric acid cycle, and oxidative phosphorylation where each actually happens, and draw arrows for what passes from one to the next. Beside each, write its ATP yield and whether it needs oxygen. One line: which of the three keeps running when oxygen runs out, and what the cell pays for that.",
+  "b": "Draw the same three pathways as a single fuel line from one glucose molecule to the ATP total, with the running count written on the line as it climbs. Then draw a second version of the line for the same glucose under anaerobic conditions and mark where it stops. Under both, one line on why a sprinting muscle and a resting one are on different lines, and what the sprinter accumulates."
+ }
+}

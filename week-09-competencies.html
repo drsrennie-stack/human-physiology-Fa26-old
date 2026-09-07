@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Week 9 competencies &middot; BIO 005 Human Physiology</title>
+<link rel="icon" type="image/svg+xml" href="icon.svg">
+<link rel="stylesheet" href="assets/fonts-site.css">
+<link rel="stylesheet" href="assets/brandbar.css">
+<style>
+:root{
+  --navy:#0B1530; --navy-deep:#060A18; --tint:#ECEFF4;
+  --gold:#C9A14A; --gold-deep:#8A6D33;
+  --maroon:#8B3A2E; --maroon-dk:#6E2D24;
+  --page:#FAFAF9; --card:#FFFFFF;
+  --muted:#414B5C; --faint:#5A6675; --rule:rgba(11,21,48,.16);
+  --display:'Open Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+  --body:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0}
+body{font-family:var(--body);background:var(--page);color:var(--navy);font-size:16px;
+  line-height:1.65;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--display);font-weight:800;letter-spacing:-.022em;margin:0}
+p{margin:0 0 14px;max-width:70ch}
+a{color:var(--maroon);text-underline-offset:3px}
+a:hover{color:var(--maroon-dk)}
+:focus-visible{outline:3px solid var(--maroon);outline-offset:3px;border-radius:3px}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+.skip{position:absolute;left:-9999px;top:0;z-index:90;background:var(--navy);color:#fff;
+  padding:12px 18px;font-weight:700;text-decoration:none}
+.skip:focus{left:0;top:0}
+
+header.top{background:var(--navy-deep);color:#fff;padding:34px 0 30px}
+header.top .eyebrow{font-size:11px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--gold);margin:0 0 10px}
+header.top h1{font-size:clamp(26px,4.4vw,38px);line-height:1.14;color:#fff;max-width:24ch}
+header.top p.sub{color:#D7DCE3;margin:12px 0 0;font-size:16px}
+
+.homebar{max-width:1000px;margin:0 auto;padding:16px 20px 0}
+.home{display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:#fff;
+  text-decoration:none;font-weight:700;font-size:14.5px;border-radius:8px;padding:9px 15px;
+  transition:background 160ms ease}
+.home:hover{background:var(--maroon);color:#fff}
+
+.pwrap{background:var(--card);border:1px solid var(--rule);border-radius:10px;
+  padding:16px 20px;margin:22px 0 0}
+.pbar{height:9px;background:var(--tint);border-radius:99px;overflow:hidden;margin-top:9px}
+.pfill{height:100%;width:0;background:var(--maroon);border-radius:99px;transition:width 260ms ease}
+.pnote{font-size:12.5px;color:var(--muted);margin:7px 0 0}
+
+main{padding:8px 0 60px}
+.chead{border-left:4px solid var(--maroon);padding:2px 0 2px 16px;margin:32px 0 6px}
+.chead .cl{font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--maroon);display:block;margin-bottom:4px}
+.chead h2{font-size:21px}
+
+.comp{background:var(--card);border:1px solid var(--rule);border-radius:10px;
+  padding:18px 20px;margin:12px 0;break-inside:avoid}
+.comp.done{background:var(--tint);border-color:var(--maroon)}
+.chd{display:flex;gap:11px;align-items:baseline;flex-wrap:wrap}
+.cnum{font-family:var(--display);font-weight:800;font-size:14px;color:var(--maroon);
+  white-space:nowrap;font-variant-numeric:tabular-nums}
+.cname{font-family:var(--display);font-weight:800;font-size:17.5px;letter-spacing:-.02em}
+.tag{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  border:1px solid var(--rule);border-radius:99px;padding:2px 9px;color:var(--faint);white-space:nowrap}
+.tag.lab{color:var(--maroon);border-color:var(--maroon)}
+.can{font-size:15px;color:var(--navy);margin:9px 0 0}
+.canlab{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--faint);display:block;margin-bottom:3px}
+.pick{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--faint);margin:16px 0 8px}
+.pick.pending{color:#5F4514}
+.prompt{display:flex;gap:11px;align-items:flex-start;padding:11px 13px;
+  border:1px solid var(--rule);border-radius:7px;margin:0 0 8px;background:var(--card)}
+.prompt:last-child{margin-bottom:0}
+.prompt input[type=checkbox]{flex:0 0 auto;width:22px;height:22px;margin:1px 0 0;
+  accent-color:var(--maroon);cursor:pointer}
+.prompt label{cursor:pointer;margin:0;font-size:14.5px}
+.prompt.checked{background:var(--tint);border-color:var(--maroon)}
+.plet{font-family:var(--display);font-weight:800;color:var(--maroon-dk);margin-right:7px}
+
+.foot{margin:40px 0 0;padding-top:18px;border-top:1px solid var(--rule);
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-size:13px;color:var(--muted)}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+@media print{
+  .mm-brandbar,.mm-jumpwrap,.homebar,.pwrap,.skip{display:none!important}
+  body{background:#fff;font-size:10.5pt}
+  .comp{break-inside:avoid;border-color:#999}
+  header.top{background:#fff;color:#000;padding:0 0 12pt}
+  header.top h1{color:#000}header.top .eyebrow{color:#000}header.top p.sub{color:#000}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the competencies</a>
+
+<div class="mm-brandbar"><div class="mm-wrap">
+  <a class="mm-mark" href="course-start.html" target="_top">
+    <span class="mm-wm">Med<b>Masters</b><span class="mm-wmsub">Collaborative</span></span>
+  </a>
+  <span class="mm-course">BIO 005 &middot; Human Physiology</span>
+</div></div>
+
+<div class="homebar"><a class="home" href="course-start.html" target="_top">
+  <span aria-hidden="true">&larr;</span> Course home</a></div>
+
+<div class="mm-jumpwrap">
+  <span class="lbl">Week 9</span>
+  <ul class="mm-jump">
+    <li><a class="j-note" href="note-sheet.html?week=9" target="_top" title="Week 9 note sheet">N<span class="mm-vh">Week 9 note sheet</span></a></li>
+    <li><a class="j-prob" href="assignment-bookproblems.html?week=9" target="_top" title="Week 9 problems">P<span class="mm-vh">Week 9 problems</span></a></li>
+    <li><a class="j-lab" href="assignment-physioex.html?week=9" target="_top" title="Week 9 lab">L<span class="mm-vh">Week 9 lab</span></a></li>
+    <li><a class="j-disc" href="assignment-discussion.html?week=9" target="_top" title="Week 9 discussion">D<span class="mm-vh">Week 9 discussion</span></a></li>
+    <li><a class="j-study" href="mastery-physio-os-standalone.html?week=9" target="_top" title="Week 9 study session">S<span class="mm-vh">Week 9 study session</span></a></li>
+  </ul>
+</div>
+
+<header class="top"><div class="wrap">
+  <p class="eyebrow">BIO 005 &middot; Week 9 &middot; Part 3</p>
+  <h1>Everything Week 9 asks you to be able to do.</h1>
+  <p class="sub">The heart as a pump. 17 competencies, each one a single thing you will be able to do by Sunday, November 8.</p>
+</div></header>
+
+<div class="wrap">
+  <div class="pwrap">
+    <p style="margin:0;font-size:14px"><strong id="pcount">0 of 17</strong> picked</p>
+    <div class="pbar" role="progressbar" aria-labelledby="pcount" aria-valuemin="0" aria-valuemax="17" aria-valuenow="0"><div class="pfill" id="pfill"></div></div>
+    <p class="pnote">Tick the prompt you are going to do for each competency. Your ticks stay on this device, so you can come back to the same list.</p>
+  </div>
+</div>
+
+<main id="main"><div class="wrap">
+
+  <div class="chead"><span class="cl">1 competency</span><h2>Autonomic Nervous System</h2></div>
+  <section class="comp" id="c-w8-adrenal-medulla" aria-labelledby="h-w8-adrenal-medulla">
+      <div class="chd"><span class="cnum">1</span><h3 class="cname" id="h-w8-adrenal-medulla">Adrenal medulla</h3><span class="tag">Lecture</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Explain why the adrenal medulla is a modified sympathetic ganglion and compare the duration of its circulating catecholamine effect with direct sympathetic innervation.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+
+  <div class="chead"><span class="cl">7 competencies</span><h2>Cardiac Electrophysiology</h2></div>
+  <section class="comp" id="c-w10-pacemaker-potential" aria-labelledby="h-w10-pacemaker-potential">
+      <div class="chd"><span class="cnum">2</span><h3 class="cname" id="h-w10-pacemaker-potential">Pacemaker potential</h3><span class="tag">Lecture</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Explain the unstable pacemaker potential of the sinoatrial node by the funny current, calcium entry, and potassium exit and state what sets intrinsic heart rate.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w10-cardiac-ap" aria-labelledby="h-w10-cardiac-ap">
+      <div class="chd"><span class="cnum">3</span><h3 class="cname" id="h-w10-cardiac-ap">Contractile cell action potential</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Diagram the ventricular action potential and identify the ion movement responsible for the rapid upstroke, the plateau, and repolarization.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w10-conduction-system" aria-labelledby="h-w10-conduction-system">
+      <div class="chd"><span class="cnum">4</span><h3 class="cname" id="h-w10-conduction-system">Conduction system</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Trace an impulse through the sinoatrial node, internodal pathways, atrioventricular node, bundle of His, bundle branches, and Purkinje fibers and explain the purpose of the atrioventricular delay.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w10-cardiac-refractory" aria-labelledby="h-w10-cardiac-refractory">
+      <div class="chd"><span class="cnum">5</span><h3 class="cname" id="h-w10-cardiac-refractory">Cardiac refractory period</h3><span class="tag">Lecture</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Explain why the long refractory period of cardiac muscle prevents tetanus and why that matters for pump function.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w10-ecg-basics" aria-labelledby="h-w10-ecg-basics">
+      <div class="chd"><span class="cnum">6</span><h3 class="cname" id="h-w10-ecg-basics">ECG waves and intervals</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Label the P wave, QRS complex, T wave, PR interval, and QT interval and state the electrical event each represents.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w10-ecg-interpretation" aria-labelledby="h-w10-ecg-interpretation">
+      <div class="chd"><span class="cnum">7</span><h3 class="cname" id="h-w10-ecg-interpretation">ECG interpretation</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Calculate heart rate from an ECG strip and identify sinus rhythm, tachycardia, bradycardia, and a first degree or complete heart block.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w10-lab-ecg" aria-labelledby="h-w10-lab-ecg">
+      <div class="chd"><span class="cnum">8</span><h3 class="cname" id="h-w10-lab-ecg">ECG recording</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Record a lead II ECG, measure the intervals, and correlate each wave with the mechanical event that follows it.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+
+  <div class="chead"><span class="cl">9 competencies</span><h2>Cardiac Mechanics</h2></div>
+  <section class="comp" id="c-w11-cardiac-cycle" aria-labelledby="h-w11-cardiac-cycle">
+      <div class="chd"><span class="cnum">9</span><h3 class="cname" id="h-w11-cardiac-cycle">Cardiac cycle</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Order the phases of the cardiac cycle and state the pressure relationship that opens and closes the atrioventricular and semilunar valves in each phase.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w11-pv-loop" aria-labelledby="h-w11-pv-loop">
+      <div class="chd"><span class="cnum">10</span><h3 class="cname" id="h-w11-pv-loop">Pressure volume loop</h3><span class="tag">Lecture</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Label the four phases of a ventricular pressure volume loop and predict how the loop changes with increased preload, increased afterload, or increased contractility.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w11-heart-sounds" aria-labelledby="h-w11-heart-sounds">
+      <div class="chd"><span class="cnum">11</span><h3 class="cname" id="h-w11-heart-sounds">Heart sounds</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Explain the origin of the first and second heart sounds and relate a murmur to valve stenosis or regurgitation by its timing.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w11-stroke-volume" aria-labelledby="h-w11-stroke-volume">
+      <div class="chd"><span class="cnum">12</span><h3 class="cname" id="h-w11-stroke-volume">Stroke volume and ejection fraction</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Calculate stroke volume and ejection fraction from end diastolic and end systolic volumes and interpret a reduced ejection fraction.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w11-cardiac-output" aria-labelledby="h-w11-cardiac-output">
+      <div class="chd"><span class="cnum">13</span><h3 class="cname" id="h-w11-cardiac-output">Cardiac output</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Calculate cardiac output and cardiac reserve and predict the effect of a change in heart rate or stroke volume on each.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w11-frank-starling" aria-labelledby="h-w11-frank-starling">
+      <div class="chd"><span class="cnum">14</span><h3 class="cname" id="h-w11-frank-starling">Frank Starling relationship</h3><span class="tag">Lecture</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>State the Frank Starling law and explain how venous return and end diastolic volume determine the force of the next contraction.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w11-preload-afterload" aria-labelledby="h-w11-preload-afterload">
+      <div class="chd"><span class="cnum">15</span><h3 class="cname" id="h-w11-preload-afterload">Preload afterload and contractility</h3><span class="tag">Lecture</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Distinguish preload, afterload, and contractility and predict how a change in each alters stroke volume.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w11-cardiac-regulation" aria-labelledby="h-w11-cardiac-regulation">
+      <div class="chd"><span class="cnum">16</span><h3 class="cname" id="h-w11-cardiac-regulation">Autonomic regulation of the heart</h3><span class="tag">Lecture</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Explain how sympathetic and parasympathetic input alter heart rate and contractility at the receptor and second messenger level.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+  <section class="comp" id="c-w11-lab-heart-sounds" aria-labelledby="h-w11-lab-heart-sounds">
+      <div class="chd"><span class="cnum">17</span><h3 class="cname" id="h-w11-lab-heart-sounds">Heart sound and pulse correlation</h3><span class="tag">Lecture</span><span class="tag lab">Lab</span></div>
+      <p class="can"><span class="canlab">You should be able to</span>Auscultate the heart sounds, locate the valve areas, and correlate the sounds with the pulse and with the cardiac cycle phases.</p>
+      <p class="pick pending">Prompts post when the week opens</p>
+  </section>
+
+  <p class="foot"><span>BIO 005 Human Physiology &middot; Yuba College &middot; Fall 2026</span><span>Dr. Sharilyn Rennie</span></p>
+</div></main>
+
+<script>
+(function(){
+  var KEY = 'bio005-comp-week-9';
+  var state = {};
+  try { state = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch(e) { state = {}; }
+
+  var rows = [].slice.call(document.querySelectorAll('.prompt'));
+  var total = 17;
+
+  function paint(){
+    var picked = 0, seen = {};
+    rows.forEach(function(r){
+      var c = r.getAttribute('data-c'), l = r.getAttribute('data-l');
+      var on = state[c] === l;
+      r.classList.toggle('checked', on);
+      r.querySelector('input').checked = on;
+      var comp = document.getElementById('c-' + c);
+      if (comp) comp.classList.toggle('done', !!state[c]);
+      if (state[c] && !seen[c]) { seen[c] = 1; picked++; }
+    });
+    var pct = total ? Math.round(picked / total * 100) : 0;
+    document.getElementById('pfill').style.width = pct + '%';
+    document.getElementById('pcount').textContent = picked + ' of ' + total;
+    var bar = document.querySelector('.pbar');
+    if (bar) bar.setAttribute('aria-valuenow', picked);
+  }
+
+  rows.forEach(function(r){
+    r.querySelector('input').addEventListener('change', function(){
+      var c = r.getAttribute('data-c'), l = r.getAttribute('data-l');
+      /* one prompt per competency: ticking B unticks A */
+      state[c] = (state[c] === l) ? null : l;
+      if (!state[c]) delete state[c];
+      try { localStorage.setItem(KEY, JSON.stringify(state)); } catch(e) {}
+      paint();
+    });
+  });
+  paint();
+}());
+</script>
+
+<script>
+(function(){var id=document.title.replace(/\W+/g,'-').toLowerCase();
+function post(){try{parent.postMessage({frame:id,height:document.documentElement.scrollHeight},'*');}catch(e){}}
+if('ResizeObserver' in window){new ResizeObserver(post).observe(document.documentElement);}
+window.addEventListener('load',post);window.addEventListener('resize',post);post();})();
+</script>
+</body>
+</html>
