@@ -401,8 +401,6 @@ legend{font-size:11.5px;font-weight:700;letter-spacing:.18em;text-transform:uppe
     <ul>
       <li><span><a href="assignment-discussion-01-visionboard.html" target="_top">Vision board discussion</a>, your post and two replies</span>
           <span class="when">Sun Sep 13, 10:00 pm</span></li>
-      <li><span><a href="assignment-bookproblems.html?week=1" target="_top">Chapter 1 book problems</a></span>
-          <span class="when">Sun Sep 13, 10:00 pm</span></li>
       <li><span><a href="assignment-physioex.html?week=1" target="_top">Reference range lab worksheet</a></span>
           <span class="when">Sun Sep 13, 10:00 pm</span></li>
       <li><span><a href="https://yccd.instructure.com/courses/42616/discussion_topics" target="_blank" rel="noopener">Introduce yourself discussion</a>, in Canvas</span>
@@ -572,7 +570,8 @@ legend{font-size:11.5px;font-weight:700;letter-spacing:.18em;text-transform:uppe
       <summary>Support and go deeper</summary>
       <div class="body">
         <ul>
-          <li><strong>Textbook.</strong> Silverthorn, Chapter 1. Open it through Access Pearson inside Canvas. This is where the book problems come from.</li>
+          <li><strong>Textbook.</strong> Silverthorn, Chapter 1. Open it through Access Pearson inside Canvas.</li>
+          <li><strong>The book problems, worked backwards.</strong> If a chapter is not going in by reading it, read a worked solution instead and write beside each line why that step is there. Studying the reasoning before producing it is a legitimate way to learn a topic, and for a hard one it is often the faster way. <a href="assignment-bookproblems.html?week=1" target="_top">Both routes are explained here</a>. No points either way.</li>
           <li><strong>The rest of the Week 1 notes.</strong> Mass balance, body water compartments, the math you need, and the chemistry you actually need are all on the <a href="week-01-notes.html" target="_top">notes page</a>, each with its own heading.</li>
           <li><strong>One patient, everything in it.</strong> The <a href="week-01-notes.html#h-w1-integrate" target="_top">last section of the notes</a> runs a single patient through every idea in the week. Useful if the pieces feel disconnected.</li>
           <li><strong>Stuck on something specific?</strong> Ask in the <a href="virtual-office.html" target="_top">virtual office</a>. Say what your question is, what you already tried, and where it stopped answering your question.</li>
@@ -618,6 +617,11 @@ legend{font-size:11.5px;font-weight:700;letter-spacing:.18em;text-transform:uppe
       <div class="choice">
         <h3>Reconstruct the process</h3>
         <p>Write the seven steps of the reflex pathway in order from memory, then trace temperature through every one.</p>
+      </div>
+      <div class="choice">
+        <h3>Work the book problems</h3>
+        <p>Silverthorn Chapter 1. Try them cold if you have a way in. If you open one and have no idea where to start, read the solution and write why each step is there, then reproduce it from blank paper. Both count.</p>
+        <p class="go"><a href="assignment-bookproblems.html?week=1" target="_top">The problems, and the two routes</a></p>
       </div>
     </div>
 
@@ -1560,7 +1564,9 @@ legend{font-size:11.5px;font-weight:700;letter-spacing:.18em;text-transform:uppe
       html += '<p><strong>Go back to:</strong> ' + back.join(' &middot; ') + '</p>'
         + '<p class="hint">Here is the important part. If you learned it one way the first time and it did not hold, '
         + 'do not simply do the same thing again more slowly. Change something. Watch it if you read it, '
-        + 'draw it if you watched it, or say it out loud to someone.</p>'
+        + 'draw it if you watched it, or say it out loud to someone. And if you open a problem on it and have '
+        + 'no idea where to start, read a worked solution and write beside each line why that step is there. '
+        + 'That is a real way to learn it, not a shortcut round it.</p>'
         + '<p class="label" style="margin-top:20px">Try one of these</p><ul class="reslist">';
       var seen = {};
       resources.forEach(function(r){

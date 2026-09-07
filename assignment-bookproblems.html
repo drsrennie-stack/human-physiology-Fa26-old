@@ -43,6 +43,15 @@ header.brand .bsub{display:block;font-size:10.5px;font-weight:700;letter-spacing
 .homebtn:hover{transform:translateY(-2px);box-shadow:0 8px 16px rgba(11,21,48,.10);text-decoration:none}
 .homebtn:focus-visible{outline:3px solid #8B3A2E;outline-offset:3px}
 @media print{.homebar{display:none}}
+.routes{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin:18px 0 20px}
+.route{background:#fff;border:1px solid rgba(11,21,48,.10);border-radius:14px;padding:22px 24px;
+  box-shadow:0 1px 3px rgba(11,21,48,.08)}
+.route .rlab{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:#8B3A2E;margin:0 0 7px}
+.route h3{font-size:19px;margin:0 0 8px}
+.route ol{padding-left:20px;margin:12px 0 0}
+.route li{margin-bottom:8px}
+.note{background:#ECEFF4;border-radius:10px;padding:16px 20px;margin:6px 0 22px}
 </style>
 </head>
 <body>
@@ -69,34 +78,52 @@ header.brand .bsub{display:block;font-size:10.5px;font-weight:700;letter-spacing
 </header>
 
 <div class="homebar"><a class="homebtn" href="course-start.html" target="_top"><span aria-hidden="true">&larr;</span> Course home</a></div>
-  <p class="eyebrow">Assignment &middot; graded &middot; part of 15% of your grade &middot; AI open, with the log</p>
+  <p class="eyebrow">Practice &middot; no points &middot; two ways to use it</p>
   <h1>Book problems</h1>
   <p class="sub" id="wkline"></p>
   <p class="due" id="dueline"></p>
+  <p class="sub" style="max-width:66ch">These carry no points and nothing here is submitted. They are here because they are the closest thing in the course to what the exam asks you to do, and because working them tells you something a reread cannot.</p>
 
   <div class="probbox"><p id="probline"></p></div>
 
-  <h2>How to work them</h2>
-  <ol class="how">
-    <li><strong>By hand, before you look anything up.</strong> Get as far as you can from what you know; the reasoning is the assignment, not the answer.</li>
-    <li><strong>Write where each piece came from</strong> as you go: the page, the figure, the video. You will need those sources for the log below.</li>
-    <li><strong>The answers in the back are for checking, after.</strong> A problem you watched yourself solve is not a problem you can solve.</li>
-  </ol>
+  <h2>Two ways to use these, and both count as learning</h2>
+  <p style="max-width:68ch">Pick the one that matches where you are with the material. If you have no idea where to start on a problem, the first route will just teach you that you are stuck, which you already knew. The second route exists for exactly that situation, and it is not a lesser option.</p>
 
-  <h2>The AI worksheet</h2>
-  <p style="max-width:66ch">One log entry per problem: solve it, source it, then, and only then, open AI to check it. The worksheet is part of the assignment, not extra. Open it, print it to PDF or paper, and complete it by hand as you work; it does not get filled out on a screen.</p>
-  <p><a class="waybtn" id="aitab" href="ai-work-log.html" target="_blank" rel="noopener">Open the AI worksheet to print</a></p>
-  <p><a class="waybtn" id="compbtn" href="week-01-competencies.html" target="_top">The competencies behind it</a></p>
+  <div class="routes">
+    <div class="route">
+      <p class="rlab">Route 1</p>
+      <h3>Work them forwards</h3>
+      <p>Use this when you have a way in, even a shaky one.</p>
+      <ol>
+        <li><strong>By hand, before you look anything up.</strong> Get as far as you can from what you already know. The reasoning is the point, not the answer.</li>
+        <li><strong>Write down where each piece came from</strong> as you go: the page, the figure, the video.</li>
+        <li><strong>Then check the answer.</strong> Not before. A problem you watched yourself solve is not a problem you can solve.</li>
+        <li><strong>Mark the exact step where you went wrong</strong>, not just that you did. That step is what to take back to the Mastery Check.</li>
+      </ol>
+    </div>
 
-  <h2>Turning it in</h2>
-  <div class="upload">
-    <ol>
-      <li><strong>Both parts, together, or it is not complete:</strong> your hand worked answers to every assigned problem, and your completed AI worksheet.</li>
-      <li><strong>Your own paper is always fine.</strong> Label it the way the worksheet is labeled: your name, the week, the question or part number, and a few words saying what the question asked, above each answer. An unlabeled page cannot be graded.</li>
-      <li>Everything handwritten, photographed or scanned into <strong>one PDF</strong>, answers first, worksheet after.</li>
-      <li>Submit the PDF on this assignment in Canvas before <strong>10:00 pm</strong>. Check for the confirmation screen.</li>
-    </ol>
+    <div class="route">
+      <p class="rlab">Route 2</p>
+      <h3>Work them backwards</h3>
+      <p>Use this when you open a problem and have genuinely no idea how to begin.</p>
+      <ol>
+        <li><strong>Read the worked solution first, slowly.</strong> You are not cheating. You are studying an example of the reasoning before trying to produce it.</li>
+        <li><strong>Beside each line, write why that step was taken.</strong> Not what it says, why it is there. This is the part that does the work, and skipping it turns the whole thing back into reading.</li>
+        <li><strong>Close it and reproduce the solution from blank paper.</strong> If you cannot, open it again, find the step you lost, and close it again.</li>
+        <li><strong>Then do the next problem of the same type cold.</strong> That is the test of whether the example transferred. If it did not, you have learned something useful and cheaply.</li>
+      </ol>
+    </div>
   </div>
+
+  <p class="note" style="max-width:68ch"><strong>Route 2 is not the easy option.</strong> Done properly it takes longer than Route 1, because writing why each step exists is harder than following along. What it does is get you moving on a problem you would otherwise have stared at for twenty minutes and abandoned. Most students should be using Route 2 early in a topic and Route 1 later in the same topic.</p>
+
+  <h2>Where these go next</h2>
+  <p style="max-width:68ch">Nothing here is turned in. What these are for is finding the gap while there is still a week left to close it, and the places that gap goes are all on the weekly page.</p>
+  <p>
+    <a class="waybtn" id="compbtn" href="week-01-competencies.html" target="_top">The competencies behind these problems</a>
+    <a class="waybtn" href="week-01.html#check" target="_top">Take the Mastery Check</a>
+  </p>
+
 </main>
 <script>
 (function(){
@@ -107,13 +134,12 @@ header.brand .bsub{display:block;font-size:10.5px;font-weight:700;letter-spacing
   var w = m ? Math.max(1, Math.min(15, parseInt(m[1],10))) : 1;
   document.title = "Book problems \u00b7 Week " + w + " \u00b7 BIO 005 Human Physiology";
   document.getElementById("wkline").textContent = "Week " + w + " \u00b7 " + TITLES[w-1];
-  document.getElementById("dueline").textContent = "Due " + DUE[w-1] + " at 10:00 pm";
+  document.getElementById("dueline").textContent =
+    "Nothing to submit. Most useful if you work them before " + DUE[w-1] + ", while the week is still open to you.";
   document.getElementById("probline").textContent = PROBLEMS[w] ||
     ("This week's assigned problems are listed on this assignment in Canvas, directly above these instructions.");
   var cb = document.getElementById("compbtn");
   if (cb) cb.href = "week-" + (w<10?"0":"") + w + "-competencies.html";
-  var tab = document.getElementById("aitab");
-  tab.href = "ai-work-log.html?week=" + w;
   var id = "bp" + w + "-" + Math.random().toString(36).slice(2,8);
   function post(){ try{ parent.postMessage({frame:id, height:document.documentElement.scrollHeight}, "*"); }catch(e){} }
   if ("ResizeObserver" in window){ new ResizeObserver(post).observe(document.documentElement); }
