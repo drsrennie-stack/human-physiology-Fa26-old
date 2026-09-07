@@ -87,7 +87,15 @@ function linksnip(url, label){
   return '<p><a href="' + BASE + url + '" target="_blank" rel="noopener"><strong>' + label + '</strong></a><br>Open it in a new tab, print to PDF or copy to your own paper, work it by hand, and upload it here.</p>';
 }
 function iframe(url, title, h){
-  return '<p><iframe src="' + BASE + url + '"\n  title="' + title + '" width="100%" height="' + h + '"\n  style="width:100%; min-height:' + h + 'px; border:0; display:block;"></iframe></p>';
+  /* THE HEIGHT APPEARS ONCE, ON PURPOSE.
+     This used to emit height="1540" AND style="min-height:1540px". Editing
+     one and not the other does nothing visible, because min-height holds the
+     box open at the old number no matter what the height attribute says.
+     Scrubs hit exactly that: changed the height, saw no change, and was left
+     with a screen of white space above the Reply button.
+     The height attribute alone sizes an iframe correctly. One number, one
+     place to change it. */
+  return '<p><iframe src="' + BASE + url + '"\n  title="' + title + '" width="100%" height="' + h + '"\n  style="width:100%; border:0; display:block;"></iframe></p>';
 }
 function snip(label, due, code){
   return '<div class="snip"><div class="bar"><span class="lbl">' + label + '</span><span class="due">' + due + '</span></div>' +
