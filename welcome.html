@@ -458,6 +458,17 @@
   a.wkpill .wkn{font-size:11px;color:rgba(244,239,232,.65);font-weight:600;}
   a.wkpill.current{background:var(--maroon);border-color:var(--gold);}
   a.wkpill.current .hg-thisweek{font-family:'Plus Jakarta Sans',sans-serif;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--straw);font-weight:700;}
+  /* The exam closes the half. It is not another week, so it sits after a
+     divider and wears gold rather than the maroon that means "you are here". */
+  .hg-split{flex-basis:100%;height:0;margin:2px 0 0;}
+  .hg-endcap{display:flex;align-items:center;gap:10px;color:rgba(244,239,232,.55);
+    font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+    flex-basis:100%;margin:14px 0 2px;}
+  .hg-endcap::after{content:"";flex:1;height:1px;background:rgba(244,239,232,.22);}
+  a.wkpill.exampill{background:transparent;border:1.5px solid var(--gold);min-width:132px;}
+  a.wkpill.exampill .wkmain{color:var(--gold);}
+  a.wkpill.exampill .wkn{color:rgba(244,239,232,.72);}
+  a.wkpill.exampill:hover,a.wkpill.exampill:focus-visible{background:rgba(201,161,74,.14);border-color:var(--gold);}
   .hg-arrow{position:absolute;top:-22px;left:50%;transform:translateX(-50%);color:var(--gold);font-size:20px;font-weight:800;}
   .hg-arrow span{display:block;animation:hgbounce 1.1s ease-in-out infinite;}
   @keyframes hgbounce{0%,100%{transform:translateY(0);}50%{transform:translateY(6px);}}
@@ -837,7 +848,7 @@
         <p class="hg-eyebrow">Your weekly hubs</p>
         <p class="hg-now" id="hgNow"></p>
       </div>
-      <p class="hg-instr">Pick a module, then open that week's hub. Every week stays open, so you can revisit past weeks anytime.</p>
+      <p class="hg-instr">Two halves, split at Midterm 1. Open any week's hub, including ones already past, because every week stays open all term.</p>
       <div class="hg-modtabs" id="hgModtabs" role="tablist" aria-label="Modules"></div>
       <div class="hg-weeks" id="hgWeeks"></div>
     </section>
@@ -1199,7 +1210,7 @@
     var wk = Math.floor((now - start) / (7*24*3600*1000)) + 1;
     var preterm = wk < 1;
     wk = Math.max(1, Math.min(15, wk));
-    var mod = wk<=5 ? 1 : wk<=10 ? 2 : 3;
+    var mod = wk <= 8 ? 1 : 2;
     return {week:wk, module:mod, preterm:preterm};
   }
 
@@ -1212,24 +1223,29 @@
      student in the second half of that week is already in the next
      module, so the week is shown there too rather than forced into
      one. Kept in step with BIO004_MODULES in schedule-fall2026.js. */
+  /* TWO HALVES, not three parts.
+     Scrubs, Sep 7 2026. Midterm 1's window is Mon Oct 26 to Wed Oct 28,
+     which sits inside Week 8, so the first half runs Weeks 1 to 8 and ends
+     on it. Midterm 2's window is Dec 14 to 16, inside Week 15, so the
+     second half runs 9 to 15 and ends on that. The previous data here was
+     three five week modules with exams at Weeks 5, 10 and 15, which is the
+     retired five exam model. */
   var HG_MODULES = [
-    {m:1, w:[1,2,3,4,5]},
-    {m:2, w:[6,7,8,9,10]},
-    {m:3, w:[11,12,13,14,15]}
+    {m:1, name:'First half',  w:[1,2,3,4,5,6,7,8],
+     exam:{n:1, wk:8,  window:'Oct 26 to 28', covers:'Weeks 1 to 7'}},
+    {m:2, name:'Second half', w:[9,10,11,12,13,14,15],
+     exam:{n:2, wk:15, window:'Dec 14 to 16', covers:'Weeks 8 to 14'}}
   ];
   /* Which exam sits in which week, so a shared week reads as the
      exam in the module it closes and as the start in the module it
      opens, instead of saying the same thing on both tabs. */
-  var HG_EXAMWK = {5:1, 10:2, 15:3};
+  var HG_EXAMWK = {8:1, 15:2};
   /* A shared week must not read the same on both tabs. In the module
      the exam closes it reads as that exam. In the module it opens it
      reads as the start, because that is what the week is to a student
      sitting in the second half of it. */
-  function hgWeekLabel(wk, mod){
-    var mods = HG_MODULES.filter(function(x){ return x.w.indexOf(wk) > -1; });
-    var shared = mods.length > 1;
-    if(shared && mod === mods[mods.length-1].m) return 'Starts here';
-    if(HG_EXAMWK[wk]) return 'Midterm ' + HG_EXAMWK[wk];
+  function hgWeekLabel(wk){
+    if(HG_EXAMWK[wk]) return 'Midterm ' + HG_EXAMWK[wk] + ' week';
     return 'Open hub';
   }
 
@@ -1238,8 +1254,8 @@
     var now = document.getElementById('hgNow');
     if(now){
       now.innerHTML = cur.preterm
-        ? 'Term starts Sep 8. First stop: <b>Part 1 &middot; Week 1</b>.'
-        : 'You are here: <b>Part ' + cur.module + ' &middot; Week ' + cur.week + '</b>.';
+        ? 'Term starts Sep 8. First stop: <b>Week 1</b>.'
+        : 'You are here: <b>' + HG_MODULES[cur.module-1].name + ' &middot; Week ' + cur.week + '</b>.';
     }
     var tabs = document.getElementById('hgModtabs');
     var weeksBox = document.getElementById('hgWeeks');
@@ -1247,18 +1263,37 @@
     var selected = cur.module;
 
     function renderWeeks(mod){
+      var MO = HG_MODULES[mod-1];
       weeksBox.innerHTML = '';
-      HG_MODULES[mod-1].w.forEach(function(wk){
-        var isNow = (wk===cur.week && mod===cur.module);
+      MO.w.forEach(function(wk){
+        var isNow = (wk===cur.week && mod===cur.module && !cur.preterm);
         var a = document.createElement('a');
         a.className = 'wkpill' + (isNow ? ' current' : '');
         a.href = 'week-' + ('0' + wk).slice(-2) + '.html';
         a.target = '_top';
         a.innerHTML = (isNow ? '<span class="hg-arrow" aria-hidden="true"><span>&#8595;</span></span>' : '') +
           '<span class="wkmain">Week ' + wk + '</span>' +
-          (isNow ? '<span class="hg-thisweek">This week</span>' : '<span class="wkn">' + hgWeekLabel(wk, mod) + '</span>');
+          (isNow ? '<span class="hg-thisweek">This week</span>' : '<span class="wkn">' + hgWeekLabel(wk) + '</span>');
         weeksBox.appendChild(a);
       });
+
+      /* The exam closes the half, so it gets its own button rather than
+         hiding as a caption under a week pill. */
+      if(MO.exam){
+        var cap = document.createElement('p');
+        cap.className = 'hg-endcap';
+        cap.textContent = 'Closes the ' + MO.name.toLowerCase();
+        weeksBox.appendChild(cap);
+
+        var x = document.createElement('a');
+        x.className = 'wkpill exampill';
+        x.href = 'syllabus-fall2026.html#s07';
+        x.target = '_top';
+        x.innerHTML = '<span class="wkmain">Midterm ' + MO.exam.n + '</span>' +
+          '<span class="wkn">' + MO.exam.window + '</span>' +
+          '<span class="wkn">' + MO.exam.covers + '</span>';
+        weeksBox.appendChild(x);
+      }
     }
     tabs.innerHTML = '';
     HG_MODULES.forEach(function(mo){
@@ -1267,7 +1302,7 @@
       b.className = 'modtab' + (mo.m===cur.module ? ' current' : '');
       b.setAttribute('role','tab');
       b.setAttribute('aria-selected', mo.m===selected ? 'true' : 'false');
-      b.innerHTML = 'Part ' + mo.m + (mo.m===cur.module ? ' <span class="modnow">now</span>' : '');
+      b.innerHTML = mo.name + (mo.m===cur.module && !cur.preterm ? ' <span class="modnow">now</span>' : '');
       b.addEventListener('click', function(){
         selected = mo.m;
         tabs.querySelectorAll('.modtab').forEach(function(t){ t.setAttribute('aria-selected','false'); });

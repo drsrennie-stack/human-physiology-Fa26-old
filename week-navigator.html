@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Where you are &middot; BIO 005 Human Physiology</title>
+<meta name="description" content="The current week and every week hub for BIO 005 Human Physiology, Fall 2026.">
+<link rel="icon" type="image/svg+xml" href="icon.svg">
+<link rel="stylesheet" href="assets/fonts-site.css">
+<style>
+/* ============================================================
+   WEEK NAVIGATOR
+   BIO 005 Human Physiology, Yuba College, Fall 2026
+
+   ONE FILE, PASTED ONCE, ON EVERY WEEK.
+
+   Scrubs asked whether the hub gate should go on each week so it
+   points at the new week as the term moves. It should, and it
+   does not need fifteen copies to do it: this page works out the
+   current week from today's date every time it loads. Paste the
+   same iframe on Week 1 and Week 12 and the Canvas front page.
+   The arrow moves itself. Nothing here is ever edited during the
+   term.
+
+   Two halves, split where Midterm 1's window falls. Weeks 1 to 8
+   close on Midterm 1, weeks 9 to 15 close on Midterm 2.
+
+   Deliberately small: about 420px tall, so it sits above a
+   Canvas page's own content rather than burying it.
+   ============================================================ */
+
+:root{
+  --navy:#0B1530; --navy-deep:#04070F; --maroon:#8B3A2E; --maroon-dk:#6E2D24;
+  --gold:#C9A14A; --bone:#F5F1E8;
+  --display:'Open Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+  --body:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;background:transparent}
+body{font-family:var(--body);-webkit-font-smoothing:antialiased}
+em,i{font-style:normal;font-weight:700}
+
+.nav{background:#04070F;border-radius:16px;padding:24px 26px 26px;
+  max-width:1000px;margin:0 auto;color:var(--bone)}
+.head{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin:0 0 8px}
+.eyebrow{font-family:var(--display);font-size:11.5px;font-weight:800;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--gold);margin:0}
+.now{margin:0;font-size:16px;font-weight:700;color:#fff}
+.now b{color:var(--gold)}
+.instr{margin:0 0 16px;font-size:14.5px;color:rgba(245,241,232,.72);max-width:66ch;line-height:1.6}
+
+.tabs{display:flex;gap:9px;margin:0 0 18px;padding:0;list-style:none}
+.tab{font-family:var(--body);font-size:14.5px;font-weight:700;cursor:pointer;
+  background:transparent;color:var(--bone);border:1.5px solid rgba(245,241,232,.34);
+  border-radius:99px;padding:9px 18px;min-height:42px;
+  transition:background 160ms ease,color 160ms ease,border-color 160ms ease}
+.tab:hover{border-color:var(--gold)}
+.tab[aria-selected="true"]{background:var(--bone);color:var(--navy);border-color:var(--bone)}
+.tab .tnow{font-size:10.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--maroon);margin-left:7px}
+.tab:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+.weeks{display:flex;flex-wrap:wrap;gap:11px;margin:0;padding:0;list-style:none}
+.weeks li{margin:0}
+a.wk{position:relative;display:inline-flex;flex-direction:column;align-items:center;gap:3px;
+  text-decoration:none;background:#fff;border:1px solid #fff;
+  color:var(--navy);border-radius:12px;padding:12px 16px;min-width:96px;min-height:62px;
+  text-align:center;transition:border-color 200ms ease,transform 200ms ease,background 200ms ease}
+a.wk:hover,a.wk:focus-visible{border-color:var(--gold);transform:translateY(-2px)}
+a.wk:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+a.wk .m{font-family:var(--display);font-weight:800;font-size:15px;color:var(--navy)}   /* 17.9:1 on white */
+a.wk .s{font-size:11px;color:#414B5C;font-weight:600}                                   /* 8.80:1 on white */
+a.wk.current{background:var(--maroon);border-color:var(--gold)}
+a.wk.current .m{color:#fff}                                                             /* 7.66:1 on maroon */
+a.wk.current .s{color:#F5F1E8;font-weight:700;letter-spacing:.09em;text-transform:uppercase;font-size:10px}  /* 6.94:1 on maroon, gold measured 3.17:1 and failed */
+a.wk.done{opacity:.78}
+
+/* the exam closes the half. Not another week, so it is gold, not maroon. */
+.endcap{display:flex;align-items:center;gap:10px;flex-basis:100%;margin:16px 0 2px;
+  font-family:var(--display);font-size:10.5px;font-weight:800;letter-spacing:.18em;
+  text-transform:uppercase;color:rgba(245,241,232,.55)}
+.endcap::after{content:"";flex:1;height:1px;background:rgba(245,241,232,.22)}
+a.wk.exam{background:transparent;border:1.5px solid var(--gold);min-width:136px}
+a.wk.exam .m{color:var(--gold)}                       /* 6.51:1 on navy-deep */
+a.wk.exam .s{color:rgba(245,241,232,.80)}
+a.wk.exam:hover,a.wk.exam:focus-visible{background:rgba(201,161,74,.14)}
+
+.arrow{position:absolute;top:-21px;left:50%;transform:translateX(-50%);
+  color:var(--gold);font-size:19px;font-weight:800;line-height:1}
+.arrow span{display:block;animation:bob 1.1s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+
+.vh{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;
+  clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+@media (max-width:640px){
+  .nav{padding:20px 16px 22px;border-radius:12px}
+  a.wk{min-width:78px;padding:11px 12px}
+}
+@media (prefers-reduced-motion:reduce){
+  .arrow span{animation:none}
+  a.wk:hover{transform:none}
+  *{transition:none!important}
+}
+@media print{
+  .nav{background:#fff;color:#000;border:1pt solid #999}
+  .eyebrow,.now b,a.wk.exam .m{color:#000}
+  a.wk{border-color:#999;color:#000;background:#fff}
+  a.wk.current{background:#eee}
+  .instr,.now,a.wk .s{color:#000}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-labelledby="navh">
+  <div class="head">
+    <p class="eyebrow" id="navh">Your weekly hubs</p>
+    <p class="now" id="now"></p>
+  </div>
+  <p class="instr">Two halves, split at Midterm 1. Every week stays open all term, so you can go back to one you have already done, or look ahead.</p>
+
+  <div class="tabs" role="tablist" aria-label="Which half of the term" id="tabs"></div>
+  <ul class="weeks" id="weeks"></ul>
+</nav>
+
+<script>
+(function(){
+  "use strict";
+
+  /* Dates of record, from bio005-schedule-fall2026.js. Inlined so this file
+     is one paste with no dependency to keep in sync. */
+  var TITLES = [
+    'How physiology works and what keeps you steady',
+    'The chemistry that does work in the body',
+    'Getting across the membrane',
+    'How cells talk, and the electrical signal',
+    'Synapses and central integration',
+    'Sensing the world, and the responses you do not control',
+    'Muscle, and how movement gets commanded',
+    'Hormones and reproduction, the slow control system',
+    'The heart as a pump',
+    'Pressure, flow, and holding blood pressure steady',
+    'Blood and how the body defends itself',
+    'Digestion, and how you use food for fuel',
+    'Breathing, gas transport, and the fast pH lever',
+    'The kidney and body fluid balance',
+    'The slow pH lever, and putting it all together'
+  ];
+  var OPENS = ['2026-09-08','2026-09-14','2026-09-21','2026-09-28','2026-10-05','2026-10-12',
+               '2026-10-19','2026-10-26','2026-11-02','2026-11-09','2026-11-16','2026-11-23',
+               '2026-11-30','2026-12-07','2026-12-14'];
+  var CLOSES = ['2026-09-13','2026-09-20','2026-09-27','2026-10-04','2026-10-11','2026-10-18',
+                '2026-10-25','2026-11-01','2026-11-08','2026-11-15','2026-11-22','2026-11-29',
+                '2026-12-06','2026-12-13','2026-12-16'];
+
+  /* Two halves. Midterm 1's window (Oct 26 to 28) falls inside Week 8, so the
+     first half runs 1 to 8 and closes on it. Midterm 2 (Dec 14 to 16) falls
+     inside Week 15. */
+  var HALVES = [
+    { name:'First half',  weeks:[1,2,3,4,5,6,7,8],
+      exam:{ n:1, window:'Oct 26 to 28', covers:'Weeks 1 to 7' } },
+    { name:'Second half', weeks:[9,10,11,12,13,14,15],
+      exam:{ n:2, window:'Dec 14 to 16', covers:'Weeks 8 to 14' } }
+  ];
+  var EXAM_WEEK = { 8:1, 15:2 };
+
+  function d(s){ var p = s.split('-'); return new Date(+p[0], +p[1]-1, +p[2]); }
+  function pad(n){ return (n < 10 ? '0' : '') + n; }
+
+  /* WHICH WEEK IS IT. This is the whole reason one file can serve every week:
+     nothing is hard coded to a week, so the same paste keeps pointing at the
+     right one as the term moves. */
+  var today = new Date(); today.setHours(0,0,0,0);
+  var cur = 1, started = false;
+  for (var i = 0; i < OPENS.length; i++){
+    if (d(OPENS[i]) <= today) { cur = i + 1; started = true; }
+  }
+  var curHalf = cur <= 8 ? 1 : 2;
+  var selected = curHalf;
+
+  var nowEl = document.getElementById('now');
+  nowEl.innerHTML = started
+    ? 'You are here: <b>' + HALVES[curHalf-1].name + ' &middot; Week ' + cur + '</b>'
+    : 'Term starts Sep 8. First stop: <b>Week 1</b>';
+
+  var tabsEl = document.getElementById('tabs');
+  var weeksEl = document.getElementById('weeks');
+
+  function renderWeeks(half){
+    var H = HALVES[half-1];
+    weeksEl.innerHTML = '';
+
+    H.weeks.forEach(function(w){
+      var isNow = started && w === cur;
+      var isPast = started && w < cur;
+      var li = document.createElement('li');
+      var a = document.createElement('a');
+      a.className = 'wk' + (isNow ? ' current' : '') + (isPast ? ' done' : '');
+      a.href = 'week-' + pad(w) + '.html';
+      a.target = '_top';
+      a.title = 'Week ' + w + ': ' + TITLES[w-1];
+      a.innerHTML =
+        (isNow ? '<span class="arrow" aria-hidden="true"><span>&#8595;</span></span>' : '') +
+        '<span class="m">Week ' + w + '</span>' +
+        '<span class="s">' + (isNow ? 'This week'
+                                    : EXAM_WEEK[w] ? 'Midterm ' + EXAM_WEEK[w] + ' week'
+                                    : isPast ? 'Revisit' : 'Open hub') + '</span>' +
+        '<span class="vh">. ' + TITLES[w-1] + '</span>';
+      li.appendChild(a);
+      weeksEl.appendChild(li);
+    });
+
+    var cap = document.createElement('li');
+    cap.className = 'endcap';
+    cap.textContent = 'Closes the ' + H.name.toLowerCase();
+    weeksEl.appendChild(cap);
+
+    var xli = document.createElement('li');
+    var x = document.createElement('a');
+    x.className = 'wk exam';
+    x.href = 'syllabus-fall2026.html#s07';
+    x.target = '_top';
+    x.innerHTML = '<span class="m">Midterm ' + H.exam.n + '</span>' +
+      '<span class="s">' + H.exam.window + '</span>' +
+      '<span class="s">' + H.exam.covers + '</span>';
+    xli.appendChild(x);
+    weeksEl.appendChild(xli);
+    post();
+  }
+
+  HALVES.forEach(function(H, idx){
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'tab';
+    b.setAttribute('role', 'tab');
+    b.setAttribute('aria-selected', (idx + 1) === selected ? 'true' : 'false');
+    b.innerHTML = H.name +
+      (started && (idx + 1) === curHalf ? ' <span class="tnow">now</span>' : '');
+    b.addEventListener('click', function(){
+      selected = idx + 1;
+      [].forEach.call(tabsEl.children, function(t, i){
+        t.setAttribute('aria-selected', (i + 1) === selected ? 'true' : 'false');
+      });
+      renderWeeks(selected);
+    });
+    tabsEl.appendChild(b);
+  });
+
+  renderWeeks(selected);
+
+  function post(){
+    try { parent.postMessage({ frame:'bio005-week-navigator',
+      height: document.documentElement.scrollHeight }, '*'); } catch(e) {}
+  }
+  if ('ResizeObserver' in window) new ResizeObserver(post).observe(document.documentElement);
+  window.addEventListener('load', post);
+  window.addEventListener('resize', post);
+  post();
+}());
+</script>
+</body>
+</html>

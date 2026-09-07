@@ -1862,7 +1862,7 @@ window.BIO005_SESSIONS = {
    ------------
        <script src="schedule-fall2026.js"><\/script>
        <script src="section-sync.js"><\/script>
-       <script src="hootie.js"><\/script>
+       <script src="bio005-question-bank.js"><\/script>\n       <script src="hootie.js"><\/script>
 
    It mounts a launcher button in the bottom corner by itself. To
    scope it to a week, the page's nav already carries the week
@@ -3491,6 +3491,7 @@ window.BIO005_SESSIONS = {
         add(sibling('schedule-fall2026.js'));
       }
     }
+    if (!window.BIO005_QUESTIONS) add(sibling('bio005-question-bank.js'));
     add(sibling('hootie.js'));
   })();
 })();
