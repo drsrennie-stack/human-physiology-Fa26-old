@@ -20,6 +20,7 @@ h1{font-size:clamp(26px,4.5vw,36px);font-weight:800;letter-spacing:-.02em;margin
 .due{color:var(--rust);font-weight:800;margin:0 0 18px}
 ol.how{margin:14px 0 22px;padding-left:22px}
 ol.how li{margin:0 0 10px;max-width:64ch}
+.btn.line{background:#fff;color:#8B3A2E;border:1.5px solid #8B3A2E}
 .btns{display:flex;gap:12px;flex-wrap:wrap;margin:6px 0 26px}
 .btn{display:inline-block;font-weight:800;text-decoration:none;border-radius:10px;padding:13px 20px;letter-spacing:.04em}
 .btn.solid{background:var(--rust);color:#fff}
@@ -73,7 +74,7 @@ header.brand .bsub{display:block;font-size:10.5px;font-weight:700;letter-spacing
 (function(){
   var TITLES = ["How physiology works and what keeps you steady", "The chemistry that does work in the body", "Getting across the membrane", "How cells talk, and the electrical signal", "Synapses and central integration", "Sensing the world, and the responses you do not control", "Muscle, and how movement gets commanded", "Hormones and reproduction, the slow control system", "The heart as a pump", "Pressure, flow, and holding blood pressure steady", "Blood and how the body defends itself", "Digestion, and how you use food for fuel", "Breathing, gas transport, and the fast pH lever", "The kidney and body fluid balance", "The slow pH lever, and putting it all together"];
   var DUE = ["Sunday, September 13", "Sunday, September 20", "Sunday, September 27", "Sunday, October 4", "Sunday, October 11", "Sunday, October 18", "Sunday, October 25", "Sunday, November 1", "Sunday, November 8", "Sunday, November 15", "Sunday, November 22", "Sunday, November 29", "Sunday, December 6", "Sunday, December 13", "Wednesday, December 16"];
-  var NOPEX = {"1": ["The standards and ranges lab, where reference ranges come from. Nothing to complete in Pearson this week; PhysioEx begins in Week 2.", "reference-range-lab.html", "Open the reference range lab"], "6": ["The home sensory and reflex lab, measured on yourself. Nothing to complete in Pearson this week.", "", ""]};
+  var NOPEX = {"1": ["The standards and ranges lab, where reference ranges come from. Nothing to complete in Pearson this week; PhysioEx begins in Week 2.", "reference-range-lab.html", "Open the reference range lab"], "6": ["The Week 6 lab is being written and posts when the week opens. Nothing to complete in Pearson this week.", "", ""]};
   var SHEETS = {"2": ["enzyme-amylase-lab.html", "Open the enzyme lab"], "3": ["osmosis-iv-fluids-lab.html", "Open the osmosis and IV fluids lab"], "11": ["cbc-pcr-lab.html", "Open the CBC and PCR lab"], "13": ["pulmonary-function-lab.html", "Open the pulmonary function lab"], "15": ["BIO005-patient-file.html", "Open your patient case file"]};
   var m = /[?&]week=(\d{1,2})/.exec(location.search);
   var w = m ? Math.max(1, Math.min(15, parseInt(m[1],10))) : 1;
@@ -97,6 +98,7 @@ header.brand .bsub{display:block;font-size:10.5px;font-weight:700;letter-spacing
     up.push("<li>Handwritten, photographed or scanned into <strong>one PDF</strong>, submitted here before <strong>10:00 pm</strong>.</li>");
   }
   document.getElementById("how").innerHTML = how.join("");
+  btns.push('<a class="btn line" href="week-' + (w<10?"0":"") + w + '-competencies.html" target="_top">The competencies behind it</a>');
   document.getElementById("btns").innerHTML = btns.join("");
   document.getElementById("up").innerHTML = up.join("");
   var id = "lab" + w + "-" + Math.random().toString(36).slice(2,8);

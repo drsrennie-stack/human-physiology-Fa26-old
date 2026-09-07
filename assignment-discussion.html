@@ -93,6 +93,20 @@ header.brand{display:flex;align-items:center;gap:12px;padding:16px max(24px,4vw)
 header.brand .bwm{font-weight:800;font-size:16px;color:var(--ink)}
 header.brand .bwm b{color:var(--maroon)}
 header.brand .bsub{display:block;font-size:10.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+
+/* this week's prompt, built from bio005-discussions.js */
+#dsc .dcard{background:#fff;border:0;border-radius:12px;padding:20px 22px;margin:0 0 14px;
+  box-shadow:0 1px 3px rgba(11,21,48,.08)}
+#dsc .dlab{font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:#8B3A2E;margin:0 0 8px}
+#dsc .dcard p{margin:0;max-width:66ch}
+#dsc .deyebrow{font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;
+  color:#8B3A2E;margin:0 0 6px}
+#dsc h3.dttl{font-size:19px;font-weight:800;margin:0 0 14px}
+#dsc .attach{background:#060A18;color:#F5F1E8;border-radius:12px;padding:18px 20px;margin:0 0 14px}
+#dsc .attach .dlab{color:#C9A14A}
+#dsc .attach p{color:#F5F1E8}
+#dsc .attach a{color:#C9A14A}
 </style>
 </head>
 <body>
@@ -144,6 +158,11 @@ header.brand .bsub{display:block;font-size:10.5px;font-weight:700;letter-spacing
     <li><b>Then turn the lens around</b><span>This is the half people skip. Where was your prediction wrong this week, and what were you assuming that made it look right? What did you have to go back and re-learn? Which part still feels shaky when you try to explain it without looking?</span></li>
   </ol>
 </section>
+<section id="thisweek">
+  <h2>This week&rsquo;s discussion</h2>
+  <div id="dsc"></div>
+</section>
+
 
 <section>
   <h2>Replying to two classmates</h2>
@@ -172,7 +191,7 @@ header.brand .bsub{display:block;font-size:10.5px;font-weight:700;letter-spacing
   /* ONE FILE, FIFTEEN WEEKS. The week comes from the URL: add ?week=3 to the
      iframe src in Canvas and this page relabels itself. Nothing to edit here
      week to week, and nothing to re-upload. */
-  var TITLES = ["How physiology works and what keeps you steady", "The chemistry that does work in the body", "Getting across the membrane", "The action potential", "The nervous system, from sensing to moving", "How muscle makes force", "Hormones, the slow control system", "Reproduction, and the clearest positive feedback loop", "The heart as a pump", "Pressure, flow, and holding blood pressure steady", "Blood, and how the body defends itself", "Digestion, and how you use food for fuel", "Breathing, gas transport, and blood pH", "The kidney, and body fluid balance", "The slow lever on pH, and putting it all together"];
+  var TITLES = ["How physiology works and what keeps you steady", "The chemistry that does work in the body", "Getting across the membrane", "How cells talk, and the electrical signal", "Synapses and central integration", "Sensing the world, and the responses you do not control", "Muscle, and how movement gets commanded", "Hormones and reproduction, the slow control system", "The heart as a pump", "Pressure, flow, and holding blood pressure steady", "Blood and how the body defends itself", "Digestion, and how you use food for fuel", "Breathing, gas transport, and the fast pH lever", "The kidney and body fluid balance", "The slow pH lever, and putting it all together"];
   var q = new URLSearchParams(window.location.search);
   var w = parseInt(q.get("week"), 10);
   if (isNaN(w) || w < 1 || w > 15) { w = 1; }
@@ -193,5 +212,32 @@ header.brand .bsub{display:block;font-size:10.5px;font-weight:700;letter-spacing
 </script>
 <script src="bio005-back.js"></script>
 <script src="bio005-nav.js" defer></script>
+
+<script src="bio005-discussions.js"></script>
+<script>
+(function(){
+  var q = new URLSearchParams(window.location.search);
+  var w = parseInt(q.get("week"), 10);
+  if (isNaN(w) || w < 1 || w > 15) { w = 1; }
+  var host = document.getElementById("dsc");
+  if (!host) return;
+  var D = (window.BIO005_DISCUSSIONS || {})[String(w)];
+  if (!D){
+    host.innerHTML = '<div class="dcard"><p class="dlab">Posts when the week opens</p>' +
+      '<p>Week 1 is the vision board, and it has its own page. Open it from the week page.</p></div>';
+    return;
+  }
+  function card(lab, text, cls){
+    return '<div class="dcard' + (cls ? ' ' + cls : '') + '"><p class="dlab">' + lab + '</p><p>' + text + '</p></div>';
+  }
+  var html = '<p class="deyebrow">' + D.eyebrow + '</p><h3 class="dttl">' + D.title + '</h3>';
+  if (D.pick)   html += card("Choose", D.pick);
+  if (D.work)   html += card("The physiology", D.work);
+  if (D.think)  html += card("Your own thinking, in the same post", D.think);
+  if (D.attach) html += card("Attach this to your post", D.attach, "attach");
+  if (D.reply)  html += card("Your two replies", D.reply);
+  host.innerHTML = html;
+})();
+</script>
 </body>
 </html>

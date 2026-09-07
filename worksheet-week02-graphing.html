@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Week 2 graphing worksheet &middot; BIO 005 Human Physiology</title>
+<link rel="icon" type="image/svg+xml" href="icon.svg">
+<link rel="stylesheet" href="assets/fonts-site.css">
+<link rel="stylesheet" href="assets/brandbar.css">
+<style>
+/* ============================================================
+   worksheet-week02-graphing.html
+   Print this, work it by hand, photograph it, attach it to the
+   Week 2 discussion post.
+
+   Built for paper first. The print stylesheet goes single ink:
+   every palette hue is redefined as a dark value, solid fills are
+   removed so nothing photocopies as a grey block, and every box is
+   kept whole on one page. Four pages, none of them half empty.
+   The name line and the instructions ride in the header rather than
+   taking a cover page of their own.
+   ============================================================ */
+:root{
+  --navy:#0B1530; --navy-deep:#060A18; --maroon:#8B3A2E; --maroon-dark:#6E2D24;
+  --gold:#C9A14A; --offwhite:#FAFAF9; --bone:#F5F1E8; --ink-soft:#414B5C;
+  --line:rgba(11,21,48,.16); --rule:#B8BEC8;
+  --display:'Open Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+  --body:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0}
+body{font-family:var(--body);background:var(--offwhite);color:var(--navy);
+  font-size:15.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--display);font-weight:800;letter-spacing:-.02em;margin:0}
+em,i,cite{font-style:normal;color:var(--maroon)}
+p{margin:0 0 12px;max-width:68ch}
+a{color:var(--maroon);text-underline-offset:3px}
+:focus-visible{outline:3px solid var(--maroon);outline-offset:3px}
+.wrap{max-width:940px;margin:0 auto;padding:0 20px}
+.skip{position:absolute;left:-9999px;top:0;z-index:90;background:var(--navy);color:#fff;
+  padding:12px 18px;font-weight:700;text-decoration:none}
+.skip:focus{left:0;top:0}
+
+header.top{background:var(--navy-deep);color:#fff;padding:32px 0 28px;margin-top:16px}
+header.top .eyebrow{font-size:11px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--gold);margin:0 0 10px}
+header.top h1{font-size:clamp(25px,4.2vw,36px);line-height:1.14;color:#fff;max-width:22ch}
+header.top p{margin:12px 0 0;color:var(--bone);max-width:62ch;font-size:15px}
+.btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.btn{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.16em;
+  text-transform:uppercase;text-decoration:none;padding:13px 20px;border-radius:8px;
+  background:var(--gold);color:var(--navy-deep);border:1.5px solid var(--gold)}
+.btn.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.55)}
+.btn:hover{background:#fff;color:var(--navy-deep);border-color:#fff}
+
+main{padding:28px 0 40px}
+h2{font-size:21px;color:var(--maroon-dark);margin:0 0 10px}
+h3{font-size:16.5px;margin:0 0 6px}
+.card.noborder{background:transparent;box-shadow:none;padding:0 0 4px}
+.card{background:#fff;border:0;border-radius:12px;padding:20px 22px;margin:0 0 16px;
+  box-shadow:0 1px 3px rgba(11,21,48,.08)}
+.lab{font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--maroon);margin:0 0 8px}
+ol.plain{margin:0;padding-left:22px}
+ol.plain li{margin:0 0 9px;max-width:66ch}
+
+/* name block */
+.namebar{display:flex;gap:26px;flex-wrap:wrap;margin:0 0 18px}
+.namebar div{flex:1 1 220px}
+.nlbl{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--ink-soft);margin:0 0 4px}
+.nline{border-bottom:1px solid var(--rule);height:26px}
+
+/* a figure and its questions */
+.fig{background:#fff;border-radius:12px;padding:22px 24px;margin:0 0 18px;
+  box-shadow:0 1px 3px rgba(11,21,48,.08)}
+.fig svg{display:block;width:100%;height:auto;max-width:560px;margin:6px auto 14px}
+.qs{margin:14px 0 0;padding:0;list-style:none;counter-reset:q}
+.qs li{counter-increment:q;margin:0 0 14px}
+.qs li .qt{font-weight:700;display:block;margin:0 0 3px;max-width:66ch}
+.qs li .qt::before{content:counter(q) ". ";color:var(--maroon);font-weight:800}
+.rule{border-bottom:1px solid var(--rule);height:24px;margin-top:4px}
+.rule2{border-bottom:1px solid var(--rule);height:24px}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* ---------- PAPER ----------
+   Single ink. No fills, no shadows, hairlines only, and no box
+   sliced by a page turn. */
+@media print{
+  @page{size:letter portrait;margin:14mm 14mm 12mm}
+  :root{--navy:#000;--navy-deep:#000;--maroon:#000;--maroon-dark:#000;--gold:#000;
+        --ink-soft:#000;--rule:#000;--offwhite:#fff;--bone:#000}
+  .skip,.mm-brandbar,.mm-jumpwrap,.mm-foot,.btnrow,.noprint{display:none !important}
+  body{background:#fff;color:#000;font-size:9.5pt;line-height:1.34}
+  header.top{background:#fff;color:#000;padding:0 0 6pt;margin:0;border-bottom:.75pt solid #000}
+  header.top h1{font-size:15pt;color:#000;max-width:none}
+  header.top p{color:#000;font-size:9pt;margin:5pt 0 0}
+  header.top .eyebrow{color:#000;font-size:7.5pt;margin:0 0 4pt}
+  .wrap{max-width:none;padding:0}
+  main{padding:8pt 0 0}
+  h2{font-size:11.5pt;color:#000;margin:0 0 5pt}
+  h3{font-size:10pt;margin:0 0 3pt}
+  p{margin:0 0 5pt;max-width:none}
+  /* A box must fit on one page. These do, at this density, so they keep
+     their hairline. Nothing is allowed to be sliced by a page turn. */
+  .card.noborder{border:0;padding:0 0 6pt}
+  .card,.fig{box-shadow:none;border:.6pt solid #000;border-radius:0;padding:7pt 8pt;margin:0 0 7pt;
+    break-inside:avoid;page-break-inside:avoid}
+  .lab{color:#000;font-size:7.5pt;margin:0 0 4pt}
+  .fig svg{max-width:96mm;margin:3pt auto 6pt}
+  .qs li{margin:0 0 5pt;break-inside:avoid;page-break-inside:avoid}
+  .rule,.rule2{border-bottom:.6pt solid #000;height:17pt}
+  .namebar div{flex:1 1 46%}
+  .nline{border-bottom:.6pt solid #000;height:20pt}
+  h1,h2,h3{break-after:avoid;page-break-after:avoid}
+  a{color:#000;text-decoration:none}
+  /* the figures themselves go to line art */
+  svg text{fill:#000 !important}
+  svg .ax,svg .tick,svg .grid{stroke:#000 !important}
+  svg .grid{stroke-opacity:.35}
+  svg .curve{stroke:#000 !important;fill:none !important}
+  svg .curve2{stroke:#000 !important;stroke-dasharray:5 3;fill:none !important}
+  svg .marker{stroke:#000 !important;fill:none !important;stroke-dasharray:3 2}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the worksheet</a>
+
+<div class="mm-brandbar"><div class="mm-wrap">
+  <a class="mm-mark" href="course-start.html" target="_top">
+    <svg viewBox="40 10 125 148" width="22" height="26" role="img" aria-label="BIO 005 Human Physiology, course home">
+      <g transform="translate(0,18)">
+        <g transform="translate(60,0) rotate(8 0 130)"><circle cx="0" cy="20" r="10" fill="#0B1530"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#0B1530"/></g>
+        <g transform="translate(100,0)"><circle cx="0" cy="10" r="11" fill="#8B3A2E"/><path d="M 0,22 C -11,22 -17,26 -17,34 C -17,52 -14,70 -12,86 C -11,108 -13,122 -15,132 L 15,132 C 13,122 11,108 12,86 C 14,70 17,52 17,34 C 17,26 11,22 0,22 Z" fill="#8B3A2E"/></g>
+        <g transform="translate(140,0) rotate(-8 0 130)"><circle cx="0" cy="20" r="10" fill="#C9A14A"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#C9A14A"/></g>
+      </g>
+    </svg>
+    <span><span class="mm-wm">BIO <b>005</b></span><span class="mm-wmsub">Human Physiology</span></span>
+  </a>
+  <span class="mm-course">BIO 005 &middot; Fall 2026</span>
+</div></div>
+
+<div class="mm-jumpwrap">
+  <span class="lbl">This week</span>
+  <ul class="mm-jump" aria-label="Week 2 assignments">
+    <li><a class="j-note" href="note-sheet.html?week=2" target="_top" title="Week 2 note sheet">N<span class="mm-vh">Week 2 note sheet</span></a></li>
+    <li><a class="j-prob" href="assignment-bookproblems.html?week=2" target="_top" title="Week 2 problems">P<span class="mm-vh">Week 2 problems</span></a></li>
+    <li><a class="j-lab" href="assignment-physioex.html?week=2" target="_top" title="Week 2 lab">L<span class="mm-vh">Week 2 lab</span></a></li>
+    <li><a class="j-disc" href="assignment-discussion.html?week=2" target="_top" title="Week 2 discussion">D<span class="mm-vh">Week 2 discussion</span></a></li>
+    <li><a class="j-study" href="mastery-physio-os-standalone.html?week=2" target="_top" title="Week 2 study session">S<span class="mm-vh">Week 2 study session</span></a></li>
+  </ul>
+</div>
+
+<header class="top"><div class="wrap">
+  <p class="eyebrow">BIO 005 &middot; Week 2 &middot; Worksheet</p>
+  <h1>Reading a physiology graph.</h1>
+  <p>Three figures. For each one you work out what it actually says, and just as importantly what it does not say. Print it, do it by hand, then photograph or scan it and attach it to your Week 2 discussion post.</p>
+  <div class="btnrow noprint">
+    <a class="btn" href="#" onclick="window.print();return false;">Print or save as PDF</a>
+    <a class="btn ghost" href="assignment-discussion.html?week=2" target="_top">The discussion this goes with</a>
+  </div>
+</div></header>
+
+<main id="main"><div class="wrap">
+
+<div class="card noborder">
+  <div class="namebar">
+    <div><p class="nlbl">Your name</p><div class="nline"></div></div>
+    <div><p class="nlbl">Date</p><div class="nline"></div></div>
+  </div>
+  <p style="margin:0"><strong>Work it by hand on this printed sheet, in pen or pencil.</strong> Do the figures in order and do not look ahead. For each one, glance at it and write what you think it says before you study the axes; your discussion post asks about that first impression, so be honest rather than tidying it up afterwards. Every figure here is real physiology, so these shapes come back later in the term.</p>
+</div>
+
+<!-- ============ FIGURE A ============ -->
+<div class="fig">
+  <p class="lab">Figure A</p>
+  <h3>Enzyme activity against pH, for two digestive enzymes</h3>
+
+  <svg viewBox="0 0 560 340" role="img" aria-label="Enzyme activity plotted against pH for two enzymes. Pepsin peaks near pH 2 and falls to near zero by pH 6. Pancreatic amylase peaks near pH 7 and is near zero below pH 4 and above pH 10.">
+    <g class="grid" stroke="#B8BEC8" stroke-width="1">
+      <line x1="70" y1="270" x2="530" y2="270"/>
+      <line x1="70" y1="215" x2="530" y2="215"/>
+      <line x1="70" y1="160" x2="530" y2="160"/>
+      <line x1="70" y1="105" x2="530" y2="105"/>
+      <line x1="70" y1="50"  x2="530" y2="50"/>
+    </g>
+    <g class="ax" stroke="#0B1530" stroke-width="2" fill="none">
+      <line x1="70" y1="50" x2="70" y2="270"/>
+      <line x1="70" y1="270" x2="530" y2="270"/>
+    </g>
+    <g class="tick" stroke="#0B1530" stroke-width="1.5">
+      <line x1="70.0" y1="270" x2="70.0" y2="276"/>
+      <line x1="135.7" y1="270" x2="135.7" y2="276"/>
+      <line x1="201.4" y1="270" x2="201.4" y2="276"/>
+      <line x1="267.1" y1="270" x2="267.1" y2="276"/>
+      <line x1="332.9" y1="270" x2="332.9" y2="276"/>
+      <line x1="398.6" y1="270" x2="398.6" y2="276"/>
+      <line x1="464.3" y1="270" x2="464.3" y2="276"/>
+      <line x1="530.0" y1="270" x2="530.0" y2="276"/>
+    </g>
+    <g font-family="Plus Jakarta Sans, sans-serif" font-size="11" fill="#0B1530" text-anchor="middle">
+      <text x="70.0" y="290">0</text>
+      <text x="135.7" y="290">2</text>
+      <text x="201.4" y="290">4</text>
+      <text x="267.1" y="290">6</text>
+      <text x="332.9" y="290">8</text>
+      <text x="398.6" y="290">10</text>
+      <text x="464.3" y="290">12</text>
+      <text x="530.0" y="290">14</text>
+      <text x="300" y="312" font-size="12" font-weight="700">pH</text>
+    </g>
+    <g font-family="Plus Jakarta Sans, sans-serif" font-size="11" fill="#0B1530" text-anchor="end">
+      <text x="62" y="274">0</text><text x="62" y="219">25</text>
+      <text x="62" y="164">50</text><text x="62" y="109">75</text><text x="62" y="54">100</text>
+    </g>
+    <text x="22" y="160" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="700"
+          fill="#0B1530" text-anchor="middle" transform="rotate(-90 22 160)">Activity, % of maximum</text>
+
+    <!-- pepsin, peak near pH 2 -->
+    <path class="curve" d="M 76,268 C 100,235 118,72 136,56 C 156,72 172,150 194,214 C 214,251 232,266 250,269 L 300,270"
+          stroke="#8B3A2E" stroke-width="2.5" fill="none"/>
+    <!-- pancreatic amylase, peak near pH 7 -->
+    <path class="curve2" d="M 168,270 C 200,266 224,228 250,152 C 268,92 284,58 300,56 C 318,58 336,96 356,162 C 378,228 400,264 422,269 L 466,270"
+          stroke="#0B1530" stroke-width="2.5" stroke-dasharray="7 4" fill="none"/>
+
+    <g font-family="Plus Jakarta Sans, sans-serif" font-size="11.5" font-weight="700">
+      <text x="140" y="44" fill="#8B3A2E">Pepsin</text>
+      <text x="308" y="44" fill="#0B1530">Pancreatic amylase</text>
+    </g>
+  </svg>
+
+  <ol class="qs">
+    <li><span class="qt">Before you study it: in one line, what do you think this figure says?</span><div class="rule"></div></li>
+    <li><span class="qt">Now the axes. What is plotted on each one, and in what units?</span><div class="rule"></div><div class="rule2"></div></li>
+    <li><span class="qt">Each curve peaks somewhere different. Name the peak pH for each enzyme, and say where in the body each one does its work.</span><div class="rule"></div><div class="rule2"></div></li>
+    <li><span class="qt">Why does activity fall away on BOTH sides of the peak? Answer in terms of the enzyme, not in terms of the graph.</span><div class="rule"></div><div class="rule2"></div></li>
+    <li><span class="qt">What does this figure NOT tell you that a reader might assume it does? Name one thing.</span><div class="rule"></div><div class="rule2"></div></li>
+    <li><span class="qt">A patient takes a drug that raises stomach pH to 5. Using only this figure, what would you predict, and what would you need to know before you trusted that prediction?</span><div class="rule"></div><div class="rule2"></div><div class="rule2"></div></li>
+  </ol>
+</div>
+
+<!-- ============ FIGURE B ============ -->
+<div class="fig">
+  <p class="lab">Figure B</p>
+  <h3>Titration of a weak acid, with the buffer region marked</h3>
+
+  <svg viewBox="0 0 560 340" role="img" aria-label="A titration curve. pH rises slowly through a flat buffer region centred on the pKa of 6.1, then steeply past the equivalence point. The buffer region is marked between roughly one quarter and three quarters of base added.">
+    <g class="grid" stroke="#B8BEC8" stroke-width="1">
+      <line x1="70" y1="270" x2="530" y2="270"/>
+      <line x1="70" y1="215" x2="530" y2="215"/>
+      <line x1="70" y1="160" x2="530" y2="160"/>
+      <line x1="70" y1="105" x2="530" y2="105"/>
+      <line x1="70" y1="50"  x2="530" y2="50"/>
+    </g>
+    <g class="ax" stroke="#0B1530" stroke-width="2" fill="none">
+      <line x1="70" y1="50" x2="70" y2="270"/>
+      <line x1="70" y1="270" x2="530" y2="270"/>
+    </g>
+    <g class="tick" stroke="#0B1530" stroke-width="1.5">
+      <line x1="70"  y1="270" x2="70"  y2="276"/>
+      <line x1="185" y1="270" x2="185" y2="276"/>
+      <line x1="300" y1="270" x2="300" y2="276"/>
+      <line x1="415" y1="270" x2="415" y2="276"/>
+      <line x1="530" y1="270" x2="530" y2="276"/>
+    </g>
+    <g font-family="Plus Jakarta Sans, sans-serif" font-size="11" fill="#0B1530" text-anchor="middle">
+      <text x="70"  y="290">0</text><text x="185" y="290">25</text>
+      <text x="300" y="290">50</text><text x="415" y="290">75</text><text x="530" y="290">100</text>
+      <text x="300" y="312" font-size="12" font-weight="700">Strong base added, % of the amount needed to neutralise</text>
+    </g>
+    <g font-family="Plus Jakarta Sans, sans-serif" font-size="11" fill="#0B1530" text-anchor="end">
+      <text x="62" y="274">2</text><text x="62" y="219">4</text>
+      <text x="62" y="164">6</text><text x="62" y="109">8</text><text x="62" y="54">10</text>
+    </g>
+    <text x="22" y="160" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="700"
+          fill="#0B1530" text-anchor="middle" transform="rotate(-90 22 160)">pH</text>
+
+    <!-- buffer region marker -->
+    <g class="marker" stroke="#C9A14A" stroke-width="1.5" stroke-dasharray="4 3" fill="none">
+      <line x1="185" y1="50" x2="185" y2="270"/>
+      <line x1="415" y1="50" x2="415" y2="270"/>
+      <line x1="70"  y1="162" x2="300" y2="162"/>
+    </g>
+    <text x="300" y="42" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="700"
+          fill="#8B3A2E" text-anchor="middle">buffer region</text>
+    <text x="76" y="154" font-family="Plus Jakarta Sans, sans-serif" font-size="10.5"
+          fill="#8B3A2E">pH = pKa = 6.1</text>
+
+    <path class="curve" d="M 70,258 C 100,244 140,206 185,188 C 230,176 270,168 300,162 C 330,156 370,148 415,136
+                           C 450,120 470,86 490,62 C 505,54 518,52 530,51"
+          stroke="#8B3A2E" stroke-width="2.5" fill="none"/>
+  </svg>
+
+  <ol class="qs">
+    <li><span class="qt">Before you study it: in one line, what do you think this figure says?</span><div class="rule"></div></li>
+    <li><span class="qt">What is on each axis, and in what units? One axis has no units. Say why not.</span><div class="rule"></div><div class="rule2"></div></li>
+    <li><span class="qt">The middle of the curve is nearly flat. What is physically happening in the solution over that stretch, and why does adding base barely move the pH there?</span><div class="rule"></div><div class="rule2"></div><div class="rule2"></div></li>
+    <li><span class="qt">The pKa is marked at 6.1. What is true about the ratio of acid to base at exactly that point?</span><div class="rule"></div><div class="rule2"></div></li>
+    <li><span class="qt">6.1 is the pKa of the carbonic acid and bicarbonate system. Blood is held near pH 7.4, well outside the flat part of this curve. Give one reason that system still works well in the body.</span><div class="rule"></div><div class="rule2"></div><div class="rule2"></div></li>
+    <li><span class="qt">What does this figure NOT tell you? Name one thing you would need before using it to reason about a patient.</span><div class="rule"></div><div class="rule2"></div></li>
+  </ol>
+</div>
+
+<!-- ============ FIGURE C ============ -->
+<div class="fig">
+  <p class="lab">Figure C</p>
+  <h3>Rate of carrier-mediated transport against solute concentration</h3>
+
+  <svg viewBox="0 0 560 340" role="img" aria-label="A hyperbolic saturation curve. Transport rate rises steeply at low concentration then flattens toward a maximum. Vmax is marked as a horizontal line at the plateau and Km is marked on the x axis at the concentration giving half of Vmax. A straight dashed line rising without limit is shown for comparison and labelled simple diffusion.">
+    <g class="grid" stroke="#B8BEC8" stroke-width="1">
+      <line x1="70" y1="270" x2="530" y2="270"/>
+      <line x1="70" y1="215" x2="530" y2="215"/>
+      <line x1="70" y1="160" x2="530" y2="160"/>
+      <line x1="70" y1="105" x2="530" y2="105"/>
+      <line x1="70" y1="50"  x2="530" y2="50"/>
+    </g>
+    <g class="ax" stroke="#0B1530" stroke-width="2" fill="none">
+      <line x1="70" y1="50" x2="70" y2="270"/>
+      <line x1="70" y1="270" x2="530" y2="270"/>
+    </g>
+    <g class="tick" stroke="#0B1530" stroke-width="1.5">
+      <line x1="70"  y1="270" x2="70"  y2="276"/>
+      <line x1="162" y1="270" x2="162" y2="276"/>
+      <line x1="254" y1="270" x2="254" y2="276"/>
+      <line x1="346" y1="270" x2="346" y2="276"/>
+      <line x1="438" y1="270" x2="438" y2="276"/>
+      <line x1="530" y1="270" x2="530" y2="276"/>
+    </g>
+    <g font-family="Plus Jakarta Sans, sans-serif" font-size="11" fill="#0B1530" text-anchor="middle">
+      <text x="70"  y="290">0</text><text x="162" y="290">5</text>
+      <text x="254" y="290">10</text><text x="346" y="290">15</text>
+      <text x="438" y="290">20</text><text x="530" y="290">25</text>
+      <text x="300" y="312" font-size="12" font-weight="700">Solute concentration outside the cell, mmol/L</text>
+    </g>
+    <g font-family="Plus Jakarta Sans, sans-serif" font-size="11" fill="#0B1530" text-anchor="end">
+      <text x="62" y="274">0</text><text x="62" y="219">25</text>
+      <text x="62" y="164">50</text><text x="62" y="109">75</text><text x="62" y="54">100</text>
+    </g>
+    <text x="22" y="160" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="700"
+          fill="#0B1530" text-anchor="middle" transform="rotate(-90 22 160)">Transport rate, % of maximum</text>
+
+    <!-- Vmax and Km markers -->
+    <g class="marker" stroke="#C9A14A" stroke-width="1.5" stroke-dasharray="4 3" fill="none">
+      <line x1="70" y1="62" x2="530" y2="62"/>
+      <line x1="70" y1="166" x2="162" y2="166"/>
+      <line x1="162" y1="166" x2="162" y2="270"/>
+    </g>
+    <text x="500" y="55" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="700"
+          fill="#8B3A2E" text-anchor="end">V max</text>
+    <text x="168" y="258" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="700"
+          fill="#8B3A2E">K m</text>
+
+    <!-- saturation curve -->
+    <path class="curve" d="M 70,270 C 100,214 130,184 162,166 C 210,142 260,116 310,100
+                           C 370,84 440,71 530,65"
+          stroke="#8B3A2E" stroke-width="2.5" fill="none"/>
+    <!-- simple diffusion, for comparison -->
+    <path class="curve2" d="M 70,270 L 460,50" stroke="#0B1530" stroke-width="2" stroke-dasharray="7 4" fill="none"/>
+    <text x="286" y="146" font-family="Plus Jakarta Sans, sans-serif" font-size="11" font-weight="700"
+          fill="#0B1530" transform="rotate(-30 286 146)">simple diffusion</text>
+  </svg>
+
+  <ol class="qs">
+    <li><span class="qt">Before you study it: in one line, what do you think this figure says?</span><div class="rule"></div></li>
+    <li><span class="qt">What is on each axis, and in what units?</span><div class="rule"></div><div class="rule2"></div></li>
+    <li><span class="qt">The solid curve flattens and the dashed line does not. What physical thing about the membrane makes the solid one flatten?</span><div class="rule"></div><div class="rule2"></div></li>
+    <li><span class="qt">Read Km off the graph. What does that value mean, in words a patient could follow?</span><div class="rule"></div><div class="rule2"></div></li>
+    <li><span class="qt">Blood glucose rises above the point where the kidney's carriers saturate. Using the shape of this curve, say what appears in the urine and why.</span><div class="rule"></div><div class="rule2"></div><div class="rule2"></div></li>
+    <li><span class="qt">Which of the two lines would still be rising at a concentration off the right edge of this graph, and what does that tell you about that transport route?</span><div class="rule"></div><div class="rule2"></div></li>
+  </ol>
+</div>
+
+<div class="card">
+  <p class="lab">Last one, and it is the one the discussion asks about</p>
+  <h3>Across all three figures</h3>
+  <ol class="qs">
+    <li><span class="qt">Which figure gave you the most trouble, and what specifically was hard about it? Not "it was confusing." Name the step.</span><div class="rule"></div><div class="rule2"></div><div class="rule2"></div><div class="rule2"></div><div class="rule2"></div></li>
+    <li><span class="qt">Go back to your three first-impression answers. Which one was furthest from what the figure actually says, and what were you assuming that made your first read seem right?</span><div class="rule"></div><div class="rule2"></div><div class="rule2"></div><div class="rule2"></div><div class="rule2"></div></li>
+    <li><span class="qt">One sentence you can reuse: what will you check first, next time you meet a figure you have never seen?</span><div class="rule"></div><div class="rule2"></div><div class="rule2"></div></li>
+  </ol>
+  <p style="margin:10px 0 0"><strong>When you are done:</strong> photograph or scan every page in order, and attach it to your Week 2 discussion post. The post is due Friday at 10:00 pm; your two replies are due Sunday at 10:00 pm.</p>
+</div>
+
+</div></main>
+
+<footer class="mm-foot"><div class="mm-wrap">
+  <nav class="mm-flinks" aria-label="Course links">
+    <a href="course-start.html" target="_top">Course home</a><span class="mm-dot" aria-hidden="true">&middot;</span>
+    <a href="week-02.html" target="_top">Week 2</a><span class="mm-dot" aria-hidden="true">&middot;</span>
+    <a href="assignment-discussion.html?week=2" target="_top">Week 2 discussion</a><span class="mm-dot" aria-hidden="true">&middot;</span>
+    <a href="syllabus-fall2026.html" target="_top">Syllabus</a><span class="mm-dot" aria-hidden="true">&middot;</span>
+    <a href="accessibility.html" target="_top">Accessibility</a>
+  </nav>
+  <p class="mm-fleg">BIO 005 Human Physiology &middot; Fall 2026 &middot; Dr. Sharilyn Rennie<br>
+     If a page does not work for you, tell me in the Virtual Office and I will fix it.</p>
+</div></footer>
+
+<script>
+(function(){
+  var id='worksheet-week02-graphing';
+  function post(){try{parent.postMessage({frame:id,height:document.documentElement.scrollHeight},'*');}catch(e){}}
+  if('ResizeObserver' in window){new ResizeObserver(post).observe(document.documentElement);}
+  window.addEventListener('load',post);window.addEventListener('resize',post);post();
+})();
+</script>
+</body>
+</html>
