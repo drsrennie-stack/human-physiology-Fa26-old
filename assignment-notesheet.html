@@ -34,6 +34,16 @@ header.brand{display:flex;align-items:center;gap:12px;padding:18px max(28px,4vw)
 header.brand .bwm{font-weight:800;font-size:16px;letter-spacing:-.01em;color:var(--navy)}
 header.brand .bwm b{color:var(--rust)}
 header.brand .bsub{display:block;font-size:10.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--slate)}
+
+/* one route home, matching every other page. Sep 7 2026. */
+.homebar{margin:0 0 18px}
+.homebtn{display:inline-flex;align-items:center;gap:8px;font-family:'Plus Jakarta Sans',system-ui,sans-serif;
+  font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;
+  color:#8B3A2E;background:#fff;border:1px solid rgba(11,21,48,.16);border-radius:8px;padding:10px 16px;
+  transition:transform 160ms ease,box-shadow 160ms ease}
+.homebtn:hover{transform:translateY(-2px);box-shadow:0 8px 16px rgba(11,21,48,.10);text-decoration:none}
+.homebtn:focus-visible{outline:3px solid #8B3A2E;outline-offset:3px}
+@media print{.homebar{display:none}}
 </style>
 </head>
 <body>
@@ -59,6 +69,7 @@ header.brand .bsub{display:block;font-size:10.5px;font-weight:700;letter-spacing
   <span><span class="bwm">BIO <b>005</b></span><span class="bsub">Human Physiology &middot; Fall 2026</span></span>
 </header>
 
+<div class="homebar"><a class="homebtn" href="course-start.html" target="_top"><span aria-hidden="true">&larr;</span> Course home</a></div>
   <p class="eyebrow">Assignment &middot; graded &middot; 20% of your grade</p>
   <h1>Competency note sheet</h1>
   <p class="sub" id="wkline">Week 1 &middot; How physiology works and what keeps you steady</p>
@@ -72,7 +83,7 @@ header.brand .bsub{display:block;font-size:10.5px;font-weight:700;letter-spacing
 
   <div class="btns">
     <a class="btn solid" id="sheetBtn" href="note-sheet.html?week=1" target="_top">Print your sheet</a>
-    <a class="btn line" id="compBtn" href="week-01-notesheet-prompts.html" target="_top">Open the competencies</a>
+    <a class="btn line" id="compBtn" href="week-01-competencies.html" target="_top">Open the competencies</a>
   </div>
 
   <h2>Turning it in</h2>
@@ -95,7 +106,7 @@ header.brand .bsub{display:block;font-size:10.5px;font-weight:700;letter-spacing
   document.getElementById("wkline").textContent = "Week " + w + " \u00b7 " + TITLES[w-1];
   document.getElementById("dueline").textContent = "Due " + DUE[w-1] + " at 10:00 pm";
   document.getElementById("sheetBtn").href = "note-sheet.html?week=" + w;
-  document.getElementById("compBtn").href = "week-" + pad + "-notesheet-prompts.html";
+  document.getElementById("compBtn").href = "week-" + pad + "-competencies.html";
   var id = "ns" + pad + "-" + Math.random().toString(36).slice(2,8);
   function post(){ try{ parent.postMessage({frame:id, height:document.documentElement.scrollHeight}, "*"); }catch(e){} }
   if ("ResizeObserver" in window){ new ResizeObserver(post).observe(document.documentElement); }

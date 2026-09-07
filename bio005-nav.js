@@ -107,7 +107,6 @@
     'osmosis-iv-fluids-lab.html':    { name: 'Osmosis and IV fluids lab', parent: 'clinical-physiology-lab-manual.html' },
     'cbc-pcr-lab.html':              { name: 'CBC and PCR lab',           parent: 'clinical-physiology-lab-manual.html' },
     'pulmonary-function-lab.html':   { name: 'Pulmonary function lab',    parent: 'clinical-physiology-lab-manual.html' },
-    'lab-week05-sensory-reflex.html':{ name: 'Week 5 sensory and reflex lab', parent: 'clinical-physiology-lab-manual.html' },
     'lab-week08-hormone-cycle.html': { name: 'Week 8 hormone cycle lab',  parent: 'clinical-physiology-lab-manual.html' },
     'lab-report-form.html':          { name: 'Lab report form',           parent: 'clinical-physiology-lab-manual.html' },
 
@@ -324,63 +323,33 @@
       }
     }
 
-    /* ---- back bar ---- */
-    if (parent && !hasOwnHeader()) {
+    /* ---- one way back, and it is always the same one ----
+       Sep 7 2026. The breadcrumb trail and the "Back to <parent>" button
+       are gone. Students got a different back destination on every page,
+       which is a thing to read before you can use it. One button, one
+       destination, the page the course starts on. */
+    /* On every page, unless the page already gives one. Some pages have
+       their own "Course home" link in the brand bar or a back link of
+       their own; two of the same button is worse than one. */
+    var already = document.querySelector('.mm-back, .b5nav-back, a[href="course-start.html"].back');
+    if (!already) {
       var nav = document.createElement('nav');
       nav.className = 'b5nav';
-      nav.setAttribute('aria-label', 'Breadcrumb');
-
-      var trail = [];
-      var walk = parent, guard = 0;
-      while (walk && guard++ < 6) {
-        trail.unshift(walk);
-        var pe = PAGES[walk];
-        walk = pe ? pe.parent : null;
-      }
-      if (trail.indexOf('course-start.html') === -1) trail.unshift('course-start.html');
-
-      var crumbs = '';
-      for (var i = 0; i < trail.length; i++) {
-        crumbs += '<li><a href="' + trail[i] + '" target="_top">' + titleOf(trail[i]) + '</a></li>';
-      }
-      crumbs += '<li><span aria-current="page">' + (me.name || document.title.split('·')[0].trim()) + '</span></li>';
-
+      nav.setAttribute('aria-label', 'Course navigation');
       nav.innerHTML = '<div class="b5nav-in">'
-        + '<a class="b5nav-back" href="' + parent + '" target="_top">'
-        + '<span aria-hidden="true">&larr;</span> Back to ' + titleOf(parent) + '</a>'
-        + '<ol>' + crumbs + '</ol></div>';
-
+        + '<a class="b5nav-back" href="course-start.html" target="_top">'
+        + '<span aria-hidden="true">&larr;</span> Course home</a></div>';
       var first = document.querySelector('.b5skip') ? document.querySelector('.b5skip').nextSibling
                                                     : document.body.firstChild;
       document.body.insertBefore(nav, first);
     }
 
-    /* ---- footer, on everything ---- */
-    if (!document.querySelector('.b5foot')) {
-      var links = [
-        ['course-start.html', 'Course home', 0],
-        ['syllabus-fall2026.html', 'Syllabus', 0],
-        ['course-schedule.html', 'Course schedule', 0],
-        ['clinical-physiology-lab-manual.html', 'Lab manual', 0],
-        ['sitemap.html', 'All course pages', 0],
-        ['accessibility.html', 'Accessibility', 0],
-        [CANVAS_HOME, 'Canvas', 1],
-        [VIRTUAL_OFFICE, "Dr. Rennie's Virtual Office", 1]
-      ];
-      var items = '';
-      for (var j = 0; j < links.length; j++) {
-        var ext = links[j][2]
-          ? ' target="_blank" rel="noopener"'
-          : ' target="_top"';
-        items += '<li><a href="' + links[j][0] + '"' + ext + '>' + links[j][1] + '</a></li>';
-      }
-      var foot = document.createElement('footer');
-      foot.className = 'b5foot';
-      foot.innerHTML = '<div class="b5foot-in">'
-        + '<nav aria-label="Site"><ul>' + items + '</ul></nav>'
-        + '<p>If a page does not work for you, tell me in the Virtual Office and I will fix it.</p></div>';
-      document.body.appendChild(foot);
-    }
+    /* ---- no footer ----
+       Sep 7 2026, Scrubs' call: the dark block at the bottom of every page
+       is removed. The links it held live in the page chrome and in Canvas,
+       and it was repeating itself under content that already ended. The
+       Listen widget lived inside it and goes with it. */
+
 
     listen();
   }

@@ -34,6 +34,16 @@ header.brand{display:flex;align-items:center;gap:12px;padding:18px max(28px,4vw)
 header.brand .bwm{font-weight:800;font-size:16px;letter-spacing:-.01em;color:var(--navy)}
 header.brand .bwm b{color:var(--rust)}
 header.brand .bsub{display:block;font-size:10.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--slate)}
+
+/* one route home, matching every other page. Sep 7 2026. */
+.homebar{margin:0 0 18px}
+.homebtn{display:inline-flex;align-items:center;gap:8px;font-family:'Plus Jakarta Sans',system-ui,sans-serif;
+  font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;
+  color:#8B3A2E;background:#fff;border:1px solid rgba(11,21,48,.16);border-radius:8px;padding:10px 16px;
+  transition:transform 160ms ease,box-shadow 160ms ease}
+.homebtn:hover{transform:translateY(-2px);box-shadow:0 8px 16px rgba(11,21,48,.10);text-decoration:none}
+.homebtn:focus-visible{outline:3px solid #8B3A2E;outline-offset:3px}
+@media print{.homebar{display:none}}
 </style>
 </head>
 <body>
@@ -59,6 +69,7 @@ header.brand .bsub{display:block;font-size:10.5px;font-weight:700;letter-spacing
   <span><span class="bwm">BIO <b>005</b></span><span class="bsub">Human Physiology &middot; Fall 2026</span></span>
 </header>
 
+<div class="homebar"><a class="homebtn" href="course-start.html" target="_top"><span aria-hidden="true">&larr;</span> Course home</a></div>
   <p class="eyebrow">Assignment &middot; graded &middot; part of 15% of your grade</p>
   <h1>Weekly lab</h1>
   <p class="sub" id="wkline"></p>
