@@ -550,7 +550,7 @@ document.addEventListener("DOMContentLoaded", function(){
      concept in a group, rather than dropping them at whatever they watched
      last. ?c=<1 based number> picks one concept. ?g=<group slug> picks the
      first concept in that group. Neither is present when a student opens the
-     page on its own, and then the resume behaviour is unchanged. */
+     page on its own, and then the resume behavior is unchanged. */
   function slug(x){ return String(x).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
   var q = location.search, want = null;
   var mc = /[?&]c=(\d{1,3})/.exec(q);

@@ -138,9 +138,9 @@ footer .sig{color:var(--ink);font-weight:800}
 
    So the embed runs smaller: the hero shrinks, the cards lose their 214px
    floor and some padding, and the grid goes two-up sooner. Nothing is
-   removed, it is the same five cards. The page also centres itself in
+   removed, it is the same five cards. The page also centers itself in
    whatever height it is given, so what spare height remains reads as even
-   padding rather than a gap at the bottom. `safe` centring keeps a narrow
+   padding rather than a gap at the bottom. `safe` centering keeps a narrow
    device top-aligned instead of pushing it off the top. */
 body.framed{display:grid;align-content:safe center;min-height:100vh}
 body.framed .site-header{padding:16px 0}
@@ -168,11 +168,11 @@ body.framed footer{margin-top:22px;padding:16px 0 20px}
 
    These cards carry `border:none` and say everything with a solid background.
    In forced-colors mode the background is replaced, so all four become the
-   same colour as the page and the cards vanish as objects. The lift goes too,
+   same color as the page and the cards vanish as objects. The lift goes too,
    since shadows are dropped. Borders are the only thing that survives, so the
    cards get one.
 
-   System colours only. A hex here is either ignored or honoured, and honoured
+   System colors only. A hex here is either ignored or honoured, and honoured
    is worse: it fights the scheme the reader chose. */
 @media (forced-colors: active){
   .cat{border:2px solid ButtonBorder;background:ButtonFace;color:ButtonText;

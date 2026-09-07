@@ -84,7 +84,7 @@ h1{font-size:1.7rem;margin:0 0 10px}
 svg.loop{display:block;width:100%;height:auto;min-width:680px}
 .nodebox{fill:#fff;stroke:var(--navy);stroke-width:2}
 .nodebox.sense{stroke:var(--gold-deep);stroke-width:2.5}
-.nodebox.centre{fill:var(--navy-tint)}
+.nodebox.center{fill:var(--navy-tint)}
 .nodebox.effect{stroke:var(--maroon);stroke-width:2.5}
 .role{font:700 10.5px var(--font);fill:var(--gold-text);letter-spacing:.09em;text-transform:uppercase}
 .lab{font:600 13px var(--font);fill:var(--navy)}
@@ -150,7 +150,7 @@ svg.loop{display:block;width:100%;height:auto;min-width:680px}
         <!-- top row: stimulus, sensor, integrating center -->
         <g id="n-stimulus"><rect class="nodebox"        x="14"  y="20"  width="200" height="96" rx="10"/></g>
         <g id="n-sensor">  <rect class="nodebox sense"  x="254" y="20"  width="200" height="96" rx="10"/></g>
-        <g id="n-centre">  <rect class="nodebox centre" x="686" y="20"  width="200" height="96" rx="10"/></g>
+        <g id="n-center">  <rect class="nodebox center" x="686" y="20"  width="200" height="96" rx="10"/></g>
 
         <!-- bottom row: effector, response -->
         <g id="n-effector"><rect class="nodebox effect" x="686" y="274" width="200" height="96" rx="10"/></g>
@@ -190,7 +190,7 @@ svg.loop{display:block;width:100%;height:auto;min-width:680px}
 
   /* ============================================================
      THE ONLY THING TO EDIT. Add a loop by adding an entry.
-     Order of parts: stimulus, sensor, afferent, centre, efferent,
+     Order of parts: stimulus, sensor, afferent, center, efferent,
      effector, response.
      ============================================================ */
   var LOOPS = [
@@ -199,7 +199,7 @@ svg.loop{display:block;width:100%;height:auto;min-width:680px}
         stimulus: 'The regulated variable moves away from its setpoint',
         sensor:   'A structure that detects the change',
         afferent: 'signal from sensor to center',
-        centre:   'Compares the value to the setpoint and decides the response',
+        center:   'Compares the value to the setpoint and decides the response',
         efferent: 'signal from center to effector',
         effector: 'The muscle or gland that carries out the response',
         response: 'The change that pushes the variable back toward the setpoint and removes the stimulus'
@@ -211,7 +211,7 @@ svg.loop{display:block;width:100%;height:auto;min-width:680px}
         stimulus: 'Core temperature falls below the setpoint near 37 degrees Celsius',
         sensor:   'Thermoreceptors in the skin and in the hypothalamus',
         afferent: 'sensory neurons',
-        centre:   'Hypothalamus',
+        center:   'Hypothalamus',
         efferent: 'sympathetic nerves and somatic motor neurons',
         effector: 'Smooth muscle of skin arterioles, and skeletal muscle',
         response: 'Vasoconstriction cuts heat loss and shivering makes heat, so core temperature rises'
@@ -223,7 +223,7 @@ svg.loop{display:block;width:100%;height:auto;min-width:680px}
         stimulus: 'Plasma glucose rises after a meal',
         sensor:   'Pancreatic beta cell, which takes up glucose directly',
         afferent: 'none needed',
-        centre:   'The same beta cell. Sensor and integrating center are one cell',
+        center:   'The same beta cell. Sensor and integrating center are one cell',
         efferent: 'insulin, carried in the blood',
         effector: 'Skeletal muscle, adipose tissue and liver',
         response: 'Those tissues take up and store glucose, so plasma glucose falls'
@@ -235,7 +235,7 @@ svg.loop{display:block;width:100%;height:auto;min-width:680px}
         stimulus: 'Arterial pressure falls when you stand up',
         sensor:   'Baroreceptors in the carotid sinus and the aortic arch',
         afferent: 'glossopharyngeal and vagus nerves',
-        centre:   'Cardiovascular control center in the medulla oblongata',
+        center:   'Cardiovascular control center in the medulla oblongata',
         efferent: 'sympathetic output up, parasympathetic output down',
         effector: 'SA node and cardiac muscle, and arteriolar smooth muscle',
         response: 'Heart rate, contractility and vasoconstriction all rise, so pressure rises'
@@ -247,7 +247,7 @@ svg.loop{display:block;width:100%;height:auto;min-width:680px}
         stimulus: 'Plasma calcium falls below the setpoint',
         sensor:   'Calcium sensing receptor on the parathyroid chief cell',
         afferent: 'none needed',
-        centre:   'The same parathyroid chief cell',
+        center:   'The same parathyroid chief cell',
         efferent: 'parathyroid hormone, carried in the blood',
         effector: 'Bone, kidney, and the small intestine by way of calcitriol',
         response: 'Calcium leaves bone, the kidney keeps more of it, more is absorbed from food, so plasma calcium rises'
@@ -255,17 +255,17 @@ svg.loop{display:block;width:100%;height:auto;min-width:680px}
       note: 'Same shortcut as glucose: the sensing cell is also the deciding cell. Three effectors here, which is part of why plasma calcium is defended so tightly. You meet this again in Week 9.' }
   ];
 
-  var ORDER = ['stimulus', 'sensor', 'afferent', 'centre', 'efferent', 'effector', 'response'];
+  var ORDER = ['stimulus', 'sensor', 'afferent', 'center', 'efferent', 'effector', 'response'];
   var ROLE = {
     stimulus: 'Stimulus', sensor: 'Sensor', afferent: 'Afferent path',
-    centre: 'Integrating center', efferent: 'Efferent path',
+    center: 'Integrating center', efferent: 'Efferent path',
     effector: 'Effector', response: 'Response'
   };
   /* Boxes on the diagram. afferent and efferent are arrow labels, not boxes. */
   var BOXES = {
     stimulus: { x: 14,  y: 20,  w: 200 },
     sensor:   { x: 254, y: 20,  w: 200 },
-    centre:   { x: 686, y: 20,  w: 200 },
+    center:   { x: 686, y: 20,  w: 200 },
     effector: { x: 686, y: 274, w: 200 },
     response: { x: 254, y: 274, w: 336 }
   };
@@ -324,7 +324,7 @@ svg.loop{display:block;width:100%;height:auto;min-width:680px}
     });
     if (line) { lines.push(line); }
     /* A second line would otherwise land on top of the arrow. Lift the
-       whole block: fully clear of it above a horizontal arrow, centred
+       whole block: fully clear of it above a horizontal arrow, centered
        on it beside a vertical one. */
     var lift = (mode === 'above' ? 14 : 7) * (lines.length - 1);
     e.setAttribute('y', y - lift);

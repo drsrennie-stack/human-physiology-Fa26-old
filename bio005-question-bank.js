@@ -386,7 +386,7 @@ window.BIO005_QUESTIONS = [
  {
   "id": "q63",
   "q": "Where does participation show up in the grade?",
-  "a": "<p>Participation in an online course is submitted work. The weekly note sheet is the heartbeat; if it is coming in, you are participating.</p>",
+  "a": "<p>Participation in an online course is submitted work, and what I can certify is the <strong>graded work</strong>: your weekly discussion post, your lab, and your application case. The note sheet, the practice items and the Mastery Check carry no points, so as much as they drive your learning, they are not what attendance is measured from.</p>",
   "topic": "Grading"
  },
  {
@@ -638,7 +638,7 @@ window.BIO005_QUESTIONS = [
  {
   "id": "q106",
   "q": "Are the midterms cumulative?",
-  "a": "<p>Each covers its own block of weeks. But physiology compounds, so Midterm 3's pathways stand on everything before them.</p>",
+  "a": "<p>Each covers its own block of weeks. Midterm 1 is Weeks 1 to 7, Midterm 2 is Weeks 8 to 14. But physiology compounds, so Midterm 2's pathways stand on everything before them.</p>",
   "topic": "Midterms"
  },
  {
@@ -668,7 +668,7 @@ window.BIO005_QUESTIONS = [
  {
   "id": "q111",
   "q": "Is there a final exam?",
-  "a": "<p>Midterm 3 is your last assessment. There is no separate final during a finals week; the term simply ends December 16.</p>",
+  "a": "<p>No. There are two exams and Midterm 2 is your last assessment. Its window is Monday December 14 to Wednesday December 16, and the term simply ends there.</p>",
   "topic": "Midterms"
  },
  {
@@ -974,7 +974,7 @@ window.BIO005_QUESTIONS = [
  {
   "id": "q163",
   "q": "Is Week 15 really only three days?",
-  "a": "<p>Yes: Monday, December 14 through Wednesday, December 16. It is deliberately light, and Midterm 3's window is those same days.</p>",
+  "a": "<p>Yes: Monday, December 14 through Wednesday, December 16. It is deliberately light, and Midterm 2's window is those same days.</p>",
   "topic": "Time and workload"
  },
  {

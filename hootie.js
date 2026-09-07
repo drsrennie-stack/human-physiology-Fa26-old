@@ -536,7 +536,7 @@
     if (exAsk) {
       var want = parseInt(exAsk[1], 10);
       var ex = ctx.exams.filter(function (e) { return e.n === want; })[0];
-      if (!ex) return { html: 'There are five exams in this course, 1 to 5. There is no Exam ' + want + '.' };
+      if (!ex) return { html: 'There are two exams in this course, Midterm 1 and Midterm 2. There is no Exam ' + want + '.' };
       return { html: examLine(ctx, ex) };
     }
 

@@ -40,7 +40,7 @@ Criteria specifically checked this pass:
 | 1.1.1 Non-text content | A | Pass. Every figure carries alt text, on screen and in the PDF structure tree. Decorative SVG is `aria-hidden`. |
 | 1.3.1 Info and relationships | A | Pass. `main` landmark, one `h1`, no skipped heading levels, every checkbox tied to a label by `for` and `id`. |
 | 1.3.2 Meaningful sequence | A | Pass. DOM order is reading order. Verified in the PDF structure tree, not only on screen. |
-| 1.4.1 Use of colour | A | Pass. The five week jump squares each carry a letter, a `title` and a visually hidden name, so colour is never the only signal. A picked prompt changes border and background, not colour alone. |
+| 1.4.1 Use of color | A | Pass. The five week jump squares each carry a letter, a `title` and a visually hidden name, so color is never the only signal. A picked prompt changes border and background, not color alone. |
 | 1.4.3 Contrast, minimum | AA | Pass. Measured, section 3. |
 | 1.4.6 Contrast, enhanced | AAA | Pass except the two pairs named in section 3. |
 | 1.4.11 Non-text contrast | AA | Pass. Card and prompt borders measured against their backgrounds. |
@@ -54,7 +54,7 @@ Criteria specifically checked this pass:
 
 ---
 
-## 3. Colour contrast audit
+## 3. Color contrast audit
 
 Measured from computed styles in headless Chromium, not read off the palette.
 

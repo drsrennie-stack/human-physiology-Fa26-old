@@ -66,7 +66,7 @@
                               NEVER text on white: 2.42:1, and never a border
                               on white either, 2.32:1 on off-white is under
                               the 3:1 non-text floor. Use --gold-deep there. */
-  --gold-ink:#060A18;      /* the text colour for a gold fill. 8.16:1 on --gold.
+  --gold-ink:#060A18;      /* the text color for a gold fill. 8.16:1 on --gold.
                               White on gold is 2.42:1 and fails. */
   --gold-deep:#8A6D33;     /* the gold that works on a light page. 4.87:1 on
                               white, so it may carry text at AA and may be a
@@ -75,7 +75,7 @@
   --maroon:#8B3A2E;        /* eyebrows, CTAs, emphasis. 7.66:1 on white and
                               7.33:1 on off-white, both AAA, so it may carry
                               text. White on it is 7.66:1. */
-  --maroon-dark:#6E2D24;   /* maroon hover, emphasis, heading colour. 10.18:1 */
+  --maroon-dark:#6E2D24;   /* maroon hover, emphasis, heading color. 10.18:1 */
   --white:#FFFFFF;         /* cards only */
   --offwhite:#FAFAF9;      /* page background only */
 

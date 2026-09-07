@@ -72,6 +72,31 @@ h2{font-size:clamp(23px,3.4vw,30px);color:var(--maroon);line-height:1.18;margin-
   padding:24px 26px;margin:0 0 16px;box-shadow:var(--shadow)}
 .card p:last-child,.card ul:last-child,.card ol:last-child{margin-bottom:0}
 
+
+/* ---------- grading categories ---------- */
+.gcard{position:relative;background:var(--card);border:1px solid var(--rule-soft);
+  border-radius:14px;padding:24px 26px 24px 118px;margin:0 0 16px;box-shadow:var(--shadow)}
+.gcard p.gpct{position:absolute;left:24px;top:20px;margin:0;font-family:var(--display);
+  font-weight:800;font-size:clamp(38px,6vw,52px);line-height:.92;color:var(--maroon);
+  font-variant-numeric:tabular-nums;letter-spacing:-.03em;max-width:none}
+.gcard p.gpct .pc{font-size:.46em;vertical-align:.62em;margin-left:1px}
+.gcard h3{font-size:21px;color:var(--navy);margin:0 0 9px;line-height:1.25}
+.gcard p{font-size:16.5px;color:var(--muted)}
+.gcard p:last-child{margin-bottom:0}
+@media (max-width:560px){
+  .gcard{padding:22px 20px}
+  .gcard p.gpct{position:static;display:block;margin:0 0 8px}
+}
+
+/* ---------- the grade scale ---------- */
+.scale{display:grid;grid-template-columns:repeat(auto-fit,minmax(124px,1fr));gap:12px;margin:0 0 16px}
+.sc{background:var(--card);border:1px solid var(--rule-soft);border-radius:12px;
+  padding:18px 16px;text-align:center;box-shadow:var(--shadow)}
+.sc .g{font-family:var(--display);font-weight:800;font-size:34px;line-height:1;
+  color:var(--maroon);display:block}
+.sc .r{display:block;margin-top:7px;font-size:14.5px;color:var(--muted);font-weight:700;
+  font-variant-numeric:tabular-nums}
+
 /* ---------- the four levels ---------- */
 .levels{counter-reset:lv;list-style:none;padding-left:0;margin:0}
 .levels li{counter-increment:lv;position:relative;padding-left:44px;margin-bottom:12px}
@@ -191,30 +216,30 @@ h2{font-size:clamp(23px,3.4vw,30px);color:var(--maroon);line-height:1.18;margin-
     <h2 id="four-h">The four categories</h2>
     <p class="sub">The work that carries the most weight is the work that proves the reasoning is yours.</p>
 
-    <div class="card">
-      <p class="label">35 percent</p>
-      <h3 style="font-size:20px;color:var(--navy);margin-bottom:8px">Show Me What You Know</h3>
+    <div class="gcard">
+      <p class="gpct">35<span class="pc">%</span></p>
+      <h3>Show Me What You Know</h3>
       <p>Two exams, 17.5 percent each. Not multiple choice: you draw a physiological pathway and teach it out loud on video, with no notes.</p>
       <p style="margin-bottom:0">Midterm 1 covers Weeks 1 to 7, window Oct 26 to 28. Midterm 2 covers Weeks 8 to 14, window Dec 14 to 16. Each is a three day window, not an hour.</p>
     </div>
 
-    <div class="card">
-      <p class="label">25 percent</p>
-      <h3 style="font-size:20px;color:var(--navy);margin-bottom:8px">Investigate It</h3>
+    <div class="gcard">
+      <p class="gpct">25<span class="pc">%</span></p>
+      <h3>Investigate It</h3>
       <p>The weekly labs. You generate and interpret real physiological output and write it up in the same structure a clinical write up uses: question, prediction, evidence, interpretation, conclusion.</p>
       <p style="margin-bottom:0">Where a week uses PhysioEx, it takes both halves. PhysioEx must show complete in Pearson, and the points live on your worksheet.</p>
     </div>
 
-    <div class="card">
-      <p class="label">25 percent</p>
-      <h3 style="font-size:20px;color:var(--navy);margin-bottom:8px">Use It</h3>
-      <p>Your weekly application case, chosen from three or four set in different rooms. They differ in context, not in rigour, and every one assesses the same underlying competency.</p>
+    <div class="gcard">
+      <p class="gpct">25<span class="pc">%</span></p>
+      <h3>Use It</h3>
+      <p>Your weekly application case, chosen from three or four set in different rooms. They differ in context, not in rigor, and every one assesses the same underlying competency.</p>
       <p style="margin-bottom:0">These accumulate into your patient file, which is the capstone of the course.</p>
     </div>
 
-    <div class="card">
-      <p class="label">15 percent</p>
-      <h3 style="font-size:20px;color:var(--navy);margin-bottom:8px">Think About It</h3>
+    <div class="gcard">
+      <p class="gpct">15<span class="pc">%</span></p>
+      <h3>Think About It</h3>
       <p>One discussion post a week, carrying the physiology and your thinking about it together. Decision, evidence, adjustment.</p>
       <p style="margin-bottom:0">Initial post Friday at 10:00 pm so there is something to reply to. Replies Sunday at 10:00 pm.</p>
     </div>
@@ -231,16 +256,20 @@ h2{font-size:clamp(23px,3.4vw,30px);color:var(--maroon);line-height:1.18;margin-
         <li><strong>The Mastery Check.</strong> No points, no penalty, unlimited attempts, and it never gives you a score.</li>
         <li><strong>Spaced recall.</strong> Week 3 has to still be there in October, and spacing is what does that.</li>
       </ul>
-      <p style="margin-bottom:0">None of this is optional in any way that matters. It is the entire route to the four categories above, and the students who skip it are the ones who arrive at a midterm able to recognise a pathway and unable to draw one.</p>
+      <p style="margin-bottom:0">None of this is optional in any way that matters. It is the entire route to the four categories above, and the students who skip it are the ones who arrive at a midterm able to recognize a pathway and unable to draw one.</p>
     </div>
   </section>
 
   <section aria-labelledby="scale-h">
     <h2 id="scale-h">The scale</h2>
-    <div class="card">
-      <p>A 89.5 to 100 &nbsp;&middot;&nbsp; B 79.5 to 89.4 &nbsp;&middot;&nbsp; C 69.5 to 79.4 &nbsp;&middot;&nbsp; D 59.5 to 69.4 &nbsp;&middot;&nbsp; F below 59.5</p>
-      <p style="margin-bottom:0">Fixed scale, applied to your final weighted percentage. There is no curve, and there is no individual extra credit.</p>
+    <div class="scale">
+      <div class="sc"><span class="g">A</span><span class="r">89.5 to 100</span></div>
+      <div class="sc"><span class="g">B</span><span class="r">79.5 to 89.4</span></div>
+      <div class="sc"><span class="g">C</span><span class="r">69.5 to 79.4</span></div>
+      <div class="sc"><span class="g">D</span><span class="r">59.5 to 69.4</span></div>
+      <div class="sc"><span class="g">F</span><span class="r">below 59.5</span></div>
     </div>
+    <p class="hint">Fixed scale, applied to your final weighted percentage. There is no curve, and there is no individual extra credit.</p>
   </section>
 
   <section aria-labelledby="gnext-h">

@@ -5,7 +5,7 @@
    The shared brand bar and the shared site footer, so every page in
    this repo carries the same mark, the same wordmark and the same
    way out. Everything here is namespaced under .mm- so it cannot
-   collide with a page's own classes, and every colour falls back to
+   collide with a page's own classes, and every color falls back to
    a literal if assets/brand.css is not linked on that page.
 
    Brand of record, Sep 6 2026: MedMasters, read off the live site.
@@ -79,7 +79,7 @@
    order, so position teaches the meaning as fast as the letter does.
    Used on course-schedule.html and on every week hub.
 
-   Colour is never the only signal: every square carries its letter,
+   Color is never the only signal: every square carries its letter,
    a title, and a visually hidden name, so a screen reader says
    "Week 3 lab" and not "L". 30px squares clear the 24px minimum
    target size. Every pair below is measured.

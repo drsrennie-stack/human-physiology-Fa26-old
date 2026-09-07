@@ -131,7 +131,7 @@ ol.comps li:first-child{border-top:1.5px solid var(--navy)}
   <p class="eyebrow">BIO 005 &middot; Yuba College &middot; Fall 2026</p>
   <h1>All 268 competencies, week by week.</h1>
   <p class="sub">Human Physiology &middot; Section BIOL-5-D9286 &middot; Sutter Internet (NET)</p>
-  <p class="subq">15 weeks &middot; September 8 to December 16, 2026 &middot; three midterms</p>
+  <p class="subq">15 weeks &middot; September 8 to December 16, 2026 &middot; two exams</p>
   <div class="lede">
     <p><strong>What this is.</strong> Every single thing this course will ask you to be able to do, sorted into the week it is taught. If it is not on this list, it is not on an exam. If it is on this list, it is fair game on the midterm that covers its week.</p>
     <p><strong>How to use it.</strong> Find your week. Those are your competencies. Your note sheet already has one page for each of them, so you do not have to copy anything off this list. Come back to it before a midterm and read down the five weeks it covers. Anything you cannot do without looking is your study list.</p>
@@ -172,10 +172,13 @@ ol.comps li:first-child{border-top:1.5px solid var(--navy)}
     15:["The slow pH lever, and putting it all together","Mon Dec 14 to Wed Dec 16, three days"]
   };
 
+  /* Two exams. The three midterm model over weeks 1-5, 6-10 and 11-15 is
+     retired, and these dates went with it. Week 15 sits after Midterm 2
+     closes, so it is examined by neither. */
   var BLOCKS = [
-    { m:1, weeks:[1,2,3,4,5],      exam:"Midterm 1. Window Monday October 12 at 8 am to Sunday October 18 at 10 pm." },
-    { m:2, weeks:[6,7,8,9,10],     exam:"Midterm 2. Window Monday November 16 at 8 am to Sunday November 22 at 10 pm." },
-    { m:3, weeks:[11,12,13,14,15], exam:"Midterm 3. Window Monday December 14 at 8 am to Wednesday December 16 at 10 pm." }
+    { m:1, label:"Midterm 1 block", weeks:[1,2,3,4,5,6,7],   exam:"Midterm 1. Covers Weeks 1 to 7. Window Monday October 26 at 8 am to Wednesday October 28 at 10 pm." },
+    { m:2, label:"Midterm 2 block", weeks:[8,9,10,11,12,13,14], exam:"Midterm 2. Covers Weeks 8 to 14. Window Monday December 14 at 8 am to Wednesday December 16 at 10 pm." },
+    { m:3, label:"After the exams", weeks:[15],              exam:"Not examined. Week 15 runs after Midterm 2 closes." }
   ];
 
   function esc(s){
@@ -193,7 +196,7 @@ ol.comps li:first-child{border-top:1.5px solid var(--navy)}
     b.weeks.forEach(function(w){ n += (DATA[w] && DATA[w].items ? DATA[w].items.length : 0); });
 
     out.push('<section class="mt">' +
-      '<p class="mlab">Midterm ' + b.m + ' block</p>' +
+      '<p class="mlab">' + (b.label || ('Midterm ' + b.m + ' block')) + '</p>' +
       '<h2>Weeks ' + b.weeks[0] + ' to ' + b.weeks[b.weeks.length-1] + '</h2>' +
       '<p class="mmeta">' + n + ' competencies. ' + esc(b.exam) + '</p>' +
     '</section>');

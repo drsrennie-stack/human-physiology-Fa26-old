@@ -54,7 +54,7 @@ window.BIO005_CREDIT = {
       aiNote:"No notes, no AI. Draw and teach on video.",
       verification:"Video of the student drawing a pathway and teaching it out loud with no notes. The strongest evidence in the course that the reasoning is the student's own.",
       syncRequired:false,
-      purpose:"Recognising a correct answer and building one from nothing are different skills. Only one of them transfers to a clinical program, and this format can tell them apart.",
+      purpose:"Recognizing a correct answer and building one from nothing are different skills. Only one of them transfers to a clinical program, and this format can tell them apart.",
       note:"17.5 percent each. Every week's Retrieve step is this task in miniature, ungraded, so the format is familiar long before it counts." },
 
     { id:"labs",
@@ -80,7 +80,7 @@ window.BIO005_CREDIT = {
       aiNote:"The reasoning must be the student's own and is what is graded. Disclose any AI used.",
       verification:"Each case asks the same five moves: name the variable and its control system, predict, explain the mechanism step by step, interpret the evidence, justify the conclusion and name what would change it.",
       syncRequired:false,
-      purpose:"Three or four cases a week set in nursing, medicine, radiology and exercise or allied health. The student chooses the room. Every case assesses the same underlying competency, so the context varies and the rigour does not.",
+      purpose:"Three or four cases a week set in nursing, medicine, radiology and exercise or allied health. The student chooses the room. Every case assesses the same underlying competency, so the context varies and the rigor does not.",
       note:"This is where the choice is real and the standard is not. The cases accumulate into the patient file, which is the capstone." },
 
     { id:"discussions",
@@ -104,7 +104,7 @@ window.BIO005_CREDIT = {
      None of this is optional in any way that matters. It is the
      entire route to the four graded categories, and the students
      who skip it are the ones who reach a midterm able to
-     recognise a pathway and unable to draw one.
+     recognize a pathway and unable to draw one.
      ------------------------------------------------------------ */
   ungraded: [
     { id:"notesheet", name:"Note sheet and retrieval",

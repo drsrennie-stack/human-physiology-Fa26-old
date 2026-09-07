@@ -41,7 +41,7 @@
       Change GAP_WEEKS to widen it.
 
   ------------------------------------------------------------
-  THE TWO BEHAVIOURS THE SPEC REQUIRES
+  THE TWO BEHAVIORS THE SPEC REQUIRES
   ------------------------------------------------------------
   1. FIRST ANSWERS ARE SAVED BEFORE THE STUDENT SEES WHAT COMES
      NEXT. A part marked lock:true has a Save button. Saving
@@ -108,7 +108,7 @@ header.top .lede{margin-top:12px;color:#fff;max-width:62ch;font-size:15.5px}
 .pfill{height:100%;width:0;background:var(--maroon);border-radius:99px;transition:width 260ms ease}
 
 main{padding:26px 0 60px}
-.grade{background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--gold-deep);
+.grade{background:var(--card);border:0;box-shadow:0 1px 3px rgba(11,21,48,.08);
   border-radius:8px;padding:15px 19px;margin:0 0 22px}
 .grade .gl{font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
   color:var(--gold-deep);margin-bottom:6px}
@@ -118,7 +118,7 @@ main{padding:26px 0 60px}
   padding:20px 22px;margin:0 0 14px}
 .part.sealed{background:var(--tint);border-style:dashed}
 /* On the sealed tint #ECEFF4 the page maroon measures 6.74:1 and the page muted
-   grey 6.88:1. Both clear AA and both miss AAA, and every other page in this
+   gray 6.88:1. Both clear AA and both miss AAA, and every other page in this
    build holds AAA, so inside a sealed box only they step down to the darker
    pair. 8.95:1 and 7.70:1. */
 .part.sealed .pnum{color:#6E2D24}
@@ -189,6 +189,14 @@ footer{border-top:1px solid var(--rule);padding:22px 0 34px;font-size:13.5px;col
   .scale label{border:0.6pt solid #000}
   h2,h3{break-after:avoid}
 }
+
+/* back link, matching the one on every other page */
+.mm-backwrap{max-width:1000px;margin:0 auto;padding:18px 20px 0}
+.mm-back{display:inline-block;font-family:var(--body,'Plus Jakarta Sans',system-ui,sans-serif);
+  font-size:10.5px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;
+  text-decoration:none;color:var(--maroon,#8B3A2E)}
+.mm-back:hover{text-decoration:underline}
+@media print{.mm-backwrap{display:none}}
 </style>
 </head>
 <body>
@@ -208,6 +216,8 @@ footer{border-top:1px solid var(--rule);padding:22px 0 34px;font-size:13.5px;col
   <span class="mm-course">BIO 005 &middot; Fall 2026</span>
 </div></div>
 
+
+<div class="mm-backwrap"><a class="mm-back" href="course-start.html" target="_top">&larr; Course home</a></div>
 
 <header class="top"><div class="wrap">
   <p class="eyebrow">BIO 005 &middot; <span data-wk>Week 2</span> &middot; Learning Lab</p>
@@ -267,7 +277,7 @@ footer{border-top:1px solid var(--rule);padding:22px 0 34px;font-size:13.5px;col
     minutes: "45 to 60 minutes",
     parts: [
       { id:"pick", n:"Choose", ttl:"Pick your figure", lock:false,
-        note:"Choose one figure or graph from this week's assigned material. Not a photograph and not a simple labelled diagram. Pick something that shows a process, a relationship, a sequence or a change.",
+        note:"Choose one figure or graph from this week's assigned material. Not a photograph and not a simple labeled diagram. Pick something that shows a process, a relationship, a sequence or a change.",
         f:[ {k:"ch", y:"t", q:"Chapter number"},
             {k:"fig", y:"t", q:"Figure number"},
             {k:"ftitle", y:"t", q:"Figure title"},
@@ -280,7 +290,7 @@ footer{border-top:1px solid var(--rule);padding:22px 0 34px;font-size:13.5px;col
             {k:"q2", y:"a", q:"2. What do you think it is trying to explain?"},
             {k:"q3", y:"a", q:"3. What are the major structures, substances or variables?"},
             {k:"q4", y:"a", q:"4. If it is a graph, what is on each axis?", h:"Write 'not a graph' if it is not one."},
-            {k:"q5", y:"a", q:"5. What do the arrows, colours, lines or symbols seem to represent?"},
+            {k:"q5", y:"a", q:"5. What do the arrows, colors, lines or symbols seem to represent?"},
             {k:"q6", y:"a", q:"6. Where does the process appear to begin?"},
             {k:"q7", y:"a", q:"7. What changes during the process?"},
             {k:"q8", y:"a", q:"8. What appears to cause that change?"},
@@ -301,7 +311,7 @@ footer{border-top:1px solid var(--rule);padding:22px 0 34px;font-size:13.5px;col
             {k:"i7", y:"a", q:"7. Make one prediction.", h:"If ______ increased, decreased or stopped, I predict ______ because ______."} ] },
 
       { id:"recreate", n:"Part 3", ttl:"Recreate it from memory", lock:true,
-        note:"Cover the original. On paper, draw it from memory with the major components or variables, the labels that matter, directional arrows, the sequence or relationship, and one sentence explaining it. Then uncover the original, compare, and correct your drawing in a second colour. Photograph both and attach them in Canvas.",
+        note:"Cover the original. On paper, draw it from memory with the major components or variables, the labels that matter, directional arrows, the sequence or relationship, and one sentence explaining it. Then uncover the original, compare, and correct your drawing in a second color. Photograph both and attach them in Canvas.",
         f:[ {k:"r1", y:"a", q:"What did you get right in your drawing?"},
             {k:"r2", y:"a", q:"What was missing or in the wrong place?"},
             {k:"r3", y:"a", q:"Name the single biggest difference between your drawing and the original."},
@@ -326,7 +336,7 @@ footer{border-top:1px solid var(--rule);padding:22px 0 34px;font-size:13.5px;col
   3: {
     title: "Previewing an Unfamiliar Chapter",
     intro: "A preview builds the shelf before you put anything on it. You are not trying to learn the chapter here. You are trying to find out what shape it is, in ten minutes, so that the real reading has somewhere to land.",
-    purpose: "To build an organising framework before detailed learning begins, and to test whether that framework actually saves you time later in the week.",
+    purpose: "To build an organizing framework before detailed learning begins, and to test whether that framework actually saves you time later in the week.",
     minutes: "50 to 70 minutes, including the competency work in Part 4",
     parts: [
       { id:"predict", n:"Before you start", ttl:"Predict, before you open anything", lock:true,
@@ -355,7 +365,7 @@ footer{border-top:1px solid var(--rule);padding:22px 0 34px;font-size:13.5px;col
             {k:"g2", y:"a", q:"2. Why did you pick this one?"},
             {k:"g3", y:"a", q:"3. What process or relationship does it seem to show?"},
             {k:"g4", y:"a", q:"4. What are its major components?"},
-            {k:"g5", y:"a", q:"5. What do its arrows, colours or symbols represent?"},
+            {k:"g5", y:"a", q:"5. What do its arrows, colors or symbols represent?"},
             {k:"g6", y:"a", q:"6. What can you work out without reading the chapter?"},
             {k:"g7", y:"a", q:"7. What can you not work out yet?"},
             {k:"g8", y:"a", q:"8. What question do you expect the surrounding text to answer?"} ] },
@@ -371,7 +381,7 @@ footer{border-top:1px solid var(--rule);padding:22px 0 34px;font-size:13.5px;col
            "How the real chapter compared with the predictions you locked at the start.",
            "Whether the section you predicted would be hard actually was.",
            "What the figure you chose let you anticipate.",
-           "Whether previewing saved time, improved organisation, or neither. Give evidence, not an impression.",
+           "Whether previewing saved time, improved organization, or neither. Give evidence, not an impression.",
            "What you would keep, drop or change in your next chapter preview." ],
     peer:[ "Name one difference between your preview and theirs.",
            "Name one thing they did that you will try.",
@@ -382,7 +392,7 @@ footer{border-top:1px solid var(--rule);padding:22px 0 34px;font-size:13.5px;col
   4: {
     title: "Spaced Recall and the Gap Finder",
     intro: "Material you looked at recently feels familiar. Familiar is not the same as retrievable. This lab separates the two, and the separation is usually uncomfortable, which is exactly why it is useful this early in the term.",
-    purpose: "To find the difference between what you recognise and what you can actually produce, and to turn that difference into a plan.",
+    purpose: "To find the difference between what you recognize and what you can actually produce, and to turn that difference into a plan.",
     minutes: "60 to 80 minutes",
     rule:"The first attempt is closed resource. No notes, no videos, no textbook, no search, no AI. Nothing you find missing here counts against you. Finding it is the point.",
     parts: [
@@ -405,7 +415,7 @@ footer{border-top:1px solid var(--rule);padding:22px 0 34px;font-size:13.5px;col
             {k:"g5", y:"t", q:"Your honest raw score out of 10"} ] },
 
       { id:"correct", n:"Part 3", ttl:"Check and correct", lock:true,
-        note:"Now open everything. Correct your work in a different colour so the two passes stay separate. Then classify every gap you found.",
+        note:"Now open everything. Correct your work in a different color so the two passes stay separate. Then classify every gap you found.",
         f:[ {k:"c1", y:"t", q:"Corrected score out of 10"},
             {k:"c2", y:"A", q:"List each gap and its type.", h:"Types: missing information, incomplete, confused concepts, vocabulary, visual interpretation, application, confident but wrong, correct but not confident."},
             {k:"c3", y:"a", q:"Which gap surprised you most?"},
@@ -498,7 +508,7 @@ footer{border-top:1px solid var(--rule);padding:22px 0 34px;font-size:13.5px;col
            "What it missed, overstated, overcomplicated or explained badly.",
            "Which course source you used to judge it.",
            "The question you asked to challenge it.",
-           "Whether its defence convinced you.",
+           "Whether its defense convinced you.",
            "Whether AI deepened your understanding or mostly made the answer sound polished.",
            "Finish this: when using AI to study physiology, I should never accept a claim about ______ without checking ______." ],
     peer:[ "Pick one AI claim your classmate discussed.",
@@ -655,7 +665,7 @@ footer{border-top:1px solid var(--rule);padding:22px 0 34px;font-size:13.5px;col
     + '<ul class="pnote check" style="margin-top:10px">'
     + L.parts.map(function(P){ return '<li>' + esc(P.n) + ', ' + esc(P.ttl.toLowerCase()) + (P.lock ? ', saved' : '') + '</li>'; }).join("")
     + '<li>First attempt photographed, before any corrections</li>'
-    + '<li>Corrections made in a second colour</li>'
+    + '<li>Corrections made in a second color</li>'
     + '<li>Both photographs attached in Canvas</li>'
     + '<li>Discussion posted, with evidence from this lab</li>'
     + '<li>One substantive reply to a classmate</li></ul></section>';

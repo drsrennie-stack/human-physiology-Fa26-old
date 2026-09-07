@@ -9,7 +9,7 @@
    12 now. The seven that left: four cell signaling competencies went to
    week 8 where the map teaches them, two body fluid compartment
    competencies went to week 3, and "Mass flow and clearance" was dropped
-   because it is not one of the 268. Their prompts travelled with them.
+   because it is not one of the 268. Their prompts traveled with them.
    ============================================================ */
 window.BIO005_SHEET = {
  "1": {
@@ -85,7 +85,7 @@ window.BIO005_SHEET = {
     "name": "Units and unit conversion",
     "can": "Convert among the units used in physiology including molarity, osmolarity, milliequivalents, mmHg, liters per minute, and percent solutions.",
     "a": "Take one real lab value and walk it through every unit physiology reports it in. Glucose in mg/dL to mmol/L, or a pressure in mmHg to kPa. Show the conversion as a drawn chain, one box per step, with the factor written on the arrow between them. Then write one line on which unit a clinician would actually say out loud, and why that one.",
-    "b": "Draw a number line for one quantity, say volume, and mark litres, millilitres and microlitres on it in the right places. Put three real physiological volumes on that line: a tidal breath, a drop of blood taken for a glucose stick, and the water in an adult body. Under it, write what goes wrong in a patient if you read one of them off by a factor of a thousand.",
+    "b": "Draw a number line for one quantity, say volume, and mark liters, milliliters and microlitres on it in the right places. Put three real physiological volumes on that line: a tidal breath, a drop of blood taken for a glucose stick, and the water in an adult body. Under it, write what goes wrong in a patient if you read one of them off by a factor of a thousand.",
     "lab": true
    },
    {
@@ -143,7 +143,7 @@ window.BIO005_SHEET = {
     "n": 4,
     "name": "Enzyme activity and regulation",
     "can": "Describe how enzymes lower activation energy and predict the effect of substrate concentration, temperature, pH, and competitive or allosteric inhibition on reaction rate.",
-    "a": "Draw an energy diagram with reactants, products, and the activation energy hump, then draw the same reaction with enzyme on top of it in a second colour. Show what the enzyme changed and what it did not. Underneath, draw four small graphs in a row: rate against substrate concentration, against temperature, against pH, and with a competitive inhibitor added. Label the axes on every one. One line on which of the four curves has a plateau and what the plateau means.",
+    "a": "Draw an energy diagram with reactants, products, and the activation energy hump, then draw the same reaction with enzyme on top of it in a second color. Show what the enzyme changed and what it did not. Underneath, draw four small graphs in a row: rate against substrate concentration, against temperature, against pH, and with a competitive inhibitor added. Label the axes on every one. One line on which of the four curves has a plateau and what the plateau means.",
     "b": "Draw an enzyme with its active site, then draw three copies of it: one with a competitive inhibitor in the active site, one with an allosteric inhibitor at a second site, and one with an allosteric activator. In each copy show what happened to the active site's shape. Then write which one you could overcome by adding more substrate, and why that works for one and not the other."
    },
    {
@@ -157,7 +157,7 @@ window.BIO005_SHEET = {
     "n": 6,
     "name": "Enzyme assay",
     "can": "Measure enzyme activity across a range of temperature or pH using a spectrophotometric or colorimetric assay, plot the results, and identify the optimum.",
-    "a": "Before you run anything, draw the graph you predict: rate on the y axis, whichever variable you are testing on the x, with your predicted optimum marked. Run the assay, then draw the real curve on the same axes in a second colour. Label the optimum you measured. Underneath, write one line on where your prediction and the data disagreed, and one line on what in the method could have moved the measured optimum away from the true one.",
+    "a": "Before you run anything, draw the graph you predict: rate on the y axis, whichever variable you are testing on the x, with your predicted optimum marked. Run the assay, then draw the real curve on the same axes in a second color. Label the optimum you measured. Underneath, write one line on where your prediction and the data disagreed, and one line on what in the method could have moved the measured optimum away from the true one.",
     "b": "Draw your assay as a flow of steps, one box each, from tube to number, with an arrow between every step. Under each box write the one thing that step controls. Then circle the single step where a mistake would change your answer the most, and write what that mistake would do to the shape of your curve, not just to one point."
    },
    {
@@ -212,7 +212,7 @@ window.BIO005_SHEET = {
     "n": 6,
     "name": "Osmolarity and tonicity",
     "can": "Calculate the osmolarity of a solution, distinguish osmolarity from tonicity, and classify a solution as isotonic, hypotonic, or hypertonic to a cell.",
-    "a": "Draw three beakers labelled 150 mM NaCl, 300 mM sucrose, and 300 mM urea. Under each, write the osmolarity calculation and the answer in mOsm/L. Then draw a red blood cell in each beaker and show its final volume. One line: all three have the same osmolarity and one of them lyses the cell, so name the property of the solute that decides tonicity.",
+    "a": "Draw three beakers labeled 150 mM NaCl, 300 mM sucrose, and 300 mM urea. Under each, write the osmolarity calculation and the answer in mOsm/L. Then draw a red blood cell in each beaker and show its final volume. One line: all three have the same osmolarity and one of them lyses the cell, so name the property of the solute that decides tonicity.",
     "b": "Draw three cells that have just come out of three unknown solutions: one shrunken, one swollen but intact, and one lysed. Beside each, write two different solutions that could have produced that result, one differing in osmolarity and one differing only in penetrating solute content. One line: say what osmolarity alone failed to tell you about the lysed cell."
    },
    {
@@ -226,15 +226,15 @@ window.BIO005_SHEET = {
     "n": 8,
     "name": "Diffusion and osmosis experiment",
     "can": "Measure diffusion and osmotic movement across a selectively permeable membrane and relate the observed rate to molecular size and concentration gradient.",
-    "a": "Before you run anything, draw your predicted result: the bag or the plate as it will look at the start and at the end, with each test molecule drawn where you expect it to be. Run it, then draw the actual result beside your prediction in a second colour. One line: name the substance that moved fastest and say whether molecular size or starting gradient explains it better in your own data.",
-    "b": "Draw a graph of distance moved on the y against molecular weight on the x, one labelled point for every substance you tested. Beside it draw a second small graph, distance moved against starting concentration. One line: your membrane passed some things and stopped others, so write the size cutoff your data actually supports and how confident you are in that number."
+    "a": "Before you run anything, draw your predicted result: the bag or the plate as it will look at the start and at the end, with each test molecule drawn where you expect it to be. Run it, then draw the actual result beside your prediction in a second color. One line: name the substance that moved fastest and say whether molecular size or starting gradient explains it better in your own data.",
+    "b": "Draw a graph of distance moved on the y against molecular weight on the x, one labeled point for every substance you tested. Beside it draw a second small graph, distance moved against starting concentration. One line: your membrane passed some things and stopped others, so write the size cutoff your data actually supports and how confident you are in that number."
    },
    {
     "n": 9,
     "name": "Tonicity and red blood cells",
     "can": "Observe erythrocytes in solutions of different tonicity, identify crenation, normal shape, and hemolysis, and explain each result.",
     "a": "Draw three microscope fields, one per solution: distilled water, 0.9 percent NaCl, and 3 percent NaCl. In each, draw the cells as you actually see them, keeping the biconcave disc, the spiky crenated form, and the ghosts distinct. Under each field write the direction of net water movement. One line: name the slide that is hardest to count cells on, and say why that difficulty is itself the result.",
-    "b": "Draw one red cell in the centre of your box and three arrows out to three versions of it: crenated, normal, and hemolysed. Beside each write the tonicity that produced it and the water arrow. Then draw what the membrane itself did in the hemolysed one. One line: crenation is reversible and hemolysis is not, so say what makes the difference."
+    "b": "Draw one red cell in the center of your box and three arrows out to three versions of it: crenated, normal, and hemolysed. Beside each write the tonicity that produced it and the water arrow. Then draw what the membrane itself did in the hemolysed one. One line: crenation is reversible and hemolysis is not, so say what makes the difference."
    },
    {
     "n": 10,
@@ -247,7 +247,7 @@ window.BIO005_SHEET = {
     "n": 11,
     "name": "Primary active transport",
     "can": "Explain how the sodium potassium ATPase uses ATP to move three sodium out and two potassium in, and state the two gradients it maintains.",
-    "a": "Draw the sodium potassium ATPase in a membrane with inside and outside labelled. Sketch the cycle in three or four steps: ions binding, ATP splitting, the shape change, ions releasing. Write 3 and 2 on the correct arrows in the correct directions. Beside it note the sodium and potassium concentrations inside and out that the pump maintains. One line: it moves three out for every two in, so say what that does to charge across the membrane.",
+    "a": "Draw the sodium potassium ATPase in a membrane with inside and outside labeled. Sketch the cycle in three or four steps: ions binding, ATP splitting, the shape change, ions releasing. Write 3 and 2 on the correct arrows in the correct directions. Beside it note the sodium and potassium concentrations inside and out that the pump maintains. One line: it moves three out for every two in, so say what that does to charge across the membrane.",
     "b": "Draw a cell with the two gradients the pump maintains, sodium high outside and potassium high inside, as tall and short bars on each side. Now poison the pump with ouabain and draw the same bars ten minutes later and an hour later. One line: pick one downstream process that fails, not the resting membrane potential, and say how many steps removed from the pump it is."
    },
    {
@@ -261,7 +261,7 @@ window.BIO005_SHEET = {
     "n": 13,
     "name": "Transport maximum and saturation",
     "can": "Interpret a transport rate curve, identify the transport maximum, and apply the concept to renal glucose handling in hyperglycemia.",
-    "a": "Draw one set of axes, transport rate on the y and solute concentration on the x. Draw a carrier mediated curve that rises and then flattens, and mark the transport maximum with a labelled dashed line. On the same axes draw a straight simple diffusion line for contrast. One line: past the transport maximum the curve is flat, so say what is happening to every extra solute molecule that arrives.",
+    "a": "Draw one set of axes, transport rate on the y and solute concentration on the x. Draw a carrier mediated curve that rises and then flattens, and mark the transport maximum with a labeled dashed line. On the same axes draw a straight simple diffusion line for contrast. One line: past the transport maximum the curve is flat, so say what is happening to every extra solute molecule that arrives.",
     "b": "Draw a kidney tubule with glucose filtered in, reabsorbed by carriers, and any leftover carried on to urine. Draw it three times: normal plasma glucose, plasma glucose at the renal threshold near 180 mg/dL, and plasma glucose well above that. Show the urine in each. Write the glucose transport maximum, about 375 mg/min, beside them. One line: say why a person can be losing glucose in urine while every carrier is working perfectly."
    },
    {
@@ -275,14 +275,14 @@ window.BIO005_SHEET = {
     "n": 15,
     "name": "Transepithelial transport",
     "can": "Trace glucose or sodium from lumen to blood across a polarized epithelium and identify which step occurs at the apical membrane and which at the basolateral membrane.",
-    "a": "Draw one polarized epithelial cell, lumen on the left and blood on the right, tight junctions at the top, apical and basolateral membranes labelled. Trace one glucose molecule all the way through: SGLT at the apical membrane, GLUT at the basolateral membrane, and the sodium potassium pump on the basolateral side. Mark each step active or passive. One line: the pump never touches glucose, so say how it powers the apical step.",
+    "a": "Draw one polarized epithelial cell, lumen on the left and blood on the right, tight junctions at the top, apical and basolateral membranes labeled. Trace one glucose molecule all the way through: SGLT at the apical membrane, GLUT at the basolateral membrane, and the sodium potassium pump on the basolateral side. Mark each step active or passive. One line: the pump never touches glucose, so say how it powers the apical step.",
     "b": "Draw the same epithelium twice. In the first, show what would go wrong if the basolateral pump drifted around to the apical side, and use that to say what tight junctions are for. In the second, draw the cell with apical SGLT blocked. Show where glucose ends up in each. One line: oral rehydration solution contains both salt and sugar, so say which of your two drawings explains why."
    },
    {
     "n": 16,
     "name": "Transport simulation",
     "can": "Use a membrane transport simulation to distinguish simple diffusion from facilitated diffusion and active transport by their response to gradient reversal and metabolic poison.",
-    "a": "Before you run it, draw three predicted graphs in a row, transport rate against time, one each for simple diffusion, facilitated diffusion, and active transport. Then draw a fourth showing what a metabolic poison does to whichever of the three it affects. Run the simulation and draw the real curves underneath in a second colour. One line: say which transport type the poison left untouched, and why it could not touch it.",
+    "a": "Before you run it, draw three predicted graphs in a row, transport rate against time, one each for simple diffusion, facilitated diffusion, and active transport. Then draw a fourth showing what a metabolic poison does to whichever of the three it affects. Run the simulation and draw the real curves underneath in a second color. One line: say which transport type the poison left untouched, and why it could not touch it.",
     "b": "Draw a decision tree with three endpoints: simple diffusion, facilitated diffusion, and active transport. At each branch put one test you can actually run in the simulation, reversing the gradient, raising solute until the rate stops climbing, or adding a metabolic poison. Draw the result that sends you down each branch. One line: name the single test that separates active transport from both of the others in one step."
    }
   ]
@@ -310,7 +310,7 @@ window.BIO005_SHEET = {
     "name": "Resting membrane potential",
     "can": "Explain why the resting membrane potential sits near the potassium equilibrium potential and predict how it shifts when membrane permeability to potassium or sodium changes.",
     "a": "Draw a cell at rest with minus 70 mV written inside. On its membrane draw potassium leak channels as many, sodium leak channels as few, and the sodium potassium pump. Beside the cell draw a voltage scale with the potassium equilibrium potential near minus 90 and the sodium equilibrium potential near plus 60, and mark where minus 70 sits between them. One line: the resting potential sits close to one of those two and nowhere near halfway, so say what makes it lean.",
-    "b": "Draw a voltage scale from minus 90 to plus 60 mV with the resting potential marked, then draw four labelled arrows off it showing where the potential moves when you open more potassium channels, open sodium channels, block the potassium leak, and stop the sodium potassium pump. One line: one of those four shifts the potential only a few mV even though it eventually ruins the cell, so name it and say why the immediate effect is so small."
+    "b": "Draw a voltage scale from minus 90 to plus 60 mV with the resting potential marked, then draw four labeled arrows off it showing where the potential moves when you open more potassium channels, open sodium channels, block the potassium leak, and stop the sodium potassium pump. One line: one of those four shifts the potential only a few mV even though it eventually ruins the cell, so name it and say why the immediate effect is so small."
    },
    {
     "n": 4,
@@ -330,7 +330,7 @@ window.BIO005_SHEET = {
     "n": 6,
     "name": "Membrane potential simulation",
     "can": "Manipulate extracellular potassium and sodium in a simulation and record the resulting change in resting membrane potential against the Nernst prediction.",
-    "a": "Before you touch the simulation, draw your predicted graph: resting membrane potential on the y and extracellular potassium on the x, with the Nernst prediction drawn as one line. Run the simulation at several potassium values and plot the measured points on the same axes in a second colour. One line: the measured points sit above the Nernst line at low potassium, so name the other ion whose permeability accounts for that gap.",
+    "a": "Before you touch the simulation, draw your predicted graph: resting membrane potential on the y and extracellular potassium on the x, with the Nernst prediction drawn as one line. Run the simulation at several potassium values and plot the measured points on the same axes in a second color. One line: the measured points sit above the Nernst line at low potassium, so name the other ion whose permeability accounts for that gap.",
     "b": "Draw two panels side by side using the same y axis. On the left, plot resting membrane potential against extracellular potassium from your runs. On the right, plot resting membrane potential against extracellular sodium over a comparable range. One line: one plot is nearly flat and one is not, so say what that comparison tells you about the relative permeability of the resting membrane."
    },
    {
@@ -345,7 +345,7 @@ window.BIO005_SHEET = {
     "name": "Functional regions of a neuron",
     "can": "Label the dendrites, cell body, axon hillock, trigger zone, axon, and axon terminal and state which signal type each region carries.",
     "a": "Draw one motor neuron big, across the whole width of your box. Label the dendrites, cell body, axon hillock, trigger zone, axon, myelin, nodes, and axon terminal. Above each region write the signal type it carries, graded or all or none, and sketch the shape of that signal there. One line: mark the spot where graded becomes all or none and say what has to be true at that spot for the change to happen.",
-    "b": "Draw the same neuron three times as three narrow strips stacked up. In the first, shade every region where graded potentials happen. In the second, shade every region with a high density of voltage gated sodium channels. In the third, shade where chemical signalling takes over from electrical. One line: name the region that appears in more than one strip and say why that makes it the decision point."
+    "b": "Draw the same neuron three times as three narrow strips stacked up. In the first, shade every region where graded potentials happen. In the second, shade every region with a high density of voltage gated sodium channels. In the third, shade where chemical signaling takes over from electrical. One line: name the region that appears in more than one strip and say why that makes it the decision point."
    },
    {
     "n": 9,
@@ -359,7 +359,7 @@ window.BIO005_SHEET = {
     "name": "Myelin and its loss",
     "can": "Explain how myelin and the nodes of Ranvier speed conduction and predict the functional consequence of demyelination.",
     "a": "Draw two axons the same length side by side, one bare and one myelinated with nodes of Ranvier. On each, mark with dots every place the action potential has to be regenerated. Put a clock reading beside each showing which signal arrives first. One line: myelin is an insulator and does nothing electrical itself, so say in one sentence how adding insulation makes a signal faster.",
-    "b": "Draw a myelinated axon with three intact internodes, then draw the same axon with the middle internode stripped bare. Show the action potential travelling along it and mark where it slows or fails. On both, draw the sodium channel distribution, dense at the nodes and sparse under the myelin. One line: the demyelinated stretch has few sodium channels, so say why conduction fails there rather than simply slowing down."
+    "b": "Draw a myelinated axon with three intact internodes, then draw the same axon with the middle internode stripped bare. Show the action potential traveling along it and mark where it slows or fails. On both, draw the sodium channel distribution, dense at the nodes and sparse under the myelin. One line: the demyelinated stretch has few sodium channels, so say why conduction fails there rather than simply slowing down."
    },
    {
     "n": 11,
@@ -401,7 +401,7 @@ window.BIO005_SHEET = {
     "name": "Refractory periods",
     "can": "Distinguish the absolute from the relative refractory period by channel state and explain how the refractory period sets maximum firing frequency and prevents backward conduction.",
     "a": "Draw an action potential tracing and bracket the absolute and relative refractory periods underneath it. Along each bracket, draw the state of the voltage gated sodium channels, inactivated and then recovering, and show whether the potassium channels are still open. Then draw a second stimulus arriving inside each period and show the result. One line: say why no stimulus at all, however large, works during the absolute period.",
-    "b": "Draw an axon with an action potential halfway along it and an arrow for the direction it is travelling. Shade the membrane behind it and mark what state its sodium channels are in. Draw the local current spreading both forward and backward, and show why only one direction succeeds. One line: an absolute refractory period of about 1 to 2 ms sets a ceiling on firing rate, so work out that ceiling in spikes per second."
+    "b": "Draw an axon with an action potential halfway along it and an arrow for the direction it is traveling. Shade the membrane behind it and mark what state its sodium channels are in. Draw the local current spreading both forward and backward, and show why only one direction succeeds. One line: an absolute refractory period of about 1 to 2 ms sets a ceiling on firing rate, so work out that ceiling in spikes per second."
    },
    {
     "n": 17,
@@ -421,7 +421,7 @@ window.BIO005_SHEET = {
     "n": 19,
     "name": "Action potential simulation",
     "can": "Run a neuron simulation with sodium and potassium channel blockers and interpret the resulting change in the action potential tracing.",
-    "a": "Before you run it, draw three predicted tracings on one set of axes: a normal action potential, one with the sodium channels blocked, and one with the potassium channels blocked. Run the simulation and draw the actual tracings underneath in a second colour. One line: name the phase that changed most under the potassium blocker, and say what that tells you about which channel ends the spike.",
+    "a": "Before you run it, draw three predicted tracings on one set of axes: a normal action potential, one with the sodium channels blocked, and one with the potassium channels blocked. Run the simulation and draw the actual tracings underneath in a second color. One line: name the phase that changed most under the potassium blocker, and say what that tells you about which channel ends the spike.",
     "b": "Draw one set of axes and plot your normal action potential, then overlay the tracing you got with a partial sodium blocker rather than a full one. Mark exactly where the two curves separate and where they rejoin. Beside the plot, sketch the sodium and potassium channel populations at the moment of separation. One line: say what a partial block did to threshold in your run, and whether the spikes that still happened came out smaller."
    },
    {
@@ -497,7 +497,7 @@ window.BIO005_SHEET = {
     "n": 9,
     "name": "Synapse simulation",
     "can": "Alter neurotransmitter release and receptor availability in a synapse simulation and interpret the resulting postsynaptic recording.",
-    "a": "Before you run anything, draw the postsynaptic recording you predict under three conditions on shared axes, normal, reduced transmitter release, and reduced receptor availability. Label the amplitude you expect on each. Run the simulation, then draw the real traces over your prediction in a second colour. One line: which of the two manipulations your prediction got wrong, and what you had assumed that turned out to be false.",
+    "a": "Before you run anything, draw the postsynaptic recording you predict under three conditions on shared axes, normal, reduced transmitter release, and reduced receptor availability. Label the amplitude you expect on each. Run the simulation, then draw the real traces over your prediction in a second color. One line: which of the two manipulations your prediction got wrong, and what you had assumed that turned out to be false.",
     "b": "Draw four postsynaptic recordings from your simulation on one shared time axis, the control run and three altered runs. Under each altered trace, draw the synapse and mark the single thing you changed, presynaptic or postsynaptic. One line: point to a trace that two different manipulations could both have produced, and name the extra run you would need to tell them apart."
    },
    {
@@ -546,7 +546,7 @@ window.BIO005_SHEET = {
     "n": 16,
     "name": "Reflex testing and reaction time",
     "can": "Elicit and grade deep tendon reflexes and measure reaction time to distinguish a reflex response from a voluntary response by latency.",
-    "a": "Draw a horizontal grading scale for deep tendon reflexes from 0 to 4 with every grade labelled. Mark where your own measured reflexes fell and where a hyperreflexic patient would fall. Beside it, draw the arc you were actually testing with its synapses shown. One line: a 0 and a 4 point at damage in different places, say which is which and how you would tell.",
+    "a": "Draw a horizontal grading scale for deep tendon reflexes from 0 to 4 with every grade labeled. Mark where your own measured reflexes fell and where a hyperreflexic patient would fall. Beside it, draw the arc you were actually testing with its synapses shown. One line: a 0 and a 4 point at damage in different places, say which is which and how you would tell.",
     "b": "Draw one time axis in milliseconds. Mark the stimulus, then plot two responses on it using your own numbers, your measured tendon reflex latency and your measured reaction time from the ruler drop. Under each, draw the path that signal took and count the structures it passed through. One line: what accounts for the gap between the two, judging from your own drawings."
    }
   ]
@@ -594,7 +594,7 @@ window.BIO005_SHEET = {
     "n": 6,
     "name": "Somatosensory pathways",
     "can": "Trace touch and pain information from receptor to cortex and explain why the somatosensory homunculus is disproportionate.",
-    "a": "Draw one diagram running from a fingertip up to the cortex with two tracts on it, one carrying fine touch and one carrying pain. Mark where each crosses the midline, where each synapses on the way, and where each arrives in the postcentral gyrus. Use two colours or two line styles. One line: name a level where a single lesion would knock out one of them and spare the other.",
+    "a": "Draw one diagram running from a fingertip up to the cortex with two tracts on it, one carrying fine touch and one carrying pain. Mark where each crosses the midline, where each synapses on the way, and where each arrives in the postcentral gyrus. Use two colors or two line styles. One line: name a level where a single lesion would knock out one of them and spare the other.",
     "b": "Draw a strip of postcentral gyrus in cross section and lay the homunculus along it, sizing each body part by the cortical area it gets rather than by its real size. Beside it, draw the same body parts at true relative size. Use your own two point discrimination data to decide what to enlarge. One line: given both drawings, state what cortical area is actually proportional to."
    },
    {
@@ -623,7 +623,7 @@ window.BIO005_SHEET = {
     "name": "Phototransduction",
     "can": "Trace phototransduction from photon absorption by retinal through the change in cyclic GMP to the decrease in glutamate release and explain why photoreceptors hyperpolarize to light.",
     "a": "Draw a photoreceptor twice, side by side, once in darkness and once in bright light. In each, show the cyclic GMP level, whether the cation channels are open or closed, the membrane potential, and how much glutamate is leaving the base of the cell. One line: name the state in which the cell releases the most transmitter, and say why that is the opposite of what you would expect.",
-    "b": "Draw the cascade as a chain of labelled boxes from photon absorption through retinal, the pigment, the G protein, the enzyme, cyclic GMP, and the channel, with arrows between every box. On each arrow, mark whether the next thing goes up or down. Then break one box of your choosing and write what the cell now does when light hits it."
+    "b": "Draw the cascade as a chain of labeled boxes from photon absorption through retinal, the pigment, the G protein, the enzyme, cyclic GMP, and the channel, with arrows between every box. On each arrow, mark whether the next thing goes up or down. Then break one box of your choosing and write what the cell now does when light hits it."
    },
    {
     "n": 11,
@@ -671,7 +671,7 @@ window.BIO005_SHEET = {
     "n": 17,
     "name": "Vision testing",
     "can": "Perform visual acuity, blind spot, accommodation, and color vision testing and interpret each result.",
-    "a": "Draw four panels in a row, one for each test you ran, acuity, blind spot, accommodation, and colour vision. In each panel, draw the setup and your own result, with real numbers where you have them, including your acuity fraction and your near point in centimetres. One line: name the test whose result depends most on the subject being honest, and what that means for trusting the number.",
+    "a": "Draw four panels in a row, one for each test you ran, acuity, blind spot, accommodation, and color vision. In each panel, draw the setup and your own result, with real numbers where you have them, including your acuity fraction and your near point in centimetres. One line: name the test whose result depends most on the subject being honest, and what that means for trusting the number.",
     "b": "Draw the eye in cross section and mark the optic disc and the fovea in their correct positions relative to each other. Draw rays from the target in your blind spot experiment to work out where the spot falls in the visual field and on which side. Then do the same for the other eye. One line: why you never notice the blind spot in ordinary life."
    },
    {
@@ -748,7 +748,7 @@ window.BIO005_SHEET = {
     "name": "Crossbridge cycle",
     "can": "Order the steps of the crossbridge cycle, binding, power stroke, detachment, and reactivation, and state where ATP binds and where it is hydrolyzed.",
     "a": "Draw the cycle as four myosin heads around a loop in order: binding, power stroke, detachment, reactivation. At each head show the thin filament position and what is sitting on the head, nothing, ATP, or ADP and phosphate. Put a star where ATP binds and a different mark where ATP is hydrolyzed, because they are not the same step. One line: name the step that stalls in rigor mortis and what the head is stuck to.",
-    "b": "Draw a stretch of thin filament with a ruler under it, and draw the myosin head at all four points of the cycle above it, showing how far the filament has travelled by each point. Mark the one step where movement actually happens and the three where the filament does not move. Then write one line on why taking ATP away leaves the muscle stiff rather than limp, using the step you marked."
+    "b": "Draw a stretch of thin filament with a ruler under it, and draw the myosin head at all four points of the cycle above it, showing how far the filament has traveled by each point. Mark the one step where movement actually happens and the three where the filament does not move. Then write one line on why taking ATP away leaves the muscle stiff rather than limp, using the step you marked."
    },
    {
     "n": 4,
@@ -825,13 +825,13 @@ window.BIO005_SHEET = {
     "name": "Muscle plasticity",
     "can": "Predict the change in fiber size, capillary supply, and mitochondrial content produced by endurance training, resistance training, and disuse.",
     "a": "Draw one fiber in cross section as your baseline, then draw three more at the same scale beside it: after months of endurance training, after months of heavy resistance training, and after six weeks in a cast. In each, draw mitochondria, capillaries, and myofibrils, and keep the diameters honest. One line: say which of the four could lift the most and which could go the longest, and why those are not the same fiber.",
-    "b": "Draw three arrows leaving one starting fiber, labelled endurance training, resistance training, and disuse. Along each arrow, draw what changes early and what changes only after months. Then draw what happens on each path when the stimulus stops. One line: one of these adaptations is lost far faster than it was gained, so name it and say what that means for someone coming back from an injury."
+    "b": "Draw three arrows leaving one starting fiber, labeled endurance training, resistance training, and disuse. Along each arrow, draw what changes early and what changes only after months. Then draw what happens on each path when the stimulus stops. One line: one of these adaptations is lost far faster than it was gained, so name it and say what that means for someone coming back from an injury."
    },
    {
     "n": 15,
     "name": "Electromyography and grip fatigue",
     "can": "Record grip force and surface EMG over a sustained contraction and relate the decline in force to recruitment and fatigue.",
-    "a": "Before you squeeze anything, draw the two traces you predict for a long hold at a constant submaximal grip force: force on top, EMG amplitude below, both against time. Then run it and draw the real traces on the same axes in a second colour. Mark where prediction and data part company. One line: the force was held flat on purpose, so say what the EMG had to do to keep it there and what that tells you about the units doing the work.",
+    "a": "Before you squeeze anything, draw the two traces you predict for a long hold at a constant submaximal grip force: force on top, EMG amplitude below, both against time. Then run it and draw the real traces on the same axes in a second color. Mark where prediction and data part company. One line: the force was held flat on purpose, so say what the EMG had to do to keep it there and what that tells you about the units doing the work.",
     "b": "Draw the raw EMG burst from the start of a maximal squeeze and from the end of it, side by side at the same scale, with the grip force trace running underneath across the whole hold. Mark on the force trace the moment you first felt it slipping. One line: say whether the falling force proves the motor neurons stopped firing, and name what else could produce the same trace."
    },
    {
@@ -907,7 +907,7 @@ window.BIO005_SHEET = {
     "n": 1,
     "name": "Signal types and range",
     "can": "Classify a chemical signal as autocrine, paracrine, neurotransmitter, neurohormone, or hormone by its route and distance of travel.",
-    "a": "Draw one target cell in the middle of the box. Draw an arrow in from each of the five signal types, autocrine, paracrine, neurotransmitter, neurohormone, hormone. Label each arrow with how far it travelled and what carried it.",
+    "a": "Draw one target cell in the middle of the box. Draw an arrow in from each of the five signal types, autocrine, paracrine, neurotransmitter, neurohormone, hormone. Label each arrow with how far it traveled and what carried it.",
     "b": "Make a five row table. Signal type, where it is released, how far it goes, what it travels through. Fill it from memory, then check one row against the book."
    },
    {
@@ -977,7 +977,7 @@ window.BIO005_SHEET = {
     "n": 11,
     "name": "Hormone transport and half life",
     "can": "Explain how protein binding in plasma affects the free hormone fraction and the half life and predict which hormone class circulates bound.",
-    "a": "Draw a length of capillary with a steroid hormone and a peptide hormone both inside it. Draw the steroid mostly stuck to carrier proteins with a small free fraction, and the peptide travelling free. At the tissue, draw an arrow for which molecules can actually leave and act. At the kidney, draw which ones get filtered. One line: only free hormone acts and only free hormone is cleared, so say why binding makes a hormone last longer.",
+    "a": "Draw a length of capillary with a steroid hormone and a peptide hormone both inside it. Draw the steroid mostly stuck to carrier proteins with a small free fraction, and the peptide traveling free. At the tissue, draw an arrow for which molecules can actually leave and act. At the kidney, draw which ones get filtered. One line: only free hormone acts and only free hormone is cleared, so say why binding makes a hormone last longer.",
     "b": "Draw plasma concentration against time after one pulse of a bound hormone and one pulse of an unbound hormone on the same axes, and mark the half life on each. Then draw a third case, the bound hormone in a person whose carrier protein level has doubled. Show what happened to total hormone and what happened to free hormone. One line: the total went up but the person feels normal, so name the number the lab should have measured."
    },
    {
@@ -985,7 +985,7 @@ window.BIO005_SHEET = {
     "name": "Hormone receptors and target response",
     "can": "Explain why one hormone can produce different responses in different tissues and relate receptor number to target cell sensitivity.",
     "a": "Draw one hormone molecule in the middle with arrows out to three different target tissues. Pick a hormone with genuinely different actions in different places, not insulin. In each tissue draw the receptor it meets and the response it gets, and make at least two of the three responses run in opposite directions. One line: the hormone was identical in all three, so name what was different and say where that difference physically lives.",
-    "b": "Draw one target cell three times: with a normal number of receptors, after weeks of very high hormone levels, and after weeks of very low hormone levels. Count receptors on the drawing rather than just labelling it. Beside the three cells, draw all three dose response curves on shared axes. One line: one of your cells now needs far more hormone for the same response, so name it and say what the body did to cause that."
+    "b": "Draw one target cell three times: with a normal number of receptors, after weeks of very high hormone levels, and after weeks of very low hormone levels. Count receptors on the drawing rather than just labeling it. Beside the three cells, draw all three dose response curves on shared axes. One line: one of your cells now needs far more hormone for the same response, so name it and say what the body did to cause that."
    },
    {
     "n": 13,
@@ -1020,14 +1020,14 @@ window.BIO005_SHEET = {
     "name": "Posterior pituitary hormones",
     "can": "Explain why the posterior pituitary is neural tissue and state the stimulus and target action of antidiuretic hormone and oxytocin.",
     "a": "Draw the hypothalamus and both pituitary lobes in one sagittal section. For the posterior lobe, draw the neuron cell bodies up in the hypothalamus with their axons running down into the lobe and ending on capillaries. For the anterior lobe, draw the portal vessels instead. Shade the neural tissue and the glandular tissue differently. One line: say why cutting the stalk does different things to the two lobes' hormones.",
-    "b": "Draw a person who has been out in the desert all day. Draw plasma osmolarity climbing above the normal 290 mOsm per litre, the osmoreceptor detecting it, the hypothalamic neuron firing, ADH leaving the posterior lobe, and water channels going into the collecting duct membrane. Draw the urine that results. Beside it, draw the oxytocin neuron and both of its targets. One line: both hormones leave the same lobe, so say what decides which one comes out."
+    "b": "Draw a person who has been out in the desert all day. Draw plasma osmolarity climbing above the normal 290 mOsm per liter, the osmoreceptor detecting it, the hypothalamic neuron firing, ADH leaving the posterior lobe, and water channels going into the collecting duct membrane. Draw the urine that results. Beside it, draw the oxytocin neuron and both of its targets. One line: both hormones leave the same lobe, so say what decides which one comes out."
    },
    {
     "n": 18,
     "name": "Hormone assay",
     "can": "Run or simulate an immunoassay for a hormone and use the standard curve to determine an unknown concentration.",
     "a": "Draw the standard curve you would build, known hormone concentration on the x axis and measured signal on the y, with your standards as points and a line through them. Then put an unknown sample's signal on the y axis and draw the construction lines that read its concentration off the x. Add a second unknown that lands above your highest standard. One line: say what you do with that second sample and why you cannot simply extend the line.",
-    "b": "Draw the assay well in cross section at four stages: antibody stuck to the well, hormone captured, detection antibody added, colour developed. Draw what a well holding a lot of hormone looks like beside an empty one. Then draw a well where a similar but wrong molecule got captured instead. One line: that last well still gives you a number, so say what the number is actually measuring and what it is not."
+    "b": "Draw the assay well in cross section at four stages: antibody stuck to the well, hormone captured, detection antibody added, color developed. Draw what a well holding a lot of hormone looks like beside an empty one. Then draw a well where a similar but wrong molecule got captured instead. One line: that last well still gives you a number, so say what the number is actually measuring and what it is not."
    },
    {
     "n": 19,
@@ -1075,7 +1075,7 @@ window.BIO005_SHEET = {
     "n": 25,
     "name": "Hormone cycle graph interpretation",
     "can": "Read a graph of gonadotropin and ovarian hormone levels across a cycle and identify the day of ovulation and the event driving each peak.",
-    "a": "Draw one set of axes covering 28 days and plot four curves on it, LH, FSH, estradiol, and progesterone, labelled along their length so they can be told apart. Drop a vertical line on the day of ovulation. Beside each peak, write the structure that was making that hormone at that moment. One line: name the peak you used to place ovulation, and say whether ovulation comes before or after it.",
+    "a": "Draw one set of axes covering 28 days and plot four curves on it, LH, FSH, estradiol, and progesterone, labeled along their length so they can be told apart. Drop a vertical line on the day of ovulation. Beside each peak, write the structure that was making that hormone at that moment. One line: name the peak you used to place ovulation, and say whether ovulation comes before or after it.",
     "b": "Draw the four curves for a normal cycle, then draw a second set of axes for a cycle in which ovulation never happened. Change only what has to change and leave the rest alone. Show which curve has lost its peak and which one never rises at all. One line: name the single hormone you would measure in the second half of a cycle to prove ovulation happened, and say what it should be doing."
    }
   ]
@@ -1152,7 +1152,7 @@ window.BIO005_SHEET = {
     "name": "Pressure volume loop",
     "can": "Label the four phases of a ventricular pressure volume loop and predict how the loop changes with increased preload, increased afterload, or increased contractility.",
     "a": "Draw a left ventricular pressure volume loop, volume on the x axis running from about 50 to 120 mL, pressure in mmHg on the y. Travel around it in the correct direction, label the four phases, and label the four corners where a valve opens or shuts. Mark EDV, ESV and stroke volume on the volume axis. One line: two sides of your loop are isovolumetric, so say how you can spot them by eye alone.",
-    "b": "Draw the normal loop once, then draw three altered loops over it in different colours: increased preload, increased afterload, and increased contractility. For each, show what happened to the width of the loop and to ESV, and label the corner that moved. One line: only two of the three raised stroke volume, so name the one that did not and say what it raised instead."
+    "b": "Draw the normal loop once, then draw three altered loops over it in different colors: increased preload, increased afterload, and increased contractility. For each, show what happened to the width of the loop and to ESV, and label the corner that moved. One line: only two of the three raised stroke volume, so name the one that did not and say what it raised instead."
    },
    {
     "n": 11,
@@ -1194,7 +1194,7 @@ window.BIO005_SHEET = {
     "name": "Autonomic regulation of the heart",
     "can": "Explain how sympathetic and parasympathetic input alter heart rate and contractility at the receptor and second messenger level.",
     "a": "Draw the SA node cell twice, side by side. Left, sympathetic: norepinephrine, the beta 1 receptor, the G protein, cAMP, and what that does to the funny current and to calcium channels. Right, parasympathetic: the vagus, acetylcholine, the M2 muscarinic receptor, and what that does to cAMP and to potassium channels. Under each, draw the pacemaker slope it produces. One line: one of them hyperpolarizes the cell, so say why that alone slows the rate.",
-    "b": "Draw a pacemaker trace with three versions on the same axes: resting with normal vagal tone, with the vagus cut, and under maximal sympathetic drive. Beside it, draw a ventricular cell showing the two places sympathetic signalling raises contractility, calcium entry and the calcium pump of the sarcoplasmic reticulum. One line: the vagus does little to the ventricles, so say what that predicts about slowing a heart against weakening one."
+    "b": "Draw a pacemaker trace with three versions on the same axes: resting with normal vagal tone, with the vagus cut, and under maximal sympathetic drive. Beside it, draw a ventricular cell showing the two places sympathetic signaling raises contractility, calcium entry and the calcium pump of the sarcoplasmic reticulum. One line: the vagus does little to the ventricles, so say what that predicts about slowing a heart against weakening one."
    },
    {
     "n": 17,
@@ -1277,7 +1277,7 @@ window.BIO005_SHEET = {
     "name": "Baroreceptor reflex",
     "can": "Trace the baroreceptor reflex from the carotid sinus and aortic arch through the medulla to the heart and vessels and state the response to a fall in blood pressure.",
     "a": "Draw the reflex as a labeled loop with every step in it: baroreceptors in the carotid sinus and the aortic arch, the afferent nerves (glossopharyngeal from the carotid, vagus from the arch), the cardiovascular center in the medulla, and both efferent arms, sympathetic and vagal, running to the SA node, the ventricles, the arterioles and the veins. Run a fall in pressure around the loop and write the direction of change at every step. One line: name the step where the signal is less firing, not more.",
-    "b": "Draw the same loop skeleton twice in different colours, once for a fall in blood pressure and once for a rise. On each, mark with up or down arrows the receptor firing rate, sympathetic outflow, vagal outflow, heart rate, contractility, and arteriolar tone. Below them, draw a time axis comparing how fast this reflex acts against the hormonal control of pressure. One line: this reflex resets over days, so say what it cannot fix."
+    "b": "Draw the same loop skeleton twice in different colors, once for a fall in blood pressure and once for a rise. On each, mark with up or down arrows the receptor firing rate, sympathetic outflow, vagal outflow, heart rate, contractility, and arteriolar tone. Below them, draw a time axis comparing how fast this reflex acts against the hormonal control of pressure. One line: this reflex resets over days, so say what it cannot fix."
    },
    {
     "n": 11,
@@ -1338,8 +1338,8 @@ window.BIO005_SHEET = {
     "n": 5,
     "name": "Red cell destruction and bilirubin",
     "can": "Trace the fate of hemoglobin after red cell breakdown and explain how failure to clear bilirubin produces jaundice.",
-    "a": "Draw a red cell at the end of its 120 days being taken apart by a macrophage in the spleen, and follow all three products out on separate arrows: globin to amino acids, iron bound and shipped back to the marrow, heme to biliverdin to bilirubin. Carry the bilirubin to the liver, into bile, into the gut, and out. Label what colours the stool and the urine. One line: almost nothing here is wasted, so say what actually leaves the body and why it has to.",
-    "b": "Draw three jaundiced patients with the block in a different place in each: massive red cell breakdown, liver cell failure, and a stone in the bile duct. Draw the same pathway under each and dam it at the right point. Show what backs up and what colour the stool is in each. One line: one of the three has pale stool, so name it and say why the colour locates the block."
+    "a": "Draw a red cell at the end of its 120 days being taken apart by a macrophage in the spleen, and follow all three products out on separate arrows: globin to amino acids, iron bound and shipped back to the marrow, heme to biliverdin to bilirubin. Carry the bilirubin to the liver, into bile, into the gut, and out. Label what colors the stool and the urine. One line: almost nothing here is wasted, so say what actually leaves the body and why it has to.",
+    "b": "Draw three jaundiced patients with the block in a different place in each: massive red cell breakdown, liver cell failure, and a stone in the bile duct. Draw the same pathway under each and dam it at the right point. Show what backs up and what color the stool is in each. One line: one of the three has pale stool, so name it and say why the color locates the block."
    },
    {
     "n": 6,
@@ -1456,21 +1456,21 @@ window.BIO005_SHEET = {
     "n": 2,
     "name": "Thyroid hormone",
     "can": "Trace thyroid hormone synthesis, state the metabolic actions of T3 and T4, and match hyperthyroid and hypothyroid signs to the underlying rate of metabolism.",
-    "a": "Draw one thyroid follicle: follicular cells around a colloid centre, with a capillary outside. Number the synthesis steps on the drawing: iodide pulled in at the blood side, iodide oxidised and attached to tyrosines on thyroglobulin at the colloid side, coupling to make T3 and T4, storage in colloid, endocytosis and release. Show where T4 becomes T3 in a target tissue. One line: say which step iodine deficiency blocks and what happens to follicle size.",
+    "a": "Draw one thyroid follicle: follicular cells around a colloid center, with a capillary outside. Number the synthesis steps on the drawing: iodide pulled in at the blood side, iodide oxidized and attached to tyrosines on thyroglobulin at the colloid side, coupling to make T3 and T4, storage in colloid, endocytosis and release. Show where T4 becomes T3 in a target tissue. One line: say which step iodine deficiency blocks and what happens to follicle size.",
     "b": "Draw a horizontal metabolic rate scale with normal in the middle, low at one end, high at the other. Hang at least four signs off each end, and pick things you can actually observe: heart rate, body temperature and heat tolerance, body weight on a steady diet, bowel activity, energy level. Draw a small arrow from each sign to the rate it reflects. One line: name one sign that is easy to misread, and say what else could cause it."
    },
    {
     "n": 3,
     "name": "Cortisol and the stress response",
     "can": "Describe the metabolic, immune, and cardiovascular actions of cortisol and explain the consequences of chronic elevation.",
-    "a": "Draw the axis top to bottom: hypothalamus, anterior pituitary, adrenal cortex, cortisol, with the negative feedback arrows running back up. From cortisol draw three labelled arrows out: metabolic, immune, cardiovascular. Under each, draw the actual effect, gluconeogenesis and protein breakdown, suppressed inflammation, and vessels holding tone in response to catecholamines. One line: say what the feedback arrows are doing to the axis in someone taking a steroid drug for months.",
+    "a": "Draw the axis top to bottom: hypothalamus, anterior pituitary, adrenal cortex, cortisol, with the negative feedback arrows running back up. From cortisol draw three labeled arrows out: metabolic, immune, cardiovascular. Under each, draw the actual effect, gluconeogenesis and protein breakdown, suppressed inflammation, and vessels holding tone in response to catecholamines. One line: say what the feedback arrows are doing to the axis in someone taking a steroid drug for months.",
     "b": "Draw a body outline with the signs of months of high cortisol placed where they show: trunk, face, limb muscle, skin, bone. Beside each sign, draw a short arrow back to the cortisol action that caused it. Add a small glucose axis showing where plasma glucose sits. One line: pick the one sign a patient would notice first and say whether it is the one that matters most."
    },
    {
     "n": 4,
     "name": "Pancreatic islet hormones",
     "can": "Compare insulin and glucagon by stimulus and by effect on liver glycogen and on plasma glucose and identify the islet cell that secretes each.",
-    "a": "Draw one islet with alpha, beta and delta cells labelled and the hormone each secretes. Beside it draw one set of axes, plasma glucose on the horizontal and secretion rate on the vertical, and put insulin and glucagon on it as two curves running opposite ways. Mark roughly where a fasting glucose sits. One line: say what the crossing region of the two curves is doing for you between meals.",
+    "a": "Draw one islet with alpha, beta and delta cells labeled and the hormone each secretes. Beside it draw one set of axes, plasma glucose on the horizontal and secretion rate on the vertical, and put insulin and glucagon on it as two curves running opposite ways. Mark roughly where a fasting glucose sits. One line: say what the crossing region of the two curves is doing for you between meals.",
     "b": "Draw the same hepatocyte twice. In the first, insulin has arrived: show glucose entering, glycogen granules being built, and the arrow direction for plasma glucose. In the second, glucagon has arrived: show glycogen being broken down, glucose leaving the cell, and the arrow for plasma glucose. Write the stimulus that released each hormone above its panel. One line: say which of the two the liver can keep doing after twenty four hours without food, and why the other one stops."
    },
    {
@@ -1485,13 +1485,13 @@ window.BIO005_SHEET = {
     "name": "Glucose tolerance testing",
     "can": "Plot a glucose tolerance curve from measured or simulated data and distinguish a normal response from an impaired one.",
     "a": "Draw one set of axes, time in hours from 0 to 3 on the horizontal, plasma glucose in mg per dL on the vertical. Mark the 75 gram drink at time zero. Plot three curves: a normal response, an impaired one, and a diabetic one. Mark the fasting line and the two hour line and write the cut values on both: fasting under 100 and two hour under 140 for normal, two hour at or over 200 for diabetes. One line: say which single point on the curve you would keep if you could only measure one.",
-    "b": "Draw a stacked pair of graphs sharing one time axis: plasma glucose on top, plasma insulin underneath. Plot the normal pair first, insulin rising early and glucose coming back down by two hours. Then overlay in a second colour the pair for someone with insulin resistance. One line: say what the insulin curve is doing in the second case while glucose is still high, and what that costs the beta cells over years."
+    "b": "Draw a stacked pair of graphs sharing one time axis: plasma glucose on top, plasma insulin underneath. Plot the normal pair first, insulin rising early and glucose coming back down by two hours. Then overlay in a second color the pair for someone with insulin resistance. One line: say what the insulin curve is doing in the second case while glucose is still high, and what that costs the beta cells over years."
    },
    {
     "n": 7,
     "name": "Four digestive processes",
     "can": "Distinguish motility, secretion, digestion, and absorption and identify where in the tract each dominates.",
-    "a": "Draw the tract as one long tube from mouth to anus with the named regions marked. Along it, draw four labelled bands showing where motility, secretion, digestion and absorption each dominate, and let them overlap where they truly do. Put a real example in each band, a named enzyme, a named secretion, a named nutrient crossing. One line: name the region where absorption dominates and say what its wall does to make that possible.",
+    "a": "Draw the tract as one long tube from mouth to anus with the named regions marked. Along it, draw four labeled bands showing where motility, secretion, digestion and absorption each dominate, and let them overlap where they truly do. Put a real example in each band, a named enzyme, a named secretion, a named nutrient crossing. One line: name the region where absorption dominates and say what its wall does to make that possible.",
     "b": "Draw a cross section of the gut wall with the four layers, mucosa to serosa. Place each of the four processes on the layer that carries it out, with the actual structure doing the work: smooth muscle sheets, glands and gland cells, enzymes in the lumen, epithelial transporters. Draw the lumen contents changing as you move along. One line: say which of the four processes is the only one that moves a molecule into your body, and where the other three stop."
    },
    {
@@ -1520,7 +1520,7 @@ window.BIO005_SHEET = {
     "name": "Gastric secretion and mucosal protection",
     "can": "Trace the production of hydrochloric acid by the parietal cell and explain how the mucosal barrier protects the stomach and how ulcers develop when it fails.",
     "a": "Draw one parietal cell with the lumen above and the capillary below. Inside it show carbon dioxide and water combining under carbonic anhydrase to give hydrogen ion and bicarbonate. Send the hydrogen ion into the lumen through the proton pump in exchange for potassium, send the bicarbonate into the blood in exchange for chloride, and send that chloride out to the lumen. Draw the three receptors on the basolateral side with their ligands. One line: say what happens to venous blood pH leaving the stomach during a meal, and why.",
-    "b": "Draw a strip of gastric mucosa with its defences drawn to scale: the mucus layer, the bicarbonate trapped in it, the tight junctions between surface cells, and the blood supply underneath. Write the luminal pH above the mucus and the pH at the cell surface below it. Then draw the same strip after the barrier fails, with acid and pepsin reaching the cells. One line: name one thing that breaks this barrier and say which defence it takes out."
+    "b": "Draw a strip of gastric mucosa with its defenses drawn to scale: the mucus layer, the bicarbonate trapped in it, the tight junctions between surface cells, and the blood supply underneath. Write the luminal pH above the mucus and the pH at the cell surface below it. Then draw the same strip after the barrier fails, with acid and pepsin reaching the cells. One line: name one thing that breaks this barrier and say which defense it takes out."
    },
    {
     "n": 12,
@@ -1541,14 +1541,14 @@ window.BIO005_SHEET = {
     "name": "Lipid digestion and absorption",
     "can": "Trace a triglyceride through emulsification, lipase action, micelle formation, and chylomicron packaging to the lymphatic route and explain why fat takes a different path than glucose.",
     "a": "Draw one triglyceride and follow it across the page in five stages: emulsified into small droplets by bile salts, cut by pancreatic lipase into free fatty acids and monoglyceride, carried in a micelle to the brush border, rebuilt into triglyceride inside the enterocyte, and packaged with protein into a chylomicron. End with the chylomicron leaving the basolateral side. One line: say what the micelle is for, given the products can cross the membrane on their own once they get there.",
-    "b": "Draw a single villus with a blood capillary and a lacteal inside it. Send glucose in one colour from the enterocyte into the capillary and on to the hepatic portal vein and liver. Send a chylomicron in another colour into the lacteal, up the lymph, and into the venous blood near the neck. Mark the two entry points into the circulation. One line: say what a chylomicron cannot get through that glucose can, and what that means for when the liver first sees dietary fat."
+    "b": "Draw a single villus with a blood capillary and a lacteal inside it. Send glucose in one color from the enterocyte into the capillary and on to the hepatic portal vein and liver. Send a chylomicron in another color into the lacteal, up the lymph, and into the venous blood near the neck. Mark the two entry points into the circulation. One line: say what a chylomicron cannot get through that glucose can, and what that means for when the liver first sees dietary fat."
    },
    {
     "n": 15,
     "name": "Liver function and enterohepatic circulation",
     "can": "State the metabolic, storage, and detoxification functions of the liver and trace the enterohepatic circulation of bile salts.",
     "a": "Draw the loop as a closed circuit: liver makes bile salts, bile duct to gallbladder, gallbladder to duodenum, bile salts work on fat down the small intestine, reabsorbed in the terminal ileum, hepatic portal vein back to the liver. Put an arrow at each leg and mark the recycled fraction as most of the pool. Add a small leak arrow for what is lost in faeces. One line: say what happens to fat digestion after the terminal ileum is surgically removed.",
-    "b": "Draw a hepatocyte with the sinusoid on one side and the bile canaliculus on the other. Around it draw four labelled jobs with a real example in each: a metabolic job, a storage job, a synthetic job, and a detoxification job. Show which side of the cell each product leaves by. One line: pick the liver job whose failure shows up first in a blood test, and name the substance you would measure."
+    "b": "Draw a hepatocyte with the sinusoid on one side and the bile canaliculus on the other. Around it draw four labeled jobs with a real example in each: a metabolic job, a storage job, a synthetic job, and a detoxification job. Show which side of the cell each product leaves by. One line: pick the liver job whose failure shows up first in a blood test, and name the substance you would measure."
    },
    {
     "n": 16,
@@ -1576,7 +1576,7 @@ window.BIO005_SHEET = {
     "name": "Postabsorptive state",
     "can": "Explain how glycogenolysis, gluconeogenesis, lipolysis, and ketogenesis maintain plasma glucose during fasting and name the hormones that drive each.",
     "a": "Draw a time axis from the last meal out to several days of fasting. Above it, draw stacked bands showing which source is supplying plasma glucose at each point: liver glycogen first, then glucose made new from amino acids, glycerol and lactate. Below the axis, draw fat breakdown rising and ketone bodies appearing later. Name the hormone driving each band. One line: say what runs out first and roughly when, and what takes over.",
-    "b": "Draw one hepatocyte in a fasting person with four labelled pathways running out of it or through it: glycogen breakdown, glucose made from noncarbohydrate precursors, and arriving from elsewhere, fatty acids from adipose and their conversion to ketone bodies. Draw the precursors arriving from muscle and fat with arrows. Write the hormone driving each pathway beside it. One line: name the tissue that switches to ketones during a long fast, and say what it is protecting."
+    "b": "Draw one hepatocyte in a fasting person with four labeled pathways running out of it or through it: glycogen breakdown, glucose made from noncarbohydrate precursors, and arriving from elsewhere, fatty acids from adipose and their conversion to ketone bodies. Draw the precursors arriving from muscle and fat with arrows. Write the hormone driving each pathway beside it. One line: name the tissue that switches to ketones during a long fast, and say what it is protecting."
    },
    {
     "n": 20,
@@ -1590,7 +1590,7 @@ window.BIO005_SHEET = {
     "name": "Energy balance and metabolic rate",
     "can": "Define basal metabolic rate, state the factors that raise and lower it, and explain how indirect calorimetry estimates energy expenditure.",
     "a": "Draw energy in on one side and energy out on the other, balanced on a pivot. Split energy out into its parts, the resting cost of staying alive, physical activity, and the cost of digesting the food itself. Beside the pivot, draw a row of short bars showing what raises and lowers basal metabolic rate: thyroid hormone, lean muscle mass, fever, age, prolonged food restriction. One line: say which side of the pivot is easier to change by a large amount, and what that means for weight change.",
-    "b": "Draw a person breathing through a mouthpiece into a measuring device, with inspired and expired gas drawn as two streams. Show the difference in oxygen between them being measured. Write the conversion beside it, roughly 4.8 to 5 kilocalories of energy released per litre of oxygen consumed. Add a small scale for the ratio of carbon dioxide made to oxygen used, near 1.0 for carbohydrate and near 0.7 for fat. One line: say what the ratio tells you that the oxygen number alone does not."
+    "b": "Draw a person breathing through a mouthpiece into a measuring device, with inspired and expired gas drawn as two streams. Show the difference in oxygen between them being measured. Write the conversion beside it, roughly 4.8 to 5 kilocalories of energy released per liter of oxygen consumed. Add a small scale for the ratio of carbon dioxide made to oxygen used, near 1.0 for carbohydrate and near 0.7 for fat. One line: say what the ratio tells you that the oxygen number alone does not."
    },
    {
     "n": 22,
@@ -1603,7 +1603,7 @@ window.BIO005_SHEET = {
     "n": 23,
     "name": "Metabolic rate measurement",
     "can": "Estimate metabolic rate from measured or simulated oxygen consumption and compare resting values with values after activity.",
-    "a": "Draw a bar chart with oxygen consumption in litres per minute on the vertical and four bars across the bottom: lying quietly, sitting, walking, and hard exercise. Draw the bars at believable relative heights, not exact values. Beside the chart, write out the conversion from litres of oxygen to kilocalories per minute and carry one bar through it. One line: say which bar comes closest to a true basal measurement, and name one condition it still fails.",
+    "a": "Draw a bar chart with oxygen consumption in liters per minute on the vertical and four bars across the bottom: lying quietly, sitting, walking, and hard exercise. Draw the bars at believable relative heights, not exact values. Beside the chart, write out the conversion from liters of oxygen to kilocalories per minute and carry one bar through it. One line: say which bar comes closest to a true basal measurement, and name one condition it still fails.",
     "b": "Draw one set of axes, time on the horizontal, oxygen consumption on the vertical, and plot a person through rest, then three minutes of exercise, then recovery. Show the rise, the plateau during work, and the slow fall after stopping. Shade the area above resting level after exercise ended. One line: say what the body is still paying for in that shaded area, and why oxygen use does not drop the moment the work stops."
    }
   ]
@@ -1617,7 +1617,7 @@ window.BIO005_SHEET = {
     "name": "Functions and functional zones",
     "can": "State the functions of the respiratory system and distinguish the conducting zone from the respiratory zone by structure and by role in gas exchange.",
     "a": "Draw the airway as a branching tree from the nose down to the alveoli, with the named levels marked. Draw a line across it at the terminal bronchiole and label the conducting zone above and the respiratory zone below. Beside the conducting zone write its jobs and its volume, about 150 mL of air that never exchanges. Beside the respiratory zone draw an alveolus against a capillary. One line: say what the conducting zone is doing to the air that the alveoli would suffer without.",
-    "b": "Draw five boxes for five jobs the respiratory system does, and in each draw the structure that does it, not just the word. Include gas exchange, the fast control of blood pH, sound production, smell, and defence against what you inhale. Mark which of the five happen in the respiratory zone and which do not. One line: name the job that is not usually listed as respiratory but kills you fastest when it fails, and say why it belongs here."
+    "b": "Draw five boxes for five jobs the respiratory system does, and in each draw the structure that does it, not just the word. Include gas exchange, the fast control of blood pH, sound production, smell, and defense against what you inhale. Mark which of the five happen in the respiratory zone and which do not. One line: name the job that is not usually listed as respiratory but kills you fastest when it fails, and say why it belongs here."
    },
    {
     "n": 2,
@@ -1638,7 +1638,7 @@ window.BIO005_SHEET = {
     "name": "Compliance and elastic recoil",
     "can": "Define lung compliance and elastic recoil and predict the effect of fibrosis and of emphysema on each.",
     "a": "Draw one set of axes, transpulmonary pressure on the horizontal, lung volume on the vertical, and plot three curves: a normal lung, a fibrotic lung, and an emphysematous lung. Make the slopes right, since the slope is compliance. Mark on each curve which is hard to inflate and which is hard to empty. One line: say which patient works harder breathing in and which works harder breathing out, and point at the slope that told you.",
-    "b": "Draw two balloons side by side to represent the two failures. One is stiff walled and takes real effort to inflate but snaps shut on its own. One is stretched out and floppy, easy to inflate and slow to empty. Label which lung disease each represents and what happened to the elastic fibres in the wall. Draw the breathing pattern each patient adopts. One line: say which one traps air and roughly where that air sits at the end of a breath."
+    "b": "Draw two balloons side by side to represent the two failures. One is stiff walled and takes real effort to inflate but snaps shut on its own. One is stretched out and floppy, easy to inflate and slow to empty. Label which lung disease each represents and what happened to the elastic fibers in the wall. Draw the breathing pattern each patient adopts. One line: say which one traps air and roughly where that air sits at the end of a breath."
    },
    {
     "n": 5,
@@ -1659,7 +1659,7 @@ window.BIO005_SHEET = {
     "name": "Lung volumes and capacities",
     "can": "Define tidal volume, inspiratory and expiratory reserve volume, residual volume, vital capacity, and total lung capacity and read each from a spirogram.",
     "a": "Draw a spirogram trace across the page: several quiet tidal breaths, then a maximal inspiration, then a maximal expiration, then back to quiet breathing. Bracket and label tidal volume, inspiratory reserve volume, expiratory reserve volume, residual volume, vital capacity and total lung capacity, and write an approximate value beside each. Draw residual volume as a band the trace never enters. One line: say which one of these a spirometer can never measure, and say why not.",
-    "b": "Draw a single tall column representing total lung capacity, divided into four stacked volumes in true proportion, labelled and valued. Beside it, draw the same column for a patient with severe fibrosis and a third for a patient with severe emphysema, keeping the same scale so the heights differ. Mark residual volume in all three. One line: say which patient has a larger total lung capacity than normal and why that is not good news."
+    "b": "Draw a single tall column representing total lung capacity, divided into four stacked volumes in true proportion, labeled and valued. Beside it, draw the same column for a patient with severe fibrosis and a third for a patient with severe emphysema, keeping the same scale so the heights differ. Mark residual volume in all three. One line: say which patient has a larger total lung capacity than normal and why that is not good news."
    },
    {
     "n": 8,
@@ -1686,15 +1686,15 @@ window.BIO005_SHEET = {
     "n": 11,
     "name": "Partial pressures",
     "can": "Apply Dalton's law to calculate the partial pressure of oxygen in inspired and alveolar air and state the normal partial pressures in alveolar air, arterial blood, and venous blood.",
-    "a": "Draw a vertical bar for atmospheric air at sea level, total 760 mmHg, split into slices for nitrogen, oxygen and the trace gases in true proportion, with the oxygen slice labelled about 160 mmHg. Beside it draw the bar for air in the alveoli, now with water vapour taking about 47 mmHg and carbon dioxide taking a real slice, and the oxygen slice down near 100 mmHg. One line: say what happened between the two bars to knock oxygen down by that much, and name both causes.",
+    "a": "Draw a vertical bar for atmospheric air at sea level, total 760 mmHg, split into slices for nitrogen, oxygen and the trace gases in true proportion, with the oxygen slice labeled about 160 mmHg. Beside it draw the bar for air in the alveoli, now with water vapor taking about 47 mmHg and carbon dioxide taking a real slice, and the oxygen slice down near 100 mmHg. One line: say what happened between the two bars to knock oxygen down by that much, and name both causes.",
     "b": "Draw a circuit: alveolus, pulmonary capillary, systemic artery, tissue capillary, systemic vein, back to the alveolus. Write the partial pressure of oxygen and of carbon dioxide at each station, using the standard values, 100 and 40 in alveolar air and arterial blood, 40 and 46 in venous blood. Draw the gradient arrows at the two exchange sites, sized to the gradient. One line: say which gas has the smaller gradient at the lung and why it still crosses fast enough."
    },
    {
     "n": 12,
     "name": "Diffusion at the respiratory membrane",
     "can": "Apply the determinants of diffusion to the respiratory membrane and predict the effect of edema, fibrosis, and emphysema on gas transfer.",
-    "a": "Draw the respiratory membrane in cross section, alveolar air to red cell, with every layer the gas crosses drawn and labelled, and mark it as very thin. Write the four things that set the rate beside it: surface area, thickness, the partial pressure gradient, and how soluble the gas is. Then draw three damaged versions: fluid in the alveolus, a thickened scarred membrane, and alveolar walls broken down into fewer larger spaces. One line: say which of the three attacks surface area rather than thickness, and how a scan would look different.",
-    "b": "Draw one pulmonary capillary as a long channel with a red cell travelling along it, and plot the partial pressure of oxygen in that red cell against distance travelled, from 40 mmHg at the arterial end up to 100 mmHg. Show it reaching equilibrium well before the end of the capillary. Then draw the same plot for a thickened membrane, and again for that patient during exercise when transit time is shorter. One line: say why the damaged lung can look normal at rest and fail during exercise."
+    "a": "Draw the respiratory membrane in cross section, alveolar air to red cell, with every layer the gas crosses drawn and labeled, and mark it as very thin. Write the four things that set the rate beside it: surface area, thickness, the partial pressure gradient, and how soluble the gas is. Then draw three damaged versions: fluid in the alveolus, a thickened scarred membrane, and alveolar walls broken down into fewer larger spaces. One line: say which of the three attacks surface area rather than thickness, and how a scan would look different.",
+    "b": "Draw one pulmonary capillary as a long channel with a red cell traveling along it, and plot the partial pressure of oxygen in that red cell against distance traveled, from 40 mmHg at the arterial end up to 100 mmHg. Show it reaching equilibrium well before the end of the capillary. Then draw the same plot for a thickened membrane, and again for that patient during exercise when transit time is shorter. One line: say why the damaged lung can look normal at rest and fail during exercise."
    },
    {
     "n": 13,
@@ -1707,14 +1707,14 @@ window.BIO005_SHEET = {
     "n": 14,
     "name": "Oxygen transport and the oxyhemoglobin curve",
     "can": "Explain the sigmoid shape of the oxyhemoglobin dissociation curve and state the physiological advantage of the steep and the flat portions.",
-    "a": "Draw the curve properly: partial pressure of oxygen in mmHg on the horizontal from 0 to 100, percent saturation of hemoglobin on the vertical from 0 to 100, sigmoid in shape. Mark the arterial point near 100 mmHg and about 98 percent, and the resting venous point near 40 mmHg and about 75 percent. Shade the steep portion and the flat portion in different colours. One line: say what the flat top buys you when someone's arterial oxygen falls from 100 to 70 mmHg, and read the saturation off your own curve to prove it.",
+    "a": "Draw the curve properly: partial pressure of oxygen in mmHg on the horizontal from 0 to 100, percent saturation of hemoglobin on the vertical from 0 to 100, sigmoid in shape. Mark the arterial point near 100 mmHg and about 98 percent, and the resting venous point near 40 mmHg and about 75 percent. Shade the steep portion and the flat portion in different colors. One line: say what the flat top buys you when someone's arterial oxygen falls from 100 to 70 mmHg, and read the saturation off your own curve to prove it.",
     "b": "Draw four hemoglobin molecules in a row, each with four binding sites, holding nothing, one, three and four oxygens. Beside each, mark how easy the next oxygen is to bind, showing the shape change that makes the later sites bind more readily. Underneath, draw the curve those four points trace out and mark the shallow foot, the steep middle and the flat top. One line: say what the curve would look like if the four sites did not talk to each other, and what you would lose."
    },
    {
     "n": 15,
     "name": "Curve shifts",
     "can": "Predict the direction of the oxyhemoglobin curve shift produced by a change in pH, carbon dioxide, temperature, or 2,3 bisphosphoglycerate and state what the shift means for tissue oxygen delivery.",
-    "a": "Draw the oxyhemoglobin dissociation curve with the axes labelled, then draw a shifted copy on either side of it. Beside the right shifted curve list the four conditions that produce it, falling pH, rising carbon dioxide, rising temperature, rising 2,3 bisphosphoglycerate, and beside the left shifted one list their opposites. Draw a vertical line at a tissue partial pressure of 40 mmHg and read the saturation off all three curves. One line: say how much extra oxygen the right shift released at that one partial pressure, and name the tissue that made it happen.",
+    "a": "Draw the oxyhemoglobin dissociation curve with the axes labeled, then draw a shifted copy on either side of it. Beside the right shifted curve list the four conditions that produce it, falling pH, rising carbon dioxide, rising temperature, rising 2,3 bisphosphoglycerate, and beside the left shifted one list their opposites. Draw a vertical line at a tissue partial pressure of 40 mmHg and read the saturation off all three curves. One line: say how much extra oxygen the right shift released at that one partial pressure, and name the tissue that made it happen.",
     "b": "Draw exercising skeletal muscle in one panel and the lung capillary in the other, and put the local conditions in each: temperature, pH, carbon dioxide. Draw the curve that hemoglobin sees in each panel, shifted in the right direction, and mark the loading and unloading points. Show the same red cell passing through both. One line: say why the shift that helps unloading at the muscle does not hurt loading at the lung, and use the shape of the curve to say it."
    },
    {
@@ -1729,27 +1729,27 @@ window.BIO005_SHEET = {
     "name": "Bohr and Haldane effects",
     "can": "Distinguish the Bohr effect from the Haldane effect and explain how the two work together at the tissue and at the lung.",
     "a": "Draw a tissue capillary and a lung capillary side by side, with one red cell in each. In the tissue, draw carbon dioxide and hydrogen ion arriving and show what they do to hemoglobin's grip on oxygen and which way the curve shifts. In the lung, draw oxygen arriving and show what that does to hemoglobin's willingness to hold carbon dioxide and hydrogen ion. Label which effect is which. One line: say which effect describes a gas changing oxygen carriage and which describes oxygen changing gas carriage.",
-    "b": "Draw one hemoglobin molecule at the centre of a loop, and run it around the circuit: tissue, vein, lung, artery, back to tissue. At each station draw what it is carrying, oxygen, hydrogen ion, carbon dioxide as carbamino, and show the handoffs. Mark the two points where the two effects are helping each other rather than competing. One line: say what happens to carbon dioxide unloading at the lung in someone whose hemoglobin cannot be fully oxygenated."
+    "b": "Draw one hemoglobin molecule at the center of a loop, and run it around the circuit: tissue, vein, lung, artery, back to tissue. At each station draw what it is carrying, oxygen, hydrogen ion, carbon dioxide as carbamino, and show the handoffs. Mark the two points where the two effects are helping each other rather than competing. One line: say what happens to carbon dioxide unloading at the lung in someone whose hemoglobin cannot be fully oxygenated."
    },
    {
     "n": 18,
     "name": "Oxygen content versus partial pressure",
     "can": "Distinguish oxygen content from oxygen partial pressure and saturation and explain why anemia and carbon monoxide poisoning reduce delivery differently.",
-    "a": "Draw three test tubes of arterial blood side by side: a healthy person, a person with half the normal hemoglobin, and a person who has breathed carbon monoxide. Under each, draw three separate scales and fill them in: partial pressure of oxygen, percent saturation, and total oxygen content in mL per 100 mL of blood, with normal content near 20. Draw the red cells to match. One line: say which of the three numbers looks completely normal in the anaemic patient, and why a blood gas machine can miss it.",
-    "b": "Draw one set of axes, partial pressure of oxygen on the horizontal and total oxygen content on the vertical, and plot three curves: normal blood, anaemic blood, and blood with carbon monoxide bound to some of the hemoglobin. Draw the carbon monoxide curve shifted left as well as lowered. Mark the arterial point on all three. One line: say why carbon monoxide is worse than losing the same number of binding sites to anaemia, and point at the feature of the curve that shows it."
+    "a": "Draw three test tubes of arterial blood side by side: a healthy person, a person with half the normal hemoglobin, and a person who has breathed carbon monoxide. Under each, draw three separate scales and fill them in: partial pressure of oxygen, percent saturation, and total oxygen content in mL per 100 mL of blood, with normal content near 20. Draw the red cells to match. One line: say which of the three numbers looks completely normal in the anemic patient, and why a blood gas machine can miss it.",
+    "b": "Draw one set of axes, partial pressure of oxygen on the horizontal and total oxygen content on the vertical, and plot three curves: normal blood, anemic blood, and blood with carbon monoxide bound to some of the hemoglobin. Draw the carbon monoxide curve shifted left as well as lowered. Mark the arterial point on all three. One line: say why carbon monoxide is worse than losing the same number of binding sites to anemia, and point at the feature of the curve that shows it."
    },
    {
     "n": 19,
     "name": "Respiratory centers",
     "can": "Identify the medullary and pontine respiratory centers and explain how the basic breathing rhythm is generated and modified.",
-    "a": "Draw a brainstem in side view with the medulla and the pons marked. Place the medullary groups and the pontine group where they sit, and label which one generates the basic rhythm. Draw the output pathway down to the diaphragm and the external intercostals, and mark that quiet expiration needs no output at all. Add inputs arriving from higher centres and from the lung. One line: say what stops working first if the connection between the medulla and the diaphragm is cut, and whether the person can hold their breath at all.",
+    "a": "Draw a brainstem in side view with the medulla and the pons marked. Place the medullary groups and the pontine group where they sit, and label which one generates the basic rhythm. Draw the output pathway down to the diaphragm and the external intercostals, and mark that quiet expiration needs no output at all. Add inputs arriving from higher centers and from the lung. One line: say what stops working first if the connection between the medulla and the diaphragm is cut, and whether the person can hold their breath at all.",
     "b": "Draw one set of axes, time on the horizontal, activity in the inspiratory neurons on the vertical, and plot quiet breathing as a repeating ramp that rises then switches off. Beneath it, on the same time axis, draw the resulting lung volume trace. Then draw the same pair for forced breathing, showing the expiratory group now firing too. One line: say which part of the trace lengthens when the pontine input is removed, and what breathing would look like."
    },
    {
     "n": 20,
     "name": "Chemoreceptor control",
     "can": "Compare central and peripheral chemoreceptors by stimulus and explain why carbon dioxide is the primary minute to minute drive to breathe.",
-    "a": "Draw the two receptor sites: the central chemoreceptors on the surface of the medulla with the blood brain barrier drawn beside them, and the peripheral chemoreceptors in the carotid and aortic bodies with their nerves labelled. Show carbon dioxide crossing the barrier and being converted to hydrogen ion in the cerebrospinal fluid, and show hydrogen ion and bicarbonate failing to cross. Mark what each site actually senses. One line: say why a rise in blood carbon dioxide reaches the central receptors but a rise in blood acid does not, in the same way.",
+    "a": "Draw the two receptor sites: the central chemoreceptors on the surface of the medulla with the blood brain barrier drawn beside them, and the peripheral chemoreceptors in the carotid and aortic bodies with their nerves labeled. Show carbon dioxide crossing the barrier and being converted to hydrogen ion in the cerebrospinal fluid, and show hydrogen ion and bicarbonate failing to cross. Mark what each site actually senses. One line: say why a rise in blood carbon dioxide reaches the central receptors but a rise in blood acid does not, in the same way.",
     "b": "Draw two graphs side by side, both with ventilation on the vertical. On the first, arterial carbon dioxide on the horizontal near the normal 40 mmHg, plotted as a steep line that responds to small changes. On the second, arterial oxygen on the horizontal from 100 down to 30 mmHg, plotted as a line that stays flat until it falls off below about 60. Mark normal on both. One line: say which stimulus is doing the minute to minute work, and say what has to happen before the other one matters."
    },
    {
@@ -1757,7 +1757,7 @@ window.BIO005_SHEET = {
     "name": "Ventilation in exercise and at altitude",
     "can": "Predict the ventilatory response to exercise and to acute and chronic altitude exposure and explain the acclimatization changes.",
     "a": "Draw one set of axes, time on the horizontal through rest, the start of exercise, steady exercise, and recovery, with ventilation on the vertical. Plot the abrupt jump at the moment work begins, the plateau, and the fall at the end. On the same time axis underneath, plot arterial carbon dioxide staying close to normal through moderate exercise. One line: say why the ventilation jump cannot have been caused by a rise in carbon dioxide, and name what you think triggered it.",
-    "b": "Draw a person arriving at 4000 metres and follow them down the page over days. Day one: inspired oxygen partial pressure low, peripheral chemoreceptors firing, ventilation up, and carbon dioxide blown off so plasma pH rises above 7.45, which limits the response. Then over days draw the kidney excreting bicarbonate to bring pH back down, ventilation rising further, red cell production climbing, and 2,3 bisphosphoglycerate rising. One line: say which acclimatisation change helps at the tissue rather than at the lung, and how."
+    "b": "Draw a person arriving at 4000 meters and follow them down the page over days. Day one: inspired oxygen partial pressure low, peripheral chemoreceptors firing, ventilation up, and carbon dioxide blown off so plasma pH rises above 7.45, which limits the response. Then over days draw the kidney excreting bicarbonate to bring pH back down, ventilation rising further, red cell production climbing, and 2,3 bisphosphoglycerate rising. One line: say which acclimatisation change helps at the tissue rather than at the lung, and how."
    },
    {
     "n": 22,
@@ -1910,7 +1910,7 @@ window.BIO005_SHEET = {
     "name": "Micturition",
     "can": "Trace the micturition reflex and explain how the internal and external sphincters allow voluntary control.",
     "a": "Draw the bladder filling, with stretch receptors in the wall, the sensory path to the sacral spinal cord, the parasympathetic motor path back to the detrusor muscle, and both sphincters. Mark the internal sphincter as smooth muscle and involuntary, the external as skeletal muscle on the pudendal nerve. Show the state of each during filling and during voiding. One line: say which sphincter a toddler has to learn to control, and why the other needs no training.",
-    "b": "Draw the reflex twice, once intact with the descending path from the pons included, and once with the spinal cord cut above the sacral segments. In the second, show which parts of the loop still work and which are gone, then draw the bladder behaviour that results. One line: say why that patient still empties the bladder but cannot choose when, and name the piece that was lost."
+    "b": "Draw the reflex twice, once intact with the descending path from the pons included, and once with the spinal cord cut above the sacral segments. In the second, show which parts of the loop still work and which are gone, then draw the bladder behavior that results. One line: say why that patient still empties the bladder but cannot choose when, and name the piece that was lost."
    },
    {
     "n": 19,
@@ -1923,7 +1923,7 @@ window.BIO005_SHEET = {
     "n": 20,
     "name": "Renal function calculation",
     "can": "Calculate glomerular filtration rate, clearance, and filtered load from a data set and interpret the values in a clinical case.",
-    "a": "Work a case on the page. Choose plausible values for plasma creatinine, urine creatinine, and urine flow rate, then draw the clearance calculation as a labelled flow of numbers with units carried through every step. Use your answer to calculate the filtered load of sodium at a plasma sodium of 140 mEq/L. One line: compare that filtered load against the sodium actually excreted in a day, and say what the gap tells you about the tubule.",
+    "a": "Work a case on the page. Choose plausible values for plasma creatinine, urine creatinine, and urine flow rate, then draw the clearance calculation as a labeled flow of numbers with units carried through every step. Use your answer to calculate the filtered load of sodium at a plasma sodium of 140 mEq/L. One line: compare that filtered load against the sodium actually excreted in a day, and say what the gap tells you about the tubule.",
     "b": "Draw a two column comparison of two patients with the same urine output, one with plasma creatinine of 1.0 mg/dL and one at 4.0 mg/dL. Calculate each one's clearance and draw it as a bar against a marked normal near 125 mL/min. Then draw what the nephrons of the second patient are doing to produce that number. One line: say whether a fourfold rise in plasma creatinine means a fourfold fall in GFR, and why that relationship is not a straight line."
    },
    {

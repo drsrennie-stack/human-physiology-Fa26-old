@@ -36,7 +36,7 @@ window.BIO005_DISCUSSIONS = {
   "3": {
     title: "Getting across the membrane",
     eyebrow: "Predict, then check",
-    pick: "Pick one: a red cell dropped into distilled water, a red cell into 3 percent saline, or a patient given a litre of 0.45 percent saline.",
+    pick: "Pick one: a red cell dropped into distilled water, a red cell into 3 percent saline, or a patient given a liter of 0.45 percent saline.",
     work: "Before you look anything up, write your prediction of what happens to cell volume and why. Then work it properly: name the tonicity, say which way water moves and what drives it, and explain why osmolarity alone does not settle the question until you know whether the solute can cross. Give the clinical consequence in one sentence.",
     think: "Now compare the two. Was your prediction right, half right, or wrong? Name the specific idea that had to change. Students most often trip on treating osmolarity and tonicity as the same thing, so if that was you, say so plainly. Getting it wrong first and knowing why is worth more here than getting it right by luck.",
     attach: "",
@@ -106,7 +106,7 @@ window.BIO005_DISCUSSIONS = {
   "10": {
     title: "Pressure, flow, and holding blood pressure steady",
     eyebrow: "The reflex that catches you",
-    pick: "Pick one: standing up quickly, haemorrhage, or a vessel narrowed by disease.",
+    pick: "Pick one: standing up quickly, hemorrhage, or a vessel narrowed by disease.",
     work: "Work the baroreceptor reflex through your situation step by step: what is sensed, where, what the integrator does, which effectors respond, and what happens to heart rate, contractility and vessel radius. Then say what the reflex is defending and what it is willing to sacrifice to defend it. Use the relationship between flow, pressure and resistance rather than describing it in words alone.",
     think: "Say which step of that reflex you would most likely leave out if you were rushing, and why that step is easy to skip. Everyone has one. Naming it now is cheaper than finding it on the midterm.",
     attach: "",
@@ -116,7 +116,7 @@ window.BIO005_DISCUSSIONS = {
   "11": {
     title: "Blood and how the body defends itself",
     eyebrow: "Reading a panel like a clinician",
-    pick: "Pick one pattern from a CBC: a low haematocrit, a raised white count with a left shift, or a low platelet count.",
+    pick: "Pick one pattern from a CBC: a low hematocrit, a raised white count with a left shift, or a low platelet count.",
     work: "Say what the number actually measures, physiologically, and what the body would have to be doing for it to move that way. Give two different mechanisms that could produce the same number, and say what other value on the panel you would look at to tell them apart. Do not diagnose; explain what is being measured and what high or low means.",
     think: "This is the first week where the answer is a range rather than a fact. Say how that changed the way you studied it, and whether you found yourself wanting a single right answer. That pull toward one right answer is worth noticing, because clinical data rarely gives you one.",
     attach: "",
@@ -136,7 +136,7 @@ window.BIO005_DISCUSSIONS = {
   "13": {
     title: "Breathing, gas transport, and the fast pH lever",
     eyebrow: "Minutes, not days",
-    pick: "Pick one: a right shift of the haemoglobin dissociation curve, hyperventilation, or hypoventilation.",
+    pick: "Pick one: a right shift of the hemoglobin dissociation curve, hyperventilation, or hypoventilation.",
     work: "Explain what your change does to oxygen loading in the lung and unloading at the tissue, or to carbon dioxide and therefore to pH. Give the direction of the pH change and the mechanism behind it, not just the label. Then name a situation where this is the body doing the right thing rather than something going wrong.",
     think: "Respiratory compensation is fast and renal compensation is slow, and this week is the fast half. Say what you did to keep the two levers separate in your head, given that week 15 brings the slow one back. If you have not built anything to keep them apart yet, say that, and say what you will try.",
     attach: "",

@@ -198,7 +198,7 @@ var BIO005_FAQ = [
  {
   "cat": "Grading",
   "q": "How is my grade calculated?",
-  "a": "Five components: competency note sheets 20 percent, three midterms 40 percent, lab 15 percent, book problems 15 percent, discussions 10 percent. Full detail in <a href=\"syllabus-fall2026.html#s07\">syllabus section 07</a>."
+  "a": "Four categories: Show Me What You Know, the two exams, 35 percent. Investigate It, the labs, 25 percent. Use It, your application cases and patient file, 25 percent. Think About It, the discussions, 15 percent. Full detail in <a href=\"syllabus-fall2026.html#s07\">syllabus section 07</a>."
  },
  {
   "cat": "Grading",
@@ -243,7 +243,7 @@ var BIO005_FAQ = [
  {
   "cat": "Grading",
   "q": "How much is each midterm worth?",
-  "a": "The three midterms together are 40 percent, so each is roughly 13 percent of your final grade."
+  "a": "The two exams together are 35 percent, so each is 17.5 percent of your final grade."
  },
  {
   "cat": "Grading",
@@ -303,7 +303,7 @@ var BIO005_FAQ = [
  {
   "cat": "Grading",
   "q": "Where does participation show up in the grade?",
-  "a": "Participation in an online course is submitted work. The weekly note sheet is the heartbeat; if it is coming in, you are participating."
+  "a": "Participation in an online course is submitted work, and what I can certify is the graded work: your weekly discussion post, your lab, and your application case. The note sheet, the practice items and the Mastery Check carry no points, so as much as they drive your learning, they are not what attendance is measured from."
  },
  {
   "cat": "Note sheets",
@@ -447,7 +447,7 @@ var BIO005_FAQ = [
  },
  {
   "cat": "Midterms",
-  "q": "When is Midterm 3?",
+  "q": "When is Midterm 2?",
   "a": "Monday, December 14 at 8:00 am to Wednesday, December 16 at 10:00 pm, with the term. It covers Weeks 11 to 15."
  },
  {
@@ -488,7 +488,7 @@ var BIO005_FAQ = [
  {
   "cat": "Midterms",
   "q": "Are the midterms cumulative?",
-  "a": "Each covers its own block of weeks. But physiology compounds, so Midterm 3's pathways stand on everything before them."
+  "a": "Each covers its own block of weeks. Midterm 1 is Weeks 1 to 7, Midterm 2 is Weeks 8 to 14. But physiology compounds, so Midterm 2's pathways stand on everything before them."
  },
  {
   "cat": "Midterms",
@@ -513,7 +513,7 @@ var BIO005_FAQ = [
  {
   "cat": "Midterms",
   "q": "Is there a final exam?",
-  "a": "Midterm 3 is your last assessment. There is no separate final during a finals week; the term simply ends December 16."
+  "a": "No. There are two exams and Midterm 2 is your last assessment. Its window is Monday December 14 to Wednesday December 16, and the term simply ends there."
  },
  {
   "cat": "Midterms",
@@ -748,7 +748,7 @@ var BIO005_FAQ = [
  {
   "cat": "Time and workload",
   "q": "Is Week 15 really only three days?",
-  "a": "Yes: Monday, December 14 through Wednesday, December 16. It is deliberately light, and Midterm 3's window is those same days."
+  "a": "Yes: Monday, December 14 through Wednesday, December 16. It is deliberately light, and Midterm 2's window is those same days."
  },
  {
   "cat": "Time and workload",

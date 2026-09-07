@@ -91,7 +91,7 @@ a{color:var(--maroon-dark)}
 /* The current page is marked three ways: a gold rule under it, a darker ink,
    and a heavier weight. The gold rule is 1.9:1 on white, which is fine as
    reinforcement but could not carry the state on its own, so the weight and
-   colour shift carry it too and aria-current carries it for a screen reader. */
+   color shift carry it too and aria-current carries it for a screen reader. */
 .mainnav a{position:relative;font-size:.9rem;font-weight:600;color:var(--navy-70);
   text-decoration:none;padding:10px 6px;margin:0 10px;min-height:44px;min-width:44px;
   display:flex;align-items:center;justify-content:center}
@@ -286,7 +286,7 @@ details.drop > summary .tag{font-size:.72rem;font-weight:700;color:var(--ink-sof
 .vl-list{list-style:none;margin:0 0 20px;padding:0}
 .vl-list li{font-size:13px;font-weight:500;line-height:19px;color:var(--navy);
   padding:4px 0 4px 15px;margin:0 0 2.4px;position:relative}
-/* Custom dot rather than a list marker, so the colour and size are ours
+/* Custom dot rather than a list marker, so the color and size are ours
    and the text hangs properly under itself. */
 .vl-list li::before{content:"";position:absolute;left:0;top:10px;width:5px;height:5px;
   border-radius:50%;background:var(--terra)}
@@ -371,7 +371,7 @@ details.drop > summary .tag{font-size:.72rem;font-weight:700;color:var(--ink-sof
   text-decoration:none;border:2px solid transparent}
 /* Hover inverts rather than shifting a shade. Gold-on-navy going to
    navy-on-gold is unmistakable; gold to straw was not. The border keeps its
-   colour so the button stays visible once its fill matches the band. */
+   color so the button stays visible once its fill matches the band. */
 .btnA{background:var(--gold-bright);border-color:var(--gold-bright);color:#060A18}
 .btnA:hover,.btnA:focus-visible{background:var(--navy);color:var(--gold-bright);
   border-color:var(--gold-bright)}
@@ -440,7 +440,7 @@ details.drop > summary .tag{font-size:.72rem;font-weight:700;color:var(--ink-sof
   min-height:44px;border-radius:6px;text-decoration:none;color:var(--navy);
   background:var(--navy-tint);border:1px solid #7C8798}
 .cal td.inwk a:hover{background:var(--straw-light);border-color:var(--gold-text)}
-/* Opens and due are told apart by WHERE the bar sits, not only by its colour,
+/* Opens and due are told apart by WHERE the bar sits, not only by its color,
    and both are named in each link's accessible name. 1.4.1. */
 .cal td.opens a{border-left:4px solid var(--navy)}
 .cal td.due a{border-bottom:4px solid var(--maroon)}
@@ -453,7 +453,7 @@ details.drop > summary .tag{font-size:.72rem;font-weight:700;color:var(--ink-sof
 
 /* ---------- the fifteen weeks ---------- */
 /* The current week gets a terra arrow, a wash and a heavier border. Three
-   cues, only one of which is colour, so 1.4.1 holds. The visible tag
+   cues, only one of which is color, so 1.4.1 holds. The visible tag
    "This week" is what a screen reader hears. */
 .wklist{display:grid;gap:10px;padding-left:28px}
 @media(max-width:640px){.wklist{padding-left:22px}}
@@ -469,7 +469,7 @@ details.drop > summary .tag{font-size:.72rem;font-weight:700;color:var(--ink-sof
 .wkrow[data-state="past"]{box-shadow:none;background:#F1F3F5}
 .wkrow[data-state="past"] h3{color:var(--ink-soft)}
 .wkrow[data-state="now"]{background:#EFF0F2;box-shadow:var(--shadow-hover)}
-/* Terra is 6.72:1 on the grey, just under AAA, so the number darkens. */
+/* Terra is 6.72:1 on the gray, just under AAA, so the number darkens. */
 .wkrow[data-state="now"] .no{color:var(--terra-dark)}
 .wkrow[data-state="now"]::before{content:"";position:absolute;left:-30px;top:50%;
   transform:translateY(-50%);width:32px;height:22px;
@@ -535,7 +535,7 @@ details.drop > summary .tag{font-size:.72rem;font-weight:700;color:var(--ink-sof
         <p class="stand">The word that ties it together is <strong>integrative</strong>. No organ
           works alone. Hold your breath and your kidney hears about it. Stand up too fast and your
           heart, your blood vessels and your brain all respond within a second. You will spend the
-          term learning to trace those connections rather than memorising the parts separately.</p>
+          term learning to trace those connections rather than memorizing the parts separately.</p>
         <div class="ctas">
           <a class="btnA" href="#thisweek">Go to this week</a>
           <a class="btnB" href="syllabus-fall2026.html" target="_top">How this course works</a>

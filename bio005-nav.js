@@ -236,7 +236,7 @@
   + '@media print{.b5nav,.b5foot,.b5skip,.b5listen,.b5play{display:none!important}}'
 
   /* Listen to this page. Text to speech, which is NOT a screen reader, and is
-     labelled that way everywhere it appears. A student who uses a real screen
+     labeled that way everywhere it appears. A student who uses a real screen
      reader has a far better tool already configured the way they like it. This
      is for reading fatigue, for a second language, for following along with
      audio, and for the ones studying in the car park before a shift. */
@@ -261,7 +261,7 @@
   + '@media (max-width:560px){.b5play{right:10px;bottom:10px;left:10px;justify-content:center}}'
   /* The dock launcher is fixed at bottom left with a very high z-index. The
      slide decks put their pen toolbar in the same corner, so the launcher sat
-     on top of the first few controls and the colour swatches failed the WCAG
+     on top of the first few controls and the color swatches failed the WCAG
      2.2 target size rule by being partly covered. Lifting the toolbar clears
      it. Harmless on every page that has no toolbar. */
   + '.inkbar{bottom:76px!important}'
