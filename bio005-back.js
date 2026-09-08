@@ -1,159 +1,187 @@
 /* ============================================================
-   BIO 005 Human Physiology, Yuba College, Fall 2026
+   BIO 005 Human Physiology, Fall 2026
    bio005-back.js
 
-   THE BACK BAR. One script, every content page.
+   A WAY BACK, ON EVERY PAGE.
 
-   THE PROBLEM
-   -----------
-   Students do not arrive at these pages from the top of the site.
-   They click a link inside a Canvas assignment, land three levels
-   in, finish reading, and then have nowhere obvious to go. A plain
-   browser Back button is not enough: inside a Canvas iframe it can
-   walk them out of the course entirely, and on a page opened in a
-   fresh tab there is no history to go back to at all.
+   THE PROBLEM THIS FIXES
+   ----------------------
+   Every internal link on this site carries target="_top". That is
+   the right choice for a page embedded on its own in Canvas: a
+   link should break out of the frame rather than nest a course
+   inside a course. The cost is that once a student follows one,
+   they are on github.io with the Canvas chrome gone. In the Canvas
+   mobile app, and in a Canvas page opened from a link, there is no
+   browser back arrow to bring them home. Scrubs hit this on the
+   Mastery OS, on the recall cards, and again on the competency
+   sheet. Three reports of the same trap is a site problem, not
+   three page problems.
 
-   WHAT THIS DOES
-   --------------
-   Works out where the student actually came from and offers the
-   right way back, in this order:
+   THE FIX
+   -------
+   One floating Back control, bottom left, on every page. It goes
+   back through the history when there is history to go back
+   through, which is the behavior a student expects and the one the
+   missing browser button would have given them. When there is no
+   history, because the page was opened cold from a Canvas module
+   link or a bookmark, it goes to the course home page instead, so
+   it is never a button that does nothing.
 
-     1. Came from another page on this site  -> back to that page,
-        named. "Back to the lab report instructions", not "Back".
-     2. Came from Canvas                     -> back to Canvas.
-     3. Came from nowhere we recognize, or a
-        fresh tab with no history            -> the course tools hub,
-        which is the one page everything else hangs off.
-
-   So the link always says where it goes, and it never dead-ends.
-
-   FRAME AWARENESS
+   WHY BOTTOM LEFT
    ---------------
-   Internal destinations use target="_top" so the student breaks
-   out of the Canvas iframe rather than loading a course inside a
-   course. Canvas destinations are left to load normally.
+   Hootie owns bottom right. Course tools used to own bottom left
+   and is switched off, so that corner is free. Two floating
+   controls in one corner overlap on a phone.
+
+   WHY FLOATING AND NOT A BAR AT THE TOP
+   -------------------------------------
+   Inside Canvas these pages are rendered at their full height and
+   the parent page does the scrolling, so a bar at the top of the
+   document is only reachable by scrolling the whole Canvas page
+   back up. A floating control stays where the student is looking.
+
+   WHY IT DOES NOT DEFER TO A PAGE'S OWN BACK LINK
+   -----------------------------------------------
+   A few pages carry their own "Back to the schedule" link in a
+   header. That was tried as a reason to skip, and it is the wrong
+   rule. Those headers are sticky, and sticky does not stick inside
+   a Canvas embed: the page is rendered at its full height and the
+   parent does the scrolling, so the header sits at the top of a
+   very long document and a student a thousand competencies down
+   is nowhere near it. That is exactly how being stuck happens. One
+   control, same corner, every page, is worth an occasional
+   duplicate.
+
+   TURNING IT OFF
+   --------------
+   A page that is already a hub, or that is loaded inside one of
+   the in place panels, does not need it:
+
+       <body data-back="off">
+
+   Panel mode is detected on its own, because every page loaded in
+   a panel carries ?embed=1 and the panel has its own X.
 
    ACCESSIBILITY
    -------------
-   It is a real link in a <nav> with an accessible name, first in
-   the tab order after the skip link, and it reads as "Back to X"
-   rather than as a bare arrow. The arrow is decorative and hidden
-   from screen readers.
-
-   USAGE
-   -----
-   Put this one line before </body> on any content page:
-     <script src="bio005-back.js"></script>
-   Nothing else. It injects itself at the top of <main>, or at the
-   top of <body> if there is no <main>.
+   A real button with a real accessible name, reachable by keyboard,
+   with a visible focus ring and a 44px minimum target. The arrow is
+   aria-hidden so a screen reader announces the word rather than a
+   character. Contrast is white on navy, 16.2:1.
    ============================================================ */
 (function () {
-  "use strict";
+  'use strict';
+  if (window.__BIO005_BACK__) return;
+  window.__BIO005_BACK__ = true;
 
-  var HUB = "course-materials.html";
-  var CANVAS = "https://yccd.instructure.com/courses/42616";
+  var HOME = 'course-start.html';
 
-  /* Pages we can name. Anything not listed still works, it just
-     falls back to a generic label rather than a specific one. */
-  var NAMES = {
-    "course-materials.html":        "course tools",
-    "course-start.html":            "course home",
-    "welcome-tour.html":            "the welcome tour",
-    "home.html":                    "course home",
-    "syllabus-fall2026.html":       "the syllabus",
-    "course-schedule.html":         "the schedule",
-    "competency-study-guide.html":  "the competency list",
-    "concept-videos-week01.html":   "the concept videos",
-    "clinical-physiology-lab-manual.html": "the lab manual",
-    "mastery-canvas.html":          "the drawing canvas",
-    "lab-report-form.html":         "the lab report form",
-    "lab-week08-hormone-cycle.html":  "the week 8 hormone cycle lab",
-    "assignment-notesheet.html":    "the note sheet assignment",
-    "assignment-physioex.html":     "the lab report instructions",
-    "assignment-bookproblems.html": "the book problems",
-    "assignment-discussion.html":   "the discussion"
-  };
+  /* Pages that are themselves a place to go back TO. Sending a student
+     from the course home page back to the course home page is a button
+     that appears to be broken. */
+  var HUBS = ['course-start.html', 'index.html', 'physiology-course-home.html',
+              'course-materials.html', 'welcome-to-physiology.html'];
 
-  function fileOf(url) {
-    try {
-      var path = new URL(url, window.location.href).pathname;
-      return path.slice(path.lastIndexOf("/") + 1) || "";
-    } catch (e) { return ""; }
+  function fileName() {
+    var p = location.pathname;
+    var i = p.lastIndexOf('/');
+    return (i < 0 ? p : p.slice(i + 1)) || 'index.html';
   }
 
-  function label(file) {
-    if (NAMES[file]) { return NAMES[file]; }
-    var wk = file.match(/^week-(\d{1,2})\.html$/);
-    if (wk) { return "week " + parseInt(wk[1], 10); }
-    return "";
+  function skip() {
+    if (/[?&]embed=/.test(location.search)) return true;      /* in a panel */
+    if (document.body.getAttribute('data-back') === 'off') return true;
+    if (HUBS.indexOf(fileName()) > -1) return true;
+    return false;
   }
 
-  /* ---------- work out the destination ---------- */
-  var ref = document.referrer || "";
-  var here = fileOf(window.location.href);
-  var dest, text, external = false;
+  /* Inside a frame, history.length counts the frame's own history. One
+     entry means this page is the only thing that has been in the frame,
+     so there is nothing to go back to and the course home is the honest
+     destination. */
+  function canGoBack() {
+    try { return window.history.length > 1; } catch (e) { return false; }
+  }
 
-  var sameSite = false;
-  try {
-    sameSite = ref && new URL(ref).origin === window.location.origin;
-  } catch (e) { sameSite = false; }
+  var CSS = [
+    '.b5-back{position:fixed;left:18px;bottom:18px;z-index:60;',
+    '  display:inline-flex;align-items:center;gap:8px;',
+    '  font-family:inherit;font-size:.85rem;font-weight:700;cursor:pointer;',
+    '  min-height:44px;padding:11px 17px;border-radius:999px;',
+    '  background:#0B1530;color:#fff;border:1px solid #0B1530;',
+    '  box-shadow:0 8px 16px rgba(0,0,0,.18);',
+    '  transition:transform 180ms ease,box-shadow 180ms ease}',
+    '.b5-back:hover{transform:translateY(-2px);box-shadow:0 12px 22px rgba(0,0,0,.22);color:#fff}',
+    '.b5-back:focus-visible{outline:3px solid #C9A14A;outline-offset:3px}',
+    '.b5-back svg{flex:0 0 auto}',
+    '@media print{.b5-back{display:none!important}}',
+    '@media (prefers-reduced-motion:reduce){',
+    '  .b5-back{transition:none}.b5-back:hover{transform:none}}'
+  ].join('');
 
-  if (sameSite) {
-    var from = fileOf(ref);
-    var name = label(from);
-    /* Ignore a referrer that is this same page, which happens on a
-       reload and would otherwise offer to send them nowhere. */
-    if (from && from !== here) {
-      dest = from;
-      text = name ? "Back to " + name : "Back to where you were";
+  var ARROW = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" ' +
+    'stroke="currentColor" stroke-width="2.6" stroke-linecap="round" ' +
+    'stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/>' +
+    '<path d="M12 19l-7-7 7-7"/></svg>';
+
+  function mount() {
+    if (skip()) return;
+
+    var st = document.createElement('style');
+    st.setAttribute('data-bio005-back', '');
+    st.textContent = CSS;
+    document.head.appendChild(st);
+
+    var back = canGoBack();
+    var el = document.createElement(back ? 'button' : 'a');
+    el.className = 'b5-back';
+    if (back) {
+      el.type = 'button';
+      el.innerHTML = ARROW + '<span>Back</span>';
+      el.setAttribute('aria-label', 'Back to the page you came from');
+      el.addEventListener('click', function () { window.history.back(); });
+    } else {
+      el.href = HOME;
+      el.target = '_top';
+      el.innerHTML = ARROW + '<span>Course home</span>';
+      el.setAttribute('aria-label', 'Go to the course home page');
     }
-  } else if (ref.indexOf("instructure.com") > -1) {
-    dest = CANVAS;
-    text = "Back to Canvas";
-    external = true;
+    document.body.appendChild(el);
+
+    /* DO NOT LAND ON TOP OF SOMETHING ELSE.
+
+       Two pages keep their own navy "Back to the schedule" button in a
+       pinned sidebar, in this exact corner, and the two pills stacked.
+       Ask the browser what is actually at the spot just above this
+       button; if the page already put something there, step up out of
+       its way. This is measured rather than hard coded, so it also
+       covers any page that grows a corner control later. */
+    (function () {
+      for (var lift = 0; lift < 4; lift++) {
+        var r = el.getBoundingClientRect();
+        var under = document.elementFromPoint(r.left + r.width / 2, r.top - 8);
+        if (!under || under === document.body || under === document.documentElement
+            || el.contains(under) || under.contains(el)) break;
+        var box = under.getBoundingClientRect();
+        if (box.height > 200 || box.width > 400) break;   /* a panel, not a control */
+        el.style.bottom = (18 + (lift + 1) * (box.height + 12)) + 'px';
+      }
+    }());
+
+    /* Keep the last line of the page clear of the floating controls. */
+    var pad = document.createElement('style');
+    pad.textContent = 'body{padding-bottom:76px}';
+    document.head.appendChild(pad);
   }
 
-  if (!dest) {
-    /* No usable referrer: a fresh tab, a bookmark, a QR code, or a
-       browser that strips it. The hub is always a safe landing. */
-    if (here === HUB) { return; }          /* already there, no bar */
-    dest = HUB;
-    text = "Back to course tools";
-  }
+  /* MOUNT LATE, ON PURPOSE.
 
-  /* ---------- build it ---------- */
-  var css = document.createElement("style");
-  css.textContent =
-    ".b005-back{border-bottom:.5px solid rgba(11,21,48,.15);background:#fff}" +
-    ".b005-back .in{max-width:1080px;margin:0 auto;padding:11px 24px}" +
-    ".b005-back a{display:inline-flex;align-items:center;gap:9px;text-decoration:none;" +
-      "font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:11px;font-weight:800;" +
-      "letter-spacing:.2em;text-transform:uppercase;color:#6E2D24}" +
-    ".b005-back a:hover{color:#8B3A2E;text-decoration:underline}" +
-    ".b005-back a:focus-visible{outline:3px solid #8B3A2E;outline-offset:3px;border-radius:3px}" +
-    ".b005-back svg{flex:none}" +
-    "@media print{.b005-back{display:none}}";
-  document.head.appendChild(css);
-
-  var nav = document.createElement("nav");
-  nav.className = "b005-back";
-  nav.setAttribute("aria-label", "Go back");
-
-  var a = document.createElement("a");
-  a.href = dest;
-  if (!external) { a.target = "_top"; }
-  a.innerHTML =
-    '<svg width="15" height="13" viewBox="0 0 15 13" fill="none" stroke="currentColor" ' +
-    'stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ' +
-    'focusable="false"><path d="M14 6.5H2M7 1.5l-5 5 5 5"/></svg>';
-  a.appendChild(document.createTextNode(text));
-
-  var inner = document.createElement("div");
-  inner.className = "in";
-  inner.appendChild(a);
-  nav.appendChild(inner);
-
-  var main = document.querySelector("main");
-  if (main) { main.parentNode.insertBefore(nav, main); }
-  else { document.body.insertBefore(nav, document.body.firstChild); }
-})();
+     Several pages build their own navigation from data after the document
+     is parsed, so a check that runs at DOMContentLoaded sees a page with no
+     Back control and adds a second one a moment before the page adds its
+     own. Waiting for load, plus a beat for anything that renders from a
+     data file, means the check reads the page a student actually sees. */
+  function start() { setTimeout(mount, 250); }
+  if (document.readyState === 'complete') start();
+  else window.addEventListener('load', start);
+}());
