@@ -1,0 +1,1360 @@
+BIO 005 HUMAN PHYSIOLOGY, FALL 2026. CANVAS SNIPPETS.
+Generated 2026-09-07. Base URL: https://drsrennie-stack.github.io/human-physiology-Fa26/
+Paste each snippet into the Canvas HTML editor (the </> button). All times Pacific.
+
+==================== HOME PAGE (front page) ====================
+<p><iframe title="BIO 005 Human Physiology, start" src="https://drsrennie-stack.github.io/human-physiology-Fa26/course-door.html" width="100%" height="1500" style="width:100%;min-height:1500px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/course-door.html" target="_blank" rel="noopener">open the course start page in a new tab</a>.</p><h2>Where things are</h2>
+<ul>
+<li><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/course-materials.html" target="_blank" rel="noopener">Course tools, this week in order</a></li>
+<li><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/syllabus-fall2026.html" target="_blank" rel="noopener">Syllabus</a> and <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/course-schedule.html" target="_blank" rel="noopener">schedule</a></li>
+<li><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/mastery-physio-os-standalone.html" target="_blank" rel="noopener">Mastery OS</a>, the study app, open all term</li>
+<li><a href="https://yccd.instructure.com/courses/42616/discussion_topics/711800">Dr. Rennie's Virtual Office</a>, the question board</li>
+<li><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/accessibility.html" target="_blank" rel="noopener">Accessibility</a></li>
+</ul>
+<p>Everything you turn in, and every grade, lives in Canvas under Modules. Each week is one module, and every module has the same six numbered steps in the same order.</p>
+
+==================== START HERE MODULE ====================
+Settings: no lock. Sequential requirements: view the four pages, score 8/10 on the syllabus check. Prerequisite for Week 01.
+
+--- TEXT HEADER: Read these in order. Week 1 opens when you have.
+
+--- PAGE: Start here · How much time this course takes   [requirement: View]
+    settings: Page. Requirement: view.
+<p><iframe title="Before you start: how much time this course takes" src="https://drsrennie-stack.github.io/human-physiology-Fa26/start-here.html" width="100%" height="1600" style="width:100%;min-height:1600px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/start-here.html" target="_blank" rel="noopener">open the page in a new tab</a>.</p>
+
+--- PAGE: Start here · Syllabus   [requirement: View]
+    settings: Page. Requirement: view. Also paste this same snippet into the Canvas Syllabus tool (Syllabus, Edit) so the left-nav Syllabus shows the real one above the assignment list. If a 14,500 px iframe feels absurd on your screen, replace it with the link alone; the page is long because it is complete.
+<p><iframe title="BIO 005 syllabus, Fall 2026" src="https://drsrennie-stack.github.io/human-physiology-Fa26/syllabus-fall2026.html" width="100%" height="14500" style="width:100%;min-height:14500px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/syllabus-fall2026.html" target="_blank" rel="noopener">open the syllabus in a new tab</a>.</p><p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/syllabus-fall2026.pdf" target="_blank" rel="noopener">Download the syllabus as a PDF</a></p>
+
+--- PAGE: Start here · Schedule and every due date   [requirement: View]
+    settings: Page. Requirement: view.
+<p><iframe title="BIO 005 schedule, Fall 2026" src="https://drsrennie-stack.github.io/human-physiology-Fa26/course-schedule.html" width="100%" height="8000" style="width:100%;min-height:8000px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/course-schedule.html" target="_blank" rel="noopener">open the schedule in a new tab</a>.</p>
+
+--- PAGE: Start here · Set up your tools   [requirement: View]
+    settings: Page. Requirement: view. Canvas-native text, nothing to iframe.
+<h2>Four things to set up this week</h2>
+<ol>
+<li><strong>Pearson Mastering A&amp;P with PhysioEx.</strong> Click <strong>Access Pearson</strong> in the course menu on the left and buy access there, and only there. Your labs run in PhysioEx from Week 2, and the Silverthorn eText comes with it.</li>
+<li><strong>The Mastery OS.</strong> Free, in your browser, no account. <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/mastery-physio-os-standalone.html" target="_blank" rel="noopener">Open it once now</a> so it is ready when the first recall cards come.</li>
+<li><strong>Paper, two pens you can tell apart, and a way to turn paper into one PDF.</strong> Every note sheet, lab and problem set is handwritten and uploaded as a single PDF. A free scanning app on your phone does this.</li>
+<li><strong>A camera and Canvas Studio.</strong> Your Week 1 introduction and both midterms are recorded video. Record a 20 second test in Canvas Studio this week so the first real one is not also the first try.</li>
+</ol>
+<p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/ai-in-this-course.html" target="_blank" rel="noopener"><strong>How AI is used in this course</strong></a><br>Where you can use it, where you cannot, and why the line is there.</p><p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/accessibility.html" target="_blank" rel="noopener"><strong>Accessibility</strong></a><br>How the course was built and what has been checked. If anything is hard to use, tell me in the first week.</p>
+
+--- QUIZ: Start here · Syllabus check   [requirement: Score at least 8 out of 10]
+    settings: Classic quiz, 10 points, unlimited attempts, keep highest, questions one at a time, no time limit. Requirement: score at least 8. This is the item that makes Start Here a real gate. The questions are below the snippets.
+(no snippet; build the quiz from the question set at the bottom of this section)
+
+--- URL: Dr. Rennie's Virtual Office, the question board
+    settings: Link to the existing discussion. No requirement.
+https://yccd.instructure.com/courses/42616/discussion_topics/711800
+
+SYLLABUS CHECK QUESTIONS (Multiple Choice / Multiple Answers). Keyed answers marked with *.
+1. When is the weekly work due?  (multiple choice)
+   A. Friday at 5:00 pm
+   B. Sunday at 10:00 pm  *
+   C. Monday at 8:00 am
+   D. Sunday at 11:59 pm
+2. Your initial discussion post is due earlier than the rest of the week's work. When?  (multiple choice)
+   A. Wednesday at 10:00 pm
+   B. Thursday at 10:00 pm
+   C. Friday at 10:00 pm  *
+   D. Saturday at 10:00 pm
+3. You turn in the note sheet 10 hours after the deadline. What happens?  (multiple choice)
+   A. It is graded in full
+   B. It earns half credit  *
+   C. It earns zero
+   D. It is graded in full if you email first
+4. You turn in the note sheet two days after the deadline. What happens?  (multiple choice)
+   A. It earns zero, no make-up  *
+   B. It earns half credit
+   C. It is graded in full
+   D. It is graded if you have a documented emergency
+5. What is the midterm format?  (multiple choice)
+   A. Multiple choice, timed, in Canvas
+   B. A written essay uploaded as a PDF
+   C. Draw a pathway and teach it on video, no notes  *
+   D. An oral exam on Zoom with the instructor
+6. Which of these are true about the weekly note sheet? Select all that apply.  (multiple answers)
+   A. It is handwritten, in two colors  *
+   B. The first color goes on before you watch any video  *
+   C. Typed note sheets are fine if they are neat
+   D. Five prompts are graded for accuracy and the rest are checked for completion  *
+7. Where do the lab points live?  (multiple choice)
+   A. In PhysioEx, automatically, when it shows complete
+   B. On the worksheet and data record you upload, once PhysioEx shows complete  *
+   C. Half in PhysioEx and half on the worksheet
+   D. On the post-lab quiz in Pearson
+8. Where should you buy your Pearson access?  (multiple choice)
+   A. Amazon, whichever listing is cheapest
+   B. The campus bookstore only
+   C. Through Access Pearson in the Canvas course menu  *
+   D. Any website that sells the ISBN
+9. What weight do the two midterms carry together?  (multiple choice)
+   A. 20 percent
+   B. 30 percent
+   C. 40 percent  *
+   D. 50 percent
+10. Which dates matter for staying enrolled? Select all that apply.  (multiple answers)
+   A. Census, September 27: nothing submitted by then means you are reported as not attending  *
+   B. Last day to drop with a grade, November 21  *
+   C. Week 1 work is optional as long as Week 2 comes in
+   D. If you stop turning work in, the instructor drops you automatically
+11. Where does the instructor ask you to send course questions?  (multiple choice)
+   A. Text message
+   B. Canvas Inbox  *
+   C. Her personal email
+   D. The Pearson help desk
+12. Realistically, how many hours a week does the syllabus say to plan on to do well?  (multiple choice)
+   A. 6 to 8
+   B. 10 to 12
+   C. 16 to 20  *
+   D. 25 to 30
+
+==================== COURSE TOOLS MODULE (open all term) ====================
+
+--- TEXT HEADER: Open all term. Nothing here is graded, and nothing here locks.
+
+--- URL: Mastery OS · the study app
+    settings: External URL, new tab.
+https://drsrennie-stack.github.io/human-physiology-Fa26/mastery-physio-os-standalone.html
+
+--- URL: Recall cards · practice a little, most days
+    settings: External URL, new tab.
+https://drsrennie-stack.github.io/human-physiology-Fa26/spaced-recall.html
+
+--- URL: Course canvas · draw it from memory
+    settings: External URL, new tab.
+https://drsrennie-stack.github.io/human-physiology-Fa26/mastery-canvas.html
+
+--- URL: The 268 competencies, with their prompts
+    settings: External URL, new tab.
+https://drsrennie-stack.github.io/human-physiology-Fa26/competency-study-guide.html
+
+--- URL: Competency Packet · what the course assumes you arrive with
+    settings: External URL, new tab.
+https://drsrennie-stack.github.io/human-physiology-Fa26/competency-packet-fall2026.html
+
+--- URL: Every lecture, all fifteen weeks
+    settings: External URL, new tab.
+https://drsrennie-stack.github.io/human-physiology-Fa26/door-lecture.html
+
+--- URL: Every lab, all fifteen weeks
+    settings: External URL, new tab.
+https://drsrennie-stack.github.io/human-physiology-Fa26/door-lab.html
+
+--- URL: The Clinical Physiology Lab manual
+    settings: External URL, new tab.
+https://drsrennie-stack.github.io/human-physiology-Fa26/clinical-physiology-lab-manual.html
+
+--- URL: 250 questions, answered
+    settings: External URL, new tab.
+https://drsrennie-stack.github.io/human-physiology-Fa26/course-questions.html
+
+--- URL: How AI is used in this course
+    settings: External URL, new tab.
+https://drsrennie-stack.github.io/human-physiology-Fa26/ai-in-this-course.html
+
+--- URL: Accessibility
+    settings: External URL, new tab.
+https://drsrennie-stack.github.io/human-physiology-Fa26/accessibility.html
+
+==================== MIDTERM 1 MODULE (between Week 07 and Week 08) ====================
+
+--- TEXT HEADER: Midterm 1 · Weeks 1 to 7 · window Monday, October 26 at 8:00 am to Wednesday, October 28 at 10:00 pm
+
+--- ASSIGNMENT: Midterm 1 · Draw and teach · Weeks 1 to 7   [requirement: Submit]
+    settings: Assignment. Group: Midterms. 100 points. Submission: media recording (Canvas Studio) or file upload. Available from Mon Oct 26, 8:00 am. Due Wed Oct 28, 10:00 pm. Available until Wed Oct 28, 10:00 pm. Module lock until Sat Oct 24, 8:00 pm. No requirement needed; the module lock and the availability window do the gating. Put the actual prompt (the pathway) in the assignment text only when you are ready for students to see it, or hand it out by announcement at 8:00 am.
+<h2>Midterm 1 · Weeks 1 to 7</h2>
+<p><strong>Window:</strong> Monday, October 26 at 8:00 am to Wednesday, October 28 at 10:00 pm. The window sits at the front of the week so the week before it is finished and the week it sits in stays open to you afterwards.</p>
+<p><strong>Format:</strong> draw and teach, on video, no notes. You draw a physiological pathway from foundations, membranes, the electrical signal, synapses, the senses, and muscle, label it, and teach it out loud, step by step, saying why each step happens. Most of the points sit in the reasoning, not in the drawing being pretty.</p>
+<ol>
+<li>Open the prompt when you are ready to start. It names the pathway and what the drawing must include.</li>
+<li>Blank paper, a pen, your phone camera. Nothing else on the desk.</li>
+<li>Record in Canvas Studio in one take. Your face, your hands and the page should all be in frame.</li>
+<li>Submit here before the window closes. A submission that exists on Monday cannot be lost on Wednesday.</li>
+</ol>
+<p>Every week's practice round has been this exact shape. This is the same thing with points on it.</p>
+
+==================== MIDTERM 2 MODULE (between Week 14 and Week 15) ====================
+
+--- TEXT HEADER: Midterm 2 · Weeks 8 to 14 · window Monday, December 14 at 8:00 am to Wednesday, December 16 at 10:00 pm
+
+--- ASSIGNMENT: Midterm 2 · Draw and teach · Weeks 8 to 14   [requirement: Submit]
+    settings: Assignment. Group: Midterms. 100 points. Submission: media recording (Canvas Studio) or file upload. Available from Mon Dec 14, 8:00 am. Due Wed Dec 16, 10:00 pm. Available until Wed Dec 16, 10:00 pm. Module lock until Sat Dec 12, 8:00 pm. No requirement needed; the module lock and the availability window do the gating. Put the actual prompt (the pathway) in the assignment text only when you are ready for students to see it, or hand it out by announcement at 8:00 am.
+<h2>Midterm 2 · Weeks 8 to 14</h2>
+<p><strong>Window:</strong> Monday, December 14 at 8:00 am to Wednesday, December 16 at 10:00 pm. The window sits at the front of the week so the week before it is finished and the week it sits in stays open to you afterwards.</p>
+<p><strong>Format:</strong> draw and teach, on video, no notes. You draw a physiological pathway from hormones and reproduction, the heart and circulation, blood, digestion, breathing, and the kidney, label it, and teach it out loud, step by step, saying why each step happens. Most of the points sit in the reasoning, not in the drawing being pretty.</p>
+<ol>
+<li>Open the prompt when you are ready to start. It names the pathway and what the drawing must include.</li>
+<li>Blank paper, a pen, your phone camera. Nothing else on the desk.</li>
+<li>Record in Canvas Studio in one take. Your face, your hands and the page should all be in frame.</li>
+<li>Submit here before the window closes. A submission that exists on Monday cannot be lost on Wednesday.</li>
+</ol>
+<p>Every week's practice round has been this exact shape. This is the same thing with points on it.</p>
+
+
+==================== WEEK 01 · How physiology works and what keeps you steady ====================
+Module name: Week 01 · How physiology works and what keeps you steady
+Lock until: none, publish now
+Requirements: sequential; view the three pages; submit note sheet, lab, problems; contribute to discussion.
+Prerequisite: Start Here
+Reading: Silverthorn Ch 1, plus the homeostasis and control pathway sections of Ch 6
+Lab, Pearson side: Standards and ranges lab (reference-range-lab.html). No Pearson this week.
+Note: Short week, term opens on a Tuesday. No lock date; publish now. Discussion is the vision board, not the weekly discussion. Prerequisite: Start Here.
+
+--- TEXT HEADER: Part 1 · Foundations · Week 1 of 15 · opens Tue Sep 8 · everything due Sun Sep 13, 10:00 pm
+
+--- PAGE: Week 01 · Start here   [requirement: View]
+    settings: Page. Requirement: view. This frames the week page, which opens with the Start Here block (time, what is due, work top to bottom) and the same six numbered steps as this module.
+<p><iframe title="Week 1, start here" src="https://drsrennie-stack.github.io/human-physiology-Fa26/week-01.html" width="100%" height="2800" style="width:100%;min-height:2800px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/week-01.html" target="_blank" rel="noopener">open this week's page in a new tab</a>.</p>
+
+--- TEXT HEADER: 1 · Note sheet, first pass. Print it, then answer from the reading and what you already know, in your first color. Before any video.
+
+--- PAGE: Week 01 · 1 · Note sheet, first pass   [requirement: View]
+    settings: Page. Requirement: view. Links open in a new tab on purpose: printing from inside an iframe prints the whole Canvas page.
+<h2>Print the Week 1 note sheet</h2>
+<p>Reading this week: Silverthorn Ch 1, plus the homeostasis and control pathway sections of Ch 6.</p>
+<p>One box per competency, already built. Open it in a new tab so you can print it or save it as a PDF. If you are not printing, rule the same boxes onto your own paper; the sheet shows you how.</p>
+<p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/note-sheet.html?week=1" target="_blank" rel="noopener"><strong>Open and print the Week 1 note sheet</strong></a><br>Opens in a new tab. Print, or save as PDF.</p><p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/competency-study-guide.html?week=1" target="_blank" rel="noopener"><strong>Read the Week 1 competencies</strong></a><br>Everything this week asks you to be able to do, each with its two prompts.</p><p><strong>First pass, first color.</strong> Read every prompt, preview the reading, then answer the best you can from what you already know. Stop while half of every box is still empty. That empty half is what the videos fill.</p>
+
+--- TEXT HEADER: 2 · Watch the lectures with your sheet open. Add what you did not know in your second color, into the same boxes.
+
+--- PAGE: Week 01 · 2 · Lectures, notes, and slides   [requirement: View]
+    settings: Page. Requirement: view. This page never changes; add lines to the manifest in lecture-week.html when material is ready.
+<p><iframe title="Week 1 lectures, notes, and slides" src="https://drsrennie-stack.github.io/human-physiology-Fa26/lecture-week.html?week=1" width="100%" height="1400" style="width:100%;min-height:1400px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/lecture-week.html?week=1" target="_blank" rel="noopener">open the lectures in a new tab</a>.</p>
+
+--- TEXT HEADER: 3 · Your vision board. Post by Fri Sep 11, 10:00 pm. Two replies by Sun Sep 13, 10:00 pm.
+
+--- DISCUSSION: Week 01 · 3 · Discussion: your digital vision board   [requirement: Contribute]
+    settings: Graded discussion. Group: Discussions. 10 points, completion based. Due Friday, September 11 at 10:00 pm. Available until Sunday, September 13 at 10:00 pm. Require students to post before seeing replies: on. Requirement: contribute. Students attach one image plus a Canvas Studio video.
+<p><iframe title="Your digital vision board, instructions" src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion-01-visionboard.html" width="100%" height="1800" style="width:100%;min-height:1800px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion-01-visionboard.html" target="_blank" rel="noopener">open the instructions in a new tab</a>.</p>
+
+--- TEXT HEADER: 4 · Lab. PhysioEx first until Pearson shows it complete, then the worksheet and data record. Due Sun Sep 13, 10:00 pm.
+
+--- ASSIGNMENT: Week 01 · 4 · Lab   [requirement: Submit]
+    settings: Assignment. Group: Lab. 10 points. Submission: file upload, PDF. Due Sunday, September 13 at 10:00 pm. Requirement: submit. Pearson side: Standards and ranges lab (reference-range-lab.html). No Pearson this week.
+<p><iframe title="Week 1 lab instructions" src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=1" width="100%" height="1100" style="width:100%;min-height:1100px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=1" target="_blank" rel="noopener">open the lab instructions in a new tab</a>.</p>
+
+--- TEXT HEADER: 5 · Book problems and recall cards. Due Sun Sep 13, 10:00 pm.
+
+--- ASSIGNMENT: Week 01 · 5 · Book problems   [requirement: Submit]
+    settings: Assignment. Group: Book problems. 10 points. Submission: file upload, PDF. Due Sunday, September 13 at 10:00 pm. Requirement: submit. Type the problem numbers into the first paragraph; the instructions page tells students to look for them there.
+<p><strong>This week's problems:</strong> Silverthorn Ch 1, plus the homeostasis and control pathway sections of Ch 6. Problems: TYPE THE NUMBERS HERE BEFORE YOU PUBLISH.</p>
+<p><iframe title="Week 1 book problems instructions" src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-bookproblems.html?week=1" width="100%" height="1600" style="width:100%;min-height:1600px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-bookproblems.html?week=1" target="_blank" rel="noopener">open the instructions in a new tab</a>.</p>
+
+--- URL: Week 01 · 5 · Recall cards in the Mastery OS (ungraded, all week)
+    settings: External URL. Open in a new tab: on. No requirement.
+https://drsrennie-stack.github.io/human-physiology-Fa26/mastery-physio-os-standalone.html?week=1
+
+--- TEXT HEADER: 6 · Turn in your note sheet, both colors, one PDF, by Sun Sep 13, 10:00 pm. Then the five-minute practice round.
+
+--- ASSIGNMENT: Week 01 · 6 · Note sheet   [requirement: Submit]
+    settings: Assignment. Group: Competency note sheets. 10 points. Submission: file upload, PDF only. Due Sunday, September 13 at 10:00 pm. Requirement: submit.
+<p><iframe title="Week 1 note sheet instructions" src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-notesheet.html?week=1" width="100%" height="1100" style="width:100%;min-height:1100px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-notesheet.html?week=1" target="_blank" rel="noopener">open the instructions in a new tab</a>.</p>
+
+--- PAGE: Week 01 · 6 · Practice round, five minutes
+    settings: Page. No requirement. Keep it last so the week ends on the midterm rehearsal every time.
+<h2>The five-minute practice round</h2>
+<p>Pick one competency from this week. Blank paper, a pen, your phone camera, and no notes.</p>
+<ol>
+<li>Draw the mechanism from memory. Label it.</li>
+<li>Start recording and teach it out loud, step by step, the way you would teach a classmate. Say why each step happens, not only what happens.</li>
+<li>Stop at five minutes. Watch it back once. Anything you could not say without looking goes on your miss list for the recall cards.</li>
+</ol>
+<p>Nothing is turned in. This is the exact shape of the midterm, practiced while nothing is on the line.</p>
+<p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/competency-study-guide.html?week=1" target="_blank" rel="noopener"><strong>Pick a competency from the Week 1 list</strong></a></p><p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/mastery-canvas.html" target="_blank" rel="noopener"><strong>Draw on the course canvas instead of paper</strong></a><br>Pen, shapes, arrows and text. Save as a PDF when you are done.</p>
+
+
+==================== WEEK 02 · The chemistry that does work in the body ====================
+Module name: Week 02 · The chemistry that does work in the body
+Lock until: Sat Sep 12, 8:00 pm
+Requirements: sequential; view the three pages; submit note sheet, lab, problems; contribute to discussion.
+Reading: Silverthorn Ch 2 and Ch 4
+Lab, Pearson side: PhysioEx Ex 8, amylase activity only. Sheet: enzyme-amylase-lab.html.
+
+--- TEXT HEADER: Part 1 · Foundations · Week 2 of 15 · opens Mon Sep 14 · everything due Sun Sep 20, 10:00 pm
+
+--- PAGE: Week 02 · Start here   [requirement: View]
+    settings: Page. Requirement: view. This frames the week page, which opens with the Start Here block (time, what is due, work top to bottom) and the same six numbered steps as this module.
+<p><iframe title="Week 2, start here" src="https://drsrennie-stack.github.io/human-physiology-Fa26/week-02.html" width="100%" height="2800" style="width:100%;min-height:2800px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/week-02.html" target="_blank" rel="noopener">open this week's page in a new tab</a>.</p>
+
+--- TEXT HEADER: 1 · Note sheet, first pass. Print it, then answer from the reading and what you already know, in your first color. Before any video.
+
+--- PAGE: Week 02 · 1 · Note sheet, first pass   [requirement: View]
+    settings: Page. Requirement: view. Links open in a new tab on purpose: printing from inside an iframe prints the whole Canvas page.
+<h2>Print the Week 2 note sheet</h2>
+<p>Reading this week: Silverthorn Ch 2 and Ch 4.</p>
+<p>One box per competency, already built. Open it in a new tab so you can print it or save it as a PDF. If you are not printing, rule the same boxes onto your own paper; the sheet shows you how.</p>
+<p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/note-sheet.html?week=2" target="_blank" rel="noopener"><strong>Open and print the Week 2 note sheet</strong></a><br>Opens in a new tab. Print, or save as PDF.</p><p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/competency-study-guide.html?week=2" target="_blank" rel="noopener"><strong>Read the Week 2 competencies</strong></a><br>Everything this week asks you to be able to do, each with its two prompts.</p><p><strong>First pass, first color.</strong> Read every prompt, preview the reading, then answer the best you can from what you already know. Stop while half of every box is still empty. That empty half is what the videos fill.</p>
+
+--- TEXT HEADER: 2 · Watch the lectures with your sheet open. Add what you did not know in your second color, into the same boxes.
+
+--- PAGE: Week 02 · 2 · Lectures, notes, and slides   [requirement: View]
+    settings: Page. Requirement: view. This page never changes; add lines to the manifest in lecture-week.html when material is ready.
+<p><iframe title="Week 2 lectures, notes, and slides" src="https://drsrennie-stack.github.io/human-physiology-Fa26/lecture-week.html?week=2" width="100%" height="1400" style="width:100%;min-height:1400px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/lecture-week.html?week=2" target="_blank" rel="noopener">open the lectures in a new tab</a>.</p>
+
+--- TEXT HEADER: 3 · Discussion. One post carrying the physiology and your thinking about it. Post by Fri Sep 18, 10:00 pm. Two replies by Sun Sep 20, 10:00 pm.
+
+--- DISCUSSION: Week 02 · 3 · Discussion   [requirement: Contribute]
+    settings: Graded discussion. Group: Discussions. 10 points. Due Friday, September 18 at 10:00 pm (initial post). Available until Sunday, September 20 at 10:00 pm (replies). If your Canvas has discussion checkpoints turned on, set reply-to-topic Fri Sep 18 10:00 pm and required replies (2) Sun Sep 20 10:00 pm instead. Require students to post before seeing replies: on. Requirement: contribute.
+<p><iframe title="Week 2 discussion instructions" src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion.html?week=2" width="100%" height="3200" style="width:100%;min-height:3200px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion.html?week=2" target="_blank" rel="noopener">open the instructions in a new tab</a>.</p>
+
+--- TEXT HEADER: 4 · Lab. PhysioEx first until Pearson shows it complete, then the worksheet and data record. Due Sun Sep 20, 10:00 pm.
+
+--- ASSIGNMENT: Week 02 · 4 · Lab   [requirement: Submit]
+    settings: Assignment. Group: Lab. 10 points. Submission: file upload, PDF. Due Sunday, September 20 at 10:00 pm. Requirement: submit. Pearson side: PhysioEx Ex 8, amylase activity only. Sheet: enzyme-amylase-lab.html.
+<p><iframe title="Week 2 lab instructions" src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=2" width="100%" height="1100" style="width:100%;min-height:1100px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=2" target="_blank" rel="noopener">open the lab instructions in a new tab</a>.</p>
+
+--- TEXT HEADER: 5 · Book problems and recall cards. Due Sun Sep 20, 10:00 pm.
+
+--- ASSIGNMENT: Week 02 · 5 · Book problems   [requirement: Submit]
+    settings: Assignment. Group: Book problems. 10 points. Submission: file upload, PDF. Due Sunday, September 20 at 10:00 pm. Requirement: submit. Type the problem numbers into the first paragraph; the instructions page tells students to look for them there.
+<p><strong>This week's problems:</strong> Silverthorn Ch 2 and Ch 4. Problems: TYPE THE NUMBERS HERE BEFORE YOU PUBLISH.</p>
+<p><iframe title="Week 2 book problems instructions" src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-bookproblems.html?week=2" width="100%" height="1600" style="width:100%;min-height:1600px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-bookproblems.html?week=2" target="_blank" rel="noopener">open the instructions in a new tab</a>.</p>
+
+--- URL: Week 02 · 5 · Recall cards in the Mastery OS (ungraded, all week)
+    settings: External URL. Open in a new tab: on. No requirement.
+https://drsrennie-stack.github.io/human-physiology-Fa26/mastery-physio-os-standalone.html?week=2
+
+--- TEXT HEADER: 6 · Turn in your note sheet, both colors, one PDF, by Sun Sep 20, 10:00 pm. Then the five-minute practice round.
+
+--- ASSIGNMENT: Week 02 · 6 · Note sheet   [requirement: Submit]
+    settings: Assignment. Group: Competency note sheets. 10 points. Submission: file upload, PDF only. Due Sunday, September 20 at 10:00 pm. Requirement: submit.
+<p><iframe title="Week 2 note sheet instructions" src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-notesheet.html?week=2" width="100%" height="1100" style="width:100%;min-height:1100px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-notesheet.html?week=2" target="_blank" rel="noopener">open the instructions in a new tab</a>.</p>
+
+--- PAGE: Week 02 · 6 · Practice round, five minutes
+    settings: Page. No requirement. Keep it last so the week ends on the midterm rehearsal every time.
+<h2>The five-minute practice round</h2>
+<p>Pick one competency from this week. Blank paper, a pen, your phone camera, and no notes.</p>
+<ol>
+<li>Draw the mechanism from memory. Label it.</li>
+<li>Start recording and teach it out loud, step by step, the way you would teach a classmate. Say why each step happens, not only what happens.</li>
+<li>Stop at five minutes. Watch it back once. Anything you could not say without looking goes on your miss list for the recall cards.</li>
+</ol>
+<p>Nothing is turned in. This is the exact shape of the midterm, practiced while nothing is on the line.</p>
+<p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/competency-study-guide.html?week=2" target="_blank" rel="noopener"><strong>Pick a competency from the Week 2 list</strong></a></p><p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/mastery-canvas.html" target="_blank" rel="noopener"><strong>Draw on the course canvas instead of paper</strong></a><br>Pen, shapes, arrows and text. Save as a PDF when you are done.</p>
+
+
+==================== WEEK 03 · Getting across the membrane ====================
+Module name: Week 03 · Getting across the membrane
+Lock until: Sat Sep 19, 8:00 pm
+Requirements: sequential; view the three pages; submit note sheet, lab, problems; contribute to discussion.
+Reading: Silverthorn Ch 3 and Ch 5
+Lab, Pearson side: PhysioEx Ex 1, all five activities. Sheet: osmosis-iv-fluids-lab.html.
+Note: Census is Sunday Sep 27, the day this week closes. A student with nothing submitted by then gets reported as not attending.
+
+--- TEXT HEADER: Part 1 · Foundations · Week 3 of 15 · opens Mon Sep 21 · everything due Sun Sep 27, 10:00 pm
+
+--- PAGE: Week 03 · Start here   [requirement: View]
+    settings: Page. Requirement: view. This frames the week page, which opens with the Start Here block (time, what is due, work top to bottom) and the same six numbered steps as this module.
+<p><iframe title="Week 3, start here" src="https://drsrennie-stack.github.io/human-physiology-Fa26/week-03.html" width="100%" height="2800" style="width:100%;min-height:2800px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/week-03.html" target="_blank" rel="noopener">open this week's page in a new tab</a>.</p>
+
+--- TEXT HEADER: 1 · Note sheet, first pass. Print it, then answer from the reading and what you already know, in your first color. Before any video.
+
+--- PAGE: Week 03 · 1 · Note sheet, first pass   [requirement: View]
+    settings: Page. Requirement: view. Links open in a new tab on purpose: printing from inside an iframe prints the whole Canvas page.
+<h2>Print the Week 3 note sheet</h2>
+<p>Reading this week: Silverthorn Ch 3 and Ch 5.</p>
+<p>One box per competency, already built. Open it in a new tab so you can print it or save it as a PDF. If you are not printing, rule the same boxes onto your own paper; the sheet shows you how.</p>
+<p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/note-sheet.html?week=3" target="_blank" rel="noopener"><strong>Open and print the Week 3 note sheet</strong></a><br>Opens in a new tab. Print, or save as PDF.</p><p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/competency-study-guide.html?week=3" target="_blank" rel="noopener"><strong>Read the Week 3 competencies</strong></a><br>Everything this week asks you to be able to do, each with its two prompts.</p><p><strong>First pass, first color.</strong> Read every prompt, preview the reading, then answer the best you can from what you already know. Stop while half of every box is still empty. That empty half is what the videos fill.</p>
+
+--- TEXT HEADER: 2 · Watch the lectures with your sheet open. Add what you did not know in your second color, into the same boxes.
+
+--- PAGE: Week 03 · 2 · Lectures, notes, and slides   [requirement: View]
+    settings: Page. Requirement: view. This page never changes; add lines to the manifest in lecture-week.html when material is ready.
+<p><iframe title="Week 3 lectures, notes, and slides" src="https://drsrennie-stack.github.io/human-physiology-Fa26/lecture-week.html?week=3" width="100%" height="1400" style="width:100%;min-height:1400px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/lecture-week.html?week=3" target="_blank" rel="noopener">open the lectures in a new tab</a>.</p>
+
+--- TEXT HEADER: 3 · Discussion. One post carrying the physiology and your thinking about it. Post by Fri Sep 25, 10:00 pm. Two replies by Sun Sep 27, 10:00 pm.
+
+--- DISCUSSION: Week 03 · 3 · Discussion   [requirement: Contribute]
+    settings: Graded discussion. Group: Discussions. 10 points. Due Friday, September 25 at 10:00 pm (initial post). Available until Sunday, September 27 at 10:00 pm (replies). If your Canvas has discussion checkpoints turned on, set reply-to-topic Fri Sep 25 10:00 pm and required replies (2) Sun Sep 27 10:00 pm instead. Require students to post before seeing replies: on. Requirement: contribute.
+<p><iframe title="Week 3 discussion instructions" src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion.html?week=3" width="100%" height="3200" style="width:100%;min-height:3200px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion.html?week=3" target="_blank" rel="noopener">open the instructions in a new tab</a>.</p>
+
+--- TEXT HEADER: 4 · Lab. PhysioEx first until Pearson shows it complete, then the worksheet and data record. Due Sun Sep 27, 10:00 pm.
+
+--- ASSIGNMENT: Week 03 · 4 · Lab   [requirement: Submit]
+    settings: Assignment. Group: Lab. 10 points. Submission: file upload, PDF. Due Sunday, September 27 at 10:00 pm. Requirement: submit. Pearson side: PhysioEx Ex 1, all five activities. Sheet: osmosis-iv-fluids-lab.html.
+<p><iframe title="Week 3 lab instructions" src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=3" width="100%" height="1100" style="width:100%;min-height:1100px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=3" target="_blank" rel="noopener">open the lab instructions in a new tab</a>.</p>
+
+--- TEXT HEADER: 5 · Book problems and recall cards. Due Sun Sep 27, 10:00 pm.
+
+--- ASSIGNMENT: Week 03 · 5 · Book problems   [requirement: Submit]
+    settings: Assignment. Group: Book problems. 10 points. Submission: file upload, PDF. Due Sunday, September 27 at 10:00 pm. Requirement: submit. Type the problem numbers into the first paragraph; the instructions page tells students to look for them there.
+<p><strong>This week's problems:</strong> Silverthorn Ch 3 and Ch 5. Problems: TYPE THE NUMBERS HERE BEFORE YOU PUBLISH.</p>
+<p><iframe title="Week 3 book problems instructions" src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-bookproblems.html?week=3" width="100%" height="1600" style="width:100%;min-height:1600px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-bookproblems.html?week=3" target="_blank" rel="noopener">open the instructions in a new tab</a>.</p>
+
+--- URL: Week 03 · 5 · Recall cards in the Mastery OS (ungraded, all week)
+    settings: External URL. Open in a new tab: on. No requirement.
+https://drsrennie-stack.github.io/human-physiology-Fa26/mastery-physio-os-standalone.html?week=3
+
+--- TEXT HEADER: 6 · Turn in your note sheet, both colors, one PDF, by Sun Sep 27, 10:00 pm. Then the five-minute practice round.
+
+--- ASSIGNMENT: Week 03 · 6 · Note sheet   [requirement: Submit]
+    settings: Assignment. Group: Competency note sheets. 10 points. Submission: file upload, PDF only. Due Sunday, September 27 at 10:00 pm. Requirement: submit.
+<p><iframe title="Week 3 note sheet instructions" src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-notesheet.html?week=3" width="100%" height="1100" style="width:100%;min-height:1100px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-notesheet.html?week=3" target="_blank" rel="noopener">open the instructions in a new tab</a>.</p>
+
+--- PAGE: Week 03 · 6 · Practice round, five minutes
+    settings: Page. No requirement. Keep it last so the week ends on the midterm rehearsal every time.
+<h2>The five-minute practice round</h2>
+<p>Pick one competency from this week. Blank paper, a pen, your phone camera, and no notes.</p>
+<ol>
+<li>Draw the mechanism from memory. Label it.</li>
+<li>Start recording and teach it out loud, step by step, the way you would teach a classmate. Say why each step happens, not only what happens.</li>
+<li>Stop at five minutes. Watch it back once. Anything you could not say without looking goes on your miss list for the recall cards.</li>
+</ol>
+<p>Nothing is turned in. This is the exact shape of the midterm, practiced while nothing is on the line.</p>
+<p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/competency-study-guide.html?week=3" target="_blank" rel="noopener"><strong>Pick a competency from the Week 3 list</strong></a></p><p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/mastery-canvas.html" target="_blank" rel="noopener"><strong>Draw on the course canvas instead of paper</strong></a><br>Pen, shapes, arrows and text. Save as a PDF when you are done.</p>
+
+
+==================== WEEK 04 · How cells talk, and the electrical signal ====================
+Module name: Week 04 · How cells talk, and the electrical signal
+Lock until: Sat Sep 26, 8:00 pm
+Requirements: sequential; view the three pages; submit note sheet, lab, problems; contribute to discussion.
+Reading: Silverthorn Ch 6 (cell signaling half) and Ch 9 (the neuron and the action potential)
+Lab, Pearson side: PhysioEx Ex 3, all activities (resting potential, threshold, TTX and lidocaine, conduction velocity, synaptic transmission).
+
+--- TEXT HEADER: Part 2 · Control systems · Week 4 of 15 · opens Mon Sep 28 · everything due Sun Oct 4, 10:00 pm
+
+--- PAGE: Week 04 · Start here   [requirement: View]
+    settings: Page. Requirement: view. This frames the week page, which opens with the Start Here block (time, what is due, work top to bottom) and the same six numbered steps as this module.
+<p><iframe title="Week 4, start here" src="https://drsrennie-stack.github.io/human-physiology-Fa26/week-04.html" width="100%" height="2800" style="width:100%;min-height:2800px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/week-04.html" target="_blank" rel="noopener">open this week's page in a new tab</a>.</p>
+
+--- TEXT HEADER: 1 · Note sheet, first pass. Print it, then answer from the reading and what you already know, in your first color. Before any video.
+
+--- PAGE: Week 04 · 1 · Note sheet, first pass   [requirement: View]
+    settings: Page. Requirement: view. Links open in a new tab on purpose: printing from inside an iframe prints the whole Canvas page.
+<h2>Print the Week 4 note sheet</h2>
+<p>Reading this week: Silverthorn Ch 6 (cell signaling half) and Ch 9 (the neuron and the action potential).</p>
+<p>One box per competency, already built. Open it in a new tab so you can print it or save it as a PDF. If you are not printing, rule the same boxes onto your own paper; the sheet shows you how.</p>
+<p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/note-sheet.html?week=4" target="_blank" rel="noopener"><strong>Open and print the Week 4 note sheet</strong></a><br>Opens in a new tab. Print, or save as PDF.</p><p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/competency-study-guide.html?week=4" target="_blank" rel="noopener"><strong>Read the Week 4 competencies</strong></a><br>Everything this week asks you to be able to do, each with its two prompts.</p><p><strong>First pass, first color.</strong> Read every prompt, preview the reading, then answer the best you can from what you already know. Stop while half of every box is still empty. That empty half is what the videos fill.</p>
+
+--- TEXT HEADER: 2 · Watch the lectures with your sheet open. Add what you did not know in your second color, into the same boxes.
+
+--- PAGE: Week 04 · 2 · Lectures, notes, and slides   [requirement: View]
+    settings: Page. Requirement: view. This page never changes; add lines to the manifest in lecture-week.html when material is ready.
+<p><iframe title="Week 4 lectures, notes, and slides" src="https://drsrennie-stack.github.io/human-physiology-Fa26/lecture-week.html?week=4" width="100%" height="1400" style="width:100%;min-height:1400px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/lecture-week.html?week=4" target="_blank" rel="noopener">open the lectures in a new tab</a>.</p>
+
+--- TEXT HEADER: 3 · Discussion. One post carrying the physiology and your thinking about it. Post by Fri Oct 2, 10:00 pm. Two replies by Sun Oct 4, 10:00 pm.
+
+--- DISCUSSION: Week 04 · 3 · Discussion   [requirement: Contribute]
+    settings: Graded discussion. Group: Discussions. 10 points. Due Friday, October 2 at 10:00 pm (initial post). Available until Sunday, October 4 at 10:00 pm (replies). If your Canvas has discussion checkpoints turned on, set reply-to-topic Fri Oct 2 10:00 pm and required replies (2) Sun Oct 4 10:00 pm instead. Require students to post before seeing replies: on. Requirement: contribute.
+<p><iframe title="Week 4 discussion instructions" src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion.html?week=4" width="100%" height="3200" style="width:100%;min-height:3200px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion.html?week=4" target="_blank" rel="noopener">open the instructions in a new tab</a>.</p>
+
+--- TEXT HEADER: 4 · Lab. PhysioEx first until Pearson shows it complete, then the worksheet and data record. Due Sun Oct 4, 10:00 pm.
+
+--- ASSIGNMENT: Week 04 · 4 · Lab   [requirement: Submit]
+    settings: Assignment. Group: Lab. 10 points. Submission: file upload, PDF. Due Sunday, October 4 at 10:00 pm. Requirement: submit. Pearson side: PhysioEx Ex 3, all activities (resting potential, threshold, TTX and lidocaine, conduction velocity, synaptic transmission).
+<p><iframe title="Week 4 lab instructions" src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=4" width="100%" height="1100" style="width:100%;min-height:1100px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=4" target="_blank" rel="noopener">open the lab instructions in a new tab</a>.</p>
+
+--- TEXT HEADER: 5 · Book problems and recall cards. Due Sun Oct 4, 10:00 pm.
+
+--- ASSIGNMENT: Week 04 · 5 · Book problems   [requirement: Submit]
+    settings: Assignment. Group: Book problems. 10 points. Submission: file upload, PDF. Due Sunday, October 4 at 10:00 pm. Requirement: submit. Type the problem numbers into the first paragraph; the instructions page tells students to look for them there.
+<p><strong>This week's problems:</strong> Silverthorn Ch 6 (cell signaling half) and Ch 9 (the neuron and the action potential). Problems: TYPE THE NUMBERS HERE BEFORE YOU PUBLISH.</p>
+<p><iframe title="Week 4 book problems instructions" src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-bookproblems.html?week=4" width="100%" height="1600" style="width:100%;min-height:1600px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-bookproblems.html?week=4" target="_blank" rel="noopener">open the instructions in a new tab</a>.</p>
+
+--- URL: Week 04 · 5 · Recall cards in the Mastery OS (ungraded, all week)
+    settings: External URL. Open in a new tab: on. No requirement.
+https://drsrennie-stack.github.io/human-physiology-Fa26/mastery-physio-os-standalone.html?week=4
+
+--- TEXT HEADER: 6 · Turn in your note sheet, both colors, one PDF, by Sun Oct 4, 10:00 pm. Then the five-minute practice round.
+
+--- ASSIGNMENT: Week 04 · 6 · Note sheet   [requirement: Submit]
+    settings: Assignment. Group: Competency note sheets. 10 points. Submission: file upload, PDF only. Due Sunday, October 4 at 10:00 pm. Requirement: submit.
+<p><iframe title="Week 4 note sheet instructions" src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-notesheet.html?week=4" width="100%" height="1100" style="width:100%;min-height:1100px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-notesheet.html?week=4" target="_blank" rel="noopener">open the instructions in a new tab</a>.</p>
+
+--- PAGE: Week 04 · 6 · Practice round, five minutes
+    settings: Page. No requirement. Keep it last so the week ends on the midterm rehearsal every time.
+<h2>The five-minute practice round</h2>
+<p>Pick one competency from this week. Blank paper, a pen, your phone camera, and no notes.</p>
+<ol>
+<li>Draw the mechanism from memory. Label it.</li>
+<li>Start recording and teach it out loud, step by step, the way you would teach a classmate. Say why each step happens, not only what happens.</li>
+<li>Stop at five minutes. Watch it back once. Anything you could not say without looking goes on your miss list for the recall cards.</li>
+</ol>
+<p>Nothing is turned in. This is the exact shape of the midterm, practiced while nothing is on the line.</p>
+<p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/competency-study-guide.html?week=4" target="_blank" rel="noopener"><strong>Pick a competency from the Week 4 list</strong></a></p><p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/mastery-canvas.html" target="_blank" rel="noopener"><strong>Draw on the course canvas instead of paper</strong></a><br>Pen, shapes, arrows and text. Save as a PDF when you are done.</p>
+
+
+==================== WEEK 05 · Synapses and central integration ====================
+Module name: Week 05 · Synapses and central integration
+Lock until: Sat Oct 3, 8:00 pm
+Requirements: sequential; view the three pages; submit note sheet, lab, problems; contribute to discussion.
+Reading: Silverthorn Ch 9 (synapse sections) and Ch 10
+Lab, Pearson side: Home sensory and reflex lab (lab-week05-sensory-reflex.html). No Pearson. The assignment page still says it is being written for Week 6; see the open items.
+
+--- TEXT HEADER: Part 2 · Control systems · Week 5 of 15 · opens Mon Oct 5 · everything due Sun Oct 11, 10:00 pm
+
+--- PAGE: Week 05 · Start here   [requirement: View]
+    settings: Page. Requirement: view. This frames the week page, which opens with the Start Here block (time, what is due, work top to bottom) and the same six numbered steps as this module.
+<p><iframe title="Week 5, start here" src="https://drsrennie-stack.github.io/human-physiology-Fa26/week-05.html" width="100%" height="2800" style="width:100%;min-height:2800px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/week-05.html" target="_blank" rel="noopener">open this week's page in a new tab</a>.</p>
+
+--- TEXT HEADER: 1 · Note sheet, first pass. Print it, then answer from the reading and what you already know, in your first color. Before any video.
+
+--- PAGE: Week 05 · 1 · Note sheet, first pass   [requirement: View]
+    settings: Page. Requirement: view. Links open in a new tab on purpose: printing from inside an iframe prints the whole Canvas page.
+<h2>Print the Week 5 note sheet</h2>
+<p>Reading this week: Silverthorn Ch 9 (synapse sections) and Ch 10.</p>
+<p>One box per competency, already built. Open it in a new tab so you can print it or save it as a PDF. If you are not printing, rule the same boxes onto your own paper; the sheet shows you how.</p>
+<p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/note-sheet.html?week=5" target="_blank" rel="noopener"><strong>Open and print the Week 5 note sheet</strong></a><br>Opens in a new tab. Print, or save as PDF.</p><p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/competency-study-guide.html?week=5" target="_blank" rel="noopener"><strong>Read the Week 5 competencies</strong></a><br>Everything this week asks you to be able to do, each with its two prompts.</p><p><strong>First pass, first color.</strong> Read every prompt, preview the reading, then answer the best you can from what you already know. Stop while half of every box is still empty. That empty half is what the videos fill.</p>
+
+--- TEXT HEADER: 2 · Watch the lectures with your sheet open. Add what you did not know in your second color, into the same boxes.
+
+--- PAGE: Week 05 · 2 · Lectures, notes, and slides   [requirement: View]
+    settings: Page. Requirement: view. This page never changes; add lines to the manifest in lecture-week.html when material is ready.
+<p><iframe title="Week 5 lectures, notes, and slides" src="https://drsrennie-stack.github.io/human-physiology-Fa26/lecture-week.html?week=5" width="100%" height="1400" style="width:100%;min-height:1400px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/lecture-week.html?week=5" target="_blank" rel="noopener">open the lectures in a new tab</a>.</p>
+
+--- TEXT HEADER: 3 · Discussion. One post carrying the physiology and your thinking about it. Post by Fri Oct 9, 10:00 pm. Two replies by Sun Oct 11, 10:00 pm.
+
+--- DISCUSSION: Week 05 · 3 · Discussion   [requirement: Contribute]
+    settings: Graded discussion. Group: Discussions. 10 points. Due Friday, October 9 at 10:00 pm (initial post). Available until Sunday, October 11 at 10:00 pm (replies). If your Canvas has discussion checkpoints turned on, set reply-to-topic Fri Oct 9 10:00 pm and required replies (2) Sun Oct 11 10:00 pm instead. Require students to post before seeing replies: on. Requirement: contribute.
+<p><iframe title="Week 5 discussion instructions" src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion.html?week=5" width="100%" height="3200" style="width:100%;min-height:3200px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion.html?week=5" target="_blank" rel="noopener">open the instructions in a new tab</a>.</p>
+
+--- TEXT HEADER: 4 · Lab. PhysioEx first until Pearson shows it complete, then the worksheet and data record. Due Sun Oct 11, 10:00 pm.
+
+--- ASSIGNMENT: Week 05 · 4 · Lab   [requirement: Submit]
+    settings: Assignment. Group: Lab. 10 points. Submission: file upload, PDF. Due Sunday, October 11 at 10:00 pm. Requirement: submit. Pearson side: Home sensory and reflex lab (lab-week05-sensory-reflex.html). No Pearson. The assignment page still says it is being written for Week 6; see the open items.
+<p><iframe title="Week 5 lab instructions" src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=5" width="100%" height="1100" style="width:100%;min-height:1100px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=5" target="_blank" rel="noopener">open the lab instructions in a new tab</a>.</p>
+
+--- TEXT HEADER: 5 · Book problems and recall cards. Due Sun Oct 11, 10:00 pm.
+
+--- ASSIGNMENT: Week 05 · 5 · Book problems   [requirement: Submit]
+    settings: Assignment. Group: Book problems. 10 points. Submission: file upload, PDF. Due Sunday, October 11 at 10:00 pm. Requirement: submit. Type the problem numbers into the first paragraph; the instructions page tells students to look for them there.
+<p><strong>This week's problems:</strong> Silverthorn Ch 9 (synapse sections) and Ch 10. Problems: TYPE THE NUMBERS HERE BEFORE YOU PUBLISH.</p>
+<p><iframe title="Week 5 book problems instructions" src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-bookproblems.html?week=5" width="100%" height="1600" style="width:100%;min-height:1600px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-bookproblems.html?week=5" target="_blank" rel="noopener">open the instructions in a new tab</a>.</p>
+
+--- URL: Week 05 · 5 · Recall cards in the Mastery OS (ungraded, all week)
+    settings: External URL. Open in a new tab: on. No requirement.
+https://drsrennie-stack.github.io/human-physiology-Fa26/mastery-physio-os-standalone.html?week=5
+
+--- TEXT HEADER: 6 · Turn in your note sheet, both colors, one PDF, by Sun Oct 11, 10:00 pm. Then the five-minute practice round.
+
+--- ASSIGNMENT: Week 05 · 6 · Note sheet   [requirement: Submit]
+    settings: Assignment. Group: Competency note sheets. 10 points. Submission: file upload, PDF only. Due Sunday, October 11 at 10:00 pm. Requirement: submit.
+<p><iframe title="Week 5 note sheet instructions" src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-notesheet.html?week=5" width="100%" height="1100" style="width:100%;min-height:1100px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-notesheet.html?week=5" target="_blank" rel="noopener">open the instructions in a new tab</a>.</p>
+
+--- PAGE: Week 05 · 6 · Practice round, five minutes
+    settings: Page. No requirement. Keep it last so the week ends on the midterm rehearsal every time.
+<h2>The five-minute practice round</h2>
+<p>Pick one competency from this week. Blank paper, a pen, your phone camera, and no notes.</p>
+<ol>
+<li>Draw the mechanism from memory. Label it.</li>
+<li>Start recording and teach it out loud, step by step, the way you would teach a classmate. Say why each step happens, not only what happens.</li>
+<li>Stop at five minutes. Watch it back once. Anything you could not say without looking goes on your miss list for the recall cards.</li>
+</ol>
+<p>Nothing is turned in. This is the exact shape of the midterm, practiced while nothing is on the line.</p>
+<p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/competency-study-guide.html?week=5" target="_blank" rel="noopener"><strong>Pick a competency from the Week 5 list</strong></a></p><p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/mastery-canvas.html" target="_blank" rel="noopener"><strong>Draw on the course canvas instead of paper</strong></a><br>Pen, shapes, arrows and text. Save as a PDF when you are done.</p>
+
+
+==================== WEEK 06 · Sensing the world, and the responses you do not control ====================
+Module name: Week 06 · Sensing the world, and the responses you do not control
+Lock until: Sat Oct 10, 8:00 pm
+Requirements: sequential; view the three pages; submit note sheet, lab, problems; contribute to discussion.
+Reading: Silverthorn Ch 11 and the autonomic sections of Ch 12
+Lab, Pearson side: Not settled. The lab map predates the Sep 5 week remap: Ex 2 (muscle) now belongs to Week 7, and the sensory lab sits in Week 5. Decide what Week 6 runs, then assign it in Pearson. The Canvas item does not change either way.
+
+--- TEXT HEADER: Part 2 · Control systems · Week 6 of 15 · opens Mon Oct 12 · everything due Sun Oct 18, 10:00 pm
+
+--- PAGE: Week 06 · Start here   [requirement: View]
+    settings: Page. Requirement: view. This frames the week page, which opens with the Start Here block (time, what is due, work top to bottom) and the same six numbered steps as this module.
+<p><iframe title="Week 6, start here" src="https://drsrennie-stack.github.io/human-physiology-Fa26/week-06.html" width="100%" height="2800" style="width:100%;min-height:2800px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/week-06.html" target="_blank" rel="noopener">open this week's page in a new tab</a>.</p>
+
+--- TEXT HEADER: 1 · Note sheet, first pass. Print it, then answer from the reading and what you already know, in your first color. Before any video.
+
+--- PAGE: Week 06 · 1 · Note sheet, first pass   [requirement: View]
+    settings: Page. Requirement: view. Links open in a new tab on purpose: printing from inside an iframe prints the whole Canvas page.
+<h2>Print the Week 6 note sheet</h2>
+<p>Reading this week: Silverthorn Ch 11 and the autonomic sections of Ch 12.</p>
+<p>One box per competency, already built. Open it in a new tab so you can print it or save it as a PDF. If you are not printing, rule the same boxes onto your own paper; the sheet shows you how.</p>
+<p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/note-sheet.html?week=6" target="_blank" rel="noopener"><strong>Open and print the Week 6 note sheet</strong></a><br>Opens in a new tab. Print, or save as PDF.</p><p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/competency-study-guide.html?week=6" target="_blank" rel="noopener"><strong>Read the Week 6 competencies</strong></a><br>Everything this week asks you to be able to do, each with its two prompts.</p><p><strong>First pass, first color.</strong> Read every prompt, preview the reading, then answer the best you can from what you already know. Stop while half of every box is still empty. That empty half is what the videos fill.</p>
+
+--- TEXT HEADER: 2 · Watch the lectures with your sheet open. Add what you did not know in your second color, into the same boxes.
+
+--- PAGE: Week 06 · 2 · Lectures, notes, and slides   [requirement: View]
+    settings: Page. Requirement: view. This page never changes; add lines to the manifest in lecture-week.html when material is ready.
+<p><iframe title="Week 6 lectures, notes, and slides" src="https://drsrennie-stack.github.io/human-physiology-Fa26/lecture-week.html?week=6" width="100%" height="1400" style="width:100%;min-height:1400px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/lecture-week.html?week=6" target="_blank" rel="noopener">open the lectures in a new tab</a>.</p>
+
+--- TEXT HEADER: 3 · Discussion. One post carrying the physiology and your thinking about it. Post by Fri Oct 16, 10:00 pm. Two replies by Sun Oct 18, 10:00 pm.
+
+--- DISCUSSION: Week 06 · 3 · Discussion   [requirement: Contribute]
+    settings: Graded discussion. Group: Discussions. 10 points. Due Friday, October 16 at 10:00 pm (initial post). Available until Sunday, October 18 at 10:00 pm (replies). If your Canvas has discussion checkpoints turned on, set reply-to-topic Fri Oct 16 10:00 pm and required replies (2) Sun Oct 18 10:00 pm instead. Require students to post before seeing replies: on. Requirement: contribute.
+<p><iframe title="Week 6 discussion instructions" src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion.html?week=6" width="100%" height="3200" style="width:100%;min-height:3200px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion.html?week=6" target="_blank" rel="noopener">open the instructions in a new tab</a>.</p>
+
+--- TEXT HEADER: 4 · Lab. PhysioEx first until Pearson shows it complete, then the worksheet and data record. Due Sun Oct 18, 10:00 pm.
+
+--- ASSIGNMENT: Week 06 · 4 · Lab   [requirement: Submit]
+    settings: Assignment. Group: Lab. 10 points. Submission: file upload, PDF. Due Sunday, October 18 at 10:00 pm. Requirement: submit. Pearson side: Not settled. The lab map predates the Sep 5 week remap: Ex 2 (muscle) now belongs to Week 7, and the sensory lab sits in Week 5. Decide what Week 6 runs, then assign it in Pearson. The Canvas item does not change either way.
+<p><iframe title="Week 6 lab instructions" src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=6" width="100%" height="1100" style="width:100%;min-height:1100px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=6" target="_blank" rel="noopener">open the lab instructions in a new tab</a>.</p>
+
+--- TEXT HEADER: 5 · Book problems and recall cards. Due Sun Oct 18, 10:00 pm.
+
+--- ASSIGNMENT: Week 06 · 5 · Book problems   [requirement: Submit]
+    settings: Assignment. Group: Book problems. 10 points. Submission: file upload, PDF. Due Sunday, October 18 at 10:00 pm. Requirement: submit. Type the problem numbers into the first paragraph; the instructions page tells students to look for them there.
+<p><strong>This week's problems:</strong> Silverthorn Ch 11 and the autonomic sections of Ch 12. Problems: TYPE THE NUMBERS HERE BEFORE YOU PUBLISH.</p>
+<p><iframe title="Week 6 book problems instructions" src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-bookproblems.html?week=6" width="100%" height="1600" style="width:100%;min-height:1600px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-bookproblems.html?week=6" target="_blank" rel="noopener">open the instructions in a new tab</a>.</p>
+
+--- URL: Week 06 · 5 · Recall cards in the Mastery OS (ungraded, all week)
+    settings: External URL. Open in a new tab: on. No requirement.
+https://drsrennie-stack.github.io/human-physiology-Fa26/mastery-physio-os-standalone.html?week=6
+
+--- TEXT HEADER: 6 · Turn in your note sheet, both colors, one PDF, by Sun Oct 18, 10:00 pm. Then the five-minute practice round.
+
+--- ASSIGNMENT: Week 06 · 6 · Note sheet   [requirement: Submit]
+    settings: Assignment. Group: Competency note sheets. 10 points. Submission: file upload, PDF only. Due Sunday, October 18 at 10:00 pm. Requirement: submit.
+<p><iframe title="Week 6 note sheet instructions" src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-notesheet.html?week=6" width="100%" height="1100" style="width:100%;min-height:1100px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-notesheet.html?week=6" target="_blank" rel="noopener">open the instructions in a new tab</a>.</p>
+
+--- PAGE: Week 06 · 6 · Practice round, five minutes
+    settings: Page. No requirement. Keep it last so the week ends on the midterm rehearsal every time.
+<h2>The five-minute practice round</h2>
+<p>Pick one competency from this week. Blank paper, a pen, your phone camera, and no notes.</p>
+<ol>
+<li>Draw the mechanism from memory. Label it.</li>
+<li>Start recording and teach it out loud, step by step, the way you would teach a classmate. Say why each step happens, not only what happens.</li>
+<li>Stop at five minutes. Watch it back once. Anything you could not say without looking goes on your miss list for the recall cards.</li>
+</ol>
+<p>Nothing is turned in. This is the exact shape of the midterm, practiced while nothing is on the line.</p>
+<p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/competency-study-guide.html?week=6" target="_blank" rel="noopener"><strong>Pick a competency from the Week 6 list</strong></a></p><p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/mastery-canvas.html" target="_blank" rel="noopener"><strong>Draw on the course canvas instead of paper</strong></a><br>Pen, shapes, arrows and text. Save as a PDF when you are done.</p>
+
+
+==================== WEEK 07 · Muscle, and how movement gets commanded ====================
+Module name: Week 07 · Muscle, and how movement gets commanded
+Lock until: Sat Oct 17, 8:00 pm
+Requirements: sequential; view the three pages; submit note sheet, lab, problems; contribute to discussion.
+Reading: Silverthorn Ch 12 (somatic motor sections), Ch 13 and Ch 14
+Lab, Pearson side: PhysioEx Ex 2, all activities (twitch, summation, tetanus, fatigue, length-tension).
+
+--- TEXT HEADER: Part 2 · Control systems · Week 7 of 15 · opens Mon Oct 19 · everything due Sun Oct 25, 10:00 pm
+
+--- PAGE: Week 07 · Start here   [requirement: View]
+    settings: Page. Requirement: view. This frames the week page, which opens with the Start Here block (time, what is due, work top to bottom) and the same six numbered steps as this module.
+<p><iframe title="Week 7, start here" src="https://drsrennie-stack.github.io/human-physiology-Fa26/week-07.html" width="100%" height="2800" style="width:100%;min-height:2800px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/week-07.html" target="_blank" rel="noopener">open this week's page in a new tab</a>.</p>
+
+--- TEXT HEADER: 1 · Note sheet, first pass. Print it, then answer from the reading and what you already know, in your first color. Before any video.
+
+--- PAGE: Week 07 · 1 · Note sheet, first pass   [requirement: View]
+    settings: Page. Requirement: view. Links open in a new tab on purpose: printing from inside an iframe prints the whole Canvas page.
+<h2>Print the Week 7 note sheet</h2>
+<p>Reading this week: Silverthorn Ch 12 (somatic motor sections), Ch 13 and Ch 14.</p>
+<p>One box per competency, already built. Open it in a new tab so you can print it or save it as a PDF. If you are not printing, rule the same boxes onto your own paper; the sheet shows you how.</p>
+<p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/note-sheet.html?week=7" target="_blank" rel="noopener"><strong>Open and print the Week 7 note sheet</strong></a><br>Opens in a new tab. Print, or save as PDF.</p><p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/competency-study-guide.html?week=7" target="_blank" rel="noopener"><strong>Read the Week 7 competencies</strong></a><br>Everything this week asks you to be able to do, each with its two prompts.</p><p><strong>First pass, first color.</strong> Read every prompt, preview the reading, then answer the best you can from what you already know. Stop while half of every box is still empty. That empty half is what the videos fill.</p>
+
+--- TEXT HEADER: 2 · Watch the lectures with your sheet open. Add what you did not know in your second color, into the same boxes.
+
+--- PAGE: Week 07 · 2 · Lectures, notes, and slides   [requirement: View]
+    settings: Page. Requirement: view. This page never changes; add lines to the manifest in lecture-week.html when material is ready.
+<p><iframe title="Week 7 lectures, notes, and slides" src="https://drsrennie-stack.github.io/human-physiology-Fa26/lecture-week.html?week=7" width="100%" height="1400" style="width:100%;min-height:1400px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/lecture-week.html?week=7" target="_blank" rel="noopener">open the lectures in a new tab</a>.</p>
+
+--- TEXT HEADER: 3 · Discussion. One post carrying the physiology and your thinking about it. Post by Fri Oct 23, 10:00 pm. Two replies by Sun Oct 25, 10:00 pm.
+
+--- DISCUSSION: Week 07 · 3 · Discussion   [requirement: Contribute]
+    settings: Graded discussion. Group: Discussions. 10 points. Due Friday, October 23 at 10:00 pm (initial post). Available until Sunday, October 25 at 10:00 pm (replies). If your Canvas has discussion checkpoints turned on, set reply-to-topic Fri Oct 23 10:00 pm and required replies (2) Sun Oct 25 10:00 pm instead. Require students to post before seeing replies: on. Requirement: contribute.
+<p><iframe title="Week 7 discussion instructions" src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion.html?week=7" width="100%" height="3200" style="width:100%;min-height:3200px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion.html?week=7" target="_blank" rel="noopener">open the instructions in a new tab</a>.</p>
+
+--- TEXT HEADER: 4 · Lab. PhysioEx first until Pearson shows it complete, then the worksheet and data record. Due Sun Oct 25, 10:00 pm.
+
+--- ASSIGNMENT: Week 07 · 4 · Lab   [requirement: Submit]
+    settings: Assignment. Group: Lab. 10 points. Submission: file upload, PDF. Due Sunday, October 25 at 10:00 pm. Requirement: submit. Pearson side: PhysioEx Ex 2, all activities (twitch, summation, tetanus, fatigue, length-tension).
+<p><iframe title="Week 7 lab instructions" src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=7" width="100%" height="1100" style="width:100%;min-height:1100px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=7" target="_blank" rel="noopener">open the lab instructions in a new tab</a>.</p>
+
+--- TEXT HEADER: 5 · Book problems and recall cards. Due Sun Oct 25, 10:00 pm.
+
+--- ASSIGNMENT: Week 07 · 5 · Book problems   [requirement: Submit]
+    settings: Assignment. Group: Book problems. 10 points. Submission: file upload, PDF. Due Sunday, October 25 at 10:00 pm. Requirement: submit. Type the problem numbers into the first paragraph; the instructions page tells students to look for them there.
+<p><strong>This week's problems:</strong> Silverthorn Ch 12 (somatic motor sections), Ch 13 and Ch 14. Problems: TYPE THE NUMBERS HERE BEFORE YOU PUBLISH.</p>
+<p><iframe title="Week 7 book problems instructions" src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-bookproblems.html?week=7" width="100%" height="1600" style="width:100%;min-height:1600px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-bookproblems.html?week=7" target="_blank" rel="noopener">open the instructions in a new tab</a>.</p>
+
+--- URL: Week 07 · 5 · Recall cards in the Mastery OS (ungraded, all week)
+    settings: External URL. Open in a new tab: on. No requirement.
+https://drsrennie-stack.github.io/human-physiology-Fa26/mastery-physio-os-standalone.html?week=7
+
+--- TEXT HEADER: 6 · Turn in your note sheet, both colors, one PDF, by Sun Oct 25, 10:00 pm. Then the five-minute practice round.
+
+--- ASSIGNMENT: Week 07 · 6 · Note sheet   [requirement: Submit]
+    settings: Assignment. Group: Competency note sheets. 10 points. Submission: file upload, PDF only. Due Sunday, October 25 at 10:00 pm. Requirement: submit.
+<p><iframe title="Week 7 note sheet instructions" src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-notesheet.html?week=7" width="100%" height="1100" style="width:100%;min-height:1100px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-notesheet.html?week=7" target="_blank" rel="noopener">open the instructions in a new tab</a>.</p>
+
+--- PAGE: Week 07 · 6 · Practice round, five minutes
+    settings: Page. No requirement. Keep it last so the week ends on the midterm rehearsal every time.
+<h2>The five-minute practice round</h2>
+<p>Pick one competency from this week. Blank paper, a pen, your phone camera, and no notes.</p>
+<ol>
+<li>Draw the mechanism from memory. Label it.</li>
+<li>Start recording and teach it out loud, step by step, the way you would teach a classmate. Say why each step happens, not only what happens.</li>
+<li>Stop at five minutes. Watch it back once. Anything you could not say without looking goes on your miss list for the recall cards.</li>
+</ol>
+<p>Nothing is turned in. This is the exact shape of the midterm, practiced while nothing is on the line.</p>
+<p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/competency-study-guide.html?week=7" target="_blank" rel="noopener"><strong>Pick a competency from the Week 7 list</strong></a></p><p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/mastery-canvas.html" target="_blank" rel="noopener"><strong>Draw on the course canvas instead of paper</strong></a><br>Pen, shapes, arrows and text. Save as a PDF when you are done.</p>
+
+
+==================== WEEK 08 · Hormones and reproduction, the slow control system ====================
+Module name: Week 08 · Hormones and reproduction, the slow control system
+Lock until: Sat Oct 24, 8:00 pm
+Requirements: sequential; view the three pages; submit note sheet, lab, problems; contribute to discussion.
+Reading: Silverthorn Ch 8, Ch 24 and Ch 26
+Lab, Pearson side: PhysioEx Ex 4 glucose and insulin activities, Ex 12 ELISA. Sheet: lab-week08-hormone-cycle.html.
+Note: Midterm 1 (weeks 1 to 7) sits at the front of this week: Mon Oct 26 8:00 am to Wed Oct 28 10:00 pm. The Midterm 1 module goes directly above this one.
+
+--- TEXT HEADER: Part 2 · Control systems · Week 8 of 15 · opens Mon Oct 26 · everything due Sun Nov 1, 10:00 pm
+
+--- PAGE: Week 08 · Start here   [requirement: View]
+    settings: Page. Requirement: view. This frames the week page, which opens with the Start Here block (time, what is due, work top to bottom) and the same six numbered steps as this module.
+<p><iframe title="Week 8, start here" src="https://drsrennie-stack.github.io/human-physiology-Fa26/week-08.html" width="100%" height="2800" style="width:100%;min-height:2800px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/week-08.html" target="_blank" rel="noopener">open this week's page in a new tab</a>.</p>
+
+--- TEXT HEADER: 1 · Note sheet, first pass. Print it, then answer from the reading and what you already know, in your first color. Before any video.
+
+--- PAGE: Week 08 · 1 · Note sheet, first pass   [requirement: View]
+    settings: Page. Requirement: view. Links open in a new tab on purpose: printing from inside an iframe prints the whole Canvas page.
+<h2>Print the Week 8 note sheet</h2>
+<p>Reading this week: Silverthorn Ch 8, Ch 24 and Ch 26.</p>
+<p>One box per competency, already built. Open it in a new tab so you can print it or save it as a PDF. If you are not printing, rule the same boxes onto your own paper; the sheet shows you how.</p>
+<p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/note-sheet.html?week=8" target="_blank" rel="noopener"><strong>Open and print the Week 8 note sheet</strong></a><br>Opens in a new tab. Print, or save as PDF.</p><p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/competency-study-guide.html?week=8" target="_blank" rel="noopener"><strong>Read the Week 8 competencies</strong></a><br>Everything this week asks you to be able to do, each with its two prompts.</p><p><strong>First pass, first color.</strong> Read every prompt, preview the reading, then answer the best you can from what you already know. Stop while half of every box is still empty. That empty half is what the videos fill.</p>
+
+--- TEXT HEADER: 2 · Watch the lectures with your sheet open. Add what you did not know in your second color, into the same boxes.
+
+--- PAGE: Week 08 · 2 · Lectures, notes, and slides   [requirement: View]
+    settings: Page. Requirement: view. This page never changes; add lines to the manifest in lecture-week.html when material is ready.
+<p><iframe title="Week 8 lectures, notes, and slides" src="https://drsrennie-stack.github.io/human-physiology-Fa26/lecture-week.html?week=8" width="100%" height="1400" style="width:100%;min-height:1400px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/lecture-week.html?week=8" target="_blank" rel="noopener">open the lectures in a new tab</a>.</p>
+
+--- TEXT HEADER: 3 · Discussion. One post carrying the physiology and your thinking about it. Post by Fri Oct 30, 10:00 pm. Two replies by Sun Nov 1, 10:00 pm.
+
+--- DISCUSSION: Week 08 · 3 · Discussion   [requirement: Contribute]
+    settings: Graded discussion. Group: Discussions. 10 points. Due Friday, October 30 at 10:00 pm (initial post). Available until Sunday, November 1 at 10:00 pm (replies). If your Canvas has discussion checkpoints turned on, set reply-to-topic Fri Oct 30 10:00 pm and required replies (2) Sun Nov 1 10:00 pm instead. Require students to post before seeing replies: on. Requirement: contribute.
+<p><iframe title="Week 8 discussion instructions" src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion.html?week=8" width="100%" height="3200" style="width:100%;min-height:3200px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion.html?week=8" target="_blank" rel="noopener">open the instructions in a new tab</a>.</p>
+
+--- TEXT HEADER: 4 · Lab. PhysioEx first until Pearson shows it complete, then the worksheet and data record. Due Sun Nov 1, 10:00 pm.
+
+--- ASSIGNMENT: Week 08 · 4 · Lab   [requirement: Submit]
+    settings: Assignment. Group: Lab. 10 points. Submission: file upload, PDF. Due Sunday, November 1 at 10:00 pm. Requirement: submit. Pearson side: PhysioEx Ex 4 glucose and insulin activities, Ex 12 ELISA. Sheet: lab-week08-hormone-cycle.html.
+<p><iframe title="Week 8 lab instructions" src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=8" width="100%" height="1100" style="width:100%;min-height:1100px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=8" target="_blank" rel="noopener">open the lab instructions in a new tab</a>.</p>
+
+--- TEXT HEADER: 5 · Book problems and recall cards. Due Sun Nov 1, 10:00 pm.
+
+--- ASSIGNMENT: Week 08 · 5 · Book problems   [requirement: Submit]
+    settings: Assignment. Group: Book problems. 10 points. Submission: file upload, PDF. Due Sunday, November 1 at 10:00 pm. Requirement: submit. Type the problem numbers into the first paragraph; the instructions page tells students to look for them there.
+<p><strong>This week's problems:</strong> Silverthorn Ch 8, Ch 24 and Ch 26. Problems: TYPE THE NUMBERS HERE BEFORE YOU PUBLISH.</p>
+<p><iframe title="Week 8 book problems instructions" src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-bookproblems.html?week=8" width="100%" height="1600" style="width:100%;min-height:1600px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-bookproblems.html?week=8" target="_blank" rel="noopener">open the instructions in a new tab</a>.</p>
+
+--- URL: Week 08 · 5 · Recall cards in the Mastery OS (ungraded, all week)
+    settings: External URL. Open in a new tab: on. No requirement.
+https://drsrennie-stack.github.io/human-physiology-Fa26/mastery-physio-os-standalone.html?week=8
+
+--- TEXT HEADER: 6 · Turn in your note sheet, both colors, one PDF, by Sun Nov 1, 10:00 pm. Then the five-minute practice round.
+
+--- ASSIGNMENT: Week 08 · 6 · Note sheet   [requirement: Submit]
+    settings: Assignment. Group: Competency note sheets. 10 points. Submission: file upload, PDF only. Due Sunday, November 1 at 10:00 pm. Requirement: submit.
+<p><iframe title="Week 8 note sheet instructions" src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-notesheet.html?week=8" width="100%" height="1100" style="width:100%;min-height:1100px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-notesheet.html?week=8" target="_blank" rel="noopener">open the instructions in a new tab</a>.</p>
+
+--- PAGE: Week 08 · 6 · Practice round, five minutes
+    settings: Page. No requirement. Keep it last so the week ends on the midterm rehearsal every time.
+<h2>The five-minute practice round</h2>
+<p>Pick one competency from this week. Blank paper, a pen, your phone camera, and no notes.</p>
+<ol>
+<li>Draw the mechanism from memory. Label it.</li>
+<li>Start recording and teach it out loud, step by step, the way you would teach a classmate. Say why each step happens, not only what happens.</li>
+<li>Stop at five minutes. Watch it back once. Anything you could not say without looking goes on your miss list for the recall cards.</li>
+</ol>
+<p>Nothing is turned in. This is the exact shape of the midterm, practiced while nothing is on the line.</p>
+<p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/competency-study-guide.html?week=8" target="_blank" rel="noopener"><strong>Pick a competency from the Week 8 list</strong></a></p><p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/mastery-canvas.html" target="_blank" rel="noopener"><strong>Draw on the course canvas instead of paper</strong></a><br>Pen, shapes, arrows and text. Save as a PDF when you are done.</p>
+
+
+==================== WEEK 09 · The heart as a pump ====================
+Module name: Week 09 · The heart as a pump
+Lock until: Sat Oct 31, 8:00 pm
+Requirements: sequential; view the three pages; submit note sheet, lab, problems; contribute to discussion.
+Reading: Silverthorn Ch 15
+Lab, Pearson side: PhysioEx Ex 6, all activities. ECG strip packet when built.
+
+--- TEXT HEADER: Part 3 · Systems in action · Week 9 of 15 · opens Mon Nov 2 · everything due Sun Nov 8, 10:00 pm
+
+--- PAGE: Week 09 · Start here   [requirement: View]
+    settings: Page. Requirement: view. This frames the week page, which opens with the Start Here block (time, what is due, work top to bottom) and the same six numbered steps as this module.
+<p><iframe title="Week 9, start here" src="https://drsrennie-stack.github.io/human-physiology-Fa26/week-09.html" width="100%" height="2800" style="width:100%;min-height:2800px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/week-09.html" target="_blank" rel="noopener">open this week's page in a new tab</a>.</p>
+
+--- TEXT HEADER: 1 · Note sheet, first pass. Print it, then answer from the reading and what you already know, in your first color. Before any video.
+
+--- PAGE: Week 09 · 1 · Note sheet, first pass   [requirement: View]
+    settings: Page. Requirement: view. Links open in a new tab on purpose: printing from inside an iframe prints the whole Canvas page.
+<h2>Print the Week 9 note sheet</h2>
+<p>Reading this week: Silverthorn Ch 15.</p>
+<p>One box per competency, already built. Open it in a new tab so you can print it or save it as a PDF. If you are not printing, rule the same boxes onto your own paper; the sheet shows you how.</p>
+<p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/note-sheet.html?week=9" target="_blank" rel="noopener"><strong>Open and print the Week 9 note sheet</strong></a><br>Opens in a new tab. Print, or save as PDF.</p><p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/competency-study-guide.html?week=9" target="_blank" rel="noopener"><strong>Read the Week 9 competencies</strong></a><br>Everything this week asks you to be able to do, each with its two prompts.</p><p><strong>First pass, first color.</strong> Read every prompt, preview the reading, then answer the best you can from what you already know. Stop while half of every box is still empty. That empty half is what the videos fill.</p>
+
+--- TEXT HEADER: 2 · Watch the lectures with your sheet open. Add what you did not know in your second color, into the same boxes.
+
+--- PAGE: Week 09 · 2 · Lectures, notes, and slides   [requirement: View]
+    settings: Page. Requirement: view. This page never changes; add lines to the manifest in lecture-week.html when material is ready.
+<p><iframe title="Week 9 lectures, notes, and slides" src="https://drsrennie-stack.github.io/human-physiology-Fa26/lecture-week.html?week=9" width="100%" height="1400" style="width:100%;min-height:1400px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/lecture-week.html?week=9" target="_blank" rel="noopener">open the lectures in a new tab</a>.</p>
+
+--- TEXT HEADER: 3 · Discussion. One post carrying the physiology and your thinking about it. Post by Fri Nov 6, 10:00 pm. Two replies by Sun Nov 8, 10:00 pm.
+
+--- DISCUSSION: Week 09 · 3 · Discussion   [requirement: Contribute]
+    settings: Graded discussion. Group: Discussions. 10 points. Due Friday, November 6 at 10:00 pm (initial post). Available until Sunday, November 8 at 10:00 pm (replies). If your Canvas has discussion checkpoints turned on, set reply-to-topic Fri Nov 6 10:00 pm and required replies (2) Sun Nov 8 10:00 pm instead. Require students to post before seeing replies: on. Requirement: contribute.
+<p><iframe title="Week 9 discussion instructions" src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion.html?week=9" width="100%" height="3200" style="width:100%;min-height:3200px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion.html?week=9" target="_blank" rel="noopener">open the instructions in a new tab</a>.</p>
+
+--- TEXT HEADER: 4 · Lab. PhysioEx first until Pearson shows it complete, then the worksheet and data record. Due Sun Nov 8, 10:00 pm.
+
+--- ASSIGNMENT: Week 09 · 4 · Lab   [requirement: Submit]
+    settings: Assignment. Group: Lab. 10 points. Submission: file upload, PDF. Due Sunday, November 8 at 10:00 pm. Requirement: submit. Pearson side: PhysioEx Ex 6, all activities. ECG strip packet when built.
+<p><iframe title="Week 9 lab instructions" src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=9" width="100%" height="1100" style="width:100%;min-height:1100px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=9" target="_blank" rel="noopener">open the lab instructions in a new tab</a>.</p>
+
+--- TEXT HEADER: 5 · Book problems and recall cards. Due Sun Nov 8, 10:00 pm.
+
+--- ASSIGNMENT: Week 09 · 5 · Book problems   [requirement: Submit]
+    settings: Assignment. Group: Book problems. 10 points. Submission: file upload, PDF. Due Sunday, November 8 at 10:00 pm. Requirement: submit. Type the problem numbers into the first paragraph; the instructions page tells students to look for them there.
+<p><strong>This week's problems:</strong> Silverthorn Ch 15. Problems: TYPE THE NUMBERS HERE BEFORE YOU PUBLISH.</p>
+<p><iframe title="Week 9 book problems instructions" src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-bookproblems.html?week=9" width="100%" height="1600" style="width:100%;min-height:1600px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-bookproblems.html?week=9" target="_blank" rel="noopener">open the instructions in a new tab</a>.</p>
+
+--- URL: Week 09 · 5 · Recall cards in the Mastery OS (ungraded, all week)
+    settings: External URL. Open in a new tab: on. No requirement.
+https://drsrennie-stack.github.io/human-physiology-Fa26/mastery-physio-os-standalone.html?week=9
+
+--- TEXT HEADER: 6 · Turn in your note sheet, both colors, one PDF, by Sun Nov 8, 10:00 pm. Then the five-minute practice round.
+
+--- ASSIGNMENT: Week 09 · 6 · Note sheet   [requirement: Submit]
+    settings: Assignment. Group: Competency note sheets. 10 points. Submission: file upload, PDF only. Due Sunday, November 8 at 10:00 pm. Requirement: submit.
+<p><iframe title="Week 9 note sheet instructions" src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-notesheet.html?week=9" width="100%" height="1100" style="width:100%;min-height:1100px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-notesheet.html?week=9" target="_blank" rel="noopener">open the instructions in a new tab</a>.</p>
+
+--- PAGE: Week 09 · 6 · Practice round, five minutes
+    settings: Page. No requirement. Keep it last so the week ends on the midterm rehearsal every time.
+<h2>The five-minute practice round</h2>
+<p>Pick one competency from this week. Blank paper, a pen, your phone camera, and no notes.</p>
+<ol>
+<li>Draw the mechanism from memory. Label it.</li>
+<li>Start recording and teach it out loud, step by step, the way you would teach a classmate. Say why each step happens, not only what happens.</li>
+<li>Stop at five minutes. Watch it back once. Anything you could not say without looking goes on your miss list for the recall cards.</li>
+</ol>
+<p>Nothing is turned in. This is the exact shape of the midterm, practiced while nothing is on the line.</p>
+<p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/competency-study-guide.html?week=9" target="_blank" rel="noopener"><strong>Pick a competency from the Week 9 list</strong></a></p><p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/mastery-canvas.html" target="_blank" rel="noopener"><strong>Draw on the course canvas instead of paper</strong></a><br>Pen, shapes, arrows and text. Save as a PDF when you are done.</p>
+
+
+==================== WEEK 10 · Pressure, flow, and holding blood pressure steady ====================
+Module name: Week 10 · Pressure, flow, and holding blood pressure steady
+Lock until: Sat Nov 7, 8:00 pm
+Requirements: sequential; view the three pages; submit note sheet, lab, problems; contribute to discussion.
+Reading: Silverthorn Ch 16
+Lab, Pearson side: PhysioEx Ex 5, all activities. Hemodynamics worksheet when posted.
+Note: Veterans Day is Wed Nov 11. Nothing is due that day anyway.
+
+--- TEXT HEADER: Part 3 · Systems in action · Week 10 of 15 · opens Mon Nov 9 · everything due Sun Nov 15, 10:00 pm
+
+--- PAGE: Week 10 · Start here   [requirement: View]
+    settings: Page. Requirement: view. This frames the week page, which opens with the Start Here block (time, what is due, work top to bottom) and the same six numbered steps as this module.
+<p><iframe title="Week 10, start here" src="https://drsrennie-stack.github.io/human-physiology-Fa26/week-10.html" width="100%" height="2800" style="width:100%;min-height:2800px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/week-10.html" target="_blank" rel="noopener">open this week's page in a new tab</a>.</p>
+
+--- TEXT HEADER: 1 · Note sheet, first pass. Print it, then answer from the reading and what you already know, in your first color. Before any video.
+
+--- PAGE: Week 10 · 1 · Note sheet, first pass   [requirement: View]
+    settings: Page. Requirement: view. Links open in a new tab on purpose: printing from inside an iframe prints the whole Canvas page.
+<h2>Print the Week 10 note sheet</h2>
+<p>Reading this week: Silverthorn Ch 16.</p>
+<p>One box per competency, already built. Open it in a new tab so you can print it or save it as a PDF. If you are not printing, rule the same boxes onto your own paper; the sheet shows you how.</p>
+<p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/note-sheet.html?week=10" target="_blank" rel="noopener"><strong>Open and print the Week 10 note sheet</strong></a><br>Opens in a new tab. Print, or save as PDF.</p><p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/competency-study-guide.html?week=10" target="_blank" rel="noopener"><strong>Read the Week 10 competencies</strong></a><br>Everything this week asks you to be able to do, each with its two prompts.</p><p><strong>First pass, first color.</strong> Read every prompt, preview the reading, then answer the best you can from what you already know. Stop while half of every box is still empty. That empty half is what the videos fill.</p>
+
+--- TEXT HEADER: 2 · Watch the lectures with your sheet open. Add what you did not know in your second color, into the same boxes.
+
+--- PAGE: Week 10 · 2 · Lectures, notes, and slides   [requirement: View]
+    settings: Page. Requirement: view. This page never changes; add lines to the manifest in lecture-week.html when material is ready.
+<p><iframe title="Week 10 lectures, notes, and slides" src="https://drsrennie-stack.github.io/human-physiology-Fa26/lecture-week.html?week=10" width="100%" height="1400" style="width:100%;min-height:1400px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/lecture-week.html?week=10" target="_blank" rel="noopener">open the lectures in a new tab</a>.</p>
+
+--- TEXT HEADER: 3 · Discussion. One post carrying the physiology and your thinking about it. Post by Fri Nov 13, 10:00 pm. Two replies by Sun Nov 15, 10:00 pm.
+
+--- DISCUSSION: Week 10 · 3 · Discussion   [requirement: Contribute]
+    settings: Graded discussion. Group: Discussions. 10 points. Due Friday, November 13 at 10:00 pm (initial post). Available until Sunday, November 15 at 10:00 pm (replies). If your Canvas has discussion checkpoints turned on, set reply-to-topic Fri Nov 13 10:00 pm and required replies (2) Sun Nov 15 10:00 pm instead. Require students to post before seeing replies: on. Requirement: contribute.
+<p><iframe title="Week 10 discussion instructions" src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion.html?week=10" width="100%" height="3200" style="width:100%;min-height:3200px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion.html?week=10" target="_blank" rel="noopener">open the instructions in a new tab</a>.</p>
+
+--- TEXT HEADER: 4 · Lab. PhysioEx first until Pearson shows it complete, then the worksheet and data record. Due Sun Nov 15, 10:00 pm.
+
+--- ASSIGNMENT: Week 10 · 4 · Lab   [requirement: Submit]
+    settings: Assignment. Group: Lab. 10 points. Submission: file upload, PDF. Due Sunday, November 15 at 10:00 pm. Requirement: submit. Pearson side: PhysioEx Ex 5, all activities. Hemodynamics worksheet when posted.
+<p><iframe title="Week 10 lab instructions" src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=10" width="100%" height="1100" style="width:100%;min-height:1100px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=10" target="_blank" rel="noopener">open the lab instructions in a new tab</a>.</p>
+
+--- TEXT HEADER: 5 · Book problems and recall cards. Due Sun Nov 15, 10:00 pm.
+
+--- ASSIGNMENT: Week 10 · 5 · Book problems   [requirement: Submit]
+    settings: Assignment. Group: Book problems. 10 points. Submission: file upload, PDF. Due Sunday, November 15 at 10:00 pm. Requirement: submit. Type the problem numbers into the first paragraph; the instructions page tells students to look for them there.
+<p><strong>This week's problems:</strong> Silverthorn Ch 16. Problems: TYPE THE NUMBERS HERE BEFORE YOU PUBLISH.</p>
+<p><iframe title="Week 10 book problems instructions" src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-bookproblems.html?week=10" width="100%" height="1600" style="width:100%;min-height:1600px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-bookproblems.html?week=10" target="_blank" rel="noopener">open the instructions in a new tab</a>.</p>
+
+--- URL: Week 10 · 5 · Recall cards in the Mastery OS (ungraded, all week)
+    settings: External URL. Open in a new tab: on. No requirement.
+https://drsrennie-stack.github.io/human-physiology-Fa26/mastery-physio-os-standalone.html?week=10
+
+--- TEXT HEADER: 6 · Turn in your note sheet, both colors, one PDF, by Sun Nov 15, 10:00 pm. Then the five-minute practice round.
+
+--- ASSIGNMENT: Week 10 · 6 · Note sheet   [requirement: Submit]
+    settings: Assignment. Group: Competency note sheets. 10 points. Submission: file upload, PDF only. Due Sunday, November 15 at 10:00 pm. Requirement: submit.
+<p><iframe title="Week 10 note sheet instructions" src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-notesheet.html?week=10" width="100%" height="1100" style="width:100%;min-height:1100px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-notesheet.html?week=10" target="_blank" rel="noopener">open the instructions in a new tab</a>.</p>
+
+--- PAGE: Week 10 · 6 · Practice round, five minutes
+    settings: Page. No requirement. Keep it last so the week ends on the midterm rehearsal every time.
+<h2>The five-minute practice round</h2>
+<p>Pick one competency from this week. Blank paper, a pen, your phone camera, and no notes.</p>
+<ol>
+<li>Draw the mechanism from memory. Label it.</li>
+<li>Start recording and teach it out loud, step by step, the way you would teach a classmate. Say why each step happens, not only what happens.</li>
+<li>Stop at five minutes. Watch it back once. Anything you could not say without looking goes on your miss list for the recall cards.</li>
+</ol>
+<p>Nothing is turned in. This is the exact shape of the midterm, practiced while nothing is on the line.</p>
+<p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/competency-study-guide.html?week=10" target="_blank" rel="noopener"><strong>Pick a competency from the Week 10 list</strong></a></p><p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/mastery-canvas.html" target="_blank" rel="noopener"><strong>Draw on the course canvas instead of paper</strong></a><br>Pen, shapes, arrows and text. Save as a PDF when you are done.</p>
+
+
+==================== WEEK 11 · Blood and how the body defends itself ====================
+Module name: Week 11 · Blood and how the body defends itself
+Lock until: Sat Nov 14, 8:00 pm
+Requirements: sequential; view the three pages; submit note sheet, lab, problems; contribute to discussion.
+Reading: Silverthorn Ch 17 and Ch 7
+Lab, Pearson side: PhysioEx Ex 11 (hematocrit, ESR, hemoglobin, blood typing). Sheet: cbc-pcr-lab.html.
+Note: Last day to drop with a grade is Sat Nov 21, inside this week.
+
+--- TEXT HEADER: Part 3 · Systems in action · Week 11 of 15 · opens Mon Nov 16 · everything due Sun Nov 22, 10:00 pm
+
+--- PAGE: Week 11 · Start here   [requirement: View]
+    settings: Page. Requirement: view. This frames the week page, which opens with the Start Here block (time, what is due, work top to bottom) and the same six numbered steps as this module.
+<p><iframe title="Week 11, start here" src="https://drsrennie-stack.github.io/human-physiology-Fa26/week-11.html" width="100%" height="2800" style="width:100%;min-height:2800px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/week-11.html" target="_blank" rel="noopener">open this week's page in a new tab</a>.</p>
+
+--- TEXT HEADER: 1 · Note sheet, first pass. Print it, then answer from the reading and what you already know, in your first color. Before any video.
+
+--- PAGE: Week 11 · 1 · Note sheet, first pass   [requirement: View]
+    settings: Page. Requirement: view. Links open in a new tab on purpose: printing from inside an iframe prints the whole Canvas page.
+<h2>Print the Week 11 note sheet</h2>
+<p>Reading this week: Silverthorn Ch 17 and Ch 7.</p>
+<p>One box per competency, already built. Open it in a new tab so you can print it or save it as a PDF. If you are not printing, rule the same boxes onto your own paper; the sheet shows you how.</p>
+<p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/note-sheet.html?week=11" target="_blank" rel="noopener"><strong>Open and print the Week 11 note sheet</strong></a><br>Opens in a new tab. Print, or save as PDF.</p><p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/competency-study-guide.html?week=11" target="_blank" rel="noopener"><strong>Read the Week 11 competencies</strong></a><br>Everything this week asks you to be able to do, each with its two prompts.</p><p><strong>First pass, first color.</strong> Read every prompt, preview the reading, then answer the best you can from what you already know. Stop while half of every box is still empty. That empty half is what the videos fill.</p>
+
+--- TEXT HEADER: 2 · Watch the lectures with your sheet open. Add what you did not know in your second color, into the same boxes.
+
+--- PAGE: Week 11 · 2 · Lectures, notes, and slides   [requirement: View]
+    settings: Page. Requirement: view. This page never changes; add lines to the manifest in lecture-week.html when material is ready.
+<p><iframe title="Week 11 lectures, notes, and slides" src="https://drsrennie-stack.github.io/human-physiology-Fa26/lecture-week.html?week=11" width="100%" height="1400" style="width:100%;min-height:1400px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/lecture-week.html?week=11" target="_blank" rel="noopener">open the lectures in a new tab</a>.</p>
+
+--- TEXT HEADER: 3 · Discussion. One post carrying the physiology and your thinking about it. Post by Fri Nov 20, 10:00 pm. Two replies by Sun Nov 22, 10:00 pm.
+
+--- DISCUSSION: Week 11 · 3 · Discussion   [requirement: Contribute]
+    settings: Graded discussion. Group: Discussions. 10 points. Due Friday, November 20 at 10:00 pm (initial post). Available until Sunday, November 22 at 10:00 pm (replies). If your Canvas has discussion checkpoints turned on, set reply-to-topic Fri Nov 20 10:00 pm and required replies (2) Sun Nov 22 10:00 pm instead. Require students to post before seeing replies: on. Requirement: contribute.
+<p><iframe title="Week 11 discussion instructions" src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion.html?week=11" width="100%" height="3200" style="width:100%;min-height:3200px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion.html?week=11" target="_blank" rel="noopener">open the instructions in a new tab</a>.</p>
+
+--- TEXT HEADER: 4 · Lab. PhysioEx first until Pearson shows it complete, then the worksheet and data record. Due Sun Nov 22, 10:00 pm.
+
+--- ASSIGNMENT: Week 11 · 4 · Lab   [requirement: Submit]
+    settings: Assignment. Group: Lab. 10 points. Submission: file upload, PDF. Due Sunday, November 22 at 10:00 pm. Requirement: submit. Pearson side: PhysioEx Ex 11 (hematocrit, ESR, hemoglobin, blood typing). Sheet: cbc-pcr-lab.html.
+<p><iframe title="Week 11 lab instructions" src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=11" width="100%" height="1100" style="width:100%;min-height:1100px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=11" target="_blank" rel="noopener">open the lab instructions in a new tab</a>.</p>
+
+--- TEXT HEADER: 5 · Book problems and recall cards. Due Sun Nov 22, 10:00 pm.
+
+--- ASSIGNMENT: Week 11 · 5 · Book problems   [requirement: Submit]
+    settings: Assignment. Group: Book problems. 10 points. Submission: file upload, PDF. Due Sunday, November 22 at 10:00 pm. Requirement: submit. Type the problem numbers into the first paragraph; the instructions page tells students to look for them there.
+<p><strong>This week's problems:</strong> Silverthorn Ch 17 and Ch 7. Problems: TYPE THE NUMBERS HERE BEFORE YOU PUBLISH.</p>
+<p><iframe title="Week 11 book problems instructions" src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-bookproblems.html?week=11" width="100%" height="1600" style="width:100%;min-height:1600px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-bookproblems.html?week=11" target="_blank" rel="noopener">open the instructions in a new tab</a>.</p>
+
+--- URL: Week 11 · 5 · Recall cards in the Mastery OS (ungraded, all week)
+    settings: External URL. Open in a new tab: on. No requirement.
+https://drsrennie-stack.github.io/human-physiology-Fa26/mastery-physio-os-standalone.html?week=11
+
+--- TEXT HEADER: 6 · Turn in your note sheet, both colors, one PDF, by Sun Nov 22, 10:00 pm. Then the five-minute practice round.
+
+--- ASSIGNMENT: Week 11 · 6 · Note sheet   [requirement: Submit]
+    settings: Assignment. Group: Competency note sheets. 10 points. Submission: file upload, PDF only. Due Sunday, November 22 at 10:00 pm. Requirement: submit.
+<p><iframe title="Week 11 note sheet instructions" src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-notesheet.html?week=11" width="100%" height="1100" style="width:100%;min-height:1100px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-notesheet.html?week=11" target="_blank" rel="noopener">open the instructions in a new tab</a>.</p>
+
+--- PAGE: Week 11 · 6 · Practice round, five minutes
+    settings: Page. No requirement. Keep it last so the week ends on the midterm rehearsal every time.
+<h2>The five-minute practice round</h2>
+<p>Pick one competency from this week. Blank paper, a pen, your phone camera, and no notes.</p>
+<ol>
+<li>Draw the mechanism from memory. Label it.</li>
+<li>Start recording and teach it out loud, step by step, the way you would teach a classmate. Say why each step happens, not only what happens.</li>
+<li>Stop at five minutes. Watch it back once. Anything you could not say without looking goes on your miss list for the recall cards.</li>
+</ol>
+<p>Nothing is turned in. This is the exact shape of the midterm, practiced while nothing is on the line.</p>
+<p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/competency-study-guide.html?week=11" target="_blank" rel="noopener"><strong>Pick a competency from the Week 11 list</strong></a></p><p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/mastery-canvas.html" target="_blank" rel="noopener"><strong>Draw on the course canvas instead of paper</strong></a><br>Pen, shapes, arrows and text. Save as a PDF when you are done.</p>
+
+
+==================== WEEK 12 · Digestion, and how you use food for fuel ====================
+Module name: Week 12 · Digestion, and how you use food for fuel
+Lock until: Sat Nov 21, 8:00 pm
+Requirements: sequential; view the three pages; submit note sheet, lab, problems; contribute to discussion.
+Reading: Silverthorn Ch 22, skim Ch 23
+Lab, Pearson side: PhysioEx Ex 8 pepsin and lipase, Ex 4 BMR activity.
+Note: Thanksgiving week. Nothing changes in the container; the syllabus already tells students to plan ahead.
+
+--- TEXT HEADER: Part 3 · Systems in action · Week 12 of 15 · opens Mon Nov 23 · everything due Sun Nov 29, 10:00 pm
+
+--- PAGE: Week 12 · Start here   [requirement: View]
+    settings: Page. Requirement: view. This frames the week page, which opens with the Start Here block (time, what is due, work top to bottom) and the same six numbered steps as this module.
+<p><iframe title="Week 12, start here" src="https://drsrennie-stack.github.io/human-physiology-Fa26/week-12.html" width="100%" height="2800" style="width:100%;min-height:2800px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/week-12.html" target="_blank" rel="noopener">open this week's page in a new tab</a>.</p>
+
+--- TEXT HEADER: 1 · Note sheet, first pass. Print it, then answer from the reading and what you already know, in your first color. Before any video.
+
+--- PAGE: Week 12 · 1 · Note sheet, first pass   [requirement: View]
+    settings: Page. Requirement: view. Links open in a new tab on purpose: printing from inside an iframe prints the whole Canvas page.
+<h2>Print the Week 12 note sheet</h2>
+<p>Reading this week: Silverthorn Ch 22, skim Ch 23.</p>
+<p>One box per competency, already built. Open it in a new tab so you can print it or save it as a PDF. If you are not printing, rule the same boxes onto your own paper; the sheet shows you how.</p>
+<p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/note-sheet.html?week=12" target="_blank" rel="noopener"><strong>Open and print the Week 12 note sheet</strong></a><br>Opens in a new tab. Print, or save as PDF.</p><p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/competency-study-guide.html?week=12" target="_blank" rel="noopener"><strong>Read the Week 12 competencies</strong></a><br>Everything this week asks you to be able to do, each with its two prompts.</p><p><strong>First pass, first color.</strong> Read every prompt, preview the reading, then answer the best you can from what you already know. Stop while half of every box is still empty. That empty half is what the videos fill.</p>
+
+--- TEXT HEADER: 2 · Watch the lectures with your sheet open. Add what you did not know in your second color, into the same boxes.
+
+--- PAGE: Week 12 · 2 · Lectures, notes, and slides   [requirement: View]
+    settings: Page. Requirement: view. This page never changes; add lines to the manifest in lecture-week.html when material is ready.
+<p><iframe title="Week 12 lectures, notes, and slides" src="https://drsrennie-stack.github.io/human-physiology-Fa26/lecture-week.html?week=12" width="100%" height="1400" style="width:100%;min-height:1400px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/lecture-week.html?week=12" target="_blank" rel="noopener">open the lectures in a new tab</a>.</p>
+
+--- TEXT HEADER: 3 · Discussion. One post carrying the physiology and your thinking about it. Post by Fri Nov 27, 10:00 pm. Two replies by Sun Nov 29, 10:00 pm.
+
+--- DISCUSSION: Week 12 · 3 · Discussion   [requirement: Contribute]
+    settings: Graded discussion. Group: Discussions. 10 points. Due Friday, November 27 at 10:00 pm (initial post). Available until Sunday, November 29 at 10:00 pm (replies). If your Canvas has discussion checkpoints turned on, set reply-to-topic Fri Nov 27 10:00 pm and required replies (2) Sun Nov 29 10:00 pm instead. Require students to post before seeing replies: on. Requirement: contribute.
+<p><iframe title="Week 12 discussion instructions" src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion.html?week=12" width="100%" height="3200" style="width:100%;min-height:3200px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion.html?week=12" target="_blank" rel="noopener">open the instructions in a new tab</a>.</p>
+
+--- TEXT HEADER: 4 · Lab. PhysioEx first until Pearson shows it complete, then the worksheet and data record. Due Sun Nov 29, 10:00 pm.
+
+--- ASSIGNMENT: Week 12 · 4 · Lab   [requirement: Submit]
+    settings: Assignment. Group: Lab. 10 points. Submission: file upload, PDF. Due Sunday, November 29 at 10:00 pm. Requirement: submit. Pearson side: PhysioEx Ex 8 pepsin and lipase, Ex 4 BMR activity.
+<p><iframe title="Week 12 lab instructions" src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=12" width="100%" height="1100" style="width:100%;min-height:1100px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=12" target="_blank" rel="noopener">open the lab instructions in a new tab</a>.</p>
+
+--- TEXT HEADER: 5 · Book problems and recall cards. Due Sun Nov 29, 10:00 pm.
+
+--- ASSIGNMENT: Week 12 · 5 · Book problems   [requirement: Submit]
+    settings: Assignment. Group: Book problems. 10 points. Submission: file upload, PDF. Due Sunday, November 29 at 10:00 pm. Requirement: submit. Type the problem numbers into the first paragraph; the instructions page tells students to look for them there.
+<p><strong>This week's problems:</strong> Silverthorn Ch 22, skim Ch 23. Problems: TYPE THE NUMBERS HERE BEFORE YOU PUBLISH.</p>
+<p><iframe title="Week 12 book problems instructions" src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-bookproblems.html?week=12" width="100%" height="1600" style="width:100%;min-height:1600px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-bookproblems.html?week=12" target="_blank" rel="noopener">open the instructions in a new tab</a>.</p>
+
+--- URL: Week 12 · 5 · Recall cards in the Mastery OS (ungraded, all week)
+    settings: External URL. Open in a new tab: on. No requirement.
+https://drsrennie-stack.github.io/human-physiology-Fa26/mastery-physio-os-standalone.html?week=12
+
+--- TEXT HEADER: 6 · Turn in your note sheet, both colors, one PDF, by Sun Nov 29, 10:00 pm. Then the five-minute practice round.
+
+--- ASSIGNMENT: Week 12 · 6 · Note sheet   [requirement: Submit]
+    settings: Assignment. Group: Competency note sheets. 10 points. Submission: file upload, PDF only. Due Sunday, November 29 at 10:00 pm. Requirement: submit.
+<p><iframe title="Week 12 note sheet instructions" src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-notesheet.html?week=12" width="100%" height="1100" style="width:100%;min-height:1100px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-notesheet.html?week=12" target="_blank" rel="noopener">open the instructions in a new tab</a>.</p>
+
+--- PAGE: Week 12 · 6 · Practice round, five minutes
+    settings: Page. No requirement. Keep it last so the week ends on the midterm rehearsal every time.
+<h2>The five-minute practice round</h2>
+<p>Pick one competency from this week. Blank paper, a pen, your phone camera, and no notes.</p>
+<ol>
+<li>Draw the mechanism from memory. Label it.</li>
+<li>Start recording and teach it out loud, step by step, the way you would teach a classmate. Say why each step happens, not only what happens.</li>
+<li>Stop at five minutes. Watch it back once. Anything you could not say without looking goes on your miss list for the recall cards.</li>
+</ol>
+<p>Nothing is turned in. This is the exact shape of the midterm, practiced while nothing is on the line.</p>
+<p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/competency-study-guide.html?week=12" target="_blank" rel="noopener"><strong>Pick a competency from the Week 12 list</strong></a></p><p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/mastery-canvas.html" target="_blank" rel="noopener"><strong>Draw on the course canvas instead of paper</strong></a><br>Pen, shapes, arrows and text. Save as a PDF when you are done.</p>
+
+
+==================== WEEK 13 · Breathing, gas transport, and the fast pH lever ====================
+Module name: Week 13 · Breathing, gas transport, and the fast pH lever
+Lock until: Sat Nov 28, 8:00 pm
+Requirements: sequential; view the three pages; submit note sheet, lab, problems; contribute to discussion.
+Reading: Silverthorn Ch 18 and Ch 19
+Lab, Pearson side: PhysioEx Ex 7, all activities, plus Ex 10 hyperventilation and rebreathing. Sheet: pulmonary-function-lab.html.
+
+--- TEXT HEADER: Part 3 · Systems in action · Week 13 of 15 · opens Mon Nov 30 · everything due Sun Dec 6, 10:00 pm
+
+--- PAGE: Week 13 · Start here   [requirement: View]
+    settings: Page. Requirement: view. This frames the week page, which opens with the Start Here block (time, what is due, work top to bottom) and the same six numbered steps as this module.
+<p><iframe title="Week 13, start here" src="https://drsrennie-stack.github.io/human-physiology-Fa26/week-13.html" width="100%" height="2800" style="width:100%;min-height:2800px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/week-13.html" target="_blank" rel="noopener">open this week's page in a new tab</a>.</p>
+
+--- TEXT HEADER: 1 · Note sheet, first pass. Print it, then answer from the reading and what you already know, in your first color. Before any video.
+
+--- PAGE: Week 13 · 1 · Note sheet, first pass   [requirement: View]
+    settings: Page. Requirement: view. Links open in a new tab on purpose: printing from inside an iframe prints the whole Canvas page.
+<h2>Print the Week 13 note sheet</h2>
+<p>Reading this week: Silverthorn Ch 18 and Ch 19.</p>
+<p>One box per competency, already built. Open it in a new tab so you can print it or save it as a PDF. If you are not printing, rule the same boxes onto your own paper; the sheet shows you how.</p>
+<p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/note-sheet.html?week=13" target="_blank" rel="noopener"><strong>Open and print the Week 13 note sheet</strong></a><br>Opens in a new tab. Print, or save as PDF.</p><p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/competency-study-guide.html?week=13" target="_blank" rel="noopener"><strong>Read the Week 13 competencies</strong></a><br>Everything this week asks you to be able to do, each with its two prompts.</p><p><strong>First pass, first color.</strong> Read every prompt, preview the reading, then answer the best you can from what you already know. Stop while half of every box is still empty. That empty half is what the videos fill.</p>
+
+--- TEXT HEADER: 2 · Watch the lectures with your sheet open. Add what you did not know in your second color, into the same boxes.
+
+--- PAGE: Week 13 · 2 · Lectures, notes, and slides   [requirement: View]
+    settings: Page. Requirement: view. This page never changes; add lines to the manifest in lecture-week.html when material is ready.
+<p><iframe title="Week 13 lectures, notes, and slides" src="https://drsrennie-stack.github.io/human-physiology-Fa26/lecture-week.html?week=13" width="100%" height="1400" style="width:100%;min-height:1400px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/lecture-week.html?week=13" target="_blank" rel="noopener">open the lectures in a new tab</a>.</p>
+
+--- TEXT HEADER: 3 · Discussion. One post carrying the physiology and your thinking about it. Post by Fri Dec 4, 10:00 pm. Two replies by Sun Dec 6, 10:00 pm.
+
+--- DISCUSSION: Week 13 · 3 · Discussion   [requirement: Contribute]
+    settings: Graded discussion. Group: Discussions. 10 points. Due Friday, December 4 at 10:00 pm (initial post). Available until Sunday, December 6 at 10:00 pm (replies). If your Canvas has discussion checkpoints turned on, set reply-to-topic Fri Dec 4 10:00 pm and required replies (2) Sun Dec 6 10:00 pm instead. Require students to post before seeing replies: on. Requirement: contribute.
+<p><iframe title="Week 13 discussion instructions" src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion.html?week=13" width="100%" height="3200" style="width:100%;min-height:3200px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion.html?week=13" target="_blank" rel="noopener">open the instructions in a new tab</a>.</p>
+
+--- TEXT HEADER: 4 · Lab. PhysioEx first until Pearson shows it complete, then the worksheet and data record. Due Sun Dec 6, 10:00 pm.
+
+--- ASSIGNMENT: Week 13 · 4 · Lab   [requirement: Submit]
+    settings: Assignment. Group: Lab. 10 points. Submission: file upload, PDF. Due Sunday, December 6 at 10:00 pm. Requirement: submit. Pearson side: PhysioEx Ex 7, all activities, plus Ex 10 hyperventilation and rebreathing. Sheet: pulmonary-function-lab.html.
+<p><iframe title="Week 13 lab instructions" src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=13" width="100%" height="1100" style="width:100%;min-height:1100px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=13" target="_blank" rel="noopener">open the lab instructions in a new tab</a>.</p>
+
+--- TEXT HEADER: 5 · Book problems and recall cards. Due Sun Dec 6, 10:00 pm.
+
+--- ASSIGNMENT: Week 13 · 5 · Book problems   [requirement: Submit]
+    settings: Assignment. Group: Book problems. 10 points. Submission: file upload, PDF. Due Sunday, December 6 at 10:00 pm. Requirement: submit. Type the problem numbers into the first paragraph; the instructions page tells students to look for them there.
+<p><strong>This week's problems:</strong> Silverthorn Ch 18 and Ch 19. Problems: TYPE THE NUMBERS HERE BEFORE YOU PUBLISH.</p>
+<p><iframe title="Week 13 book problems instructions" src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-bookproblems.html?week=13" width="100%" height="1600" style="width:100%;min-height:1600px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-bookproblems.html?week=13" target="_blank" rel="noopener">open the instructions in a new tab</a>.</p>
+
+--- URL: Week 13 · 5 · Recall cards in the Mastery OS (ungraded, all week)
+    settings: External URL. Open in a new tab: on. No requirement.
+https://drsrennie-stack.github.io/human-physiology-Fa26/mastery-physio-os-standalone.html?week=13
+
+--- TEXT HEADER: 6 · Turn in your note sheet, both colors, one PDF, by Sun Dec 6, 10:00 pm. Then the five-minute practice round.
+
+--- ASSIGNMENT: Week 13 · 6 · Note sheet   [requirement: Submit]
+    settings: Assignment. Group: Competency note sheets. 10 points. Submission: file upload, PDF only. Due Sunday, December 6 at 10:00 pm. Requirement: submit.
+<p><iframe title="Week 13 note sheet instructions" src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-notesheet.html?week=13" width="100%" height="1100" style="width:100%;min-height:1100px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-notesheet.html?week=13" target="_blank" rel="noopener">open the instructions in a new tab</a>.</p>
+
+--- PAGE: Week 13 · 6 · Practice round, five minutes
+    settings: Page. No requirement. Keep it last so the week ends on the midterm rehearsal every time.
+<h2>The five-minute practice round</h2>
+<p>Pick one competency from this week. Blank paper, a pen, your phone camera, and no notes.</p>
+<ol>
+<li>Draw the mechanism from memory. Label it.</li>
+<li>Start recording and teach it out loud, step by step, the way you would teach a classmate. Say why each step happens, not only what happens.</li>
+<li>Stop at five minutes. Watch it back once. Anything you could not say without looking goes on your miss list for the recall cards.</li>
+</ol>
+<p>Nothing is turned in. This is the exact shape of the midterm, practiced while nothing is on the line.</p>
+<p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/competency-study-guide.html?week=13" target="_blank" rel="noopener"><strong>Pick a competency from the Week 13 list</strong></a></p><p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/mastery-canvas.html" target="_blank" rel="noopener"><strong>Draw on the course canvas instead of paper</strong></a><br>Pen, shapes, arrows and text. Save as a PDF when you are done.</p>
+
+
+==================== WEEK 14 · The kidney and body fluid balance ====================
+Module name: Week 14 · The kidney and body fluid balance
+Lock until: Sat Dec 5, 8:00 pm
+Requirements: sequential; view the three pages; submit note sheet, lab, problems; contribute to discussion.
+Reading: Silverthorn Ch 20
+Lab, Pearson side: PhysioEx Ex 9, all activities.
+Note: Midterm 2 (weeks 8 to 14) opens the Monday after this week closes. The Midterm 2 module goes directly below this one.
+
+--- TEXT HEADER: Part 3 · Systems in action · Week 14 of 15 · opens Mon Dec 7 · everything due Sun Dec 13, 10:00 pm
+
+--- PAGE: Week 14 · Start here   [requirement: View]
+    settings: Page. Requirement: view. This frames the week page, which opens with the Start Here block (time, what is due, work top to bottom) and the same six numbered steps as this module.
+<p><iframe title="Week 14, start here" src="https://drsrennie-stack.github.io/human-physiology-Fa26/week-14.html" width="100%" height="2800" style="width:100%;min-height:2800px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/week-14.html" target="_blank" rel="noopener">open this week's page in a new tab</a>.</p>
+
+--- TEXT HEADER: 1 · Note sheet, first pass. Print it, then answer from the reading and what you already know, in your first color. Before any video.
+
+--- PAGE: Week 14 · 1 · Note sheet, first pass   [requirement: View]
+    settings: Page. Requirement: view. Links open in a new tab on purpose: printing from inside an iframe prints the whole Canvas page.
+<h2>Print the Week 14 note sheet</h2>
+<p>Reading this week: Silverthorn Ch 20.</p>
+<p>One box per competency, already built. Open it in a new tab so you can print it or save it as a PDF. If you are not printing, rule the same boxes onto your own paper; the sheet shows you how.</p>
+<p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/note-sheet.html?week=14" target="_blank" rel="noopener"><strong>Open and print the Week 14 note sheet</strong></a><br>Opens in a new tab. Print, or save as PDF.</p><p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/competency-study-guide.html?week=14" target="_blank" rel="noopener"><strong>Read the Week 14 competencies</strong></a><br>Everything this week asks you to be able to do, each with its two prompts.</p><p><strong>First pass, first color.</strong> Read every prompt, preview the reading, then answer the best you can from what you already know. Stop while half of every box is still empty. That empty half is what the videos fill.</p>
+
+--- TEXT HEADER: 2 · Watch the lectures with your sheet open. Add what you did not know in your second color, into the same boxes.
+
+--- PAGE: Week 14 · 2 · Lectures, notes, and slides   [requirement: View]
+    settings: Page. Requirement: view. This page never changes; add lines to the manifest in lecture-week.html when material is ready.
+<p><iframe title="Week 14 lectures, notes, and slides" src="https://drsrennie-stack.github.io/human-physiology-Fa26/lecture-week.html?week=14" width="100%" height="1400" style="width:100%;min-height:1400px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/lecture-week.html?week=14" target="_blank" rel="noopener">open the lectures in a new tab</a>.</p>
+
+--- TEXT HEADER: 3 · Discussion. One post carrying the physiology and your thinking about it. Post by Fri Dec 11, 10:00 pm. Two replies by Sun Dec 13, 10:00 pm.
+
+--- DISCUSSION: Week 14 · 3 · Discussion   [requirement: Contribute]
+    settings: Graded discussion. Group: Discussions. 10 points. Due Friday, December 11 at 10:00 pm (initial post). Available until Sunday, December 13 at 10:00 pm (replies). If your Canvas has discussion checkpoints turned on, set reply-to-topic Fri Dec 11 10:00 pm and required replies (2) Sun Dec 13 10:00 pm instead. Require students to post before seeing replies: on. Requirement: contribute.
+<p><iframe title="Week 14 discussion instructions" src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion.html?week=14" width="100%" height="3200" style="width:100%;min-height:3200px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion.html?week=14" target="_blank" rel="noopener">open the instructions in a new tab</a>.</p>
+
+--- TEXT HEADER: 4 · Lab. PhysioEx first until Pearson shows it complete, then the worksheet and data record. Due Sun Dec 13, 10:00 pm.
+
+--- ASSIGNMENT: Week 14 · 4 · Lab   [requirement: Submit]
+    settings: Assignment. Group: Lab. 10 points. Submission: file upload, PDF. Due Sunday, December 13 at 10:00 pm. Requirement: submit. Pearson side: PhysioEx Ex 9, all activities.
+<p><iframe title="Week 14 lab instructions" src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=14" width="100%" height="1100" style="width:100%;min-height:1100px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=14" target="_blank" rel="noopener">open the lab instructions in a new tab</a>.</p>
+
+--- TEXT HEADER: 5 · Book problems and recall cards. Due Sun Dec 13, 10:00 pm.
+
+--- ASSIGNMENT: Week 14 · 5 · Book problems   [requirement: Submit]
+    settings: Assignment. Group: Book problems. 10 points. Submission: file upload, PDF. Due Sunday, December 13 at 10:00 pm. Requirement: submit. Type the problem numbers into the first paragraph; the instructions page tells students to look for them there.
+<p><strong>This week's problems:</strong> Silverthorn Ch 20. Problems: TYPE THE NUMBERS HERE BEFORE YOU PUBLISH.</p>
+<p><iframe title="Week 14 book problems instructions" src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-bookproblems.html?week=14" width="100%" height="1600" style="width:100%;min-height:1600px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-bookproblems.html?week=14" target="_blank" rel="noopener">open the instructions in a new tab</a>.</p>
+
+--- URL: Week 14 · 5 · Recall cards in the Mastery OS (ungraded, all week)
+    settings: External URL. Open in a new tab: on. No requirement.
+https://drsrennie-stack.github.io/human-physiology-Fa26/mastery-physio-os-standalone.html?week=14
+
+--- TEXT HEADER: 6 · Turn in your note sheet, both colors, one PDF, by Sun Dec 13, 10:00 pm. Then the five-minute practice round.
+
+--- ASSIGNMENT: Week 14 · 6 · Note sheet   [requirement: Submit]
+    settings: Assignment. Group: Competency note sheets. 10 points. Submission: file upload, PDF only. Due Sunday, December 13 at 10:00 pm. Requirement: submit.
+<p><iframe title="Week 14 note sheet instructions" src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-notesheet.html?week=14" width="100%" height="1100" style="width:100%;min-height:1100px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-notesheet.html?week=14" target="_blank" rel="noopener">open the instructions in a new tab</a>.</p>
+
+--- PAGE: Week 14 · 6 · Practice round, five minutes
+    settings: Page. No requirement. Keep it last so the week ends on the midterm rehearsal every time.
+<h2>The five-minute practice round</h2>
+<p>Pick one competency from this week. Blank paper, a pen, your phone camera, and no notes.</p>
+<ol>
+<li>Draw the mechanism from memory. Label it.</li>
+<li>Start recording and teach it out loud, step by step, the way you would teach a classmate. Say why each step happens, not only what happens.</li>
+<li>Stop at five minutes. Watch it back once. Anything you could not say without looking goes on your miss list for the recall cards.</li>
+</ol>
+<p>Nothing is turned in. This is the exact shape of the midterm, practiced while nothing is on the line.</p>
+<p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/competency-study-guide.html?week=14" target="_blank" rel="noopener"><strong>Pick a competency from the Week 14 list</strong></a></p><p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/mastery-canvas.html" target="_blank" rel="noopener"><strong>Draw on the course canvas instead of paper</strong></a><br>Pen, shapes, arrows and text. Save as a PDF when you are done.</p>
+
+
+==================== WEEK 15 · The slow pH lever, and putting it all together ====================
+Module name: Week 15 · The slow pH lever, and putting it all together
+Lock until: Sat Dec 12, 8:00 pm
+Requirements: sequential; view the three pages; submit note sheet, lab, problems; contribute to discussion.
+Reading: Silverthorn Ch 21 and Ch 25
+Lab, Pearson side: PhysioEx Ex 10 renal and metabolic compensation. Sheet: BIO005-patient-file.html.
+Note: Three days only, Mon Dec 14 to Wed Dec 16. Everything is due Wed Dec 16 at 10:00 pm. Discussion: post Tue Dec 15, replies Wed Dec 16 (your call; the syllabus only says Friday and Sunday).
+
+--- TEXT HEADER: Part 3 · Systems in action · Week 15 of 15 · opens Mon Dec 14 · everything due Wed Dec 16, 10:00 pm
+
+--- PAGE: Week 15 · Start here   [requirement: View]
+    settings: Page. Requirement: view. This frames the week page, which opens with the Start Here block (time, what is due, work top to bottom) and the same six numbered steps as this module.
+<p><iframe title="Week 15, start here" src="https://drsrennie-stack.github.io/human-physiology-Fa26/week-15.html" width="100%" height="2800" style="width:100%;min-height:2800px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/week-15.html" target="_blank" rel="noopener">open this week's page in a new tab</a>.</p>
+
+--- TEXT HEADER: 1 · Note sheet, first pass. Print it, then answer from the reading and what you already know, in your first color. Before any video.
+
+--- PAGE: Week 15 · 1 · Note sheet, first pass   [requirement: View]
+    settings: Page. Requirement: view. Links open in a new tab on purpose: printing from inside an iframe prints the whole Canvas page.
+<h2>Print the Week 15 note sheet</h2>
+<p>Reading this week: Silverthorn Ch 21 and Ch 25.</p>
+<p>One box per competency, already built. Open it in a new tab so you can print it or save it as a PDF. If you are not printing, rule the same boxes onto your own paper; the sheet shows you how.</p>
+<p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/note-sheet.html?week=15" target="_blank" rel="noopener"><strong>Open and print the Week 15 note sheet</strong></a><br>Opens in a new tab. Print, or save as PDF.</p><p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/competency-study-guide.html?week=15" target="_blank" rel="noopener"><strong>Read the Week 15 competencies</strong></a><br>Everything this week asks you to be able to do, each with its two prompts.</p><p><strong>First pass, first color.</strong> Read every prompt, preview the reading, then answer the best you can from what you already know. Stop while half of every box is still empty. That empty half is what the videos fill.</p>
+
+--- TEXT HEADER: 2 · Watch the lectures with your sheet open. Add what you did not know in your second color, into the same boxes.
+
+--- PAGE: Week 15 · 2 · Lectures, notes, and slides   [requirement: View]
+    settings: Page. Requirement: view. This page never changes; add lines to the manifest in lecture-week.html when material is ready.
+<p><iframe title="Week 15 lectures, notes, and slides" src="https://drsrennie-stack.github.io/human-physiology-Fa26/lecture-week.html?week=15" width="100%" height="1400" style="width:100%;min-height:1400px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/lecture-week.html?week=15" target="_blank" rel="noopener">open the lectures in a new tab</a>.</p>
+
+--- TEXT HEADER: 3 · Discussion. One post carrying the physiology and your thinking about it. Post by Tue Dec 15, 10:00 pm. Two replies by Wed Dec 16, 10:00 pm.
+
+--- DISCUSSION: Week 15 · 3 · Discussion   [requirement: Contribute]
+    settings: Graded discussion. Group: Discussions. 10 points. Due Tuesday, December 15 at 10:00 pm (initial post). Available until Wednesday, December 16 at 10:00 pm (replies). If your Canvas has discussion checkpoints turned on, set reply-to-topic Tue Dec 15 10:00 pm and required replies (2) Wed Dec 16 10:00 pm instead. Require students to post before seeing replies: on. Requirement: contribute.
+<p><iframe title="Week 15 discussion instructions" src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion.html?week=15" width="100%" height="3200" style="width:100%;min-height:3200px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion.html?week=15" target="_blank" rel="noopener">open the instructions in a new tab</a>.</p>
+
+--- TEXT HEADER: 4 · Lab. PhysioEx first until Pearson shows it complete, then the worksheet and data record. Due Wed Dec 16, 10:00 pm.
+
+--- ASSIGNMENT: Week 15 · 4 · Lab   [requirement: Submit]
+    settings: Assignment. Group: Lab. 10 points. Submission: file upload, PDF. Due Wednesday, December 16 at 10:00 pm. Requirement: submit. Pearson side: PhysioEx Ex 10 renal and metabolic compensation. Sheet: BIO005-patient-file.html.
+<p><iframe title="Week 15 lab instructions" src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=15" width="100%" height="1100" style="width:100%;min-height:1100px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=15" target="_blank" rel="noopener">open the lab instructions in a new tab</a>.</p>
+
+--- TEXT HEADER: 5 · Book problems and recall cards. Due Wed Dec 16, 10:00 pm.
+
+--- ASSIGNMENT: Week 15 · 5 · Book problems   [requirement: Submit]
+    settings: Assignment. Group: Book problems. 10 points. Submission: file upload, PDF. Due Wednesday, December 16 at 10:00 pm. Requirement: submit. Type the problem numbers into the first paragraph; the instructions page tells students to look for them there.
+<p><strong>This week's problems:</strong> Silverthorn Ch 21 and Ch 25. Problems: TYPE THE NUMBERS HERE BEFORE YOU PUBLISH.</p>
+<p><iframe title="Week 15 book problems instructions" src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-bookproblems.html?week=15" width="100%" height="1600" style="width:100%;min-height:1600px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-bookproblems.html?week=15" target="_blank" rel="noopener">open the instructions in a new tab</a>.</p>
+
+--- URL: Week 15 · 5 · Recall cards in the Mastery OS (ungraded, all week)
+    settings: External URL. Open in a new tab: on. No requirement.
+https://drsrennie-stack.github.io/human-physiology-Fa26/mastery-physio-os-standalone.html?week=15
+
+--- TEXT HEADER: 6 · Turn in your note sheet, both colors, one PDF, by Wed Dec 16, 10:00 pm. Then the five-minute practice round.
+
+--- ASSIGNMENT: Week 15 · 6 · Note sheet   [requirement: Submit]
+    settings: Assignment. Group: Competency note sheets. 10 points. Submission: file upload, PDF only. Due Wednesday, December 16 at 10:00 pm. Requirement: submit.
+<p><iframe title="Week 15 note sheet instructions" src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-notesheet.html?week=15" width="100%" height="1100" style="width:100%;min-height:1100px;border:0;display:block" allowfullscreen></iframe></p>
+<p><strong>If the box above does not load,</strong> <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-notesheet.html?week=15" target="_blank" rel="noopener">open the instructions in a new tab</a>.</p>
+
+--- PAGE: Week 15 · 6 · Practice round, five minutes
+    settings: Page. No requirement. Keep it last so the week ends on the midterm rehearsal every time.
+<h2>The five-minute practice round</h2>
+<p>Pick one competency from this week. Blank paper, a pen, your phone camera, and no notes.</p>
+<ol>
+<li>Draw the mechanism from memory. Label it.</li>
+<li>Start recording and teach it out loud, step by step, the way you would teach a classmate. Say why each step happens, not only what happens.</li>
+<li>Stop at five minutes. Watch it back once. Anything you could not say without looking goes on your miss list for the recall cards.</li>
+</ol>
+<p>Nothing is turned in. This is the exact shape of the midterm, practiced while nothing is on the line.</p>
+<p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/competency-study-guide.html?week=15" target="_blank" rel="noopener"><strong>Pick a competency from the Week 15 list</strong></a></p><p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/mastery-canvas.html" target="_blank" rel="noopener"><strong>Draw on the course canvas instead of paper</strong></a><br>Pen, shapes, arrows and text. Save as a PDF when you are done.</p>
+
+
+==================== OPEN ITEMS ====================
+1. Push lecture-week.html and the fifteen rebuilt week-NN.html pages to the repo root. Every Week module's Step 2 page points at lecture-week.html; until it is pushed those pages show a 404 inside the frame. The rebuilt week pages carry the Start Here block and the six numbered steps in the Canvas order.
+2. week-02.html links to week-02-notes.html, which does not exist (only week-01-notes.html does). The lecture-week manifest points at the Mission 2 notes page instead, so students have a working route, but the week page link itself will 404 until you fix or remove it.
+3. week-01.html still says the Week 1 note sheet posts when the week opens. week-01-notesheet-prompts.html and note-sheet.html?week=1 both exist. One line to fix on the week page.
+4. assignment-physioex.html says the Week 6 lab is being written, and door-lab.html says the Week 5 sensory and reflex lab opens soon. lab-week05-sensory-reflex.html exists. Decide which week runs it (the lab map was written before the Sep 5 remap) and update NOPEX in assignment-physioex.html and the row in door-lab.html.
+5. physioex-lab-map-fall2026.md still uses the Aug 23 week order at weeks 5 to 8. The lab lines in this guide are already remapped to the Sep 5 order; check them against Pearson before you assign.
+6. Week 15 discussion dates are my call (post Tue Dec 15, replies Wed Dec 16). The syllabus only states Friday and Sunday.
+7. Discussion checkpoints: if your Canvas has them turned on, use them so the Friday post and the Sunday replies each get a real due date. If not, the Friday due date with Sunday availability is the fallback, and the iframe instructions already say both dates.
+8. The height sender in every page does nothing inside Canvas; Canvas has no listener, and only an admin can add one to the theme. The fixed heights in these snippets are measured at a 960 px content width with a margin added. If a frame shows an inner scrollbar, raise its number.
+9. Eight different entry pages exist (home, index, welcome, welcome-tour, course-entry, course-start, course-door, canvas-home, canvas-start). The Home page here uses course-door.html because it has no prose and every link leaves the frame. The rest can stay; nothing in Canvas points at them.
+10. Content notes for weeks 3 to 15 do not exist yet. lecture-week.html handles the gap honestly (it says which Monday they post by and routes the student to the reading and the note sheet), so Canvas needs nothing when they arrive: one manifest line per page.

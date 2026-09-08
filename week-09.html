@@ -41,6 +41,16 @@ body.preweek .chip.pend{display:none}
 .cclist{list-style:none;margin:18px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:10px}
 .cclist a{display:block;background:#1C2E4F;border:1px solid rgba(245,241,232,.28);border-radius:12px;padding:14px 18px;color:var(--cream);font-weight:700;text-decoration:none;transition:transform 200ms ease,box-shadow 200ms ease}
 .cclist a:hover{transform:translateY(-3px);box-shadow:0 10px 22px rgba(0,0,0,.3)}
+.start{margin-top:22px;background:var(--white);border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,.08);padding:22px 24px;max-width:640px}
+.start .wk{font-size:13px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--rust);margin:0}
+.start .here{font-size:clamp(22px,3vw,28px);font-weight:800;letter-spacing:-.02em;margin:2px 0 12px}
+.start .time{margin:0 0 14px;font-size:15px}
+.start .time strong{color:var(--rust)}
+.start h2{font-size:12px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--rust);margin:0 0 6px}
+.start ul{margin:0 0 14px;padding-left:20px;font-size:15px}
+.start ul li{margin:3px 0}
+.start .one{margin:0;padding-top:12px;border-top:1px solid rgba(11,21,48,.14);font-size:15px}
+.start .one strong{display:block;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--rust);margin-bottom:4px}
 footer{padding:26px max(40px,5vw) 40px;border-top:1px solid rgba(11,21,48,.14)}
 footer .inner{display:flex;flex-wrap:wrap;gap:8px 26px;font-size:14px}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
@@ -64,36 +74,37 @@ footer .inner{display:flex;flex-wrap:wrap;gap:8px 26px;font-size:14px}
 </div></div>
 
 
-<!-- The five jump squares came out Sep 7 2026. They described the
-     assignment set as it stood before Use It became the patient chart
-     and the weekly lab was rebuilt, so N, P, L, D and S no longer match
-     what a week contains and there was no square for Use It. The CSS is
-     left in place. See course-schedule.html for the array to restore. -->
 
-<div class="mm-jumpwrap" style="padding-top:6px">
-  <span class="lbl">This week&rsquo;s pages</span>
-  <a href="week-09-notes.html" target="_top">Notes</a>
-  <a href="week-09-competencies.html" target="_top">Competencies</a>
-</div>
 <header class="band">
   <div class="inner">
     <p class="eyebrow">BIO 005 &middot; Part 2 &middot; Week 9 of 15</p>
     <h1>The heart as a pump</h1>
     <p class="lede">17 competencies this week, each one a single thing you will be able to do. Your note sheet lists them all.</p>
-    <span class="duetag">Everything below is due Sunday at 10:00 pm.</span>
+    <div class="start" role="region" aria-label="Start here">
+      <p class="wk">Week 9 of 15</p>
+      <p class="here">Start here &darr;</p>
+      <p class="time"><strong>Estimated time this week:</strong> 16 to 20 hours. The official floor is 14; doing well takes more.</p>
+      <h2>Due this week</h2>
+      <ul>
+        <li>Discussion post: Friday, November 6, 10:00 pm</li>
+        <li>Discussion replies: Sunday, November 8, 10:00 pm</li>
+        <li>Note sheet, lab, book problems: Sunday, November 8, 10:00 pm</li>
+      </ul>
+      <p class="one"><strong>If you only remember one thing</strong>Work down this page from top to bottom. The steps are numbered, and each one feeds the next.</p>
+    </div>
     <div class="opensnote"><strong>This week opens Monday, November 2.</strong> Everything for it posts by then. You are welcome to read ahead; nothing here is due yet.</div>
   </div>
 </header>
 <main id="main" class="band" style="padding-top:20px">
   <div class="inner">
-    <p class="eyebrow">The six steps, in order</p>
+    <p class="eyebrow">Work down this page, top to bottom</p>
     <ol class="steps">
-      <li><h3>Prepare</h3><p class="stepbody"><strong>Read the note sheet questions first, preview the text, organize your notes,</strong> then answer the best you can from what you know, in your first color. It comes first, always. <span class="chip pend">Note sheet posts when the week opens</span></p><p class="stepbody">Silverthorn Chapter 15.</p></li>
-      <li><h3>Watch</h3><p class="stepbody"><strong>Now watch each concept's video, name and number at the top of the prompt, and add what you did not know in a second color.</strong> Color one is your baseline; color two is what you need to commit to memory. <span class="chip pend">Videos post when the week opens</span></p></li>
-      <li><h3>Discuss</h3><p class="stepbody"><strong>One post: something from this week's physiology, plus your honest thinking about it.</strong> Initial post by Friday, 10:00 pm; peer replies by Sunday, 10:00 pm.</p></li>
-      <li><h3>Practice</h3><p class="stepbody">Do the assigned Silverthorn problems, and run your recall cards in the <a href="mastery-physio-os-standalone.html" target="_top">Mastery OS</a>. <span class="chip pend">Problem numbers post when the week opens</span></p></li>
+      <li><h3>Note sheet, first pass</h3><p class="stepbody"><strong>Read the note sheet questions first, preview the text, organize your notes,</strong> then answer the best you can from what you know, in your first color. It comes first, always. <span class="chip pend">Note sheet posts when the week opens</span> <a class="steplink" href="note-sheet.html?week=9" target="_top">Print the Week 9 note sheet &rarr;</a></p><p class="stepbody">Silverthorn Chapter 15.</p></li>
+      <li><h3>Watch the lectures, second color</h3><p class="stepbody"><strong>Now watch each concept's video, name and number at the top of the prompt, and add what you did not know in a second color.</strong> Color one is your baseline; color two is what you need to commit to memory. <a class="steplink" href="lecture-week.html?week=9" target="_top">Open the Week 9 lectures &rarr;</a> <span class="chip pend">Videos post when the week opens</span></p></li>
+      <li><h3>Discussion, post by Friday</h3><p class="stepbody"><strong>One post: something from this week's physiology, plus your honest thinking about it.</strong> Initial post by Friday, 10:00 pm; peer replies by Sunday, 10:00 pm.</p></li>
       <li><h3>Lab</h3><p class="stepbody"><strong>PhysioEx Exercise 6:</strong> cardiac refractory period, autonomic and chemical modifiers, temperature and ions. Plus the ECG strip packet. Assigned in Pearson through <strong>Access Pearson</strong> in Canvas. In order: run PhysioEx first, until it shows complete in Pearson, then the worksheet and data record, then the clinical correlation questions below. One part without the other earns nothing.</p></li>
-      <li><h3>Prove</h3><p class="stepbody"><strong>The five minute draw and teach practice round,</strong> in the exact midterm format, ungraded. <span class="chip pend">Posts when the week opens</span></p></li>
+      <li><h3>Book problems and recall cards</h3><p class="stepbody">Do the assigned Silverthorn problems, and run your recall cards in the <a href="mastery-physio-os-standalone.html" target="_top">Mastery OS</a>. <span class="chip pend">Problem numbers post when the week opens</span></p></li>
+      <li><h3>Turn in your note sheet, then the five-minute practice round</h3><p class="stepbody"><strong>Turn in your note sheet in Canvas as one PDF, both colors, every page labeled,</strong> by Sunday, November 8 at 10:00 pm. <a class="steplink" href="assignment-notesheet.html?week=9" target="_top">How to turn it in &rarr;</a></p><p class="stepbody"><strong>The five minute draw and teach practice round,</strong> in the exact midterm format, ungraded. <span class="chip pend">Posts when the week opens</span></p></li>
     </ol>
   </div>
 </main>
@@ -120,10 +131,5 @@ footer .inner{display:flex;flex-wrap:wrap;gap:8px 26px;font-size:14px}
   window.addEventListener('load',post);window.addEventListener('resize',post);post();
 })();
 </script>
-<!-- Ask Hootie, on every page. -->
-<script src="schedule-fall2026.js"></script>
-<script src="hootie.js"></script>
-<!-- A way back, on every page. -->
-<script src="bio005-back.js"></script>
 </body>
 </html>
