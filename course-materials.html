@@ -358,11 +358,25 @@ footer :focus-visible{outline-color:var(--gold)}
 .seqgroup:first-child{border-top:0}
 .seqgroup h3{margin:0 0 10px;font-size:15.5px;font-weight:800;color:#0B1530}
 .seqrow{display:flex;align-items:stretch;flex-wrap:wrap;gap:10px}
+/* An arrow travels with the chip it points at, so a row that wraps starts
+   the new line with the arrow instead of stranding one at the end of the
+   line above. */
+.seqstep{display:flex;align-items:stretch;gap:10px}
+.seqstep:first-child .seqarrow{display:none}
 .seqchip{background:#fff;border:0;border-radius:10px;padding:10px 14px;font-size:13.5px;font-weight:700;color:#0B1530;display:flex;flex-direction:column;justify-content:center;min-width:110px;box-shadow:0 12px 24px rgba(11,21,48,.26), 0 3px 8px rgba(11,21,48,.14)}
 .seqchip small{font-weight:600;font-size:11.5px;color:#454B58;margin-top:2px}
 .seqchip.done{background:#8B3A2E;color:#fff}
 .seqchip.done small{color:#F3DAD3}
+.seqchip.keep{background:#ECEFF4;color:#0B1530;box-shadow:0 6px 14px rgba(11,21,48,.16), 0 2px 5px rgba(11,21,48,.10)}
+.seqchip.keep small{color:#3A4152}
+.seqtop{display:flex;align-items:center;gap:7px}
+.seqsym{font-size:10px;line-height:1;flex:0 0 auto}
 .seqarrow{align-self:center;color:#8B3A2E;font-weight:800;font-size:18px}
+.seqkey{display:flex;flex-wrap:wrap;gap:16px;margin:0 0 16px;font-size:12.5px;font-weight:600;color:#3A4152}
+.seqkey span{display:inline-flex;align-items:center;gap:7px}
+.seqkey b{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;font-size:10px;line-height:1}
+.seqkey b.g{background:#8B3A2E;color:#fff}
+.seqkey b.u{background:#ECEFF4;color:#0B1530}
 @media(max-width:560px){.seqchip{min-width:0;flex:1 1 40%}}
 </style>
 <section class="seqwrap" aria-label="This week's assignments, at a glance">
@@ -371,63 +385,68 @@ footer :focus-visible{outline-color:var(--gold)}
     <div class="seqbig">
 
     <div class="seqgroup">
+      <p class="seqkey" aria-label="Key">
+        <span><b class="g" aria-hidden="true">&#9679;</b>Turned in and graded</span>
+        <span><b class="u" aria-hidden="true">&#9675;</b>No points, and not optional</span>
+      </p>
+    </div>
+
+    <div class="seqgroup">
       <h3>The note sheet</h3>
       <div class="seqrow">
-        <span class="seqchip">Prework note sheet, part one<small>first color, from what you know</small></span>
-        <span class="seqarrow" aria-hidden="true">&rarr;</span>
-        <span class="seqchip">Lecture videos<small>concept name and number on each prompt</small></span>
-        <span class="seqarrow" aria-hidden="true">&rarr;</span>
-        <span class="seqchip">Note sheet, part two<small>second color, what you did not know</small></span>
-        <span class="seqarrow" aria-hidden="true">&rarr;</span>
-        <span class="seqchip done">Turn it in<small>one PDF, Sunday 10:00 pm</small></span>
+        <span class="seqstep"><span class="seqchip">Prework note sheet, part one<small>first color, from what you know</small></span></span>
+        <span class="seqstep"><span class="seqarrow" aria-hidden="true">&rarr;</span><span class="seqchip">Lecture videos<small>concept name and number on each prompt</small></span></span>
+        <span class="seqstep"><span class="seqarrow" aria-hidden="true">&rarr;</span><span class="seqchip">Note sheet, part two<small>second color, what you did not know</small></span></span>
+        <span class="seqstep"><span class="seqarrow" aria-hidden="true">&rarr;</span><span class="seqchip keep"><span class="seqtop"><span class="seqsym" aria-hidden="true">&#9675;</span>Keep it</span><small>no points, and not optional. Bring it to office hours.</small></span></span>
       </div>
     </div>
 
     <div class="seqgroup">
       <h3>The book problems</h3>
       <div class="seqrow">
-        <span class="seqchip">Silverthorn homework problems<small>by hand, sources as you go</small></span>
-        <span class="seqarrow" aria-hidden="true">&rarr;</span>
-        <span class="seqchip">AI revision<small>the worksheet, after your attempt</small></span>
-        <span class="seqarrow" aria-hidden="true">&rarr;</span>
-        <span class="seqchip done">Turn it in<small>answers plus worksheet, one PDF</small></span>
+        <span class="seqstep"><span class="seqchip">Silverthorn homework problems<small>by hand, sources as you go</small></span></span>
+        <span class="seqstep"><span class="seqarrow" aria-hidden="true">&rarr;</span><span class="seqchip">AI revision<small>the worksheet, after your attempt</small></span></span>
+        <span class="seqstep"><span class="seqarrow" aria-hidden="true">&rarr;</span><span class="seqchip keep"><span class="seqtop"><span class="seqsym" aria-hidden="true">&#9675;</span>Check your own</span><small>no points. The answers are in the back for exactly this.</small></span></span>
       </div>
     </div>
 
     <div class="seqgroup">
       <h3 id="seqLabTitle">The lab. This week: standards and ranges</h3>
       <div class="seqrow" id="seqLabRow">
-        <span class="seqchip">Predict<small>first color, before you look</small></span>
-        <span class="seqarrow" aria-hidden="true">&rarr;</span>
-        <span class="seqchip">Build the range<small>the middle 95, by hand</small></span>
-        <span class="seqarrow" aria-hidden="true">&rarr;</span>
-        <span class="seqchip">Read the lab test<small>the population drift case</small></span>
-        <span class="seqarrow" aria-hidden="true">&rarr;</span>
-        <span class="seqchip">Look back<small>second color, commit to memory</small></span>
-        <span class="seqarrow" aria-hidden="true">&rarr;</span>
-        <span class="seqchip done">Turn it in<small>one PDF, Sunday 10:00 pm</small></span>
+        <span class="seqstep"><span class="seqchip">Predict<small>first color, before you look</small></span></span>
+        <span class="seqstep"><span class="seqarrow" aria-hidden="true">&rarr;</span><span class="seqchip">Build the range<small>the middle 95, by hand</small></span></span>
+        <span class="seqstep"><span class="seqarrow" aria-hidden="true">&rarr;</span><span class="seqchip">Read the lab test<small>the population drift case</small></span></span>
+        <span class="seqstep"><span class="seqarrow" aria-hidden="true">&rarr;</span><span class="seqchip">Look back<small>second color, commit to memory</small></span></span>
+        <span class="seqstep"><span class="seqarrow" aria-hidden="true">&rarr;</span><span class="seqchip done">Turn it in<small>one PDF, Sunday 10:00 pm</small></span></span>
       </div>
     </div>
 
     <div class="seqgroup">
       <h3 id="seqDiscTitle">The discussion. Week 1: your digital vision board</h3>
       <div class="seqrow" id="seqDiscRow">
-        <span class="seqchip">Build your board<small>one image, plus a short intro video</small></span>
-        <span class="seqarrow" aria-hidden="true">&rarr;</span>
-        <span class="seqchip done">Post it<small>part one, Friday September 11, 10:00 pm</small></span>
-        <span class="seqarrow" aria-hidden="true">&rarr;</span>
-        <span class="seqchip done">Reply to two classmates<small>Sunday September 13, 10:00 pm</small></span>
+        <span class="seqstep"><span class="seqchip">Build your board<small>one image, plus a short intro video</small></span></span>
+        <span class="seqstep"><span class="seqarrow" aria-hidden="true">&rarr;</span><span class="seqchip done">Post it<small>part one, Friday September 11, 10:00 pm</small></span></span>
+        <span class="seqstep"><span class="seqarrow" aria-hidden="true">&rarr;</span><span class="seqchip done">Reply to two classmates<small>Sunday September 13, 10:00 pm</small></span></span>
+      </div>
+    </div>
+
+    <div class="seqgroup">
+      <h3 id="seqChartTitle">The patient chart. Camila Reyes, all fifteen weeks</h3>
+      <div class="seqrow" id="seqChartRow">
+        <span class="seqstep"><span class="seqchip">Read this week's desk entry<small>your entry point, one patient all term</small></span></span>
+        <span class="seqstep"><span class="seqarrow" aria-hidden="true">&rarr;</span><span class="seqchip">Work the patient sheet<small>the five questions, by hand</small></span></span>
+        <span class="seqstep"><span class="seqarrow" aria-hidden="true">&rarr;</span><span class="seqchip done"><span class="seqtop"><span class="seqsym" aria-hidden="true">&#9679;</span>Turn it in</span><small>one PDF, Sunday 10:00 pm</small></span></span>
       </div>
     </div>
 
     <div class="seqgroup">
       <h3>Study. The Mastery OS, all week</h3>
       <div class="seqrow">
-        <span class="seqchip">Open the Week 1 recall cards<small>in the Mastery OS</small></span>
-        <span class="seqarrow" aria-hidden="true">&rarr;</span>
-        <span class="seqchip">A few minutes daily<small>retrieve, do not reread</small></span>
-        <span class="seqarrow" aria-hidden="true">&rarr;</span>
-        <span class="seqchip">Sunday check<small>clear your weakness dashboard</small></span>
+        <span class="seqstep"><span class="seqchip">Open the Week 1 recall cards<small>start here, the easier ones first</small></span></span>
+        <span class="seqstep"><span class="seqarrow" aria-hidden="true">&rarr;</span><span class="seqchip">A few minutes daily<small>retrieve, do not reread</small></span></span>
+        <span class="seqstep"><span class="seqarrow" aria-hidden="true">&rarr;</span><span class="seqchip">Practice exam, random draw<small>a fresh set every time</small></span></span>
+        <span class="seqstep"><span class="seqarrow" aria-hidden="true">&rarr;</span><span class="seqchip">Mastery Check<small>harder, applied. Once the cards are steady.</small></span></span>
+        <span class="seqstep"><span class="seqarrow" aria-hidden="true">&rarr;</span><span class="seqchip keep"><span class="seqtop"><span class="seqsym" aria-hidden="true">&#9675;</span>Upload your weekly log</span><small>no points. I read it to spot who needs a hand.</small></span></span>
       </div>
     </div>
 
@@ -443,10 +462,21 @@ footer :focus-visible{outline-color:var(--gold)}
   var POST = ["Friday, September 11", "Friday, September 18", "Friday, September 25", "Friday, October 2", "Friday, October 9", "Friday, October 16", "Friday, October 23", "Friday, October 30", "Friday, November 6", "Friday, November 13", "Friday, November 20", "Friday, November 27", "Friday, December 4", "Friday, December 11", "Monday, December 14"];
   var LAB = {"1": ["The lab. This week: standards and ranges", [["Predict", "first color, before you look"], ["Build the range", "the middle 95, by hand"], ["Read the lab test", "the population drift case"], ["Look back", "second color, commit to memory"]]], "2": ["The lab. This week: the enzyme lab, PhysioEx Exercise 8", [["Predict", "first color, before you look"], ["Run PhysioEx", "until Pearson shows complete"], ["The worksheet", "data, by hand"], ["The clinical correlation", "the amylase and lipase panel"]]], "3": ["The lab. This week: osmosis and IV fluids", [["Run PhysioEx", "until Pearson shows complete"], ["The worksheet", "data, by hand"], ["The clinical correlation", "the IV fluids case"]]], "6": ["The lab. This week: posts when the week opens", [["Check back Monday", "the lab and its worksheet post then"]]], "8": ["The lab. This week: PhysioEx Exercise 4 plus the hormone cycle worksheet", [["Run PhysioEx", "Exercise 4, glucose and insulin, and the Exercise 12 ELISA"], ["The worksheet", "data, by hand"], ["Work the cycle graph", "read the cycle, name the events, explain each peak"]]]};
   var GEN = [["Run this week's PhysioEx", "until Pearson shows complete"], ["The worksheet", "data, by hand"], ["Clinical correlations", "where the week has them"]];
+  /* done means it is turned in for points. The symbol repeats the key
+     above, so the mark does not rely on the maroon fill alone. */
   function chip(t, sub, done){
-    return '<span class="seqchip' + (done ? ' done' : '') + '">' + t + '<small>' + sub + '</small></span>';
+    var top = done
+      ? '<span class="seqtop"><span class="seqsym" aria-hidden="true">\u25CF</span>' + t + '</span>'
+      : t;
+    return '<span class="seqchip' + (done ? ' done' : '') + '">' + top + '<small>' + sub + '</small></span>';
   }
   var arrow = '<span class="seqarrow" aria-hidden="true">&rarr;</span>';
+  /* Join chips into steps so a wrapped row never ends on a lone arrow. */
+  function row(){
+    var a = [].slice.call(arguments), o = [];
+    for (var i = 0; i < a.length; i++) o.push('<span class="seqstep">' + (i ? arrow : '') + a[i] + '</span>');
+    return o.join('');
+  }
   var lab = LAB[w] || ["The lab, this week", GEN];
   var lt = document.getElementById('seqLabTitle');
   var lr = document.getElementById('seqLabRow');
@@ -455,21 +485,30 @@ footer :focus-visible{outline-color:var(--gold)}
     var parts = [];
     for (var i = 0; i < lab[1].length; i++) parts.push(chip(lab[1][i][0], lab[1][i][1], false));
     parts.push(chip('Turn it in', 'one PDF, ' + DUE[w-1] + ', 10:00 pm', true));
-    lr.innerHTML = parts.join(arrow);
+    lr.innerHTML = row.apply(null, parts);
+  }
+  var ct = document.getElementById('seqChartTitle');
+  var cr = document.getElementById('seqChartRow');
+  if (ct && cr){
+    ct.textContent = 'The patient chart. Camila Reyes, week ' + w + ' of fifteen';
+    cr.innerHTML = row(
+      chip("Read this week's desk entry", 'your entry point, one patient all term', false),
+      chip('Work the patient sheet', 'the five questions, by hand', false),
+      chip('Turn it in', 'one PDF, ' + DUE[w-1] + ', 10:00 pm', true));
   }
   var dt = document.getElementById('seqDiscTitle');
   var dr = document.getElementById('seqDiscRow');
   if (dt && dr){
     if (w === 1){
       dt.textContent = 'The discussion. Week 1: your digital vision board';
-      dr.innerHTML = chip('Build your board','one image, plus a short intro video',false) + arrow +
-        chip('Post it','part one, ' + POST[0] + ', 10:00 pm',true) + arrow +
-        chip('Reply to two classmates', DUE[0] + ', 10:00 pm', true);
+      dr.innerHTML = row(chip('Build your board','one image, plus a short intro video',false),
+        chip('Post it','part one, ' + POST[0] + ', 10:00 pm',true),
+        chip('Reply to two classmates', DUE[0] + ', 10:00 pm', true));
     } else {
       dt.textContent = 'The discussion, Week ' + w;
-      dr.innerHTML = chip('Write your post',"this week's physiology, plus your honest thinking",false) + arrow +
-        chip('Post it', POST[w-1] + ', 10:00 pm', true) + arrow +
-        chip('Reply to two classmates', DUE[w-1] + ', 10:00 pm', true);
+      dr.innerHTML = row(chip('Write your post',"this week's physiology, plus your honest thinking",false),
+        chip('Post it', POST[w-1] + ', 10:00 pm', true),
+        chip('Reply to two classmates', DUE[w-1] + ', 10:00 pm', true));
     }
   }
 })();
@@ -594,9 +633,9 @@ footer :focus-visible{outline-color:var(--gold)}
   <section class="band band-dark on-dark" aria-labelledby="h-study">
     <div class="wrap">
       <div class="b-head">
-        <p class="eyebrow">Step six &middot; Every day after</p>
+        <p class="eyebrow">Steps six to eight &middot; Every day after</p>
         <h2 id="h-study">Then keep it, with <em>practice cards</em>.</h2>
-        <p class="b-sub">Steps one to five are how you learn Week 1. This is how you still have it in Week 12. Rereading feels like studying and mostly is not. Both tools here make you produce the answer instead of recognizing it, which is the whole difference.</p>
+        <p class="b-sub">Steps one to five are how you learn Week 1. These three are how you still have it in Week 12. Rereading feels like studying and mostly is not. Every tool here makes you produce the answer instead of recognizing it, which is the whole difference. Work them in order, easiest retrieval first: cards, then drawing from memory, then a practice exam, and the applied Mastery Check last.</p>
       </div>
 
       <div class="path">
@@ -628,6 +667,24 @@ footer :focus-visible{outline-color:var(--gold)}
               <p class="slinks">
                 <a class="slink key" href="mastery-canvas.html" target="_top">Open the canvas</a>
                 <a class="slink" href="competency-study-guide.html" target="_top">What to draw</a>
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <p class="arrow" aria-hidden="true"><svg width="26" height="40" viewBox="0 0 26 40" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M13 3v29"/><path d="M4 24l9 9 9-9"/></svg></p>
+
+        <section class="stage" aria-labelledby="s8">
+          <div class="stage-hd">
+            <span class="sn">08</span>
+            <div>
+              <span class="slabel">Every week &middot; the check</span>
+              <h3 id="s8">Take a practice exam, then upload your weekly results</h3>
+              <p class="sd">Work in this order. The recall cards come first, because they are the easier retrieval and they are what builds the memory you will draw on. Then run a practice exam, which pulls a random set out of the bank, so you get a fresh test every time rather than a set you have memorized the shape of. The Mastery Check is the last step and the hardest one: it is applied, it wants you to use physiology on a situation rather than restate it, and it is worth taking only once the cards are steady.</p>
+              <p class="sd">Print your weekly practice log as a PDF and upload it in Canvas. It carries no points. I read it to see who is practicing and who could use a hand before an exam, which is much more useful to both of us in week 4 than in week 7.</p>
+              <p class="slinks">
+                <a class="slink key" href="practice-exam.html" target="_top">Generate a practice exam</a>
+                <a class="slink" href="assignment-practice-log.html" target="_top">How to upload your log</a>
               </p>
             </div>
           </div>

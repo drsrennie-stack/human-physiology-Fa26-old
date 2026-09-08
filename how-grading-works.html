@@ -184,9 +184,37 @@ h2{font-size:clamp(23px,3.4vw,30px);color:var(--maroon);line-height:1.18;margin-
   .card,.explore{box-shadow:none;border-color:#999;break-inside:avoid}
   .panel{display:block!important}
 }
+
+/* PANEL MODE. When this page is opened inside the Start Here panel it is
+   loaded with ?embed=1, which sets html.embedded. The page keeps its whole
+   body and loses only its chrome: the brand bar, the page masthead and the
+   "Where to next" block, all of which the surrounding page already
+   provides. Added Sep 7 2026 so the panel can hold the real page rather
+   than a second copy of its wording that would drift. */
+html.embedded .mm-brandbar,
+html.embedded header.top,
+html.embedded .skip{display:none!important}
+html.embedded body{padding-top:0}
+/* An always-visible scrollbar in panel mode. The panel is a bounded reading
+   pane, and on macOS overlay scrollbars stay hidden until you scroll, so a
+   student can mistake a scrollable panel for a broken one. */
+html.embedded{scrollbar-gutter:stable;scrollbar-width:thin;scrollbar-color:rgba(11,21,48,.35) transparent}
+html.embedded::-webkit-scrollbar{width:11px}
+html.embedded::-webkit-scrollbar-track{background:rgba(11,21,48,.05)}
+html.embedded::-webkit-scrollbar-thumb{background:rgba(11,21,48,.32);border-radius:99px;
+  border:3px solid transparent;background-clip:content-box}
+html.embedded::-webkit-scrollbar-thumb:hover{background:rgba(11,21,48,.52);border:3px solid transparent;background-clip:content-box}
+html.embedded main{padding-top:4px}
+html.embedded #gnext-h, html.embedded #gnext-h ~ *{display:none}
 </style>
 </head>
 <body>
+<script>
+/* ?embed=1 puts this page in panel mode. See the html.embedded rules. */
+(function(){ if (/[?&]embed=1/.test(location.search))
+  document.documentElement.className += ' embedded'; }());
+</script>
+
 <a class="skip" href="#four-h">Skip to the main content</a>
 
 <div class="mm-brandbar"><div class="mm-wrap">
@@ -253,7 +281,7 @@ h2{font-size:clamp(23px,3.4vw,30px);color:var(--maroon);line-height:1.18;margin-
         <li><strong>The note sheet and the retrieval work.</strong> This is where you find out what you do not know. Grading it would push you to make it look finished instead of honest, and an honest sheet with gaps in it is worth more to you than a tidy one.</li>
         <li><strong>The practice items.</strong> Predict, commit, check, correct, explain. Getting these wrong is the point of doing them.</li>
         <li><strong>The book problems.</strong> Two ways to use them, and both count as learning. Work them forwards if you have a way in. If you open one and have no idea how to start, read the worked solution and write beside each line why that step is there, then reproduce it from blank paper.</li>
-        <li><strong>The Mastery Check.</strong> No points, no penalty, unlimited attempts, and it never gives you a score.</li>
+        <li><strong>The Mastery Check.</strong> No points and no penalty, and you can take it as many times as you want. It does score you, and it does more than that: it reports competency by competency, separates what you got wrong while feeling sure from what you got wrong while unsure, and tells you what to go back to. None of those numbers reach the gradebook.</li>
         <li><strong>Spaced recall.</strong> Week 3 has to still be there in October, and spacing is what does that.</li>
       </ul>
       <p style="margin-bottom:0">None of this is optional in any way that matters. It is the entire route to the four categories above, and the students who skip it are the ones who arrive at a midterm able to recognize a pathway and unable to draw one.</p>

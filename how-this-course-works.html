@@ -159,9 +159,47 @@ h2{font-size:clamp(23px,3.4vw,30px);color:var(--maroon);line-height:1.18;margin-
   .card,.explore{box-shadow:none;border-color:#999;break-inside:avoid}
   .panel{display:block!important}
 }
+
+/* PANEL MODE. When this page is opened inside the Start Here panel it is
+   loaded with ?embed=1, which sets html.embedded. The page keeps its whole
+   body and loses only its chrome: the brand bar, the page masthead and the
+   "Where to next" block, all of which the surrounding page already
+   provides. Added Sep 7 2026 so the panel can hold the real page rather
+   than a second copy of its wording that would drift. */
+html.embedded .mm-brandbar,
+html.embedded header.top,
+html.embedded .skip{display:none!important}
+html.embedded body{padding-top:0}
+/* An always-visible scrollbar in panel mode. The panel is a bounded reading
+   pane, and on macOS overlay scrollbars stay hidden until you scroll, so a
+   student can mistake a scrollable panel for a broken one. */
+html.embedded{scrollbar-gutter:stable;scrollbar-width:thin;scrollbar-color:rgba(11,21,48,.35) transparent}
+html.embedded::-webkit-scrollbar{width:11px}
+html.embedded::-webkit-scrollbar-track{background:rgba(11,21,48,.05)}
+html.embedded::-webkit-scrollbar-thumb{background:rgba(11,21,48,.32);border-radius:99px;
+  border:3px solid transparent;background-clip:content-box}
+html.embedded::-webkit-scrollbar-thumb:hover{background:rgba(11,21,48,.52);border:3px solid transparent;background-clip:content-box}
+html.embedded main{padding-top:4px}
+html.embedded #next-h, html.embedded #next-h ~ *{display:none}
+
+/* what you use */
+.pl-uses{margin:18px 0 0}
+.pl-uses ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.pl-uses li{display:flex;flex-direction:column;gap:1px;background:var(--card);
+  border-radius:10px;padding:11px 14px;box-shadow:var(--shadow)}
+.pl-uses a{font-weight:800;font-size:15.5px;text-decoration:none;color:var(--maroon)}
+.pl-uses a:hover{color:var(--maroon-dk);text-decoration:underline}
+.pl-uses .tdesc{font-size:13.5px;color:var(--muted)}
+.pl-tag .sym{margin-right:7px;font-size:9px;vertical-align:1px}
 </style>
 </head>
 <body>
+<script>
+/* ?embed=1 puts this page in panel mode. See the html.embedded rules. */
+(function(){ if (/[?&]embed=1/.test(location.search))
+  document.documentElement.className += ' embedded'; }());
+</script>
+
 <a class="skip" href="#stages-h">Skip to the seven stages</a>
 
 <div class="mm-brandbar"><div class="mm-wrap">
@@ -289,6 +327,12 @@ h2{font-size:clamp(23px,3.4vw,30px);color:var(--maroon);line-height:1.18;margin-
   var STAGES = [
     {
       n:1, id:'learn', name:'Learn', graded:false,
+      tools:[
+        ['The week\'s competencies', 'week-01-competencies.html', 'what you have to be able to do, in full'],
+        ['Reading and notes', 'week-01-notes.html', 'the written version, section by section'],
+        ['Concept videos', 'concept-videos-week01.html', 'the same ground, in short pieces'],
+        ['Your note sheet', 'note-sheet.html', 'print it before you start, and keep it beside you']
+      ],
       q:'Build what you need to know.',
       body:'<p>Four core ideas a week. Everyone is responsible for all four. <strong>How you get to them is entirely up to you.</strong></p>' +
            '<p>Each idea is offered as a set of short videos and as written notes covering the same ground. Use one, use both, or use the textbook instead. You are not expected to consume every format, and doing so is usually a waste of an evening.</p>',
@@ -299,6 +343,14 @@ h2{font-size:clamp(23px,3.4vw,30px);color:var(--maroon);line-height:1.18;margin-
     },
     {
       n:2, id:'retrieve', name:'Retrieve', graded:false,
+      tools:[
+        ['Your note sheet', 'note-sheet.html', 'one open box per competency, and both prompts on the sheet'],
+        ['Brain dumps', 'braindump-week01.html', 'a prompt, a blank page, a timer, then the self check'],
+        ['Draw it', 'mastery-canvas.html', 'a blank canvas for a mechanism, a sequence, or a loop'],
+        ['Recall cards', 'mastery-physio-os-standalone.html', 'spaced recall, with the reason behind every answer'],
+        ['Book problems', 'assignment-bookproblems.html', 'the chapter set, and the two routes through it'],
+        ['Everything ungraded, on one sheet', 'ungraded-sheet.html', 'target, dumps, drawings and problems together, printable']
+      ],
       q:'Can you get it back without looking?',
       body:'<p>Close everything. Rebuild the week\'s central mechanism from a blank page.</p>' +
            '<p>You choose the mode: draw it, brain dump it, explain it out loud to an empty room, rebuild the process in order, or work the book problems. <strong>The target is the same in every mode.</strong> Pick the one that will show you your gaps fastest.</p>',
@@ -310,6 +362,9 @@ h2{font-size:clamp(23px,3.4vw,30px);color:var(--maroon);line-height:1.18;margin-
     },
     {
       n:3, id:'practice', name:'Practice', graded:false,
+      tools:[
+        ['Practice items', 'practice-exam.html', 'build a short draw on the week you are in']
+      ],
       q:'Can you use it to predict what happens?',
       body:'<p>A small number of high value items, and the same routine every week: <strong>predict, commit, check, correct, explain.</strong></p>' +
            '<p>The commit step is the one people skip, and it is the one that makes the check worth anything. If you read the answer before choosing, you will recognize it and believe you knew it.</p>',
@@ -321,17 +376,34 @@ h2{font-size:clamp(23px,3.4vw,30px);color:var(--maroon);line-height:1.18;margin-
     },
     {
       n:4, id:'check', name:'Mastery Check', graded:false,
+      tools:[
+        ['Build your Mastery Check', 'practice-exam.html', 'tick your week, choose 30, sit it with nothing open']
+      ],
       q:'Did the way you learned it actually work?',
+      /* REWRITTEN Sep 7 2026. This described a Mastery Check that no
+         longer exists: a 20 question set that asked every competency
+         twice and never showed a score. That was the design before the
+         practice exam was built. The Mastery Check IS the practice
+         exam now, the student builds it themselves, and it does show a
+         percentage. Describing a tool the course does not have is how
+         a student arrives at stage 04 and cannot find the thing the
+         page promised. */
       body:'<p><strong>No points. No penalty. Nothing about it reaches Canvas.</strong> Its only job is to tell you whether the way you chose to learn this week worked.</p>' +
-           '<p>Every competency is asked twice, once at Retrieve level and once at Use It level, because answering recognition questions well and being able to do physiology are not the same thing. It never gives you a score. It gives you a line for each competency and a specific next move.</p>',
-      does:['Take it without your notes the first time.',
-            'Read what it says about each competency, not how many you got.',
-            'If something is not solid, take the resource it suggests. Change something rather than doing the same thing more slowly.',
-            'Retake it. The questions change between attempts, and there is no limit.'],
+           '<p>It is a real practice exam and <strong>you build it yourself</strong>: open the practice exam, tick the week you are in, choose 30 questions. Every one is a different draw from about 5,600, so sitting the same week twice measures whether you learned the physiology rather than whether you remembered the questions.</p>' +
+           '<p>You rate your confidence before you check each answer, which is what lets the report tell a gap (unsure and wrong) from a misconception (sure and wrong).</p>' +
+           '<p><strong>You do get a score, and every attempt is logged.</strong> It is not what you are graded on, but it is how improvement gets measured over a run of attempts rather than guessed at from one. Underneath the number is the part that tells you what to do next: your score by week, the competencies to review, the ones you got wrong while confident, and how this attempt compares with your last one on the same weeks.</p>',
+      does:['Build it on the week you are in, 30 questions, no notes the first time.',
+            'Rate your confidence honestly. Guess when you are guessing; the report is only as good as that.',
+            'Read the competency list and the confident-wrong list, not the number at the top.',
+            'Change something, then build another one. Thirty questions sample a week rather than covering it.'],
       miss:'Treating it as a test to pass. It is a measuring instrument pointed at your own study choices, and a wrong answer here is worth more to you than a right one.'
     },
     {
       n:5, id:'investigate', name:'Investigate', graded:true,
+      tools:[
+        ['This week\'s lab', 'assignment-physioex.html', 'what to run, what to record, and the clinical correlation'],
+        ['The lab report structure', 'lab-report-form.html', 'question, prediction, evidence, interpretation, conclusion']
+      ],
       q:'What does the evidence show?',
       body:'<p>The weekly lab. You generate and interpret real physiological output: a trace, a curve, a set of values, a calculation.</p>' +
            '<p>Every lab uses the same reasoning structure, and it is the one a clinical write up uses: <strong>question, prediction, evidence, interpretation, conclusion.</strong> You write the prediction before you see the data. That order is not optional, and it is where most of the learning is.</p>',
@@ -344,6 +416,10 @@ h2{font-size:clamp(23px,3.4vw,30px);color:var(--maroon);line-height:1.18;margin-
     },
     {
       n:6, id:'apply', name:'Apply', graded:true,
+      tools:[
+        ['The patient chart', 'assignment-apply.html', 'this week\'s chart and your entry point'],
+        ['Your patient sheet', 'patient-sheet.html', 'the five questions walked through, with room to answer']
+      ],
       q:'Choose a case. Use the physiology.',
       body:'<p>Three or four cases a week, set in different rooms: nursing, medicine, radiology, and exercise or allied health. <strong>You choose one.</strong></p>' +
            '<p>They differ in context. They do not differ in rigor, and every one of them assesses the same underlying competency. Pick the room you are heading for, or pick the one furthest from it, whichever you would rather spend an hour on.</p>',
@@ -356,6 +432,9 @@ h2{font-size:clamp(23px,3.4vw,30px);color:var(--maroon);line-height:1.18;margin-
     },
     {
       n:7, id:'reflect', name:'Reflect', graded:true,
+      tools:[
+        ['The Reflect discussion', 'assignment-discussion-metacognition.html', 'the prompt, and what a full post contains']
+      ],
       q:'What did the evidence tell you, and what did you do with it?',
       body:'<p>One post a week, carrying the physiology and your thinking about it together. Not a content post plus a separate reflection.</p>' +
            '<p>It asks for the same three moves you just made in Apply, turned on yourself: <strong>decision, evidence, adjustment.</strong> What did your Mastery Check reveal, what did you do about it, and what happened when you tried again. Plus one question about the physiology itself, which changes each week.</p>',
@@ -420,14 +499,31 @@ h2{font-size:clamp(23px,3.4vw,30px);color:var(--maroon);line-height:1.18;margin-
       '<div class="pl-top">' +
         '<span class="pl-num" aria-hidden="true">0' + S.n + '</span>' +
         '<span class="pl-name">' + S.name + '</span>' +
+        /* The mark carries a symbol as well as a colour and a word, because
+           colour on its own is not a signal a colour blind student can read,
+           and this is the distinction the whole grade model rests on. */
         '<span class="pl-tag ' + (S.graded ? 'yes' : 'no') + '">' +
-          (S.graded ? 'Graded' : 'No points') + '</span>' +
+          '<span class="sym" aria-hidden="true">' + (S.graded ? '\u25CF' : '\u25CB') + '</span>' +
+          (S.graded ? 'Graded, counts toward your grade' : 'No points, and not optional') + '</span>' +
       '</div>' +
       '<p class="pl-q">' + S.q + '</p>' +
       '<div class="pl-body">' + S.body + '</div>' +
       '<div class="pl-does"><p class="label">What you actually do</p><ul>' +
         S.does.map(function(d){ return '<li>' + d + '</li>'; }).join('') +
       '</ul></div>' +
+      /* WHAT YOU USE, added Sep 8 2026. Scrubs: this stage should give them
+         the options here, the competencies and the note sheet and the
+         reading and videos under Learn, and the retrieval tools under
+         Retrieve. Every stage now names the pages it actually runs on
+         rather than describing them and leaving the student to hunt. */
+      (S.tools && S.tools.length
+        ? '<div class="pl-uses"><p class="label">What you use</p><ul>' +
+            S.tools.map(function(t){
+              return '<li><a href="' + t[1] + '" target="_top">' + t[0] + '</a>' +
+                     '<span class="tdesc">' + t[2] + '</span></li>';
+            }).join('') +
+          '</ul></div>'
+        : '') +
       '<div class="pl-miss"><p class="label">Where people go wrong</p><p>' + S.miss + '</p></div>';
 
     prevB.disabled = i === 0;

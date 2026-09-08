@@ -2791,6 +2791,23 @@ var DR_IC={
 
 var DR={i:0,done:0,spent:0,steps:[],headline:'',note:'',budget:60};
 
+/* WHERE IS THE REST OF THE SITE FROM HERE?
+   This file ships at the repo root and again inside /os/, so a plain
+   relative link resolves correctly from one of them and 404s from the
+   other. Read it off the URL instead of guessing. */
+function siteRoot(){ return /\/os\/[^\/]*$/.test(location.pathname) ? '../' : ''; }
+/* CARDS BEFORE PRACTICE EXAMS.
+   A practice draw taken before the cards have had a first pass tests
+   material the student has not met yet, and the score it returns
+   teaches nothing except that it is week one. Once most of what is in
+   play has been answered at least once, a random draw stops being
+   discouraging and starts being diagnostic. */
+function drCardsSteady(){
+  var inp=allComps().filter(function(x){ return inPlay(x.c); });
+  if(inp.length<4) return false;
+  var seen=inp.filter(function(x){ return x.c.last; }).length;
+  return seen >= Math.ceil(inp.length*0.6);
+}
 function drBudget(){
   var p=S.profile||{};
   var m=p.minutes||(p.hoursPerDay?Math.round(p.hoursPerDay*60):0);
@@ -2837,11 +2854,32 @@ function drBuild(){
   var over=termNotStarted()?0:(allComps().filter(function(x){return x.c.last&&isOverdue(x.c.next);}).length?1:0);
   var budget=drBudget(), steps=[];
 
+  /* CARDS COME FIRST, EVERY DAY, INCLUDING THE FIRST ONE.
+
+     dueToday() only returns competencies that have been answered at
+     least once, because a recall date is set by an attempt. On day
+     one nothing has been attempted, so the old test produced a track
+     with no card on it at all, which is exactly backwards: the first
+     pass is the whole point of the first day. When nothing is due,
+     offer the first pass instead. */
   if(due.length){
     steps.push({tool:'recall',ic:'card',name:'Recall Rx',sub:'Spaced cards',mins:Math.min(12,Math.max(5,due.length)),
       why:'<b>'+due.length+'</b> competenc'+(due.length===1?'y':'ies')+' up for recall.',
       body:'Answer from memory and rate how sure you are <b>before</b> you look. Being sure and being wrong is the gap that costs marks, and it is the one you cannot feel from the inside.',
       go:function(){ if(window.BIO005_RECALL_OPEN)window.BIO005_RECALL_OPEN(null); location.hash='s-recall'; }});
+  } else {
+    var fresh=untouched();
+    if(fresh.length){
+      steps.push({tool:'recall',ic:'card',name:'Recall Rx',sub:'Spaced cards, first pass',mins:Math.min(12,Math.max(5,fresh.length)),
+        why:'<b>'+fresh.length+'</b> competenc'+(fresh.length===1?'y has':'ies have')+' not been through a card yet.',
+        body:'Nothing is due back yet, because you have not met these once. Answer from memory anyway and rate how sure you are <b>before</b> you look. This first pass is what puts each card on the schedule, so the app knows when to bring it back.',
+        go:function(){ if(window.BIO005_RECALL_OPEN)window.BIO005_RECALL_OPEN(null); location.hash='s-recall'; }});
+    } else {
+      steps.push({tool:'recall',ic:'card',name:'Recall Rx',sub:'Spaced cards, get ahead',mins:8,
+        why:'Nothing is due back today.',
+        body:'You are clear on the schedule, so this one is optional. Pull a few cards anyway if you want the week ahead to be lighter. Answering early costs you nothing and moves the next date out.',
+        go:function(){ if(window.BIO005_RECALL_OPEN)window.BIO005_RECALL_OPEN(null); location.hash='s-recall'; }});
+    }
   }
   var target=(lec[0]||lab[0]||weak[0]||allComps()[0]);
   if(target){
@@ -2849,6 +2887,27 @@ function drBuild(){
       why:lec.length?'Today’s lecture competency.':'Your weakest competency in play.',
       body:'<b>'+esc(target.c.name)+'.</b> Blank paper, nothing in front of you. Then reveal the checklist and mark yourself honestly. The gaps are the point.',
       go:function(){ CUR_EX=target.c; openGame('drawknow'); }});
+  }
+  /* SECOND RETRIEVAL, AND IT CHANGES AS THE TERM GOES ON.
+
+     Early on that is a blank page brain dump: cheap, broad, and it
+     builds the memory the harder work runs on. Once most of what is
+     in play has been through a card at least once, a random practice
+     draw becomes the better use of the same fifteen minutes, because
+     by then a score means something. The Mastery Check is applied
+     and harder still, so it sits after both of these rather than
+     next to them, and it is never the thing offered first. */
+  if(drCardsSteady()){
+    steps.push({tool:'',ic:'card',name:'Practice exam',sub:'A random draw, every time',mins:15,
+      why:'Your cards are steady enough for a real check.',
+      body:'A fresh set is generated every time, so you are answering the physiology rather than a set you have memorized the shape of. Take the report it gives you, work the competencies it flags, and print your weekly log to upload in Canvas. When the practice draws stop surprising you, that is when the Mastery Check is worth taking.',
+      go:function(){ window.open(siteRoot()+'practice-exam.html','_top'); }});
+  } else {
+    steps.push({tool:'',ic:'draw',name:'Brain Dump',sub:'Blank page, cold',mins:12,
+      topic:(target?target.c.name:''),
+      why:'Broad recall, and it is the cheapest one you have.',
+      body:'Blank page, nothing in front of you, and write down everything you can produce about this week. Then open your note sheet and mark what never made it onto the page. What you left out is your study list, and it is usually shorter and more specific than you expect.',
+      go:function(){ if(target){CUR_EX=target.c;} openGame('braindump'); }});
   }
   var lp=drLoopPick();
   if(lp){

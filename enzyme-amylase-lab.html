@@ -44,6 +44,7 @@ td.blank{height:34px}
 .labvals th,.labvals td{font-variant-numeric:tabular-nums}
 footer{padding:26px max(40px,5vw) 40px;border-top:1px solid rgba(11,21,48,.14)}
 footer .inner{display:flex;flex-wrap:wrap;gap:8px 26px;font-size:14px}
+.note{font-size:.94em;color:#3D4759}
 @media print{.band{padding:24px 0}.skip,footer{display:none}body{font-size:12.5px}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
@@ -76,14 +77,14 @@ footer .inner{display:flex;flex-wrap:wrap;gap:8px 26px;font-size:14px}
 
 <main id="main" class="band" style="padding-top:10px">
   <div class="inner">
-    <p class="eyebrow">The five parts, in order</p>
+    <h2 class="eyebrow" style="font-size:inherit;font-weight:700">The five parts, in order</h2>
     <ol class="numrow">
 
       <li>
         <h3>Before you touch anything: predict</h3>
         <p>In your first color, on your paper, answer these from what you already know. Do not look anything up. Wrong predictions are worth more than looked-up ones, because a wrong prediction shows you exactly what to fix.</p>
         <ol class="qs">
-          <li>Amylase digests starch. Predict its activity at 8&deg;C, 37&deg;C, and 70&deg;C, and say why you predicted that shape.</li>
+          <li>Amylase digests starch. Predict its activity at 8&deg;C (46&deg;F), 37&deg;C (98.6&deg;F), and 70&deg;C (158&deg;F), and say why you predicted that shape.</li>
           <li>Salivary amylase works in the mouth. Predict what happens to it in the stomach, and name the variable responsible.</li>
           <li>Rate your confidence in each prediction, 1 to 5. You will come back to these numbers.</li>
         </ol>
@@ -95,9 +96,9 @@ footer .inner{display:flex;flex-wrap:wrap;gap:8px 26px;font-size:14px}
         <table>
           <caption>Amylase activity and temperature</caption>
           <tr><th scope="col">Tube temperature</th><th scope="col">Starch remaining?</th><th scope="col">Maltose present?</th><th scope="col">Activity: none, some, full</th></tr>
-          <tr><td>8&deg;C</td><td class="blank"></td><td class="blank"></td><td class="blank"></td></tr>
-          <tr><td>37&deg;C</td><td class="blank"></td><td class="blank"></td><td class="blank"></td></tr>
-          <tr><td>70&deg;C</td><td class="blank"></td><td class="blank"></td><td class="blank"></td></tr>
+          <tr><td>8&deg;C (46&deg;F)</td><td class="blank"></td><td class="blank"></td><td class="blank"></td></tr>
+          <tr><td>37&deg;C (98.6&deg;F)</td><td class="blank"></td><td class="blank"></td><td class="blank"></td></tr>
+          <tr><td>70&deg;C (158&deg;F)</td><td class="blank"></td><td class="blank"></td><td class="blank"></td></tr>
         </table>
         <table>
           <caption>Amylase activity and pH</caption>
@@ -112,9 +113,9 @@ footer .inner{display:flex;flex-wrap:wrap;gap:8px 26px;font-size:14px}
         <h3>Interpret what you measured</h3>
         <ol class="qs">
           <li>Where was the optimum for each variable, and how do you know from your data rather than from the book?</li>
-          <li>At 70&deg;C the activity is gone and does not come back on cooling. Name what happened to the protein, and explain why the shape of a protein and the job of a protein are the same fact.</li>
-          <li>At 8&deg;C the activity is low but returns on warming. Why is cold different from heat for an enzyme?</li>
-          <li>Draw the curve of amylase activity against temperature, label the optimum, and mark where a fever of 40&deg;C would sit. What does that predict about enzyme function in a high fever?</li>
+          <li>At 70&deg;C (158&deg;F) the activity is gone and does not come back on cooling. Name what happened to the protein, and explain why the shape of a protein and the job of a protein are the same fact.</li>
+          <li>At 8&deg;C (46&deg;F) the activity is low but returns on warming. Why is cold different from heat for an enzyme?</li>
+          <li>Draw the curve of amylase activity against temperature, label the optimum, and mark where a fever of 40&deg;C (104&deg;F) would sit. What does that predict about enzyme function in a high fever?</li>
         </ol>
       </li>
 
@@ -138,15 +139,18 @@ footer .inner{display:flex;flex-wrap:wrap;gap:8px 26px;font-size:14px}
       </li>
 
       <li>
-        <h3>Look back at your thinking</h3>
+        <h3>Look back at your thinking: the metacognition</h3>
+        <p>This is the part people skip, and it is the part that makes the other four worth doing. Same three moves you use in the Reflect discussion: <strong>decision, evidence, adjustment.</strong></p>
         <ol class="qs">
-          <li>Return to your predictions. Which were right, which were wrong, and for each wrong one: what were you assuming that made it seem right?</li>
-          <li>In your second color, write the two or three things this lab taught you that you did not have walking in. That color is your commit to memory list.</li>
-          <li>Re-rate your confidence, 1 to 5, on explaining enzyme behavior to a classmate. If it did not move, that is information too; bring the sticking point to office hours or the discussion.</li>
+          <li><strong>Decision.</strong> Return to your predictions. Which were right, which were wrong, and for each wrong one, what were you assuming that made it seem right? Name the assumption, not just the error. "I thought hotter always means faster" is an assumption. "I got it wrong" is not.</li>
+          <li><strong>Evidence.</strong> What in your own data told you the assumption was wrong? Point at the tube, the pH, the row. If nothing in your data contradicted it, say so, and say what you would have had to measure.</li>
+          <li><strong>Adjustment.</strong> In your second color, write the two or three things this lab taught you that you did not have walking in. That color is your commit to memory list.</li>
+          <li><strong>Then re-rate.</strong> Confidence 1 to 5 on explaining enzyme behavior to a classmate with nothing in front of you. If the number did not move, that is information too. Bring the sticking point to the <a href="assignment-discussion-metacognition.html?week=1" target="_top">Reflect discussion</a> or to office hours rather than sitting on it.</li>
         </ol>
       </li>
 
     </ol>
+  <p class="note" style="max-width:62ch">Nobody is graded on whether the predictions were right. Wrong and honestly examined beats right and unexamined, because only one of those two changes what you do next week.</p>
   </div>
 </main>
 

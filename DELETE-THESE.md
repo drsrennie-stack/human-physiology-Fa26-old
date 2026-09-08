@@ -6,15 +6,15 @@ them. So the duplicates have to be removed by hand, and this is the list.
 I checked inbound links on every one of these before putting it here. Each file
 below has **zero pages linking to it**, so deleting it cannot 404 anything.
 
-## Delete these seven
+## Delete these five
 
 | Path | Why |
 |---|---|
 | `schedule.html` | Static page carrying the OLD week order (Week 9 Digestion, Week 10 Cardiac Function and Blood). Nothing links to it. `course-schedule.html` is data driven and now renders the adopted order on its own. |
 | `bio005-schedule_2/` (whole folder) | The other static schedule page. Right week order, but textbook noun-phrase titles, which lost to the student-language titles on Aug 24. Unwired, nothing links to it. |
 | `course-calendar.html` | Third schedule page. Nothing links to it. |
-| `physiology-course-home.html` | Duplicate course home. `index.html` and `welcome.html` are the real ones. |
-| `physiology-course-map.html` | Only reachable from `physiology-course-home.html`, which is going. |
+| ~~`physiology-course-home.html`~~ | **DO NOT DELETE. Sep 6 2026:** this is the page the Canvas "Enter Human Physiology Course" item embeds, so it is live and student facing. It was repainted onto the MedMasters brand on Sep 6. |
+| ~~`physiology-course-map.html`~~ | **DO NOT DELETE.** It is linked from `physiology-course-home.html`, which is staying. |
 | `index.md` | Stray. Nothing reads it. |
 | `loop-switcher.html` | Anatomy Loops leftover. Loops are retired for physiology. |
 

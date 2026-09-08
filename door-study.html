@@ -1,44 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Study &middot; BIO 005 Human Physiology</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The study tools &middot; BIO 005 Human Physiology</title>
+<meta name="description" content="Every study tool in BIO 005 Human Physiology, in one place: practice exams, recall cards, drawing, brain dumps, teach backs and the competency list.">
+<link rel="icon" type="image/svg+xml" href="icon.svg">
 <link rel="stylesheet" href="assets/fonts-site.css">
 <link rel="stylesheet" href="assets/brandbar.css">
 <style>
-:root{--navy:#0B1530;--rust:#8B3A2E;--gold:#C9A14A;--goldpale:#F7EFD9;--slate:#8C90A0;--cream:#F5F1E8;--nearblack:#060A18}
-*{box-sizing:border-box}
+/* ============================================================
+   THE STUDY TOOLS
+   BIO 005 Human Physiology, Yuba College, Fall 2026
+
+   One page, one tile per tool, so a student picks a way to study
+   rather than trying to remember what exists.
+
+   REBUILT Sep 7 2026 from the icon grid Scrubs sent. The layout is
+   hers; what changed is the palette and the contents.
+
+     - It was a dark page with white cards on it. The brand is a
+       light page: off white ground, white cards lifted by a
+       shadow, maroon eyebrow, big maroon numerals.
+     - "Study With Me: log your hours, bank Scholar Points" is
+       gone. Scholar Points are retired and nothing should offer a
+       student a currency that does not exist.
+     - Loops and the Tissue Chart are BIO 004 anatomy tools and
+       are not in this course.
+
+   Every tile points at something that exists. A tool that is not
+   built yet does not get a tile, because a dead tile on a study
+   page costs a student more than a missing one.
+   ============================================================ */
+
+:root{
+  --navy:#0B1530; --navy-deep:#04070F; --navy-tint:#ECEFF4;
+  --maroon:#8B3A2E; --maroon-dk:#6E2D24; --gold:#C9A14A;
+  --page:#FAFAF9; --card:#FFFFFF;
+  --ink:#0B1530; --muted:#414B5C; --faint:#5A6675;
+  --rule:rgba(11,21,48,.16); --rule-soft:rgba(11,21,48,.10);
+  --shadow:0 1px 3px rgba(11,21,48,.08);
+  --lift:0 8px 18px rgba(11,21,48,.10);
+  --display:'Open Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+  --body:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
 html,body{margin:0}
-body{font-family:'Plus Jakarta Sans Variable','Plus Jakarta Sans',system-ui,sans-serif;color:var(--navy);background:#fff;line-height:1.6;font-size:15px;padding:56px max(32px,4.5vw)}
-.inner{max-width:1080px;margin:0 auto}
-.skip{position:absolute;left:-9999px;top:0;background:var(--navy);color:#fff;padding:12px 18px;font-weight:700;text-decoration:none}
+body{font-family:var(--body);background:var(--page);color:var(--ink);
+  font-size:17px;line-height:1.68;-webkit-font-smoothing:antialiased}
+em,i,cite,dfn,var{font-style:normal;font-weight:700}
+h1,h2,h3{font-family:var(--display);font-weight:800;letter-spacing:-.022em;margin:0}
+p{margin:0 0 16px;max-width:68ch}
+ul,ol{margin:0 0 16px;padding-left:22px;max-width:68ch}
+li{margin-bottom:7px}
+a{color:var(--maroon);text-underline-offset:3px}
+a:hover{color:var(--maroon-dk)}
+:focus-visible{outline:3px solid var(--maroon);outline-offset:3px;border-radius:4px}
+.wrap{max-width:900px;margin:0 auto;padding:0 22px}
+.skip{position:absolute;left:-9999px;top:0;z-index:120;background:var(--navy);color:#fff;
+  padding:13px 20px;font-weight:700;text-decoration:none}
 .skip:focus{left:0;top:0}
-a{color:var(--rust)}
-:focus-visible{outline:3px solid var(--rust);outline-offset:3px}
-.eyebrow{font-size:11px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--rust);margin:0 0 14px}
-h1{font-size:clamp(28px,5vw,42px);font-weight:800;letter-spacing:-.025em;margin:0 0 8px;line-height:1.1}
-.lede{max-width:640px;margin:0 0 26px}
-.cardbox{background:#fff;border:1px solid var(--slate);border-radius:12px;box-shadow:0 14px 30px rgba(11,21,48,.14);padding:22px 24px;margin:0 0 24px}
-.cardbox h2{font-size:19px;font-weight:800;margin:0 0 4px}
-.cardbox .sub{margin:0 0 14px;font-size:14px;color:rgba(11,21,48,.75)}
-.wkgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,190px),1fr));gap:8px}
-.wk{display:block;border:1px solid var(--slate);border-radius:8px;padding:10px 12px;text-decoration:none;font-weight:700;font-size:14px;color:var(--navy)}
-.wk:hover{border-color:var(--rust);color:var(--rust)}
-.rowlist{list-style:none;margin:0;padding:0}
-.rowlist li{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;padding:12px 0;border-bottom:1px solid rgba(11,21,48,.12)}
-.rowlist li:last-child{border-bottom:0}
-.wklbl{flex:1 1 260px;font-weight:700;font-size:14.5px;min-width:0}
-.wklbl small{display:block;font-weight:400;color:rgba(11,21,48,.75)}
-.pxbtn{display:inline-flex;align-items:center;justify-content:center;background:var(--navy);color:#fff;font-weight:800;font-size:11px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border-radius:8px;width:78px;height:44px;text-align:center;line-height:1.15}
-.pxbtn:hover{background:var(--rust)}
-.lablink{font-weight:700;font-size:14px}
-.soon{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;background:var(--goldpale);border:1px solid var(--slate);border-radius:4px;padding:3px 9px;color:var(--navy)}
-footer{margin-top:34px;padding-top:20px;border-top:1px solid rgba(11,21,48,.14);display:flex;flex-wrap:wrap;gap:8px 24px;font-size:14px}
-@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+
+header.top{padding:32px 0 22px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--maroon);margin:0 0 12px}
+h1{font-size:clamp(30px,5vw,44px);line-height:1.08;color:var(--navy);max-width:18ch}
+h1 b{color:var(--maroon);font-weight:800}
+header.top p{color:var(--muted);margin:16px 0 0;font-size:18px;max-width:56ch}
+
+main{padding:0 0 70px}
+section{padding:38px 0 0}
+h2{font-size:clamp(23px,3.4vw,30px);color:var(--maroon);line-height:1.18;margin-bottom:10px}
+.sub{font-size:17.5px;color:var(--muted);margin:6px 0 20px;max-width:60ch}
+.label{font-size:11.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--maroon);margin:0 0 10px}
+.hint{font-size:15px;color:var(--muted)}
+
+.card{background:var(--card);border:1px solid var(--rule-soft);border-radius:14px;
+  padding:24px 26px;margin:0 0 16px;box-shadow:var(--shadow)}
+.card p:last-child,.card ul:last-child,.card ol:last-child{margin-bottom:0}
+
+
+/* ---------- grading categories ---------- */
+.gcard{position:relative;background:var(--card);border:1px solid var(--rule-soft);
+  border-radius:14px;padding:24px 26px 24px 118px;margin:0 0 16px;box-shadow:var(--shadow)}
+.gcard p.gpct{position:absolute;left:24px;top:20px;margin:0;font-family:var(--display);
+  font-weight:800;font-size:clamp(38px,6vw,52px);line-height:.92;color:var(--maroon);
+  font-variant-numeric:tabular-nums;letter-spacing:-.03em;max-width:none}
+.gcard p.gpct .pc{font-size:.46em;vertical-align:.62em;margin-left:1px}
+.gcard h3{font-size:21px;color:var(--navy);margin:0 0 9px;line-height:1.25}
+.gcard p{font-size:16.5px;color:var(--muted)}
+.gcard p:last-child{margin-bottom:0}
+@media (max-width:560px){
+  .gcard{padding:22px 20px}
+  .gcard p.gpct{position:static;display:block;margin:0 0 8px}
+}
+
+/* ---------- the grade scale ---------- */
+.scale{display:grid;grid-template-columns:repeat(auto-fit,minmax(124px,1fr));gap:12px;margin:0 0 16px}
+.sc{background:var(--card);border:1px solid var(--rule-soft);border-radius:12px;
+  padding:18px 16px;text-align:center;box-shadow:var(--shadow)}
+.sc .g{font-family:var(--display);font-weight:800;font-size:34px;line-height:1;
+  color:var(--maroon);display:block}
+.sc .r{display:block;margin-top:7px;font-size:14.5px;color:var(--muted);font-weight:700;
+  font-variant-numeric:tabular-nums}
+
+/* ---------- the four levels ---------- */
+.levels{counter-reset:lv;list-style:none;padding-left:0;margin:0}
+.levels li{counter-increment:lv;position:relative;padding-left:44px;margin-bottom:12px}
+.levels li::before{content:counter(lv);position:absolute;left:0;top:1px;width:30px;height:30px;
+  border-radius:50%;background:var(--navy-tint);color:var(--navy);font-family:var(--display);
+  font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center}
+.levels li:nth-child(3)::before,.levels li:nth-child(4)::before{background:var(--maroon);color:#fff}
+
+/* ---------- the stage explorer ---------- */
+.explore{background:var(--card);border:1px solid var(--rule);border-radius:16px;
+  padding:26px 26px 28px;box-shadow:var(--lift);margin:22px 0 0}
+.prompt{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:700;
+  color:var(--navy);margin:0 0 14px}
+.prompt .dot{width:9px;height:9px;border-radius:50%;background:var(--maroon);flex:0 0 auto}
+
+.stages{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px;padding:0;list-style:none}
+.stages li{margin:0}
+.stagebtn{
+  font-family:var(--body);font-size:15px;font-weight:700;cursor:pointer;
+  background:var(--card);color:var(--navy);border:1.5px solid var(--rule);
+  border-radius:99px;padding:10px 18px;min-height:46px;
+  display:inline-flex;align-items:center;gap:9px;
+  transition:background 150ms ease,color 150ms ease,border-color 150ms ease;
+}
+.stagebtn .n{font-family:var(--display);font-weight:800;font-size:12px;color:var(--maroon)}
+.stagebtn:hover{border-color:var(--navy);background:var(--navy-tint)}
+.stagebtn[aria-selected="true"]{background:var(--navy);color:#fff;border-color:var(--navy)}
+.stagebtn[aria-selected="true"] .n{color:var(--gold)}
+.stagebtn:focus-visible{outline:3px solid var(--maroon);outline-offset:3px}
+
+.panel{border-top:1px solid var(--rule-soft);padding-top:22px}
+.panel:focus{outline:none}
+.pl-top{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin:0 0 4px}
+.pl-num{font-family:var(--display);font-weight:800;font-size:34px;line-height:1;
+  color:var(--maroon);font-variant-numeric:tabular-nums}
+.pl-name{font-family:var(--display);font-weight:800;font-size:25px;color:var(--navy)}
+.pl-tag{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  border-radius:99px;padding:4px 11px;white-space:nowrap}
+.pl-tag.no{background:var(--navy-tint);color:var(--navy)}          /* 15.65:1 */
+.pl-tag.yes{background:var(--maroon);color:#fff}                   /*  7.66:1 */
+.pl-q{font-size:18px;font-weight:700;color:var(--navy);margin:10px 0 12px;max-width:56ch}
+.pl-body p{font-size:16.5px;color:var(--muted)}
+.pl-body p strong{color:var(--navy)}
+.pl-does{margin:16px 0 0}
+.pl-does .label{margin-bottom:8px}
+.pl-does ul{margin:0;padding-left:20px}
+.pl-does li{font-size:16px;color:var(--muted);margin-bottom:6px}
+.pl-miss{margin:18px 0 0;padding:16px 18px;background:var(--navy-tint);border-radius:10px}
+.pl-miss .label{margin-bottom:6px}
+.pl-miss p{margin:0;font-size:16px;color:var(--navy)}
+
+.pl-nav{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0 0;
+  border-top:1px solid var(--rule-soft);padding-top:16px}
+.pl-nav button{font-family:var(--body);font-size:15px;font-weight:700;cursor:pointer;
+  background:transparent;border:1.5px solid var(--navy);color:var(--navy);
+  border-radius:9px;padding:10px 17px;min-height:44px;
+  transition:background 150ms ease,color 150ms ease}
+.pl-nav button:hover:not(:disabled){background:var(--navy);color:#fff}
+.pl-nav button:disabled{opacity:.4;cursor:default}
+.seen{margin-left:auto;align-self:center;font-size:14px;color:var(--muted);font-weight:700}
+
+.btn{display:inline-flex;align-items:center;gap:9px;text-decoration:none;
+  font-family:var(--body);font-size:15.5px;font-weight:700;border-radius:10px;
+  padding:12px 20px;min-height:46px;border:1.5px solid var(--navy);
+  background:var(--navy);color:#fff;transition:background 160ms ease,border-color 160ms ease}
+.btn:hover{background:var(--maroon);border-color:var(--maroon);color:#fff}
+.btn.ghost{background:transparent;color:var(--navy)}
+.btn.ghost:hover{background:var(--navy);color:#fff}
+.btnrow{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 0}
+
+.foot{margin:50px 0 0;padding-top:20px;border-top:1px solid var(--rule);
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  font-size:14.5px;color:var(--muted)}
+.vh{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;
+  clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+@media (max-width:620px){
+  .stagebtn{font-size:14px;padding:10px 14px}
+  .explore{padding:20px 16px 22px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+@media print{
+  .mm-brandbar,.skip,.stages,.pl-nav,.btnrow{display:none!important}
+  body{background:#fff;font-size:11pt}
+  .card,.explore{box-shadow:none;border-color:#999;break-inside:avoid}
+  .panel{display:block!important}
+}
+
+/* ---------- the tool grid ---------- */
+.tools{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(min(258px,100%),1fr));
+  margin:6px 0 0;padding:0;list-style:none}
+.tools li{margin:0;display:flex}
+a.tool{position:relative;display:flex;flex-direction:column;width:100%;text-decoration:none;color:inherit;
+  background:var(--card);border:1px solid var(--rule-soft);border-radius:14px;
+  padding:24px 22px 20px;box-shadow:var(--shadow);overflow:hidden;
+  transition:transform 200ms ease,box-shadow 200ms ease,border-color 200ms ease}
+a.tool:hover{transform:translateY(-2px);box-shadow:var(--lift);border-color:var(--rule)}
+a.tool:focus-visible{outline:3px solid var(--maroon);outline-offset:3px}
+
+/* The colored tab on the card's top boundary. Her brand element, and
+   here it is also what tells one card from another at a glance: three
+   brand colors dealt out so no two neighbors in a three column grid
+   share one. */
+a.tool::before{content:'';position:absolute;left:0;right:0;top:0;height:5px;background:var(--tab)}
+a.tool{--accent:#0B1530;--tab:#0B1530;--ink:#FFFFFF}
+a.tool.c-navy   {--accent:#0B1530;--tab:#0B1530;--ink:#FFFFFF}
+a.tool.c-maroon {--accent:#8B3A2E;--tab:#8B3A2E;--ink:#FFFFFF}
+/* THE GOLD CARD, Sep 7 2026. It was #624612, which is the readable
+   gold this course uses for small text on white, but as a whole tile
+   it reads olive brown rather than gold. Scrubs asked for maroon, dark
+   blue and yellow, so the tile is the real brand gold #C9A14A with
+   NAVY strokes on it: 7.46:1, AAA, and it actually looks gold.
+   The 5px tab is a separate value. Brand gold sits at 2.42:1 against
+   the white card, under the 3:1 a meaningful graphic needs, so the tab
+   uses #B0871F at 3.32:1. Same hue, one is on white and one carries
+   dark strokes, and each is picked for the job it does. */
+a.tool.c-gold   {--accent:#C9A14A;--tab:#B0871F;--ink:#0B1530}
+
+.ico{width:50px;height:50px;border-radius:13px;display:flex;align-items:center;justify-content:center;
+  margin:2px 0 14px;flex:0 0 auto;background:var(--accent)}
+.ico svg{width:25px;height:25px;display:block;stroke:var(--ink)}
+a.tool h3{font-size:19px;color:var(--navy);margin:0 0 6px;line-height:1.25}
+a.tool p{font-size:15.5px;color:var(--muted);margin:0;max-width:none}
+a.tool .np{display:inline-block;margin-top:12px;font-size:10.5px;font-weight:700;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--maroon);
+  border:1px solid var(--maroon);border-radius:99px;padding:3px 10px}
+.groupnote{font-size:15.5px;color:var(--muted);margin:0 0 16px;max-width:64ch}
 </style>
 </head>
 <body>
-<a class="skip" href="#main">Skip to main content</a>
+<a class="skip" href="#retrieve-h">Skip to the study tools</a>
 
 <div class="mm-brandbar"><div class="mm-wrap">
   <a class="mm-mark" href="course-start.html" target="_top">
@@ -49,46 +247,74 @@ footer{margin-top:34px;padding-top:20px;border-top:1px solid rgba(11,21,48,.14);
         <g transform="translate(140,0) rotate(-8 0 130)"><circle cx="0" cy="20" r="10" fill="#C9A14A"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#C9A14A"/></g>
       </g>
     </svg>
-    <span><span class="mm-wm">BIO <b>005</b></span><span class="mm-wmsub">Human Physiology</span></span>
+    <span class="mm-wm">BIO <b>005</b><span class="mm-wmsub">Human Physiology</span></span>
   </a>
   <span class="mm-course">BIO 005 &middot; Fall 2026</span>
 </div></div>
 
-<main id="main" class="inner">
-<p class="eyebrow">BIO 005 &middot; Study &middot; the whole term</p>
-<h1>The study tools.</h1>
-<p class="lede">Retrieve, do not reread. Everything here makes you produce the answer instead of recognizing it, which is the whole difference.</p>
+<header class="top"><div class="wrap">
+  <p class="eyebrow">BIO 005 &middot; Study &middot; the whole term</p>
+  <h1>The study <b>tools.</b></h1>
+  <p>Retrieve, do not reread. Everything here makes you produce the answer instead of recognizing it, which is the whole difference. None of it is graded.</p>
+</div></header>
 
-<section class="cardbox">
-  <h2>The Mastery OS</h2>
-  <p class="sub">Your study engine for this course: spaced recall across all 268 competencies, and a gap finder that shows exactly where you are weak before a grade depends on it. A few minutes daily beats hours the night before, and it is not close.</p>
-  <div class="wkgrid" style="grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr))">
-    <a class="wk" href="os/mastery-physio-os.html" target="_top">Open the Mastery OS</a>
-  </div>
-</section>
-<section class="cardbox">
-  <h2>Draw from memory</h2>
-  <p class="sub">The blank canvas: draw a pathway with nothing in front of you, then check it. If you cannot produce it without looking, you have not learned it yet, and better to find out now.</p>
-  <div class="wkgrid" style="grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr))">
-    <a class="wk" href="mastery-canvas.html" target="_top">Open the canvas</a>
-    <a class="wk" href="competency-study-guide.html" target="_top">What to draw</a>
-  </div>
-</section>
-<section class="cardbox">
-  <h2>The Competency Packet</h2>
-  <p class="sub">The whole course on one list: 268 things you will be able to do, by midterm and by week. Nothing is graded that is not on it.</p>
-  <div class="wkgrid" style="grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr))">
-    <a class="wk" href="competency-packet-fall2026.html" target="_top">Open the packet</a>
-  </div>
-</section>
+<main>
+<div class="wrap">
 
-<footer><a href="course-door.html" target="_top">Back to the doors</a><a href="course-materials.html#thisweek" target="_top">This week</a><a href="course-schedule.html" target="_top">Schedule</a><a href="syllabus-fall2026.html" target="_top">Syllabus</a></footer>
+  <section aria-labelledby="retrieve-h">
+    <h2 id="retrieve-h">Five ways to study</h2>
+    <p class="groupnote">All of them make you produce the answer instead of recognizing it. None of them are graded. Rotate between them; the switching is part of what makes it stick.</p>
+    <ul class="tools">
+
+      <li><a class="tool c-maroon" href="practice-exam.html" target="_top">
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1" fill="#fff"/></svg></span>
+        <h3>Practice exam</h3>
+        <p>A real exam over any weeks you pick, the competencies to work on, and your weekly log.</p>
+        <span class="np">Log is required weekly</span>
+      </a></li>
+
+      <li><a class="tool c-navy" href="mastery-physio-os-standalone.html" target="_top">
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="14" height="12" rx="2"/><path d="M7 3h14v12"/></svg></span>
+        <h3>Recall cards</h3>
+        <p>Spaced recall, with the full reason every answer is right or wrong.</p>
+      </a></li>
+
+      <li><a class="tool c-gold" href="mastery-canvas.html" target="_top">
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7a2.8 2.8 0 0 0-4-4l-7 7-1 5z"/><path d="M4 20h6"/></svg></span>
+        <h3>Draw it</h3>
+        <p>A blank canvas. Mechanism, sequence, mind map, loop. Produce it from nothing, then check it.</p>
+      </a></li>
+
+      <li><a class="tool c-navy" href="braindump-week01.html" target="_top">
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h11l4 4v14H5z"/><path d="M15 3v5h5"/><path d="M9 12h6M9 16h4"/></svg></span>
+        <h3>Brain dumps</h3>
+        <p>A prompt, a blank page, a timer. Two prompts for every competency.</p>
+      </a></li>
+
+      <li><a class="tool c-gold" href="competency-sheet-print.html" target="_top">
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h8M8 17h5"/></svg></span>
+        <h3>The competency list</h3>
+        <p>All 268, in full, plus the anatomy, chemistry and math assumed coming in.</p>
+      </a></li>
+
+    </ul>
+  </section>
+
+  <div class="foot">
+    <span><a href="course-start.html" target="_top">Start Here</a> &middot; <a href="week-navigator.html" target="_top">Go to a week</a> &middot; <a href="course-grid.html" target="_top">The whole term</a> &middot; <a href="syllabus-fall2026.html" target="_top">Syllabus</a></span>
+    <span>Dr. Sharilyn Rennie</span>
+  </div>
+
+</div>
 </main>
+
 <script>
-(function(){var id='door-'+Math.random().toString(36).slice(2,8);
-function post(){try{parent.postMessage({frame:id,height:document.documentElement.scrollHeight},'*');}catch(e){}}
-if('ResizeObserver' in window){new ResizeObserver(post).observe(document.documentElement);}
-window.addEventListener('load',post);window.addEventListener('resize',post);post();})();
+(function(){
+  var id = "study-" + Math.random().toString(36).slice(2,8);
+  function post(){ try{ parent.postMessage({frame:id, height:document.documentElement.scrollHeight}, "*"); }catch(e){} }
+  if ("ResizeObserver" in window){ new ResizeObserver(post).observe(document.documentElement); }
+  window.addEventListener("load", post); window.addEventListener("resize", post); post();
+})();
 </script>
 </body>
 </html>
