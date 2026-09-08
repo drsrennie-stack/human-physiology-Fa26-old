@@ -1,26 +1,35 @@
 PUSH THIS FOLDER TO github.com/drsrennie-stack/human-physiology-Fa26
 
 Everything in here is a file that is different on your live site from what
-is on your computer. 313 files. That is the whole backlog, not just today.
-It is why pages have been 404ing.
+is on your computer. That is the whole backlog, not just today. It is why
+pages have been 404ing.
 
 HOW TO PUSH IT
 1. Unzip this file. You get a folder called PUSH-BIO005-sep08.
 2. Open the folder. Select everything INSIDE it (Command A), including the
-   os, tools and assets folders. Do not drag the outer folder itself.
+   os, tools, assets and compliance folders. Do not drag the outer folder.
 3. Go to github.com/drsrennie-stack/human-physiology-Fa26
 4. Add file, then Upload files.
 5. Drag the selection onto the page. Wait for the count to finish.
 6. Commit changes.
 
-Delete this READ-ME-FIRST.txt before you drag, or it will end up in the repo.
+Delete this READ-ME-FIRST.txt before you drag, or it lands in the repo.
 
-WHAT CHANGED TODAY
-- course-materials.html      note sheet and book problems no longer say
-                             "Turn it in". New rows for the patient chart
-                             and the practice exam. New step 08.
+TODAY'S CHANGES
+- week-01.html            recall cards, brain dumps, the practice draw and
+                          the drawing canvas now open in a panel with an X
+                          instead of navigating away with no back button.
+                          Reconstruct the process card removed.
+- access-pearson.html     NEW. How to buy the book and Mastering, with
+                          drawings of each screen.
+- bio005-dock.js          Course tools pill switched off.
+- hootie.js is now loaded on every page (about 150 files in here are that
+  one two line change plus the pages that needed the schedule file).
+- mastery-physio-os*.html every card in the daily track opens, not just
+                          the first one.
+- course-materials.html   what is graded and what is not.
 - week-01-notesheet-prompts.html   the graded rubric is gone.
-- mastery-physio-os.html, mastery-physio-os-standalone.html,
-  os/mastery-physio-os.html        the daily track now shows Recall Rx and
-                             Brain Dump on day one, and a practice exam
-                             once the cards are steady.
+
+ONE FILE TO DELETE BY HAND
+bio005-gate.js is retired. Deleting it has to be done in GitHub directly,
+uploading cannot remove a file.

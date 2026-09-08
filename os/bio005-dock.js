@@ -620,7 +620,19 @@
 
   var launcher, scrim, panel, input, body, live, lastFocus = null, open = false;
 
+  /* COURSE TOOLS IS OFF, SEPTEMBER 8 2026.
+
+     Scrubs asked for the launcher pill to come out for now. It is a
+     switch rather than a deletion because the rest of this file is
+     load bearing: solo frame mode, the target="_top" interception and
+     BIO005_CONTENT_HEIGHT all live here and every page's height sender
+     calls them. Removing the script tag would take those with it.
+
+     Set this back to true to bring the pill back on all pages at once. */
+  var SHOW_DOCK = false;
+
   function build() {
+    if (!SHOW_DOCK) return;
     var st = document.createElement('style');
     st.setAttribute('data-bio005-dock', '');
     st.textContent = CSS;
