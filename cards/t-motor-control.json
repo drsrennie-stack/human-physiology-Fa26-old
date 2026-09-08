@@ -350,16 +350,16 @@
    "tags": [
     "lecture"
    ],
-   "q": "Why does a small stroke in the primary motor cortex weaken one specific body part, such as a hand, rather than the whole opposite side?",
-   "a": "The motor cortex is arranged as a map of the body, so a small area of damage removes the command for the one region that area controls.",
+   "q": "Where are the cell bodies of the neurons that begin the corticospinal pathway?",
+   "a": "In the primary motor cortex of the precentral gyrus.",
    "options": [
-    "The motor cortex is arranged as a map of the body, so a small lesion removes one region's command",
-    "The motor cortex only sends commands to the hands, so other regions are never affected",
-    "The spinal cord takes over for any body part the cortex can no longer reach",
-    "Motor commands for the rest of the body cross to the other hemisphere before the lesion"
+    "In the vestibular nuclei of the brainstem",
+    "In the postcentral gyrus of the parietal lobe",
+    "In the ventral horn of the spinal cord",
+    "In the primary motor cortex of the precentral gyrus"
    ],
-   "correctIndex": 0,
-   "explanation": "Corticospinal neurons in the precentral gyrus are laid out somatotopically, so face, hand, arm, trunk and leg each occupy their own strip. Damage to the hand strip therefore costs the hand and leaves the leg working. The same fibers become crowded together further down, in the internal capsule, which is why a lesion of the same physical size there weakens the entire opposite side. The motor cortex commands the whole body, not only the hands. The spinal cord holds reflex circuits and pattern generators but cannot substitute for a lost voluntary command. Corticospinal fibers do cross, but they cross low in the medulla, well below the cortex, so crossing is not what limits the size of the deficit."
+   "correctIndex": 3,
+   "explanation": "Most corticospinal axons arise from large pyramidal cells in layer V of the precentral gyrus, with contributions from nearby premotor and parietal areas. The postcentral gyrus is primary somatosensory cortex and sends no corticospinal motor output. The ventral horn holds the lower motor neurons where this pathway ends, not where it starts. The vestibular nuclei give rise to the vestibulospinal tract, a separate brainstem pathway."
   },
   {
    "id": "c21",
@@ -422,16 +422,16 @@
    "tags": [
     "lecture"
    ],
-   "q": "A stroke the size of a pea in the internal capsule can weaken an entire half of the body, while a stroke of the same size in the motor cortex weakens only a hand. What accounts for the difference?",
-   "a": "In the internal capsule the corticospinal fibers for the whole body are packed into a small bundle, so one small lesion catches all of them.",
+   "q": "Through which part of the internal capsule do corticospinal fibers descend?",
+   "a": "The posterior limb.",
    "options": [
-    "In the capsule the fibers for the whole body are packed tightly together, so a small lesion catches all of them",
-    "The internal capsule contains the cell bodies, which cannot be replaced",
-    "Blood supply to the capsule is richer, so damage there spreads further",
-    "The capsule carries sensory fibers only, and sensory loss looks like weakness"
+    "The anterior limb",
+    "They bypass the internal capsule entirely",
+    "The genu only",
+    "The posterior limb"
    ],
-   "correctIndex": 0,
-   "explanation": "Fibers that spread across a wide sheet of cortex funnel down into a compact bundle in the posterior limb of the internal capsule. Packing the whole body's motor traffic into a few millimeters means a tiny infarct there produces a dense hemiparesis, which is the classic lacunar stroke. Cell bodies stay up in the cortex; the capsule carries axons. Blood supply does not make a lesion spread; the small perforating arteries that feed the capsule are in fact end arteries with little collateral, which is part of why lesions there are so sharply defined. The capsule carries both motor and sensory traffic, but weakness in this situation is real motor weakness, not a sensory finding."
+   "correctIndex": 3,
+   "explanation": "Corticospinal fibers are packed into the posterior limb of the internal capsule, which is why a small infarct there can weaken an entire half of the body. The anterior limb carries frontopontine and thalamic connections rather than the limb motor fibers. The genu carries corticobulbar fibers heading for cranial nerve nuclei. Every corticospinal axon passes through the capsule on its way from the corona radiata to the brainstem."
   },
   {
    "id": "c25",
@@ -440,16 +440,16 @@
    "tags": [
     "lecture"
    ],
-   "q": "Corticospinal fibers cross to the opposite side low in the medulla. What is the functional consequence of that crossing point?",
-   "a": "A lesion above the crossing weakens the opposite side of the body, while a lesion below it weakens the same side.",
+   "q": "Which midbrain structure carries corticospinal fibers on their way toward the spinal cord?",
+   "a": "The cerebral peduncle.",
    "options": [
-    "A lesion above the crossing weakens the opposite side; a lesion below it weakens the same side",
-    "A lesion anywhere along the pathway weakens the opposite side",
-    "A lesion anywhere along the pathway weakens both sides equally",
-    "The crossing has no effect on which side is weak, only on how severe the weakness is"
+    "The cerebral peduncle",
+    "The red nucleus",
+    "The substantia nigra",
+    "The superior colliculus"
    ],
    "correctIndex": 0,
-   "explanation": "Everything upstream of a crossing point belongs to the opposite side of the body; everything downstream belongs to the same side. So a capsular or cortical lesion on the right weakens the left arm and leg, while a lesion of the lateral corticospinal tract in the cervical cord on the right weakens the right arm and leg. Being able to place a lesion above or below the decussation from the side of the weakness is the whole clinical point of knowing where the crossing happens. Saying every lesion weakens the opposite side ignores the tract's entire course inside the spinal cord. Bilateral weakness would need a lesion catching both tracts, such as a central cord or midline brainstem lesion. And the side of weakness is exactly what the crossing determines, so it cannot be irrelevant."
+   "explanation": "The cerebral peduncle is the massive fiber bundle on the ventral surface of the midbrain, and the corticospinal fibers occupy its middle portion as they pass through. The superior colliculus handles visual orienting reflexes. The red nucleus gives rise to the rubrospinal tract, which is a separate descending pathway. The substantia nigra belongs to the basal ganglia circuitry and sends its output to the striatum, not to the cord."
   },
   {
    "id": "c26",
@@ -602,16 +602,16 @@
    "tags": [
     "lecture"
    ],
-   "q": "Two patients each have equal weakness of the right arm. One lesion is in the corticospinal tract above the level of the motor neuron, the other is in the motor neurons themselves at C6. Which findings separate them?",
-   "a": "Muscle tone and reflexes: the tract lesion gives increased tone, brisk reflexes and little wasting, while the motor neuron lesion gives flaccid weakness, lost reflexes and wasting.",
+   "q": "Which structure would a corticospinal axon reach first after leaving the internal capsule?",
+   "a": "The cerebral peduncle of the midbrain.",
    "options": [
-    "The tract lesion gives increased tone and brisk reflexes; the motor neuron lesion gives flaccid weakness, lost reflexes and wasting",
-    "The tract lesion gives flaccid weakness and wasting; the motor neuron lesion gives increased tone",
-    "Both give identical findings, so only imaging can separate them",
-    "The tract lesion causes sensory loss and the motor neuron lesion does not"
+    "The pyramid of the medulla",
+    "The cerebral peduncle of the midbrain",
+    "The lateral corticospinal tract of the cord",
+    "The ventral horn of the cervical cord"
    ],
-   "correctIndex": 0,
-   "explanation": "The motor neuron is the final common path, so cutting it removes everything the muscle receives: contraction, reflex arc, and the trophic support that keeps the muscle bulky. The result is flaccid, wasted, areflexic weakness. A lesion higher up leaves the motor neuron alive but removes descending control over it, so the reflex arc is not only intact but disinhibited, giving increased tone and brisk reflexes, with wasting limited to disuse. Reversing the two patterns is the most common error, so it is worth checking against the logic rather than memorizing the list. The two are not indistinguishable at the bedside, which is why this examination survives. Sensory loss depends on whether sensory fibers happen to be involved and does not separate motor lesions by level."
+   "correctIndex": 1,
+   "explanation": "The route runs downward through the brainstem in order, so the midbrain peduncle comes next, then the basilar pons, then the medullary pyramid, then the cord. The pyramid is two brainstem levels further along. The lateral corticospinal tract exists only after the fibers have crossed in the medulla. The ventral horn is the destination at the far end of the pathway."
   },
   {
    "id": "c35",

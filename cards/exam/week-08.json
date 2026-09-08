@@ -1,0 +1,777 @@
+[
+  {
+    "id": "w08-ma-01",
+    "type": "ma",
+    "competencyId": "w3-signal-types",
+    "dok": 2,
+    "stem": "Which statements about the range and route of chemical signals are correct? Select all that apply.",
+    "options": [
+      "A neurohormone is released by a neuron but travels in the blood to reach its target.",
+      "A paracrine signal acts on the same cell that released it.",
+      "A hormone reaches nearly every cell in the body, but only cells with the matching receptor respond.",
+      "A neurotransmitter crosses a synapse, so it reaches only the cell right next to the release site.",
+      "The same molecule can never act as both a neurotransmitter and a hormone."
+    ],
+    "correct": [0, 2, 3],
+    "why": "Signals are classified by how they get to the target. Neurotransmitters cross a synapse. Paracrines diffuse through interstitial fluid to nearby cells. Hormones and neurohormones ride the blood, so they reach everywhere, and the target is defined by which cells carry the receptor. The molecule itself does not decide the class, the route does.",
+    "whyNot": [
+      "Correct. A neurohormone is made by a neuron and released into the blood, so it has the range of a hormone.",
+      "Wrong. A signal that acts on the cell that released it is autocrine. Paracrines act on neighboring cells.",
+      "Correct. Blood carries a hormone to every tissue, but only receptor bearing cells respond.",
+      "Correct. Synaptic signaling is short range, across a gap of a fraction of a micrometer.",
+      "Wrong. Norepinephrine is a neurotransmitter at sympathetic synapses and a hormone when the adrenal medulla releases it into blood. The class depends on the route, not the molecule."
+    ]
+  },
+  {
+    "id": "w08-ma-02",
+    "type": "ma",
+    "competencyId": "w3-second-messengers",
+    "dok": 2,
+    "stem": "Which statements correctly pair a second messenger with the enzyme that produces it or a target it acts on? Select all that apply.",
+    "options": [
+      "Adenylyl cyclase makes cyclic AMP from ATP.",
+      "Cyclic AMP activates protein kinase A.",
+      "Phospholipase C splits a membrane phospholipid into IP3 and diacylglycerol.",
+      "IP3 directly activates protein kinase C.",
+      "Calcium binds calmodulin, which then activates other enzymes.",
+      "Diacylglycerol opens calcium channels on the endoplasmic reticulum."
+    ],
+    "correct": [0, 1, 2, 4],
+    "why": "There are two main G protein pathways. Gs activates adenylyl cyclase, which makes cyclic AMP, which turns on protein kinase A. Gq activates phospholipase C, which cuts PIP2 into IP3 and diacylglycerol. IP3 opens calcium channels on the endoplasmic reticulum, and diacylglycerol together with that calcium activates protein kinase C. Calcium itself often works through calmodulin.",
+    "whyNot": [
+      "Correct. Adenylyl cyclase is the amplifier enzyme of the Gs pathway and cyclic AMP is its product.",
+      "Correct. Cyclic AMP binds the regulatory subunits of protein kinase A and frees the catalytic subunits.",
+      "Correct. Phospholipase C is the amplifier enzyme of the Gq pathway and makes both messengers at once.",
+      "Wrong. IP3 opens calcium channels on the endoplasmic reticulum. Diacylglycerol is the messenger that activates protein kinase C.",
+      "Correct. Calmodulin is the calcium sensor that lets a calcium rise switch on kinases and other enzymes.",
+      "Wrong. That is the job of IP3. Diacylglycerol stays in the membrane and activates protein kinase C."
+    ]
+  },
+  {
+    "id": "w08-ma-03",
+    "type": "ma",
+    "competencyId": "w3-catalytic-intracellular-receptors",
+    "dok": 2,
+    "stem": "Insulin binds a receptor tyrosine kinase on the cell surface. Cortisol binds an intracellular receptor. Which comparisons are correct? Select all that apply.",
+    "options": [
+      "Insulin binding turns on the receptor's own enzyme activity on the inside of the membrane.",
+      "The insulin receptor phosphorylates proteins already present in the cell, so the response begins within minutes.",
+      "The cortisol receptor complex binds DNA and changes which genes are transcribed.",
+      "Cortisol needs a G protein to activate its receptor.",
+      "Blocking transcription would abolish the fast glucose uptake response to insulin."
+    ],
+    "correct": [0, 1, 2],
+    "why": "A receptor enzyme is its own amplifier. Ligand binding outside switches on kinase activity inside, and that kinase phosphorylates proteins that already exist, so the effect is fast. A lipophilic hormone like cortisol enters the cell, binds its receptor, and the complex acts on DNA. The output is new protein, so the response is slow to start and long lasting.",
+    "whyNot": [
+      "Correct. The insulin receptor is a tyrosine kinase, and the ligand activates it directly, no G protein involved.",
+      "Correct. Phosphorylation of existing proteins and movement of GLUT4 to the membrane take minutes, not hours.",
+      "Correct. The hormone receptor complex is a transcription factor.",
+      "Wrong. G proteins belong to G protein coupled receptors on the surface. Cortisol enters the cell and binds its receptor directly.",
+      "Wrong. Fast insulin actions do not need new protein. Blocking transcription would abolish the cortisol response, not the fast insulin response."
+    ]
+  },
+  {
+    "id": "w08-ma-04",
+    "type": "ma",
+    "competencyId": "w3-signal-termination",
+    "dok": 2,
+    "stem": "Which events would end a chemical signal at its target cell? Select all that apply.",
+    "options": [
+      "An enzyme in the extracellular fluid breaks down the ligand.",
+      "The ligand is taken back up into the cell that released it.",
+      "The receptor and its bound ligand are pulled into the target cell by endocytosis and degraded.",
+      "The ligand binds its receptor more tightly.",
+      "The ligand diffuses away from the receptor and is carried off in the blood.",
+      "The target cell adds more receptors to its membrane."
+    ],
+    "correct": [0, 1, 2, 4],
+    "why": "A signal continues as long as ligand occupies receptors. Anything that removes ligand from the receptor ends it: enzymatic breakdown, reuptake into the releasing cell, diffusion away, or internalization of the whole receptor ligand complex. If none of these work, the signal keeps going, which is why blocking acetylcholinesterase causes continuous muscle stimulation.",
+    "whyNot": [
+      "Correct. Acetylcholinesterase in the synaptic cleft is the classic example.",
+      "Correct. Norepinephrine is cleared mainly by reuptake into the neuron that released it.",
+      "Correct. Endocytosis removes both the ligand and the receptor from the surface, ending the signal and lowering receptor number.",
+      "Wrong. Tighter binding prolongs receptor occupancy and prolongs the signal.",
+      "Correct. Once the ligand leaves the receptor and is washed away, the receptor is free and the signal stops.",
+      "Wrong. More receptors is up regulation. It increases the target cell's sensitivity and does not end a signal."
+    ]
+  },
+  {
+    "id": "w08-ma-05",
+    "type": "ma",
+    "competencyId": "w9-hormone-classes",
+    "dok": 2,
+    "stem": "Which statements about the three hormone classes are correct? Select all that apply.",
+    "options": [
+      "Peptide hormones are made in advance and stored in secretory vesicles until a signal triggers exocytosis.",
+      "Steroid hormones are made on demand from cholesterol and are not stored.",
+      "Steroid hormones bind receptors on the cell surface because they are too large to cross the membrane.",
+      "Peptide hormones dissolve in plasma and travel without a carrier protein.",
+      "Thyroid hormones are amines, but they enter cells and bind nuclear receptors like steroids do.",
+      "Catecholamines such as epinephrine bind intracellular receptors."
+    ],
+    "correct": [0, 1, 3, 4],
+    "why": "Peptides are water soluble, made ahead of time, stored in vesicles, released by exocytosis, and act on surface receptors. Steroids are lipophilic, made from cholesterol only when needed, diffuse out of the cell as they are made, travel bound to carriers, and act on intracellular receptors. The amines split: catecholamines behave like peptides, thyroid hormones behave like steroids.",
+    "whyNot": [
+      "Correct. Storage in vesicles is why a peptide can be released within seconds of a stimulus.",
+      "Correct. Steroid secreting cells have almost no stored hormone, so secretion rate equals synthesis rate.",
+      "Wrong. Steroids are small and lipid soluble. They cross the membrane easily and bind receptors inside the cell.",
+      "Correct. Water soluble hormones need no carrier, which is one reason their half lives are short.",
+      "Correct. Thyroid hormone is made from tyrosine but it is lipophilic, circulates bound to carriers, and acts on a nuclear receptor.",
+      "Wrong. Epinephrine is water soluble and binds adrenergic receptors on the cell surface, which are G protein coupled."
+    ]
+  },
+  {
+    "id": "w08-ma-06",
+    "type": "ma",
+    "competencyId": "w9-hormone-interactions",
+    "dok": 2,
+    "stem": "Which of the following hormone pairs are correctly labeled? Select all that apply.",
+    "options": [
+      "Glucagon and epinephrine given together raise blood glucose more than the sum of their separate effects: synergism.",
+      "Thyroid hormone must be present for growth hormone to produce normal growth, but thyroid hormone alone does not drive that growth: permissiveness.",
+      "Insulin lowers blood glucose while glucagon raises it: antagonism.",
+      "Cortisol increases the number of beta receptors on target cells so epinephrine has a larger effect: antagonism.",
+      "Two hormones with the same effect whose combined effect exactly equals the sum of their separate effects: synergism."
+    ],
+    "correct": [0, 1, 2],
+    "why": "Synergism means the combined effect is greater than the sum of the parts. Permissiveness means one hormone has little effect of its own but is required for a second hormone to work fully. Antagonism means the two hormones oppose each other, often by acting on the same variable in opposite directions or by one lowering the receptors for the other.",
+    "whyNot": [
+      "Correct. More than additive is the definition of synergism, and the glucose raising hormones are the standard example.",
+      "Correct. Thyroid hormone permits growth hormone to act. Without it, growth hormone is far less effective.",
+      "Correct. Opposite effects on the same variable is antagonism.",
+      "Wrong. Cortisol here makes epinephrine work better, not worse. That is permissiveness, and receptor up regulation is one mechanism for it.",
+      "Wrong. An effect equal to the sum is additive. Synergism requires the combination to exceed the sum."
+    ]
+  },
+  {
+    "id": "w08-ma-07",
+    "type": "ma",
+    "competencyId": "w9-hormone-release",
+    "dok": 2,
+    "stem": "Each option pairs a hormone stimulus with a classification. Select every option that is classified correctly.",
+    "options": [
+      "A rise in blood glucose triggers insulin release: humoral.",
+      "Sympathetic preganglionic neurons stimulate the adrenal medulla to release epinephrine: neural.",
+      "ACTH from the anterior pituitary stimulates cortisol release: hormonal.",
+      "A fall in plasma calcium triggers parathyroid hormone release: hormonal.",
+      "Suckling at the nipple triggers oxytocin release: humoral.",
+      "TSH stimulates the thyroid to release thyroxine: neural."
+    ],
+    "correct": [0, 1, 2],
+    "why": "A humoral stimulus is a change in a blood chemical that the endocrine cell senses directly. A neural stimulus is a nerve firing onto the endocrine cell. A hormonal stimulus is another hormone binding the endocrine cell. Ask what the secreting cell actually detects.",
+    "whyNot": [
+      "Correct. The beta cell senses glucose itself, so the stimulus is humoral.",
+      "Correct. The medulla is directly innervated, so the stimulus is neural and the response takes seconds.",
+      "Correct. A hormone from one gland driving another gland is a hormonal stimulus.",
+      "Wrong. The parathyroid chief cell senses calcium directly. That is humoral, not hormonal.",
+      "Wrong. Suckling is a sensory reflex carried by nerves to the hypothalamus. That is a neural stimulus.",
+      "Wrong. TSH is a hormone acting on the thyroid, so the stimulus is hormonal."
+    ]
+  },
+  {
+    "id": "w08-ma-08",
+    "type": "ma",
+    "competencyId": "w9-posterior-pituitary",
+    "dok": 2,
+    "stem": "Which statements about posterior pituitary hormones are correct? Select all that apply.",
+    "options": [
+      "ADH and oxytocin are made in hypothalamic neuron cell bodies and travel down axons to be stored in the posterior lobe.",
+      "The posterior pituitary receives its hormones through a portal blood system from the hypothalamus.",
+      "A rise in plasma osmolarity is a stimulus for ADH release.",
+      "ADH acts on the kidney collecting duct to increase water reabsorption.",
+      "Oxytocin release during labor is a negative feedback loop that limits how strong contractions become.",
+      "Release from the posterior lobe requires an action potential arriving at the axon terminal."
+    ],
+    "correct": [0, 2, 3, 5],
+    "why": "The posterior pituitary is not a gland. It is the ends of axons whose cell bodies sit in the hypothalamus. The hormones are neurohormones: made in the neuron, moved down the axon, and released into the blood when the neuron fires. ADH responds to high osmolarity and low blood volume and saves water at the kidney. Oxytocin drives labor and milk ejection through positive feedback reflexes.",
+    "whyNot": [
+      "Correct. This is why the posterior pituitary is called neural tissue.",
+      "Wrong. The portal system carries releasing hormones to the anterior pituitary. The posterior lobe gets its hormones by axonal transport.",
+      "Correct. Osmoreceptors in the hypothalamus fire when plasma becomes more concentrated and drive ADH release.",
+      "Correct. ADH inserts aquaporins into collecting duct cells so water leaves the urine and returns to the blood.",
+      "Wrong. Labor is positive feedback. Contractions increase cervical stretch, which increases oxytocin, which increases contractions.",
+      "Correct. Neurohormone release is exocytosis triggered by depolarization of the terminal, the same as neurotransmitter release."
+    ]
+  },
+  {
+    "id": "w08-ma-09",
+    "type": "ma",
+    "competencyId": "w15-hpg-axis",
+    "dok": 2,
+    "stem": "Which statements about the hypothalamic pituitary gonadal axis are correct? Select all that apply.",
+    "options": [
+      "GnRH from the hypothalamus stimulates the anterior pituitary to release both LH and FSH.",
+      "In males, testosterone feeds back negatively on the hypothalamus and the anterior pituitary.",
+      "Inhibin from the gonads feeds back to reduce FSH release specifically.",
+      "In females, estrogen exerts negative feedback at every concentration, so it can never trigger an LH surge.",
+      "LH acts directly on the hypothalamus to increase GnRH release."
+    ],
+    "correct": [0, 1, 2],
+    "why": "The axis has three tiers: GnRH from the hypothalamus, LH and FSH from the anterior pituitary, and sex steroids plus inhibin from the gonad. Steroids feed back negatively on both upper tiers most of the time. Inhibin targets FSH. The one exception is the female follicular phase, where a sustained high estrogen level switches feedback to positive and produces the LH surge.",
+    "whyNot": [
+      "Correct. One releasing hormone controls both gonadotropins, and the pulse pattern shapes the ratio.",
+      "Correct. Rising testosterone lowers GnRH and LH, which is why outside testosterone shuts the axis down.",
+      "Correct. Inhibin from Sertoli or granulosa cells is the specific brake on FSH.",
+      "Wrong. Moderate estrogen is inhibitory, but high estrogen sustained for about two days flips to positive feedback and drives the LH surge.",
+      "Wrong. LH acts on the gonad. Feedback to the hypothalamus comes from the gonadal steroids, not from LH."
+    ]
+  },
+  {
+    "id": "w08-ma-10",
+    "type": "ma",
+    "competencyId": "w15-male-reproductive",
+    "dok": 2,
+    "stem": "Which statements about the control of the testis are correct? Select all that apply.",
+    "options": [
+      "LH acts on Leydig cells to stimulate testosterone production.",
+      "FSH acts on Sertoli cells, which support the developing sperm.",
+      "Sertoli cells release inhibin, which lowers FSH release from the pituitary.",
+      "Taking large doses of testosterone from an outside source raises LH and increases sperm production.",
+      "Spermatogenesis requires a testosterone concentration inside the seminiferous tubules far higher than the level in blood."
+    ],
+    "correct": [0, 1, 2, 4],
+    "why": "The testis has two compartments. Leydig cells between the tubules respond to LH by making testosterone. Sertoli cells inside the tubules respond to FSH and to the very high local testosterone, and they nurse sperm and release inhibin. Testosterone feeds back on LH and inhibin feeds back on FSH.",
+    "whyNot": [
+      "Correct. Leydig cells carry the LH receptor and are the testosterone source.",
+      "Correct. Sertoli cells carry the FSH receptor and form the blood testis barrier around developing sperm.",
+      "Correct. Inhibin is the Sertoli cell's feedback signal, and it targets FSH.",
+      "Wrong. Outside testosterone suppresses GnRH and LH, so the Leydig cells stop, local testosterone in the tubules falls, and sperm count drops.",
+      "Correct. Local testosterone near the Leydig cells is many times the blood level, and that high concentration is what the tubules need."
+    ]
+  },
+  {
+    "id": "w08-ma-11",
+    "type": "ma",
+    "competencyId": "w15-pregnancy-hormones",
+    "dok": 2,
+    "stem": "Which statements about the hormones of pregnancy are correct? Select all that apply.",
+    "options": [
+      "Human chorionic gonadotropin from the embryo binds LH receptors on the corpus luteum and keeps it alive.",
+      "Without hCG, the corpus luteum degenerates about 14 days after ovulation, progesterone falls, and menstruation follows.",
+      "Placental progesterone keeps the uterine smooth muscle quiet during pregnancy.",
+      "hCG stays at its peak for the whole pregnancy because the placenta never takes over progesterone production.",
+      "Relaxin loosens the pelvic ligaments and softens the cervix in preparation for delivery.",
+      "Placental estrogen prevents milk ejection after birth by blocking oxytocin receptors."
+    ],
+    "correct": [0, 1, 2, 4],
+    "why": "The corpus luteum has a built in lifespan of about two weeks unless something rescues it. hCG does that by acting like LH. By about week 10 to 12 the placenta makes enough progesterone and estrogen on its own, hCG falls, and the corpus luteum is no longer needed. Progesterone keeps the myometrium quiet, estrogen drives uterine and breast growth, and relaxin readies the pelvis.",
+    "whyNot": [
+      "Correct. hCG and LH share a receptor, so the embryo can rescue the corpus luteum before the pituitary would let it fail.",
+      "Correct. Progesterone withdrawal is what triggers menstruation in a nonpregnant cycle.",
+      "Correct. Progesterone suppresses contractions and its fall near term helps allow labor.",
+      "Wrong. hCG peaks in the first trimester and then falls once the placenta takes over steroid production.",
+      "Correct. Relaxin acts on connective tissue of the pelvis and cervix.",
+      "Wrong. Milk ejection is not blocked after birth. Placental steroids, mainly progesterone, block milk production before birth by opposing prolactin, and their fall at delivery lets milk come in."
+    ]
+  },
+  {
+    "id": "w08-ma-12",
+    "type": "ma",
+    "competencyId": "w15-uterine-cycle",
+    "dok": 2,
+    "stem": "Which statements correctly match a phase of the uterine cycle with the hormone that drives it? Select all that apply.",
+    "options": [
+      "The proliferative phase is driven by estrogen from the growing follicles.",
+      "The secretory phase is driven by progesterone from the corpus luteum.",
+      "Menstruation begins when estrogen and progesterone fall at the end of the luteal phase.",
+      "The menstrual phase occurs during the luteal phase of the ovary.",
+      "The secretory phase begins before ovulation."
+    ],
+    "correct": [0, 1, 2],
+    "why": "The uterine lining follows the ovary. While follicles grow and make estrogen, the endometrium thickens (proliferative). After ovulation the corpus luteum makes progesterone, and the glands fill with secretions (secretory). When the corpus luteum dies and both steroids drop, the lining loses its support and sheds (menses), which overlaps the start of the next follicular phase.",
+    "whyNot": [
+      "Correct. Estrogen is the growth signal for the endometrium.",
+      "Correct. Progesterone converts the thickened lining into a secretory lining ready for implantation.",
+      "Correct. Steroid withdrawal constricts the spiral arteries and the functional layer dies and sheds.",
+      "Wrong. Menstruation overlaps the early follicular phase. The luteal phase pairs with the secretory phase.",
+      "Wrong. Secretory changes need progesterone, and progesterone comes from the corpus luteum, which forms only after ovulation."
+    ]
+  },
+  {
+    "id": "w08-tf-01",
+    "type": "tf",
+    "competencyId": "w3-signal-types",
+    "dok": 2,
+    "statement": "A paracrine signal must enter the bloodstream to reach its target cell.",
+    "truth": false,
+    "correction": "A paracrine signal diffuses through the interstitial fluid to nearby cells and never enters the blood. A signal that travels in the blood is a hormone or neurohormone.",
+    "why": "Paracrines act locally because they are broken down or taken up before they can travel far. That short range is the point. If a signal reaches the blood, it is by definition a hormone, and the whole body becomes a possible target."
+  },
+  {
+    "id": "w08-tf-02",
+    "type": "tf",
+    "competencyId": "w3-second-messengers",
+    "dok": 1,
+    "statement": "Cyclic AMP is produced by phospholipase C.",
+    "truth": false,
+    "correction": "Cyclic AMP is produced by adenylyl cyclase. Phospholipase C produces IP3 and diacylglycerol.",
+    "why": "Each G protein pathway has its own amplifier enzyme. Gs activates adenylyl cyclase, which converts ATP to cyclic AMP. Gq activates phospholipase C, which cuts a membrane phospholipid into IP3 and diacylglycerol. Mixing these up is the most common second messenger error."
+  },
+  {
+    "id": "w08-tf-03",
+    "type": "tf",
+    "competencyId": "w3-catalytic-intracellular-receptors",
+    "dok": 2,
+    "statement": "A steroid hormone response takes longer to begin than a peptide hormone response because the steroid must first be converted to a water soluble form before it can enter the cell.",
+    "truth": false,
+    "correction": "A steroid response is slow because the hormone receptor complex must change gene transcription and the cell must translate new protein. The steroid enters the cell easily because it is lipid soluble, no conversion is needed.",
+    "why": "Time course follows mechanism. Peptides work through surface receptors that modify proteins already in the cell, so the response is fast. Steroids work by making new protein, which takes an hour or more. Lipid solubility is what lets a steroid cross the membrane, so making it water soluble would block entry, not permit it."
+  },
+  {
+    "id": "w08-tf-04",
+    "type": "tf",
+    "competencyId": "w3-signal-termination",
+    "dok": 2,
+    "statement": "If the enzyme that degrades a neurotransmitter is blocked, the signal ends faster because the transmitter diffuses away sooner.",
+    "truth": false,
+    "correction": "Blocking the degrading enzyme makes the signal last longer, because the transmitter stays in the cleft and keeps binding receptors.",
+    "why": "Degradation is one of the main ways a signal is ended. Remove it and ligand accumulates, receptors stay occupied, and the target keeps responding. Diffusion does not speed up to compensate. This is why acetylcholinesterase inhibitors cause prolonged muscle stimulation."
+  },
+  {
+    "id": "w08-tf-05",
+    "type": "tf",
+    "competencyId": "w9-hormone-classes",
+    "dok": 1,
+    "statement": "Peptide hormones can be stored in vesicles and released within seconds of a stimulus, while steroid hormones must be synthesized each time they are needed.",
+    "truth": true,
+    "correction": "This is true because peptides are packaged into secretory vesicles ahead of time, while steroids are lipid soluble, cannot be held in a vesicle, and diffuse out of the cell as soon as they are made.",
+    "why": "Storage explains the speed of release. A beta cell can dump insulin in seconds because the vesicles are already loaded. An adrenal cortex cell has almost no cortisol on hand, so the plasma level rises only as fast as the synthetic pathway can run, which takes minutes."
+  },
+  {
+    "id": "w08-tf-06",
+    "type": "tf",
+    "competencyId": "w9-hormone-interactions",
+    "dok": 1,
+    "statement": "Insulin and glucagon are antagonists because they have opposite effects on blood glucose.",
+    "truth": true,
+    "correction": "This is true because antagonism is defined as two hormones opposing each other, and insulin lowers blood glucose while glucagon raises it.",
+    "why": "Antagonistic pairs let the body push a variable in both directions and hold it steady. Insulin promotes glucose uptake and storage. Glucagon promotes glycogen breakdown and glucose release. The ratio of the two, not either alone, sets the blood glucose."
+  },
+  {
+    "id": "w08-tf-07",
+    "type": "tf",
+    "competencyId": "w9-hormone-release",
+    "dok": 1,
+    "statement": "Insulin release in response to rising blood glucose is an example of neural control of hormone release.",
+    "truth": false,
+    "correction": "It is an example of humoral control. The beta cell senses the glucose concentration in the blood directly, without a nerve or another hormone telling it to secrete.",
+    "why": "Classify a stimulus by what the endocrine cell actually detects. The beta cell takes up glucose, makes ATP, closes potassium channels, depolarizes, and releases insulin. No neuron is required, although nerves can adjust the response. That direct sensing of a blood chemical is the humoral pattern."
+  },
+  {
+    "id": "w08-tf-08",
+    "type": "tf",
+    "competencyId": "w9-posterior-pituitary",
+    "dok": 2,
+    "statement": "A fall in plasma osmolarity stimulates ADH release, which causes the kidney to reabsorb more water.",
+    "truth": false,
+    "correction": "A rise in plasma osmolarity stimulates ADH release. When osmolarity falls, ADH is suppressed and the kidney excretes the extra water.",
+    "why": "ADH exists to defend water balance. Concentrated plasma means the body needs water, so hypothalamic osmoreceptors fire, ADH is released, aquaporins go into the collecting duct, and water is saved. Dilute plasma means too much water, so ADH shuts off and dilute urine carries the excess out. The second half of the statement is right, the trigger is backwards."
+  },
+  {
+    "id": "w08-tf-09",
+    "type": "tf",
+    "competencyId": "w15-hpg-axis",
+    "dok": 2,
+    "statement": "In a woman, the high estrogen level sustained in the late follicular phase switches estrogen feedback from negative to positive and triggers the LH surge.",
+    "truth": true,
+    "correction": "This is true because moderate estrogen inhibits GnRH and LH, but estrogen held above a threshold for about two days increases GnRH release and pituitary sensitivity, so LH surges instead of falling.",
+    "why": "This switch is the key event of the ovarian cycle. The dominant follicle makes more and more estrogen. Once the level is high enough for long enough, the hypothalamus and pituitary respond by increasing rather than decreasing LH. The surge causes ovulation. After ovulation, progesterone from the corpus luteum restores negative feedback."
+  },
+  {
+    "id": "w08-tf-10",
+    "type": "tf",
+    "competencyId": "w15-male-reproductive",
+    "dok": 2,
+    "statement": "Injecting a man with large doses of testosterone increases his sperm production, because testosterone is required for spermatogenesis.",
+    "truth": false,
+    "correction": "Outside testosterone lowers sperm production. It suppresses GnRH, LH, and FSH by negative feedback, so the Leydig cells stop making the very high local testosterone the tubules need and the Sertoli cells lose FSH support.",
+    "why": "Spermatogenesis needs testosterone inside the tubules at a concentration far above blood levels, and only LH driven Leydig cells can supply that. Injected testosterone raises the blood level, which the hypothalamus and pituitary read as too much, and the axis shuts down. Blood testosterone is fine, testicular testosterone is not, and sperm count falls."
+  },
+  {
+    "id": "w08-bd-01",
+    "type": "bd",
+    "competencyId": "w3-gpcr-pathway",
+    "dok": 3,
+    "prompt": "Without notes, trace what happens from the moment glucagon binds its receptor on a liver cell to the release of glucose into the blood. Include how the signal is turned off.",
+    "rubric": [
+      "glucagon binds a G protein coupled receptor on the cell surface",
+      "the receptor activates Gs, and the alpha subunit swaps GDP for GTP",
+      "active Gs alpha turns on adenylyl cyclase, which converts ATP to cyclic AMP",
+      "cyclic AMP activates protein kinase A",
+      "protein kinase A phosphorylates enzymes that increase glycogen breakdown and decrease glycogen synthesis",
+      "glucose leaves the liver cell into the blood",
+      "the signal ends when Gs alpha hydrolyzes GTP and phosphodiesterase breaks down cyclic AMP"
+    ]
+  },
+  {
+    "id": "w08-bd-02",
+    "type": "bd",
+    "competencyId": "w3-receptor-modulation",
+    "dok": 3,
+    "prompt": "A patient uses a beta 2 agonist inhaler many times a day for weeks and finds it works less and less. Explain what has happened at the receptor level, and predict what happens to sensitivity if the patient stops using it for a week and then takes one dose.",
+    "rubric": [
+      "the inhaler drug is an agonist, it activates the receptor",
+      "chronic high ligand exposure causes down regulation of the receptor",
+      "receptors are removed from the membrane by endocytosis and degraded, so receptor number falls",
+      "fewer receptors means lower target cell sensitivity, so the same dose gives a smaller response",
+      "after the drug is stopped, the cell makes new receptors and receptor number recovers over days",
+      "a single dose after the break produces a larger response than the last dose during heavy use"
+    ]
+  },
+  {
+    "id": "w08-bd-03",
+    "type": "bd",
+    "competencyId": "w9-hypothalamic-pituitary",
+    "dok": 3,
+    "prompt": "Trace the thyroid axis from the hypothalamus to the thyroid gland, and explain where the long loop and short loop feedback act and what they do.",
+    "rubric": [
+      "the hypothalamus releases TRH into the hypothalamic hypophyseal portal system",
+      "TRH stimulates the anterior pituitary to release TSH",
+      "TSH stimulates the thyroid to release T3 and T4",
+      "long loop: thyroid hormone feeds back negatively on the anterior pituitary and the hypothalamus",
+      "short loop: TSH feeds back negatively on the hypothalamus to reduce TRH",
+      "high thyroid hormone lowers TRH and TSH, low thyroid hormone raises them"
+    ]
+  },
+  {
+    "id": "w08-bd-04",
+    "type": "bd",
+    "competencyId": "w9-endocrine-pathology",
+    "dok": 3,
+    "prompt": "A patient has a low plasma cortisol. Explain how measuring ACTH tells you whether the problem is in the adrenal cortex or in the pituitary, and predict the ACTH level in each case.",
+    "rubric": [
+      "primary hyposecretion means the peripheral gland (the adrenal cortex) is failing",
+      "in primary hyposecretion, low cortisol removes negative feedback, so ACTH is high",
+      "secondary hyposecretion means the pituitary (or hypothalamus) is failing",
+      "in secondary hyposecretion, ACTH is low and the adrenal is low because it is not being stimulated",
+      "the pattern of the two tiers together, not cortisol alone, identifies the failing tier",
+      "giving ACTH would raise cortisol in the secondary case but not in the primary case"
+    ]
+  },
+  {
+    "id": "w08-bd-05",
+    "type": "bd",
+    "competencyId": "w15-uterine-cycle",
+    "dok": 3,
+    "prompt": "Describe what happens to the endometrium across one 28 day cycle, name the hormone driving each phase, and explain what causes menstruation.",
+    "rubric": [
+      "menstrual phase: the functional layer of the endometrium is shed",
+      "proliferative phase: estrogen from growing follicles thickens the endometrium",
+      "ovulation marks the switch from proliferative to secretory",
+      "secretory phase: progesterone from the corpus luteum makes the glands secrete and prepares the lining for implantation",
+      "if no pregnancy, the corpus luteum degenerates after about 14 days and estrogen and progesterone fall",
+      "steroid withdrawal constricts the spiral arteries, the lining dies and sheds, which is menstruation"
+    ]
+  },
+  {
+    "id": "w08-bd-06",
+    "type": "bd",
+    "competencyId": "w15-lab-cycle-graphs",
+    "dok": 3,
+    "prompt": "Describe the pattern of LH, FSH, estrogen, and progesterone across a 28 day cycle. State the day ovulation occurs and explain what event drives each peak.",
+    "rubric": [
+      "estrogen rises through the follicular phase as the dominant follicle grows",
+      "the sustained estrogen peak just before midcycle triggers the LH surge by positive feedback",
+      "the LH surge (with a smaller FSH peak) occurs around day 13 to 14 and ovulation follows about a day later, around day 14",
+      "progesterone rises during the luteal phase because the corpus luteum makes it, peaking around day 21",
+      "FSH is somewhat elevated early in the follicular phase to recruit follicles, then is suppressed by estrogen and inhibin",
+      "in the late luteal phase the corpus luteum degenerates, both steroids fall, and the loss of feedback lets FSH rise to start the next cycle"
+    ]
+  },
+  {
+    "id": "w08-bd-07",
+    "type": "bd",
+    "competencyId": "w15-ovarian-cycle",
+    "dok": 3,
+    "prompt": "Explain how the LH surge is triggered, why it is called positive feedback, and what stops the surge afterward.",
+    "rubric": [
+      "during most of the follicular phase, moderate estrogen exerts negative feedback on GnRH and LH",
+      "the dominant follicle produces steadily rising estrogen",
+      "when estrogen stays above a threshold for about two days, feedback switches from negative to positive",
+      "high estrogen increases GnRH release and pituitary sensitivity, so LH surges",
+      "it is positive feedback because the product (estrogen) increases the signal that stimulates more of the response, rather than shutting it down",
+      "the LH surge causes ovulation about 24 to 36 hours later",
+      "after ovulation, progesterone from the corpus luteum restores negative feedback and LH falls"
+    ]
+  },
+  {
+    "id": "w08-bd-08",
+    "type": "bd",
+    "competencyId": "w9-hormone-transport",
+    "dok": 3,
+    "prompt": "Explain why steroid hormones circulate mostly bound to plasma proteins, what binding does to their half life, which fraction of the hormone is active, and what happens to total and free hormone if the amount of carrier protein rises with feedback intact.",
+    "rubric": [
+      "steroids are lipophilic and poorly soluble in plasma, so they ride on carrier proteins",
+      "only the free (unbound) fraction can leave the capillary and enter target cells",
+      "bound hormone is protected from liver and kidney clearance, so the half life is long (hours to days)",
+      "bound and free hormone are in equilibrium, as free hormone is used more is released from the carrier",
+      "peptide hormones circulate free and have short half lives (minutes)",
+      "feedback loops sense the free hormone",
+      "more carrier protein raises total hormone, but free hormone returns to normal once feedback adjusts secretion"
+    ]
+  },
+  {
+    "id": "w08-app-01",
+    "type": "app",
+    "competencyId": "w3-receptor-location",
+    "dok": 3,
+    "case": "Two hormones are injected into a dog at time zero. Epinephrine, a water soluble amine, raises heart rate within 30 seconds, and the effect is gone in 5 minutes. Aldosterone, a steroid, does nothing measurable to sodium reabsorption for 60 minutes. Then reabsorption climbs and stays elevated for 8 hours.",
+    "stem": "Which explanation accounts for both time courses?",
+    "options": [
+      "Epinephrine binds a surface receptor and uses second messengers to modify proteins already in the cell. Aldosterone enters the cell, binds an intracellular receptor, and changes gene transcription, so new proteins take time to appear and then persist.",
+      "Epinephrine acts faster because it is smaller and crosses the membrane more quickly than aldosterone.",
+      "Aldosterone acts slowly because it circulates bound to plasma proteins and cannot leave the blood until the carriers are saturated.",
+      "Both hormones use surface receptors, but aldosterone's receptor is coupled to a slower G protein."
+    ],
+    "correct": 0,
+    "why": "Receptor location follows solubility, and time course follows receptor location. A water soluble hormone cannot enter the cell, so it signals from the surface, and second messengers act on existing proteins within seconds. The signal ends as soon as the hormone is cleared. A lipid soluble hormone enters the cell and changes gene expression. The lag is transcription and translation, and the long tail is the lifetime of the new proteins.",
+    "whyNot": [
+      "Correct. This links solubility, receptor location, and mechanism to explain both the speed and the duration of each response.",
+      "Wrong. Epinephrine does not cross the membrane at all. It is water soluble and stays outside. Aldosterone is the one that crosses.",
+      "Wrong. Carrier binding is in equilibrium with free hormone from the start. Free aldosterone reaches cells immediately. The delay is in making new protein, not in leaving the blood.",
+      "Wrong. Aldosterone uses an intracellular receptor, not a G protein coupled receptor. No G protein is slow enough to explain a 60 minute lag and an 8 hour effect."
+    ]
+  },
+  {
+    "id": "w08-app-02",
+    "type": "app",
+    "competencyId": "w3-gpcr-pathway",
+    "dok": 3,
+    "case": "A patient has a rare mutation in the adrenal cortex. The ACTH receptor is present and binds ACTH normally, but it cannot activate its Gs protein. Plasma ACTH is 180 pg/mL (normal 10 to 60). Plasma cortisol is 2 micrograms/dL (normal 5 to 25).",
+    "stem": "Predict the cyclic AMP level in these adrenal cells and explain why ACTH is so high.",
+    "options": [
+      "Cyclic AMP stays low despite high ACTH because the receptor cannot turn on adenylyl cyclase. ACTH is high because low cortisol removes negative feedback on the pituitary.",
+      "Cyclic AMP is high because ACTH binds normally. Cortisol is low because it is being degraded too quickly.",
+      "Cyclic AMP is low because ACTH is not binding its receptor. ACTH is high because the pituitary is overproducing it as a primary pituitary disorder.",
+      "Cyclic AMP is normal because IP3 substitutes for it. ACTH is high because cortisol stimulates ACTH release."
+    ],
+    "correct": 0,
+    "why": "Trace the pathway. ACTH binds the receptor, but a receptor that cannot activate Gs cannot activate adenylyl cyclase, so cyclic AMP does not rise and cortisol synthesis is not stimulated. The pituitary senses the low cortisol, loses its negative feedback, and pours out ACTH. High trophic hormone with low peripheral hormone is the signature of a gland that cannot respond.",
+    "whyNot": [
+      "Correct. The break is between the receptor and the G protein, so everything downstream is quiet and the axis above is disinhibited.",
+      "Wrong. Binding is normal but binding alone does nothing. The G protein step is broken, so cyclic AMP cannot rise. Cortisol is low from lack of synthesis, not fast degradation.",
+      "Wrong. The case says ACTH binds normally. And the pituitary is responding correctly to low cortisol, which makes this a primary adrenal problem, not a pituitary one.",
+      "Wrong. IP3 belongs to the Gq pathway and does not substitute for cyclic AMP. Cortisol inhibits ACTH release, it does not stimulate it."
+    ]
+  },
+  {
+    "id": "w08-app-03",
+    "type": "app",
+    "competencyId": "w3-signal-amplification",
+    "dok": 3,
+    "case": "In a liver cell, one activated glucagon receptor activates about 100 G proteins before the ligand leaves. Each G protein activates one adenylyl cyclase, and each active cyclase makes about 1000 cyclic AMP molecules. Assume one cyclic AMP activates one protein kinase A, and each active protein kinase A phosphorylates about 100 enzyme molecules.",
+    "stem": "About how many enzyme molecules are phosphorylated per glucagon binding event, and what does the calculation show about where amplification comes from?",
+    "options": [
+      "About 10 million. Each catalytic step multiplies the signal, so total gain is the product of the gains of the steps.",
+      "About 1200. The gains of the steps add together.",
+      "About 100,000. Only the two enzyme steps multiply, and the G protein step does not count.",
+      "About 10 million. The amplification comes from one glucagon molecule binding many receptors at once."
+    ],
+    "correct": 0,
+    "why": "Multiply, do not add: 100 times 1000 times 100 equals 10,000,000. Every step where one active molecule produces many products is a catalytic step, and each one multiplies whatever came before it. That is why a hormone at nanomolar concentration can change the metabolism of a whole cell.",
+    "whyNot": [
+      "Correct. Three multiplying steps, 100 times 1000 times 100, give ten million.",
+      "Wrong. Adding 100 plus 1000 plus 100 gives 1200. Cascades multiply because each activated molecule keeps working on many substrates.",
+      "Wrong. The receptor activating 100 G proteins is itself a catalytic step, so it counts. Dropping it loses a factor of 100.",
+      "Wrong. The number is right but the reason is not. One ligand binds one receptor at a time. The gain comes from the enzyme cascade downstream, not from the binding step."
+    ]
+  },
+  {
+    "id": "w08-app-04",
+    "type": "app",
+    "competencyId": "w3-receptor-modulation",
+    "dok": 3,
+    "case": "A patient with asthma has been using a beta 2 agonist inhaler 8 to 10 times a day for 3 weeks. She reports that each puff now gives less relief. A lung function test shows her FEV1 improves by only 5 percent after a dose (a normal response to this drug is 12 percent or more).",
+    "stem": "What has happened at the receptor level, and what would be expected to restore her response?",
+    "options": [
+      "Chronic agonist exposure has down regulated beta 2 receptors on airway smooth muscle. Reducing how often she uses the drug for several days lets receptor number recover.",
+      "The drug has changed into a competitive antagonist with repeated use. A higher dose will restore the response.",
+      "Her airway cells have up regulated beta 2 receptors, so the drug now binds too many receptors and the effects cancel out.",
+      "Her liver now clears the drug faster. Using it more often will restore the response."
+    ],
+    "correct": 0,
+    "why": "Continuous agonist exposure tells the cell it is being overstimulated, and the cell responds by pulling receptors out of the membrane and degrading them. Fewer receptors means less response per dose. Receptor number is regulated in both directions, so removing the excess stimulus lets the cell rebuild its receptor population over days.",
+    "whyNot": [
+      "Correct. Loss of response to an agonist after chronic exposure is down regulation, and a rest period reverses it.",
+      "Wrong. A molecule's action at a receptor does not change with time. And more agonist on a cell with fewer receptors gives only a little more effect while driving further down regulation.",
+      "Wrong. Up regulation is the response to too little stimulation, and more receptors would make the drug work better, not worse.",
+      "Wrong. Faster clearance would shorten the effect, not shrink the peak response measured right after a dose. Using it more often is what caused the problem."
+    ]
+  },
+  {
+    "id": "w08-app-05",
+    "type": "app",
+    "competencyId": "w3-lab-dose-response",
+    "dok": 3,
+    "case": "A student measures contraction of an isolated muscle strip as percent of the strip's maximum. Drug A: 1 nM gives 10 percent, 10 nM gives 50 percent, 100 nM gives 100 percent, 1000 nM gives 100 percent. Drug B: 1 nM gives 5 percent, 10 nM gives 25 percent, 100 nM gives 50 percent, 1000 nM gives 50 percent, 10000 nM gives 50 percent.",
+    "stem": "Compare the two drugs, and predict what happens to the response when a saturating dose of drug B is added to a strip already at a saturating dose of drug A.",
+    "options": [
+      "Drug A is a full agonist with an EC50 of 10 nM. Drug B is a partial agonist with an EC50 of 100 nM. Adding B pulls the response below 100 percent, because B competes for receptors and produces less effect from the receptors it occupies.",
+      "Drug B is more potent than drug A because it reaches its plateau at a lower fraction of the maximum.",
+      "Both drugs are full agonists. Drug B simply has lower affinity and would reach 100 percent at a higher dose.",
+      "Drug B is a pure antagonist because it never produces a full response, so it would have no effect on its own."
+    ],
+    "correct": 0,
+    "why": "Read efficacy from the height of the plateau and potency from the EC50. Drug A plateaus at 100 percent with half maximal effect at 10 nM. Drug B plateaus at 50 percent no matter how much is given, with half of its own maximum (25 percent) at 10 nM and 50 percent of the strip's maximum at 100 nM. A partial agonist occupying receptors in the presence of a full agonist takes some receptors away from the full agonist and gives less in return, so the response falls.",
+    "whyNot": [
+      "Correct. Full versus partial agonist is decided by the plateau, and a partial agonist acts as a partial antagonist of a full agonist.",
+      "Wrong. Potency is read horizontally, from the concentration needed, and a low plateau has nothing to do with potency. Drug A needs less drug for any given response.",
+      "Wrong. Drug B is flat at 50 percent from 100 nM to 10000 nM, a hundredfold range. More drug does not help, so the ceiling is a property of the drug, not of affinity.",
+      "Wrong. An antagonist produces no response. Drug B produces 50 percent on its own, so it is an agonist, just a partial one."
+    ]
+  },
+  {
+    "id": "w08-app-06",
+    "type": "app",
+    "competencyId": "w9-hormone-transport",
+    "dok": 3,
+    "case": "A woman in the third trimester of pregnancy has a total thyroxine (T4) of 16 micrograms/dL (normal 5 to 12). Her free T4 is 1.2 ng/dL (normal 0.8 to 1.8) and her TSH is 1.5 mU/L (normal 0.4 to 4.0). Pregnancy raises the liver's production of thyroxine binding globulin.",
+    "stem": "Which explanation fits all three values?",
+    "options": [
+      "More binding protein holds more T4 in the bound pool. The axis senses free T4, which is normal, so TSH is normal and her thyroid hormone action is normal.",
+      "Her thyroid is overactive. The high total T4 has pushed TSH into the low part of the normal range.",
+      "The extra binding protein has trapped T4, so free T4 is too low to act and TSH is about to rise.",
+      "Bound hormone is the active form, so she has a mild excess of thyroid hormone action."
+    ],
+    "correct": 0,
+    "why": "Only free hormone leaves the blood, enters cells, and feeds back on the pituitary. When carrier protein rises, hormone shifts into the bound pool, free hormone dips for a moment, TSH nudges secretion up, and the free level returns to its set point with a larger bound reserve. The result is a high total, a normal free level, and a normal TSH. Nothing is wrong with her thyroid.",
+    "whyNot": [
+      "Correct. Total hormone changed because the carrier changed. The regulated variable, free hormone, is normal.",
+      "Wrong. An overactive thyroid would raise free T4 and suppress TSH below normal. Her free T4 is mid normal and her TSH is mid normal.",
+      "Wrong. Her free T4 is measured and it is normal. Feedback has already compensated for the extra carrier, so there is no reason for TSH to rise now.",
+      "Wrong. Bound hormone cannot leave the capillary or enter a cell. The bound pool is a reservoir, not the active fraction."
+    ]
+  },
+  {
+    "id": "w08-app-07",
+    "type": "app",
+    "competencyId": "w9-hormone-receptors",
+    "dok": 3,
+    "case": "Epinephrine is infused into a volunteer. Blood flow to skeletal muscle rises 40 percent. Blood flow to the skin falls 30 percent. Heart rate rises from 65 to 95 beats per minute. The hormone reaches every tissue at the same blood concentration.",
+    "stem": "Why does one hormone produce opposite effects on the two vascular beds?",
+    "options": [
+      "The response is decided by the target cell. Skeletal muscle arterioles express mostly beta 2 receptors, which relax the smooth muscle. Skin arterioles express mostly alpha 1 receptors, which contract it.",
+      "Epinephrine reaches skeletal muscle at a higher concentration because muscle is closer to the heart.",
+      "The skin converts epinephrine into a different hormone that has the opposite effect.",
+      "Skeletal muscle has more receptors than skin, and a larger number of receptors always produces vasodilation."
+    ],
+    "correct": 0,
+    "why": "A hormone carries no instructions. It only carries a shape. What happens next depends on which receptor subtype the target cell expresses and what that receptor is wired to inside the cell. Beta 2 receptors couple to Gs and relax vascular smooth muscle. Alpha 1 receptors couple to Gq and contract it. The same molecule in the same blood gives opposite results because the two tissues read it differently.",
+    "whyNot": [
+      "Correct. Receptor subtype and its downstream pathway, not the ligand, determine the response.",
+      "Wrong. The case states the concentration is the same everywhere, and blood mixes thoroughly before it reaches any tissue.",
+      "Wrong. Epinephrine is not converted into an opposing hormone in the skin. It binds alpha 1 receptors there and they constrict.",
+      "Wrong. Receptor number changes the size of a response, not its direction. Direction is set by the receptor subtype."
+    ]
+  },
+  {
+    "id": "w08-app-08",
+    "type": "app",
+    "competencyId": "w9-hypothalamic-pituitary",
+    "dok": 3,
+    "case": "A patient has taken a high dose of prednisone, a synthetic glucocorticoid that acts like cortisol, every day for 6 months for an autoimmune disease. She stops it suddenly. Two days later she is weak, nauseated, and dizzy when she stands. Morning cortisol is 1 microgram/dL (normal 5 to 25). ACTH is 8 pg/mL (normal 10 to 60).",
+    "stem": "Trace what has happened in the hypothalamic pituitary adrenal axis.",
+    "options": [
+      "Months of glucocorticoid suppressed CRH and ACTH by negative feedback, and the unstimulated adrenal cortex shrank. With the drug gone, neither ACTH nor cortisol can rise quickly, so both are low.",
+      "The drug destroyed the adrenal cortex directly, so ACTH should be very high from lost feedback.",
+      "The drug raised ACTH by positive feedback, which exhausted the adrenal gland.",
+      "Stopping the drug removed the stimulus for CRH, and the hypothalamus needs weeks to make new CRH."
+    ],
+    "correct": 0,
+    "why": "The axis cannot tell prednisone from cortisol. For six months the hypothalamus and pituitary saw plenty of glucocorticoid and shut off CRH and ACTH. An adrenal cortex without ACTH atrophies. When the drug stops, the suppressed upper tiers recover slowly and the shrunken gland could not respond quickly even if they did. Low cortisol with low ACTH is the secondary pattern, and it was caused by feedback, not by damage.",
+    "whyNot": [
+      "Correct. Negative feedback from an outside glucocorticoid produced secondary suppression of the whole axis.",
+      "Wrong. Glucocorticoids do not destroy the adrenal cortex, and primary adrenal failure would give a high ACTH, not a low one.",
+      "Wrong. Glucocorticoids exert negative feedback, not positive. ACTH fell during treatment, it did not rise.",
+      "Wrong. Glucocorticoid is an inhibitor of CRH, not a stimulus. Removing it should eventually raise CRH. The slow recovery is release from long suppression plus an atrophied adrenal."
+    ]
+  },
+  {
+    "id": "w08-app-09",
+    "type": "app",
+    "competencyId": "w9-endocrine-pathology",
+    "dok": 3,
+    "case": "Two patients have T4 and TSH measured. Patient 1: T4 2 micrograms/dL (normal 5 to 12), TSH 45 mU/L (normal 0.4 to 4.0). Patient 2: T4 2 micrograms/dL (normal 5 to 12), TSH 0.2 mU/L (normal 0.4 to 4.0).",
+    "stem": "Classify each disorder and identify which tier of the axis is failing.",
+    "options": [
+      "Patient 1 has primary hyposecretion: the thyroid is failing, and TSH is high because negative feedback is lost. Patient 2 has secondary hyposecretion: the pituitary or hypothalamus is failing, so TSH is low and the thyroid is unstimulated.",
+      "Both have primary hyposecretion, because T4 is low in both.",
+      "Patient 1 has secondary hyposecretion, because the high TSH shows the pituitary is working too hard. Patient 2 has primary hyposecretion.",
+      "Patient 1 has primary hypersecretion of TSH. Patient 2 has normal function, because a low TSH means feedback is intact."
+    ],
+    "correct": 0,
+    "why": "The same low T4 means two different things depending on the tier above it. A pituitary that sees low T4 and responds correctly pumps out TSH, so a high TSH means the pituitary is healthy and the thyroid is the problem. A pituitary that sees low T4 and does nothing is itself the problem, so a low TSH with low T4 points upstream.",
+    "whyNot": [
+      "Correct. Read the trophic hormone against the peripheral hormone to find the failing tier.",
+      "Wrong. The T4 alone cannot separate primary from secondary. The TSH values are opposite, so the tiers at fault are different.",
+      "Wrong. A pituitary working hard is a healthy pituitary. That makes patient 1 primary, not secondary. And a low TSH in patient 2 means the pituitary is not responding, which is secondary.",
+      "Wrong. The high TSH in patient 1 is an appropriate response to low T4, not a pituitary tumor. And a low TSH with a low T4 is not intact feedback. Intact feedback would raise TSH."
+    ]
+  },
+  {
+    "id": "w08-app-10",
+    "type": "app",
+    "competencyId": "w9-lab-hormone-assay",
+    "dok": 3,
+    "case": "A student runs a sandwich immunoassay for cortisol in which absorbance rises with hormone concentration. The standards read: 0 micrograms/dL gives 0.05, 5 gives 0.25, 10 gives 0.45, 15 gives 0.65, 20 gives 0.85. Above 20 the curve flattens. A patient sample was diluted 1 part sample to 3 parts buffer (a 1 in 4 dilution) before the assay, and the diluted sample reads 0.45.",
+    "stem": "What is the cortisol concentration in the undiluted patient sample, and why was the dilution necessary?",
+    "options": [
+      "40 micrograms/dL. The curve gives 10 micrograms/dL for the diluted sample, and multiplying by the dilution factor of 4 gives the original. Without dilution the sample would have read on the flat part of the curve, where the value cannot be determined.",
+      "10 micrograms/dL. The standard curve is read directly, and dilution does not change the concentration.",
+      "2.5 micrograms/dL. The diluted reading must be divided by 4.",
+      "40 micrograms/dL. The curve gives 40 directly because absorbance is proportional to concentration times 4."
+    ],
+    "correct": 0,
+    "why": "Match the reading to the curve first. An absorbance of 0.45 sits exactly on the 10 micrograms/dL standard. That is the concentration in the tube, which holds one quarter sample, so the original sample is four times more concentrated: 40 micrograms/dL. An undiluted sample at 40 would have been well past 20, on the plateau, where a big change in concentration barely changes absorbance and the number would be unreliable.",
+    "whyNot": [
+      "Correct. Read the curve, then undo the dilution. The dilution brought the sample into the linear range.",
+      "Wrong. 10 micrograms/dL is the concentration in the diluted tube. Diluting one part in four lowers the concentration to one quarter, so the original must be four times higher.",
+      "Wrong. Dividing by 4 goes the wrong way. The sample was diluted, so the original was more concentrated than the reading, not less.",
+      "Wrong. The curve does not know about the dilution. Absorbance 0.45 means 10 on the standard curve, and the factor of 4 is applied afterward by the student, not built into the curve."
+    ]
+  },
+  {
+    "id": "w08-app-11",
+    "type": "app",
+    "competencyId": "w15-ovarian-cycle",
+    "dok": 3,
+    "case": "A woman takes a daily pill containing a steady dose of estrogen and a progestin (a synthetic progesterone) starting on day 1 of her cycle. On day 13 her LH is 4 IU/L (a normal midcycle surge reaches 40 to 100). Ultrasound shows only small follicles and no dominant follicle. Her own ovarian estradiol output is low.",
+    "stem": "Explain why no LH surge occurs.",
+    "options": [
+      "The steady steroid dose holds negative feedback on GnRH, LH, and FSH. Without gonadotropin support no follicle grows large enough to produce the sustained estrogen rise that would switch feedback to positive and trigger the surge.",
+      "The pill's estrogen directly destroys the developing follicles in the ovary.",
+      "The progestin blocks LH receptors on the ovary, so the surge occurs but cannot be measured in blood.",
+      "The pill stops the pituitary from making any LH at all, which is why LH is zero."
+    ],
+    "correct": 0,
+    "why": "The surge needs two things: a follicle that makes a lot of estrogen for a couple of days, and an axis free to respond to it with positive feedback. The pill takes away both. Steady estrogen and progestin act on the hypothalamus and pituitary as constant negative feedback, so FSH and LH stay low, follicles are not recruited to dominance, and the ovary's own estrogen never rises. Progesterone in particular holds the axis in the negative feedback state, as it does in the luteal phase.",
+    "whyNot": [
+      "Correct. Negative feedback at the top of the axis removes the follicle growth and the estrogen peak that the surge depends on.",
+      "Wrong. Estrogen does not kill follicles. Follicles stay small because FSH support is missing, not because they are destroyed.",
+      "Wrong. LH is measured in blood, and blood LH is 4, not surging. The surge is a pituitary event and it never happened.",
+      "Wrong. LH is 4 IU/L, not zero. The pituitary still makes basal LH. What the pill prevents is the surge."
+    ]
+  },
+  {
+    "id": "w08-app-12",
+    "type": "app",
+    "competencyId": "w15-parturition-lactation",
+    "dok": 3,
+    "case": "A woman in labor has weak contractions every 3 minutes and her cervix is dilated 4 cm (full dilation is 10 cm). Her doctor starts an intravenous oxytocin infusion. Within 20 minutes the contractions are stronger and come every 2 minutes, and over the next hour the cervix dilates to 6 cm.",
+    "stem": "Explain how the infusion fits the feedback loop of labor, and predict what happens to her own oxytocin release as the cervix stretches further.",
+    "options": [
+      "Labor is a positive feedback loop. Cervical stretch sends sensory signals to the hypothalamus, oxytocin is released, contractions push the fetus against the cervix, and the stretch increases again. The infusion adds to the loop, and her own oxytocin release will keep rising until delivery removes the stretch.",
+      "Labor is a negative feedback loop, so her own oxytocin release will fall as the infused hormone raises the plasma level.",
+      "Oxytocin acts only on the mammary gland. The stronger contractions come from progesterone withdrawal.",
+      "Cervical stretch normally inhibits oxytocin release so contractions do not become dangerous. The infusion overrides that brake."
+    ],
+    "correct": 0,
+    "why": "Labor is the textbook example of positive feedback. Each contraction makes the next stimulus bigger instead of smaller, so the loop escalates until an outside event, delivery, ends it. Infused oxytocin simply supplies more of the loop's signal. Because her own release depends on cervical stretch and not on the plasma oxytocin level, it rises as dilation proceeds. Oxytocin also raises the uterus's sensitivity by increasing prostaglandin release, which strengthens the loop further.",
+    "whyNot": [
+      "Correct. Stretch drives oxytocin, oxytocin drives contraction, contraction drives more stretch, until delivery.",
+      "Wrong. Labor is positive feedback. The hypothalamus responds to cervical stretch, not to plasma oxytocin, so infused hormone does not shut her own release off.",
+      "Wrong. Oxytocin acts on both uterine smooth muscle and mammary myoepithelial cells. Progesterone withdrawal makes the uterus responsive, but the immediate contractions described here are the oxytocin effect.",
+      "Wrong. Stretch stimulates oxytocin release, it does not inhibit it. There is no brake in this loop, which is exactly why it runs to completion."
+    ]
+  }
+]

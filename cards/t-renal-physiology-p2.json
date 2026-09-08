@@ -2098,16 +2098,16 @@
    "tags": [
     "lecture"
    ],
-   "q": "A toddler wets the bed and a healthy adult does not, even though both have the same bladder emptying reflex. Which part of the control differs?",
-   "a": "Voluntary control of the external urethral sphincter, which is learned; the spinal reflex that empties the bladder is present from birth.",
+   "q": "Which nerve carries the voluntary command to the external urethral sphincter?",
+   "a": "The pudendal nerve.",
    "options": [
-    "Voluntary control of the external urethral sphincter, which is learned; the emptying reflex is present from birth",
-    "The stretch receptors in the bladder wall, which do not develop until later childhood",
-    "The detrusor muscle, which cannot contract strongly in a small child",
-    "The internal urethral sphincter, which is under voluntary control once toilet training is complete"
+    "The pelvic nerve",
+    "The hypogastric nerve",
+    "The pudendal nerve",
+    "The vagus nerve"
    ],
-   "correctIndex": 0,
-   "explanation": "Bladder filling stretches the wall, afferents fire, and a sacral reflex contracts the detrusor while relaxing the internal sphincter. That much works from birth. What continence adds is a descending voluntary command, carried by the pudendal nerve to the skeletal muscle of the external sphincter, that can hold the sphincter closed against the reflex until a socially acceptable moment. Toilet training is the acquisition of that override, and it is also why a spinal cord injury above the sacral level leaves a bladder that empties reflexively but not on request. Stretch receptors are functional in infancy, which is why the reflex works at all. The detrusor of a small child contracts perfectly well. The internal sphincter is smooth muscle under autonomic control and is never voluntary."
+   "correctIndex": 2,
+   "explanation": "The pudendal nerve is a somatic motor nerve, so it commands the skeletal muscle of the external sphincter and lets you delay voiding. The pelvic nerve carries parasympathetic fibers that contract the detrusor. The hypogastric nerve carries sympathetic fibers that keep the bladder relaxed and the internal sphincter closed during filling. The vagus does not reach the bladder."
   },
   {
    "id": "c116",

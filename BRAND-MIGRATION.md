@@ -137,7 +137,7 @@ live site does and what most pages in here were getting wrong.
 ### The shared chrome
 
 New file `assets/brandbar.css`, namespaced under `.mm-` so it cannot collide
-with a page's own classes, and every colour falls back to a literal if
+with a page's own classes, and every color falls back to a literal if
 `brand.css` is not linked on that page. It carries the sticky white brand bar
 (mark, two-tone wordmark, course line) and the dark dot-separated footer.
 

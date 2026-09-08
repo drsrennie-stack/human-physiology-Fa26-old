@@ -1022,7 +1022,7 @@
     "It blocks virus moving through the fluid but not virus passing cell to cell",
     "It blocks both routes, since antibody reaches a virus wherever the virus goes",
     "It blocks neither route, since antibody plays no part in antiviral defense",
-    "It blocks cell to cell spread but not free virus traveling in the blood"
+    "It blocks cell to cell spread but not free virus travelling in the blood"
    ],
    "correctIndex": 0,
    "explanation": "Antibody patrols the extracellular space, so it intercepts free particles and can prevent the initial infection, but a virus that moves through direct contact between cells never enters that space and is never exposed. Clearing those infected cells requires the cytotoxic T response this vaccine failed to raise. The last option reverses the logic exactly, giving antibody access to the one route it cannot reach."

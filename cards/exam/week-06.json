@@ -1,0 +1,640 @@
+[
+  {
+    "id": "w06-ma-01", "type": "ma", "competencyId": "w7-receptor-classes", "dok": 2,
+    "stem": "Which statements correctly pair a receptor with the stimulus it actually responds to? Select all that apply.",
+    "options": [
+      "Carotid body chemoreceptors fire more when arterial PO2 falls.",
+      "Carotid sinus baroreceptors are mechanoreceptors that respond to stretch of the arterial wall.",
+      "Rods and cones are chemoreceptors that respond to photopigment breakdown products carried in the blood.",
+      "Skin thermoreceptors are free nerve endings that respond to a change in skin temperature.",
+      "Muscle spindles are nociceptors that fire only when a muscle is overstretched and damaged."
+    ],
+    "correct": [0, 1, 3],
+    "why": "Receptors are classified by their adequate stimulus, the form of energy that opens their channels at the lowest threshold. Chemoreceptors bind molecules, mechanoreceptors respond to deformation, thermoreceptors to temperature, photoreceptors to light, and nociceptors to stimuli that threaten damage. The same tissue can hold two classes side by side, as in the neck, where the carotid body senses gas and the carotid sinus senses pressure.",
+    "whyNot": [
+      "Belongs. The carotid body is a chemoreceptor and a fall in PO2 is its adequate stimulus.",
+      "Belongs. The sinus is a stretchy segment of artery wall and its afferents fire in proportion to wall stretch, which tracks pressure.",
+      "Wrong. Rods and cones are photoreceptors. Light isomerizes retinal inside the cell; nothing arrives from the blood.",
+      "Belongs. Warm and cold receptors are free endings whose channels open at particular temperature ranges.",
+      "Wrong. Spindles are mechanoreceptors that report muscle length continuously, at all lengths, not just damaging ones."
+    ]
+  },
+  {
+    "id": "w06-ma-02", "type": "ma", "competencyId": "w7-receptor-adaptation", "dok": 2,
+    "stem": "Which statements about tonic and phasic receptors are correct? Select all that apply.",
+    "options": [
+      "A phasic receptor fires at stimulus onset and then stops firing while the stimulus continues.",
+      "A tonic receptor keeps firing for as long as the stimulus lasts, though its rate may slow a little.",
+      "Baroreceptors and muscle spindles are tonic, because pressure and muscle length must be monitored continuously.",
+      "Nociceptors are phasic, which is why the pain from an injury fades within a few seconds.",
+      "Olfactory receptors are tonic, which is why you keep noticing a smell for as long as you stay in the room."
+    ],
+    "correct": [0, 1, 2],
+    "why": "Adaptation is the fall in receptor firing during a constant stimulus. Phasic receptors adapt quickly and report change: onset, offset, and movement. Tonic receptors adapt slowly or not at all and report the ongoing state of something the body must track all the time, such as blood pressure, muscle length, and tissue damage.",
+    "whyNot": [
+      "Belongs. That onset burst followed by silence is the definition of a rapidly adapting, phasic receptor.",
+      "Belongs. Slow adaptation means the CNS gets a continuous report; the slight slowing is normal.",
+      "Belongs. Both variables are needed at every moment, so their receptors are tonic.",
+      "Wrong. Nociceptors are tonic. Pain persists while the damaging stimulus persists, which protects the tissue.",
+      "Wrong. Olfactory receptors are phasic. A smell fades within minutes even though the odorant is still there."
+    ]
+  },
+  {
+    "id": "w06-ma-03", "type": "ma", "competencyId": "w7-somatosensory-pathways", "dok": 2,
+    "stem": "Which statements about the somatosensory pathways and the sensory homunculus are correct? Select all that apply.",
+    "options": [
+      "Fine touch and vibration ascend in the dorsal columns and cross to the other side in the medulla.",
+      "Pain and temperature cross in the spinal cord within a segment or two of entry and ascend in the spinothalamic tract.",
+      "Both pathways go straight from the spinal cord to the cortex without a synapse in the thalamus.",
+      "The trunk gets more cortex than the lips because the trunk has more skin area.",
+      "The hands and face occupy large cortical areas because they have dense innervation and small receptive fields."
+    ],
+    "correct": [0, 1, 4],
+    "why": "Touch and pain use different ascending routes that cross at different levels, which is why a one sided spinal lesion takes fine touch from one leg and pain from the other. Both routes relay in the thalamus before reaching the postcentral gyrus. Cortical area is set by the number of separate afferent lines a region sends, not by the amount of skin, so the fingertips and lips are huge on the map.",
+    "whyNot": [
+      "Belongs. First order axons run all the way to the medulla, synapse there, and the second order axons cross.",
+      "Belongs. Second order neurons in the dorsal horn cross almost at once and climb on the opposite side.",
+      "Wrong. All conscious somatic sensation relays in the thalamus. Smell is the only sense that skips it.",
+      "Wrong. The trunk has sparse innervation and large receptive fields, so it needs little cortex despite its size.",
+      "Belongs. Many separate lines from a small area need a lot of cortex to keep them apart."
+    ]
+  },
+  {
+    "id": "w06-ma-04", "type": "ma", "competencyId": "w7-vision-optics", "dok": 2,
+    "stem": "Which statements about refraction and accommodation in the eye are correct? Select all that apply.",
+    "options": [
+      "The cornea does most of the refraction, because the air to cornea interface has the largest jump in refractive index.",
+      "For near vision the ciliary muscle contracts, the suspensory ligaments slacken, and the lens becomes rounder.",
+      "For distance vision the ciliary muscle contracts hard to pull the lens flat.",
+      "In bright light, parasympathetic fibers contract the pupillary sphincter and the pupil constricts.",
+      "The lens changes its refractive power by changing its refractive index."
+    ],
+    "correct": [0, 1, 3],
+    "why": "Light bends where refractive index changes, so the cornea, which faces air, supplies about two thirds of the eye's power and cannot adjust. The lens supplies the rest and is the adjustable part: a rounder lens bends light more and is needed for near objects. Rounding happens when the ciliary muscle contracts and releases tension on the ligaments. The pupil is a separate reflex that limits light and improves depth of focus.",
+    "whyNot": [
+      "Belongs. Refraction depends on the index change at a surface, and air to cornea is the biggest one in the eye.",
+      "Belongs. Contraction moves the ciliary body inward, the ligaments go slack, and the elastic lens rounds up on its own.",
+      "Wrong. Distance vision is the relaxed state. A relaxed ciliary muscle lets the ligaments pull the lens flat.",
+      "Belongs. The sphincter is parasympathetic and muscarinic, which is why muscarinic antagonists dilate the pupil.",
+      "Wrong. The index of the lens is fixed. Its power changes because its curvature changes."
+    ]
+  },
+  {
+    "id": "w06-ma-05", "type": "ma", "competencyId": "w7-equilibrium", "dok": 2,
+    "stem": "Which statements about the vestibular apparatus are correct? Select all that apply.",
+    "options": [
+      "The semicircular canals respond to angular acceleration, not to rotation at a constant speed.",
+      "During constant speed rotation the endolymph catches up with the canal wall and the cupula returns to its resting position.",
+      "The otolith crystals of the utricle and saccule are denser than the fluid around them, so they lag behind during linear acceleration.",
+      "Tilting the head at rest does not affect the utricle, because gravity is not an acceleration.",
+      "The saccule detects horizontal linear acceleration and the utricle detects vertical."
+    ],
+    "correct": [0, 1, 2],
+    "why": "Both parts of the vestibular system work by inertia. In the canals the endolymph lags when the head starts or stops turning and deflects the cupula, but once the fluid is moving with the head there is nothing to deflect. In the otolith organs the heavy crystals lag during linear acceleration and are pulled by gravity during tilt, shearing the hair cells beneath them.",
+    "whyNot": [
+      "Belongs. Only a change in rotational speed moves the endolymph relative to the canal.",
+      "Belongs. That is why a steady spin stops feeling like a spin after about twenty seconds.",
+      "Belongs. The density difference is what makes the membrane lag and shear the stereocilia.",
+      "Wrong. Gravity acts on the otoliths the same way acceleration does, so a tilt shifts the membrane and is sensed.",
+      "Wrong. It is the other way round. The utricle lies horizontally and senses horizontal acceleration; the saccule is vertical."
+    ]
+  },
+  {
+    "id": "w06-ma-06", "type": "ma", "competencyId": "w7-chemical-senses", "dok": 2,
+    "stem": "Which statements about taste and smell are correct? Select all that apply.",
+    "options": [
+      "Olfactory receptor cells are true neurons whose own axons pass through the cribriform plate to the olfactory bulb.",
+      "Taste receptor cells are modified epithelial cells that release transmitter onto a separate sensory neuron.",
+      "Olfactory information reaches the amygdala and olfactory cortex without a relay in the thalamus.",
+      "Salt and sour tastes use G protein coupled receptors, while sweet, bitter, and umami use ion channels.",
+      "Olfactory receptor neurons cannot be replaced, which is why the sense of smell declines with age."
+    ],
+    "correct": [0, 1, 2],
+    "why": "The two chemical senses differ in cell type and in wiring. Smell uses receptor neurons that project directly into the brain and onto limbic structures, which is why odors trigger memory and emotion so directly. Taste uses epithelial receptor cells, a cranial nerve, the solitary nucleus, the thalamus, and then the gustatory cortex. Within taste, salt and sour are ion channel mediated and the other three are G protein coupled.",
+    "whyNot": [
+      "Belongs. The receptor cell is a bipolar neuron, and its axon is the first order fiber.",
+      "Belongs. Taste cells are not neurons. They depolarize, release transmitter, and the afferent neuron carries the signal.",
+      "Belongs. Mitral cell axons in the olfactory tract go directly to piriform cortex and amygdala.",
+      "Wrong. It is reversed. Na+ and H+ act through channels; sweet, bitter, and umami molecules bind G protein coupled receptors.",
+      "Wrong. Olfactory receptor neurons are replaced from basal cells throughout life, about every two months."
+    ]
+  },
+  {
+    "id": "w06-ma-07", "type": "ma", "competencyId": "w7-lab-vision-tests", "dok": 2,
+    "stem": "Which statements correctly interpret results from the vision tests done in lab? Select all that apply.",
+    "options": [
+      "A subject who reads 20/40 sees at 20 feet what a normal eye can see at 40 feet.",
+      "The blind spot exists because there are no photoreceptors where the optic nerve leaves the retina.",
+      "People usually notice their blind spot in everyday vision because the other eye cannot cover it.",
+      "The near point recedes with age because the lens loses elasticity and cannot round up as far.",
+      "A subject who fails the Ishihara color plates has a problem with the lens, since color depends on refraction."
+    ],
+    "correct": [0, 1, 3],
+    "why": "Each lab test isolates one function. Acuity tests the optics and the fovea together. The blind spot test shows where the optic disc is, and it goes unnoticed because the two visual fields overlap and the brain fills in. The near point measures how far the lens can still round up. Color plates test the three cone pigments and have nothing to do with the optics in front of the retina.",
+    "whyNot": [
+      "Belongs. The top number is the test distance and the bottom is the distance at which a normal eye reads that line.",
+      "Belongs. The optic disc is where axons leave, so light landing there is not transduced.",
+      "Wrong. The other eye does cover it, and the brain fills in the gap, so it is not noticed unless one eye is closed.",
+      "Belongs. A stiffer lens rounds less, so the closest point that can be focused moves outward.",
+      "Wrong. Color discrimination depends on cone pigments in the retina. A lens problem blurs everything equally."
+    ]
+  },
+  {
+    "id": "w06-ma-08", "type": "ma", "competencyId": "w8-ans-organization", "dok": 2,
+    "stem": "Which statements correctly contrast somatic motor and autonomic pathways? Select all that apply.",
+    "options": [
+      "A somatic motor pathway uses a single neuron from the CNS all the way to skeletal muscle.",
+      "An autonomic pathway uses two neurons in series, with a synapse in a peripheral ganglion.",
+      "A somatic motor neuron can only excite its target, while an autonomic neuron can excite or inhibit its target.",
+      "Autonomic postganglionic fibers end on skeletal muscle fibers.",
+      "The somatic motor pathway has a synapse in the sympathetic chain ganglion."
+    ],
+    "correct": [0, 1, 2],
+    "why": "The somatic system is a one neuron, one transmitter, one effect system: acetylcholine on nicotinic receptors always contracts skeletal muscle. The autonomic system uses a preganglionic neuron, a ganglion, and a postganglionic neuron to reach smooth muscle, cardiac muscle, and glands, and its effect can be excitatory or inhibitory depending on the receptor on the target.",
+    "whyNot": [
+      "Belongs. The cell body is in the ventral horn or brainstem and the axon runs without a synapse to the muscle.",
+      "Belongs. Preganglionic to ganglion to postganglionic to effector is the defining autonomic layout.",
+      "Belongs. Skeletal muscle has no inhibitory input from its motor neuron; smooth muscle and heart can be sped up or slowed.",
+      "Wrong. Skeletal muscle is somatic only. Autonomic targets are smooth muscle, cardiac muscle, and glands.",
+      "Wrong. The somatic pathway has no peripheral ganglion at all. Chain ganglia are sympathetic."
+    ]
+  },
+  {
+    "id": "w06-ma-09", "type": "ma", "competencyId": "w8-ans-divisions", "dok": 2,
+    "stem": "Which statements correctly describe the sympathetic and parasympathetic divisions? Select all that apply.",
+    "options": [
+      "Sympathetic preganglionic fibers leave the spinal cord from the thoracic and upper lumbar segments.",
+      "Parasympathetic preganglionic fibers leave from the brainstem in cranial nerves and from the sacral cord.",
+      "Sympathetic ganglia lie close to the cord, so sympathetic preganglionic fibers are short and postganglionic fibers are long.",
+      "Parasympathetic activity raises heart rate and slows digestion.",
+      "Sympathetic activity increases gastrointestinal motility to move food along faster during exercise."
+    ],
+    "correct": [0, 1, 2],
+    "why": "The two divisions differ in where they leave the CNS, where their ganglia sit, and what they do. Sympathetic outflow is thoracolumbar with ganglia in the chain or near the aorta. Parasympathetic outflow is craniosacral with ganglia in or near the organ. At the heart the parasympathetic division slows the rate and the sympathetic raises it; in the gut the parasympathetic increases motility and secretion and the sympathetic reduces them.",
+    "whyNot": [
+      "Belongs. Thoracolumbar outflow, T1 to about L2.",
+      "Belongs. Cranial nerves III, VII, IX, and X plus sacral segments S2 to S4.",
+      "Belongs. The ganglion is next to the cord, so most of the distance is covered by the postganglionic fiber.",
+      "Wrong. Reversed. Parasympathetic slows the heart and speeds digestion; that is the rest and digest pattern.",
+      "Wrong. Sympathetic activity inhibits motility and diverts blood away from the gut during exercise."
+    ]
+  },
+  {
+    "id": "w06-ma-10", "type": "ma", "competencyId": "w8-ans-receptors", "dok": 2,
+    "stem": "Which statements correctly match an autonomic receptor to its transmitter, location, and effect? Select all that apply.",
+    "options": [
+      "Nicotinic receptors are ligand gated ion channels found on all autonomic postganglionic neurons and on skeletal muscle.",
+      "Muscarinic receptors are G protein coupled and sit on the targets of parasympathetic postganglionic fibers.",
+      "Norepinephrine acting on beta-1 receptors raises heart rate and force of contraction.",
+      "Sympathetic postganglionic fibers to sweat glands release norepinephrine onto alpha receptors.",
+      "Activating beta-2 receptors on bronchiolar smooth muscle causes the airways to constrict."
+    ],
+    "correct": [0, 1, 2],
+    "why": "Acetylcholine is used in every ganglion and at the neuromuscular junction, where it acts on nicotinic channels, and by parasympathetic postganglionic fibers, where it acts on muscarinic G protein coupled receptors. Most sympathetic postganglionic fibers release norepinephrine onto alpha or beta receptors, and the receptor on the tissue decides the response. Sweat glands are the well known exception: sympathetic, but cholinergic and muscarinic.",
+    "whyNot": [
+      "Belongs. Both autonomic ganglia and the neuromuscular junction use the fast nicotinic channel.",
+      "Belongs. Heart, gut, glands, and pupil sphincter respond to acetylcholine through muscarinic receptors.",
+      "Belongs. Beta-1 is the cardiac receptor and its activation is the sympathetic effect on the heart.",
+      "Wrong. Sweat glands are sympathetic but cholinergic. Their receptors are muscarinic, which is why anticholinergic drugs dry the skin.",
+      "Wrong. Beta-2 activation relaxes airway smooth muscle. Constriction comes from muscarinic activation."
+    ]
+  },
+  {
+    "id": "w06-ma-11", "type": "ma", "competencyId": "w7-stimulus-coding", "dok": 2,
+    "stem": "Which statements about how the nervous system codes a stimulus are correct? Select all that apply.",
+    "options": [
+      "Modality is coded by which receptor and pathway are active, not by the shape of the action potential.",
+      "Stimulus intensity is coded by action potential frequency and by the number of receptors recruited.",
+      "A stronger stimulus produces larger action potentials in the sensory neuron.",
+      "Location is coded by which afferent is firing and where its pathway ends in the cortex.",
+      "Electrical stimulation of the optic nerve is perceived as sound, because the CNS decides modality from the type of stimulus."
+    ],
+    "correct": [0, 1, 3],
+    "why": "Action potentials are all alike, so the information has to be carried by which line is active and how often it fires. Modality and location are labeled line properties: activity in a given afferent is always read as its usual sense from its usual spot, however it was produced. Intensity is coded by frequency and by recruitment, and duration by how long the firing continues.",
+    "whyNot": [
+      "Belongs. Every action potential is the same size and shape; only the line identifies the sense.",
+      "Belongs. A stronger stimulus makes a bigger receptor potential, more spikes per second, and brings in neighbors with higher thresholds.",
+      "Wrong. Action potentials are all or none. Intensity changes their frequency, never their amplitude.",
+      "Belongs. The afferent's cortical target is fixed, so its activity is always mapped to the same body location.",
+      "Wrong. Activity in the optic nerve is always perceived as light, whatever caused it. That is the labeled line principle."
+    ]
+  },
+  {
+    "id": "w06-ma-12", "type": "ma", "competencyId": "w7-hearing-clinical", "dok": 2,
+    "stem": "Which statements about conductive and sensorineural hearing loss are correct? Select all that apply.",
+    "options": [
+      "In a conductive loss, bone conduction bypasses the middle ear, so the Rinne shows bone longer than air on the affected side.",
+      "In a sensorineural loss, the Weber lateralizes away from the affected ear.",
+      "In a conductive loss, the Weber lateralizes toward the affected ear.",
+      "A normal Rinne on both sides rules out any sensorineural loss.",
+      "Damage to cochlear hair cells produces a conductive loss, because the cochlea conducts the fluid wave."
+    ],
+    "correct": [0, 1, 2],
+    "why": "The two tests answer different questions. Rinne asks whether sound gets through the outer and middle ear: if bone beats air, it does not, so the loss is conductive. Weber asks which cochlea is working better: a damaged cochlea sends the tone to the other side, while a conductive block sends it toward the blocked ear because that cochlea is intact and shielded from room noise.",
+    "whyNot": [
+      "Belongs. The fork on the mastoid drives the cochlea directly and skips the blocked middle ear.",
+      "Belongs. The tone is heard best by the healthier cochlea, so it goes to the good ear.",
+      "Belongs. The intact cochlea on the blocked side hears the bone conducted tone without competition from air borne sound.",
+      "Wrong. A sensorineural loss leaves the Rinne in normal order, air longer than bone, just with both shortened. The Weber is what finds it.",
+      "Wrong. Hair cell damage is sensorineural. Conductive means the problem is in the canal, eardrum, or ossicles."
+    ]
+  },
+
+  {
+    "id": "w06-tf-01", "type": "tf", "competencyId": "w7-receptor-adaptation", "dok": 2,
+    "statement": "Muscle spindles are phasic receptors, so they stop firing when a muscle is held at a constant length.",
+    "truth": false,
+    "correction": "Muscle spindles are tonic receptors that keep firing at a constant length, so the CNS always knows where the limb is.",
+    "why": "Limb position must be known continuously, not just when it changes, so spindles adapt very little. Phasic receptors such as Pacinian corpuscles and olfactory receptors are the ones that fall silent during a steady stimulus. A phasic spindle would leave you with no idea where your arm was once it stopped moving."
+  },
+  {
+    "id": "w06-tf-02", "type": "tf", "competencyId": "w7-somatosensory-pathways", "dok": 2,
+    "statement": "Fine touch information from the left hand crosses the midline in the medulla, so it reaches the right somatosensory cortex.",
+    "truth": true,
+    "correction": "True. Dorsal column axons climb on the same side to the medulla, synapse there, and the second order axons cross before ascending to the thalamus and cortex.",
+    "why": "Each somatosensory pathway crosses once, and the level of crossing is what differs. Fine touch and vibration cross in the medulla; pain and temperature cross in the spinal cord. Either way the information from one side ends up in the opposite cortex, which is why a stroke on one side produces sensory loss on the other."
+  },
+  {
+    "id": "w06-tf-03", "type": "tf", "competencyId": "w7-vision-optics", "dok": 1,
+    "statement": "The lens provides most of the refractive power of the eye, because it is the part whose shape can change.",
+    "truth": false,
+    "correction": "The cornea provides about two thirds of the refractive power; the lens supplies the rest and is only the adjustable part.",
+    "why": "Refraction depends on the change in refractive index at a surface, and the biggest change in the eye is from air to cornea. The lens sits in fluid on both sides, so it bends light less, but it can round up or flatten and that adjustment is what lets us focus at different distances. Being adjustable is not the same as being powerful."
+  },
+  {
+    "id": "w06-tf-04", "type": "tf", "competencyId": "w7-phototransduction", "dok": 2,
+    "statement": "In the dark, photoreceptors are hyperpolarized and release very little glutamate.",
+    "truth": false,
+    "correction": "In the dark, cyclic GMP is high, the cation channels are open, the photoreceptor sits depolarized near minus 40 mV, and it releases glutamate steadily; light is what hyperpolarizes it.",
+    "why": "Photoreceptors are the exception among sensory cells: the stimulus turns them off. In the dark the cyclic GMP gated channels carry the dark current, keeping the cell depolarized and its glutamate release high. Light activates a phosphodiesterase that destroys cyclic GMP, the channels close, the cell hyperpolarizes, and glutamate release drops. That drop is the signal to the bipolar cells."
+  },
+  {
+    "id": "w06-tf-05", "type": "tf", "competencyId": "w7-equilibrium", "dok": 2,
+    "statement": "A person spun at a constant speed in the dark with the eyes closed stops feeling the rotation after a short time.",
+    "truth": true,
+    "correction": "True. Once the endolymph catches up with the canal walls the cupula returns to center and the canal afferents go back to baseline firing, so there is no signal of rotation.",
+    "why": "The canals sense angular acceleration by inertia: the fluid lags when rotation starts and deflects the cupula. At constant speed there is no lag, so nothing bends the hair cells. Without vision to report the moving world, the person feels stationary, and when the chair stops the fluid keeps going and produces a false sense of spinning the other way."
+  },
+  {
+    "id": "w06-tf-06", "type": "tf", "competencyId": "w7-chemical-senses", "dok": 1,
+    "statement": "Taste information, like smell, reaches the cortex without passing through the thalamus.",
+    "truth": false,
+    "correction": "Taste relays in the solitary nucleus and then in the thalamus before reaching the gustatory cortex; smell is the one sense that skips the thalamus.",
+    "why": "Olfactory receptor neurons project into the olfactory bulb, and the bulb sends axons straight to olfactory cortex and the amygdala, which is why smells have such direct emotional and memory effects. Taste travels a conventional route through cranial nerves VII, IX, and X, the solitary nucleus, and the thalamus. The two chemical senses are often lumped together, but only one of them bypasses the thalamus."
+  },
+  {
+    "id": "w06-tf-07", "type": "tf", "competencyId": "w8-ans-divisions", "dok": 2,
+    "statement": "Because the sympathetic division uses norepinephrine, blocking acetylcholine receptors would have no effect on sympathetic output.",
+    "truth": false,
+    "correction": "Sympathetic preganglionic fibers release acetylcholine onto nicotinic receptors in the ganglion, so a nicotinic blocker stops sympathetic output at the ganglion even though the postganglionic transmitter is norepinephrine.",
+    "why": "Both autonomic divisions are cholinergic at the ganglion. What differs is the postganglionic transmitter: norepinephrine for most sympathetic fibers, acetylcholine for parasympathetic fibers. A ganglionic blocker therefore shuts down both divisions, and the visible effect on each organ depends on which division had the greater resting tone there."
+  },
+  {
+    "id": "w06-tf-08", "type": "tf", "competencyId": "w8-ans-tone", "dok": 2,
+    "statement": "If the parasympathetic supply to the heart is cut, resting heart rate falls, because the sympathetic division now has nothing to oppose.",
+    "truth": false,
+    "correction": "Resting heart rate rises toward the intrinsic rate of the SA node, about 100 beats per minute, because resting vagal tone was holding the rate down.",
+    "why": "At rest the vagus dominates the heart. The SA node on its own fires about 100 times a minute, and vagal tone brakes it to around 70. Removing the brake lets the rate climb. Sympathetic tone to the heart at rest is small, so removing it instead would lower the rate only slightly. Removing one division reveals the tone of the other, and the direction of change tells you which division was doing the work."
+  },
+  {
+    "id": "w06-tf-09", "type": "tf", "competencyId": "w7-visual-processing", "dok": 2,
+    "statement": "Cutting the right optic nerve blinds the right eye completely but leaves the full visual field of the left eye intact.",
+    "truth": true,
+    "correction": "True. The optic nerve carries every ganglion cell axon from one eye, and the nerve sits in front of the chiasm, so nothing from the other eye has joined it yet.",
+    "why": "The place a lesion sits along the visual pathway decides the pattern of loss. Before the chiasm the fibers are grouped by eye, so an optic nerve lesion blinds one eye. At the chiasm the crossing nasal fibers from both eyes are damaged and both temporal fields go. Behind the chiasm the fibers are grouped by visual field, so an optic tract lesion takes the same half of the field from both eyes."
+  },
+  {
+    "id": "w06-tf-10", "type": "tf", "competencyId": "w7-receptive-fields", "dok": 2,
+    "statement": "The back has a smaller two point threshold than the fingertip, because the back has more skin over which to spread its receptors.",
+    "truth": false,
+    "correction": "The fingertip has the smaller two point threshold, because its receptors have small receptive fields and are densely packed, so two nearby points land on separate afferents.",
+    "why": "Two point threshold tracks receptive field size. Two points inside one receptive field stimulate one afferent and are felt as one point. The fingertip has many small fields packed together, so points a few millimeters apart are felt as two. The back has few, large fields, so points must be several centimeters apart. Skin area has nothing to do with it; what matters is how many separate lines a patch of skin sends."
+  },
+
+  {
+    "id": "w06-bd-01", "type": "bd", "competencyId": "w7-transduction", "dok": 3,
+    "prompt": "Without notes, explain how pressing on the skin over a touch receptor ends up as action potentials traveling toward the spinal cord. Include what happens at the receptor ending and what happens at the trigger zone, and say how a harder press is represented.",
+    "rubric": [
+      "pressure deforms the ending and opens mechanically gated cation channels",
+      "inward current produces a graded depolarization, the receptor potential",
+      "receptor potential size depends on stimulus strength and it can sum",
+      "the receptor potential spreads to the trigger zone (first node of Ranvier)",
+      "if threshold is reached, voltage gated Na+ channels open and action potentials fire",
+      "a larger receptor potential gives a higher action potential frequency, not bigger action potentials"
+    ]
+  },
+  {
+    "id": "w06-bd-02", "type": "bd", "competencyId": "w7-pain-modulation", "dok": 3,
+    "prompt": "Explain two things. First, why pain from the heart is often felt in the left arm and chest wall. Second, why rubbing a bumped shin makes it hurt less. Name the fibers and the neurons involved in each.",
+    "rubric": [
+      "visceral nociceptor afferents and somatic afferents converge on the same second order neurons in the dorsal horn",
+      "the brain attributes the input to the skin, the more common source, so cardiac pain is referred to the arm and chest dermatomes",
+      "rubbing activates large myelinated A beta touch fibers",
+      "A beta input excites inhibitory interneurons in the dorsal horn",
+      "the interneurons reduce transmission from C and A delta fibers to the projection neuron, closing the gate",
+      "the pain signal reaching the brain is weaker while the touch input continues"
+    ]
+  },
+  {
+    "id": "w06-bd-03", "type": "bd", "competencyId": "w7-lab-tactile-mapping", "dok": 3,
+    "prompt": "Describe how you measured two point discrimination on the fingertip and on the back in lab, state the result you expect at each site, and explain the difference in terms of receptive fields and lateral inhibition.",
+    "rubric": [
+      "touch the skin with two points, changing the separation, while the subject cannot see",
+      "the threshold is the smallest separation still reported as two points",
+      "include single point trials so the subject cannot simply guess two",
+      "fingertip threshold is a few millimeters, back threshold is several centimeters",
+      "fingertip receptors have small receptive fields and dense innervation, back receptors have large sparse fields",
+      "two points inside one receptive field are felt as one point",
+      "lateral inhibition sharpens the borders and helps separate two nearby points"
+    ]
+  },
+  {
+    "id": "w06-bd-04", "type": "bd", "competencyId": "w7-phototransduction", "dok": 3,
+    "prompt": "Explain step by step why a rod hyperpolarizes when light hits it. Start with the state of the rod in the dark and end with what the bipolar cell sees.",
+    "rubric": [
+      "in the dark cyclic GMP is high, the cyclic GMP gated cation channels are open, and the rod sits depolarized near minus 40 mV",
+      "the depolarized rod releases glutamate continuously",
+      "light converts 11 cis retinal to all trans retinal, which activates rhodopsin",
+      "rhodopsin activates transducin, which activates phosphodiesterase",
+      "phosphodiesterase breaks down cyclic GMP, so the channels close",
+      "less inward cation current, so the rod hyperpolarizes",
+      "glutamate release falls, and that decrease is the signal to the bipolar cell"
+    ]
+  },
+  {
+    "id": "w06-bd-05", "type": "bd", "competencyId": "w7-hearing-transduction", "dok": 3,
+    "prompt": "Explain how the cochlea codes the pitch and the loudness of a sound. Include how the basilar membrane behaves and what happens at the hair cell.",
+    "rubric": [
+      "the stapes pushes on the oval window and starts a pressure wave in the perilymph",
+      "the basilar membrane is narrow and stiff near the oval window and wide and flexible at the apex",
+      "high frequencies displace the base most and low frequencies the apex, so pitch is coded by which hair cells along the membrane are activated (place coding)",
+      "membrane movement bends the stereocilia against the tectorial membrane and opens mechanically gated channels",
+      "K+ enters from the endolymph and depolarizes the hair cell, which releases transmitter onto the cochlear nerve",
+      "louder sounds move the membrane more, open more channels, and produce more transmitter release, a higher firing rate, and recruitment of more fibers"
+    ]
+  },
+  {
+    "id": "w06-bd-06", "type": "bd", "competencyId": "w7-lab-hearing-tests", "dok": 3,
+    "prompt": "Describe how to perform the Weber and Rinne tests. Then state and explain the results you expect in a person with a right sided conductive loss and in a person with a right sided sensorineural loss.",
+    "rubric": [
+      "Weber: vibrating fork on the midline of the skull, ask which ear hears it louder",
+      "Rinne: fork on the mastoid until the tone disappears, then hold it beside the ear canal, compare which lasts longer",
+      "normal Rinne is air conduction longer than bone conduction",
+      "right conductive loss: Weber lateralizes to the right and the right Rinne shows bone longer than air",
+      "right sensorineural loss: Weber lateralizes to the left and the Rinne stays air longer than bone on both sides",
+      "bone conduction bypasses the middle ear, and a conductive block also shields that cochlea from room noise, which is why the Weber goes toward it"
+    ]
+  },
+  {
+    "id": "w06-bd-07", "type": "bd", "competencyId": "w8-ans-tone", "dok": 3,
+    "prompt": "Explain what autonomic tone means. Then use the heart and the arterioles to show why removing one autonomic division has different consequences in a dually innervated organ and in an organ with a single innervation.",
+    "rubric": [
+      "tone is a resting level of firing in an autonomic division that can be raised or lowered from baseline",
+      "the heart has dual innervation, and at rest vagal tone dominates, holding the rate below the intrinsic SA node rate",
+      "cutting the vagus raises heart rate; cutting the sympathetic supply lowers it only slightly",
+      "most arterioles receive sympathetic innervation only, so diameter is controlled by raising or lowering sympathetic tone",
+      "removing sympathetic input to arterioles causes dilation and there is no parasympathetic input to compensate",
+      "dual innervation allows faster and finer control because one division can be raised while the other is lowered"
+    ]
+  },
+  {
+    "id": "w06-bd-08", "type": "bd", "competencyId": "w8-ans-pharmacology", "dok": 3,
+    "prompt": "A patient with asthma is prescribed a nonselective beta blocker for high blood pressure. Using receptors, explain what the drug does to the heart, why that lowers blood pressure, what it may do to the airways, and what kind of drug would be a safer choice.",
+    "rubric": [
+      "beta-1 receptors on the SA node and ventricular muscle: blocking them lowers heart rate and contractility",
+      "lower heart rate and stroke volume lower cardiac output, which lowers blood pressure",
+      "beta-2 receptors on bronchiolar smooth muscle mediate relaxation in response to epinephrine",
+      "blocking beta-2 removes that bronchodilation, so airways narrow and asthma can worsen",
+      "a beta-1 selective blocker lowers blood pressure while sparing the airway beta-2 receptors"
+    ]
+  },
+
+  {
+    "id": "w06-app-01", "type": "app", "competencyId": "w7-transduction", "dok": 3,
+    "case": "In lab, a recording is made from a single mechanoreceptor afferent in the skin. Threshold at the trigger zone is about 15 mV above rest. A 1 gram weight produces a receptor potential of 8 mV and no action potentials. A 5 gram weight produces a receptor potential of 20 mV and 15 action potentials per second. A 10 gram weight produces 40 action potentials per second.",
+    "stem": "Which statement best explains the difference between the 1 gram and 5 gram results?",
+    "options": [
+      "The 8 mV receptor potential did not reach threshold at the trigger zone, so no action potentials fired; the 20 mV potential did, and its size set the firing rate.",
+      "The 1 gram weight did not open any mechanically gated channels, so there was no transduction at all.",
+      "The 1 gram weight produced action potentials that were too small to record.",
+      "The 5 gram weight produced larger action potentials, which is how intensity is coded."
+    ],
+    "correct": 0,
+    "why": "Transduction and the firing of action potentials are two separate steps. The 1 gram weight was transduced, since an 8 mV receptor potential was recorded, but that graded potential was below the 15 mV needed at the trigger zone, so nothing was sent to the CNS. The 5 gram weight produced a bigger graded potential that crossed threshold, and the amount by which it exceeded threshold set the frequency. The 10 gram weight raised the frequency further, which is how intensity is coded.",
+    "whyNot": [
+      "Correct. A subthreshold receptor potential is real transduction with no output, and a suprathreshold one sets the firing rate.",
+      "Wrong. An 8 mV depolarization was recorded, so channels did open. The problem was reaching threshold, not transduction.",
+      "Wrong. Action potentials are all or none. There is no such thing as a small one; either threshold was reached or it was not.",
+      "Wrong. Action potentials are the same size for every stimulus. Intensity is coded by frequency, as the 15 versus 40 per second results show."
+    ]
+  },
+  {
+    "id": "w06-app-02", "type": "app", "competencyId": "w7-stimulus-coding", "dok": 3,
+    "case": "A researcher places a fine electrode on the median nerve at the wrist and stimulates a single cutaneous afferent that normally serves the tip of the index finger. At 10 pulses per second the subject reports a light tap on the tip of the index finger. At 50 pulses per second the subject reports a firm press at the same spot. Nothing is touching the finger.",
+    "stem": "Which coding principles explain the two reports?",
+    "options": [
+      "Location and modality come from which line is active (labeled line), and intensity comes from firing frequency.",
+      "The subject feels the finger because current spread down the nerve to the receptors in the fingertip.",
+      "The higher frequency changed the modality from touch to pressure by activating a different receptor type.",
+      "The sensation should have been felt at the wrist where the stimulus was applied, so the report is a mistake."
+    ],
+    "correct": 0,
+    "why": "The CNS does not know where along the axon a spike started. It reads activity in that afferent as touch at the fingertip because that is where the line normally comes from and where its cortical target is mapped. Firing frequency is read as intensity, so more pulses per second feel like a harder press. Nothing about the receptor or the finger changed; only the traffic on the line changed.",
+    "whyNot": [
+      "Correct. Labeled line sets what and where; frequency sets how much.",
+      "Wrong. The stimulus is a single afferent at the wrist. Current does not travel 15 cm to the fingertip; the perception is a property of the line.",
+      "Wrong. A single afferent was stimulated throughout, so no new receptor type was recruited. The same line at higher frequency reads as more intense.",
+      "Wrong. The report is exactly what labeled line coding predicts. Sensation is referred to the receptive field, not to the site of stimulation."
+    ]
+  },
+  {
+    "id": "w06-app-03", "type": "app", "competencyId": "w7-receptive-fields", "dok": 3,
+    "case": "In lab a student records two point thresholds: lip 2 mm, fingertip 3 mm, forearm 35 mm. A classmate has just had a partial nerve block of one fingertip. About half of the afferents from that fingertip are silenced, but the fingertip still clearly feels a single touch.",
+    "stem": "Predict the classmate's two point threshold on the blocked fingertip and explain.",
+    "options": [
+      "Higher than 3 mm, because with fewer working afferents two nearby points are more likely to fall on the same surviving line and be felt as one.",
+      "Unchanged at 3 mm, because two point threshold depends only on the size of the cortical map, which the block does not change.",
+      "Lower than 3 mm, because fewer active afferents means less lateral inhibition and therefore sharper perception.",
+      "Zero, because a partial block removes the ability to feel two points at all."
+    ],
+    "correct": 0,
+    "why": "Two point discrimination needs two points to activate two separate afferents. When half the lines are silenced, the surviving lines are spread farther apart, so the points must be moved farther apart before they land on different ones. The skin still feels touch, which is why a threshold can be measured, but it is coarser. Cortex can only separate points the periphery reports separately.",
+    "whyNot": [
+      "Correct. Fewer separate lines per area of skin behaves like larger receptive fields, and the threshold rises.",
+      "Wrong. The cortical map reflects the number of peripheral lines; it cannot separate two points that arrive on the same afferent.",
+      "Wrong. Lateral inhibition sharpens perception, so losing it makes discrimination worse, not better. And the block removes lines, not just inhibition.",
+      "Wrong. A threshold of zero would mean perfect discrimination. The fingertip still feels touch, so a threshold exists, just larger."
+    ]
+  },
+  {
+    "id": "w06-app-04", "type": "app", "competencyId": "w7-pain-modulation", "dok": 3,
+    "case": "A 58 year old man develops crushing chest pain during exertion that spreads down the inner side of his left arm. There is no injury to the arm, arm pulses are normal, and pressing on the arm does not change the pain. His ECG shows changes consistent with reduced blood flow to heart muscle.",
+    "stem": "Why is the pain felt in the arm?",
+    "options": [
+      "Cardiac nociceptor afferents enter the cord at T1 to T5 and converge on the same dorsal horn neurons as afferents from the arm skin, and the brain attributes the input to the skin.",
+      "Reduced cardiac output lowers blood flow to the arm, which activates nociceptors in the arm muscle.",
+      "Pain from the heart triggers a spinal reflex that makes the arm muscles contract painfully.",
+      "C fibers from the heart travel inside the nerves of the arm and are stimulated along the way."
+    ],
+    "correct": 0,
+    "why": "This is referred pain by convergence. Visceral nociceptors are few and their afferents share second order neurons with the far more numerous somatic afferents from the same spinal segments. The brain has learned that activity in those neurons usually means skin injury, so it projects the pain to the arm and chest wall. The normal arm pulses and the fact that pressing on the arm changes nothing tell you the arm itself is not the source.",
+    "whyNot": [
+      "Correct. Shared second order neurons in the dorsal horn are the mechanism of referred pain.",
+      "Wrong. Arm pulses are normal, so arm perfusion is fine. And ischemic muscle pain would change with pressure and use of the arm.",
+      "Wrong. There is no reflex that contracts arm muscles in response to cardiac pain, and contraction is not what the patient reports.",
+      "Wrong. Cardiac afferents run with sympathetic nerves to the thoracic cord, not through the arm nerves."
+    ]
+  },
+  {
+    "id": "w06-app-05", "type": "app", "competencyId": "w7-phototransduction", "dok": 3,
+    "case": "An experimental drug inhibits the phosphodiesterase in rods, so cyclic GMP cannot be broken down even when rhodopsin is activated. Retinal recordings are taken from a treated animal, first in a dark room and then during a flash of light.",
+    "stem": "Predict the rod's membrane potential and glutamate release in the dark and in the light.",
+    "options": [
+      "In the dark the rod is depolarized and releasing glutamate as normal; in the light it stays depolarized and keeps releasing glutamate, so no light signal is sent.",
+      "In the dark the rod is hyperpolarized because cyclic GMP builds up; in the light it depolarizes.",
+      "In both conditions the rod is hyperpolarized and silent, because the cascade is stuck.",
+      "Light still hyperpolarizes the rod, because transducin can close the channels directly without changing cyclic GMP."
+    ],
+    "correct": 0,
+    "why": "The only way light changes a rod's membrane potential is by lowering cyclic GMP. In the dark the drug changes nothing that matters: cyclic GMP is already high, channels are open, the cell is depolarized near minus 40 mV, and glutamate is released steadily. In the light rhodopsin and transducin still activate, but the phosphodiesterase they turn on is blocked, so cyclic GMP stays high, the channels stay open, and the rod behaves as if it were still dark.",
+    "whyNot": [
+      "Correct. The cascade is interrupted at the step that actually changes the membrane potential, so light has no effect.",
+      "Wrong. High cyclic GMP opens the cation channels and depolarizes the rod; it does not hyperpolarize it. This reverses the dark state.",
+      "Wrong. The dark state depends on high cyclic GMP, which the drug preserves. The rod is depolarized and active, not silent.",
+      "Wrong. Transducin has no direct action on the channels. Its only job is to activate phosphodiesterase, which the drug blocks."
+    ]
+  },
+  {
+    "id": "w06-app-06", "type": "app", "competencyId": "w7-visual-processing", "dok": 3,
+    "case": "A patient keeps walking into door frames on her right side. Visual field testing shows loss of the right half of the visual field in both eyes. Acuity in the remaining field is normal in each eye, and shining a light into either eye constricts both pupils.",
+    "stem": "Where must the damaged fibers be, and what did they carry?",
+    "options": [
+      "In the left optic tract, behind the chiasm, carrying fibers from the left temporal retina and the right nasal retina, both of which viewed the right visual field.",
+      "In the right optic nerve, carrying all the fibers from the right eye.",
+      "At the center of the optic chiasm, carrying the crossing nasal fibers from both eyes.",
+      "In the right optic tract, carrying the fibers that viewed the right visual field."
+    ],
+    "correct": 0,
+    "why": "The same half of the field is missing in both eyes, which can only happen behind the chiasm, where fibers are sorted by visual field rather than by eye. The right visual field lands on the left half of each retina: the temporal retina of the left eye and the nasal retina of the right eye. Those fibers meet in the left optic tract. Each eye still sees, so neither optic nerve is cut, and the preserved pupil reflexes fit a lesion that spares part of the pathway.",
+    "whyNot": [
+      "Correct. Right field, left retinal halves, left optic tract.",
+      "Wrong. An optic nerve lesion blinds one whole eye and leaves the other eye's entire field intact. Here both eyes have a half field loss.",
+      "Wrong. A chiasm lesion takes the crossing nasal fibers from both eyes, which viewed the two temporal fields. That gives loss of the left field in the left eye and the right field in the right eye, not the same side in both.",
+      "Wrong. The right optic tract carries the left visual field. Losing the right field means the left tract is damaged."
+    ]
+  },
+  {
+    "id": "w06-app-07", "type": "app", "competencyId": "w7-vision-clinical", "dok": 3,
+    "case": "A 16 year old can read the board only from the front row, but reads a phone screen at 25 cm with no trouble. An eye exam shows a normal cornea and a normal, elastic lens. The eyeball measures about 1.5 mm longer than average from front to back.",
+    "stem": "Where does light from a distant object focus in her eye, and which lens corrects it?",
+    "options": [
+      "In front of the retina, because the eye is too long for its refractive power; a concave (diverging) lens moves the focal point back onto the retina.",
+      "Behind the retina, because the eye is too long; a convex (converging) lens brings the focal point forward.",
+      "On the retina, but blurred because the long eyeball stretches the retina; no lens will help.",
+      "In front of the retina; a convex (converging) lens adds power to fix it."
+    ],
+    "correct": 0,
+    "why": "Her optics are normal, so parallel rays from a distant object are brought to a focus at the normal distance behind the lens. The retina is farther back than that, so the image forms in front of it and has spread out again by the time it lands. Near objects focus farther back and can land on the retina, which is why near vision is fine. A diverging lens weakens the eye's total power and pushes the focal point back to the retina.",
+    "whyNot": [
+      "Correct. A long eye is effectively overpowered for distance; subtract power with a concave lens.",
+      "Wrong. A focal point behind the retina is hyperopia, which comes from an eye that is too short or too weak, and it blurs near vision first.",
+      "Wrong. Eye length changes where the focal point falls relative to the retina; it does not stretch the retina into blur. Lenses correct this easily.",
+      "Wrong. The focal point is already too far forward. Adding converging power would move it even farther in front of the retina and make the blur worse."
+    ]
+  },
+  {
+    "id": "w06-app-08", "type": "app", "competencyId": "w7-hearing-transduction", "dok": 3,
+    "case": "A patient has damage to the stria vascularis, the tissue that secretes endolymph. Her endolymph K+ is measured at 60 mmol/L (normal about 150 mmol/L). The ossicles, the basilar membrane, and the hair cell stereocilia are all structurally intact.",
+    "stem": "Predict the effect on hearing and explain the mechanism.",
+    "options": [
+      "Hearing is reduced, because bending the stereocilia normally lets K+ flow into the hair cell down a steep gradient; a smaller gradient gives a smaller receptor potential and less transmitter release.",
+      "Hearing is unaffected, because hair cells depolarize by Na+ entry from the perilymph, not by K+ from the endolymph.",
+      "Hearing is louder, because low endolymph K+ hyperpolarizes the hair cells and makes them more excitable.",
+      "Hearing is reduced only for low frequencies, because low K+ stiffens the apex of the basilar membrane."
+    ],
+    "correct": 0,
+    "why": "Hair cells are unusual: their receptor current is carried by K+ flowing in from the K+ rich, positively charged endolymph bathing the stereocilia. The size of that current depends on the electrochemical gradient across the tip of the stereocilium. Cutting endolymph K+ to less than half shrinks the gradient, so the same amount of bending produces a smaller depolarization, less glutamate, and less nerve firing across all frequencies. The mechanics are intact; the electrochemistry is not.",
+    "whyNot": [
+      "Correct. The hair cell receptor potential is a K+ current driven by the endolymph gradient, and that gradient is now reduced.",
+      "Wrong. The stereocilia sit in endolymph, not perilymph, and the transduction current is K+. This is the exception to the usual Na+ story.",
+      "Wrong. Excitability of a hair cell is not the issue; the driving force for the receptor current is. A smaller gradient gives a smaller signal, not a bigger one.",
+      "Wrong. Endolymph composition does not change the mechanical properties of the basilar membrane, and the deficit affects hair cells along its whole length."
+    ]
+  },
+  {
+    "id": "w06-app-09", "type": "app", "competencyId": "w7-hearing-clinical", "dok": 3,
+    "case": "A 70 year old woman says voices sound muffled, worse in her right ear. Weber: the tone lateralizes to the left. Rinne: air conduction lasts longer than bone conduction in both ears, but both durations are shorter on the right than on the left. Otoscopy shows clear ear canals and normal eardrums on both sides.",
+    "stem": "Which site of damage fits all of the results, and why?",
+    "options": [
+      "The right cochlea or cochlear nerve, because the Rinne is in normal order on both sides (no conductive block) and the Weber goes to the better ear.",
+      "The right middle ear, because the Rinne durations are shorter on the right.",
+      "The left cochlea, because the Weber lateralized to the left.",
+      "The right ear canal, because muffling is typical of a blocked canal."
+    ],
+    "correct": 0,
+    "why": "Read the Rinne first. Air still beats bone on both sides, so sound is getting through both outer and middle ears and neither side has a conductive block; the shorter durations on the right just mean the right side hears less of everything. Then read the Weber: the tone goes to the left, the better ear, which is the pattern of a sensorineural loss on the right. Clear canals and normal eardrums confirm the outer and middle ear are not the problem.",
+    "whyNot": [
+      "Correct. Normal order Rinne plus Weber away from the bad ear equals sensorineural loss on that side.",
+      "Wrong. A middle ear problem reverses the Rinne on that side, bone longer than air. Here the order is normal; only the durations are shorter.",
+      "Wrong. The Weber goes toward the better cochlea in sensorineural loss, so lateralization to the left means the left cochlea is the healthy one.",
+      "Wrong. A blocked canal is a conductive loss. It would reverse the right Rinne and send the Weber to the right, and otoscopy shows the canal is clear."
+    ]
+  },
+  {
+    "id": "w06-app-10", "type": "app", "competencyId": "w8-ans-receptors", "dok": 3,
+    "case": "A gardener is exposed to an insecticide that blocks acetylcholinesterase, so acetylcholine builds up at every cholinergic synapse. Within an hour her heart rate is 48 beats per minute (resting normal 60 to 100), she is drooling and sweating heavily, her pupils are pinpoint, and her skeletal muscles are twitching.",
+    "stem": "Which receptors explain the slow heart rate, the sweating, and the muscle twitching?",
+    "options": [
+      "Muscarinic receptors on the SA node and on sweat glands are overstimulated, and nicotinic receptors on skeletal muscle are overstimulated.",
+      "Alpha receptors on the heart and beta receptors on skeletal muscle are overstimulated.",
+      "Muscarinic receptors on skeletal muscle and nicotinic receptors on the SA node are overstimulated.",
+      "Beta-1 receptors on the SA node are blocked by the excess acetylcholine, and the sweating is a sympathetic adrenergic response."
+    ],
+    "correct": 0,
+    "why": "Excess acetylcholine acts wherever acetylcholine receptors are. Muscarinic receptors on the SA node slow the heart, muscarinic receptors on salivary glands and the pupil sphincter cause drooling and pinpoint pupils, and sweat glands, which are sympathetic but cholinergic, are driven through muscarinic receptors too. Skeletal muscle has nicotinic receptors, and continuous stimulation there produces twitching. Sorting each sign to its receptor is the whole skill here.",
+    "whyNot": [
+      "Correct. Muscarinic at the heart and sweat glands, nicotinic at skeletal muscle.",
+      "Wrong. Alpha and beta receptors respond to norepinephrine and epinephrine, and acetylcholine does not act on them. Beta receptors are not on skeletal muscle fibers as the motor receptor.",
+      "Wrong. The receptors are swapped. Skeletal muscle uses nicotinic receptors and the SA node uses muscarinic receptors.",
+      "Wrong. Acetylcholine does not block beta-1 receptors; it activates muscarinic receptors that oppose them. And sweating is cholinergic, not adrenergic, which is exactly why this poisoning produces it."
+    ]
+  },
+  {
+    "id": "w06-app-11", "type": "app", "competencyId": "w8-ans-pharmacology", "dok": 3,
+    "case": "Before an eye exam a patient is given eye drops containing a muscarinic antagonist. Twenty minutes later her pupils are 8 mm wide (normal in room light about 3 to 4 mm) and she cannot read a form held 30 cm away, although her distance vision is unchanged.",
+    "stem": "Explain both effects from the receptor that was blocked.",
+    "options": [
+      "The drug blocks muscarinic receptors on the pupillary sphincter, so the pupil cannot constrict, and on the ciliary muscle, so the lens cannot round up for near focus.",
+      "The drug stimulates alpha-1 receptors on the radial muscle of the iris, which dilates the pupil and flattens the lens.",
+      "The drug blocks nicotinic receptors in the ciliary ganglion, which stops all parasympathetic output to the eye.",
+      "The drug paralyzes the retina, so the pupil dilates to gather more light and near vision fails."
+    ],
+    "correct": 0,
+    "why": "Both the pupillary sphincter and the ciliary muscle are smooth muscles driven by parasympathetic fibers through muscarinic receptors. Blocking those receptors removes constriction, so the sympathetic radial muscle wins and the pupil dilates. It also removes the ciliary contraction that rounds the lens, so accommodation fails and near objects blur. Distance vision needs a flat lens, which is the relaxed state, so it is untouched.",
+    "whyNot": [
+      "Correct. Two muscarinic targets, two effects: mydriasis and loss of accommodation.",
+      "Wrong. The drug is an antagonist at muscarinic receptors, not an agonist at alpha receptors. And the radial muscle has no role in lens shape.",
+      "Wrong. A nicotinic blocker at the ganglion would also dilate the pupil, but the drug given acts on muscarinic receptors on the effector, not in the ganglion.",
+      "Wrong. The retina is not affected by the drug, and pupil size is not a response to retinal failure. The two signs are both explained by blocked smooth muscle."
+    ]
+  },
+  {
+    "id": "w06-app-12", "type": "app", "competencyId": "w8-lab-autonomic-testing", "dok": 3,
+    "case": "In lab, two subjects rest lying down for five minutes and then stand. Subject A: lying heart rate 64, blood pressure 118/76; after one minute standing, heart rate 82, blood pressure 116/80. Subject B: lying heart rate 66, blood pressure 120/78; after one minute standing, heart rate 70, blood pressure 92/60, and he reports feeling lightheaded.",
+    "stem": "Which statement correctly interprets the two responses?",
+    "options": [
+      "Subject A mounted a normal baroreflex response: sympathetic activation and vagal withdrawal raised heart rate and constricted vessels, so pressure was defended. Subject B's sympathetic response was inadequate, so pressure fell.",
+      "Subject A's rise in heart rate shows an abnormal sympathetic overreaction; Subject B's small rise is the normal response.",
+      "Both responses are normal, since heart rate rose in both subjects.",
+      "Subject B's pressure fell because his vagal tone increased when he stood."
+    ],
+    "correct": 0,
+    "why": "Standing pools blood in the legs, venous return and stroke volume fall, and arterial pressure starts to drop. Baroreceptors fire less, and the reflex answer is more sympathetic outflow and less vagal outflow: faster heart, stronger contraction, constricted arterioles and veins. Subject A shows exactly that, with a rise of 18 beats and a pressure held steady. Subject B raised his rate by only 4 beats and his pressure fell 28 mmHg systolic, so the sympathetic limb did not respond enough and his brain perfusion dipped.",
+    "whyNot": [
+      "Correct. A defended pressure with a moderate rate rise is normal; a falling pressure with almost no rate rise is a failed reflex.",
+      "Wrong. A rise of about 15 to 20 beats on standing is expected. Subject B's small rise in the face of a large pressure fall is the abnormal one.",
+      "Wrong. The point of the reflex is to hold pressure, and Subject B's fell to 92/60 with symptoms. A rate rise of 4 beats is not an adequate response.",
+      "Wrong. Rising vagal tone would slow the heart, and his rate went up slightly. His problem is too little sympathetic response, not too much vagal."
+    ]
+  }
+]

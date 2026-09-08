@@ -170,7 +170,7 @@
     "It is unchanged, because these endings sense plasma osmolarity"
    ],
    "correctIndex": 0,
-   "explanation": "Baroreceptors report wall stretch, so a smaller volume at a lower pressure means fewer action potentials traveling up the glossopharyngeal and vagus nerves. The medulla reads that drop as low pressure and raises sympathetic outflow, which is why heart rate goes up. Heart rate does not drive baroreceptor firing; the reflex runs the other way, from sensor to effector. Osmolarity is the business of hypothalamic osmoreceptors, not of these endings."
+   "explanation": "Baroreceptors report wall stretch, so a smaller volume at a lower pressure means fewer action potentials travelling up the glossopharyngeal and vagus nerves. The medulla reads that drop as low pressure and raises sympathetic outflow, which is why heart rate goes up. Heart rate does not drive baroreceptor firing; the reflex runs the other way, from sensor to effector. Osmolarity is the business of hypothalamic osmoreceptors, not of these endings."
   },
   {
    "id": "c10",

@@ -8,16 +8,16 @@
    "tags": [
     "lecture"
    ],
-   "q": "Glycolysis runs in the cytosol while the citric acid cycle and oxidative phosphorylation run inside mitochondria. What does that split mean for a mature red blood cell, which has no mitochondria?",
-   "a": "It can only make ATP by glycolysis, so it depends on glucose and produces lactate rather than fully oxidizing fuel.",
+   "q": "In which part of the cell does glycolysis take place?",
+   "a": "In the cytosol.",
    "options": [
-    "It can only make ATP by glycolysis, so it depends on glucose and produces lactate",
-    "It cannot make ATP at all and relies on ATP absorbed from the plasma",
-    "It makes ATP more efficiently, since it skips the slower mitochondrial steps",
-    "It uses the oxygen it is carrying to make ATP directly in the cytosol"
+    "The mitochondrial matrix",
+    "The cytosol",
+    "The inner mitochondrial membrane",
+    "The outer mitochondrial membrane"
    ],
-   "correctIndex": 0,
-   "explanation": "Compartments decide what a cell can do. Glycolysis needs only cytosolic enzymes, so a cell without mitochondria can still run it, but it stops at pyruvate, which is then reduced to lactate to regenerate the NAD+ that glycolysis needs. That yields 2 ATP per glucose instead of about 32, and it is why red blood cells are obligate glucose users. A cell with no ATP production would not survive; ATP is not taken up from plasma. Skipping mitochondria is far LESS efficient, not more. And the red cell pointedly does not use the oxygen it carries, which is the whole design: burning its own cargo would defeat the purpose of transporting it."
+   "correctIndex": 1,
+   "explanation": "The ten glycolytic enzymes are soluble proteins dissolved in the cytosol, which is why a cell with no mitochondria at all can still run glycolysis. The mitochondrial matrix holds the citric acid cycle enzymes, and the inner mitochondrial membrane holds the electron transport chain. The outer mitochondrial membrane is freely permeable to small molecules and carries no ATP producing pathway."
   },
   {
    "id": "c2",

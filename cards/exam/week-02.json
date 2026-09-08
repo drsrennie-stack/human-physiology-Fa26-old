@@ -1,0 +1,761 @@
+[
+  {
+    "id": "w02-ma-01",
+    "type": "ma",
+    "competencyId": "w1-water-properties",
+    "dok": 1,
+    "stem": "Which of the following dissolve readily in water, that is, are hydrophilic? Select all that apply.",
+    "options": [
+      "Sodium and chloride ions",
+      "Glucose, which carries several hydroxyl (OH) groups",
+      "Triglycerides",
+      "Cortisol, a steroid hormone",
+      "Urea, a small polar molecule"
+    ],
+    "correct": [0, 1, 4],
+    "why": "Water is polar. The oxygen carries a partial negative charge and the hydrogens partial positive charges, so water surrounds charged or polar solutes and pulls them into solution. Ions and molecules with many polar groups dissolve well. Nonpolar molecules cannot interact with water this way, so they stay out of solution and need carriers to travel in plasma.",
+    "whyNot": [
+      "Belongs. Each ion attracts a shell of oriented water molecules, which is what dissolving means.",
+      "Belongs. Every hydroxyl group can hydrogen bond with water, so glucose is highly soluble.",
+      "Does not belong. Triglycerides are almost entirely hydrocarbon, nonpolar, and hydrophobic. They travel in blood packaged inside lipoproteins.",
+      "Does not belong. Steroids are built from a nonpolar ring skeleton. Cortisol travels mostly bound to plasma proteins because it does not dissolve well in plasma water.",
+      "Belongs. Urea is small and polar, so it hydrogen bonds with water and dissolves freely, which is why it moves easily through body fluids."
+    ]
+  },
+  {
+    "id": "w02-ma-02",
+    "type": "ma",
+    "competencyId": "w1-water-properties",
+    "dok": 2,
+    "stem": "Which statements correctly connect the properties of water to how substances move in the body? Select all that apply.",
+    "options": [
+      "Water molecules hydrogen bond to each other because oxygen carries a partial negative charge and the hydrogens partial positive charges.",
+      "Hydrophobic molecules such as steroid hormones travel in plasma mostly bound to carrier proteins.",
+      "Ions dissolve in water because water molecules form a hydration shell around each ion.",
+      "Nonpolar molecules dissolve well in water because they do not disturb the hydrogen bonds between water molecules.",
+      "Lipid soluble molecules cross the phospholipid bilayer more easily than hydrophilic molecules of similar size."
+    ],
+    "correct": [0, 1, 2, 4],
+    "why": "The polarity of water explains most of solubility. Polar and charged solutes are pulled into solution by water's partial charges. Nonpolar solutes are pushed out of the water phase and into lipid environments, which is why they need carriers in plasma but cross membranes easily.",
+    "whyNot": [
+      "Belongs. This is the source of water's polarity and its hydrogen bonding.",
+      "Belongs. A hydrophobic hormone cannot dissolve well in plasma water, so most of it rides on albumin or a specific binding globulin.",
+      "Belongs. The oriented water shell is what separates the ions and keeps them in solution.",
+      "Does not belong. Nonpolar molecules are excluded from water because water prefers to hydrogen bond with itself rather than surround a molecule that offers no partial charges. That is the meaning of hydrophobic.",
+      "Belongs. The interior of the bilayer is nonpolar, so a lipid soluble molecule enters it readily while a hydrophilic molecule is repelled."
+    ]
+  },
+  {
+    "id": "w02-ma-03",
+    "type": "ma",
+    "competencyId": "w1-ph-buffers",
+    "dok": 2,
+    "stem": "Which statements about pH are correct? Select all that apply.",
+    "options": [
+      "A solution at pH 6 has ten times the H+ concentration of a solution at pH 7.",
+      "Normal arterial blood pH is about 7.35 to 7.45.",
+      "Adding H+ to a solution raises its pH.",
+      "A plasma pH of 7.2 is acidic relative to normal blood even though 7.2 is above 7.0.",
+      "A change of about 0.3 pH units means the H+ concentration has roughly doubled or halved."
+    ],
+    "correct": [0, 1, 3, 4],
+    "why": "pH is the negative logarithm of the H+ concentration, so each whole unit is a tenfold change and the scale runs backward: more H+ means a lower pH. Blood is held slightly alkaline, near 7.4, and physiology judges acid or base relative to that set point, not relative to pH 7.0.",
+    "whyNot": [
+      "Belongs. One pH unit is a factor of ten in H+.",
+      "Belongs. This is the normal arterial range. Below 7.35 is acidosis, above 7.45 is alkalosis.",
+      "Does not belong. More H+ lowers pH. This option reverses the scale.",
+      "Belongs. Blood at 7.2 has more H+ than normal blood, so the patient is acidotic. Chemical neutrality at 7.0 is not the reference point in physiology.",
+      "Belongs. Ten to the power 0.3 is about 2, so 0.3 pH units is a doubling or halving of H+. A drop from 7.4 to 7.1 means twice the normal H+."
+    ]
+  },
+  {
+    "id": "w02-ma-04",
+    "type": "ma",
+    "competencyId": "w1-ph-buffers",
+    "dok": 2,
+    "stem": "During hard exercise, muscle releases lactic acid into the blood. Which of the following happen as the bicarbonate buffer system responds? Select all that apply.",
+    "options": [
+      "Bicarbonate (HCO3-) combines with the added H+ to form carbonic acid (H2CO3).",
+      "Plasma bicarbonate concentration falls.",
+      "Carbonic acid breaks down to CO2 and water, and the CO2 can be exhaled.",
+      "The buffer returns pH exactly to 7.40 with no help from the lungs or kidneys.",
+      "Plasma bicarbonate concentration rises because the buffer generates new HCO3-."
+    ],
+    "correct": [0, 1, 2],
+    "why": "A buffer pair is a weak acid and its conjugate base. When acid is added, the base member (bicarbonate) binds the H+ and becomes the acid member (carbonic acid). That uses up bicarbonate. Carbonic acid then dehydrates to CO2, which the lungs can remove. The pH falls less than it would without the buffer, but it still falls a little, and full correction needs the lungs and kidneys.",
+    "whyNot": [
+      "Belongs. This is the buffering reaction itself.",
+      "Belongs. Every H+ that is buffered consumes one bicarbonate ion.",
+      "Belongs. Converting the acid to CO2 and blowing it off is what makes this buffer so effective in the body.",
+      "Does not belong. Buffers limit a pH change; they do not erase it. Returning pH to the set point requires ventilation changes and, over hours to days, renal adjustment of bicarbonate.",
+      "Does not belong. Bicarbonate is consumed, not produced, when acid is buffered. New bicarbonate comes from the kidney, not from the buffer reaction."
+    ]
+  },
+  {
+    "id": "w02-ma-05",
+    "type": "ma",
+    "competencyId": "w1-protein-function",
+    "dok": 2,
+    "stem": "Which of the following are true of how protein structure determines binding? Select all that apply.",
+    "options": [
+      "The amino acid sequence (primary structure) determines how the chain folds.",
+      "The binding site is made of amino acids that can be far apart in the sequence but are brought together by folding.",
+      "Hydrogen bonds, ionic bonds, and hydrophobic interactions hold the folded tertiary structure together.",
+      "A ligand binds only if its shape and charge are complementary to the binding site.",
+      "Quaternary structure refers to the sequence of amino acids in a single chain."
+    ],
+    "correct": [0, 1, 2, 3],
+    "why": "Function follows shape. The sequence dictates the fold, the fold builds the binding site out of residues that may be scattered along the chain, and weak bonds hold that fold in place. A ligand fits only if its shape and charge distribution match the pocket, which is why one amino acid substitution in the pocket can abolish binding.",
+    "whyNot": [
+      "Belongs. Change the sequence and the fold, and therefore the function, can change.",
+      "Belongs. Folding brings distant residues into one pocket. Sickle cell hemoglobin shows how a single residue on the surface changes behavior.",
+      "Belongs. These weak bonds, not peptide bonds, hold tertiary structure, which is why heat and pH can unfold a protein.",
+      "Belongs. Complementary shape and charge are what give binding its specificity.",
+      "Does not belong. Quaternary structure is the arrangement of two or more folded chains into one working protein, such as the four subunits of hemoglobin. The amino acid sequence of one chain is primary structure."
+    ]
+  },
+  {
+    "id": "w02-ma-06",
+    "type": "ma",
+    "competencyId": "w1-protein-function",
+    "dok": 2,
+    "stem": "A tube of enzyme is heated to 60 C (140 F) for ten minutes and loses all activity. Which of the following describe what happened? Select all that apply.",
+    "options": [
+      "The weak bonds holding the tertiary structure were broken.",
+      "The peptide bonds of the primary structure were broken.",
+      "The active site lost its shape, so the enzyme no longer binds its substrate.",
+      "The amino acid sequence is unchanged.",
+      "Cooling the tube back to 37 C (98.6 F) will restore full activity."
+    ],
+    "correct": [0, 2, 3],
+    "why": "Heat denatures a protein by shaking apart the hydrogen bonds, ionic bonds, and hydrophobic interactions that hold its fold. The covalent peptide bonds survive, so the sequence is intact, but the active site is gone. Many denatured proteins clump together once their hydrophobic cores are exposed, so simply cooling does not bring them back.",
+    "whyNot": [
+      "Belongs. This is what denaturation means.",
+      "Does not belong. Breaking peptide bonds is hydrolysis, which needs a protease or strong acid and long time, not ten minutes of heat.",
+      "Belongs. No active site shape, no binding, no catalysis.",
+      "Belongs. Denaturation changes shape, not sequence.",
+      "Does not belong. Some small proteins refold on cooling, but after prolonged heating most aggregate and the loss is permanent. Full recovery cannot be assumed."
+    ]
+  },
+  {
+    "id": "w02-ma-07",
+    "type": "ma",
+    "competencyId": "w1-enzyme-function",
+    "dok": 2,
+    "stem": "Which statements about enzymes and activation energy are correct? Select all that apply.",
+    "options": [
+      "Enzymes lower the activation energy of the reaction they catalyze.",
+      "Enzymes change the overall free energy difference between reactants and products.",
+      "Enzymes are not consumed by the reaction and can be used again.",
+      "Enzymes speed up the rate at which a reaction reaches equilibrium without changing the equilibrium itself.",
+      "Enzymes make an endergonic reaction proceed on its own."
+    ],
+    "correct": [0, 2, 3],
+    "why": "An enzyme binds its substrate and stabilizes the transition state, so less energy is needed to get the reaction started. That makes the reaction faster at body temperature. The enzyme does not add energy, so the starting and ending energies, and therefore the equilibrium, are unchanged. The enzyme is released unchanged at the end and works again.",
+    "whyNot": [
+      "Belongs. Lowering the energy barrier is the whole job of an enzyme.",
+      "Does not belong. The energy of reactants and products is fixed by the molecules themselves. An enzyme lowers the hill between them but not the height of either side.",
+      "Belongs. A single enzyme molecule can process thousands of substrate molecules per second.",
+      "Belongs. The forward and reverse reactions are both sped up, so the same equilibrium is reached, only sooner.",
+      "Does not belong. An endergonic reaction runs only when it is coupled to an exergonic one such as ATP hydrolysis. An enzyme can catalyze the coupled reaction but cannot supply the energy."
+    ]
+  },
+  {
+    "id": "w02-ma-08",
+    "type": "ma",
+    "competencyId": "w1-enzyme-function",
+    "dok": 2,
+    "stem": "Which of the following are true of a competitive inhibitor? Select all that apply.",
+    "options": [
+      "It binds at the active site.",
+      "Its effect can be overcome by raising the substrate concentration.",
+      "It lowers Vmax.",
+      "It raises the apparent Km.",
+      "It binds at a site away from the active site and changes the shape of the enzyme."
+    ],
+    "correct": [0, 1, 3],
+    "why": "A competitive inhibitor looks enough like the substrate to occupy the active site. Substrate and inhibitor then compete for the same pocket. More substrate wins more of the contests, so at high enough substrate the enzyme still reaches its normal Vmax, but it takes more substrate to get halfway there, which is a higher apparent Km.",
+    "whyNot": [
+      "Belongs. Competition means the two molecules want the same site.",
+      "Belongs. Flooding the enzyme with substrate crowds out the inhibitor.",
+      "Does not belong. Vmax is unchanged with a competitive inhibitor. A lowered Vmax that substrate cannot restore is the signature of a noncompetitive or allosteric inhibitor.",
+      "Belongs. Apparent Km rises because more substrate is needed to reach half of Vmax.",
+      "Does not belong. Binding away from the active site and reshaping the enzyme describes an allosteric inhibitor, not a competitive one."
+    ]
+  },
+  {
+    "id": "w02-ma-09",
+    "type": "ma",
+    "competencyId": "w1-atp-energy",
+    "dok": 2,
+    "stem": "Which of the following are true of ATP and energy coupling in cells? Select all that apply.",
+    "options": [
+      "Hydrolysis of ATP to ADP and inorganic phosphate releases usable energy.",
+      "ATP is a long term energy store that lasts a resting cell for many hours.",
+      "Cells couple ATP hydrolysis to reactions that would not proceed on their own.",
+      "Moving Na+ out of the cell against its gradient by the Na+/K+ ATPase is cellular work that requires ATP.",
+      "ATP is made only by oxidative phosphorylation."
+    ],
+    "correct": [0, 2, 3],
+    "why": "ATP is the immediate energy currency, not the savings account. The energy released when its terminal phosphate is removed is transferred, often by handing that phosphate to another molecule, to drive transport, movement, or synthesis. The cell keeps only a few seconds worth of ATP on hand and must remake it continuously.",
+    "whyNot": [
+      "Belongs. The phosphate bond is high energy in the sense that breaking it releases about 30 kJ per mole under cellular conditions.",
+      "Does not belong. The ATP pool turns over in seconds to a minute. Long term storage is glycogen and fat, which are used to regenerate ATP.",
+      "Belongs. This is what energy coupling means: an exergonic reaction pays for an endergonic one.",
+      "Belongs. Transport against a gradient is one of the three main categories of work, along with mechanical work and chemical synthesis.",
+      "Does not belong. Glycolysis and the citric acid cycle also make ATP directly by substrate level phosphorylation. Oxidative phosphorylation makes most, not all, of it."
+    ]
+  },
+  {
+    "id": "w02-ma-10",
+    "type": "ma",
+    "competencyId": "w1-atp-energy",
+    "dok": 2,
+    "stem": "Which of these processes require ATP to be spent by the cell? Select all that apply.",
+    "options": [
+      "Myosin cycling during muscle contraction",
+      "Diffusion of oxygen from alveolar air into pulmonary capillary blood",
+      "Pumping Ca2+ back into the sarcoplasmic reticulum after a contraction",
+      "Joining amino acids to build a new protein",
+      "Osmotic movement of water into a cell placed in a hypotonic solution"
+    ],
+    "correct": [0, 2, 3],
+    "why": "ATP pays for three kinds of work: mechanical work such as moving myosin along actin, transport work such as pumping an ion against its gradient, and chemical work such as synthesizing a large molecule. Movement down a gradient, whether of oxygen or of water, is driven by the gradient itself and costs the cell nothing.",
+    "whyNot": [
+      "Belongs. Each myosin head hydrolyzes one ATP per power stroke. This is mechanical work.",
+      "Does not belong. Oxygen diffuses down its partial pressure gradient with no energy input. Passive movement is free.",
+      "Belongs. The Ca2+ ATPase moves calcium against a steep gradient into the reticulum. This is transport work.",
+      "Belongs. Amino acids must be activated with energy from ATP before they can be linked. This is chemical work.",
+      "Does not belong. Osmosis is driven by the water concentration difference across the membrane. The cell does not spend ATP to let water in, though it may spend ATP later to correct its volume."
+    ]
+  },
+  {
+    "id": "w02-ma-11",
+    "type": "ma",
+    "competencyId": "w1-lab-enzyme-assay",
+    "dok": 2,
+    "stem": "A student measures enzyme activity in tubes held at 10, 20, 30, 40, 50, 60, and 70 C by reading absorbance every 30 seconds. Which of the following are correct practices or interpretations? Select all that apply.",
+    "options": [
+      "The rate for each tube should be taken from the initial straight part of the absorbance versus time curve.",
+      "A blank tube with buffer and substrate but no enzyme corrects for color that is not produced by the reaction.",
+      "The temperature that gives the highest rate is the optimum for this enzyme.",
+      "The 70 C (158 F) tube should show the highest rate because reaction rates always rise with temperature.",
+      "Substrate concentration should be the same in every tube so that temperature is the only variable."
+    ],
+    "correct": [0, 1, 2, 4],
+    "why": "An assay only tells you about the variable you changed if everything else is held constant and the measurement reflects the enzyme, not the background. Initial rate is used because substrate is still plentiful then. The curve of rate against temperature rises as collisions become more frequent, peaks at the optimum, and then falls as the enzyme denatures.",
+    "whyNot": [
+      "Belongs. Later in the run the substrate is depleted and the slope no longer reflects enzyme activity.",
+      "Belongs. Without a blank, absorbance from the substrate or buffer would be counted as product.",
+      "Belongs. That is the definition of the optimum in an assay.",
+      "Does not belong. Rates rise with temperature only until the enzyme begins to unfold. Above the optimum, denaturation wins and the rate collapses. Rates for uncatalyzed chemistry keep rising, but a protein catalyst does not.",
+      "Belongs. If substrate differed between tubes, a rate difference could be due to substrate rather than temperature."
+    ]
+  },
+  {
+    "id": "w02-ma-12",
+    "type": "ma",
+    "competencyId": "w14-atp-pathways",
+    "dok": 2,
+    "stem": "Which statements correctly compare the pathways that make ATP from glucose? Select all that apply.",
+    "options": [
+      "Glycolysis takes place in the cytosol and does not require oxygen.",
+      "The citric acid cycle takes place in the mitochondrial matrix.",
+      "Oxidative phosphorylation produces most of the ATP made from one glucose.",
+      "The citric acid cycle directly produces most of the ATP made from one glucose.",
+      "Oxidative phosphorylation can continue without oxygen as long as NADH is available."
+    ],
+    "correct": [0, 1, 2],
+    "why": "Glycolysis in the cytosol makes 2 ATP per glucose and needs no oxygen. Pyruvate then enters the mitochondrion, and the citric acid cycle in the matrix makes only 2 ATP directly but loads NADH and FADH2 with electrons. Those electrons run the electron transport chain on the inner membrane, which needs oxygen as the final acceptor and drives the synthesis of the remaining 26 to 28 ATP.",
+    "whyNot": [
+      "Belongs. This is why glycolysis alone can keep a cell alive briefly without oxygen.",
+      "Belongs. The cycle enzymes are dissolved in the matrix, inside the inner membrane.",
+      "Belongs. About 26 to 28 of the roughly 30 to 32 ATP come from oxidative phosphorylation.",
+      "Does not belong. The cycle's direct ATP yield is small. Its main product is reduced NADH and FADH2 that carry energy to the electron transport chain.",
+      "Does not belong. Without oxygen to accept electrons at the end of the chain, electron flow stops, the H+ gradient collapses, and ATP synthase stops. NADH just piles up."
+    ]
+  },
+  {
+    "id": "w02-tf-01",
+    "type": "tf",
+    "competencyId": "w1-water-properties",
+    "dok": 1,
+    "statement": "Cholesterol dissolves freely in plasma water because it is a small molecule.",
+    "truth": false,
+    "correction": "Cholesterol is nonpolar and hydrophobic, so it does not dissolve in plasma water; it is carried inside lipoproteins.",
+    "why": "Solubility in water depends on polarity, not on size. Water dissolves solutes that offer charges or polar groups it can hydrogen bond with. Cholesterol is a ring of hydrocarbon with a single hydroxyl group, so water excludes it, and the body packages it in lipoprotein particles with a polar surface to move it through blood."
+  },
+  {
+    "id": "w02-tf-02",
+    "type": "tf",
+    "competencyId": "w1-ph-buffers",
+    "dok": 1,
+    "statement": "A solution with a pH of 8 contains more H+ than a solution with a pH of 7.",
+    "truth": false,
+    "correction": "pH is the negative log of the H+ concentration, so pH 8 has one tenth the H+ of pH 7.",
+    "why": "The pH scale runs backward and is logarithmic. A higher number means fewer hydrogen ions, and each whole unit is a tenfold difference. Students often read pH like a concentration, but it is the negative exponent of the concentration."
+  },
+  {
+    "id": "w02-tf-03",
+    "type": "tf",
+    "competencyId": "w1-ph-buffers",
+    "dok": 2,
+    "statement": "A buffer prevents any change in pH when acid is added to a solution.",
+    "truth": false,
+    "correction": "A buffer limits the change in pH; it binds most of the added H+, but the pH still shifts slightly and the buffer can be used up.",
+    "why": "A buffer pair works by having its base member take up added H+, converting it to the weak acid member. Each H+ bound is one less free in solution, so the pH falls far less than in unbuffered water. It still falls, because some H+ stays free, and once the base member is consumed the buffer no longer helps. That is why blood pH does move during heavy exercise or in disease."
+  },
+  {
+    "id": "w02-tf-04",
+    "type": "tf",
+    "competencyId": "w1-protein-function",
+    "dok": 2,
+    "statement": "Denaturation breaks the weak bonds that hold a protein's shape but leaves its amino acid sequence intact.",
+    "truth": true,
+    "correction": "True, because heat and pH disrupt hydrogen bonds, ionic bonds, and hydrophobic interactions, while the covalent peptide bonds of the backbone survive.",
+    "why": "Shape is held by weak interactions that are easily disturbed. Heat adds motion that shakes them apart, and a pH change alters the charges on side chains so ionic and hydrogen bonds no longer form. The peptide bonds are covalent and need a protease or harsh chemistry to break. So a denatured protein is the right chain in the wrong shape, and shape is what determines function."
+  },
+  {
+    "id": "w02-tf-05",
+    "type": "tf",
+    "competencyId": "w1-protein-function",
+    "dok": 2,
+    "statement": "A protein's binding site is made of amino acids that sit next to each other in the primary sequence.",
+    "truth": false,
+    "correction": "The binding site is formed when folding brings together amino acids that may be far apart in the sequence.",
+    "why": "The chain folds back on itself many times, so residues from different regions end up lining one pocket. This is why a mutation far from the region that seems to matter can still wreck binding, and why unfolding the protein, which separates those residues again, destroys the site even though the sequence is unchanged."
+  },
+  {
+    "id": "w02-tf-06",
+    "type": "tf",
+    "competencyId": "w1-enzyme-function",
+    "dok": 2,
+    "statement": "Raising the substrate concentration increases the rate of an enzyme catalyzed reaction without limit.",
+    "truth": false,
+    "correction": "Rate rises with substrate only until the enzyme molecules are saturated; after that the rate plateaus at Vmax.",
+    "why": "Each enzyme molecule can process only so many substrate molecules per second. At low substrate, many active sites sit empty and adding substrate fills them, so rate climbs. Once nearly every active site is occupied all the time, extra substrate has nowhere to bind and the rate levels off. The only way to raise Vmax is to add more enzyme."
+  },
+  {
+    "id": "w02-tf-07",
+    "type": "tf",
+    "competencyId": "w1-atp-energy",
+    "dok": 2,
+    "statement": "The energy released by ATP hydrolysis can drive a reaction that would not happen on its own.",
+    "truth": true,
+    "correction": "True, because coupling an exergonic reaction (ATP hydrolysis) to an endergonic one makes the combined reaction release net energy, so it proceeds.",
+    "why": "Reactions run in the direction that releases free energy. Building glucose 6 phosphate or pumping Na+ uphill absorbs energy and would not go forward alone. When the cell links that step to ATP hydrolysis, usually by transferring the phosphate onto the substrate or the pump, the total energy change is negative and the pair runs. This is energy coupling, and it is how ATP pays for all three kinds of cellular work."
+  },
+  {
+    "id": "w02-tf-08",
+    "type": "tf",
+    "competencyId": "w1-lab-enzyme-assay",
+    "dok": 2,
+    "statement": "In a temperature series, the fall in reaction rate above the optimum is caused by denaturation of the enzyme.",
+    "truth": true,
+    "correction": "True, because past the optimum the added heat breaks the weak bonds that hold the active site in shape, so fewer working enzyme molecules remain.",
+    "why": "Below the optimum, warming speeds the reaction the way it speeds any chemistry, with more frequent and more energetic collisions. Above it, the protein begins to unfold and the loss of active enzyme outweighs the gain in collision energy. The drop is usually steep and often not reversible, which is why the high temperature tubes in an assay show almost no activity."
+  },
+  {
+    "id": "w02-tf-09",
+    "type": "tf",
+    "competencyId": "w14-atp-pathways",
+    "dok": 1,
+    "statement": "Glycolysis requires oxygen in order to convert glucose to pyruvate.",
+    "truth": false,
+    "correction": "Glycolysis is anaerobic; oxygen is required only by oxidative phosphorylation in the mitochondria.",
+    "why": "None of the ten glycolytic reactions uses oxygen. The pathway runs in the cytosol and produces 2 ATP and 2 NADH per glucose whether oxygen is present or not. Oxygen matters downstream, as the final electron acceptor of the electron transport chain. When oxygen is absent, pyruvate is converted to lactate so glycolysis can keep going."
+  },
+  {
+    "id": "w02-tf-10",
+    "type": "tf",
+    "competencyId": "w14-atp-pathways",
+    "dok": 2,
+    "statement": "When oxygen is absent, a cell makes about the same amount of ATP per glucose as when oxygen is present, because glycolysis speeds up to compensate.",
+    "truth": false,
+    "correction": "Without oxygen, ATP yield falls from about 30 to 32 per glucose to only 2, because the citric acid cycle and oxidative phosphorylation cannot run.",
+    "why": "Almost all the ATP from glucose comes from oxidative phosphorylation, which needs oxygen as the final electron acceptor. Without it, only glycolysis works. Glycolysis can run faster to make ATP more quickly, but it still gets only 2 ATP from each glucose, so the cell burns through glucose rapidly and piles up lactate. Faster is not the same as more efficient."
+  },
+  {
+    "id": "w02-bd-01",
+    "type": "bd",
+    "competencyId": "w1-enzyme-function",
+    "dok": 3,
+    "prompt": "Without notes, explain how a competitive inhibitor and an allosteric (noncompetitive) inhibitor each slow an enzyme, and predict what happens to the reaction rate in each case when substrate concentration is raised.",
+    "rubric": [
+      "competitive inhibitor binds at the active site and competes with substrate",
+      "raising substrate overcomes competitive inhibition, rate approaches normal Vmax",
+      "competitive inhibitor raises apparent Km but leaves Vmax unchanged",
+      "allosteric inhibitor binds a site away from the active site and changes the enzyme's shape",
+      "raising substrate does not overcome allosteric inhibition",
+      "allosteric inhibitor lowers Vmax"
+    ]
+  },
+  {
+    "id": "w02-bd-02",
+    "type": "bd",
+    "competencyId": "w1-enzyme-function",
+    "dok": 3,
+    "prompt": "Without notes, explain why the rate of an enzyme catalyzed reaction rises and then falls as temperature is raised from 10 C (50 F) to 60 C (140 F).",
+    "rubric": [
+      "warming increases molecular motion and collision frequency, so rate rises",
+      "rate peaks at an optimum, near 37 C for most human enzymes",
+      "above the optimum, heat breaks the weak bonds holding the protein fold",
+      "the enzyme denatures and the active site loses its shape",
+      "fewer working enzyme molecules, so rate falls sharply",
+      "denaturation is often irreversible"
+    ]
+  },
+  {
+    "id": "w02-bd-03",
+    "type": "bd",
+    "competencyId": "w1-enzyme-function",
+    "dok": 3,
+    "prompt": "Without notes, explain how an enzyme lowers activation energy and why that matters for a cell operating at 37 C (98.6 F). Include what the enzyme does not change.",
+    "rubric": [
+      "activation energy is the energy needed to reach the transition state",
+      "enzyme binds substrate at the active site",
+      "binding orients substrates or strains bonds, stabilizing the transition state",
+      "lower barrier means many more molecules can react at body temperature",
+      "enzyme does not change the net free energy change or the equilibrium",
+      "enzyme is released unchanged and reused"
+    ]
+  },
+  {
+    "id": "w02-bd-04",
+    "type": "bd",
+    "competencyId": "w1-lab-enzyme-assay",
+    "dok": 3,
+    "prompt": "Without notes, describe how you would find the pH optimum of an enzyme using a colorimetric assay. Include what you hold constant, what control you run, how you get a rate from the readings, and how you identify the optimum.",
+    "rubric": [
+      "prepare buffers spanning a range of pH values",
+      "hold enzyme amount, substrate concentration, and temperature the same in every tube",
+      "run a blank with no enzyme to subtract background color",
+      "read absorbance over time and take the rate from the initial linear slope",
+      "plot rate against pH",
+      "the optimum is the pH that gives the highest rate"
+    ]
+  },
+  {
+    "id": "w02-bd-05",
+    "type": "bd",
+    "competencyId": "w1-lab-enzyme-assay",
+    "dok": 3,
+    "prompt": "Without notes: a group measures an enzyme at 30, 40, 50, and 60 C (86, 104, 122, and 140 F) and finds that the rate keeps rising at every step. Explain what this result does and does not tell you about the optimum, and what you would do next before reporting one.",
+    "rubric": [
+      "the optimum has not been reached, it is at or above 60 C",
+      "the rate must fall on the high side before an optimum can be named",
+      "test additional higher temperatures until the rate drops",
+      "confirm each rate came from the initial linear part of the curve, not after substrate ran out",
+      "some enzymes, for example from heat loving microbes, have optima well above 37 C"
+    ]
+  },
+  {
+    "id": "w02-bd-06",
+    "type": "bd",
+    "competencyId": "w1-ph-buffers",
+    "dok": 3,
+    "prompt": "Without notes, trace what the bicarbonate buffer system does when lactic acid enters the blood during hard exercise, and explain what the lungs contribute.",
+    "rubric": [
+      "lactic acid releases H+ into plasma",
+      "HCO3- binds the H+ to form carbonic acid (H2CO3)",
+      "carbonic acid converts to CO2 and water",
+      "plasma bicarbonate falls as it is consumed",
+      "pH drops only slightly instead of sharply",
+      "ventilation rises and the lungs exhale the extra CO2, which pulls pH back toward 7.4"
+    ]
+  },
+  {
+    "id": "w02-bd-07",
+    "type": "bd",
+    "competencyId": "w14-atp-pathways",
+    "dok": 3,
+    "prompt": "Without notes, compare what happens to one glucose molecule with and without oxygen. Name where each pathway runs, roughly how much ATP results, and what becomes of pyruvate in each case.",
+    "rubric": [
+      "glycolysis runs in the cytosol in both cases and nets 2 ATP",
+      "with oxygen, pyruvate enters the mitochondrion and feeds the citric acid cycle in the matrix",
+      "electron transport and oxidative phosphorylation on the inner membrane use oxygen as the final electron acceptor",
+      "total with oxygen is about 30 to 32 ATP per glucose",
+      "without oxygen, pyruvate is converted to lactate to regenerate NAD+ so glycolysis can continue",
+      "without oxygen the yield is only 2 ATP per glucose"
+    ]
+  },
+  {
+    "id": "w02-bd-08",
+    "type": "bd",
+    "competencyId": "w1-protein-function",
+    "dok": 3,
+    "prompt": "Without notes, explain in terms of protein structure why a fever of 41 C (105.8 F) and a blood pH of 7.0 can each cause cells to stop working properly.",
+    "rubric": [
+      "protein function depends on its folded three dimensional shape",
+      "shape is held by weak bonds: hydrogen, ionic, and hydrophobic interactions",
+      "heat increases molecular motion and breaks these weak bonds",
+      "a pH change alters the charge on amino acid side chains, disrupting ionic and hydrogen bonds",
+      "binding sites and active sites lose their shape",
+      "enzymes, transporters, and other proteins lose function, sometimes permanently"
+    ]
+  },
+  {
+    "id": "w02-app-01",
+    "type": "app",
+    "competencyId": "w1-enzyme-function",
+    "dok": 3,
+    "case": "A patient has swallowed methanol. The enzyme alcohol dehydrogenase converts methanol to formaldehyde, which is what causes the damage. Ethanol binds the active site of the same enzyme with about ten times the affinity of methanol. The emergency team gives the patient ethanol.",
+    "stem": "Predict the effect of the ethanol on the rate at which methanol is converted to formaldehyde, and explain the mechanism.",
+    "options": [
+      "Conversion slows, because ethanol occupies the active site and methanol must compete for it.",
+      "Conversion speeds up, because ethanol binds an allosteric site and activates the enzyme.",
+      "No change, because the two alcohols are different substrates and bind at different sites.",
+      "Conversion stops permanently, because ethanol denatures the enzyme."
+    ],
+    "correct": 0,
+    "why": "This is competitive inhibition used as a treatment. Both alcohols fit the same active site. With ethanol present at high concentration and higher affinity, most enzyme molecules are busy with ethanol at any moment, so methanol is processed slowly and the kidneys have time to excrete it before much formaldehyde forms.",
+    "whyNot": [
+      "Correct. Two substrates for one active site compete, and the one with more molecules and higher affinity wins most of the time.",
+      "Ethanol binds the active site, not a separate regulatory site, and it is a substrate, not an activator. Allosteric activation would raise the rate, which is the opposite of the goal.",
+      "The case states that both bind the same active site. That shared site is the whole basis of the treatment.",
+      "Ethanol is a substrate and is metabolized normally. It does not unfold the protein. Denaturation would be irreversible and would also block ethanol metabolism, which is not what happens."
+    ]
+  },
+  {
+    "id": "w02-app-02",
+    "type": "app",
+    "competencyId": "w1-enzyme-function",
+    "dok": 3,
+    "case": "An enzyme has a Km of 1 mM for its substrate. A student measures the reaction rate at substrate concentrations of 0.5 mM, 5 mM, and 50 mM, keeping enzyme amount and temperature the same.",
+    "stem": "Predict how the rate at 50 mM compares to the rate at 5 mM, and why.",
+    "options": [
+      "Only slightly higher, because at 5 mM the enzyme is already close to saturated.",
+      "About ten times higher, because rate is proportional to substrate concentration.",
+      "Lower, because excess substrate denatures the enzyme.",
+      "The same as at 0.5 mM, because Km sets the maximum rate."
+    ],
+    "correct": 0,
+    "why": "Km is the substrate concentration that gives half of Vmax. At 5 mM, five times Km, the enzyme is running at about 83 percent of Vmax. At 50 mM it reaches about 98 percent. So a tenfold jump in substrate buys only a small gain because most active sites were already occupied. The curve is a hyperbola, not a straight line.",
+    "whyNot": [
+      "Correct. Above a few multiples of Km the rate flattens toward Vmax.",
+      "Proportional behavior holds only well below Km, where most active sites are empty. From 0.5 to 5 mM the rate roughly doubles and a half, not tenfold, and above that it barely moves.",
+      "Substrate does not denature the enzyme. Some enzymes show substrate inhibition, but nothing in this case suggests it, and the default expectation is a plateau, not a drop.",
+      "Km is not the maximum rate. It is the substrate concentration at half maximal rate. At 0.5 mM the enzyme is at only about one third of Vmax, far below its rate at 50 mM."
+    ]
+  },
+  {
+    "id": "w02-app-03",
+    "type": "app",
+    "competencyId": "w1-enzyme-function",
+    "dok": 3,
+    "case": "A drug is tested on a purified enzyme. Without the drug, Km is 4 mM and Vmax is 200 units. With the drug, Km is still 4 mM but Vmax is 100 units.",
+    "stem": "Predict what happens to the reaction rate if the substrate concentration is raised tenfold while the drug is still present, and explain why.",
+    "options": [
+      "Rate rises toward 100 units but never reaches 200, because the drug binds away from the active site and substrate cannot displace it.",
+      "Rate rises to 200 units, because extra substrate outcompetes the drug for the active site.",
+      "Rate falls, because higher substrate increases drug binding.",
+      "Rate stays at exactly 100 units, because Vmax is fixed regardless of substrate."
+    ],
+    "correct": 0,
+    "why": "Unchanged Km with a lowered Vmax is the fingerprint of a noncompetitive inhibitor. The drug binds a site other than the active site and reduces how fast each enzyme molecule can work, or takes a fraction of enzyme molecules out of action. Substrate still binds normally, which is why Km is unchanged, but no amount of substrate can remove an inhibitor that is not in the active site.",
+    "whyNot": [
+      "Correct. The drugged enzyme population behaves like half as much enzyme. More substrate pushes the rate up along the new curve toward the new, lower Vmax.",
+      "That is what happens with a competitive inhibitor, which would have raised Km and left Vmax at 200. These numbers show the opposite pattern.",
+      "Substrate and a noncompetitive inhibitor bind independently. Raising substrate does not increase inhibitor binding.",
+      "Vmax is the ceiling, not the current rate. At any substrate concentration below saturation, adding substrate still raises the rate; it simply cannot exceed 100."
+    ]
+  },
+  {
+    "id": "w02-app-04",
+    "type": "app",
+    "competencyId": "w1-enzyme-function",
+    "dok": 3,
+    "case": "The pancreas normally secretes bicarbonate that raises the pH of the duodenum to about 8, which is the optimum for the protein digesting enzyme trypsin. A patient's pancreas makes trypsin but fails to secrete enough bicarbonate, so the duodenal contents stay at about pH 4.",
+    "stem": "Predict what happens to trypsin activity in this patient's duodenum and explain the mechanism.",
+    "options": [
+      "Activity falls sharply, because the extra H+ changes the charges on side chains in the active site and the enzyme's shape no longer fits its substrate.",
+      "Activity rises, because more H+ speeds up all chemical reactions.",
+      "Activity is unchanged, because enzymes work equally well at any pH once they are activated.",
+      "Activity falls, because low pH breaks the peptide bonds of trypsin and digests it."
+    ],
+    "correct": 0,
+    "why": "Every enzyme has a pH optimum set by the ionization of its own amino acids. At pH 4, side chains that must be uncharged at pH 8 pick up protons, and side chains that must be negative become neutral. Hydrogen bonds and ionic bonds in and around the active site are lost, the pocket changes shape, and substrate binding and catalysis drop. If the pH change is large enough the enzyme unfolds completely.",
+    "whyNot": [
+      "Correct. pH affects enzymes through side chain charge and therefore shape, which is why trypsin and pepsin have such different optima.",
+      "H+ is not a general catalyst. Away from its optimum an enzyme loses shape, and rate falls no matter how far the pH moves in either direction.",
+      "Activation by removing a peptide fragment turns trypsinogen into trypsin, but the active enzyme still depends on its folded shape, which depends on pH.",
+      "Peptide bonds are covalent and survive pH 4 easily. Stomach acid at pH 2 does not hydrolyze proteins on its own; that takes pepsin. The loss here is denaturation, not digestion."
+    ]
+  },
+  {
+    "id": "w02-app-05",
+    "type": "app",
+    "competencyId": "w1-lab-enzyme-assay",
+    "dok": 3,
+    "case": "A lab group assays an enzyme at six temperatures and records the initial rate as change in absorbance per minute: 20 C (68 F) 0.010, 30 C (86 F) 0.020, 37 C (98.6 F) 0.030, 45 C (113 F) 0.034, 55 C (131 F) 0.012, and 65 C (149 F) 0.001.",
+    "stem": "Identify the temperature optimum from these data and explain why the rate drops between 45 and 55 C.",
+    "options": [
+      "The optimum is near 45 C; above it the enzyme denatures, so fewer active molecules remain.",
+      "The optimum is 37 C, because that is human body temperature.",
+      "The optimum is 65 C, because the highest temperature gives the most collisions.",
+      "The optimum cannot be identified, because the low rates at 55 and 65 C mean the substrate ran out."
+    ],
+    "correct": 0,
+    "why": "The optimum is whatever temperature gives the highest measured rate, here 45 C. Below that, warming speeds the reaction by increasing collision energy. Past it, heat breaks the weak bonds that hold the fold, the active site is lost, and the rate collapses even though the remaining molecules are colliding faster than ever. Not every enzyme peaks at exactly 37 C, and a data driven optimum beats an assumption.",
+    "whyNot": [
+      "Correct. Read the optimum from the data, and explain the drop by denaturation.",
+      "Body temperature is a reasonable guess before the experiment, but the data show a higher rate at 45 C. The assay exists to measure the optimum, not to assume it.",
+      "Collision frequency does rise with temperature, but a protein catalyst unfolds. The rate at 65 C is essentially zero, which is the signature of denaturation.",
+      "These are initial rates, measured while substrate is plentiful. Substrate depletion shows up as a plateau late in a single run, not as a low starting slope in the hot tubes."
+    ]
+  },
+  {
+    "id": "w02-app-06",
+    "type": "app",
+    "competencyId": "w1-lab-enzyme-assay",
+    "dok": 3,
+    "case": "A student runs the same enzyme and substrate at two temperatures and records absorbance every minute for ten minutes. At 37 C (98.6 F) the absorbance climbs steeply, then flattens completely after two minutes. At 20 C (68 F) the absorbance rises slowly and is still rising in a straight line at ten minutes. She calculates each rate as the total change over ten minutes and concludes that the enzyme is more active at 20 C.",
+    "stem": "What is the most likely explanation for the two curves, and how should she correct her rate calculation?",
+    "options": [
+      "At 37 C the substrate was used up within two minutes; she should take each rate from the initial linear slope, which will show 37 C is faster.",
+      "The enzyme denatured at 37 C after two minutes; 20 C is the true optimum.",
+      "The enzyme really is more active at 20 C, because cooler temperatures stabilize the fold.",
+      "The spectrophotometer drifted at 37 C, so the 37 C data should be discarded."
+    ],
+    "correct": 0,
+    "why": "A progress curve flattens when there is no more substrate to convert, and a fast enzyme exhausts substrate quickly. The 37 C tube did most of its work in the first minute or two, while the 20 C tube was still chewing slowly through its substrate at ten minutes. Averaging over the whole ten minutes penalizes the fast tube. Initial velocity, taken while substrate is still in excess, is the honest comparison.",
+    "whyNot": [
+      "Correct. The plateau is substrate depletion, and initial slope is the standard rate.",
+      "Denaturation at 37 C would be unusual for a human enzyme, and denaturation shows up across a temperature series as a drop at high temperatures, not as a sudden plateau in a single warm tube after a fast start.",
+      "A slower initial slope at 20 C means less activity, not more. The straight line at 20 C simply means substrate has not run out yet.",
+      "Drift produces a sloping or noisy baseline, not a clean steep rise followed by a flat plateau. The 37 C data are good; the calculation was the problem."
+    ]
+  },
+  {
+    "id": "w02-app-07",
+    "type": "app",
+    "competencyId": "w1-lab-enzyme-assay",
+    "dok": 3,
+    "case": "A student assays amylase at pH 3, 5, 7, and 9 with excess substrate and gets initial rates of 0.002, 0.018, 0.030, and 0.015 absorbance units per minute. She then repeats the pH 7 tube with twice the amount of enzyme, all else unchanged.",
+    "stem": "Predict the initial rate in the doubled enzyme tube and explain why.",
+    "options": [
+      "About 0.060 per minute, because with substrate in excess the rate is proportional to the amount of enzyme.",
+      "Still about 0.030 per minute, because the pH optimum fixes the maximum rate.",
+      "About 0.015 per minute, because the extra enzyme competes with itself for substrate.",
+      "Higher than 0.060 per minute, because doubling enzyme more than doubles collisions."
+    ],
+    "correct": 0,
+    "why": "When substrate is in excess, every enzyme molecule is working at close to its full speed, so the total rate is simply the number of enzyme molecules times the rate per molecule. Doubling the enzyme doubles Vmax. The pH optimum determines how fast each molecule works, and pH 7 is the best of the tested values, but it does not cap how many molecules you add.",
+    "whyNot": [
+      "Correct. Vmax scales with enzyme concentration when substrate is not limiting.",
+      "The optimum sets the rate per enzyme molecule, not the rate of the tube. Twice the catalyst gives twice the product per minute.",
+      "With substrate in excess there is plenty for every enzyme molecule. Competition among enzyme molecules would only appear when substrate runs low.",
+      "Each enzyme molecule works independently. Rate scales linearly with enzyme, not faster than linearly."
+    ]
+  },
+  {
+    "id": "w02-app-08",
+    "type": "app",
+    "competencyId": "w1-ph-buffers",
+    "dok": 3,
+    "case": "A patient has been vomiting for two days and has lost a large amount of stomach acid (HCl). Labs: plasma bicarbonate 36 mEq/L (22 to 26), PCO2 40 mmHg (35 to 45). Use pH = 6.1 + log (HCO3- divided by 0.03 times PCO2).",
+    "stem": "Predict the direction of the patient's arterial pH and the change in ventilation that follows, and explain why.",
+    "options": [
+      "pH rises above 7.45; ventilation decreases so that CO2 is retained and pH moves back toward normal.",
+      "pH rises above 7.45; ventilation increases to blow off CO2.",
+      "pH falls below 7.35; ventilation increases to blow off CO2.",
+      "pH stays at 7.40, because bicarbonate does not affect pH when PCO2 is normal."
+    ],
+    "correct": 0,
+    "why": "Losing HCl removes H+ from the body, which leaves bicarbonate unopposed and its concentration rises. Dissolved CO2 is 0.03 times 40, or 1.2, so the ratio is 36 divided by 1.2, or 30. Log 30 is about 1.48, so pH is about 7.58. The buffer pair is out of balance toward the base member. Chemoreceptors sense the high pH and reduce ventilation, letting CO2 build up, which raises the acid member of the pair and lowers the ratio back toward 20 to 1.",
+    "whyNot": [
+      "Correct. High bicarbonate with normal PCO2 means a high ratio and a high pH, and the lung compensates by slowing breathing.",
+      "Blowing off CO2 would remove acid and push pH even higher. Compensation must move pH the opposite way, so ventilation falls.",
+      "The ratio of base to acid is above 20 to 1, so pH is high, not low. A falling pH with rising ventilation is the response to added acid, the mirror image of this case.",
+      "pH depends on the ratio of bicarbonate to dissolved CO2. Changing either one changes pH, and here bicarbonate is 50 percent above normal."
+    ]
+  },
+  {
+    "id": "w02-app-09",
+    "type": "app",
+    "competencyId": "w1-ph-buffers",
+    "dok": 3,
+    "case": "A patient with long standing lung disease cannot exhale CO2 normally. Labs: PCO2 70 mmHg (35 to 45), plasma bicarbonate 36 mEq/L (22 to 26). Use pH = 6.1 + log (HCO3- divided by 0.03 times PCO2). Log 17 is about 1.23.",
+    "stem": "Estimate the arterial pH and explain what the raised bicarbonate tells you about how the body has responded.",
+    "options": [
+      "About 7.33; the kidneys have retained bicarbonate to offset the high CO2, but the compensation is not complete because pH is still below 7.35.",
+      "About 7.40; the raised bicarbonate has fully corrected the pH.",
+      "About 7.10; the ratio of bicarbonate to dissolved CO2 is 10 to 1.",
+      "About 7.60; a bicarbonate this high always means alkalosis."
+    ],
+    "correct": 0,
+    "why": "Dissolved CO2 is 0.03 times 70, or 2.1. The ratio is 36 divided by 2.1, about 17. Log 17 is about 1.23, so pH is about 7.33. The extra CO2 is the acid member of the buffer pair and it drives pH down. Over days the kidneys have added bicarbonate, the base member, which lifts the ratio from what it would have been (24 divided by 2.1, about 11, pH about 7.15) most of the way back. The pH is much better than it would be uncompensated but still slightly acidic.",
+    "whyNot": [
+      "Correct. Run the numbers and compare the result with the normal range.",
+      "A ratio of 17 gives 7.33, not 7.40. The kidneys almost never compensate completely; they bring pH close to, but not into, the normal range.",
+      "The ratio is 36 divided by 2.1, which is about 17, not 10. A ratio of 10 would require a much lower bicarbonate or a higher PCO2.",
+      "Bicarbonate cannot be judged alone. The ratio to dissolved CO2 sets the pH, and here the CO2 is high enough that the pH is acidic despite the high bicarbonate."
+    ]
+  },
+  {
+    "id": "w02-app-10",
+    "type": "app",
+    "competencyId": "w14-atp-pathways",
+    "dok": 3,
+    "case": "A runner completes a 400 meter sprint in 50 seconds. Oxygen delivery to the leg muscles cannot keep up with demand during the run. Blood lactate rises from 1.0 mmol/L to 12 mmol/L (resting 0.5 to 2.0) by the finish.",
+    "stem": "Explain why lactate rises, in terms of what the muscle cell needs to keep making ATP.",
+    "options": [
+      "Pyruvate is converted to lactate to regenerate NAD+, which glycolysis must have to keep producing ATP without oxygen.",
+      "Lactate is a more efficient fuel than glucose, so the muscle switches to making it.",
+      "The mitochondria are damaged by the sprint and leak lactate into the blood.",
+      "The citric acid cycle produces lactate as its normal end product when it runs quickly."
+    ],
+    "correct": 0,
+    "why": "Glycolysis needs NAD+ to accept electrons at one of its steps. Normally the resulting NADH hands those electrons to the mitochondrion, which needs oxygen at the end of the chain. Without enough oxygen, NADH accumulates and NAD+ runs out, which would stop glycolysis and ATP production. Converting pyruvate to lactate takes the electrons back off NADH and regenerates NAD+, so glycolysis can keep making its 2 ATP per glucose at high speed. Lactate is the cost of that shortcut.",
+    "whyNot": [
+      "Correct. Lactate production is a way to keep glycolysis running when oxidative phosphorylation cannot keep up.",
+      "Lactate is a product, not a fuel, in this setting, and it carries most of the energy of glucose still unreleased. The muscle is being less efficient, not more.",
+      "Mitochondria are not damaged by sprinting and they do not make lactate. Lactate is made in the cytosol from pyruvate.",
+      "The citric acid cycle needs oxygen downstream to run at all, and its outputs are CO2, NADH, FADH2, and a little ATP. Lactate is made when pyruvate is kept out of the cycle."
+    ]
+  },
+  {
+    "id": "w02-app-11",
+    "type": "app",
+    "competencyId": "w14-atp-pathways",
+    "dok": 3,
+    "case": "A child has an inherited defect in pyruvate dehydrogenase, the enzyme that converts pyruvate to acetyl CoA for entry into the citric acid cycle. Resting blood lactate is 8 mmol/L (0.5 to 2.0). Oxygen delivery to the tissues is normal.",
+    "stem": "Predict the ATP yield per glucose in this child's cells and explain why lactate is high even at rest with plenty of oxygen.",
+    "options": [
+      "Yield falls to about 2 ATP per glucose; pyruvate cannot enter the mitochondrion's pathways, so it is diverted to lactate.",
+      "Yield is normal, because the citric acid cycle can use pyruvate directly without acetyl CoA.",
+      "Yield rises, because glycolysis speeds up to compensate for the block.",
+      "Yield is normal, because oxygen is present and oxidative phosphorylation does not depend on glucose."
+    ],
+    "correct": 0,
+    "why": "The block sits at the doorway between glycolysis and the citric acid cycle. Glucose still makes pyruvate and 2 ATP in the cytosol, but the pyruvate cannot become acetyl CoA, so it never reaches the cycle or the electron transport chain. The cell handles the pile of pyruvate the same way an oxygen starved muscle does: it converts it to lactate to regenerate NAD+. Oxygen is available but glucose derived carbon cannot get to where it would be used.",
+    "whyNot": [
+      "Correct. Glucose is stuck at the glycolysis stage, so ATP per glucose is small and lactate accumulates.",
+      "Pyruvate has no way into the cycle except through acetyl CoA. That is precisely the step that is defective.",
+      "Faster glycolysis can make ATP more quickly, but it does not change the 2 ATP per glucose. Speed and yield are different things.",
+      "Oxidative phosphorylation needs NADH and FADH2 from the citric acid cycle. Fats can still supply acetyl CoA, but the question is about ATP from glucose, and glucose cannot get past pyruvate."
+    ]
+  },
+  {
+    "id": "w02-app-12",
+    "type": "app",
+    "competencyId": "w1-atp-energy",
+    "dok": 3,
+    "case": "The first step of glycolysis attaches a phosphate to glucose. Adding phosphate to glucose by itself has a free energy change of about plus 14 kJ per mole. Hydrolysis of ATP has a free energy change of about minus 30 kJ per mole. The enzyme hexokinase carries out the step.",
+    "stem": "Predict whether the phosphorylation of glucose proceeds in the cell, and explain how hexokinase makes it possible.",
+    "options": [
+      "It proceeds, because hexokinase couples the two reactions by transferring the phosphate directly from ATP to glucose, giving a net change of about minus 16 kJ per mole.",
+      "It does not proceed, because a reaction with a positive free energy change cannot occur in a cell.",
+      "It proceeds only because the heat released by ATP hydrolysis warms the glucose enough to react.",
+      "It proceeds with a net change of about plus 44 kJ per mole, because the two values add together."
+    ],
+    "correct": 0,
+    "why": "This is energy coupling. The endergonic step (plus 14) and the exergonic step (minus 30) are made into a single reaction in one active site. The phosphate never floats free; hexokinase hands it from ATP to glucose. The combined free energy change is minus 30 plus 14, which is minus 16 kJ per mole, so the coupled reaction is exergonic and runs forward. This same trick, direct phosphate transfer from ATP, powers pumps and many synthesis steps.",
+    "whyNot": [
+      "Correct. Coupling turns an uphill step into part of a downhill reaction.",
+      "Endergonic steps happen constantly in cells. They just have to be paid for by coupling to an exergonic reaction. That is what ATP is for.",
+      "The energy of ATP is captured by chemical transfer of the phosphate group, not by heat. Heat released to the surroundings is energy lost, not energy used.",
+      "Signs matter. Minus 30 plus 14 is minus 16, a net release. A value of plus 44 would be strongly uphill and the reaction would not run."
+    ]
+  }
+]

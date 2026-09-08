@@ -1120,7 +1120,7 @@
     "The regulated variable itself to the effector"
    ],
    "correctIndex": 2,
-   "explanation": "Efferent means carrying away from the center, and this limb may be a motor nerve or a hormone in the blood. Sensory information traveling inward is the afferent limb. The setpoint stays inside the integrating center and is never shipped to the sensor. A pathway carries signals, not the regulated variable itself."
+   "explanation": "Efferent means carrying away from the center, and this limb may be a motor nerve or a hormone in the blood. Sensory information travelling inward is the afferent limb. The setpoint stays inside the integrating center and is never shipped to the sensor. A pathway carries signals, not the regulated variable itself."
   },
   {
    "id": "c62",
@@ -1272,7 +1272,7 @@
     "The effector"
    ],
    "correctIndex": 1,
-   "explanation": "Information traveling from a receptor toward the comparator is the afferent limb, and this is the classic place students reverse the terms. The efferent limb would run from the hypothalamus out to skin blood vessels or to skeletal muscle. The integrating center is the hypothalamus itself, and the effectors are the vessels and muscles that respond."
+   "explanation": "Information travelling from a receptor toward the comparator is the afferent limb, and this is the classic place students reverse the terms. The efferent limb would run from the hypothalamus out to skin blood vessels or to skeletal muscle. The integrating center is the hypothalamus itself, and the effectors are the vessels and muscles that respond."
   },
   {
    "id": "c70",
@@ -1329,7 +1329,7 @@
     "The loop has no setpoint because glucose is not regulated"
    ],
    "correctIndex": 2,
-   "explanation": "The beta cell measures glucose and adjusts insulin output itself, so the sensing and comparing steps collapse into one cell with no separate afferent nerve. The effectors are the liver, muscle, and fat cells that take up glucose. Insulin traveling in blood is a perfectly good efferent pathway, since efferent limbs can be neural or hormonal. Glucose is one of the most tightly regulated variables in the body."
+   "explanation": "The beta cell measures glucose and adjusts insulin output itself, so the sensing and comparing steps collapse into one cell with no separate afferent nerve. The effectors are the liver, muscle, and fat cells that take up glucose. Insulin travelling in blood is a perfectly good efferent pathway, since efferent limbs can be neural or hormonal. Glucose is one of the most tightly regulated variables in the body."
   },
   {
    "id": "c73",
@@ -2117,12 +2117,12 @@
     "lecture"
    ],
    "q": "In an endocrine reflex, what carries the signal from the integrating center to the effector?",
-   "a": "A hormone traveling in the blood.",
+   "a": "A hormone travelling in the blood.",
    "options": [
     "Direct electrical coupling through gap junctions",
     "A paracrine molecule diffusing through interstitial fluid",
     "A motor neuron with its cell body in the spinal cord",
-    "A hormone traveling in the blood"
+    "A hormone travelling in the blood"
    ],
    "correctIndex": 3,
    "explanation": "Endocrine reflexes use the bloodstream as the efferent pathway, which lets one gland reach every tissue with the right receptor. Diffusion through interstitial fluid limits a signal to its neighbors and is therefore local. A motor neuron is the efferent limb of a neural reflex, not an endocrine one. Gap junction coupling passes current between adjacent cells only."

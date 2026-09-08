@@ -1130,16 +1130,16 @@
     "lecture",
     "lab"
    ],
-   "q": "Menstruation begins when progesterone falls at the end of the luteal phase. What does that fall actually do to the uterine lining?",
-   "a": "The spiral arteries constrict, the superficial functional layer loses its blood supply and is shed, and the deeper basal layer stays behind to rebuild it.",
+   "q": "Which layer of the endometrium is shed during menstruation?",
+   "a": "The stratum functionalis.",
    "options": [
-    "Spiral arteries constrict, the functional layer loses its blood supply and is shed, and the basal layer stays to rebuild it",
-    "The entire lining including the deepest layer is shed, and a new one grows from the myometrium",
-    "The lining stops secreting but is not shed until oestrogen also falls",
-    "The muscular wall of the uterus is shed along with the lining"
+    "The stratum functionalis",
+    "The stratum basalis",
+    "The myometrium",
+    "The perimetrium"
    ],
    "correctIndex": 0,
-   "explanation": "Progesterone from the corpus luteum is what maintains the built up lining. When the corpus luteum degenerates and progesterone falls, the coiled spiral arteries supplying the superficial functionalis constrict, that layer becomes ischaemic and breaks down, and it is shed as menstrual flow. The deeper stratum basalis has its own straight arterial supply that is not affected, so it survives and regenerates the lining under oestrogen in the next cycle. If the whole lining were shed there would be nothing left to rebuild from, and the myometrium is muscle, not a source of endometrial cells. Oestrogen also falls at this point, but it is progesterone withdrawal that triggers the shedding, which is why a progestin only pill can be used to control bleeding. The myometrium is never shed; it contracts to help expel the flow."
+   "explanation": "The functionalis is the superficial layer supplied by spiral arteries, and it is the layer built up and then lost each cycle. The basalis is retained and is the source of the cells that regenerate the functionalis afterward. The myometrium is the smooth muscle wall and stays in place, contracting to help expel the shed tissue. The perimetrium is the outer serous covering and is never shed."
   },
   {
    "id": "c63",

@@ -1,0 +1,779 @@
+[
+  {
+    "id": "w03-ma-01",
+    "type": "ma",
+    "competencyId": "w1-fluid-compartments",
+    "dok": 2,
+    "stem": "Consider a healthy 70 kg adult. Which statements about the body fluid compartments are correct? Select all that apply.",
+    "options": [
+      "Total body water is about 42 L, roughly 60 percent of body mass.",
+      "The intracellular fluid holds about two thirds of total body water.",
+      "Plasma is the larger of the two extracellular subcompartments.",
+      "Sodium is the dominant cation outside cells and potassium is the dominant cation inside cells.",
+      "Plasma and interstitial fluid have nearly the same ion composition but differ in protein content.",
+      "Water cannot cross the cell membrane, so the intracellular and extracellular compartments are osmotically independent."
+    ],
+    "correct": [0, 1, 3, 4],
+    "why": "About 42 L of water sits in a 70 kg adult. Two thirds (28 L) is inside cells and one third (14 L) is outside. Of the extracellular 14 L, about 3 L is plasma and 11 L is interstitial fluid. The Na+/K+ ATPase keeps Na+ outside and K+ inside. Capillary walls let ions and water pass but hold back most protein, so plasma and interstitial fluid match in ions and differ mainly in protein. Water moves freely across cell membranes, which is why the two big compartments always end up at the same osmolarity.",
+    "whyNot": [
+      "Correct. 0.6 times 70 kg gives about 42 L of water.",
+      "Correct. About 28 L of the 42 L is intracellular.",
+      "Wrong. Interstitial fluid (about 11 L) is much larger than plasma (about 3 L). Plasma is the smaller subcompartment.",
+      "Correct. The pump sets this pattern, high Na+ outside and high K+ inside.",
+      "Correct. Ions cross the capillary wall freely, but most plasma protein stays in the blood.",
+      "Wrong. Water crosses cell membranes readily, so the two compartments share one osmolarity. Only solutes are held in place."
+    ]
+  },
+  {
+    "id": "w03-ma-02",
+    "type": "ma",
+    "competencyId": "w2-membrane-structure",
+    "dok": 2,
+    "stem": "Which of the following changes would make a plasma membrane more fluid at 37 C (98.6 F)? Select all that apply.",
+    "options": [
+      "Replacing saturated fatty acid tails with unsaturated tails.",
+      "Removing cholesterol from the membrane.",
+      "Shortening the fatty acid tails.",
+      "Lowering the temperature to 20 C (68 F).",
+      "Lengthening the fatty acid tails."
+    ],
+    "correct": [0, 1, 2],
+    "why": "Membrane fluidity depends on how tightly the phospholipid tails can pack. Anything that loosens packing raises fluidity. Unsaturated tails have kinks that keep tails apart. Short tails have less surface for tails to stick together. At body temperature cholesterol sits between tails and restrains their motion, so removing it loosens the membrane. Cooling and long saturated tails both let tails pack tighter and lower fluidity.",
+    "whyNot": [
+      "Correct. The double bond kinks the tail and prevents tight packing.",
+      "Correct. At 37 C cholesterol acts as a brake on tail movement, so taking it away increases fluidity. (At low temperatures it does the opposite and keeps the membrane from gelling.)",
+      "Correct. Shorter tails have less contact with their neighbors and move more freely.",
+      "Wrong. Cooling slows tail motion and lets tails pack closer, so fluidity falls. This would be the answer if the question asked what makes the membrane stiffer.",
+      "Wrong. Longer tails have more surface to interact with neighbors and pack more tightly, lowering fluidity."
+    ]
+  },
+  {
+    "id": "w03-ma-03",
+    "type": "ma",
+    "competencyId": "w2-permeability",
+    "dok": 2,
+    "stem": "Which of these molecules can cross a pure phospholipid bilayer at a useful rate without a transport protein? Select all that apply.",
+    "options": [
+      "Oxygen (O2)",
+      "Carbon dioxide (CO2)",
+      "Sodium ions (Na+)",
+      "Glucose",
+      "A steroid hormone such as cortisol",
+      "Ethanol"
+    ],
+    "correct": [0, 1, 4, 5],
+    "why": "The middle of the bilayer is a layer of hydrocarbon tails with no water in it. To cross it unaided, a molecule must be able to dissolve in oil. Small nonpolar gases and lipid soluble molecules cross easily. Ethanol is small and only weakly polar, so it crosses well too. Charged ions carry a shell of water and cannot enter the oily core at all. Glucose is uncharged but large and highly polar, with many hydroxyl groups, so its rate through pure lipid is close to zero.",
+    "whyNot": [
+      "Correct. O2 is small and nonpolar, so it dissolves in the lipid core.",
+      "Correct. CO2 is small and nonpolar and crosses freely, which is why it leaves cells so quickly.",
+      "Wrong. Na+ is charged and hydrated. It needs a channel or carrier. This is why the Na+ gradient can be maintained at all.",
+      "Wrong. Glucose is a large polar molecule. It needs a GLUT carrier or SGLT.",
+      "Correct. Steroids are lipids and pass straight through the membrane, which is why their receptors sit inside the cell.",
+      "Correct. Ethanol is small and lipid soluble enough to cross every membrane in the body, which is why it distributes into total body water."
+    ]
+  },
+  {
+    "id": "w03-ma-04",
+    "type": "ma",
+    "competencyId": "w2-fick-diffusion",
+    "dok": 2,
+    "stem": "According to Fick's law of diffusion, which of these changes would increase the rate at which oxygen crosses a membrane? Select all that apply.",
+    "options": [
+      "Increasing the oxygen concentration difference across the membrane.",
+      "Increasing the surface area of the membrane.",
+      "Increasing the thickness of the membrane.",
+      "Increasing the lipid solubility of the diffusing molecule.",
+      "Increasing the distance the molecule must travel.",
+      "Increasing the size of the diffusing molecule."
+    ],
+    "correct": [0, 1, 3],
+    "why": "Fick's law says diffusion rate is proportional to surface area, concentration gradient, and membrane permeability, and inversely proportional to membrane thickness (distance). Permeability itself rises with lipid solubility and falls with molecular size. So the three things that speed transfer are a bigger gradient, more area, and a more lipid soluble molecule. Thicker membranes, longer distances, and bigger molecules all slow it down.",
+    "whyNot": [
+      "Correct. The gradient is the driving force. Double the gradient, double the rate.",
+      "Correct. Area multiplies the rate. This is why the lungs and gut have such enormous surfaces.",
+      "Wrong. Thickness is in the denominator. A thicker barrier slows diffusion, which is what happens in pulmonary edema.",
+      "Correct. A more lipid soluble molecule enters the bilayer more easily, so its permeability is higher.",
+      "Wrong. Distance works the same way as thickness. Diffusion over long distances is slow, which is why cells must be near capillaries.",
+      "Wrong. Larger molecules move more slowly and enter the lipid core less easily, so permeability falls."
+    ]
+  },
+  {
+    "id": "w03-ma-05",
+    "type": "ma",
+    "competencyId": "w2-osmolarity-tonicity",
+    "dok": 2,
+    "stem": "A solution contains 150 mmol/L NaCl and nothing else. Assume NaCl fully dissociates. Which statements are correct? Select all that apply.",
+    "options": [
+      "Its osmolarity is about 300 mOsm/L.",
+      "It is isosmotic to normal body fluids.",
+      "It is isotonic to a red blood cell.",
+      "Its osmolarity is 150 mOsm/L.",
+      "Adding 100 mmol/L urea to it would make it hypertonic to red blood cells."
+    ],
+    "correct": [0, 1, 2],
+    "why": "Osmolarity counts particles. Each NaCl gives one Na+ and one Cl-, so 150 mmol/L NaCl is 300 mOsm/L. Body fluids are close to 300 mOsm/L, so this solution is isosmotic. Tonicity depends only on the solutes that cannot enter the cell. Na+ and Cl- stay outside the red cell, so all 300 mOsm/L count and the cell neither swells nor shrinks. Urea crosses the membrane and equilibrates, so it raises osmolarity but not tonicity.",
+    "whyNot": [
+      "Correct. 150 times 2 particles gives 300 mOsm/L.",
+      "Correct. Normal plasma is about 280 to 300 mOsm/L, so this matches.",
+      "Correct. All of the solute is impermeant to the red cell, and it matches the cell's own 300 mOsm/L, so cell volume does not change.",
+      "Wrong. This forgets that NaCl dissociates into two particles. 150 mmol/L of glucose would be 150 mOsm/L, but not NaCl.",
+      "Wrong. Urea penetrates the cell, so it adds osmolarity (now 400 mOsm/L, hyperosmotic) without adding tonicity. The solution stays isotonic."
+    ]
+  },
+  {
+    "id": "w03-ma-06",
+    "type": "ma",
+    "competencyId": "w2-lab-diffusion-osmosis",
+    "dok": 2,
+    "stem": "In lab, a dialysis bag filled with 20 percent sucrose is tied off, placed in a beaker of distilled water, and weighed every 10 minutes. The dialysis tubing passes water but not sucrose. Which statements are correct? Select all that apply.",
+    "options": [
+      "The bag gains mass because water moves into the bag by osmosis.",
+      "The bag gains mass fastest during the first 10 minutes, when the gradient is steepest.",
+      "Sucrose leaves the bag at the same rate that water enters.",
+      "A bag filled with 40 percent sucrose would gain mass faster than the 20 percent bag.",
+      "A bag filled with distilled water and placed in distilled water would also gain mass."
+    ],
+    "correct": [0, 1, 3],
+    "why": "The bag holds solute the tubing cannot pass, so water moves toward the sucrose and the bag gets heavier. The rate depends on the difference in solute concentration across the membrane, so it is highest at the start and falls as water dilutes the sucrose. A more concentrated bag has a steeper gradient and gains water faster. With no gradient, as in water inside water, there is no net water movement.",
+    "whyNot": [
+      "Correct. Water moves toward the higher solute concentration, into the bag.",
+      "Correct. Rate is proportional to the gradient, and the gradient is largest before any water has entered.",
+      "Wrong. Sucrose is too large to pass through the tubing. If it could, the bag would not keep gaining water.",
+      "Correct. Twice the sucrose means a steeper osmotic gradient and a faster rate of water entry.",
+      "Wrong. With no solute difference there is no net osmosis. Water still crosses in both directions, but equally, so the mass stays the same."
+    ]
+  },
+  {
+    "id": "w03-ma-07",
+    "type": "ma",
+    "competencyId": "w2-lab-rbc-tonicity",
+    "dok": 2,
+    "stem": "Red blood cells are added to tubes of 0.9 percent NaCl (isotonic), 3 percent NaCl, 0.2 percent NaCl, and distilled water. Which predictions are correct? Select all that apply.",
+    "options": [
+      "In 0.9 percent NaCl, the cells keep their normal biconcave shape.",
+      "In 3 percent NaCl, the cells crenate because water leaves them.",
+      "In 0.2 percent NaCl, the cells swell and may hemolyze.",
+      "In 3 percent NaCl, the cells shrink because NaCl enters and pulls water out with it.",
+      "In distilled water, hemolysis makes the tube change from cloudy to clear.",
+      "In 0.9 percent NaCl, water does not cross the membrane at all."
+    ],
+    "correct": [0, 1, 2, 4],
+    "why": "Red cells are about 300 mOsm/L inside and their membrane does not pass Na+ or Cl- to any useful extent. In isotonic saline there is no gradient and volume is stable. In 3 percent NaCl the outside is far more concentrated, so water leaves and the cell shrivels (crenation). In dilute saline or pure water the outside is less concentrated, so water enters, the cell swells, and the membrane bursts. Intact cells scatter light and make a suspension cloudy; once they lyse, the hemoglobin is in solution and the tube turns clear red.",
+    "whyNot": [
+      "Correct. Inside and outside match, so there is no net water movement.",
+      "Correct. Water leaves toward the concentrated saline and the cell membrane wrinkles.",
+      "Correct. The outside is hypotonic, water enters, and the cell may burst.",
+      "Wrong. NaCl does not enter the red cell. The cell shrinks because water leaves, not because salt enters. This is the whole reason NaCl is an impermeant solute.",
+      "Correct. Whole cells scatter light. Burst cells release their hemoglobin into solution, so the suspension becomes transparent.",
+      "Wrong. Water crosses constantly in both directions. Isotonic means the two flows are equal, not that water is blocked."
+    ]
+  },
+  {
+    "id": "w03-ma-08",
+    "type": "ma",
+    "competencyId": "w2-facilitated-diffusion",
+    "dok": 2,
+    "stem": "Glucose enters most cells through GLUT carriers by facilitated diffusion. Which statements about this process are correct? Select all that apply.",
+    "options": [
+      "Net glucose movement stops once glucose concentration is equal on both sides of the membrane.",
+      "The transport rate levels off at high glucose concentration because the carriers are saturated.",
+      "The carrier uses ATP to change its shape and move glucose.",
+      "The carrier can move glucose against its gradient as long as the gradient is small.",
+      "Another sugar of similar shape can compete for the carrier and slow glucose transport."
+    ],
+    "correct": [0, 1, 4],
+    "why": "Facilitated diffusion is passive. The carrier only speeds movement down the gradient. It cannot build a gradient and it does not use ATP. Because there are a limited number of carriers, each with a binding site, the rate reaches a maximum when every carrier is busy. A binding site that fits glucose can also bind similar sugars, which explains both specificity and competition.",
+    "whyNot": [
+      "Correct. With no gradient there is no net driving force. Glucose still crosses in both directions, but equally.",
+      "Correct. Saturation is the signature of protein mediated transport. Simple diffusion never plateaus.",
+      "Wrong. The shape change is driven by glucose binding, not by ATP. ATP would be needed for primary active transport.",
+      "Wrong. A passive carrier can never move solute uphill, even a little. Uphill transport requires SGLT or a pump.",
+      "Correct. Competition for the binding site is a direct consequence of carrier specificity."
+    ]
+  },
+  {
+    "id": "w03-ma-09",
+    "type": "ma",
+    "competencyId": "w2-primary-active-transport",
+    "dok": 2,
+    "stem": "Which statements about the Na+/K+ ATPase are correct? Select all that apply.",
+    "options": [
+      "Each cycle moves 3 Na+ out of the cell and 2 K+ into the cell.",
+      "Each cycle moves one net positive charge out of the cell.",
+      "It moves both ions down their concentration gradients.",
+      "It keeps intracellular K+ high and intracellular Na+ low.",
+      "It is found only in neurons and muscle cells.",
+      "If ATP runs out, Na+ leaks in and K+ leaks out until both gradients fade."
+    ],
+    "correct": [0, 1, 3, 5],
+    "why": "The pump hydrolyzes one ATP to push 3 Na+ out against a steep gradient and pull 2 K+ in against its gradient. Three positive charges out and two in leaves one net charge out, so the pump is electrogenic. It is the reason every cell has low Na+ and high K+ inside. Every cell in the body has it, because every cell needs to hold these gradients. Without ATP the pump stops, the leaks continue, and the gradients run down.",
+    "whyNot": [
+      "Correct. The 3 to 2 stoichiometry is the defining feature of this pump.",
+      "Correct. 3 positive charges out minus 2 positive charges in leaves a net loss of one positive charge from the cell each cycle.",
+      "Wrong. Both ions are pumped uphill, against their gradients. That is why ATP is required.",
+      "Correct. These two gradients are what the pump exists to maintain.",
+      "Wrong. All cells have the pump. Neurons and muscle depend on it heavily, but so does every epithelial cell, red cell, and liver cell.",
+      "Correct. The leaks never stop, so without pumping the cell drifts toward equal ion concentrations inside and out."
+    ]
+  },
+  {
+    "id": "w03-ma-10",
+    "type": "ma",
+    "competencyId": "w2-secondary-active-transport",
+    "dok": 2,
+    "stem": "SGLT sits on the apical membrane of an intestinal epithelial cell. Which statements about SGLT are correct? Select all that apply.",
+    "options": [
+      "It moves Na+ and glucose into the cell in the same direction, so it is a symporter.",
+      "It hydrolyzes ATP directly to move glucose.",
+      "Its energy comes from Na+ moving down its concentration gradient into the cell.",
+      "It can move glucose into the cell even when intracellular glucose is higher than luminal glucose.",
+      "Blocking the Na+/K+ ATPase will eventually stop it.",
+      "It moves Na+ out of the cell while moving glucose in, so it is an antiporter."
+    ],
+    "correct": [0, 2, 3, 4],
+    "why": "SGLT couples two solutes. Na+ flows downhill into the cell, and that energy release is used to drag glucose uphill into the cell at the same time. Both go the same way, so it is symport. SGLT never touches ATP itself. It depends on the Na+ gradient, which the Na+/K+ ATPase on the basolateral side created using ATP. That is why this is called secondary active transport. Poison the pump and the Na+ gradient collapses, and SGLT stops.",
+    "whyNot": [
+      "Correct. Both Na+ and glucose enter together.",
+      "Wrong. SGLT uses no ATP directly. ATP was used one step earlier by the Na+/K+ ATPase.",
+      "Correct. The downhill flow of Na+ is the power source.",
+      "Correct. This uphill movement is what makes it active transport rather than facilitated diffusion.",
+      "Correct. Without the pump, intracellular Na+ rises, the gradient flattens, and SGLT loses its energy supply.",
+      "Wrong. That describes an antiporter such as the Na+/Ca2+ exchanger. SGLT moves both solutes inward."
+    ]
+  },
+  {
+    "id": "w03-ma-11",
+    "type": "ma",
+    "competencyId": "w2-vesicular-transport",
+    "dok": 2,
+    "stem": "Which statements about vesicular transport are correct? Select all that apply.",
+    "options": [
+      "Phagocytosis is triggered by a large particle touching surface receptors, and actin pushes out pseudopods to engulf it.",
+      "Pinocytosis is nonselective and brings in a small droplet of extracellular fluid with whatever is dissolved in it.",
+      "Receptor mediated endocytosis concentrates a specific ligand, such as LDL, in a coated pit before the vesicle forms.",
+      "Exocytosis of stored hormone or neurotransmitter is usually triggered by a rise in intracellular Ca2+.",
+      "All forms of vesicular transport are passive and need no ATP.",
+      "Exocytosis reduces the surface area of the plasma membrane."
+    ],
+    "correct": [0, 1, 2, 3],
+    "why": "Vesicular transport moves material too large or too polar for any carrier. Phagocytosis engulfs particles using actin, pinocytosis gulps fluid without selection, and receptor mediated endocytosis uses receptors and a clathrin coat to pull in one ligand efficiently. Exocytosis fuses a vesicle with the membrane, dumps the cargo, and adds the vesicle membrane to the cell surface. All of it costs ATP for coat assembly, actin movement, and vesicle transport, and regulated exocytosis waits for a Ca2+ signal.",
+    "whyNot": [
+      "Correct. Receptor contact starts it, and actin does the physical work.",
+      "Correct. Pinocytosis has no receptor step, so anything in the fluid comes along.",
+      "Correct. Receptors gather in the pit, so the cell captures far more ligand than the fluid alone would carry.",
+      "Correct. Ca2+ entry is the usual trigger for fusion of docked secretory vesicles.",
+      "Wrong. Moving membrane, building coats, and running actin all use ATP. Vesicular transport is active.",
+      "Wrong. Exocytosis adds the vesicle membrane to the surface, so area increases. Endocytosis is what removes membrane."
+    ]
+  },
+  {
+    "id": "w03-ma-12",
+    "type": "ma",
+    "competencyId": "w2-transepithelial-transport",
+    "dok": 2,
+    "stem": "Sodium is absorbed from the gut lumen into the blood across an intestinal epithelial cell. Which statements are correct? Select all that apply.",
+    "options": [
+      "Na+ enters the cell at the apical membrane down its concentration gradient, through channels or SGLT.",
+      "Na+ leaves the cell at the basolateral membrane by way of the Na+/K+ ATPase.",
+      "The Na+/K+ ATPase is located on the apical membrane facing the lumen.",
+      "Tight junctions keep the apical and basolateral proteins in separate regions of the membrane.",
+      "Water follows the absorbed Na+ into the interstitial fluid by osmosis.",
+      "Na+ crosses the basolateral membrane by simple diffusion through the lipid bilayer."
+    ],
+    "correct": [0, 1, 3, 4],
+    "why": "Transepithelial transport works because the two faces of the cell carry different proteins. The pump sits on the basolateral side and keeps intracellular Na+ low. That makes the apical side a downhill entry for Na+ through channels or SGLT. The pump then throws Na+ out the basolateral side into the interstitial fluid, and water follows the salt. Tight junctions act as a fence that stops apical and basolateral proteins from mixing, and without that polarity there would be no net direction.",
+    "whyNot": [
+      "Correct. The pump keeps intracellular Na+ low, so entry from the lumen is downhill.",
+      "Correct. Basolateral pumping is the only way Na+ gets out the far side.",
+      "Wrong. The pump is basolateral. If it faced the lumen it would pump Na+ back into the gut and nothing would be absorbed.",
+      "Correct. Polarity of the epithelium depends on this fence.",
+      "Correct. Salt absorbed into the interstitium creates an osmotic gradient and water follows, which is how the gut absorbs about 9 L of water a day.",
+      "Wrong. Na+ is charged and cannot cross a lipid bilayer. It needs the pump on that side."
+    ]
+  },
+  {
+    "id": "w03-tf-01",
+    "type": "tf",
+    "competencyId": "w1-fluid-compartments",
+    "dok": 1,
+    "statement": "In a healthy adult, the extracellular fluid holds more of the total body water than the intracellular fluid does.",
+    "truth": false,
+    "correction": "The intracellular fluid holds about two thirds of total body water (about 28 L of 42 L); the extracellular fluid holds about one third (14 L).",
+    "why": "Most body water is inside cells. The extracellular fluid is smaller but it is the compartment we can sample and treat, so it gets most of the clinical attention. Students often flip the two because plasma and interstitial fluid are discussed so much more often than cytosol."
+  },
+  {
+    "id": "w03-tf-02",
+    "type": "tf",
+    "competencyId": "w2-membrane-structure",
+    "dok": 2,
+    "statement": "At body temperature, cholesterol makes the plasma membrane less fluid by restricting the movement of the phospholipid tails.",
+    "truth": true,
+    "correction": "True. At 37 C (98.6 F) cholesterol wedges between phospholipids and limits tail motion, which stiffens the membrane and reduces the leak of small solutes.",
+    "why": "Cholesterol is a fluidity buffer. At warm temperatures it restrains the tails and makes the membrane firmer and less leaky. At cold temperatures it does the opposite, keeping tails from packing into a gel. The statement is true because it specifies body temperature."
+  },
+  {
+    "id": "w03-tf-03",
+    "type": "tf",
+    "competencyId": "w2-fick-diffusion",
+    "dok": 2,
+    "statement": "Doubling the thickness of a membrane doubles the rate of diffusion across it.",
+    "truth": false,
+    "correction": "Doubling the thickness cuts the rate of diffusion in half, because thickness is in the denominator of Fick's law.",
+    "why": "Thickness and distance always slow diffusion. Surface area and concentration gradient speed it. Students who memorize Fick's law as a list of variables without noting which ones multiply and which ones divide will get this backwards. Pulmonary edema is the clinical example: fluid thickens the alveolar wall and oxygen transfer falls."
+  },
+  {
+    "id": "w03-tf-04",
+    "type": "tf",
+    "competencyId": "w2-osmolarity-tonicity",
+    "dok": 2,
+    "statement": "Any solution that is hyperosmotic to a cell must also be hypertonic to that cell.",
+    "truth": false,
+    "correction": "A hyperosmotic solution is hypertonic only if the extra solute cannot enter the cell; a solution of 300 mOsm/L NaCl plus 100 mOsm/L urea is hyperosmotic but isotonic, because urea equilibrates across the membrane.",
+    "why": "Osmolarity counts every particle. Tonicity counts only the impermeant ones, because only they can hold water on one side for the long term. A penetrating solute like urea raises the osmolarity of the bottle but has no lasting effect on cell volume. This distinction is why clinicians care about effective osmoles rather than total osmoles."
+  },
+  {
+    "id": "w03-tf-05",
+    "type": "tf",
+    "competencyId": "w2-osmosis-cell-volume",
+    "dok": 1,
+    "statement": "When a cell is placed in a hypotonic solution, water enters the cell and the cell swells.",
+    "truth": true,
+    "correction": "True. A hypotonic solution has less impermeant solute than the cell, so water moves toward the higher solute concentration inside the cell and cell volume rises.",
+    "why": "Water moves toward the side with more solute that cannot cross the membrane. Hypotonic means the outside has less of that solute than the cell, so the inside wins and the cell swells. If it swells enough, the membrane breaks. This is the basis for hemolysis in distilled water."
+  },
+  {
+    "id": "w03-tf-06",
+    "type": "tf",
+    "competencyId": "w2-lab-rbc-tonicity",
+    "dok": 2,
+    "statement": "Red blood cells crenate in 3 percent NaCl because sodium chloride enters the cell and damages the membrane.",
+    "truth": false,
+    "correction": "Red blood cells crenate in 3 percent NaCl because the solution is hypertonic, so water leaves the cell by osmosis and the shrunken membrane wrinkles; NaCl does not enter the cell.",
+    "why": "The red cell membrane is essentially impermeable to Na+ and Cl-. Crenation is purely a water problem: water leaves, the cell loses volume, and the membrane has too much surface for the smaller contents. Nothing chemical is happening to the membrane. If NaCl could enter, it would equilibrate and the cell would return to normal size, which is what happens with a penetrating solute like urea."
+  },
+  {
+    "id": "w03-tf-07",
+    "type": "tf",
+    "competencyId": "w2-facilitated-diffusion",
+    "dok": 1,
+    "statement": "Facilitated diffusion requires ATP because a membrane protein is involved.",
+    "truth": false,
+    "correction": "Facilitated diffusion is passive and uses no ATP; the protein only provides a path, and the concentration gradient supplies all the energy.",
+    "why": "Involving a protein does not make a process active. What makes a process active is moving solute against its gradient. GLUT carriers and ion channels both use proteins and both are passive. The common confusion is treating carrier and pump as the same thing. A carrier lets solute slide downhill. A pump pushes it uphill and pays for it with ATP."
+  },
+  {
+    "id": "w03-tf-08",
+    "type": "tf",
+    "competencyId": "w2-primary-active-transport",
+    "dok": 1,
+    "statement": "The Na+/K+ ATPase moves two sodium ions out of the cell and three potassium ions into the cell for each ATP used.",
+    "truth": false,
+    "correction": "The Na+/K+ ATPase moves three sodium ions out and two potassium ions in for each ATP, which is why it leaves the cell with one net positive charge fewer per cycle.",
+    "why": "The numbers matter because the imbalance is what makes the pump electrogenic. Three positives out and two in removes one net positive charge from the cell each cycle, which contributes a few millivolts to the resting membrane potential. Flipping the numbers would make the pump add positive charge to the cell, which is not what happens."
+  },
+  {
+    "id": "w03-tf-09",
+    "type": "tf",
+    "competencyId": "w2-transport-maximum",
+    "dok": 2,
+    "statement": "Once plasma glucose is high enough that the filtered load exceeds the transport maximum, any further rise in plasma glucose causes more glucose to appear in the urine.",
+    "truth": true,
+    "correction": "True. Above the transport maximum the carriers are saturated and reabsorb a fixed amount, so every extra milligram filtered is excreted.",
+    "why": "Reabsorption cannot rise above the transport maximum because every carrier is already busy. Filtered load keeps rising with plasma glucose, so the difference between filtered and reabsorbed, which is the excreted amount, rises too. This is why urine glucose tracks plasma glucose in uncontrolled diabetes once the renal threshold is crossed."
+  },
+  {
+    "id": "w03-tf-10",
+    "type": "tf",
+    "competencyId": "w2-vesicular-transport",
+    "dok": 2,
+    "statement": "Pinocytosis and receptor mediated endocytosis both require the cargo to bind a specific surface receptor before a vesicle forms.",
+    "truth": false,
+    "correction": "Only receptor mediated endocytosis requires receptor binding; pinocytosis is nonselective and takes in a droplet of extracellular fluid along with whatever is dissolved in it.",
+    "why": "The receptor step is what makes receptor mediated endocytosis specific and efficient. Ligand binding gathers receptors into a clathrin coated pit and the cell captures a concentrated dose of one molecule. Pinocytosis has no such step, so it takes in fluid in proportion to what is in the fluid. This is why the cell uses receptor mediated endocytosis for scarce cargo like LDL and iron bound transferrin."
+  },
+  {
+    "id": "w03-bd-01",
+    "type": "bd",
+    "competencyId": "w1-compartment-shifts",
+    "dok": 3,
+    "prompt": "Without notes, explain what happens to the extracellular and intracellular compartments when a patient is given one liter of 3 percent (hypertonic) saline through an IV. Trace the direction of water movement and the change in cell volume, and name one clinical reason this would be done.",
+    "rubric": [
+      "NaCl stays in the extracellular fluid because the pump keeps it out of cells",
+      "extracellular osmolarity rises",
+      "water moves out of cells into the extracellular fluid",
+      "cells shrink (intracellular volume falls)",
+      "extracellular volume increases by more than the liter given",
+      "used to shrink swollen brain cells in cerebral edema or severe hyponatremia"
+    ]
+  },
+  {
+    "id": "w03-bd-02",
+    "type": "bd",
+    "competencyId": "w2-permeability",
+    "dok": 3,
+    "prompt": "Without notes, explain why oxygen crosses a cell membrane with no help, while glucose and sodium ions each need a protein. Use size, charge, and lipid solubility in your answer, and say what kind of protein each one needs.",
+    "rubric": [
+      "the core of the bilayer is hydrophobic (oily), so a molecule must dissolve in lipid to cross unaided",
+      "oxygen is small and nonpolar, so it dissolves in the core and diffuses through",
+      "glucose is large and polar (many hydroxyl groups), so it cannot enter the lipid core",
+      "glucose needs a carrier (GLUT or SGLT)",
+      "sodium is charged and carries a shell of water, so it cannot enter the lipid core at all",
+      "sodium needs a channel or a carrier or pump"
+    ]
+  },
+  {
+    "id": "w03-bd-03",
+    "type": "bd",
+    "competencyId": "w2-fick-diffusion",
+    "dok": 3,
+    "prompt": "Without notes, list the variables in Fick's law of diffusion and use them to explain why emphysema (loss of alveolar walls) and pulmonary edema (fluid in the alveolar wall) both reduce oxygen transfer, but for different reasons. Then explain why giving supplemental oxygen helps in both.",
+    "rubric": [
+      "rate is proportional to surface area times concentration gradient times permeability",
+      "rate is inversely proportional to membrane thickness or diffusion distance",
+      "emphysema destroys alveolar walls and lowers surface area",
+      "edema adds fluid to the alveolar wall and increases diffusion distance (thickness)",
+      "supplemental oxygen raises alveolar oxygen and steepens the concentration gradient",
+      "a bigger gradient partly makes up for less area or greater thickness"
+    ]
+  },
+  {
+    "id": "w03-bd-04",
+    "type": "bd",
+    "competencyId": "w2-osmolarity-tonicity",
+    "dok": 3,
+    "prompt": "Without notes, calculate the osmolarity of a solution containing 100 mmol/L NaCl and 100 mmol/L glucose. Say whether it is isosmotic to body fluids. Then predict its tonicity to a red blood cell, given that red cells take up glucose through GLUT1 and metabolize it, and explain what happens to the cell.",
+    "rubric": [
+      "NaCl contributes 200 mOsm/L (two particles per molecule)",
+      "glucose contributes 100 mOsm/L",
+      "total osmolarity is 300 mOsm/L, which is isosmotic",
+      "only the impermeant solute (NaCl, 200 mOsm/L) counts toward tonicity",
+      "glucose enters the cell and is used up, so it does not hold water outside",
+      "the solution is hypotonic to the red cell",
+      "water enters and the cell swells and may hemolyze"
+    ]
+  },
+  {
+    "id": "w03-bd-05",
+    "type": "bd",
+    "competencyId": "w2-osmosis-cell-volume",
+    "dok": 3,
+    "prompt": "Without notes, a cell with 300 mOsm/L of impermeant solute inside is placed in a solution of 150 mOsm/L NaCl plus 150 mOsm/L urea. Predict the cell volume at the first instant, describe what happens over the next several minutes, and predict the final result. Explain each step.",
+    "rubric": [
+      "at first the total osmolarity is 300 outside and 300 inside, so there is no immediate water movement",
+      "urea crosses the membrane and enters the cell down its gradient",
+      "water follows urea into the cell",
+      "at equilibrium urea is equal on both sides and no longer counts",
+      "only 150 mOsm/L of impermeant solute remains outside against 300 inside, so the solution is hypotonic",
+      "the cell swells to about twice its volume or lyses"
+    ]
+  },
+  {
+    "id": "w03-bd-06",
+    "type": "bd",
+    "competencyId": "w2-secondary-active-transport",
+    "dok": 3,
+    "prompt": "Without notes, trace how the Na+/K+ ATPase powers calcium removal by the Na+/Ca2+ exchanger in a heart muscle cell. Then predict what happens to intracellular Ca2+ and to contraction strength if the pump is partly inhibited, and explain why.",
+    "rubric": [
+      "the pump uses ATP to keep intracellular Na+ low, storing energy in the inward Na+ gradient",
+      "the exchanger is an antiporter that moves Na+ in and Ca2+ out",
+      "Na+ flowing downhill into the cell provides the energy to push Ca2+ out against its gradient",
+      "pump inhibition lets intracellular Na+ rise and flattens the Na+ gradient",
+      "the exchanger has less driving force, so Ca2+ removal slows",
+      "intracellular Ca2+ rises and contraction becomes stronger"
+    ]
+  },
+  {
+    "id": "w03-bd-07",
+    "type": "bd",
+    "competencyId": "w2-transepithelial-transport",
+    "dok": 3,
+    "prompt": "Without notes, trace one glucose molecule from the lumen of the small intestine to the blood. Name the transporter at each membrane, say which membrane it sits on, state whether each step is uphill or downhill for glucose, and explain why the Na+/K+ ATPase is essential even though it never touches glucose.",
+    "rubric": [
+      "SGLT on the apical membrane moves glucose into the cell with Na+",
+      "the apical step is uphill for glucose, powered by Na+ moving downhill",
+      "glucose accumulates inside the cell to a high concentration",
+      "GLUT2 on the basolateral membrane moves glucose out by facilitated diffusion, downhill",
+      "glucose then diffuses into the capillary",
+      "the Na+/K+ ATPase on the basolateral membrane keeps intracellular Na+ low, which is what makes the apical Na+ step downhill"
+    ]
+  },
+  {
+    "id": "w03-bd-08",
+    "type": "bd",
+    "competencyId": "w2-lab-transport-sim",
+    "dok": 3,
+    "prompt": "Without notes, describe the two tests the transport simulation uses (reversing the concentration gradient and adding a metabolic poison) and predict how simple diffusion, facilitated diffusion, and active transport each respond to them. Add one more observation that separates simple from facilitated diffusion.",
+    "rubric": [
+      "reversing the gradient reverses the direction of net movement for simple and facilitated diffusion",
+      "active transport keeps moving solute in the same direction even against a reversed gradient",
+      "metabolic poison (no ATP) has no effect on simple or facilitated diffusion",
+      "metabolic poison stops active transport",
+      "facilitated diffusion and active transport plateau at high concentration because carriers saturate",
+      "simple diffusion never plateaus, its rate keeps rising with concentration"
+    ]
+  },
+  {
+    "id": "w03-app-01",
+    "type": "app",
+    "competencyId": "w1-compartment-shifts",
+    "dok": 3,
+    "case": "An 82 year old nursing home resident has eaten and drunk very little for four days. Her plasma sodium is 160 mmol/L (normal 135 to 145) and her plasma osmolarity is 330 mOsm/L (normal 280 to 296). She is confused.",
+    "stem": "Which way has water moved between her compartments, and what has that done to the volume of her brain cells?",
+    "options": [
+      "Out of her cells into the extracellular fluid; brain cells have shrunk",
+      "Into her cells from the extracellular fluid; brain cells have swollen",
+      "Water has not moved; the sodium gradient across cell membranes is fixed",
+      "Only from the interstitial fluid into plasma; brain cell volume is unchanged"
+    ],
+    "correct": 0,
+    "why": "She has lost water without losing much solute, so her extracellular fluid is concentrated. Na+ cannot enter cells, so it acts as an impermeant solute and pulls water out of cells until the two compartments match. Her brain cells lose volume, which is why she is confused. Both compartments end up smaller and more concentrated.",
+    "whyNot": [
+      "Correct. High extracellular osmolarity draws water out of cells, and the brain is the organ most sensitive to that shrinkage.",
+      "Wrong. This is what happens when plasma sodium is low, as in water intoxication. Here the extracellular fluid is concentrated, so water leaves cells.",
+      "Wrong. Water crosses cell membranes freely and always moves toward the higher osmolarity. The sodium gradient is fixed by the pump, but water is not.",
+      "Wrong. Plasma and interstitial fluid share the same osmolarity and exchange water freely, and neither is separate from the cells. Cells cannot be spared when the extracellular fluid is concentrated."
+    ]
+  },
+  {
+    "id": "w03-app-02",
+    "type": "app",
+    "competencyId": "w1-compartment-shifts",
+    "dok": 3,
+    "case": "A patient receives 1 L of 0.9 percent NaCl (isotonic saline, about 300 mOsm/L) by IV over one hour. Before and after the infusion her plasma sodium is 140 mmol/L (normal 135 to 145). Her plasma volume is about 3 L and her interstitial volume is about 11 L.",
+    "stem": "Where will most of this liter be an hour after the infusion, and what happens to her cell volume?",
+    "options": [
+      "About three quarters moves into the interstitial fluid and one quarter stays in plasma; cells do not change volume",
+      "All of it stays in the plasma; cells do not change volume",
+      "It spreads through all compartments in proportion to their size, so about two thirds ends up inside cells",
+      "It moves into cells because saline is a hypotonic fluid; cells swell"
+    ],
+    "correct": 0,
+    "why": "Saline is isotonic, so it changes nothing about osmolarity and gives cells no reason to gain or lose water. The Na+ it contains is held out of cells by the pump, so the whole liter stays in the extracellular fluid. Within that space, water and ions cross capillary walls freely, so the liter distributes between plasma and interstitial fluid in proportion to their sizes, about 1 to 3. Roughly 250 mL stays in the blood and 750 mL ends up in the interstitium.",
+    "whyNot": [
+      "Correct. Isotonic saline expands the extracellular fluid only, and the capillary wall lets it spread to the larger interstitial space.",
+      "Wrong. Capillary walls pass water and small ions freely, so plasma cannot hold on to the whole liter. Only protein is kept in plasma, and saline has none.",
+      "Wrong. This describes what pure water (or 5 percent dextrose after the glucose is used) does. Saline brings impermeant solute with it, so it cannot enter cells.",
+      "Wrong. 0.9 percent NaCl is isotonic, not hypotonic. It matches cell osmolarity and neither swells nor shrinks cells."
+    ]
+  },
+  {
+    "id": "w03-app-03",
+    "type": "app",
+    "competencyId": "w2-permeability",
+    "dok": 3,
+    "case": "Aspirin is a weak acid. Below a pH of about 3.5 most of it is in its uncharged form. Above that pH most of it is charged. A student swallows a tablet. Stomach contents are at pH 2. The inside of a stomach lining cell is at pH 7.4.",
+    "stem": "Predict how aspirin moves from the stomach into the lining cells and what happens once it is inside.",
+    "options": [
+      "Mostly uncharged in the stomach, it crosses the lipid bilayer easily, then becomes charged inside the cell and is trapped there",
+      "Mostly charged in the stomach, it needs a carrier protein to enter the cell, then stays charged inside",
+      "It cannot enter the cell at all because weak acids are never lipid soluble",
+      "It enters by pinocytosis because it is too large to cross a membrane in any other way"
+    ],
+    "correct": 0,
+    "why": "Charge is the main barrier to crossing a lipid bilayer. At pH 2 aspirin is mostly uncharged, so it dissolves in the membrane and diffuses into the cell. Inside, at pH 7.4, it gives up its proton and becomes charged. The charged form cannot get back through the lipid, so aspirin accumulates in the lining cells. This ion trapping is part of why aspirin irritates the stomach lining.",
+    "whyNot": [
+      "Correct. Uncharged in, charged and trapped inside. The pH difference does the concentrating.",
+      "Wrong. At pH 2, well below the switch point of 3.5, aspirin is mostly uncharged. No carrier is needed, and once inside it becomes charged rather than staying that way.",
+      "Wrong. Lipid solubility of a weak acid depends on pH. In acid the uncharged form dominates and crosses well.",
+      "Wrong. Aspirin is a small molecule. Pinocytosis is for fluid and dissolved material that cannot cross any other way, and it would not explain trapping inside the cell."
+    ]
+  },
+  {
+    "id": "w03-app-04",
+    "type": "app",
+    "competencyId": "w2-fick-diffusion",
+    "dok": 3,
+    "case": "A patient with pulmonary edema has fluid in the alveolar walls that doubles the diffusion distance from 0.5 micrometers to 1.0 micrometer. Breathing room air, alveolar PO2 is 100 mmHg and pulmonary capillary PO2 is 40 mmHg, a gradient of 60 mmHg. He is given supplemental oxygen, which raises alveolar PO2 to 300 mmHg while capillary PO2 stays at 40 mmHg. Surface area is unchanged.",
+    "stem": "Compared with his oxygen transfer rate before the edema started, what is his transfer rate on supplemental oxygen?",
+    "options": [
+      "About twice the original rate",
+      "About half the original rate",
+      "About the same as the original rate",
+      "About four times the original rate"
+    ],
+    "correct": 0,
+    "why": "Use Fick's law. The gradient went from 60 to 260 mmHg, a factor of about 4.3. The distance doubled, which divides the rate by 2. 4.3 divided by 2 is about 2.2, so transfer is roughly twice what it was before the edema. Supplemental oxygen does more than repair the damage in this case, which is why it is so effective in diffusion limited lung disease.",
+    "whyNot": [
+      "Correct. Gradient up 4.3 fold, thickness up 2 fold, net gain about 2 fold.",
+      "Wrong. Half would be the rate on room air with the edema and no extra oxygen. This ignores the gradient change.",
+      "Wrong. The two changes do not cancel. The gradient rose more than the distance did.",
+      "Wrong. Four fold would be the gradient effect alone. This ignores the doubled thickness that divides the rate."
+    ]
+  },
+  {
+    "id": "w03-app-05",
+    "type": "app",
+    "competencyId": "w2-osmolarity-tonicity",
+    "dok": 3,
+    "case": "A patient is given 1 L of 5 percent dextrose in 0.45 percent NaCl by IV. In the bag, the NaCl contributes about 154 mOsm/L and the dextrose (glucose) contributes about 278 mOsm/L, for a total of about 432 mOsm/L. Normal plasma osmolarity is 280 to 296 mOsm/L. Within an hour or two the cells take up the glucose and metabolize it.",
+    "stem": "How should you classify this fluid, and what will it do to the patient's cells?",
+    "options": [
+      "Hyperosmotic in the bag but effectively hypotonic in the body; cells gain water and swell slightly",
+      "Hyperosmotic and hypertonic; cells lose water and shrink",
+      "Isotonic, because 432 is close enough to normal; cell volume does not change",
+      "Hypo-osmotic in the bag; cells swell immediately on infusion"
+    ],
+    "correct": 0,
+    "why": "Osmolarity is what the osmometer reads, and 432 mOsm/L is hyperosmotic. Tonicity is about what stays outside cells over time. Glucose enters cells and is burned to CO2 and water, so it stops counting. The only lasting solute is the 154 mOsm/L of NaCl, which is about half normal. The fluid behaves like half strength saline plus a bag of free water, so some of that water moves into cells.",
+    "whyNot": [
+      "Correct. The glucose disappears, leaving a hypotonic salt solution, and the extra free water spreads into cells.",
+      "Wrong. This would be right if the glucose stayed outside the cells, as it does in an insulin deficient patient. In a patient who can use glucose, the solute vanishes and the fluid is hypotonic.",
+      "Wrong. 432 mOsm/L is well above normal, and even after the glucose is gone the remaining 154 mOsm/L of NaCl is well below normal. It is not isotonic at any point.",
+      "Wrong. In the bag the fluid is hyperosmotic, not hypo-osmotic. Cells do not swell immediately; the swelling comes only after glucose has been taken up and metabolized."
+    ]
+  },
+  {
+    "id": "w03-app-06",
+    "type": "app",
+    "competencyId": "w2-osmosis-cell-volume",
+    "dok": 3,
+    "case": "A patient with kidney failure has a blood urea nitrogen of 150 mg/dL (normal 7 to 20). Urea crosses most cell membranes freely, but it crosses into and out of brain cells slowly over hours. Rapid dialysis pulls his blood urea down to 40 mg/dL in three hours. Brain cell urea has not had time to fall.",
+    "stem": "Predict what happens to his brain cells during and just after the dialysis session, and why.",
+    "options": [
+      "Brain cells swell, because they are now hyperosmotic to plasma and water moves into them",
+      "Brain cells shrink, because plasma osmolarity is falling and water leaves them",
+      "Brain cell volume is unchanged, because urea is a penetrating solute and never affects tonicity",
+      "Brain cells shrink at first, then swell as urea re-enters them from plasma"
+    ],
+    "correct": 0,
+    "why": "Whenever a solute is removed from one side faster than it can cross the membrane, it acts as an impermeant solute for that time. Plasma urea fell fast. Brain urea is still high. So for a few hours the brain cells hold more osmoles than the plasma, and water moves into them. Brain swelling after fast dialysis is called dialysis disequilibrium. It is prevented by dialyzing slowly so brain urea has time to keep up.",
+    "whyNot": [
+      "Correct. Trapped urea inside the cells draws water in until the cells can unload it.",
+      "Wrong. Falling plasma osmolarity moves water into cells, not out. Shrinking would need plasma osmolarity to rise.",
+      "Wrong. Urea only fails to affect tonicity when it has time to equilibrate. Here it has not, so it behaves like an impermeant solute for a while.",
+      "Wrong. The sequence is backwards. Water goes in first, and later the urea leaves the cells and the swelling resolves."
+    ]
+  },
+  {
+    "id": "w03-app-07",
+    "type": "app",
+    "competencyId": "w2-secondary-active-transport",
+    "dok": 3,
+    "case": "A patient with cholera is losing several liters of watery stool a day. His intestinal lining cells are intact. He is given an oral rehydration solution containing 75 mmol/L Na+ and 75 mmol/L glucose. Plain salt water at the same sodium concentration does not rehydrate cholera patients nearly as well.",
+    "stem": "Why does adding glucose to the drink increase the absorption of sodium and water?",
+    "options": [
+      "Glucose and Na+ enter the cell together through SGLT, so each glucose pulls a Na+ in with it and water follows the absorbed salt",
+      "Glucose provides ATP for the Na+/K+ ATPase, which otherwise would have no fuel",
+      "Glucose raises the osmolarity of the lumen, which pushes water into the blood",
+      "Glucose opens sodium channels in the tight junctions so Na+ leaks between cells"
+    ],
+    "correct": 0,
+    "why": "SGLT is a symporter. It cannot move glucose without moving Na+ at the same time. Giving glucose in the drink drives the SGLT cycle, and every glucose absorbed brings Na+ into the cell with it. The basolateral pump throws that Na+ into the interstitial fluid, and water follows by osmosis. The cholera toxin blocks a different Na+ route, so SGLT is the pathway still working, and glucose is the key that turns it on.",
+    "whyNot": [
+      "Correct. Coupled Na+ and glucose uptake through SGLT, then osmotic water absorption. This is one of the most important uses of transport physiology in medicine.",
+      "Wrong. The cell has plenty of fuel from the blood. The reason glucose helps is that it is a cotransported solute, not that it feeds the pump.",
+      "Wrong. Raising luminal osmolarity would pull water into the lumen and make diarrhea worse. The drink works by moving solute out of the lumen, not by concentrating it.",
+      "Wrong. Tight junctions are not glucose regulated channels. Na+ absorption here is through the cells, apical SGLT then basolateral pump."
+    ]
+  },
+  {
+    "id": "w03-app-08",
+    "type": "app",
+    "competencyId": "w2-transport-maximum",
+    "dok": 3,
+    "case": "A patient has a plasma glucose of 200 mg/dL (normal 70 to 100 fasting) and a glomerular filtration rate of 125 mL/min. Assume the kidney's transport maximum for glucose is 375 mg/min and that the carriers reabsorb everything up to that limit.",
+    "stem": "How much glucose appears in the urine each minute, and why?",
+    "options": [
+      "None, because the filtered load of 250 mg/min is below the transport maximum",
+      "250 mg/min, because that is the filtered load",
+      "125 mg/min, because that is the difference between 375 and 250",
+      "375 mg/min, because the transport maximum sets the amount excreted"
+    ],
+    "correct": 0,
+    "why": "First find the filtered load. 200 mg/dL is 2 mg/mL, times 125 mL/min gives 250 mg/min filtered. The carriers can handle 375 mg/min, so they reabsorb all 250 and nothing is left for the urine. Glucose only spills when the filtered load climbs past the transport maximum, which for this patient would take a plasma glucose of about 300 mg/dL.",
+    "whyNot": [
+      "Correct. Filtered load 250 is less than the capacity 375, so reabsorption is complete.",
+      "Wrong. 250 mg/min is what is filtered, not what is excreted. Nearly all of it is reabsorbed.",
+      "Wrong. 375 minus 250 is the unused reabsorptive capacity, not an amount excreted. Excretion is filtered minus reabsorbed, and here that is zero.",
+      "Wrong. The transport maximum is the most that can be reabsorbed, not an amount that is excreted."
+    ]
+  },
+  {
+    "id": "w03-app-09",
+    "type": "app",
+    "competencyId": "w2-transport-maximum",
+    "dok": 3,
+    "case": "A patient with type 2 diabetes is started on a drug that blocks SGLT2, the main glucose carrier in the proximal tubule. This lowers her kidney's transport maximum for glucose from 375 mg/min to about 100 mg/min. Her plasma glucose is 180 mg/dL (normal 70 to 100 fasting) and her GFR is 100 mL/min. Before the drug she had no glucose in her urine.",
+    "stem": "Predict what her urine will show on the drug, and what that will do to her urine volume.",
+    "options": [
+      "About 80 mg/min of glucose in the urine, and urine volume rises because the glucose holds water in the tubule",
+      "No glucose in the urine, because 180 mg/dL is below the normal renal threshold",
+      "About 180 mg/min of glucose in the urine, and urine volume is unchanged",
+      "About 100 mg/min of glucose in the urine, and urine volume falls because less glucose is reabsorbed"
+    ],
+    "correct": 0,
+    "why": "Filtered load is 1.8 mg/mL times 100 mL/min, or 180 mg/min. Before the drug, 375 mg/min of capacity handled that easily. Now capacity is 100 mg/min, so 180 minus 100 leaves 80 mg/min in the urine. Glucose in the tubule is an impermeant solute for the tubule wall, so it holds water with it and urine output rises. This osmotic diuresis is the same reason untreated diabetics urinate so much, and it is part of how the drug lowers blood glucose and blood pressure.",
+    "whyNot": [
+      "Correct. Filtered 180, reabsorbed 100, excreted 80, and the extra solute pulls water along.",
+      "Wrong. The renal threshold is set by the transport maximum, and the drug lowered it. The old threshold no longer applies.",
+      "Wrong. 180 mg/min is the filtered load. The remaining 100 mg/min of capacity still reabsorbs part of it. And unabsorbed glucose always increases urine volume.",
+      "Wrong. 100 mg/min is the amount reabsorbed, not excreted. And glucose left in the tubule increases urine volume rather than decreasing it."
+    ]
+  },
+  {
+    "id": "w03-app-10",
+    "type": "app",
+    "competencyId": "w2-transepithelial-transport",
+    "dok": 3,
+    "case": "An infant is born with a mutation that makes apical SGLT1 nonfunctional in the small intestine. Basolateral GLUT2, the Na+/K+ ATPase, and the fructose carrier GLUT5 all work normally. Every feeding with milk (which contains glucose and galactose after digestion) produces severe watery diarrhea. Fructose based formula does not.",
+    "stem": "Explain the mechanism of the diarrhea.",
+    "options": [
+      "Glucose cannot enter the cells, so it stays in the lumen as an impermeant solute and holds water there osmotically, and the Na+ that would have entered with it is not absorbed either",
+      "Glucose enters the cells but cannot leave them, so the cells swell, burst, and leak fluid into the lumen",
+      "Without SGLT1 the Na+/K+ ATPase stops, so no sodium of any kind can be absorbed",
+      "Unabsorbed glucose is fermented into acid, and acid alone causes the water loss"
+    ],
+    "correct": 0,
+    "why": "Glucose absorption has one door in from the lumen, SGLT1. Close it and dietary glucose stays in the gut. A solute that cannot be absorbed acts like an osmotic laxative, holding water in the lumen. On top of that, each glucose normally carried a Na+ in with it, so that salt and its water are also lost. Fructose uses GLUT5, a separate apical carrier, so it is still absorbed and does not cause the problem.",
+    "whyNot": [
+      "Correct. Unabsorbed glucose is an osmotic solute in the lumen, and the coupled Na+ absorption is lost too.",
+      "Wrong. This would describe a GLUT2 defect. Here the apical entry step is missing, so glucose never gets into the cell.",
+      "Wrong. The pump runs on ATP from the blood side and works fine. Other apical Na+ routes still absorb Na+, which is why fructose formula is tolerated.",
+      "Wrong. Bacteria do ferment some of the glucose in the colon, but the main driver is osmotic. The diarrhea begins before fermentation and is proportional to the unabsorbed solute."
+    ]
+  },
+  {
+    "id": "w03-app-11",
+    "type": "app",
+    "competencyId": "w2-lab-transport-sim",
+    "dok": 3,
+    "case": "In the transport simulation, solute Z gives these results. Its transport rate rises in a straight line as its concentration goes from 1 to 50 mmol/L with no plateau. Adding a metabolic poison that removes all ATP does not change the rate. Reversing the concentration gradient reverses the direction of net movement.",
+    "stem": "Which transport process is solute Z using, and what will happen to its transport if you set the number of membrane proteins in the simulation to zero?",
+    "options": [
+      "Simple diffusion; transport is unchanged because it uses no protein",
+      "Facilitated diffusion; transport stops because the carriers are gone",
+      "Active transport; transport stops because the pumps are gone",
+      "Simple diffusion; transport stops because all transport needs a protein"
+    ],
+    "correct": 0,
+    "why": "Three features identify simple diffusion. No plateau means no saturable binding site, so no protein. No effect of poison means no energy requirement. Reversal with the gradient means the process is passive. A molecule using simple diffusion goes straight through the lipid, so removing every membrane protein leaves its transport exactly where it was.",
+    "whyNot": [
+      "Correct. No plateau rules out any carrier, and a process with no protein cannot be stopped by removing proteins.",
+      "Wrong. Facilitated diffusion would match the poison and reversal results, but it would plateau at high concentration. The straight line rules it out.",
+      "Wrong. Active transport would stop when ATP was removed and would keep going against a reversed gradient. Solute Z did neither.",
+      "Wrong. The identification is right but the prediction is wrong. Simple diffusion is precisely the process that needs no protein."
+    ]
+  },
+  {
+    "id": "w03-app-12",
+    "type": "app",
+    "competencyId": "w2-lab-rbc-tonicity",
+    "dok": 3,
+    "case": "Red blood cells are placed in a tube of 0.9 percent NaCl (300 mOsm/L, isotonic) to which 200 mmol/L glycerol has been added, giving a total osmolarity of 500 mOsm/L. Glycerol crosses the red cell membrane slowly, over several minutes. NaCl does not cross.",
+    "stem": "Predict the sequence of changes in the red cells over the next 15 minutes.",
+    "options": [
+      "They shrink at first, then return to normal volume as glycerol enters and water follows it",
+      "They shrink and stay shrunken, because the solution is hypertonic",
+      "They swell immediately and hemolyze, because glycerol is a penetrating solute",
+      "They stay normal the whole time, because 300 mOsm/L of NaCl is isotonic"
+    ],
+    "correct": 0,
+    "why": "At the first instant all 500 mOsm/L is outside against 300 inside, so water leaves and the cells crenate. Then glycerol diffuses in over a few minutes and water follows. Once glycerol is equal on both sides it no longer counts. What remains is 300 mOsm/L of impermeant NaCl outside against 300 mOsm/L of impermeant solute inside, which is isotonic, so the cells end at their original volume. The solution is hyperosmotic but isotonic.",
+    "whyNot": [
+      "Correct. A brief shrink while glycerol is still outside, then recovery once it has equilibrated.",
+      "Wrong. That would be right for 500 mOsm/L of NaCl alone. Glycerol does not stay outside, so the shrinkage is temporary.",
+      "Wrong. Glycerol is penetrating, but at the first instant it is all outside and pulls water out. And at the end there is still 300 mOsm/L of NaCl outside to balance the cell, so there is no swelling past normal.",
+      "Wrong. The NaCl alone would be isotonic, but the glycerol is not yet inside the cell at time zero, so there is a real transient. The cells only look normal after equilibration."
+    ]
+  }
+]

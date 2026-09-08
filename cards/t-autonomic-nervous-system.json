@@ -389,16 +389,16 @@
         "lecture",
         "lab"
       ],
-      "q": "Sympathetic ganglia sit in a chain close to the spinal cord, far from the organs they act on. What does that arrangement do to the pattern of a sympathetic response?",
-      "a": "It spreads the response, because one preganglionic fiber can synapse on many postganglionic neurons that then travel to different targets.",
+      "q": "Where are most sympathetic ganglia located?",
+      "a": "In a chain alongside the vertebral column, close to the spinal cord.",
       "options": [
-        "It spreads the response, since one preganglionic fiber can drive many postganglionic neurons going to different targets",
-        "It keeps the response narrow, since each fiber reaches only one organ",
-        "It slows the response, since the signal must travel further",
-        "It makes the response weaker, since the postganglionic axons are long"
+        "Inside the wall of each individual target organ",
+        "Within the brainstem, next to the nuclei of the cranial nerves",
+        "In a chain alongside the vertebral column, close to the spinal cord",
+        "Scattered through the mesentery, just outside the wall of each organ"
       ],
-      "correctIndex": 0,
-      "explanation": "A preganglionic sympathetic fiber typically diverges onto many postganglionic neurons, and those neurons leave the chain at different levels heading for different organs. That is the structural reason a sympathetic response is a whole body response: heart rate, airway diameter, pupil, sweat glands and blood vessels all shift together. Narrow, organ by organ control is the parasympathetic pattern, and it comes from ganglia sitting in the target organ wall. Distance does not meaningfully slow the response; conduction along an axon is fast, and the slower part of an autonomic response is the receptor and second messenger step at the effector. Long axons do not weaken the signal, because an action potential is regenerated all along the membrane rather than fading with distance."
+      "correctIndex": 2,
+      "explanation": "Sympathetic ganglia lie in the paravertebral chain flanking the vertebral column, with a few prevertebral ganglia in front of the aorta, so the relay happens near the cord rather than near the target. Ganglia inside the organ wall are the parasympathetic pattern. Ganglia are by definition outside the CNS, so the brainstem option cannot be right."
     },
     {
       "id": "c23",
@@ -408,16 +408,16 @@
         "lecture",
         "lab"
       ],
-      "q": "Parasympathetic ganglia sit in or on the wall of the target organ. What does that do to the pattern of a parasympathetic response?",
-      "a": "It keeps the response local, so one organ can be adjusted without dragging the others along with it.",
+      "q": "Where are parasympathetic ganglia located?",
+      "a": "In or very near the wall of the target organ.",
       "options": [
-        "It keeps the response local, so one organ can be adjusted on its own",
-        "It spreads the response across every organ at once",
-        "It makes the response slower to start than a sympathetic response",
-        "It removes the need for a second neuron in the pathway"
+        "In a chain beside the vertebral column",
+        "In the lateral horn of the spinal cord",
+        "In front of the abdominal aorta",
+        "In or very near the wall of the target organ"
       ],
-      "correctIndex": 0,
-      "explanation": "With the synapse sitting at the organ, the postganglionic neuron is short and its territory is small, so parasympathetic output can be aimed. That is what lets the body increase gastric secretion after a meal without also slowing the heart. Widespread simultaneous activation is the sympathetic pattern, helped along by the adrenal medulla dumping catecholamines into the blood. Parasympathetic responses are not slower to start; if anything the cardiac response to vagal firing is faster than the sympathetic one, because the muscarinic receptor opens a K+ channel through a very short signaling path. The pathway still uses two neurons in series, preganglionic and postganglionic, which is true of both divisions."
+      "correctIndex": 3,
+      "explanation": "Parasympathetic ganglia sit on or in the organ they supply, which is why the postganglionic fiber is so short. The paravertebral chain and the prevertebral ganglia in front of the aorta are both sympathetic locations. The lateral horn is inside the spinal cord and holds preganglionic cell bodies, not a ganglion."
     },
     {
       "id": "c24",
@@ -446,16 +446,16 @@
         "lecture",
         "lab"
       ],
-      "q": "Cutting the vagus nerve below the diaphragm changes stomach and intestinal activity but leaves heart rate almost unchanged. What does that tell you about the vagus?",
-      "a": "It supplies both the heart and the abdominal organs, but its cardiac branches leave higher up, so a cut below the diaphragm spares the heart.",
+      "q": "Which nerve carries most of the parasympathetic supply to the thoracic and abdominal organs?",
+      "a": "The vagus nerve.",
       "options": [
-        "It supplies both, but the cardiac branches leave higher up, so a low cut spares the heart",
-        "It supplies the abdominal organs only, and the heart is controlled by a different nerve",
-        "It supplies the heart only, and the gut change must be a coincidence",
-        "It carries sensory information only, so cutting it changes nothing that is measurable"
+        "The phrenic nerve",
+        "The vagus nerve",
+        "The greater splanchnic nerve",
+        "The pelvic splanchnic nerve"
       ],
-      "correctIndex": 0,
-      "explanation": "The vagus carries most of the parasympathetic output to the thoracic and abdominal organs, but it gives off branches along its route. Cardiac branches come off in the neck and thorax, so a vagotomy performed below the diaphragm has already let those branches go and only removes the abdominal supply. Level matters, which is the same reasoning used with spinal cord lesions. Saying the heart is on a different nerve ignores the vagal slowing of the sinoatrial node that sets resting heart rate. Saying the gut change is coincidence ignores a reproducible surgical result. The vagus is in fact mostly sensory by fiber count, but its motor fibers are the reason the surgery works at all."
+      "correctIndex": 1,
+      "explanation": "The vagus, cranial nerve X, supplies the heart, lungs, stomach, and most of the intestine, carrying the great majority of parasympathetic traffic below the neck. The greater splanchnic nerve is sympathetic preganglionic fiber heading for prevertebral ganglia. The pelvic splanchnic nerves are parasympathetic but serve only the distal colon and pelvic organs, and the phrenic nerve is somatic motor to the diaphragm."
     },
     {
       "id": "c26",

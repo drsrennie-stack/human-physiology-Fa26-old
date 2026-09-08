@@ -48,17 +48,10 @@ Canvas assignment as well, so the blank form survives the site being down.
 | Sheet | File | Height | Pages |
 |---|---|---|---|
 | Weekly lab analysis sheet, all 15 weeks | `lab-report-form.html` | 1400 | 1 |
-| Week 5 sensory and reflex lab | `lab-week05-sensory-reflex.html` | 3600 | 3 |
 | Week 8 hormone cycle lab | `lab-week08-hormone-cycle.html` | 2600 | 2 |
 
 ```html
-<p><iframe title="Week 5 sensory and reflex lab"
-  src="https://drsrennie-stack.github.io/human-physiology-Fa26/lab-week05-sensory-reflex.html"
-  width="100%" height="3600"
-  style="width:100%;height:3600px;border:0"
-  allowfullscreen></iframe></p>
 <p><strong>If the box above does not load,</strong>
-  <a href="https://drsrennie-stack.github.io/human-physiology-Fa26/lab-week05-sensory-reflex.html"
      target="_blank" rel="noopener">open the lab in a new tab</a>.
   The printable PDF is attached to this assignment.</p>
 ```
@@ -96,7 +89,6 @@ setup screen.
 | Week | Why | The lab |
 |---|---|---|
 | 1 | No homeostasis or graphing exercise | `workbook_week01_fluid-homeostasis.html` |
-| 5 | No sensory exercise | `lab-week05-sensory-reflex.html` |
 | 8 | No reproduction exercise | `lab-week08-hormone-cycle.html` |
 
 ---

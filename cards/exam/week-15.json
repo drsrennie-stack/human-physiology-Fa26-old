@@ -1,0 +1,763 @@
+[
+  {
+    "id": "w15-ma-01",
+    "type": "ma",
+    "competencyId": "w13-renal-ph-control",
+    "dok": 2,
+    "stem": "Which of the following are true of how the kidney handles hydrogen ion and bicarbonate? Select all that apply.",
+    "options": [
+      "Most filtered bicarbonate is reclaimed in the proximal tubule, and that reclamation depends on H+ being secreted into the lumen.",
+      "Secreted H+ combines with filtered bicarbonate to form carbon dioxide and water, which enter the tubule cell and are turned back into bicarbonate inside it.",
+      "Reclaiming filtered bicarbonate adds new bicarbonate to the body.",
+      "Excreting H+ bound to ammonia or phosphate in the urine generates new bicarbonate that enters the blood.",
+      "The kidney can lower plasma bicarbonate by letting bicarbonate escape in an alkaline urine."
+    ],
+    "correct": [0, 1, 3, 4],
+    "why": "The kidney works on pH in two ways. First it reclaims the bicarbonate that was filtered, which only prevents a loss. Second it secretes H+ that leaves the body bound to ammonia or phosphate, and every H+ that leaves this way leaves one new bicarbonate behind in the blood. When the body is too alkaline the kidney simply lets bicarbonate pass into the urine.",
+    "whyNot": [
+      "Belongs. About 80 percent of filtered bicarbonate is reclaimed in the proximal tubule, and the process starts with H+ secreted by the Na+/H+ exchanger.",
+      "Belongs. Carbonic anhydrase on the luminal surface converts the H+ and bicarbonate to carbon dioxide and water, which diffuse in and are rebuilt into bicarbonate that exits into the blood.",
+      "Does not belong. Reclamation returns bicarbonate that was already in the plasma before it was filtered. It stops a loss but adds nothing new.",
+      "Belongs. This is how the kidney generates new bicarbonate. The H+ trapped in the urine as ammonium or titratable acid is gone for good, and the bicarbonate made with it is a net gain.",
+      "Belongs. In metabolic alkalosis with normal volume, less H+ is secreted, filtered bicarbonate is not reclaimed, and it leaves in an alkaline urine."
+    ]
+  },
+  {
+    "id": "w15-ma-02",
+    "type": "ma",
+    "competencyId": "w13-renal-ph-control",
+    "dok": 2,
+    "stem": "Why is renal compensation slower but more complete than respiratory compensation? Select all that apply.",
+    "options": [
+      "Renal compensation takes hours to days because tubule cells must increase transporter numbers and ammonia production.",
+      "Respiratory compensation acts within minutes because chemoreceptors change ventilation right away.",
+      "Respiratory compensation cannot return pH all the way to normal because the change in PCO2 that it produces weakens the chemoreceptor drive that started it.",
+      "The kidney can remove a net load of fixed acid or base from the body, which the lungs cannot do.",
+      "Renal compensation is slow because the kidney must wait for the lungs to finish first."
+    ],
+    "correct": [0, 1, 2, 3],
+    "why": "The lungs move fast but can only adjust carbon dioxide. As they compensate, the PCO2 change they cause pulls against the chemoreceptor signal, so the correction stops short. The kidney is slow because it must build up new transporters and ammonia synthesis, but once it does it can excrete the actual excess acid or base, so it can bring pH close to normal and hold it there.",
+    "whyNot": [
+      "Belongs. Renal compensation begins within hours but reaches its full effect over two to five days as the cells adapt.",
+      "Belongs. Central and peripheral chemoreceptors respond to H+ and PCO2 in seconds to minutes and reset ventilation.",
+      "Belongs. In a metabolic acidosis, hyperventilation lowers PCO2, and the lower PCO2 removes part of the stimulus that was driving the hyperventilation, so the response levels off with pH still low.",
+      "Belongs. Only the kidney can excrete fixed acids such as lactic or keto acids, or excrete bicarbonate, so only the kidney can fix the underlying load.",
+      "Does not belong. The two systems run in parallel and independently. Renal compensation is slow because of the biology of the tubule cells, not because of any sequence with the lungs."
+    ]
+  },
+  {
+    "id": "w15-ma-03",
+    "type": "ma",
+    "competencyId": "w13-acid-base-disorders",
+    "dok": 2,
+    "stem": "A blood gas shows pH 7.28 (7.35 to 7.45), PCO2 60 mmHg (35 to 45), HCO3- 27 mEq/L (22 to 26). Which statements are correct? Select all that apply.",
+    "options": [
+      "The blood is acidemic.",
+      "The high PCO2 is the value that explains the low pH, so the disorder is respiratory.",
+      "The slightly high bicarbonate is the beginning of renal compensation.",
+      "The disorder is a metabolic acidosis because the bicarbonate is abnormal.",
+      "The primary problem is that alveolar ventilation is too low for the carbon dioxide being produced."
+    ],
+    "correct": [0, 1, 2, 4],
+    "why": "Start with the pH. It is below 7.35, so this is an acidosis. Then ask which value would lower pH. A high PCO2 lowers pH, and a high bicarbonate raises it, so the PCO2 is the cause and the bicarbonate is the response. High PCO2 means the lungs are not clearing carbon dioxide as fast as the tissues make it.",
+    "whyNot": [
+      "Belongs. A pH of 7.28 is below the normal range, so the blood is acidemic.",
+      "Belongs. Carbon dioxide combines with water to form H+, so a PCO2 of 60 mmHg is the value pushing pH down.",
+      "Belongs. A bicarbonate just above normal in a respiratory acidosis is the kidney starting to secrete H+ and generate new bicarbonate.",
+      "Does not belong. A metabolic acidosis has a low bicarbonate. Here the bicarbonate is high, which moves pH the opposite way from the problem, so it is compensation.",
+      "Belongs. PCO2 rises whenever alveolar ventilation falls below what carbon dioxide production requires."
+    ]
+  },
+  {
+    "id": "w15-ma-04",
+    "type": "ma",
+    "competencyId": "w13-acid-base-disorders",
+    "dok": 2,
+    "stem": "Which of the following would produce a metabolic acidosis? Select all that apply.",
+    "options": [
+      "Severe diarrhea that loses bicarbonate rich intestinal fluid.",
+      "Ketoacid production in uncontrolled type 1 diabetes.",
+      "Lactic acid production in tissues that are not being perfused.",
+      "Hypoventilation from an opioid overdose.",
+      "Loss of gastric acid by repeated vomiting."
+    ],
+    "correct": [0, 1, 2],
+    "why": "A metabolic acidosis is any acidosis that starts with a fall in bicarbonate. Bicarbonate can fall because it is lost from the body, as in diarrhea, or because it is used up buffering a fixed acid, as with ketoacids or lactic acid. A rise in PCO2 is a respiratory acidosis, and a loss of acid raises bicarbonate and gives an alkalosis.",
+    "whyNot": [
+      "Belongs. Intestinal secretions below the stomach are rich in bicarbonate, so losing liters of diarrhea lowers plasma bicarbonate directly.",
+      "Belongs. Without insulin the liver makes ketoacids, and each one releases an H+ that is buffered by bicarbonate, consuming it.",
+      "Belongs. Anaerobic metabolism produces lactic acid, which is buffered by bicarbonate and lowers it.",
+      "Does not belong. Hypoventilation raises PCO2. That is a respiratory acidosis, and bicarbonate is not the primary change.",
+      "Does not belong. Losing gastric HCl removes H+ and leaves bicarbonate behind, so the result is a metabolic alkalosis."
+    ]
+  },
+  {
+    "id": "w15-ma-05",
+    "type": "ma",
+    "competencyId": "w13-acid-base-compensation",
+    "dok": 2,
+    "stem": "A blood gas shows pH 7.36 (7.35 to 7.45), PCO2 28 mmHg (35 to 45), HCO3- 15 mEq/L (22 to 26). Which statements are correct? Select all that apply.",
+    "options": [
+      "The pH is inside the normal range but on the acid side of 7.40, so the primary disorder is an acidosis.",
+      "The low bicarbonate is the value that lowers pH, so the disorder is metabolic.",
+      "The low PCO2 is compensation by the lungs through increased ventilation.",
+      "The disorder is fully compensated because the pH has returned to the normal range.",
+      "The low PCO2 shows that a respiratory alkalosis is the primary problem."
+    ],
+    "correct": [0, 1, 2, 3],
+    "why": "When the pH is normal but both other values are abnormal, the side of 7.40 tells you which problem came first. A pH of 7.36 is on the acid side, so the primary problem was an acidosis. The low bicarbonate is what lowers pH, so it is metabolic, and the low PCO2 is the lungs blowing off carbon dioxide to pull pH back up. Because pH is back inside the range, the compensation is complete.",
+    "whyNot": [
+      "Belongs. A compensated disorder lands pH inside the range but not at 7.40, and the side it lands on names the original problem.",
+      "Belongs. Bicarbonate is the base in the buffer pair, so a low value lowers pH.",
+      "Belongs. Chemoreceptors sense the H+ and raise ventilation, which lowers PCO2 and raises pH toward normal.",
+      "Belongs. Fully compensated means pH is back within 7.35 to 7.45 while the primary and compensating values remain abnormal.",
+      "Does not belong. If the low PCO2 were the primary problem, pH would be above 7.40. It is below, so the low PCO2 is the compensation."
+    ]
+  },
+  {
+    "id": "w15-ma-06",
+    "type": "ma",
+    "competencyId": "w13-acid-base-compensation",
+    "dok": 2,
+    "stem": "Which statements about compensation for an acid base disorder are correct? Select all that apply.",
+    "options": [
+      "Compensation moves pH back toward normal but does not remove the primary problem.",
+      "In a compensated disorder, the compensating value moves in the same direction as the primary value, both up or both down.",
+      "Compensation overshoots and pushes pH past 7.40 to the opposite side.",
+      "Respiratory compensation for a metabolic disorder begins within minutes.",
+      "Renal compensation for a respiratory disorder is complete within one hour."
+    ],
+    "correct": [0, 1, 3],
+    "why": "Compensation is the other system adjusting its own value to offset the primary change. If PCO2 goes up, bicarbonate goes up to match. If bicarbonate goes down, PCO2 goes down to match. That returns pH toward 7.40 but never past it, and it never fixes the original cause, which still has to be treated.",
+    "whyNot": [
+      "Belongs. A patient with a fully compensated respiratory acidosis still has the lung disease that raised PCO2. Compensation only limits the damage to pH.",
+      "Belongs. Respiratory acidosis has high PCO2 and high bicarbonate. Metabolic acidosis has low bicarbonate and low PCO2. The pair moves together.",
+      "Does not belong. The signal driving compensation fades as pH approaches normal, so the response stops short of 7.40. A pH on the far side of 7.40 means a second, separate disorder.",
+      "Belongs. Peripheral chemoreceptors respond to plasma H+ within minutes, so ventilation changes almost at once.",
+      "Does not belong. The kidney needs hours to begin and days to reach full effect. A bicarbonate that is still normal in the first hours of a respiratory disorder is expected."
+    ]
+  },
+  {
+    "id": "w15-ma-07",
+    "type": "ma",
+    "competencyId": "w13-lab-abg-interpretation",
+    "dok": 2,
+    "stem": "A frightened patient has been breathing 30 times per minute for 20 minutes. Blood gas: pH 7.52 (7.35 to 7.45), PCO2 28 mmHg (35 to 45), HCO3- 23 mEq/L (22 to 26). Which statements are correct? Select all that apply.",
+    "options": [
+      "These values show an uncompensated respiratory alkalosis.",
+      "Rapid ventilation is removing carbon dioxide faster than the tissues produce it.",
+      "Bicarbonate is still normal because the kidney has not had time to respond.",
+      "The rise in pH lowers ionized calcium, which can cause tingling around the mouth and fingers.",
+      "If this continues for days, the kidney will compensate by generating new bicarbonate."
+    ],
+    "correct": [0, 1, 2, 3],
+    "why": "Hyperventilation lowers PCO2, which pulls H+ out of the buffer equation and raises pH. Twenty minutes is far too short for the kidney to do anything, so bicarbonate sits at its normal value and the disorder is uncompensated. The high pH also makes albumin bind more calcium, which lowers free calcium and makes neurons more excitable.",
+    "whyNot": [
+      "Belongs. High pH with a low PCO2 is respiratory alkalosis, and the normal bicarbonate means no compensation has happened yet.",
+      "Belongs. PCO2 falls only when alveolar ventilation exceeds what carbon dioxide production requires.",
+      "Belongs. Renal adjustment of bicarbonate takes hours to days, so at 20 minutes it is unchanged.",
+      "Belongs. Fewer H+ on albumin leaves more binding sites open for calcium, so ionized calcium drops and nerves fire more easily.",
+      "Does not belong. In an alkalosis the kidney compensates by excreting bicarbonate, which lowers it. Generating new bicarbonate is what it does in an acidosis."
+    ]
+  },
+  {
+    "id": "w15-ma-08",
+    "type": "ma",
+    "competencyId": "w15-integration-case",
+    "dok": 2,
+    "stem": "A patient has had severe watery diarrhea for three days and has lost about 3 liters of fluid. Plasma bicarbonate is 14 mEq/L (22 to 26). Which responses are expected? Select all that apply.",
+    "options": [
+      "Peripheral chemoreceptors drive faster, deeper breathing, lowering PCO2.",
+      "Baroreceptor unloading raises sympathetic output, increasing heart rate and constricting arterioles.",
+      "Renin, angiotensin II and aldosterone rise, so the kidney retains sodium and water.",
+      "ADH release is suppressed and the urine becomes dilute.",
+      "The kidney increases H+ secretion and ammonium excretion to generate new bicarbonate."
+    ],
+    "correct": [0, 1, 2, 4],
+    "why": "This patient has two problems at once: a metabolic acidosis from bicarbonate loss and volume depletion from fluid loss. The acidosis is met by the lungs first and the kidney later. The volume loss is met by the baroreflex within seconds, then by ADH, renin, angiotensin II and aldosterone, all of which tell the kidney to hold on to water and salt.",
+    "whyNot": [
+      "Belongs. The carotid bodies sense the extra H+ and raise ventilation within minutes. This is respiratory compensation.",
+      "Belongs. Less stretch on the baroreceptors means less inhibition of the medulla, so sympathetic output rises and parasympathetic output falls.",
+      "Belongs. Low volume and sympathetic drive both release renin, and the resulting aldosterone drives sodium reabsorption in the distal nephron.",
+      "Does not belong. Low volume and low pressure stimulate ADH release, so the urine is scant and concentrated. Dilute urine would throw away the water the body needs.",
+      "Belongs. Over days the kidney compensates for the acidosis by excreting more acid as ammonium and returning new bicarbonate to the blood."
+    ]
+  },
+  {
+    "id": "w15-ma-09",
+    "type": "ma",
+    "competencyId": "w15-integration-case",
+    "dok": 2,
+    "stem": "A patient loses about 1.5 liters of blood in an accident. Which statements about the order and timing of the responses are correct? Select all that apply.",
+    "options": [
+      "The baroreceptor reflex raises heart rate within seconds, before any hormone level has changed.",
+      "ADH rises within minutes, driven by the fall in pressure and by angiotensin II.",
+      "Aldosterone driven sodium retention takes hours and is what rebuilds the volume.",
+      "Red cell replacement through erythropoietin takes days to weeks, so hematocrit falls first as fluid is retained.",
+      "ANP release rises because the atria sense the low pressure."
+    ],
+    "correct": [0, 1, 2, 3],
+    "why": "Responses to hemorrhage stack up by speed. Nerves act in seconds, hormones in minutes to hours, and new cells in days to weeks. The atria are underfilled, so ANP, which is released by atrial stretch, goes down rather than up.",
+    "whyNot": [
+      "Belongs. A reflex arc through the medulla takes well under a second, so heart rate and vasoconstriction are the first line of defense.",
+      "Belongs. Low pressure removes inhibition from the ADH neurons, and angiotensin II stimulates them, so ADH climbs within minutes.",
+      "Belongs. Aldosterone must be synthesized and then change gene expression in the tubule cells, so its sodium retention builds over hours.",
+      "Belongs. Fluid is restored long before red cells are, so the blood is diluted and hematocrit drops over the first day or two before erythropoietin slowly restores it.",
+      "Does not belong. ANP is released when the atria are stretched by extra volume. After hemorrhage the atria are underfilled and ANP falls, which helps the kidney retain sodium."
+    ]
+  },
+  {
+    "id": "w15-ma-10",
+    "type": "ma",
+    "competencyId": "w15-exercise-integration",
+    "dok": 2,
+    "stem": "Which of the following are true during steady moderate exercise? Select all that apply.",
+    "options": [
+      "Cardiac output rises, mostly through a higher heart rate, with stroke volume rising as well.",
+      "Arterioles in working muscle dilate in response to local metabolites while arterioles in the gut and kidney constrict.",
+      "Mean arterial pressure falls sharply because total peripheral resistance drops.",
+      "Ventilation rises in step with carbon dioxide production, so arterial PCO2 stays near normal.",
+      "Insulin falls while glucagon and epinephrine rise, mobilizing glucose and fatty acids."
+    ],
+    "correct": [0, 1, 3, 4],
+    "why": "Exercise raises cardiac output and redirects it toward muscle. Resistance in the muscle bed falls, but sympathetic constriction elsewhere and the big rise in cardiac output keep mean pressure slightly above rest. Ventilation tracks metabolism closely enough that arterial gases barely move, and the hormone shift supplies fuel to the working fibers.",
+    "whyNot": [
+      "Belongs. Heart rate can triple, and stroke volume rises from greater venous return and stronger sympathetic contractility.",
+      "Belongs. Adenosine, low PO2, H+ and K+ dilate muscle arterioles, and sympathetic drive constricts the splanchnic and renal beds to divert flow.",
+      "Does not belong. Mean arterial pressure rises modestly in moderate exercise. Systolic pressure rises clearly while diastolic changes little. A sharp fall would be a failure of the response.",
+      "Belongs. Ventilation rises in proportion to metabolic rate, so PCO2 stays close to 40 mmHg in moderate work.",
+      "Belongs. Sympathetic input to the pancreas suppresses insulin and promotes glucagon, and adrenal epinephrine drives glycogenolysis and lipolysis."
+    ]
+  },
+  {
+    "id": "w15-ma-11",
+    "type": "ma",
+    "competencyId": "w15-exercise-integration",
+    "dok": 2,
+    "stem": "Which of the following describe the renal and fluid responses to a long run in warm weather? Select all that apply.",
+    "options": [
+      "Renal blood flow and GFR fall because sympathetic drive constricts the renal arterioles.",
+      "Sweat is hypotonic to plasma, so plasma osmolarity rises and ADH is released.",
+      "Aldosterone rises during prolonged exercise, so the kidney and the sweat glands conserve sodium.",
+      "Urine output rises during exercise because more blood is sent to the kidney.",
+      "Venous return is supported by the skeletal muscle pump and the respiratory pump."
+    ],
+    "correct": [0, 1, 2, 4],
+    "why": "During exercise the kidney gives up blood flow to the muscles, and water and salt are lost in sweat. Rising osmolarity and falling volume both raise ADH, and the renin, angiotensin II and aldosterone system is switched on, so the kidney makes a small amount of concentrated urine and holds sodium. Meanwhile the muscle and respiratory pumps keep blood returning to the heart despite the dilated muscle beds.",
+    "whyNot": [
+      "Belongs. Sympathetic vasoconstriction of the afferent arteriole cuts renal flow and GFR, which also reduces urine production.",
+      "Belongs. Sweat carries away more water than salt relative to plasma, so what is left behind is more concentrated and the osmoreceptors respond.",
+      "Belongs. Renin rises with sympathetic drive and falling volume, and aldosterone acts on both the distal nephron and the sweat gland duct to reclaim sodium.",
+      "Does not belong. Renal blood flow falls during exercise, and with ADH and aldosterone high the urine is scant and concentrated.",
+      "Belongs. Rhythmic muscle contraction squeezes the veins and the fall in intrathoracic pressure during inspiration draws blood toward the heart."
+    ]
+  },
+  {
+    "id": "w15-ma-12",
+    "type": "ma",
+    "competencyId": "w15-drawing-synthesis",
+    "dok": 2,
+    "stem": "A student is drawing a negative feedback loop that controls blood pressure. Which features must the drawing include for the loop to work as negative feedback? Select all that apply.",
+    "options": [
+      "A sensor that measures the regulated variable, such as baroreceptors sensing arterial stretch.",
+      "An integrating center that compares the input to a set point, such as the medulla.",
+      "An effector response whose direction opposes the original change in the variable.",
+      "An arrow from the effector that amplifies the original change.",
+      "A final arrow showing the response acting on the same variable that the sensor measures."
+    ],
+    "correct": [0, 1, 2, 4],
+    "why": "Every negative feedback loop has the same parts. Something measures the variable, something compares it to a set point, and something changes the variable in the opposite direction from the disturbance. The loop closes when the response feeds back onto the variable the sensor is watching. An arrow that reinforces the original change turns the drawing into positive feedback.",
+    "whyNot": [
+      "Belongs. Without a sensor the system has no information about the variable and cannot regulate it.",
+      "Belongs. The comparison with a set point is what decides whether a response is needed and in which direction.",
+      "Belongs. Negative means the response pushes the variable back toward the set point. Low pressure must lead to responses that raise pressure.",
+      "Does not belong. An amplifying arrow is positive feedback, which drives the variable further from where it started. Ovulation and blood clotting use it, but pressure control does not.",
+      "Belongs. If the response acts on some other variable, the sensor never sees the correction and the loop is not closed."
+    ]
+  },
+  {
+    "id": "w15-tf-01",
+    "type": "tf",
+    "competencyId": "w13-renal-ph-control",
+    "dok": 2,
+    "statement": "The kidney compensates for a respiratory acidosis by excreting bicarbonate in the urine.",
+    "truth": false,
+    "correction": "The kidney compensates for a respiratory acidosis by secreting more H+ and generating new bicarbonate, which raises plasma bicarbonate.",
+    "why": "In a respiratory acidosis the problem is too much carbon dioxide, and the only way the kidney can pull pH back up is to add base. It does that by secreting H+ into the urine as ammonium and phosphate, and each secreted H+ leaves a new bicarbonate in the blood. Excreting bicarbonate is what the kidney does in an alkalosis, and it would make an acidosis worse."
+  },
+  {
+    "id": "w15-tf-02",
+    "type": "tf",
+    "competencyId": "w13-renal-ph-control",
+    "dok": 1,
+    "statement": "The proximal tubule reclaims most of the filtered bicarbonate by secreting H+ into the tubule lumen.",
+    "truth": true,
+    "correction": "True. Secreted H+ combines with filtered bicarbonate to form carbon dioxide and water, which enter the cell and are converted back into bicarbonate that returns to the blood.",
+    "why": "Bicarbonate itself cannot cross the apical membrane of the proximal tubule. The cell gets around this by secreting H+, letting carbonic anhydrase in the lumen convert the bicarbonate into carbon dioxide and water, and then rebuilding bicarbonate inside the cell. About 80 percent of the filtered load is reclaimed this way, and without it the body would lose thousands of milliequivalents of base every day."
+  },
+  {
+    "id": "w15-tf-03",
+    "type": "tf",
+    "competencyId": "w13-acid-base-disorders",
+    "dok": 2,
+    "statement": "A high arterial PCO2 always means that the patient has a respiratory acidosis.",
+    "truth": false,
+    "correction": "A high PCO2 is a respiratory acidosis only when the pH is on the acid side. With an alkaline pH, a high PCO2 is the lung compensating for a metabolic alkalosis.",
+    "why": "The same abnormal value can be the cause or the compensation, and only the pH tells you which. In a metabolic alkalosis the lungs slow down to hold carbon dioxide, so PCO2 rises above normal, but the pH stays above 7.40. Calling that a respiratory acidosis would have you treating the compensation and missing the real problem."
+  },
+  {
+    "id": "w15-tf-04",
+    "type": "tf",
+    "competencyId": "w13-acid-base-disorders",
+    "dok": 1,
+    "statement": "A metabolic alkalosis is defined by a fall in plasma bicarbonate.",
+    "truth": false,
+    "correction": "A metabolic alkalosis is defined by a rise in plasma bicarbonate, which raises pH.",
+    "why": "Bicarbonate is the base half of the buffer pair. More base means higher pH, so a metabolic alkalosis starts with a high bicarbonate, as happens after vomiting removes acid. A low bicarbonate is the mark of a metabolic acidosis, the opposite disorder."
+  },
+  {
+    "id": "w15-tf-05",
+    "type": "tf",
+    "competencyId": "w13-acid-base-compensation",
+    "dok": 2,
+    "statement": "In a fully compensated acid base disorder, the pH returns to the normal range but stays on the side of 7.40 that matches the primary problem.",
+    "truth": true,
+    "correction": "True. Compensation weakens as pH approaches normal, so it stops short of 7.40, and the side the pH lands on still identifies the original disorder.",
+    "why": "The signal that drives compensation is the abnormal pH itself. As pH gets closer to normal that signal fades, so the response levels off with pH just inside the range. A fully compensated respiratory acidosis lands around 7.36 to 7.39, and a compensated alkalosis around 7.41 to 7.44. If pH crossed to the other side, a second disorder would have to be present."
+  },
+  {
+    "id": "w15-tf-06",
+    "type": "tf",
+    "competencyId": "w13-lab-abg-interpretation",
+    "dok": 2,
+    "statement": "A patient in diabetic ketoacidosis breathes deeply and rapidly because the acidosis is respiratory in origin.",
+    "truth": false,
+    "correction": "The deep, rapid breathing is respiratory compensation for a metabolic acidosis, driven by H+ acting on the peripheral chemoreceptors.",
+    "why": "Ketoacids consume bicarbonate, so this is a metabolic acidosis. The carotid bodies sense the extra H+ and drive ventilation up, which lowers PCO2 and pulls pH partly back toward normal. The breathing pattern is the response, not the cause. A respiratory acidosis would have a high PCO2 and a patient who is breathing too little, not too much."
+  },
+  {
+    "id": "w15-tf-07",
+    "type": "tf",
+    "competencyId": "w15-integration-case",
+    "dok": 2,
+    "statement": "After a sudden hemorrhage, ADH and aldosterone restore blood pressure before the baroreceptor reflex has time to act.",
+    "truth": false,
+    "correction": "The baroreceptor reflex acts within seconds and is the first line of defense. ADH rises over minutes, and aldosterone driven volume recovery takes hours.",
+    "why": "A neural reflex needs only nerve conduction and synaptic delay, so heart rate and vasoconstriction change within a heartbeat or two. Hormones must be released, carried in the blood, and act on their targets, and aldosterone must also change gene expression in tubule cells. Any order that puts a hormone ahead of the reflex has the timing backwards."
+  },
+  {
+    "id": "w15-tf-08",
+    "type": "tf",
+    "competencyId": "w15-exercise-integration",
+    "dok": 2,
+    "statement": "During moderate exercise, arterial PO2 falls sharply, and that fall is the main signal that drives ventilation up.",
+    "truth": false,
+    "correction": "Arterial PO2 and PCO2 stay close to normal in moderate exercise. Ventilation is driven up by central command from the motor cortex and by feedback from muscle receptors, not by a fall in arterial oxygen.",
+    "why": "If ventilation waited for arterial gases to change, it could not keep up with the tissues. Instead the motor cortex signals the respiratory centers at the same time it signals the muscles, and mechanoreceptors and metaboreceptors in the working muscle add to the drive. The result is ventilation that rises in step with metabolism, so arterial PO2 and PCO2 barely move. A large fall in PO2 would only occur in someone with lung disease."
+  },
+  {
+    "id": "w15-tf-09",
+    "type": "tf",
+    "competencyId": "w15-exercise-integration",
+    "dok": 1,
+    "statement": "During exercise, blood flow to skeletal muscle rises while blood flow to the gut and the kidney falls.",
+    "truth": true,
+    "correction": "True. Local metabolites dilate muscle arterioles while sympathetic vasoconstriction narrows the splanchnic and renal arterioles, shifting cardiac output toward the working muscle.",
+    "why": "Working muscle can take more than 80 percent of cardiac output during hard exercise. That is possible because the muscle arterioles respond to adenosine, H+, K+ and low PO2 by dilating, while sympathetic nerves constrict the beds that can wait, such as the digestive organs and the kidney. The redistribution is as important as the rise in cardiac output for delivering oxygen."
+  },
+  {
+    "id": "w15-tf-10",
+    "type": "tf",
+    "competencyId": "w15-drawing-synthesis",
+    "dok": 2,
+    "statement": "In a correct drawing of a homeostatic negative feedback loop, the arrow from the effector back to the regulated variable points in the same direction as the original disturbance.",
+    "truth": false,
+    "correction": "In negative feedback the effector arrow points in the opposite direction from the disturbance, pushing the variable back toward its set point.",
+    "why": "A loop where the response reinforces the disturbance is positive feedback, and it drives the variable further away until something outside the loop stops it. Homeostasis depends on the response opposing the change. When you draw a loop, check the last arrow: if a rise leads to responses that cause a fall, the loop is negative and will hold the variable steady."
+  },
+  {
+    "id": "w15-bd-01",
+    "type": "bd",
+    "competencyId": "w13-renal-ph-control",
+    "dok": 3,
+    "prompt": "Without notes, explain how the kidney raises plasma bicarbonate in a patient who has been retaining carbon dioxide for a week, and why the process takes days rather than minutes.",
+    "rubric": [
+      "high PCO2 raises carbon dioxide inside tubule cells, and carbonic anhydrase produces H+ and bicarbonate",
+      "H+ is secreted into the lumen (Na+/H+ exchanger and H+ ATPase)",
+      "secreted H+ is trapped in the urine as ammonium or bound to phosphate, so it leaves the body",
+      "each H+ excreted this way leaves one new bicarbonate that enters the blood",
+      "the urine becomes acidic and plasma bicarbonate climbs above normal",
+      "the delay comes from having to synthesize more transporters and more ammonia in the tubule cells, which takes days"
+    ]
+  },
+  {
+    "id": "w15-bd-02",
+    "type": "bd",
+    "competencyId": "w13-acid-base-disorders",
+    "dok": 3,
+    "prompt": "Without notes, walk through the steps you use to classify an acid base disorder, using this blood gas as your example: pH 7.30 (7.35 to 7.45), PCO2 30 mmHg (35 to 45), HCO3- 14 mEq/L (22 to 26).",
+    "rubric": [
+      "look at pH first: 7.30 is below 7.40, so the primary disorder is an acidosis",
+      "ask which value would lower pH: a low bicarbonate lowers pH, so the disorder is metabolic",
+      "the low PCO2 would raise pH, so it is not the cause, it is compensation",
+      "conclusion: metabolic acidosis with respiratory compensation",
+      "pH is still outside the normal range, so compensation is partial, not complete"
+    ]
+  },
+  {
+    "id": "w15-bd-03",
+    "type": "bd",
+    "competencyId": "w13-acid-base-compensation",
+    "dok": 3,
+    "prompt": "Without notes, explain why the lungs compensate for an acid base disorder quickly but incompletely, while the kidney compensates slowly but can bring pH almost all the way back.",
+    "rubric": [
+      "chemoreceptors change ventilation within minutes, so PCO2 changes fast",
+      "the changed PCO2 reduces the chemoreceptor stimulus that drove the change, so the response levels off with pH still abnormal",
+      "the lungs can only adjust carbon dioxide, they cannot remove fixed acid or base",
+      "the kidney must increase transporter numbers and ammonia production, which takes hours to days",
+      "the kidney can excrete the actual excess acid (as ammonium and titratable acid) or excrete excess bicarbonate",
+      "because it removes the load itself, renal compensation can return pH close to normal and hold it"
+    ]
+  },
+  {
+    "id": "w15-bd-04",
+    "type": "bd",
+    "competencyId": "w13-lab-abg-interpretation",
+    "dok": 3,
+    "prompt": "A patient found after an opioid overdose has a blood gas of pH 7.22 (7.35 to 7.45), PCO2 65 mmHg (35 to 45), HCO3- 26 mEq/L (22 to 26). Without notes, explain the chain from the drug to these numbers, and predict how the numbers would change over three days if the hypoventilation continued.",
+    "rubric": [
+      "opioids depress the medullary respiratory centers, so alveolar ventilation falls",
+      "carbon dioxide is produced faster than it is removed, so PCO2 rises",
+      "carbon dioxide combines with water to form H+ and bicarbonate, and the added H+ lowers pH",
+      "this is an acute respiratory acidosis",
+      "bicarbonate is normal because the kidney has not had time to respond, so it is uncompensated",
+      "over days the kidney secretes more H+ and generates new bicarbonate, so bicarbonate rises above 30 mEq/L",
+      "pH climbs back toward the low end of normal while PCO2 stays high"
+    ]
+  },
+  {
+    "id": "w15-bd-05",
+    "type": "bd",
+    "competencyId": "w15-integration-case",
+    "dok": 3,
+    "prompt": "A patient has vomited repeatedly for three days. Without notes, trace this disturbance through the digestive, cardiovascular, respiratory, and renal systems, in the order the responses appear, and explain why the kidney keeps the urine acidic even though the blood is alkaline.",
+    "rubric": [
+      "loss of gastric HCl removes H+ and leaves bicarbonate behind, producing a metabolic alkalosis",
+      "loss of fluid lowers blood volume and pressure, and the baroreflex raises heart rate and constricts vessels within seconds",
+      "within minutes the lungs slow ventilation, PCO2 rises, and pH is pulled partly back",
+      "low volume raises renin, angiotensin II, aldosterone and ADH over minutes to hours, so the kidney retains sodium and water",
+      "aldosterone and sodium reabsorption drive H+ secretion, so the kidney keeps reclaiming bicarbonate and the urine stays acidic",
+      "the alkalosis cannot resolve until volume is replaced, because the kidney puts volume ahead of pH"
+    ]
+  },
+  {
+    "id": "w15-bd-06",
+    "type": "bd",
+    "competencyId": "w15-exercise-integration",
+    "dok": 3,
+    "prompt": "Without notes, explain how cardiac output and the distribution of blood flow change in the first minute of moderate exercise, and name the signal that triggers each change.",
+    "rubric": [
+      "central command from the motor cortex reaches the medulla, withdrawing vagal tone and raising sympathetic output",
+      "heart rate rises within seconds, and contractility and stroke volume rise with sympathetic drive",
+      "the skeletal muscle pump and respiratory pump raise venous return, supporting stroke volume",
+      "local metabolites (adenosine, H+, K+, low PO2) dilate arterioles in working muscle",
+      "sympathetic vasoconstriction narrows gut, kidney and resting muscle arterioles, diverting flow",
+      "total peripheral resistance falls, so mean arterial pressure rises only modestly despite the large rise in cardiac output"
+    ]
+  },
+  {
+    "id": "w15-bd-07",
+    "type": "bd",
+    "competencyId": "w15-exercise-integration",
+    "dok": 3,
+    "prompt": "Without notes, explain the endocrine and renal responses to a 90 minute run on a warm day. Say what each hormone does and why it is released.",
+    "rubric": [
+      "sympathetic input suppresses insulin and raises glucagon, keeping glucose available for muscle",
+      "epinephrine from the adrenal medulla drives glycogen breakdown and fat mobilization",
+      "sweat loss raises plasma osmolarity and lowers volume, both of which release ADH",
+      "ADH increases water reabsorption in the collecting duct, so urine is scant and concentrated",
+      "sympathetic drive and low volume release renin, leading to angiotensin II and aldosterone",
+      "aldosterone conserves sodium in the kidney and in sweat",
+      "renal blood flow and GFR fall because sympathetic nerves constrict the renal arterioles"
+    ]
+  },
+  {
+    "id": "w15-bd-08",
+    "type": "bd",
+    "competencyId": "w15-drawing-synthesis",
+    "dok": 3,
+    "prompt": "From memory, draw and label the pathway that returns plasma osmolarity to normal after you drink a liter of water. Then explain each step in writing without notes.",
+    "rubric": [
+      "absorbed water lowers plasma osmolarity",
+      "osmoreceptors in the hypothalamus detect the fall",
+      "ADH release from the posterior pituitary is reduced",
+      "fewer aquaporin channels are inserted in the collecting duct, so water reabsorption falls",
+      "a large volume of dilute urine is produced",
+      "plasma osmolarity rises back to the set point, and the loop is negative feedback"
+    ]
+  },
+  {
+    "id": "w15-app-01",
+    "type": "app",
+    "competencyId": "w13-renal-ph-control",
+    "dok": 3,
+    "case": "A man with severe chronic lung disease has had a PCO2 near 58 mmHg (35 to 45) for years. His plasma bicarbonate is 34 mEq/L (22 to 26) and his pH is 7.37 (7.35 to 7.45). He is placed on a ventilator that brings his PCO2 down to 40 mmHg within an hour.",
+    "stem": "Predict his arterial pH at the end of that hour and explain why.",
+    "options": [
+      "pH rises above 7.45, because the bicarbonate the kidney built up over years is still high while the carbon dioxide is gone",
+      "pH stays near 7.37, because the kidney lowers bicarbonate as fast as the ventilator lowers PCO2",
+      "pH falls below 7.35, because removing carbon dioxide generates H+",
+      "pH stays near 7.37, because bicarbonate has no effect on pH when PCO2 is normal"
+    ],
+    "correct": 0,
+    "why": "The kidney spent days raising bicarbonate to offset the high PCO2. The ventilator removes the PCO2 in an hour, but the kidney needs days to excrete the extra bicarbonate. For that hour the patient has a normal PCO2 and a high bicarbonate, which is the picture of a metabolic alkalosis, and pH overshoots into the alkaline range. This is why chronic carbon dioxide retainers are ventilated gently.",
+    "whyNot": [
+      "Correct. Compensation that was appropriate for a high PCO2 becomes an alkalosis once the PCO2 is normalized faster than the kidney can respond.",
+      "This assumes renal compensation is as fast as ventilation. The kidney needs days to unload bicarbonate, not an hour.",
+      "Removing carbon dioxide consumes H+ rather than generating it. The buffer equation runs toward carbon dioxide and water, so pH goes up, not down.",
+      "Bicarbonate affects pH at every PCO2. With PCO2 at 40 mmHg, a bicarbonate of 34 mEq/L gives a pH well above 7.45."
+    ]
+  },
+  {
+    "id": "w15-app-02",
+    "type": "app",
+    "competencyId": "w13-renal-ph-control",
+    "dok": 3,
+    "case": "A woman has had heavy diarrhea for five days. Her plasma bicarbonate is 16 mEq/L (22 to 26) and her pH is 7.33 (7.35 to 7.45). Her urine pH is 5.0 (normal range 4.5 to 8.0) and her urine ammonium excretion is three times normal.",
+    "stem": "What is her kidney doing, and what does it accomplish for her plasma?",
+    "options": [
+      "Secreting H+ that leaves the body as ammonium, which generates new bicarbonate to replace what was lost in the stool",
+      "Excreting bicarbonate, which explains why the plasma bicarbonate is low",
+      "Reclaiming filtered bicarbonate only, which returns bicarbonate that was already in the plasma but adds nothing new",
+      "Secreting ammonium to lower plasma pH and match the acidic urine"
+    ],
+    "correct": 0,
+    "why": "The diarrhea took bicarbonate out of the body, so reclaiming the filtered load is not enough. The kidney has responded by making more ammonia, which traps secreted H+ in the urine as ammonium. Every H+ that leaves this way leaves one new bicarbonate in the blood. The acid urine and the high ammonium excretion are the signs that this net acid excretion is running hard.",
+    "whyNot": [
+      "Correct. High ammonium excretion with acid urine is the kidney generating new bicarbonate, which is the renal compensation for a metabolic acidosis.",
+      "A kidney excreting bicarbonate would produce alkaline urine. This urine is acidic, and the low plasma bicarbonate was caused by the diarrhea, not the kidney.",
+      "Reclamation is happening too, but it cannot raise bicarbonate above what was filtered. The extra ammonium is the sign of new bicarbonate generation, which is what the plasma needs.",
+      "Ammonium excretion removes acid from the body and raises plasma pH. The kidney is defending pH, not lowering it."
+    ]
+  },
+  {
+    "id": "w15-app-03",
+    "type": "app",
+    "competencyId": "w13-acid-base-disorders",
+    "dok": 3,
+    "case": "A hiker drives from sea level to a mountain hut at 4,000 meters and six hours later has a blood gas drawn: pH 7.50 (7.35 to 7.45), PCO2 28 mmHg (35 to 45), HCO3- 23 mEq/L (22 to 26), PO2 55 mmHg (80 to 100).",
+    "stem": "Classify the disorder and explain the mechanism that produced it.",
+    "options": [
+      "Respiratory alkalosis, because the low PO2 stimulated the peripheral chemoreceptors and the resulting hyperventilation blew off carbon dioxide",
+      "Metabolic alkalosis, because the kidney retained bicarbonate at altitude",
+      "Respiratory acidosis, because the thin air made it harder to move carbon dioxide out of the lungs",
+      "Metabolic acidosis, because the low PO2 forced the muscles to make lactic acid"
+    ],
+    "correct": 0,
+    "why": "At altitude the arterial PO2 falls low enough to fire the carotid bodies, and the hiker breathes more than his carbon dioxide production requires. PCO2 falls, pH rises, and the bicarbonate is still normal because six hours is too short for the kidney to respond. That makes this an uncompensated respiratory alkalosis. Over the next days the kidney will excrete bicarbonate and bring the pH down.",
+    "whyNot": [
+      "Correct. High pH with low PCO2 and normal bicarbonate is respiratory alkalosis, and hypoxic drive is the cause at altitude.",
+      "The bicarbonate is normal, so the kidney has not changed anything yet. The high pH is explained entirely by the low PCO2.",
+      "Thin air lowers PO2, but carbon dioxide leaves the lungs easily at any altitude. The PCO2 here is low, not high, which rules out a respiratory acidosis.",
+      "A lactic acidosis would lower bicarbonate and pH. Here pH is high and bicarbonate is normal, and a PO2 of 55 mmHg is enough for aerobic metabolism at rest."
+    ]
+  },
+  {
+    "id": "w15-app-04",
+    "type": "app",
+    "competencyId": "w13-acid-base-disorders",
+    "dok": 3,
+    "case": "A man with a blocked small intestine has been vomiting for three days and now has a tube draining his stomach. Blood gas: pH 7.52 (7.35 to 7.45), PCO2 47 mmHg (35 to 45), HCO3- 37 mEq/L (22 to 26).",
+    "stem": "Classify the disorder and explain what produced each abnormal value.",
+    "options": [
+      "Metabolic alkalosis: losing gastric H+ left bicarbonate behind, and the lungs are compensating by slowing ventilation so PCO2 rises",
+      "Respiratory acidosis: the high PCO2 is the primary problem and the kidney has raised bicarbonate to compensate",
+      "Respiratory alkalosis: the vomiting made him hyperventilate and blow off acid",
+      "Mixed metabolic and respiratory alkalosis: both abnormal values are pushing pH up"
+    ],
+    "correct": 0,
+    "why": "The pH is above 7.40, so the primary disorder is an alkalosis. The high bicarbonate is the value that raises pH, so it is metabolic, and it came from days of losing gastric acid. The high PCO2 would lower pH, so it is the compensation: the chemoreceptors have let ventilation fall so carbon dioxide accumulates and pulls pH partly back down.",
+    "whyNot": [
+      "Correct. The pattern of high pH, high bicarbonate and high PCO2 with a clear history of acid loss is a metabolic alkalosis with respiratory compensation.",
+      "A respiratory acidosis has these same two abnormal values but the pH would be below 7.40. At 7.52 the high PCO2 cannot be the cause.",
+      "A respiratory alkalosis requires a low PCO2. His PCO2 is high, and vomiting removes acid from the stomach, not carbon dioxide from the lungs.",
+      "A high PCO2 pushes pH down, not up. The two values are opposing each other, which is what compensation looks like, not a mixed disorder."
+    ]
+  },
+  {
+    "id": "w15-app-05",
+    "type": "app",
+    "competencyId": "w13-acid-base-compensation",
+    "dok": 3,
+    "case": "A teenager with untreated type 1 diabetes arrives breathing deeply and rapidly. Blood gas: pH 7.20 (7.35 to 7.45), PCO2 22 mmHg (35 to 45), HCO3- 8 mEq/L (22 to 26). Blood glucose is 480 mg/dL (70 to 100).",
+    "stem": "What is the compensation status, and which system is doing the compensating?",
+    "options": [
+      "Partially compensated: the lungs are blowing off carbon dioxide to raise pH, but the pH is still well below normal",
+      "Uncompensated: the PCO2 is abnormal, which means no compensation has occurred",
+      "Fully compensated: the low PCO2 matches the low bicarbonate, which is what a complete compensation looks like",
+      "Partially compensated by the kidney, which is generating bicarbonate and lowering PCO2 at the same time"
+    ],
+    "correct": 0,
+    "why": "Ketoacids consumed the bicarbonate, so this is a metabolic acidosis. The carotid bodies sense the H+ and drive ventilation up, which is the deep rapid breathing you can see at the bedside. That lowers PCO2 far below normal and raises pH from where it would otherwise be, but not into the normal range. Compensation is present and partial, and the lungs are doing it.",
+    "whyNot": [
+      "Correct. Low PCO2 in a metabolic acidosis is respiratory compensation, and a pH still outside the range means it is partial.",
+      "An abnormal PCO2 in a metabolic disorder is exactly what compensation looks like. Uncompensated would mean a PCO2 still near 40 mmHg.",
+      "Matching directions shows compensation is happening, but full compensation is judged by the pH, and 7.20 is far from normal.",
+      "The kidney does not change PCO2, and it takes days to generate new bicarbonate. The fast response in this patient is the lungs."
+    ]
+  },
+  {
+    "id": "w15-app-06",
+    "type": "app",
+    "competencyId": "w13-acid-base-compensation",
+    "dok": 3,
+    "case": "A woman suddenly became short of breath 20 minutes ago from a clot in a lung artery. She is breathing 32 times per minute. Blood gas: pH 7.49 (7.35 to 7.45), PCO2 30 mmHg (35 to 45), HCO3- 22 mEq/L (22 to 26).",
+    "stem": "What is the compensation status now, and if the fast breathing continued for three days, how would the bicarbonate and pH change?",
+    "options": [
+      "Uncompensated now; over three days the kidney would excrete bicarbonate, bicarbonate would fall below normal, and pH would move back toward 7.45",
+      "Fully compensated now, because the bicarbonate is normal; nothing would change over three days",
+      "Uncompensated now; over three days the kidney would generate new bicarbonate and pH would rise further",
+      "Partially compensated now by the kidney; within hours bicarbonate would return pH to 7.40 exactly"
+    ],
+    "correct": 0,
+    "why": "The low PCO2 raised pH, and bicarbonate has not moved because 20 minutes is too short for the kidney. That is an uncompensated respiratory alkalosis. Given days, the kidney compensates for an alkalosis by secreting less H+ and letting bicarbonate escape in the urine. Plasma bicarbonate drops below normal, which pulls pH back toward the top of the normal range.",
+    "whyNot": [
+      "Correct. A normal bicarbonate at 20 minutes means no compensation yet, and the correct renal response to an alkalosis is to lose bicarbonate.",
+      "A normal compensating value means compensation has not started, not that it is complete. Full compensation would show a low bicarbonate with pH inside the range.",
+      "Generating new bicarbonate is the response to an acidosis. In an alkalosis that would push pH higher, the wrong direction.",
+      "Renal compensation takes days, not hours, and it never brings pH to exactly 7.40. It stops just inside the normal range on the alkaline side."
+    ]
+  },
+  {
+    "id": "w15-app-07",
+    "type": "app",
+    "competencyId": "w13-lab-abg-interpretation",
+    "dok": 3,
+    "case": "A 68 year old woman has had profuse watery diarrhea for four days. Blood gas: pH 7.30 (7.35 to 7.45), PCO2 30 mmHg (35 to 45), HCO3- 14 mEq/L (22 to 26). Plasma potassium is 3.0 mmol/L (3.5 to 5.0). She is breathing 26 times per minute.",
+    "stem": "Which mechanism explains her low PCO2?",
+    "options": [
+      "The extra H+ in her plasma stimulates the carotid body chemoreceptors, which raise ventilation above what her carbon dioxide production requires",
+      "Fluid loss has lowered her metabolic rate, so her tissues produce less carbon dioxide",
+      "Bicarbonate loss in the stool removes carbon dioxide directly from the blood",
+      "The low potassium stimulates the respiratory centers to breathe faster"
+    ],
+    "correct": 0,
+    "why": "Her diarrhea took bicarbonate with it and left a metabolic acidosis. The peripheral chemoreceptors respond to arterial H+ and drive the medullary respiratory centers, so she breathes more than her metabolism requires and her PCO2 falls. The low PCO2 is what is holding her pH at 7.30 instead of something lower.",
+    "whyNot": [
+      "Correct. Respiratory compensation for a metabolic acidosis runs through the carotid bodies, and fast breathing with a low PCO2 is the visible result.",
+      "Carbon dioxide production is not low enough to explain a PCO2 of 30 mmHg, and even if production fell, ventilation would fall to match. The PCO2 is low because ventilation is high relative to production.",
+      "Bicarbonate and carbon dioxide are linked in the plasma, but losing bicarbonate in stool does not remove carbon dioxide from the lungs. Only ventilation changes PCO2.",
+      "Low potassium weakens muscles, including respiratory muscles. It does not stimulate breathing, and if anything it would work against the compensation."
+    ]
+  },
+  {
+    "id": "w15-app-08",
+    "type": "app",
+    "competencyId": "w13-lab-abg-interpretation",
+    "dok": 3,
+    "case": "A man has a generalized seizure lasting three minutes, during which he does not breathe effectively and all of his skeletal muscles contract violently. Blood drawn right after: pH 7.15 (7.35 to 7.45), PCO2 55 mmHg (35 to 45), HCO3- 19 mEq/L (22 to 26), lactate 8 mmol/L (0.5 to 2.2).",
+    "stem": "Which two processes together explain these numbers?",
+    "options": [
+      "Reduced ventilation during the seizure raised PCO2, and intense anaerobic muscle contraction produced lactic acid that consumed bicarbonate",
+      "Hyperventilation during the seizure lowered pH, and the kidney excreted bicarbonate in response",
+      "The kidney compensated for the high PCO2 by lowering bicarbonate",
+      "Vomiting during the seizure lost acid, and the muscles produced carbon dioxide"
+    ],
+    "correct": 0,
+    "why": "Both abnormal values push pH down, so neither one is compensating for the other. This is a respiratory acidosis from three minutes of poor ventilation stacked on top of a metabolic acidosis from lactic acid. The lactate value confirms the second half. Once he breathes normally the PCO2 will fall within minutes, and the liver will clear the lactate over the next hour or two.",
+    "whyNot": [
+      "Correct. High PCO2 plus low bicarbonate plus a high lactate is a mixed respiratory and metabolic acidosis, and the seizure explains both.",
+      "Hyperventilation would lower PCO2, not raise it to 55 mmHg, and the kidney cannot change bicarbonate in three minutes.",
+      "Renal compensation for a high PCO2 raises bicarbonate rather than lowering it, and it takes days, not minutes.",
+      "Losing acid by vomiting would raise bicarbonate and push pH up. Here bicarbonate is low and pH is very low."
+    ]
+  },
+  {
+    "id": "w15-app-09",
+    "type": "app",
+    "competencyId": "w15-integration-case",
+    "dok": 3,
+    "case": "A man's heart has been weakened by a heart attack and pumps out only about half the normal fraction of blood with each beat. Over the following month his heart rate rises to 95 beats per minute, his ankles swell, and his urine sodium falls to 10 mmol/L (normal on a regular diet 40 to 220).",
+    "stem": "Trace the chain of responses that connects the weak heart to the swollen ankles and the low urine sodium, in the order they occur.",
+    "options": [
+      "Low cardiac output unloads the baroreceptors, sympathetic drive raises heart rate and releases renin, angiotensin II and aldosterone plus ADH retain sodium and water, and the expanded volume raises venous pressure and pushes fluid into the tissues",
+      "Low cardiac output stretches the atria, ANP rises, the kidney excretes sodium, and the lost fluid moves into the ankles",
+      "Low cardiac output raises arterial pressure, the baroreflex slows the heart, and the kidney retains sodium to compensate for the slower rate",
+      "Low cardiac output lowers GFR, so the kidney cannot filter water, and the water that stays in the blood leaks into the ankles"
+    ],
+    "correct": 0,
+    "why": "The body reads a weak heart as a low volume state, because the arterial side is underfilled. The baroreflex and the kidney respond as they would to hemorrhage: sympathetic drive, renin, angiotensin II, aldosterone and ADH all rise, and the kidney holds sodium and water. The retained fluid cannot raise cardiac output because the heart cannot pump it, so it backs up on the venous side, raises capillary pressure, and filters out into the tissues.",
+    "whyNot": [
+      "Correct. The sequence runs from the baroreflex in seconds to hormonal salt and water retention over days, and the edema is the price of a volume expansion that the weak heart cannot use.",
+      "ANP does rise in heart failure because the atria are stretched, but its effect is overwhelmed by the sodium retaining hormones, and a urine sodium of 10 mmol/L shows the kidney is holding sodium, not excreting it.",
+      "Low cardiac output lowers arterial pressure. The baroreflex speeds the heart, which is why his heart rate is 95, not slows it.",
+      "GFR does fall, but the kidney still filters far more water than it excretes. The retention is driven by hormones acting on reabsorption, not by a failure to filter."
+    ]
+  },
+  {
+    "id": "w15-app-10",
+    "type": "app",
+    "competencyId": "w15-integration-case",
+    "dok": 3,
+    "case": "A woman with a severe bloodstream infection has widespread arteriolar dilation. Mean arterial pressure is 58 mmHg (70 to 100), heart rate 130 per minute, lactate 6 mmol/L (0.5 to 2.2), pH 7.27 (7.35 to 7.45), PCO2 30 mmHg (35 to 45), HCO3- 13 mEq/L (22 to 26), and urine output 10 mL per hour (normal at least 30).",
+    "stem": "Which chain of events connects the vasodilation to the low bicarbonate and the low urine output?",
+    "options": [
+      "Low pressure means poor tissue perfusion, so cells switch to anaerobic metabolism and lactic acid consumes bicarbonate; the same low pressure plus sympathetic renal vasoconstriction cuts GFR, so little urine forms",
+      "Vasodilation improves tissue perfusion, so bicarbonate is low because the kidney is excreting it, and urine is low because ADH has been suppressed",
+      "The low PCO2 caused the kidney to excrete bicarbonate, and the resulting acidosis shut down urine production",
+      "Vasodilation lowers venous return, so the atria release more ANP, which lowers bicarbonate and urine output"
+    ],
+    "correct": 0,
+    "why": "Pressure is what drives blood through tissue, and a mean pressure of 58 mmHg is not enough. Underperfused cells make lactic acid, which is buffered by bicarbonate, so bicarbonate falls and the lungs compensate by dropping PCO2. The kidney is a high flow organ and suffers first: low perfusion pressure and intense sympathetic constriction of its arterioles push GFR down, and urine output collapses. The tachycardia is the baroreflex trying to defend pressure.",
+    "whyNot": [
+      "Correct. Every finding in the case follows from inadequate perfusion pressure, which is the common thread that links the cardiovascular, metabolic, acid base and renal pictures.",
+      "Dilation in the whole body lowers pressure and therefore lowers flow through most tissues. The bicarbonate loss is from lactic acid, and ADH is high, not suppressed, when pressure is this low.",
+      "The low PCO2 is respiratory compensation for the metabolic acidosis, not its cause, and renal bicarbonate loss takes days. Urine output falls from low perfusion, not from pH.",
+      "Less venous return means less atrial stretch and less ANP, not more. ANP has nothing to do with bicarbonate, and it would raise urine output rather than lower it."
+    ]
+  },
+  {
+    "id": "w15-app-11",
+    "type": "app",
+    "competencyId": "w15-exercise-integration",
+    "dok": 3,
+    "case": "A runner is measured during a steady 10 kilometer race. Her heart rate is 165 per minute (rest 60), cardiac output is 20 liters per minute (rest 5), and mean arterial pressure is 105 mmHg (rest 88). Her core temperature is 38.8 degrees Celsius (101.8 degrees Fahrenheit) and her skin is flushed.",
+    "stem": "Her cardiac output has risen fourfold, but her mean arterial pressure has risen only modestly. What explains that?",
+    "options": [
+      "Total peripheral resistance has fallen, because arterioles in working muscle and in the skin have dilated",
+      "The baroreflex has reset to a lower set point and is holding pressure down by slowing the heart",
+      "Venous return has fallen, so stroke volume is low and the heart cannot generate pressure",
+      "The kidney has excreted enough fluid to keep the blood volume low"
+    ],
+    "correct": 0,
+    "why": "Mean arterial pressure equals cardiac output times total peripheral resistance. Output went up four times, so resistance must have fallen to roughly a quarter of its resting value for pressure to rise only a little. Muscle arterioles are dilated by local metabolites, and skin arterioles are dilated to dump heat, which is why she is flushed. Those two huge beds pull resistance down even though the gut and kidney are constricted.",
+    "whyNot": [
+      "Correct. A large drop in resistance is the only way a fourfold rise in output can produce a small rise in pressure.",
+      "The baroreflex resets upward during exercise, allowing pressure to rise, and it is clearly not slowing the heart at 165 beats per minute.",
+      "The muscle and respiratory pumps raise venous return during running, and a cardiac output of 20 liters per minute at 165 beats per minute means stroke volume is above resting, not below.",
+      "During exercise renal blood flow and urine output fall, and ADH and aldosterone conserve fluid. Volume is not being dumped."
+    ]
+  },
+  {
+    "id": "w15-app-12",
+    "type": "app",
+    "competencyId": "w15-drawing-synthesis",
+    "dok": 3,
+    "case": "A student draws the baroreflex response to standing up. Her drawing shows: standing, blood pools in the legs, arterial pressure falls, baroreceptor firing falls, the medulla responds, and then an arrow from the medulla to the SA node labeled increased parasympathetic output. The rest of the drawing is correct.",
+    "stem": "What does her drawing predict would happen to pressure after standing, and how does that compare to what really happens?",
+    "options": [
+      "Her drawing predicts heart rate falls and pressure keeps dropping, a positive feedback loop; in reality the medulla withdraws parasympathetic output and raises sympathetic output, so heart rate rises and pressure recovers",
+      "Her drawing is correct, because parasympathetic output to the SA node raises heart rate",
+      "Her drawing predicts no change in heart rate, because the SA node responds only to sympathetic input",
+      "Her drawing predicts vasodilation in the legs, which would return the pooled blood to the heart"
+    ],
+    "correct": 0,
+    "why": "Trace the loop. Pressure falls, so the medulla should act to raise it. Parasympathetic output slows the SA node, so her arrow would lower heart rate, lower cardiac output, and drop pressure further, which then lowers baroreceptor firing again. That is a runaway loop. The real reflex does the opposite: less baroreceptor input means less parasympathetic and more sympathetic output, so heart rate and contractility rise, arterioles constrict, and pressure comes back within a few beats.",
+    "whyNot": [
+      "Correct. One reversed arrow flips the loop from negative to positive feedback, and checking the direction of the last arrow is how you catch it.",
+      "Parasympathetic output slows the SA node through acetylcholine. Raising heart rate requires withdrawing it and adding sympathetic drive.",
+      "The SA node is under tonic parasympathetic control at rest, and changes in that input are the fastest way the reflex changes heart rate.",
+      "Vasodilation in the legs would let even more blood pool there. The correct response is sympathetic constriction of the arterioles and veins, which pushes blood back toward the heart."
+    ]
+  }
+]

@@ -750,16 +750,16 @@
     "lecture",
     "lab"
    ],
-   "q": "The atrioventricular node is the only electrical route from the atria to the ventricles. If the atria suddenly begin firing about 400 times a minute, what happens to the ventricular rate, and why?",
-   "a": "The ventricles beat much more slowly and irregularly, because the node's slow conduction and long refractory period block most of those impulses.",
+   "q": "Where is the atrioventricular node located?",
+   "a": "In the floor of the right atrium near the tricuspid valve.",
    "options": [
-    "The ventricles beat much slower and irregularly, because the node blocks most of the impulses",
-    "The ventricles also beat about 400 times a minute, matching the atria",
-    "The ventricles stop completely, since the node cannot conduct at that rate",
-    "The ventricles beat at exactly half the atrial rate every time"
+    "In the interventricular septum, just below the aortic valve",
+    "In the floor of the right atrium near the tricuspid valve",
+    "In the roof of the left atrium, next to the mitral valve",
+    "In the apex of the right ventricle, at the base of the papillary muscles"
    ],
-   "correctIndex": 0,
-   "explanation": "The fibrous ring between atria and ventricles is electrically insulating, so everything has to pass through the AV node, and the node conducts slowly and takes a long time to recover. At very high atrial rates most impulses arrive while the node is still refractory and go no further. Whichever ones happen to arrive after recovery get through, and because that timing is unpredictable the ventricular response is irregular. This is atrial fibrillation, and the node is the reason it is survivable rather than immediately fatal. Ventricles at 400 a minute would be fibrillation of the ventricles themselves, which is an arrest rhythm. Complete failure to conduct is third degree block, a different problem. A fixed two to one relationship is what you see in regular atrial flutter, not in fibrillation, because flutter has a regular atrial rate for the node to divide."
+   "correctIndex": 1,
+   "explanation": "The atrioventricular node lies low in the interatrial septum, in the floor of the right atrium near the tricuspid valve and coronary sinus, which places it right at the gateway between atria and ventricles where the delay is imposed. The interventricular septum carries the bundle of His and bundle branches, which are downstream of the node. The left atrium and the ventricular apex contain no nodal tissue; the apex is where Purkinje fibers first deliver the impulse to working muscle."
   },
   {
    "id": "c42",

@@ -1,0 +1,765 @@
+[
+  {
+    "id": "w10-ma-01",
+    "type": "ma",
+    "competencyId": "w9-adrenal-cortex",
+    "dok": 2,
+    "stem": "Which statements about the hormones of the adrenal cortex are correct? Select all that apply.",
+    "options": [
+      "Aldosterone comes from the zona glomerulosa and increases sodium reabsorption in the kidney.",
+      "Cortisol comes from the zona fasciculata and raises blood glucose.",
+      "Aldosterone secretion is controlled mainly by ACTH.",
+      "Cortisol feeds back to inhibit CRH and ACTH release.",
+      "The adrenal androgens from the zona reticularis are the main source of testosterone in adult men."
+    ],
+    "correct": [0, 1, 3],
+    "why": "The three zones make three classes of steroid. The outer zone makes aldosterone, which acts on the distal nephron to save sodium and secrete potassium. The middle zone makes cortisol, a stress hormone that raises glucose by promoting gluconeogenesis and breaking down protein and fat. The inner zone makes weak androgens. Cortisol is the feedback signal on the hypothalamus and pituitary. Aldosterone answers to angiotensin II and potassium, not mainly to ACTH.",
+    "whyNot": [
+      "Belongs. Aldosterone is the sodium saving hormone of the glomerulosa, and water follows the sodium.",
+      "Belongs. Cortisol is the glucocorticoid of the fasciculata and its main metabolic job is to keep glucose up during stress or fasting.",
+      "Does not belong. ACTH has only a small permissive effect on aldosterone. The main signals are angiotensin II and a rise in plasma potassium. This is why an adrenal tumor making aldosterone does not respond to ACTH changes.",
+      "Belongs. Cortisol is the negative feedback signal for the whole axis, which is why a block in cortisol synthesis lets ACTH climb.",
+      "Does not belong. In adult men the testes make almost all the testosterone. Adrenal androgens matter mainly in women and in children."
+    ]
+  },
+  {
+    "id": "w10-ma-02",
+    "type": "ma",
+    "competencyId": "w11-flow-resistance",
+    "dok": 2,
+    "stem": "Which statements about pressure, flow, and resistance in a blood vessel are correct? Select all that apply.",
+    "options": [
+      "Doubling the length of a vessel doubles its resistance.",
+      "Halving the radius of a vessel raises its resistance about sixteenfold.",
+      "Raising blood viscosity, as in polycythemia, lowers resistance.",
+      "If the pressure gradient is unchanged and resistance doubles, flow falls by half.",
+      "Flow depends on the absolute pressure inside a vessel, not on the pressure difference between its two ends."
+    ],
+    "correct": [0, 1, 3],
+    "why": "Flow equals the pressure gradient divided by resistance. Resistance rises with length and with viscosity, and it rises with the fourth power of a decrease in radius. Length and viscosity change slowly if at all, so radius is the term the body actually uses to control flow. What drives flow is the difference in pressure between the two ends of the vessel, not the pressure at any one point.",
+    "whyNot": [
+      "Belongs. Resistance is directly proportional to length, so a vessel twice as long has twice the resistance.",
+      "Belongs. Resistance goes as one over radius to the fourth power, so half the radius means two to the fourth, or sixteen, times the resistance.",
+      "Does not belong. Thicker blood is harder to push, so resistance rises with viscosity. This is why a very high hematocrit lowers flow.",
+      "Belongs. Flow and resistance are inversely related at a fixed gradient, so doubling one halves the other.",
+      "Does not belong. A vessel with 100 mmHg at both ends has no flow at all. Only the difference between the ends drives flow."
+    ]
+  },
+  {
+    "id": "w10-ma-03",
+    "type": "ma",
+    "competencyId": "w11-vessel-function",
+    "dok": 2,
+    "stem": "Which statements correctly match a vessel type to its physiological role? Select all that apply.",
+    "options": [
+      "Arteries stretch during systole and recoil during diastole, which keeps blood flowing between heartbeats.",
+      "Arterioles are the main site of resistance and the main site where flow is divided among organs.",
+      "Blood moves fastest in the capillaries because they are the narrowest vessels.",
+      "Veins hold most of the blood volume at rest.",
+      "Venoconstriction mainly raises total peripheral resistance."
+    ],
+    "correct": [0, 1, 3],
+    "why": "Each segment of the circulation has a job. Elastic arteries act as a pressure reservoir that smooths pulsatile flow. Arterioles carry the most resistance and their smooth muscle sets how much of the cardiac output each organ gets. Capillaries are the exchange vessels, and blood creeps through them because their total cross sectional area is huge. Veins are the volume reservoir, holding around 60 percent of the blood, and constricting them returns that stored blood to the heart rather than raising resistance much.",
+    "whyNot": [
+      "Belongs. The elastic recoil of the aorta and large arteries is what keeps diastolic pressure and flow from dropping to zero between beats.",
+      "Belongs. Arteriolar smooth muscle changes radius, and radius to the fourth power sets resistance, so arterioles are where flow is controlled.",
+      "Does not belong. Velocity depends on total cross sectional area, and the capillaries together have by far the largest area, so velocity is slowest there. That slow transit is what gives time for exchange.",
+      "Belongs. Veins are thin walled and compliant, so they store most of the blood volume and act as a reserve the sympathetic system can mobilize.",
+      "Does not belong. Veins are wide, so even constricted they add little resistance. Venoconstriction mainly lowers capacitance and pushes blood toward the heart, raising venous return."
+    ]
+  },
+  {
+    "id": "w10-ma-04",
+    "type": "ma",
+    "competencyId": "w11-blood-pressure",
+    "dok": 2,
+    "stem": "A patient's blood pressure is 130 over 85 mmHg. Which statements are correct? Select all that apply.",
+    "options": [
+      "Pulse pressure is 45 mmHg.",
+      "Mean arterial pressure is about 100 mmHg.",
+      "Mean arterial pressure is the simple average of systolic and diastolic, about 108 mmHg.",
+      "If cardiac output doubled and total peripheral resistance fell by half, mean arterial pressure would stay about the same.",
+      "Pulse pressure is set mainly by total peripheral resistance."
+    ],
+    "correct": [0, 1, 3],
+    "why": "Pulse pressure is systolic minus diastolic, 130 minus 85, or 45 mmHg. Mean arterial pressure is diastolic plus one third of pulse pressure, because the heart spends more time in diastole than in systole. That gives 85 plus 15, or 100 mmHg. Mean pressure is the product of cardiac output and total peripheral resistance, so changes that offset each other leave it unchanged. Pulse pressure reflects stroke volume and how stiff the arteries are, not resistance.",
+    "whyNot": [
+      "Belongs. 130 minus 85 is 45 mmHg.",
+      "Belongs. 85 plus one third of 45 is 85 plus 15, or 100 mmHg.",
+      "Does not belong. The simple average overestimates the mean because diastole lasts longer than systole. The correct estimate weights diastolic pressure more heavily.",
+      "Belongs. Mean arterial pressure equals cardiac output times total peripheral resistance, so doubling one and halving the other cancels. This is roughly what happens in exercise.",
+      "Does not belong. Pulse pressure rises when stroke volume rises or when the arteries stiffen. Resistance mostly sets mean and diastolic pressure."
+    ]
+  },
+  {
+    "id": "w10-ma-05",
+    "type": "ma",
+    "competencyId": "w11-local-blood-flow",
+    "dok": 2,
+    "stem": "Which statements about local control of arteriolar tone are correct? Select all that apply.",
+    "options": [
+      "A rise in tissue carbon dioxide, hydrogen ion, adenosine, or potassium relaxes arteriolar smooth muscle.",
+      "The myogenic response constricts an arteriole when the pressure inside it rises.",
+      "Nitric oxide released from the endothelium constricts arterioles.",
+      "Active hyperemia is the flow increase that follows a period of blocked flow.",
+      "Endothelin released from the endothelium constricts arterioles."
+    ],
+    "correct": [0, 1, 4],
+    "why": "Arterioles adjust their own radius using three kinds of signals. Metabolic signals from a working tissue relax the wall so flow rises to match demand. The myogenic response answers stretch with contraction, which helps hold flow constant when pressure changes. The endothelium releases nitric oxide, a dilator, and endothelin, a constrictor. Active hyperemia is the rise in flow driven by increased metabolism. Reactive hyperemia is the rebound after an occlusion.",
+    "whyNot": [
+      "Belongs. These are the classic metabolic vasodilators, and they accumulate whenever a tissue works harder than its blood supply allows.",
+      "Belongs. Stretch opens channels in the smooth muscle, calcium enters, and the wall contracts. This is part of autoregulation.",
+      "Does not belong. Nitric oxide is a vasodilator. It relaxes smooth muscle by raising cGMP. Confusing it with endothelin reverses the direction.",
+      "Does not belong. That describes reactive hyperemia. Active hyperemia is the increase in flow that accompanies increased tissue activity.",
+      "Belongs. Endothelin is the endothelium's main constrictor signal."
+    ]
+  },
+  {
+    "id": "w10-ma-06",
+    "type": "ma",
+    "competencyId": "w11-capillary-exchange",
+    "dok": 2,
+    "stem": "Which of the following favor movement of fluid out of a capillary into the interstitial space? Select all that apply.",
+    "options": [
+      "Capillary hydrostatic pressure",
+      "Plasma colloid osmotic pressure",
+      "Interstitial colloid osmotic pressure",
+      "A rise in interstitial hydrostatic pressure",
+      "Dilation of the arteriole feeding the capillary"
+    ],
+    "correct": [0, 2, 4],
+    "why": "Four forces act across the capillary wall. Capillary hydrostatic pressure pushes fluid out. Plasma proteins pull fluid in. The small amount of protein in the interstitium pulls fluid out. Interstitial hydrostatic pressure pushes fluid back in. Anything that raises capillary hydrostatic pressure, such as opening the arteriole upstream, raises filtration.",
+    "whyNot": [
+      "Belongs. This is the blood pressure inside the capillary and it is the main outward force.",
+      "Does not belong. Albumin and other plasma proteins cannot cross the wall, so they hold water in the capillary. This is the main inward force.",
+      "Belongs. Protein that leaks into the interstitium pulls water toward it. This force is small normally but grows when lymphatics are blocked.",
+      "Does not belong. Pressure in the interstitium pushes fluid back into the capillary, opposing filtration.",
+      "Belongs. Opening the arteriole lets more arterial pressure through to the capillary, so capillary hydrostatic pressure and filtration both rise."
+    ]
+  },
+  {
+    "id": "w10-ma-07",
+    "type": "ma",
+    "competencyId": "w11-edema",
+    "dok": 2,
+    "stem": "Which of the following would be expected to produce edema? Select all that apply.",
+    "options": [
+      "Right heart failure that raises systemic venous pressure",
+      "Liver failure with reduced albumin synthesis",
+      "Histamine release at a bee sting that widens capillary pores",
+      "Increased lymphatic drainage of a tissue",
+      "Dehydration that concentrates the plasma proteins"
+    ],
+    "correct": [0, 1, 2],
+    "why": "Edema forms when filtration out of the capillaries exceeds what the lymphatics can return. That happens when capillary hydrostatic pressure rises, when plasma protein falls, when the capillary wall leaks protein, or when lymph cannot drain. Anything that improves drainage or raises the inward pull of plasma protein does the opposite.",
+    "whyNot": [
+      "Belongs. Venous pressure backs up into the capillaries, raising capillary hydrostatic pressure and filtration.",
+      "Belongs. Less albumin means lower plasma colloid osmotic pressure, so less fluid is pulled back in at the venous end.",
+      "Belongs. Wider pores let protein escape into the interstitium, which raises interstitial colloid osmotic pressure and pulls fluid out. This is the local swelling of inflammation.",
+      "Does not belong. Better lymphatic drainage removes fluid and protein from the tissue. Blocked lymphatics cause edema, not increased drainage.",
+      "Does not belong. Concentrating the plasma proteins raises the inward pull, favoring reabsorption, not edema."
+    ]
+  },
+  {
+    "id": "w10-ma-08",
+    "type": "ma",
+    "competencyId": "w11-venous-return",
+    "dok": 2,
+    "stem": "Which of the following increase venous return to the heart? Select all that apply.",
+    "options": [
+      "Rhythmic contraction of the leg muscles during walking",
+      "Inspiration, which lowers intrathoracic pressure and raises abdominal pressure",
+      "Sympathetic venoconstriction",
+      "Standing motionless for a long time",
+      "Straining hard against a closed glottis"
+    ],
+    "correct": [0, 1, 2],
+    "why": "Venous pressure is low, so the veins need help pushing blood back to the heart. Contracting muscles squeeze the deep veins and one way valves make sure the blood goes toward the heart. Breathing in lowers pressure in the chest and raises it in the abdomen, which pulls blood into the thoracic veins. Sympathetic nerves constrict veins and squeeze stored blood forward. Standing still or raising chest pressure by straining does the opposite.",
+    "whyNot": [
+      "Belongs. This is the skeletal muscle pump, the main reason walking prevents pooling.",
+      "Belongs. This is the respiratory pump. The pressure gradient from abdomen to chest widens during each breath in.",
+      "Belongs. Venoconstriction lowers venous capacitance and displaces stored blood toward the heart.",
+      "Does not belong. Without the muscle pump, gravity distends the leg veins and blood pools there, so venous return falls.",
+      "Does not belong. A Valsalva strain raises intrathoracic pressure, which narrows the gradient driving blood into the chest and lowers venous return during the strain."
+    ]
+  },
+  {
+    "id": "w10-ma-09",
+    "type": "ma",
+    "competencyId": "w11-baroreflex",
+    "dok": 2,
+    "stem": "Mean arterial pressure drops suddenly when a person stands up. Which of the following are part of the baroreceptor reflex response? Select all that apply.",
+    "options": [
+      "Firing rate of the carotid sinus afferents decreases.",
+      "Parasympathetic output to the SA node increases.",
+      "Sympathetic output to arterioles increases, raising total peripheral resistance.",
+      "Sympathetic output to the ventricles increases contractility and stroke volume.",
+      "Heart rate falls."
+    ],
+    "correct": [0, 2, 3],
+    "why": "Baroreceptors are stretch receptors. When pressure falls, the wall stretches less and firing drops. Less afferent input to the medulla releases the sympathetic centers and quiets the parasympathetic center. The result is a faster, stronger heart, constricted arterioles, and constricted veins, all of which push pressure back toward normal.",
+    "whyNot": [
+      "Belongs. Baroreceptors report the pressure that exists. Less stretch means fewer action potentials.",
+      "Does not belong. Parasympathetic output falls in response to low pressure. Raising it would slow the heart and make the pressure worse.",
+      "Belongs. Arteriolar constriction raises resistance, and mean pressure equals cardiac output times resistance.",
+      "Belongs. Sympathetic nerves and epinephrine raise contractility, so more blood is ejected per beat.",
+      "Does not belong. Heart rate rises. A falling heart rate is the response to high pressure, not low."
+    ]
+  },
+  {
+    "id": "w10-ma-10",
+    "type": "ma",
+    "competencyId": "w11-cv-hormonal",
+    "dok": 2,
+    "stem": "Which statements about hormonal control of blood pressure are correct? Select all that apply.",
+    "options": [
+      "Angiotensin II constricts arterioles and stimulates aldosterone release.",
+      "Aldosterone raises blood volume by increasing sodium reabsorption in the kidney, with water following.",
+      "Antidiuretic hormone lowers blood volume by increasing urine output.",
+      "Atrial natriuretic peptide is released when the atria are stretched and increases sodium excretion.",
+      "Renin is released from the kidney when blood pressure is high."
+    ],
+    "correct": [0, 1, 3],
+    "why": "The kidney and the hormones that act on it set blood volume, and volume sets pressure in the long run. Low renal perfusion releases renin, which leads to angiotensin II. Angiotensin II raises pressure fast by constricting arterioles and slowly by triggering aldosterone, ADH, and thirst. ADH saves water. ANP is the counterweight, released by a full heart to dump sodium and water and lower volume.",
+    "whyNot": [
+      "Belongs. Angiotensin II is one of the strongest vasoconstrictors in the body and is the main trigger for aldosterone.",
+      "Belongs. Aldosterone acts on the distal nephron to reclaim sodium, and water follows osmotically, so blood volume rises.",
+      "Does not belong. ADH does the opposite. It inserts water channels in the collecting duct, so the kidney saves water and urine volume falls.",
+      "Belongs. ANP is released by stretched atrial cells when volume is high, and it promotes sodium and water loss and lowers pressure.",
+      "Does not belong. Renin is released when renal perfusion pressure is low or when sympathetic drive to the kidney is high. High pressure suppresses renin."
+    ]
+  },
+  {
+    "id": "w10-ma-11",
+    "type": "ma",
+    "competencyId": "w11-exercise-cv",
+    "dok": 2,
+    "stem": "Which of the following occur during moderate exercise in a healthy adult? Select all that apply.",
+    "options": [
+      "Cardiac output rises several fold.",
+      "Blood flow to the skin falls throughout exercise to conserve blood pressure.",
+      "Blood flow to the gut and kidneys falls.",
+      "Total peripheral resistance falls.",
+      "Diastolic pressure rises sharply."
+    ],
+    "correct": [0, 2, 3],
+    "why": "Exercise raises heart rate and stroke volume, so cardiac output can triple or more. Working muscle dilates its arterioles so strongly that total peripheral resistance falls even though sympathetic nerves are constricting the gut and kidney. Skin vessels dilate to get rid of heat. Mean pressure rises only modestly, systolic rises with stroke volume, and diastolic stays about the same or dips.",
+    "whyNot": [
+      "Belongs. Cardiac output can go from about 5 to 20 L/min or more in a fit person.",
+      "Does not belong. Skin flow rises as the body heats up, because the skin is where heat is dumped. Only at the very start or at maximal effort is skin flow reduced.",
+      "Belongs. Sympathetic constriction of the splanchnic and renal beds redirects blood to the working muscle.",
+      "Belongs. Muscle makes up a large fraction of the body, so dilation of muscle arterioles outweighs constriction elsewhere.",
+      "Does not belong. Diastolic pressure is held steady or falls slightly because resistance drops. A large rise in diastolic pressure with exercise is abnormal."
+    ]
+  },
+  {
+    "id": "w10-ma-12",
+    "type": "ma",
+    "competencyId": "w11-shock-compensation",
+    "dok": 2,
+    "stem": "A person has just lost 15 percent of their blood volume. Which of the following are compensations that act within the first hour? Select all that apply.",
+    "options": [
+      "Baroreflex driven increases in heart rate and arteriolar constriction",
+      "A fall in capillary hydrostatic pressure, so interstitial fluid moves into the plasma",
+      "Increased antidiuretic hormone release, so urine output falls",
+      "Release of new red blood cells from the bone marrow to restore hematocrit",
+      "Increased atrial natriuretic peptide release"
+    ],
+    "correct": [0, 1, 2],
+    "why": "Compensation for blood loss happens in layers. The baroreflex acts in seconds. Lower capillary pressure lets interstitial fluid refill the plasma over minutes to hours. Hormones such as ADH, angiotensin II, and aldosterone act over minutes to hours and keep the kidney from wasting what is left. Making new red cells takes days to weeks. ANP falls, not rises, because the atria are less stretched.",
+    "whyNot": [
+      "Belongs. Reduced baroreceptor firing raises sympathetic output within seconds.",
+      "Belongs. Arteriolar constriction and lower arterial pressure drop capillary hydrostatic pressure, so the Starling balance tips toward reabsorption. This is transcapillary refill.",
+      "Belongs. Low volume and low pressure stimulate ADH, and the kidney saves water.",
+      "Does not belong. Erythropoietin driven red cell production takes days, so hematocrit is not restored in the first hour. In fact hematocrit falls as interstitial fluid dilutes the remaining cells.",
+      "Does not belong. ANP is released when the atria are stretched by high volume. After blood loss the atria are underfilled and ANP falls."
+    ]
+  },
+  {
+    "id": "w10-tf-01",
+    "type": "tf",
+    "competencyId": "w9-adrenal-cortex",
+    "dok": 1,
+    "statement": "Aldosterone acts on the kidney to increase sodium reabsorption and potassium secretion.",
+    "truth": true,
+    "correction": "This is true because aldosterone increases the number of sodium channels and sodium potassium pumps in the principal cells of the distal nephron, which moves sodium into the blood and potassium into the urine.",
+    "why": "Aldosterone is the sodium saving hormone of the zona glomerulosa. Sodium retention brings water with it, so blood volume and pressure rise. The same cells that reclaim sodium secrete potassium, which is why too much aldosterone causes low plasma potassium and too little causes high plasma potassium."
+  },
+  {
+    "id": "w10-tf-02",
+    "type": "tf",
+    "competencyId": "w11-flow-resistance",
+    "dok": 2,
+    "statement": "If the radius of an arteriole doubles and the pressure gradient is unchanged, flow through it doubles.",
+    "truth": false,
+    "correction": "If the radius doubles at an unchanged pressure gradient, resistance falls to one sixteenth and flow rises about sixteenfold.",
+    "why": "Resistance depends on radius to the fourth power. Doubling the radius divides resistance by two to the fourth, or sixteen. Since flow is the gradient divided by resistance, flow rises sixteenfold. This is why arterioles need only small changes in radius to make large changes in organ blood flow. Treating radius as a linear term is the most common error in this topic."
+  },
+  {
+    "id": "w10-tf-03",
+    "type": "tf",
+    "competencyId": "w11-vessel-function",
+    "dok": 2,
+    "statement": "Blood velocity is lowest in the capillaries because their combined cross sectional area is the largest of any vessel type.",
+    "truth": true,
+    "correction": "This is true because the same volume of blood per minute passes through each segment of the circulation, so velocity is inversely related to total cross sectional area, and the billions of capillaries together have the greatest area.",
+    "why": "Flow through the whole system is the same at every level, equal to cardiac output. When that flow spreads over a very wide total area, the blood moves slowly, like a river widening into a delta. The slow transit through capillaries gives time for oxygen, nutrients, and waste to exchange. Velocity picks up again in the veins as the vessels merge and the total area shrinks."
+  },
+  {
+    "id": "w10-tf-04",
+    "type": "tf",
+    "competencyId": "w11-blood-pressure",
+    "dok": 2,
+    "statement": "Mean arterial pressure is the simple average of systolic and diastolic pressure.",
+    "truth": false,
+    "correction": "Mean arterial pressure is closer to diastolic pressure and is estimated as diastolic pressure plus one third of pulse pressure.",
+    "why": "At resting heart rates the heart spends about twice as long in diastole as in systole, so the pressure in the arteries sits near the diastolic value for most of each cycle. Averaging the two extremes overestimates the mean. For 120 over 80, the simple average is 100 mmHg but the true mean is about 93 mmHg. The mean is the number that matters for organ perfusion."
+  },
+  {
+    "id": "w10-tf-05",
+    "type": "tf",
+    "competencyId": "w11-local-blood-flow",
+    "dok": 2,
+    "statement": "When a rise in blood pressure stretches an arteriole, the myogenic response is dilation, which relieves the stretch.",
+    "truth": false,
+    "correction": "When a rise in pressure stretches an arteriole, the myogenic response is constriction, which raises resistance and keeps flow to the tissue roughly constant.",
+    "why": "Stretching arteriolar smooth muscle opens mechanically gated channels, calcium enters, and the muscle contracts. The vessel narrows, resistance rises, and flow does not climb with the pressure. This is one of the mechanisms of autoregulation in organs such as the brain and kidney. If the response were dilation, every rise in pressure would flood the tissue with flow."
+  },
+  {
+    "id": "w10-tf-06",
+    "type": "tf",
+    "competencyId": "w11-capillary-exchange",
+    "dok": 2,
+    "statement": "At the venous end of a typical capillary, plasma colloid osmotic pressure exceeds capillary hydrostatic pressure, so the net movement of fluid is into the capillary.",
+    "truth": true,
+    "correction": "This is true because hydrostatic pressure falls along the length of the capillary from about 32 mmHg to about 15 mmHg while colloid osmotic pressure stays near 25 mmHg, so the inward pull wins at the venous end.",
+    "why": "Fluid leaks out at the arterial end, where hydrostatic pressure is high, and most of it is pulled back in at the venous end, where hydrostatic pressure has dropped below the osmotic pull of the plasma proteins. The small amount not reabsorbed, about 3 liters a day, is returned by the lymphatics. Anything that lowers plasma protein removes this reabsorbing end and produces edema."
+  },
+  {
+    "id": "w10-tf-07",
+    "type": "tf",
+    "competencyId": "w11-venous-return",
+    "dok": 2,
+    "statement": "During inspiration intrathoracic pressure falls, and as a result venous return to the heart decreases.",
+    "truth": false,
+    "correction": "During inspiration intrathoracic pressure falls and abdominal pressure rises, which widens the pressure gradient toward the chest and increases venous return.",
+    "why": "The great veins in the chest are exposed to intrathoracic pressure. When the diaphragm drops, pressure in the chest falls and pressure in the abdomen rises, so blood is pulled from the abdominal veins into the thoracic veins and right atrium. This is the respiratory pump. It is why deep breathing helps return during exercise and why a Valsalva strain, which raises chest pressure, does the opposite."
+  },
+  {
+    "id": "w10-tf-08",
+    "type": "tf",
+    "competencyId": "w11-lab-bp-measurement",
+    "dok": 2,
+    "statement": "Korotkoff sounds are heard while cuff pressure is above systolic pressure, because the artery is completely closed.",
+    "truth": false,
+    "correction": "Korotkoff sounds are heard while cuff pressure is between systolic and diastolic pressure, because the artery opens briefly at each pulse and the turbulent spurt of blood makes a sound.",
+    "why": "Above systolic pressure the cuff shuts the artery completely, there is no flow, and there is nothing to hear. As cuff pressure falls just below systolic, the artery opens only at the peak of each pulse and blood squirts through in a turbulent jet, which is the first tapping sound. Below diastolic pressure the artery stays open all the time, flow becomes smooth and laminar, and the sounds disappear."
+  },
+  {
+    "id": "w10-tf-09",
+    "type": "tf",
+    "competencyId": "w11-baroreflex",
+    "dok": 2,
+    "statement": "When arterial pressure rises, baroreceptor firing decreases and the medulla responds by raising sympathetic output.",
+    "truth": false,
+    "correction": "When arterial pressure rises, baroreceptor firing increases and the medulla responds by lowering sympathetic output and raising parasympathetic output, which slows the heart and dilates arterioles.",
+    "why": "Baroreceptors are stretch receptors, so more pressure means more stretch and more action potentials. That increased afferent traffic inhibits the sympathetic centers and excites the vagal center. Heart rate, contractility, and resistance all fall, bringing pressure back down. The statement reverses both the sensor and the response, which would make the reflex a positive feedback loop."
+  },
+  {
+    "id": "w10-tf-10",
+    "type": "tf",
+    "competencyId": "w11-exercise-cv",
+    "dok": 2,
+    "statement": "During moderate exercise total peripheral resistance rises, because sympathetic outflow constricts arterioles in most organs.",
+    "truth": false,
+    "correction": "During moderate exercise total peripheral resistance falls, because metabolic dilation of arterioles in the large mass of working muscle outweighs sympathetic constriction in the gut and kidney.",
+    "why": "Sympathetic outflow does rise during exercise and does constrict the arterioles of the splanchnic and renal beds. But skeletal muscle is a large fraction of the body, and its arterioles dilate strongly in response to local metabolites, overriding the sympathetic signal. The net effect is a fall in total resistance. That fall is why mean arterial pressure rises only modestly even when cardiac output triples."
+  },
+  {
+    "id": "w10-bd-01",
+    "type": "bd",
+    "competencyId": "w11-flow-resistance",
+    "dok": 3,
+    "prompt": "Without notes, explain why a change in arteriole radius is the body's main tool for controlling blood flow to an organ. Include what happens to flow when the radius is halved and the pressure gradient does not change.",
+    "rubric": [
+      "flow equals the pressure gradient divided by resistance",
+      "resistance is inversely proportional to radius to the fourth power",
+      "halving the radius raises resistance about sixteenfold",
+      "flow falls to about one sixteenth at the same gradient",
+      "arterioles have thick smooth muscle that can change radius quickly",
+      "vessel length and blood viscosity do not change on a moment to moment basis"
+    ]
+  },
+  {
+    "id": "w10-bd-02",
+    "type": "bd",
+    "competencyId": "w11-local-blood-flow",
+    "dok": 3,
+    "prompt": "A skeletal muscle starts contracting. Explain how the arterioles in that muscle know to dilate, what happens to flow, and what the response is called.",
+    "rubric": [
+      "called active hyperemia",
+      "increased metabolism raises carbon dioxide, hydrogen ion, adenosine, and potassium and lowers oxygen in the tissue",
+      "these metabolites relax arteriolar smooth muscle",
+      "resistance falls and flow rises",
+      "flow rises in proportion to metabolic demand",
+      "local signals override sympathetic vasoconstriction in the working muscle"
+    ]
+  },
+  {
+    "id": "w10-bd-03",
+    "type": "bd",
+    "competencyId": "w11-capillary-exchange",
+    "dok": 3,
+    "prompt": "List the four Starling forces, say which direction each pushes fluid, and explain why fluid leaves the capillary at the arterial end but returns at the venous end.",
+    "rubric": [
+      "capillary hydrostatic pressure pushes fluid out",
+      "plasma colloid osmotic pressure pulls fluid in",
+      "interstitial hydrostatic pressure pushes fluid in",
+      "interstitial colloid osmotic pressure pulls fluid out",
+      "capillary hydrostatic pressure falls along the capillary while plasma colloid osmotic pressure stays about the same",
+      "net filtration at the arterial end and net reabsorption at the venous end",
+      "fluid not reabsorbed is returned by the lymphatics"
+    ]
+  },
+  {
+    "id": "w10-bd-04",
+    "type": "bd",
+    "competencyId": "w11-edema",
+    "dok": 3,
+    "prompt": "Explain the four ways edema can form. For each, give the Starling force that changes and one example of a condition that causes it.",
+    "rubric": [
+      "increased capillary hydrostatic pressure, as in heart failure or venous obstruction",
+      "decreased plasma protein and plasma colloid osmotic pressure, as in liver failure, kidney protein loss, or malnutrition",
+      "increased capillary permeability lets protein leak out and raises interstitial colloid osmotic pressure, as in inflammation or burns",
+      "lymphatic blockage stops the return of filtered fluid and protein, as in filariasis or lymph node removal",
+      "edema forms when filtration exceeds lymphatic return"
+    ]
+  },
+  {
+    "id": "w10-bd-05",
+    "type": "bd",
+    "competencyId": "w11-venous-return",
+    "dok": 3,
+    "prompt": "Explain what happens to venous return, stroke volume, and blood pressure when a person stands motionless for a long time, and describe the mechanisms that normally keep venous return up.",
+    "rubric": [
+      "gravity distends the compliant leg veins and blood pools there",
+      "venous return falls",
+      "end diastolic volume falls, so stroke volume falls by the Frank Starling relationship",
+      "cardiac output and mean arterial pressure fall",
+      "skeletal muscle pump with one way valves pushes blood toward the heart during movement",
+      "respiratory pump pulls blood into the chest during inspiration",
+      "sympathetic venoconstriction lowers venous capacitance and pushes stored blood forward"
+    ]
+  },
+  {
+    "id": "w10-bd-06",
+    "type": "bd",
+    "competencyId": "w11-baroreflex",
+    "dok": 3,
+    "prompt": "Trace the baroreceptor reflex from a sudden drop in arterial pressure to the return of pressure toward normal. Name the sensors, the afferent path, the integrating center, the efferent paths, and the effector responses.",
+    "rubric": [
+      "stretch receptors in the carotid sinus and aortic arch",
+      "less stretch, so afferent firing rate falls",
+      "afferents travel in the glossopharyngeal and vagus nerves to the medulla",
+      "medulla raises sympathetic output and lowers parasympathetic output",
+      "heart rate and contractility rise, so cardiac output rises",
+      "arteriolar constriction raises total peripheral resistance and venoconstriction raises venous return",
+      "mean arterial pressure rises back toward the set point, a negative feedback loop"
+    ]
+  },
+  {
+    "id": "w10-bd-07",
+    "type": "bd",
+    "competencyId": "w11-shock-compensation",
+    "dok": 3,
+    "prompt": "A person loses about 30 percent of their blood volume. Describe the compensations in the order they take effect, and explain why compensation can eventually fail.",
+    "rubric": [
+      "baroreflex within seconds: tachycardia, arteriolar constriction, venoconstriction",
+      "lower capillary hydrostatic pressure pulls interstitial fluid into the plasma over minutes to hours",
+      "renin, angiotensin II, aldosterone, and ADH conserve salt and water and stimulate thirst over hours",
+      "red cells and plasma proteins are replaced over days to weeks",
+      "if perfusion stays low, the heart and vessel smooth muscle become underperfused and weaken",
+      "falling cardiac output lowers perfusion further, a positive feedback loop that leads to irreversible shock"
+    ]
+  },
+  {
+    "id": "w10-bd-08",
+    "type": "bd",
+    "competencyId": "w11-exercise-cv",
+    "dok": 3,
+    "prompt": "Explain how the cardiovascular system redistributes blood during moderate exercise, and why mean arterial pressure rises only a little even though cardiac output may triple.",
+    "rubric": [
+      "sympathetic output rises and parasympathetic output falls, so heart rate and contractility rise",
+      "muscle pump raises venous return, so stroke volume rises",
+      "cardiac output rises several fold",
+      "arterioles in working muscle dilate because of local metabolites",
+      "sympathetic constriction of gut and kidney arterioles diverts flow to muscle, and skin flow rises to lose heat",
+      "total peripheral resistance falls because muscle dilation outweighs constriction elsewhere",
+      "mean arterial pressure equals cardiac output times resistance, so it rises only modestly"
+    ]
+  },
+  {
+    "id": "w10-app-01",
+    "type": "app",
+    "competencyId": "w11-flow-resistance",
+    "dok": 3,
+    "case": "A man with polycythemia has a hematocrit of 62 percent (normal 40 to 52). His blood is roughly twice as viscous as normal. His arteriole radii and mean arterial pressure are unchanged.",
+    "stem": "What happens to blood flow through his tissues, and what would restore it?",
+    "options": [
+      "Flow falls to about half; restoring it requires arteriolar dilation to lower resistance or a higher pressure gradient",
+      "Flow doubles, because thicker blood carries more oxygen per milliliter",
+      "Flow is unchanged, because viscosity affects only pressure and not flow",
+      "Flow falls to about one sixteenth, because viscosity acts on resistance the same way radius does"
+    ],
+    "correct": 0,
+    "why": "Resistance is directly proportional to viscosity. Doubling viscosity doubles resistance, and at the same pressure gradient flow falls by half. To bring flow back the body must either lower resistance somewhere else, which means widening arterioles, or raise the driving pressure. This is why polycythemia strains the heart and why removing blood to lower the hematocrit is a treatment.",
+    "whyNot": [
+      "Correct. Viscosity is a first power term in resistance, so doubling it halves flow at a fixed gradient.",
+      "Wrong. Oxygen content per milliliter does rise, but flow is set by the pressure gradient and resistance, and thicker blood is harder to push, so flow falls.",
+      "Wrong. Viscosity is one of the three terms in resistance, and resistance sets flow at a given gradient.",
+      "Wrong. Sixteenfold is the effect of halving the radius. Viscosity and length act linearly, only radius acts to the fourth power."
+    ]
+  },
+  {
+    "id": "w10-app-02",
+    "type": "app",
+    "competencyId": "w11-blood-pressure",
+    "dok": 3,
+    "case": "In a clinic, a 75 year old man reads 160 over 60 mmHg and a 35 year old woman reads 130 over 100 mmHg (normal below 120 over 80).",
+    "stem": "Calculate each person's pulse pressure and mean arterial pressure and compare them.",
+    "options": [
+      "Man: pulse pressure 100 mmHg, mean about 93 mmHg. Woman: pulse pressure 30 mmHg, mean 110 mmHg. The woman has the higher mean pressure despite the lower systolic value.",
+      "Both have about the same mean pressure, because their systolic values are within 30 mmHg of each other.",
+      "The man has the higher mean pressure, because his wider pulse pressure adds more to the mean.",
+      "Man: mean 110 mmHg. Woman: mean 115 mmHg, using the midpoint of the two readings."
+    ],
+    "correct": 0,
+    "why": "Mean arterial pressure is diastolic plus one third of pulse pressure. For the man, pulse pressure is 160 minus 60, or 100, and one third of that is about 33, so the mean is about 93 mmHg. For the woman, pulse pressure is 130 minus 100, or 30, one third is 10, and the mean is 110 mmHg. The man's stiff aorta gives a high systolic and a low diastolic, but because diastole dominates the average, his mean is lower. The woman's high diastolic pressure points to high resistance and a high mean.",
+    "whyNot": [
+      "Correct. Diastolic pressure is weighted twice as heavily as systolic in the estimate, so the woman's high diastolic pressure gives her the higher mean.",
+      "Wrong. Systolic pressure alone does not tell you the mean. The two diastolic values differ by 40 mmHg, and diastole is where most of each cycle is spent.",
+      "Wrong. A wide pulse pressure comes here from a low diastolic floor, and one third of the pulse pressure cannot make up for a 40 mmHg lower starting point.",
+      "Wrong. The midpoint overestimates the mean because it treats systole and diastole as equal in duration. It also still ranks the woman higher, so it does not change the comparison, only the numbers."
+    ]
+  },
+  {
+    "id": "w10-app-03",
+    "type": "app",
+    "competencyId": "w11-local-blood-flow",
+    "dok": 3,
+    "case": "In lab, a cuff on a student's upper arm is inflated to 200 mmHg, well above her systolic pressure of 118 mmHg, and held for 3 minutes. When the cuff is released her forearm turns pink and feels warm for about a minute, then returns to normal.",
+    "stem": "What explains the flush after the cuff is released?",
+    "options": [
+      "During the occlusion, oxygen fell and metabolites accumulated, so the arterioles dilated; on release, flow through the dilated bed is far above normal until the metabolites wash out",
+      "The baroreflex raised sympathetic output to the arm, and sympathetic activation increases flow to skin",
+      "Cuff pressure damaged the endothelium, which released endothelin and opened the arterioles",
+      "The myogenic response dilated the arterioles because cuff pressure stretched their walls"
+    ],
+    "correct": 0,
+    "why": "This is reactive hyperemia. With no flow for three minutes the tissue used up its oxygen and built up carbon dioxide, hydrogen ion, adenosine, and potassium. Those signals relaxed the arteriolar smooth muscle. When the cuff comes off, blood pours through vessels that are wide open, so flow overshoots. As the metabolites are washed out the arterioles regain their tone and flow settles.",
+    "whyNot": [
+      "Correct. The flush is the local metabolic response to a period of no flow, and it is proportional to how long the flow was blocked.",
+      "Wrong. Sympathetic activation constricts skin arterioles and would make the arm pale. And a single arm cuff does not change systemic pressure enough to trigger the baroreflex.",
+      "Wrong. Endothelin is a constrictor, so it would reduce flow. The endothelial signal that dilates is nitric oxide, and it plays a supporting role here.",
+      "Wrong. The myogenic response answers stretch with constriction, not dilation. And during occlusion pressure inside the downstream arterioles falls, so they are less stretched, not more."
+    ]
+  },
+  {
+    "id": "w10-app-04",
+    "type": "app",
+    "competencyId": "w11-capillary-exchange",
+    "dok": 3,
+    "case": "In a leg capillary, hydrostatic pressure at the arterial end is 35 mmHg, plasma colloid osmotic pressure is 25 mmHg (normal 25 to 28), interstitial hydrostatic pressure is 0 mmHg, and interstitial colloid osmotic pressure is 3 mmHg. The person then stands still for several hours and capillary hydrostatic pressure at that point rises to 45 mmHg with the other three values unchanged.",
+    "stem": "What is the net filtration pressure before and after standing, and what does the change mean for the tissue?",
+    "options": [
+      "13 mmHg outward before, 23 mmHg outward after; more fluid filters than the lymphatics can return, so the ankles swell",
+      "13 mmHg inward before, 3 mmHg inward after; the tissue stays dry",
+      "10 mmHg outward before and unchanged after, because plasma protein concentration rises to compensate",
+      "38 mmHg outward before, 48 mmHg outward after; the difference is too small to matter"
+    ],
+    "correct": 0,
+    "why": "Add the outward forces and subtract the inward forces. Outward is capillary hydrostatic plus interstitial colloid osmotic, 35 plus 3, or 38 mmHg. Inward is plasma colloid osmotic plus interstitial hydrostatic, 25 plus 0, or 25 mmHg. The net is 13 mmHg outward. After hours of standing, gravity raises venous and capillary pressure in the legs, so outward becomes 45 plus 3, or 48, and the net is 23 mmHg outward. The lymphatics can handle the normal load but not nearly double, so fluid accumulates.",
+    "whyNot": [
+      "Correct. Raising the only large outward force by 10 mmHg raises net filtration by 10 mmHg, and standing edema is the result.",
+      "Wrong. This subtracts in the wrong direction. Hydrostatic pressure of 35 mmHg outward is larger than 25 mmHg of osmotic pull inward, so the net is outward.",
+      "Wrong. 10 mmHg ignores the interstitial colloid osmotic pressure, and plasma protein concentration does not rise fast enough to offset a 10 mmHg change in hydrostatic pressure.",
+      "Wrong. 38 and 48 are the outward forces alone. The inward pull of 25 mmHg from plasma protein has not been subtracted."
+    ]
+  },
+  {
+    "id": "w10-app-05",
+    "type": "app",
+    "competencyId": "w11-edema",
+    "dok": 3,
+    "case": "A woman had the lymph nodes removed from her left armpit during breast cancer surgery. Months later her left arm is swollen while the right arm is normal. Her serum albumin is 4.2 g/dL (normal 3.5 to 5.0), her heart function is normal, and the arm is not red or hot.",
+    "stem": "Which mechanism explains the swelling, and what happens to the protein in the interstitial fluid of that arm over time?",
+    "options": [
+      "Lymphatic drainage is blocked, so filtered fluid and escaped protein cannot leave; interstitial protein accumulates, raises interstitial colloid osmotic pressure, and pulls in still more fluid",
+      "Plasma colloid osmotic pressure is low, so less fluid is reabsorbed at the venous end; interstitial protein is diluted",
+      "Venous pressure is high from heart failure, raising capillary hydrostatic pressure in the arm; interstitial protein is unchanged",
+      "Surgery increased capillary permeability; interstitial protein falls as the wound heals and the swelling clears"
+    ],
+    "correct": 0,
+    "why": "The swelling is on one side only, the albumin is normal, the heart is normal, and there is no inflammation. That leaves the one mechanism that is regional and permanent: the lymphatics of that arm drain through the nodes that were removed. Lymphatics normally carry away both the fluid that is not reabsorbed and the small amount of protein that leaks out. With them blocked, protein builds up in the tissue, its osmotic pull grows, and the arm draws in more fluid. This is why lymphedema tends to worsen rather than resolve.",
+    "whyNot": [
+      "Correct. Lymphedema is a one sided, protein rich swelling downstream of a lymphatic blockage, and the trapped protein makes it self reinforcing.",
+      "Wrong. Her albumin is normal, and a low plasma protein would cause swelling in both arms and the legs, not one arm.",
+      "Wrong. Her heart is normal, and heart failure would raise venous pressure on both sides and mostly in the legs.",
+      "Wrong. Increased permeability gives a hot, red, acute swelling. This is months later with no inflammation, and permeability edema clears as the leak closes, which this has not."
+    ]
+  },
+  {
+    "id": "w10-app-06",
+    "type": "app",
+    "competencyId": "w11-venous-return",
+    "dok": 3,
+    "case": "A healthy 20 year old stands motionless in a hot room at 32 degrees C (90 degrees F) for 20 minutes. Her heart rate rises from 70 to 95 beats/min (normal 60 to 100) and she feels lightheaded. She begins walking in place and feels better within a minute.",
+    "stem": "Explain what happened to her stroke volume during standing and after she began walking.",
+    "options": [
+      "Standing pooled blood in her leg veins, so venous return, end diastolic volume, and stroke volume fell; the faster heart rate did not fully make up the lost output; walking squeezed the leg veins and restored venous return, so stroke volume recovered",
+      "Standing raised venous return because gravity pushes blood down toward the heart; walking lowered venous return and slowed the heart",
+      "Heat raised stroke volume by dilating the veins; walking lowered it by constricting them, which is why she felt better",
+      "Stroke volume did not change; the lightheadedness came from the rise in heart rate, and walking lowered heart rate"
+    ],
+    "correct": 0,
+    "why": "Without muscle contraction there is no muscle pump, so gravity fills the compliant veins in the legs. Heat makes it worse by dilating skin vessels and veins. Less blood returns to the heart, the ventricle fills less, and by the Frank Starling relationship it ejects less. The baroreflex raises heart rate, but rate cannot fully compensate when each beat is small, so cerebral perfusion dips. Walking in place squeezes the deep leg veins and the valves send that blood toward the heart, so filling and stroke volume come back.",
+    "whyNot": [
+      "Correct. This is the classic story of orthostatic pooling and its rescue by the skeletal muscle pump.",
+      "Wrong. The heart is above the leg veins, so gravity works against venous return when standing, and walking raises return rather than lowering it.",
+      "Wrong. Heat dilates veins and skin vessels, which increases pooling and lowers stroke volume. Walking helps by pumping, not by constricting veins.",
+      "Wrong. A heart rate of 95 is not high enough to cause symptoms on its own. The rise in rate is the baroreflex responding to a fall in stroke volume and pressure."
+    ]
+  },
+  {
+    "id": "w10-app-07",
+    "type": "app",
+    "competencyId": "w11-lab-bp-measurement",
+    "dok": 3,
+    "case": "A student inflates a cuff on her partner's arm to 180 mmHg and lets it fall slowly while listening over the brachial artery. The first tapping sound appears at 128 mmHg and the sounds disappear at 84 mmHg (normal below 120 over 80).",
+    "stem": "What produces the sounds between 128 and 84 mmHg, and why do they stop below 84 mmHg?",
+    "options": [
+      "Between those pressures the cuff squeezes the artery partly shut and it opens only at the peak of each pulse, so blood spurts through in a turbulent jet that is audible; below 84 the artery stays open through the whole cycle, flow is smooth, and there is nothing to hear",
+      "The sounds are the heart valves closing, conducted down the arm; below 84 the cuff no longer transmits them",
+      "The sounds are the artery snapping shut at each diastole; below 84 the artery closes completely and stays closed",
+      "The sounds come from the cuff rubbing against the skin; they stop when the cuff loses tension"
+    ],
+    "correct": 0,
+    "why": "Smooth laminar flow is silent. Above 128 mmHg the cuff holds the artery closed and there is no flow at all. Just below the systolic peak, the artery pops open for an instant each beat and blood squirts through the narrowed segment at high velocity, which makes turbulence and sound. As cuff pressure drops the artery stays open longer each cycle. Once cuff pressure is below diastolic, the artery never closes, the flow is laminar again, and the sound disappears. So the first sound marks systolic pressure and the last sound marks diastolic pressure.",
+    "whyNot": [
+      "Correct. Korotkoff sounds are turbulence through a partly compressed artery, present only while cuff pressure lies between systolic and diastolic pressure.",
+      "Wrong. Heart sounds are heard over the chest, not the arm, and they do not appear and disappear with cuff pressure.",
+      "Wrong. Below diastolic pressure the artery is open all the time, not closed. If it were closed there would be no pulse in the wrist.",
+      "Wrong. A cuff rubbing would make noise at any pressure and would not track the heartbeat. The sounds here are timed to each pulse."
+    ]
+  },
+  {
+    "id": "w10-app-08",
+    "type": "app",
+    "competencyId": "w11-lab-bp-measurement",
+    "dok": 3,
+    "case": "In lab a subject reads 118 over 76 mmHg lying down with a heart rate of 68 beats/min (normal below 120 over 80, heart rate 60 to 100). One minute after standing she reads 112 over 82 mmHg with a heart rate of 84 beats/min.",
+    "stem": "Calculate pulse pressure and mean arterial pressure in both positions. What does the pattern tell you about her cardiovascular reflexes?",
+    "options": [
+      "Pulse pressure narrowed from 42 to 30 mmHg while mean pressure stayed near 90 mmHg; stroke volume fell on standing and the baroreflex raised heart rate and resistance to hold the mean, which is a normal response",
+      "Mean pressure fell by 6 mmHg, showing orthostatic hypotension",
+      "Pulse pressure widened because stroke volume rose on standing, which is a normal response",
+      "Mean pressure rose from 76 to 82 mmHg because venous return increased on standing"
+    ],
+    "correct": 0,
+    "why": "Lying down, pulse pressure is 118 minus 76, or 42, and the mean is 76 plus 14, or 90 mmHg. Standing, pulse pressure is 112 minus 82, or 30, and the mean is 82 plus 10, or 92 mmHg. The narrower pulse pressure tells you stroke volume fell, which is expected when blood pools in the legs. The higher diastolic pressure and faster heart rate tell you the baroreflex answered with vasoconstriction and a faster heart. The mean is unchanged, so the reflex did its job.",
+    "whyNot": [
+      "Correct. A small drop in systolic with a rise in diastolic and heart rate, and no change in the mean, is a normal orthostatic response.",
+      "Wrong. Systolic fell 6 mmHg, but the mean did not. Orthostatic hypotension requires a systolic drop of at least 20 mmHg or a diastolic drop of at least 10 mmHg, and here diastolic rose.",
+      "Wrong. Pulse pressure narrowed, from 42 to 30. Stroke volume falls on standing because venous return falls.",
+      "Wrong. 76 and 82 are the diastolic values, not the means. And venous return falls on standing, which is why the reflex was needed."
+    ]
+  },
+  {
+    "id": "w10-app-09",
+    "type": "app",
+    "competencyId": "w11-baroreflex",
+    "dok": 3,
+    "case": "A patient is given a drug that constricts arterioles and has no direct effect on the heart. Mean arterial pressure rises from 90 to 120 mmHg (normal 70 to 105). Within a minute heart rate falls from 72 to 50 beats/min (normal 60 to 100).",
+    "stem": "Why did the heart rate fall?",
+    "options": [
+      "The rise in pressure stretched the carotid sinus and aortic arch baroreceptors, their firing increased, the medulla raised vagal output and lowered sympathetic output, and the SA node slowed",
+      "The drug acted directly on the SA node to slow it",
+      "The rise in pressure reduced baroreceptor firing, and lower firing slows the heart",
+      "Higher arterial pressure reduced venous return, so the heart slowed to allow more time to fill"
+    ],
+    "correct": 0,
+    "why": "The drug raised resistance, and mean pressure equals cardiac output times resistance, so pressure rose. The baroreceptors reported the higher pressure by firing faster. That afferent traffic drives the medulla to increase parasympathetic output to the SA node and to reduce sympathetic output. The heart slows and cardiac output falls, which partly offsets the rise in pressure. This reflex bradycardia is the standard sign that the baroreflex is intact.",
+    "whyNot": [
+      "Correct. The reflex reads a rise in pressure and answers with a slower heart, a negative feedback correction.",
+      "Wrong. The case states the drug has no direct cardiac effect. The slowing is a reflex to the pressure change, not a drug effect on the node.",
+      "Wrong. Baroreceptors are stretch receptors, so higher pressure raises firing. This option has the sensor backwards.",
+      "Wrong. Heart rate is set by the SA node under autonomic control, not by filling time. And arteriolar constriction does not reduce venous return in a way that slows the heart."
+    ]
+  },
+  {
+    "id": "w10-app-10",
+    "type": "app",
+    "competencyId": "w11-cv-hormonal",
+    "dok": 3,
+    "case": "A woman with a weak heart has a mean arterial pressure of 75 mmHg (normal 70 to 105) and reduced blood flow to her kidneys. Her plasma renin, aldosterone, and antidiuretic hormone are all elevated. Over the next month she gains 4 kg and her ankles swell, although her serum albumin is normal at 4.0 g/dL (normal 3.5 to 5.0).",
+    "stem": "Trace how the hormone pattern leads to the weight gain and ankle swelling.",
+    "options": [
+      "Low renal perfusion releases renin; angiotensin II and aldosterone increase sodium and water retention and ADH adds water retention; blood volume and venous pressure rise, capillary hydrostatic pressure rises, and fluid filters into the tissues",
+      "High atrial natriuretic peptide is driving sodium loss, and the resulting dehydration concentrates the blood and pulls fluid into the tissues",
+      "The high aldosterone lowers blood volume by wasting sodium, and the low volume drops plasma protein and causes the edema",
+      "The high renin means the kidneys are receiving too much blood and are shifting the excess into the tissues"
+    ],
+    "correct": 0,
+    "why": "The kidney reads a weak heart as low volume, because renal perfusion is poor. It releases renin, which produces angiotensin II, which raises aldosterone and, with the low pressure, ADH. All three hormones tell the kidney to hold onto salt and water. That would be the right response to bleeding, but here the heart cannot pump the extra volume, so it backs up in the veins. Venous pressure rises, capillary hydrostatic pressure rises, and fluid leaks into the tissues, mostly in the legs where gravity adds to the pressure. The weight gain is retained water.",
+    "whyNot": [
+      "Correct. This is the volume overload of heart failure, driven by hormones that were designed for hemorrhage.",
+      "Wrong. ANP is the counter hormone and would cause sodium loss, not retention. And dehydration concentrates plasma protein, which pulls fluid in, not out.",
+      "Wrong. Aldosterone saves sodium and raises volume. It does not waste sodium. And her albumin is normal, so low plasma protein is not the mechanism.",
+      "Wrong. Renin is released when renal perfusion is low, not high. High renin here means the kidney thinks the body is volume depleted."
+    ]
+  },
+  {
+    "id": "w10-app-11",
+    "type": "app",
+    "competencyId": "w11-exercise-cv",
+    "dok": 3,
+    "case": "A trained runner at rest has a heart rate of 50 beats/min and a stroke volume of 100 mL, with a mean arterial pressure of 90 mmHg (normal 70 to 105). At a moderate running pace her heart rate is 150 beats/min, her stroke volume is 130 mL, and her mean arterial pressure is 105 mmHg.",
+    "stem": "Calculate her cardiac output at rest and during running. What must have happened to total peripheral resistance?",
+    "options": [
+      "Cardiac output rose from 5 to about 19.5 L/min, almost fourfold, while mean pressure rose only 17 percent, so total peripheral resistance must have fallen to roughly a third of its resting value",
+      "Cardiac output rose from 5 to about 19.5 L/min, and total peripheral resistance rose in proportion, which is why mean pressure went up",
+      "Cardiac output rose only threefold because stroke volume stays constant during exercise, and resistance did not change",
+      "Total peripheral resistance was unchanged; mean pressure rose only because cardiac output rose"
+    ],
+    "correct": 0,
+    "why": "Cardiac output is heart rate times stroke volume. At rest, 50 times 100 mL is 5000 mL/min, or 5 L/min. Running, 150 times 130 mL is 19,500 mL/min, or 19.5 L/min. Mean pressure equals cardiac output times total peripheral resistance, so resistance is pressure divided by output. At rest that is 90 divided by 5, or 18 units. Running, it is 105 divided by 19.5, or about 5.4 units. Resistance fell to about 30 percent of resting. The fall comes from metabolic dilation of the arterioles in her working muscle.",
+    "whyNot": [
+      "Correct. A nearly fourfold rise in output with only a small rise in pressure is possible only if resistance dropped sharply.",
+      "Wrong. If resistance had risen with output, mean pressure would have risen fourfold or more, to well over 300 mmHg. It rose only 15 mmHg.",
+      "Wrong. The case gives stroke volume rising from 100 to 130 mL, and output rose almost fourfold, not threefold. Stroke volume does rise in exercise because venous return rises.",
+      "Wrong. With resistance unchanged, a fourfold rise in output would give a fourfold rise in pressure. The modest rise proves resistance fell."
+    ]
+  },
+  {
+    "id": "w10-app-12",
+    "type": "app",
+    "competencyId": "w11-shock-compensation",
+    "dok": 3,
+    "case": "A motorcyclist arrives at the emergency department after losing about 1.5 L of blood, about 30 percent of his volume. His heart rate is 130 beats/min (normal 60 to 100), blood pressure is 88 over 70 mmHg (normal below 120 over 80), his skin is cool and pale, and he has produced almost no urine. Over the next hour, despite intravenous fluid, his pressure drifts down to 70 over 55 mmHg and his heart rate begins to fall.",
+    "stem": "Which interpretation of the first findings and of the later change is correct?",
+    "options": [
+      "The fast heart, narrow pulse pressure, pale cool skin, and low urine output show the baroreflex and renal compensations at work; the later fall in pressure with a slowing heart suggests compensation is failing as the heart and vessels themselves become underperfused",
+      "The narrow pulse pressure shows that stroke volume is high, so the heart is compensating well; the slowing heart rate an hour later shows he is recovering",
+      "The pale cool skin shows that skin vessels have dilated to shed heat; the later fall in pressure is the expected effect of intravenous fluid diluting the blood",
+      "The low urine output shows kidney failure from the crash; the later slowing of the heart shows the baroreflex has finally corrected the pressure"
+    ],
+    "correct": 0,
+    "why": "Early on, every finding is a compensation. Low pressure lowers baroreceptor firing, so sympathetic output rises. The heart races, skin and gut arterioles constrict so the skin goes pale and cool, and the pulse pressure is narrow because stroke volume is small. Renal vasoconstriction plus ADH and aldosterone shut down urine output to save volume. When pressure keeps falling and the heart slows despite maximal sympathetic drive, the heart muscle itself is not getting enough flow and the vasoconstricted vessels are starting to fail. That is the positive feedback loop of progressive shock, and it is the point where compensation alone can no longer save him.",
+    "whyNot": [
+      "Correct. The early signs are the reflex defending pressure; the late signs are the reflex losing.",
+      "Wrong. A narrow pulse pressure means a small stroke volume, not a large one. And a falling heart rate with falling pressure is a sign of decompensation, not recovery.",
+      "Wrong. Pale cool skin means skin arterioles are constricted by sympathetic drive. And fluid should raise pressure, so a fall despite fluid means the circulation is failing.",
+      "Wrong. The low urine output is a compensation, the kidney saving water under ADH, aldosterone, and sympathetic constriction. A corrected pressure would be higher, not lower."
+    ]
+  }
+]

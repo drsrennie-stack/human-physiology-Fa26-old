@@ -1,0 +1,762 @@
+[
+  {
+    "id": "w05-ma-01",
+    "type": "ma",
+    "competencyId": "w5-synaptic-sequence",
+    "dok": 2,
+    "stem": "An action potential arrives at a chemical synapse. Which of the following are required steps between the arrival of that action potential and the change in the postsynaptic membrane potential? Select all that apply.",
+    "options": [
+      "Voltage gated Ca2+ channels in the terminal open",
+      "Ca2+ binds to proteins on the vesicle and triggers fusion with the membrane",
+      "Neurotransmitter diffuses across the cleft and binds postsynaptic receptors",
+      "Voltage gated Na+ channels in the postsynaptic membrane open first",
+      "Neurotransmitter is actively pumped across the cleft into the postsynaptic cell"
+    ],
+    "correct": [0, 1, 2],
+    "why": "The presynaptic depolarization opens voltage gated Ca2+ channels, Ca2+ entry triggers vesicle fusion and exocytosis, and the released transmitter diffuses across the cleft to bind receptors. Receptor binding opens or closes ion channels, and that is what changes the postsynaptic potential. Everything after that is a graded response, not a spike, until the trigger zone is reached.",
+    "whyNot": [
+      "Belongs. Ca2+ entry is the link between the electrical signal and release.",
+      "Belongs. Ca2+ acting on the vesicle docking proteins is the trigger for exocytosis.",
+      "Belongs. Transmitter crosses the cleft by diffusion and works by binding receptors.",
+      "Does not belong. The first postsynaptic event is a graded potential through ligand gated channels; voltage gated Na+ channels open later, and only if the trigger zone reaches threshold.",
+      "Does not belong. Transmitter is never pumped into the postsynaptic cell; it stays in the cleft and acts on receptors from outside."
+    ]
+  },
+  {
+    "id": "w05-ma-02",
+    "type": "ma",
+    "competencyId": "w5-neurotransmitters",
+    "dok": 2,
+    "stem": "Which of the following statements about neurotransmitter classes are correct? Select all that apply.",
+    "options": [
+      "Glutamate is the main excitatory transmitter of the central nervous system",
+      "GABA and glycine usually inhibit their targets by opening Cl- channels",
+      "Acetylcholine is always excitatory no matter which receptor it binds",
+      "Norepinephrine, epinephrine and dopamine are catecholamines made from tyrosine",
+      "Neuropeptides act only at the neuromuscular junction"
+    ],
+    "correct": [0, 1, 3],
+    "why": "Glutamate excites through cation channels, while GABA in the brain and glycine in the spinal cord inhibit mainly through Cl- channels. The catecholamines share a synthesis path from tyrosine. The sign of any transmitter is set by its receptor, so acetylcholine excites skeletal muscle through nicotinic receptors and slows the heart through muscarinic receptors.",
+    "whyNot": [
+      "Belongs. Glutamate is the workhorse excitatory transmitter of the brain and cord.",
+      "Belongs. Both open Cl- channels and hold the membrane near the Cl- equilibrium potential.",
+      "Does not belong. The same acetylcholine that excites skeletal muscle hyperpolarizes cardiac pacemaker cells; the receptor sets the sign.",
+      "Belongs. All three come from tyrosine by the same enzyme pathway.",
+      "Does not belong. Neuropeptides such as substance P and the endorphins act widely in the brain and cord; the neuromuscular junction uses acetylcholine."
+    ]
+  },
+  {
+    "id": "w05-ma-03",
+    "type": "ma",
+    "competencyId": "w5-neurotransmitter-removal",
+    "dok": 2,
+    "stem": "Which of the following correctly pair a route of neurotransmitter clearance with a drug or condition that slows it? Select all that apply.",
+    "options": [
+      "Enzymatic degradation of acetylcholine, slowed by an acetylcholinesterase inhibitor",
+      "Reuptake of serotonin into the presynaptic terminal, slowed by a selective serotonin reuptake inhibitor",
+      "Diffusion out of the cleft, slowed by blocking voltage gated Na+ channels",
+      "Reuptake of norepinephrine, slowed by cocaine",
+      "Enzymatic degradation of glutamate in the cleft, slowed by a monoamine oxidase inhibitor"
+    ],
+    "correct": [0, 1, 3],
+    "why": "Three routes clear a transmitter: an enzyme in the cleft breaks it down, a transporter carries it back into the terminal or into glia, or it simply diffuses away. Acetylcholinesterase inhibitors block the enzyme route for acetylcholine, and SSRIs and cocaine block transporter reuptake for serotonin and for the catecholamines. Glutamate has no cleft enzyme; it is cleared by transporters.",
+    "whyNot": [
+      "Belongs. Acetylcholinesterase in the cleft ends the acetylcholine signal, and inhibiting it prolongs the response.",
+      "Belongs. SSRIs block the serotonin transporter, so serotonin stays in the cleft longer.",
+      "Does not belong. Diffusion is passive and is not a drug target; Na+ channel blockers stop conduction, not clearance.",
+      "Belongs. Cocaine blocks the norepinephrine and dopamine transporters and prolongs their action.",
+      "Does not belong. Glutamate is cleared by reuptake, not by a cleft enzyme, and monoamine oxidase works on catecholamines and serotonin inside cells."
+    ]
+  },
+  {
+    "id": "w05-ma-04",
+    "type": "ma",
+    "competencyId": "w5-postsynaptic-potentials",
+    "dok": 2,
+    "stem": "A postsynaptic neuron rests at -70 mV with threshold at -55 mV. Which of the following would produce an inhibitory postsynaptic potential (IPSP)? Select all that apply.",
+    "options": [
+      "Opening K+ channels (K+ equilibrium potential -90 mV)",
+      "Opening Cl- channels (Cl- equilibrium potential -75 mV)",
+      "Opening mixed cation channels (reversal potential 0 mV)",
+      "Opening Na+ channels (Na+ equilibrium potential +60 mV)",
+      "Closing K+ channels that were open at rest"
+    ],
+    "correct": [0, 1],
+    "why": "Opening a channel pulls the membrane toward that ion's equilibrium potential. K+ and Cl- both have equilibrium potentials below rest here, so opening either one hyperpolarizes the cell or holds it away from threshold, which is an IPSP. Cation and Na+ channels have reversal potentials far above threshold, so opening them depolarizes and produces an EPSP.",
+    "whyNot": [
+      "Belongs. K+ leaves the cell and the membrane moves toward -90 mV, away from threshold.",
+      "Belongs. Cl- enters and the membrane moves to and is clamped near -75 mV, which is below rest and far from threshold.",
+      "Does not belong. A 0 mV reversal potential means net inward current at -70 mV, which is a depolarizing EPSP.",
+      "Does not belong. Na+ entry depolarizes; this is an EPSP.",
+      "Does not belong. Closing resting K+ channels removes an outward current and depolarizes the cell, the opposite of inhibition."
+    ]
+  },
+  {
+    "id": "w05-ma-05",
+    "type": "ma",
+    "competencyId": "w5-summation-integration",
+    "dok": 2,
+    "stem": "Which of the following statements about summation at a postsynaptic neuron are correct? Select all that apply.",
+    "options": [
+      "Temporal summation adds potentials from one synapse fired repeatedly in quick succession",
+      "Spatial summation adds potentials arriving at the same time from different synapses",
+      "An EPSP and an IPSP that arrive together partly cancel each other",
+      "Graded potentials keep their full amplitude as they spread to the trigger zone",
+      "The decision to fire is made at the trigger zone, based on the summed potential there"
+    ],
+    "correct": [0, 1, 2, 4],
+    "why": "Postsynaptic potentials are graded and decay as they spread, so what matters is the net potential at the trigger zone. Temporal summation stacks responses from one input in time, spatial summation stacks responses from several inputs in space, and excitatory and inhibitory inputs add algebraically. The trigger zone fires if the sum reaches threshold.",
+    "whyNot": [
+      "Belongs. Rapid repeat firing of one synapse lets a new EPSP begin before the last one has decayed.",
+      "Belongs. Inputs from several synapses active at once sum along the way to the trigger zone.",
+      "Belongs. Depolarizing and hyperpolarizing currents add algebraically, so an IPSP subtracts from an EPSP.",
+      "Does not belong. Graded potentials lose amplitude with distance, which is why a distant dendritic input counts for less at the trigger zone.",
+      "Belongs. The trigger zone has the highest density of voltage gated Na+ channels and is where threshold is tested."
+    ]
+  },
+  {
+    "id": "w05-ma-06",
+    "type": "ma",
+    "competencyId": "w5-presynaptic-modulation",
+    "dok": 2,
+    "stem": "Which of the following describe presynaptic inhibition, as opposed to postsynaptic inhibition? Select all that apply.",
+    "options": [
+      "A modulatory neuron synapses on the axon terminal of another neuron",
+      "The amount of transmitter released from that one terminal falls",
+      "Only the input from the modulated terminal is weakened; other inputs to the same postsynaptic cell are unchanged",
+      "The postsynaptic membrane is hyperpolarized so that all inputs are weakened",
+      "The resting potential of the postsynaptic cell shifts"
+    ],
+    "correct": [0, 1, 2],
+    "why": "In presynaptic inhibition an axo-axonic synapse reduces Ca2+ entry or the readiness of vesicles at one terminal, so that terminal releases less transmitter. Because the change is at one terminal, only that pathway is turned down. Postsynaptic inhibition acts on the target cell membrane and dampens every input the cell receives, which is less selective.",
+    "whyNot": [
+      "Belongs. The defining feature is a synapse onto the terminal itself.",
+      "Belongs. Less Ca2+ entry per spike means fewer vesicles fuse.",
+      "Belongs. This selectivity is the main advantage of presynaptic control.",
+      "Does not belong. Hyperpolarizing the whole postsynaptic membrane is postsynaptic inhibition and affects all inputs.",
+      "Does not belong. Presynaptic modulation leaves the postsynaptic resting potential and input resistance unchanged; a shifted resting potential points to a postsynaptic effect."
+    ]
+  },
+  {
+    "id": "w05-ma-07",
+    "type": "ma",
+    "competencyId": "w5-synaptic-plasticity",
+    "dok": 2,
+    "stem": "Which of the following are part of the mechanism of long term potentiation at a glutamate synapse? Select all that apply.",
+    "options": [
+      "Repeated high frequency stimulation strongly depolarizes the postsynaptic membrane",
+      "Depolarization expels Mg2+ from the NMDA receptor channel",
+      "Ca2+ enters the postsynaptic cell through the open NMDA channel",
+      "Ca2+ activates kinases that insert more AMPA receptors into the postsynaptic membrane",
+      "The presynaptic terminal stops releasing glutamate"
+    ],
+    "correct": [0, 1, 2, 3],
+    "why": "Long term potentiation needs coincidence: glutamate must be bound to the NMDA receptor while the membrane is depolarized enough to push Mg2+ out of the pore. Ca2+ then enters, activates kinases, and more AMPA receptors are inserted, so the same amount of glutamate produces a larger EPSP afterward. The synapse is strengthened, not shut down.",
+    "whyNot": [
+      "Belongs. A single weak stimulus does not depolarize enough; a train does.",
+      "Belongs. The voltage dependent Mg2+ block is what makes the NMDA receptor a coincidence detector.",
+      "Belongs. Ca2+ is the second messenger that triggers the change.",
+      "Belongs. More AMPA receptors is the main early expression of the stronger synapse.",
+      "Does not belong. Release continues; if anything, retrograde signals can increase it. A silenced terminal would weaken the synapse."
+    ]
+  },
+  {
+    "id": "w05-ma-08",
+    "type": "ma",
+    "competencyId": "w5-electrical-synapses",
+    "dok": 1,
+    "stem": "Which of the following are true of an electrical synapse at a gap junction, compared with a chemical synapse? Select all that apply.",
+    "options": [
+      "Current flows directly from one cell to the next through connexin channels",
+      "There is almost no synaptic delay",
+      "It can be strengthened or weakened by drugs that act on receptors",
+      "The signal can usually pass in either direction",
+      "It depends on Ca2+ entry into a terminal"
+    ],
+    "correct": [0, 1, 3],
+    "why": "Gap junctions join the cytoplasm of two cells, so ions move straight through and the coupled cell responds at once, usually in either direction. There is no transmitter, no receptor and no Ca2+ triggered release, which makes the synapse fast but leaves little room for modulation. Chemical synapses trade speed for the ability to be excitatory or inhibitory and to be adjusted.",
+    "whyNot": [
+      "Belongs. Connexin channels form a direct ionic path between the two cells.",
+      "Belongs. No release or diffusion step, so the delay is too short to measure.",
+      "Does not belong. There are no transmitter receptors at a gap junction, so receptor drugs have no target there; modulation is a strength of chemical synapses.",
+      "Belongs. Most gap junctions conduct both ways, unlike the one way chemical synapse.",
+      "Does not belong. Ca2+ triggered vesicle release is the chemical synapse mechanism; an electrical synapse still works with extracellular Ca2+ removed."
+    ]
+  },
+  {
+    "id": "w05-ma-09",
+    "type": "ma",
+    "competencyId": "w5-reflex-arc",
+    "dok": 2,
+    "stem": "Which of the following are true of the knee jerk (patellar tendon) reflex? Select all that apply.",
+    "options": [
+      "The receptor is the muscle spindle in the quadriceps",
+      "The sensory neuron synapses directly on the alpha motor neuron in the spinal cord, so the excitatory arc is monosynaptic",
+      "The integrating center is the cerebral cortex",
+      "The effector is the quadriceps muscle, which contracts",
+      "The reflex is abolished if the sensory neuron is cut, even though the motor neuron is intact"
+    ],
+    "correct": [0, 1, 3, 4],
+    "why": "A tap stretches the quadriceps, spindle Ia afferents fire, they synapse directly on quadriceps alpha motor neurons in the spinal cord, and the muscle contracts. The integrating center is the cord, and the response happens before the brain knows about it. Any break in the arc, afferent or efferent, abolishes the reflex.",
+    "whyNot": [
+      "Belongs. The spindle detects the stretch produced by the tap.",
+      "Belongs. One synapse between afferent and motor neuron is why the latency is so short.",
+      "Does not belong. The cortex is not in the loop; the spinal cord integrates this reflex, which is why it survives in a person with a cord transection above that level.",
+      "Belongs. The quadriceps is the muscle that was stretched and that responds.",
+      "Belongs. The reflex needs every component of the arc; losing the afferent limb removes the input even when the motor side is healthy."
+    ]
+  },
+  {
+    "id": "w05-ma-10",
+    "type": "ma",
+    "competencyId": "w5-golgi-tendon",
+    "dok": 2,
+    "stem": "Which of the following correctly contrast the Golgi tendon organ with the muscle spindle? Select all that apply.",
+    "options": [
+      "The tendon organ lies in series with the muscle fibers and responds to tension; the spindle lies in parallel and responds to length",
+      "Tendon organ afferents inhibit the alpha motor neurons of their own muscle through an interneuron",
+      "Spindle afferents excite the alpha motor neurons of their own muscle directly",
+      "Both receptors trigger contraction of the muscle they sit in",
+      "During a passive stretch of a relaxed muscle, the spindle fires strongly while the tendon organ fires only weakly"
+    ],
+    "correct": [0, 1, 2, 4],
+    "why": "Because it sits in series with the contracting fibers, the tendon organ is squeezed by tension, especially the tension of active contraction. Because the spindle sits in parallel, it is stretched when the whole muscle lengthens. The spindle drives a monosynaptic contraction of its own muscle; the tendon organ drives inhibition of its own muscle, protecting the tendon and setting force.",
+    "whyNot": [
+      "Belongs. Series versus parallel placement is what makes one a tension sensor and the other a length sensor.",
+      "Belongs. The Ib afferent excites an inhibitory interneuron, which quiets the homonymous motor neurons.",
+      "Belongs. The Ia afferent synapses directly on the homonymous alpha motor neuron.",
+      "Does not belong. Only the spindle triggers contraction; the tendon organ triggers relaxation of its own muscle.",
+      "Belongs. A relaxed muscle stretched passively lengthens the parallel spindle a lot but puts only modest tension through the tendon."
+    ]
+  },
+  {
+    "id": "w05-ma-11",
+    "type": "ma",
+    "competencyId": "w5-withdrawal-reflex",
+    "dok": 2,
+    "stem": "A person steps on a tack with the right foot. Which of the following are part of the combined flexor withdrawal and crossed extensor response? Select all that apply.",
+    "options": [
+      "Right hip and knee flexors are excited through interneurons",
+      "Right extensors are inhibited so they do not fight the withdrawal",
+      "Left extensors are excited through interneurons that cross the cord",
+      "Left flexors are excited so both legs lift at the same time",
+      "The reflex is polysynaptic and can be shaped by descending input from the brain"
+    ],
+    "correct": [0, 1, 2, 4],
+    "why": "Pain afferents excite interneurons that drive ipsilateral flexors and inhibit ipsilateral extensors, lifting the injured foot. Commissural interneurons drive contralateral extensors and inhibit contralateral flexors, so the other leg stiffens and carries the weight. The several synapses involved mean the brain can adjust the response, for example suppressing it when you already know the pain is coming.",
+    "whyNot": [
+      "Belongs. Flexor excitation on the stimulated side is the withdrawal itself.",
+      "Belongs. Reciprocal inhibition of the extensors lets the leg flex smoothly.",
+      "Belongs. The crossed extensor reflex keeps you standing.",
+      "Does not belong. Lifting the supporting leg would drop you to the floor; contralateral flexors are inhibited, not excited.",
+      "Belongs. Multiple interneurons mean multiple points where descending signals can modify the response."
+    ]
+  },
+  {
+    "id": "w05-ma-12",
+    "type": "ma",
+    "competencyId": "w5-csf-bbb",
+    "dok": 2,
+    "stem": "Which of the following are true of the blood brain barrier and of cerebrospinal fluid? Select all that apply.",
+    "options": [
+      "Tight junctions between brain capillary endothelial cells block most paracellular movement of solutes",
+      "Lipid soluble molecules such as alcohol, caffeine and anesthetics cross the barrier easily",
+      "Glucose crosses only because endothelial transporters carry it",
+      "Cerebrospinal fluid cushions the brain and reduces its effective weight by buoyancy",
+      "Any drug that is water soluble reaches neurons as readily as it reaches muscle"
+    ],
+    "correct": [0, 1, 2, 3],
+    "why": "Brain capillaries have tight junctions, so solutes cannot slip between the endothelial cells the way they do in most tissues. What reaches neurons must cross the cells themselves: lipid soluble molecules diffuse through membranes, while glucose, amino acids and other needed polar solutes ride specific transporters. Cerebrospinal fluid floats the brain and buffers it against blows.",
+    "whyNot": [
+      "Belongs. The tight junctions are the barrier; loosening them in inflammation lets more through.",
+      "Belongs. Membrane solubility lets these molecules take the transcellular route, which is why they act on the brain so quickly.",
+      "Belongs. Glucose is polar and needs a carrier, and the brain depends on that transport.",
+      "Belongs. Floating in fluid reduces the brain's effective weight to a small fraction and protects it from mechanical injury.",
+      "Does not belong. A water soluble drug without a transporter is largely kept out; that is the point of the barrier, and it is why many antibiotics penetrate the brain poorly."
+    ]
+  },
+  {
+    "id": "w05-tf-01",
+    "type": "tf",
+    "competencyId": "w5-synaptic-sequence",
+    "dok": 2,
+    "statement": "Neurotransmitter release from a presynaptic terminal is triggered by Na+ entering the terminal during the action potential.",
+    "truth": false,
+    "correction": "Release is triggered by Ca2+ entering the terminal through voltage gated Ca2+ channels that open when the action potential depolarizes the terminal.",
+    "why": "The action potential itself is carried by Na+, but Na+ does not talk to the vesicles. The depolarization opens voltage gated Ca2+ channels, and it is the Ca2+ that binds vesicle proteins and drives fusion. This is why lowering extracellular Ca2+ or blocking Ca2+ channels stops release while the action potential still arrives normally."
+  },
+  {
+    "id": "w05-tf-02",
+    "type": "tf",
+    "competencyId": "w5-neurotransmitters",
+    "dok": 2,
+    "statement": "Whether a neurotransmitter excites or inhibits a postsynaptic cell is decided by the receptor it binds and the ion channel that receptor controls, not by the transmitter molecule alone.",
+    "truth": true,
+    "correction": "True, because the same transmitter can open a cation channel at one receptor and a K+ or Cl- channel at another, giving an EPSP in one cell and an IPSP in the other.",
+    "why": "Acetylcholine depolarizes skeletal muscle through nicotinic cation channels and hyperpolarizes cardiac pacemaker cells through muscarinic receptors coupled to K+ channels. Glutamate and GABA are called excitatory and inhibitory because their common receptors behave that way, but the rule is still the receptor, not the molecule."
+  },
+  {
+    "id": "w05-tf-03",
+    "type": "tf",
+    "competencyId": "w5-neurotransmitter-removal",
+    "dok": 2,
+    "statement": "A drug that blocks reuptake of a neurotransmitter shortens the postsynaptic response, because less transmitter is recycled for the next release.",
+    "truth": false,
+    "correction": "Blocking reuptake prolongs and enlarges the postsynaptic response, because the transmitter stays in the cleft and keeps binding receptors.",
+    "why": "Reuptake is one of the routes that ends a signal. Take it away and the transmitter lingers, so the response lasts longer, which is the basis of how SSRIs and cocaine act. Recycling matters for long term supply, but the immediate effect of a reuptake blocker is more signal, not less."
+  },
+  {
+    "id": "w05-tf-04",
+    "type": "tf",
+    "competencyId": "w5-postsynaptic-potentials",
+    "dok": 2,
+    "statement": "An IPSP always makes the membrane potential more negative than the resting potential.",
+    "truth": false,
+    "correction": "An IPSP makes the cell less likely to fire; it may hyperpolarize the cell, but if the channel's equilibrium potential is close to rest it can simply hold the membrane near rest and shunt excitatory current.",
+    "why": "Opening Cl- channels in a cell whose Cl- equilibrium potential equals the resting potential produces almost no voltage change, yet the added conductance clamps the membrane at rest and makes EPSPs smaller. Inhibition is about moving the cell away from threshold or resisting depolarization, not always about a visible hyperpolarization."
+  },
+  {
+    "id": "w05-tf-05",
+    "type": "tf",
+    "competencyId": "w5-presynaptic-modulation",
+    "dok": 2,
+    "statement": "The main advantage of presynaptic inhibition over postsynaptic inhibition is that it can turn down one specific input to a neuron while leaving the neuron's other inputs at full strength.",
+    "truth": true,
+    "correction": "True, because the modulating synapse sits on a single axon terminal, so only the transmitter released by that terminal is reduced.",
+    "why": "Postsynaptic inhibition changes the membrane of the target cell, so every input to that cell is dampened together. Presynaptic inhibition acts on one terminal and edits one message without touching the rest, which is what selectivity means here. The trade off is that the modulated input is affected regardless of what else the postsynaptic cell is doing."
+  },
+  {
+    "id": "w05-tf-06",
+    "type": "tf",
+    "competencyId": "w5-electrical-synapses",
+    "dok": 1,
+    "statement": "Electrical synapses are slower than chemical synapses because current must pass through two membranes.",
+    "truth": false,
+    "correction": "Electrical synapses are faster than chemical synapses, because current flows directly between cells through gap junction channels with no release, diffusion or receptor binding step.",
+    "why": "The synaptic delay of a chemical synapse comes from Ca2+ entry, vesicle fusion and diffusion across the cleft, about half a millisecond or more. A gap junction skips all of that. The price of the speed is that an electrical synapse cannot easily be made inhibitory or modulated by drugs."
+  },
+  {
+    "id": "w05-tf-07",
+    "type": "tf",
+    "competencyId": "w5-reflex-arc",
+    "dok": 2,
+    "statement": "A monosynaptic reflex has one synapse in the spinal cord, between the sensory neuron and the motor neuron, and therefore no interneuron in its excitatory pathway.",
+    "truth": true,
+    "correction": "True, because in the stretch reflex the Ia afferent synapses directly on the alpha motor neuron, which is what makes the reflex so fast.",
+    "why": "Most reflexes are polysynaptic, with one or more interneurons between input and output, and each extra synapse adds delay and a place for modulation. The stretch reflex is the textbook exception. Note that the inhibition of the antagonist in the same reflex does use an interneuron, so the whole response is not monosynaptic, only its excitatory core."
+  },
+  {
+    "id": "w05-tf-08",
+    "type": "tf",
+    "competencyId": "w5-golgi-tendon",
+    "dok": 2,
+    "statement": "When a Golgi tendon organ fires strongly, it causes the muscle it sits in to contract harder to protect the tendon.",
+    "truth": false,
+    "correction": "A strongly firing Golgi tendon organ inhibits the alpha motor neurons of its own muscle through an interneuron, so the muscle relaxes and tension on the tendon falls.",
+    "why": "The tendon organ is a tension sensor in series with the muscle. High tension threatens the tendon, so the reflex is negative feedback: the Ib afferent excites an inhibitory interneuron, the motor pool is quieted, and force drops. Contracting harder would raise tension further and is the opposite of what the reflex does."
+  },
+  {
+    "id": "w05-tf-09",
+    "type": "tf",
+    "competencyId": "w5-stretch-reflex",
+    "dok": 2,
+    "statement": "During a voluntary contraction, gamma motor neurons contract the ends of the intrafusal fibers so that the muscle spindle keeps firing even as the muscle shortens.",
+    "truth": true,
+    "correction": "True, because gamma drive takes up the slack in the spindle and keeps its central region taut, so the spindle can still report length changes during the contraction.",
+    "why": "Alpha and gamma motor neurons are activated together in a voluntary movement. Without gamma coactivation the shortening muscle would unload the spindle, the Ia afferent would fall silent, and the nervous system would lose its length information in the middle of the movement. Gamma drive also sets how sensitive the spindle is, which is why it changes the size of a tendon jerk."
+  },
+  {
+    "id": "w05-tf-10",
+    "type": "tf",
+    "competencyId": "w5-spinal-pathways",
+    "dok": 2,
+    "statement": "The spinothalamic tract carries pain and temperature and crosses to the opposite side within a segment or two of where it enters the spinal cord.",
+    "truth": true,
+    "correction": "True, because the second order spinothalamic neurons cross in the anterior white commissure near the entry level, so a one sided cord lesion produces pain and temperature loss on the opposite side below the lesion.",
+    "why": "The dorsal column pathway for fine touch, vibration and position sense stays on the same side until it crosses in the medulla, and the corticospinal tract crosses in the medulla on its way down. The spinothalamic tract crosses early. This difference in crossing level is why a hemisection of the cord gives a split pattern of deficits, with weakness and vibration loss on one side and pain loss on the other."
+  },
+  {
+    "id": "w05-bd-01",
+    "type": "bd",
+    "competencyId": "w5-summation-integration",
+    "dok": 3,
+    "prompt": "Without notes, explain how a postsynaptic neuron decides whether to fire an action potential when it is receiving several excitatory and inhibitory inputs at once. Include where the decision is made and why timing and location of the inputs matter.",
+    "rubric": [
+      "EPSPs and IPSPs are graded potentials that add algebraically",
+      "spatial summation combines inputs from different synapses arriving together",
+      "temporal summation combines repeated inputs from one synapse close in time",
+      "graded potentials decay with distance, so distant dendritic inputs count for less",
+      "the summed potential is tested at the trigger zone (axon hillock or initial segment)",
+      "an action potential fires only if the trigger zone reaches threshold"
+    ]
+  },
+  {
+    "id": "w05-bd-02",
+    "type": "bd",
+    "competencyId": "w5-lab-synapse-sim",
+    "dok": 3,
+    "prompt": "In the synapse simulation you can change extracellular Ca2+ and change the number of available postsynaptic receptors. Without notes, explain how you would use these two controls to decide whether an unknown drug that shrinks the EPSP is acting on the presynaptic terminal or on the postsynaptic receptors, and what result you expect in each case.",
+    "rubric": [
+      "the EPSP size depends on both amount of transmitter released and number of receptors available",
+      "raising extracellular Ca2+ increases transmitter release per action potential",
+      "if the drug acts presynaptically, extra Ca2+ restores the EPSP at least partly",
+      "if the drug blocks receptors, extra Ca2+ does not restore the EPSP",
+      "adding receptors (or applying transmitter directly) restores the response only if the receptors were the problem",
+      "the peak of the EPSP, not its duration, is the measure to compare"
+    ]
+  },
+  {
+    "id": "w05-bd-03",
+    "type": "bd",
+    "competencyId": "w5-stretch-reflex",
+    "dok": 3,
+    "prompt": "Without notes, trace what happens from the moment a reflex hammer taps the patellar tendon to the moment the leg kicks, including what happens to the hamstrings and why.",
+    "rubric": [
+      "the tap stretches the quadriceps and its muscle spindles",
+      "spindle Ia afferents fire in proportion to the stretch",
+      "Ia afferents synapse directly on quadriceps alpha motor neurons in the spinal cord (monosynaptic)",
+      "alpha motor neurons fire and the quadriceps contracts, extending the knee",
+      "Ia afferents also excite an inhibitory interneuron that inhibits hamstring motor neurons (reciprocal inhibition)",
+      "the relaxed antagonist lets the kick happen without resistance"
+    ]
+  },
+  {
+    "id": "w05-bd-04",
+    "type": "bd",
+    "competencyId": "w5-spinal-pathways",
+    "dok": 3,
+    "prompt": "Without notes, explain why a lesion of the left half of the spinal cord produces some deficits on the left side of the body and others on the right. Name the pathways involved and where each one crosses.",
+    "rubric": [
+      "dorsal column pathway carries fine touch, vibration and proprioception and crosses in the medulla",
+      "spinothalamic tract carries pain and temperature and crosses near its entry level in the cord",
+      "corticospinal tract carries voluntary motor commands and crosses in the medulla",
+      "below the lesion, weakness and loss of vibration and position sense are on the same side (left)",
+      "pain and temperature loss is on the opposite side (right)",
+      "the side of a deficit tells you whether the pathway had already crossed at the level of the lesion"
+    ]
+  },
+  {
+    "id": "w05-bd-05",
+    "type": "bd",
+    "competencyId": "w5-lab-reflex-testing",
+    "dok": 3,
+    "prompt": "Without notes, explain how measuring the delay from stimulus to response lets you tell a spinal reflex from a voluntary response, and give the approximate timing you expect for each.",
+    "rubric": [
+      "a monosynaptic spinal reflex takes only a few tens of milliseconds (about 20 to 40 ms)",
+      "the reflex delay is conduction to the cord, one synapse, and conduction back to the muscle",
+      "a voluntary response takes well over 100 ms (typically 150 to 250 ms)",
+      "the extra time is ascending pathway, cortical processing and descending command",
+      "anticipation of the stimulus shortens a voluntary reaction time and invalidates the measurement",
+      "reflex latency does not depend on attention, but reaction time does"
+    ]
+  },
+  {
+    "id": "w05-bd-06",
+    "type": "bd",
+    "competencyId": "w5-golgi-tendon",
+    "dok": 3,
+    "prompt": "Without notes, compare what the muscle spindle and the Golgi tendon organ each detect, how their placement in the muscle makes that possible, and what reflex each one produces. Then explain what happens to the muscle if the tendon organ pathway is lost.",
+    "rubric": [
+      "spindle lies in parallel with extrafusal fibers and detects muscle length and rate of stretch",
+      "tendon organ lies in series with the muscle at the tendon and detects tension",
+      "spindle afferents excite the same muscle (stretch reflex)",
+      "tendon organ afferents inhibit the same muscle through an inhibitory interneuron",
+      "the tendon organ reflex is negative feedback that limits force and protects the tendon",
+      "without it, force during a strong contraction is not braked and tendon injury is more likely"
+    ]
+  },
+  {
+    "id": "w05-bd-07",
+    "type": "bd",
+    "competencyId": "w5-synaptic-plasticity",
+    "dok": 3,
+    "prompt": "Without notes, explain how repeated stimulation strengthens a glutamate synapse (long term potentiation). Include why a single weak stimulus does not do it, and what is physically different about the synapse afterward.",
+    "rubric": [
+      "AMPA receptors carry the normal EPSP",
+      "NMDA receptors are blocked by Mg2+ at resting potential",
+      "high frequency stimulation depolarizes the postsynaptic cell enough to expel Mg2+",
+      "Ca2+ enters through the NMDA receptor only when glutamate is bound and the membrane is depolarized",
+      "Ca2+ activates kinases that insert more AMPA receptors into the postsynaptic membrane",
+      "afterward the same release produces a larger EPSP, which is the cellular basis of learning"
+    ]
+  },
+  {
+    "id": "w05-bd-08",
+    "type": "bd",
+    "competencyId": "w5-csf-bbb",
+    "dok": 3,
+    "prompt": "Without notes, explain how the blood brain barrier decides which substances in the blood reach neurons, and use it to predict why a lipid soluble sedative acts on the brain within minutes while a water soluble antibiotic barely gets in.",
+    "rubric": [
+      "brain capillary endothelial cells are joined by tight junctions",
+      "tight junctions block the paracellular route that most capillaries allow",
+      "substances must cross the endothelial cell membranes (transcellular route)",
+      "lipid soluble molecules dissolve through membranes and enter freely",
+      "polar or water soluble molecules need a specific transporter (for example glucose) or are excluded",
+      "the sedative crosses by diffusion; the antibiotic has no transporter and stays out"
+    ]
+  },
+  {
+    "id": "w05-app-01",
+    "type": "app",
+    "competencyId": "w5-summation-integration",
+    "dok": 3,
+    "case": "A motor neuron rests at -70 mV with a threshold of -55 mV. Input A is a single synapse on the soma that produces a 4 mV EPSP. When input A fires once, the neuron does not reach threshold. The experimenter then stimulates input A five times in 10 ms, and each EPSP lasts about 15 ms.",
+    "stem": "Predict what happens at the trigger zone during the burst, and name the process responsible.",
+    "options": [
+      "The EPSPs stack before each one decays, the membrane passes -55 mV, and the neuron fires; this is temporal summation",
+      "Each EPSP returns to rest before the next begins, so the neuron never passes -66 mV; no summation occurs",
+      "The five EPSPs arrive from five different synapses and add across space; this is spatial summation",
+      "The repeated stimulation causes presynaptic inhibition, so each EPSP is smaller than the last"
+    ],
+    "correct": 0,
+    "why": "Five 4 mV EPSPs delivered within 10 ms from one synapse overlap, because each one lasts longer than the gap between stimuli. Their sum at the soma approaches 20 mV, well past the 15 mV needed to reach threshold, so the neuron fires. Adding inputs from one synapse in time is temporal summation.",
+    "whyNot": [
+      "Correct. Overlapping EPSPs from a single input add in time and carry the cell past threshold.",
+      "This would be true only if the interval between stimuli were longer than the EPSP duration. Here 15 ms EPSPs at 2 ms spacing overlap almost completely.",
+      "Spatial summation adds inputs from different synapses. The case says all five stimuli come from the same synapse, input A.",
+      "Presynaptic inhibition requires a separate modulatory neuron on the terminal. Repeated firing of a single input in this time window does not shrink release; if anything, short term facilitation enlarges it."
+    ]
+  },
+  {
+    "id": "w05-app-02",
+    "type": "app",
+    "competencyId": "w5-summation-integration",
+    "dok": 3,
+    "case": "A neuron rests at -70 mV with threshold at -55 mV. Three excitatory synapses on the soma each produce a 6 mV EPSP, and one inhibitory synapse on the soma produces a 5 mV IPSP. All four fire at the same instant.",
+    "stem": "Does the neuron fire, and what is the approximate membrane potential at the trigger zone?",
+    "options": [
+      "No; the inputs sum to about -57 mV, just below threshold",
+      "Yes; the inputs sum to about -52 mV, above threshold",
+      "No; an IPSP cancels all EPSPs regardless of size, so the cell stays at -70 mV",
+      "Yes; only the EPSPs count because IPSPs act after the spike is triggered"
+    ],
+    "correct": 0,
+    "why": "Excitatory and inhibitory inputs add algebraically. Three EPSPs of 6 mV give 18 mV of depolarization, the IPSP subtracts 5 mV, leaving 13 mV net. From -70 mV that brings the trigger zone to about -57 mV, two millivolts short of threshold, so no action potential.",
+    "whyNot": [
+      "Correct. 18 minus 5 is 13 mV, and -70 plus 13 is -57 mV, which does not reach -55 mV.",
+      "This would be the answer if you ignored the IPSP: 18 mV of depolarization alone gives -52 mV. The inhibitory input has to be subtracted.",
+      "Inhibition is not all or none. An IPSP subtracts its own amplitude; it does not veto every excitatory input.",
+      "IPSPs act on the summed potential at the same time as EPSPs. There is no rule that delays inhibition until after a spike."
+    ]
+  },
+  {
+    "id": "w05-app-03",
+    "type": "app",
+    "competencyId": "w5-lab-synapse-sim",
+    "dok": 3,
+    "case": "In the synapse simulation, the control EPSP is 10 mV. A student adds drug X and the EPSP falls to 3 mV. She then doubles extracellular Ca2+ and the EPSP rises to 9 mV. In a separate run without drug X, doubling Ca2+ alone raises the EPSP from 10 mV to 14 mV.",
+    "stem": "What does this pattern indicate about where drug X acts?",
+    "options": [
+      "Drug X reduces transmitter release from the presynaptic terminal, because extra Ca2+ largely rescues the response",
+      "Drug X blocks postsynaptic receptors, because the EPSP never fully returns to 10 mV",
+      "Drug X speeds transmitter clearance, because a smaller EPSP always means faster removal",
+      "Drug X blocks voltage gated Na+ channels on the postsynaptic cell, so the EPSP cannot be recorded"
+    ],
+    "correct": 0,
+    "why": "Extra Ca2+ works by increasing the amount of transmitter released per action potential. If the drug had removed receptors, releasing more transmitter would not help much because there would be nothing extra to bind. A response that goes from 3 mV back to 9 mV when Ca2+ is raised was limited by release, so the drug is acting at the terminal.",
+    "whyNot": [
+      "Correct. A presynaptic deficit in release is the one that more Ca2+ can compensate.",
+      "A receptor block would not be rescued by more transmitter, because the missing receptors cannot be replaced by Ca2+. The small gap from 9 to 10 mV reflects an incomplete rescue, not a receptor effect.",
+      "Faster clearance shortens the response more than it shrinks the peak, and extra Ca2+ would not selectively repair it. The rescue with Ca2+ points to release.",
+      "The EPSP is a graded potential through ligand gated channels and is recordable without voltage gated Na+ channels. A Na+ channel block would stop action potentials, not shrink the EPSP to 3 mV."
+    ]
+  },
+  {
+    "id": "w05-app-04",
+    "type": "app",
+    "competencyId": "w5-lab-synapse-sim",
+    "dok": 3,
+    "case": "In the synapse simulation, the control EPSP has a peak of 10 mV and a duration of 20 ms. After a drug is added, the peak is 12 mV and the duration is 80 ms. Presynaptic Ca2+ entry per action potential is measured and is unchanged.",
+    "stem": "What is the most likely action of the drug?",
+    "options": [
+      "It blocks a route that clears the transmitter from the cleft, so transmitter stays bound longer",
+      "It blocks postsynaptic receptors, so fewer channels open",
+      "It reduces vesicle fusion, so less transmitter is released per spike",
+      "It opens more voltage gated Ca2+ channels in the terminal"
+    ],
+    "correct": 0,
+    "why": "A response that lasts four times longer with a slightly larger peak is the signature of transmitter that is not being cleared. Release is normal, since Ca2+ entry is unchanged, and receptors must be working because the response is at least as big as before. Blocking degradation or reuptake leaves transmitter in the cleft to keep binding.",
+    "whyNot": [
+      "Correct. Prolonged clearance extends the time transmitter is available and stretches the response.",
+      "A receptor block would shrink the peak, not enlarge it, and would not lengthen the response.",
+      "Less release would give a smaller EPSP. The peak went up, not down.",
+      "The case states Ca2+ entry per spike is unchanged, and more Ca2+ would raise the peak without lengthening the response fourfold."
+    ]
+  },
+  {
+    "id": "w05-app-05",
+    "type": "app",
+    "competencyId": "w5-stretch-reflex",
+    "dok": 3,
+    "case": "A patient has a lesion that removes descending inhibition from the brain onto the spinal reflex circuits of the right leg. The alpha motor neurons, gamma motor neurons, muscle spindles, and Ia afferents of the right leg are intact.",
+    "stem": "Predict what a tap on the right patellar tendon will produce, and why.",
+    "options": [
+      "An exaggerated knee jerk, because the intact monosynaptic arc is no longer damped by descending inhibition",
+      "An absent knee jerk, because the reflex needs the cortex to complete the loop",
+      "A normal knee jerk, because descending input does not reach spinal reflex circuits",
+      "A delayed knee jerk of about 200 ms, because the signal must now travel through the brain"
+    ],
+    "correct": 0,
+    "why": "The stretch reflex is a spinal loop and does not need the brain to work. Under normal conditions descending pathways hold the reflex in check. Take that braking away and the same Ia input drives a larger motor response, so the jerk is brisker than normal. This is the pattern seen after upper motor neuron lesions.",
+    "whyNot": [
+      "Correct. Removing inhibition from an intact reflex arc increases the output.",
+      "The knee jerk is monosynaptic and spinal; it survives even after complete cord transection above the level, so it cannot depend on the cortex.",
+      "Descending pathways do reach spinal interneurons and motor neurons and normally suppress reflex gain. That is why reflexes change after a brain or cord lesion.",
+      "The reflex arc still runs entirely within the cord, so its latency stays at a few tens of milliseconds. Nothing forces the signal through the brain."
+    ]
+  },
+  {
+    "id": "w05-app-06",
+    "type": "app",
+    "competencyId": "w5-stretch-reflex",
+    "dok": 3,
+    "case": "During a reflex exam, a student cannot get a knee jerk from a relaxed subject. The instructor has the subject hook the fingers together and pull hard (the Jendrassik maneuver), and now the tap produces a clear kick. The subject reports no change in sensation over the leg.",
+    "stem": "What is the most likely explanation for why the reflex appeared?",
+    "options": [
+      "Descending activity during the effort raised gamma motor neuron drive and spinal motor neuron excitability, making the spindles more sensitive and the arc easier to bring to threshold",
+      "Pulling with the arms stretched the quadriceps mechanically and added to the tap",
+      "The maneuver opened the blood brain barrier and let more glutamate reach the cord",
+      "The effort activated the Golgi tendon organs, which excite the quadriceps"
+    ],
+    "correct": 0,
+    "why": "The reinforcement maneuver works through the nervous system, not through mechanics. Voluntary effort elsewhere in the body raises descending excitatory drive to spinal circuits, including gamma motor neurons. Tighter intrafusal fibers make the spindle respond more strongly to the same tap, and more excitable alpha motor neurons reach threshold with that stronger Ia volley.",
+    "whyNot": [
+      "Correct. Increased gamma drive and general spinal facilitation raise the gain of the arc.",
+      "Pulling the hands apart does not lengthen the quadriceps. The effect is neural, which is why it works on a leg the subject is not moving.",
+      "The blood brain barrier is not involved, and glutamate in the blood does not drive spinal reflexes.",
+      "Golgi tendon organs inhibit their own muscle; they do not excite the quadriceps, and the arms are not the muscle being tested."
+    ]
+  },
+  {
+    "id": "w05-app-07",
+    "type": "app",
+    "competencyId": "w5-spinal-pathways",
+    "dok": 3,
+    "case": "A patient has a lesion confined to the right dorsal column of the spinal cord at the T6 level. Strength is normal in all four limbs.",
+    "stem": "Predict the sensory findings below the lesion.",
+    "options": [
+      "Loss of vibration and position sense in the right leg, with pain and temperature intact on both sides",
+      "Loss of vibration and position sense in the left leg, with pain and temperature intact on both sides",
+      "Loss of pain and temperature in the left leg, with vibration and position sense intact",
+      "Loss of all sensation in the right leg"
+    ],
+    "correct": 0,
+    "why": "The dorsal column pathway carries fine touch, vibration and proprioception up the same side of the cord it entered and does not cross until the medulla. A right dorsal column lesion therefore removes those senses from the right side below the lesion. The spinothalamic tract runs in a different part of the cord and is untouched, so pain and temperature are preserved.",
+    "whyNot": [
+      "Correct. Uncrossed fibers, same side deficit, and the other tract is spared.",
+      "A left sided deficit would need a pathway that had already crossed. The dorsal columns have not crossed at T6.",
+      "Pain and temperature travel in the spinothalamic tract, which is not part of the dorsal column and is not damaged here.",
+      "Losing everything on one side would require damage to both the dorsal column and the spinothalamic tract on that side, and even then pain loss would be on the other side."
+    ]
+  },
+  {
+    "id": "w05-app-08",
+    "type": "app",
+    "competencyId": "w5-spinal-pathways",
+    "dok": 3,
+    "case": "A patient has a small lesion in the left side of the medulla that damages the corticospinal tract above the point where it crosses. Sensory pathways are spared.",
+    "stem": "Predict the motor deficit and explain the side.",
+    "options": [
+      "Weakness on the right side of the body, because the tract has not yet crossed at the level of the lesion",
+      "Weakness on the left side of the body, because the tract has already crossed at the level of the lesion",
+      "Weakness on both sides, because the corticospinal tract sends equal fibers to both sides",
+      "No weakness, because reflexes can take over voluntary movement"
+    ],
+    "correct": 0,
+    "why": "Corticospinal fibers from the left cortex control the right side of the body and cross at the lower medulla. A lesion above that crossing removes the fibers while they are still on the left, so the muscles that lose their command are on the right. Lesions below the crossing, in the cord, give same side weakness.",
+    "whyNot": [
+      "Correct. Above the decussation the fibers are still on the side of origin, so the deficit is contralateral.",
+      "Same side weakness happens with a cord lesion, below the crossing. In the upper medulla the crossing has not happened yet.",
+      "Most corticospinal fibers cross; only a small fraction stay uncrossed. The deficit is strongly one sided.",
+      "Reflexes maintain tone and posture but cannot generate voluntary movement. Weakness is real even though reflexes are preserved or brisk."
+    ]
+  },
+  {
+    "id": "w05-app-09",
+    "type": "app",
+    "competencyId": "w5-lab-reflex-testing",
+    "dok": 3,
+    "case": "In lab, a student records muscle electrical activity from the calf while a partner taps the Achilles tendon. Latency from tap to muscle activity is 35 ms. The partner then uses a light flash and asks the student to plantarflex as fast as possible when the light comes on. Latency is 190 ms. Nerve conduction velocity in the leg is about 50 m/s and the leg is about 1 m long.",
+    "stem": "Why is the second latency so much longer than the first, given that both use the same muscle and the same motor neurons?",
+    "options": [
+      "The reflex needs only one spinal synapse, while the voluntary response adds ascending conduction, cortical processing, and descending conduction",
+      "The visual stimulus is weaker than a tendon tap, so the motor neurons take longer to reach threshold",
+      "Voluntary movement uses slower unmyelinated motor axons than reflexes do",
+      "The muscle contracts more slowly when the command comes from the brain"
+    ],
+    "correct": 0,
+    "why": "Thirty five milliseconds is about what a round trip of roughly 2 m of nerve at 50 m/s takes, plus one synapse. The voluntary response uses the same motor neurons and muscle, so the extra 150 ms must come from everything the reflex skips: retina to brain, cortical decision, and the descending command to the cord.",
+    "whyNot": [
+      "Correct. The difference in latency is the difference in the path length and the number of synapses.",
+      "Stimulus strength changes whether a response occurs, not the 150 ms difference in path. A very bright flash still gives a reaction time well over 100 ms.",
+      "The same alpha motor neurons and the same large myelinated axons carry both responses. The difference is upstream of the motor neuron.",
+      "Muscle contraction time is the same whichever pathway drives the motor neurons; the recording is of the electrical activity, before contraction even begins."
+    ]
+  },
+  {
+    "id": "w05-app-10",
+    "type": "app",
+    "competencyId": "w5-csf-bbb",
+    "dok": 3,
+    "case": "A patient with a bacterial infection of the meninges is treated with an antibiotic that normally crosses the blood brain barrier poorly. Her CSF drug level on day 2 is 40 percent of the plasma level (expected in healthy adults less than 5 percent). By day 10, as the inflammation resolves, her CSF drug level has fallen to 8 percent of plasma while the dose is unchanged.",
+    "stem": "What best explains the change between day 2 and day 10?",
+    "options": [
+      "Inflammation loosened endothelial tight junctions and opened a paracellular route; as the junctions resealed, the drug was excluded again",
+      "The drug became more lipid soluble as the infection resolved",
+      "The choroid plexus stopped producing CSF, concentrating the drug",
+      "Bacteria were actively transporting the drug into the CSF, and their death ended the transport"
+    ],
+    "correct": 0,
+    "why": "The barrier is the tight junctions between brain capillary endothelial cells. Inflammation makes those junctions leaky, so a water soluble drug that normally cannot pass between the cells slips through. As the infection resolves and the junctions tighten, the paracellular route closes and the drug level in the CSF drops back toward its usual low value.",
+    "whyNot": [
+      "Correct. Permeability tracked the inflammation, and the drug's own properties never changed.",
+      "Lipid solubility is a fixed chemical property of the molecule. It does not change with the patient's condition.",
+      "CSF production continues during and after meningitis. Reduced production would raise, not lower, the CSF drug concentration, and the level fell.",
+      "Bacteria do not pump antibiotics into the CSF on the patient's behalf. The route was through the host's own leaky capillaries."
+    ]
+  },
+  {
+    "id": "w05-app-11",
+    "type": "app",
+    "competencyId": "w5-neurotransmitter-removal",
+    "dok": 3,
+    "case": "A person is exposed to an organophosphate insecticide that irreversibly inhibits acetylcholinesterase. Within an hour they have profuse salivation and sweating, a heart rate of 48 beats per minute (normal 60 to 100), and muscle twitching that then progresses to weakness.",
+    "stem": "Which mechanism explains both the early twitching and the later weakness at the skeletal neuromuscular junction?",
+    "options": [
+      "Acetylcholine accumulates in the cleft and overstimulates nicotinic receptors, then persistent depolarization inactivates the muscle Na+ channels so the muscle can no longer fire",
+      "Acetylcholine is destroyed too fast, so the muscle first fires randomly and then receives no signal",
+      "The insecticide blocks acetylcholine release, and the twitching is a withdrawal effect",
+      "The insecticide blocks reuptake of acetylcholine into the motor neuron, which depletes the terminal"
+    ],
+    "correct": 0,
+    "why": "Acetylcholinesterase is the only fast route for clearing acetylcholine at the neuromuscular junction. With the enzyme blocked, every release lingers and the endplate is stimulated over and over, giving fasciculations. A membrane held depolarized cannot reset its voltage gated Na+ channels, so the muscle becomes unable to generate action potentials and weakness follows. The slow heart and salivation are the same excess acetylcholine at muscarinic receptors.",
+    "whyNot": [
+      "Correct. Too much transmitter for too long, first excitation, then depolarization block.",
+      "The enzyme is inhibited, so acetylcholine is destroyed too slowly, not too fast. The mechanism is reversed.",
+      "Release is not blocked; the terminal is releasing normally, and the problem is what happens after release. Withdrawal is not a mechanism at the endplate.",
+      "Acetylcholine is not taken back up intact. The terminal recovers choline after the enzyme splits the transmitter, so a reuptake block is not the mechanism here."
+    ]
+  },
+  {
+    "id": "w05-app-12",
+    "type": "app",
+    "competencyId": "w5-withdrawal-reflex",
+    "dok": 3,
+    "case": "A researcher applies a brief painful stimulus to the sole of a person's left foot while the person stands on both feet. Muscle recordings show left hamstring activation at 80 ms and right quadriceps activation at 95 ms. When the same stimulus is applied while the person is lying down, the left hamstring response is unchanged but the right quadriceps response is much smaller.",
+    "stem": "What do these findings show about how the withdrawal and crossed extensor responses are organized?",
+    "options": [
+      "Both are polysynaptic spinal responses; the crossed extensor component is adjusted by descending input according to whether the other leg needs to bear weight",
+      "The left hamstring response is a monosynaptic stretch reflex, which is why it is fast",
+      "The right quadriceps response comes from the cortex deciding to shift weight, which is why it is slower",
+      "Lying down blocks the commissural interneurons mechanically"
+    ],
+    "correct": 0,
+    "why": "Both latencies are far longer than a monosynaptic reflex and far shorter than a voluntary reaction, which fits polysynaptic spinal circuits. The extra 15 ms for the crossed response is the commissural interneuron pathway. That the crossed extension shrinks when there is no weight to support shows the brain sets the gain of the reflex through descending pathways, which is possible because the circuit has interneurons to act on.",
+    "whyNot": [
+      "Correct. Spinal timing plus context dependence is the signature of a polysynaptic reflex under descending control.",
+      "The stretch reflex is triggered by muscle stretch, not by pain, and its latency is about 20 to 30 ms. An 80 ms response to a painful stimulus is a polysynaptic flexor reflex.",
+      "A cortical decision would take 150 ms or more. Ninety five milliseconds is spinal timing, with the extra delay coming from crossing interneurons, not the brain.",
+      "Posture does not physically block spinal interneurons. What changes is the descending drive that sets how strongly those interneurons respond."
+    ]
+  }
+]

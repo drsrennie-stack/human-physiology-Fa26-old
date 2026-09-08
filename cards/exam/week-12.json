@@ -1,0 +1,766 @@
+[
+  {
+    "id": "w12-ma-01",
+    "type": "ma",
+    "competencyId": "w9-islet-hormones",
+    "dok": 2,
+    "stem": "Which of the following are true of insulin and glucagon? Select all that apply.",
+    "options": [
+      "Glucagon is released from alpha cells mainly when plasma glucose is high.",
+      "Insulin is released from beta cells when plasma glucose rises after a meal.",
+      "Glucagon stimulates the liver to break down glycogen and release glucose into the blood.",
+      "Insulin raises plasma glucose by stimulating hepatic glucose output.",
+      "Insulin stimulates the liver to store glucose as glycogen."
+    ],
+    "correct": [1, 2, 4],
+    "why": "The two islet hormones respond to opposite signals and push plasma glucose in opposite directions. A rise in glucose stimulates beta cells to release insulin, which drives glucose into muscle and fat and tells the liver to store it as glycogen. A fall in glucose stimulates alpha cells to release glucagon, which tells the liver to break glycogen down and make new glucose so the brain keeps its supply.",
+    "whyNot": [
+      "Backwards. Glucagon is released when plasma glucose falls. High glucose suppresses it.",
+      "Correct. Rising glucose is the main stimulus for insulin release from the beta cell.",
+      "Correct. Glycogenolysis in the liver is the fastest way glucagon raises plasma glucose.",
+      "Backwards. Insulin lowers plasma glucose and shuts off hepatic glucose output. Stimulating output is what glucagon does.",
+      "Correct. Insulin activates glycogen synthase in the liver, so glucose from the meal is stored."
+    ]
+  },
+  {
+    "id": "w12-ma-02",
+    "type": "ma",
+    "competencyId": "w14-digestive-processes",
+    "dok": 2,
+    "stem": "Which statements correctly match a digestive process to where it dominates? Select all that apply.",
+    "options": [
+      "Chemical digestion of starch begins in the mouth.",
+      "The colon absorbs most of the fat from a meal.",
+      "Most absorption of nutrients occurs in the small intestine.",
+      "The esophagus is a major site of digestive enzyme secretion.",
+      "The stomach mixes and mechanically breaks down food but absorbs very little nutrient."
+    ],
+    "correct": [0, 2, 4],
+    "why": "Each region of the tract has a dominant job. The mouth starts starch digestion with salivary amylase. The stomach is a mixer and a holding tank that starts protein digestion but absorbs almost nothing except water, alcohol, and a few drugs. The small intestine does nearly all chemical digestion and nutrient absorption. The colon finishes water and electrolyte absorption.",
+    "whyNot": [
+      "Correct. Salivary amylase begins breaking starch into smaller sugars while food is still being chewed.",
+      "Fat is absorbed in the small intestine. By the time chyme reaches the colon the fat should already be gone, and the colon has no lipase or micelles to handle it.",
+      "Correct. The small intestine has the enzymes, the transporters, and the surface area, so it is where absorption dominates.",
+      "The esophagus is a conduit. It secretes mucus for lubrication, not enzymes.",
+      "Correct. The stomach's job is motility and secretion. Its surface is not built for nutrient absorption."
+    ]
+  },
+  {
+    "id": "w12-ma-03",
+    "type": "ma",
+    "competencyId": "w14-gi-motility",
+    "dok": 2,
+    "stem": "Which of the following are true of the motility patterns of the gut? Select all that apply.",
+    "options": [
+      "Peristalsis moves a bolus forward by contracting behind it and relaxing ahead of it.",
+      "The migrating motor complex occurs during a meal to speed digestion.",
+      "Segmentation mixes chyme with secretions but produces little net forward movement.",
+      "Segmentation is the main pattern in the esophagus.",
+      "The migrating motor complex sweeps leftover residue and bacteria toward the colon between meals."
+    ],
+    "correct": [0, 2, 4],
+    "why": "There are three patterns and each has a purpose. Peristalsis is propulsion. Segmentation is mixing, which gives enzymes and the mucosa time with the chyme. The migrating motor complex is housekeeping, a slow wave of contraction that runs from stomach to ileum every 90 minutes or so between meals and clears debris and bacteria.",
+    "whyNot": [
+      "Correct. Contraction behind and relaxation ahead is the definition of a peristaltic wave.",
+      "The migrating motor complex runs between meals, when the gut is empty. Eating stops it and switches the gut to segmentation and peristalsis.",
+      "Correct. Alternating rings of contraction chop and mix chyme back and forth without pushing it far.",
+      "The esophagus is a transport tube. It uses peristalsis to deliver a bolus to the stomach and has no mixing role.",
+      "Correct. This is the housekeeping function, and losing it allows bacterial overgrowth in the small intestine."
+    ]
+  },
+  {
+    "id": "w12-ma-04",
+    "type": "ma",
+    "competencyId": "w14-digestive-phases",
+    "dok": 2,
+    "stem": "Which of the following are true of the phases of digestive control? Select all that apply.",
+    "options": [
+      "The intestinal phase mainly speeds gastric emptying so the stomach empties faster as the duodenum fills.",
+      "The cephalic phase starts before food reaches the stomach and is carried by the vagus nerve.",
+      "The gastric phase is controlled entirely by hormones released from the duodenum.",
+      "The gastric phase is triggered by distension of the stomach and by peptides in the lumen.",
+      "Secretin and cholecystokinin released during the intestinal phase slow gastric emptying."
+    ],
+    "correct": [1, 3, 4],
+    "why": "The three phases are named for where the stimulus comes from. In the cephalic phase the brain anticipates food and the vagus turns on secretion and motility. In the gastric phase the stomach itself senses stretch and peptides and responds through local reflexes and gastrin. In the intestinal phase the duodenum senses acid, fat, and hypertonic chyme and uses hormones and reflexes to slow the stomach down so it is not overwhelmed.",
+    "whyNot": [
+      "Backwards. The intestinal phase is mostly a brake. Acid, fat, and osmolarity in the duodenum slow gastric emptying.",
+      "Correct. Sight, smell, taste, and even thinking about food activate vagal output to the stomach before anything arrives.",
+      "The gastric phase is driven by stretch and peptides in the stomach acting through enteric reflexes and gastrin. Duodenal hormones belong to the intestinal phase.",
+      "Correct. Stretch receptors and chemoreceptors in the stomach wall start the short and long reflexes and release gastrin.",
+      "Correct. Both hormones reduce gastric motility and emptying so the duodenum gets chyme at a rate it can neutralize and digest."
+    ]
+  },
+  {
+    "id": "w12-ma-05",
+    "type": "ma",
+    "competencyId": "w14-liver-function",
+    "dok": 2,
+    "stem": "Which of the following are true of liver function and the enterohepatic circulation? Select all that apply.",
+    "options": [
+      "The liver converts ammonia from amino acid breakdown into urea.",
+      "Most bile salts are lost in the feces each day, so the liver must make an entirely new pool.",
+      "Bile salts are reabsorbed mainly in the ileum and return to the liver in the portal vein.",
+      "Drugs absorbed from the gut reach the systemic circulation before they pass through the liver.",
+      "The liver stores glucose as glycogen after a meal and releases it during fasting."
+    ],
+    "correct": [0, 2, 4],
+    "why": "The liver sits between the gut and the rest of the body. Everything absorbed from the intestine passes through it first in the portal blood, so it can store nutrients, detoxify drugs, and convert ammonia to urea before anything reaches the systemic circulation. Bile salts ride the same route back: secreted into the duodenum, reabsorbed in the ileum, and returned in the portal vein to be secreted again.",
+    "whyNot": [
+      "Correct. The urea cycle in hepatocytes is the main way toxic ammonia is removed from the body.",
+      "About 95 percent of bile salts are recycled. The pool circulates several times per meal, and the liver replaces only the small fraction lost in feces.",
+      "Correct. Active transport in the terminal ileum recovers bile salts and sends them back to the liver.",
+      "Backwards. Portal blood goes to the liver first, which is why many oral drugs are partly inactivated before they reach the body. This is the first pass effect.",
+      "Correct. Glycogen storage under insulin and glycogen breakdown under glucagon are central liver jobs."
+    ]
+  },
+  {
+    "id": "w12-ma-06",
+    "type": "ma",
+    "competencyId": "w14-large-intestine",
+    "dok": 2,
+    "stem": "Which of the following are true of the large intestine? Select all that apply.",
+    "options": [
+      "The colon secretes digestive enzymes that finish protein digestion.",
+      "The colon absorbs sodium and water, turning liquid chyme into semi solid feces.",
+      "Aldosterone reduces sodium absorption in the colon.",
+      "Colonic bacteria ferment undigested carbohydrate into short chain fatty acids that colon cells use for fuel.",
+      "The defecation reflex is triggered by stretch of the rectal wall."
+    ],
+    "correct": [1, 3, 4],
+    "why": "The colon does no enzymatic digestion of its own. It absorbs sodium, with water following, and it hosts bacteria that ferment what the small intestine could not digest. The short chain fatty acids they produce are absorbed and feed the colonocytes. When feces distend the rectum, stretch receptors start the defecation reflex.",
+    "whyNot": [
+      "The colon has no digestive enzymes. Any breakdown there is done by bacteria, not by the mucosa.",
+      "Correct. Sodium absorption drives osmotic water absorption, about 1.5 liters a day.",
+      "Backwards. Aldosterone increases sodium absorption in the colon, just as it does in the kidney.",
+      "Correct. Fermentation produces acetate, propionate, and butyrate, and butyrate is the preferred fuel of colonocytes.",
+      "Correct. Rectal distension triggers reflex contraction of the rectum and relaxation of the internal anal sphincter."
+    ]
+  },
+  {
+    "id": "w12-ma-07",
+    "type": "ma",
+    "competencyId": "w14-absorptive-state",
+    "dok": 2,
+    "stem": "Which of the following happen in the absorptive state, in the hours after a mixed meal? Select all that apply.",
+    "options": [
+      "Muscle and adipose cells take up glucose through GLUT4 transporters inserted in response to insulin.",
+      "The liver releases glucose from glycogen to supply the brain.",
+      "Excess glucose is converted to fatty acids and stored as triglyceride.",
+      "Hormone sensitive lipase is highly active, releasing fatty acids from adipose tissue.",
+      "Insulin is the dominant hormone."
+    ],
+    "correct": [0, 2, 4],
+    "why": "The absorptive state is about storage. Insulin is high and glucagon is low. Glucose enters muscle and fat through GLUT4, is stored as glycogen in liver and muscle, and any excess becomes fat. Amino acids are used for protein synthesis. Fat breakdown is switched off because there is no need for stored fuel while food is being absorbed.",
+    "whyNot": [
+      "Correct. Insulin moves GLUT4 to the membrane, and this is the main route for clearing a glucose load.",
+      "Hepatic glucose release is a fasting event driven by glucagon. After a meal the liver takes glucose in and stores it.",
+      "Correct. Once glycogen stores are full, extra glucose goes to lipogenesis.",
+      "Insulin inhibits hormone sensitive lipase. Lipolysis is a postabsorptive event.",
+      "Correct. Insulin drives every storage pathway of the absorptive state."
+    ]
+  },
+  {
+    "id": "w12-ma-08",
+    "type": "ma",
+    "competencyId": "w14-metabolic-rate",
+    "dok": 2,
+    "stem": "Which of the following are true of basal metabolic rate and its measurement? Select all that apply.",
+    "options": [
+      "Basal metabolic rate is measured at rest, after an overnight fast, in a comfortable temperature.",
+      "Fasting for several days raises basal metabolic rate.",
+      "Thyroid hormone raises basal metabolic rate.",
+      "Eating a meal briefly lowers metabolic rate.",
+      "Indirect calorimetry estimates energy expenditure from the rate of oxygen consumption."
+    ],
+    "correct": [0, 2, 4],
+    "why": "Basal metabolic rate is the energy cost of staying alive with nothing else going on, so the conditions of measurement remove digestion, activity, and thermoregulation. Thyroid hormone sets the baseline rate. Indirect calorimetry works because nearly all energy release in the body is oxidative, so oxygen consumed is proportional to energy spent, about 4.8 kcal per liter.",
+    "whyNot": [
+      "Correct. Rest, fasting, and thermoneutral conditions strip away everything but basal maintenance.",
+      "Prolonged fasting lowers metabolic rate. The body conserves energy when intake stops, which is one reason weight loss slows during a diet.",
+      "Correct. Thyroid hormone increases Na+/K+ ATPase and mitochondrial activity throughout the body.",
+      "Eating raises metabolic rate for several hours. Digesting, absorbing, and storing a meal cost energy. This is diet induced thermogenesis.",
+      "Correct. Oxygen consumption is converted to kilocalories using the caloric equivalent of oxygen."
+    ]
+  },
+  {
+    "id": "w12-ma-09",
+    "type": "ma",
+    "competencyId": "w9-stress-response",
+    "dok": 2,
+    "stem": "Which of the following are actions of cortisol? Select all that apply.",
+    "options": [
+      "Cortisol is released from the adrenal medulla in response to sympathetic nerves.",
+      "Cortisol raises plasma glucose by stimulating gluconeogenesis in the liver.",
+      "Cortisol lowers blood pressure by opposing the action of catecholamines.",
+      "Cortisol promotes breakdown of muscle protein to supply amino acids.",
+      "Cortisol suppresses the immune response and inflammation."
+    ],
+    "correct": [1, 3, 4],
+    "why": "Cortisol is the adrenal cortex hormone of sustained stress. It mobilizes fuel by breaking down protein and fat and turning the amino acids into glucose, it makes tissues less responsive to insulin so the glucose stays available, it is permissive for the vasoconstrictor action of catecholamines, and it turns down the immune system. Each of these is helpful for a few hours and harmful when it goes on for months.",
+    "whyNot": [
+      "The medulla makes epinephrine. Cortisol comes from the zona fasciculata of the cortex in response to ACTH.",
+      "Correct. Gluconeogenesis plus insulin resistance is why cortisol raises plasma glucose.",
+      "Backwards. Cortisol is permissive for catecholamine vasoconstriction, so it supports blood pressure. Cortisol deficiency causes hypotension.",
+      "Correct. Muscle protein catabolism supplies the substrate for gluconeogenesis.",
+      "Correct. Cortisol inhibits cytokine production and lymphocyte activity, which is why it is used as an anti inflammatory drug."
+    ]
+  },
+  {
+    "id": "w12-ma-10",
+    "type": "ma",
+    "competencyId": "w14-pancreatic-bile-secretion",
+    "dok": 2,
+    "stem": "Which of the following are true of pancreatic and biliary secretion? Select all that apply.",
+    "options": [
+      "Bile salts digest triglycerides into fatty acids and monoglycerides.",
+      "Pancreatic duct cells secrete bicarbonate in response to secretin.",
+      "Pancreatic proteases are secreted as inactive zymogens and activated in the duodenum.",
+      "Cholecystokinin stimulates pancreatic bicarbonate secretion but not enzyme secretion.",
+      "Bile salts emulsify fat, which increases the surface area available to lipase."
+    ],
+    "correct": [1, 2, 4],
+    "why": "Pancreatic juice has two parts made by two cell types under two hormones. Duct cells make bicarbonate under secretin and neutralize acid chyme. Acinar cells make enzymes under cholecystokinin and the vagus, and the proteases leave as zymogens so they do not digest the pancreas. Bile has no enzymes. Bile salts are detergents that break fat into small droplets so lipase has more surface to work on.",
+    "whyNot": [
+      "Bile salts are not enzymes. They emulsify. Hydrolysis of triglyceride is done by pancreatic lipase.",
+      "Correct. Secretin, released by duodenal acid, drives a bicarbonate rich watery secretion from the ducts.",
+      "Correct. Trypsinogen is activated by enteropeptidase on the brush border and trypsin then activates the rest.",
+      "Backwards. Cholecystokinin is the enzyme signal to acinar cells, and it also contracts the gallbladder. Bicarbonate is the job of secretin.",
+      "Correct. Emulsification is the physical step that makes chemical digestion of fat efficient."
+    ]
+  },
+  {
+    "id": "w12-ma-11",
+    "type": "ma",
+    "competencyId": "w14-carb-protein-absorption",
+    "dok": 2,
+    "stem": "Which of the following are true of carbohydrate and protein digestion and absorption? Select all that apply.",
+    "options": [
+      "Amylase breaks starch all the way down to free glucose.",
+      "Glucose enters the enterocyte across the apical membrane with sodium on the SGLT1 cotransporter.",
+      "Absorbed monosaccharides enter the lymph before they reach the blood.",
+      "Pepsin begins protein digestion in the acid environment of the stomach.",
+      "Amino acids and small peptides absorbed by the enterocyte enter the portal blood."
+    ],
+    "correct": [1, 3, 4],
+    "why": "Both pathways end at the brush border. Amylase from saliva and pancreas cuts starch into maltose and small oligosaccharides, and brush border enzymes finish the job so free glucose is released right at SGLT1. Protein is started by pepsin in the stomach, continued by pancreatic proteases, and finished by brush border peptidases. Sugars and amino acids are water soluble, so they leave the cell through the basolateral membrane into capillaries and travel to the liver in the portal vein.",
+    "whyNot": [
+      "Amylase stops at maltose, maltotriose, and limit dextrins. Maltase and other brush border enzymes release the free glucose.",
+      "Correct. Secondary active transport driven by the sodium gradient pulls glucose in even against its own gradient.",
+      "Only fat goes to the lymph. Sugars are small and water soluble and go straight into the capillaries.",
+      "Correct. Pepsin is secreted as pepsinogen and works only at the low pH of the stomach.",
+      "Correct. Amino acids, dipeptides, and tripeptides cross the brush border and then leave the cell into portal blood."
+    ]
+  },
+  {
+    "id": "w12-ma-12",
+    "type": "ma",
+    "competencyId": "w14-postabsorptive-state",
+    "dok": 2,
+    "stem": "Which of the following are true of the postabsorptive (fasting) state? Select all that apply.",
+    "options": [
+      "Fatty acids can be converted into glucose by the liver.",
+      "Glucagon drives glycogen breakdown in the liver.",
+      "Insulin is high, keeping glucose inside the tissues.",
+      "Gluconeogenesis uses amino acids, glycerol, and lactate as starting material.",
+      "The liver makes ketone bodies from fatty acids, and the brain can use them for fuel."
+    ],
+    "correct": [1, 3, 4],
+    "why": "When absorption stops, insulin falls and glucagon rises. The liver first breaks down glycogen, then builds new glucose from amino acids, glycerol, and lactate. Adipose tissue releases fatty acids, and most tissues switch to burning fat. The liver turns some of that fat into ketone bodies, which the brain can use after a day or two, sparing glucose and protein.",
+    "whyNot": [
+      "Humans cannot turn fatty acids into glucose. Acetyl CoA cannot be converted back to pyruvate. Only the glycerol backbone of a triglyceride can become glucose.",
+      "Correct. Glycogenolysis is the first source of glucose during the early hours of a fast.",
+      "Backwards. Insulin is low in fasting, which is what releases the brakes on lipolysis and hepatic glucose output.",
+      "Correct. These three are the main gluconeogenic substrates, and glucagon and cortisol drive the pathway.",
+      "Correct. Ketone bodies are exported from the liver and become an important brain fuel in prolonged fasting."
+    ]
+  },
+  {
+    "id": "w12-tf-01",
+    "type": "tf",
+    "competencyId": "w9-islet-hormones",
+    "dok": 2,
+    "statement": "A rise in plasma amino acids after a protein meal stimulates insulin release but suppresses glucagon release.",
+    "truth": false,
+    "correction": "Amino acids stimulate both insulin and glucagon, and the glucagon prevents the insulin from driving plasma glucose too low after a meal that contains little carbohydrate.",
+    "why": "Glucose is the signal that separates the two hormones: it turns insulin on and glucagon off. Amino acids do not. They stimulate both islet cell types. That makes sense physiologically. Insulin is needed to move the amino acids into cells for protein synthesis, but a pure protein meal supplies little glucose, so without the glucagon the insulin would cause hypoglycemia."
+  },
+  {
+    "id": "w12-tf-02",
+    "type": "tf",
+    "competencyId": "w14-gi-motility",
+    "dok": 1,
+    "statement": "Segmentation contractions in the small intestine mix chyme with digestive secretions but produce little net forward movement.",
+    "truth": true,
+    "correction": "True, because segmentation is alternating rings of contraction that chop chyme back and forth, so mixing is its purpose and forward propulsion is left to peristalsis.",
+    "why": "Mixing gives enzymes time to act and brings digested nutrients into contact with the brush border. If the small intestine only pushed chyme forward, absorption would fall because contact time would be too short. This is why loss of segmentation or an overly fast transit leads to malabsorption."
+  },
+  {
+    "id": "w12-tf-03",
+    "type": "tf",
+    "competencyId": "w14-digestive-phases",
+    "dok": 2,
+    "statement": "During the intestinal phase, acid and fat arriving in the duodenum speed up gastric emptying so the meal moves through faster.",
+    "truth": false,
+    "correction": "Acid and fat in the duodenum slow gastric emptying, through secretin, cholecystokinin, and enteric reflexes, so chyme arrives no faster than the duodenum can neutralize and digest it.",
+    "why": "The intestinal phase is a feedback brake. The duodenum is small and can only neutralize and digest so much per minute. Sensing acid, fat, and hypertonic chyme, it sends hormonal and neural signals back to the stomach to reduce motility and tighten the pylorus. A fatty meal stays in the stomach longer for exactly this reason."
+  },
+  {
+    "id": "w12-tf-04",
+    "type": "tf",
+    "competencyId": "w14-liver-function",
+    "dok": 2,
+    "statement": "Most of the bile salts secreted into the intestine during a meal are lost in the feces, so the liver must synthesize a new pool every day.",
+    "truth": false,
+    "correction": "About 95 percent of bile salts are reabsorbed in the ileum and returned to the liver in the portal vein, and the liver replaces only the small fraction lost in feces.",
+    "why": "Synthesizing bile salts from cholesterol is slow, and a meal needs far more than the liver could make on demand. The enterohepatic circulation solves this by recycling the same pool several times per meal. This is also why drugs that bind bile salts in the gut lower plasma cholesterol: the liver has to pull cholesterol out of the blood to replace what is lost."
+  },
+  {
+    "id": "w12-tf-05",
+    "type": "tf",
+    "competencyId": "w14-large-intestine",
+    "dok": 2,
+    "statement": "The colon absorbs water mainly by absorbing sodium, with water following osmotically.",
+    "truth": true,
+    "correction": "True, because there is no pump for water anywhere in the body, so the colon moves sodium across the epithelium and the osmotic gradient pulls water after it.",
+    "why": "Sodium enters colonocytes through apical channels and is pumped out the basolateral side by the Na+/K+ ATPase. The solute movement makes the interstitium slightly hypertonic and water follows through the cells and between them. Aldosterone increases the number of apical sodium channels and so increases colonic water absorption, which is one reason volume depletion produces firm stool."
+  },
+  {
+    "id": "w12-tf-06",
+    "type": "tf",
+    "competencyId": "w14-absorptive-state",
+    "dok": 2,
+    "statement": "In the absorptive state, adipose tissue releases fatty acids into the blood so that glucose is spared for the brain.",
+    "truth": false,
+    "correction": "In the absorptive state insulin inhibits lipolysis and adipose tissue stores fat, because glucose is plentiful and there is no need to spare it.",
+    "why": "Releasing stored fat to spare glucose is the strategy of the postabsorptive state, when glucagon is high and insulin is low. After a meal the situation is reversed. Insulin turns off hormone sensitive lipase, turns on lipoprotein lipase at the capillary wall, and drives fatty acids into the adipocyte for storage."
+  },
+  {
+    "id": "w12-tf-07",
+    "type": "tf",
+    "competencyId": "w14-metabolic-rate",
+    "dok": 1,
+    "statement": "Indirect calorimetry estimates energy expenditure by measuring the heat that leaves the body.",
+    "truth": false,
+    "correction": "Indirect calorimetry measures oxygen consumption and converts it to energy expenditure, since nearly all the energy the body releases comes from oxidative metabolism.",
+    "why": "Measuring heat directly requires an insulated chamber and is called direct calorimetry. The indirect method works because burning fuel with oxygen releases a predictable amount of energy, roughly 4.8 kcal for every liter of oxygen consumed. That is why a mouthpiece and a gas analyzer are enough to estimate metabolic rate."
+  },
+  {
+    "id": "w12-tf-08",
+    "type": "tf",
+    "competencyId": "w9-growth-hormone",
+    "dok": 2,
+    "statement": "An adult who develops a growth hormone secreting tumor will grow taller over the following years.",
+    "truth": false,
+    "correction": "After the epiphyseal plates have closed, bones cannot lengthen, so excess growth hormone in an adult thickens bones and enlarges soft tissue (acromegaly) without adding height.",
+    "why": "Growth hormone lengthens bones by stimulating cartilage proliferation at the epiphyseal plate, mostly through IGF-1. Once the plate has fused, that target is gone. The hormone still acts on bone thickness, on the hands, feet, jaw, and on soft tissues and metabolism, which is why the same excess produces gigantism in a child but acromegaly in an adult."
+  },
+  {
+    "id": "w12-tf-09",
+    "type": "tf",
+    "competencyId": "w14-gi-regulation",
+    "dok": 2,
+    "statement": "Secretin is released when acidic chyme enters the duodenum, and it stimulates the pancreas to secrete bicarbonate.",
+    "truth": true,
+    "correction": "True, because secretin is the hormone that matches bicarbonate output to the acid load arriving from the stomach, protecting the duodenal mucosa and giving pancreatic enzymes the near neutral pH they need.",
+    "why": "S cells in the duodenal mucosa sense low pH and release secretin into the blood. Secretin acts on pancreatic duct cells to increase bicarbonate secretion and also inhibits gastric acid secretion and emptying. This is a clean negative feedback loop: acid triggers the response that removes the acid."
+  },
+  {
+    "id": "w12-tf-10",
+    "type": "tf",
+    "competencyId": "w14-glucose-regulation",
+    "dok": 2,
+    "statement": "During a prolonged fast, plasma glucose falls close to zero once liver glycogen is used up.",
+    "truth": false,
+    "correction": "Plasma glucose stays in the low normal range (roughly 60 to 70 mg/dL) through a prolonged fast because glucagon and cortisol drive gluconeogenesis from amino acids, glycerol, and lactate, and ketones reduce the brain's need for glucose.",
+    "why": "Liver glycogen lasts about a day, but the brain cannot tolerate a glucose of zero for even a few minutes. Gluconeogenesis takes over as glycogen runs out, and the switch of most tissues to fatty acids and of the brain partly to ketones lowers the amount of glucose that has to be made. The regulated variable is defended, just at a slightly lower level."
+  },
+  {
+    "id": "w12-bd-01",
+    "type": "bd",
+    "competencyId": "w14-carb-protein-absorption",
+    "dok": 3,
+    "prompt": "Without notes, trace a dietary protein from the stomach to the portal blood. Name the enzymes at each step, how they are activated, and how the products cross the brush border.",
+    "rubric": [
+      "pepsin, activated from pepsinogen by stomach acid, begins protein digestion",
+      "pancreatic trypsin and chymotrypsin continue digestion in the small intestine",
+      "trypsinogen is activated by enteropeptidase on the brush border and trypsin activates the other zymogens",
+      "brush border peptidases cut oligopeptides to amino acids, dipeptides, and tripeptides",
+      "amino acids enter the enterocyte by sodium dependent cotransport",
+      "dipeptides and tripeptides enter by hydrogen ion dependent cotransport and are broken down inside the cell",
+      "amino acids leave the basolateral membrane and travel in the portal vein to the liver"
+    ]
+  },
+  {
+    "id": "w12-bd-02",
+    "type": "bd",
+    "competencyId": "w14-lab-digestion-enzymes",
+    "dok": 3,
+    "prompt": "You have amylase solution, starch solution, iodine, buffers at pH 2, pH 7, and pH 9, and a 37 C (98.6 F) water bath. Without notes, describe how you would test the effect of pH on amylase, the result you expect, and how the result relates to where amylase works in the body.",
+    "rubric": [
+      "equal amounts of amylase and starch in each tube, with only the pH different",
+      "same temperature and same incubation time for every tube",
+      "iodine test: blue black means starch remains, no color change means starch was digested",
+      "expect the most digestion near pH 7 and little or none at pH 2",
+      "amylase works in the mouth and duodenum, both near neutral pH",
+      "salivary amylase stops working when it reaches the acid of the stomach"
+    ]
+  },
+  {
+    "id": "w12-bd-03",
+    "type": "bd",
+    "competencyId": "w14-postabsorptive-state",
+    "dok": 3,
+    "prompt": "Without notes, explain how the body keeps plasma glucose in range during the 24 hours after the last meal. Name the pathways in the order they take over and the hormones that drive them.",
+    "rubric": [
+      "insulin falls and glucagon rises as absorption ends",
+      "liver glycogenolysis supplies glucose during the first hours",
+      "liver glycogen is largely gone by about 24 hours",
+      "gluconeogenesis from amino acids, glycerol, and lactate takes over, driven by glucagon and cortisol",
+      "lipolysis in adipose tissue releases fatty acids and most tissues switch to burning fat",
+      "the liver begins converting fatty acids to ketone bodies",
+      "glucose is spared for the brain and red blood cells"
+    ]
+  },
+  {
+    "id": "w12-bd-04",
+    "type": "bd",
+    "competencyId": "w9-thyroid",
+    "dok": 3,
+    "prompt": "Without notes, explain why a person with too much thyroid hormone loses weight despite eating more, feels hot in a cool room, and has a rapid resting heart rate. Also state what happens to TSH.",
+    "rubric": [
+      "thyroid hormone raises basal metabolic rate and oxygen consumption",
+      "more Na+/K+ ATPase pumps and mitochondrial enzymes in cells, so more ATP is used",
+      "the extra energy is released as heat, so the person feels hot and sweats",
+      "fuel is burned faster than it is eaten, so weight falls",
+      "thyroid hormone increases beta adrenergic receptors so the heart responds more to catecholamines",
+      "TSH is low because high thyroid hormone feeds back on the pituitary"
+    ]
+  },
+  {
+    "id": "w12-bd-05",
+    "type": "bd",
+    "competencyId": "w14-gastric-secretion",
+    "dok": 3,
+    "prompt": "Without notes, trace how a parietal cell makes hydrochloric acid, then explain why the stomach lining does not digest itself.",
+    "rubric": [
+      "carbonic anhydrase combines carbon dioxide and water to make hydrogen ion and bicarbonate",
+      "the hydrogen potassium ATPase pumps hydrogen ion into the lumen in exchange for potassium",
+      "chloride leaves the cell through apical channels to join the hydrogen ion",
+      "bicarbonate exits into the blood, the alkaline tide",
+      "a mucus and bicarbonate layer keeps the pH at the cell surface near neutral",
+      "tight junctions block acid from entering between cells and damaged cells are replaced quickly",
+      "pepsin is released as inactive pepsinogen and prostaglandins maintain mucus, bicarbonate, and blood flow"
+    ]
+  },
+  {
+    "id": "w12-bd-06",
+    "type": "bd",
+    "competencyId": "w14-lipid-absorption",
+    "dok": 3,
+    "prompt": "Without notes, explain why a dietary triglyceride ends up in the lymph while a dietary glucose molecule ends up in the portal blood. Trace each step for the fat.",
+    "rubric": [
+      "bile salts emulsify fat into small droplets",
+      "pancreatic lipase breaks triglyceride into monoglycerides and free fatty acids",
+      "products are carried in micelles to the brush border and diffuse into the enterocyte",
+      "triglyceride is rebuilt inside the cell and packaged with protein into chylomicrons",
+      "chylomicrons are too large to enter blood capillaries so they enter lacteals and reach blood through the thoracic duct",
+      "glucose is small and water soluble, crosses on SGLT1 and GLUT2, and enters capillaries leading to the portal vein"
+    ]
+  },
+  {
+    "id": "w12-bd-07",
+    "type": "bd",
+    "competencyId": "w14-thermoregulation",
+    "dok": 3,
+    "prompt": "Without notes, trace the negative feedback response of a person who steps outside into 0 C (32 F) air wearing a T shirt. Include the sensor, the integrating center, and each effector response.",
+    "rubric": [
+      "skin thermoreceptors and central thermoreceptors send input to the hypothalamus",
+      "the hypothalamus compares core temperature to its set point of about 37 C (98.6 F)",
+      "sympathetic vasoconstriction of skin vessels reduces heat loss",
+      "shivering increases heat production by skeletal muscle",
+      "nonshivering thermogenesis rises through catecholamines and thyroid hormone",
+      "behavioral responses such as curling up and seeking shelter",
+      "the responses shut off when core temperature returns to the set point"
+    ]
+  },
+  {
+    "id": "w12-bd-08",
+    "type": "bd",
+    "competencyId": "w9-diabetes",
+    "dok": 3,
+    "prompt": "Without notes, explain why a person with untreated type 1 diabetes produces large volumes of urine and becomes very thirsty. Start from the absence of insulin.",
+    "rubric": [
+      "without insulin, muscle and fat cannot take up glucose and the liver keeps releasing it, so plasma glucose rises",
+      "the filtered load of glucose exceeds the transport maximum of the proximal tubule",
+      "glucose left in the tubule holds water osmotically, so urine volume rises (osmotic diuresis)",
+      "sodium and water are lost with the glucose",
+      "plasma volume falls and plasma osmolarity rises",
+      "osmoreceptors in the hypothalamus trigger thirst and ADH release"
+    ]
+  },
+  {
+    "id": "w12-app-01",
+    "type": "app",
+    "competencyId": "w9-growth-hormone",
+    "dok": 3,
+    "case": "A 9 year old boy is the tallest child in his class by a wide margin. His growth hormone is 45 ng/mL (normal fasting less than 5) and his IGF-1 is well above the range for his age. An X ray shows open epiphyseal plates in his long bones.",
+    "stem": "If this hormone excess continued untreated for the next several years, what would happen to his height, and why?",
+    "options": [
+      "He would keep growing much taller than expected, because IGF-1 drives cartilage proliferation at plates that are still open.",
+      "His height would stop increasing, because high growth hormone closes the epiphyseal plates early.",
+      "He would grow only in bone thickness, because growth hormone cannot lengthen bone at any age.",
+      "His height would not change, because growth hormone has no effect on bone in children."
+    ],
+    "correct": 0,
+    "why": "Growth hormone, acting mostly through hepatic IGF-1, stimulates chondrocytes at the epiphyseal plate to divide and lay down cartilage that is then converted to bone. As long as the plates are open, more hormone means more linear growth. This is the mechanism of gigantism. Plate closure is driven by sex steroids at puberty, not by growth hormone, so nothing here stops the process until puberty does.",
+    "whyNot": [
+      "Correct. Open plates plus high IGF-1 equals continued and excessive linear growth.",
+      "Growth hormone does not close the plates. Estrogen and testosterone at puberty do. If anything, the excess can delay puberty and prolong growth.",
+      "This describes acromegaly, the adult pattern, when the plates have already fused. In a child with open plates the bones lengthen.",
+      "Growth hormone is the main driver of postnatal linear growth. A child with too little of it is short, and a child with too much is tall."
+    ]
+  },
+  {
+    "id": "w12-app-02",
+    "type": "app",
+    "competencyId": "w9-thyroid",
+    "dok": 3,
+    "case": "A 45 year old woman feels cold all the time and has gained weight without eating more. Her free T4 is 0.4 ng/dL (normal 0.8 to 1.8) and her TSH is 32 mU/L (normal 0.4 to 4.0). In the lab her resting oxygen consumption is 0.17 L/min, well below the 0.25 L/min predicted for her size.",
+    "stem": "What explains her low oxygen consumption, and what should happen to her TSH after she starts taking replacement T4?",
+    "options": [
+      "Low thyroid hormone means fewer Na+/K+ ATPase pumps and less mitochondrial activity, so cells use less ATP and oxygen; TSH will fall as replacement restores negative feedback.",
+      "The high TSH is directly slowing her metabolism; TSH will fall once the replacement T4 blocks TSH receptors.",
+      "Low thyroid hormone reduces the delivery of oxygen by the blood; TSH will rise further as replacement T4 stimulates the pituitary.",
+      "Her weight gain has lowered oxygen consumption per kilogram; TSH will be unchanged because replacement T4 does not reach the pituitary."
+    ],
+    "correct": 0,
+    "why": "Thyroid hormone sets the basal rate of ATP use in nearly every cell by increasing the number of sodium pumps and mitochondrial enzymes. With too little hormone, cells run slower, consume less oxygen, and release less heat, which is why she is cold and why she gains weight on the same intake. The high TSH shows the pituitary is responding correctly to low hormone. Replacement T4 will be sensed by the pituitary and TSH will come back down toward normal.",
+    "whyNot": [
+      "Correct. Both the mechanism of the low metabolic rate and the direction of the TSH change are right.",
+      "TSH has no direct effect on metabolic rate. It only stimulates the thyroid. And T4 does not block TSH receptors; it suppresses TSH release through negative feedback.",
+      "Thyroid hormone does not limit oxygen delivery, it sets oxygen demand. And T4 inhibits rather than stimulates the pituitary, so TSH falls.",
+      "Weight gain is a consequence of the low rate, not its cause. The pituitary is exactly where T4 acts to suppress TSH."
+    ]
+  },
+  {
+    "id": "w12-app-03",
+    "type": "app",
+    "competencyId": "w9-stress-response",
+    "dok": 3,
+    "case": "A 60 year old man has taken a high dose of prednisone, a synthetic glucocorticoid, every day for six months. His fasting glucose is 138 mg/dL (normal 70 to 99), his blood pressure is 152/94 mmHg (normal below 120/80), and a small skin wound has not healed in three weeks.",
+    "stem": "Which single mechanism best links the drug to all three findings?",
+    "options": [
+      "Glucocorticoid stimulates gluconeogenesis and insulin resistance, is permissive for catecholamine vasoconstriction, and suppresses inflammation and collagen synthesis.",
+      "Glucocorticoid stimulates insulin release, which raises glucose, retains sodium, and diverts amino acids away from the wound.",
+      "Glucocorticoid stimulates the adrenal medulla, so epinephrine raises glucose and pressure and constricts skin vessels so the wound cannot heal.",
+      "Glucocorticoid blocks glucagon, so stored glucose accumulates in the blood, and the high glucose raises pressure and damages the wound."
+    ],
+    "correct": 0,
+    "why": "Each finding is a normal cortisol action that has gone on too long. Cortisol raises glucose by driving gluconeogenesis and making muscle and fat less responsive to insulin. It supports blood pressure by allowing catecholamines to constrict vessels and by some mineralocorticoid activity. And it suppresses the inflammatory and proliferative steps that wound healing depends on. Six months of a high dose produces the whole pattern at once.",
+    "whyNot": [
+      "Correct. Metabolic, cardiovascular, and immune actions of cortisol, all pushed to excess.",
+      "Cortisol does not stimulate insulin. It opposes insulin. Insulin would lower glucose, not raise it.",
+      "Cortisol is permissive for catecholamine action but does not drive the medulla to secrete more. The wound problem is impaired inflammation and repair, not vasoconstriction.",
+      "Cortisol does not block glucagon, and the glucose comes from new synthesis, not from a backlog. High glucose does not by itself raise blood pressure over this time course."
+    ]
+  },
+  {
+    "id": "w12-app-04",
+    "type": "app",
+    "competencyId": "w9-diabetes",
+    "dok": 3,
+    "case": "A 19 year old with type 1 diabetes ran out of insulin three days ago. In the emergency room her plasma glucose is 480 mg/dL (normal 70 to 99), her arterial pH is 7.15 (normal 7.35 to 7.45), her bicarbonate is 8 mmol/L (normal 22 to 28), and her plasma ketones are markedly elevated. She is breathing deeply and rapidly.",
+    "stem": "Which mechanism links the absence of insulin to her low bicarbonate?",
+    "options": [
+      "Without insulin, lipolysis is unrestrained, the liver converts the flood of fatty acids into ketoacids, and the ketoacids consume bicarbonate as they are buffered.",
+      "The high glucose is itself an acid and titrates bicarbonate directly.",
+      "Her deep rapid breathing blows off carbon dioxide, and the kidney excretes bicarbonate to compensate.",
+      "Without insulin, muscle cannot make ATP aerobically, so lactic acid from anaerobic metabolism consumes the bicarbonate."
+    ],
+    "correct": 0,
+    "why": "Insulin is the brake on hormone sensitive lipase. Remove it and adipose tissue releases fatty acids far faster than the liver can oxidize them completely, so the liver exports acetoacetate and beta hydroxybutyrate. These are strong acids. Each one releases a hydrogen ion that is buffered by bicarbonate, and the bicarbonate falls as the ketones rise. The deep breathing is the respiratory compensation, lowering carbon dioxide to limit the fall in pH.",
+    "whyNot": [
+      "Correct. Lipolysis to ketogenesis to buffering is the chain, and it starts with missing insulin.",
+      "Glucose is not an acid. It causes osmotic diuresis and dehydration but does not lower pH directly.",
+      "The breathing is a response to the acidosis, not its cause. It lowers carbon dioxide, which raises pH. The kidney is trying to keep bicarbonate, not dump it.",
+      "Muscle can still oxidize fatty acids and ketones without insulin. Lactic acidosis is a problem of oxygen supply, not of insulin, and the ketone level tells you which acid is responsible here."
+    ]
+  },
+  {
+    "id": "w12-app-05",
+    "type": "app",
+    "competencyId": "w9-lab-glucose-tolerance",
+    "dok": 3,
+    "case": "Two subjects drink 75 g of glucose. Subject A: fasting 88 mg/dL, 30 min 150, 60 min 175, 90 min 130, 120 min 105. Subject B: fasting 118 mg/dL, 30 min 190, 60 min 235, 90 min 225, 120 min 205. (Normal fasting 70 to 99 mg/dL; a normal 2 hour value is below 140 mg/dL; the renal threshold for glucose is about 180 mg/dL.)",
+    "stem": "What does subject B's curve tell you about insulin action, and what would you predict in a urine sample collected from each subject at 60 minutes?",
+    "options": [
+      "Subject B clears glucose from the blood poorly, so insulin action on uptake is inadequate; B's urine will contain glucose and A's will not.",
+      "Subject B absorbed the glucose more slowly, so it stayed in the blood longer; neither urine will contain glucose.",
+      "Subject B released too much insulin, which is why the value is still falling at 120 min; both urines will contain glucose.",
+      "Subject B has a normal insulin response but a larger body water volume; A's urine will contain glucose and B's will not."
+    ],
+    "correct": 0,
+    "why": "Subject A's curve is normal: a moderate peak and a return toward baseline by two hours, which is what happens when insulin drives glucose into muscle, fat, and liver. Subject B starts high, peaks much higher, and is still above 200 mg/dL at two hours. The downslope is where insulin does its work, so a flat downslope means insulin is not doing its job. At 60 minutes B is at 235 mg/dL, well past the renal threshold, so glucose spills into the urine. A never crosses 180, so A's urine stays glucose free.",
+    "whyNot": [
+      "Correct. Impaired disposal shows in the slow return, and only B crosses the renal threshold.",
+      "Slower absorption would give a lower and later peak, not a higher one. And B reaches 235, far above the threshold, so B's urine will contain glucose.",
+      "Excess insulin would push glucose below baseline, not leave it above 200 at two hours. A never crosses 180 so A's urine has no glucose.",
+      "A larger volume of distribution would lower the peak, not raise it. And it is B, not A, whose glucose exceeds the renal threshold."
+    ]
+  },
+  {
+    "id": "w12-app-06",
+    "type": "app",
+    "competencyId": "w14-gi-regulation",
+    "dok": 3,
+    "case": "A research volunteer is given a drug that blocks cholecystokinin receptors and then eats a meal high in fat. Ultrasound measures gallbladder volume, a duodenal tube samples pancreatic enzyme output, and a marker tracks gastric emptying.",
+    "stem": "Compared with the same meal without the drug, predict the gallbladder, the pancreatic enzyme output, and the rate of gastric emptying.",
+    "options": [
+      "The gallbladder fails to contract, enzyme output is much lower, and gastric emptying is faster than normal.",
+      "The gallbladder fails to contract, enzyme output is much lower, and gastric emptying is slower than normal.",
+      "The gallbladder contracts normally, bicarbonate output is lower, and gastric emptying is unchanged.",
+      "The gallbladder contracts more strongly, enzyme output rises, and gastric emptying is slower because fat stays in the stomach."
+    ],
+    "correct": 0,
+    "why": "Fat and protein in the duodenum release cholecystokinin, and cholecystokinin does three things: contracts the gallbladder and relaxes the sphincter of Oddi so bile enters the duodenum, stimulates acinar cells to secrete enzymes, and slows gastric emptying so fat is delivered at a rate the duodenum can handle. Block the receptor and all three responses are lost. Losing the brake means the stomach empties fat faster, which is the opposite of what a fatty meal normally does.",
+    "whyNot": [
+      "Correct. All three cholecystokinin actions are blocked, and the loss of the emptying brake speeds emptying.",
+      "The first two are right, but cholecystokinin normally slows emptying, so blocking it removes the brake and emptying is faster, not slower.",
+      "Gallbladder contraction depends on cholecystokinin and will fail. Bicarbonate is controlled by secretin, which the drug does not touch.",
+      "This is the response to the fatty meal with the receptor working, the opposite of what the blocker produces."
+    ]
+  },
+  {
+    "id": "w12-app-07",
+    "type": "app",
+    "competencyId": "w14-gastric-secretion",
+    "dok": 3,
+    "case": "A 70 year old woman has taken high doses of ibuprofen, a drug that blocks prostaglandin synthesis, for a year for arthritis. She now has a gastric ulcer. Her gastric acid output when tested is 20 mmol per hour (normal stimulated output 15 to 25).",
+    "stem": "Her acid output is normal. Why did an ulcer form anyway?",
+    "options": [
+      "Blocking prostaglandins reduced mucus and bicarbonate secretion and mucosal blood flow, so a normal amount of acid reached and damaged an unprotected epithelium.",
+      "Ibuprofen stimulates parietal cells, and the ulcer formed during earlier periods of high acid that the test happened to miss.",
+      "Ibuprofen activates pepsinogen directly, so pepsin digested the mucosa despite normal acid.",
+      "Ibuprofen raises gastrin, which thickens the mucosa until it outgrows its blood supply and breaks down."
+    ],
+    "correct": 0,
+    "why": "The stomach survives its own acid because prostaglandins keep the defenses running: the mucus layer, the bicarbonate trapped inside it, and the blood flow that carries away any acid that leaks through. Nonsteroidal anti inflammatory drugs shut off prostaglandin synthesis, so those defenses fade while the acid stays the same. An ulcer forms when attack exceeds defense, and here the defense side dropped.",
+    "whyNot": [
+      "Correct. The drug attacked the mucosal barrier, not the acid.",
+      "Ibuprofen does not stimulate acid secretion, and the normal measured output fits that. The problem is defense, not attack.",
+      "Pepsinogen is activated by acid and by pepsin itself, not by ibuprofen. Pepsin contributes to ulcers only where the barrier has already failed.",
+      "Ibuprofen does not raise gastrin. If it did, the ulcer mechanism would be excess acid, but the measured output rules that out."
+    ]
+  },
+  {
+    "id": "w12-app-08",
+    "type": "app",
+    "competencyId": "w14-pancreatic-bile-secretion",
+    "dok": 3,
+    "case": "A 50 year old man has a gallstone lodged in the common bile duct, above the point where the pancreatic duct joins it, so pancreatic juice still reaches the duodenum but bile does not. His stools are pale and greasy. His prothrombin time is 22 seconds (normal 11 to 13.5), meaning his blood clots slowly.",
+    "stem": "Explain the greasy stool and the slow clotting.",
+    "options": [
+      "Without bile salts, fat is not emulsified and micelles do not form, so lipase works poorly and fat and the fat soluble vitamin K are lost in the stool, leaving the liver short of vitamin K for clotting factors.",
+      "Without bile, pancreatic lipase is not activated, so triglyceride passes through undigested, and the undigested fat binds clotting factors in the gut.",
+      "Without bile, duodenal pH stays acidic, which inactivates lipase and destroys vitamin K in the lumen.",
+      "Bile normally digests fat directly, so its absence leaves fat undigested, and the unabsorbed fat blocks absorption of calcium needed for clotting."
+    ],
+    "correct": 0,
+    "why": "Bile salts do two jobs in fat absorption: they emulsify fat so lipase has enough surface area, and they form micelles that ferry the products to the brush border. Without them, lipase still works but very inefficiently, and the products cannot reach the mucosa, so fat leaves in the stool. Vitamin K travels with the fat and is lost with it. The liver needs vitamin K to make several clotting factors, so clotting slows.",
+    "whyNot": [
+      "Correct. Emulsification, micelles, vitamin K, clotting factors, in that order.",
+      "Lipase is secreted active. Bile does not activate it. And clotting factors are made in the liver, not absorbed from the gut.",
+      "Bicarbonate from the pancreas still arrives, so the pH is fine. Vitamin K is lost because it is not absorbed, not because it is destroyed.",
+      "Bile salts emulsify. They are not enzymes. And the clotting problem is a vitamin K problem, not a calcium problem."
+    ]
+  },
+  {
+    "id": "w12-app-09",
+    "type": "app",
+    "competencyId": "w14-lipid-absorption",
+    "dok": 3,
+    "case": "A 30 year old woman had 100 cm of terminal ileum removed after an injury. Her pancreas and liver are normal. Two months later she has diarrhea after every meal, and a stool test shows fat at 20 g per day (normal less than 7 g per day).",
+    "stem": "Why is fat appearing in her stool when her lipase and bile production are both normal?",
+    "options": [
+      "Bile salts are no longer reabsorbed in the ileum, so the bile salt pool shrinks and there are not enough to emulsify fat and form micelles, and the unabsorbed fat and bile salts entering the colon draw in water and cause diarrhea.",
+      "The ileum is where lipase acts, so removing it leaves triglyceride undigested.",
+      "The ileum is the only site of chylomicron formation, so absorbed fat cannot be exported to the lymph.",
+      "Without the ileum, fat is absorbed in the colon, where bacteria convert it back to triglyceride and excrete it."
+    ],
+    "correct": 0,
+    "why": "Fat digestion and most fat absorption happen in the duodenum and jejunum, which she still has. What she lost is the site that recovers bile salts. Every meal now loses most of the pool to the colon, and the liver cannot synthesize replacement fast enough. With too few bile salts, emulsification and micelle formation fail, and fat is left behind. In the colon, the fatty acids and bile salts stimulate secretion, and the osmotic load holds water, so she gets diarrhea.",
+    "whyNot": [
+      "Correct. This is bile salt deficiency from loss of the enterohepatic circulation.",
+      "Lipase acts in the duodenum and jejunum, which are intact. The ileum's fat related job is bile salt recovery.",
+      "Chylomicrons are made in enterocytes throughout the small intestine, mainly the jejunum, not only in the ileum.",
+      "The colon has no lipase, no micelles, and no ability to absorb fat. Fat reaching the colon leaves in the stool."
+    ]
+  },
+  {
+    "id": "w12-app-10",
+    "type": "app",
+    "competencyId": "w14-glucose-regulation",
+    "dok": 3,
+    "case": "A healthy student eats a large bowl of pasta. Thirty minutes later her plasma glucose is 145 mg/dL (fasting normal 70 to 99), her plasma insulin is 400 pmol/L (fasting normal 20 to 100), and her plasma glucagon is half its fasting value.",
+    "stem": "Predict what her liver, muscle, and adipose tissue are doing over the next hour.",
+    "options": [
+      "The liver stores glucose as glycogen and stops making new glucose, muscle and fat take up glucose through GLUT4, and fat breakdown is suppressed.",
+      "The liver releases glucose from glycogen to match the rising demand, and muscle burns fatty acids to spare the glucose.",
+      "The liver converts the glucose to ketones, and muscle takes up glucose through GLUT4 that is always present in the membrane.",
+      "The liver and muscle both refuse glucose because it is already high, so the excess is filtered and lost in the urine."
+    ],
+    "correct": 0,
+    "why": "This is the absorptive state and the hormone values say so: insulin up, glucagon down. Insulin tells the liver to switch from producing glucose to storing it, tells muscle and fat to insert GLUT4 and take glucose in, and shuts off hormone sensitive lipase in adipose tissue. Over the next hour plasma glucose comes back down as these pathways clear the load, and insulin falls with it.",
+    "whyNot": [
+      "Correct. Storage in every tissue, driven by high insulin and low glucagon.",
+      "This is the fasting response. With glucagon low and insulin high, the liver stops releasing glucose.",
+      "Ketone production is a fasting process and requires high fatty acid delivery with low insulin. And GLUT4 is stored inside the cell until insulin moves it to the membrane.",
+      "Tissues do not refuse glucose when it is high, they take more. And 145 mg/dL is below the renal threshold, so no glucose is lost in urine."
+    ]
+  },
+  {
+    "id": "w12-app-11",
+    "type": "app",
+    "competencyId": "w14-thermoregulation",
+    "dok": 3,
+    "case": "A 25 year old man with influenza has a core temperature of 39.5 C (103.1 F) (normal about 37 C or 98.6 F). His hands and feet are cold and pale, he is shivering, and he says he feels freezing and wants more blankets.",
+    "stem": "Why is he shivering and feeling cold when his temperature is already high?",
+    "options": [
+      "Cytokines from the infection raised the hypothalamic set point through prostaglandin E2, so his core temperature is below the new set point and the hypothalamus is running cold responses to raise it.",
+      "The infection has damaged his thermoreceptors, so they are reporting a low temperature to the hypothalamus.",
+      "The high temperature is causing heat loss to exceed heat production, and shivering is a reflex to make up the difference.",
+      "The hypothalamus has lowered its set point to fight the virus, and the cold extremities show heat being dumped to the environment."
+    ],
+    "correct": 0,
+    "why": "Fever is not a failure of thermoregulation. It is thermoregulation aimed at a new target. Pyrogenic cytokines stimulate prostaglandin E2 production in the hypothalamus, which raises the set point, say to 40 C (104 F). A core of 39.5 C is now too cold relative to the target, so the hypothalamus does exactly what it would do in a snowstorm: vasoconstrict the skin to conserve heat and shiver to produce more. He will feel cold until his core reaches the new set point.",
+    "whyNot": [
+      "Correct. The set point rose, and the effectors are chasing it.",
+      "The thermoreceptors are reporting accurately. The comparison point in the hypothalamus is what moved.",
+      "Heat production is exceeding loss, which is why the temperature rose. Shivering is a response to a core below set point, not to heat loss.",
+      "A lowered set point would cause sweating and flushing, the picture seen when a fever breaks, not shivering and vasoconstriction."
+    ]
+  },
+  {
+    "id": "w12-app-12",
+    "type": "app",
+    "competencyId": "w14-lab-metabolic-rate",
+    "dok": 3,
+    "case": "A 75 kg subject breathes through a gas analyzer. At rest her oxygen consumption is 0.30 L/min. After 10 minutes of stepping it is 1.50 L/min. When she stops and sits down, oxygen consumption falls but stays above the resting value for several minutes. Use 4.8 kcal per liter of oxygen.",
+    "stem": "What is her resting energy expenditure, and why does oxygen consumption stay above resting after she stops?",
+    "options": [
+      "About 1.4 kcal/min at rest; oxygen consumption stays elevated because the body is rebuilding creatine phosphate, clearing lactate, and refilling oxygen stores used during the exercise.",
+      "About 0.06 kcal/min at rest; oxygen consumption stays elevated because the analyzer takes several minutes to respond.",
+      "About 1.4 kcal/min at rest; oxygen consumption stays elevated because her leg muscles are still contracting at a low level.",
+      "About 7.2 kcal/min at rest; oxygen consumption stays elevated because breathing rate cannot fall quickly."
+    ],
+    "correct": 0,
+    "why": "Resting expenditure is 0.30 times 4.8, which is 1.44 kcal/min. Exercise is 1.50 times 4.8, or 7.2 kcal/min, a fivefold increase. The elevated consumption after exercise is the oxygen debt, or excess postexercise oxygen consumption. During the first minutes of exercise, ATP came partly from creatine phosphate and anaerobic glycolysis, which need no oxygen at the time but must be paid for afterward. Restoring creatine phosphate, converting lactate back to glucose or oxidizing it, and reloading myoglobin and hemoglobin all consume oxygen after the work has stopped.",
+    "whyNot": [
+      "Correct. Multiply liters by 4.8, and the debt explains the slow return.",
+      "Dividing instead of multiplying gives 0.06. And the analyzer is fast; the slow return is physiology, not equipment lag.",
+      "The arithmetic is right, but she is sitting still. The elevated consumption comes from restoring the muscle's energy stores, not from ongoing contraction.",
+      "7.2 kcal/min is the exercise value, not the resting value. Breathing falls quickly once the chemical drive falls, so it is not the reason."
+    ]
+  }
+]

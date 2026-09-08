@@ -64,7 +64,7 @@ PhysioEx 10.0 has no exercise for these, per `physioex-lab-map-fall2026.md`:
 | Week | Topic | Why there is no PhysioEx | What the lab is instead |
 |---|---|---|---|
 | 1 | Foundations | No homeostasis or graphing exercise | Week 1 fluid homeostasis workbook (`workbook_week01_fluid-homeostasis.html`, exists) |
-| 5 | The nervous system | No sensory exercise | At-home sensory and reflex lab (**not built yet**) |
+| 5 | Synapses and central integration | Exercise 3, split with week 4 not set | **Lab not chosen yet** |
 | 8 | Reproduction | No reproduction exercise | Hormone cycle graph worksheet (**not built yet**) |
 
 `assignment-physioex.html` reads the week from the URL and, on 1, 5 and 8, swaps

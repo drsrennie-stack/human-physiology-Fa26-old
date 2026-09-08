@@ -2803,16 +2803,16 @@
     "lab",
     "application"
    ],
-   "q": "The aortic valve sits near the middle of the chest, yet its sounds are heard best at the second intercostal space on the RIGHT of the sternum. Why does the sound show up there?",
-   "a": "Sound travels in the direction blood is moving, and the ascending aorta carries it up and to the right.",
+   "q": "Where is the aortic auscultation area located?",
+   "a": "The second intercostal space at the right sternal border.",
    "options": [
-    "Sound travels in the direction blood is moving, and the ascending aorta carries it up and to the right",
-    "The aortic valve physically sits under the right second intercostal space",
-    "The right lung amplifies sound better than the left",
-    "The right side of the chest wall is thinner in most people"
+    "The fifth intercostal space at the midclavicular line",
+    "The second intercostal space at the left sternal border",
+    "The second intercostal space at the right sternal border",
+    "The fourth intercostal space at the left sternal border"
    ],
-   "correctIndex": 0,
-   "explanation": "Valve sounds are carried downstream by the blood, so the listening area is where the outflow vessel comes closest to the chest wall rather than where the valve itself sits. The ascending aorta sweeps up and to the right, which puts aortic sounds at the right second interspace, and it is also why aortic stenosis radiates toward the right carotid. The valve itself is roughly central, behind the sternum, so listening directly over it would put the four valve sounds almost on top of each other. Lung tissue attenuates sound rather than amplifying it, and the two sides are not meaningfully different. Chest wall thickness varies between people but not reliably between sides."
+   "correctIndex": 2,
+   "explanation": "Sound from the aortic valve carries along the direction of blood flow into the ascending aorta, which travels up and to the right, so it is heard best at the right second intercostal space. The left second intercostal space is the pulmonic area. The fifth intercostal space at the midclavicular line is the mitral area at the apex. The left lower sternal border is the tricuspid area."
   },
   {
    "id": "c153",
@@ -2822,16 +2822,16 @@
     "lab",
     "application"
    ],
-   "q": "Why are pulmonic valve sounds heard best at the second intercostal space on the LEFT of the sternum, while aortic sounds are heard on the right?",
-   "a": "The two great vessels leave the heart in different directions, and the pulmonary trunk carries its sound up and to the left.",
+   "q": "Where is the pulmonic auscultation area located?",
+   "a": "The second intercostal space at the left sternal border.",
    "options": [
-    "The great vessels leave in different directions, and the pulmonary trunk carries sound up and to the left",
-    "The pulmonic valve is the only valve on the left side of the heart",
-    "Pulmonary pressures are higher, so the sound carries further",
-    "The left lung is smaller, so less sound is absorbed"
+    "The second intercostal space at the right sternal border",
+    "The second intercostal space at the left sternal border",
+    "The fifth intercostal space at the midclavicular line",
+    "The xiphoid process"
    ],
-   "correctIndex": 0,
-   "explanation": "Both semilunar valves sit close together at the base of the heart, so what separates their listening areas is the path of the vessel each one empties into. The pulmonary trunk runs up and slightly left, the aorta up and right, and the sound follows the blood. The pulmonic valve is actually part of the RIGHT heart, since it guards the outflow of the right ventricle, which is a useful reminder that listening area and chamber side are different things. Pulmonary artery pressure is much lower than aortic, roughly 25 over 10 rather than 120 over 80, so a louder pulmonic component usually means pulmonary hypertension. The left lung is smaller, but that is to make room for the heart and it is not what places the listening area."
+   "correctIndex": 1,
+   "explanation": "The pulmonary trunk runs up and slightly to the left, so pulmonic valve sounds project to the left second intercostal space. The right second intercostal space belongs to the aortic valve, and confusing the two sides is the most common error in this exercise. The apex at the fifth intercostal space midclavicular line is where mitral sounds are loudest. The xiphoid process is not one of the four standard listening areas."
   },
   {
    "id": "c154",
@@ -2841,16 +2841,16 @@
     "lab",
     "application"
    ],
-   "q": "The tricuspid valve lies behind the lower sternum. Where do its sounds reach the chest wall best, and why there?",
-   "a": "At the fourth or fifth intercostal space just left of the sternum, because the right ventricle sits directly behind the lower sternum and projects its sound forward.",
+   "q": "Where is the tricuspid auscultation area located?",
+   "a": "The fourth or fifth intercostal space at the lower left sternal border.",
    "options": [
-    "At the fourth or fifth interspace beside the lower sternum, because the right ventricle sits right behind it",
-    "At the left midclavicular line, because that is where the apex strikes the chest",
-    "At the right second interspace, following the aorta",
-    "Over the xiphoid process, because sound travels best through cartilage"
+    "The second intercostal space at the left sternal border",
+    "The second intercostal space at the right sternal border",
+    "The fifth intercostal space at the left anterior axillary line",
+    "The fourth or fifth intercostal space at the lower left sternal border"
    ],
-   "correctIndex": 0,
-   "explanation": "The right ventricle is the most anterior chamber of the heart, sitting immediately behind the lower sternum, so its inflow valve projects almost straight forward to the lower left sternal border. That anterior position is also why the right ventricle is the chamber most often injured in blunt chest trauma. The left midclavicular line at the fifth interspace is the apex, which belongs to the left ventricle and therefore to the mitral valve. The right second interspace follows the aorta and belongs to the aortic valve. Sound does pass through cartilage, but the xiphoid is not where the tricuspid valve projects, and it is a poor listening surface in practice."
+   "correctIndex": 3,
+   "explanation": "The tricuspid valve sits behind the lower sternum, so its sounds are heard best just beside the sternum at the fourth or fifth interspace. The left second interspace is the pulmonic area, higher on the chest. The anterior axillary line is lateral to the apex and is not a standard area, although mitral murmurs may radiate that way. The right second interspace is the aortic area."
   },
   {
    "id": "c155",
@@ -2860,16 +2860,16 @@
     "lab",
     "application"
    ],
-   "q": "Mitral sounds are loudest at the fifth intercostal space in the left midclavicular line, the same place the apical impulse is felt. What does that tell you about where the left ventricle sits?",
-   "a": "Its apex points down and to the left and reaches the chest wall there, so both the sound of its inflow valve and the impulse of its contraction arrive at the same spot.",
+   "q": "Where is the mitral auscultation area located?",
+   "a": "The fifth intercostal space at the left midclavicular line.",
    "options": [
-    "The apex points down and to the left and reaches the chest wall there, so sound and impulse arrive together",
-    "The left ventricle sits directly behind the sternum, so all its sounds are central",
-    "The mitral valve has migrated to the apex, away from the other three valves",
-    "The coincidence is unrelated, since the apical impulse comes from the right ventricle"
+    "The fifth intercostal space at the left midclavicular line",
+    "The third intercostal space at the left sternal border",
+    "The fifth intercostal space at the right sternal border",
+    "The second intercostal space at the left sternal border"
    ],
    "correctIndex": 0,
-   "explanation": "The heart is tilted, with the left ventricle forming the apex and pointing down, forward and to the left. That apex is what taps the chest wall during contraction, and it is also the surface closest to the mitral valve's downstream flow, so both the palpable impulse and the mitral sounds land at the fifth interspace in the midclavicular line. Knowing this is what lets you use a shift in the apical impulse as a sign that the ventricle has enlarged. The chamber sitting directly behind the sternum is the right ventricle, not the left. All four valves stay together at the base of the heart; only their listening areas are spread out. And the apical impulse is a left ventricular sign, which is exactly why it is useful."
+   "explanation": "The apex of the heart points down and to the left and sits at the fifth intercostal space in the midclavicular line, which is where mitral sounds are loudest and where the apical impulse is felt. The third left interspace is above the apex and is sometimes used as a secondary listening point but is not the mitral area. The right side of the chest at that level is far from the apex. The left second interspace is the pulmonic area."
   },
   {
    "id": "c156",
@@ -2917,16 +2917,16 @@
     "lab",
     "application"
    ],
-   "q": "The apical impulse is normally felt at the fifth intercostal space in the left midclavicular line. In a patient whose left ventricle has enlarged, where does it move, and what does that tell you?",
-   "a": "It moves down and toward the left, further from the midline, which is a bedside sign that the left ventricle has dilated.",
+   "q": "Where is the point of maximal impulse normally palpated?",
+   "a": "The fifth intercostal space at the left midclavicular line.",
    "options": [
-    "Down and to the left, further from the midline, which is a sign of left ventricular dilation",
-    "Up and toward the midline, because the enlarged ventricle pulls the apex inward",
-    "It disappears entirely, because an enlarged ventricle cannot contract",
-    "It moves to the right side of the chest, because the heart rotates completely"
+    "The fifth intercostal space at the left midclavicular line",
+    "Directly over the sternum",
+    "The second intercostal space at the left sternal border",
+    "The fifth intercostal space at the right midclavicular line"
    ],
    "correctIndex": 0,
-   "explanation": "The apical impulse marks where the apex of the left ventricle touches the chest wall. If the chamber dilates, the apex is pushed further down and out, so the impulse is felt lower and more laterally, and it often becomes broader and more sustained. This is a genuinely useful physical finding because it is a direct, cheap read on chamber size. Moving up and inward would mean the chamber had shrunk. A dilated ventricle still contracts, often forcefully at first, so the impulse does not vanish; a truly impalpable apex usually means something between the heart and the chest wall, such as a large effusion, emphysema, or obesity. A right sided apex means the heart itself is displaced, by dextrocardia or by something pushing it, not by dilation."
+   "explanation": "The apex strikes the chest wall during contraction at the fifth interspace in the midclavicular line, the same place the mitral area is auscultated. The left second interspace overlies the great vessels rather than the apex. The sternum covers the right ventricle and the septum, and the impulse there is not the apical beat. The apex points to the left, so the right midclavicular line is on the wrong side of the chest."
   },
   {
    "id": "c159",

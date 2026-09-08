@@ -1,0 +1,788 @@
+[
+  {
+    "id": "w13-ma-01",
+    "type": "ma",
+    "competencyId": "w12-respiratory-functions",
+    "dok": 1,
+    "stem": "Which statements correctly describe the conducting zone and the respiratory zone? Select all that apply.",
+    "options": [
+      "The conducting zone warms, humidifies, and filters air but exchanges no gas with the blood.",
+      "The respiratory zone begins where alveoli first appear, at the respiratory bronchioles.",
+      "Oxygen crosses into the blood across the walls of the trachea and large bronchi.",
+      "The air sitting in the conducting zone at the end of inspiration is the anatomic dead space.",
+      "Cartilage rings hold the alveolar walls open so they cannot collapse."
+    ],
+    "correct": [0, 1, 3],
+    "why": "The conducting zone is a set of pipes. It conditions and moves air but its walls are too thick and too poorly perfused to exchange gas. Gas exchange happens only in the respiratory zone, where thin alveolar walls sit against pulmonary capillaries. Air left in the pipes at the end of a breath never reaches an alveolus, so it is dead space.",
+    "whyNot": [
+      "Belongs. Conditioning the air and moving it is the whole job of the conducting zone.",
+      "Belongs. The respiratory bronchioles carry the first alveoli, so they mark the start of the exchange zone.",
+      "Wrong. Tracheal and bronchial walls are thick and lined by cartilage and mucus; no useful gas exchange occurs there.",
+      "Belongs. About 150 mL of each breath stays in the conducting airways and never meets blood.",
+      "Wrong. Cartilage ends before the bronchioles. Alveoli are held open by transpulmonary pressure and surfactant, not by cartilage."
+    ]
+  },
+  {
+    "id": "w13-ma-02",
+    "type": "ma",
+    "competencyId": "w12-lung-volumes",
+    "dok": 2,
+    "stem": "A spirogram gives tidal volume 500 mL, inspiratory reserve volume 3000 mL, expiratory reserve volume 1200 mL. A separate gas dilution test gives residual volume 1200 mL. Which statements are correct? Select all that apply.",
+    "options": [
+      "Vital capacity is 4700 mL.",
+      "Total lung capacity is 5900 mL.",
+      "Functional residual capacity is 2400 mL.",
+      "Inspiratory capacity is 3500 mL.",
+      "Residual volume can be read directly from the spirogram trace.",
+      "Vital capacity includes the residual volume."
+    ],
+    "correct": [0, 1, 2, 3],
+    "why": "Capacities are sums of volumes. Vital capacity is tidal volume plus both reserves, 500 plus 3000 plus 1200, which is 4700 mL. Adding residual volume gives total lung capacity, 5900 mL. Functional residual capacity is what is left after a quiet expiration, expiratory reserve plus residual, 2400 mL. Inspiratory capacity is tidal volume plus inspiratory reserve, 3500 mL.",
+    "whyNot": [
+      "Belongs. 500 plus 3000 plus 1200 equals 4700 mL.",
+      "Belongs. Vital capacity 4700 plus residual volume 1200 equals 5900 mL.",
+      "Belongs. Expiratory reserve 1200 plus residual 1200 equals 2400 mL.",
+      "Belongs. Tidal 500 plus inspiratory reserve 3000 equals 3500 mL.",
+      "Wrong. Residual volume never leaves the lung, so a spirometer, which only measures air that moves, cannot see it. That is why a dilution test was needed here.",
+      "Wrong. Vital capacity is the most air that can be moved. Residual volume by definition cannot be moved, so it is excluded."
+    ]
+  },
+  {
+    "id": "w13-ma-03",
+    "type": "ma",
+    "competencyId": "w12-respiratory-centers",
+    "dok": 2,
+    "stem": "Which statements about how the breathing rhythm is generated and modified are correct? Select all that apply.",
+    "options": [
+      "The basic rhythm arises from a network of neurons in the medulla that fires spontaneously.",
+      "Pontine centers fine tune the rhythm, mainly by helping to end inspiration.",
+      "Quiet expiration requires a burst of firing from expiratory motor neurons.",
+      "Stretch receptors in the lung, signaling through the vagus nerve, cut inspiration short when the lung is overinflated.",
+      "Cutting the spinal cord at the level of the thoracic vertebrae stops rhythm generation in the medulla.",
+      "Higher brain centers can override the rhythm for a short time, as in a voluntary breath hold."
+    ],
+    "correct": [0, 1, 3, 5],
+    "why": "The rhythm is made in the medulla by neurons that fire on their own. The pons shapes the timing, especially the switch from inspiration to expiration. Lung stretch receptors and higher centers can modify the rhythm, but the medulla keeps going without them. Quiet expiration is passive recoil, so no expiratory motor burst is needed.",
+    "whyNot": [
+      "Belongs. The medullary network, including the pre Botzinger complex, is the pacemaker for breathing.",
+      "Belongs. The pontine respiratory group limits inspiratory time so the pattern stays smooth.",
+      "Wrong. In quiet breathing the inspiratory neurons simply stop firing and elastic recoil pushes the air out. Expiratory muscles are recruited only in forced breathing.",
+      "Belongs. This is the Hering Breuer reflex. It protects against overinflation and shortens inspiration.",
+      "Wrong. The rhythm generator is in the brainstem, above the cut. A thoracic cut removes intercostal drive but the diaphragm, supplied from C3 to C5, keeps breathing.",
+      "Belongs. The cortex can hold or speed breathing temporarily, but rising carbon dioxide eventually wins and the medulla takes over."
+    ]
+  },
+  {
+    "id": "w13-ma-04",
+    "type": "ma",
+    "competencyId": "w13-buffer-systems",
+    "dok": 2,
+    "stem": "Which statements about the body's buffer systems are correct? Select all that apply.",
+    "options": [
+      "Bicarbonate is the dominant extracellular buffer because its concentration is high and the carbon dioxide it forms can be exhaled.",
+      "The phosphate buffer does most of its work inside cells and in the urine, where its concentration is high.",
+      "Hemoglobin is the main buffer inside the red blood cell.",
+      "Bicarbonate is the best buffer for hydrogen ions that come from a rise in carbon dioxide.",
+      "Chemical buffers act within seconds, faster than either the lungs or the kidneys.",
+      "Plasma proteins carry no charge, so they do not buffer."
+    ],
+    "correct": [0, 1, 2, 4],
+    "why": "A buffer's importance depends on how much of it is present and where. Bicarbonate sits at about 24 mmol/L in plasma and is linked to a gas the lungs can remove, which makes it an open system and the main extracellular buffer. Phosphate and proteins work mainly inside cells, and hemoglobin handles the red cell. All chemical buffers respond instantly; the lungs take minutes and the kidneys take days.",
+    "whyNot": [
+      "Belongs. High concentration plus the open lung end is exactly why bicarbonate dominates in plasma.",
+      "Belongs. Phosphate is dilute in plasma but concentrated inside cells and in the renal tubule.",
+      "Belongs. Hemoglobin's histidine side chains take up most of the hydrogen ion produced during carbon dioxide transport.",
+      "Wrong. Hydrating carbon dioxide produces one hydrogen ion and one bicarbonate together, so bicarbonate cannot mop up the acid it just helped make. Proteins buffer that load.",
+      "Belongs. Buffering is a chemical reaction and is essentially instantaneous.",
+      "Wrong. Proteins carry many charged side chains and are important buffers in plasma and especially inside cells."
+    ]
+  },
+  {
+    "id": "w13-ma-05",
+    "type": "ma",
+    "competencyId": "w12-surfactant",
+    "dok": 2,
+    "stem": "Which statements about surfactant and surface tension are correct? Select all that apply.",
+    "options": [
+      "Surfactant lowers surface tension by getting between water molecules at the air liquid interface.",
+      "Surfactant lowers surface tension more in small alveoli than in large ones.",
+      "Without surfactant, a small alveolus tends to empty into a larger one connected to it.",
+      "Surfactant raises lung compliance.",
+      "Surfactant works by strengthening the attraction between water molecules lining the alveolus.",
+      "Surfactant production is complete well before 24 weeks of gestation."
+    ],
+    "correct": [0, 1, 2, 3],
+    "why": "Water molecules at the alveolar surface attract each other and pull the alveolus inward. Surfactant sits between them and weakens that pull. Because the same amount of surfactant is packed more densely in a smaller alveolus, the small ones get the biggest reduction, which evens out collapsing pressures between alveoli of different sizes. Lower surface tension means the lung stretches more easily, so compliance rises.",
+    "whyNot": [
+      "Belongs. That is the mechanism: the phospholipid tails break up the cohesive layer of water at the surface.",
+      "Belongs. Concentration per unit area is higher in a small alveolus, so its surface tension falls more.",
+      "Belongs. By Laplace's law the small alveolus has the higher collapsing pressure, so gas flows to the larger one unless surfactant corrects the difference.",
+      "Belongs. Surface tension is a major part of the lung's elastic recoil, so lowering it makes the lung easier to inflate.",
+      "Wrong. That describes the opposite of what surfactant does; surface tension comes from water attracting water, and surfactant weakens it.",
+      "Wrong. Type II cells begin making surfactant around 24 to 26 weeks and reach adequate amounts near 34 weeks, which is why very premature babies develop respiratory distress."
+    ]
+  },
+  {
+    "id": "w13-ma-06",
+    "type": "ma",
+    "competencyId": "w12-compliance",
+    "dok": 2,
+    "stem": "Which statements about lung compliance and elastic recoil are correct? Select all that apply.",
+    "options": [
+      "Compliance is the change in lung volume produced by a given change in transpulmonary pressure.",
+      "Emphysema raises compliance and lowers elastic recoil.",
+      "Fibrosis lowers compliance and raises elastic recoil.",
+      "A lung with very high compliance is hard to inflate.",
+      "Loss of elastic recoil makes expiration harder, not easier.",
+      "Losing surfactant raises compliance."
+    ],
+    "correct": [0, 1, 2, 4],
+    "why": "Compliance and recoil move in opposite directions. Elastic fibers and surface tension both make the lung pull inward, which is recoil, and both make it resist stretching, which is low compliance. Emphysema destroys elastic tissue, so the lung inflates easily but cannot push air out. Fibrosis adds stiff scar, so the lung is hard to inflate but empties fast.",
+    "whyNot": [
+      "Belongs. Compliance is delta volume over delta pressure, about 200 mL per cmH2O in a healthy adult.",
+      "Belongs. Destroyed elastic fibers mean a floppy lung with little inward pull.",
+      "Belongs. Scar tissue is stiff and springs back hard.",
+      "Wrong. High compliance means a large volume change for a small pressure change, so the lung is easy to inflate. The problem in emphysema is getting air out.",
+      "Belongs. Quiet expiration depends on recoil. With little recoil, air is trapped and expiration needs muscle work.",
+      "Wrong. Surface tension is part of recoil. Losing surfactant raises surface tension, raises recoil, and lowers compliance."
+    ]
+  },
+  {
+    "id": "w13-ma-07",
+    "type": "ma",
+    "competencyId": "w12-oxygen-transport",
+    "dok": 2,
+    "stem": "Which statements about oxygen transport and the oxyhemoglobin dissociation curve are correct? Select all that apply.",
+    "options": [
+      "Almost all oxygen in blood is bound to hemoglobin; only about 1.5 percent is dissolved in plasma.",
+      "The flat upper part of the curve, above a PO2 of about 60 mmHg, keeps arterial saturation high even if alveolar PO2 falls somewhat.",
+      "The steep part of the curve, between a PO2 of about 20 and 40 mmHg, lets a small fall in tissue PO2 release a large amount of oxygen.",
+      "At a PO2 of 40 mmHg, typical of resting venous blood, hemoglobin is about 75 percent saturated.",
+      "Binding of the first oxygen molecule lowers hemoglobin's affinity for the next one.",
+      "Raising arterial PO2 from 100 to 200 mmHg roughly doubles arterial oxygen content."
+    ],
+    "correct": [0, 1, 2, 3],
+    "why": "Hemoglobin is the oxygen carrier, and its four subunits cooperate: binding one oxygen makes the next bind more easily. That cooperativity gives the S shape. The plateau means the lung loads hemoglobin fully over a wide range of alveolar PO2, and the steep segment means tissues can pull oxygen off with only a modest drop in PO2.",
+    "whyNot": [
+      "Belongs. Dissolved oxygen is about 0.3 mL per 100 mL of blood, against about 20 mL bound to hemoglobin.",
+      "Belongs. That is the safety margin for altitude and mild lung disease.",
+      "Belongs. This is why resting tissue can take about 25 percent and working muscle far more.",
+      "Belongs. 40 mmHg and 75 percent is the standard venous point on the curve.",
+      "Wrong. That is the reverse of cooperativity. The first binding raises affinity for the rest, which is what makes the curve steep in the middle.",
+      "Wrong. At 100 mmHg hemoglobin is already about 98 percent saturated. Doubling PO2 only adds a little dissolved oxygen, so content rises by a few percent, not double."
+    ]
+  },
+  {
+    "id": "w13-ma-08",
+    "type": "ma",
+    "competencyId": "w12-co2-transport",
+    "dok": 2,
+    "stem": "Which statements about carbon dioxide transport in blood are correct? Select all that apply.",
+    "options": [
+      "About 70 percent of carbon dioxide travels as bicarbonate ion.",
+      "About 23 percent travels bound to hemoglobin as carbaminohemoglobin.",
+      "About 7 percent travels dissolved in plasma.",
+      "In a systemic capillary, chloride moves into the red cell as bicarbonate moves out.",
+      "Carbonic anhydrase is found mainly in plasma, so most bicarbonate forms outside the red cell.",
+      "Carbon dioxide binds to the iron of the heme group, competing with oxygen."
+    ],
+    "correct": [0, 1, 2, 3],
+    "why": "Most carbon dioxide diffuses into the red cell, where carbonic anhydrase quickly converts it to carbonic acid, which splits into hydrogen ion and bicarbonate. Hemoglobin buffers the hydrogen ion and the bicarbonate is exported to plasma through band 3 in exchange for chloride. A smaller share binds the globin protein, and a little stays dissolved.",
+    "whyNot": [
+      "Belongs. Bicarbonate is the main carrier.",
+      "Belongs. Carbon dioxide attaches to amino groups of the globin chains.",
+      "Belongs. Carbon dioxide is far more soluble than oxygen, but 7 percent is still a small share.",
+      "Belongs. This is the chloride shift. It keeps the red cell electrically neutral as bicarbonate leaves.",
+      "Wrong. Carbonic anhydrase is inside the red cell. Plasma has almost none, which is why the reaction in plasma is too slow to matter.",
+      "Wrong. Carbon dioxide binds the protein part of hemoglobin, not the heme iron, so it does not compete directly with oxygen for the same site."
+    ]
+  },
+  {
+    "id": "w13-ma-09",
+    "type": "ma",
+    "competencyId": "w12-bohr-haldane",
+    "dok": 2,
+    "stem": "Which statements about the Bohr and Haldane effects are correct? Select all that apply.",
+    "options": [
+      "The Bohr effect: rising carbon dioxide or hydrogen ion lowers hemoglobin's affinity for oxygen.",
+      "The Haldane effect: deoxygenated hemoglobin carries more carbon dioxide and hydrogen ion than oxygenated hemoglobin.",
+      "In the lung, oxygen loading pushes carbon dioxide off hemoglobin.",
+      "The Bohr effect shifts the oxyhemoglobin curve to the left.",
+      "The Haldane effect describes how oxygen changes hemoglobin's handling of carbon dioxide, not how carbon dioxide changes oxygen binding.",
+      "At the tissue, the Haldane effect helps hemoglobin load carbon dioxide."
+    ],
+    "correct": [0, 1, 2, 4, 5],
+    "why": "The two effects are two sides of one molecule. Bohr: carbon dioxide and acid act on oxygen binding, loosening it, which is a rightward shift. Haldane: the oxygen state of hemoglobin acts on carbon dioxide binding, with deoxyhemoglobin carrying more. At the tissue both favor unloading oxygen and loading carbon dioxide. In the lung both run in reverse.",
+    "whyNot": [
+      "Belongs. That is the definition of the Bohr effect.",
+      "Belongs. That is the definition of the Haldane effect.",
+      "Belongs. This is the Haldane effect working in the lung direction.",
+      "Wrong. Lower affinity is a rightward shift. A left shift would mean tighter binding, the opposite of what acid does.",
+      "Belongs. Keeping the direction straight is the whole point: Bohr is carbon dioxide acting on oxygen, Haldane is oxygen acting on carbon dioxide.",
+      "Belongs. As oxygen leaves at the tissue, the deoxyhemoglobin formed picks up carbon dioxide and hydrogen ion."
+    ]
+  },
+  {
+    "id": "w13-ma-10",
+    "type": "ma",
+    "competencyId": "w12-ventilation-adaptation",
+    "dok": 2,
+    "stem": "Which statements about ventilation during exercise and at altitude are correct? Select all that apply.",
+    "options": [
+      "During moderate exercise ventilation rises in step with carbon dioxide production, so arterial PCO2 stays near normal.",
+      "On arrival at high altitude, low arterial PO2 stimulates the peripheral chemoreceptors and ventilation rises.",
+      "The respiratory alkalosis of the first hours at altitude limits how far ventilation can rise at first.",
+      "Over weeks at altitude, erythropoietin raises red cell mass and hemoglobin concentration.",
+      "After a month at altitude, arterial PO2 returns to its sea level value.",
+      "The rise in ventilation during moderate exercise is driven mainly by a fall in arterial PO2."
+    ],
+    "correct": [0, 1, 2, 3],
+    "why": "Exercise raises ventilation before any blood gas changes, through signals from the motor cortex and from joints and muscles, and the response is so well matched that PCO2 and PO2 barely move. Altitude is different: the stimulus is real hypoxia, and the first response is limited because blowing off carbon dioxide makes the blood alkaline, which quiets the central chemoreceptors. Renal bicarbonate loss and more red cells improve things over days to weeks.",
+    "whyNot": [
+      "Belongs. Arterial PCO2 is nearly constant in moderate exercise.",
+      "Belongs. The carotid bodies fire hard once PO2 drops below about 60 mmHg.",
+      "Belongs. Alkaline cerebrospinal fluid acts as a brake until the kidneys and choroid plexus adjust bicarbonate.",
+      "Belongs. The kidney senses hypoxia and releases erythropoietin; hematocrit rises over weeks.",
+      "Wrong. Inspired PO2 is still low, so arterial PO2 stays below sea level values. Acclimatization improves delivery, it does not restore PO2.",
+      "Wrong. Arterial PO2 stays near normal in moderate exercise, so it cannot be the main drive. Feedforward and mechanoreceptor signals are."
+    ]
+  },
+  {
+    "id": "w13-ma-11",
+    "type": "ma",
+    "competencyId": "w13-respiratory-ph-control",
+    "dok": 2,
+    "stem": "Which statements about respiratory control of plasma pH are correct? Select all that apply.",
+    "options": [
+      "Hyperventilation lowers PCO2, pulls the reaction toward carbon dioxide, and so lowers hydrogen ion and raises pH.",
+      "Hypoventilation raises PCO2 and lowers pH.",
+      "The respiratory response to a metabolic acidosis is an increase in ventilation.",
+      "Respiratory compensation for a pH disturbance takes several days to begin.",
+      "The lungs change plasma pH by changing how much bicarbonate is excreted.",
+      "Ventilation changes alone can fully return a metabolic acidosis to a pH of 7.40."
+    ],
+    "correct": [0, 1, 2],
+    "why": "Carbon dioxide plus water gives carbonic acid, which gives hydrogen ion plus bicarbonate. Ventilation sets PCO2, and PCO2 sets where that equilibrium sits. Blowing off carbon dioxide drains hydrogen ion; retaining carbon dioxide adds it. The lungs respond within minutes and can only partly correct a disturbance that started elsewhere.",
+    "whyNot": [
+      "Belongs. Removing carbon dioxide drags the equation to the left and consumes hydrogen ion.",
+      "Belongs. Retained carbon dioxide adds acid, which is respiratory acidosis.",
+      "Belongs. The extra hydrogen ion stimulates the peripheral chemoreceptors, breathing deepens, and PCO2 falls to offset the acid.",
+      "Wrong. Ventilation changes within minutes. Days is the time course of renal compensation.",
+      "Wrong. The lungs handle only carbon dioxide. Bicarbonate excretion is the kidney's job.",
+      "Wrong. Compensation moves pH toward normal but stops short of it, because the stimulus fades as pH improves and the original bicarbonate loss is still there."
+    ]
+  },
+  {
+    "id": "w13-ma-12",
+    "type": "ma",
+    "competencyId": "w12-chemoreceptors",
+    "dok": 2,
+    "stem": "Which statements about chemoreceptor control of breathing are correct? Select all that apply.",
+    "options": [
+      "Central chemoreceptors respond to hydrogen ion in the fluid around the medulla, which forms from carbon dioxide that crosses the blood brain barrier.",
+      "Central chemoreceptors respond directly to hydrogen ion in arterial blood.",
+      "Peripheral chemoreceptors in the carotid bodies respond strongly to arterial PO2 only after it falls below about 60 mmHg.",
+      "Peripheral chemoreceptors also respond to a rise in arterial PCO2 and hydrogen ion.",
+      "Carbon dioxide is the main minute to minute drive because a small rise in PCO2 produces a large rise in ventilation.",
+      "Peripheral chemoreceptors sense total oxygen content, so anemia is a strong stimulus to breathe."
+    ],
+    "correct": [0, 2, 3, 4],
+    "why": "Carbon dioxide is the fine control. It crosses into the brain freely, becomes hydrogen ion there, and the central chemoreceptors read that. A rise of only a few mmHg roughly doubles ventilation. Oxygen is the emergency backup, sensed by the carotid bodies, which stay fairly quiet until PO2 is well below normal. The carotid bodies read dissolved oxygen, not oxygen bound to hemoglobin.",
+    "whyNot": [
+      "Belongs. Carbon dioxide diffuses in, is hydrated, and the hydrogen ion is what the receptor senses.",
+      "Wrong. Hydrogen ion cannot cross the blood brain barrier, so the central receptors see only the acid made from carbon dioxide inside the brain.",
+      "Belongs. The hypoxic response is small until PO2 drops off the plateau of the oxyhemoglobin curve.",
+      "Belongs. The peripheral receptors also give a fast, though smaller, response to acid and carbon dioxide.",
+      "Belongs. The sensitivity to carbon dioxide is far greater than the sensitivity to oxygen in the normal range.",
+      "Wrong. The receptors respond to PO2, the dissolved oxygen, which is normal in anemia. Anemia does not stimulate breathing this way."
+    ]
+  },
+  {
+    "id": "w13-tf-01",
+    "type": "tf",
+    "competencyId": "w12-intrapleural-pressure",
+    "dok": 2,
+    "statement": "Intrapleural pressure is below atmospheric pressure because the lung pulls inward and the chest wall pulls outward on a sealed, fluid filled space.",
+    "truth": true,
+    "correction": "True: the two opposing pulls stretch the small volume of pleural fluid, and since fluid cannot expand, its pressure falls below atmospheric.",
+    "why": "The lung wants to collapse and the chest wall wants to spring outward. The pleural fluid between them is a closed system with no air, so the two pulls put it under a slight vacuum, about minus 3 to minus 5 cmH2O at rest. That negative pressure is what holds the lung against the chest wall. Open the seal and both structures move to their resting positions: the lung collapses and the chest wall springs out."
+  },
+  {
+    "id": "w13-tf-02",
+    "type": "tf",
+    "competencyId": "w12-airway-resistance",
+    "dok": 2,
+    "statement": "Sympathetic stimulation constricts bronchiolar smooth muscle and raises airway resistance.",
+    "truth": false,
+    "correction": "Sympathetic stimulation, through epinephrine acting on beta 2 receptors, relaxes bronchiolar smooth muscle, widens the airways, and lowers resistance.",
+    "why": "Bronchioles carry no cartilage, so their smooth muscle sets their radius. Epinephrine and beta 2 agonist drugs relax that muscle; parasympathetic acetylcholine and histamine contract it. Because resistance depends on the fourth power of radius, even a small change in bronchiolar diameter makes a large change in airflow. This is why albuterol opens an asthmatic airway."
+  },
+  {
+    "id": "w13-tf-03",
+    "type": "tf",
+    "competencyId": "w12-dead-space",
+    "dok": 2,
+    "statement": "Two people with the same minute ventilation always have the same alveolar ventilation.",
+    "truth": false,
+    "correction": "Alveolar ventilation is (tidal volume minus dead space) times rate, so at the same minute ventilation the person taking slower, deeper breaths delivers more fresh air to the alveoli.",
+    "why": "Every breath wastes about 150 mL in the conducting airways. That cost is paid per breath, not per liter. Twelve breaths of 500 mL and twenty four breaths of 250 mL both move 6 L per minute, but the first delivers 350 times 12, or 4200 mL per minute, to the alveoli, and the second delivers 100 times 24, or 2400 mL per minute. Minute ventilation counts all the air moved; alveolar ventilation counts only what reaches the exchange surface."
+  },
+  {
+    "id": "w13-tf-04",
+    "type": "tf",
+    "competencyId": "w12-partial-pressures",
+    "dok": 2,
+    "statement": "Alveolar PO2 is about 150 mmHg, the same as humidified inspired air, because air flows straight into the alveoli.",
+    "truth": false,
+    "correction": "Alveolar PO2 is about 100 mmHg, lower than the inspired 150 mmHg, because oxygen keeps leaving the alveolus into the blood and carbon dioxide keeps entering, and each breath only partly refreshes the large volume already there.",
+    "why": "Humidified room air at sea level has a PO2 of (760 minus 47) times 0.21, about 150 mmHg. But a tidal breath of 500 mL, minus 150 mL of dead space, mixes with about 2400 mL of stale gas already in the lung, and the alveolus is constantly trading oxygen for carbon dioxide with the capillary blood. The steady state that results is roughly 100 mmHg oxygen and 40 mmHg carbon dioxide. Hyperventilation pushes alveolar PO2 up toward 150 but never past it."
+  },
+  {
+    "id": "w13-tf-05",
+    "type": "tf",
+    "competencyId": "w12-gas-diffusion",
+    "dok": 2,
+    "statement": "Pulmonary edema lowers oxygen transfer across the respiratory membrane more than it lowers carbon dioxide transfer.",
+    "truth": true,
+    "correction": "True: carbon dioxide is about 20 times more soluble than oxygen in the fluid of the membrane, so it still crosses a thickened barrier fast enough while oxygen falls behind.",
+    "why": "Diffusion rate depends on surface area, thickness, the partial pressure gradient, and solubility. Edema fluid thickens the barrier for both gases equally, but carbon dioxide's much higher solubility means its diffusion has a large reserve. In practice a patient with pulmonary edema has a low arterial PO2 while PCO2 is normal or even low, because hypoxia drives extra ventilation. Carbon dioxide retention appears only when the lung is very badly damaged."
+  },
+  {
+    "id": "w13-tf-06",
+    "type": "tf",
+    "competencyId": "w12-va-q-matching",
+    "dok": 2,
+    "statement": "When a region of lung is poorly ventilated, its arterioles dilate to send more blood there and pick up whatever oxygen is available.",
+    "truth": false,
+    "correction": "Pulmonary arterioles constrict in response to low alveolar PO2, sending blood away from the poorly ventilated region toward alveoli that are still ventilated.",
+    "why": "The pulmonary circulation is the opposite of the systemic circulation. In muscle, low oxygen dilates arterioles to bring more blood. In the lung, low alveolar oxygen constricts the local arteriole, which is called hypoxic pulmonary vasoconstriction. Blood is diverted to alveoli that are getting fresh air, so ventilation and perfusion stay matched and arterial PO2 is protected. Dilating the vessel would create a shunt and lower arterial PO2."
+  },
+  {
+    "id": "w13-tf-07",
+    "type": "tf",
+    "competencyId": "w12-hb-curve-shifts",
+    "dok": 1,
+    "statement": "A rise in red cell 2,3 bisphosphoglycerate shifts the oxyhemoglobin curve to the left and raises hemoglobin's affinity for oxygen.",
+    "truth": false,
+    "correction": "A rise in 2,3 bisphosphoglycerate shifts the curve to the right and lowers affinity, so hemoglobin releases more oxygen at any given tissue PO2.",
+    "why": "2,3 BPG is made by red cells during glycolysis and binds in the central pocket of deoxyhemoglobin, stabilizing the low affinity form. More of it means oxygen comes off more easily. Red cells make more in chronic hypoxia, at altitude, and in anemia, which is a useful adaptation. Stored blood loses 2,3 BPG and shifts left, holding oxygen more tightly."
+  },
+  {
+    "id": "w13-tf-08",
+    "type": "tf",
+    "competencyId": "w12-oxygen-content",
+    "dok": 2,
+    "statement": "A patient with anemia can have a normal arterial PO2 and a normal hemoglobin saturation while arterial oxygen content is low.",
+    "truth": true,
+    "correction": "True: PO2 reflects dissolved oxygen and saturation reflects the fraction of sites filled, while content depends on how much hemoglobin there is to fill.",
+    "why": "The lungs of an anemic patient work fine. Dissolved oxygen equilibrates to a normal PO2 near 95 mmHg, and every hemoglobin molecule present gets loaded to about 98 percent. The problem is that there are fewer hemoglobin molecules, so the total oxygen carried per 100 mL of blood is low. A pulse oximeter and a blood gas can both look normal while delivery to tissue is poor. Content is what the tissue actually receives."
+  },
+  {
+    "id": "w13-tf-09",
+    "type": "tf",
+    "competencyId": "w13-buffer-systems",
+    "dok": 1,
+    "statement": "The phosphate buffer system is the most important buffer in plasma because of its high plasma concentration.",
+    "truth": false,
+    "correction": "Bicarbonate is the most important plasma buffer; phosphate is present in plasma at only about 1 mmol/L and does its main work inside cells and in the urine.",
+    "why": "A buffer can only handle acid in proportion to how much of it is present. Plasma bicarbonate sits at about 24 mmol/L, and the carbon dioxide it forms can be exhaled, so it never saturates. Phosphate has a pKa near 6.8, close to body pH, which makes it a good buffer chemically, but its plasma concentration is too low to matter there. Inside cells and in the renal tubule its concentration is much higher, and that is where it works."
+  },
+  {
+    "id": "w13-tf-10",
+    "type": "tf",
+    "competencyId": "w12-spirometry-patterns",
+    "dok": 2,
+    "statement": "A restrictive lung disease such as fibrosis lowers the ratio of forced expiratory volume in one second to forced vital capacity below 0.70.",
+    "truth": false,
+    "correction": "Restriction leaves the ratio normal or high, because both the one second volume and the total volume shrink together and the stiff lung actually empties quickly; a low ratio marks obstruction.",
+    "why": "The ratio asks how fast air leaves, not how much. In fibrosis the lung is small but its strong recoil pushes air out quickly, so a large fraction of the reduced vital capacity comes out in the first second and the ratio is often above 0.80. In obstruction the airways are narrow, air leaves slowly, and the first second captures a smaller fraction, giving a ratio below 0.70. To spot restriction you look at the total volumes, not the ratio."
+  },
+  {
+    "id": "w13-bd-01",
+    "type": "bd",
+    "competencyId": "w12-surfactant",
+    "dok": 3,
+    "prompt": "Without notes, explain how surfactant keeps alveoli from collapsing, and then explain why a baby born at 28 weeks has stiff lungs and labored breathing.",
+    "rubric": [
+      "water lining the alveolus creates surface tension that pulls the alveolus inward",
+      "surfactant from type II cells sits between water molecules and lowers surface tension",
+      "by Laplace's law smaller alveoli have higher collapsing pressure, and surfactant lowers tension most in small alveoli, equalizing pressures",
+      "lower surface tension lowers recoil and raises compliance",
+      "surfactant production is not adequate until about 34 weeks of gestation",
+      "without it alveoli collapse at end expiration, compliance falls, and each breath needs much more pressure",
+      "the result is high work of breathing and low arterial PO2"
+    ]
+  },
+  {
+    "id": "w13-bd-02",
+    "type": "bd",
+    "competencyId": "w12-lab-spirometry",
+    "dok": 3,
+    "prompt": "A student's spirogram shows a tidal volume of 450 mL, an inspiratory reserve volume of 2500 mL, and an expiratory reserve volume of 1100 mL. The predicted vital capacity is 4500 mL. Calculate vital capacity, inspiratory capacity, and percent of predicted, interpret the result, and state which volumes cannot be obtained from this trace and why.",
+    "rubric": [
+      "vital capacity is 450 plus 2500 plus 1100, which is 4050 mL",
+      "inspiratory capacity is 450 plus 2500, which is 2950 mL",
+      "percent predicted is 4050 divided by 4500, about 90 percent",
+      "90 percent is within the normal range (above about 80 percent)",
+      "residual volume cannot be read because that air never leaves the lung and the spirometer only measures air that moves",
+      "functional residual capacity and total lung capacity therefore cannot be calculated from the spirogram alone"
+    ]
+  },
+  {
+    "id": "w13-bd-03",
+    "type": "bd",
+    "competencyId": "w12-oxygen-transport",
+    "dok": 3,
+    "prompt": "Without notes, explain why the oxyhemoglobin dissociation curve is S shaped and what advantage the flat part and the steep part each give the body.",
+    "rubric": [
+      "hemoglobin has four binding sites and binding one oxygen raises the affinity of the remaining sites (cooperativity)",
+      "cooperativity makes saturation rise slowly at low PO2, then steeply, then level off, which is the S shape",
+      "the flat part is above a PO2 of about 60 mmHg",
+      "the flat part means arterial saturation stays high even if alveolar PO2 drops, as at altitude or in mild lung disease",
+      "the steep part is between a PO2 of about 20 and 40 mmHg, where tissues sit",
+      "on the steep part a small fall in tissue PO2 releases a lot of oxygen, so active tissue can extract much more"
+    ]
+  },
+  {
+    "id": "w13-bd-04",
+    "type": "bd",
+    "competencyId": "w12-co2-transport",
+    "dok": 3,
+    "prompt": "Without notes, trace carbon dioxide from a working muscle cell into the blood of a systemic capillary. Name the three forms it is carried in, give the approximate share of each, and describe the chloride shift step by step.",
+    "rubric": [
+      "carbon dioxide diffuses from the cell into plasma and then into the red cell",
+      "about 7 percent stays dissolved in plasma",
+      "about 23 percent binds amino groups on the globin chains as carbaminohemoglobin",
+      "about 70 percent becomes bicarbonate",
+      "inside the red cell carbonic anhydrase converts carbon dioxide and water to carbonic acid, which splits into hydrogen ion and bicarbonate",
+      "hemoglobin buffers the hydrogen ion",
+      "bicarbonate leaves the red cell through band 3 in exchange for chloride entering (the chloride shift)"
+    ]
+  },
+  {
+    "id": "w13-bd-05",
+    "type": "bd",
+    "competencyId": "w12-bohr-haldane",
+    "dok": 3,
+    "prompt": "Without notes, define the Bohr effect and the Haldane effect so that a classmate could tell them apart, then explain how the two cooperate in a capillary in exercising muscle.",
+    "rubric": [
+      "Bohr effect: carbon dioxide and hydrogen ion lower hemoglobin's affinity for oxygen (curve shifts right)",
+      "Haldane effect: deoxygenated hemoglobin binds more carbon dioxide and hydrogen ion than oxygenated hemoglobin",
+      "Bohr is carbon dioxide acting on oxygen binding; Haldane is oxygen state acting on carbon dioxide binding",
+      "in muscle, carbon dioxide enters the red cell and forms hydrogen ion, which drives oxygen off hemoglobin (Bohr)",
+      "the deoxyhemoglobin formed then takes up more carbon dioxide and hydrogen ion (Haldane)",
+      "each effect promotes the other, so oxygen unloading and carbon dioxide loading reinforce each other",
+      "in the lung both run in reverse: oxygen loading drives carbon dioxide off"
+    ]
+  },
+  {
+    "id": "w13-bd-06",
+    "type": "bd",
+    "competencyId": "w12-ventilation-adaptation",
+    "dok": 3,
+    "prompt": "A student flies from sea level to a research station at 3500 m. Without notes, predict what happens to her ventilation, arterial PCO2, and arterial pH in the first hour, then explain what changes over the next two weeks and why each change helps.",
+    "rubric": [
+      "low arterial PO2 stimulates the peripheral chemoreceptors and ventilation rises",
+      "hyperventilation lowers PCO2 and raises pH (respiratory alkalosis)",
+      "the alkalosis quiets the central chemoreceptors and limits the initial rise in ventilation",
+      "over days the kidneys excrete bicarbonate, pH returns toward normal, and ventilation rises further",
+      "the kidney releases erythropoietin, so red cell mass and hemoglobin rise, raising oxygen content",
+      "red cell 2,3 BPG rises, shifting the curve right to improve unloading at the tissue"
+    ]
+  },
+  {
+    "id": "w13-bd-07",
+    "type": "bd",
+    "competencyId": "w12-lab-ventilation-response",
+    "dok": 3,
+    "prompt": "In lab, a subject held her breath for 45 seconds after normal breathing, 90 seconds after one minute of hyperventilation, and only 20 seconds after one minute of rebreathing into a paper bag. Without notes, explain all three results in terms of carbon dioxide, and explain why the hyperventilation result is dangerous before swimming underwater.",
+    "rubric": [
+      "a breath hold ends when arterial PCO2 rises to the breakpoint that the chemoreceptors will not tolerate",
+      "hyperventilation lowers the starting PCO2, so it takes longer to reach the breakpoint and the hold is longer",
+      "rebreathing raises the starting PCO2, so the breakpoint is reached sooner and the hold is shorter",
+      "hyperventilation adds almost no oxygen because hemoglobin is already about 98 percent saturated",
+      "central chemoreceptors sense the hydrogen ion formed from carbon dioxide, which is the main drive",
+      "while swimming, oxygen is used up before PCO2 reaches the breakpoint, so PO2 can fall low enough to cause blackout without any urge to breathe"
+    ]
+  },
+  {
+    "id": "w13-bd-08",
+    "type": "bd",
+    "competencyId": "w13-respiratory-ph-control",
+    "dok": 3,
+    "prompt": "A patient with diabetic ketoacidosis has a pH of 7.22 (normal 7.35 to 7.45) and a plasma bicarbonate of 12 mmol/L (normal 22 to 26). She is breathing deeply and rapidly. Without notes, use the carbon dioxide bicarbonate equation to explain how her breathing pattern changes her pH, what triggers it, and why it cannot fully fix the problem.",
+    "rubric": [
+      "carbon dioxide plus water forms carbonic acid, which splits into hydrogen ion plus bicarbonate",
+      "the extra hydrogen ion stimulates the peripheral chemoreceptors, so ventilation rises within minutes",
+      "hyperventilation lowers PCO2",
+      "lowering PCO2 pulls the reaction toward carbon dioxide, which consumes hydrogen ion",
+      "hydrogen ion falls, so pH rises toward normal",
+      "pH depends on the ratio of bicarbonate to PCO2, and lowering PCO2 partly restores the ratio",
+      "compensation is partial: the ketoacids are still there, bicarbonate is still low, and the drive fades as pH improves"
+    ]
+  },
+  {
+    "id": "w13-app-01",
+    "type": "app",
+    "competencyId": "w12-ventilation-mechanics",
+    "dok": 3,
+    "case": "A student breathes quietly at sea level, where atmospheric pressure is 760 mmHg. Midway through inspiration a probe reads alveolar pressure at 759 mmHg. At the end of inspiration, with the chest still expanded and the diaphragm still contracted, alveolar pressure reads 760 mmHg.",
+    "stem": "Why has airflow stopped at the end of inspiration even though the chest is still held in the expanded position?",
+    "options": [
+      "Alveolar pressure now equals atmospheric pressure, so there is no pressure gradient to drive flow.",
+      "Intrapleural pressure has returned to atmospheric, so the lung is no longer being pulled open.",
+      "The diaphragm has begun to relax and is starting to push air back out.",
+      "The lungs are physically full and no more air can fit."
+    ],
+    "correct": 0,
+    "why": "Air moves only down a pressure gradient. Expanding the chest lowered alveolar pressure below 760, air flowed in, and that inflow raised alveolar pressure back up. Once alveolar pressure matches atmospheric, the gradient is zero and flow stops, even though the lung is now larger. Flow depends on the pressure difference, not on how big the lung is.",
+    "whyNot": [
+      "Correct. Zero gradient means zero flow. This is Boyle's law playing out: the volume increase lowered pressure, inflow restored it.",
+      "Intrapleural pressure is still negative, in fact more negative than at rest, which is what holds the lung at its larger volume. It never reaches atmospheric in a healthy chest.",
+      "The case states the diaphragm is still contracted. Relaxation would begin expiration, raising alveolar pressure above 760, which has not happened yet.",
+      "A quiet breath uses only about 500 mL of a lung that can hold several liters more. There is plenty of room; the missing ingredient is a pressure gradient."
+    ]
+  },
+  {
+    "id": "w13-app-02",
+    "type": "app",
+    "competencyId": "w12-intrapleural-pressure",
+    "dok": 3,
+    "case": "At the end of a quiet expiration, a subject is relaxed with no respiratory muscle activity and no airflow. A probe reads alveolar pressure at 0 cmH2O (equal to atmospheric) and intrapleural pressure at minus 5 cmH2O.",
+    "stem": "What is holding the lung inflated at this moment, given that no muscle is contracting and no air is flowing?",
+    "options": [
+      "The transpulmonary pressure of 5 cmH2O, alveolar minus intrapleural, holds the lung open against its elastic recoil.",
+      "A positive alveolar pressure is pushing outward on the alveolar walls.",
+      "Low level tonic contraction of the diaphragm keeps the chest expanded.",
+      "Surfactant generates an outward force that inflates the alveoli."
+    ],
+    "correct": 0,
+    "why": "The lung is always trying to collapse. What stops it is the pressure difference across its wall: alveolar pressure inside minus intrapleural pressure outside. At rest that is 0 minus (minus 5), or 5 cmH2O pushing outward, and it exactly balances the inward recoil at functional residual capacity. No muscle work is needed; the sealed pleural space does the holding.",
+    "whyNot": [
+      "Correct. The transpulmonary pressure is the distending pressure of the lung, and 5 cmH2O balances recoil at end expiration.",
+      "Alveolar pressure is zero here, equal to atmospheric. It is not positive, and it is not what keeps the lung open; the pressure outside the lung is what matters.",
+      "The case says no muscle is active. The lung stays at functional residual capacity purely because of the balance between lung recoil and chest wall recoil.",
+      "Surfactant reduces the inward pull of surface tension. It lowers recoil; it does not generate an outward inflating force."
+    ]
+  },
+  {
+    "id": "w13-app-03",
+    "type": "app",
+    "competencyId": "w12-compliance",
+    "dok": 3,
+    "case": "A 62 year old patient is tested. A change in transpulmonary pressure of 10 cmH2O produces a change in lung volume of only 300 mL, giving a compliance of 30 mL per cmH2O (normal about 200 mL per cmH2O).",
+    "stem": "Predict this patient's elastic recoil and which phase of breathing demands the most extra work.",
+    "options": [
+      "Recoil is high, and inspiration is hard because the lung resists being stretched.",
+      "Recoil is low, and expiration is hard because the lung cannot push air out.",
+      "Recoil is high, and expiration is hard because the lung snaps shut too fast.",
+      "Recoil is low, and inspiration is hard because the floppy lung cannot generate a pressure gradient."
+    ],
+    "correct": 0,
+    "why": "Compliance of 30 means the lung is stiff: a lot of pressure buys very little volume. Stiffness and strong recoil are the same property viewed from two sides. A stiff lung springs back easily, so expiration is quick and passive, but every inspiration requires the muscles to generate a large negative pressure. This is the restrictive picture seen in pulmonary fibrosis.",
+    "whyNot": [
+      "Correct. Low compliance, high recoil, inspiratory work. The three go together.",
+      "Low recoil with hard expiration is emphysema, the high compliance disease. This patient's compliance is far below normal, not above.",
+      "Recoil is indeed high, but strong recoil makes expiration easier, not harder. Air leaves quickly in a stiff lung.",
+      "Low recoil is the wrong prediction for a stiff lung, and a floppy lung is easy, not hard, to inflate."
+    ]
+  },
+  {
+    "id": "w13-app-04",
+    "type": "app",
+    "competencyId": "w12-airway-resistance",
+    "dok": 3,
+    "case": "During an asthma attack a patient's bronchioles have an average radius of 1.0 mm. After an inhaled beta 2 agonist the average radius increases to 1.2 mm, a 20 percent increase. Airway length and gas viscosity do not change.",
+    "stem": "Predict the change in airway resistance produced by the drug.",
+    "options": [
+      "Resistance falls to about half its original value.",
+      "Resistance falls by about 20 percent, matching the change in radius.",
+      "Resistance falls to about 70 percent of its original value.",
+      "Resistance is unchanged, because resistance depends on airway length rather than radius."
+    ],
+    "correct": 0,
+    "why": "Resistance is proportional to 1 over radius to the fourth power. Raising radius by a factor of 1.2 raises radius to the fourth by 1.2 times 1.2 times 1.2 times 1.2, about 2.07. Resistance therefore falls to about 1 over 2.07, roughly half. This is why a modest change in bronchiolar diameter has such a large effect on airflow, in both directions.",
+    "whyNot": [
+      "Correct. A 20 percent increase in radius roughly doubles radius to the fourth, so resistance is roughly halved.",
+      "That assumes resistance changes in proportion to radius. The fourth power relationship makes the effect much larger.",
+      "That would follow if resistance depended on radius squared (1.2 squared is 1.44, and 1 over 1.44 is about 0.7). It depends on the fourth power.",
+      "Length matters, but it is constant here. Radius is the main variable determinant of resistance, and it changed."
+    ]
+  },
+  {
+    "id": "w13-app-05",
+    "type": "app",
+    "competencyId": "w12-spirometry-patterns",
+    "dok": 3,
+    "case": "A 55 year old patient has a forced expiratory volume in one second of 3.0 L and a forced vital capacity of 3.4 L, giving a ratio of 0.88 (normal about 0.75 to 0.80). Her predicted forced vital capacity is 5.0 L.",
+    "stem": "Which change in lung mechanics best explains this pair of results?",
+    "options": [
+      "The lung cannot be expanded to normal size, so volumes are small but air leaves fast.",
+      "Narrowed airways slow expiration, so the first second captures a smaller fraction of the total.",
+      "Loss of elastic recoil traps air, so residual volume is high and vital capacity falls.",
+      "Increased dead space means less of each breath reaches the alveoli."
+    ],
+    "correct": 0,
+    "why": "Her forced vital capacity is only 68 percent of predicted, so volume is clearly reduced. Yet 88 percent of it comes out in the first second, which is faster than normal. Small volume with fast emptying is the restrictive pattern: a stiff lung or weak chest wall that cannot be filled, with strong recoil that empties it quickly. Obstruction would show a low ratio.",
+    "whyNot": [
+      "Correct. Reduced volume with a normal or high ratio is restriction. Fibrosis is a classic cause.",
+      "Slow emptying lowers the ratio below 0.70. Her ratio is high, so airflow is not the problem.",
+      "Air trapping from lost recoil gives an obstructive picture with a low ratio. High recoil, not low, fits these numbers.",
+      "Dead space affects gas exchange, not the shape of a forced expiration. It does not change the ratio or shrink vital capacity."
+    ]
+  },
+  {
+    "id": "w13-app-06",
+    "type": "app",
+    "competencyId": "w12-dead-space",
+    "dok": 3,
+    "case": "A patient on a ventilator has an anatomic dead space of 150 mL. Setting A delivers 400 mL breaths at 15 per minute. Setting B delivers 600 mL breaths at 10 per minute. Both settings give a minute ventilation of 6000 mL per minute.",
+    "stem": "Which setting will produce the lower arterial PCO2, and why?",
+    "options": [
+      "Setting B, because alveolar ventilation is 4500 mL per minute versus 3750 for setting A.",
+      "Setting A, because the higher rate clears carbon dioxide from the lungs more often.",
+      "Neither; the minute ventilations are equal, so carbon dioxide removal is equal.",
+      "Setting A, because smaller breaths waste less air in the dead space."
+    ],
+    "correct": 0,
+    "why": "Carbon dioxide removal depends on alveolar ventilation, not minute ventilation. Setting A: (400 minus 150) times 15 gives 3750 mL per minute. Setting B: (600 minus 150) times 10 gives 4500 mL per minute. The larger breath pays the 150 mL dead space toll fewer times, so more fresh gas reaches the alveoli each minute and arterial PCO2 falls lower.",
+    "whyNot": [
+      "Correct. Deeper and slower wins because the dead space cost is per breath.",
+      "Rate alone does not clear carbon dioxide. Each extra breath at 400 mL delivers only 250 mL of useful gas, and the arithmetic favors setting B.",
+      "Equal minute ventilation does not mean equal alveolar ventilation. Dead space makes the two diverge, and PCO2 tracks alveolar ventilation.",
+      "Dead space is a fixed 150 mL per breath regardless of breath size. A small breath wastes the same amount and delivers less."
+    ]
+  },
+  {
+    "id": "w13-app-07",
+    "type": "app",
+    "competencyId": "w12-partial-pressures",
+    "dok": 3,
+    "case": "A patient at sea level (barometric pressure 760 mmHg) breathes 40 percent oxygen through a mask. Water vapor pressure at body temperature, 37 C (98.6 F), is 47 mmHg. Her arterial PCO2 is 40 mmHg (normal 35 to 45), and her respiratory exchange ratio is 0.8.",
+    "stem": "What is her approximate alveolar PO2?",
+    "options": [
+      "About 235 mmHg",
+      "About 285 mmHg",
+      "About 304 mmHg",
+      "About 100 mmHg"
+    ],
+    "correct": 0,
+    "why": "First humidify the air: 760 minus 47 is 713 mmHg. Then apply Dalton's law: 713 times 0.40 is about 285 mmHg for inspired PO2. In the alveolus, carbon dioxide takes up space, so subtract PCO2 divided by the exchange ratio: 40 divided by 0.8 is 50. That leaves about 235 mmHg. Raising inspired oxygen raises alveolar PO2 a great deal, which is why oxygen therapy works so well for diffusion problems.",
+    "whyNot": [
+      "Correct. Humidify, apply the fraction, then subtract the carbon dioxide term.",
+      "285 is the inspired PO2 in the airways. It ignores the carbon dioxide that dilutes oxygen once the gas reaches the alveolus.",
+      "304 is 760 times 0.40. It forgets that water vapor takes up 47 mmHg before oxygen gets its share.",
+      "100 mmHg is the normal alveolar PO2 on room air. Breathing 40 percent oxygen roughly doubles the inspired fraction, so the alveolar value must be far higher."
+    ]
+  },
+  {
+    "id": "w13-app-08",
+    "type": "app",
+    "competencyId": "w12-gas-diffusion",
+    "dok": 3,
+    "case": "A patient with heart failure has fluid accumulating in the alveolar walls, roughly doubling the thickness of the respiratory membrane. Arterial blood gas: PO2 58 mmHg (normal 80 to 100), PCO2 36 mmHg (normal 35 to 45). Respiratory rate is 26 per minute (normal 12 to 20).",
+    "stem": "Why is oxygen transfer failing while carbon dioxide transfer is not?",
+    "options": [
+      "Carbon dioxide is about 20 times more soluble in the membrane fluid, so it still crosses the thicker barrier fast enough, and the extra ventilation keeps PCO2 down.",
+      "Carbon dioxide travels as bicarbonate, so its transport does not depend on membrane thickness.",
+      "Oxygen transfer fails because the edema fluid raises hemoglobin's affinity and blocks loading.",
+      "The thicker membrane blocks oxygen only because oxygen molecules are larger than carbon dioxide molecules."
+    ],
+    "correct": 0,
+    "why": "Doubling thickness halves the diffusion rate of both gases. Oxygen has little reserve, so its transfer falls behind and arterial PO2 drops. Carbon dioxide's high solubility gives it about a twenty fold advantage, so even at half speed it equilibrates. Meanwhile the low PO2 stimulates breathing, and the extra alveolar ventilation lowers PCO2 slightly below normal. Hypoxemia with normal or low PCO2 is the signature of a diffusion problem.",
+    "whyNot": [
+      "Correct. Solubility, not size, sets the diffusion advantage, and the hyperventilation explains the low normal PCO2.",
+      "Bicarbonate must convert back to carbon dioxide gas to cross the membrane, so thickness affects it too. It simply has enough reserve to cope.",
+      "Edema fluid does not act on hemoglobin. The problem is getting oxygen to the red cell, not binding it once there.",
+      "Oxygen and carbon dioxide are nearly the same size. Solubility in water, not molecular size, is what separates their diffusion rates."
+    ]
+  },
+  {
+    "id": "w13-app-09",
+    "type": "app",
+    "competencyId": "w12-va-q-matching",
+    "dok": 3,
+    "case": "A mucus plug completely blocks the bronchus to the right lower lobe of an otherwise healthy patient. Blood flow to that lobe continues at first. The lobe normally receives about 20 percent of pulmonary blood flow.",
+    "stem": "Predict the local vascular response in that lobe over the next several minutes and the effect on arterial PO2.",
+    "options": [
+      "Arterioles in the lobe constrict in response to low alveolar PO2, diverting blood to ventilated lobes, so arterial PO2 falls only modestly.",
+      "Arterioles in the lobe dilate to bring more blood past the trapped air, so arterial PO2 stays normal.",
+      "No vascular response occurs, so all 20 percent of blood flow passes through unventilated alveoli and arterial PO2 falls sharply.",
+      "Sympathetic reflexes constrict all pulmonary arterioles equally, so blood flow to the plugged lobe is unchanged."
+    ],
+    "correct": 0,
+    "why": "Once ventilation stops, the alveolar gas in the lobe equilibrates with venous blood and its PO2 falls. Pulmonary arterioles respond to low local PO2 by constricting, which is the opposite of systemic vessels. Blood is redirected to lobes that are still ventilated, so the shunt fraction stays small and arterial PO2 is protected. The match between ventilation and perfusion is restored by moving the blood, since the air cannot be moved.",
+    "whyNot": [
+      "Correct. Hypoxic pulmonary vasoconstriction is a local, unlearned response that limits the shunt.",
+      "Dilation would send more blood past alveoli that have no fresh air, enlarging the shunt and lowering arterial PO2. The lung does the opposite.",
+      "This is what would happen without hypoxic vasoconstriction. The response exists precisely to prevent a full 20 percent shunt.",
+      "The response is local and driven by alveolar PO2 in the affected region, not a systemic reflex. Only the hypoxic vessels constrict."
+    ]
+  },
+  {
+    "id": "w13-app-10",
+    "type": "app",
+    "competencyId": "w12-hb-curve-shifts",
+    "dok": 3,
+    "case": "A trauma patient receives four units of red cells that have been stored for three weeks. Stored red cells lose most of their 2,3 bisphosphoglycerate. After transfusion his hemoglobin is 10 g/dL (normal 13.5 to 17.5) and his arterial saturation is 98 percent. His tissue PO2 is a normal 40 mmHg.",
+    "stem": "Predict how the transfused cells will behave at the tissues in the first hours, before they rebuild 2,3 bisphosphoglycerate.",
+    "options": [
+      "Their curve is shifted left, so at a tissue PO2 of 40 mmHg they hold on to oxygen and unload less than normal cells.",
+      "Their curve is shifted right, so they unload extra oxygen and improve tissue delivery.",
+      "They behave normally, because arterial saturation is 98 percent and saturation is what determines unloading.",
+      "They carry less oxygen from the lung, because low 2,3 bisphosphoglycerate prevents loading."
+    ],
+    "correct": 0,
+    "why": "2,3 BPG binds deoxyhemoglobin and lowers oxygen affinity. Without it, hemoglobin binds oxygen tightly, which is a left shift and a lower P50. Loading in the lung is fine, and may even be slightly better, but at a tissue PO2 of 40 mmHg the transfused cells stay more saturated than normal cells and give up less oxygen. The patient's tissues get less benefit from the transfusion than the hemoglobin number suggests until the cells restore their 2,3 BPG over about a day.",
+    "whyNot": [
+      "Correct. Low 2,3 BPG means high affinity, left shift, poor unloading.",
+      "A right shift would need more 2,3 BPG, more acid, more carbon dioxide, or more heat. Stored cells have less 2,3 BPG, not more.",
+      "Arterial saturation only describes loading. Unloading depends on where the curve sits at tissue PO2, and that is what the shift changes.",
+      "Loading is not the problem. A left shifted hemoglobin loads well; it is the release at the tissue that suffers."
+    ]
+  },
+  {
+    "id": "w13-app-11",
+    "type": "app",
+    "competencyId": "w12-oxygen-content",
+    "dok": 3,
+    "case": "A man is brought in from a house with a faulty furnace. Arterial PO2 is 95 mmHg (normal 80 to 100). A standard pulse oximeter reads 98 percent. A blood test shows 40 percent of his hemoglobin sites are occupied by carbon monoxide. Hemoglobin concentration is 15 g/dL (normal 13.5 to 17.5).",
+    "stem": "His tissues are severely short of oxygen. Which statement explains why, given the normal PO2?",
+    "options": [
+      "PO2 measures only dissolved oxygen; 40 percent of his hemoglobin cannot carry oxygen, so content is low, and carbon monoxide also shifts the curve left so the remaining oxygen unloads poorly.",
+      "His PO2 is normal, so his arterial blood is carrying a normal amount of oxygen and the problem must be in the tissues' ability to use it.",
+      "Carbon monoxide blocks oxygen diffusion across the respiratory membrane, so less oxygen reaches the blood.",
+      "Carbon monoxide destroys red cells, so his hemoglobin concentration is too low to carry oxygen."
+    ],
+    "correct": 0,
+    "why": "The lungs are working: dissolved oxygen equilibrates normally, so PO2 is 95. But carbon monoxide binds hemoglobin about 200 times more tightly than oxygen, and 40 percent of the sites are gone. Arterial content drops to about 60 percent of normal, similar to a hemoglobin of 9 g/dL. Worse, the bound carbon monoxide shifts the remaining sites to a higher affinity, so even the oxygen that is carried is released poorly at tissue PO2. The pulse oximeter cannot tell carboxyhemoglobin from oxyhemoglobin, so its 98 percent is misleading.",
+    "whyNot": [
+      "Correct. Normal PO2, low content, and a left shift: all three parts matter.",
+      "PO2 and content are different things. A normal PO2 says the lung is fine; it says nothing about how many hemoglobin sites are free to carry oxygen.",
+      "Carbon monoxide does not act at the membrane. Diffusion is normal, which is exactly why PO2 is normal.",
+      "Hemoglobin concentration is a normal 15 g/dL. The cells are intact; their binding sites are occupied."
+    ]
+  },
+  {
+    "id": "w13-app-12",
+    "type": "app",
+    "competencyId": "w12-chemoreceptors",
+    "dok": 3,
+    "case": "A patient with severe long standing lung disease has an arterial PCO2 of 65 mmHg (normal 35 to 45), a PO2 of 52 mmHg (normal 80 to 100), and a pH of 7.36 (normal 7.35 to 7.45). He is given high flow oxygen. Within 30 minutes his PO2 is 120 mmHg, his breathing has become slow and shallow, and his PCO2 has risen to 80 mmHg.",
+    "stem": "Which mechanism best explains why his ventilation fell when oxygen was given?",
+    "options": [
+      "His central chemoreceptors had adapted to chronic high PCO2, leaving low PO2 at the peripheral chemoreceptors as his main drive; raising PO2 removed that drive.",
+      "High PO2 directly stimulates the central chemoreceptors, which inhibit the medullary rhythm generator.",
+      "The extra oxygen shifted his oxyhemoglobin curve left and trapped carbon dioxide in his tissues.",
+      "Oxygen at high concentration paralyzes the diaphragm within minutes."
+    ],
+    "correct": 0,
+    "why": "Normally PCO2 is the main drive, sensed as hydrogen ion in the fluid around the medulla. In chronic carbon dioxide retention, bicarbonate moves into that fluid over days and its pH returns toward normal, so the central chemoreceptors stop responding to the high PCO2. What is left is the peripheral chemoreceptor response to low PO2. Raising PO2 above about 60 mmHg silences the carotid bodies, ventilation falls, and PCO2 climbs. Oxygen in such a patient is given carefully, aiming for a modest PO2 rather than a normal one.",
+    "whyNot": [
+      "Correct. The normal carbon dioxide drive was lost to adaptation, and oxygen removed the backup drive.",
+      "Central chemoreceptors do not sense oxygen at all. They respond to hydrogen ion from carbon dioxide, and high PO2 does not act on them.",
+      "A left shift changes oxygen unloading, not carbon dioxide removal. His PCO2 rose because he stopped breathing enough, not because carbon dioxide was trapped.",
+      "Oxygen does not paralyze skeletal muscle. His diaphragm works; the command to use it has been reduced."
+    ]
+  }
+]

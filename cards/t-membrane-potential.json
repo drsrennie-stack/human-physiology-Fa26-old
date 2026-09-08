@@ -1125,16 +1125,16 @@
    "tags": [
     "lecture"
    ],
-   "q": "Why does an action potential start at the axon hillock rather than out on a dendrite where the input arrived?",
-   "a": "Voltage gated Na+ channels are packed most densely there, so it takes the smallest depolarization to reach threshold at that spot.",
+   "q": "Where are voltage gated Na+ channels most densely concentrated in a neuron?",
+   "a": "The axon hillock and the axon membrane.",
    "options": [
-    "Voltage gated Na+ channels are densest there, so it reaches threshold with the smallest depolarization",
-    "Dendrites have no membrane potential to depolarize",
-    "The cell body actively blocks any depolarization from reaching the dendrites",
-    "The action potential is generated in the nucleus and travels outward"
+    "The postsynaptic membrane of the neuromuscular junction",
+    "The axon hillock and the axon membrane",
+    "The stereocilia of inner ear hair cells",
+    "The membrane of the endoplasmic reticulum"
    ],
-   "correctIndex": 0,
-   "explanation": "Threshold is not a fixed voltage for the whole cell; it depends on how many Na+ channels are available in that patch of membrane. The axon hillock and initial segment carry the highest density, so that region has the lowest threshold and fires first, then the action potential propagates down the axon. This is why the hillock is called the trigger zone, and why the graded potentials arriving from many dendrites are summed and judged in one place. Dendrites do have a resting membrane potential and do produce graded potentials; they simply carry too few voltage gated Na+ channels to fire on their own in most neurons. Nothing blocks depolarization from spreading; it spreads passively and decays with distance, which is why decay is part of summation. The nucleus has no role in generating electrical signals."
+   "correctIndex": 1,
+   "explanation": "The axon hillock carries the highest density of voltage gated Na+ channels, which is why it is the trigger zone where an action potential is initiated and then propagated along the axon. The postsynaptic membrane at the neuromuscular junction is packed with ligand gated nicotinic receptors instead. Hair cell stereocilia carry mechanically gated channels. The endoplasmic reticulum has Ca2+ release channels, not the Na+ channels that drive the upstroke."
   },
   {
    "id": "c63",

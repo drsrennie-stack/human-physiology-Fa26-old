@@ -1,0 +1,792 @@
+[
+  {
+    "id": "w14-ma-01",
+    "type": "ma",
+    "competencyId": "w13-kidney-functions",
+    "dok": 1,
+    "stem": "Which of the following are homeostatic jobs the kidney actually does? Select all that apply.",
+    "options": [
+      "Adjusts water excretion to hold plasma osmolarity near 290 mOsm/L",
+      "Releases erythropoietin when oxygen delivery to the kidney falls",
+      "Makes most of the plasma proteins, including albumin",
+      "Excretes nitrogen wastes such as urea and creatinine",
+      "Stores glycogen and releases glucose during fasting",
+      "Helps regulate plasma pH by secreting hydrogen ion and reclaiming bicarbonate"
+    ],
+    "correct": [0, 1, 3, 5],
+    "why": "The kidney regulates water and electrolyte balance, acid base balance, waste excretion, and blood pressure, and it makes erythropoietin, renin and calcitriol. Protein synthesis and glycogen storage belong to the liver.",
+    "whyNot": [
+      "Belongs. Changing how much water leaves in the urine is the main way plasma osmolarity is defended.",
+      "Belongs. Erythropoietin from the kidney drives red cell production, which is why kidney failure causes anemia.",
+      "Does not belong. Plasma proteins are made by the liver. The kidney's job with albumin is to keep it out of the urine.",
+      "Belongs. Urea, creatinine and uric acid leave the body almost entirely through the kidney.",
+      "Does not belong. Glycogen storage and release is a liver function. The kidney can make a little glucose in prolonged fasting but does not store glycogen for it.",
+      "Belongs. The kidney is the slow but complete arm of pH regulation, excreting fixed acid and adjusting bicarbonate."
+    ]
+  },
+  {
+    "id": "w14-ma-02",
+    "type": "ma",
+    "competencyId": "w13-nephron-function",
+    "dok": 2,
+    "stem": "Which statements correctly pair a nephron region with what it does to the tubular fluid? Select all that apply.",
+    "options": [
+      "The proximal tubule reabsorbs about two thirds of the filtered sodium and water",
+      "The descending limb of the loop of Henle actively pumps sodium chloride out into the medulla",
+      "The thick ascending limb pumps sodium chloride out and is impermeable to water, so the fluid becomes dilute",
+      "The collecting duct's water permeability depends on antidiuretic hormone",
+      "Juxtamedullary nephrons have short loops that stay in the cortex",
+      "Juxtamedullary nephrons, with their long loops, are the ones that build the deep medullary gradient"
+    ],
+    "correct": [0, 2, 3, 5],
+    "why": "Each segment has a signature job. The proximal tubule does bulk isosmotic reabsorption, the descending limb loses water passively, the thick ascending limb pumps salt without water and dilutes the fluid, and the collecting duct adjusts water reabsorption under hormone control. Only the long looped juxtamedullary nephrons reach deep into the medulla.",
+    "whyNot": [
+      "Belongs. Bulk reabsorption of about 65 to 70 percent of filtered sodium and water happens here.",
+      "Does not belong. The descending limb has no salt pump. It is water permeable, so water leaves and the fluid concentrates passively. The pumping happens in the ascending limb.",
+      "Belongs. Salt out, water stays, so the fluid leaving is about 100 mOsm/L. This is the diluting segment.",
+      "Belongs. Without the hormone the duct is nearly watertight; with it, aquaporin 2 channels are inserted and water is reabsorbed.",
+      "Does not belong. That describes cortical nephrons. Juxtamedullary nephrons have loops that dip to the tip of the medulla.",
+      "Belongs. The depth of the loop sets how far the countercurrent multiplier can stack the gradient, so long loops give the 1200 mOsm/L tip."
+    ]
+  },
+  {
+    "id": "w14-ma-03",
+    "type": "ma",
+    "competencyId": "w13-renal-processes",
+    "dok": 2,
+    "stem": "For any solute, excretion equals filtration minus reabsorption plus secretion. Which statements are correct? Select all that apply.",
+    "options": [
+      "A solute that is filtered but neither reabsorbed nor secreted is excreted at a rate equal to its filtered load",
+      "Reabsorption moves solute from the tubular fluid into the peritubular blood",
+      "Secretion moves solute from the tubular fluid into the peritubular blood",
+      "If excretion is greater than the filtered load, the solute was net secreted",
+      "Filtered load equals plasma concentration times urine flow rate",
+      "Excretion rate equals urine concentration times urine flow rate"
+    ],
+    "correct": [0, 1, 3, 5],
+    "why": "Filtration puts solute into the tubule, reabsorption takes it back into blood, and secretion adds more from blood. Whatever is left is excreted. Filtered load is GFR times plasma concentration, and excretion is urine concentration times urine flow, so comparing the two tells you the net direction of tubular handling.",
+    "whyNot": [
+      "Belongs. With no tubular handling, what is filtered is what comes out. This is how inulin behaves.",
+      "Belongs. Reabsorption is tubule to blood.",
+      "Does not belong. This is the direction of reabsorption. Secretion goes the other way, blood to tubule.",
+      "Belongs. Filtration alone cannot excrete more than the filtered load, so anything extra was added by the tubule.",
+      "Does not belong. Filtered load is GFR times plasma concentration. Urine flow belongs in the excretion equation, not here.",
+      "Belongs. Concentration times volume per minute gives mass per minute leaving in the urine."
+    ]
+  },
+  {
+    "id": "w14-ma-04",
+    "type": "ma",
+    "competencyId": "w13-filtration-membrane",
+    "dok": 2,
+    "stem": "Which statements about what crosses the glomerular filtration membrane are correct? Select all that apply.",
+    "options": [
+      "Water, glucose, sodium and urea appear in the filtrate at about their plasma concentrations",
+      "Albumin is mostly excluded by its size and by the negative charge of the basement membrane",
+      "Red blood cells normally pass through the fenestrations of the glomerular capillaries",
+      "A small positively charged protein is filtered more easily than a negatively charged protein of the same size",
+      "Loss of the negative charge on the filtration barrier would decrease albumin filtration",
+      "The filtrate has about the same osmolarity as plasma"
+    ],
+    "correct": [0, 1, 3, 5],
+    "why": "The barrier sorts by size and charge. Small solutes and water pass freely, so the filtrate is essentially protein free plasma at the same osmolarity. Albumin is just at the size limit and is repelled by the negative charge of the basement membrane and podocyte coat, so little gets through. Cells are far too large.",
+    "whyNot": [
+      "Belongs. Small solutes cross freely, so their filtrate concentration matches plasma.",
+      "Belongs. Albumin is about the size cutoff and carries a negative charge, so both filters keep it out.",
+      "Does not belong. Fenestrations are around 70 nanometers; a red cell is thousands of nanometers across. Blood in urine means the barrier is damaged.",
+      "Belongs. The barrier is negatively charged, so it repels anions and lets cations of the same size through more easily.",
+      "Does not belong. Losing the negative charge removes the repulsion, so albumin filtration rises. This is what happens in some glomerular diseases.",
+      "Belongs. Osmolarity comes mostly from small solutes, which are filtered freely, so filtrate is about 300 mOsm/L like plasma."
+    ]
+  },
+  {
+    "id": "w14-ma-05",
+    "type": "ma",
+    "competencyId": "w13-tubular-secretion",
+    "dok": 2,
+    "stem": "Which statements about tubular secretion are correct? Select all that apply.",
+    "options": [
+      "Secretion moves substances from peritubular capillary blood into the tubular lumen",
+      "Secretion lets the kidney excrete a substance faster than filtration alone would allow",
+      "Hydrogen ion secretion is a major way the kidney excretes acid",
+      "Potassium is secreted in the collecting duct under aldosterone control",
+      "Glucose is secreted by the proximal tubule when plasma glucose is high",
+      "A substance must be filtered before it can be secreted"
+    ],
+    "correct": [0, 1, 2, 3],
+    "why": "Secretion is the kidney's second route into the tubule. It pulls hydrogen ion, potassium, and organic anions and cations such as penicillin and creatinine out of the peritubular blood, so their clearance can exceed GFR. Glucose is never secreted; it spills into urine only when reabsorption is saturated.",
+    "whyNot": [
+      "Belongs. Blood to lumen is the definition of secretion.",
+      "Belongs. Only 20 percent of plasma is filtered each pass, so secretion from the other 80 percent lets some drugs be cleared almost completely in one pass.",
+      "Belongs. Fixed acid leaves the body as secreted hydrogen ion trapped on phosphate and ammonia buffers.",
+      "Belongs. Principal cells secrete potassium, and aldosterone turns that secretion up.",
+      "Does not belong. Glucose has no secretory carrier. It appears in urine when the filtered load passes the transport maximum, which is a reabsorption limit.",
+      "Does not belong. Secretion works on the plasma that bypassed the filter. Drugs bound to albumin are not filtered at all yet are secreted well."
+    ]
+  },
+  {
+    "id": "w14-ma-06",
+    "type": "ma",
+    "competencyId": "w13-natriuretic-peptides",
+    "dok": 2,
+    "stem": "Which statements about atrial natriuretic peptide are correct? Select all that apply.",
+    "options": [
+      "It is released by atrial muscle cells when the atria are stretched by increased blood volume",
+      "It raises glomerular filtration rate by dilating the afferent arteriole",
+      "It stimulates renin release from the granular cells",
+      "It inhibits aldosterone secretion",
+      "It stimulates antidiuretic hormone release",
+      "It increases sodium excretion in the urine"
+    ],
+    "correct": [0, 1, 3, 5],
+    "why": "Atrial natriuretic peptide is the heart's signal that there is too much volume. It works against the renin angiotensin aldosterone system at every step: more filtration, less renin, less aldosterone, less antidiuretic hormone, less sodium reabsorption, so salt and water leave in the urine.",
+    "whyNot": [
+      "Belongs. Atrial stretch is the stimulus, so the peptide rises with volume expansion.",
+      "Belongs. Afferent dilation raises glomerular pressure and filtration, so more sodium reaches the tubule to be lost.",
+      "Does not belong. The peptide suppresses renin. Stimulating renin would conserve volume, the opposite of its job.",
+      "Belongs. Less aldosterone means less sodium reabsorption in the collecting duct.",
+      "Does not belong. It suppresses antidiuretic hormone so water is not retained along with the sodium.",
+      "Belongs. Natriuresis is in the name: it makes the kidney dump sodium."
+    ]
+  },
+  {
+    "id": "w14-ma-07",
+    "type": "ma",
+    "competencyId": "w13-micturition",
+    "dok": 2,
+    "stem": "Which statements about the micturition reflex and its control are correct? Select all that apply.",
+    "options": [
+      "Stretch receptors in the bladder wall trigger parasympathetic contraction of the detrusor",
+      "The internal sphincter is smooth muscle that relaxes as the detrusor contracts",
+      "The external sphincter is skeletal muscle under somatic motor control and can be held closed on purpose",
+      "The reflex is integrated in the lumbar sympathetic chain",
+      "Sympathetic stimulation makes the detrusor contract",
+      "Higher brain centers can inhibit the reflex until a convenient time"
+    ],
+    "correct": [0, 1, 2, 5],
+    "why": "Filling stretches the bladder, sensory fibers reach the sacral spinal cord, and parasympathetic motor neurons contract the detrusor while the internal sphincter opens with it. The external sphincter is skeletal muscle, so its somatic motor neurons can be kept firing by the brain to hold urine, or switched off to void. Sympathetic input relaxes the detrusor during filling.",
+    "whyNot": [
+      "Belongs. Stretch is the trigger, and the sacral parasympathetic outflow is the motor limb.",
+      "Belongs. The internal sphincter is part of the bladder neck and opens passively when the detrusor pulls on it.",
+      "Belongs. This is the voluntary gate, run by somatic motor neurons in the sacral cord.",
+      "Does not belong. The reflex is integrated in the sacral spinal cord. Sympathetic fibers help with storage, not with the reflex itself.",
+      "Does not belong. Sympathetic input relaxes the detrusor and tightens the internal sphincter, which favors storage.",
+      "Belongs. Descending pathways from the pons and cortex hold the reflex in check, which is what toilet training develops."
+    ]
+  },
+  {
+    "id": "w14-ma-08",
+    "type": "ma",
+    "competencyId": "w9-calcium-homeostasis",
+    "dok": 2,
+    "stem": "Plasma calcium falls after a low calcium meal. Which responses follow? Select all that apply.",
+    "options": [
+      "Parathyroid hormone secretion rises",
+      "Parathyroid hormone stimulates osteoclast activity so calcium leaves bone",
+      "Parathyroid hormone increases calcium reabsorption in the distal nephron",
+      "Parathyroid hormone increases phosphate reabsorption in the proximal tubule",
+      "Calcitonin secretion from the thyroid rises",
+      "Parathyroid hormone stimulates the kidney to make calcitriol, which raises intestinal calcium absorption"
+    ],
+    "correct": [0, 1, 2, 5],
+    "why": "Low calcium is sensed by the parathyroid glands, which release parathyroid hormone. The hormone pulls calcium from bone, saves calcium in the kidney, wastes phosphate in the kidney, and activates vitamin D so more calcium is absorbed from food. Calcitonin does the reverse and is released when calcium is high, so it falls here.",
+    "whyNot": [
+      "Belongs. The calcium sensing receptor on parathyroid cells fires when calcium drops.",
+      "Belongs. Bone is the fast reservoir; resorption releases calcium within hours.",
+      "Belongs. Less calcium lost in urine helps plasma calcium climb.",
+      "Does not belong. Parathyroid hormone blocks phosphate reabsorption so phosphate is excreted. Dumping phosphate keeps it from binding the calcium being released from bone.",
+      "Does not belong. Calcitonin lowers plasma calcium and is released when calcium is high. It falls when calcium is low.",
+      "Belongs. Calcitriol is the slow arm, raising absorption of dietary calcium over a day or two."
+    ]
+  },
+  {
+    "id": "w14-ma-09",
+    "type": "ma",
+    "competencyId": "w13-gfr-forces",
+    "dok": 2,
+    "stem": "Which of these changes, each acting alone, would increase glomerular filtration rate? Select all that apply.",
+    "options": [
+      "Dilation of the afferent arteriole",
+      "A fall in plasma protein concentration",
+      "Obstruction of the ureter by a stone",
+      "Moderate constriction of the efferent arteriole",
+      "Constriction of the afferent arteriole"
+    ],
+    "correct": [0, 1, 3],
+    "why": "Filtration is driven by glomerular capillary hydrostatic pressure and opposed by capsular pressure and plasma colloid osmotic pressure. Anything that raises capillary pressure (afferent dilation, efferent constriction) or lowers the opposing forces (less plasma protein) raises filtration. Anything that lowers capillary pressure or raises the opposing forces lowers it.",
+    "whyNot": [
+      "Belongs. Opening the inflow lets more pressure reach the capillary, so hydrostatic pressure and filtration rise.",
+      "Belongs. Less protein means less colloid osmotic pressure pulling fluid back, so net filtration pressure rises.",
+      "Does not belong. Urine backs up and capsular hydrostatic pressure rises, which opposes filtration.",
+      "Belongs. Narrowing the outflow raises pressure upstream in the capillary. Severe constriction eventually cuts plasma flow enough to reverse this, which is why the item says moderate.",
+      "Does not belong. Narrowing the inflow drops pressure downstream in the capillary, so filtration falls."
+    ]
+  },
+  {
+    "id": "w14-ma-10",
+    "type": "ma",
+    "competencyId": "w13-renal-threshold",
+    "dok": 2,
+    "stem": "Which statements about the transport maximum and renal threshold for glucose are correct? Select all that apply.",
+    "options": [
+      "The transport maximum is the fastest rate of reabsorption, reached when every carrier is occupied",
+      "The renal threshold is the plasma glucose concentration at which glucose first appears in the urine",
+      "The renal threshold, about 180 mg/dL, is lower than the plasma level that would saturate every nephron because nephrons differ in their carrier capacity",
+      "Above the renal threshold, urinary glucose excretion rises as plasma glucose rises",
+      "Glucose appears in urine because a high plasma glucose makes the filtration barrier leaky to it",
+      "The transport maximum rises when plasma glucose rises"
+    ],
+    "correct": [0, 1, 2, 3],
+    "why": "Glucose is always filtered freely. It is normally all recovered by sodium linked carriers in the proximal tubule, but carriers saturate. Transport maximum is a rate (mg/min); renal threshold is the plasma concentration (mg/dL) at which the filtered load starts to outrun the carriers. Because some nephrons saturate before others, spilling starts below the calculated saturation point, an effect called splay.",
+    "whyNot": [
+      "Belongs. Saturation of the carriers sets the ceiling on reabsorption rate.",
+      "Belongs. Threshold is a plasma concentration, the point where excretion starts.",
+      "Belongs. Splay: individual nephrons hit their limits at different plasma levels, so some glucose escapes before the whole kidney is saturated.",
+      "Belongs. Once the carriers are full, every extra milligram filtered is excreted.",
+      "Does not belong. Glucose is filtered freely at any plasma level. The barrier is not the problem; the reabsorption ceiling is.",
+      "Does not belong. The transport maximum is set by the number of carriers, which does not change with plasma glucose."
+    ]
+  },
+  {
+    "id": "w14-ma-11",
+    "type": "ma",
+    "competencyId": "w13-volume-osmolarity",
+    "dok": 2,
+    "stem": "A patient receives two liters of 0.9 percent sodium chloride, which is isosmotic with plasma. Which statements are correct? Select all that apply.",
+    "options": [
+      "Extracellular fluid volume expands",
+      "Extracellular fluid osmolarity stays about the same",
+      "Intracellular fluid volume stays about the same",
+      "Cells swell",
+      "The added fluid ends up about one quarter in plasma and three quarters in interstitial fluid",
+      "Plasma sodium concentration rises sharply"
+    ],
+    "correct": [0, 1, 2, 4],
+    "why": "Isosmotic saline adds salt and water in the same proportion as the extracellular fluid, so osmolarity does not change and there is no gradient to move water across cell membranes. The whole volume stays extracellular and splits between plasma and interstitial fluid in their normal ratio. This is isosmotic volume expansion.",
+    "whyNot": [
+      "Belongs. Sodium chloride stays extracellular, and the water it holds stays with it.",
+      "Belongs. The infused fluid matches plasma osmolarity, so mixing changes nothing.",
+      "Belongs. With no osmotic gradient, water does not enter or leave cells.",
+      "Does not belong. Cells swell only when extracellular fluid becomes hypoosmotic, as with plain water intake.",
+      "Belongs. Plasma is about a quarter of the extracellular fluid, so it receives about a quarter of the added volume.",
+      "Does not belong. The infusion has the same sodium concentration as plasma, so plasma sodium does not change."
+    ]
+  },
+  {
+    "id": "w14-ma-12",
+    "type": "ma",
+    "competencyId": "w13-lab-urinalysis",
+    "dok": 2,
+    "stem": "Which urinalysis findings are correctly paired with the renal process that explains them? Select all that apply.",
+    "options": [
+      "Glucose positive in a patient with plasma glucose 350 mg/dL: filtered load exceeded the transport maximum",
+      "Protein strongly positive: the filtration barrier is damaged",
+      "Specific gravity 1.002 after drinking two liters of water: antidiuretic hormone is low and the collecting duct is nearly water impermeable",
+      "Ketones positive: the proximal tubule is secreting ketones to correct an acidosis",
+      "Blood positive: normal, because red cells are freely filtered",
+      "Specific gravity 1.030 in a dehydrated patient: antidiuretic hormone is acting on the collecting duct"
+    ],
+    "correct": [0, 1, 2, 5],
+    "why": "Each abnormal urine finding points at a step. Glucose means the reabsorption ceiling was passed. Protein or blood means the barrier leaked. Specific gravity tracks how much water the collecting duct reabsorbed, which is set by antidiuretic hormone. Ketones are a plasma overload from fat metabolism, not a renal secretion.",
+    "whyNot": [
+      "Belongs. 350 mg/dL is well above the renal threshold, so the carriers are saturated and glucose spills.",
+      "Belongs. Plasma proteins are normally kept out by size and charge; a positive test means the barrier failed.",
+      "Belongs. Water loading suppresses the hormone, the duct stays watertight, and dilute urine near 50 mOsm/L results.",
+      "Does not belong. Ketones reach the urine because the liver makes them faster than tissues use them, so the filtered load outruns reabsorption. The tubule does not make or secrete them.",
+      "Does not belong. Red cells are thousands of times too large to be filtered. Blood in urine means the barrier or the urinary tract is damaged.",
+      "Belongs. High specific gravity means concentrated urine, which requires the hormone to insert aquaporins in the collecting duct."
+    ]
+  },
+  {
+    "id": "w14-tf-01",
+    "type": "tf",
+    "competencyId": "w13-kidney-functions",
+    "dok": 1,
+    "statement": "The kidney releases erythropoietin when oxygen delivery to its tissue falls, and this increases red blood cell production in bone marrow.",
+    "truth": true,
+    "correction": "True. Kidney cells sense low oxygen and release erythropoietin, which stimulates red cell production, so more hemoglobin is available to carry oxygen.",
+    "why": "The kidney is a good oxygen sensor because its blood flow is high and steady, so a drop in oxygen content reflects the blood rather than the flow. This is why chronic kidney disease causes anemia and why people living at altitude make more red cells."
+  },
+  {
+    "id": "w14-tf-02",
+    "type": "tf",
+    "competencyId": "w13-nephron-function",
+    "dok": 2,
+    "statement": "The descending limb of the loop of Henle actively pumps sodium chloride out of the tubular fluid into the medullary interstitium.",
+    "truth": false,
+    "correction": "The descending limb has no salt pump; it is permeable to water, so water leaves and the fluid concentrates passively. The thick ascending limb is the segment that pumps sodium chloride out.",
+    "why": "The two limbs divide the work. The descending limb equilibrates with the salty medulla by losing water. The thick ascending limb pumps salt out but holds water in, which is what makes the medulla salty and the fluid dilute. Students often put the pump on the wrong limb because the descending limb is the one that gets concentrated."
+  },
+  {
+    "id": "w14-tf-03",
+    "type": "tf",
+    "competencyId": "w13-renal-processes",
+    "dok": 2,
+    "statement": "If a solute's excretion rate is lower than its filtered load, the tubule net reabsorbed that solute.",
+    "truth": true,
+    "correction": "True. Excretion equals filtration minus reabsorption plus secretion, so excreting less than was filtered means reabsorption outweighed any secretion.",
+    "why": "The mass balance equation is the whole tool. Filtration loads the tubule, and comparing what comes out with what went in tells you the net direction of tubular handling. Excretion below the filtered load means net reabsorption; above it means net secretion; equal means no net handling, which is how inulin behaves."
+  },
+  {
+    "id": "w14-tf-04",
+    "type": "tf",
+    "competencyId": "w13-filtration-membrane",
+    "dok": 2,
+    "statement": "Albumin is kept out of the filtrate only because it is too large to fit through the filtration slits.",
+    "truth": false,
+    "correction": "Albumin is close to the size cutoff and would partly pass on size alone; it is also repelled by the negative charges on the basement membrane and podocytes, so charge and size together keep it out.",
+    "why": "The barrier is a charge filter as well as a sieve. Neutral molecules the size of albumin are filtered a little, but albumin's negative charge cuts that to almost nothing. When glomerular disease strips the negative charge, albumin leaks even though the pores have not enlarged, which is why proteinuria can appear before structural damage."
+  },
+  {
+    "id": "w14-tf-05",
+    "type": "tf",
+    "competencyId": "w13-tubular-secretion",
+    "dok": 2,
+    "statement": "Organic anions such as penicillin leave the body only by filtration, so their clearance can never exceed glomerular filtration rate.",
+    "truth": false,
+    "correction": "Organic anions are actively secreted by the proximal tubule from the peritubular blood, so their clearance can be much higher than glomerular filtration rate.",
+    "why": "Only about a fifth of the plasma entering the kidney is filtered. Secretory carriers in the proximal tubule reach into the other four fifths and pull organic anions and cations into the lumen. That is why para aminohippurate is cleared almost completely in one pass and why penicillin doses had to be given so often before drugs were found to block the carrier."
+  },
+  {
+    "id": "w14-tf-06",
+    "type": "tf",
+    "competencyId": "w13-natriuretic-peptides",
+    "dok": 2,
+    "statement": "Atrial natriuretic peptide is released when blood volume falls and the atria are less stretched.",
+    "truth": false,
+    "correction": "Atrial natriuretic peptide is released when blood volume rises and stretches the atria; it then promotes sodium and water loss to bring volume back down.",
+    "why": "The peptide is the volume overload signal. Falling volume does the opposite: atrial stretch falls, the peptide falls, and the renin angiotensin aldosterone system takes over to conserve salt and water. Getting the stimulus backwards flips every downstream prediction."
+  },
+  {
+    "id": "w14-tf-07",
+    "type": "tf",
+    "competencyId": "w13-micturition",
+    "dok": 2,
+    "statement": "Voluntary control of urination works by keeping the skeletal muscle of the external sphincter contracted until the person chooses to relax it.",
+    "truth": true,
+    "correction": "True. Somatic motor neurons keep the external sphincter closed; the brain stops those neurons when it is time to void, and the reflex empties the bladder.",
+    "why": "The reflex itself is involuntary: stretch triggers parasympathetic detrusor contraction and the internal smooth muscle sphincter opens with it. The one skeletal muscle in the system, the external sphincter, is the point of voluntary control. Higher centers also inhibit the reflex directly, but the sphincter is the final gate."
+  },
+  {
+    "id": "w14-tf-08",
+    "type": "tf",
+    "competencyId": "w13-countercurrent",
+    "dok": 2,
+    "statement": "The vasa recta build the medullary osmotic gradient by actively pumping salt into the interstitium.",
+    "truth": false,
+    "correction": "The vasa recta do no pumping; they are a passive countercurrent exchanger whose hairpin shape keeps blood from washing away the gradient that the loop of Henle builds.",
+    "why": "Building the gradient takes energy, and that energy comes from the sodium pumps of the thick ascending limb. The vasa recta only preserve it. Blood going down picks up salt and loses water, then blood coming back up gives the salt back and regains water, so the blood leaving the medulla is only slightly more concentrated than the blood entering it."
+  },
+  {
+    "id": "w14-tf-09",
+    "type": "tf",
+    "competencyId": "w13-clearance-inference",
+    "dok": 2,
+    "statement": "A substance whose clearance is higher than inulin clearance is being net reabsorbed by the tubule.",
+    "truth": false,
+    "correction": "Clearance above inulin clearance means net secretion; reabsorption pulls clearance below the inulin value.",
+    "why": "Inulin clearance equals glomerular filtration rate because inulin is filtered and then left alone. Any substance cleared faster than that must have had more added to the urine than filtration supplied, which is secretion. Any substance cleared slower had some taken back. Glucose, at zero clearance, is the extreme of reabsorption; para aminohippurate, cleared at nearly the whole plasma flow, is the extreme of secretion."
+  },
+  {
+    "id": "w14-tf-10",
+    "type": "tf",
+    "competencyId": "w13-adh-water-balance",
+    "dok": 2,
+    "statement": "Antidiuretic hormone concentrates the urine by making the ascending limb of the loop of Henle permeable to water.",
+    "truth": false,
+    "correction": "Antidiuretic hormone acts on the collecting duct, where it inserts aquaporin 2 channels so water can leave the tubule and enter the hyperosmotic medulla; the ascending limb stays water impermeable no matter what.",
+    "why": "The ascending limb has to stay watertight or the gradient could never form, because water would follow the pumped salt right back out. The hormone's target is the last segment, the collecting duct, which runs through the salty medulla. With aquaporins in place water is drawn out and the urine concentrates; without them it stays dilute."
+  },
+  {
+    "id": "w14-bd-01",
+    "type": "bd",
+    "competencyId": "w9-calcium-homeostasis",
+    "dok": 3,
+    "prompt": "Without notes, trace the whole body response to a fall in plasma calcium, naming what each of the three target organs does and what stops the response. Then say what calcitonin does and how important it is.",
+    "rubric": [
+      "parathyroid cells sense low calcium and release parathyroid hormone",
+      "bone: osteoclast resorption releases calcium and phosphate into plasma",
+      "kidney: more calcium reabsorbed in the distal nephron, less phosphate reabsorbed so phosphate is excreted",
+      "kidney: parathyroid hormone activates the enzyme that converts vitamin D to calcitriol",
+      "intestine: calcitriol increases calcium absorption from food",
+      "rising plasma calcium feeds back to shut off parathyroid hormone release",
+      "calcitonin lowers calcium by inhibiting osteoclasts but plays only a minor role in adults"
+    ]
+  },
+  {
+    "id": "w14-bd-02",
+    "type": "bd",
+    "competencyId": "w13-lab-renal-calculation",
+    "dok": 3,
+    "prompt": "A patient's plasma inulin is 1 mg/mL, urine inulin is 120 mg/mL, and urine flow is 1 mL/min. Plasma glucose is 100 mg/dL. Without notes, calculate the glomerular filtration rate and the filtered load of glucose, explain why inulin clearance gives you the filtration rate, and predict how much glucose is in this patient's urine and why.",
+    "rubric": [
+      "clearance equals urine concentration times urine flow divided by plasma concentration",
+      "inulin clearance is 120 times 1 divided by 1, which is 120 mL/min",
+      "inulin clearance equals glomerular filtration rate because inulin is freely filtered and neither reabsorbed nor secreted",
+      "filtered load equals glomerular filtration rate times plasma concentration",
+      "plasma glucose 100 mg/dL is 1 mg/mL, so the filtered load of glucose is 120 mg/min",
+      "100 mg/dL is below the renal threshold (about 180 mg/dL), so the filtered load is below the transport maximum",
+      "all filtered glucose is reabsorbed in the proximal tubule, so urine glucose is essentially zero"
+    ]
+  },
+  {
+    "id": "w14-bd-03",
+    "type": "bd",
+    "competencyId": "w13-countercurrent",
+    "dok": 3,
+    "prompt": "Without notes, explain how the loop of Henle builds the osmotic gradient of the renal medulla, and how the vasa recta keep blood flow from washing that gradient away.",
+    "rubric": [
+      "the thick ascending limb actively pumps sodium chloride into the interstitium and is impermeable to water",
+      "the descending limb is permeable to water, so water leaves and its fluid becomes more concentrated as it descends",
+      "the concentrated fluid delivered to the ascending limb lets the single pumping step be repeated and stacked along the loop (multiplication)",
+      "the result is about 300 mOsm/L at the top of the medulla and about 1200 mOsm/L at the tip",
+      "urea recycled from the collecting duct adds to the gradient in the inner medulla",
+      "the vasa recta are hairpin loops, so solute that enters the descending vessel diffuses back out of the ascending vessel and water does the reverse",
+      "blood leaving the medulla is only slightly more concentrated than blood entering, so the gradient is preserved; slow flow helps"
+    ]
+  },
+  {
+    "id": "w14-bd-04",
+    "type": "bd",
+    "competencyId": "w13-adh-water-balance",
+    "dok": 3,
+    "prompt": "A person works outdoors on a 38 degrees Celsius (100 degrees Fahrenheit) day and sweats heavily without drinking. Without notes, trace the response from the change in plasma to the change in urine, naming the sensor, the hormone, its target, and the channel involved.",
+    "rubric": [
+      "sweat loss raises plasma osmolarity (and lowers volume)",
+      "hypothalamic osmoreceptors shrink and fire more",
+      "antidiuretic hormone (vasopressin) is released from the posterior pituitary; thirst is also stimulated",
+      "the hormone binds V2 receptors on collecting duct principal cells",
+      "aquaporin 2 water channels are inserted into the apical membrane",
+      "water leaves the collecting duct into the hyperosmotic medulla and returns to blood",
+      "a small volume of concentrated urine is produced and plasma osmolarity falls back toward normal"
+    ]
+  },
+  {
+    "id": "w14-bd-05",
+    "type": "bd",
+    "competencyId": "w13-raas",
+    "dok": 3,
+    "prompt": "A person donates a unit of blood and their blood pressure dips. Without notes, trace the renin angiotensin aldosterone response from the signals that release renin to the recovery of blood pressure.",
+    "rubric": [
+      "renin is released by granular cells of the afferent arteriole in response to low pressure, sympathetic stimulation, and low sodium chloride at the macula densa",
+      "renin converts angiotensinogen (from the liver) to angiotensin I",
+      "angiotensin converting enzyme in the lungs converts angiotensin I to angiotensin II",
+      "angiotensin II constricts arterioles, raising peripheral resistance and blood pressure, and constricts the efferent arteriole to defend filtration",
+      "angiotensin II stimulates aldosterone release from the adrenal cortex, plus antidiuretic hormone release and thirst",
+      "aldosterone increases sodium reabsorption (and potassium secretion) in the distal tubule and collecting duct, and water follows the sodium",
+      "volume and pressure rise, which removes the stimulus for renin release"
+    ]
+  },
+  {
+    "id": "w14-bd-06",
+    "type": "bd",
+    "competencyId": "w13-potassium-handling",
+    "dok": 3,
+    "prompt": "Without notes, explain what controls how much potassium the collecting duct secretes, then predict what a loop diuretic such as furosemide does to plasma potassium and explain each step.",
+    "rubric": [
+      "potassium is secreted by principal cells of the collecting duct",
+      "sodium entry through apical sodium channels makes the lumen negative, which drives potassium out through apical potassium channels",
+      "aldosterone increases the number of sodium channels, potassium channels, and basolateral sodium potassium pumps, so secretion rises",
+      "high plasma potassium directly stimulates aldosterone release and directly increases pump activity",
+      "higher flow and sodium delivery to the collecting duct increase potassium secretion",
+      "a loop diuretic blocks salt reabsorption in the ascending limb, so more sodium and fluid reach the collecting duct, and the volume loss raises aldosterone",
+      "potassium secretion rises and plasma potassium falls (hypokalemia)"
+    ]
+  },
+  {
+    "id": "w14-bd-07",
+    "type": "bd",
+    "competencyId": "w13-gfr-regulation",
+    "dok": 3,
+    "prompt": "Without notes, predict what happens to glomerular filtration rate when the afferent arteriole constricts and when the efferent arteriole constricts, and explain the two intrinsic mechanisms that keep filtration rate steady when arterial pressure changes.",
+    "rubric": [
+      "afferent constriction lowers glomerular capillary hydrostatic pressure, so filtration rate falls; afferent dilation raises it",
+      "moderate efferent constriction raises glomerular capillary pressure, so filtration rate rises",
+      "myogenic response: when arterial pressure rises, afferent arteriole smooth muscle stretches and contracts, holding capillary pressure steady",
+      "tubuloglomerular feedback: the macula densa senses sodium chloride delivery in the distal tubule",
+      "high sodium chloride delivery means filtration is too high, so the macula densa signals the afferent arteriole to constrict (via adenosine or ATP)",
+      "low sodium chloride delivery allows afferent dilation and stimulates renin release",
+      "together these hold filtration rate nearly constant over mean arterial pressures of about 80 to 180 mmHg"
+    ]
+  },
+  {
+    "id": "w14-bd-08",
+    "type": "bd",
+    "competencyId": "w13-proximal-reabsorption",
+    "dok": 3,
+    "prompt": "Without notes, explain how the proximal tubule reabsorbs glucose, amino acids, and water even though it has no pump for any of them, and why the fluid leaving the proximal tubule is still about 300 mOsm/L.",
+    "rubric": [
+      "the basolateral sodium potassium ATPase keeps intracellular sodium low, creating a gradient for sodium to enter from the lumen",
+      "sodium enters the cell through apical cotransporters that carry glucose or amino acids with it (secondary active transport)",
+      "glucose and amino acids are moved against their gradients using the energy of the sodium gradient, then leave the cell across the basolateral membrane by facilitated diffusion",
+      "solute reabsorption makes the fluid on the blood side slightly more concentrated than the lumen",
+      "the proximal epithelium is highly water permeable (aquaporin 1 and leaky junctions), so water follows the solute by osmosis",
+      "water follows solute in proportion, so the tubular fluid osmolarity stays at about 300 mOsm/L (isosmotic reabsorption)",
+      "about two thirds of filtered sodium and water and essentially all glucose and amino acids are reabsorbed here"
+    ]
+  },
+  {
+    "id": "w14-app-01",
+    "type": "app",
+    "competencyId": "w13-gfr-forces",
+    "dok": 3,
+    "case": "A patient with liver disease has a plasma albumin of 2.5 g/dL (normal 3.5 to 5.0). Measurements in one glomerulus give a capillary hydrostatic pressure of 60 mmHg (normal about 55), a capsular hydrostatic pressure of 15 mmHg (normal about 15), and a plasma colloid osmotic pressure of 25 mmHg (normal about 30).",
+    "stem": "What is the net filtration pressure in this glomerulus, and what does it predict for glomerular filtration rate?",
+    "options": [
+      "20 mmHg, so filtration rate is higher than normal",
+      "10 mmHg, so filtration rate is unchanged",
+      "50 mmHg, so filtration rate is much higher than normal",
+      "20 mmHg, but filtration rate is lower than normal because low albumin reduces filtration"
+    ],
+    "correct": 0,
+    "why": "Net filtration pressure is capillary hydrostatic pressure minus capsular pressure minus colloid osmotic pressure: 60 minus 15 minus 25 equals 20 mmHg. Normal is about 10 mmHg. Low albumin lowers the force pulling fluid back, and the slightly high capillary pressure adds push, so filtration rate rises.",
+    "whyNot": [
+      "Correct. Both changes favor filtration, and the arithmetic gives twice the normal net pressure.",
+      "10 mmHg is the normal value with normal numbers. This patient's colloid osmotic pressure is lower and capillary pressure is higher, so the net force has changed.",
+      "50 mmHg comes from subtracting only the capsular pressure and ignoring colloid osmotic pressure, which always opposes filtration.",
+      "Low albumin means less colloid osmotic pressure, which favors filtration, not less. The number is right but the prediction is backwards."
+    ]
+  },
+  {
+    "id": "w14-app-02",
+    "type": "app",
+    "competencyId": "w13-gfr-regulation",
+    "dok": 3,
+    "case": "A patient has lost about two liters of blood. Mean arterial pressure is 60 mmHg (normal 70 to 105), heart rate is 130 beats per minute, and the skin is cold and pale. Urine output over the last hour is 5 mL (normal above 30 mL per hour).",
+    "stem": "Which mechanism best explains the near shutdown of urine production?",
+    "options": [
+      "Intense sympathetic constriction of the afferent arterioles overrides autoregulation, glomerular capillary pressure falls, and filtration rate falls",
+      "The myogenic response constricts the afferent arteriole in response to the low pressure, lowering filtration rate",
+      "Tubuloglomerular feedback senses low sodium chloride at the macula densa and constricts the afferent arteriole",
+      "Atrial natriuretic peptide rises with the low volume and reduces filtration rate"
+    ],
+    "correct": 0,
+    "why": "Autoregulation holds filtration steady for pressures down to about 80 mmHg, and even then it is an intrinsic mechanism that a strong sympathetic drive can override. In hemorrhage the sympathetic nervous system clamps the afferent arterioles to redirect blood to heart and brain, so glomerular pressure and filtration collapse. Angiotensin II and antidiuretic hormone add to the water retention.",
+    "whyNot": [
+      "Correct. Extrinsic sympathetic control wins over intrinsic autoregulation when the whole body is under threat.",
+      "The myogenic response does the opposite. When pressure falls, the afferent arteriole relaxes to keep filtration up. It cannot explain a fall in filtration.",
+      "Low sodium chloride at the macula densa signals low filtration, and the response is afferent dilation and renin release, not constriction. High sodium chloride would cause constriction.",
+      "Atrial natriuretic peptide falls when volume falls, and when present it raises filtration rate. Both parts are wrong for this patient."
+    ]
+  },
+  {
+    "id": "w14-app-03",
+    "type": "app",
+    "competencyId": "w13-renal-clearance",
+    "dok": 3,
+    "case": "A patient collects urine for 24 hours. Urine flow works out to 1.2 mL/min and urine creatinine is 100 mg/dL. Plasma creatinine is 1.0 mg/dL (normal 0.6 to 1.2).",
+    "stem": "What is the creatinine clearance, and what does the number tell you?",
+    "options": [
+      "120 mL/min, which is close to glomerular filtration rate because creatinine is freely filtered and only slightly secreted",
+      "120 mL/min, which equals renal plasma flow because creatinine is completely removed in one pass",
+      "100 mL/min, because clearance is urine concentration divided by plasma concentration",
+      "12 mL/min, which means the kidneys have failed"
+    ],
+    "correct": 0,
+    "why": "Clearance is urine concentration times urine flow divided by plasma concentration: 100 times 1.2 divided by 1.0 equals 120 mL/min. Creatinine is filtered freely and not reabsorbed, so its clearance tracks filtration rate. A small amount is secreted, so the estimate runs a little high, but it is the standard bedside measure of filtration rate.",
+    "whyNot": [
+      "Correct. The arithmetic gives 120 mL/min, and creatinine handling makes that a good estimate of filtration rate.",
+      "Renal plasma flow is measured with para aminohippurate, which is nearly completely cleared. Creatinine is only filtered plus a little secretion, so most of it stays in the plasma on each pass.",
+      "Leaving out urine flow gives a ratio with no units of volume per time. Clearance must include how much urine was produced.",
+      "The units of both concentrations are the same, so they cancel. 12 mL/min would require an error of ten in the arithmetic, and a plasma creatinine of 1.0 is normal, which does not fit failed kidneys."
+    ]
+  },
+  {
+    "id": "w14-app-04",
+    "type": "app",
+    "competencyId": "w13-clearance-inference",
+    "dok": 3,
+    "case": "A new drug is being studied. Plasma concentration is 0.5 mg/mL, urine concentration is 20 mg/mL, and urine flow is 1 mL/min. Inulin clearance in the same patient is 100 mL/min.",
+    "stem": "What is the net tubular handling of this drug?",
+    "options": [
+      "Net reabsorption of 30 mg/min; its clearance of 40 mL/min is below the filtration rate",
+      "Net secretion of 30 mg/min; its clearance of 40 mL/min is above the filtration rate",
+      "No net tubular handling; a clearance of 40 mL/min means 40 percent of the filtered drug is excreted",
+      "Net reabsorption of 20 mg/min, since 20 mg/min is what appears in the urine"
+    ],
+    "correct": 0,
+    "why": "Filtered load is 100 mL/min times 0.5 mg/mL, which is 50 mg/min. Excretion is 20 mg/mL times 1 mL/min, which is 20 mg/min. The tubule took back 30 mg/min. Clearance is 20 times 1 divided by 0.5, which is 40 mL/min, well below the inulin value of 100, which confirms net reabsorption.",
+    "whyNot": [
+      "Correct. Excretion is less than the filtered load by 30 mg/min, and the clearance is below filtration rate.",
+      "Secretion would push excretion above the filtered load and clearance above 100 mL/min. This drug's numbers go the other way.",
+      "No net handling would mean clearance equal to inulin clearance. Forty percent excreted is exactly the sign that 60 percent was reabsorbed.",
+      "20 mg/min is the excretion rate, not the amount reabsorbed. Reabsorption is filtered load minus excretion, which is 50 minus 20."
+    ]
+  },
+  {
+    "id": "w14-app-05",
+    "type": "app",
+    "competencyId": "w13-proximal-reabsorption",
+    "dok": 3,
+    "case": "A patient has a proximal tubule disorder that impairs the energy supply of the basolateral sodium potassium ATPase. Urinalysis shows glucose, amino acids, phosphate and bicarbonate in the urine. Plasma glucose is 95 mg/dL (normal 70 to 100).",
+    "stem": "Why do all of these substances spill into the urine together?",
+    "options": [
+      "Their reabsorption depends on the sodium gradient set by the basolateral pump, so one failure lets all of them escape",
+      "The filtration barrier has become leaky, so these molecules are filtered when they normally would not be",
+      "Plasma glucose has exceeded the renal threshold, and the other solutes follow the glucose osmotically",
+      "The collecting duct has begun to secrete these solutes into the urine"
+    ],
+    "correct": 0,
+    "why": "Glucose, amino acids, phosphate and bicarbonate are all recovered by transporters that use sodium moving down its gradient into the cell. That gradient exists only because the basolateral pump keeps intracellular sodium low. Starve the pump and every sodium coupled cotransporter slows at once, so the substances that ride on sodium spill together, even at normal plasma levels.",
+    "whyNot": [
+      "Correct. A single shared driving force explains why unrelated solutes fail together.",
+      "These small molecules are always freely filtered. The problem is not getting into the tubule, it is failing to get back out.",
+      "Plasma glucose of 95 mg/dL is well below the threshold of about 180 mg/dL. And amino acids and bicarbonate have their own carriers; they do not follow glucose.",
+      "The collecting duct does not secrete glucose or amino acids. Secretion there is limited to potassium and hydrogen ion."
+    ]
+  },
+  {
+    "id": "w14-app-06",
+    "type": "app",
+    "competencyId": "w13-renal-threshold",
+    "dok": 3,
+    "case": "A patient with untreated diabetes has a plasma glucose of 400 mg/dL (normal 70 to 100). Glomerular filtration rate is 125 mL/min and the glucose transport maximum is 375 mg/min.",
+    "stem": "Predict the rate of glucose excretion and the effect on urine volume.",
+    "options": [
+      "About 125 mg/min of glucose is excreted, and urine volume rises because the glucose holds water in the tubule",
+      "About 500 mg/min of glucose is excreted, and urine volume rises",
+      "No glucose is excreted because the transport maximum has not been reached",
+      "About 375 mg/min of glucose is excreted, and urine volume falls because antidiuretic hormone is high"
+    ],
+    "correct": 0,
+    "why": "Plasma glucose of 400 mg/dL is 4 mg/mL, so the filtered load is 4 times 125, which is 500 mg/min. The carriers can reclaim at most 375 mg/min, so 125 mg/min escapes. That unreabsorbed glucose is an osmotically active solute that keeps water in the tubule, producing the large urine volume of untreated diabetes.",
+    "whyNot": [
+      "Correct. Filtered load minus transport maximum gives the excretion rate, and the leftover solute drives an osmotic diuresis.",
+      "500 mg/min is the filtered load, not the excretion. The carriers still reabsorb 375 mg/min of it.",
+      "The filtered load of 500 mg/min is well above the transport maximum of 375 mg/min, so the carriers are saturated and glucose must spill.",
+      "375 mg/min is what is reabsorbed, not excreted. And antidiuretic hormone cannot pull water back against the osmotic pull of unreabsorbed glucose, so volume rises despite the hormone."
+    ]
+  },
+  {
+    "id": "w14-app-07",
+    "type": "app",
+    "competencyId": "w13-countercurrent",
+    "dok": 3,
+    "case": "A patient takes a high dose of furosemide, which blocks the sodium potassium two chloride cotransporter in the thick ascending limb. After 12 hours without water, plasma osmolarity is 300 mOsm/kg (normal 280 to 295) and antidiuretic hormone is high, yet urine osmolarity is 300 mOsm/kg (normal range 50 to 1200).",
+    "stem": "Why can this patient no longer concentrate urine despite high antidiuretic hormone?",
+    "options": [
+      "Blocking salt reabsorption in the ascending limb stops the countercurrent multiplier, so the medullary gradient collapses and there is nothing to draw water out of the collecting duct",
+      "Furosemide blocks the insertion of aquaporin 2 into the collecting duct",
+      "Furosemide makes the descending limb impermeable to water, so fluid enters the ascending limb too dilute",
+      "Furosemide stops blood flow through the vasa recta, so the gradient cannot be maintained"
+    ],
+    "correct": 0,
+    "why": "The energy for the whole medullary gradient comes from salt pumping in the thick ascending limb. Block the transporter and no salt enters the interstitium, the gradient washes away within hours, and the medulla ends up near 300 mOsm/L. Antidiuretic hormone still opens the water channels, but water only leaves the collecting duct if the outside is saltier than the inside, and now it is not. Urine ends up isosmotic to plasma.",
+    "whyNot": [
+      "Correct. The hormone can open the door, but with no gradient there is no reason for water to walk through it.",
+      "Furosemide works on the loop transporter, not on the collecting duct. Aquaporin insertion is intact, which is why the urine is not dilute either.",
+      "The descending limb's water permeability is not changed by the drug. And a water impermeable descending limb would not explain why the urine settles at exactly plasma osmolarity.",
+      "The vasa recta keep flowing. They preserve a gradient that the loop builds; they cannot preserve one that is no longer being built."
+    ]
+  },
+  {
+    "id": "w14-app-08",
+    "type": "app",
+    "competencyId": "w13-adh-water-balance",
+    "dok": 3,
+    "case": "A hiker has had no water for eight hours on a 35 degrees Celsius (95 degrees Fahrenheit) day. Plasma osmolarity is 298 mOsm/kg (normal 280 to 295), plasma sodium is 148 mEq/L (normal 135 to 145), urine osmolarity is 1000 mOsm/kg, and urine output is 20 mL per hour (normal above 30).",
+    "stem": "Which sequence explains the concentrated, low volume urine?",
+    "options": [
+      "Hypothalamic osmoreceptors shrink and fire, the posterior pituitary releases antidiuretic hormone, aquaporin 2 is inserted in the collecting duct, and water is drawn into the hypertonic medulla",
+      "Low blood volume triggers aldosterone, which directly increases water reabsorption in the collecting duct",
+      "The rise in osmolarity inhibits antidiuretic hormone release, so the kidney holds on to water",
+      "Atrial natriuretic peptide rises with dehydration and reduces filtration, so less urine is formed"
+    ],
+    "correct": 0,
+    "why": "Sweat is hypotonic, so losing it concentrates the plasma. Osmoreceptor cells in the hypothalamus lose water and shrink, which increases their firing, and the posterior pituitary releases antidiuretic hormone. The hormone acts on V2 receptors in collecting duct principal cells, aquaporin 2 channels move into the apical membrane, and water follows the medullary gradient back into blood. A small volume of very concentrated urine is the result.",
+    "whyNot": [
+      "Correct. Sensor, hormone, channel, gradient: every step is in order.",
+      "Aldosterone reabsorbs sodium, not water directly, and it does not change the water permeability of the collecting duct. It is antidiuretic hormone that does that.",
+      "A rise in osmolarity stimulates antidiuretic hormone release. Inhibiting it would produce dilute urine and make the dehydration worse.",
+      "Atrial natriuretic peptide falls when volume falls, and it raises filtration rate when present. Neither fits this hiker."
+    ]
+  },
+  {
+    "id": "w14-app-09",
+    "type": "app",
+    "competencyId": "w13-raas",
+    "dok": 3,
+    "case": "A patient with high blood pressure starts a drug that blocks angiotensin converting enzyme. Two weeks later blood pressure has fallen from 160/100 to 130/85 mmHg, and plasma potassium has risen from 4.0 to 5.1 mEq/L (normal 3.5 to 5.0).",
+    "stem": "Which mechanism explains both the fall in pressure and the rise in potassium?",
+    "options": [
+      "Less angiotensin II means less arteriolar constriction and less aldosterone, so sodium retention and vasoconstriction fall, and the collecting duct secretes less potassium",
+      "The drug raises renin, and renin itself dilates arterioles and blocks potassium secretion",
+      "The drug blocks the aldosterone receptor in the collecting duct directly",
+      "The lower blood pressure dropped filtration rate below the autoregulatory range, so less potassium was filtered"
+    ],
+    "correct": 0,
+    "why": "Angiotensin II does two things that matter here: it constricts arterioles and it drives aldosterone release. Block its formation and peripheral resistance falls, so pressure falls. With less aldosterone the collecting duct principal cells reabsorb less sodium, the lumen is less negative, and less potassium is secreted, so plasma potassium drifts up. This is the expected side effect of the drug class.",
+    "whyNot": [
+      "Correct. Both findings trace back to the loss of angiotensin II and its downstream aldosterone effect.",
+      "Renin does rise, because the feedback brake is off, but renin is only an enzyme that makes angiotensin I. It has no direct effect on vessels or on potassium handling.",
+      "That describes spironolactone, an aldosterone antagonist. This drug works upstream, at the conversion of angiotensin I to II, and lowers aldosterone rather than blocking its receptor.",
+      "A pressure of 130/85 gives a mean pressure near 100 mmHg, well inside the autoregulatory range, so filtration is unchanged. And potassium excretion is set by secretion in the collecting duct, not by how much is filtered."
+    ]
+  },
+  {
+    "id": "w14-app-10",
+    "type": "app",
+    "competencyId": "w13-potassium-handling",
+    "dok": 3,
+    "case": "A patient with heart failure is started on spironolactone, a drug that blocks the aldosterone receptor. One week later plasma potassium is 5.8 mEq/L (normal 3.5 to 5.0) and plasma sodium is 134 mEq/L (normal 135 to 145). Urine output has increased.",
+    "stem": "Which mechanism explains the rise in plasma potassium?",
+    "options": [
+      "Without aldosterone signaling, principal cells have fewer sodium channels and pumps, less sodium enters, the lumen is less negative, and less potassium is secreted",
+      "The drug blocks potassium reabsorption in the proximal tubule, so potassium accumulates in plasma",
+      "The drug raises filtration rate, so more potassium is filtered and reabsorbed",
+      "The drug blocks antidiuretic hormone, and water loss concentrates the potassium in plasma"
+    ],
+    "correct": 0,
+    "why": "Aldosterone normally tells principal cells to make more apical sodium channels, more apical potassium channels, and more basolateral sodium potassium pumps. Sodium entering through those channels makes the lumen negative, and that electrical pull is what drives potassium out. Block the receptor and the whole machine slows, so potassium stays in the body. This is why aldosterone antagonists are called potassium sparing diuretics.",
+    "whyNot": [
+      "Correct. Potassium secretion rides on sodium reabsorption in the same cells, and aldosterone controls both.",
+      "Blocking proximal reabsorption of potassium would lower plasma potassium, not raise it, since more would reach the urine. And spironolactone does not act in the proximal tubule.",
+      "Spironolactone does not change filtration rate, and filtered potassium is almost all reabsorbed before the collecting duct anyway. Plasma potassium is set by what the collecting duct secretes.",
+      "Spironolactone does not touch antidiuretic hormone. And the increased urine output means water is leaving, so concentration of plasma cannot explain a fall in sodium alongside the rise in potassium."
+    ]
+  },
+  {
+    "id": "w14-app-11",
+    "type": "app",
+    "competencyId": "w13-lab-urinalysis",
+    "dok": 3,
+    "case": "A patient has eaten nothing for three days and has been drinking very little. Urinalysis: specific gravity 1.035 (normal 1.005 to 1.030), pH 5.0 (normal 4.5 to 8.0), glucose negative, protein negative, blood negative, ketones moderate.",
+    "stem": "Which explanation best links the abnormal findings to what the kidney is doing?",
+    "options": [
+      "Fasting drives fat breakdown, ketoacids are filtered faster than the tubule can reabsorb them, the acid load is excreted as hydrogen ion, and antidiuretic hormone is concentrating the urine because water intake is low",
+      "The proximal tubule has lost its ketone transporters, so filtered ketones cannot be recovered",
+      "The filtration barrier has become leaky, allowing ketones and acid into the filtrate",
+      "Antidiuretic hormone has been suppressed, so the kidney is dumping solute and water"
+    ],
+    "correct": 0,
+    "why": "Nothing here is broken. Three days of fasting makes the liver produce ketoacids, and their plasma level rises until the filtered load outruns proximal reabsorption, so ketones appear in the urine. They also add acid, which the kidney secretes as hydrogen ion, giving the low pH. Little water intake means high antidiuretic hormone and a concentrated urine, hence the high specific gravity. All three findings match a normal kidney responding to a starved, dry patient.",
+    "whyNot": [
+      "Correct. Each finding is a working renal process responding to the metabolic situation.",
+      "Ketone carriers are intact. The problem is overload, not transporter loss. This is the same logic as glucose spilling above the renal threshold.",
+      "Ketones are small molecules that are always filtered freely. And a leaky barrier would show protein and blood, both of which are negative.",
+      "Suppressed antidiuretic hormone gives dilute urine with a specific gravity near 1.002. This urine is very concentrated, so the hormone is clearly acting."
+    ]
+  },
+  {
+    "id": "w14-app-12",
+    "type": "app",
+    "competencyId": "w13-volume-osmolarity",
+    "dok": 3,
+    "case": "A patient has had vomiting and diarrhea for three days and has lost about four liters of fluid. Plasma sodium is 140 mEq/L (normal 135 to 145), plasma osmolarity is 290 mOsm/kg (normal 280 to 295), blood pressure is 90/60 mmHg, and heart rate is 120 beats per minute.",
+    "stem": "Classify the disturbance and predict the shift of water between the extracellular and intracellular compartments.",
+    "options": [
+      "Isosmotic volume depletion; extracellular volume is down but there is no net water shift into or out of cells",
+      "Hyperosmotic volume depletion; water leaves the cells to dilute the extracellular fluid",
+      "Hypoosmotic volume depletion; water enters the cells and they swell",
+      "The main loss is from the intracellular compartment, so cells have shrunk while extracellular volume is normal"
+    ],
+    "correct": 0,
+    "why": "The fluid lost from the gut carried salt and water in roughly the same proportion as the extracellular fluid, so what remains has the same osmolarity, as the normal sodium and osmolarity show. With no osmotic gradient, cells neither gain nor lose water. The whole deficit sits in the extracellular compartment, which is why blood pressure is low and heart rate is high.",
+    "whyNot": [
+      "Correct. Normal osmolarity plus signs of low volume is the signature of isosmotic depletion.",
+      "Hyperosmotic depletion needs a high plasma sodium and osmolarity, as in sweating or water deprivation. This patient's values are normal, so there is no pull on cell water.",
+      "Hypoosmotic depletion would show a low plasma sodium, as when salt is lost and replaced with plain water. Sodium here is 140.",
+      "Fluid leaves the body from the extracellular compartment first. Cells only shrink if the extracellular fluid becomes more concentrated than they are, which has not happened."
+    ]
+  }
+]

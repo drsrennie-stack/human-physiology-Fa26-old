@@ -43,8 +43,69 @@ Change only the week number. Everything else stays the same.
   title="Week 1 book problems" width="100%" height="1350"
   style="width:100%; border:0; display:block;"></iframe></p>
 
+--- PER WEEK: THE WEEKLY LAB  (assignment-physioex.html) ---
+REBUILT Sep 7 2026, evening. Four parts every week: what you run
+(PhysioEx named down to the activity, or a dry lab in weeks 1, 5 and 8),
+what you record, a clinical correlation, and the metacognition.
+
 <p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=1"
-  title="Week 1 lab" width="100%" height="900"
+  title="Week 1 lab" width="100%" height="2400"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=2"
+  title="Week 2 lab" width="100%" height="2400"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=3"
+  title="Week 3 lab" width="100%" height="2450"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=4"
+  title="Week 4 lab" width="100%" height="2600"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=5"
+  title="Week 5 lab" width="100%" height="2500"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=6"
+  title="Week 6 lab" width="100%" height="2450"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=7"
+  title="Week 7 lab" width="100%" height="2450"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=8"
+  title="Week 8 lab" width="100%" height="2400"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=9"
+  title="Week 9 lab" width="100%" height="2550"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=10"
+  title="Week 10 lab" width="100%" height="2450"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=11"
+  title="Week 11 lab" width="100%" height="2400"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=12"
+  title="Week 12 lab" width="100%" height="2550"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=13"
+  title="Week 13 lab" width="100%" height="2500"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=14"
+  title="Week 14 lab" width="100%" height="2550"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-physioex.html?week=15"
+  title="Week 15 lab" width="100%" height="2450"
   style="width:100%; border:0; display:block;"></iframe></p>
 
 <p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion.html?week=1"
@@ -70,7 +131,7 @@ Course home  (course-door.html)
 
 Start here, the fifteen weeks  (course-start.html)
 <p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/course-start.html"
-  title="Start here, the fifteen weeks" width="100%" height="3200"
+  title="Start here" width="100%" height="2850"
   style="width:100%; border:0; display:block;"></iframe></p>
 
 Welcome  (welcome.html)
@@ -138,9 +199,335 @@ Vision board directions  (assignment-discussion-01-visionboard.html)
   title="Vision board directions" width="100%" height="1550"
   style="width:100%; border:0; display:block;"></iframe></p>
 
-Reflect discussion directions  (assignment-discussion-01-metacognition.html)
-<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion-01-metacognition.html"
-  title="Week 1 Reflect discussion directions" width="100%" height="2700"
+Reflect discussion, the metacognition  (assignment-discussion-metacognition.html)
+One file, fifteen weeks. Add ?week=N. Only question four changes; the other
+three are fixed all term on purpose, because the point is to watch what a
+student does with evidence about their own learning, and you cannot watch
+that change if the question keeps moving. Week 1 is the exception, and the
+exception is in the data rather than in a second file: its post is due Sunday
+and its replies are optional.
+
+Week 1
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion-metacognition.html?week=1"
+  title="Week 1 Reflect discussion" width="100%" height="2800"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+Week 2
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion-metacognition.html?week=2"
+  title="Week 2 Reflect discussion" width="100%" height="2700"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+Week 3
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion-metacognition.html?week=3"
+  title="Week 3 Reflect discussion" width="100%" height="2700"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+Week 4
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion-metacognition.html?week=4"
+  title="Week 4 Reflect discussion" width="100%" height="2700"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+Week 5
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion-metacognition.html?week=5"
+  title="Week 5 Reflect discussion" width="100%" height="2700"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+Week 6
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion-metacognition.html?week=6"
+  title="Week 6 Reflect discussion" width="100%" height="2700"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+Week 7
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion-metacognition.html?week=7"
+  title="Week 7 Reflect discussion" width="100%" height="2700"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+Week 8
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion-metacognition.html?week=8"
+  title="Week 8 Reflect discussion" width="100%" height="2700"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+Week 9
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion-metacognition.html?week=9"
+  title="Week 9 Reflect discussion" width="100%" height="2700"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+Week 10
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion-metacognition.html?week=10"
+  title="Week 10 Reflect discussion" width="100%" height="2700"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+Week 11
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion-metacognition.html?week=11"
+  title="Week 11 Reflect discussion" width="100%" height="2700"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+Week 12
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion-metacognition.html?week=12"
+  title="Week 12 Reflect discussion" width="100%" height="2700"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+Week 13
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion-metacognition.html?week=13"
+  title="Week 13 Reflect discussion" width="100%" height="2700"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+Week 14
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion-metacognition.html?week=14"
+  title="Week 14 Reflect discussion" width="100%" height="2700"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+Week 15
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-discussion-metacognition.html?week=15"
+  title="Week 15 Reflect discussion" width="100%" height="2700"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+
+Course home, the Canvas front page  (physiology-course-home.html)
+This is what "Enter Human Physiology Course" embeds. Rebuilt Sep 7 2026.
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/physiology-course-home.html"
+  title="Enter Human Physiology" width="100%" height="4750"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+The study tools  (door-study.html)
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/door-study.html"
+  title="The study tools" width="100%" height="1200"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+Competency study list  (competency-sheet-print.html)
+All 268 by week, each written out in full and tagged lecture or lab. It is
+long by nature, 14 pages printed, because it is the whole study list. For
+Canvas, attaching the tagged PDF is usually better than embedding a page
+this tall.
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/competency-sheet-print.html"
+  title="Competency study list" width="100%" height="17450"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+Practice exam and Gap Finder  (practice-exam.html)
+Link this rather than embedding it. It opens its own exam window, which a
+Canvas iframe fights with.
+<p><a href="https://drsrennie-stack.github.io/human-physiology-Fa26/practice-exam.html" target="_blank" rel="noopener"><strong>Open the Practice Exam and Gap Finder</strong></a></p>
+
+Virtual Office, the explainer page  (virtual-office.html)
+Not the board itself. This is the page that explains how the board works and
+links out to it. The board is
+https://yccd.instructure.com/courses/42616/discussion_topics/711800
+and canvas-virtual-office-body.html is what goes in the board's own body.
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/virtual-office.html"
+  title="Dr. Rennie's Virtual Office" width="100%" height="3750"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+Week 2 lab, the enzyme lab  (enzyme-amylase-lab.html)
+The directions and the worksheet. Students run PhysioEx Exercise 8 in Pearson
+first, then work this by hand and upload one PDF. Due Sun Sep 20, 10:00 pm.
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/enzyme-amylase-lab.html"
+  title="Week 2 lab, the enzyme lab" width="100%" height="3600"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+Week 1 lab, standards and ranges  (reference-range-lab.html)
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/reference-range-lab.html"
+  title="Week 1 lab, standards and ranges" width="100%" height="3100"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+How grading works  (how-grading-works.html)
+The four categories with the big percentages, and what carries no points.
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/how-grading-works.html"
+  title="How grading works" width="100%" height="2750"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+Welcome to the course  (welcome-to-physiology.html)
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/welcome-to-physiology.html"
+  title="Welcome to Human Physiology" width="100%" height="3250"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+Week navigator  (week-navigator.html)
+Short on purpose. It shows one half of the term at a time, so it does not
+need a tall frame. Safe to put at the bottom of every week page.
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/week-navigator.html"
+  title="Go to a week" width="100%" height="550"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+How this course works  (how-this-course-works.html)
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/how-this-course-works.html"
+  title="How this course works" width="100%" height="3700"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+The simple schedule, one page  (course-grid.html)
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/course-grid.html"
+  title="Course schedule at a glance" width="100%" height="4100"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+Syllabus  (syllabus-fall2026.html)
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/syllabus-fall2026.html"
+  title="Syllabus" width="100%" height="18050"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+Use It, the patient chart  (assignment-apply.html)
+REBUILT Sep 7 2026, evening. One patient, Camila Reyes, followed for all
+fifteen weeks. The student picks one of five entry points in Week 1,
+nursing, medicine, radiology, respiratory therapy, or exercise and allied
+health, and stays in it. Every entry point assesses the same competencies.
+Heights measured with every disclosure panel open, so the box never
+scrolls internally. The choice is remembered per browser, per device.
+
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-apply.html?week=1"
+  title="Week 1 Use It, the patient chart" width="100%" height="4550"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-apply.html?week=2"
+  title="Week 2 Use It, the patient chart" width="100%" height="4600"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-apply.html?week=3"
+  title="Week 3 Use It, the patient chart" width="100%" height="5300"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-apply.html?week=4"
+  title="Week 4 Use It, the patient chart" width="100%" height="4650"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-apply.html?week=5"
+  title="Week 5 Use It, the patient chart" width="100%" height="4650"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-apply.html?week=6"
+  title="Week 6 Use It, the patient chart" width="100%" height="4600"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-apply.html?week=7"
+  title="Week 7 Use It, the patient chart" width="100%" height="4550"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-apply.html?week=8"
+  title="Week 8 Use It, the patient chart" width="100%" height="4600"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-apply.html?week=9"
+  title="Week 9 Use It, the patient chart" width="100%" height="4550"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-apply.html?week=10"
+  title="Week 10 Use It, the patient chart" width="100%" height="4550"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-apply.html?week=11"
+  title="Week 11 Use It, the patient chart" width="100%" height="4550"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-apply.html?week=12"
+  title="Week 12 Use It, the patient chart" width="100%" height="4650"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-apply.html?week=13"
+  title="Week 13 Use It, the patient chart" width="100%" height="4700"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-apply.html?week=14"
+  title="Week 14 Use It, the patient chart" width="100%" height="4650"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-apply.html?week=15"
+  title="Week 15 Use It, the patient chart" width="100%" height="4600"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+Your ungraded work  (ungraded-sheet.html)
+ADDED Sep 7 2026. Everything in a week that carries no points, on one page:
+the retrieval target, the brain dumps, the drawing prompts, the book
+problems and the teach-it prompt. Week 1 offers a tagged PDF of the whole
+sheet; later weeks post theirs when the week opens.
+
+This page does NOT normally need embedding. It is what the two cards on the
+week page open as a panel, and it prints on its own. The snippet is here for
+the case where you want it as its own Canvas page.
+
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/ungraded-sheet.html?week=1"
+  title="Week 1 ungraded work" width="100%" height="6200"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+Weekly practice log directions  (assignment-practice-log.html)
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-practice-log.html"
+  title="Weekly practice log" width="100%" height="2750"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+PRACTICE LOG, ONE PER WEEK
+One file serves all fifteen. Add ?week=N and the eyebrow names the week;
+everything else on the page is identical, so there is nothing to keep in
+step across fifteen copies. Paste the matching snippet into each week's
+ungraded assignment.
+
+Week 1
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-practice-log.html?week=1"
+  title="Week 1 practice log" width="100%" height="2750"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+Week 2
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-practice-log.html?week=2"
+  title="Week 2 practice log" width="100%" height="2750"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+Week 3
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-practice-log.html?week=3"
+  title="Week 3 practice log" width="100%" height="2750"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+Week 4
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-practice-log.html?week=4"
+  title="Week 4 practice log" width="100%" height="2750"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+Week 5
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-practice-log.html?week=5"
+  title="Week 5 practice log" width="100%" height="2750"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+Week 6
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-practice-log.html?week=6"
+  title="Week 6 practice log" width="100%" height="2750"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+Week 7
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-practice-log.html?week=7"
+  title="Week 7 practice log" width="100%" height="2750"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+Week 8
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-practice-log.html?week=8"
+  title="Week 8 practice log" width="100%" height="2750"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+Week 9
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-practice-log.html?week=9"
+  title="Week 9 practice log" width="100%" height="2750"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+Week 10
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-practice-log.html?week=10"
+  title="Week 10 practice log" width="100%" height="2750"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+Week 11
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-practice-log.html?week=11"
+  title="Week 11 practice log" width="100%" height="2750"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+Week 12
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-practice-log.html?week=12"
+  title="Week 12 practice log" width="100%" height="2750"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+Week 13
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-practice-log.html?week=13"
+  title="Week 13 practice log" width="100%" height="2750"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+Week 14
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-practice-log.html?week=14"
+  title="Week 14 practice log" width="100%" height="2750"
+  style="width:100%; border:0; display:block;"></iframe></p>
+
+Week 15
+<p><iframe src="https://drsrennie-stack.github.io/human-physiology-Fa26/assignment-practice-log.html?week=15"
+  title="Week 15 practice log" width="100%" height="2750"
   style="width:100%; border:0; display:block;"></iframe></p>
 
 Week 1 lab, standards and ranges  (reference-range-lab.html)

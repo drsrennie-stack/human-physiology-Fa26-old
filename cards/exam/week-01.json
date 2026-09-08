@@ -1,0 +1,639 @@
+[
+  {
+    "id": "w01-ma-01", "type": "ma", "competencyId": "w1-levels-function", "dok": 1,
+    "stem": "Which statements correctly place a process at its level of organization? Select all that apply.",
+    "options": [
+      "An enzyme binding its substrate is a molecular level event.",
+      "A neuron firing an action potential is a cellular level event.",
+      "The heart and blood vessels moving blood around the body is an organ system level function.",
+      "Body temperature regulation by the hypothalamus, skin, and skeletal muscle working together is a molecular level event.",
+      "A single cardiac muscle cell contracting is an organ level event."
+    ],
+    "correct": [0, 1, 2],
+    "why": "Physiology can be studied at any level from molecule to whole organism, and each process is best explained at the level where the key interactions happen. A protein binding a substrate is molecular. One cell producing an electrical signal is cellular. Blood moving through the whole circulation needs the heart, vessels, and blood together, which is an organ system. Temperature control coordinates several organ systems and is explained at the organism level.",
+    "whyNot": [
+      "Correct. Enzyme and substrate are both molecules, and the binding is a molecular interaction.",
+      "Correct. The action potential is a property of one cell and its membrane.",
+      "Correct. Moving blood through the body requires the heart, vessels, and blood acting as one system.",
+      "Wrong. This response coordinates the nervous system, skin, and muscles, so it is best explained at the organism level, not the molecular level.",
+      "Wrong. One muscle cell contracting is a cellular event. The organ level would be the whole heart pumping."
+    ]
+  },
+  {
+    "id": "w01-ma-02", "type": "ma", "competencyId": "w1-homeostasis", "dok": 2,
+    "stem": "Which of the following describe homeostasis rather than chemical equilibrium? Select all that apply.",
+    "options": [
+      "The variable is held near a setpoint by sensors and effectors.",
+      "Energy is spent continuously to keep the variable in its range.",
+      "Net movement of the substance has stopped because there is no longer any gradient.",
+      "Plasma sodium is kept near 140 mmol/L even though sodium intake changes from day to day.",
+      "The concentration is the same inside and outside the cell."
+    ],
+    "correct": [0, 1, 3],
+    "why": "Homeostasis is the active defense of a regulated variable near a setpoint. It needs a sensor, an integrating center, and an effector, and it costs energy because the body is holding the variable away from where it would drift on its own. Equilibrium is the opposite: gradients have run down, nothing is being defended, and no energy is needed.",
+    "whyNot": [
+      "Correct. Sensors and effectors defending a setpoint is the definition of a homeostatic control loop.",
+      "Correct. Keeping a variable away from equilibrium takes continuous energy, for example the Na+ K+ ATPase.",
+      "Wrong. No gradient and no net movement is chemical equilibrium. Nothing is being regulated.",
+      "Correct. A constant plasma value despite a changing intake means intake and output are being matched by a control system.",
+      "Wrong. Equal concentrations on both sides is equilibrium. Living cells keep sodium and potassium unequal across the membrane."
+    ]
+  },
+  {
+    "id": "w01-ma-03", "type": "ma", "competencyId": "w1-feedback-components", "dok": 2,
+    "stem": "Between meals a person's blood glucose falls to 60 mg/dL (normal fasting 70 to 100). The pancreas releases glucagon and the liver releases glucose into the blood. Which statements correctly assign the parts of the loop? Select all that apply.",
+    "options": [
+      "The fall in blood glucose is the stimulus.",
+      "The pancreatic alpha cell acts as both sensor and integrating center.",
+      "Glucagon traveling in the blood is the afferent pathway.",
+      "The liver is the effector, and the rise in blood glucose is the response.",
+      "The response makes the original stimulus larger."
+    ],
+    "correct": [0, 1, 3],
+    "why": "The change in the regulated variable is the stimulus. The alpha cell detects the low glucose and decides how much glucagon to release, so it is sensor and integrator in one. Glucagon is the outgoing (efferent) signal to the liver, the effector. The liver's glucose release raises the variable, which opposes the original fall. That is negative feedback.",
+    "whyNot": [
+      "Correct. The stimulus is the deviation of the regulated variable, here a fall in glucose.",
+      "Correct. Endocrine cells often sense and integrate in the same cell, with no separate nerve pathway.",
+      "Wrong. Afferent means toward the integrating center. Glucagon leaves the center and goes to the effector, so it is the efferent signal.",
+      "Correct. The liver carries out the response, and the response is the change in the variable.",
+      "Wrong. Raising glucose opposes the fall. Making the stimulus larger would be positive feedback."
+    ]
+  },
+  {
+    "id": "w01-ma-04", "type": "ma", "competencyId": "w1-feedback-types", "dok": 2,
+    "stem": "Which of these are positive feedback loops? Select all that apply.",
+    "options": [
+      "During labor, uterine contractions push the fetus against the cervix, which triggers more oxytocin release and stronger contractions.",
+      "A rise in body temperature triggers sweating, which lowers body temperature.",
+      "Sodium entry during an action potential depolarizes the membrane, which opens more sodium channels.",
+      "A fall in blood pressure raises heart rate, which brings blood pressure back up.",
+      "Platelets at a wound release chemicals that attract more platelets to the site."
+    ],
+    "correct": [0, 2, 4],
+    "why": "The test is the direction of the response. In negative feedback the response opposes the change and brings the variable back. In positive feedback the response makes the change bigger, so the loop runs faster and faster until an outside event ends it: the baby is delivered, the sodium channels inactivate, the wound is sealed.",
+    "whyNot": [
+      "Correct. Each contraction causes more oxytocin, which causes more contraction. Delivery ends the loop.",
+      "Wrong. Sweating opposes the rise in temperature. That is negative feedback.",
+      "Correct. Depolarization opens more sodium channels, which depolarizes further. Channel inactivation ends it.",
+      "Wrong. The rise in heart rate opposes the fall in pressure. That is negative feedback.",
+      "Correct. More platelets bring more platelets. The loop ends when the plug seals the wound."
+    ]
+  },
+  {
+    "id": "w01-ma-05", "type": "ma", "competencyId": "w1-feedforward", "dok": 2,
+    "stem": "Which of the following are examples of feedforward (anticipatory) control? Select all that apply.",
+    "options": [
+      "Saliva and gastric acid secretion begin when you smell food, before any food reaches the stomach.",
+      "Heart rate rises in the seconds before a race starts, while the runner is still standing.",
+      "Shivering begins after core temperature has fallen below its setpoint.",
+      "After three weeks in a hot climate, a person starts sweating sooner and the sweat contains less salt.",
+      "Insulin begins to rise during a meal in response to gut hormones, before blood glucose has risen."
+    ],
+    "correct": [0, 1, 4],
+    "why": "Feedforward control starts the response before the regulated variable has changed, using a cue that predicts the change. Smelling food, seeing the starting line, and gut hormones released as food arrives are all cues. The point is to shrink the deviation that is about to happen. Feedback responds after the variable has moved. Acclimatization is a slow change in the body's capacity over days to weeks.",
+    "whyNot": [
+      "Correct. The stomach prepares on a cue (smell) before the variable it deals with (food in the stomach) has changed.",
+      "Correct. No exercise has happened yet, so no error signal exists. The brain is anticipating.",
+      "Wrong. Shivering after temperature has already dropped is negative feedback responding to an error.",
+      "Wrong. A change over weeks in how the sweat glands work is acclimatization, not anticipation.",
+      "Correct. The gut signals the pancreas that glucose is coming, so insulin rises ahead of the glucose."
+    ]
+  },
+  {
+    "id": "w01-ma-06", "type": "ma", "competencyId": "w1-control-pathways", "dok": 2,
+    "stem": "Which of the following responses are local control? Select all that apply.",
+    "options": [
+      "Arterioles in an exercising muscle dilate in response to carbon dioxide and hydrogen ions released by the muscle itself.",
+      "Blood pressure falls, baroreceptors signal the brainstem, and the heart speeds up.",
+      "Damaged tissue releases histamine, and the capillaries in that spot become leaky.",
+      "A rise in plasma osmolarity is sensed in the hypothalamus, and the kidney conserves water.",
+      "An endothelial cell releases nitric oxide that relaxes the smooth muscle cell next to it."
+    ],
+    "correct": [0, 2, 4],
+    "why": "Local control happens where the change occurs. Cells in the tissue sense the change and act on their neighbors through paracrine signals, with no nerve or hormone carrying the message across the body. A reflex pathway is long distance: a sensor in one place sends information to an integrating center (brain, spinal cord, or endocrine cell), and the response is delivered somewhere else by a nerve or a hormone.",
+    "whyNot": [
+      "Correct. The muscle's own metabolites act on the vessels beside it. Nothing leaves the tissue.",
+      "Wrong. Sensor in the artery, integrating center in the brainstem, effector in the heart. That is a long distance reflex.",
+      "Correct. Histamine is a paracrine signal acting on vessels a few cell widths away.",
+      "Wrong. The sensor is in the brain and the effector is the kidney, with a hormone (vasopressin) between them. That is a reflex.",
+      "Correct. Nitric oxide diffuses to the neighboring cell and acts there. That is local paracrine control."
+    ]
+  },
+  {
+    "id": "w01-ma-07", "type": "ma", "competencyId": "w1-mass-balance", "dok": 2,
+    "stem": "A person takes in 2.5 L of water per day in food and drink and produces 0.3 L of metabolic water per day. Which daily output combinations would hold total body water constant? Select all that apply.",
+    "options": [
+      "Urine 1.5 L, sweat and skin loss 0.6 L, breath 0.4 L, feces 0.3 L",
+      "Urine 2.0 L, sweat and skin loss 0.5 L, breath 0.3 L",
+      "Urine 1.0 L, sweat and skin loss 0.5 L, breath 0.3 L, feces 0.1 L",
+      "Urine 2.5 L, sweat and skin loss 0.6 L, breath 0.4 L",
+      "Urine 2.2 L, sweat and skin loss 0.3 L, breath 0.3 L"
+    ],
+    "correct": [0, 1, 4],
+    "why": "Mass balance says the amount in the body stays constant when intake plus production equals output. Intake here is 2.5 L and production is 0.3 L, so total input is 2.8 L per day. Any set of outputs that adds to 2.8 L keeps body water constant. The kidney is the route the body adjusts to make the sum come out right.",
+    "whyNot": [
+      "Correct. 1.5 plus 0.6 plus 0.4 plus 0.3 equals 2.8 L, matching input.",
+      "Correct. 2.0 plus 0.5 plus 0.3 equals 2.8 L, matching input.",
+      "Wrong. These outputs total 1.9 L, so the body would gain 0.9 L per day and plasma would become dilute.",
+      "Wrong. These outputs total 3.5 L, so the body would lose 0.7 L per day and plasma osmolarity would rise.",
+      "Correct. 2.2 plus 0.3 plus 0.3 equals 2.8 L, matching input."
+    ]
+  },
+  {
+    "id": "w01-ma-08", "type": "ma", "competencyId": "w1-units-conversion", "dok": 2,
+    "stem": "Which of the following conversions are correct? Select all that apply.",
+    "options": [
+      "A 150 mmol/L NaCl solution has an osmolarity of about 300 mOsm/L.",
+      "A plasma sodium of 140 mEq/L equals 140 mmol/L, because each sodium ion carries one charge.",
+      "A plasma calcium of 2.5 mmol/L equals 2.5 mEq/L.",
+      "A 5 percent glucose solution contains 5 g of glucose per 100 mL, which is 50 g/L.",
+      "A cardiac output of 5 L/min equals 500 mL/min."
+    ],
+    "correct": [0, 1, 3],
+    "why": "Osmolarity counts particles, so a salt that splits into two ions gives twice its molar concentration. Milliequivalents count charges, so mEq equals mmol times the charge on the ion. Percent solutions are grams per 100 mL. Liters to milliliters is a factor of 1000. Getting these right is what lets you compare a lab value to its reference range.",
+    "whyNot": [
+      "Correct. NaCl dissociates into Na+ and Cl-, so 150 mmol/L gives 300 mOsm/L of particles.",
+      "Correct. For a monovalent ion, milliequivalents and millimoles are the same number.",
+      "Wrong. Calcium is divalent, so 2.5 mmol/L is 5.0 mEq/L. You multiply by the charge.",
+      "Correct. 5 g per 100 mL times 10 gives 50 g per liter.",
+      "Wrong. 5 L/min is 5000 mL/min. This answer dropped a factor of 10."
+    ]
+  },
+  {
+    "id": "w01-ma-09", "type": "ma", "competencyId": "w1-lab-graphing", "dok": 2,
+    "stem": "Urine flow rate in mL/min is measured one hour after subjects drink different volumes of water. When the data are graphed, the points fall along a rising straight line. Which statements are correct? Select all that apply.",
+    "options": [
+      "The volume of water drunk belongs on the x axis because it is the variable the experimenter set.",
+      "Urine flow rate is the dependent variable.",
+      "The slope tells how much urine flow rises for each extra milliliter drunk.",
+      "A straight rising line proves that drinking water is the only thing that affects urine flow.",
+      "If the line flattened at high volumes, the slope in that region would be steeper."
+    ],
+    "correct": [0, 1, 2],
+    "why": "The independent variable is the one the experimenter controls, and it goes on the x axis. The dependent variable is what responds, and it goes on the y axis. The slope is the change in y for each unit change in x, so it tells you how strongly the response follows the manipulation. A flattening line means the slope is falling toward zero, which usually means the system has hit a limit.",
+    "whyNot": [
+      "Correct. The experimenter chose the volumes, so volume drunk is the independent variable and goes on x.",
+      "Correct. Urine flow is the response being measured, so it is the dependent variable.",
+      "Correct. Slope is the rise in urine flow per unit of water drunk.",
+      "Wrong. A clean relationship shows water intake affects urine flow. It says nothing about other factors such as salt intake or vasopressin.",
+      "Wrong. A flat region means the slope has dropped toward zero, which is a smaller slope, not a steeper one."
+    ]
+  },
+  {
+    "id": "w01-ma-10", "type": "ma", "competencyId": "w1-lab-measurement-error", "dok": 2,
+    "stem": "Which of the following describe random error rather than systematic error? Select all that apply.",
+    "options": [
+      "Repeated readings scatter above and below the true value with no consistent direction.",
+      "A scale that always reads 2 kg heavy because it was never zeroed.",
+      "Averaging many trials brings the mean closer to the true value.",
+      "A thermometer that reads 0.5 C (0.9 F) high on every measurement because it was calibrated wrong.",
+      "Small fluctuation in blood pressure from one heartbeat to the next."
+    ],
+    "correct": [0, 2, 4],
+    "why": "Random error is scatter with no fixed direction. It comes from small uncontrolled things such as breathing, hand tremor, or real beat to beat variation, and it shrinks when you repeat and average because the highs and lows cancel. Systematic error is a fixed offset in one direction. It comes from the instrument or the method, and averaging does nothing to it. You fix it by calibrating against a known standard.",
+    "whyNot": [
+      "Correct. Scatter in both directions with no bias is the signature of random error.",
+      "Wrong. A constant offset in one direction is systematic error. Every reading is wrong by the same amount.",
+      "Correct. Averaging works on random error because the positive and negative deviations cancel.",
+      "Wrong. A calibration offset is systematic. Averaging a hundred readings still leaves it 0.5 C (0.9 F) high.",
+      "Correct. Beat to beat variation is real biological noise with no fixed direction, and it is handled by averaging."
+    ]
+  },
+  {
+    "id": "w01-ma-11", "type": "ma", "competencyId": "w1-structure-function", "dok": 2,
+    "stem": "Which statements correctly link a structure to the function it makes possible? Select all that apply.",
+    "options": [
+      "The biconcave shape of a red blood cell gives it more surface area for its volume, which speeds oxygen loading and unloading.",
+      "Microvilli on the cells lining the small intestine increase the surface available for absorption.",
+      "Thick capillary walls speed the exchange of gases between blood and tissue.",
+      "The single layer of flattened cells in the alveolar wall keeps the diffusion distance for oxygen short.",
+      "A protein that loses its three dimensional shape when heated keeps its full activity because the amino acid sequence is unchanged."
+    ],
+    "correct": [0, 1, 3],
+    "why": "Function follows from structure at every level. Exchange and absorption depend on surface area and diffusion distance, so cells and tissues that specialize in exchange are folded, flattened, or thin. Proteins depend on shape, so anything that disrupts the shape disrupts the function even when the sequence is intact.",
+    "whyNot": [
+      "Correct. The dimpled disc has far more surface than a sphere of the same volume, so oxygen crosses faster.",
+      "Correct. Folding the membrane into microvilli multiplies the absorptive area many times.",
+      "Wrong. Diffusion slows as distance grows. Capillary walls are one thin cell thick precisely to keep exchange fast.",
+      "Correct. A thin flat wall minimizes the distance oxygen must diffuse to reach the blood.",
+      "Wrong. Denaturation destroys the active site shape. The sequence is unchanged but the function is lost."
+    ]
+  },
+  {
+    "id": "w01-ma-12", "type": "ma", "competencyId": "w1-lab-experimental-design", "dok": 2,
+    "stem": "A team tests whether caffeine raises resting heart rate. Twenty students drink coffee containing 200 mg of caffeine. Twenty others drink the same volume of decaffeinated coffee that looks and tastes the same. Heart rate is measured 30 minutes later. Which statements are correct? Select all that apply.",
+    "options": [
+      "Caffeine dose is the independent variable.",
+      "Heart rate is the dependent variable.",
+      "The decaf group controls for the effects of drinking a warm liquid and of expecting a stimulant.",
+      "The decaf group is unnecessary because heart rate before the coffee could serve as the control.",
+      "Heart rate is the independent variable because it is what the team measures."
+    ],
+    "correct": [0, 1, 2],
+    "why": "The independent variable is the one thing the team changes on purpose, caffeine. The dependent variable is what they measure to see the effect, heart rate. A good control condition matches everything except the independent variable, so the decaf group experiences the same warm drink, the same wait, and the same expectation. Any difference between groups can then be credited to caffeine.",
+    "whyNot": [
+      "Correct. Caffeine present or absent is the one thing the team deliberately varied.",
+      "Correct. Heart rate is the measured outcome, so it depends on the treatment.",
+      "Correct. Matching the drink removes volume, warmth, and expectation as alternative explanations.",
+      "Wrong. A before reading does not rule out the warm liquid, the wait, or expectation. Only a matched decaf group does.",
+      "Wrong. The variable the team measures is the dependent variable. The independent variable is the one they set."
+    ]
+  },
+
+  {
+    "id": "w01-tf-01", "type": "tf", "competencyId": "w1-levels-function", "dok": 1,
+    "statement": "Every physiological process is best explained at the molecular level, because all higher functions are built from molecules.",
+    "truth": false,
+    "correction": "Each process is best explained at the level where the important interactions happen. Blood pressure control, for example, is explained at the organ system level, even though molecules are involved at every step.",
+    "why": "Molecules are the building blocks, but knowing the molecules does not tell you how blood pressure is defended. That needs baroreceptors, nerves, the heart, and vessels acting together. Physiology works across levels, and a good explanation picks the level where the mechanism actually operates."
+  },
+  {
+    "id": "w01-tf-02", "type": "tf", "competencyId": "w1-homeostasis", "dok": 2,
+    "statement": "A person can be in steady state for a variable, with intake equal to output, while that variable sits outside its homeostatic range.",
+    "truth": true,
+    "correction": "True. Steady state only means the amount is not changing. Homeostasis means the amount is being held within its healthy range, and a stable value can still be too high or too low.",
+    "why": "A patient with kidney disease may hold plasma potassium steady at 5.8 mEq/L (normal 3.5 to 5.0) for months. Intake matches output, so it is a steady state, but the control system has failed to bring the value back into range. Stable is not the same as healthy."
+  },
+  {
+    "id": "w01-tf-03", "type": "tf", "competencyId": "w1-homeostasis", "dok": 1,
+    "statement": "Homeostasis means the regulated variable is held at exactly one constant value.",
+    "truth": false,
+    "correction": "Homeostasis holds the variable within a range around a setpoint. The value oscillates as the control loop corrects small deviations, and the setpoint itself can shift, as in fever or the daily temperature rhythm.",
+    "why": "Feedback only acts after a deviation has occurred, so the variable must move a little before it is corrected. Body temperature drifts up and down by a few tenths of a degree over the day, and blood glucose rises and falls with meals. Regulation means staying in range, not staying fixed."
+  },
+  {
+    "id": "w01-tf-04", "type": "tf", "competencyId": "w1-feedback-components", "dok": 2,
+    "statement": "In the blood glucose loop after a meal, insulin is the afferent signal that carries information from the sensor to the integrating center.",
+    "truth": false,
+    "correction": "Insulin is the efferent signal. The beta cell senses the glucose and integrates the information itself, then releases insulin, which carries the command out to the liver and muscle.",
+    "why": "Afferent means toward the center, efferent means away from it. In an endocrine reflex the sensor and integrating center are often the same cell, so there is no separate afferent path at all. The hormone is the outgoing signal to the effector. Confusing the two puts the response before the decision."
+  },
+  {
+    "id": "w01-tf-05", "type": "tf", "competencyId": "w1-feedback-types", "dok": 2,
+    "statement": "A positive feedback loop shuts itself off once the regulated variable returns to its setpoint.",
+    "truth": false,
+    "correction": "A positive feedback loop has no setpoint to return to. It drives the variable further in the same direction and only stops when an event outside the loop ends it, such as delivery of the baby or inactivation of the sodium channels.",
+    "why": "In negative feedback the response reduces the stimulus, so the loop winds down on its own. In positive feedback the response increases the stimulus, so the loop speeds up. Nothing inside the loop can stop it. That is why every positive feedback loop in the body is paired with an external stopping event."
+  },
+  {
+    "id": "w01-tf-06", "type": "tf", "competencyId": "w1-feedforward", "dok": 2,
+    "statement": "Acclimatization to altitude takes days to weeks because it depends on slow changes such as making more red blood cells, whereas the rise in ventilation at the start of a race begins within seconds.",
+    "truth": true,
+    "correction": "True. Acclimatization is a slow gain in capacity that builds over sustained exposure, while feedforward is an immediate anticipatory response to a cue.",
+    "why": "The two are easy to mix up because both help the body cope before trouble is severe. The difference is timescale and mechanism. Feedforward uses an existing pathway triggered by a predictive cue and acts at once. Acclimatization changes the amount of machinery, such as red cell mass or sweat gland output, and that takes time to build and time to fade."
+  },
+  {
+    "id": "w01-tf-07", "type": "tf", "competencyId": "w1-control-pathways", "dok": 2,
+    "statement": "A reflex pathway is faster than local control because it does not need the nervous system.",
+    "truth": false,
+    "correction": "A reflex pathway uses the nervous system or the endocrine system to carry information over a long distance. Local control acts within the tissue where the change happened, using paracrine signals, and it does not need either system.",
+    "why": "The defining feature of a reflex is distance: sensor in one place, integrating center somewhere else, effector in a third place, with a nerve or hormone connecting them. Local control keeps everything in one neighborhood. Neither is always faster, but the statement reverses which one needs the nervous system."
+  },
+  {
+    "id": "w01-tf-08", "type": "tf", "competencyId": "w1-units-conversion", "dok": 2,
+    "statement": "A 1 mmol/L solution of calcium chloride (CaCl2) has an osmolarity of about 1 mOsm/L.",
+    "truth": false,
+    "correction": "CaCl2 dissociates into one calcium ion and two chloride ions, so 1 mmol/L gives about 3 mOsm/L.",
+    "why": "Osmolarity counts every dissolved particle, not every molecule you started with. Glucose stays one particle, NaCl becomes two, CaCl2 becomes three. This matters because water follows particle count, so a solution's effect on cell volume depends on osmolarity, not molarity."
+  },
+  {
+    "id": "w01-tf-09", "type": "tf", "competencyId": "w1-lab-graphing", "dok": 1,
+    "statement": "When plotting how heart rate changes with exercise intensity, heart rate belongs on the x axis.",
+    "truth": false,
+    "correction": "Exercise intensity is the independent variable and belongs on the x axis. Heart rate responds to it, so heart rate is the dependent variable and goes on the y axis.",
+    "why": "The x axis carries the variable the experimenter set, and the y axis carries the response. Putting them the wrong way round flips the meaning of the slope: instead of beats per minute gained per watt, you would be reading watts per beat, which is not the question being asked."
+  },
+  {
+    "id": "w01-tf-10", "type": "tf", "competencyId": "w1-lab-measurement-error", "dok": 2,
+    "statement": "Taking a blood pressure reading three times and averaging the results reduces random error but does not remove a systematic error such as a cuff that is too small.",
+    "truth": true,
+    "correction": "True. Averaging cancels scatter that goes in both directions, but a cuff that is too small pushes every reading high by a similar amount, and the average keeps that offset.",
+    "why": "Physiological measurements are repeated because the body itself fluctuates and because each reading carries small chance errors. Averaging handles those. A bias built into the method shows up identically in every trial, so the only fix is to correct the method: use the right cuff, calibrate the instrument, or compare against a known standard."
+  },
+
+  {
+    "id": "w01-bd-01", "type": "bd", "competencyId": "w1-structure-function", "dok": 3,
+    "prompt": "Without notes, explain why a person with emphysema (loss of alveolar walls) and a person whose intestinal villi have been flattened by celiac disease share the same kind of functional problem. Name the shared problem and trace it in each organ.",
+    "rubric": [
+      "both structural changes reduce surface area",
+      "exchange across a membrane depends on the surface area available",
+      "fewer alveolar walls means less oxygen diffuses into the blood per breath",
+      "flattened villi means less nutrient absorbed per meal",
+      "the shared problem is reduced surface for transfer across a membrane",
+      "the amount of function a structure can do is set by its shape"
+    ]
+  },
+  {
+    "id": "w01-bd-02", "type": "bd", "competencyId": "w1-structure-function", "dok": 3,
+    "prompt": "A fever of 41 C (105.8 F) can change the shape of enzymes. Explain how a change in a protein's shape changes what the protein does, and predict what happens to the reactions that depend on that enzyme.",
+    "rubric": [
+      "a protein's function depends on its three dimensional shape",
+      "heat disrupts the weak bonds that hold the shape (denaturation)",
+      "the active site no longer fits its substrate",
+      "the reaction rate falls",
+      "processes that depend on the enzyme slow or stop",
+      "the amino acid sequence is unchanged, so the problem is shape, not identity"
+    ]
+  },
+  {
+    "id": "w01-bd-03", "type": "bd", "competencyId": "w1-mass-balance", "dok": 3,
+    "prompt": "A person eats 200 mmol of sodium per day and has had a stable weight for months. Write the mass balance equation for sodium, state how much sodium must leave the body each day and by what main route, then predict what happens to extracellular fluid volume on the first day if intake suddenly drops to 50 mmol while the kidneys keep excreting 200 mmol.",
+    "rubric": [
+      "change in body amount equals intake plus production minus output",
+      "the body does not make sodium, so output must equal intake, 200 mmol per day",
+      "most sodium leaves in urine, with small amounts in sweat and feces",
+      "after the drop, output exceeds intake by about 150 mmol on day one",
+      "body sodium falls, water follows sodium, so extracellular fluid volume shrinks",
+      "the kidneys then cut excretion until output again matches intake"
+    ]
+  },
+  {
+    "id": "w01-bd-04", "type": "bd", "competencyId": "w1-mass-balance", "dok": 3,
+    "prompt": "Using mass balance, explain why a person who drinks 1 L of water in 10 minutes does not keep that extra liter of body water. Trace what the body does with the load and how it knows to do it.",
+    "rubric": [
+      "intake briefly exceeds output, so body water rises",
+      "plasma osmolarity falls because the water dilutes the solutes",
+      "the fall in osmolarity is sensed and vasopressin release drops",
+      "the kidneys excrete the excess as dilute urine over the next hours",
+      "body water returns to its previous amount once extra output has matched the extra intake",
+      "the body regulates water by adjusting output, since the intake has already happened"
+    ]
+  },
+  {
+    "id": "w01-bd-05", "type": "bd", "competencyId": "w1-lab-experimental-design", "dok": 3,
+    "prompt": "A team wants to know whether putting one hand in cold water raises blood pressure. Design the experiment. State the hypothesis, the independent and dependent variables, the control condition, and what the control rules out.",
+    "rubric": [
+      "hypothesis: cold water immersion of the hand raises blood pressure",
+      "independent variable: water temperature",
+      "dependent variable: blood pressure",
+      "control: the same hand in water at a neutral temperature for the same time",
+      "the control rules out effects of immersion itself, time, posture, and anticipation",
+      "measure blood pressure before and during in both conditions and repeat in several subjects"
+    ]
+  },
+  {
+    "id": "w01-bd-06", "type": "bd", "competencyId": "w1-lab-experimental-design", "dok": 3,
+    "prompt": "A student measures heart rate in ten people before and after they climb three flights of stairs, and heart rate rises. Explain why this before and after design is weaker than a design with a separate control group, and describe what the control group would do.",
+    "rubric": [
+      "anything else that changed over those minutes could explain the rise (standing, anxiety, being measured)",
+      "the design confounds the stair climb with the passage of time and the act of moving",
+      "the control group stands or walks slowly on level ground for the same time",
+      "the control shows how much heart rate changes without the stair climb",
+      "compare the change in the stair group to the change in the control group",
+      "everything else stays the same: time of day, measurement method, rest before"
+    ]
+  },
+  {
+    "id": "w01-bd-07", "type": "bd", "competencyId": "w1-homeostasis", "dok": 3,
+    "prompt": "Compare a healthy person's plasma glucose with glucose in a sealed beaker where glucose has stopped moving between two compartments. Explain why one is homeostasis and the other is equilibrium, and predict what happens to each if the energy supply is cut.",
+    "rubric": [
+      "plasma glucose is a regulated variable held near a setpoint by sensors and effectors",
+      "holding it there costs energy (insulin, glucagon, transport, liver metabolism)",
+      "in the beaker no energy is being spent, the gradient has run down, and net movement has stopped",
+      "equilibrium has no sensor, setpoint, or correction",
+      "cutting energy in the body lets glucose drift out of range toward equilibrium",
+      "cutting energy changes nothing in the beaker because none was being used"
+    ]
+  },
+  {
+    "id": "w01-bd-08", "type": "bd", "competencyId": "w1-feedback-types", "dok": 3,
+    "prompt": "Explain why blood clotting is a positive feedback loop, what stops it, and why the body could not use positive feedback to control body temperature.",
+    "rubric": [
+      "each step produces more of the signal that started it (platelets recruit more platelets, thrombin activates more clotting)",
+      "the response amplifies the original change instead of opposing it",
+      "it ends with an outside event: the wound is sealed, no new surface is exposed, or anticoagulants limit spread",
+      "positive feedback drives the variable away from its start, not back toward a setpoint",
+      "temperature needs a response that opposes the change (negative feedback) to stay near 37 C (98.6 F)",
+      "a positive loop on temperature would push it higher or lower without limit"
+    ]
+  },
+
+  {
+    "id": "w01-app-01", "type": "app", "competencyId": "w1-structure-function", "dok": 3,
+    "case": "A patient has a defect in a red blood cell membrane protein that makes her red cells small and spherical instead of biconcave discs. Her hemoglobin is 10 g/dL (normal 12 to 16) and her spleen is enlarged.",
+    "stem": "Predict why her red cells are destroyed faster than normal ones as they pass through the narrow channels of the spleen.",
+    "options": [
+      "A sphere has no spare membrane, so the cell cannot deform to squeeze through narrow spaces and is trapped and destroyed.",
+      "A sphere has more surface area for its volume, so the cell loses oxygen too fast and dies.",
+      "Spherical cells hold more hemoglobin, which makes them too heavy to move through the spleen.",
+      "The shape change has no effect; the anemia is caused only by the enlarged spleen."
+    ],
+    "correct": 0,
+    "why": "A biconcave disc has extra membrane relative to its volume, and that slack is what lets a red cell fold to pass through channels narrower than itself. A sphere is the shape with the least surface for a given volume, so there is no slack. The cell cannot deform, gets stuck in the spleen's narrow passages, and is removed. Fewer surviving cells means a lower hemoglobin.",
+    "whyNot": [
+      "Correct. Deformability comes from spare membrane, and the sphere has none.",
+      "Wrong. A sphere has the least surface per volume of any shape, not the most. And losing oxygen does not kill a red cell.",
+      "Wrong. Hemoglobin content is not what determines passage, and weight is irrelevant to flow at this scale.",
+      "Wrong. The spleen is enlarged because it is working overtime trapping the abnormal cells. The shape change is the cause, not a bystander."
+    ]
+  },
+  {
+    "id": "w01-app-02", "type": "app", "competencyId": "w1-structure-function", "dok": 3,
+    "case": "In one patient a mutation makes the cilia on airway epithelial cells unable to beat. In another patient a different mutation makes airway mucus so thick and sticky that it cannot be moved. Both patients have repeated lung infections.",
+    "stem": "What do the two structural changes have in common at the level of function?",
+    "options": [
+      "Both stop the mucus escalator, so trapped particles and bacteria are not cleared from the airways.",
+      "Both reduce the surface area available for gas exchange in the alveoli.",
+      "Both block oxygen diffusion across the alveolar wall.",
+      "Both prevent the epithelium from producing any mucus at all."
+    ],
+    "correct": 0,
+    "why": "Airway clearance needs two structures working together: a mucus layer that traps particles and cilia that sweep it upward. Break either one and the function is lost. Cilia that cannot beat leave normal mucus sitting still. Mucus that is too sticky cannot be moved by normal cilia. Either way, bacteria stay in the lung and infection follows. Different structures, same functional loss.",
+    "whyNot": [
+      "Correct. Clearance fails whether the motor (cilia) or the load (mucus) is defective.",
+      "Wrong. Neither change touches the alveoli. Surface area for gas exchange is intact.",
+      "Wrong. The alveolar wall is unaffected. Infection, not diffusion distance, is the problem here.",
+      "Wrong. Both patients make mucus. In one it is not moved, in the other it is too thick to move."
+    ]
+  },
+  {
+    "id": "w01-app-03", "type": "app", "competencyId": "w1-mass-balance", "dok": 3,
+    "case": "A hiker sweats 1.2 L per hour for 3 hours. During the hike she drinks 1.5 L total, loses 0.2 L in breath, produces no urine, and makes 0.1 L of metabolic water.",
+    "stem": "What is the net change in her body water at the end of the hike?",
+    "options": [
+      "A loss of 2.2 L",
+      "A loss of 2.3 L",
+      "A loss of 2.0 L",
+      "A loss of 3.8 L"
+    ],
+    "correct": 0,
+    "why": "Work it in order. Output is sweat 3.6 L plus breath 0.2 L, which is 3.8 L. Input is drink 1.5 L plus metabolic water 0.1 L, which is 1.6 L. Change equals input minus output, so 1.6 minus 3.8 gives a deficit of 2.2 L. With sweat being hypo-osmotic to plasma, her plasma osmolarity is also rising, which is why she is thirsty.",
+    "whyNot": [
+      "Correct. Total input 1.6 L, total output 3.8 L, net loss 2.2 L.",
+      "Wrong. This forgets the 0.1 L of metabolic water on the input side.",
+      "Wrong. This forgets the 0.2 L lost in breath on the output side.",
+      "Wrong. This is total output alone. It ignores everything she drank and produced."
+    ]
+  },
+  {
+    "id": "w01-app-04", "type": "app", "competencyId": "w1-mass-balance", "dok": 3,
+    "case": "A patient on a fixed hospital diet takes in 100 mmol of potassium per day. His urine contains 80 mmol per day and his feces 10 mmol per day. His plasma potassium today is 4.0 mEq/L (normal 3.5 to 5.0).",
+    "stem": "Predict what happens over the coming days if nothing changes.",
+    "options": [
+      "Total body potassium rises by about 10 mmol per day, and plasma potassium will drift upward unless output increases.",
+      "The patient is in balance, because his plasma potassium is normal today.",
+      "Total body potassium falls, because urine output is large.",
+      "Plasma potassium stays at 4.0 mEq/L, because the body cannot store potassium."
+    ],
+    "correct": 0,
+    "why": "Intake is 100 mmol and output is 90 mmol, so the body gains 10 mmol per day. A normal plasma value today only tells you where he is now, not which way he is moving. Positive balance means the amount in the body is climbing, and sooner or later plasma potassium will follow unless the kidneys raise excretion to match intake, which is what a healthy kidney does.",
+    "whyNot": [
+      "Correct. Input exceeds output by 10 mmol per day, so he is in positive potassium balance.",
+      "Wrong. Balance is about intake versus output, not today's plasma value. A normal value can be on its way up.",
+      "Wrong. 90 mmol out is less than 100 mmol in. Body potassium is rising, not falling.",
+      "Wrong. Most potassium sits inside cells, and cells do take up some of a load, but that only slows the rise. It does not cancel a daily surplus."
+    ]
+  },
+  {
+    "id": "w01-app-05", "type": "app", "competencyId": "w1-mass-balance", "dok": 3,
+    "case": "At rest, a person's liver releases glucose into the blood at 10 g per hour and the tissues remove glucose at 10 g per hour. Plasma glucose is steady at 90 mg/dL (normal fasting 70 to 100). She starts jogging, and muscle uptake rises to 25 g per hour.",
+    "stem": "What must happen to keep plasma glucose constant, and what happens if it does not?",
+    "options": [
+      "Liver output must rise to about 25 g per hour; if it does not, plasma glucose falls because output from the blood exceeds input.",
+      "Liver output must fall to zero so that the muscle can use the glucose already in the blood.",
+      "Nothing needs to change; the 90 mg/dL level is held in place by the glucose molecules themselves.",
+      "Muscle uptake must return to 10 g per hour, because the liver cannot change its output."
+    ],
+    "correct": 0,
+    "why": "Plasma glucose is a pool with an input (liver) and an output (tissue uptake). It stays constant only when the two match. Once uptake jumps to 25 g per hour, the liver must match it or the pool drains. A 15 g per hour shortfall is huge compared with the few grams of glucose actually dissolved in plasma, so glucose would fall fast. Glucagon and epinephrine drive the liver to raise its output during exercise for exactly this reason.",
+    "whyNot": [
+      "Correct. Mass balance for the plasma glucose pool requires input to rise to match the new output.",
+      "Wrong. Cutting input while output rises would drain the pool even faster.",
+      "Wrong. Molecules do not defend a concentration. Only matched input and output do.",
+      "Wrong. The liver can and does raise output during exercise. And muscle uptake rising is the point of exercise."
+    ]
+  },
+  {
+    "id": "w01-app-06", "type": "app", "competencyId": "w1-lab-experimental-design", "dok": 3,
+    "case": "A study tests whether a new drug lowers blood pressure. Forty patients take the drug, and over 4 weeks their average blood pressure falls from 150/95 mmHg to 135/85 mmHg (normal below 120/80). There is no other group.",
+    "stem": "Which control would let the team credit the drug rather than something else, and what would that control rule out?",
+    "options": [
+      "A matched group taking a look alike pill with no drug on the same schedule, which rules out the passage of time, the effect of being watched, and the tendency of high readings to drift back toward average.",
+      "Measuring the same patients again at 8 weeks, which rules out the possibility that the drug wears off.",
+      "Giving the same patients a higher dose, which rules out the possibility that the first dose was too low.",
+      "Comparing the patients to healthy volunteers with normal blood pressure, which rules out measurement error."
+    ],
+    "correct": 0,
+    "why": "A control condition matches everything except the independent variable. Patients enrolled because their pressure was high tend to drift downward anyway, they often change habits once they are being measured, and 4 weeks of time passes for everyone. A placebo group experiences all of that without the drug, so the difference between groups is what the drug did.",
+    "whyNot": [
+      "Correct. The placebo group holds time, attention, and expectation constant, isolating the drug.",
+      "Wrong. A later reading still has no comparison group, so it cannot separate the drug from time.",
+      "Wrong. A dose change adds a second experiment. It still cannot tell you whether the first fall was caused by the drug.",
+      "Wrong. Healthy volunteers differ in many ways and did not take the drug. Measurement error is controlled by method, not by a different population."
+    ]
+  },
+  {
+    "id": "w01-app-07", "type": "app", "competencyId": "w1-lab-experimental-design", "dok": 3,
+    "case": "A lab tests whether epinephrine raises the rate of an isolated frog heart. They add 1 mL of epinephrine dissolved in saline to the bath, and heart rate rises from 40 to 60 beats per minute. In a second run on the same heart they add 1 mL of plain saline, and heart rate stays at 40.",
+    "stem": "What is the role of the second run, and what does it rule out?",
+    "options": [
+      "It is the control. It holds everything constant except the epinephrine, so it rules out the added volume or the disturbance of the bath as the cause of the rise.",
+      "It is the independent variable, because saline is the substance being tested.",
+      "It measures the dependent variable, because heart rate in saline is the outcome of interest.",
+      "It is unnecessary, because heart rate was already known to be 40 before the drug."
+    ],
+    "correct": 0,
+    "why": "Adding anything to the bath changes volume, temperature, and mixing. Without the saline run, the team could not tell whether the heart sped up because of epinephrine or because of the act of adding liquid. The saline run is identical in every way except the drug. Since heart rate did not change, the rise in the first run can be credited to epinephrine.",
+    "whyNot": [
+      "Correct. The control run matches the treatment in everything but the one variable of interest.",
+      "Wrong. The independent variable is the presence or absence of epinephrine. Saline is the vehicle, not the treatment.",
+      "Wrong. Heart rate is the dependent variable in both runs. The saline run does not define it, it provides the comparison.",
+      "Wrong. A resting value does not tell you what adding liquid to the bath does. Only the matched control does."
+    ]
+  },
+  {
+    "id": "w01-app-08", "type": "app", "competencyId": "w1-feedforward", "dok": 3,
+    "case": "A trained runner wears a heart rate monitor. Standing still at the start line, her heart rate climbs from 60 to 95 beats per minute (normal resting 60 to 100). The start is delayed 5 minutes, and during the wait her heart rate settles back to 70.",
+    "stem": "What kind of control raised her heart rate at the line, and what does the fall during the delay show?",
+    "options": [
+      "Feedforward control. The brain anticipated exercise and raised heart rate before any error existed, and the anticipatory signal faded when the expected exercise did not come.",
+      "Negative feedback. Muscle metabolites accumulated and triggered a compensating rise in heart rate.",
+      "Acclimatization. Her heart adapted permanently to racing over weeks of training.",
+      "Positive feedback. The rise in heart rate caused a further rise until the delay broke the loop."
+    ],
+    "correct": 0,
+    "why": "She has not moved, so no regulated variable has changed and there is no error for feedback to correct. The rise comes from the brain predicting the coming demand and preparing the heart in advance. That is feedforward. When the cue (the imminent start) goes away, the preparation fades. Feedforward exists to shrink the deviation that would otherwise occur when exercise begins.",
+    "whyNot": [
+      "Correct. A response to a predictive cue with no deviation yet is feedforward.",
+      "Wrong. She is standing still. No metabolites have accumulated, so there is no feedback error to respond to.",
+      "Wrong. Acclimatization is a slow change in capacity. Training lowers resting heart rate, it does not make it jump at the line.",
+      "Wrong. Heart rate rising did not cause itself to rise further. The rise had a cause outside the loop, and it reversed on its own."
+    ]
+  },
+  {
+    "id": "w01-app-09", "type": "app", "competencyId": "w1-control-pathways", "dok": 3,
+    "case": "A patient with a small skin burn has redness and warmth confined to the burned area. His core temperature is 37 C (98.6 F), heart rate 72 beats per minute (normal 60 to 100), and blood pressure 118/76 mmHg (normal below 120/80).",
+    "stem": "The response is confined to the injured tissue with no change in whole body variables. What does that pattern tell you about the control pathway?",
+    "options": [
+      "Local control. Chemicals released by the injured cells act on nearby blood vessels, without involving the nervous or endocrine systems.",
+      "A long distance reflex. The brain detected the injury and sent signals to dilate vessels throughout the body.",
+      "Endocrine control. A hormone released into the blood caused vasodilation in every tissue.",
+      "Feedforward control. The body anticipated the burn and prepared the skin in advance."
+    ],
+    "correct": 0,
+    "why": "Injured cells release paracrine signals such as histamine that dilate the arterioles a few cell widths away. The message never leaves the tissue, so the effect stays put. If the nervous or endocrine system were carrying the signal, you would expect effects far from the burn, such as changes in heart rate or blood pressure, and there are none.",
+    "whyNot": [
+      "Correct. A response limited to the site of the stimulus, with normal systemic variables, is the signature of local control.",
+      "Wrong. A neural reflex could produce a widespread response, but the vessels elsewhere are not dilated and blood pressure is normal.",
+      "Wrong. A hormone in blood reaches every tissue. A response limited to one patch of skin is not endocrine.",
+      "Wrong. Feedforward acts before a change happens. The burn has already occurred, and the redness is a response to it."
+    ]
+  },
+  {
+    "id": "w01-app-10", "type": "app", "competencyId": "w1-feedback-components", "dok": 3,
+    "case": "A drug destroys the cold sensitive thermoreceptors in the skin but leaves the temperature sensitive neurons in the hypothalamus intact. A person taking the drug steps out into 0 C (32 F) air.",
+    "stem": "Predict the effect on the shivering response.",
+    "options": [
+      "Shivering starts later, only after core temperature has fallen enough for the hypothalamic sensors to detect it.",
+      "Shivering never starts, because the hypothalamus cannot respond without input from the skin.",
+      "Shivering starts sooner, because the hypothalamus is no longer inhibited by the skin.",
+      "Shivering is unchanged, because the effector, skeletal muscle, is intact."
+    ],
+    "correct": 0,
+    "why": "The loop has two sets of sensors. Skin receptors detect cold at the surface almost immediately, before core temperature moves, and that early warning lets the hypothalamus start shivering while core temperature is still normal. Without them the integrating center must wait until the core itself cools. The loop still works, but it responds later, so core temperature falls further before the correction begins.",
+    "whyNot": [
+      "Correct. The remaining sensors are in the core, so the stimulus must reach the core before the loop fires.",
+      "Wrong. The hypothalamic sensors and the effector are intact, so shivering will still occur once core temperature drops.",
+      "Wrong. Skin cold receptors drive shivering, they do not inhibit it. Losing them removes the early trigger.",
+      "Wrong. An intact effector does not help if the signal to activate it arrives late. Timing of the sensor changes the whole loop."
+    ]
+  },
+  {
+    "id": "w01-app-11", "type": "app", "competencyId": "w1-units-conversion", "dok": 3,
+    "case": "A patient's lab report lists plasma calcium as 5.0 mEq/L. The reference range on the sheet is given in different units, 2.2 to 2.6 mmol/L.",
+    "stem": "Convert the value and predict whether this patient's calcium is in range.",
+    "options": [
+      "2.5 mmol/L, within range, because each calcium ion carries two charges so mEq is twice mmol.",
+      "5.0 mmol/L, well above range, because mEq and mmol are the same number for any ion.",
+      "10 mmol/L, well above range, because mmol is twice mEq for a divalent ion.",
+      "2.5 mmol/L, but the two cannot be compared because mEq and mmol measure different things."
+    ],
+    "correct": 0,
+    "why": "Milliequivalents count charges, millimoles count ions. Calcium is Ca2+, so each ion carries two charges and 5.0 mEq/L is 2.5 mmol/L. That sits inside the 2.2 to 2.6 range, so the patient's calcium is normal. Reading the raw number against the range without converting would wrongly suggest a dangerous excess.",
+    "whyNot": [
+      "Correct. Divide mEq by the charge (2) to get mmol, 5.0 divided by 2 is 2.5, which is in range.",
+      "Wrong. mEq equals mmol only for ions with a single charge such as sodium and potassium. Calcium has two.",
+      "Wrong. This multiplies when it should divide. Going from mEq to mmol for a divalent ion halves the number.",
+      "Wrong. The conversion is exact once you know the charge. The two units are directly comparable for a known ion."
+    ]
+  },
+  {
+    "id": "w01-app-12", "type": "app", "competencyId": "w1-lab-measurement-error", "dok": 3,
+    "case": "A student measures a classmate's resting heart rate five times by counting the radial pulse for 15 seconds and multiplying by 4. The readings are 64, 72, 68, 76, and 60 beats per minute (normal resting 60 to 100). A chest strap monitor worn at the same time reads 68 the entire time.",
+    "stem": "What kind of error is the student's method showing, and what would reduce it?",
+    "options": [
+      "Random error. Counting for a full 60 seconds and averaging several trials would tighten the readings around 68.",
+      "Systematic error. Every reading is too high, so the student should subtract a fixed number.",
+      "Systematic error. The 15 second count multiplies any miscount by 4, so all the readings are biased in one direction.",
+      "No error. The heart rate really changed by 16 beats per minute between trials."
+    ],
+    "correct": 0,
+    "why": "The readings scatter on both sides of 68 and their average is 68, which matches the monitor. That is random error: a one beat miscount in 15 seconds becomes 4 beats per minute, and it can go either way. A longer count shrinks the effect of each miscount, and averaging cancels the scatter. There is no fixed offset to correct, so it is not systematic.",
+    "whyNot": [
+      "Correct. Scatter around the true value with no bias is random error, and it is reduced by longer counts and averaging.",
+      "Wrong. Two readings are below 68 and two are above. There is no consistent direction, so there is no offset to subtract.",
+      "Wrong. Multiplying by 4 magnifies the error, but a miscount can be high or low. Magnified scatter is still random, not biased.",
+      "Wrong. The chest strap shows the true rate held at 68. The variation is in the measurement, not the heart."
+    ]
+  }
+]

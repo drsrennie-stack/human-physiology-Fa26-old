@@ -1,0 +1,641 @@
+[
+  {
+    "id": "w04-ma-01", "type": "ma", "competencyId": "w2-electrochemical-gradient", "dok": 2,
+    "stem": "A neuron is resting at -70 mV with the usual ion distributions (K+ high inside, Na+ and Cl- high outside, Ca2+ very low inside). Which statements about the forces acting on these ions are correct? Select all that apply.",
+    "options": [
+      "The chemical gradient pushes K+ out of the cell.",
+      "The electrical gradient at -70 mV pulls K+ into the cell.",
+      "The chemical gradient and the electrical gradient both push Na+ into the cell.",
+      "The chemical gradient pushes Cl- out of the cell.",
+      "Ca2+ has almost no chemical gradient across the membrane."
+    ],
+    "correct": [0, 1, 2],
+    "why": "Each ion feels two forces. The chemical force follows the concentration difference. The electrical force follows the charge inside the cell. For K+ the two forces oppose each other, which is why K+ leaks out only slowly at rest. For Na+ both forces point inward, which is why Na+ rushes in the moment a channel opens.",
+    "whyNot": [
+      "Belongs. K+ is about 150 mmol/L inside and 5 mmol/L outside, so its chemical gradient points out.",
+      "Belongs. The inside of the cell is negative, and a negative interior attracts a positive ion, so the electrical force on K+ points in.",
+      "Belongs. Na+ is high outside (chemical force in) and the interior is negative (electrical force in). This is why Na+ entry is so fast when channels open.",
+      "Does not belong. Cl- is high outside, so its chemical gradient pushes it into the cell. It is the electrical gradient, the negative interior, that pushes Cl- out.",
+      "Does not belong. Extracellular Ca2+ is about 10,000 times higher than free cytosolic Ca2+, one of the steepest gradients in the body, which is what makes Ca2+ a useful signal when channels open."
+    ]
+  },
+  {
+    "id": "w04-ma-02", "type": "ma", "competencyId": "w2-ion-channels", "dok": 2,
+    "stem": "Which pairings of a channel with the stimulus that opens it are correct? Select all that apply.",
+    "options": [
+      "K+ leak channels: no stimulus, they are open at rest.",
+      "Voltage gated Na+ channels at the trigger zone: depolarization of the membrane to threshold.",
+      "Nicotinic acetylcholine receptor channels at the motor end plate: binding of acetylcholine.",
+      "Mechanically gated channels in a touch receptor: a change in membrane voltage.",
+      "Ligand gated channels at a synapse: physical stretch of the membrane."
+    ],
+    "correct": [0, 1, 2],
+    "why": "The name of the channel class tells you the stimulus. Leak channels are always open. Voltage gated channels respond to membrane potential. Ligand gated channels respond to a chemical binding. Mechanically gated channels respond to stretch or pressure. Each class sits where its stimulus normally arrives: leak channels everywhere, voltage gated channels on the axon, ligand gated channels at synapses, mechanically gated channels in sensory endings.",
+    "whyNot": [
+      "Belongs. Leak channels have no gate and are the main reason the resting membrane is permeable to K+.",
+      "Belongs. The trigger zone has a high density of voltage gated Na+ channels, and depolarization is what opens their activation gate.",
+      "Belongs. The nicotinic receptor is a ligand gated channel; acetylcholine binding opens it and lets Na+ in.",
+      "Does not belong. Mechanically gated channels open when the membrane is stretched or deformed. A voltage change is the stimulus for voltage gated channels.",
+      "Does not belong. Ligand gated channels open when a chemical binds. Stretch is the stimulus for mechanically gated channels."
+    ]
+  },
+  {
+    "id": "w04-ma-03", "type": "ma", "competencyId": "w2-potential-terms", "dok": 1,
+    "stem": "A neuron rests at -70 mV. Which of these changes in membrane potential are depolarizations? Select all that apply.",
+    "options": [
+      "From -70 mV to -55 mV",
+      "From -70 mV to -85 mV",
+      "From -70 mV to +20 mV",
+      "From +30 mV back down to -70 mV",
+      "From -55 mV to -30 mV"
+    ],
+    "correct": [0, 2, 4],
+    "why": "Depolarization means the membrane potential becomes less negative, moving toward zero (and past it, if there is an overshoot). Repolarization is the return toward rest after a depolarization. Hyperpolarization is a move to a value more negative than rest.",
+    "whyNot": [
+      "Belongs. Moving from -70 to -55 mV is less negative, so it is a depolarization (and reaches a typical threshold).",
+      "Does not belong. Moving from -70 to -85 mV is more negative than rest. That is hyperpolarization.",
+      "Belongs. Moving from -70 to +20 mV is a depolarization; the part above 0 mV is called the overshoot.",
+      "Does not belong. Falling from +30 back to -70 mV is repolarization, the return toward rest.",
+      "Belongs. Moving from -55 to -30 mV is less negative, so it is still a depolarization even though it did not start at rest."
+    ]
+  },
+  {
+    "id": "w04-ma-04", "type": "ma", "competencyId": "w4-neuron-classes", "dok": 2,
+    "stem": "Which statements correctly connect a class of neuron to how it works? Select all that apply.",
+    "options": [
+      "In a pseudounipolar sensory neuron, action potentials travel from the peripheral receptor to the spinal cord along one continuous axon, without passing through the cell body.",
+      "A multipolar motor neuron has many dendrites, which lets it sum input from many presynaptic cells before deciding whether to fire.",
+      "Interneurons lie entirely within the central nervous system and make up the large majority of neurons in the body.",
+      "Bipolar neurons are the typical somatic motor neurons found in the ventral horn of the spinal cord.",
+      "Sensory (afferent) neurons carry action potentials away from the central nervous system toward muscles and glands."
+    ],
+    "correct": [0, 1, 2],
+    "why": "Structure fits function. Pseudounipolar sensory neurons have one process that splits, so the signal goes straight past the cell body sitting in the dorsal root ganglion. Multipolar neurons, which include motor neurons and most interneurons, have a large dendritic tree for integration. Interneurons never leave the CNS and do most of the processing.",
+    "whyNot": [
+      "Belongs. The cell body sits off to the side in the dorsal root ganglion; the signal runs along the axon from receptor to cord.",
+      "Belongs. Many dendrites means many synaptic inputs, and the trigger zone sums them all.",
+      "Belongs. Interneurons connect neurons to neurons inside the CNS and outnumber sensory and motor neurons by far.",
+      "Does not belong. Somatic motor neurons are multipolar. Bipolar neurons are rare and are found in the retina, the olfactory epithelium and the inner ear.",
+      "Does not belong. This describes efferent (motor) neurons. Afferent neurons carry signals toward the CNS."
+    ]
+  },
+  {
+    "id": "w04-ma-05", "type": "ma", "competencyId": "w4-neuron-regions", "dok": 2,
+    "stem": "Which statements correctly match a region of a neuron with the electrical signal it carries? Select all that apply.",
+    "options": [
+      "The dendrites and cell body carry graded potentials.",
+      "The trigger zone (axon hillock and initial segment) is where graded potentials are summed and compared with threshold.",
+      "The axon carries action potentials that keep the same amplitude from the trigger zone to the terminal.",
+      "The axon terminal generates the graded potentials that are summed at the trigger zone.",
+      "The dendrites have the highest density of voltage gated Na+ channels in the neuron."
+    ],
+    "correct": [0, 1, 2],
+    "why": "Input regions (dendrites and soma) produce graded potentials that shrink with distance. The trigger zone has the first dense cluster of voltage gated Na+ channels, so it is where the decision to fire is made. The axon then conducts the all or none action potential to the terminal, which releases neurotransmitter.",
+    "whyNot": [
+      "Belongs. Synaptic input opens ligand gated channels on the dendrites and soma, producing local graded potentials.",
+      "Belongs. The trigger zone is the first place with enough voltage gated Na+ channels to start an action potential, so it acts as the threshold detector.",
+      "Belongs. Action potentials are regenerated along the axon, so they do not decay.",
+      "Does not belong. The terminal is the output end; it receives the action potential and releases neurotransmitter. Graded potentials are produced at the input end, the dendrites and soma.",
+      "Does not belong. The dendrites are relatively poor in voltage gated Na+ channels, which is why their signals are graded. The dense cluster is at the trigger zone."
+    ]
+  },
+  {
+    "id": "w04-ma-06", "type": "ma", "competencyId": "w4-glia-functions", "dok": 2,
+    "stem": "Which statements about the physiological roles of glial cells are correct? Select all that apply.",
+    "options": [
+      "Ependymal cells form the myelin sheath around axons in the spinal cord.",
+      "Astrocytes take up K+ and glutamate from the extracellular fluid around active synapses, protecting nearby neurons.",
+      "Satellite cells fire action potentials to relay signals between neurons inside a ganglion.",
+      "One oligodendrocyte can myelinate segments of several CNS axons, while one Schwann cell myelinates a single segment of one PNS axon.",
+      "Microglia are the immune cells of the CNS and remove debris and damaged cells."
+    ],
+    "correct": [1, 3, 4],
+    "why": "Glia do not fire action potentials, but neurons cannot work without them. Astrocytes keep the extracellular fluid stable, oligodendrocytes and Schwann cells insulate axons, microglia defend and clean up, ependymal cells line the ventricles and make cerebrospinal fluid, and satellite cells support cell bodies in ganglia.",
+    "whyNot": [
+      "Does not belong. Ependymal cells line the ventricles and central canal and help make cerebrospinal fluid. Oligodendrocytes make CNS myelin.",
+      "Belongs. Clearing K+ and glutamate keeps neurons from being depolarized and overexcited by their neighbors.",
+      "Does not belong. Satellite cells are supporting cells that surround cell bodies in peripheral ganglia. They do not fire action potentials.",
+      "Belongs. This is the structural reason CNS and PNS myelin are affected by different diseases and repair differently.",
+      "Belongs. Microglia are the resident macrophages of the CNS."
+    ]
+  },
+  {
+    "id": "w04-ma-07", "type": "ma", "competencyId": "w4-graded-potentials", "dok": 2,
+    "stem": "Which statements about graded potentials are correct? Select all that apply.",
+    "options": [
+      "Graded potentials are all or none: once one starts, it always reaches the same size.",
+      "Their amplitude depends on how many ion channels open, so a stronger stimulus produces a larger graded potential.",
+      "They shrink with distance because current leaks out through the membrane and the cytoplasm resists current flow.",
+      "They are conducted along the axon without any loss of amplitude.",
+      "They can be depolarizing or hyperpolarizing, depending on which ion moves."
+    ],
+    "correct": [1, 2, 4],
+    "why": "A graded potential is a local change in membrane potential whose size matches the stimulus. Because the charge that enters spreads passively, some leaks back out through open channels (current leak) and the narrow cytoplasm slows the rest (cytoplasmic resistance), so the signal fades with distance. Whether it depolarizes or hyperpolarizes depends on which channels open.",
+    "whyNot": [
+      "Does not belong. All or none describes the action potential. Graded potentials vary in size, which is what the word graded means.",
+      "Belongs. More open channels means more ion flow and a larger local voltage change.",
+      "Belongs. These two properties, current leak and cytoplasmic resistance, are exactly why graded potentials decay with distance.",
+      "Does not belong. Graded potentials decay; they are not regenerated. The action potential is what travels the axon without loss.",
+      "Belongs. Na+ or Ca2+ entry depolarizes; K+ exit or Cl- entry hyperpolarizes."
+    ]
+  },
+  {
+    "id": "w04-ma-08", "type": "ma", "competencyId": "w4-action-potential", "dok": 2,
+    "stem": "Which statements correctly pair a phase of the action potential with the channel event that causes it? Select all that apply.",
+    "options": [
+      "Rising phase: voltage gated Na+ channels open and Na+ enters the cell.",
+      "Peak: Na+ channel inactivation gates have closed and voltage gated K+ channels are open.",
+      "Falling phase: K+ leaves the cell through voltage gated K+ channels.",
+      "Afterhyperpolarization: voltage gated K+ channels are still open, so the potential dips toward the K+ equilibrium potential.",
+      "Afterhyperpolarization: the Na+/K+ ATPase rapidly pumps K+ out of the cell.",
+      "Rising phase: K+ rushes into the cell through voltage gated K+ channels."
+    ],
+    "correct": [0, 1, 2, 3],
+    "why": "The action potential is a timed sequence of two voltage gated channels. Na+ channels open fast and drive the upstroke, then inactivate. K+ channels open slowly, so they are wide open at the peak and carry K+ out during the fall. Because they close slowly, the membrane briefly dips below rest before the leak channels bring it back.",
+    "whyNot": [
+      "Belongs. Depolarization opens the fast activation gate; Na+ entry depolarizes further, a positive feedback loop.",
+      "Belongs. The slow inactivation gate closes near the peak, ending Na+ entry, while the slow K+ channels have finally opened.",
+      "Belongs. K+ efflux carries positive charge out and returns the potential toward rest.",
+      "Belongs. Extra K+ permeability pulls the membrane closer to the K+ equilibrium potential, about -90 mV.",
+      "Does not belong. The pump is too slow to shape a millisecond event and it pumps K+ in, not out. The afterhyperpolarization is a channel effect.",
+      "Does not belong. K+ is high inside, so it never rushes in. The upstroke is Na+ entry."
+    ]
+  },
+  {
+    "id": "w04-ma-09", "type": "ma", "competencyId": "w4-threshold", "dok": 2,
+    "stem": "Which statements about threshold and the all or none principle are correct? Select all that apply.",
+    "options": [
+      "Threshold is the membrane potential at which Na+ entry through voltage gated channels outruns K+ loss, so depolarization becomes self reinforcing.",
+      "A stimulus twice as strong as threshold produces an action potential twice as large.",
+      "A graded potential that reaches the trigger zone below threshold produces no action potential at all.",
+      "Action potential amplitude is set by the ion gradients and the number of available channels, not by the size of the stimulus.",
+      "Threshold is measured at the dendrites, where the stimulus first arrives."
+    ],
+    "correct": [0, 2, 3],
+    "why": "Threshold is a tipping point. Below it, K+ leak wins and the membrane drifts back to rest. Above it, enough Na+ channels open that Na+ entry opens still more channels, and the event runs to completion on its own. Because the same channels and the same gradients are used every time, the peak is the same every time, regardless of how hard the neuron was pushed.",
+    "whyNot": [
+      "Belongs. This positive feedback between depolarization and Na+ channel opening is the mechanism behind threshold.",
+      "Does not belong. Stimulus strength changes whether and how often the neuron fires, not how big each action potential is.",
+      "Belongs. Subthreshold signals fade away; there is no partial action potential.",
+      "Belongs. The peak approaches the Na+ equilibrium potential no matter how large the stimulus, as long as the channels are healthy.",
+      "Does not belong. Threshold is judged at the trigger zone, where the voltage gated Na+ channels are concentrated. What matters is the voltage that arrives there, not the voltage at the dendrite."
+    ]
+  },
+  {
+    "id": "w04-ma-10", "type": "ma", "competencyId": "w4-conduction-velocity", "dok": 2,
+    "stem": "Which statements about conduction velocity are correct? Select all that apply.",
+    "options": [
+      "A large diameter myelinated axon conducts faster than a small diameter myelinated axon.",
+      "In saltatory conduction the action potential is regenerated at every point along the axon membrane.",
+      "Myelin speeds conduction by reducing current leak across the membrane, so the depolarization spreads farther before it must be regenerated.",
+      "A larger diameter raises cytoplasmic resistance, which is why large axons conduct faster.",
+      "A large unmyelinated axon conducts faster than a small unmyelinated axon."
+    ],
+    "correct": [0, 2, 4],
+    "why": "Two things speed an axon: a larger diameter, which lowers the resistance of the cytoplasm so current spreads farther, and myelin, which stops current from leaking out between nodes. The fastest fibers are large and myelinated, the slowest are small and unmyelinated. In saltatory conduction the action potential is regenerated only at the nodes of Ranvier.",
+    "whyNot": [
+      "Belongs. Among myelinated fibers, diameter still matters; larger fibers have lower internal resistance.",
+      "Does not belong. Regeneration at every point describes continuous conduction in unmyelinated axons. Saltatory conduction regenerates only at the nodes, which is what makes it fast.",
+      "Belongs. Less leak means the current reaches the next node with more charge left, so each node fires sooner.",
+      "Does not belong. A larger diameter lowers cytoplasmic resistance, the same way a wide pipe carries flow more easily.",
+      "Belongs. Diameter speeds conduction whether or not the axon is myelinated."
+    ]
+  },
+  {
+    "id": "w04-ma-11", "type": "ma", "competencyId": "w4-ion-disturbance", "dok": 2,
+    "stem": "A patient's plasma K+ falls to 2.5 mmol/L (normal 3.5 to 5.0). Intracellular K+ is unchanged. Which statements about the effect on neurons and muscle cells are correct? Select all that apply.",
+    "options": [
+      "The K+ equilibrium potential becomes more negative.",
+      "The resting membrane potential hyperpolarizes.",
+      "The cells need a larger depolarization to reach threshold, so excitability falls.",
+      "Voltage gated Na+ channels become inactivated at rest.",
+      "The resting potential moves closer to threshold."
+    ],
+    "correct": [0, 1, 2],
+    "why": "A lower extracellular K+ makes the K+ gradient steeper, so the Nernst equation gives a more negative equilibrium potential. Because the resting membrane is mostly permeable to K+, the resting potential follows it downward. The gap to threshold widens, and the cell is harder to fire. This is why hypokalemia causes weakness.",
+    "whyNot": [
+      "Belongs. The ratio of outside to inside K+ shrinks, so the log term is more negative and the equilibrium potential is more negative.",
+      "Belongs. The resting potential tracks the K+ equilibrium potential because K+ permeability dominates at rest.",
+      "Belongs. A more negative resting potential sits farther from threshold, so a stronger stimulus is required.",
+      "Does not belong. Inactivation happens when the membrane is held depolarized, which is the hyperkalemia story. A hyperpolarized membrane keeps Na+ channels closed but ready.",
+      "Does not belong. The resting potential moves away from threshold, not toward it."
+    ]
+  },
+  {
+    "id": "w04-ma-12", "type": "ma", "competencyId": "w4-myelin", "dok": 2,
+    "stem": "Which statements about myelin and the nodes of Ranvier are correct? Select all that apply.",
+    "options": [
+      "Myelin makes each action potential larger at every node than it would be without myelin.",
+      "Voltage gated Na+ channels are concentrated at the nodes of Ranvier.",
+      "Loss of myelin speeds conduction because the axon membrane is now in direct contact with extracellular fluid.",
+      "Between nodes, current flows through the cytoplasm with very little leak, so the depolarization reaches the next node quickly.",
+      "A demyelinated segment leaks current and has few Na+ channels, so the action potential may fail to reach the next node."
+    ],
+    "correct": [1, 3, 4],
+    "why": "Myelin is insulation. It does not change the size of the action potential; it changes how far the current spreads before the next set of Na+ channels regenerates it. When myelin is lost, the exposed membrane leaks current and lacks Na+ channels, so the signal fades and can die before reaching the next node.",
+    "whyNot": [
+      "Does not belong. Amplitude is set by ion gradients and channel density, not by myelin. Myelin changes speed and reliability, not size.",
+      "Belongs. Clustering the channels at the nodes is what allows the action potential to jump from node to node.",
+      "Does not belong. Demyelination slows or blocks conduction. Contact with extracellular fluid means more leak, not less.",
+      "Belongs. Low leak between nodes is why the current reaches the next node with enough charge to trigger it almost immediately.",
+      "Belongs. This is the mechanism of conduction block in demyelinating diseases such as multiple sclerosis and Guillain Barre syndrome."
+    ]
+  },
+
+  {
+    "id": "w04-tf-01", "type": "tf", "competencyId": "w2-electrochemical-gradient", "dok": 2,
+    "statement": "In a resting neuron, the chemical gradient and the electrical gradient on K+ point in the same direction, both pushing K+ out of the cell.",
+    "truth": false,
+    "correction": "The chemical gradient pushes K+ out, but the negative interior pulls K+ in, so the two forces on K+ oppose each other at rest.",
+    "why": "K+ is high inside, so concentration drives it out. But the inside of the cell is negative, and a negative interior attracts a positive ion, so the electrical force pulls K+ back in. At the K+ equilibrium potential (about -90 mV) the two forces balance exactly. At -70 mV the chemical force is a little stronger, so K+ leaks out slowly. The ion whose two forces do point the same way at rest is Na+, which is why Na+ entry is so fast when channels open."
+  },
+  {
+    "id": "w04-tf-02", "type": "tf", "competencyId": "w2-nernst", "dok": 2,
+    "statement": "If a neuron's membrane were permeable only to Na+, its membrane potential would settle near +60 mV.",
+    "truth": true,
+    "correction": "True, because with a single permeant ion the membrane potential equals that ion's Nernst equilibrium potential, and for Na+ (about 145 mmol/L outside, 15 mmol/L inside) that is about +60 mV.",
+    "why": "The Nernst equation gives the potential at which the electrical force exactly balances the chemical force on one ion. For Na+ the ratio outside to inside is about 10, the log of 10 is 1, and 61 times 1 gives about +61 mV. Na+ would enter until the inside was positive enough to stop further net entry. A real neuron never gets there because K+ leak channels stay open, but the peak of the action potential does approach this value, which is why the overshoot exists."
+  },
+  {
+    "id": "w04-tf-03", "type": "tf", "competencyId": "w2-resting-potential", "dok": 2,
+    "statement": "The resting membrane potential is negative mainly because the Na+/K+ ATPase pumps three Na+ out for every two K+ it brings in.",
+    "truth": false,
+    "correction": "The resting potential is negative mainly because the membrane is far more permeable to K+ than to Na+ at rest, so K+ leaks out and pulls the potential toward the K+ equilibrium potential; the pump's unequal exchange contributes only a few millivolts directly.",
+    "why": "The pump is essential, but for a different reason: it builds and maintains the K+ and Na+ gradients. The potential itself comes from what those gradients do through open channels. Because K+ leak channels outnumber Na+ leak channels many times over, K+ exit dominates and the inside becomes negative. If you blocked the pump, the immediate change would be only about 3 to 4 mV; the big collapse of the resting potential would come later, as the gradients ran down."
+  },
+  {
+    "id": "w04-tf-04", "type": "tf", "competencyId": "w2-ion-channels", "dok": 2,
+    "statement": "A voltage gated Na+ channel has a single gate that opens when the membrane depolarizes and closes again when the membrane repolarizes.",
+    "truth": false,
+    "correction": "A voltage gated Na+ channel has two gates: a fast activation gate that opens on depolarization and a slow inactivation gate that closes shortly afterward, and the channel cannot open again until the membrane repolarizes and both gates reset.",
+    "why": "The two gate design is what gives the action potential its shape and its refractory period. The activation gate opens within a fraction of a millisecond and lets Na+ rush in. The inactivation gate then swings shut about a millisecond later and stops the current even though the membrane is still depolarized. Because the inactivation gate only reopens after repolarization, the channel is unavailable for a while, which is the absolute refractory period. A single gate channel could not produce a refractory period on its own."
+  },
+  {
+    "id": "w04-tf-05", "type": "tf", "competencyId": "w2-potential-terms", "dok": 1,
+    "statement": "Hyperpolarization means the membrane potential moves closer to zero.",
+    "truth": false,
+    "correction": "Hyperpolarization means the membrane potential becomes more negative than the resting value, moving away from zero and away from threshold.",
+    "why": "Moving toward zero from a negative resting potential is depolarization, and it brings the neuron closer to firing. Hyperpolarization does the opposite: it pushes the potential further from threshold, so the neuron is harder to fire. Inhibitory synapses work this way, opening K+ or Cl- channels to hyperpolarize the cell. The afterhyperpolarization at the end of an action potential is the same idea, caused by K+ channels that are slow to close."
+  },
+  {
+    "id": "w04-tf-06", "type": "tf", "competencyId": "w4-axonal-transport", "dok": 1,
+    "statement": "Fast anterograde axonal transport carries synaptic vesicles and mitochondria from the cell body toward the axon terminal along microtubules, using the motor protein kinesin.",
+    "truth": true,
+    "correction": "True, because the axon terminal has no ribosomes and depends on kinesin driven transport along microtubules to deliver membrane bound organelles and vesicle components made in the cell body.",
+    "why": "Fast transport moves organelles and vesicles at up to about 400 mm per day. Kinesin walks toward the terminal (anterograde), and dynein walks back toward the cell body (retrograde), returning worn organelles and growth factor signals. Slow transport is a separate process that moves cytoskeletal proteins and enzymes at only millimeters per day, which is why a cut axon takes so long to regrow."
+  },
+  {
+    "id": "w04-tf-07", "type": "tf", "competencyId": "w4-graded-potentials", "dok": 2,
+    "statement": "A graded potential that begins as a 20 mV depolarization at a dendrite arrives at the trigger zone still at 20 mV, as long as no other input interferes.",
+    "truth": false,
+    "correction": "A graded potential loses amplitude as it spreads, because current leaks out through the membrane and the cytoplasm resists current flow, so it arrives at the trigger zone smaller than it started.",
+    "why": "Graded potentials are not regenerated. The charge that enters at the synapse spreads passively, and along the way some of it exits through open leak channels while the rest is slowed by the narrow cytoplasm. The farther the synapse from the trigger zone, the smaller the signal that arrives. This is why a synapse on the cell body has more influence than one on a distant dendrite, and why several inputs often must add together (summation) to reach threshold."
+  },
+  {
+    "id": "w04-tf-08", "type": "tf", "competencyId": "w4-action-potential", "dok": 2,
+    "statement": "Repolarization during an action potential is caused mainly by the Na+/K+ ATPase pumping the Na+ that entered back out of the cell.",
+    "truth": false,
+    "correction": "Repolarization is caused by K+ leaving the cell through voltage gated K+ channels after the Na+ channels inactivate; the pump is far too slow to shape a millisecond event and only restores the gradients over time.",
+    "why": "Each action potential moves very few ions relative to the total present, so the gradients barely change during a single spike. What returns the potential to rest is a change in permeability: Na+ channels shut off and K+ channels open, so positive charge leaves the cell. The pump works in the background, over seconds to minutes, to keep the gradients from running down after many action potentials."
+  },
+  {
+    "id": "w04-tf-09", "type": "tf", "competencyId": "w4-intensity-coding", "dok": 2,
+    "statement": "A stronger stimulus produces larger action potentials in a sensory neuron, and the brain reads the amplitude to judge stimulus strength.",
+    "truth": false,
+    "correction": "Action potential amplitude is fixed (all or none), so a stronger stimulus is coded by a higher frequency of action potentials in each neuron and by recruiting more neurons.",
+    "why": "Every action potential in a given axon has the same size because it uses the same channels and the same gradients. What a stronger stimulus does change is the size of the graded potential at the receptor. A larger graded potential keeps the trigger zone above threshold longer and drives it back to threshold sooner after each refractory period, so the neuron fires more often. Stronger stimuli also spread to more receptors, so more axons fire. Frequency and population, not amplitude, carry intensity."
+  },
+  {
+    "id": "w04-tf-10", "type": "tf", "competencyId": "w4-refractory", "dok": 2,
+    "statement": "During the absolute refractory period, no stimulus of any strength can trigger a second action potential, because the voltage gated Na+ channels are inactivated.",
+    "truth": true,
+    "correction": "True, because inactivated Na+ channels cannot reopen until the membrane repolarizes and resets their gates, so there is no inward current available no matter how strong the stimulus.",
+    "why": "The absolute refractory period lasts from the start of the action potential until enough Na+ channels have recovered from inactivation, about 1 to 2 ms. During the relative refractory period that follows, some Na+ channels have reset but the K+ channels are still open, so a stronger than normal stimulus can fire a smaller action potential. The absolute period sets the maximum firing rate and, because the membrane just behind a traveling spike is refractory, it keeps the action potential from turning around."
+  },
+
+  {
+    "id": "w04-bd-01", "type": "bd", "competencyId": "w2-nernst", "dok": 3,
+    "prompt": "Without notes, explain how you would use the Nernst equation to find the equilibrium potential for K+ when extracellular K+ is 5 mmol/L and intracellular K+ is 150 mmol/L at 37 C (98.6 F). Give the approximate answer and explain what the sign tells you about K+ movement.",
+    "rubric": [
+      "equilibrium potential equals 61 mV times the log of outside over inside concentration (for a +1 ion at body temperature)",
+      "the ratio is 5 over 150, about 1 over 30",
+      "the log of 1 over 30 is about -1.5, so the answer is about -90 mV",
+      "the negative sign means the inside must be negative to balance the chemical gradient pushing K+ out",
+      "at exactly -90 mV there is no net K+ movement",
+      "at any potential less negative than -90 mV (such as -70 mV), K+ moves out of the cell"
+    ]
+  },
+  {
+    "id": "w04-bd-02", "type": "bd", "competencyId": "w2-resting-potential", "dok": 3,
+    "prompt": "Without notes, explain why a neuron's resting membrane potential sits at about -70 mV rather than at the K+ equilibrium potential (about -90 mV) or the Na+ equilibrium potential (about +60 mV). Then predict what happens to the resting potential if K+ permeability suddenly increases.",
+    "rubric": [
+      "the resting membrane is much more permeable to K+ than to Na+ because of open K+ leak channels",
+      "K+ leaving the cell makes the inside negative and pulls the potential toward the K+ equilibrium potential",
+      "a small Na+ leak inward pulls the potential a little positive of -90 mV, which is why rest is -70 rather than -90 mV",
+      "the Na+/K+ ATPase maintains the gradients and adds only a few mV of negativity directly",
+      "the potential never approaches +60 mV because Na+ permeability at rest is very low",
+      "increasing K+ permeability moves the potential closer to -90 mV, a hyperpolarization"
+    ]
+  },
+  {
+    "id": "w04-bd-03", "type": "bd", "competencyId": "w2-lab-membrane-potential", "dok": 3,
+    "prompt": "In the membrane potential simulation you raise extracellular K+ from 5 to 20 mmol/L with intracellular K+ fixed at 150 mmol/L. Without notes, explain what the Nernst equation predicts, what you expect the simulated resting potential to do, and why raising extracellular Na+ by the same factor would barely change the resting potential.",
+    "rubric": [
+      "the outside to inside ratio for K+ rises from 1 over 30 to about 1 over 7.5",
+      "the predicted K+ equilibrium potential moves from about -90 mV to about -53 mV, a less negative value",
+      "the measured resting potential depolarizes in the same direction and lands within a few mV of the prediction",
+      "the resting potential follows K+ because the resting membrane is highly permeable to K+",
+      "changing extracellular Na+ shifts the Na+ equilibrium potential, but resting Na+ permeability is so low that the membrane barely responds",
+      "the Nernst equation predicts the membrane potential well only for an ion the membrane is actually permeable to"
+    ]
+  },
+  {
+    "id": "w04-bd-04", "type": "bd", "competencyId": "w4-myelin", "dok": 3,
+    "prompt": "Without notes, explain how myelin and the nodes of Ranvier speed up conduction, and predict what happens to an action potential when it reaches a stretch of axon that has lost its myelin.",
+    "rubric": [
+      "myelin insulates the axon, reducing current leak across the membrane between nodes",
+      "voltage gated Na+ channels are concentrated at the nodes of Ranvier",
+      "current spreads quickly through the cytoplasm from one node to the next and the action potential is regenerated only at the nodes (saltatory conduction)",
+      "a demyelinated segment leaks current and has few Na+ channels, so the depolarization decays as it crosses it",
+      "the signal reaches the next node smaller and later, so conduction slows",
+      "if the depolarization falls below threshold at the next node, conduction fails (conduction block)",
+      "the functional result is delayed or lost signals, such as weakness, numbness or blurred vision depending on the pathway"
+    ]
+  },
+  {
+    "id": "w04-bd-05", "type": "bd", "competencyId": "w4-refractory", "dok": 3,
+    "prompt": "Without notes, describe the absolute and relative refractory periods in terms of channel states. Then explain how the refractory period sets the maximum firing frequency of an axon and why it keeps an action potential from traveling backward.",
+    "rubric": [
+      "absolute refractory period: Na+ channels are inactivated, so no stimulus of any strength can start a second action potential",
+      "relative refractory period: some Na+ channels have recovered but K+ channels are still open, so a stronger than normal stimulus is needed and the action potential is smaller",
+      "maximum firing frequency is about 1 divided by the absolute refractory period (about 1 ms gives roughly 1000 per second)",
+      "the membrane just behind the traveling action potential is refractory",
+      "current spreading backward cannot re-excite that refractory membrane, so the action potential moves only forward from the trigger zone"
+    ]
+  },
+  {
+    "id": "w04-bd-06", "type": "bd", "competencyId": "w4-ion-disturbance", "dok": 3,
+    "prompt": "A patient with kidney failure has a plasma K+ of 7.5 mmol/L (normal 3.5 to 5.0). Without notes, explain step by step what this does to the resting potential and excitability of neurons and muscle cells, both at first and if the high K+ persists.",
+    "rubric": [
+      "the outside to inside K+ ratio rises, so the K+ equilibrium potential becomes less negative",
+      "the resting membrane potential depolarizes toward threshold",
+      "at first the cell needs less depolarization to fire, so excitability rises (tingling, cramps)",
+      "a sustained depolarization drives voltage gated Na+ channels into the inactivated state",
+      "inactivated Na+ channels cannot reopen until the membrane repolarizes, so the cell can no longer fire",
+      "the lasting result is reduced excitability: muscle weakness and, in the heart, conduction failure or arrhythmia"
+    ]
+  },
+  {
+    "id": "w04-bd-07", "type": "bd", "competencyId": "w4-lab-ap-simulation", "dok": 3,
+    "prompt": "In the neuron simulation you apply tetrodotoxin (TTX) in one run and tetraethylammonium (TEA) in another. Without notes, predict how each drug changes the action potential tracing and explain each change in terms of the channel it blocks.",
+    "rubric": [
+      "TTX blocks voltage gated Na+ channels",
+      "with TTX there is no upstroke and no action potential (a partial block gives a higher threshold and a smaller peak)",
+      "TEA blocks voltage gated K+ channels",
+      "with TEA the upstroke and peak are normal because Na+ channels are untouched",
+      "with TEA repolarization is slow and prolonged and the afterhyperpolarization disappears",
+      "the membrane still repolarizes eventually with TEA because Na+ channels inactivate and K+ leak channels remain open"
+    ]
+  },
+  {
+    "id": "w04-bd-08", "type": "bd", "competencyId": "w4-lab-nerve-conduction", "dok": 3,
+    "prompt": "A compound action potential is recorded 8 cm from the stimulating electrode. The first deflection appears at 1.6 ms and the last at 8 ms. Without notes, show how to calculate the conduction velocity of the fastest and slowest fibers and explain why the response is spread out over time instead of arriving all at once.",
+    "rubric": [
+      "velocity equals distance divided by time, with distance converted to meters (8 cm is 0.08 m)",
+      "fastest fibers: 0.08 m divided by 0.0016 s is 50 m/s",
+      "slowest fibers: 0.08 m divided by 0.008 s is 10 m/s",
+      "a nerve contains axons of different diameters and degrees of myelination",
+      "large myelinated axons conduct fastest and arrive first; small or unmyelinated axons conduct slowest and arrive last",
+      "the compound action potential is the sum of many single axon action potentials, so different arrival times spread it out"
+    ]
+  },
+
+  {
+    "id": "w04-app-01", "type": "app", "competencyId": "w2-nernst", "dok": 3,
+    "case": "A researcher measures Cl- in a neuron at 37 C (98.6 F): intracellular Cl- is 5 mmol/L and extracellular Cl- is 110 mmol/L. The neuron's resting potential is -70 mV. A neurotransmitter then opens Cl- channels on the cell.",
+    "stem": "What is the approximate equilibrium potential for Cl-, and what happens when the Cl- channels open at -70 mV?",
+    "options": [
+      "About -82 mV; Cl- enters the cell and the membrane hyperpolarizes toward -82 mV",
+      "About +82 mV; Cl- leaves the cell and the membrane depolarizes",
+      "About -82 mV; Cl- leaves the cell and the membrane depolarizes toward threshold",
+      "About 0 mV; there is no net Cl- movement because Cl- is not a signaling ion"
+    ],
+    "correct": 0,
+    "why": "The ratio outside to inside is 110 over 5, or 22, and the log of 22 is about 1.34. For a -1 ion the sign flips, so the equilibrium potential is about -61 times 1.34, or about -82 mV. At -70 mV the cell is less negative than -82 mV, so the electrical force pushing Cl- out is weaker than the chemical force pushing it in. Cl- enters, carrying negative charge in, and the membrane moves toward -82 mV. That is an inhibitory response.",
+    "whyNot": [
+      "Correct. The negative sign for an anion with a higher outside concentration, and movement toward its equilibrium potential, are both predicted by the Nernst equation.",
+      "The magnitude is right but the sign is wrong. For an anion that is high outside, the inside must be negative to keep Cl- from entering, so the equilibrium potential is negative.",
+      "The equilibrium potential is right but the direction is wrong. An ion moves so as to bring the membrane toward its own equilibrium potential. From -70 mV toward -82 mV means negative charge must enter, so Cl- goes in.",
+      "Zero would require equal concentrations on both sides. Cl- has a 22 fold gradient, and Cl- channels are the basis of most fast inhibition in the CNS."
+    ]
+  },
+  {
+    "id": "w04-app-02", "type": "app", "competencyId": "w2-resting-potential", "dok": 3,
+    "case": "A neuron rests at -70 mV. Its K+ equilibrium potential is -90 mV and its Na+ equilibrium potential is +60 mV, and its threshold is -55 mV. A drug opens extra K+ channels in the membrane, tripling the resting K+ permeability without changing Na+ permeability or the ion gradients.",
+    "stem": "Predict the new resting potential and the effect on how easily the neuron fires.",
+    "options": [
+      "The resting potential moves toward -90 mV and the neuron becomes harder to fire",
+      "The resting potential moves toward +60 mV and the neuron becomes easier to fire",
+      "The resting potential does not change, because the Na+/K+ pump sets the resting potential",
+      "The resting potential moves toward -55 mV and the neuron fires more easily because K+ enters the cell"
+    ],
+    "correct": 0,
+    "why": "The resting potential is a weighted average of the equilibrium potentials, weighted by permeability. At rest K+ already dominates, which is why -70 mV sits close to -90 mV. Tripling K+ permeability gives K+ even more of a say, so the potential moves closer to -90 mV. That widens the gap to threshold from 15 mV to something larger, so a bigger stimulus is now needed. This is how many inhibitory signals and some anesthetics work.",
+    "whyNot": [
+      "Correct. More K+ permeability means more K+ efflux and a potential closer to the K+ equilibrium potential.",
+      "This would follow from raising Na+ permeability, which is what happens during the action potential upstroke, not from raising K+ permeability.",
+      "The pump maintains the gradients but contributes only a few mV directly. The resting potential is set by which ions the membrane is permeable to, and that just changed.",
+      "K+ is high inside, so opening K+ channels lets K+ out, not in. K+ efflux carries positive charge out and hyperpolarizes the cell, moving it away from -55 mV."
+    ]
+  },
+  {
+    "id": "w04-app-03", "type": "app", "competencyId": "w2-lab-membrane-potential", "dok": 3,
+    "case": "In the membrane potential simulation, intracellular K+ is fixed at 150 mmol/L. A student sets extracellular K+ to 50 mmol/L; the Nernst prediction is about -29 mV and the simulation reports -31 mV. The student resets K+ to normal (5 mmol/L outside), then lowers extracellular Na+ from 150 to 15 mmol/L. The Nernst prediction for Na+ moves from about +60 mV to about 0 mV, but the simulated resting potential changes by only about 3 mV.",
+    "stem": "Why did the K+ change match the Nernst prediction closely while the Na+ change did not?",
+    "options": [
+      "The resting membrane is far more permeable to K+ than to Na+, so the resting potential follows the K+ equilibrium potential and barely responds to the Na+ equilibrium potential",
+      "The Nernst equation applies only to positive ions that are high inside the cell, so it cannot be used for Na+",
+      "The measurement was made too soon; given enough time the resting potential would move to 0 mV to match the Na+ prediction",
+      "Na+ has no real concentration gradient across the membrane, so changing it cannot affect any potential"
+    ],
+    "correct": 0,
+    "why": "The Nernst equation tells you where the membrane potential would sit if the membrane were permeable to only that ion. The real resting potential is a permeability weighted average, and at rest K+ permeability is roughly 40 times Na+ permeability. So the membrane tracks the K+ equilibrium potential closely and gives the Na+ equilibrium potential only a small vote. That is exactly what the data show: a near perfect match for K+ and a 3 mV nudge for Na+.",
+    "whyNot": [
+      "Correct. Permeability decides which equilibrium potential the membrane actually follows.",
+      "The Nernst equation works for any ion, positive or negative, whichever side is higher. The +60 mV prediction for Na+ is a valid Nernst result; it just carries little weight at rest.",
+      "The simulated potential is at steady state. Na+ permeability at rest stays low no matter how long you wait, so the membrane never approaches the Na+ prediction unless Na+ channels open.",
+      "Na+ has a large gradient, about tenfold, and that gradient is what drives the action potential upstroke. It simply has little influence while Na+ channels are closed."
+    ]
+  },
+  {
+    "id": "w04-app-04", "type": "app", "competencyId": "w4-myelin", "dok": 3,
+    "case": "A patient develops tingling in the feet and weakness in the legs over several days. A nerve conduction study of the peroneal nerve shows a velocity of 18 m/s (normal 45 to 60) with a response of nearly normal amplitude. An immune attack has stripped the myelin from several segments along many axons, each segment about 2 mm long. The exposed membrane in those segments has very few voltage gated Na+ channels.",
+    "stem": "Predict what happens to an action potential as it reaches one of these demyelinated segments.",
+    "options": [
+      "The depolarization spreads passively across the bare segment, decaying like a graded potential, and reaches the next node smaller and later; if it falls below threshold there, conduction stops",
+      "The bare segment regenerates action potentials at every point along its length, so conduction across it is faster than in the myelinated parts",
+      "The action potential reverses direction at the segment and travels back toward the cell body",
+      "The action potential crosses the segment unchanged, because action potentials are all or none and cannot be reduced"
+    ],
+    "correct": 0,
+    "why": "Between nodes, a myelinated axon relies on passive current spread with almost no leak. Strip the myelin and the segment leaks current, and without Na+ channels it cannot regenerate the signal. The depolarization arrives at the next node weaker and delayed. Across many such segments the delays add up, which is the slowed velocity. Where the signal drops below threshold, the axon simply stops conducting, which produces the weakness and numbness. The amplitude of the compound response is near normal because the axons themselves are still present.",
+    "whyNot": [
+      "Correct. A bare segment behaves like a leaky cable, not like an excitable membrane, so the signal decays across it.",
+      "Regeneration at every point needs voltage gated Na+ channels along the whole segment. Demyelinated internodal membrane has few, and even in an unmyelinated axon continuous conduction is slower than saltatory, not faster.",
+      "Direction is set by the refractory membrane behind the action potential, which has not changed. Demyelination slows or blocks the signal; it does not turn it around.",
+      "All or none describes the action potential at a site that fires. It does not mean the passive current between sites is protected from decay. If the current that arrives is too small, no action potential fires at all."
+    ]
+  },
+  {
+    "id": "w04-app-05", "type": "app", "competencyId": "w4-refractory", "dok": 3,
+    "case": "A sensory axon has an absolute refractory period of 2 ms followed by a relative refractory period lasting a further 3 ms. In the lab, the axon is stimulated with a strong pulse and then a second pulse of the same strength is delivered at different intervals.",
+    "stem": "What is the highest firing rate this axon can sustain, and what will a second pulse delivered 3 ms after the first do?",
+    "options": [
+      "About 500 per second; a pulse at 3 ms lands in the relative refractory period and produces a smaller action potential only if it is strong enough",
+      "About 200 per second; a pulse at 3 ms produces no action potential at all because the axon is still absolutely refractory",
+      "About 500 per second; a pulse at 3 ms produces a normal full sized action potential because the absolute period has ended",
+      "About 2000 per second; a pulse at 3 ms produces a larger than normal action potential because K+ channels are still open"
+    ],
+    "correct": 0,
+    "why": "The absolute refractory period sets the ceiling. One action potential every 2 ms is 1 divided by 0.002, or 500 per second. At 3 ms the absolute period is over, but the axon is 1 ms into its relative period: only some Na+ channels have recovered and K+ channels are still open, so it takes a stronger than usual stimulus to reach threshold and the resulting action potential is smaller because less Na+ current is available.",
+    "whyNot": [
+      "Correct. Both the rate ceiling and the behavior during the relative period follow from the channel states.",
+      "The 200 per second figure treats the whole 5 ms as absolute. Only the first 2 ms is absolute; the pulse at 3 ms falls in the relative period, where a strong stimulus can fire the axon.",
+      "The rate is right, but at 3 ms the axon is not fully recovered. With K+ channels open and some Na+ channels still inactivated, the response is reduced, not normal. A full response would need about 5 ms.",
+      "A 2000 per second rate would require a 0.5 ms absolute period. And open K+ channels oppose depolarization, so the action potential is smaller, never larger."
+    ]
+  },
+  {
+    "id": "w04-app-06", "type": "app", "competencyId": "w4-ion-disturbance", "dok": 3,
+    "case": "A patient with kidney failure arrives with muscle weakness. Plasma K+ is 7.2 mmol/L (normal 3.5 to 5.0). The team gives insulin with glucose, which drives K+ from the plasma into cells. Two hours later plasma K+ is 5.0 mmol/L. Intracellular K+ was about 150 mmol/L throughout and changed very little.",
+    "stem": "Predict what the treatment did to the resting potential and the voltage gated Na+ channels of the patient's muscle cells.",
+    "options": [
+      "The resting potential moved back toward -70 mV (more negative), Na+ channels recovered from inactivation, and the cells can fire normally again",
+      "The resting potential depolarized further, because moving K+ into the cells raised intracellular K+",
+      "The resting potential became more negative, but the Na+ channels stay inactivated permanently once hyperkalemia has occurred",
+      "Nothing changed, because moving K+ from plasma into cells does not alter the K+ gradient across the membrane"
+    ],
+    "correct": 0,
+    "why": "At 7.2 mmol/L the outside to inside ratio was 7.2 over 150, giving a K+ equilibrium potential of about -80 mV instead of the usual -90 mV, and the resting potential had depolarized with it. Holding the membrane depolarized had inactivated a fraction of the Na+ channels, which is why the muscles were weak. Lowering plasma K+ to 5.0 mmol/L steepens the gradient again, the resting potential returns toward its normal value, and once the membrane repolarizes the inactivation gates reset. Excitability returns.",
+    "whyNot": [
+      "Correct. Repolarization is exactly what inactivated Na+ channels need in order to recover.",
+      "Intracellular K+ was 150 mmol/L and barely moved; the meaningful change is the fall in extracellular K+, which steepens the gradient and makes the potential more negative, not less.",
+      "Inactivation is reversible. The gates reset as soon as the membrane repolarizes; that reset is what ends every normal refractory period.",
+      "The gradient is the ratio of outside to inside. Dropping the outside value from 7.2 to 5.0 with the inside fixed changes that ratio and therefore the K+ equilibrium potential."
+    ]
+  },
+  {
+    "id": "w04-app-07", "type": "app", "competencyId": "w4-lab-ap-simulation", "dok": 3,
+    "case": "In the neuron simulation, a control action potential peaks at +35 mV, returns to -70 mV within 2 ms, and shows an afterhyperpolarization to -78 mV. After a drug is added, the action potential peaks at +33 mV, takes 9 ms to return to -70 mV, and shows no afterhyperpolarization.",
+    "stem": "Which channel does the drug block, and what happens to the maximum firing frequency of this neuron?",
+    "options": [
+      "Voltage gated K+ channels; maximum firing frequency falls because the prolonged action potential lengthens the refractory period",
+      "Voltage gated Na+ channels; maximum firing frequency falls because no action potentials can be generated",
+      "K+ leak channels; maximum firing frequency rises because the resting potential is now closer to threshold",
+      "Voltage gated K+ channels; maximum firing frequency rises because the membrane stays depolarized near threshold for longer"
+    ],
+    "correct": 0,
+    "why": "A normal upstroke and peak say the Na+ channels are fine. Slow repolarization with no afterhyperpolarization is the signature of a missing voltage gated K+ current; the membrane repolarizes only through Na+ inactivation and leak channels, which is slow. Na+ channels recover from inactivation only after the membrane repolarizes, so a 9 ms action potential keeps the neuron refractory far longer than a 2 ms one. The next action potential cannot start until then, so the firing ceiling drops.",
+    "whyNot": [
+      "Correct. The tracing points to K+ channel block, and the longer refractory period lowers the rate ceiling.",
+      "Blocking Na+ channels would abolish or shrink the upstroke. Here the peak is essentially unchanged at +33 mV, so Na+ channels are working.",
+      "Blocking leak channels would shift the resting potential and make the baseline less negative, but it would not stretch repolarization from 2 to 9 ms. Voltage gated K+ channels do that job.",
+      "Staying depolarized does not help firing. Na+ channels are inactivated while the membrane is depolarized and cannot reopen until it repolarizes, so a longer action potential means a longer wait before the next one."
+    ]
+  },
+  {
+    "id": "w04-app-08", "type": "app", "competencyId": "w4-lab-nerve-conduction", "dok": 3,
+    "case": "You stimulate a frog sciatic nerve and record the compound action potential 10 cm away. The first, largest deflection begins at 2.5 ms. A second, smaller deflection begins at 5.0 ms. A single stimulus pulse was delivered.",
+    "stem": "What are the conduction velocities of the fibers producing the two deflections, and what accounts for the difference?",
+    "options": [
+      "The first deflection is from fibers conducting at 40 m/s and the second from fibers conducting at 20 m/s; the nerve contains large and small myelinated axons that conduct at different speeds",
+      "The first deflection is from fibers conducting at 40 m/s and the second shows the same fibers firing a second action potential",
+      "Both deflections come from fibers conducting at 40 m/s; the second is delayed by the absolute refractory period",
+      "The first deflection is from fibers conducting at 4 m/s and the second at 2 m/s; small unmyelinated fibers arrive first because they have less membrane to charge"
+    ],
+    "correct": 0,
+    "why": "Velocity is distance over time. The distance is 0.10 m, so 0.10 divided by 0.0025 s is 40 m/s and 0.10 divided by 0.0050 s is 20 m/s. A nerve is a bundle of axons of different diameters and myelination, and each group arrives at its own time. The large myelinated fibers get there first and make the biggest deflection; smaller fibers arrive later. A compound action potential is just the sum of all of these.",
+    "whyNot": [
+      "Correct. Two populations of fibers with two velocities give two separate deflections from one stimulus.",
+      "One stimulus pulse produces one action potential per axon. There is no second stimulus, so the fast fibers have no reason to fire again 2.5 ms later.",
+      "The refractory period limits how soon an axon can fire again; it does not delay a single action potential in transit. A second deflection from the same fibers would need a second stimulus.",
+      "The velocities are off by a factor of ten because the distance was left in centimeters. And small unmyelinated fibers are the slowest, so they arrive last, not first."
+    ]
+  },
+  {
+    "id": "w04-app-09", "type": "app", "competencyId": "w4-graded-potentials", "dok": 3,
+    "case": "A neuron rests at -70 mV and its threshold is -55 mV. It receives two excitatory synapses. Synapse A is on a distal dendrite 600 micrometers from the trigger zone. Synapse B is on the cell body right next to the trigger zone. Each synapse produces a 12 mV depolarization at its own location. The signal from A has decayed to 5 mV by the time it reaches the trigger zone; the signal from B arrives at 11 mV.",
+    "stem": "Predict whether the neuron fires when A fires alone, when B fires alone, and when A and B fire at the same time.",
+    "options": [
+      "Neither synapse alone fires the neuron, but A and B together do, because 5 plus 11 mV brings the trigger zone past -55 mV",
+      "B alone fires the neuron because 12 mV is close enough to the 15 mV needed",
+      "Both synapses fire the neuron on their own, because each produces 12 mV and 12 mV is a strong signal",
+      "The neuron never fires, because graded potentials from different synapses cannot add together"
+    ],
+    "correct": 0,
+    "why": "The trigger zone needs 15 mV of depolarization to go from -70 to -55 mV. What counts is the voltage that arrives there, not the voltage at the synapse. A delivers 5 mV and B delivers 11 mV; neither reaches 15 mV alone. When both arrive together the graded potentials add (spatial summation), giving 16 mV and a membrane potential of -54 mV, which is past threshold. The distal synapse contributes less because current leak and cytoplasmic resistance drain it along the way.",
+    "whyNot": [
+      "Correct. Subthreshold alone, suprathreshold when summed.",
+      "Close is not enough. Threshold is a tipping point; 11 mV at the trigger zone leaves the membrane at -59 mV, and below threshold the potential simply decays back to rest.",
+      "The 12 mV values are measured at the synapses. Graded potentials decay with distance, and the decision is made at the trigger zone, where A delivers only 5 mV.",
+      "Adding graded potentials from different locations is spatial summation, and it is the normal way a neuron combines inputs to reach threshold."
+    ]
+  },
+  {
+    "id": "w04-app-10", "type": "app", "competencyId": "w4-intensity-coding", "dok": 3,
+    "case": "A pressure receptor in the skin is tested with a recording electrode on its sensory axon. A light touch produces 10 action potentials per second. A firm press produces 80 per second. Every action potential is 100 mV in amplitude in both trials. The axon's absolute refractory period is 1 ms.",
+    "stem": "Predict what happens to the signal from this axon and from the skin as a whole when the pressure is increased far beyond a firm press.",
+    "options": [
+      "Firing rate rises toward a ceiling of about 1000 per second set by the refractory period; beyond that, extra intensity is signaled by recruiting more sensory axons, not by this one",
+      "Action potential amplitude grows above 100 mV in proportion to the pressure, and the brain reads the amplitude",
+      "Firing rate keeps rising without limit as long as the pressure keeps rising",
+      "The axon stops firing because the graded potential at the receptor becomes too large and overshoots threshold"
+    ],
+    "correct": 0,
+    "why": "Amplitude is all or none, so it stays at 100 mV. Intensity is coded as frequency, and a larger receptor potential drives the trigger zone back to threshold sooner after each spike. But the axon cannot fire again until its Na+ channels recover, so 1 divided by 0.001 s, about 1000 per second, is the most this axon can do. Once it saturates, the only remaining way to signal more pressure is for the stimulus to spread and activate additional receptors, which is population coding.",
+    "whyNot": [
+      "Correct. Frequency coding within the axon up to the refractory limit, then population coding across axons.",
+      "Amplitude is fixed by the ion gradients and the channels available. The data already show this: light touch and firm press both gave 100 mV.",
+      "The absolute refractory period puts a hard ceiling on rate. No axon can fire again while its Na+ channels are inactivated.",
+      "A graded potential cannot overshoot threshold in a harmful way. A larger receptor potential simply keeps the trigger zone above threshold so it fires again as soon as the refractory period ends."
+    ]
+  },
+  {
+    "id": "w04-app-11", "type": "app", "competencyId": "w4-conduction-velocity", "dok": 3,
+    "case": "A person steps on a tack. The foot is 1.2 m from the spinal cord. Three kinds of sensory axons carry the news: large myelinated A beta touch fibers at 60 m/s, small myelinated A delta sharp pain fibers at 15 m/s, and unmyelinated C fibers for burning pain at 1 m/s.",
+    "stem": "Predict the order and timing of arrival of these three signals at the spinal cord.",
+    "options": [
+      "Touch at about 20 ms, sharp pain at about 80 ms, burning pain at about 1200 ms; large myelinated fibers first, unmyelinated last",
+      "All three arrive together at about 20 ms, because action potentials are all or none and travel at the same speed",
+      "Burning pain first, because C fibers are unmyelinated and lose no time regenerating the signal at nodes",
+      "Touch at about 20 ms, sharp pain at about 80 ms, burning pain at about 120 ms"
+    ],
+    "correct": 0,
+    "why": "Time equals distance divided by velocity. For 1.2 m: 1.2 over 60 is 0.02 s (20 ms), 1.2 over 15 is 0.08 s (80 ms), and 1.2 over 1 is 1.2 s (1200 ms). This matches the everyday experience of feeling the contact, then a sharp jab, then a slow burning ache well over a second later. Diameter and myelin set the order: the biggest myelinated fibers use saltatory conduction with low internal resistance, and the thin unmyelinated fibers must regenerate the signal at every point.",
+    "whyNot": [
+      "Correct. The arithmetic and the fiber properties both give this order.",
+      "All or none refers to amplitude, not speed. Velocity depends on diameter and myelination, so the three fiber types arrive at very different times.",
+      "Continuous conduction in unmyelinated fibers is the slow method, not the fast one. Regenerating at every point takes far longer than jumping node to node.",
+      "The first two times are right, but 1.2 m at 1 m/s takes 1.2 s, not 0.12 s. This answer uses 10 m/s for the C fibers."
+    ]
+  },
+  {
+    "id": "w04-app-12", "type": "app", "competencyId": "w4-glia-functions", "dok": 3,
+    "case": "During a seizure, neurons in one region fire rapidly and release K+ into the surrounding extracellular fluid. Astrocytes normally take this K+ up. In an experiment, astrocyte K+ uptake is blocked and extracellular K+ in the region rises from 3 to 10 mmol/L. Intracellular K+ in the neurons stays at about 150 mmol/L.",
+    "stem": "Predict the effect of the blocked uptake on neighboring neurons that were not part of the original firing.",
+    "options": [
+      "Their K+ equilibrium potential becomes less negative, so they depolarize toward threshold and become easier to fire, spreading the abnormal activity",
+      "They hyperpolarize, because extra K+ outside pulls more K+ out of the cells, so the seizure stops on its own",
+      "They are unaffected, because extracellular K+ does not influence the resting potential",
+      "They fire larger action potentials, because the extra extracellular K+ increases the Na+ driving force"
+    ],
+    "correct": 0,
+    "why": "Astrocytes act as a K+ buffer. Without that buffering, the outside to inside ratio for K+ rises from 3 over 150 to 10 over 150, moving the K+ equilibrium potential from about -104 mV to about -72 mV. The resting potential of nearby neurons follows it toward threshold, so they fire more easily and the seizure activity recruits cells that were not originally involved. If the depolarization persists, Na+ channels would eventually inactivate, but the first effect is increased excitability.",
+    "whyNot": [
+      "Correct. Extracellular K+ sets the K+ equilibrium potential, and the resting potential follows.",
+      "More K+ outside means a smaller gradient and less K+ leaving, which depolarizes rather than hyperpolarizes. Raising extracellular K+ never hyperpolarizes a cell.",
+      "Extracellular K+ is one of the strongest influences on the resting potential, because the resting membrane is mostly permeable to K+.",
+      "Action potential amplitude is set by the Na+ gradient and channel availability, and both are unchanged or reduced here; a depolarized membrane actually has fewer available Na+ channels, so spikes get smaller, not larger."
+    ]
+  }
+]

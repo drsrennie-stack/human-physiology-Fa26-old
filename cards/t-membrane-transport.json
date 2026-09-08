@@ -1791,16 +1791,16 @@
    "tags": [
     "lecture"
    ],
-   "q": "Why must the Na+/K+ ATPase sit only on the basolateral membrane of an absorptive epithelial cell, and never on the apical side facing the lumen?",
-   "a": "It has to pump Na+ out into the blood side to keep Na+ low inside the cell, which is what gives the apical SGLT the gradient it uses to pull glucose in from the lumen.",
+   "q": "In a polarized absorptive epithelial cell, where is the Na+/K+ ATPase found?",
+   "a": "Only on the basolateral membrane.",
    "options": [
-    "It keeps intracellular Na+ low by pumping into the blood side, which powers the apical SGLT to pull glucose in",
-    "It would be destroyed by digestive enzymes if it faced the lumen",
-    "It only works when it is in contact with capillary blood",
-    "Its position does not matter, since it pumps Na+ in both directions"
+    "Only in the tight junction",
+    "Only on the apical membrane",
+    "Only on the basolateral membrane",
+    "Evenly on both membranes"
    ],
-   "correctIndex": 0,
-   "explanation": "Absorption depends on the two membranes doing different jobs, which is what polarity means. The pump on the basolateral side spends ATP to keep cytosolic Na+ low, and the apical SGLT then rides that Na+ gradient downhill and drags glucose in against its own gradient. If the pump sat on the apical membrane it would be pumping Na+ back into the lumen, the gradient across the apical membrane would collapse, and secondary active transport of glucose would stop. Protection from digestive enzymes is not the reason; the pump's catalytic sites face the cytosol, and other apical proteins survive the lumen. The pump needs ATP and its own ions, not physical contact with blood. And it does not run in both directions in the cell; it is a directional pump, three Na+ out and two K+ in per ATP."
+   "correctIndex": 2,
+   "explanation": "The pump is restricted to the basolateral membrane, where it moves absorbed Na+ toward the blood and, by keeping intracellular Na+ low, maintains the gradient that apical carriers depend on. An apical pump would push Na+ back into the lumen. An even distribution would cancel any net direction of transport, and junction proteins do not pump ions."
   },
   {
    "id": "c99",

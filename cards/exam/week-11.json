@@ -1,0 +1,656 @@
+[
+  {
+    "id": "w11-ma-01", "type": "ma", "competencyId": "w10-plasma", "dok": 2,
+    "stem": "Which of the following are true of plasma proteins? Select all that apply.",
+    "options": [
+      "Albumin is the main source of the colloid osmotic pressure that pulls fluid back into capillaries.",
+      "Most plasma proteins are made by the liver.",
+      "Gamma globulins (antibodies) are made by the liver in response to infection.",
+      "Fibrinogen is a soluble precursor that thrombin converts to insoluble fibrin.",
+      "Plasma proteins cross capillary walls freely, so their concentration in interstitial fluid matches plasma."
+    ],
+    "correct": [0, 1, 3],
+    "why": "Plasma proteins do three kinds of work. Albumin, the most abundant, holds water in the vessels by colloid osmotic pressure. Fibrinogen and other clotting factors protect against blood loss. Globulins carry lipids and hormones or, in the case of gamma globulins, act as antibodies. The liver makes nearly all of them, which is why liver failure causes edema and bleeding at the same time.",
+    "whyNot": [
+      "Belongs. Albumin is small and abundant, so it contributes most of the osmotic pull that opposes filtration.",
+      "Belongs. The liver synthesizes albumin, fibrinogen, most globulins, and the clotting factors.",
+      "Wrong. Antibodies are made by plasma cells, which are activated B lymphocytes, not by the liver. This is the one plasma protein family the liver does not make.",
+      "Belongs. Fibrinogen circulates dissolved in plasma until thrombin cuts it into fibrin, which polymerizes into the clot mesh.",
+      "Wrong. Plasma proteins are too large to cross the capillary wall in any quantity. That is exactly why they stay in plasma and generate an osmotic gradient. If they crossed freely there would be no gradient."
+    ]
+  },
+  {
+    "id": "w11-ma-02", "type": "ma", "competencyId": "w10-hematocrit", "dok": 2,
+    "stem": "Which of the following would raise a person's measured hematocrit? Select all that apply.",
+    "options": [
+      "Dehydration that shrinks plasma volume",
+      "Living at high altitude for several months",
+      "Slow, chronic blood loss from a bleeding ulcer",
+      "Iron deficiency",
+      "Rapid infusion of 2 L of isotonic saline",
+      "Repeated erythropoietin injections"
+    ],
+    "correct": [0, 1, 5],
+    "why": "Hematocrit is the fraction of blood volume occupied by red cells, so it rises when red cell mass rises or when plasma volume falls. Only the first change means more oxygen carrying capacity. The second is a concentration artifact that can hide a real anemia. Any test of hematocrit has to be read with the patient's hydration in mind.",
+    "whyNot": [
+      "Belongs. Less plasma with the same number of red cells packs the cells into a larger fraction of the volume.",
+      "Belongs. Low oxygen at altitude raises erythropoietin, and over weeks the marrow adds red cells.",
+      "Wrong. Chronic bleeding loses red cells faster than the marrow replaces them, and the lost iron limits new hemoglobin. Hematocrit falls.",
+      "Wrong. Without iron the marrow cannot build hemoglobin, so the cells that are made are small and few. Hematocrit falls.",
+      "Wrong. Saline adds plasma volume and no cells, so the same red cell mass sits in a larger volume. Hematocrit falls. This is the reverse of dehydration.",
+      "Belongs. Erythropoietin is the marrow's signal to make red cells, so injecting it raises red cell mass whether or not the body needed it."
+    ]
+  },
+  {
+    "id": "w11-ma-03", "type": "ma", "competencyId": "w10-rbc-hemoglobin", "dok": 2,
+    "stem": "Which statements correctly connect red blood cell structure to its function? Select all that apply.",
+    "options": [
+      "The biconcave shape gives a large surface area relative to volume, which speeds gas exchange.",
+      "Lacking a nucleus, the mature red cell cannot make new proteins or repair itself, which limits its lifespan to about 120 days.",
+      "Each hemoglobin molecule binds one oxygen molecule at a time.",
+      "Lacking mitochondria, the red cell does not consume the oxygen it carries.",
+      "The flexible membrane lets the cell fold to squeeze through capillaries narrower than itself.",
+      "Oxygen binds to the globin chains rather than to the iron in heme."
+    ],
+    "correct": [0, 1, 3, 4],
+    "why": "The red cell gives up almost everything a cell normally has in order to carry hemoglobin. No nucleus and no organelles leave more room for hemoglobin and let the cell bend, but they also mean the cell cannot maintain itself and wears out in about four months. Hemoglobin itself has four globin chains, each holding one heme with one iron atom, and each iron reversibly binds one oxygen molecule, so one hemoglobin can carry four oxygen molecules.",
+    "whyNot": [
+      "Belongs. A disc with a dimple has more membrane per unit of volume than a sphere, so oxygen has a short path in and out.",
+      "Belongs. No nucleus means no transcription, so worn enzymes and membrane cannot be replaced. Macrophages in the spleen and liver remove the aging cells.",
+      "Wrong. Hemoglobin has four heme groups and can bind four oxygen molecules. One per molecule would cut oxygen carriage to a quarter of normal.",
+      "Belongs. Red cells make ATP by glycolysis only, so the oxygen they carry is delivered to tissues rather than burned on the way.",
+      "Belongs. Capillaries can be narrower than the red cell diameter. A rigid cell, as in sickle cell disease, lodges and blocks flow.",
+      "Wrong. Oxygen binds to the iron atom at the center of each heme. The globin chains hold the heme and change shape as oxygen loads, which affects affinity, but they are not the binding site."
+    ]
+  },
+  {
+    "id": "w11-ma-04", "type": "ma", "competencyId": "w10-rbc-destruction", "dok": 2,
+    "stem": "Which statements about what happens to hemoglobin after an old red cell is destroyed are correct? Select all that apply.",
+    "options": [
+      "Iron from heme is recovered, carried by transferrin, and reused by the marrow or stored in the liver.",
+      "The globin chains are broken down into amino acids that are reused.",
+      "The rest of the heme is converted to bilirubin, which travels to the liver bound to albumin.",
+      "Bilirubin is excreted mainly by the kidney without any modification.",
+      "If the liver cannot conjugate and secrete bilirubin, it accumulates and stains the skin and sclerae yellow.",
+      "Old red cells are removed mainly by neutrophils circulating in the blood."
+    ],
+    "correct": [0, 1, 2, 4],
+    "why": "Macrophages in the spleen and liver take up aged red cells and dismantle hemoglobin. The parts worth keeping, iron and amino acids, are recycled. The heme ring that is left is toxic and poorly soluble, so it is converted to bilirubin, shipped to the liver on albumin, conjugated to make it water soluble, and secreted in bile. Anything that overloads or blocks this path raises plasma bilirubin and produces jaundice.",
+    "whyNot": [
+      "Belongs. The body conserves iron carefully; almost all the iron in new red cells comes from recycled old ones.",
+      "Belongs. Globin is ordinary protein and goes back to the amino acid pool.",
+      "Belongs. Unconjugated bilirubin is not water soluble and must ride on albumin to reach the liver.",
+      "Wrong. Bilirubin leaves mainly in bile after the liver conjugates it. Gut bacteria then convert it to the pigments that color stool. The kidney excretes only the small conjugated fraction that spills into blood.",
+      "Belongs. Jaundice is the visible sign that bilirubin production has outrun the liver's ability to clear it, whether from too much hemolysis, liver damage, or a blocked bile duct.",
+      "Wrong. Neutrophils handle bacteria. Aged red cells are removed by macrophages, mostly in the spleen, which is why the spleen enlarges when red cell destruction is high."
+    ]
+  },
+  {
+    "id": "w11-ma-05", "type": "ma", "competencyId": "w10-leukocytes", "dok": 2,
+    "stem": "Which of the following pairings of leukocyte, function, and the condition that raises its count are correct? Select all that apply.",
+    "options": [
+      "Neutrophils rise in acute bacterial infection because they are the first phagocytes to reach the site.",
+      "Eosinophils rise in parasitic worm infections and in allergies.",
+      "Lymphocytes rise mainly in bacterial infections because they are the main phagocyte.",
+      "Monocytes leave the blood, become macrophages in tissue, and rise in chronic infections.",
+      "Basophils release histamine and heparin and take part in allergic reactions.",
+      "Neutrophils live for months in tissue and are the main antigen presenting cell."
+    ],
+    "correct": [0, 1, 3, 4],
+    "why": "Each white cell type has a job, and the differential count tells you which job the body is doing. Neutrophils are short lived phagocytes that pour out of the marrow in bacterial infection. Lymphocytes are the adaptive cells and rise with viral infection. Monocytes become the long lived tissue macrophages. Eosinophils attack parasites too big to swallow and are raised in allergy. Basophils and mast cells release the mediators of allergic inflammation.",
+    "whyNot": [
+      "Belongs. Neutrophils are the most numerous leukocyte and the first responders to bacteria. A high count with immature forms is the classic bacterial pattern.",
+      "Belongs. Eosinophils release toxic granules onto parasites and also dampen allergic reactions, so both conditions raise them.",
+      "Wrong. Lymphocytes are not phagocytes. They are B and T cells and rise most in viral infections. Bacterial infection raises neutrophils.",
+      "Belongs. Monocytes are the circulating form of the macrophage, which handles long lasting infections and cleans up debris.",
+      "Belongs. Basophil and mast cell granules hold histamine, which drives the vasodilation and leakage of an allergic reaction.",
+      "Wrong. Neutrophils live only hours to days and die at the site as pus. Macrophages and dendritic cells are the antigen presenting cells."
+    ]
+  },
+  {
+    "id": "w11-ma-06", "type": "ma", "competencyId": "w10-hemostasis", "dok": 2,
+    "stem": "Which of the following are true of platelet plug formation? Select all that apply.",
+    "options": [
+      "Platelets stick to exposed collagen with the help of von Willebrand factor.",
+      "Activated platelets release ADP and thromboxane A2, which recruit and activate more platelets.",
+      "Thromboxane A2 dilates the injured vessel so more platelets are delivered to the site.",
+      "The plug stays limited to the injured area because intact endothelium releases prostacyclin and nitric oxide, which inhibit platelets.",
+      "The platelet plug is held together by fibrin from the start, before any coagulation factor acts."
+    ],
+    "correct": [0, 1, 3],
+    "why": "Hemostasis begins with vascular spasm, then the platelet plug, then coagulation. Platelets normally ignore healthy endothelium. When collagen is exposed, von Willebrand factor bridges platelets to it, the platelets change shape and release granule contents, and ADP and thromboxane A2 pull in more platelets in a positive feedback loop. The plug is loose until fibrin from the coagulation cascade reinforces it.",
+    "whyNot": [
+      "Belongs. Von Willebrand factor is the glue between platelet receptors and collagen. Without it adhesion fails and bleeding time is long.",
+      "Belongs. This is the positive feedback that builds the plug quickly. Aspirin blocks thromboxane synthesis and slows it.",
+      "Wrong. Thromboxane A2 is a vasoconstrictor. It reinforces the vascular spasm that reduces flow through the injured vessel. Dilation would work against hemostasis.",
+      "Belongs. Healthy endothelium next to the injury actively keeps the plug from spreading. Loss of this braking is one reason damaged endothelium promotes thrombosis.",
+      "Wrong. Fibrin appears only after thrombin acts at the end of the coagulation cascade. The early plug is platelets sticking to each other, which is why it can be pushed apart by high flow until fibrin locks it."
+    ]
+  },
+  {
+    "id": "w11-ma-07", "type": "ma", "competencyId": "w10-lab-hematocrit", "dok": 2,
+    "stem": "A student spins a capillary tube of blood from an adult male and reads a hematocrit of 45 percent. The same sample gives a hemoglobin of 15 g/dL. Which statements about these results are correct? Select all that apply.",
+    "options": [
+      "The two values are consistent with each other by the rule of three (hemoglobin times three is close to hematocrit).",
+      "Both values fall within the normal range for an adult male (hematocrit 40 to 54 percent, hemoglobin 14 to 17 g/dL).",
+      "Hematocrit is the percentage of blood volume made up of plasma.",
+      "If the tube had been spun too briefly, the packed cell column would read falsely high because plasma is trapped among the cells.",
+      "A hemoglobin of 15 g/dL with a hematocrit of 30 percent would also be acceptable, since the two measurements are independent."
+    ],
+    "correct": [0, 1, 3],
+    "why": "Hematocrit and hemoglobin both measure red cell content, one by volume and one by pigment, so they should agree. In a normal sample hemoglobin in g/dL times three is close to hematocrit in percent. When they disagree, either the technique was wrong or the cells contain an abnormal amount of hemoglobin, and either way the sample needs a second look.",
+    "whyNot": [
+      "Belongs. Fifteen times three is 45, so the pair passes the check.",
+      "Belongs. Both numbers sit inside the male reference ranges given.",
+      "Wrong. Hematocrit is the red cell fraction, not the plasma fraction. A hematocrit of 45 percent means plasma is about 55 percent.",
+      "Belongs. Centrifugation has to pack the cells fully. An under spun column still has plasma between cells, so it reads high and overstates red cell mass.",
+      "Wrong. Fifteen times three predicts a hematocrit near 45, so 30 percent is far off. The two measurements are linked because both come from the same red cells, and a mismatch this large means one measurement is in error."
+    ]
+  },
+  {
+    "id": "w11-ma-08", "type": "ma", "competencyId": "w11-lymph-return", "dok": 2,
+    "stem": "Which statements about lymphatic return are correct? Select all that apply.",
+    "options": [
+      "About 3 liters of fluid leave the capillaries and return to the blood through the lymphatics each day.",
+      "Lymphatic capillaries have overlapping endothelial cells that act as one way flaps, so fluid and protein can enter but not leave.",
+      "Lymph is pushed along by a dedicated lymphatic heart.",
+      "Lymph passes through lymph nodes before it rejoins the blood at the subclavian veins.",
+      "If lymphatic vessels are blocked, protein accumulates in the interstitium and the tissue swells.",
+      "Lymph enters the blood through the hepatic portal vein."
+    ],
+    "correct": [0, 1, 3, 4],
+    "why": "Capillary filtration slightly exceeds reabsorption, and the excess, along with any protein that leaks out, has no way back except the lymphatics. Lymphatic capillaries are blind ended and leaky in one direction. Lymph moves by skeletal muscle squeezing, smooth muscle in larger vessels, breathing movements, and one way valves. It is filtered through nodes and returned at the junction of the subclavian and internal jugular veins.",
+    "whyNot": [
+      "Belongs. Roughly three liters a day, about the whole plasma volume, depends on lymphatic return.",
+      "Belongs. The flaps open when interstitial pressure rises and close when lymph pressure rises, trapping the fluid inside.",
+      "Wrong. There is no lymphatic pump organ in humans. Flow depends on muscle contraction, vessel smooth muscle, respiratory pressure changes, and valves. That is why swelling worsens with inactivity.",
+      "Belongs. Nodes filter lymph and expose it to lymphocytes and macrophages before it reenters circulation.",
+      "Belongs. Trapped protein raises interstitial osmotic pressure, which holds water in the tissue. This is lymphedema.",
+      "Wrong. The portal vein carries blood from the gut to the liver. Lymph enters the blood at the subclavian veins by way of the thoracic duct and right lymphatic duct."
+    ]
+  },
+  {
+    "id": "w11-ma-09", "type": "ma", "competencyId": "w15-innate-immunity", "dok": 2,
+    "stem": "Which of the following correctly describe an innate defense? Select all that apply.",
+    "options": [
+      "Skin and mucous membranes block entry, and this works against any pathogen without prior exposure.",
+      "Lysozyme in tears and saliva breaks down bacterial cell walls.",
+      "Natural killer cells must have met a virus before to recognize a cell infected by it.",
+      "Interferons released by an infected cell signal neighboring cells to make antiviral proteins.",
+      "Complement proteins can punch holes in bacterial membranes and coat bacteria for phagocytosis.",
+      "Innate defenses get stronger with each repeat exposure to the same pathogen."
+    ],
+    "correct": [0, 1, 3, 4],
+    "why": "Innate defenses are the ones you are born with. They recognize general features shared by many pathogens rather than one specific antigen, so they respond immediately and the same way every time. Barriers, chemical secretions, phagocytes, natural killer cells, complement, interferons, inflammation, and fever all belong here. They buy time while the slower adaptive response gets going.",
+    "whyNot": [
+      "Belongs. A barrier does not care what is trying to get in, which is what makes it nonspecific and immediate.",
+      "Belongs. Lysozyme is a chemical defense present before any infection, active against many bacteria.",
+      "Wrong. Natural killer cells act on the first day of an infection with no prior exposure. They kill cells that have lost normal self markers or show stress signals. Needing prior exposure describes adaptive lymphocytes.",
+      "Belongs. Interferons are a nonspecific antiviral warning system and work against many different viruses.",
+      "Belongs. Complement forms membrane attack complexes and opsonizes bacteria, and it can be activated without antibody.",
+      "Wrong. Innate defenses have no memory. They respond identically to the tenth exposure and the first. Improvement with repeat exposure is the hallmark of adaptive immunity."
+    ]
+  },
+  {
+    "id": "w11-ma-10", "type": "ma", "competencyId": "w15-antibodies", "dok": 2,
+    "stem": "Which statements about antibody structure and function are correct? Select all that apply.",
+    "options": [
+      "Each antibody has two identical antigen binding sites, one at the tip of each arm.",
+      "The variable regions of the heavy and light chains together form the antigen binding site.",
+      "The constant region (the stem) determines the antibody class and what it can recruit, such as complement or phagocytes.",
+      "Antibodies kill bacteria directly by digesting them.",
+      "Neutralization means the antibody covers the part of a toxin or virus that would bind to a host cell.",
+      "Opsonization means the antibody hides the target from phagocytes."
+    ],
+    "correct": [0, 1, 2, 4],
+    "why": "An antibody is a Y shaped protein. The two arms bind antigen, and because there are two identical sites the antibody can bridge two particles and clump them. The stem does not touch antigen; it is the handle that complement and phagocyte receptors grab. Antibodies do not kill anything themselves. They neutralize, agglutinate, opsonize, and activate complement, and other cells or proteins do the destruction.",
+    "whyNot": [
+      "Belongs. Two identical sites are what make agglutination and precipitation possible.",
+      "Belongs. The variable regions differ from one antibody to the next, which is what gives each its specificity.",
+      "Belongs. IgG, IgM, IgA, IgE, and IgD differ in their constant regions, and that region decides whether the antibody can cross the placenta, fix complement, or bind mast cells.",
+      "Wrong. Antibodies have no enzymatic activity against bacteria. Killing is done by complement, phagocytes, or natural killer cells that the antibody recruits.",
+      "Belongs. A neutralized toxin or virus is still present but cannot attach to its target, so it is harmless until cleared.",
+      "Wrong. Opsonization is the opposite. Antibody coating makes the target more visible to phagocytes, because phagocytes have receptors for the antibody stem."
+    ]
+  },
+  {
+    "id": "w11-ma-11", "type": "ma", "competencyId": "w15-immune-dysfunction", "dok": 2,
+    "stem": "Which of the following correctly classify a form of immune dysfunction by what the immune system is doing wrong? Select all that apply.",
+    "options": [
+      "In allergy, the immune system mounts a response against a harmless substance.",
+      "In autoimmunity, the immune system fails to treat the body's own tissue as self and attacks it.",
+      "In immunodeficiency, the immune system is overactive against normal tissue.",
+      "Anaphylaxis is an IgE and mast cell driven allergic response that can drop blood pressure within minutes.",
+      "Type 1 diabetes, in which T cells destroy pancreatic beta cells, is an example of immunodeficiency."
+    ],
+    "correct": [0, 1, 3],
+    "why": "The three categories answer three different questions. Is the response aimed at something harmless (allergy)? Is it aimed at self (autoimmunity)? Or is a needed part of the system missing or failing (immunodeficiency)? The first two are the system doing too much or the wrong thing. The third is the system doing too little.",
+    "whyNot": [
+      "Belongs. Pollen, peanut protein, and penicillin are harmless in themselves; the harm comes from the response.",
+      "Belongs. Tolerance to self normally removes or silences self reactive lymphocytes. Autoimmunity is a failure of that tolerance.",
+      "Wrong. Immunodeficiency is too little immune function, not too much. Overactivity against normal tissue is autoimmunity.",
+      "Belongs. IgE on mast cells triggers massive histamine release, which dilates arterioles and leaks fluid out of capillaries, so pressure falls fast.",
+      "Wrong. Destroying one's own beta cells is an attack on self, which is autoimmunity. The immune system here is fully capable; it is aimed at the wrong target."
+    ]
+  },
+  {
+    "id": "w11-ma-12", "type": "ma", "competencyId": "w10-coagulation", "dok": 2,
+    "stem": "Which statements about the coagulation cascade are correct? Select all that apply.",
+    "options": [
+      "The extrinsic pathway starts when tissue factor from damaged tissue outside the vessel contacts blood.",
+      "The intrinsic pathway starts when factor XII contacts exposed collagen or another negatively charged surface.",
+      "Both pathways converge on activation of factor X, which begins the common pathway.",
+      "Thrombin converts fibrinogen to fibrin and also activates factor XIII, which cross links the fibrin.",
+      "Calcium is required only in the intrinsic pathway.",
+      "Vitamin K is itself a clotting factor that is used up as the clot forms."
+    ],
+    "correct": [0, 1, 2, 3],
+    "why": "The cascade is a chain of enzymes, each one activating the next, that ends in thrombin. The two starting routes differ in the trigger. Tissue factor from outside the vessel starts the fast extrinsic route. Contact with collagen inside the vessel starts the slower intrinsic route. Both activate factor X, which with factor V and calcium converts prothrombin to thrombin. Thrombin then makes fibrin, stabilizes it, and feeds back to speed its own production.",
+    "whyNot": [
+      "Belongs. Tissue factor is the extrinsic trigger, and the prothrombin time tests this route.",
+      "Belongs. Contact activation of factor XII is the intrinsic trigger, and the partial thromboplastin time tests this route.",
+      "Belongs. Factor X activation is the meeting point, so a common pathway defect prolongs both laboratory tests.",
+      "Belongs. Thrombin has several jobs: it cleaves fibrinogen, activates factor XIII to cross link fibrin, and activates factors V, VIII, and XI to amplify the cascade.",
+      "Wrong. Calcium is needed at several steps in both starting pathways and in the common pathway. That is why removing calcium with citrate stops clotting completely.",
+      "Wrong. Vitamin K is not a clotting factor and is not consumed in the clot. It is a cofactor the liver uses to finish making factors II, VII, IX, and X so they can bind calcium."
+    ]
+  },
+
+  {
+    "id": "w11-tf-01", "type": "tf", "competencyId": "w10-plasma", "dok": 1,
+    "statement": "Albumin is the most abundant plasma protein and is the main contributor to plasma colloid osmotic pressure.",
+    "truth": true,
+    "correction": "True. Albumin makes up more than half of plasma protein by mass, and because it is small there are many molecules per gram, so it produces most of the osmotic pull that holds water inside capillaries.",
+    "why": "Colloid osmotic pressure depends on the number of protein particles, not their size. Albumin is both abundant and relatively small, so it wins on particle count. Lose albumin, as in liver failure or nephrotic syndrome, and fluid leaks out of the capillaries into tissue. Students sometimes credit fibrinogen or globulins, but those are larger and far less numerous."
+  },
+  {
+    "id": "w11-tf-02", "type": "tf", "competencyId": "w10-rbc-hemoglobin", "dok": 2,
+    "statement": "Oxygen binds to the globin protein chains of hemoglobin; the iron in heme only gives blood its red color.",
+    "truth": false,
+    "correction": "Oxygen binds reversibly to the iron atom at the center of each of the four heme groups, so one hemoglobin molecule can carry up to four oxygen molecules.",
+    "why": "The globin chains are the scaffold. They hold the heme groups in place and shift shape as oxygen loads, which raises affinity for the next oxygen, but the actual binding site is the iron. This matters clinically: without enough iron the marrow cannot make working hemoglobin no matter how much globin it produces, and carbon monoxide poisons oxygen transport by taking the iron site. The color change from dark to bright red is a side effect of iron binding oxygen, not the point of it."
+  },
+  {
+    "id": "w11-tf-03", "type": "tf", "competencyId": "w10-erythropoiesis", "dok": 2,
+    "statement": "Erythropoietin is released by the bone marrow when it senses that oxygen delivery has fallen.",
+    "truth": false,
+    "correction": "Erythropoietin is released mainly by the kidney in response to low tissue oxygen, and it travels in the blood to the bone marrow, which is the target that responds by making more red cells.",
+    "why": "The feedback loop has a sensor, a signal, and an effector, and they are in different organs. The kidney senses oxygen and makes the hormone. The marrow receives the hormone and makes the cells. Keeping them separate explains a common clinical picture: a patient with failing kidneys becomes anemic even though the marrow is healthy, because the signal is missing, and injecting erythropoietin fixes it."
+  },
+  {
+    "id": "w11-tf-04", "type": "tf", "competencyId": "w10-hemostasis", "dok": 2,
+    "statement": "Vascular spasm is the first response to a vessel injury and reduces blood flow through the wound before a platelet plug has formed.",
+    "truth": true,
+    "correction": "True. Injury triggers immediate contraction of vascular smooth muscle, from direct stimulation, local pain reflexes, and mediators released by platelets, and this narrows the vessel and slows blood loss while the platelet plug and clot are still forming.",
+    "why": "The three phases of hemostasis overlap but start in order: spasm within seconds, platelet plug within a minute or two, and fibrin over several minutes. The spasm is not enough on its own, but it drops the pressure and flow at the wound so that platelets can stick rather than being washed away. Thromboxane A2 and serotonin from activated platelets later reinforce it."
+  },
+  {
+    "id": "w11-tf-05", "type": "tf", "competencyId": "w10-fibrinolysis", "dok": 2,
+    "statement": "Plasmin is an anticoagulant that prevents fibrin from forming in the first place.",
+    "truth": false,
+    "correction": "Plasmin is a fibrinolytic enzyme. It digests fibrin that has already formed, dissolving the clot once the vessel has healed. Anticoagulants such as antithrombin and heparin act earlier, by blocking thrombin and other enzymes so fibrin is not made.",
+    "why": "There are two ways the body keeps clotting under control, and they act at different times. Anticoagulants limit how much clot forms and keep it from spreading along healthy vessel. Fibrinolysis removes the clot afterward. Plasminogen is built into the clot as it forms and is activated later by tissue plasminogen activator from healthy endothelium. Drugs that activate plasminogen dissolve existing clots; drugs that boost antithrombin, like heparin, prevent new ones."
+  },
+  {
+    "id": "w11-tf-06", "type": "tf", "competencyId": "w10-blood-types", "dok": 2,
+    "statement": "A person with type O blood has neither A nor B antigens on their red cells and therefore makes neither anti-A nor anti-B antibodies.",
+    "truth": false,
+    "correction": "A person with type O blood has no A or B antigens but has both anti-A and anti-B antibodies in the plasma, because the immune system makes antibodies against whichever ABO antigens the person lacks.",
+    "why": "The rule is that you carry antibodies against the antigens you do not have. Type O lacks both, so it makes both. That is why type O red cells can go to anyone (no antigen to be attacked) but type O plasma cannot, and why a type O recipient can receive red cells only from another type O donor. Reversing the logic, type AB has both antigens and makes neither antibody."
+  },
+  {
+    "id": "w11-tf-07", "type": "tf", "competencyId": "w15-innate-immunity", "dok": 1,
+    "statement": "Fever, inflammation, and phagocytosis are innate defenses because they respond the same way regardless of which pathogen is present.",
+    "truth": true,
+    "correction": "True. Innate defenses recognize general features shared by many pathogens rather than one specific antigen, so they act immediately and identically on every exposure and do not improve with repetition.",
+    "why": "The dividing line between innate and adaptive immunity is specificity and memory. Innate responses use receptors for common microbial patterns, so they need no time to learn and no prior exposure. The cost is that they cannot get better. Adaptive responses are slow the first time because a specific lymphocyte clone must be found and expanded, but they leave memory behind."
+  },
+  {
+    "id": "w11-tf-08", "type": "tf", "competencyId": "w15-antibodies", "dok": 2,
+    "statement": "The constant region of an antibody determines which antigen the antibody will bind.",
+    "truth": false,
+    "correction": "The variable regions at the tips of the two arms determine which antigen an antibody binds. The constant region determines the antibody class and which effector mechanisms it can recruit.",
+    "why": "The two ends of an antibody do two different jobs. The variable regions differ between antibodies and fit one antigen. The constant region is shared across all antibodies of the same class and is read by complement and by receptors on phagocytes, mast cells, and the placenta. Class switching during an immune response swaps the constant region while keeping the same variable region, so the antibody keeps its target but changes what it can do."
+  },
+  {
+    "id": "w11-tf-09", "type": "tf", "competencyId": "w15-immune-memory", "dok": 2,
+    "statement": "Passive immunization, such as an injection of preformed antibodies, gives long lasting protection because it creates memory cells.",
+    "truth": false,
+    "correction": "Passive immunization gives immediate but temporary protection that lasts only as long as the injected antibodies survive, a few weeks to months, because the recipient's own lymphocytes were never activated and no memory cells are formed.",
+    "why": "Memory requires that the recipient's own B and T cells meet antigen and divide. Antibody alone contains no antigen, so nothing is learned. This is why antivenom, rabies immune globulin, and the antibodies a newborn gets across the placenta all wear off. Active immunization delivers antigen, so it is slow to work but leaves memory. The two are often given together to cover both the short term and the long term."
+  },
+  {
+    "id": "w11-tf-10", "type": "tf", "competencyId": "w15-immune-dysfunction", "dok": 2,
+    "statement": "In an allergy, symptoms arise because the immune system fails to respond to a harmful antigen.",
+    "truth": false,
+    "correction": "In an allergy, symptoms arise because the immune system responds strongly to a substance that is harmless in itself, and the response, not the substance, causes the damage.",
+    "why": "Allergy is a problem of aim, not of strength. The mechanisms involved, IgE, mast cells, histamine, and eosinophils, are normal tools for fighting parasites. Turned against pollen or peanut protein they produce swelling, airway narrowing, and in the worst case a fall in blood pressure. Failure to respond to a real threat is immunodeficiency, a different category."
+  },
+
+  {
+    "id": "w11-bd-01", "type": "bd", "competencyId": "w10-erythropoiesis", "dok": 3,
+    "prompt": "Without notes, trace what happens in the erythropoietin feedback loop over the first month after a person moves from sea level to 3,500 m altitude. Include what turns the loop on, what turns it off, and what the marrow needs to respond.",
+    "rubric": [
+      "low atmospheric oxygen lowers tissue oxygen delivery (hypoxia)",
+      "the kidney senses hypoxia and secretes erythropoietin",
+      "erythropoietin acts on the bone marrow to increase red cell production",
+      "new red cells take days to mature, so hematocrit rises over one to several weeks",
+      "the marrow requires iron, folate, and vitamin B12 to make the new cells",
+      "as red cell mass rises, oxygen delivery improves and erythropoietin secretion falls (negative feedback)"
+    ]
+  },
+  {
+    "id": "w11-bd-02", "type": "bd", "competencyId": "w10-coagulation", "dok": 3,
+    "prompt": "Without notes, explain how the intrinsic and extrinsic pathways each get started, where they join, and what thrombin does once it is formed. Include the roles of calcium and vitamin K.",
+    "rubric": [
+      "extrinsic pathway is triggered by tissue factor from damaged tissue outside the vessel",
+      "intrinsic pathway is triggered by contact of factor XII with exposed collagen",
+      "both pathways activate factor X, which starts the common pathway",
+      "activated factor X converts prothrombin to thrombin",
+      "thrombin converts fibrinogen to fibrin and activates factor XIII to cross link the fibrin mesh",
+      "calcium is needed at multiple steps of the cascade",
+      "vitamin K is needed by the liver to make working factors II, VII, IX, and X"
+    ]
+  },
+  {
+    "id": "w11-bd-03", "type": "bd", "competencyId": "w10-fibrinolysis", "dok": 3,
+    "prompt": "Without notes, explain how the body keeps a clot from spreading along a healthy vessel and how it removes the clot once the vessel has healed. Then predict what a drug that blocks vitamin K does to each of these processes.",
+    "rubric": [
+      "healthy endothelium releases prostacyclin and nitric oxide that inhibit platelets",
+      "antithrombin (boosted by heparin) inactivates thrombin and other clotting enzymes",
+      "plasminogen is trapped in the clot and later activated to plasmin by tissue plasminogen activator",
+      "plasmin digests fibrin and dissolves the clot",
+      "a vitamin K blocker (warfarin) reduces functional factors II, VII, IX, and X, so less thrombin and fibrin form",
+      "the drug slows new clot formation but does not itself dissolve existing clots"
+    ]
+  },
+  {
+    "id": "w11-bd-04", "type": "bd", "competencyId": "w10-blood-types", "dok": 3,
+    "prompt": "Without notes, explain the mechanism of hemolytic disease of the newborn. Say which parent is which Rh type, when the mother becomes sensitized, why the first pregnancy is usually spared, and what happens to the fetus in a later pregnancy.",
+    "rubric": [
+      "mother is Rh negative and the fetus is Rh positive",
+      "fetal red cells enter the maternal circulation, usually at delivery",
+      "the mother makes anti-D antibodies after that first exposure, so the first baby is already born",
+      "in a later Rh positive pregnancy maternal anti-D (IgG) crosses the placenta",
+      "the antibody binds fetal red cells and causes hemolysis, anemia, and high bilirubin",
+      "anti-D immune globulin given to the mother clears fetal cells before she is sensitized"
+    ]
+  },
+  {
+    "id": "w11-bd-05", "type": "bd", "competencyId": "w10-lab-blood-typing", "dok": 3,
+    "prompt": "Without notes, explain what you are looking for on a blood typing slide when you add anti-A, anti-B, and anti-D serum, and how you get from the pattern of agglutination to the list of red cell donor types the person can safely receive.",
+    "rubric": [
+      "agglutination (clumping) in a well means the antibody found its antigen on the red cells",
+      "the antigens present define the type, for example clumping with anti-B only is type B",
+      "clumping with anti-D means Rh positive, no clumping means Rh negative",
+      "the person's plasma contains antibodies against whichever A or B antigens they lack",
+      "safe donor red cells carry no antigen that the recipient's antibodies would attack",
+      "an Rh negative recipient should receive only Rh negative cells to avoid sensitization"
+    ]
+  },
+  {
+    "id": "w11-bd-06", "type": "bd", "competencyId": "w15-inflammation", "dok": 3,
+    "prompt": "Without notes, put the events of the inflammatory response in order after a splinter breaks the skin, and explain how each of the four cardinal signs (redness, heat, swelling, pain) arises from those events.",
+    "rubric": [
+      "damaged cells and mast cells release histamine and other mediators",
+      "arterioles dilate, increasing local blood flow, which causes redness and heat",
+      "capillary permeability increases, so plasma and protein leak into the tissue, causing swelling",
+      "swelling and chemical mediators stimulate pain receptors",
+      "neutrophils then monocytes are attracted by chemotaxis and squeeze out of capillaries (diapedesis)",
+      "phagocytes engulf bacteria and debris, and tissue repair follows"
+    ]
+  },
+  {
+    "id": "w11-bd-07", "type": "bd", "competencyId": "w15-adaptive-immunity", "dok": 3,
+    "prompt": "Without notes, compare humoral and cell mediated immunity. For each, name the lymphocyte responsible, what kind of target it handles, and how the target is eliminated. Include where the helper T cell fits.",
+    "rubric": [
+      "humoral immunity uses B cells that become plasma cells and secrete antibodies",
+      "antibodies act on targets outside cells: bacteria, toxins, and free virus in body fluids",
+      "antibodies neutralize, agglutinate, opsonize, or activate complement, and other cells do the killing",
+      "cell mediated immunity uses cytotoxic T cells",
+      "cytotoxic T cells kill the body's own cells that are infected by virus or are cancerous",
+      "helper T cells release cytokines that activate both B cells and cytotoxic T cells"
+    ]
+  },
+  {
+    "id": "w11-bd-08", "type": "bd", "competencyId": "w15-immune-memory", "dok": 3,
+    "prompt": "Without notes, compare the primary and secondary antibody responses in timing, size, and antibody class, explain what accounts for the difference, and state how a vaccine uses this.",
+    "rubric": [
+      "primary response has a lag of several days, a low peak, and mostly IgM",
+      "secondary response starts within a day or two, peaks much higher, and is mostly IgG",
+      "the difference is memory B and T cells left from the first exposure, more numerous and already class switched",
+      "a vaccine supplies antigen without disease, so it triggers a primary response and leaves memory",
+      "on real exposure the memory cells produce a secondary response fast enough to prevent illness",
+      "boosters raise the number of memory cells and antibody levels"
+    ]
+  },
+
+  {
+    "id": "w11-app-01", "type": "app", "competencyId": "w10-erythropoiesis", "dok": 3,
+    "case": "A patient with long standing kidney disease has a hematocrit of 27 percent (normal 40 to 54 for males), a reticulocyte count of 0.3 percent (normal 0.5 to 1.5), normal iron stores, and a normal arterial PO2 of 95 mmHg (normal 80 to 100).",
+    "stem": "Which mechanism best explains why the hematocrit is low, and what does the low reticulocyte count tell you?",
+    "options": [
+      "The damaged kidney is not secreting enough erythropoietin, so the marrow is under stimulated; the low reticulocyte count shows that few new cells are being made",
+      "The marrow is producing red cells rapidly, but they are being destroyed in the spleen; the low reticulocyte count shows the spleen is overactive",
+      "Low arterial PO2 has driven erythropoietin so high that the marrow is exhausted; the low reticulocyte count shows burnout",
+      "Iron deficiency has stalled hemoglobin synthesis; the low reticulocyte count shows there is no iron to build cells"
+    ],
+    "correct": 0,
+    "why": "The loop is broken at the sensor and signal step. Tissue oxygen delivery is low because there are too few red cells, but the diseased kidney cannot answer with erythropoietin, so the marrow never gets the message. Reticulocytes are red cells released in the last day or two, so a low count means low production. A marrow that was responding to anemia would push reticulocytes well above normal. Giving erythropoietin restores the signal and the count rises.",
+    "whyNot": [
+      "Correct. The kidney is the source of erythropoietin, and the reticulocyte count is the direct readout of marrow output.",
+      "Rapid destruction with a working marrow raises the reticulocyte count, often several times normal, as the marrow tries to keep up. A low count rules out an active marrow.",
+      "The PO2 is normal, so the lungs are not the problem, and erythropoietin does not exhaust the marrow. A high erythropoietin level would produce a high reticulocyte count.",
+      "Iron stores are stated to be normal. Iron deficiency also produces small pale cells, but the missing ingredient here is the hormone signal, not the raw material."
+    ]
+  },
+  {
+    "id": "w11-app-02", "type": "app", "competencyId": "w10-coagulation", "dok": 3,
+    "case": "A young man has a prothrombin time of 12 seconds (normal 11 to 13.5), a partial thromboplastin time of 78 seconds (normal 25 to 35), a platelet count of 250,000 per microliter (normal 150,000 to 400,000), and a normal bleeding time. Small cuts stop bleeding normally, but a knock to the knee produces a large bleed into the joint that lasts for days.",
+    "stem": "Where in the hemostatic system is the defect, and why do small cuts behave differently from the knee injury?",
+    "options": [
+      "A factor unique to the intrinsic pathway is deficient; the platelet plug seals small cuts, but a large bleed needs fibrin reinforcement that this patient makes too slowly",
+      "A factor unique to the extrinsic pathway is deficient; the prothrombin time would catch it if the injury were larger",
+      "Platelet function is poor; small cuts clot by the coagulation cascade alone, while joints depend on platelets",
+      "The common pathway is blocked, so neither test can complete, and only the vascular spasm stops bleeding"
+    ],
+    "correct": 0,
+    "why": "Only the partial thromboplastin time is prolonged, so the missing factor is one tested by the intrinsic route alone, such as factor VIII or IX. Platelets are normal in number and function, so the plug forms and small cuts, which the plug alone can seal, stop on time. A joint bleed is a bigger, higher pressure leak that the loose plug cannot hold, and fibrin arrives too late and too thin. That is why the bleeding is delayed and prolonged rather than immediate.",
+    "whyNot": [
+      "Correct. Normal PT, prolonged PTT, and normal platelet studies localize the defect to the intrinsic pathway.",
+      "A defect in the extrinsic pathway, factor VII, would prolong the prothrombin time, which is normal here. The size of the injury does not change which test is abnormal.",
+      "Platelet count and bleeding time are normal, so platelet function is intact. The roles are also reversed: platelets are what seal small cuts quickly.",
+      "A common pathway block would prolong both tests, since both routes pass through factor X, prothrombin, and fibrinogen. Here one test is normal."
+    ]
+  },
+  {
+    "id": "w11-app-03", "type": "app", "competencyId": "w10-coagulation", "dok": 3,
+    "case": "A blood sample is drawn into a tube containing sodium citrate, which binds calcium ions. After an hour at room temperature the blood has not clotted. A technician adds calcium chloride to a portion of the sample, and it clots within a few minutes.",
+    "stem": "What does this experiment show about the role of calcium in coagulation?",
+    "options": [
+      "Calcium is a required cofactor at several steps in the cascade, so removing it stops the cascade at those steps and restoring it lets the cascade run",
+      "Calcium is the trigger for the extrinsic pathway, taking the place of tissue factor",
+      "Calcium converts fibrinogen directly into fibrin, so it replaces thrombin",
+      "Citrate destroyed the clotting factors, and the calcium chloride rebuilt them"
+    ],
+    "correct": 0,
+    "why": "Several clotting factors, including the vitamin K dependent ones, must bind calcium to attach to the phospholipid surface of platelets where the cascade assembles. Take calcium away and the enzymes are intact but cannot assemble, so nothing happens. Add it back and they work immediately. This is why citrate and EDTA tubes keep blood liquid in the laboratory, and why the same sample can be clotted on demand to run a coagulation test.",
+    "whyNot": [
+      "Correct. The factors were never damaged; they were simply waiting for calcium.",
+      "The extrinsic trigger is tissue factor exposed by injury. Calcium is needed after the trigger, not as the trigger, and it is needed in the intrinsic pathway too.",
+      "Only thrombin cleaves fibrinogen to fibrin. Calcium is needed to generate thrombin and to cross link fibrin, but it has no enzymatic activity of its own.",
+      "Citrate is reversible. It chelates calcium and leaves proteins untouched, which is exactly why adding calcium back restores clotting so quickly. Destroyed proteins could not be rebuilt by a salt."
+    ]
+  },
+  {
+    "id": "w11-app-04", "type": "app", "competencyId": "w10-fibrinolysis", "dok": 3,
+    "case": "A patient arrives two hours after a clot blocks a coronary artery. She is given an intravenous infusion of recombinant tissue plasminogen activator (tPA). Thirty minutes later blood flow through the artery is restored. Over the next day the nursing staff watch her closely for bleeding from the intravenous site and gums.",
+    "stem": "What did the drug do to the clot, and why is bleeding elsewhere the expected risk?",
+    "options": [
+      "tPA converted plasminogen trapped in the clot to plasmin, which digested the fibrin; the same enzyme also dissolves useful clots at any recent wound",
+      "tPA blocked vitamin K so no new factors were made; existing clots then fell apart on their own",
+      "tPA inhibited platelet aggregation so the plug dissolved; bleeding follows because platelets are gone",
+      "tPA boosted antithrombin to inactivate thrombin; without thrombin the old fibrin unraveled"
+    ],
+    "correct": 0,
+    "why": "The body builds the demolition crew into the clot. Plasminogen is incorporated into the fibrin mesh as it forms and sits inactive until tissue plasminogen activator from endothelium converts it to plasmin. Giving tPA as a drug speeds this up enormously. Plasmin does not know which clot is the harmful one, so any clot sealing a recent puncture or a small vessel in the brain is also at risk. The drug removes clots; it does not prevent them.",
+    "whyNot": [
+      "Correct. tPA is a plasminogen activator, and fibrinolysis is its only action.",
+      "This describes warfarin, and warfarin cannot dissolve an existing clot. It only slows the formation of new fibrin, and it takes days to act.",
+      "This describes aspirin. Blocking platelets does not break down fibrin, and it would not reopen an artery already blocked by an organized clot.",
+      "This describes heparin. Inactivating thrombin stops new fibrin from forming but leaves existing fibrin in place; fibrin does not unravel without plasmin."
+    ]
+  },
+  {
+    "id": "w11-app-05", "type": "app", "competencyId": "w10-fibrinolysis", "dok": 3,
+    "case": "A patient starts warfarin on Monday. On Tuesday morning the prothrombin time is 12 seconds (normal 11 to 13.5). On Friday morning it is 28 seconds. The dose has not changed.",
+    "stem": "Why did the test take several days to lengthen, when the drug reached the liver within hours of the first dose?",
+    "options": [
+      "Warfarin only blocks the production of new functional factors II, VII, IX, and X; the factors already circulating keep working until they are cleared over the following days",
+      "Warfarin must be converted by gut bacteria into its active form, which takes several days",
+      "Warfarin acts on the platelet plug first and reaches the cascade only after platelets are exhausted",
+      "The first doses were absorbed by the clot itself and the drug reached the plasma only after the clot dissolved"
+    ],
+    "correct": 0,
+    "why": "Warfarin does not touch factors that already exist. It blocks the vitamin K cycle in the liver, so every factor made from now on lacks the calcium binding groups it needs to work. The prothrombin time depends on the factors present in plasma, and those have half lives from several hours (factor VII) to a few days (prothrombin). The test lengthens as the old, working factors are used up and replaced by defective ones. This is why heparin is often given at the same time for the first few days.",
+    "whyNot": [
+      "Correct. The delay is the turnover time of the existing factors, not a delay in the drug.",
+      "Warfarin is absorbed and active as taken. Gut bacteria are relevant in that they make vitamin K, which opposes warfarin, not activates it.",
+      "Warfarin has no effect on platelets. Aspirin acts on platelets. The prothrombin time does not measure platelet function in any case.",
+      "Drugs are not soaked up by clots. Warfarin distributes in plasma within hours; what takes days is the disappearance of the working factors it can no longer replace."
+    ]
+  },
+  {
+    "id": "w11-app-06", "type": "app", "competencyId": "w10-blood-types", "dok": 3,
+    "case": "A 24 year old woman typed as A negative is bleeding after an accident. No Rh negative blood is available, and she is given two units of O positive red cells. There is no immediate transfusion reaction.",
+    "stem": "Why is there no reaction now, and what is the risk that follows from this transfusion?",
+    "options": [
+      "Her anti-B has nothing to bind on O cells, so no ABO reaction occurs; but the Rh positive cells will sensitize her to D, endangering a future Rh positive fetus or transfusion",
+      "O positive cells carry no antigens of any kind, so the transfusion carries no risk",
+      "Her plasma anti-D destroyed the donor cells silently, which is why no reaction was seen",
+      "The donor's anti-A in the O positive plasma will agglutinate her own A cells over the next few days"
+    ],
+    "correct": 0,
+    "why": "ABO and Rh are independent systems. Her plasma has anti-B only, and O cells have neither A nor B antigen, so there is nothing for it to bind. Rh is different: an Rh negative person has no anti-D until first exposed. The D antigen on the donor cells is that first exposure, and over the following weeks she makes anti-D and memory cells. That antibody will attack Rh positive cells in any later transfusion and, because it is IgG, will cross the placenta in a later Rh positive pregnancy. Anti-D immune globulin can be given to try to prevent sensitization.",
+    "whyNot": [
+      "Correct. No immediate ABO reaction, but delayed Rh sensitization is the real cost.",
+      "O cells lack A and B but do carry D, which is what makes them Rh positive. D is exactly the antigen this patient must not be exposed to.",
+      "An Rh negative person makes no anti-D until sensitized, so there was nothing in her plasma to destroy the cells. Any anti-D reaction would come later, on a second exposure.",
+      "Packed red cells carry very little donor plasma, and what there is gets diluted in the recipient's volume. Donor antibodies are not the main event in red cell transfusion."
+    ]
+  },
+  {
+    "id": "w11-app-07", "type": "app", "competencyId": "w10-blood-types", "dok": 3,
+    "case": "A type O positive patient with severe burns needs plasma, not red cells. The blood bank supplies plasma from a type AB donor.",
+    "stem": "Predict what happens when this plasma is infused, and explain why this pairing works even though AB red cells would not.",
+    "options": [
+      "No reaction; AB plasma contains neither anti-A nor anti-B, so there is nothing to bind the recipient's O cells, whereas AB red cells would carry both antigens that the O recipient's antibodies attack",
+      "Agglutination; AB plasma carries both A and B antigens, which react with the recipient's anti-A and anti-B",
+      "No reaction; type O recipients have no antibodies, so any plasma is safe",
+      "Agglutination; the recipient's anti-A and anti-B attack the antibodies in the donor plasma"
+    ],
+    "correct": 0,
+    "why": "For a red cell transfusion you worry about the recipient's antibodies meeting the donor's antigens. For a plasma transfusion the roles flip: you worry about the donor's antibodies meeting the recipient's antigens. AB donors have both antigens on their cells and therefore make neither antibody, so their plasma is safe for anyone. O donors are the mirror image: their cells are safe for anyone, but their plasma carries both antibodies and would attack A, B, or AB recipients.",
+    "whyNot": [
+      "Correct. Universal red cell donor and universal plasma donor are opposite types for exactly this reason.",
+      "Antigens are on red cells, not in plasma. Plasma contains antibodies, and AB plasma contains none of the ABO antibodies.",
+      "Type O recipients have both anti-A and anti-B. That is why they can receive only O red cells. It happens not to matter here because there is no antigen for those antibodies to bind.",
+      "Antibodies do not agglutinate other antibodies. Agglutination requires antibody bridging red cells that carry the matching antigen."
+    ]
+  },
+  {
+    "id": "w11-app-08", "type": "app", "competencyId": "w10-lab-blood-typing", "dok": 3,
+    "case": "In lab a student tests a simulated blood sample. Anti-A serum: agglutination. Anti-B serum: agglutination. Anti-D serum: no agglutination. The controls behave as expected.",
+    "stem": "Which red cell donor types could this person receive, and what is the physiological reason for each restriction?",
+    "options": [
+      "A negative, B negative, AB negative, or O negative; the recipient has no anti-A or anti-B to attack any ABO type, but should avoid Rh positive cells to prevent becoming sensitized to D",
+      "AB negative only; the recipient's cells match only AB negative donors",
+      "Any type; the recipient has both antigens and so tolerates everything",
+      "O negative only; O negative is the universal donor and nothing else is safe"
+    ],
+    "correct": 0,
+    "why": "Clumping with anti-A and anti-B means both antigens are present, so the type is AB, and no clumping with anti-D means Rh negative. An AB person makes neither anti-A nor anti-B, so red cells of any ABO type carry nothing their plasma will attack. The Rh restriction is different in kind: the person has no anti-D now, but Rh positive cells would sensitize them, and the antibody they then make would cause a reaction on a later exposure.",
+    "whyNot": [
+      "Correct. ABO tolerance is broad because of missing antibodies; Rh caution is about preventing future antibodies.",
+      "Matching is not required for the donor cells to be safe. What matters is that the recipient's antibodies find no target, and an AB recipient has no ABO antibodies.",
+      "Having both ABO antigens does not make Rh irrelevant. Rh positive cells would expose an Rh negative recipient to D and sensitize them.",
+      "O negative is always compatible, but it is not the only option. Restricting an AB negative patient to O negative wastes the scarcest blood type."
+    ]
+  },
+  {
+    "id": "w11-app-09", "type": "app", "competencyId": "w15-inflammation", "dok": 3,
+    "case": "A patient with a bacterial infection has a temperature of 39.4 C (102.9 F). He is shivering under two blankets and his hands are cold and pale even though his core temperature is high.",
+    "stem": "What mechanism raised his temperature, and why is he shivering while already hot?",
+    "options": [
+      "Pyrogens from macrophages and bacteria raised the hypothalamic set point; the body treats its current temperature as too cold and shivers and vasoconstricts to reach the new set point",
+      "Bacterial metabolism generates the heat directly; shivering is a side effect of the toxins on muscle",
+      "The hypothalamus has stopped regulating temperature; shivering is random muscle activity",
+      "The infection blocked sweating, so heat accumulated; the cold hands show blood has been shunted to the skin"
+    ],
+    "correct": 0,
+    "why": "Fever is a regulated rise, not a failure of regulation. Interleukin 1 and other pyrogens act on the hypothalamus and reset its thermostat higher. At that moment the body's actual temperature is below the new target, so the hypothalamus does what it always does when cold: it constricts skin vessels to conserve heat and triggers shivering to generate it. Once the new set point is reached the shivering stops. When the set point returns to normal the patient sweats and flushes. The higher temperature slows bacterial growth and speeds immune cell activity.",
+    "whyNot": [
+      "Correct. Set point up, body chases it, shivering and cold skin result.",
+      "The heat of bacterial metabolism is negligible next to the body's own output. The temperature rises because the body deliberately makes and keeps more heat, and shivering is the coordinated response to a set point above actual temperature.",
+      "The hypothalamus is working normally, just aiming higher. Uncontrolled temperature rise with no set point is heat stroke, and it does not produce shivering.",
+      "Sweating is suppressed during the rise because the body wants heat, not because sweat glands are blocked. Pale cold hands mean blood is shunted away from the skin, not to it."
+    ]
+  },
+  {
+    "id": "w11-app-10", "type": "app", "competencyId": "w15-adaptive-immunity", "dok": 3,
+    "case": "A boy has an inherited condition in which B cells never mature. His serum IgG is 60 mg/dL (normal 700 to 1600) and IgM is undetectable. His T cell counts and function are normal. He is exposed in the same week to tetanus toxin from a dirty wound and to a virus that infects cells in the throat.",
+    "stem": "Predict how his immune system handles each threat.",
+    "options": [
+      "He cannot neutralize the tetanus toxin because that requires antibody, but his cytotoxic T cells can still kill the virus infected throat cells",
+      "He handles both normally because T cells can take over antibody production when B cells are absent",
+      "He handles neither, because without B cells the T cells cannot be activated",
+      "He neutralizes the toxin using T cells but cannot kill infected cells, because that requires antibody"
+    ],
+    "correct": 0,
+    "why": "The two arms of adaptive immunity handle different kinds of target. A toxin dissolved in body fluid is outside any cell, and only antibody can bind and neutralize it. T cells do not recognize free toxin at all. A virus inside a cell is hidden from antibody, and the job of finding and killing that cell belongs to cytotoxic T cells, which are intact here. So the boy is in danger from the toxin and from bacterial infections in general, while cell mediated defense against the viral infection goes ahead.",
+    "whyNot": [
+      "Correct. Humoral immunity is missing; cell mediated immunity is present.",
+      "T cells cannot make antibody. Only B cells and their plasma cell descendants do. Helper T cells assist B cells but cannot substitute for them.",
+      "T cell activation depends on antigen presenting cells such as dendritic cells and macrophages, not on B cells. His T cell function is stated to be normal.",
+      "This reverses the roles. Antibody neutralizes toxin, and cytotoxic T cells kill infected cells."
+    ]
+  },
+  {
+    "id": "w11-app-11", "type": "app", "competencyId": "w15-immune-memory", "dok": 3,
+    "case": "A nurse who completed a hepatitis B vaccine series six years ago has an antibody level of 8 mIU/mL (protective level 10 or above). She receives a single booster dose. Five days later her level is 350 mIU/mL, and nearly all of it is IgG.",
+    "stem": "Why did the antibody level rise so fast and so high after one dose, when the original series needed three doses over six months?",
+    "options": [
+      "The original series left memory B and T cells that are numerous and already class switched, so the booster triggered a secondary response with a short lag and a high IgG peak",
+      "The booster contained ten times more antigen than the original doses",
+      "The low starting level shows she had lost all immunity and the booster restarted a primary response",
+      "Antibody from the original series had been stored in the liver and was released by the booster"
+    ],
+    "correct": 0,
+    "why": "Circulating antibody fades, but memory cells persist for years. A serum level below the protective cutoff says little about memory. On re exposure, memory cells need no long search and no class switch, so antibody appears within days instead of weeks and rises to a much higher level, mostly IgG. The size and speed of this response is itself proof that the original immunization worked, and it is why a single booster restores protection while an unvaccinated person would need the whole series.",
+    "whyNot": [
+      "Correct. Fast, high, and IgG are the three signatures of a secondary response.",
+      "Booster doses are the same size as the original. The difference is in the recipient, not the vaccine.",
+      "A primary response would take one to two weeks to appear and would be mostly IgM at a lower level. A response this fast and IgG dominant can only come from memory.",
+      "Antibodies are not stored and released. They are proteins secreted continuously by plasma cells and cleared over weeks. New antibody must be made by newly activated cells."
+    ]
+  },
+  {
+    "id": "w11-app-12", "type": "app", "competencyId": "w10-leukocytes", "dok": 3,
+    "case": "Ten days after a round of chemotherapy a patient has a total white cell count of 1,100 per microliter (normal 4,000 to 11,000) with a neutrophil count of 200 per microliter (normal 1,500 to 7,000). She develops a fever of 38.5 C (101.3 F) but the site of a small skin infection on her arm is barely red and has no pus.",
+    "stem": "Predict what kind of infection she is most at risk from, and explain why the infected site looks so mild.",
+    "options": [
+      "Bacterial infection that spreads rapidly, because neutrophils are the first phagocytes to arrive; the site is mild because pus and much of the local swelling come from neutrophils that she does not have",
+      "Parasitic worm infection, because neutrophils are the main defense against parasites; the site is mild because worms do not cause inflammation",
+      "Allergic reaction, because neutrophils normally suppress mast cells; the site is mild because histamine release is blocked",
+      "No increased risk, because lymphocytes and antibodies can take over the neutrophil role within hours"
+    ],
+    "correct": 0,
+    "why": "Neutrophils are the front line against bacteria. They leave the marrow in enormous numbers, reach a wound within hours, and die there as pus. Chemotherapy stops marrow production, and because neutrophils live only a day or so in the blood, their count collapses first. Without them bacteria that would normally be contained at a scratch multiply and reach the blood, which is why fever in a patient with this count is treated as an emergency. The barely visible site is the warning sign, not reassurance: the redness and pus that normally announce an infection are made by the very cells that are missing.",
+    "whyNot": [
+      "Correct. Low neutrophils mean poor bacterial containment and a muted inflammatory picture.",
+      "Eosinophils, not neutrophils, defend against parasitic worms, and parasites do provoke inflammation. Bacteria are the immediate threat when neutrophils are gone.",
+      "Neutrophils do not restrain mast cells, and allergy is not a consequence of low neutrophil count. Histamine release does not depend on neutrophils.",
+      "Lymphocytes are not phagocytes and antibody responses take days. Nothing replaces neutrophils quickly, which is why the risk is real and immediate."
+    ]
+  }
+]

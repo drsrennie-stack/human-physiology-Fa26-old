@@ -1,0 +1,762 @@
+[
+  {
+    "id": "w09-ma-01",
+    "type": "ma",
+    "competencyId": "w8-adrenal-medulla",
+    "dok": 2,
+    "stem": "Which of the following are true of the adrenal medulla and its effect on the heart? Select all that apply.",
+    "options": [
+      "Its chromaffin cells are driven by preganglionic sympathetic neurons that release acetylcholine.",
+      "It releases mostly epinephrine into the blood rather than onto a single target cell.",
+      "Its effect on heart rate begins sooner than the effect of the cardiac sympathetic nerves.",
+      "Its effect on heart rate outlasts the effect of the cardiac sympathetic nerves.",
+      "It releases catecholamines only when the parasympathetic division is active."
+    ],
+    "correct": [0, 1, 3],
+    "why": "The adrenal medulla is a sympathetic ganglion whose postganglionic cells never grew axons. Preganglionic fibers release acetylcholine onto nicotinic receptors on the chromaffin cells, and the cells answer by dumping epinephrine (and some norepinephrine) into the blood. Because the hormone has to circulate before it reaches the heart, the effect starts later than a nerve signal, and because it is cleared from blood over minutes rather than reabsorbed at a synapse in milliseconds, the effect lasts much longer.",
+    "whyNot": [
+      "Belongs. The chromaffin cells sit in the position of postganglionic neurons, so the input is preganglionic and cholinergic.",
+      "Belongs. About 80 percent of the output is epinephrine, and it enters the blood as a hormone.",
+      "Wrong. Blood transport adds a delay of seconds, so direct innervation wins on speed. This option describes the nerve route, not the hormone route.",
+      "Belongs. Circulating catecholamines are cleared slowly, so the heart stays fast after the nerve traffic has stopped.",
+      "Wrong. The medulla is a sympathetic structure and fires with sympathetic activation. Parasympathetic activity does not trigger it."
+    ]
+  },
+  {
+    "id": "w09-ma-02",
+    "type": "ma",
+    "competencyId": "w10-conduction-system",
+    "dok": 2,
+    "stem": "Which statements about the atrioventricular node delay are correct? Select all that apply.",
+    "options": [
+      "The delay lets the atria finish contracting before the ventricles begin to contract.",
+      "The delay comes from slow conduction through small nodal cells with few gap junctions.",
+      "The delay is produced by the Purkinje fibers, which conduct slowly.",
+      "Sympathetic stimulation shortens the delay.",
+      "The impulse crosses the atrioventricular node in about 10 milliseconds."
+    ],
+    "correct": [0, 1, 3],
+    "why": "The atrioventricular node is the only normal electrical path from atria to ventricles, and it is built to be slow. Its cells are small, they have few gap junctions, and their upstroke depends on slow calcium channels, so the impulse takes about 100 milliseconds to cross. That pause gives the atria time to finish pushing blood into the ventricles before ventricular contraction starts. Sympathetic input speeds nodal conduction and shortens the delay, which is why the PR interval shortens during exercise.",
+    "whyNot": [
+      "Belongs. This is the purpose of the delay. Atrial contraction adds the last portion of ventricular filling.",
+      "Belongs. Small cells, few gap junctions, and a calcium dependent upstroke all make nodal conduction slow.",
+      "Wrong. Purkinje fibers are the fastest conducting cells in the heart. Their job is to spread the impulse quickly so the ventricles contract together.",
+      "Belongs. Norepinephrine raises calcium current in nodal cells, so conduction speeds up and the PR interval shortens.",
+      "Wrong. The nodal delay is about 100 milliseconds, not 10. A 10 millisecond delay would not give the atria time to empty."
+    ]
+  },
+  {
+    "id": "w09-ma-03",
+    "type": "ma",
+    "competencyId": "w10-ecg-basics",
+    "dok": 2,
+    "stem": "Which pairings of an ECG feature with its electrical event are correct? Select all that apply.",
+    "options": [
+      "P wave: atrial depolarization.",
+      "QRS complex: ventricular depolarization, with atrial repolarization hidden inside it.",
+      "T wave: ventricular depolarization.",
+      "PR interval: onset of atrial depolarization to onset of ventricular depolarization, most of it spent in the atrioventricular node.",
+      "QT interval: the time the atria spend contracting."
+    ],
+    "correct": [0, 1, 3],
+    "why": "The ECG records the sum of electrical activity in the heart as seen from the body surface. The P wave is atrial depolarization. The QRS is ventricular depolarization, and it is large enough to bury the small atrial repolarization signal that happens at the same time. The T wave is ventricular repolarization. The PR interval runs from the start of the P wave to the start of the QRS and is mostly nodal delay. The QT interval runs from the start of the QRS to the end of the T wave and covers ventricular depolarization plus repolarization, roughly the time of ventricular systole.",
+    "whyNot": [
+      "Belongs. The P wave is the wave of depolarization spreading through the atria from the sinoatrial node.",
+      "Belongs. The ventricles have far more muscle than the atria, so their signal swamps atrial repolarization.",
+      "Wrong. The T wave is ventricular repolarization. Ventricular depolarization is the QRS.",
+      "Belongs. The PR interval is the conduction time from atria to ventricles, and the 100 millisecond nodal delay is most of it.",
+      "Wrong. The QT interval is a ventricular measure covering depolarization through repolarization. Atrial contraction follows the P wave."
+    ]
+  },
+  {
+    "id": "w09-ma-04",
+    "type": "ma",
+    "competencyId": "w11-lab-heart-sounds",
+    "dok": 2,
+    "stem": "You listen to a resting subject's heart while feeling the radial pulse. Which statements are correct? Select all that apply.",
+    "options": [
+      "The first sound occurs as the atrioventricular valves close at the start of ventricular systole.",
+      "The radial pulse is felt shortly after the first sound.",
+      "The second sound marks the closing of the semilunar valves at the start of ventricular diastole.",
+      "The second sound is caused by blood rushing into the ventricles during rapid filling.",
+      "At rest the gap from the first sound to the second sound is longer than the gap from the second sound to the next first sound."
+    ],
+    "correct": [0, 1, 2],
+    "why": "The first sound is the vibration from the atrioventricular valves snapping shut when ventricular pressure rises above atrial pressure. Ejection follows, and the pressure wave takes a fraction of a second to reach the wrist, so the pulse lands just after the first sound. The second sound is the semilunar valves closing when ventricular pressure drops below arterial pressure, and it marks the start of diastole. At a resting rate the time between the first and second sounds (systole) is shorter than the time between the second sound and the next first sound (diastole).",
+    "whyNot": [
+      "Belongs. Atrioventricular valve closure produces the first sound and begins systole.",
+      "Belongs. The pulse is the arrival of the ejected pressure wave at the wrist, which follows the first sound by a short delay.",
+      "Belongs. Semilunar valve closure produces the second sound and begins diastole.",
+      "Wrong. Rapid filling is quiet in a healthy heart. The second sound is valve closure, not inflow.",
+      "Wrong. At rest systole is about one third of the cycle and diastole about two thirds, so the first to second gap is the shorter one."
+    ]
+  },
+  {
+    "id": "w09-ma-05",
+    "type": "ma",
+    "competencyId": "w10-pacemaker-potential",
+    "dok": 2,
+    "stem": "Which statements about the sinoatrial node pacemaker potential are true? Select all that apply.",
+    "options": [
+      "Funny current channels open as the membrane hyperpolarizes and let Na+ into the cell.",
+      "The upstroke of the sinoatrial node action potential is carried by Ca2+ entering through L type channels.",
+      "The sinoatrial node has a stable resting membrane potential near -90 mV between beats.",
+      "Repolarization of the node is due to K+ leaving the cell.",
+      "Acetylcholine makes the pacemaker slope steeper."
+    ],
+    "correct": [0, 1, 3],
+    "why": "Nodal cells never rest. At the end of each action potential the membrane sits near -60 mV, and that hyperpolarization opens the funny current channels, which let Na+ leak in and start the slow depolarizing drift. As the membrane approaches -40 mV, L type Ca2+ channels open and Ca2+ entry produces the upstroke. K+ channels then open, K+ leaves, and the membrane repolarizes to -60 mV, where the cycle starts again. Norepinephrine steepens the drift by raising the funny current and Ca2+ current; acetylcholine flattens it by opening K+ channels and lowering the funny current.",
+    "whyNot": [
+      "Belongs. The funny current is unusual because hyperpolarization opens it, which is why the drift starts right after repolarization.",
+      "Belongs. Nodal cells lack fast Na+ channels, so the upstroke is a slower Ca2+ event.",
+      "Wrong. The node has no stable resting potential. The membrane starts depolarizing as soon as it repolarizes, which is why it is a pacemaker.",
+      "Belongs. K+ exit ends the action potential and brings the membrane back to about -60 mV.",
+      "Wrong. Acetylcholine flattens the slope and slows the heart. A steeper slope is the sympathetic effect."
+    ]
+  },
+  {
+    "id": "w09-ma-06",
+    "type": "ma",
+    "competencyId": "w10-cardiac-ap",
+    "dok": 2,
+    "stem": "Which statements about the ventricular contractile cell action potential are true? Select all that apply.",
+    "options": [
+      "The rapid upstroke is Na+ entering through fast voltage gated channels.",
+      "The plateau is Ca2+ entering through L type channels while some K+ leaves.",
+      "The plateau is produced by Cl- entering the cell.",
+      "Repolarization is K+ leaving as the Ca2+ channels close.",
+      "The whole action potential lasts about 2 milliseconds, like a neuron action potential."
+    ],
+    "correct": [0, 1, 3],
+    "why": "A ventricular cell rests near -90 mV. When a neighbor depolarizes it to threshold, fast Na+ channels open and the membrane shoots up to about +20 mV in a millisecond. Those channels inactivate, and instead of repolarizing right away the cell holds a plateau because L type Ca2+ channels open and inward Ca2+ current balances outward K+ current. That Ca2+ entry is the trigger for Ca2+ release from the sarcoplasmic reticulum. After 150 to 200 milliseconds the Ca2+ channels close, K+ current wins, and the cell repolarizes. The whole event lasts about 200 milliseconds, roughly 100 times longer than a neuron action potential.",
+    "whyNot": [
+      "Belongs. Fast Na+ channels give the ventricle its steep upstroke and fast cell to cell conduction.",
+      "Belongs. Inward Ca2+ balancing outward K+ holds the membrane depolarized and supplies the trigger for contraction.",
+      "Wrong. Cl- is not the plateau current. Cl- entry would make the cell more negative, not hold it depolarized.",
+      "Belongs. Once Ca2+ entry stops, the K+ current is unopposed and the membrane returns to -90 mV.",
+      "Wrong. The plateau stretches the cardiac action potential to about 200 milliseconds. Two milliseconds is a neuron or skeletal muscle value."
+    ]
+  },
+  {
+    "id": "w09-ma-07",
+    "type": "ma",
+    "competencyId": "w10-cardiac-refractory",
+    "dok": 2,
+    "stem": "Which statements about the cardiac refractory period are correct? Select all that apply.",
+    "options": [
+      "The refractory period lasts almost as long as the contraction itself.",
+      "Because of the long refractory period, a second action potential cannot begin until the muscle has largely relaxed.",
+      "Cardiac muscle can therefore sum twitches into a sustained contraction, just as skeletal muscle does.",
+      "A tetanized ventricle could not refill, so it could not pump.",
+      "The refractory period is long because the Na+ channels open slowly."
+    ],
+    "correct": [0, 1, 3],
+    "why": "In skeletal muscle the action potential is over in a few milliseconds and the twitch lasts far longer, so repeated stimuli can stack twitches into tetanus. In cardiac muscle the plateau keeps the Na+ channels inactivated for most of the contraction, so the refractory period is about 250 milliseconds and overlaps nearly the whole twitch. By the time a new action potential is possible, the muscle is relaxing. That makes summation and tetanus impossible, which is exactly what a pump needs, because the ventricle must relax to fill before it can eject again.",
+    "whyNot": [
+      "Belongs. The absolute refractory period runs through the plateau and most of repolarization, which is most of the contraction.",
+      "Belongs. Na+ channels cannot reset until the membrane repolarizes, so the next beat has to wait for relaxation to begin.",
+      "Wrong. Summation needs a new action potential during the twitch, and the refractory period forbids that. This option describes skeletal muscle.",
+      "Belongs. Filling only happens when the ventricle relaxes. A ventricle locked in contraction has no diastole and no stroke volume.",
+      "Wrong. Na+ channels open quickly. The refractory period is long because the plateau keeps them inactivated, not because they are slow to open."
+    ]
+  },
+  {
+    "id": "w09-ma-08",
+    "type": "ma",
+    "competencyId": "w11-cardiac-cycle",
+    "dok": 2,
+    "stem": "Which statements about valve behavior during the cardiac cycle are correct? Select all that apply.",
+    "options": [
+      "The atrioventricular valves open when atrial pressure is higher than ventricular pressure.",
+      "During isovolumetric contraction all four valves are closed.",
+      "The aortic valve opens when left ventricular pressure rises above aortic pressure.",
+      "Most ventricular filling happens during atrial contraction.",
+      "The aortic valve closes when atrial pressure rises above ventricular pressure."
+    ],
+    "correct": [0, 1, 2],
+    "why": "Heart valves have no muscle. They open and close purely by the pressure difference across them. The atrioventricular valves are open whenever atrial pressure is above ventricular pressure, which is most of diastole, and they slam shut when the ventricle starts to contract. With both sets of valves shut, ventricular pressure climbs with no change in volume until it passes aortic pressure and the aortic valve opens. When the ventricle relaxes and its pressure drops below aortic pressure, the aortic valve closes. Atrial contraction adds only the last 20 to 30 percent of filling at rest; most filling is passive.",
+    "whyNot": [
+      "Belongs. A higher atrial pressure pushes the leaflets open and blood flows down the gradient into the ventricle.",
+      "Belongs. That is what isovolumetric means: pressure rises, nothing enters, nothing leaves.",
+      "Belongs. The ventricle must out push the aorta before any blood can leave.",
+      "Wrong. About 70 to 80 percent of filling is passive, during the rapid and slow filling phases. The atrial kick adds the rest.",
+      "Wrong. Atrial pressure has nothing to do with the aortic valve. It closes when ventricular pressure falls below aortic pressure."
+    ]
+  },
+  {
+    "id": "w09-ma-09",
+    "type": "ma",
+    "competencyId": "w11-pv-loop",
+    "dok": 2,
+    "stem": "Which statements about a left ventricular pressure volume loop are correct? Select all that apply.",
+    "options": [
+      "The width of the loop, from end diastolic volume to end systolic volume, is the stroke volume.",
+      "Increased preload moves the right edge of the loop (end diastolic volume) to the right.",
+      "Increased afterload raises the pressure at which the aortic valve opens.",
+      "Increased contractility raises end systolic volume.",
+      "The isovolumetric phases are the horizontal segments of the loop."
+    ],
+    "correct": [0, 1, 2],
+    "why": "The loop plots pressure against volume through one beat. The bottom edge is filling (volume rising at low pressure). The right vertical edge is isovolumetric contraction (pressure rising at constant volume). The top edge is ejection (volume falling at high pressure). The left vertical edge is isovolumetric relaxation. More preload pushes the right edge outward, so the loop widens. More afterload means the ventricle has to reach a higher pressure before the aortic valve opens, so the right edge climbs higher and ejection stops sooner, leaving more blood behind. More contractility empties the ventricle further, so the left edge moves left and end systolic volume falls.",
+    "whyNot": [
+      "Belongs. Stroke volume is end diastolic minus end systolic volume, which is exactly the horizontal span of the loop.",
+      "Belongs. More filling means a larger volume when contraction starts, so the loop extends to the right.",
+      "Belongs. Ejection cannot begin until ventricular pressure exceeds aortic pressure, so a higher aortic pressure lifts the corner where ejection starts.",
+      "Wrong. Contractility is the ability to empty. Higher contractility lowers end systolic volume and moves the left edge leftward.",
+      "Wrong. Isovolumetric means constant volume, so those segments are vertical. The horizontal segments are filling and ejection."
+    ]
+  },
+  {
+    "id": "w09-ma-10",
+    "type": "ma",
+    "competencyId": "w11-stroke-volume",
+    "dok": 2,
+    "stem": "A ventricle has an end diastolic volume of 140 mL and an end systolic volume of 60 mL. Which statements are correct? Select all that apply.",
+    "options": [
+      "Stroke volume is 80 mL.",
+      "Ejection fraction is about 57 percent.",
+      "Ejection fraction is 43 percent.",
+      "If end systolic volume rose to 90 mL with end diastolic volume unchanged, stroke volume would fall to 50 mL.",
+      "Ejection fraction is a volume, measured in mL."
+    ],
+    "correct": [0, 1, 3],
+    "why": "Stroke volume is what leaves the ventricle in one beat: end diastolic volume minus end systolic volume, so 140 minus 60 is 80 mL. Ejection fraction is the fraction of the filled volume that gets ejected: 80 divided by 140 is 0.57, or 57 percent, which is inside the normal range of about 55 to 70 percent. If the ventricle stopped emptying at 90 mL, only 140 minus 90, or 50 mL, would leave per beat and the ejection fraction would fall to about 36 percent.",
+    "whyNot": [
+      "Belongs. 140 minus 60 is 80 mL.",
+      "Belongs. 80 divided by 140 is 0.57.",
+      "Wrong. 43 percent is 60 divided by 140, the fraction left behind, not the fraction ejected.",
+      "Belongs. 140 minus 90 is 50 mL. A higher end systolic volume with the same filling means less ejected.",
+      "Wrong. Ejection fraction is a ratio of two volumes, so it is a percentage with no units."
+    ]
+  },
+  {
+    "id": "w09-ma-11",
+    "type": "ma",
+    "competencyId": "w11-cardiac-output",
+    "dok": 2,
+    "stem": "Which statements about cardiac output are correct? Select all that apply.",
+    "options": [
+      "Cardiac output equals heart rate multiplied by stroke volume.",
+      "At a heart rate of 60 beats per minute and a stroke volume of 80 mL, cardiac output is 4.8 L/min.",
+      "Cardiac reserve is the difference between maximum cardiac output and resting cardiac output.",
+      "Doubling heart rate always doubles cardiac output.",
+      "A resting cardiac output of about 5 L/min means the whole blood volume passes through the heart roughly once every minute."
+    ],
+    "correct": [0, 1, 2, 4],
+    "why": "Cardiac output is the volume one ventricle pumps per minute, so it is rate times volume per beat. Sixty beats times 80 mL is 4800 mL, or 4.8 L/min. Total blood volume is about 5 L, so at rest the entire volume makes one circuit per minute. Cardiac reserve is how much output can rise above resting, and it can be 4 to 6 times resting in a fit person. Doubling rate does not reliably double output, because a faster rate shortens diastole and cuts filling, so stroke volume usually falls as rate climbs.",
+    "whyNot": [
+      "Belongs. This is the definition, and it is the reason both rate and stroke volume matter.",
+      "Belongs. 60 times 80 mL is 4800 mL/min, which is 4.8 L/min.",
+      "Belongs. Reserve is the extra output available on demand, so it is maximum minus resting.",
+      "Wrong. Stroke volume falls at very high rates because there is less time to fill, so output rises less than the rate did.",
+      "Belongs. With about 5 L of blood and 5 L/min of output, each liter is pumped about once per minute at rest."
+    ]
+  },
+  {
+    "id": "w09-ma-12",
+    "type": "ma",
+    "competencyId": "w11-preload-afterload",
+    "dok": 2,
+    "stem": "Which statements about preload, afterload, and contractility are correct? Select all that apply.",
+    "options": [
+      "Preload is the stretch on the ventricular muscle at the end of diastole, set mainly by end diastolic volume.",
+      "Afterload is the pressure the ventricle must exceed to push blood out, set mainly by arterial pressure.",
+      "Norepinephrine raises stroke volume without needing an increase in end diastolic volume.",
+      "Raising afterload raises stroke volume on that beat.",
+      "Raising preload lowers stroke volume on that beat."
+    ],
+    "correct": [0, 1, 2],
+    "why": "Three separate things set how much a ventricle ejects. Preload is how much it was stretched by filling, and more stretch means a stronger contraction by the Frank Starling relationship. Afterload is the pressure it must overcome to open the aortic valve and keep ejecting, and more afterload means less ejected on that beat. Contractility is the strength of contraction at any given stretch, and norepinephrine raises it through beta 1 receptors and cAMP, so the ventricle empties further from the same starting volume.",
+    "whyNot": [
+      "Belongs. Preload is the length of the muscle fibers before contraction, and end diastolic volume is what stretches them.",
+      "Belongs. The ventricle ejects against arterial pressure, so a higher aortic pressure is a higher afterload.",
+      "Belongs. This is what contractility means: more force from the same fiber length, so end systolic volume falls and stroke volume rises with the same preload.",
+      "Wrong. More afterload means the ventricle stops ejecting sooner, so stroke volume falls and end systolic volume rises. This option reverses the effect.",
+      "Wrong. More preload means more stretch and a stronger beat, so stroke volume rises. This option reverses the Frank Starling relationship."
+    ]
+  },
+  {
+    "id": "w09-tf-01",
+    "type": "tf",
+    "competencyId": "w8-adrenal-medulla",
+    "dok": 2,
+    "statement": "The adrenal medulla is controlled by postganglionic sympathetic neurons that release norepinephrine onto its chromaffin cells.",
+    "truth": false,
+    "correction": "The adrenal medulla is controlled by preganglionic sympathetic neurons that release acetylcholine onto nicotinic receptors on the chromaffin cells, which are themselves modified postganglionic cells.",
+    "why": "The chromaffin cells are the postganglionic cells of this pathway. They just never grew axons, so they release their catecholamines into the blood instead of onto a target. Because they occupy the postganglionic position, the fiber that reaches them is preganglionic and cholinergic, the same as the input to any sympathetic ganglion. Students often assume the medulla receives norepinephrine because it produces catecholamines, but the input signal and the output signal are different transmitters."
+  },
+  {
+    "id": "w09-tf-02",
+    "type": "tf",
+    "competencyId": "w10-conduction-system",
+    "dok": 1,
+    "statement": "In a normal heart, the atrioventricular node is the only electrical connection between the atria and the ventricles.",
+    "truth": true,
+    "correction": "This is true because the fibrous skeleton that holds the valves insulates the atrial muscle from the ventricular muscle, so the impulse can only pass through the node and the bundle of His.",
+    "why": "Gap junctions let the impulse spread freely within the atria and within the ventricles, but the connective tissue ring around the valves blocks it from crossing directly. The atrioventricular node and bundle of His are the one bridge. That is what makes the nodal delay possible, since the impulse has no way around the slow cells. It is also why damage to the node produces heart block, and why an extra muscle bridge (an accessory pathway) lets the ventricles fire early."
+  },
+  {
+    "id": "w09-tf-03",
+    "type": "tf",
+    "competencyId": "w10-ecg-basics",
+    "dok": 2,
+    "statement": "The T wave on the ECG represents repolarization of the atria.",
+    "truth": false,
+    "correction": "The T wave represents repolarization of the ventricles. Atrial repolarization happens during the QRS complex and is hidden by it.",
+    "why": "Every wave on the ECG comes from a large mass of cells changing voltage at the same time. The atria are small, so their repolarization makes a tiny signal, and it happens while the huge ventricular depolarization signal is being written, so it disappears inside the QRS. The ventricles repolarize about 200 milliseconds after they depolarize, once the plateau ends, and that large signal is the T wave. A long QT interval therefore points at slow ventricular repolarization, not at anything atrial."
+  },
+  {
+    "id": "w09-tf-04",
+    "type": "tf",
+    "competencyId": "w11-lab-heart-sounds",
+    "dok": 2,
+    "statement": "The first heart sound is produced by the semilunar valves closing at the start of ventricular contraction.",
+    "truth": false,
+    "correction": "The first heart sound is produced by the atrioventricular valves closing at the start of ventricular contraction. The semilunar valves close at the end of ejection and produce the second sound.",
+    "why": "When the ventricle starts to contract, its pressure rises above atrial pressure almost at once and the atrioventricular valves slam shut. That vibration is the first sound. The semilunar valves are still closed at that moment because ventricular pressure has not yet reached arterial pressure. They open during ejection and close when the ventricle relaxes, which gives the second sound. Remembering which valves are open in each phase is the key: the semilunar valves cannot close at the start of systole because they were not open."
+  },
+  {
+    "id": "w09-tf-05",
+    "type": "tf",
+    "competencyId": "w10-ecg-interpretation",
+    "dok": 2,
+    "statement": "A strip with 15 small boxes between consecutive R waves, with an upright P wave before every QRS, shows a rate of 100 beats per minute at the upper limit of normal sinus rhythm.",
+    "truth": true,
+    "correction": "This is true because each small box is 0.04 second, so 1500 divided by 15 gives 100 beats per minute, and a P wave before every QRS at a rate of 60 to 100 defines sinus rhythm.",
+    "why": "At standard paper speed, one minute is 1500 small boxes. Dividing 1500 by the number of small boxes between R waves gives the rate. Fifteen boxes is 0.60 second per beat, which is 100 beats per minute, right at the boundary between sinus rhythm and sinus tachycardia. The P wave in front of every QRS tells you the sinoatrial node is driving the ventricles. One box more (16) would give 94, one box fewer (14) would give 107 and be called sinus tachycardia."
+  },
+  {
+    "id": "w09-tf-06",
+    "type": "tf",
+    "competencyId": "w10-lab-ecg",
+    "dok": 2,
+    "statement": "On a lead II recording, the QRS complex is a direct record of the ventricular muscle shortening.",
+    "truth": false,
+    "correction": "The QRS complex records ventricular depolarization, an electrical event. The mechanical contraction follows it by a few tens of milliseconds and is not recorded by the ECG at all.",
+    "why": "The ECG picks up voltage changes at the skin, so it only sees electrical events. Depolarization triggers Ca2+ entry, Ca2+ release, and cross bridge cycling, and those steps take time, so tension develops after the QRS is finished. The same is true for every wave: atrial contraction follows the P wave, and ventricular relaxation follows the T wave. A heart can show a normal QRS and still contract poorly, which is why the ECG alone cannot tell you about pump function."
+  },
+  {
+    "id": "w09-tf-07",
+    "type": "tf",
+    "competencyId": "w11-heart-sounds",
+    "dok": 2,
+    "statement": "A murmur heard between the first and second heart sounds could be caused by a narrowed mitral valve.",
+    "truth": false,
+    "correction": "A murmur between the first and second sounds is systolic, when the mitral valve should be closed, so it comes from a mitral valve that leaks (regurgitation) or an aortic valve that is narrowed (stenosis). A narrowed mitral valve makes noise during diastole, after the second sound, when blood is flowing through it.",
+    "why": "A murmur is turbulent flow. To place a murmur, ask which valves have blood moving through them at that moment. Between the first and second sounds the ventricle is ejecting, so the aortic valve is carrying flow and the mitral valve is supposed to be sealed. Turbulence then means either flow through a narrowed aortic valve or backward flow through a mitral valve that fails to seal. A narrowed mitral valve can only make noise when blood is trying to cross it, which is during ventricular filling."
+  },
+  {
+    "id": "w09-tf-08",
+    "type": "tf",
+    "competencyId": "w11-frank-starling",
+    "dok": 2,
+    "statement": "Within physiological limits, an increase in venous return raises the stroke volume of the next beat even with no change in autonomic input to the heart.",
+    "truth": true,
+    "correction": "This is true because more venous return raises end diastolic volume, the extra stretch on the muscle fibers raises the force of contraction, and the ventricle ejects the extra blood. This is the Frank Starling law and it is built into the muscle itself.",
+    "why": "Cardiac muscle is length sensitive. A longer starting length improves cross bridge overlap and makes the fibers more sensitive to Ca2+, so a fuller ventricle contracts harder without any nerve or hormone involved. This is how the two sides of the heart keep their outputs matched: whatever volume the right side sends into the lungs arrives at the left side, stretches it, and gets ejected. A denervated transplanted heart still shows this response, which is the proof it does not need the autonomic system."
+  },
+  {
+    "id": "w09-tf-09",
+    "type": "tf",
+    "competencyId": "w11-cardiac-regulation",
+    "dok": 2,
+    "statement": "Parasympathetic stimulation slows the heart mainly by reducing the contractility of the ventricles.",
+    "truth": false,
+    "correction": "Parasympathetic stimulation slows the heart by acting on the sinoatrial node, where acetylcholine on muscarinic receptors opens K+ channels and reduces the funny current, so the pacemaker potential takes longer to reach threshold. The ventricles receive little parasympathetic innervation.",
+    "why": "Heart rate is set by the pacemaker, so anything that changes rate has to act on the node. Acetylcholine hyperpolarizes nodal cells and flattens the pacemaker slope, and that lengthens each cycle. The vagus nerve reaches the sinoatrial node, the atrial muscle, and the atrioventricular node, but very few fibers reach the ventricles, so parasympathetic input has little direct effect on ventricular force. Contractility is the sympathetic side of the story, through beta 1 receptors and cAMP."
+  },
+  {
+    "id": "w09-tf-10",
+    "type": "tf",
+    "competencyId": "w11-cardiac-output",
+    "dok": 2,
+    "statement": "During exercise, cardiac output rises only because heart rate rises; stroke volume stays at its resting value.",
+    "truth": false,
+    "correction": "During exercise both heart rate and stroke volume rise. Sympathetic input raises contractility and the muscle pump raises venous return, so stroke volume climbs (often from about 70 mL to 100 mL or more) before very high rates begin to limit filling.",
+    "why": "Cardiac output is rate times stroke volume, and exercise pushes on both. Norepinephrine and epinephrine raise contractility, so the ventricle empties further and end systolic volume falls. Contracting skeletal muscle and deeper breathing squeeze more blood back to the heart, so end diastolic volume is maintained or rises even though diastole is shorter. The result is a stroke volume well above resting. Only at rates near maximum does filling time get short enough for stroke volume to plateau or fall."
+  },
+  {
+    "id": "w09-bd-01",
+    "type": "bd",
+    "competencyId": "w10-pacemaker-potential",
+    "dok": 3,
+    "prompt": "Without notes, explain how a sinoatrial node cell generates its own rhythm, name the ion movement in each phase, and then explain why norepinephrine makes the heart beat faster.",
+    "rubric": [
+      "the node has no stable resting potential; the membrane starts drifting upward from about -60 mV right after repolarization",
+      "the drift is the funny current, Na+ entering through channels that open on hyperpolarization",
+      "near -40 mV, L type Ca2+ channels open and Ca2+ entry produces the upstroke",
+      "K+ leaving the cell repolarizes the membrane back to about -60 mV",
+      "the intrinsic rate of the node is about 100 beats per minute; vagal tone holds the resting rate near 70",
+      "norepinephrine on beta 1 receptors raises cAMP, increases the funny current and Ca2+ current, steepens the slope, and threshold is reached sooner so rate rises"
+    ]
+  },
+  {
+    "id": "w09-bd-02",
+    "type": "bd",
+    "competencyId": "w10-cardiac-ap",
+    "dok": 3,
+    "prompt": "Without notes, sketch a ventricular contractile cell action potential, label the ion movement behind the upstroke, the plateau, and repolarization, and explain why the plateau matters for contraction.",
+    "rubric": [
+      "resting potential near -90 mV, held by K+ permeability",
+      "upstroke: fast voltage gated Na+ channels open and Na+ rushes in",
+      "plateau: L type Ca2+ channels open and Ca2+ entry balances K+ exit, holding the membrane depolarized for 150 to 200 milliseconds",
+      "repolarization: Ca2+ channels close and K+ exit returns the membrane to -90 mV",
+      "the Ca2+ that enters during the plateau triggers Ca2+ release from the sarcoplasmic reticulum (calcium induced calcium release)",
+      "less plateau Ca2+ entry means less release and a weaker contraction"
+    ]
+  },
+  {
+    "id": "w09-bd-03",
+    "type": "bd",
+    "competencyId": "w10-cardiac-refractory",
+    "dok": 3,
+    "prompt": "Without notes, explain why cardiac muscle cannot be tetanized while skeletal muscle can, and explain why that difference is essential for the heart to work as a pump.",
+    "rubric": [
+      "in skeletal muscle the action potential ends in a few milliseconds, long before the twitch, so repeated stimuli sum into tetanus",
+      "in cardiac muscle the plateau keeps the action potential going for about 200 milliseconds",
+      "Na+ channels stay inactivated through the plateau, so the refractory period lasts almost as long as the contraction",
+      "a new action potential cannot start until the muscle is already relaxing, so twitches cannot sum",
+      "the ventricle must relax to fill; a tetanized ventricle would have no diastole and no stroke volume",
+      "the refractory period also limits how fast the ventricle can be driven, which protects filling time"
+    ]
+  },
+  {
+    "id": "w09-bd-04",
+    "type": "bd",
+    "competencyId": "w10-lab-ecg",
+    "dok": 3,
+    "prompt": "Without notes, describe what you would measure on a lead II ECG strip from a resting subject, and for the P wave, QRS complex, and T wave state the mechanical event that follows each one and why it follows rather than coincides.",
+    "rubric": [
+      "measure the R to R spacing and compute rate as 1500 divided by small boxes (or 300 divided by large boxes)",
+      "measure the PR interval (normal 0.12 to 0.20 second), the QRS duration (under 0.12 second), and the QT interval (about 0.36 to 0.44 second)",
+      "P wave is atrial depolarization; atrial contraction follows and finishes ventricular filling",
+      "QRS is ventricular depolarization; ventricular contraction, atrioventricular valve closure, and the first sound follow",
+      "T wave is ventricular repolarization; ventricular relaxation, semilunar valve closure, and the second sound follow",
+      "the ECG records electrical events only; excitation contraction coupling takes time, so each mechanical event lags its wave"
+    ]
+  },
+  {
+    "id": "w09-bd-05",
+    "type": "bd",
+    "competencyId": "w11-cardiac-cycle",
+    "dok": 3,
+    "prompt": "Without notes, walk through one left ventricular cardiac cycle starting with atrial contraction. For each phase, state which valves are open and the pressure comparison that opens or closes them.",
+    "rubric": [
+      "atrial contraction: mitral valve open, aortic valve closed; atrial pressure above ventricular pressure pushes in the last 20 to 30 percent of filling",
+      "isovolumetric contraction: ventricular pressure rises above atrial pressure, mitral valve closes (first sound); both valves closed and volume does not change",
+      "ejection: ventricular pressure exceeds aortic pressure (about 80 mmHg), aortic valve opens, blood leaves",
+      "isovolumetric relaxation: ventricular pressure falls below aortic pressure, aortic valve closes (second sound); both valves closed and volume does not change",
+      "ventricular filling: ventricular pressure falls below atrial pressure, mitral valve opens, passive filling supplies most of end diastolic volume",
+      "valves are passive and open or close only by the pressure difference across them"
+    ]
+  },
+  {
+    "id": "w09-bd-06",
+    "type": "bd",
+    "competencyId": "w11-frank-starling",
+    "dok": 3,
+    "prompt": "Without notes, a person lying flat suddenly stands up, and then a few minutes later lies down again. Explain, using the Frank Starling law, what happens to left ventricular stroke volume in each case and why no nerves are needed for the change.",
+    "rubric": [
+      "standing pools blood in the leg veins, so venous return falls",
+      "less venous return means a smaller end diastolic volume and less stretch on the ventricular fibers",
+      "less stretch means a weaker contraction and a smaller stroke volume on the next beat",
+      "lying down returns the pooled blood, raises end diastolic volume, and stroke volume rises again",
+      "the Frank Starling law: force of contraction is proportional to the stretch of the muscle at the end of diastole, within limits",
+      "the response is a property of the muscle itself (length dependent Ca2+ sensitivity and overlap), so it happens in a denervated heart"
+    ]
+  },
+  {
+    "id": "w09-bd-07",
+    "type": "bd",
+    "competencyId": "w11-cardiac-regulation",
+    "dok": 3,
+    "prompt": "Without notes, compare how the sympathetic and parasympathetic divisions change heart rate and contractility. Name the transmitter, the receptor, the G protein and second messenger, and the ion channel effect for each.",
+    "rubric": [
+      "sympathetic: norepinephrine (and circulating epinephrine) on beta 1 receptors, Gs, cAMP rises, protein kinase A",
+      "in the node cAMP increases the funny current and Ca2+ current, steepens the pacemaker slope, and heart rate rises",
+      "in contractile cells protein kinase A increases Ca2+ entry and Ca2+ release, so contractility rises and end systolic volume falls",
+      "parasympathetic: acetylcholine on muscarinic (M2) receptors, Gi, cAMP falls, and K+ channels open",
+      "K+ efflux hyperpolarizes the node and the funny current falls, so the slope flattens and heart rate falls",
+      "the ventricles have little parasympathetic innervation, so contractility is barely affected by the vagus"
+    ]
+  },
+  {
+    "id": "w09-bd-08",
+    "type": "bd",
+    "competencyId": "w11-heart-sounds",
+    "dok": 3,
+    "prompt": "Without notes, explain what produces the first and second heart sounds, then explain how you would use the timing of a murmur (before or after the second sound) to decide whether a given valve is narrowed or leaking.",
+    "rubric": [
+      "the first sound is the atrioventricular valves closing when ventricular pressure rises above atrial pressure at the start of systole",
+      "the second sound is the semilunar valves closing when ventricular pressure falls below arterial pressure at the start of diastole",
+      "a murmur is turbulent flow through a valve that is either too narrow (stenosis) or does not seal (regurgitation)",
+      "a systolic murmur (between the first and second sounds) means aortic or pulmonary stenosis, or mitral or tricuspid regurgitation",
+      "a diastolic murmur (after the second sound) means mitral or tricuspid stenosis, or aortic or pulmonary regurgitation",
+      "the rule: ask which valves should be open and which should be closed in that phase; noise from an open valve is stenosis, noise from a closed valve is regurgitation"
+    ]
+  },
+  {
+    "id": "w09-app-01",
+    "type": "app",
+    "competencyId": "w10-pacemaker-potential",
+    "dok": 3,
+    "case": "A patient with a resting heart rate of 62 beats per minute (normal 60 to 100) is given atropine, a drug that blocks muscarinic receptors. Within two minutes the rate is 95 beats per minute. No epinephrine or norepinephrine was given.",
+    "stem": "What happened in the sinoatrial node cells to raise the rate?",
+    "options": [
+      "Blocking the resting vagal signal reduced K+ efflux and raised the funny current, so the pacemaker potential reached threshold sooner.",
+      "Atropine stimulated beta 1 receptors, raised cAMP, and increased Ca2+ entry during the upstroke.",
+      "Atropine lowered the threshold for the L type Ca2+ channels so the upstroke fired at a more negative voltage.",
+      "Atropine triggered epinephrine release from the adrenal medulla, which drove the node faster."
+    ],
+    "correct": 0,
+    "why": "At rest the vagus is always releasing some acetylcholine onto the node. That acetylcholine, through muscarinic receptors, opens K+ channels and lowers the funny current, which holds the rate below the intrinsic 100 beats per minute. Atropine blocks the muscarinic receptors, so the brake comes off: K+ efflux falls, the funny current rises, the pacemaker slope steepens, and each cycle is shorter. The rate climbs toward the intrinsic rate of the node without any sympathetic help.",
+    "whyNot": [
+      "Correct. The rate rose because the parasympathetic brake was removed, which changes the same channels acetylcholine was acting on.",
+      "Wrong. Atropine is a muscarinic blocker and has no action at beta 1 receptors. A beta 1 agonist would do this, and the rate could then exceed 100.",
+      "Wrong. Atropine does not change the voltage at which Ca2+ channels open. The node reaches the same threshold, just sooner.",
+      "Wrong. The case rules out catecholamines, and atropine does not stimulate the medulla. The rise stopping near 100 also fits vagal withdrawal, not a hormone."
+    ]
+  },
+  {
+    "id": "w09-app-02",
+    "type": "app",
+    "competencyId": "w10-cardiac-ap",
+    "dok": 3,
+    "case": "A patient with kidney failure has a plasma K+ of 7.2 mmol/L (normal 3.5 to 5.0). The ECG shows a QRS complex that has widened from 0.08 to 0.14 second (normal under 0.12).",
+    "stem": "Explain the chain from the high plasma K+ to the wide QRS.",
+    "options": [
+      "The resting potential of ventricular cells is less negative, so more fast Na+ channels are inactivated at rest, the upstroke is slower, and the wave of depolarization spreads more slowly through the ventricles.",
+      "The high K+ blocks the L type Ca2+ channels, so the plateau is shorter and repolarization spreads faster.",
+      "The resting potential of ventricular cells is more negative, so it takes longer to reach threshold in each cell.",
+      "The high K+ speeds up conduction through the atrioventricular node, so the ventricles depolarize before the Purkinje fibers are ready."
+    ],
+    "correct": 0,
+    "why": "The resting potential of a ventricular cell is set mostly by the K+ gradient. Raising extracellular K+ shrinks that gradient, so the resting potential moves from about -90 mV toward -70 mV. Fast Na+ channels are voltage sensitive, and at a less negative resting potential a fraction of them sit in the inactivated state. With fewer channels available, the upstroke of each cell is smaller and slower, each cell depolarizes its neighbor less effectively, and the wave of depolarization crawls through the ventricles instead of racing. Slower ventricular depolarization is a wider QRS.",
+    "whyNot": [
+      "Correct. The problem is Na+ channel availability, and the ECG shows it as slow ventricular depolarization.",
+      "Wrong. High K+ does not block Ca2+ channels, and a shorter plateau would change the QT interval and T wave, not the width of the QRS.",
+      "Wrong. Raising outside K+ makes the resting potential less negative, not more. A more negative potential would keep the Na+ channels fully available.",
+      "Wrong. Faster nodal conduction would shorten the PR interval. It does not widen the QRS, and high K+ slows conduction everywhere rather than speeding it."
+    ]
+  },
+  {
+    "id": "w09-app-03",
+    "type": "app",
+    "competencyId": "w10-cardiac-refractory",
+    "dok": 3,
+    "case": "A patient is started on a drug that blocks the K+ channels responsible for phase 3 repolarization in ventricular cells. The QT interval lengthens from 0.38 to 0.50 second (normal about 0.36 to 0.44).",
+    "stem": "Predict what happens to the ventricular refractory period and to the fastest rate at which the ventricle can respond to stimulation.",
+    "options": [
+      "The refractory period lengthens, so the maximum rate the ventricle can follow falls.",
+      "The refractory period shortens, so the ventricle can be driven at a higher rate.",
+      "The refractory period is unchanged, because it depends only on how fast the Na+ channels open.",
+      "The refractory period lengthens, so the ventricle will start to tetanize at moderate rates."
+    ],
+    "correct": 0,
+    "why": "The refractory period lasts until enough Na+ channels have recovered from inactivation, and that recovery only happens once the membrane repolarizes. Slowing the K+ current stretches the action potential, so the membrane stays depolarized longer and the Na+ channels stay inactivated longer. A longer refractory period means a longer minimum gap between beats, so the highest rate the ventricle can respond to drops. Each cycle also has less of its time available for a new stimulus to fire a full beat.",
+    "whyNot": [
+      "Correct. A longer action potential drags the refractory period with it, and rate ceiling equals one over the minimum cycle length.",
+      "Wrong. Blocking repolarizing current lengthens the action potential. A shorter refractory period would come from a shorter action potential.",
+      "Wrong. The refractory period depends on Na+ channel recovery, which requires repolarization. Anything that delays repolarization delays recovery.",
+      "Wrong. Lengthening the refractory period makes tetanus even less possible. Tetanus needs a new action potential during the contraction, which a long refractory period prevents."
+    ]
+  },
+  {
+    "id": "w09-app-04",
+    "type": "app",
+    "competencyId": "w10-ecg-interpretation",
+    "dok": 3,
+    "case": "A lead II strip shows an upright P wave before every QRS complex. The R waves are 20 small boxes apart on every beat. The PR interval measures 0.26 second on every beat (normal 0.12 to 0.20).",
+    "stem": "State the ventricular rate and explain what the PR interval tells you about conduction between atria and ventricles.",
+    "options": [
+      "75 beats per minute; every atrial impulse reaches the ventricles, but it is held in the atrioventricular node longer than normal (first degree block).",
+      "75 beats per minute; the atria and ventricles are firing independently and the atrioventricular node is not conducting at all (complete block).",
+      "60 beats per minute; conduction is normal, and the long PR interval is the expected result of a slow rate.",
+      "100 beats per minute; the impulse is bypassing the atrioventricular node through a faster route."
+    ],
+    "correct": 0,
+    "why": "Rate is 1500 divided by the small boxes between R waves, so 1500 divided by 20 is 75 beats per minute. A P wave before every QRS with a fixed PR interval means each atrial impulse is getting through to the ventricles. A PR interval above 0.20 second means the trip is taking too long, and since most of the PR interval is nodal delay, the slow step is the atrioventricular node. Every beat conducts, just late. That is a first degree block, a delay rather than a failure.",
+    "whyNot": [
+      "Correct. The rate calculation and the fixed, prolonged PR interval both fit a conducted but delayed impulse.",
+      "Wrong. In complete block the P waves and QRS complexes have no fixed relationship and the ventricular rate is slow (30 to 40). Here the PR interval is the same on every beat, so the node is conducting.",
+      "Wrong. 20 small boxes gives 75, not 60. Also a slow rate does not itself lengthen the PR interval beyond 0.20 second; that requires slowed nodal conduction.",
+      "Wrong. 100 would need 15 small boxes. A bypass route would shorten the PR interval, not lengthen it."
+    ]
+  },
+  {
+    "id": "w09-app-05",
+    "type": "app",
+    "competencyId": "w11-cardiac-cycle",
+    "dok": 3,
+    "case": "A patient's atria have stopped contracting in a coordinated way, so there is no atrial kick. At rest her heart rate is 72 beats per minute and her left ventricular end diastolic volume is 115 mL (previously 130 mL). She then climbs three flights of stairs and her rate reaches 150 beats per minute.",
+    "stem": "Predict how the loss of atrial contraction affects end diastolic volume at rest compared with during the stair climb, and explain why.",
+    "options": [
+      "The loss matters more at 150 beats per minute, because the short diastole cuts passive filling and the ventricle depends more on the atrial kick to finish filling.",
+      "The loss matters more at rest, because at 72 beats per minute the atria normally supply most of the filling.",
+      "The loss matters equally at both rates, because atrial contraction always adds a fixed 15 mL.",
+      "The loss matters less at 150 beats per minute, because sympathetic input raises contractility and contractility increases filling."
+    ],
+    "correct": 0,
+    "why": "At a resting rate diastole is long, about two thirds of the cycle, and passive filling has time to bring the ventricle close to its full volume before the atria contract. The atrial kick adds only the last 20 to 30 percent, which is why her end diastolic volume fell modestly, from 130 to 115 mL. At 150 beats per minute the cycle is 0.40 second and most of the lost time comes out of diastole, so passive filling is cut short. In a normal heart the atrial kick then becomes a much larger fraction of filling. Without it, end diastolic volume and stroke volume fall much more during exercise than at rest.",
+    "whyNot": [
+      "Correct. The atrial contribution grows as diastole shrinks, so losing it hurts most at high rates.",
+      "Wrong. At rest the atria supply the minority of filling. Passive filling during the long diastole does most of the work, which is why the resting drop was small.",
+      "Wrong. The atrial contribution is a fraction that depends on how much passive filling has already happened, not a fixed volume.",
+      "Wrong. Contractility affects emptying, not filling. It lowers end systolic volume; it does not replace lost inflow during a short diastole."
+    ]
+  },
+  {
+    "id": "w09-app-06",
+    "type": "app",
+    "competencyId": "w11-pv-loop",
+    "dok": 3,
+    "case": "A patient is given a drug that dilates the veins and pools blood in the venous system. Before the drug, the left ventricular pressure volume loop ran from an end diastolic volume of 130 mL to an end systolic volume of 50 mL. After the drug, end diastolic volume is 105 mL and end systolic volume is still about 50 mL. Aortic pressure and heart rate are unchanged.",
+    "stem": "Describe the change in the loop and calculate the change in stroke volume.",
+    "options": [
+      "The right edge of the loop moves left and the loop narrows; stroke volume falls from 80 to 55 mL, because preload fell and contractility did not change.",
+      "The loop grows taller because afterload rose; stroke volume falls from 80 to 55 mL.",
+      "The left edge of the loop moves right because contractility fell; stroke volume falls from 80 to 55 mL.",
+      "The loop is unchanged in shape but shifts down; stroke volume stays at 80 mL because end systolic volume did not change."
+    ],
+    "correct": 0,
+    "why": "Venous dilation lowers venous return, so the ventricle fills less and the loop starts contracting from a smaller volume. That is a preload change, and on the loop it shows as the right edge (end diastolic volume) moving leftward. The ventricle still empties to the same end systolic volume because contractility and afterload are unchanged, so the left edge stays put and the loop gets narrower. Stroke volume before was 130 minus 50, or 80 mL. After it is 105 minus 50, or 55 mL.",
+    "whyNot": [
+      "Correct. Only the filling side of the loop moved, which is the signature of a pure preload change.",
+      "Wrong. Afterload is set by aortic pressure, which did not change. A taller loop with a higher end systolic volume would be the afterload picture.",
+      "Wrong. Lower contractility would raise end systolic volume and move the left edge rightward. Here end systolic volume did not change.",
+      "Wrong. Stroke volume is end diastolic minus end systolic volume, and the end diastolic side fell by 25 mL, so stroke volume must fall."
+    ]
+  },
+  {
+    "id": "w09-app-07",
+    "type": "app",
+    "competencyId": "w11-heart-sounds",
+    "dok": 3,
+    "case": "A patient has a low pitched rumbling murmur that begins after the second heart sound and continues until just before the next first sound. Catheter measurements during diastole show a left atrial pressure of 24 mmHg (normal 4 to 12) and a left ventricular pressure of 6 mmHg (normal 4 to 12).",
+    "stem": "What is producing the sound, and what is happening to left ventricular filling?",
+    "options": [
+      "Blood is being forced through a narrowed mitral valve during diastole; the 18 mmHg gradient drives turbulent flow and the ventricle fills slowly and incompletely.",
+      "Blood is leaking backward through the mitral valve during diastole; the ventricle overfills.",
+      "Blood is leaking backward through the aortic valve during diastole; the ventricle fills from two directions.",
+      "Blood is being forced through a narrowed aortic valve during ejection; filling is normal but ejection is impaired."
+    ],
+    "correct": 0,
+    "why": "The timing places the murmur in diastole, when the only valve that should have flow through it on the left side is the mitral valve. In a healthy heart, atrial and ventricular pressures are nearly equal during filling because the open mitral valve offers almost no resistance. Here the atrium is at 24 mmHg while the ventricle sits at 6 mmHg, so there is an 18 mmHg drop across a valve that should be wide open. That gradient means the orifice is narrowed. Blood squeezing through a small opening is turbulent, which is the rumble, and the ventricle fills slowly, so end diastolic volume and stroke volume are reduced.",
+    "whyNot": [
+      "Correct. A diastolic murmur plus a large atrium to ventricle gradient is a narrowed mitral valve, and narrowing restricts inflow.",
+      "Wrong. The mitral valve is supposed to be open in diastole, so it cannot leak backward then. Mitral regurgitation is a systolic murmur, and it would not create a gradient into the ventricle.",
+      "Wrong. Aortic regurgitation is diastolic, but it would raise ventricular diastolic pressure and would not produce a high atrial pressure with a low ventricular pressure.",
+      "Wrong. Aortic stenosis produces a systolic murmur between the first and second sounds. This murmur is after the second sound, and the measured gradient is across the mitral valve."
+    ]
+  },
+  {
+    "id": "w09-app-08",
+    "type": "app",
+    "competencyId": "w11-stroke-volume",
+    "dok": 3,
+    "case": "An echocardiogram gives a left ventricular end diastolic volume of 180 mL (normal about 100 to 140) and an end systolic volume of 120 mL (normal about 40 to 60). Resting heart rate is 80 beats per minute.",
+    "stem": "Calculate stroke volume and ejection fraction, and explain what the pair of numbers says about this ventricle.",
+    "options": [
+      "Stroke volume 60 mL, ejection fraction 33 percent; the ventricle is weak and has dilated, so it maintains a near normal stroke volume only by starting from a much larger volume.",
+      "Stroke volume 60 mL, ejection fraction 67 percent; the ventricle is contracting normally.",
+      "Stroke volume 120 mL, ejection fraction 67 percent; the ventricle is contracting more strongly than normal.",
+      "Stroke volume 60 mL, ejection fraction 33 percent; the ventricle is small and underfilled."
+    ],
+    "correct": 0,
+    "why": "Stroke volume is 180 minus 120, which is 60 mL, a value near the low end of normal. Ejection fraction is 60 divided by 180, which is 0.33, far below the normal 55 to 70 percent. The two numbers together tell the story. This ventricle ejects only a third of what it holds, so contractility is poor. It still puts out about 60 mL per beat because it has stretched to hold 180 mL, and the Frank Starling stretch on those enlarged fibers partly makes up for the weak contraction. Stroke volume alone would hide the problem; ejection fraction exposes it.",
+    "whyNot": [
+      "Correct. The arithmetic gives 60 mL and 33 percent, and a low fraction with a large end diastolic volume is a dilated, weak ventricle.",
+      "Wrong. 67 percent is 120 divided by 180, which is the fraction left behind, not the fraction ejected.",
+      "Wrong. 120 mL is the end systolic volume, the blood that stayed in the ventricle. Stroke volume is the difference between the two measurements.",
+      "Wrong. An end diastolic volume of 180 mL is well above normal, so the ventricle is enlarged, not small or underfilled."
+    ]
+  },
+  {
+    "id": "w09-app-09",
+    "type": "app",
+    "competencyId": "w11-cardiac-output",
+    "dok": 3,
+    "case": "A patient's atrioventricular node has stopped conducting, and a ventricular escape pacemaker is driving the ventricles at 38 beats per minute (normal 60 to 100). An echocardiogram shows a stroke volume of 95 mL (normal about 70 mL).",
+    "stem": "Calculate the cardiac output, and explain why the stroke volume is above normal even though the ventricle has not become stronger.",
+    "options": [
+      "About 3.6 L/min; the long diastole lets the ventricle fill to a larger end diastolic volume, and the extra stretch raises stroke volume by the Frank Starling relationship, but not enough to offset the slow rate.",
+      "About 5.0 L/min; the larger stroke volume fully compensates for the slow rate.",
+      "About 3.6 L/min; the escape pacemaker releases norepinephrine onto the ventricle and raises contractility.",
+      "About 2.7 L/min; stroke volume is above normal because afterload has fallen."
+    ],
+    "correct": 0,
+    "why": "Cardiac output is 38 beats per minute times 95 mL, which is 3610 mL/min, or about 3.6 L/min, well below a normal resting 5 L/min. At 38 beats per minute each cycle lasts about 1.6 seconds, and almost all of that extra time is diastole. The ventricle fills to a larger end diastolic volume, the fibers are stretched more, and they contract harder, so stroke volume rises from about 70 to 95 mL. That is the Frank Starling mechanism doing what it can. The gain in stroke volume (about 35 percent) is much smaller than the loss in rate (about 50 percent), so output still falls.",
+    "whyNot": [
+      "Correct. The math gives 3.6 L/min, and the raised stroke volume is a preload effect from the long filling time.",
+      "Wrong. 38 times 95 mL is 3610 mL, not 5000. To reach 5 L/min at 38 beats per minute the stroke volume would need to be about 130 mL.",
+      "Wrong. An escape pacemaker is a group of cells firing spontaneously. It does not release norepinephrine. Contractility has not changed; filling has.",
+      "Wrong. 2.7 L/min does not follow from 38 times 95 mL, and nothing in the case changed arterial pressure. The larger stroke volume is from more filling, not less afterload."
+    ]
+  },
+  {
+    "id": "w09-app-10",
+    "type": "app",
+    "competencyId": "w11-frank-starling",
+    "dok": 3,
+    "case": "A healthy volunteer lying flat is tilted so her legs are raised above her heart. Over the next several beats, right ventricular stroke volume rises from 70 to 80 mL. Her heart rate and autonomic output do not change during the first few beats.",
+    "stem": "Predict what happens to left ventricular stroke volume over the next several beats, and explain the mechanism that links the two ventricles.",
+    "options": [
+      "Left ventricular stroke volume rises to match about 80 mL, because the extra blood the right ventricle pumps into the lungs returns to the left ventricle, raises its end diastolic volume, and the extra stretch increases its force of contraction.",
+      "Left ventricular stroke volume stays at 70 mL, because the two ventricles are regulated independently and the left side needs sympathetic input to change.",
+      "Left ventricular stroke volume falls, because the extra blood in the lungs raises the afterload on the left ventricle.",
+      "Left ventricular stroke volume rises to 80 mL because the right ventricle sends an electrical signal to the left ventricle to contract harder."
+    ],
+    "correct": 0,
+    "why": "Raising the legs pushes pooled venous blood back to the right heart, so the right ventricle fills more and by the Frank Starling law ejects more. That extra 10 mL per beat goes into the pulmonary circulation and, a few beats later, arrives at the left atrium and left ventricle. The left ventricle now fills more, stretches more, and contracts harder, so its stroke volume climbs until it matches the right side. No nerve is needed, because the response is built into the muscle. This is how the two pumps in series stay balanced; without it, blood would pile up in the lungs or in the systemic veins within minutes.",
+    "whyNot": [
+      "Correct. The link is the pulmonary circulation delivering the extra volume and the muscle's own length dependence converting it into more force.",
+      "Wrong. The two ventricles are in series, so whatever one sends becomes the other's preload. The length response needs no autonomic input, as a denervated transplanted heart shows.",
+      "Wrong. Left ventricular afterload is aortic pressure, not pulmonary volume. More pulmonary blood raises left ventricular preload, which increases stroke volume rather than lowering it.",
+      "Wrong. The ventricles share one electrical impulse, but the signal is the same on every beat. The change in force comes from stretch, not from a stronger electrical signal."
+    ]
+  },
+  {
+    "id": "w09-app-11",
+    "type": "app",
+    "competencyId": "w11-preload-afterload",
+    "dok": 3,
+    "case": "A patient is given a drug that dilates arterioles only. Mean arterial pressure falls from 110 to 85 mmHg (normal about 70 to 105). Heart rate is held constant with a pacemaker, and venous return does not change during the first few beats. Before the drug, end diastolic volume was 130 mL and end systolic volume was 55 mL.",
+    "stem": "Predict the immediate change in end systolic volume and stroke volume, and explain why.",
+    "options": [
+      "End systolic volume falls and stroke volume rises above 75 mL, because the ventricle ejects against a lower afterload and can empty further from the same starting volume.",
+      "End systolic volume rises and stroke volume falls, because a lower arterial pressure means less pressure to drive blood out of the ventricle.",
+      "End diastolic volume rises and stroke volume rises, because the arteriolar dilation raises venous return.",
+      "Nothing changes, because stroke volume depends only on preload and contractility."
+    ],
+    "correct": 0,
+    "why": "Afterload is the pressure the ventricle must overcome to eject, and arterial pressure sets it. Dropping the arterial pressure by 25 mmHg means the aortic valve opens sooner in the beat and the ventricle keeps ejecting longer before its pressure falls below aortic pressure. With the same filling (130 mL) and the same contractility, the ventricle empties further, so end systolic volume falls below 55 mL and stroke volume rises above the original 75 mL. This is why arteriolar dilators help a weak ventricle: they lower the load it works against.",
+    "whyNot": [
+      "Correct. Lower afterload means more complete ejection from an unchanged preload, which is a smaller end systolic volume and a larger stroke volume.",
+      "Wrong. The ventricle generates its own pressure to eject. Arterial pressure opposes ejection; it does not drive it. This reverses the meaning of afterload.",
+      "Wrong. The case holds venous return constant during the first few beats, and arteriolar dilation acts on the resistance side, not on filling. This describes a preload change, which is not what the drug did.",
+      "Wrong. Afterload is the third determinant of stroke volume. Ignoring it leaves out the effect the case is asking about."
+    ]
+  },
+  {
+    "id": "w09-app-12",
+    "type": "app",
+    "competencyId": "w11-cardiac-regulation",
+    "dok": 3,
+    "case": "A patient starts a beta 1 receptor blocker. Before the drug, resting heart rate was 72 beats per minute and maximum exercise heart rate was 185. After the drug, resting rate is 64 and maximum exercise rate is 130.",
+    "stem": "Explain, at the receptor and second messenger level, why the drug changed the exercise rate so much more than the resting rate.",
+    "options": [
+      "At rest the rate is set mostly by vagal tone, which acts through muscarinic receptors the drug does not touch; during exercise the rise depends on norepinephrine raising cAMP through beta 1 receptors, and that is exactly the pathway the drug blocks.",
+      "The drug blocks muscarinic receptors on the node, so it removes the vagal brake at rest but cannot help during exercise.",
+      "At rest the node runs at its intrinsic rate, so nothing can slow it; during exercise the drug blocks the funny current channels directly.",
+      "The drug lowers the intrinsic rate of the node by blocking L type Ca2+ channels, and the effect is larger at high rates because more Ca2+ channels are open."
+    ],
+    "correct": 0,
+    "why": "Resting heart rate sits below the intrinsic 100 beats per minute because the vagus is releasing acetylcholine onto muscarinic receptors, and only a small amount of sympathetic tone is present. Blocking beta 1 receptors removes that small sympathetic contribution, so rest drops a few beats. Exercise is different: the rise from about 100 to 185 is almost entirely norepinephrine and epinephrine acting on beta 1 receptors, raising cAMP, and increasing the funny current and Ca2+ current in the node. With the receptor blocked, the second messenger never rises, and the rate can only reach about 130, roughly what vagal withdrawal plus whatever escapes the block allows.",
+    "whyNot": [
+      "Correct. The drug blocks the sympathetic pathway, which matters little at rest and enormously during exercise.",
+      "Wrong. A beta 1 blocker does not act at muscarinic receptors. Blocking muscarinic receptors would raise the resting rate, and the resting rate fell.",
+      "Wrong. The resting node is held below its intrinsic rate by vagal tone. And the drug blocks a receptor, not the funny current channel itself; the funny current falls because cAMP falls.",
+      "Wrong. Beta 1 blockers do not block Ca2+ channels. They stop norepinephrine from increasing Ca2+ current through cAMP, which is a different step."
+    ]
+  }
+]
