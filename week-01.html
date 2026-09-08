@@ -392,6 +392,29 @@ button.sheetbtn[aria-expanded="true"]{background:#0B1530;color:#fff;border-color
 .c-maroon{--tab:#8B3A2E;--icoink:#fff}
 .c-navy{--tab:#0B1530;--icoink:#fff}
 .c-gold{--tab:#C9A14A;--icoink:#0B1530}
+
+/* The path rows are the control now, Sep 7 2026. They looked like
+   checkboxes and were inert: the only working toggle was a button at the
+   foot of each section, seven screens away from the list showing the
+   state. Both work now and share one store. */
+#pathlist{list-style:none;padding:0;margin:0}
+#pathlist li{display:flex;align-items:center;gap:10px;margin:0 0 2px}
+.ptog{flex:1;display:flex;align-items:center;gap:14px;width:100%;text-align:left;
+  font:inherit;font-size:17px;font-weight:700;color:var(--navy,#0B1530);
+  background:#fff;border:1px solid rgba(11,21,48,.14);border-radius:10px;
+  padding:12px 16px;cursor:pointer;transition:border-color 150ms ease,background 150ms ease}
+.ptog:hover{border-color:#8B3A2E}
+.ptog:focus-visible{outline:3px solid #8B3A2E;outline-offset:2px}
+.ptog .st{font-size:17px;line-height:1;width:20px;text-align:center;color:#5A6675}
+.ptog[aria-pressed="true"]{background:#ECEFF4}
+.ptog[aria-pressed="true"] .st{color:#8B3A2E}
+.ptog[aria-pressed="true"] .nm{text-decoration:line-through;text-decoration-color:rgba(11,21,48,.35)}
+li.next .ptog{border-color:#8B3A2E}
+li.next .ptog .st{color:#8B3A2E}
+#pathlist .jump{flex:0 0 auto;font-size:12.5px;font-weight:800;letter-spacing:.1em;
+  text-transform:uppercase;color:#8B3A2E;text-decoration:none;padding:8px 10px;border-radius:8px}
+#pathlist .jump:hover{text-decoration:underline}
+@media print{#pathlist .jump{display:none}}
 </style>
 </head>
 <body>
@@ -983,13 +1006,15 @@ button.sheetbtn[aria-expanded="true"]{background:#0B1530;color:#fff;border-color
        ======================================================== -->
   <section class="step" id="apply" aria-labelledby="apply-h">
     <p class="stepnum"><span class="big">06</span>Apply</p>
-    <h2 id="apply-h">Choose a case. Use the physiology.</h2>
-    <p class="subtitle">Four cases, four different rooms, the same physiology underneath. Pick one.</p>
+    <h2 id="apply-h">One patient. Choose the room you meet her in.</h2>
+    <p class="subtitle">This is Use It, and it carries 25 percent of your grade.</p>
 
-    <p>All four cases are about a body holding a variable steady while something pushes on it. They differ in who the patient is and what you are looking at, not in how hard they are. Pick the one closest to where you are heading, or pick the one furthest from it, whichever you would rather spend an hour on.</p>
+    <p>You have one patient, <strong>Camila Reyes</strong>, and you will have her for the whole term. She is the same patient for everyone in the class. What you choose is your <strong>entry point</strong>, and you keep that too: nursing, medicine, radiology, respiratory therapy, or exercise and allied health. Everyone reads the same chart every week, then gets the data their discipline would actually have on its desk and a question written from that desk. No entry point is the easier one.</p>
+
+    <p>Choose it this week. Week 1 is her preseason physical, which is the only entry all term where every number is normal, and that is exactly what makes it the one every later week gets compared against.</p>
 
     <div class="card">
-      <p class="label">Whichever case you choose, answer these five</p>
+      <p class="label">Five questions, the same five every week</p>
       <ol>
         <li>Name the physiological variable being regulated, and the control system doing the regulating.</li>
         <li>Predict what is happening to that variable, and in which direction.</li>
@@ -997,9 +1022,20 @@ button.sheetbtn[aria-expanded="true"]{background:#0B1530;color:#fff;border-color
         <li>Interpret the evidence you were given. Say what it shows and what it cannot show.</li>
         <li>Justify your conclusion, and name the one measurement that would change it.</li>
       </ol>
+      <p class="hint" style="margin-bottom:0">By November you should not need to look these up.</p>
     </div>
 
-    <div class="choices">
+    <div class="btnrow">
+      <a class="btn" href="assignment-apply.html?week=1" target="_top">This week's chart and your entry point</a>
+      <a class="btn ghost" href="patient-sheet.html?week=1" target="_blank" rel="noopener">Open your patient sheet &#8599;</a>
+    </div>
+    <p class="hint">The patient sheet walks you through all five questions with somewhere to write, and it is the same sheet every week. Fifteen of them are the patient file you synthesise in Week 15, so keep them.</p>
+
+    <details>
+      <summary>Four extra cases, if you want more practice</summary>
+      <div class="body">
+        <p>These are not the assignment and nothing is submitted for them. They are four separate patients, one per room, all built on the same week 1 physiology. Work one if you want a second run at the five questions before you write your real entry.</p>
+        <div class="choices">
       <div class="choice">
         <p class="kind">Case A &nbsp;|&nbsp; Nursing</p>
         <h3>She stood up and went gray</h3>
@@ -1028,6 +1064,8 @@ button.sheetbtn[aria-expanded="true"]{background:#0B1530;color:#fff;border-color
         <p class="go"><strong>Work it:</strong> explain the rise, then explain the plateau, which is the harder half. Say what is happening at minute 45 that was not happening at minute 5, and what would break the plateau.</p>
       </div>
     </div>
+      </div>
+    </details>
 
     <details>
       <summary>What a strong answer looks like</summary>
@@ -1101,16 +1139,17 @@ button.sheetbtn[aria-expanded="true"]{background:#0B1530;color:#fff;border-color
        ======================================================== -->
   <section class="path" aria-labelledby="path-h">
     <h2 id="path-h">Your Week 1 path</h2>
+    <p class="hint" style="margin:0 0 12px">Tap a step to mark it done. Tap it again to undo.</p>
     <ol id="pathlist">
-      <li data-path="learn"><span class="st" aria-hidden="true">&#9675;</span><span>Learn <span class="vh" data-vh="learn">not started</span></span></li>
-      <li data-path="retrieve"><span class="st" aria-hidden="true">&#9675;</span><span>Retrieve <span class="vh" data-vh="retrieve">not started</span></span></li>
-      <li data-path="practice"><span class="st" aria-hidden="true">&#9675;</span><span>Practice <span class="vh" data-vh="practice">not started</span></span></li>
-      <li data-path="check"><span class="st" aria-hidden="true">&#9675;</span><span>Mastery Check <span class="vh" data-vh="check">not started</span></span></li>
-      <li data-path="investigate"><span class="st" aria-hidden="true">&#9675;</span><span>Investigate <span class="vh" data-vh="investigate">not started</span></span></li>
-      <li data-path="apply"><span class="st" aria-hidden="true">&#9675;</span><span>Apply <span class="vh" data-vh="apply">not started</span></span></li>
-      <li data-path="reflect"><span class="st" aria-hidden="true">&#9675;</span><span>Reflect <span class="vh" data-vh="reflect">not started</span></span></li>
+      <li data-path="learn"><button type="button" class="ptog" data-mark="learn" aria-pressed="false"><span class="st" aria-hidden="true">&#9675;</span><span class="nm">Learn</span><span class="vh" data-vh="learn">not started</span></button><a class="jump" href="#learn">Go to it</a></li>
+      <li data-path="retrieve"><button type="button" class="ptog" data-mark="retrieve" aria-pressed="false"><span class="st" aria-hidden="true">&#9675;</span><span class="nm">Retrieve</span><span class="vh" data-vh="retrieve">not started</span></button><a class="jump" href="#retrieve">Go to it</a></li>
+      <li data-path="practice"><button type="button" class="ptog" data-mark="practice" aria-pressed="false"><span class="st" aria-hidden="true">&#9675;</span><span class="nm">Practice</span><span class="vh" data-vh="practice">not started</span></button><a class="jump" href="#practice">Go to it</a></li>
+      <li data-path="check"><button type="button" class="ptog" data-mark="check" aria-pressed="false"><span class="st" aria-hidden="true">&#9675;</span><span class="nm">Mastery Check</span><span class="vh" data-vh="check">not started</span></button><a class="jump" href="#check">Go to it</a></li>
+      <li data-path="investigate"><button type="button" class="ptog" data-mark="investigate" aria-pressed="false"><span class="st" aria-hidden="true">&#9675;</span><span class="nm">Investigate</span><span class="vh" data-vh="investigate">not started</span></button><a class="jump" href="#investigate">Go to it</a></li>
+      <li data-path="apply"><button type="button" class="ptog" data-mark="apply" aria-pressed="false"><span class="st" aria-hidden="true">&#9675;</span><span class="nm">Apply</span><span class="vh" data-vh="apply">not started</span></button><a class="jump" href="#apply">Go to it</a></li>
+      <li data-path="reflect"><button type="button" class="ptog" data-mark="reflect" aria-pressed="false"><span class="st" aria-hidden="true">&#9675;</span><span class="nm">Reflect</span><span class="vh" data-vh="reflect">not started</span></button><a class="jump" href="#reflect">Go to it</a></li>
     </ol>
-    <p class="hint" style="margin:14px 0 0">You mark these yourself and they stay on this device. Canvas is the official record of what has been submitted and graded.</p>
+    <p class="hint" style="margin:14px 0 0">These ticks are yours. They live in this browser on this device, they are not sent anywhere, and they are not what you are graded on. Canvas is the official record of what has been submitted.</p>
   </section>
 
   <div class="btnrow" style="margin-top:30px">
@@ -1153,11 +1192,18 @@ button.sheetbtn[aria-expanded="true"]{background:#0B1530;color:#fff;border-color
     STEPS.forEach(function(s){
       var on = !!done[s];
 
-      var btn = document.querySelector('[data-mark="' + s + '"]');
-      if (btn){
+      /* Two controls per stage now: the button at the foot of the section
+         and the row in the path panel. Both read and write the same store,
+         so paint every one of them. */
+      document.querySelectorAll('[data-mark="' + s + '"]').forEach(function(btn){
         btn.setAttribute('aria-pressed', on ? 'true' : 'false');
-        btn.textContent = on ? 'Done' : 'Mark ' + btn.getAttribute('data-name') + ' done';
-      }
+        if (btn.classList.contains('ptog')){
+          btn.setAttribute('aria-label',
+            btn.querySelector('.nm').textContent + (on ? ', done. Tap to undo.' : '. Tap to mark done.'));
+        } else {
+          btn.textContent = on ? 'Done' : 'Mark ' + btn.getAttribute('data-name') + ' done';
+        }
+      });
 
       var li = document.querySelector('[data-path="' + s + '"]');
       if (li){
@@ -1178,7 +1224,8 @@ button.sheetbtn[aria-expanded="true"]{background:#0B1530;color:#fff;border-color
 
   document.querySelectorAll('[data-mark]').forEach(function(btn){
     var s = btn.getAttribute('data-mark');
-    btn.setAttribute('data-name', btn.textContent.replace(/^Mark\s+/, '').replace(/\s+done$/, ''));
+    if (!btn.classList.contains('ptog'))
+      btn.setAttribute('data-name', btn.textContent.replace(/^Mark\s+/, '').replace(/\s+done$/, ''));
     btn.addEventListener('click', function(){
       done[s] = !done[s];
       if (!done[s]) delete done[s];

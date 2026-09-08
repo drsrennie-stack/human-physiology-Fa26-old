@@ -121,10 +121,17 @@ section h2{font-size:clamp(21px,3vw,27px);margin-bottom:10px}
 .panel :focus-visible{outline-color:var(--gold)}
 
 /* ---------- call to action ---------- */
-.cta{display:inline-flex;align-items:center;gap:10px;margin:18px 0 0;
-  background:var(--maroon);color:#fff;
+/* The CTA is now a link to the Canvas board rather than a "hit Reply
+   below" instruction, so the anchor carries the class itself. Putting
+   an <a> inside a maroon block would have inherited the page's maroon
+   link color on a maroon ground. White on #8B3A2E is 7.66:1. */
+.cta{display:inline-flex;align-items:center;gap:10px;
+  background:var(--maroon);color:#fff;text-decoration:none;
   font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;
-  padding:15px 26px;border-radius:8px;max-width:none}
+  padding:15px 26px;border-radius:8px;max-width:none;min-height:46px;
+  transition:background 160ms ease}
+a.cta:hover,a.cta:focus-visible{background:var(--maroon-dark,#6E2D24);color:#fff}
+a.cta:focus-visible{outline:3px solid var(--navy);outline-offset:3px}
 .cta .arw{font-size:15px;line-height:1}
 
 /* ---------- the copy-paste post template, a white card inside the dark panel ---------- */
@@ -192,7 +199,7 @@ footer :focus-visible{outline-color:var(--gold)}
   <p class="eyebrow">Getting help, and giving it</p>
   <h1>Dr. Rennie's <span>Virtual Office</span>.</h1>
   <p class="lede">The Virtual Office is a question board in Canvas, open all term. It is the front door for course questions, and it is public on purpose. In a fully online class the hallway conversation after lecture does not happen by accident, so we hold it here, where everyone can benefit from it.</p>
-  <p class="cta"><span class="arw" aria-hidden="true">&darr;</span> To ask something, hit Reply below</p>
+  <p style="margin:18px 0 0"><a class="cta" href="https://yccd.instructure.com/courses/42616/discussion_topics/711800" target="_blank" rel="noopener">Ask a question in the Virtual Office <span aria-hidden="true">&#8599;</span><span class="vh"> Opens the Canvas discussion in a new tab.</span></a></p>
 </div></header>
 
 <main id="main">
@@ -283,11 +290,9 @@ footer :focus-visible{outline-color:var(--gold)}
   <p>If a page does not work for you, tell me there and I will fix it.</p>
 </div></section>
 
+
 <section style="padding-top:0"><div class="wrap">
-  <h2>About extra credit</h2>
-  <p>At the end of the term I read back through the whole board. Where someone has contributed thoughtfully across the semester, in their own words and their own thinking, I may add a small amount of extra credit.</p>
-  <p>I am saying may on purpose. This is not a promise, there is no set number of posts that earns it, and no single post is worth points on its own. What I am looking for is collaboration rather than transactions. Staying in a thread instead of dropping one answer and leaving. Building on what someone else already said. Asking the follow-up question. Saying "I think it is this, but I cannot work out why that part fits" and letting someone meet you there. Coming back to tell people what finally worked. An answer pasted in from an AI reads differently from a person working something out, and it does not count toward this.</p>
-  <p>Write like yourself and there is nothing here to manage.</p>
+  <p style="margin:0"><a class="cta" href="https://yccd.instructure.com/courses/42616/discussion_topics/711800" target="_blank" rel="noopener">Open the Virtual Office in Canvas <span aria-hidden="true">&#8599;</span><span class="vh"> Opens the Canvas discussion in a new tab.</span></a></p>
 </div></section>
 
 </main>

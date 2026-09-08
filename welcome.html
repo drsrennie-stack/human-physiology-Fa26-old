@@ -1276,22 +1276,37 @@
     return 'Open hub';
   }
 
-  /* Two weeks open at a time, revised Sep 7 2026: a week unlocks on the
-     Saturday before the PREVIOUS week starts, at noon, and then stays open
-     for good. One week of lead time, no more. Identical rule to
-     week-navigator.html; if one changes, change both. Weeks open Monday
-     except Week 1, which opens Tuesday Sep 8, so this walks back to the
-     most recent Saturday rather than a fixed offset, then takes seven more. */
+  /* Two weeks open at a time. A week unlocks when the previous week
+     opens, at the start of that day, so the moment Week 2 opens Week 3
+     unlocks with it. Week 1 is the exception, opening at noon on the
+     Saturday before the term. Finished weeks stay open all term.
+
+     HG_HOLD pins a week shut past its normal unlock while its materials
+     are still being written. A hold only ever delays. Week 2 is held to
+     Sep 14, so Week 1 runs alone and Weeks 2 and 3 open together.
+
+     Identical rule to week-navigator.html; if one changes, change both. */
   var HG_OPENS = ['2026-09-08','2026-09-14','2026-09-21','2026-09-28','2026-10-05',
                   '2026-10-12','2026-10-19','2026-10-26','2026-11-02','2026-11-09',
                   '2026-11-16','2026-11-23','2026-11-30','2026-12-07','2026-12-14'];
-  var HG_LEAD_DAYS = 7;   /* one full week of lead time */
+  var HG_HOLD = { 2: '2026-09-14' };
+  function hgDate(iso){ var t = iso.split('-'); return new Date(+t[0], +t[1]-1, +t[2]); }
   function hgUnlock(wk){
-    var t = HG_OPENS[wk-1].split('-');
-    var o = new Date(+t[0], +t[1]-1, +t[2]);
-    var back = (o.getDay() - 6 + 7) % 7 || 7;
-    return new Date(o.getFullYear(), o.getMonth(),
-                    o.getDate() - back - HG_LEAD_DAYS, 12, 0, 0, 0);
+    var u;
+    if (wk > 1) {
+      var prev = hgDate(HG_OPENS[wk-2]);
+      u = new Date(prev.getFullYear(), prev.getMonth(), prev.getDate(), 0, 0, 0, 0);
+    } else {
+      var o = hgDate(HG_OPENS[0]);
+      var back = (o.getDay() - 6 + 7) % 7 || 7;
+      u = new Date(o.getFullYear(), o.getMonth(), o.getDate() - back, 12, 0, 0, 0);
+    }
+    if (HG_HOLD[wk]) {
+      var h = hgDate(HG_HOLD[wk]);
+      var held = new Date(h.getFullYear(), h.getMonth(), h.getDate(), 0, 0, 0, 0);
+      if (held > u) u = held;
+    }
+    return u;
   }
   function hgShort(dt){ return dt.toLocaleDateString('en-US',{month:'short',day:'numeric'}); }
   function hgLong(dt){ return dt.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'}); }

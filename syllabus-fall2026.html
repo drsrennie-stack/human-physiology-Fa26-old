@@ -119,9 +119,28 @@ footer{margin-top:64px;padding:24px;color:var(--navy-70);font-size:14px;text-ali
 @media print{.printbar{display:none}}
 .vh{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;
   clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+/* PANEL MODE. Loaded with ?embed=1 from the Start Here panel: the page
+   keeps its whole body and loses only chrome the surrounding page already
+   provides. Added Sep 7 2026. */
+html.embedded .mm-brandbar,
+html.embedded header.top,
+html.embedded .homebar,
+html.embedded .skip{display:none!important}
+html.embedded body{padding-top:0}
+html.embedded main{padding-top:4px}
+html.embedded{scrollbar-gutter:stable;scrollbar-width:thin;scrollbar-color:rgba(11,21,48,.35) transparent}
+html.embedded::-webkit-scrollbar{width:11px}
+html.embedded::-webkit-scrollbar-track{background:rgba(11,21,48,.05)}
+html.embedded::-webkit-scrollbar-thumb{background:rgba(11,21,48,.32);border-radius:99px;border:3px solid transparent;background-clip:content-box}
 </style>
 </head>
 <body>
+<script>
+(function(){ if (/[?&]embed=1/.test(location.search))
+  document.documentElement.className += ' embedded'; }());
+</script>
+
 <a class="skip" href="#contents">Skip to the contents</a>
 
 <div class="mm-brandbar"><div class="mm-wrap">
@@ -264,14 +283,19 @@ footer{margin-top:64px;padding:24px;color:var(--navy-70);font-size:14px;text-ali
   <p><strong>In this course, mastery means levels 3 and 4,</strong> with recall as the foundation that makes either possible. Recognition is not on the list. It is the level that feels like understanding while you are reading and disappears the moment the notes are closed.</p>
 
   <h3>The Mastery Check, and why it has no points</h3>
-  <p>Every week ends its learning half with a <strong>Mastery Check</strong>. It is not a quiz, and it is not called one, because the word quiz makes everyone think about points instead of about information.</p>
+  <p>Every week ends its learning half with a <strong>Mastery Check</strong>. It is not a quiz, and it is not called one, because the word quiz makes everyone think about points instead of about information. It is a real practice exam that you build yourself, on the week you are in.</p>
   <ul>
     <li><strong>No points, no penalty, and nothing about it reaches Canvas.</strong> Its only job is to tell you whether the way you chose to learn that week worked.</li>
+    <li><strong>You build it yourself.</strong> Open the practice exam, tick the week you are in, choose 30 questions, and go. That takes about five seconds and it means the exam is yours rather than one handed to you.</li>
     <li><strong>Do not use your notes the first time.</strong> If you look things up it will tell you what you can find. You already know you can find things. What you need to know is what you can retrieve.</li>
-    <li><strong>Unlimited attempts, and the questions change between them.</strong> Try, find the gap, relearn it, try again. That sequence is the whole point, and it is impossible to build if the first attempt is being scored.</li>
-    <li><strong>Every competency is asked twice, at two levels.</strong> Once at Retrieve, where you reconstruct the mechanism, and once at Use It, where you meet a situation you have not seen and have to predict what changes and why. Asking only the first kind lets you look fluent while still being unable to do physiology. The pair is what tells the truth.</li>
-    <li><strong>It never gives you a score.</strong> A percentage is a grade wearing a different hat, and it tells you nothing about what to do on Tuesday. Instead it gives you a line for each competency and a specific next move: what you are solid on, what to go back to, and which resource to try that is not the one that already did not work for you.</li>
+    <li><strong>Unlimited attempts, and every one is a different exam.</strong> The bank holds about 5,600 questions, so sitting the same week twice measures whether you learned the physiology rather than whether you remembered the questions. Try, find the gap, relearn it, try again.</li>
+    <li><strong>Five kinds of question, in the same mix every time.</strong> Multiple choice, multiple answer, true or false where you have to make the false statement true, brain dumps you check against a rubric, and application questions. Roughly nine in ten sit above simple recall, because recognizing a right answer and being able to do physiology are not the same skill.</li>
+    <li><strong>You rate your confidence before you check.</strong> That is what lets the report separate a gap, where you were unsure and wrong, from a misconception, where you were sure and wrong. Those need completely different fixes, and the confident wrong ones are the expensive kind because they do not go away on their own.</li>
+    <li><strong>You do get a score, and every attempt is logged.</strong> That is on purpose. The score is not what you are graded on, but it is how improvement gets measured: the log keeps every exam you take, so you and I can both see whether the numbers are moving over a run of attempts rather than guessing from one.</li>
+    <li><strong>The score is not the most useful part of the report, though.</strong> Underneath it you get your score by week, the competencies to review, the ones you got wrong while you felt confident, and how this attempt compares with your last one on the same weeks. That is what tells you what to do next.</li>
+    <li><strong>One exam does not cover a week.</strong> Thirty questions sample it. A competency you have never been asked about is not one you have proved, which is the real reason to come back and build another.</li>
   </ul>
+  <p>The report lists the competencies to review and never the questions or the answers, so you can upload it. That is the <strong>weekly practice log</strong>, and it carries no points either: I read it to see who is practicing and who might want a hand before an exam, not to grade anybody.</p>
   <p>Then the discussion closes the loop. It does not ask what study strategy you used. It asks what the check revealed, what you did about it, and what happened when you tried again. That is evidence of your thinking, and it is gradeable without anyone having to grade your learning process itself.</p>
 
   <h3>Where the effort actually goes</h3>
@@ -379,7 +403,7 @@ footer{margin-top:64px;padding:24px;color:var(--navy-70);font-size:14px;text-ali
   <ul>
     <li><strong>The note sheet and the retrieval work.</strong> This is where you find out what you do not know. Grading it would push you to make it look finished instead of making it honest, and an honest sheet with gaps in it is worth more to you than a tidy one.</li>
     <li><strong>The practice items and the book problems.</strong> Predict, commit, check, correct, explain. Getting these wrong is the point of doing them. The book problems sit in Learn and Retrieve with two routes through them: work them forwards if you have a way in, or work them backwards, reading a solution and writing beside each line why that step is there before reproducing it from blank paper. The second route is for the problems you open and cannot start. It is not the easy option, it is usually the slower one, and it is a real way to learn a hard topic rather than a way around it.</li>
-    <li><strong>The Mastery Check.</strong> No points, no penalty, unlimited attempts, and it never gives you a score. It reports competency by competency and tells you what to go back to. See section 04 for why it works that way.</li>
+    <li><strong>The Mastery Check.</strong> No points, no penalty, and as many attempts as you want. It does score you, and it reports competency by competency so you know what to go back to. The score is for you; none of it reaches the gradebook. See section 04 for why it works that way.</li>
   </ul>
   <p>None of this is optional in any way that matters. It is the entire route to the four graded categories above, and the students who skip it are the ones who arrive at a midterm able to recognize a pathway and unable to draw one.</p>
 </section>

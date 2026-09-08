@@ -177,25 +177,51 @@ a.wk.exam:hover,a.wk.exam:focus-visible{background:rgba(201,161,74,.14)}
   function pad(n){ return (n < 10 ? '0' : '') + n; }
 
   /* WHEN A WEEK UNLOCKS.
-     Scrubs' rule, revised Sep 7 2026: two weeks open at a time, so a
-     student who has to work ahead can get one week ahead and no further.
+     Scrubs' rule, Sep 7 2026 (third revision).
 
-     A week now unlocks on the Saturday BEFORE THE PREVIOUS WEEK starts,
-     at noon. Sit in Week 5 and Weeks 1 to 6 are open: everything you have
-     finished, the week you are in, and exactly one week in front of you.
-     Week 7 is not, which is the point. The old rule opened a week on the
-     Saturday before it started, which gave a weekend of lead time rather
-     than a full week.
+     THE RULE. A week unlocks when the previous week opens, at the start
+     of that day. So the moment Week 2 opens, Week 3 unlocks with it, and
+     from then on a student always has the week they are in plus exactly
+     one in front. Weeks already finished stay open for the rest of the
+     term.
 
-     Weeks open Monday, except Week 1 which opens Tuesday Sep 8, so this
-     walks back to the most recent Saturday rather than assuming a fixed
-     number of days, then takes a further seven. */
-  var LEAD_DAYS = 7;   /* one full week of lead time */
-  function unlockAt(openISO){
+     WEEK 1. There is no Week 0 to unlock it, so it opens at noon on the
+     Saturday before the term, which lets somebody arriving over the
+     weekend get started.
+
+     HOLDS. A week whose materials are not finished yet can be pinned
+     shut past its normal unlock with an entry in HOLD below. A hold only
+     ever delays a week; it can never open one early. Week 2 is held to
+     Sep 14 because Scrubs is still writing it, which means Week 1 runs
+     alone and then Weeks 2 and 3 open together on the 14th. Delete a
+     week's HOLD entry the moment its materials are ready and the normal
+     rule takes over again.
+
+     A HOLD IS VISIBLE TO STUDENTS. The locked pill shows the held date,
+     so a hold reads as "Opens Sep 14", not as something broken. Do not
+     leave one in place past the date it names. */
+  var HOLD = {
+    2: '2026-09-14'   /* materials still being written, Sep 7 2026 */
+  };
+  function unlockAt(openISO, wkNum){
     var o = d(openISO);
-    var back = (o.getDay() - 6 + 7) % 7 || 7;   /* most recent Saturday before */
-    var u = new Date(o.getFullYear(), o.getMonth(),
-                     o.getDate() - back - LEAD_DAYS, 12, 0, 0, 0);
+    var u;
+    if (wkNum > 1) {
+      /* start of the day the previous week opens */
+      var prev = d(OPENS[wkNum - 2]);
+      u = new Date(prev.getFullYear(), prev.getMonth(), prev.getDate(), 0, 0, 0, 0);
+    } else {
+      /* Week 1 only: noon on the Saturday before it starts. Weeks open
+         Monday except Week 1, which opens Tuesday Sep 8, so walk back to
+         the most recent Saturday rather than assuming a fixed offset. */
+      var back = (o.getDay() - 6 + 7) % 7 || 7;
+      u = new Date(o.getFullYear(), o.getMonth(), o.getDate() - back, 12, 0, 0, 0);
+    }
+    if (HOLD[wkNum]) {
+      var h = d(HOLD[wkNum]);
+      var held = new Date(h.getFullYear(), h.getMonth(), h.getDate(), 0, 0, 0, 0);
+      if (held > u) u = held;      /* a hold delays, never opens early */
+    }
     return u;
   }
   function shortDate(dt){
@@ -231,7 +257,7 @@ a.wk.exam:hover,a.wk.exam:focus-visible{background:rgba(201,161,74,.14)}
     H.weeks.forEach(function(w){
       var isNow  = started && w === cur;
       var isPast = started && w < cur;
-      var unlock = unlockAt(OPENS[w-1]);
+      var unlock = unlockAt(OPENS[w-1], w);
       var locked = new Date() < unlock;
 
       var li = document.createElement('li');
