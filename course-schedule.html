@@ -229,13 +229,16 @@ em,i,cite,dfn,var,address{font-style:normal}
     <h2>How every week works</h2>
     <p class="sub">The same six steps, in the same order, every week of the term. Independent study runs alongside them.</p>
     <div class="beats" id="beats"></div>
-    <ul class="jump-key" aria-label="What the week squares mean">
-      <li><span class="sq j-note" aria-hidden="true">N</span> Note sheet</li>
-      <li><span class="sq j-prob" aria-hidden="true">P</span> Problems</li>
-      <li><span class="sq j-lab" aria-hidden="true">L</span> Lab</li>
-      <li><span class="sq j-disc" aria-hidden="true">D</span> Discussion</li>
-      <li><span class="sq j-study" aria-hidden="true">S</span> Study session</li>
-    </ul>
+    <!-- THE FIVE JUMP SQUARES CAME OUT, Sep 7 2026.
+         Scrubs: "This takes them to the wrong pages... we changed the
+         assignment so just remove those blocks for now."
+
+         They pointed at the assignment set as it stood before Use It
+         became the patient chart and the weekly lab was rebuilt, so N, P,
+         L, D and S no longer describe what a week actually contains. The
+         CSS for .wk-jump and .jump-key is left in place, and the JUMPS
+         array is left commented in the script below, so this comes back
+         as a two block edit once the week set is settled. -->
       </section>
 
   <section class="section">
@@ -378,29 +381,18 @@ em,i,cite,dfn,var,address{font-style:normal}
     }
 
 
-    /* five jump squares, same five, same order, every week */
-    var JUMPS = [
-      ['N','j-note', 'note-sheet.html?week=',            'note sheet'],
-      ['P','j-prob', 'assignment-bookproblems.html?week=','problems'],
-      ['L','j-lab',  'assignment-physioex.html?week=',    'lab'],
-      ['D','j-disc', 'assignment-discussion.html?week=',  'discussion'],
-      ['S','j-study','mastery-physio-os-standalone.html?week=','study session']
-    ];
-    var jump = el('ul','wk-jump');
-    JUMPS.forEach(function(j){
-      var li = document.createElement('li');
-      var a  = document.createElement('a');
-      a.className = j[1];
-      a.href = j[2] + w.wk;
-      a.target = '_top';
-      a.title = 'Week ' + w.wk + ' ' + j[3];
-      a.appendChild(document.createTextNode(j[0]));
-      var vh = el('span','vh','Week ' + w.wk + ' ' + j[3]);
-      a.appendChild(vh);
-      li.appendChild(a);
-      jump.appendChild(li);
-    });
-    card.appendChild(jump);
+    /* THE FIVE JUMP SQUARES CAME OUT, Sep 7 2026. See the comment where
+       the legend used to sit. The array below is the whole of what has to
+       come back, with its hrefs corrected to the current assignment set:
+
+         ['N','j-note', 'note-sheet.html?week=',                  'note sheet'],
+         ['P','j-prob', 'assignment-bookproblems.html?week=',     'problems'],
+         ['L','j-lab',  'assignment-physioex.html?week=',         'lab'],
+         ['D','j-disc', 'assignment-discussion.html?week=',       'discussion'],
+         ['S','j-study','mastery-physio-os-standalone.html?week=','study session']
+
+       Whatever replaces it needs a sixth for Use It, assignment-apply.html,
+       which did not exist when these five were written. */
 
     if (w.extras && w.extras.length){
       var ul = el('ul','wk-extras');

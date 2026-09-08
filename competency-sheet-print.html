@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="icon.svg">
+<title>Competency sheet, printable &middot; BIO 005 Human Physiology</title>
+<link rel="stylesheet" href="assets/fonts-site.css">
+<!--
+  ============================================================
+  BIO 005 Human Physiology, Fall 2026
+  competency-sheet-print.html
+
+  All 268 competencies, by week, with the full statement of what each
+  one asks you to be able to do, tagged lecture or lab.
+
+  WHAT CHANGED, Sep 7 2026. This started as a names only desk card with
+  tick boxes and it was the wrong thing. A competency name is a label,
+  not a task: "Feedback loop components" tells a student nothing they
+  can study from. The full statement does, because it names the verb
+  and the specifics, right down to which pathway to trace. So the
+  statements are always on now and the tick boxes are gone. A student
+  can read a week's list and write a study guide straight off it, which
+  is what it is for.
+
+  It runs longer than the names only version did, and that is the
+  trade. competency-packet-fall2026.html remains the formal document
+  with the design around it; this is the plain list you print.
+
+  DATA comes from bio005-competencies.js, the same 268 the packet, the
+  Mastery OS and the exam bank all read. The lecture and lab tags are
+  its `facets` field, not a guess from the id: id prefixes are
+  historical labels and several disagree with the week a competency is
+  actually taught in.
+  ============================================================
+-->
+<style>
+:root{
+  --navy:#0B1530; --maroon:#8B3A2E; --maroon-dark:#6E2D24;
+  --gold-deep:#8A6D33; --gold-text:#624612; --gold-pale:#F7EFD9;
+  --offwhite:#FAFAF9; --ink-soft:#3D4759; --rule:#A3ACBA; --rule-soft:#D8DDE5;
+  --font:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{margin:0}
+body{font-family:var(--font);background:var(--offwhite);color:var(--navy);line-height:1.45;font-size:16px}
+em,i{font-style:normal}
+h1,h2,h3{margin:0;letter-spacing:-.02em}
+p{margin:0 0 12px}
+a{color:var(--maroon-dark)}
+:focus-visible{outline:3px solid var(--navy);outline-offset:2px;border-radius:3px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--navy);color:#fff;padding:12px 18px;font-weight:700;text-decoration:none}
+.skip:focus{left:0;top:0}
+.vh{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+.wrap{max-width:1000px;margin:0 auto;padding:26px max(16px,3vw) 60px}
+.eyebrow{font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--maroon-dark);margin:0 0 5px}
+h1{font-size:clamp(1.4rem,3.2vw,1.85rem);margin:0 0 6px}
+.lead{max-width:70ch;color:var(--ink-soft);font-size:.95rem}
+
+.bar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:16px 0 6px}
+button.btn{font:inherit;font-size:.84rem;font-weight:700;cursor:pointer;color:var(--navy);background:#fff;
+  border:1.5px solid #7C8798;border-radius:999px;padding:9px 15px;min-height:44px}
+button.btn:hover{background:var(--gold-pale);border-color:var(--gold-deep)}
+button.btn[aria-pressed="true"]{background:var(--maroon);border-color:var(--maroon);color:#fff}
+.tally{font-size:.84rem;font-weight:700;color:var(--gold-text);margin:0}
+.warn{font-size:.82rem;color:var(--ink-soft);margin:0;max-width:64ch}
+
+.sheet{background:#fff;border:1px solid var(--rule);border-radius:14px;padding:22px max(14px,2vw);margin:14px 0 0;
+  box-shadow:0 1px 3px rgba(11,21,48,.08)}
+
+/* NO GRID, NO FLEX IN THE LIST OR THE WEEK HEADER.
+   WeasyPrint builds the tagged PDF and its grid support is partial: the
+   first attempt rendered one word per line and came out at 31 pages
+   instead of 11. Plain block and inline layout prints identically in
+   the browser and in WeasyPrint, which is the whole point of having a
+   PDF that matches the page. */
+.wk{margin:0 0 14px}
+h2.wkhd{border-bottom:1.5px solid var(--navy);padding:0 0 3px;margin:18px 0 8px;
+  font-size:inherit;font-weight:400;break-after:avoid;page-break-after:avoid}
+.wk:first-child h2.wkhd{margin-top:0}
+.wkn{font-size:.74rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--maroon)}
+.wkt{font-size:.94rem;font-weight:800;margin-left:8px}
+.wkc{font-size:.7rem;font-weight:700;color:var(--ink-soft);margin-left:8px;white-space:nowrap}
+
+ol.cl{margin:0;padding:0 0 0 2.1em;list-style:decimal}
+ol.cl li{padding:5px 0;border-bottom:1px dotted var(--rule-soft);
+  break-inside:avoid;page-break-inside:avoid}
+ol.cl li:last-child{border-bottom:0}
+ol.cl li::marker{font-size:.76rem;font-weight:800;color:var(--ink-soft)}
+.lb{display:block}
+.nm{display:block;font-size:.88rem;font-weight:800;line-height:1.25}
+.can{display:block;font-size:.83rem;line-height:1.4;color:var(--ink-soft);margin-top:1px}
+.tag{display:inline;font-size:.6rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;
+  border:1px solid var(--rule);border-radius:3px;padding:0 3px;white-space:nowrap;color:var(--ink-soft);margin-left:5px}
+.tag.lab{border-color:var(--maroon);color:var(--maroon-dark);background:#fff}
+.tag.lec{border-color:var(--gold-deep);color:var(--gold-text)}
+
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:.76rem;color:var(--ink-soft);margin:10px 0 0;align-items:center}
+.legend .tag{margin:0}
+
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+@media print{
+  @page{size:letter portrait;margin:0.5in}
+  html,body{background:#fff}
+  body{font-size:9pt;color:#000;line-height:1.3}
+  .bar,.skip,.tally,.warn,.lead,.noprint{display:none!important}
+  .wrap{max-width:none;padding:0}
+  .sheet{border:0;box-shadow:none;padding:0;margin:0;border-radius:0}
+  h1{font-size:14pt;margin:0 0 2pt}
+  .eyebrow{font-size:7pt;margin:0 0 4pt}
+  h2.wkhd{border-bottom:.9pt solid #000;margin:12pt 0 5pt}
+  .wkn{font-size:7.6pt;color:#000}
+  .wkt{font-size:9.6pt}
+  .wkc{font-size:7pt}
+  ol.cl{padding-left:1.9em}
+  ol.cl li{padding:2.8pt 0;border-bottom:.3pt dotted #999}
+  .nm{font-size:8.7pt}
+  .can{font-size:8.3pt;color:#222;line-height:1.3}
+  .tag{font-size:5.8pt;border:.5pt solid #666;color:#333}
+  .tag.lab{border-color:#000;color:#000}
+  .legend{font-size:7pt;margin-top:8pt}
+  a[href]::after{content:''}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#sheet">Skip to the competency sheet</a>
+
+<main class="wrap">
+  <p class="eyebrow">BIO 005 &middot; Human Physiology &middot; Fall 2026 &middot; Dr. Sharilyn Rennie</p>
+  <h1>Competency sheet</h1>
+  <p class="lead">All 268 competencies, by week, each one written out in full and tagged lecture or lab. Nothing is graded that is not on this list.</p>
+
+  <div class="bar">
+    <button type="button" class="btn" id="printBtn">Print it</button>
+    <button type="button" class="btn" id="labBtn" aria-pressed="false">Lab only</button>
+    <p class="tally" id="tally"></p>
+  </div>
+  <p class="warn">Every competency here is written as the thing you have to be able to do. Read a week, turn each line into a question, and you have that week's study guide.</p>
+
+  <div class="sheet" id="sheet">
+    <div id="cols"></div>
+    <p class="legend">
+      <span class="tag lec">Lec</span> taught in lecture
+      <span class="tag lab">Lab</span> assessed in lab
+      <span>A competency can be both.</span>
+    </p>
+  </div>
+</main>
+
+<script src="bio005-competencies.js"></script>
+<script src="bio005-week-grid.js"></script>
+<script>
+(function(){
+  "use strict";
+  var A = window.BIO005_COMPETENCIES || [];
+  var G = (window.BIO005_WEEK_GRID && window.BIO005_WEEK_GRID.weeks) || [];
+  var TITLE = {};
+  G.forEach(function(w){ TITLE[w.wk] = w.title; });
+
+  function esc(s){
+    return String(s == null ? '' : s).replace(/[&<>"]/g, function(c){
+      return { '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;' }[c];
+    });
+  }
+  function facets(c){
+    var f = c.facets || [];
+    return {
+      lec: f.indexOf('lecture') > -1,
+      lab: f.indexOf('lab') > -1
+    };
+  }
+
+  var cols = document.getElementById('cols');
+  var labOnly = false;
+
+  function render(){
+    var byWeek = {};
+    A.forEach(function(c){
+      var f = facets(c);
+      if (labOnly && !f.lab) return;
+      (byWeek[c.week] = byWeek[c.week] || []).push(c);
+    });
+
+    var html = '';
+    Object.keys(byWeek).map(Number).sort(function(a,b){ return a-b; }).forEach(function(wk){
+      var list = byWeek[wk];
+      /* A real h2 per week, not a styled div. On a 268 item sheet the
+         heading list IS the navigation for a screen reader user, and a
+         div gives them nothing to jump between. */
+      /* A real h2 per week, not a styled div. On a 268 item sheet the
+         heading list IS the navigation for a screen reader user, and a
+         div gives them nothing to jump between. */
+      html += '<section class="wk" aria-labelledby="wkh-' + wk + '">'
+            + '<h2 class="wkhd" id="wkh-' + wk + '">'
+            + '<span class="wkn">Week ' + wk + '</span>'
+            + '<span class="wkt">' + esc(TITLE[wk] || '') + '</span>'
+            + '<span class="wkc">' + list.length + ' competencies</span>'
+            + '</h2><ol class="cl">';
+      list.forEach(function(c){
+        var f = facets(c);
+        /* The statement carries the task, so it leads. The short name
+           sits above it as a label you can scan for, with the lecture
+           and lab tags beside it. No tick boxes: this is a list to
+           study from, not a checklist to work through. */
+        /* The li content is wrapped in a div so the tagger emits an
+           /LBody beside the /Lbl. PDF/UA wants a list item to be a
+           label plus a body; without the wrapper WeasyPrint put the
+           text straight under /LI and the LBody was missing. */
+        html += '<li><div class="lb">'
+              + '<span class="nm">' + esc(c.name)
+              + (f.lec ? ' <span class="tag lec">Lec</span>' : '')
+              + (f.lab ? ' <span class="tag lab">Lab</span>' : '')
+              + '</span>'
+              + '<span class="can">' + esc(c.can) + '</span>'
+              + '</div></li>';
+      });
+      html += '</ol></section>';
+    });
+    cols.innerHTML = html;
+
+    var shown = cols.querySelectorAll('ol.cl li').length;
+    document.getElementById('tally').textContent =
+      shown + (labOnly ? ' lab competencies' : ' competencies') + ' of ' + A.length;
+  }
+
+  document.getElementById('labBtn').addEventListener('click', function(){
+    labOnly = !labOnly;
+    this.setAttribute('aria-pressed', labOnly ? 'true' : 'false');
+    this.textContent = labOnly ? 'Show all' : 'Lab only';
+    render();
+  });
+  document.getElementById('printBtn').addEventListener('click', function(){ window.print(); });
+
+  render();
+})();
+</script>
+<script>
+/* iframe height sender */
+(function(){
+  var id = "csheet-" + Math.random().toString(36).slice(2,8);
+  function post(){ try{ parent.postMessage({frame:id, height:document.documentElement.scrollHeight}, "*"); }catch(e){} }
+  if ("ResizeObserver" in window){ new ResizeObserver(post).observe(document.documentElement); }
+  window.addEventListener("load", post); window.addEventListener("resize", post); post();
+})();
+</script>
+</body>
+</html>

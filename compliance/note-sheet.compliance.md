@@ -30,7 +30,7 @@ contrast (1.4.6) is met on every measured text and background pair on these
 files. Measurements are composited values read out of a rendered Chromium page,
 not values read off a stylesheet.
 
-## 3. Colour contrast audit
+## 3. Color contrast audit
 
 Every pair below was measured, not estimated.
 
@@ -79,7 +79,7 @@ non-text minimum of 1.4.11 with room to spare.
 | #3B4150 description | Gold-pale #F7EFD9 | 10.06:1 | AAA |
 
 Both of those last two were changed for this reason. The page default link
-maroon measured 6.60:1 on the pale gold and the default description grey
+maroon measured 6.60:1 on the pale gold and the default description gray
 measured 6.81:1. Both clear AA, both miss AAA, so the exam row overrides them.
 
 ## 4. Defects found by measurement and fixed
@@ -141,9 +141,9 @@ Verified programmatically, not with a live reader:
   target.
 - Every competency page in the sheet is an `article`, so a reader can jump
   page to page.
-- The four spaces carry visible text labels, not colour or position alone,
+- The four spaces carry visible text labels, not color or position alone,
   which is 1.3.3 and 1.4.1.
-- Decorative marks (the tick squares, the colour rules) carry
+- Decorative marks (the tick squares, the color rules) carry
   `aria-hidden="true"` so they are not announced as content.
 - `aria-label` on the blank name and competency rules of the blank variant, so
   a reader hears what belongs on the line.
@@ -155,7 +155,7 @@ Verified programmatically, not with a live reader:
 **Not yet done: a live screen reader pass.** Nothing on these pages has been
 driven with VoiceOver or NVDA. That is the open item for this project.
 
-## 7. Reflow, motion, forced colours
+## 7. Reflow, motion, forced colors
 
 - Reflow verified at 320, 375, 768, 1024 and 1440 px. No horizontal scrolling
   at any width on any file listed in section 1. The four spaces collapse to a
@@ -173,7 +173,7 @@ driven with VoiceOver or NVDA. That is the open item for this project.
 |---|---|---|
 | No live screen reader pass | Every file | Run VoiceOver on Safari and NVDA on Firefox before Week 1 opens |
 | `.rd-box-kicker` 6.02:1, `.rd-box-tag` 6.75:1 | unit-01 to unit-05, before-you-start | Pre-existing, clears AA, misses AAA. Darken the box grounds on the next pass at the unit pages |
-| Print colour fidelity | note-sheet.html | Black on white by design so it prints on a mono laser. Not a defect |
+| Print color fidelity | note-sheet.html | Black on white by design so it prints on a mono laser. Not a defect |
 | Three per page is tight | note-sheet.html `?per=3` | Boxes are about 1.6in tall. It fits and it is measured, but it is the economy setting, not the good one. Two per page is the default for that reason |
 
 ## 9. The hello screen on the Canvas door
@@ -183,7 +183,7 @@ itself rather than being a separate page load, so the Canvas embed is still one
 iframe. It is an absolute overlay inside a relatively positioned stage, never
 `position:fixed`.
 
-Measured behaviour, not asserted:
+Measured behavior, not asserted:
 
 | Check | Result |
 |---|---|

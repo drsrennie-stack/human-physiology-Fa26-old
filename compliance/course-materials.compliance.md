@@ -18,10 +18,10 @@ Restyled to the MedMasters Collaborative site on Scrubs' instruction. Every valu
 
 | Token | Value | Source |
 |---|---|---|
-| navy | `#0B1530` | site body colour |
+| navy | `#0B1530` | site body color |
 | ink-deep | `#060A18` | site dark band |
-| maroon | `#8B3A2E` | site eyebrow, CTA and emphasis colour |
-| gold | `#C9A14A` | site eyebrow colour on the dark band |
+| maroon | `#8B3A2E` | site eyebrow, CTA and emphasis color |
+| gold | `#C9A14A` | site eyebrow color on the dark band |
 | display | Open Sans 800, tracking `-0.025em` | site h1 and h2 |
 | body | Plus Jakarta Sans | site body and UI |
 | eyebrow | 11px, 700, `0.3em`, uppercase | site section labels |
@@ -30,7 +30,7 @@ Restyled to the MedMasters Collaborative site on Scrubs' instruction. Every valu
 
 **One deliberate substitution.** The live site uses bone `#F5F1E8` for text on the dark band. The standing rule is that cream is out of teaching deliverables, so off-white `#FAFAF9` is used instead. On near black the two are visually indistinguishable and the change is one token, `--bone`, if the site value is wanted back.
 
-**Resolved: the whole repo is now on these values.** Scrubs' instruction was "everything the MedMasters brand," so this is no longer a one-page change. `assets/brand.css`, all 107 root pages and the deck engine were moved onto the site palette in one pass. Three generations of colour existed at once and are now one:
+**Resolved: the whole repo is now on these values.** Scrubs' instruction was "everything the MedMasters brand," so this is no longer a one-page change. `assets/brand.css`, all 107 root pages and the deck engine were moved onto the site palette in one pass. Three generations of color existed at once and are now one:
 
 | Was | Where it lived | Now |
 |---|---|---|
@@ -47,7 +47,7 @@ Type moved too: display is Open Sans, everything else Plus Jakarta Sans, and DM 
 | Criterion | Level | Result |
 |---|---|---|
 | 1.1.1 Non-text content | A | Pass. Every decorative icon is `aria-hidden="true"`. The logo `svg` carries `role="img"` and an `aria-label`. No icon-only control lacks an accessible name (measured: 0). |
-| 1.3.1 Info and relationships | A | Pass. `header`, `nav`, `main`, `footer` landmarks present. Week strip is a `role="list"` labelled by its own heading. |
+| 1.3.1 Info and relationships | A | Pass. `header`, `nav`, `main`, `footer` landmarks present. Week strip is a `role="list"` labeled by its own heading. |
 | 1.3.2 Meaningful sequence | A | Pass. Reading order matches visual order; no positioned content reorders meaning. |
 | 1.4.3 Contrast minimum | AA | Pass, 15 of 15 pairs. |
 | 1.4.4 Resize text | AA | Pass. All type is set in px within a fluid layout; no overflow at 200 percent. |
@@ -63,9 +63,9 @@ Type moved too: display is Open Sans, everything else Plus Jakarta Sans, and DM 
 | 2.5.8 Target size minimum | AA | Pass. Smallest target is a footer link at 116 by 28 px. Week tiles are 62 by 53. Floor is 24 by 24. |
 | 3.1.1 Language of page | A | Pass. `lang="en"`. |
 | 3.2.3 Consistent navigation | AA | Pass. Footer link set matches the rest of the site. |
-| 2.3.3 Animation from interactions | AAA | Pass. There is no animation on this page. Colour transitions are 160ms and are suppressed under `prefers-reduced-motion: reduce`. |
+| 2.3.3 Animation from interactions | AAA | Pass. There is no animation on this page. Color transitions are 160ms and are suppressed under `prefers-reduced-motion: reduce`. |
 
-## 4. Colour contrast audit
+## 4. Color contrast audit
 
 Every text and background pair on the rendered page, composited (alpha resolved against what is actually painted behind it), measured in Chromium. 15 pairs, **0 AA failures, 0 AAA failures.** Lowest ratio on the page is 7.23:1.
 
@@ -108,12 +108,12 @@ Tab from page load: skip link, "Start this week", "Read the syllabus", the curre
 
 ## 6b. Structure
 
-One `h1`. Four `h2`, one per band plus the week strip and admin labels. Eight `h3`, one per stage plus the vision board callout. Each stage is its own `section` labelled by its `h3`. Zero skipped heading levels. Three landmarks. Skip link present and first. Zero icon-only controls without an accessible name.
+One `h1`. Four `h2`, one per band plus the week strip and admin labels. Eight `h3`, one per stage plus the vision board callout. Each stage is its own `section` labeled by its `h3`. Zero skipped heading levels. Three landmarks. Skip link present and first. Zero icon-only controls without an accessible name.
 
 ## 6c. Defects fixed in this build
 
 1. **Admin card text collided.** `Syllabus` and `How the course runs` were two inline spans inside an inline span, so they rendered as "SyllabusHow the course runs" in all three admin cards. Wrapped in a flex column.
-2. **Two maroons.** The page said `#8B3A2E` while `assets/brand.css` said `#7A2A22`. Settled in favour of the MedMasters site value, `#8B3A2E`. See section 2 for the part that is still open.
+2. **Two maroons.** The page said `#8B3A2E` while `assets/brand.css` said `#7A2A22`. Settled in favor of the MedMasters site value, `#8B3A2E`. See section 2 for the part that is still open.
 3. **External font requests.** Two families were pulled from `fonts.googleapis.com`. Now self-hosted in `assets/fonts-site.css`. Zero external requests.
 4. **Open Sans was flagged as a stray third family.** It is not. It is the MedMasters site display face, confirmed from the live site's computed styles. Kept, now self-hosted.
 5. **Dead and stale links.** `slides-P-what-is-physiology.html` pointed at a superseded single-concept deck; now points at `slides-p-mission-01-maintain-control.html`. The videos card claimed "twenty short segments," which stops being true the moment the Mission recording replaces them; the count is gone.
@@ -129,7 +129,7 @@ No live screen reader session has been run against this file. Everything in sect
 What still needs a real reader (VoiceOver on Safari, and NVDA on Firefox):
 
 - The week strip. It is a `role="list"` of mixed anchors and spans. Confirm the reader announces "Week 3, The action potential, not open yet" and does not present it as a broken link.
-- The wordmark. `MedMasters` is split across a `span` and a `b` for colour. Confirm it is announced as one word and not "Med, Masters".
+- The wordmark. `MedMasters` is split across a `span` and a `b` for color. Confirm it is announced as one word and not "Med, Masters".
 - The four "This week" rows. Each is one link containing a title, a description and a due-date line. Confirm the whole thing reads as a single coherent link and the due dates are announced.
 - The admin cards, after the flex-column fix, to confirm the title and subtitle are announced in order and not run together as they were rendered.
 
@@ -181,7 +181,7 @@ measurement, not by eye.
 | `#E8CE85` on maroon | 4.96:1 | 7.25:1 | `#FEF8EE` |
 | `#EDDABF` on maroon | 5.61:1 | 7.25:1 | `#FEF8EE` |
 | `#A0522D` old terra-dark | 5.38:1 | 9.74:1 | `#6E2D24` |
-| `#5A6273` grey text | 6.12:1 | 8.75:1 | `#454B58` |
+| `#5A6273` gray text | 6.12:1 | 8.75:1 | `#454B58` |
 | `#555F70` / `#555E71` / `#4F5663` | 6.17 to 6.51:1 | 7.6 to 8.8:1 | `#454B58` |
 | `#6E5018` on cream tint | 6.48:1 | 7.80:1 | `#5F4514` |
 | gold on navy-chip `#16233C` | 6.48:1 | 7.41:1 | chip darkened to `#0D1729` |

@@ -18,7 +18,7 @@ Target is WCAG 2.2 Level AA as the floor, Level AAA where it can be reached. Eve
 
 | Criterion | Level achieved | How |
 |---|---|---|
-| 1.3.1 Info and relationships | AA | Semantic landmarks, heading order, `for`/`id` on every labelled control |
+| 1.3.1 Info and relationships | AA | Semantic landmarks, heading order, `for`/`id` on every labeled control |
 | 1.4.3 / 1.4.6 Contrast | AAA on every text pair, see section 3 | Measured, not estimated |
 | 1.4.11 Non-text contrast | AA | Gold is never a border on a light page; `--gold-deep #8A6D33` is used there instead |
 | 1.4.12 Text spacing | AA | No fixed-height text containers introduced |

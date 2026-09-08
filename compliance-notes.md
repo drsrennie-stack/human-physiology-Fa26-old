@@ -25,6 +25,91 @@ competencies per printed page.
 `door-lab.html`, `course-schedule.html`, `course-start.html`,
 `mastery-physio-os-standalone.html`, `worksheet-week02-graphing.html`.
 
+**Added September 7, 2026.** `assignment-discussion-01-metacognition.html`,
+the Week 1 Reflect discussion, and slide 23 of
+`slides-p-introduction-to-physiology.html`, which carries the first two
+raster images in the deck.
+
+**Rebuilt September 7, 2026.** `physiology-course-home.html`, which is what
+the Canvas front page "Enter Human Physiology Course" embeds, and
+`door-study.html`, the study tools page. Both were carrying a retired course
+model and four full-width dark bands that are not the brand. Contrast
+measured on both: every text pair AAA.
+
+The gold card on `door-study.html` uses two values of the same hue, each
+picked for its job. The icon tile is the real brand gold `#C9A14A` with navy
+`#0B1530` strokes on it, 7.46:1, because a readable-on-white gold like
+`#624612` reads olive brown as a whole tile and the brief was maroon, dark
+blue and yellow. The 5px tab is `#B0871F` at 3.32:1 on the white card, since
+brand gold sits at 2.42:1, under the 3:1 a meaningful graphic needs. Card
+color is never the only thing telling one tile from another: each has its
+own title and icon.
+
+**Added September 7, 2026, third batch.** `competency-sheet-print.html` and
+the PDF it builds, `BIO005-Fall2026-Competency-Sheet.pdf`. Every competency
+is written out in full, so a student can turn the list into a study guide
+rather than reading 268 labels. 14 pages, PDF/UA-1, 268 list items in
+`/LI` + `/Lbl` + `/LBody`, 15 `/H2`, one `/Sect` per week.
+
+Two things had to be fixed to get there. The first layout used CSS grid,
+which WeasyPrint only partly supports: it broke competency names one word
+per line and ran to 31 pages. Rebuilt in plain block and inline layout, so
+the browser and the PDF agree. And WeasyPrint tags a list item's wrapper as
+`/Div`, leaving the `/LBody` missing, which makes a screen reader read the
+text as a loose group rather than as the body of item N. `relabel_list_bodies()`
+in `tools/make_pdf.py` retypes a `/Div` that is a direct child of an `/LI`,
+and only that, so nothing else in the tree moves.
+
+**Added September 7, 2026, second batch.** `course-grid.html` (the one page
+schedule with the started and done tracker) and `assignment-practice-log.html`
+(the ungraded weekly practice log), plus the data file `bio005-week-grid.js`.
+
+`practice-log.html` and `bio005-practice-log.js` were part of this batch and
+were **retired the same day**. They duplicated a log `practice-exam.html`
+already prints. See limitation 14.
+
+**Added September 7, 2026, third batch.** `assignment-apply.html` (the Use It
+weekly application case directions, one file serving all fifteen weeks) and its
+data file `bio005-apply-cases.js` (fifteen weeks, four cases a week in four
+rooms, sixty cases). Until this batch the Use It assignment, which carries 25
+percent of the grade and runs every week, existed as a page for no week at all.
+Week 1's four cases were written inside `week-01.html` and nowhere else; weeks 2
+to 15 had a stage in the week page with nothing in it.
+
+`how-grading-works.html` and `syllabus-fall2026.html` were corrected in the same
+batch: both still described the Mastery Check as something that "never gives you
+a score". See limitation 19.
+
+**Added September 7, 2026, fourth batch, the evening rebuild.**
+
+`bio005-patient-chart.js` and the rebuilt `assignment-apply.html`. Use It is
+now one patient, Camila Reyes, followed across all fifteen weeks, with five
+entry points: nursing, medicine, radiology, respiratory therapy, and exercise
+and allied health. Seventy-five desk entries. The student picks an entry point
+in Week 1 and it is remembered in `localStorage` under `bio005-track-v1`. This
+replaces the four standalone room cases as the graded assignment and resolves
+limitation 17.
+
+`bio005-lab-plan.js` and the rebuilt `assignment-physioex.html`. Every week now
+has four parts: what you run (the PhysioEx exercise named down to the activity,
+or a dry lab), what you record, a clinical correlation, and the metacognition.
+Weeks 1, 5 and 8 have no PhysioEx exercise; Week 5 previously had no lab at all
+and now has a dry lab on reflexes, the pupillary responses and the autonomic
+exam. This closes half of limitation 5.
+
+`week-01.html`: the Use It patient chart added to the due list, and a sixth
+retrieval option added to stage 02 that builds a fresh ten question draw from
+the generator. `assignment-discussion.html`: the maroon rule under every `h2`
+and the maroon outline on the emphasis box removed, per the standing rule that
+boxes are white cards lifted by shadow with no accent bars.
+
+**Also touched September 7, 2026, verified for regressions only:**
+`welcome.html`, `assignment-discussion-01-visionboard.html`, `week-01.html`,
+`canvas-kit.html`, `week-navigator.html`, `syllabus-fall2026.html`,
+`course-questions.html`, `hootie.js`, `bio005-dock.js`,
+`bio005-question-bank.js`, `bio005-faq.js`,
+`mastery-physio-os-standalone.html`, `unit-05-standalone.html`.
+
 ---
 
 ## 2. WCAG version and level
@@ -70,11 +155,34 @@ Measured from computed styles in headless Chromium, not read off the palette.
 | Header h1 on the dark band | #FFFFFF | #060A18 | 19.42:1 | AAA |
 | Header sub on the dark band | #D7DCE3 | #060A18 | 13.85:1 | AAA |
 | Course home button | #FFFFFF | #0B1530 | 18.04:1 | AAA |
+| Reflect discussion body `body` | #0B1530 | #FFFFFF | 18.04:1 | AAA |
+| Reflect discussion eyebrow, due line, links | #8B3A2E | #FFFFFF | 7.66:1 | AAA |
+| Reflect discussion secondary note `.note` | #414B5C | #FFFFFF | 8.80:1 | AAA |
+| Reflect discussion rule box text | #0B1530 | #F7EFD9 | 15.72:1 | AAA |
+| Reflect discussion rule box bold lead | #8B3A2E | #F7EFD9 | 6.67:1 | AA |
+| Slide 23 panel label `.plab` | #8B3A2E | #FFFFFF | 7.66:1 | AAA |
+| Slide 23 image captions | #414B5C | #FFFFFF | 8.80:1 | AAA |
 | Jump square N, note sheet | #FFFFFF | #0B1530 | 18.04:1 | AAA |
 | Jump square P, problems | #FFFFFF | #8B3A2E | 7.66:1 | AAA |
 | Jump square L, lab | #060A18 | #C9A14A | 8.16:1 | AAA |
 | Jump square D, discussion | #8B3A2E | #FFFFFF | 7.66:1 | AAA |
 | Jump square S, study | #0B1530 | #ECEFF4 | 15.65:1 | AAA |
+| Use It body text | #0B1530 | #FAFAF9 | 17.27:1 | AAA |
+| Use It eyebrow, due line, links | #8B3A2E | #FAFAF9 | 7.33:1 | AAA |
+| Use It case body `.go` | #2A3448 | #FFFFFF | 12.48:1 | AAA |
+| Use It room label, nursing | #8B3A2E | #FFFFFF | 7.66:1 | AAA |
+| Use It room label, medicine | #0B1530 | #FFFFFF | 18.04:1 | AAA |
+| Use It room label, radiology | #624612 | #FFFFFF | 8.73:1 | AAA |
+| Use It room label, exercise | #6E2D24 | #FFFFFF | 10.18:1 | AAA |
+| Use It note text `.note` | #414B5C | #FAFAF9 | 8.43:1 | AAA |
+| Use It brand subline | #4F5468 | #FFFFFF | 7.50:1 | AAA |
+| Use It solid button | #FFFFFF | #8B3A2E | 7.66:1 | AAA |
+| Use It solid button, hover | #FFFFFF | #6E2D24 | 10.18:1 | AAA |
+| Use It picker option, unselected | #0B1530 | #FFFFFF | 18.04:1 | AAA |
+| Use It picker option, selected | #0B1530 | #ECEFF4 | 15.65:1 | AAA |
+| Use It picker helper text | #414B5C | #FFFFFF | 8.80:1 | AAA |
+| Use It chart field label | #8B3A2E | #FFFFFF | 7.66:1 | AAA |
+| Weekly lab part number | #8B3A2E | #FAFAF9 | 7.33:1 | AAA |
 | **"Pick one and do that one" `.pick`** | **#5A6675** | **#FFFFFF** | **5.07:1** | **AA, not AAA** |
 | **Tag pills `.tag`** | **#5A6675** | **#FFFFFF** | **5.07:1** | **AA, not AAA** |
 
@@ -82,9 +190,15 @@ The two AA rows are both small supporting labels that repeat information already
 carried in full elsewhere on the card. They clear AA comfortably. Raising them to
 AAA is a one-line change in `tools/gen_competency_pages.js` if you want it.
 
-Gold is never used as text or as a border on a light background anywhere in this
-pass. It appears as an eyebrow on the near-black band, where it measures 9.71:1,
-and as a jump square background carrying near-black text.
+Gold is never used as text on a light background anywhere in this pass. It
+appears as an eyebrow on the near-black band, where it measures 9.71:1, and as a
+jump square background carrying near-black text.
+
+One new use of gold, on `assignment-apply.html`: the radiology case card carries
+a 5px gold tab on its top edge. The tab is decorative and carries no information
+of its own. The room it marks is written out as text on the card, in #624612,
+which measures 8.73:1. Nothing on that page depends on telling one tab color from
+another, which is 1.4.1 Use of Color.
 
 ---
 
@@ -172,6 +286,31 @@ directly with pikepdf and are reported in section 4.
 An automated pass proves the semantics are present. It does not prove the page
 is usable, and this document should not be read as claiming it does.
 
+The two files added September 7, 2026 were checked the same way: heading
+order with no skipped levels, every image carrying alt text, no link with an
+empty accessible name, a skip link ahead of the content on the discussion
+page, and full keyboard reach with a visible focus ring. Both still need the
+human VoiceOver and NVDA passes in limitation 1.
+
+The second batch of September 7 files was checked the same way. On
+`course-grid.html` each item's two boxes sit in a `role="group"` labeled by
+the item name, so a screen reader announces "Lab, Started checkbox" rather
+than an orphan "Started"; 71 groups, no unlabeled input. The trend chart on the retired
+`practice-log.html` was `aria-hidden` with a sentence beneath it stating the
+same numbers in words; that pattern is worth keeping if a chart is ever added
+to the generator's own log.
+
+The assistant was also audited on September 7, 2026 against the current course
+model. Retired facts found and corrected: note sheets at 20 percent, book
+problems at 15 percent, labs at 15 percent, three midterm windows, five grade
+components, a Scholar Points bank, a placeholder grade weight in the
+attendance answer, and a `loop` keyword that answered every feedback loop
+question with a note about lab practice items. Two standalone pages carried
+frozen copies of the assistant and its dock and were re-inlined from source by
+`tools/reinline_hootie.py`; on both, a guard was stopping the schedule and the
+248 answer bank from ever loading, so the assistant replied "I cannot see the
+schedule from this page" to every question asked on them.
+
 ---
 
 ## 7. Known limitations and remediation plan
@@ -185,10 +324,27 @@ is usable, and this document should not be read as claiming it does.
 | 5 | Week 3 has no lab worksheet. The osmosis and IV fluids worksheet was unhooked because it is not on the Canvas schedule. Week 6 has no lab either. | Both need a lab named. |
 | 6 | "Mass flow and clearance" appears in no week of the competency map. | Needs a home or a deliberate retirement. |
 | 7 | The remaining PDFs in `_superseded/` are untagged. | They are out of the student path. Delete once you are satisfied nothing links to them. |
+| 8 | On the Reflect discussion page, the bold lead inside the gold rule box measures 6.67:1, which is AA and not the AAA floor the rest of the page meets. | Switching that lead to navy #0B1530 takes it to 15.72:1 and keeps the maroon left border doing the color work. Your call, since maroon on the gold panel is the pattern used elsewhere. |
+| 9 | Slide 23 embeds two screenshots of real lab reports. Their alt text describes the band structure and the printed values, which is what the slide teaches, but a screenshot of a report is still an image of text. | If any student reports difficulty, the same content can be redrawn as inline SVG with real text nodes. Not planned unless asked. |
+| 10 | The live unlock rule is duplicated in `week-navigator.html` and `welcome.html`. Both were changed together and verified, but nothing enforces that. | Extract to one shared file when either is next touched. |
+| 11 | Weeks 5 to 8 are described three different ways in this repo. Canvas and the PhysioEx lab map agree (5 nervous system, 6 muscle, 7 endocrine, 8 reproduction); `bio005-schedule-fall2026.js` does not (5 synapses, 6 sensory, 7 muscle, 8 hormones and reproduction together). | The schedule of record needs realigning to Canvas, and the sensory competencies (`w7-*`) need a home when it is. Not done here: moving competencies is a teaching decision, not a side effect of building a grid. |
+| 12 | `window.BIO005_GRADING` in `bio005-schedule-fall2026.js` called itself the model of record while holding the retired five component model. Corrected September 7. Nothing read it, which is the only reason no page repeated those numbers to a student. | Wire the pages that state grade weights to read this object, so there is one place to change instead of six. |
+| 13 | The practice log and the grid tracker both keep state in one browser on one device. Both say so in plain language on the page. | The practice log has an export and import for moving between devices. The grid ticks do not; they are low stakes enough that adding one would cost more than it returns. |
+| 14 | `practice-log.html` and `bio005-practice-log.js` were built before `practice-exam.html` was in this repo, and they duplicated a weekly log the generator already prints, with the same purpose and nearly the same wording. Retired September 7, 2026; every reference rewired to the generator. | Nothing outstanding. Recorded here because the first fix was only half a fix: on finding the generator I made the log read its history instead of retiring the tool, which removed the duplicate data and left the duplicate tool. |
+| 15 | The Mastery Check was described in two places as a tool that no longer exists: 20 questions, every competency asked twice, never shows a score. That was the design written before `practice-exam.html` was built. Corrected September 7, 2026 in `syllabus-fall2026.html` and `how-this-course-works.html`. | Nothing outstanding for Week 1. Weeks 2 to 15 are still 122-line stubs with no stage 04 at all, so the button that launches the week's Mastery Check exists only on `week-01.html`. It has to be added as each week page is built. |
+| 16 | The Reflect discussion is now one file, `assignment-discussion-metacognition.html?week=N`, serving all fifteen weeks. `assignment-discussion-01-metacognition.html` was retired into it. | Nothing outstanding. Question four is the only per-week text; it lives in one `Q4` map at the bottom of the file. Week 1's Sunday deadline and optional replies are data in that same script, not a second page. |
+| 17 | RESOLVED September 7, 2026. Two descriptions of Use It coexisted: the four-room weekly case, and the patient file's own weekly flow. They are now one assignment. `assignment-apply.html` is the patient chart, one patient across fifteen weeks with five entry points, and it carries the 25 percent. | Nothing outstanding for the assignment. `BIO005-patient-file.html` still assigns each student a different patient from their name, which the class-wide chart supersedes. Not deleted. See limitation 21. |
+| 18 | RESOLVED September 7, 2026. Week 1's Use It is assigned. `week-01.html` now lists the patient chart in its due items, and Week 1 is the baseline every later week is compared against, so leaving it out would have cost more than it saved. | `bio005-week-grid.js` still does not list `apply` in Week 1's due array. One-line change, left alone tonight only because the grid is read by `course-grid.html` and was not otherwise touched. |
+| 19 | The Mastery Check correction on September 7 (limitation 15) fixed `syllabus-fall2026.html` section 04 and `how-this-course-works.html`, and missed two more places that still said it "never gives you a score": `how-grading-works.html` and a second line in `syllabus-fall2026.html`. Both corrected the same day. | Nothing outstanding. Recorded because it is the second time a retired description survived in a file nobody thought to grep. The lesson is to grep the phrase, not the page. |
+| 20 | Sixty new clinical cases are unreviewed by a second physiologist. Every number sits inside a published reference or physiological range, and the four cases that turn on a genuinely contested mechanism (weeks 4, 13, 14 and 15) ask the student to lay out both accounts rather than keying an answer to one side. | Read them before each week opens. Weeks 13 and 15 are the two most worth a second look, because the oxygen-in-COPD case and the lactate case are both places where the textbook answer and the current evidence disagree. |
+| 21 | `BIO005-patient-file.html` assigns a different patient per student, keyed on the student's typed name, and describes a six step weekly flow (predict, order tokens, commit before each result, revise, draw, synthesize). The graded Use It is now one class-wide patient with five entry points. Both are good designs and only one can be the assignment. | The tool is intact and unlinked from the weekly assignment; `assignment-apply.html` links it only in Week 15, as the capstone, which is true under either reading. Decide whether to retire it, fold its order-token mechanic into the chart, or run it as a separate optional tool. |
+| 22 | `bio005-apply-cases.js`, the sixty standalone four-room cases written earlier the same day, is superseded as the graded assignment and now links from nothing. | Kept deliberately as an alternate bank for exam items and discussion seeds. Delete only if you decide you will never draw on it. |
+| 23 | The 75 chart entries and the 15 lab plans are unreviewed by a second physiologist. Every value in the chart is internally consistent and meant to be checked by students: the arrival blood gas satisfies Henderson-Hasselbalch, the compensation satisfies Winter's formula, the anion gap closes as the chloride rises, and the corrected sodium works out. | Read each week before it opens. Weeks 13 and 15 are the two most worth a second look: the oxygen-in-COPD mechanism and the source of the protons in exercise acidosis are both places where the textbook answer and current evidence disagree, and both are written to ask the student to hold the disagreement rather than key an answer to one side. |
+| 24 | Week 5's dry lab asks students to elicit reflexes and take orthostatic vitals with a partner. Not every online student has a partner, and some students cannot perform or receive these maneuvers. | The instructions carry a printed set of recorded observations as an equivalent alternative, stated in step 4, and the reasoning is what is graded either way. Verify the alternative is genuinely equivalent when the Week 5 worksheet is built. |
 
 ---
 
 ## 8. Reviewer
 
-Prepared for Dr. Sharilyn Rennie, September 7, 2026. Not signed off until
+Prepared for Dr. Sharilyn Rennie, September 7, 2026, updated later the same day. Not signed off until
 section 6's outstanding screen reader passes are done.
