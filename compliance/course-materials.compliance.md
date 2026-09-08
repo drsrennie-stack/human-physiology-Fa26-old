@@ -217,3 +217,38 @@ brand ones, and were left alone.
 ## 9. Reviewer
 
 Dr. Sharilyn Rennie
+
+## Update, September 8 2026: graded and ungraded marking
+
+Files covered: course-materials.html, week-01-notesheet-prompts.html
+
+### What changed
+The "at a glance" flows were still marking the note sheet and the book
+problems as turned in. Both are ungraded under the current model, so the
+maroon chip was replaced with a navy-tint chip carrying an open circle.
+Rows for the patient chart and the practice exam were added, and a key
+sits at the top of the card.
+
+### Contrast, new pairs only, measured
+| Foreground | Background | Ratio | Level |
+|---|---|---|---|
+| #0B1530 chip label | #ECEFF4 ungraded chip | 15.65:1 | AAA |
+| #3A4152 chip subtext | #ECEFF4 ungraded chip | 8.85:1 | AAA |
+| #FFFFFF chip label | #8B3A2E graded chip | 7.66:1 | AAA |
+| #F3DAD3 chip subtext | #8B3A2E graded chip | 5.75:1 | AA, AAA at large |
+| #3A4152 key text | #FFFFFF card | 10.20:1 | AAA |
+
+### Not carried by color alone
+Graded and ungraded are distinguished by a filled circle and an open
+circle as well as by fill, and the key at the top of the card names both.
+The circles are aria-hidden, and the chip text states the status in words
+("Turn it in", "Keep it, no points, and not optional"), so a screen
+reader gets the status from the text rather than the symbol.
+
+### Reflow
+Each arrow now travels inside a .seqstep with the chip it points at, so a
+wrapped row begins the new line with the arrow rather than ending the
+previous line with a dangling one. Verified at 1240px and 600px.
+
+### Reviewer
+Dr. Sharilyn Rennie

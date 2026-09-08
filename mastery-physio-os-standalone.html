@@ -6284,7 +6284,14 @@ function drTile(s,i,state){
   var open=(state==='now');
   return '<div class="dr-slot" data-state="'+state+'" data-i="'+i+'">'
    +'<div class="dr-tile '+(s.tool?'tool-'+s.tool:'')+(s.none?' none':'')+'">'
-   +(open?'<button class="dr-hit" data-dri="'+i+'" aria-label="Open '+esc(s.name)+(s.topic?', '+esc(s.topic):'')+'"></button>':'')
+   /* EVERY TILE OPENS, NOT JUST THE ONE MARKED NOW.
+
+      This used to render the hit area only on the current step, so the
+      second and third cards looked exactly like cards and did nothing at
+      all when a student tapped them. The Now pill is a recommendation
+      about order, and it still is; it should not be the thing that
+      decides whether a control responds. */
+   +'<button class="dr-hit" data-dri="'+i+'" aria-label="Open '+esc(s.name)+(s.topic?', '+esc(s.topic):'')+'"></button>'
    +(state==='now'?'<span class="dr-pill now">Now</span>':'')
    +(state==='done'?'<span class="dr-pill done">Done</span>':'')
    +(s.catch?'<span class="dr-catch">'+esc(s.catch)+'</span>':'')
@@ -6308,7 +6315,7 @@ function renderDayRail(){
    +'<span class="bar"><span style="width:'+pct+'%"></span></span>'
    +'<span>'+DR.done+' of '+DR.steps.length+' done</span></div></div>';
   h+='<div class="dr-steps">'+DR.steps.map(function(s,i){
-       return drTile(s,i, i<DR.i?'done':(i===DR.i?'now':'later'));}).join('')+'</div>';
+       return drTile(s,i, s.did?'done':(i===DR.i?'now':'later'));}).join('')+'</div>';
   if(DR.i>=DR.steps.length){
     h+='<div class="dr-fork"><p class="eyebrow">Your call</p>'
      +'<h3>That is everything. The rest is yours.</h3>'
@@ -6335,7 +6342,9 @@ function longToday(){
 /* Session titles run long. A headline is a headline. */
 function drShort(s,n){ s=String(s||''); return s.length>(n||42)?s.slice(0,(n||42)-1).replace(/[,;:\s]+$/,'')+'…':s; }
 function drOpen(i){
-  if(i!==DR.i) return;
+  if(!DR.steps[i]) return;
+  /* Opening a later card makes it the current one rather than refusing. */
+  if(i!==DR.i){ DR.i=i; renderDayRail(); }
   var slot=$('#dayRail').querySelectorAll('.dr-slot')[i]; if(!slot) return;
   slot.classList.add('open', i < DR.steps.length/2 ? 'left':'right');
   $('#dr-scrim').classList.add('on');
@@ -6347,7 +6356,14 @@ function drClose(complete){
   if(slot) slot.classList.remove('open','left','right');
   $('#dr-scrim').classList.remove('on');
   setTimeout(function(){
-    if(complete && s){ DR.done++; DR.spent+=s.mins; DR.i++; }
+    /* Done is tracked on the step, not by counting forward from the top,
+       because cards can now be worked out of order. */
+    if(complete && s && !s.did){ s.did=true; }
+    DR.done=0; DR.spent=0;
+    for(var k=0;k<DR.steps.length;k++){ if(DR.steps[k].did){ DR.done++; DR.spent+=DR.steps[k].mins; } }
+    var nxt=DR.steps.length;
+    for(var k2=0;k2<DR.steps.length;k2++){ if(!DR.steps[k2].did){ nxt=k2; break; } }
+    DR.i=nxt;
     renderDayRail();
     var n=$('#dayRail').querySelector('.dr-hit'); if(n)n.focus();
   },320);
