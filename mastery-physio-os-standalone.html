@@ -788,7 +788,7 @@ section.block:first-of-type{border-top:none}
         <div class="coach-prompts" id="coachPrompts" aria-label="Suggested prompts"></div>
         <form class="coach-input" id="coachForm">
           <label class="visually-hidden" for="coachInput">Ask the coach</label>
-          <input id="coachInput" type="text" placeholder="Ask the coach anything..." autocomplete="off">
+          <label class="visually-hidden" for="coachInput">Ask the coach a question</label><input id="coachInput" type="text" placeholder="Ask the coach anything..." autocomplete="off">
           <button class="btn primary" type="submit">Send</button>
         </form>
       </div>
@@ -837,7 +837,7 @@ section.block:first-of-type{border-top:none}
       <div class="note">Upload once. Mastery OS generates the daily plans, spaced-recall schedule, competency tracking, weakness dashboard, and recommendations automatically. Students never build the course structure.</div>
       <div class="note" id="instrSchedInfo" style="background:var(--navy);color:var(--offwhite);border-color:var(--navy)"></div>
       <div class="field"><label>Term start and end</label><div style="display:flex;gap:8px"><input id="cfgStart" type="date" aria-label="Term start"><input id="cfgEnd" type="date" aria-label="Term end"></div><p class="hint">Set the semester dates. The course length (8, 16, or any) comes from the schedule you import.</p></div>
-      <div class="field"><label for="cfgPaste">Import schedule</label><textarea id="cfgPaste" rows="4" placeholder="Paste your schedule.js contents or JSON, or choose a file below."></textarea><input id="cfgFile" type="file" accept=".js.json.txt.html" style="margin-top:8px"><div style="margin-top:8px"><button class="btn gold" id="cfgImport">Import schedule</button></div><p class="hint" id="cfgImportInfo">It reads the weeks and exam dates automatically.</p></div>
+      <div class="field"><label for="cfgPaste">Import schedule</label><textarea id="cfgPaste" rows="4" placeholder="Paste your schedule.js contents or JSON, or choose a file below."></textarea><input id="cfgFile" type="file" accept=".js.json.txt.html" aria-label="Choose a schedule file to import" style="margin-top:8px"><div style="margin-top:8px"><button class="btn gold" id="cfgImport">Import schedule</button></div><p class="hint" id="cfgImportInfo">It reads the weeks and exam dates automatically.</p></div>
       <button class="btn block" id="instrReload" style="margin-bottom:18px">Reload plan from current schedule</button>
       <div class="field"><label for="cfgCourse">Course label</label><input id="cfgCourse" type="text"></div>
       <div class="field"><label for="cfgExam">Next practical / exam date</label><input id="cfgExam" type="date"><p class="hint">Drives the exam countdown and how aggressively recall is scheduled.</p></div>
@@ -5903,23 +5903,23 @@ function renderOB(){
   var dots='<div class="ob-dots" aria-hidden="true">'+OB_STEPS.map(function(x,i){return '<span class="'+(i<=OB.step?'on':'')+'"></span>';}).join('')+'</div>';
   var inner='';
   if(st.kind==='intro'||st.kind==='done'){
-    inner=OB_LOGO+'<div style="height:18px"></div><h2>'+esc(st.t)+'</h2><p class="sub">'+esc(st.s)+'</p>';
+    inner=OB_LOGO+'<div style="height:18px"></div><h1>'+esc(st.t)+'</h1><p class="sub">'+esc(st.s)+'</p>';
   }else if(st.kind==='name'){
-    inner='<h2>'+esc(st.t)+'</h2><p class="sub">'+esc(st.s)+'</p><input class="ob-txt" id="obName" type="text" placeholder="Your name" value="'+esc(d.name||'')+'" autocomplete="given-name">';
+    inner='<h1>'+esc(st.t)+'</h1><p class="sub">'+esc(st.s)+'</p><input class="ob-txt" id="obName" type="text" placeholder="Your name" value="'+esc(d.name||'')+'" autocomplete="given-name">';
   }else if(st.kind==='section'){
-    inner='<h2>'+esc(st.t)+'</h2><p class="sub">'+esc(st.s)+'</p><div class="ob-choices" role="group">'+st.opts.map(function(o){var on=d.section===o[0];return '<button class="ob-choice" aria-pressed="'+(on?'true':'false')+'" data-obsection="'+esc(o[0])+'"><span class="ck">'+I.check+'</span><span><span class="ttl">'+esc(o[1])+'</span><span class="dsc">'+esc(o[2])+'</span></span></button>';}).join('')+'</div>';
+    inner='<h1>'+esc(st.t)+'</h1><p class="sub">'+esc(st.s)+'</p><div class="ob-choices" role="group">'+st.opts.map(function(o){var on=d.section===o[0];return '<button class="ob-choice" aria-pressed="'+(on?'true':'false')+'" data-obsection="'+esc(o[0])+'"><span class="ck">'+I.check+'</span><span><span class="ttl">'+esc(o[1])+'</span><span class="dsc">'+esc(o[2])+'</span></span></button>';}).join('')+'</div>';
   }else if(st.kind==='grade'){
-    inner='<h2>'+esc(st.t)+'</h2><p class="sub">'+esc(st.s)+'</p><div class="ob-choices" role="group">'+st.opts.map(function(o){var on=d.grade===o[0];return '<button class="ob-choice" aria-pressed="'+(on?'true':'false')+'" data-obgrade="'+esc(o[0])+'"><span class="ck">'+I.check+'</span><span><span class="ttl">'+esc(o[0])+'</span><span class="dsc">'+esc(o[1])+'</span></span></button>';}).join('')+'</div>';
+    inner='<h1>'+esc(st.t)+'</h1><p class="sub">'+esc(st.s)+'</p><div class="ob-choices" role="group">'+st.opts.map(function(o){var on=d.grade===o[0];return '<button class="ob-choice" aria-pressed="'+(on?'true':'false')+'" data-obgrade="'+esc(o[0])+'"><span class="ck">'+I.check+'</span><span><span class="ttl">'+esc(o[0])+'</span><span class="dsc">'+esc(o[1])+'</span></span></button>';}).join('')+'</div>';
   }else if(st.kind==='days'){
-    inner='<h2>'+esc(st.t)+'</h2><p class="sub">'+esc(st.s)+'</p><div class="ob-chips" role="group">'+[2,3,4,5,6,7].map(function(n){var on=(d.days||4)===n;return '<button class="ob-chip" aria-pressed="'+(on?'true':'false')+'" data-obdays="'+n+'">'+n+' days</button>';}).join('')+'</div>';
+    inner='<h1>'+esc(st.t)+'</h1><p class="sub">'+esc(st.s)+'</p><div class="ob-chips" role="group">'+[2,3,4,5,6,7].map(function(n){var on=(d.days||4)===n;return '<button class="ob-chip" aria-pressed="'+(on?'true':'false')+'" data-obdays="'+n+'">'+n+' days</button>';}).join('')+'</div>';
   }else if(st.kind==='plan'){
     var wh=gradeHoursFor(d.grade||'B');var days=d.days||4;var per=Math.round((wh/days)*10)/10;
-    inner='<h2>'+esc(st.t)+'</h2><p class="sub">'+esc(st.s)+'</p><div class="ob-choices" role="group"><div class="ob-choice" aria-pressed="true"><span class="ck">'+I.check+'</span><span><span class="ttl">About '+wh+' hours a week</span><span class="dsc">For a '+esc(d.grade||'B')+' goal, outside of class time.</span></span></div><div class="ob-choice" aria-pressed="true"><span class="ck">'+I.check+'</span><span><span class="ttl">Around '+per+' hours on each of your '+days+' study days</span><span class="dsc">Mastery OS fills that time with the highest-yield work first, then spaced review.</span></span></div></div>';
+    inner='<h1>'+esc(st.t)+'</h1><p class="sub">'+esc(st.s)+'</p><div class="ob-choices" role="group"><div class="ob-choice" aria-pressed="true"><span class="ck">'+I.check+'</span><span><span class="ttl">About '+wh+' hours a week</span><span class="dsc">For a '+esc(d.grade||'B')+' goal, outside of class time.</span></span></div><div class="ob-choice" aria-pressed="true"><span class="ck">'+I.check+'</span><span><span class="ttl">Around '+per+' hours on each of your '+days+' study days</span><span class="dsc">Mastery OS fills that time with the highest-yield work first, then spaced review.</span></span></div></div>';
   }else if(st.kind==='activities'){
     var sel=d.activities||['retrieval','draw'];
-    inner='<h2>'+esc(st.t)+'</h2><p class="sub">'+esc(st.s)+'</p><div class="ob-chips" role="group">'+st.opts.map(function(o){var on=sel.indexOf(o[0])>-1;return '<button class="ob-chip" aria-pressed="'+(on?'true':'false')+'" data-obact="'+esc(o[0])+'">'+esc(o[1])+'</button>';}).join('')+'</div>';
+    inner='<h1>'+esc(st.t)+'</h1><p class="sub">'+esc(st.s)+'</p><div class="ob-chips" role="group">'+st.opts.map(function(o){var on=sel.indexOf(o[0])>-1;return '<button class="ob-chip" aria-pressed="'+(on?'true':'false')+'" data-obact="'+esc(o[0])+'">'+esc(o[1])+'</button>';}).join('')+'</div>';
   }else if(st.kind==='confidence'){
-    inner='<h2>'+esc(st.t)+'</h2><p class="sub">'+esc(st.s)+'</p><div class="ob-choices" role="group">'+st.opts.map(function(o){var on=d.confidence===o[0];return '<button class="ob-choice" aria-pressed="'+(on?'true':'false')+'" data-obconf="'+esc(o[0])+'"><span class="ck">'+I.check+'</span><span><span class="ttl">'+esc(o[1].split('.')[0])+'</span><span class="dsc">'+esc(o[1])+'</span></span></button>';}).join('')+'</div>';
+    inner='<h1>'+esc(st.t)+'</h1><p class="sub">'+esc(st.s)+'</p><div class="ob-choices" role="group">'+st.opts.map(function(o){var on=d.confidence===o[0];return '<button class="ob-choice" aria-pressed="'+(on?'true':'false')+'" data-obconf="'+esc(o[0])+'"><span class="ck">'+I.check+'</span><span><span class="ttl">'+esc(o[1].split('.')[0])+'</span><span class="dsc">'+esc(o[1])+'</span></span></button>';}).join('')+'</div>';
   }
   p.innerHTML=dots+inner;
   $('#obBack').style.display=OB.step===0?'none':'';

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <link rel="icon" type="image/svg+xml" href="icon.svg">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Drawing Canvas | BIO 004 Human Anatomy</title>
+<title>Drawing Canvas &middot; BIO 005 Human Physiology</title>
 <link rel="stylesheet" href="assets/fonts-site.css">
 <meta name="description" content="Draw from memory. Pen, shapes, arrows, and text. Save to PDF when you are done.">
 <style>
@@ -162,9 +162,9 @@ input[type="text"]{width:100%;font-family:var(--display);font-size:.92rem;color:
 <header class="site-header">
   <div class="wrap headrow">
     <div class="brand">
-      <a href="index.html" target="_top">Human Anatomy</a>
+      <a href="course-start.html" target="_top">Human Physiology</a>
       <span class="badge-tool">Drawing Canvas</span>
-      <span class="sr-only">BIO 004</span>
+      <span class="sr-only">BIO 005</span>
     </div>
     <div class="headactions">
       <button class="btn ghost tiny" id="undo" type="button">Undo</button>
@@ -261,10 +261,16 @@ input[type="text"]{width:100%;font-family:var(--display);font-size:.92rem;color:
 </div>
 </main>
 
+<!-- WHAT COUNTS AS DRAWING HERE, Sep 7 2026. Scrubs' point: in
+     physiology a drawing is rarely a picture of a structure. It is a
+     mechanism, a sequence, a feedback loop, a mind map, a graph with the
+     axes named. The canvas does not care which, and the page should not
+     imply otherwise, so the default title is "Drawing from memory" and
+     the examples below name the forms rather than naming organs. -->
 <div id="exportSheet" aria-hidden="true">
   <div class="ex-page ex-drawing">
     <div class="ex-head">
-      <span class="ex-course" id="ex_course">BIO 004 Human Anatomy</span>
+      <span class="ex-course" id="ex_course">BIO 005 Human Physiology</span>
       <span class="ex-doc" id="ex_title">Drawing from memory</span>
     </div>
     <img id="ex_img" alt="Student drawing">
@@ -272,7 +278,7 @@ input[type="text"]{width:100%;font-family:var(--display);font-size:.92rem;color:
   </div>
   <div class="ex-page ex-stamp">
     <div class="ex-head">
-      <span class="ex-course">BIO 004 Human Anatomy</span>
+      <span class="ex-course">BIO 005 Human Physiology</span>
       <span class="ex-doc">Drawing provenance stamp</span>
     </div>
     <h2 class="ex-h2">How this drawing was made</h2>
@@ -300,7 +306,7 @@ input[type="text"]{width:100%;font-family:var(--display);font-size:.92rem;color:
 <footer class="site-footer">
   <div class="wrap">
     <p style="margin:0 0 .3rem"><strong>Dr. Sharilyn Rennie</strong></p>
-    <p style="margin:0">BIO 004 Human Anatomy &middot; Drawing Canvas</p>
+    <p style="margin:0">BIO 005 Human Physiology &middot; Drawing Canvas</p>
     <p class="small" style="margin:.5rem 0 0">Nothing typed or drawn on this page is stored, transmitted or recorded. Save your PDF before closing the tab.</p>
   </div>
 </footer>
@@ -312,14 +318,22 @@ input[type="text"]{width:100%;font-family:var(--display);font-size:.92rem;color:
 /* =========================================================================
    ONE PLACE TO EDIT PER ASSIGNMENT
    Either edit DEFAULTS below, or pass them in the URL, for example:
-   mastery-canvas.html?title=Long%20bone,%20sectioned&course=BIO%20004%20Human%20Anatomy
-     &list=Diaphysis|Epiphysis|Metaphysis|Epiphyseal%20line|Periosteum|Medullary%20cavity
+   mastery-canvas.html?title=Negative%20feedback,%20body%20temperature&course=BIO%20005%20Human%20Physiology
+     &list=Stimulus|Sensor|Afferent%20path|Integrating%20center|Efferent%20path|Effector|Response
    The list becomes the Check my work self score. Leave it out and that button stays hidden.
    ========================================================================= */
+/* THIS IS THE PHYSIOLOGY COPY. Corrected Sep 7 2026.
+   It was defaulting to BIO 005 Human Physiology and, worse, writing to the
+   key BIO004-CANVAS-v1. BIO 004 is served from the same
+   drsrennie-stack.github.io origin and localStorage is scoped to the
+   origin rather than the path, so a physiology student's saved drawings
+   were landing in the anatomy course's store. That is the same bug that
+   once put anatomy competencies inside the physiology Mastery OS. Every
+   key this course writes starts with 'bio005-'. */
 var DEFAULTS = {
-  course: 'BIO 004 Human Anatomy',
+  course: 'BIO 005 Human Physiology',
   title: 'Drawing from memory',
-  key: 'BIO004-CANVAS-v1',
+  key: 'bio005-canvas-v1',
   list: []
 };
 
