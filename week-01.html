@@ -362,6 +362,10 @@ legend{font-size:11.5px;font-weight:700;letter-spacing:.18em;text-transform:uppe
 .panel .phead{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px 12px 20px}
 .panel .ptitle{font-weight:800;font-size:16px;color:#0B1530;margin:0}
 .panel .pscroll{display:inline-block;margin-left:10px;font-weight:600;font-size:12.5px;color:#414B5C}
+.panel .pacts{display:flex;align-items:center;gap:12px;flex:0 0 auto}
+.panel .pfull{font-weight:700;font-size:13px;color:#8B3A2E;text-decoration:underline;white-space:nowrap}
+.panel .pfull:hover{color:#6E2D24}
+button.sheetbtn.thin{padding:8px 14px;font-size:14px}
 .panel .pclose{appearance:none;background:#fff;border:1.5px solid rgba(11,21,48,.16);border-radius:9px;
   width:38px;height:38px;line-height:1;cursor:pointer;font-size:19px;font-weight:800;color:#8B3A2E;flex:0 0 auto}
 .panel .pclose:hover{border-color:#8B3A2E;color:#6E2D24}
@@ -696,7 +700,8 @@ li.next .ptog .st{color:#8B3A2E}
         <span class="mins">20 min</span>
         <p class="go"><button type="button" class="sheetbtn" aria-expanded="false" aria-controls="panel-sheet"
                 data-panel="panel-sheet" data-src="ungraded-sheet.html?week=1&amp;embed=1#dr-h">All the drawing prompts</button></p>
-        <p class="go" style="margin-top:8px"><a href="mastery-canvas.html?week=1" target="_blank" rel="noopener">Or draw it on screen &#8599;</a></p>
+        <p class="go" style="margin-top:8px"><button type="button" class="sheetbtn thin" aria-expanded="false" aria-controls="panel-canvas"
+                data-panel="panel-canvas" data-src="mastery-canvas.html?week=1&amp;embed=1">Or draw it on screen</button></p>
       </div>
 
       <div class="choice c-navy">
@@ -704,7 +709,8 @@ li.next .ptog .st{color:#8B3A2E}
         <h3>Recall cards</h3>
         <p>Spaced recall over this week's competencies, with the reason every answer is right or wrong. It brings Week 1 back in October, which is the whole point of spacing.</p>
         <span class="mins">10 min</span>
-        <p class="go"><a href="mastery-physio-os-standalone.html?week=1" target="_blank" rel="noopener">Open the recall cards &#8599;</a></p>
+        <p class="go"><button type="button" class="sheetbtn" aria-expanded="false" aria-controls="panel-cards"
+                data-panel="panel-cards" data-src="mastery-physio-os-standalone.html?week=1&amp;embed=1">Open the recall cards</button></p>
       </div>
 
       <div class="choice c-navy">
@@ -712,7 +718,8 @@ li.next .ptog .st{color:#8B3A2E}
         <h3>Brain dump it</h3>
         <p>Blank page, three minutes, everything you can get down about the loop. Then check what you left out, in a second color.</p>
         <span class="mins">3 min each</span>
-        <p class="go"><a href="braindump-week01.html" target="_blank" rel="noopener">Open the brain dumps &#8599;</a></p>
+        <p class="go"><button type="button" class="sheetbtn" aria-expanded="false" aria-controls="panel-dump"
+                data-panel="panel-dump" data-src="braindump-week01.html?embed=1">Open the brain dumps</button></p>
       </div>
 
       <div class="choice c-maroon">
@@ -722,19 +729,13 @@ li.next .ptog .st{color:#8B3A2E}
         <span class="mins">10 min</span>
       </div>
 
-      <div class="choice c-maroon">
-        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20h4v-5h4v-5h4V5h4"/></svg></span>
-        <h3>Reconstruct the process</h3>
-        <p>Write the seven steps of the reflex pathway in order from memory, then trace temperature through every one.</p>
-        <span class="mins">10 min</span>
-      </div>
-
       <div class="choice c-gold">
         <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg></span>
         <h3>Quiz yourself on a fresh draw</h3>
         <p>Ten questions, built new every time, so a second run measures what you learned rather than what you remembered. Every attempt is logged with the competencies that need another pass.</p>
         <span class="mins">15 min</span>
-        <p class="go"><a href="practice-exam.html?week=1&amp;n=10" target="_blank" rel="noopener">Build a 10 question draw &#8599;</a></p>
+        <p class="go"><button type="button" class="sheetbtn" aria-expanded="false" aria-controls="panel-quiz"
+                data-panel="panel-quiz" data-src="practice-exam.html?week=1&amp;n=10&amp;embed=1">Build a 10 question draw</button></p>
       </div>
 
       <div class="choice c-navy">
@@ -759,6 +760,30 @@ li.next .ptog .st{color:#8B3A2E}
         <div class="phead">
           <p class="ptitle">Your ungraded work, Week 1 <span class="pscroll">scroll inside, and the PDF button is at the top</span></p>
           <button type="button" class="pclose" aria-label="Close, book problems">&times;</button>
+        </div>
+      </div>
+      <div class="panel" id="panel-cards" role="group" aria-label="Recall cards for Week 1" hidden>
+        <div class="phead">
+          <p class="ptitle">Recall cards, Week 1 <span class="pscroll">scroll inside. Your progress is saved as you go.</span></p>
+          <span class="pacts"><a class="pfull" href="mastery-physio-os-standalone.html?week=1" target="_blank" rel="noopener">Open full screen &#8599;</a><button type="button" class="pclose" aria-label="Close, recall cards for week 1">&times;</button></span>
+        </div>
+      </div>
+      <div class="panel" id="panel-dump" role="group" aria-label="Brain dumps for Week 1" hidden>
+        <div class="phead">
+          <p class="ptitle">Brain dumps, Week 1 <span class="pscroll">scroll inside. Print or save from the top of the sheet.</span></p>
+          <span class="pacts"><a class="pfull" href="braindump-week01.html" target="_blank" rel="noopener">Open full screen &#8599;</a><button type="button" class="pclose" aria-label="Close, brain dumps for week 1">&times;</button></span>
+        </div>
+      </div>
+      <div class="panel" id="panel-quiz" role="group" aria-label="A fresh ten question draw" hidden>
+        <div class="phead">
+          <p class="ptitle">Quiz yourself, Week 1 <span class="pscroll">scroll inside. A new set is built every time you open it.</span></p>
+          <span class="pacts"><a class="pfull" href="practice-exam.html?week=1&amp;n=10" target="_blank" rel="noopener">Open full screen &#8599;</a><button type="button" class="pclose" aria-label="Close, a fresh ten question draw">&times;</button></span>
+        </div>
+      </div>
+      <div class="panel" id="panel-canvas" role="group" aria-label="The drawing canvas" hidden>
+        <div class="phead">
+          <p class="ptitle">Draw it on screen <span class="pscroll">scroll inside. Save your drawing as a PDF from the canvas itself.</span></p>
+          <span class="pacts"><a class="pfull" href="mastery-canvas.html?week=1" target="_blank" rel="noopener">Open full screen &#8599;</a><button type="button" class="pclose" aria-label="Close, the drawing canvas">&times;</button></span>
         </div>
       </div>
     </div>
@@ -1370,6 +1395,24 @@ window.addEventListener('load',post);window.addEventListener('resize',post);post
     var f = document.createElement('iframe');
     f.src = src; f.title = panel.getAttribute('aria-label');
     f.setAttribute('scrolling','auto'); f.loading = 'lazy';
+    /* KEEP THE PANEL A PANEL.
+
+       Every internal link on this site carries target="_top", which is
+       right for a page embedded on its own in Canvas and wrong inside
+       one of these panels: one tap and the whole Canvas page navigates
+       away to github.io with no back button, which is the trap this
+       panel exists to avoid. Same origin, so rewrite those targets once
+       the frame has loaded. External links and _blank are left alone. */
+    f.addEventListener('load', function(){
+      var d; try { d = f.contentDocument; } catch(e){ return; }
+      if (!d) return;
+      var links = d.querySelectorAll('a[target="_top"], a[target="_parent"]');
+      for (var i = 0; i < links.length; i++) links[i].setAttribute('target','_self');
+      d.addEventListener('click', function(e){
+        var a = e.target.closest && e.target.closest('a[target="_top"], a[target="_parent"]');
+        if (a) a.setAttribute('target','_self');
+      }, true);
+    });
     panel.appendChild(f);
   }
   function tell(){
@@ -1401,5 +1444,8 @@ window.addEventListener('load',post);window.addEventListener('resize',post);post
   });
 }());
 </script>
+<!-- Ask Hootie, on every page. -->
+<script src="schedule-fall2026.js"></script>
+<script src="hootie.js"></script>
 </body>
 </html>
