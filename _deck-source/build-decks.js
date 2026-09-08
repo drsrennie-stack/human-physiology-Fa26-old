@@ -363,7 +363,7 @@ ${ADD_CSS}
 
 <noscript>
   <div class="noscript-note">
-    <p><b>These slides read and print without JavaScript.</b> Every box below is already open, so nothing is hidden from you. What you lose is Present mode, the click to open behaviour and the timer. The same material is written out in full on the Week ${deck.week} notes page and in the course lab manual, both of which read and print with no scripting at all.</p>
+    <p><b>These slides read and print without JavaScript.</b> Every box below is already open, so nothing is hidden from you. What you lose is Present mode, the click to open behavior and the timer. The same material is written out in full on the Week ${deck.week} notes page and in the course lab manual, both of which read and print with no scripting at all.</p>
   </div>
   <style>.rv .rv-body{display:block !important}.rv:not(.open)::after{display:none}</style>
 </noscript>

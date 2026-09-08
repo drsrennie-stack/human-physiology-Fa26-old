@@ -211,34 +211,44 @@ window.BIO005_CREDIT = {
 
 
 window.BIO005_GRADING = {
-  status: 'GRADE MODEL OF RECORD, Sep 7 2026, from the published syllabus-fall2026.html. ' +
-          'Two midterms, not three. Supersedes the Aug 23 model that had checks, chart entries, ' +
-          'module videos, a conference and two discussion threads; none of that is in the syllabus.',
-  note:   'Sorted by whether the work can be verified as the student\'s own. The midterms are the ' +
-          'only identity-verified, notes-closed evidence in the course, which is why they carry 40.',
+  status: 'GRADE MODEL OF RECORD, corrected Sep 7 2026 against the published ' +
+          'syllabus-fall2026.html and how-grading-works.html. Four categories, two midterms. ' +
+          'THE PREVIOUS CONTENT OF THIS BLOCK WAS WRONG: it called itself the model of record ' +
+          'while carrying the retired five component model, note sheets 20, midterms 40, lab 15, ' +
+          'book problems 15, discussions 10. Nothing reads this object today, which is the only ' +
+          'reason no page repeated those numbers to a student.',
+  note:   'Sorted by weight. The note sheets, the practice items, the book problems and the ' +
+          'Mastery Check carry no points at all, on purpose: they are where a student finds out ' +
+          'what they do not know, and grading them rewards looking finished over being honest.',
   categories: [
-    { key:'notesheets',  name:'Competency note sheets', weight:20, n:15,
-      ai:'closed', note:'One prompt per competency. Five prompts graded for accuracy, the rest checked for completion.' },
-    { key:'midterms',    name:'Midterm exams', weight:40, n:2,
-      ai:'closed', note:'20 percent each. Draw and teach on video, no notes. ' +
-                        'Midterm 1 covers weeks 1 to 7, window Mon Oct 26 8:00 am to Wed Oct 28 10:00 pm. ' +
-                        'Midterm 2 covers weeks 8 to 14, window Mon Dec 14 8:00 am to Wed Dec 16 10:00 pm. ' +
-                        'Each window sits at the front of its week so the week before is finished and the week it sits in stays open.' },
-    { key:'lab',         name:'Laboratory', weight:15, n:15,
-      ai:'open for setup, closed for interpretation', note:'Weekly PhysioEx labs with data records.' },
-    { key:'problems',    name:'Book problems', weight:15, n:15,
-      ai:'open, with the log', note:'Assigned Silverthorn problems each week.' },
-    { key:'discussions', name:'Discussions', weight:10, n:15,
-      ai:'open',   note:'One post a week carrying both the physiology and the thinking about it.' }
+    { key:'exams',       name:'Show Me What You Know', weight:35, n:2,
+      ai:'closed', note:'Two midterms, 17.5 percent each. Draw a physiological pathway and teach it ' +
+                        'on video, out loud, no notes.' },
+    { key:'lab',         name:'Investigate It', weight:25, n:15,
+      ai:'open for setup, closed for interpretation',
+      note:'The weekly labs, written up as question, prediction, evidence, interpretation, conclusion. ' +
+           'Where a week uses PhysioEx it must show complete in Pearson, and the points live on the worksheet.' },
+    { key:'apply',       name:'Use It', weight:25, n:15,
+      ai:'open, with disclosure',
+      note:'The weekly application case, chosen from three or four set in different rooms. They differ ' +
+           'in context, not in rigor. These accumulate into the patient file, the capstone of the course.' },
+    { key:'discussions', name:'Think About It', weight:15, n:15,
+      ai:'closed',
+      note:'One post a week carrying the physiology and the thinking about it together. Initial post ' +
+           'Friday 10:00 pm, replies Sunday 10:00 pm.' }
+  ],
+  ungraded: [
+    'Competency note sheets', 'Retrieval practice', 'Practice items',
+    'Book problems', 'Mastery Check', 'Weekly practice log'
   ],
   exams: [
-    { n:1, covers:[1,2,3,4,5,6,7],       opens:'2026-10-26', closes:'2026-10-28', weight:20 },
-    { n:2, covers:[8,9,10,11,12,13,14],  opens:'2026-12-14', closes:'2026-12-16', weight:20 }
+    { n:1, covers:[1,2,3,4,5,6,7],       opens:'2026-10-26', closes:'2026-10-28', weight:17.5 },
+    { n:2, covers:[8,9,10,11,12,13,14],  opens:'2026-12-14', closes:'2026-12-16', weight:17.5 }
   ],
-  retired: 'Three midterms covering 1-5, 6-10 and 11-15 are retired as of Sep 7 2026. ' +
-           'So are the Aug 23 categories. Week 15 is not on an exam; it closes with the synthesis work.'
+  retired: 'Retired as of Sep 7 2026: three midterms covering 1-5, 6-10 and 11-15; five unit exams; ' +
+           'the Aug 23 categories; and the five component model with graded note sheets and book ' +
+           'problems. Week 15 is not on an exam; it closes with the synthesis work.'
 };
-
 /* ============================================================
    OPEN DECISIONS THAT CHANGE THE SCHEDULE
    These are the ones that would force a rebuild if answered late.
