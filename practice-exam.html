@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Practice Exam + Gap Finder · BIO 005 Human Physiology</title>
+<link rel="icon" type="image/svg+xml" href="icon.svg">
+<link rel="stylesheet" href="assets/fonts-site.css">
+<style>
+/* ============================================================
+   practice-exam.html
+   One tool for the whole term. The setup page builds an exam from
+   bio005-exam-bank.js and opens it in its own window (or a full
+   screen dialog if the browser blocks the window). Every attempt
+   stays in this browser's localStorage. Nothing is sent anywhere.
+
+   Brand of record: navy #0B1530, maroon #8B3A2E, gold #C9A14A.
+   Headlines Open Sans 800, everything else Plus Jakarta Sans.
+   No italics. No bars closing off a section. White cards lift off
+   the off-white page with a shadow, never a border.
+   ============================================================ */
+:root{
+  --navy:#0B1530; --navy-deep:#060A18; --navy-tint:#ECEFF4;
+  --gold:#C9A14A; --gold-ink:#060A18; --gold-deep:#8A6D33;
+  --maroon:#8B3A2E; --maroon-dark:#6E2D24; --maroon-tint:#F6ECE9;
+  --white:#FFFFFF; --offwhite:#FAFAF9; --bone:#F5F1E8;
+  --ink-soft:#414B5C; --line:rgba(11,21,48,0.16);
+  --ok:#1F5E3A; --ok-tint:#E6F1EA;
+  --display:'Open Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+  --body:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0}
+body{font-family:var(--body);background:var(--offwhite);color:var(--navy);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--display);font-weight:800;letter-spacing:-.022em;margin:0}
+em,i,cite{font-style:normal;color:var(--maroon)}
+p{margin:0 0 12px;max-width:68ch}
+a{color:var(--maroon);text-underline-offset:3px}
+a:hover{color:var(--maroon-dark)}
+:focus-visible{outline:3px solid var(--maroon);outline-offset:3px;border-radius:3px}
+button{font:inherit}
+[hidden]{display:none !important}
+.vh{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+.skip{position:absolute;left:-9999px;top:0;z-index:90;background:var(--navy);color:#fff;padding:12px 18px;font-weight:700;text-decoration:none}
+.skip:focus{left:0;top:0}
+
+/* brand bar */
+.brandbar{position:sticky;top:0;z-index:60;background:#fff;border-bottom:1px solid var(--line);padding:13px 0}
+.brandbar .wrap{display:flex;align-items:center;gap:11px;flex-wrap:wrap}
+.mark{display:flex;align-items:center;gap:9px;text-decoration:none}
+.wm{display:block;font-family:var(--display);font-size:16px;font-weight:800;color:var(--navy);letter-spacing:-.02em;line-height:1.05}
+.wm b{color:var(--maroon);font-weight:800}
+.wmsub{display:block;font-family:var(--body);font-size:8px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-soft);margin-top:3px}
+.course{margin-left:auto;font-size:9.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft)}
+
+/* hero */
+.back{display:inline-block;margin:22px 0 0;font-size:10.5px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;text-decoration:none;color:var(--maroon)}
+.back:hover{text-decoration:underline}
+.eyebrow{font-size:10.5px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--maroon);margin:0 0 10px}
+.hero{padding:14px 0 26px}
+.hero h1{font-size:clamp(28px,5vw,42px);line-height:1.12;max-width:20ch}
+.hero h1 span{color:var(--maroon)}
+.lede{margin-top:14px;color:var(--ink-soft);max-width:62ch;font-size:17px}
+
+/* cards and layout */
+.card{background:#fff;border:0;border-radius:12px;padding:22px 24px;box-shadow:0 1px 3px rgba(11,21,48,.08);transition:transform 200ms ease,box-shadow 200ms ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 8px 16px rgba(11,21,48,.10)}
+.card h2{font-size:clamp(19px,2.6vw,23px);color:var(--maroon-dark);margin:0 0 6px}
+.card h3{font-size:16px;margin:0 0 6px}
+.card .role{font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--maroon);margin:0 0 10px}
+.grid2{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+section{padding:18px 0}
+fieldset{border:0;padding:0;margin:0 0 18px;min-width:0}
+legend{font-family:var(--display);font-weight:800;font-size:16px;padding:0;margin:0 0 8px}
+.hint{color:var(--ink-soft);font-size:14px;margin:0 0 10px}
+
+/* choice rows: weeks, modes, counts */
+.part{font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-deep);margin:12px 0 6px}
+.part:first-of-type{margin-top:0}
+.chk{display:flex;align-items:flex-start;gap:10px;padding:7px 8px;border-radius:8px;cursor:pointer}
+.chk:hover{background:var(--navy-tint)}
+.chk input{width:20px;height:20px;margin:2px 0 0;accent-color:var(--maroon);flex:0 0 auto}
+.chk .wn{font-weight:800;font-family:var(--display);color:var(--maroon);min-width:74px;white-space:nowrap}
+.chk .wt{color:var(--navy)}
+.chk .cnt{color:var(--ink-soft);font-size:13px}
+.radios{display:grid;gap:6px}
+.pillrow{display:flex;flex-wrap:wrap;gap:8px}
+.pill{border:2px solid var(--navy);background:#fff;color:var(--navy);border-radius:999px;padding:8px 16px;font-weight:700;cursor:pointer}
+.pill[aria-pressed="true"]{background:var(--navy);color:#fff}
+.pill:hover{border-color:var(--maroon)}
+.pill.sm{padding:6px 12px;font-size:14px}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--maroon);color:#fff;border:0;border-radius:8px;padding:14px 24px;font-size:12.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;text-decoration:none}
+.btn:hover{background:var(--maroon-dark)}
+.btn.ghost{background:#fff;color:var(--navy);border:2px solid var(--navy)}
+.btn.ghost:hover{border-color:var(--maroon);color:var(--maroon)}
+.btn.gold{background:var(--gold);color:var(--gold-ink)}
+.btn.gold:hover{background:#b8913f}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.btn.sm{padding:10px 16px;font-size:11px}
+.actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:16px}
+.blueprint{display:grid;grid-template-columns:1fr auto;gap:4px 18px;font-size:14px;margin:8px 0 0;max-width:360px}
+.blueprint dt{color:var(--ink-soft)}
+.blueprint dd{margin:0;font-weight:700;text-align:right}
+.note{font-size:14px;color:var(--ink-soft)}
+
+/* history table */
+table{border-collapse:collapse;width:100%;font-size:14.5px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+.tablewrap{overflow-x:auto}
+.improve{background:var(--navy-tint);border-radius:10px;padding:14px 16px;margin:14px 0 0;font-size:15px}
+.improve strong{color:var(--maroon)}
+
+/* gap bars */
+.bars{display:grid;gap:10px;margin:8px 0 0}
+.bar{display:grid;grid-template-columns:minmax(120px,2fr) minmax(120px,3fr) 52px;gap:12px;align-items:center;font-size:14.5px}
+.bar .lab{font-weight:700}
+.bar .lab small{display:block;font-weight:400;color:var(--ink-soft);font-size:12.5px}
+.bar .track{height:14px;background:var(--navy-tint);border-radius:999px;overflow:hidden}
+.bar .fill{height:100%;background:var(--navy);border-radius:999px;transition:width 400ms ease}
+.bar .fill.low{background:var(--maroon)}
+.bar .pct{text-align:right;font-weight:800;font-family:var(--display)}
+.gaps{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:8px}
+.gaps li{display:flex;gap:12px;align-items:flex-start;background:var(--maroon-tint);border-radius:10px;padding:10px 14px}
+.gaps li .n{font-family:var(--display);font-weight:800;color:var(--maroon);min-width:22px}
+.gaps li small{display:block;color:var(--ink-soft);font-size:13px}
+.startline{font-family:var(--display);font-weight:800;font-size:18px;color:var(--maroon-dark);margin:16px 0 4px}
+.quad{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:10px;margin:10px 0 0}
+.quad div{background:var(--navy-tint);border-radius:10px;padding:12px 14px}
+.quad .big{font-family:var(--display);font-weight:800;font-size:26px;line-height:1;color:var(--navy)}
+.quad .big.warn{color:var(--maroon)}
+.quad small{display:block;color:var(--ink-soft);font-size:12.5px;margin-top:4px}
+
+/* dark panel */
+.panel{background:var(--navy-deep);color:var(--bone);padding:36px 0 40px;margin:24px 0 0}
+.panel h2{color:#fff;font-size:clamp(20px,3vw,26px);margin-bottom:8px}
+.panel .eyebrow{color:var(--gold)}
+.panel p{color:var(--bone)}
+.panel a{color:var(--gold)}
+.panel :focus-visible{outline-color:var(--gold)}
+.loop{display:flex;flex-wrap:wrap;gap:8px 14px;font-family:var(--display);font-weight:800;font-size:15px;color:#fff;margin:10px 0 16px}
+.loop span+span::before{content:"\2192";color:var(--gold);margin-right:14px}
+
+/* footer */
+footer{background:var(--navy-deep);color:var(--bone);padding:30px 0 36px;margin-top:40px}
+footer a{color:var(--bone);text-decoration:underline}
+footer a:hover{color:var(--gold)}
+footer :focus-visible{outline-color:var(--gold)}
+.flinks{display:flex;flex-wrap:wrap;gap:8px 10px;align-items:center;font-size:14px}
+.dot{color:var(--gold)}
+.fleg{margin:16px 0 0;font-size:13px;color:var(--bone);max-width:74ch;opacity:.86}
+
+/* ---------- the exam window ---------- */
+body.run{background:var(--offwhite)}
+.xtop{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line);padding:10px 0}
+.xtop .wrap{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.xtop .title{font-family:var(--display);font-weight:800;font-size:15px;color:var(--navy)}
+.xtop .title b{color:var(--maroon)}
+.xtop .prog{margin-left:auto;font-size:13px;color:var(--ink-soft);font-weight:700}
+.xtop .track{flex-basis:100%;height:6px;background:var(--navy-tint);border-radius:999px;overflow:hidden}
+.xtop .fill{height:100%;background:var(--maroon);transition:width 300ms ease}
+.xmain{padding:26px 0 60px}
+.xcard{background:#fff;border-radius:14px;padding:26px 28px;box-shadow:0 1px 3px rgba(11,21,48,.08);max-width:860px;margin:0 auto}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px;align-items:center}
+.tag{font-size:10.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;border-radius:999px;padding:5px 11px;background:var(--navy-tint);color:var(--navy)}
+.tag.type{background:var(--maroon);color:#fff}
+.tag.dok{background:#fff;border:1px solid var(--line);color:var(--ink-soft)}
+.case{background:var(--navy-tint);border-radius:10px;padding:14px 16px;margin:0 0 14px;font-size:15.5px}
+.case .role{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--maroon);margin:0 0 6px}
+.stem{font-family:var(--display);font-weight:800;font-size:clamp(18px,2.4vw,22px);line-height:1.35;margin:0 0 16px;max-width:none}
+.opts{display:grid;gap:8px;margin:0 0 6px}
+.opt{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;border-radius:10px;border:2px solid var(--line);cursor:pointer;background:#fff}
+.opt:hover{border-color:var(--navy)}
+.opt input{width:20px;height:20px;margin:2px 0 0;flex:0 0 auto;accent-color:var(--maroon)}
+.opt .l{font-family:var(--display);font-weight:800;color:var(--maroon);min-width:18px}
+.opt.right{border-color:var(--ok);background:var(--ok-tint)}
+.opt.wrong{border-color:var(--maroon);background:var(--maroon-tint)}
+.opt .mark{margin-left:auto;font-weight:800;font-size:12px;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
+.opt.right .mark{color:var(--ok)}
+.opt.wrong .mark{color:var(--maroon)}
+.opt[aria-disabled="true"]{cursor:default}
+textarea{width:100%;min-height:120px;font:inherit;font-size:15.5px;line-height:1.55;padding:12px 14px;border:2px solid var(--line);border-radius:10px;resize:vertical;color:var(--navy);background:#fff}
+textarea:focus{border-color:var(--navy)}
+.conf{margin:16px 0 0;padding:14px 16px;background:var(--offwhite);border-radius:10px}
+.conf legend{font-size:14px;font-weight:700;font-family:var(--body);margin:0 0 8px}
+.conf .row{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.conf label{display:inline-flex;align-items:center;gap:6px;border:2px solid var(--line);border-radius:999px;padding:6px 12px;cursor:pointer;background:#fff;font-size:14px}
+.conf label:hover{border-color:var(--navy)}
+.conf label:has(input:checked){background:var(--navy);color:#fff;border-color:var(--navy)}
+.conf input{position:absolute;opacity:0;width:1px;height:1px}
+.conf label:has(input:focus-visible){outline:3px solid var(--maroon);outline-offset:2px}
+.xactions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:20px}
+.fb{margin:20px 0 0;border-radius:12px;padding:18px 20px;background:var(--offwhite)}
+.fb .verdict{font-family:var(--display);font-weight:800;font-size:19px;margin:0 0 10px}
+.fb .verdict.ok{color:var(--ok)}
+.fb .verdict.no{color:var(--maroon)}
+.fb h4{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--maroon);margin:14px 0 6px}
+.fb h4:first-of-type{margin-top:0}
+.fb p{max-width:none;margin:0 0 8px}
+.fb ul{margin:0;padding-left:20px}
+.fb li{margin:0 0 6px}
+.fb .comp{background:#fff;border-radius:10px;padding:12px 14px;margin-top:12px;font-size:14.5px}
+.fb .comp b{color:var(--maroon)}
+.rubric{display:grid;gap:8px;margin:8px 0 0}
+.rubric label{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border-radius:10px;background:#fff;border:2px solid var(--line);cursor:pointer}
+.rubric label:hover{border-color:var(--navy)}
+.rubric input{width:20px;height:20px;margin:2px 0 0;accent-color:var(--maroon);flex:0 0 auto}
+.tfrow{display:flex;gap:10px;margin:0 0 14px}
+.tfbtn{flex:1;border:2px solid var(--navy);background:#fff;color:var(--navy);border-radius:10px;padding:14px;font-family:var(--display);font-weight:800;font-size:17px;cursor:pointer}
+.tfbtn[aria-pressed="true"]{background:var(--navy);color:#fff}
+.tfbtn:hover{border-color:var(--maroon)}
+.finish h2{font-size:clamp(24px,4vw,34px);color:var(--navy);margin:0 0 6px}
+.finish h2 span{color:var(--maroon)}
+.score{display:flex;flex-wrap:wrap;gap:14px;margin:14px 0 6px}
+.score div{background:var(--navy-tint);border-radius:12px;padding:14px 18px;min-width:140px}
+.score .big{font-family:var(--display);font-weight:800;font-size:34px;line-height:1;color:var(--navy)}
+.score small{display:block;color:var(--ink-soft);font-size:12.5px;margin-top:6px}
+.finish h3{font-size:18px;color:var(--maroon-dark);margin:24px 0 8px}
+.namebox{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:12px 0 0}
+.namebox input{font:inherit;padding:10px 12px;border:2px solid var(--line);border-radius:8px;min-width:240px}
+dialog.xdlg{border:0;padding:0;width:min(100vw,1200px);height:100vh;max-height:100vh;max-width:100vw;background:var(--offwhite);color:var(--navy)}
+dialog.xdlg::backdrop{background:rgba(6,10,24,.7)}
+.dlgclose{position:fixed;top:10px;right:14px;z-index:70}
+
+@media (max-width:620px){
+  .course{margin-left:0;flex-basis:100%}
+  .bar{grid-template-columns:1fr 60px}
+  .bar .track{grid-column:1 / -1}
+  .xcard{padding:20px 16px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none !important;animation:none !important}
+  .card:hover{transform:none}
+}
+@media print{
+  .skip,.brandbar,.back,footer,.xtop,.btn,.pill,.actions,.xactions{display:none !important}
+  body{background:#fff;color:#000;font-size:10.5pt}
+  .card,.xcard{box-shadow:none;border-top:1px solid #000;border-radius:0;padding:8pt 0;break-inside:avoid}
+  .bar .track{border:1px solid #000;background:#fff}
+  .bar .fill{background:#000}
+  .gaps li,.quad div,.score div,.improve{background:#fff;border:1px solid #000}
+  h1,h2,h3{break-after:avoid}
+  a{color:#000;text-decoration:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+
+<div class="brandbar" id="brandbar"><div class="wrap">
+  <a class="mark" href="course-start.html" target="_top">
+    <svg viewBox="40 10 125 148" width="22" height="26" role="img" aria-label="BIO 005 Human Physiology, course home">
+      <g transform="translate(0,18)">
+        <g transform="translate(60,0) rotate(8 0 130)"><circle cx="0" cy="20" r="10" fill="#0B1530"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#0B1530"/></g>
+        <g transform="translate(100,0)"><circle cx="0" cy="10" r="11" fill="#8B3A2E"/><path d="M 0,22 C -11,22 -17,26 -17,34 C -17,52 -14,70 -12,86 C -11,108 -13,122 -15,132 L 15,132 C 13,122 11,108 12,86 C 14,70 17,52 17,34 C 17,26 11,22 0,22 Z" fill="#8B3A2E"/></g>
+        <g transform="translate(140,0) rotate(-8 0 130)"><circle cx="0" cy="20" r="10" fill="#C9A14A"/><path d="M 0,32 C -10,32 -16,36 -16,42 C -16,55 -13,68 -11,82 C -10,100 -12,118 -14,130 L 14,130 C 12,118 10,100 11,82 C 13,68 16,55 16,42 C 16,36 10,32 0,32 Z" fill="#C9A14A"/></g>
+      </g>
+    </svg>
+    <span><span class="wm">BIO <b>005</b></span><span class="wmsub">Human Physiology</span></span>
+  </a>
+  <span class="course">BIO 005 &middot; Fall 2026</span>
+</div></div>
+
+<!-- ================= SETUP PAGE ================= -->
+<div id="setup">
+<div class="wrap"><a class="back" href="door-study.html" target="_top">&larr; Study</a></div>
+
+<header class="hero"><div class="wrap">
+  <p class="eyebrow">Practice, then find the gaps</p>
+  <h1>Practice Exam <span>+ Gap Finder</span>.</h1>
+  <p class="lede">Pick the weeks you want to practice, choose a length, and the tool builds a fresh exam from a bank of more than 5,000 questions. Every question is tied to one competency, so at the end you do not just get a score. You get a list of exactly what to go back and review.</p>
+</div></header>
+
+<main id="main">
+<section><div class="wrap">
+  <div class="card" id="builder">
+    <p class="role">Build an exam</p>
+    <h2>Choose what you want to practice.</h2>
+    <div class="grid2">
+      <div>
+        <fieldset>
+          <legend>Weeks</legend>
+          <p class="hint">Weeks that have not opened yet are still available here. Practice ahead if you want to.</p>
+          <div id="weeks"></div>
+        </fieldset>
+      </div>
+      <div>
+        <fieldset>
+          <legend>Practice mode</legend>
+          <div class="radios" id="modes">
+            <label class="chk"><input type="radio" name="mode" value="one" checked><span class="wt"><strong>One week.</strong> <span class="cnt">Just the week you tick.</span></span></label>
+            <label class="chk"><input type="radio" name="mode" value="multi"><span class="wt"><strong>Multiple weeks, Gap Finder.</strong> <span class="cnt">Tick several weeks. The exam draws from all of them and reports each week separately.</span></span></label>
+            <label class="chk"><input type="radio" name="mode" value="cumulative"><span class="wt"><strong>Cumulative exam.</strong> <span class="cnt">A midterm block or the whole course.</span></span></label>
+          </div>
+          <div class="pillrow" id="presets" hidden style="margin-top:10px">
+            <button type="button" class="pill sm" data-weeks="1,2,3,4,5,6,7">Midterm 1, weeks 1 to 7</button>
+            <button type="button" class="pill sm" data-weeks="8,9,10,11,12,13,14">Midterm 2, weeks 8 to 14</button>
+            <button type="button" class="pill sm" data-weeks="opened">Everything opened so far</button>
+            <button type="button" class="pill sm" data-weeks="all">Whole course</button>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Number of questions</legend>
+          <div class="pillrow" id="counts" role="group" aria-label="Number of questions">
+            <button type="button" class="pill" data-n="10" aria-pressed="false">10</button>
+            <button type="button" class="pill" data-n="20" aria-pressed="false">20</button>
+            <button type="button" class="pill" data-n="30" aria-pressed="true">30</button>
+            <button type="button" class="pill" data-n="50" aria-pressed="false">50</button>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>What a 30 question exam is made of</legend>
+          <dl class="blueprint" id="blueprint"></dl>
+          <p class="note" style="margin-top:8px">Every exam is built to the same mix of thinking levels: 10 percent recall, 45 percent apply, 45 percent analyze and predict. You cannot accidentally generate thirty definition questions.</p>
+        </fieldset>
+      </div>
+    </div>
+    <div class="actions">
+      <button type="button" class="btn" id="go">Generate my exam <span aria-hidden="true">&rarr;</span></button>
+      <span class="note" id="gomsg" aria-live="polite"></span>
+    </div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="grid2">
+    <div class="card" id="gapcard">
+      <p class="role">Your Gap Finder</p>
+      <h2 id="gaptitle">Nothing to show yet.</h2>
+      <div id="gapbody"><p class="note">Finish one exam and this card fills in with your score by week and the competencies to start with.</p></div>
+      <div class="actions" id="gapactions" hidden>
+        <button type="button" class="btn gold" id="practicegaps">Practice my gaps</button>
+        <button type="button" class="btn ghost sm" id="reportlast">Open my last results report</button>
+      </div>
+    </div>
+    <div class="card" id="histcard">
+      <p class="role">My practice history</p>
+      <h2>Every attempt, kept in this browser.</h2>
+      <p class="note">Nothing here is sent anywhere by itself. It lives in this browser only, so export it if you switch computers or clear your browsing data. Once a week, print your practice log as a PDF and upload it in Canvas. I read those to see who is practicing and who might need a hand before an exam, not to grade you.</p>
+      <div class="tablewrap"><table id="hist"><thead><tr><th>#</th><th>Weeks</th><th class="num">Score</th><th class="num">Confidence</th><th>Date</th></tr></thead><tbody></tbody></table></div>
+      <div id="improve" class="improve" hidden></div>
+      <div class="actions">
+        <button type="button" class="btn" id="printlog">Print my weekly practice log</button>
+        <button type="button" class="btn ghost sm" id="export">Export my practice history</button>
+        <label class="btn ghost sm" for="importfile" style="cursor:pointer">Import my practice history</label>
+        <input type="file" id="importfile" accept="application/json,.json" class="vh">
+        <span class="note" id="histmsg" aria-live="polite"></span>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="card" id="trendcard" hidden>
+    <p class="role">Your progress by week</p>
+    <h2>Same week, every attempt, oldest first.</h2>
+    <p class="note">This is the honest version of a score. One number tells you where you were. The sequence tells you whether what you are doing is working.</p>
+    <div class="tablewrap"><table id="trends"><thead><tr><th>Week</th><th class="num">Attempts</th><th>Scores, oldest to newest</th><th class="num">Change</th><th>Direction</th></tr></thead><tbody></tbody></table></div>
+    <h3 style="margin-top:18px">Biggest lift across your recent attempts</h3>
+    <p class="note">Average points each competency has cost you per attempt, over your last six attempts. Fix the top of this list first.</p>
+    <ol class="gaps" id="lift"></ol>
+  </div>
+</div></section>
+
+<div class="panel"><div class="wrap">
+  <p class="eyebrow">How to use this all term</p>
+  <h2>Retrieve, diagnose, study, retrieve again.</h2>
+  <div class="loop"><span>Retrieve</span><span>Diagnose</span><span>Study</span><span>Retrieve again</span><span>Compare</span><span>Adjust</span></div>
+  <p>Take an exam before you study, not after. The Gap Finder tells you where the holes are, so you study those competencies instead of rereading everything. Then take another exam on the same weeks and compare. The number that matters is the change between attempts, not the first score.</p>
+  <p>Two different things leave this page. The weekly practice log is a PDF you upload in Canvas for me alone. It shows your attempts and scores by week so I can reach out before an exam if it looks like you could use help. Your discussion post is public, and it never needs a score. Say whether you are improving (a lot, a little, not yet), how many attempts you made, what you changed about how you study, and whether the change helped. If you want to quote your change in percentage points, you can, but you do not have to.</p>
+  <p>The results report you save at the end lists the competencies you missed, never the questions. That is on purpose. Go back to the note sheet and the recall cards for those competencies and rebuild the idea, then come back and test it.</p>
+</div></div>
+</main>
+
+<footer><div class="wrap">
+  <nav class="flinks" aria-label="Course links">
+    <a href="course-start.html" target="_top">Course home</a><span class="dot" aria-hidden="true">&middot;</span>
+    <a href="door-study.html" target="_top">Study</a><span class="dot" aria-hidden="true">&middot;</span>
+    <a href="competency-study-guide.html" target="_top">Study guide</a><span class="dot" aria-hidden="true">&middot;</span>
+    <a href="syllabus-fall2026.html" target="_top">Syllabus</a><span class="dot" aria-hidden="true">&middot;</span>
+    <a href="course-schedule.html" target="_top">Schedule</a><span class="dot" aria-hidden="true">&middot;</span>
+    <a href="accessibility.html" target="_top">Accessibility</a><span class="dot" aria-hidden="true">&middot;</span>
+    <a href="https://yccd.instructure.com/courses/42616" target="_blank" rel="noopener">Canvas</a>
+  </nav>
+  <p class="fleg">BIO 005 Human Physiology &middot; Fall 2026 &middot; Dr. Sharilyn Rennie<br>
+     If a page does not work for you, tell me in the Virtual Office and I will fix it.</p>
+</div></footer>
+</div>
+
+<!-- ================= EXAM WINDOW ================= -->
+<div id="exam" hidden>
+  <div class="xtop"><div class="wrap">
+    <span class="title">BIO <b>005</b> Practice Exam</span>
+    <span class="prog" id="xprog" aria-live="polite"></span>
+    <div class="track" aria-hidden="true"><div class="fill" id="xfill" style="width:0%"></div></div>
+  </div></div>
+  <main class="xmain" id="xmain"><div class="wrap"><div class="xcard" id="xcard" aria-live="polite"></div></div></main>
+</div>
+
+<dialog class="xdlg" id="xdlg" aria-label="Practice exam"></dialog>
+
+<script src="bio005-exam-bank.js"></script>
+<script>
+(function(){
+'use strict';
+/* ---------------- constants ---------------- */
+var BANK = window.BIO005_EXAM_BANK;
+var KEY_HIST = 'bio005-exam-history-v1';
+var KEY_SEEN = 'bio005-exam-seen-v1';
+var KEY_PENDING = 'bio005-exam-pending-v1';
+var BLUEPRINT = { mc:14, ma:5, tf:4, bd:3, app:4 };  /* per 30 */
+var TYPE_NAME = { mc:'Multiple choice', ma:'Multiple answer', tf:'True or false, then fix it', bd:'Brain dump', app:'Application' };
+var DOK_NAME = { 1:'Recall', 2:'Apply', 3:'Analyze and predict' };
+var PARTS = [ {n:1, title:'Part 1, Foundations', weeks:[1,2,3]}, {n:2, title:'Part 2, Control systems', weeks:[4,5,6,7,8]}, {n:3, title:'Part 3, Systems in action', weeks:[9,10,11,12,13,14,15]} ];
+
+var COMP = {}; BANK.competencies.forEach(function(c){ COMP[c.id] = c; });
+var WEEK = {}; BANK.weeks.forEach(function(w){ WEEK[w.n] = w; });
+var compCountByWeek = {}; BANK.competencies.forEach(function(c){ compCountByWeek[c.week] = (compCountByWeek[c.week]||0)+1; });
+
+/* ---------------- utilities ---------------- */
+function $(s, r){ return (r||document).querySelector(s); }
+function $$(s, r){ return Array.prototype.slice.call((r||document).querySelectorAll(s)); }
+function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+function el(tag, attrs, html){ var e=document.createElement(tag); if(attrs) Object.keys(attrs).forEach(function(k){ if(k==='class') e.className=attrs[k]; else if(k==='html') e.innerHTML=attrs[k]; else e.setAttribute(k, attrs[k]); }); if(html!=null) e.innerHTML=html; return e; }
+function shuffle(a){ for(var i=a.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)); var t=a[i]; a[i]=a[j]; a[j]=t; } return a; }
+function pct(x){ return Math.round(x*100); }
+function pad(n){ return (n<10?'0':'')+n; }
+function fmtDate(iso){ var d=new Date(iso); return d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}); }
+function fmtDateTime(iso){ var d=new Date(iso); return d.toLocaleString('en-US',{month:'short',day:'numeric',year:'numeric',hour:'numeric',minute:'2-digit',timeZone:'America/Los_Angeles'})+' Pacific'; }
+function load(key, dflt){ try{ var v=localStorage.getItem(key); return v?JSON.parse(v):dflt; }catch(e){ return dflt; } }
+function save(key, v){ try{ localStorage.setItem(key, JSON.stringify(v)); return true; }catch(e){ return false; } }
+function weeksLabel(ws){ ws=ws.slice().sort(function(a,b){return a-b;}); if(ws.length===1) return 'Week '+ws[0]; var runs=[],s=ws[0],p=ws[0]; for(var i=1;i<=ws.length;i++){ if(ws[i]===p+1){p=ws[i];continue;} runs.push(s===p?String(s):s+' to '+p); s=p=ws[i]; } return 'Weeks '+runs.join(', '); }
+function todayOpened(){ var now=new Date(); return BANK.weeks.filter(function(w){ return new Date(w.opens+'T08:00:00-07:00') <= now; }).map(function(w){return w.n;}); }
+function uid(){ return Date.now().toString(36)+Math.random().toString(36).slice(2,7); }
+function hash(s){ var h=5381; for(var i=0;i<s.length;i++){ h=((h<<5)+h+s.charCodeAt(i))|0; } return (h>>>0).toString(36); }
+
+/* ---------------- blueprint ---------------- */
+function typeCounts(n){
+  var out={}, sum=0;
+  Object.keys(BLUEPRINT).forEach(function(t){ out[t]=Math.round(n*BLUEPRINT[t]/30); sum+=out[t]; });
+  if(n<=10){ out={mc:5,ma:2,tf:1,bd:1,app:1}; sum=10; }
+  out.mc += n-sum;
+  return out;
+}
+function dokQuotas(n){ var d1=Math.max(1,Math.round(n*0.10)), d2=Math.round(n*0.45); return {1:d1, 2:d2, 3:n-d1-d2}; }
+
+/* Build the slot list: each slot has a type and a dok. */
+function buildSlots(n){
+  var tc=typeCounts(n), q=dokQuotas(n), slots=[];
+  var fixed3 = tc.bd + tc.app;
+  var pool=[]; var d3left = Math.max(0, q[3]-fixed3);
+  for(var i=0;i<q[1];i++) pool.push(1);
+  for(i=0;i<q[2];i++) pool.push(2);
+  for(i=0;i<d3left;i++) pool.push(3);
+  /* if bd+app exceed the dok 3 quota, take the overflow from dok 2 */
+  while(pool.length < tc.mc+tc.ma+tc.tf) pool.push(2);
+  while(pool.length > tc.mc+tc.ma+tc.tf) pool.pop();
+  shuffle(pool);
+  function take(pref){ for(var k=0;k<pref.length;k++){ var idx=pool.indexOf(pref[k]); if(idx>=0){ return pool.splice(idx,1)[0]; } } return pool.pop(); }
+  for(i=0;i<tc.bd;i++) slots.push({type:'bd', dok:3});
+  for(i=0;i<tc.app;i++) slots.push({type:'app', dok:3});
+  for(i=0;i<tc.tf;i++) slots.push({type:'tf', dok:take([1,2])});
+  for(i=0;i<tc.ma;i++) slots.push({type:'ma', dok:take([2,1,3])});
+  for(i=0;i<tc.mc;i++) slots.push({type:'mc', dok:pool.length?pool.pop():2});
+  return slots;
+}
+
+/* Assign a week to each slot, proportional to competency count (or to gap weights), with a floor of one per week. */
+function assignWeeks(slots, weeks, weekWeight){
+  var order=shuffle(weeks.slice());
+  var weights=weeks.map(function(w){ return weekWeight ? (weekWeight[w]||0.5) : compCountByWeek[w]||1; });
+  var total=weights.reduce(function(a,b){return a+b;},0);
+  var floorN = Math.min(slots.length, weeks.length);
+  shuffle(slots);
+  slots.forEach(function(s,i){
+    if(i<floorN){ s.week=order[i]; return; }
+    var r=Math.random()*total, acc=0;
+    for(var k=0;k<weeks.length;k++){ acc+=weights[k]; if(r<=acc){ s.week=weeks[k]; return; } }
+    s.week=weeks[weeks.length-1];
+  });
+  return slots;
+}
+
+/* Pick items for the slots. compWeight is optional {competencyId: weight}. */
+function generate(n, weeks, compWeight){
+  var slots=buildSlots(n);
+  var weekWeight=null;
+  if(compWeight){ weekWeight={}; BANK.competencies.forEach(function(c){ if(weeks.indexOf(c.week)>=0) weekWeight[c.week]=(weekWeight[c.week]||0)+(compWeight[c.id]||0.5); }); }
+  assignWeeks(slots, weeks, weekWeight);
+  var seen=load(KEY_SEEN, []); var seenSet={}; seen.forEach(function(id){ seenSet[id]=1; });
+  var used={}, usedComp={}, out=[];
+  var pool=BANK.items.filter(function(it){ return weeks.indexOf(it.week)>=0; });
+  function score(it){ var w=(compWeight?(compWeight[it.competencyId]||0.5):1); if(seenSet[it.id]) w*=0.25; if(usedComp[it.competencyId]) w*=0.4; return w*(0.5+Math.random()); }
+  function pick(filter){ var best=null, bs=-1; for(var i=0;i<pool.length;i++){ var it=pool[i]; if(used[it.id]) continue; if(!filter(it)) continue; var s=score(it); if(s>bs){ bs=s; best=it; } } return best; }
+  slots.forEach(function(s){
+    var it =
+      pick(function(it){ return it.type===s.type && it.week===s.week && it.dok===s.dok; }) ||
+      pick(function(it){ return it.type===s.type && it.week===s.week && Math.abs(it.dok-s.dok)===1; }) ||
+      pick(function(it){ return it.type===s.type && it.dok===s.dok; }) ||
+      pick(function(it){ return it.type===s.type && it.week===s.week; }) ||
+      pick(function(it){ return it.type===s.type; }) ||
+      pick(function(it){ return it.week===s.week && it.dok===s.dok && (it.type==='mc'||it.type==='ma'); }) ||
+      pick(function(){ return true; });
+    if(it){ used[it.id]=1; usedComp[it.competencyId]=1; out.push(it); }
+  });
+  /* order: mix, but never open with a brain dump */
+  shuffle(out);
+  var firstObj=out.findIndex(function(it){ return it.type!=='bd'; });
+  if(firstObj>0){ var t=out[0]; out[0]=out[firstObj]; out[firstObj]=t; }
+  return out;
+}
+
+/* ---------------- history and gaps ---------------- */
+function history(){ var h=load(KEY_HIST, {attempts:[]}); if(!h.attempts) h.attempts=[]; return h; }
+function saveAttempt(a){ var h=history(); h.attempts.push(a); if(h.attempts.length>60) h.attempts=h.attempts.slice(-60); save(KEY_HIST, h); var seen=load(KEY_SEEN, []); seen=seen.concat(a.itemIds||[]); if(seen.length>900) seen=seen.slice(-900); save(KEY_SEEN, seen); }
+function compWeightsFrom(attempts){
+  var acc={};
+  attempts.slice(-6).forEach(function(a){ Object.keys(a.byComp||{}).forEach(function(id){ var v=a.byComp[id]; if(!acc[id]) acc[id]={got:0,n:0}; acc[id].got+=v[0]; acc[id].n+=v[1]; }); });
+  var w={};
+  Object.keys(acc).forEach(function(id){ var r=acc[id].got/acc[id].n; w[id]= r<0.5?5 : r<0.75?3 : r<1?1.5 : 0.4; });
+  return w;
+}
+
+/* ---------------- setup page ---------------- */
+var setup = {
+  n:30,
+  init:function(){
+    var wk=$('#weeks');
+    PARTS.forEach(function(p){
+      wk.appendChild(el('p',{class:'part'}, p.title));
+      p.weeks.forEach(function(n){
+        var w=WEEK[n];
+        var lab=el('label',{class:'chk'});
+        lab.innerHTML='<input type="checkbox" name="week" value="'+n+'"><span class="wn">Week '+n+'</span><span class="wt">'+esc(w.title)+' <span class="cnt">('+(compCountByWeek[n]||0)+' competencies)</span></span>';
+        wk.appendChild(lab);
+      });
+    });
+    var bp=$('#blueprint'); Object.keys(BLUEPRINT).forEach(function(t){ bp.appendChild(el('dt',null,TYPE_NAME[t])); bp.appendChild(el('dd',null,String(BLUEPRINT[t]))); });
+    bp.appendChild(el('dt',null,'Total')); bp.appendChild(el('dd',null,'30'));
+    /* default: the current week */
+    var opened=todayOpened(); var cur=opened.length?opened[opened.length-1]:1;
+    var box=$('#weeks input[value="'+cur+'"]'); if(box) box.checked=true;
+    $$('#modes input').forEach(function(r){ r.addEventListener('change', setup.modeChanged); });
+    $$('#weeks input').forEach(function(c){ c.addEventListener('change', function(){ if(setup.mode()==='one'){ $$('#weeks input').forEach(function(o){ if(o!==c) o.checked=false; }); } }); });
+    $$('#presets .pill').forEach(function(b){ b.addEventListener('click', function(){ var ws=b.getAttribute('data-weeks'); var list = ws==='all'?BANK.weeks.map(function(w){return w.n;}) : ws==='opened'?(todayOpened().length?todayOpened():[1]) : ws.split(',').map(Number); $$('#weeks input').forEach(function(o){ o.checked=list.indexOf(Number(o.value))>=0; }); $$('#presets .pill').forEach(function(o){ o.setAttribute('aria-pressed', o===b?'true':'false'); }); }); });
+    $$('#counts .pill').forEach(function(b){ b.addEventListener('click', function(){ setup.n=Number(b.getAttribute('data-n')); $$('#counts .pill').forEach(function(o){ o.setAttribute('aria-pressed', o===b?'true':'false'); }); }); });
+    $('#go').addEventListener('click', setup.go);
+    $('#practicegaps').addEventListener('click', setup.practiceGaps);
+    $('#reportlast').addEventListener('click', function(){ var h=history(); if(h.attempts.length) report.open(h.attempts[h.attempts.length-1]); });
+    $('#export').addEventListener('click', setup.exportHistory);
+    $('#printlog').addEventListener('click', function(){ var h=history(); if(!h.attempts.length){ $('#histmsg').textContent='Finish one exam first, then the log has something to show.'; return; } var name=prompt('Your name, for the top of the log only. It is not stored.'); if(name===null) return; report.openLog(h.attempts, name.trim()); });
+    $('#importfile').addEventListener('change', setup.importHistory);
+    window.addEventListener('storage', function(e){ if(e.key===KEY_HIST) setup.render(); });
+    window.addEventListener('focus', setup.render);
+    setup.render();
+  },
+  mode:function(){ var r=$('#modes input:checked'); return r?r.value:'one'; },
+  modeChanged:function(){
+    var m=setup.mode(); $('#presets').hidden = m!=='cumulative';
+    if(m==='one'){ var first=$('#weeks input:checked'); $$('#weeks input').forEach(function(o){ o.checked=(o===first); }); }
+    if(m==='cumulative' && $$('#weeks input:checked').length<2){ $('#presets .pill').click(); }
+  },
+  weeks:function(){ return $$('#weeks input:checked').map(function(c){ return Number(c.value); }); },
+  go:function(){
+    var ws=setup.weeks(); var msg=$('#gomsg');
+    if(!ws.length){ msg.textContent='Tick at least one week first.'; $('#weeks input').focus(); return; }
+    msg.textContent='';
+    runner.launch({ n:setup.n, weeks:ws, mode:setup.mode(), weights:null, label:null });
+  },
+  practiceGaps:function(){
+    var h=history(); if(!h.attempts.length) return;
+    var last=h.attempts[h.attempts.length-1];
+    var w=compWeightsFrom(h.attempts.filter(function(a){ return a.weeks.some(function(x){ return last.weeks.indexOf(x)>=0; }); }));
+    var n = setup.n>30?30:setup.n<20?20:setup.n;
+    runner.launch({ n:n, weeks:last.weeks, mode:'gaps', weights:w, label:'Practice my gaps' });
+  },
+  render:function(){
+    var h=history(); var tb=$('#hist tbody'); tb.innerHTML='';
+    if(!h.attempts.length){ tb.innerHTML='<tr><td colspan="5" class="note">No attempts yet.</td></tr>'; $('#improve').hidden=true; }
+    h.attempts.forEach(function(a,i){
+      var tr=el('tr'); tr.innerHTML='<td>'+(i+1)+'</td><td>'+esc(weeksLabel(a.weeks))+(a.label?' <span class="note">('+esc(a.label)+')</span>':'')+'</td><td class="num">'+pct(a.score)+'%</td><td class="num">'+(a.conf?a.conf.toFixed(1):'')+'</td><td>'+esc(fmtDate(a.date))+'</td>';
+      tb.appendChild(tr);
+    });
+    if(h.attempts.length>=2){
+      var last=h.attempts[h.attempts.length-1]; var key=last.weeks.slice().sort().join(',');
+      var same=h.attempts.filter(function(a){ return a.weeks.slice().sort().join(',')===key; });
+      if(same.length>=2){
+        var first=same[0], pts=pct(last.score)-pct(first.score); var rel = first.score>0 ? Math.round((last.score-first.score)/first.score*100) : null;
+        $('#improve').hidden=false;
+        $('#improve').innerHTML='<strong>'+esc(weeksLabel(last.weeks))+', attempt 1 to attempt '+same.length+':</strong> '+(pts>=0?'+':'')+pts+' percentage points'+(rel!=null?' ('+(rel>=0?'+':'')+rel+' percent relative change)':'')+'. <span class="note">Percentage points and percent change are not the same thing. Going from 50 percent to 75 percent is +25 points, or a 50 percent relative improvement. Use percentage points when you report.</span>';
+      } else $('#improve').hidden=true;
+    }
+    /* progress by week and biggest lift */
+    var tr=weekTrends(h.attempts); var tw=Object.keys(tr).map(Number).sort(function(x,y){return x-y;});
+    $('#trendcard').hidden = !tw.length;
+    var tb2=$('#trends tbody'); tb2.innerHTML='';
+    tw.forEach(function(w){ var seq=tr[w]; var ch=pct(seq[seq.length-1].p)-pct(seq[0].p); var row=el('tr'); row.innerHTML='<td><strong>Week '+w+'</strong><br><span class="note">'+esc(WEEK[w].title)+'</span></td><td class="num">'+seq.length+'</td><td>'+seq.map(function(x){ return pct(x.p)+'%'; }).join(' <span class="dot" aria-hidden="true">&rarr;</span> ')+'</td><td class="num">'+(seq.length>1?((ch>=0?'+':'')+ch+' pts'):'')+'</td><td>'+(seq.length>1?trendWord(ch):'First attempt')+'</td>'; tb2.appendChild(row); });
+    var lift=biggestLift(h.attempts).slice(0,8); var lo=$('#lift'); lo.innerHTML='';
+    lift.forEach(function(g,i){ var c=COMP[g.id]; var li=el('li'); li.innerHTML='<span class="n">'+(i+1)+'</span><span><strong>'+esc(c.name)+'</strong> <span class="note">(Week '+c.week+', about '+Math.round(g.pts)+' point'+(Math.round(g.pts)===1?'':'s')+' per attempt, '+pct(g.r)+' percent right so far)</span><small>'+esc(c.can)+'</small></span>'; lo.appendChild(li); });
+    if(!lift.length) lo.innerHTML='<li><span class="n">&#10003;</span><span>Nothing is costing you points across your recent attempts.</span></li>';
+    /* gap card */
+    if(h.attempts.length){
+      var a=h.attempts[h.attempts.length-1];
+      $('#gaptitle').textContent = weeksLabel(a.weeks)+', '+pct(a.score)+' percent on '+fmtDate(a.date)+'.';
+      $('#gapbody').innerHTML = gapsHTML(a, true);
+      $('#gapactions').hidden=false;
+    }
+  },
+  exportHistory:function(){
+    var data=JSON.stringify({tool:'BIO 005 Practice Exam + Gap Finder', exported:new Date().toISOString(), history:history()}, null, 1);
+    var blob=new Blob([data],{type:'application/json'}); var a=el('a',{href:URL.createObjectURL(blob), download:'bio005-practice-history-'+new Date().toISOString().slice(0,10)+'.json'}); document.body.appendChild(a); a.click(); a.remove();
+    $('#histmsg').textContent='Exported. Keep that file somewhere safe.';
+  },
+  importHistory:function(e){
+    var f=e.target.files[0]; if(!f) return; var r=new FileReader();
+    r.onload=function(){ try{ var d=JSON.parse(r.result); var inc=(d.history&&d.history.attempts)||d.attempts; if(!Array.isArray(inc)) throw new Error('no attempts'); var h=history(); var ids={}; h.attempts.forEach(function(a){ ids[a.id]=1; }); var added=0; inc.forEach(function(a){ if(a&&a.id&&!ids[a.id]){ h.attempts.push(a); added++; } }); h.attempts.sort(function(a,b){ return a.date<b.date?-1:1; }); save(KEY_HIST,h); $('#histmsg').textContent='Imported '+added+' attempt'+(added===1?'':'s')+'.'; setup.render(); }catch(err){ $('#histmsg').textContent='That file is not a practice history export.'; } };
+    r.readAsText(f); e.target.value='';
+  }
+};
+
+/* Gap Finder HTML shared by the results screen, the setup card and the report. */
+function gapsHTML(a, compact){
+  var h='';
+  h+='<div class="bars">';
+  a.weeks.slice().sort(function(x,y){return x-y;}).forEach(function(w){ var v=a.byWeek[w]; if(!v) return; var p=v[1]?v[0]/v[1]:0; h+='<div class="bar"><span class="lab">Week '+w+'<small>'+esc(WEEK[w].title)+'</small></span><span class="track" aria-hidden="true"><span class="fill'+(p<0.7?' low':'')+'" style="width:'+pct(p)+'%;display:block"></span></span><span class="pct">'+pct(p)+'%</span></div>'; });
+  h+='</div>';
+  var gaps=priorityGaps(a);
+  if(gaps.length){
+    h+='<p class="startline">Do not study everything again. Start here. These lift your score the most.</p><ol class="gaps">';
+    gaps.slice(0, compact?5:10).forEach(function(g,i){ var c=COMP[g.id]; h+='<li><span class="n">'+(i+1)+'</span><span><strong>'+esc(c.name)+'</strong> <span class="note">(Week '+c.week+', cost you '+Math.round(g.pts)+' point'+(Math.round(g.pts)===1?'':'s')+')</span><small>'+esc(c.can)+'</small></span></li>'; });
+    h+='</ol>';
+  } else h+='<p class="startline">Every competency on this attempt was fully correct.</p>';
+  if(a.quad && !compact){
+    h+='<div class="quad"><div><span class="big">'+a.quad.mastered+'</span><small>Right and confident. Probably solid.</small></div><div><span class="big">'+a.quad.shaky+'</span><small>Right but unsure. Shaky, worth a second look.</small></div><div><span class="big warn">'+a.quad.gap+'</span><small>Wrong and unsure. A gap. Learn it.</small></div><div><span class="big warn">'+a.quad.misconception+'</span><small>Wrong and confident. A misconception. Fix it first.</small></div></div>';
+  }
+  return h;
+}
+/* Rank competencies by how many points they cost on this attempt. Fixing the top of the list lifts the score the most. */
+function priorityGaps(a){
+  var out=[]; Object.keys(a.byComp||{}).forEach(function(id){ var v=a.byComp[id]; var r=v[1]?v[0]/v[1]:0; var lost=a.n?(v[1]-v[0])/a.n*100:0; if(r<1 && lost>0){ out.push({id:id, r:r, pts:lost, weight:lost + (a.miscon&&a.miscon.indexOf(id)>=0?1:0)}); } });
+  out.sort(function(x,y){ return y.weight-x.weight; }); return out;
+}
+/* Same idea across recent attempts: average points lost per attempt, per competency. */
+function biggestLift(attempts){
+  var acc={}, n=0;
+  attempts.slice(-6).forEach(function(a){ n++; Object.keys(a.byComp||{}).forEach(function(id){ var v=a.byComp[id]; if(!acc[id]) acc[id]={lost:0,got:0,seen:0}; acc[id].lost+=a.n?(v[1]-v[0])/a.n*100:0; acc[id].got+=v[0]; acc[id].seen+=v[1]; }); });
+  return Object.keys(acc).map(function(id){ return {id:id, pts:acc[id].lost/(n||1), r:acc[id].seen?acc[id].got/acc[id].seen:0, seen:acc[id].seen}; }).filter(function(x){ return x.pts>0; }).sort(function(x,y){ return y.pts-x.pts; });
+}
+/* Score sequence per week across every attempt, oldest first. */
+function weekTrends(attempts){
+  var t={};
+  attempts.forEach(function(a){ Object.keys(a.byWeek||{}).forEach(function(w){ var v=a.byWeek[w]; if(!v||!v[1]) return; (t[w]=t[w]||[]).push({p:v[0]/v[1], date:a.date}); }); });
+  return t;
+}
+function trendWord(pts){ return pts>=10?'Up a lot':pts>=1?'Up a little':pts<=-10?'Down a lot':pts<=-1?'Down a little':'About the same'; }
+
+/* ---------------- the exam runner ---------------- */
+var runner = {
+  cfg:null, items:[], i:0, answers:[], start:0, host:null, inDialog:false,
+  launch:function(cfg){
+    cfg.id=uid(); save(KEY_PENDING, cfg);
+    var w=null;
+    try{ w=window.open('practice-exam.html?run='+cfg.id, 'bio005-practice-exam', 'width=1100,height=860,menubar=no,toolbar=no,location=no,status=no'); }catch(e){ w=null; }
+    if(w && !w.closed){ try{ w.focus(); }catch(e){} $('#gomsg').textContent='Your exam opened in its own window. If you do not see it, check for a blocked pop-up.'; return; }
+    /* blocked: run inside a full screen dialog */
+    runner.openInDialog(cfg);
+  },
+  openInDialog:function(cfg){
+    var d=$('#xdlg'); d.innerHTML='';
+    var close=el('button',{type:'button',class:'btn ghost sm dlgclose'},'Close exam'); close.addEventListener('click', function(){ if(runner.i<runner.items.length && !confirm('Leave this exam? Unfinished attempts are not saved.')) return; d.close(); document.body.classList.remove('run'); });
+    var x=$('#exam'); d.appendChild(close); d.appendChild(x); x.hidden=false; runner.inDialog=true;
+    d.showModal(); runner.begin(cfg, x);
+  },
+  begin:function(cfg, hostEl){
+    runner.cfg=cfg; runner.host=hostEl;
+    runner.items=generate(cfg.n, cfg.weeks, cfg.weights);
+    runner.i=0; runner.answers=[]; runner.start=Date.now();
+    document.body.classList.add('run');
+    runner.show();
+  },
+  progress:function(){
+    var n=runner.items.length, i=Math.min(runner.i, n);
+    $('#xprog', runner.host).textContent = i<n ? 'Question '+(i+1)+' of '+n+' · '+weeksLabel(runner.cfg.weeks) : 'Finished · '+weeksLabel(runner.cfg.weeks);
+    $('#xfill', runner.host).style.width = Math.round(i/n*100)+'%';
+  },
+  show:function(){
+    runner.progress();
+    var card=$('#xcard', runner.host); card.innerHTML='';
+    if(runner.i>=runner.items.length){ runner.finish(card); return; }
+    var it=runner.items[runner.i]; var c=COMP[it.competencyId];
+    var meta=el('div',{class:'meta'}); meta.innerHTML='<span class="tag type">'+TYPE_NAME[it.type]+'</span><span class="tag">Week '+it.week+'</span><span class="tag dok">'+DOK_NAME[it.dok]+'</span>';
+    card.appendChild(meta);
+    views[it.type](card, it, c);
+    window.scrollTo(0,0); try{ runner.host.scrollTop=0; }catch(e){}
+    var f=card.querySelector('h2, .stem'); if(f){ f.setAttribute('tabindex','-1'); f.focus(); }
+  },
+  record:function(it, rec){
+    rec.id=it.id; rec.type=it.type; rec.competencyId=it.competencyId; rec.week=it.week; rec.dok=it.dok;
+    runner.answers.push(rec);
+  },
+  next:function(){ runner.i++; runner.show(); },
+  finish:function(card){
+    var a=summarize(runner.cfg, runner.answers, runner.items, runner.start);
+    saveAttempt(a);
+    runner.progress();
+    var h='<div class="finish"><p class="eyebrow">Your Gap Finder</p><h2>'+pct(a.score)+' percent on <span>'+esc(weeksLabel(a.weeks))+'</span>.</h2>';
+    h+='<div class="score"><div><span class="big">'+pct(a.score)+'%</span><small>Overall, all question types</small></div><div><span class="big">'+(a.conf?a.conf.toFixed(1):'n/a')+'</span><small>Average confidence, 1 to 5</small></div><div><span class="big">'+a.n+'</span><small>Questions in '+Math.max(1,Math.round(a.minutes))+' minutes</small></div></div>';
+    var prev=previousSame(a); if(prev){ var pts=pct(a.score)-pct(prev.score); h+='<p class="improve"><strong>Compared with your last attempt on these weeks ('+esc(fmtDate(prev.date))+'):</strong> '+(pts>=0?'+':'')+pts+' percentage points.</p>'; }
+    h+='<h3>Score by week</h3>'+gapsHTML(a,false);
+    h+='<p class="note" style="margin-top:12px">A word on honesty. Nothing here is graded, and the list above is only as good as your answers. Guess when you are guessing, mark low confidence when you feel it, and tick only the brain dump components you really wrote. That is what makes the list point at the right things.</p>';
+    if(a.miscon && a.miscon.length){ h+='<h3>Watch these: wrong while confident</h3><ul>'+a.miscon.map(function(id){ return '<li><strong>'+esc(COMP[id].name)+'</strong> <span class="note">(Week '+COMP[id].week+')</span></li>'; }).join('')+'</ul><p class="note">A confident wrong answer usually means a misconception rather than a blank. Those are worth fixing first because they will not go away on their own.</p>'; }
+    h+='<h3>Save your results</h3><p>The report lists the competencies to review, not the questions, so you can upload it to Canvas when I ask for it. Your name goes on the report only. It is not stored anywhere.</p><div class="namebox"><label for="rname"><strong>Your name</strong></label><input type="text" id="rname" autocomplete="name" placeholder="Name for the report"></div>';
+    h+='<div class="xactions"><button type="button" class="btn" id="saverep">Open my results report</button><button type="button" class="btn gold" id="againgaps">Practice my gaps</button><button type="button" class="btn ghost" id="done">Done</button></div></div>';
+    card.innerHTML=h;
+    $('#saverep', card).addEventListener('click', function(){ a.name=$('#rname',card).value.trim(); report.open(a); });
+    $('#againgaps', card).addEventListener('click', function(){ var w=compWeightsFrom(history().attempts.filter(function(x){ return x.weeks.some(function(y){ return a.weeks.indexOf(y)>=0; }); })); runner.begin({ id:uid(), n:a.n>30?30:a.n<20?20:a.n, weeks:a.weeks, mode:'gaps', weights:w, label:'Practice my gaps' }, runner.host); });
+    $('#done', card).addEventListener('click', function(){ if(runner.inDialog){ $('#xdlg').close(); document.body.classList.remove('run'); setup.render(); } else { window.close(); card.innerHTML='<p>You can close this window now. Your attempt is saved on the setup page.</p>'; } });
+    var f=card.querySelector('h2'); f.setAttribute('tabindex','-1'); f.focus();
+  }
+};
+function previousSame(a){ var key=a.weeks.slice().sort().join(','); var same=history().attempts.filter(function(x){ return x.id!==a.id && x.weeks.slice().sort().join(',')===key; }); return same.length?same[same.length-1]:null; }
+
+/* Item score: 0 to 1. Then the attempt summary. */
+function summarize(cfg, answers, items, start){
+  var byWeek={}, byComp={}, quad={mastered:0,shaky:0,gap:0,misconception:0}, miscon=[], confSum=0, confN=0, total=0;
+  cfg.weeks.forEach(function(w){ byWeek[w]=[0,0]; });
+  answers.forEach(function(r){
+    total+=r.score;
+    byWeek[r.week]=byWeek[r.week]||[0,0]; byWeek[r.week][0]+=r.score; byWeek[r.week][1]+=1;
+    byComp[r.competencyId]=byComp[r.competencyId]||[0,0]; byComp[r.competencyId][0]+=r.score; byComp[r.competencyId][1]+=1;
+    if(r.conf){ confSum+=r.conf; confN++; var right=r.score>=0.75, sure=r.conf>=4;
+      if(right&&sure) quad.mastered++; else if(right) quad.shaky++; else if(sure){ quad.misconception++; if(miscon.indexOf(r.competencyId)<0) miscon.push(r.competencyId); } else quad.gap++; }
+  });
+  var a={ id:cfg.id||uid(), date:new Date().toISOString(), weeks:cfg.weeks.slice().sort(function(x,y){return x-y;}), mode:cfg.mode, label:cfg.label||null, n:answers.length,
+    score: answers.length?total/answers.length:0, conf: confN?confSum/confN:null, minutes:(Date.now()-start)/60000,
+    byWeek:byWeek, byComp:byComp, quad:quad, miscon:miscon, itemIds:items.map(function(i){return i.id;}),
+    types:answers.reduce(function(o,r){ o[r.type]=(o[r.type]||0)+1; return o; },{}) };
+  a.stamp=hash(a.id+'|'+a.date+'|'+Math.round(a.score*1000)+'|'+a.weeks.join(','));
+  return a;
+}
+
+/* ---------------- item views ---------------- */
+function confidenceBlock(){
+  var f=el('fieldset',{class:'conf'}); f.innerHTML='<legend>Before you check: how sure are you?</legend><div class="row">'+[1,2,3,4,5].map(function(n){ var t={1:'Guessing',2:'Not sure',3:'Halfway',4:'Fairly sure',5:'Sure'}[n]; return '<label><input type="radio" name="conf" value="'+n+'"><span>'+n+' '+t+'</span></label>'; }).join('')+'</div>';
+  return f;
+}
+function getConf(root){ var r=root.querySelector('input[name="conf"]:checked'); return r?Number(r.value):0; }
+function compLine(c){ return '<div class="comp"><b>Competency tested:</b> '+esc(c.name)+'. '+esc(c.can)+'</div>'; }
+function nextBtn(card, label, before){ var b=el('button',{type:'button',class:'btn'},(label||'Next question')+' <span aria-hidden="true">&rarr;</span>'); b.addEventListener('click', function(){ if(before) before(); runner.next(); }); return b; }
+function shuffledOptions(it){ var idx=it.options.map(function(_,i){return i;}); shuffle(idx); return idx; }
+var LET='ABCDEF';
+
+var views = {
+  mc:function(card, it, c){ views.choice(card, it, c, false); },
+  app:function(card, it, c){ views.choice(card, it, c, true); },
+  choice:function(card, it, c, isCase){
+    if(isCase){ card.appendChild(el('div',{class:'case'},'<p class="role">The situation</p>'+esc(it.case))); }
+    card.appendChild(el('h2',{class:'stem'}, esc(it.stem)));
+    var order=shuffledOptions(it); var fs=el('fieldset'); fs.innerHTML='<legend class="vh">Choose one answer</legend>';
+    var opts=el('div',{class:'opts'});
+    order.forEach(function(oi,k){ var l=el('label',{class:'opt'}); l.innerHTML='<input type="radio" name="ans" value="'+oi+'"><span class="l">'+LET[k]+'</span><span>'+esc(it.options[oi])+'</span>'; opts.appendChild(l); });
+    fs.appendChild(opts); card.appendChild(fs);
+    var conf=confidenceBlock(); card.appendChild(conf);
+    var act=el('div',{class:'xactions'}); var chk=el('button',{type:'button',class:'btn',disabled:''},'Check my answer'); act.appendChild(chk); var msg=el('span',{class:'note'},'Pick an answer and a confidence level.'); act.appendChild(msg); card.appendChild(act);
+    function ready(){ chk.disabled = !(card.querySelector('input[name="ans"]:checked') && getConf(card)); msg.textContent = chk.disabled?'Pick an answer and a confidence level.':''; }
+    card.addEventListener('change', ready);
+    chk.addEventListener('click', function(){
+      var picked=Number(card.querySelector('input[name="ans"]:checked').value); var right=picked===it.correct;
+      $$('.opt',card).forEach(function(l){ var v=Number(l.querySelector('input').value); l.querySelector('input').disabled=true; l.setAttribute('aria-disabled','true'); if(v===it.correct){ l.classList.add('right'); l.appendChild(el('span',{class:'mark'},'Correct answer')); } else if(v===picked){ l.classList.add('wrong'); l.appendChild(el('span',{class:'mark'},'Your answer')); } });
+      $$('.conf input',card).forEach(function(i){ i.disabled=true; });
+      var fb=el('div',{class:'fb',role:'region','aria-label':'Feedback'}); var h='<p class="verdict '+(right?'ok':'no')+'">'+(right?'Correct.':'Not quite.')+'</p><h4>Why</h4><p>'+esc(it.why)+'</p>';
+      if(it.whyNot){ h+='<h4>Why the other choices do not work</h4><ul>'+order.map(function(oi,k){ return '<li><strong>'+LET[k]+'.</strong> '+esc(it.whyNot[oi])+'</li>'; }).join('')+'</ul>'; }
+      h+=compLine(c); fb.innerHTML=h; card.appendChild(fb);
+      runner.record(it,{score:right?1:0, conf:getConf(card), picked:picked});
+      act.innerHTML=''; act.appendChild(nextBtn(card, runner.i+1>=runner.items.length?'See my Gap Finder':'Next question')); act.querySelector('button').focus();
+    });
+  },
+  ma:function(card, it, c){
+    card.appendChild(el('h2',{class:'stem'}, esc(it.stem)));
+    var order=shuffledOptions(it); var fs=el('fieldset'); fs.innerHTML='<legend class="vh">Select all that apply</legend>';
+    var opts=el('div',{class:'opts'});
+    order.forEach(function(oi,k){ var l=el('label',{class:'opt'}); l.innerHTML='<input type="checkbox" name="ans" value="'+oi+'"><span class="l">'+LET[k]+'</span><span>'+esc(it.options[oi])+'</span>'; opts.appendChild(l); });
+    fs.appendChild(opts); card.appendChild(fs);
+    var conf=confidenceBlock(); card.appendChild(conf);
+    var act=el('div',{class:'xactions'}); var chk=el('button',{type:'button',class:'btn',disabled:''},'Check my answer'); act.appendChild(chk); var msg=el('span',{class:'note'},'Tick every option that applies, then your confidence.'); act.appendChild(msg); card.appendChild(act);
+    function ready(){ chk.disabled = !(card.querySelector('input[name="ans"]:checked') && getConf(card)); msg.textContent=chk.disabled?'Tick every option that applies, then your confidence.':''; }
+    card.addEventListener('change', ready);
+    chk.addEventListener('click', function(){
+      var picked=$$('input[name="ans"]:checked',card).map(function(i){ return Number(i.value); });
+      var hits=picked.filter(function(p){ return it.correct.indexOf(p)>=0; }).length; var fp=picked.length-hits;
+      var score=Math.max(0,(hits-fp)/it.correct.length); var exact=score===1 && hits===it.correct.length;
+      $$('.opt',card).forEach(function(l){ var inp=l.querySelector('input'); var v=Number(inp.value); inp.disabled=true; l.setAttribute('aria-disabled','true'); var isC=it.correct.indexOf(v)>=0, was=picked.indexOf(v)>=0; if(isC){ l.classList.add('right'); l.appendChild(el('span',{class:'mark'}, was?'Correct, you had it':'Correct, you missed it')); } else if(was){ l.classList.add('wrong'); l.appendChild(el('span',{class:'mark'},'Not correct')); } });
+      $$('.conf input',card).forEach(function(i){ i.disabled=true; });
+      var fb=el('div',{class:'fb',role:'region','aria-label':'Feedback'}); var h='<p class="verdict '+(exact?'ok':'no')+'">'+(exact?'Correct, all of them.':(score>0?'Partly right. '+hits+' of '+it.correct.length+' correct options'+(fp?', '+fp+' that did not belong':'')+'.':'Not quite.'))+'</p><h4>Why</h4><p>'+esc(it.why)+'</p><h4>Option by option</h4><ul>'+order.map(function(oi,k){ return '<li><strong>'+LET[k]+'.</strong> '+esc(it.whyNot[oi])+'</li>'; }).join('')+'</ul>'+compLine(c);
+      fb.innerHTML=h; card.appendChild(fb);
+      runner.record(it,{score:score, conf:getConf(card), picked:picked});
+      act.innerHTML=''; act.appendChild(nextBtn(card, runner.i+1>=runner.items.length?'See my Gap Finder':'Next question')); act.querySelector('button').focus();
+    });
+  },
+  tf:function(card, it, c){
+    card.appendChild(el('p',{class:'hint'},'Decide whether the statement is true or false. If it is false, rewrite it so it is true. If it is true, say in one sentence why.'));
+    card.appendChild(el('h2',{class:'stem'}, esc(it.statement)));
+    var row=el('div',{class:'tfrow',role:'group','aria-label':'True or false'}); var bt=el('button',{type:'button',class:'tfbtn','aria-pressed':'false'},'True'); var bf=el('button',{type:'button',class:'tfbtn','aria-pressed':'false'},'False'); row.appendChild(bt); row.appendChild(bf); card.appendChild(row);
+    var judged=null; var lab=el('label',{for:'tfwrite'},'<strong id="tflab">Now make the statement true, in your own words.</strong>'); var ta=el('textarea',{id:'tfwrite',placeholder:'Write it here, or on paper.'}); var writeWrap=el('div',{hidden:''}); writeWrap.appendChild(lab); writeWrap.appendChild(ta); card.appendChild(writeWrap);
+    var conf=confidenceBlock(); card.appendChild(conf);
+    var act=el('div',{class:'xactions'}); var chk=el('button',{type:'button',class:'btn',disabled:''},'Check my answer'); act.appendChild(chk); card.appendChild(act);
+    function setJ(v){ judged=v; bt.setAttribute('aria-pressed', v===true?'true':'false'); bf.setAttribute('aria-pressed', v===false?'true':'false'); writeWrap.hidden=false; $('#tflab',card).textContent = v===false?'Now make the statement true, in your own words.':'You said true. In one sentence, why is it true?'; ready(); }
+    bt.addEventListener('click', function(){ setJ(true); }); bf.addEventListener('click', function(){ setJ(false); });
+    function ready(){ chk.disabled = !(judged!==null && getConf(card)); }
+    card.addEventListener('change', ready);
+    chk.addEventListener('click', function(){
+      var right = judged===it.truth; bt.disabled=bf.disabled=true; $$('.conf input',card).forEach(function(i){ i.disabled=true; }); ta.readOnly=true;
+      var fb=el('div',{class:'fb',role:'region','aria-label':'Feedback'});
+      var h='<p class="verdict '+(right?'ok':'no')+'">'+(right?('Correct, the statement is '+(it.truth?'true':'false')+'.'):('Not quite. The statement is '+(it.truth?'true':'false')+'.'))+'</p>';
+      h+='<h4>'+(it.truth?'Why it is true':'One appropriate correction')+'</h4><p>'+esc(it.correction)+'</p><h4>Why</h4><p>'+esc(it.why)+'</p>';
+      h+='<fieldset class="conf" style="margin-top:14px"><legend>Compare your answer</legend><div class="rubric">'+
+        '<label><input type="radio" name="cmp" value="1"><span>Mine communicates the same physiological concept</span></label>'+
+        '<label><input type="radio" name="cmp" value="0.5"><span>I had part of the concept</span></label>'+
+        '<label><input type="radio" name="cmp" value="0"><span>I need to review this</span></label></div></fieldset>'+compLine(c);
+      fb.innerHTML=h; card.appendChild(fb);
+      act.innerHTML=''; var nb=nextBtn(card, runner.i+1>=runner.items.length?'See my Gap Finder':'Next question', function(){ var cmp=Number(fb.querySelector('input[name="cmp"]:checked').value); runner.record(it,{score: right?cmp:0, conf:getConf(card), judged:judged, cmp:cmp}); }); nb.disabled=true; act.appendChild(nb); var m=el('span',{class:'note'},'Compare your answer first.'); act.appendChild(m);
+      fb.addEventListener('change', function(){ if(fb.querySelector('input[name="cmp"]:checked')){ nb.disabled=false; m.textContent=''; } });
+      fb.querySelector('input[name="cmp"]').focus();
+    });
+  },
+  bd:function(card, it, c){
+    card.appendChild(el('p',{class:'hint'},'Brain dump. Without notes, write everything you know. Paper is fine. When you are done, open the self check.'));
+    card.appendChild(el('h2',{class:'stem'}, esc(it.prompt)));
+    var lab=el('label',{for:'bdwrite',class:'vh'},'Your brain dump'); var ta=el('textarea',{id:'bdwrite',placeholder:'Write here, or on paper.',style:'min-height:170px'}); card.appendChild(lab); card.appendChild(ta);
+    var act=el('div',{class:'xactions'}); var chk=el('button',{type:'button',class:'btn'},'Self check my answer'); act.appendChild(chk); card.appendChild(act);
+    chk.addEventListener('click', function(){
+      ta.readOnly=true;
+      var fb=el('div',{class:'fb',role:'region','aria-label':'Self check'}); var h='<h4>Your answer should include</h4><p class="note">Tick each component you actually wrote or said. Be honest with yourself. This is the only grade that matters here.</p><div class="rubric">'+it.rubric.map(function(r,k){ return '<label><input type="checkbox" name="rub" value="'+k+'"><span>'+esc(r)+'</span></label>'; }).join('')+'</div><p id="bdcount" class="note" style="margin-top:10px" aria-live="polite">0 of '+it.rubric.length+' components demonstrated.</p>'+compLine(c);
+      fb.innerHTML=h; card.appendChild(fb);
+      act.innerHTML=''; var nb=nextBtn(card, runner.i+1>=runner.items.length?'See my Gap Finder':'Next question', function(){ var n=$$('input[name="rub"]:checked',fb).length; runner.record(it,{score:n/it.rubric.length, conf:0, demonstrated:n, of:it.rubric.length}); }); act.appendChild(nb);
+      fb.addEventListener('change', function(){ var n=$$('input[name="rub"]:checked',fb).length; $('#bdcount',fb).textContent=n+' of '+it.rubric.length+' components demonstrated.'; });
+      fb.querySelector('input').focus();
+    });
+  }
+};
+
+/* ---------------- the results report ---------------- */
+var report = {
+  html:function(a){
+    var css=report.css();
+    var weeksRows=a.weeks.map(function(w){ var v=a.byWeek[w]||[0,0]; var p=v[1]?v[0]/v[1]:0; return '<tr><td>Week '+w+'. '+esc(WEEK[w].title)+'</td><td class="n">'+v[1]+'</td><td class="n"><span class="bar'+(p<0.7?' low':'')+'" style="width:'+Math.round(p*120)+'px"></span>'+pct(p)+'%</td></tr>'; }).join('');
+    var review=Object.keys(a.byComp).map(function(id){ var v=a.byComp[id]; return {id:id, r:v[1]?v[0]/v[1]:0, n:v[1]}; }).filter(function(x){ return x.r<1; }).sort(function(x,y){ return x.r-y.r || COMP[x.id].week-COMP[y.id].week; });
+    var solid=Object.keys(a.byComp).filter(function(id){ var v=a.byComp[id]; return v[1] && v[0]/v[1]>=1; }).length;
+    var reviewRows=review.map(function(x){ var c=COMP[x.id]; return '<li><strong>'+esc(c.name)+'</strong> (Week '+c.week+', '+esc(c.topic)+', '+pct(x.r)+' percent on '+x.n+' item'+(x.n===1?'':'s')+(a.miscon&&a.miscon.indexOf(x.id)>=0?', answered with confidence':'')+')<small>'+esc(c.can)+'</small></li>'; }).join('');
+    var types=Object.keys(a.types||{}).map(function(t){ return TYPE_NAME[t]+' '+a.types[t]; }).join(', ');
+    return '<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Practice exam results, '+esc(weeksLabel(a.weeks))+', BIO 005</title><style>'+css+'</style></head><body><div class="wrap">'+
+      '<div class="btns"><button class="p" onclick="window.print()">Print or save as PDF</button><button onclick="(function(){var b=new Blob([document.documentElement.outerHTML],{type:\'text/html\'});var l=document.createElement(\'a\');l.href=URL.createObjectURL(b);l.download=\'bio005-practice-results-'+a.date.slice(0,10)+'.html\';document.body.appendChild(l);l.click();l.remove();})()">Download as HTML</button></div>'+
+      '<p class="eyebrow">BIO 005 Human Physiology, Practice Exam + Gap Finder</p><h1>Practice exam results</h1><p>'+(a.name?'<strong>'+esc(a.name)+'</strong>. ':'')+esc(fmtDateTime(a.date))+'</p>'+
+      '<dl class="meta"><dt>Weeks</dt><dd>'+esc(weeksLabel(a.weeks))+'</dd><dt>Mode</dt><dd>'+esc(a.label||{one:'One week',multi:'Multiple weeks, Gap Finder',cumulative:'Cumulative exam',gaps:'Practice my gaps'}[a.mode]||a.mode)+'</dd><dt>Questions</dt><dd>'+a.n+' ('+esc(types)+')</dd><dt>Time</dt><dd>'+Math.max(1,Math.round(a.minutes))+' minutes</dd></dl>'+
+      '<div class="score"><div><b>'+pct(a.score)+'%</b><small>Overall score</small></div><div><b>'+(a.conf?a.conf.toFixed(1):'n/a')+'</b><small>Average confidence (1 to 5)</small></div><div><b>'+solid+'</b><small>Competencies with every item right</small></div><div><b>'+review.length+'</b><small>Competencies to review</small></div></div>'+
+      (a.quad?'<h2>Confidence check</h2><p>Right and confident: '+a.quad.mastered+'. Right but unsure: '+a.quad.shaky+'. Wrong and unsure: '+a.quad.gap+'. Wrong and confident: '+a.quad.misconception+'.</p>':'')+
+      '<h2>Score by week</h2><table><thead><tr><th>Week</th><th class="n">Items</th><th class="n">Score</th></tr></thead><tbody>'+weeksRows+'</tbody></table>'+
+      '<h2>Competencies to review</h2><p>These are the competencies with at least one missed item, weakest first. Questions and answers are deliberately not listed. Rebuild each idea from the note sheet and the recall cards, then test it again.</p>'+(review.length?'<ol>'+reviewRows+'</ol>':'<p>None. Every competency on this attempt was fully correct.</p>')+
+      '<p class="stamp">Generated by the BIO 005 Practice Exam + Gap Finder. Attempt '+esc(a.id)+', stamp '+esc(a.stamp)+'. Practice results carry no points. The value is in what you do next.</p></div></body></html>';
+  },
+  logHtml:function(attempts, name){
+    var css=report.css();
+    var now=new Date(); var weekAgo=new Date(now.getTime()-7*86400000);
+    var recent=attempts.filter(function(a){ return new Date(a.date)>=weekAgo; });
+    var qRecent=recent.reduce(function(s,a){ return s+a.n; },0), minRecent=recent.reduce(function(s,a){ return s+(a.minutes||0); },0);
+    /* per week summary: attempts that included that week, first and latest score for that week */
+    var perWeek={};
+    attempts.forEach(function(a){ a.weeks.forEach(function(w){ var v=a.byWeek&&a.byWeek[w]; if(!v||!v[1]) return; var p=v[0]/v[1]; if(!perWeek[w]) perWeek[w]={n:0,first:p,latest:p,best:p,items:0,firstDate:a.date,latestDate:a.date}; var r=perWeek[w]; r.n++; r.latest=p; r.latestDate=a.date; r.best=Math.max(r.best,p); r.items+=v[1]; }); });
+    var weekRows=Object.keys(perWeek).map(Number).sort(function(x,y){return x-y;}).map(function(w){ var r=perWeek[w]; var ch=pct(r.latest)-pct(r.first); return '<tr><td>Week '+w+'. '+esc(WEEK[w].title)+'</td><td class="n">'+r.n+'</td><td class="n">'+r.items+'</td><td class="n">'+pct(r.first)+'%</td><td class="n">'+pct(r.latest)+'%</td><td class="n">'+pct(r.best)+'%</td><td class="n">'+(r.n>1?((ch>=0?'+':'')+ch+' pts, '+trendWord(ch)):'first attempt')+'</td></tr>'; }).join('');
+    var rows=attempts.map(function(a,i){ return '<tr><td class="n">'+(i+1)+'</td><td>'+esc(fmtDate(a.date))+'</td><td>'+esc(weeksLabel(a.weeks))+(a.label?' ('+esc(a.label)+')':'')+'</td><td class="n">'+a.n+'</td><td class="n">'+pct(a.score)+'%</td><td class="n">'+(a.conf?a.conf.toFixed(1):'')+'</td></tr>'; }).join('');
+    /* improvement on the most recent week set */
+    var last=attempts[attempts.length-1]; var key=last.weeks.slice().sort().join(','); var same=attempts.filter(function(a){ return a.weeks.slice().sort().join(',')===key; });
+    var trend=''; var verdict='';
+    if(same.length>=2){ var pts=pct(last.score)-pct(same[0].score); verdict = pts>=10?'Improving a lot':pts>=1?'Improving a little':'Not improving yet'; trend='On '+weeksLabel(last.weeks)+', attempt 1 to attempt '+same.length+': '+(pts>=0?'+':'')+pts+' percentage points. <strong>'+verdict+'.</strong>'; }
+    else { trend='Only one attempt so far on '+weeksLabel(last.weeks)+'. Take a second one after you study and the change will show here.'; verdict='Too early to say'; }
+    /* competencies still under 70 percent across the last six attempts */
+    var acc={}; attempts.slice(-6).forEach(function(a){ Object.keys(a.byComp||{}).forEach(function(id){ var v=a.byComp[id]; if(!acc[id]) acc[id]=[0,0]; acc[id][0]+=v[0]; acc[id][1]+=v[1]; }); });
+    var weak=Object.keys(acc).map(function(id){ return {id:id, r:acc[id][0]/acc[id][1], n:acc[id][1]}; }).filter(function(x){ return x.r<0.7; }).sort(function(x,y){ return x.r-y.r; }).slice(0,12);
+    var weakRows=weak.map(function(x){ var c=COMP[x.id]; return '<li><strong>'+esc(c.name)+'</strong> (Week '+c.week+', '+pct(x.r)+' percent over '+x.n+' item'+(x.n===1?'':'s')+')</li>'; }).join('');
+    var stamp=hash(attempts.map(function(a){ return a.id+':'+Math.round(a.score*1000); }).join('|'));
+    return '<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Practice log, BIO 005</title><style>'+css+'</style></head><body><div class="wrap">'+
+      '<div class="btns"><button class="p" onclick="window.print()">Print or save as PDF</button><button onclick="(function(){var b=new Blob([document.documentElement.outerHTML],{type:\'text/html\'});var l=document.createElement(\'a\');l.href=URL.createObjectURL(b);l.download=\'bio005-practice-log-'+now.toISOString().slice(0,10)+'.html\';document.body.appendChild(l);l.click();l.remove();})()">Download as HTML</button></div>'+
+      '<p class="eyebrow">BIO 005 Human Physiology, Practice Exam + Gap Finder</p><h1>Weekly practice log</h1><p>'+(name?'<strong>'+esc(name)+'</strong>. ':'')+'Printed '+esc(fmtDateTime(now.toISOString()))+'. Upload this in Canvas. It is for Dr. Rennie only.</p>'+
+      '<div class="score"><div><b>'+recent.length+'</b><small>Attempts in the last 7 days</small></div><div><b>'+qRecent+'</b><small>Questions answered in the last 7 days</small></div><div><b>'+Math.round(minRecent)+'</b><small>Minutes in the last 7 days</small></div><div><b>'+attempts.length+'</b><small>Attempts all term on this device</small></div></div>'+
+      '<h2>Am I improving?</h2><p>'+trend+'</p>'+
+      '<div class="box"><p class="eyebrow">For your discussion post (no scores needed)</p><p>Improving: <strong>'+verdict+'</strong>. Attempts this week: <strong>'+recent.length+'</strong>. What I changed about how I study: ______. Did it help: ______. What I will do differently next: ______.</p></div>'+
+      '<h2>Score by week</h2><p>Each row is one week of the course. First and latest are your first and most recent scores on that week\'s questions.</p><table><thead><tr><th>Week</th><th class="n">Attempts</th><th class="n">Items</th><th class="n">First</th><th class="n">Latest</th><th class="n">Best</th><th class="n">Change</th></tr></thead><tbody>'+weekRows+'</tbody></table>'+
+      '<h2>Biggest lift</h2><p>Average points each competency cost per attempt over the last six attempts. Fixing the top of this list raises the score the most.</p>'+(function(){ var l=biggestLift(attempts).slice(0,8); return l.length?'<ol>'+l.map(function(g){ var c=COMP[g.id]; return '<li><strong>'+esc(c.name)+'</strong> (Week '+c.week+', about '+Math.round(g.pts)+' point'+(Math.round(g.pts)===1?'':'s')+' per attempt)</li>'; }).join('')+'</ol>':'<p>Nothing is costing points right now.</p>'; })()+
+      '<h2>Every attempt</h2><table><thead><tr><th class="n">#</th><th>Date</th><th>Weeks</th><th class="n">Questions</th><th class="n">Score</th><th class="n">Confidence</th></tr></thead><tbody>'+rows+'</tbody></table>'+
+      '<h2>Still below 70 percent</h2>'+(weak.length?'<p>Across your last six attempts. Start your studying here.</p><ol>'+weakRows+'</ol>':'<p>Nothing is sitting below 70 percent across your recent attempts.</p>')+
+      '<p class="stamp">Generated by the BIO 005 Practice Exam + Gap Finder on this device. Log stamp '+esc(stamp)+'. Practice results carry no points; the log is so I can reach out before an exam if it would help.</p></div></body></html>';
+  },
+  openLog:function(attempts, name){ report.show(report.logHtml(attempts, name), 'bio005-log', 'bio005-practice-log-'+new Date().toISOString().slice(0,10)+'.html'); },
+  css:function(){ return 'body{font-family:Arial,Helvetica,sans-serif;color:#0B1530;margin:0;background:#fff}.wrap{max-width:820px;margin:0 auto;padding:28px 24px}h1{font-size:26px;margin:0 0 4px}h2{font-size:17px;color:#6E2D24;margin:26px 0 8px}p{margin:0 0 10px;line-height:1.55}.eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#8B3A2E;font-weight:700;margin:0 0 6px}.meta{display:grid;grid-template-columns:auto 1fr;gap:4px 16px;font-size:14px;margin:12px 0 0}.meta dt{font-weight:700;color:#414B5C}.meta dd{margin:0}.score{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}.score div{border:1px solid #0B1530;border-radius:10px;padding:10px 14px;min-width:130px}.score b{display:block;font-size:26px}.score small{color:#414B5C}.box{border:1px solid #0B1530;border-radius:10px;padding:12px 14px;margin:8px 0 4px}.box p{margin:0}table{border-collapse:collapse;width:100%;font-size:14px}th,td{text-align:left;padding:7px 8px;border-bottom:1px solid #ccc;vertical-align:top}th{font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:#414B5C}td.n,th.n{text-align:right;white-space:nowrap}.bar{display:inline-block;height:10px;background:#0B1530;vertical-align:middle;margin-right:6px}.bar.low{background:#8B3A2E}ol{padding-left:20px}li{margin:0 0 8px;line-height:1.45}li small{display:block;color:#414B5C}.btns{margin:0 0 18px;display:flex;gap:10px;flex-wrap:wrap}button{font:inherit;font-weight:700;padding:10px 16px;border-radius:8px;border:2px solid #0B1530;background:#fff;cursor:pointer}button.p{background:#8B3A2E;color:#fff;border-color:#8B3A2E}.stamp{margin-top:28px;font-size:12px;color:#414B5C;border-top:1px solid #ccc;padding-top:10px}@media print{.btns{display:none}body{font-size:10.5pt}.bar{border:1px solid #000}tr{break-inside:avoid}}'; },
+  show:function(html, winName, fileName){
+    var w=null; try{ w=window.open('', winName, 'width=900,height=900'); }catch(e){}
+    if(w){ w.document.open(); w.document.write(html); w.document.close(); try{ w.focus(); }catch(e){} }
+    else { var b=new Blob([html],{type:'text/html'}); var l=el('a',{href:URL.createObjectURL(b),download:fileName}); document.body.appendChild(l); l.click(); l.remove(); }
+  },
+  open:function(a){ report.show(report.html(a), 'bio005-results', 'bio005-practice-results-'+a.date.slice(0,10)+'.html'); },
+};
+
+/* ---------------- boot ---------------- */
+/* DEEP LINK FROM A WEEK PAGE, added Sep 7 2026.
+   ?week=N preselects that week and switches the mode to one week, so
+   the Mastery Check button on week-NN.html lands a student on a setup
+   page that is already correct for the week they are in. &n=10|20|30|50
+   preselects the length. Neither starts an exam by itself: the student
+   still presses the button, which keeps the moment they commit to
+   sitting one theirs rather than the link's.
+   An out of range value is ignored rather than clamped, because a
+   wrong week silently substituted is worse than the default. */
+function applyDeepLink(){
+  var m = /[?&]week=(\d{1,2})/.exec(location.search);
+  if(m){
+    var w = parseInt(m[1],10);
+    if(w>=1 && w<=15){
+      var one = document.querySelector('#modes input[value="one"]');
+      if(one){ one.checked = true; setup.modeChanged(); }
+      $$('#weeks input').forEach(function(c){ c.checked = (Number(c.value)===w); });
+    }
+  }
+  var q = /[?&]n=(10|20|30|50)/.exec(location.search);
+  if(q){
+    var btn = document.querySelector('#counts .pill[data-n="'+q[1]+'"]');
+    if(btn) btn.click();
+  }
+}
+
+var run=/[?&]run=([^&]+)/.exec(location.search);
+if(run){
+  var cfg=load(KEY_PENDING, null);
+  $('#setup').hidden=true; $('#brandbar').hidden=true; document.title='Practice exam · BIO 005 Human Physiology';
+  var x=$('#exam'); x.hidden=false;
+  if(cfg && cfg.id===run[1]){ runner.begin(cfg, x); }
+  else { $('#xcard',x).innerHTML='<h2>This exam window has expired.</h2><p>Close it and generate a new exam from the setup page.</p>'; }
+} else {
+  setup.init();
+  applyDeepLink();
+}
+})();
+</script>
+<script>
+/* Iframe height sender for the Canvas embed. */
+(function(){
+  var id='practice-exam';
+  function post(){ try{parent.postMessage({frame:id,height:document.documentElement.scrollHeight},'*');}catch(e){} }
+  if('ResizeObserver' in window){new ResizeObserver(post).observe(document.documentElement);}
+  window.addEventListener('load',post);
+  window.addEventListener('resize',post);
+  post();
+})();
+</script>
+</body>
+</html>

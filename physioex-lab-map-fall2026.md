@@ -14,7 +14,7 @@ PhysioEx 10.0: 12 exercises, 63 activities, in the Study Area of Mastering A&P. 
 | 2 | Chemistry that does work | **Ex 8, amylase activity only**, enzyme activity vs temperature and pH. Save pepsin and lipase for Week 12. |, | 16, 17, 18, **20** (the enzyme assay) |
 | 3 | Getting across the membrane | **Ex 1, all five activities**, simple diffusion, facilitated diffusion, osmotic pressure, filtration, active transport | `osmosis-iv-fluids-lab.html` (tonicity and red cells), `workbook_week02_membranes-transport.html` | 23, 24, 25, **26**, **27**, 29, 31, **34** |
 | 4 | The action potential | **Ex 3, all activities**, resting membrane potential, threshold, blocking the AP (TTX/lidocaine), conduction velocity, synaptic transmission | `workbook_week03_membrane-potential.html` | **36**, 39, **40**, 56, 60, **62**, **63**, 64, 67, 68, **72** |
-| 5 | The nervous system | **None.** PhysioEx has no sensory exercise. | **CUSTOM BUILD #1**, home sensory/reflex lab (see gap list) | **79**, 103, 104, **107**, **116**, **117**, **128** |
+| 5 | Synapses and central integration | Exercise 3 covers synaptic transmission; the split with week 4 is not set yet. | **PENDING**, week 5 lab not chosen | **79**, 103, 104, **107**, **116**, **117**, **128** |
 | 6 | How muscle makes force | **Ex 2, all activities**, twitch, stimulus voltage, treppe, wave summation, tetanus, fatigue, length-tension, isotonic contraction |, | 85, 86, 87, 88, 89, 90, 92, **95** (94 EMG: see substitutions) |
 | 7 | Hormones | **Ex 4, glucose/insulin + hormone replacement activities**, glucose tolerance and diabetes. **Ex 12, ELISA activity** as the hormone immunoassay. |, | 134, 135, 139, 142, **144**, **145** |
 | 8 | Reproduction | **None.** PhysioEx has no reproduction exercise. | **CUSTOM BUILD #2**, hormone-cycle graph interpretation worksheet | 261, 262, **265** |
@@ -34,7 +34,7 @@ Coverage check: 10 of 15 weeks run fully or primarily on PhysioEx. All 12 Physio
 
 ## The gap list, custom builds, ranked by need
 
-1. **Week 5 home sensory/reflex lab.** The only true gap with no PhysioEx and no existing page. All of it is home-doable with zero equipment: ruler-drop reaction time (comp 79), bent-paperclip two-point discrimination (107), printable acuity/blind-spot/astigmatism charts (116), phone-tone hearing screen and eyes-closed balance test (117), orthostatic heart-rate response for autonomic tone (128). Students collect real data on themselves, genuinely ungoogleable numbers.
+1. **Week 6 lab.** Sensing and the autonomic responses. The home sensory and reflex build was dropped Sep 6 2026; Scrubs is writing a replacement.
 2. **Week 8 hormone-cycle graph worksheet.** Pure data interpretation: a gonadotropin/ovarian-hormone cycle graph, students identify ovulation day and the event driving each peak (265) and correlate uterine phases (261, 262). One page.
 3. **Week 9 ECG strip packet.** Rate calculation, rhythm identification, wave labeling on provided strips (162 to 164). Check the clinical manual before building, this may already exist.
 4. **Week 14 urinalysis worksheet (optional).** Ex 9 covers the renal *processes*; a dipstick-image case worksheet covers the *reading urine* competency (226). Could also fold into the Week 15 patient file.

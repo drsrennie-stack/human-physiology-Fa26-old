@@ -30,7 +30,7 @@ Printed at the top of every sheet:
 
 Each competency carries its number pre-printed in a box, the concept name, the
 full "You should be able to" text, prompt A/B tick boxes, and two blanks for
-their pass 1 and pass 2 pen colours. Name and date on the top right of the
+their pass 1 and pass 2 pen colors. Name and date on the top right of the
 sheet.
 
 **Nobody has to print 18 pages.** There is a 1 / 2 / 3 control at the top and
@@ -55,7 +55,7 @@ labels, filled in with a worked **anatomy** example (long bone structure, from
 BIO 004, so there is nothing on it a physiology student can copy). It shows the
 picture in box 1, the labels on leader lines in box 2, the three-box arrow
 chain in box 3, and the same chain in box 4 with the failed box crossed out and
-an arrow to what stops. Both pen colours are in it. That section is screen
+an arrow to what stops. Both pen colors are in it. That section is screen
 only, so it never costs a printed page, and the sheet says plainly that a hand
 ruled sheet is graded exactly the same as a printed one.
 
@@ -89,11 +89,11 @@ including the week-by-week schedule, with the exam dates now in it.
 There was a dark "Right now" panel pinned above the week list holding the
 current week, expanded, with all seven of its links. The list below it then
 showed the same week again, marked "This week". Two copies of one week in two
-colour schemes.
+color schemes.
 
 The dark panel is gone. The current week is simply open where it belongs,
 first in the light list, still marked "This week". The nineteen CSS rules that
-only styled the dark panel went with it. One list, one colour scheme.
+only styled the dark panel went with it. One list, one color scheme.
 
 ### 5. The course home moved properly this time
 
@@ -185,7 +185,7 @@ discussion opens only after the last one, no console errors.
 
 Two contrast misses turned up in the sealed part boxes, 6.74:1 and 6.88:1.
 Both clear AA, both miss AAA, and everything else in this build holds AAA, so
-inside a sealed box the maroon and the grey now step down to 8.95:1 and 7.70:1.
+inside a sealed box the maroon and the gray now step down to 8.95:1 and 7.70:1.
 
 **Week 2's discussion is wired in.** The lab shows a **Post in the Week 2
 discussion** button once the student finishes it, pointing at
@@ -201,7 +201,7 @@ week, every page type, plus the door, the week page and the competency list.
 ### 8. Naming, fixed
 
 Two numbering systems were running at once and they disagreed. The lab page
-labelled itself by week, but `course-start.html` and the iframe file labelled
+labeled itself by week, but `course-start.html` and the iframe file labeled
 the same thing "Learning Lab 1" on Week 2 and "Learning Lab 3" on Week 4. A
 student on the Week 4 page saw a 3.
 
@@ -294,7 +294,7 @@ marked decision of record, order Weeks 4 to 8 as: action potential, whole
 nervous system, muscle, hormones, reproduction.
 
 `course-start.html` and the syllabus schedule order the same weeks as: cell
-signalling and the electrical signal, synapses and integration, sensory and
+signaling and the electrical signal, synapses and integration, sensory and
 autonomic, muscle, hormones and reproduction together.
 
 Weeks 1 to 3 and 9 to 15 agree. Weeks 4 to 8 do not. Every student-facing page

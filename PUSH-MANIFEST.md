@@ -18,7 +18,7 @@ Do not drag PUSH-MANIFEST.md.
 Your syllabus is `syllabus-fall2026.html`. The dock asked for `syllabus.html`, and the
 fallback asked for `fall-2026-syllabus.html`. Three names, one file. Fixed in
 `bio005-dock.js`, `os/bio005-dock.js`, `hootie.js` and `os/hootie.js`, and the Syllabus
-tile is now live instead of greyed out.
+tile is now live instead of grayed out.
 
 ### Finished tools were sitting behind "coming soon"
 These tiles pointed at pages that already exist, but were flagged as not built yet, so

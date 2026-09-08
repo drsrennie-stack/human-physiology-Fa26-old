@@ -94,10 +94,12 @@ true.
 
 ## 3. Weeks open on a date, and early on Saturday night
 
-**`bio005-gate.js`** carries the fifteen opening dates. A week opens on its Monday, and early
-access opens the **Saturday before at 8 pm Pacific**, so a student who has finished and
-submitted the week they are in can start the next one over the weekend instead of waiting
-two days for nothing.
+**Week gating.** `bio005-gate.js` was deleted on September 7, 2026: nothing loaded it, and
+it described a rule the course does not use. The live rule lives in `week-navigator.html`
+(`unlockAt`) and `welcome.html` (`hgUnlock`), and the two must stay identical. Two weeks are
+open at any time. A week unlocks at noon on the day the previous week opens, so the moment
+Week 2 opens, Week 3 unlocks. Week 1 is the exception and opens at noon on the Saturday
+before the term starts. Weeks a student has finished stay open for the rest of the term.
 
 A locked week does not show a wall. It says which day it opens, names the exact Saturday
 evening early access begins, says plainly that the material is still being written rather

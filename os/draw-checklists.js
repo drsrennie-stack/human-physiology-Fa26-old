@@ -1,7 +1,7 @@
 /* ============================================================
    BIO 005 Human Physiology, Yuba College, Fall 2026
    draw-checklists.js
-   Drawing checklists for the draw it from memory synthesis check.
+   Drawing checklists for the Given not Googled synthesis check.
    Generated from the competency set: every competency carrying the
    draw facet, plus every DOK 3 core competency. 128 entries.
 
