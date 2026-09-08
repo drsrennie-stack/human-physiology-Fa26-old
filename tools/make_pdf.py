@@ -39,6 +39,9 @@ JOBS = {
    ('note-sheet.html?week=1&per=1', 'BIO 005 Week 1 note sheet, one per page',
     'One competency to a page, so the drawing box is taller than it is wide',
     '.sheetpage'),
+ 'BIO005-Week1-Patient-Sheet.pdf':
+   ('patient-sheet.html?week=1', 'BIO 005 Week 1 patient sheet',
+    'The Use It walkthrough for Week 1, with room to answer'),
  'BIO005-Week1-Ungraded-Work.pdf':
    ('ungraded-sheet.html?week=1', 'BIO 005 Week 1 ungraded work',
     'Everything ungraded in Week 1: retrieval target, brain dumps, drawing prompts, book problems'),
