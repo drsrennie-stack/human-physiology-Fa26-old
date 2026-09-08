@@ -57,6 +57,11 @@ body.preweek .chip.pend{display:none}
 .start ul li{margin:3px 0}
 .start .one{margin:0;padding-top:12px;border-top:1px solid rgba(11,21,48,.14);font-size:15px}
 .start .one strong{display:block;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--rust);margin-bottom:4px}
+.intro{margin-top:16px;background:var(--white);border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,.08);padding:18px 20px;max-width:640px}
+.intro h2{font-size:12px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--rust);margin:0 0 6px}
+.intro p{margin:0 0 10px;font-size:15px}
+.intro .frame{position:relative;width:100%;padding-top:56.25%;border-radius:10px;overflow:hidden;background:var(--navy)}
+.intro .frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 footer{padding:26px max(40px,5vw) 40px;border-top:1px solid rgba(11,21,48,.14)}
 footer .inner{display:flex;flex-wrap:wrap;gap:8px 26px;font-size:14px}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
@@ -97,6 +102,11 @@ footer .inner{display:flex;flex-wrap:wrap;gap:8px 26px;font-size:14px}
       </ul>
       <p class="one"><strong>If you only remember one thing</strong>Work down this page from top to bottom. The steps are numbered, and each one feeds the next.</p>
     </div>
+    <div class="intro" id="intro">
+      <h2>Before anything else</h2>
+      <p><strong>Watch the course introduction.</strong> About ten minutes. It shows you how the week works, where everything is, and what I am asking of you, so you never have to guess.</p>
+      <div id="introSlot"></div>
+    </div>
     <p class="intro">A quick word before you start. This week is deliberately lighter than the ones that follow, because you are learning two things at once: the physiology, and the system this course runs on. The rhythm you practice this week, the note sheet in two colors, the videos, the lab, the Sunday deadline, is the exact same rhythm all fifteen weeks. Learn it now, while the load is gentle, and every week after this one costs you less.</p>
     <div class="hours">
       <p>Plan your hours. Honest estimates for a typical student; yours will differ, and that is fine.</p>
@@ -116,12 +126,12 @@ footer .inner{display:flex;flex-wrap:wrap;gap:8px 26px;font-size:14px}
   <div class="inner">
     <p class="eyebrow">Work down this page, top to bottom</p>
     <ol class="steps">
-      <li><h3>Note sheet, first pass</h3><p class="stepbody"><strong>Read the <a href="week-01-notesheet-prompts.html" target="_top">Week 1 note sheet questions</a> first, preview the text, organize your notes,</strong> then answer the best you can from what you know, in your first color. One prompt per competency; the rubric is on the sheet. <span class="chip pend">Note sheet posts when the week opens</span></p></li>
+      <li><h3>Note sheet, first pass</h3><p class="stepbody"><strong>Read the <a href="week-01-notesheet-prompts.html" target="_top">Week 1 note sheet questions</a> first, preview the text, organize your notes,</strong> then answer the best you can from what you know, in your first color. One prompt per competency; the rubric is on the sheet. <a class="steplink" href="note-sheet.html?week=1" target="_top">Print the Week 1 note sheet &rarr;</a></p></li>
       <li><h3>Watch the lectures, second color</h3><p class="stepbody"><strong>Now work the Week 1 notes and videos, and add what you did not know in a second color.</strong> Color one is your baseline; color two is what you need to commit to memory. <a class="steplink" href="week-01-notes.html" target="_top">Open the Week 1 notes &rarr;</a> <a class="steplink" href="lecture-week.html?week=1" target="_top">Open the Week 1 lectures &rarr;</a> </p></li>
       <li><h3>Discussion, post by Friday</h3><p class="stepbody"><strong>This week it is your digital vision board:</strong> one image of who you are and where you are going, posted with a short video introduction. Post by Friday, 10:00 pm; replies by Sunday, 10:00 pm. <a class="steplink" href="assignment-discussion-01-visionboard.html" target="_top">Open the vision board &rarr;</a></p></li>
       <li><h3>Lab</h3><p class="stepbody"><strong>Your first lab is the standards and ranges lab:</strong> build a reference range by hand and learn what that column on every lab panel claims. No Pearson this week; PhysioEx begins in Week 2. <a class="steplink" href="reference-range-lab.html" target="_top">Open the reference range lab &rarr;</a></p></li>
       <li><h3>Book problems and recall cards</h3><p class="stepbody"><strong>End of chapter problems from Silverthorn, Chapter 1,</strong> and run your recall cards in the <a href="mastery-physio-os-standalone.html" target="_top">Mastery OS</a>.</p></li>
-      <li><h3>Turn in your note sheet, then the five-minute practice round</h3><p class="stepbody"><strong>Turn in your note sheet in Canvas as one PDF, both colors, every page labeled,</strong> by Sunday, September 13 at 10:00 pm. <a class="steplink" href="assignment-notesheet.html?week=1" target="_top">How to turn it in &rarr;</a></p><p class="stepbody"><strong>The five minute draw and teach practice round,</strong> in the exact midterm format, ungraded. <span class="chip pend">Posts when the week opens</span></p></li>
+      <li><h3>Turn in your note sheet, then the five-minute practice round</h3><p class="stepbody"><strong>Turn in your note sheet in Canvas as one PDF, both colors, every page labeled,</strong> by Sunday, September 13 at 10:00 pm. <a class="steplink" href="assignment-notesheet.html?week=1" target="_top">How to turn it in &rarr;</a></p><p class="stepbody"><strong>The five minute draw and teach practice round,</strong> in the exact midterm format, ungraded. Pick one competency from this week, blank paper, no notes, and teach it to your phone camera for five minutes. Nothing is turned in; watch it back once and anything you could not say without looking goes on your miss list. <a class="steplink" href="competency-study-guide.html?week=1" target="_top">Pick a competency &rarr;</a></p></li>
     </ol>
   </div>
 </main>
@@ -133,6 +143,19 @@ footer .inner{display:flex;flex-wrap:wrap;gap:8px 26px;font-size:14px}
   </div>
 </footer>
 <script>
+(function(){
+  /* COURSE INTRODUCTION VIDEO. Paste the embed URL between the quotes and upload.
+     Loom:    https://www.loom.com/embed/VIDEO_ID
+     YouTube: https://www.youtube.com/embed/VIDEO_ID
+     Studio:  the src of the embed code Canvas Studio gives you */
+  var INTRO_VIDEO_EMBED = "";
+  var slot = document.getElementById('introSlot');
+  if (INTRO_VIDEO_EMBED) {
+    slot.innerHTML = '<div class="frame"><iframe src="' + INTRO_VIDEO_EMBED + '" title="Course introduction, BIO 005 Human Physiology" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>';
+  } else {
+    slot.innerHTML = '<p style="margin:0"><strong>The introduction video posts here on opening day.</strong> If you are reading this before then, start with the syllabus and come back.</p>';
+  }
+})();
 (function(){
   var opens = new Date(document.body.getAttribute('data-opens') + 'T00:00:00');
   if(new Date() < opens){ document.body.classList.add('preweek'); }
