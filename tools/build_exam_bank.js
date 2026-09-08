@@ -17,12 +17,24 @@ const clean = s => String(s).replace(/\s*[—–]\s*/g, ', ').replace(/\s+/g, ' 
 
 const items = [];
 let cards = 0, skipped = 0;
+
+/* UNIQUE IDS, added Sep 8 2026.
+   Card ids in os/bio005-card-bank.js restart at c1 inside every topic, so
+   4,980 cards shared 352 ids and 5,610 items shared 982. practice-exam.html
+   deduplicates a draw with `if (used[it.id]) continue` and down-weights a
+   repeat with `seenSet[it.id]`, both of which key on this id. The effect was
+   that picking one item silently locked out every other item sharing its id:
+   in a cumulative weeks 1 to 7 draw, 76 percent of the block was unreachable.
+   The item id is now globally unique and the original is kept as srcId so a
+   question can still be traced back to its card. */
+let seq = 0;
+const uid = () => 'q' + String(++seq).padStart(5, '0');
 window.BIO005_CARD_BANK.modules.forEach(m => m.topics.forEach(t => t.cards.forEach(c => {
   const comp = COMP[c.competencyId];
   if (!comp || !Array.isArray(c.options) || c.options.length < 3) { skipped++; return; }
   cards++;
   items.push({
-    id: c.id, type: 'mc', competencyId: c.competencyId, week: comp.week, topic: comp.general,
+    id: uid(), srcId: c.id, type: 'mc', competencyId: c.competencyId, week: comp.week, topic: comp.general,
     dok: c.dok || comp.dok || 2,
     stem: clean(c.q), options: c.options.map(clean), correct: c.correctIndex,
     why: clean(c.explanation || c.a || '')
@@ -35,7 +47,7 @@ fs.readdirSync(dir).filter(f => /^week-\d\d\.json$/.test(f)).sort().forEach(f =>
   JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8')).forEach(it => {
     const comp = COMP[it.competencyId];
     if (!comp) throw new Error(f + ': unknown competency ' + it.competencyId);
-    const out = Object.assign({}, it, { week: comp.week, topic: comp.general });
+    const out = Object.assign({}, it, { id: uid(), srcId: it.id, week: comp.week, topic: comp.general });
     ['stem', 'case', 'statement', 'correction', 'why', 'prompt'].forEach(k => { if (out[k]) out[k] = clean(out[k]); });
     ['options', 'whyNot', 'rubric'].forEach(k => { if (out[k]) out[k] = out[k].map(clean); });
     items.push(out); authored++;
